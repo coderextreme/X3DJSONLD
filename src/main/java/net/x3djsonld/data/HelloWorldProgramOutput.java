@@ -180,7 +180,7 @@ public class HelloWorldProgramOutput
     .addChild(new ViewpointGroup().setDescription("Available viewpoints")
       .addChild(new Viewpoint("DefaultView").setDescription("Hello X3DJSAIL"))
       .addChild(new Viewpoint("TopDownView").setDescription("top-down view from above").setOrientation(1.0,0.0,0.0,-1.570796).setPosition(0.0,100.0,0.0)))
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","ANY"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
     .addChild(new WorldInfo("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
     .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
     .addChild(new WorldInfo().setUSE("WorldInfoDEF"))

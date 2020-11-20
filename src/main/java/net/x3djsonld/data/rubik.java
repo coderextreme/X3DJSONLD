@@ -73,7 +73,7 @@ public class rubik
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a kind of rubik cube with spheres")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\""))
     .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(0.0,0.0,12.0))
     .addChild(new ProtoDeclare("sphereproto").setName("sphereproto")
       .setProtoInterface(new ProtoInterface()

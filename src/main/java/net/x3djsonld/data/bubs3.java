@@ -76,7 +76,7 @@ public class bubs3
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\""))
     .addChild(new Viewpoint().setDescription("Bubbles in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}))
     .addChild(new Transform("DECLBubble_bubbleA")

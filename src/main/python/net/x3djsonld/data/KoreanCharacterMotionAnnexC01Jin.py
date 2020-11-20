@@ -50,7 +50,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     HAnimHumanoid(DEF='hanim_AnnexC01Jin',name='AnnexC01Jin',scale=(0.0225,0.0225,0.0225),version='2.0',
       #  HAnimHumanoid original info='"humanoidVersion=2.0"' 
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
-        metadata=MetadataString(name='humanoidVersion',value=[2.0])),
+        metadata=MetadataString(name='humanoidVersion',value=['2.0'])),
       skeleton=[
       HAnimJoint(DEF='hanim_humanoid_root',center=(0,30.53,-0.7076),name='humanoid_root',
         children=[

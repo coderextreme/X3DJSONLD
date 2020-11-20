@@ -125,7 +125,7 @@ public class indexedfaceset_pixeltexture_entire
     .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-10.0,0.0))
     .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
     .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","WALK","FLY","ANY"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
     .addChild(new Shape()
       .setAppearance(new Appearance()
         .setMaterial(new Material())

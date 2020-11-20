@@ -59,7 +59,7 @@ public class NeedClassName
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
     .addMeta(new meta().setName(meta.NAME_SOURCE     ).setContent("t1.wrl")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setAvatarSize(new double[] {200.0,200.0,120.0}).setSpeed(3).setType(new String[] {"EXAMINE","FLY","WALK"}))
+    .addChild(new NavigationInfo().setAvatarSize(new double[] {200.0,200.0,120.0}).setSpeed(3).setType("\"EXAMINE\" \"FLY\" \"WALK\""))
     .addChild(new WorldInfo().setTitle("Arts Mapper"))
     .addChild(new Viewpoint().setDescription("looking North").setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071).setPosition(0.0,60.0,110.0))
     .addChild(new Viewpoint().setDescription("looking East").setFieldOfView(0.785398125648499).setOrientation(0.0,0.400000005960464,0.0,-1.39999997615814).setPosition(-140.0,30.0,0.0))

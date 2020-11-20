@@ -929,6 +929,253 @@
         }
       ]
     },
+    "AcousticProperties": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@absorption": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@diffuse": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refraction": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@specular": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Analyser": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@fftSize": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "default": 2048,
+              "type": "integer"
+            },
+            "@frequencyBinCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "default": 1024,
+              "type": "integer"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@maxDecibels": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -30,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@minDecibels": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -100,
+              "type": "number"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@smoothingTimeConstant": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0.8,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "Anchor": {
       "type": "object",
       "oneOf": [
@@ -1079,6 +1326,9 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "-acousticProperties": {
+              "$ref": "#/definitions/-AcousticPropertiesSFNode"
             },
             "-fillProperties": {
               "$ref": "#/definitions/-FillPropertiesSFNode"
@@ -1333,6 +1583,11 @@
               "default": true,
               "type": "boolean"
             },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
@@ -1394,6 +1649,114 @@
                 "format": "uri-reference",
                 "type": "string"
               }
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "AudioDestination": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@maxChannelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "default": 2,
+              "type": "integer"
+            },
+            "@mediaDeviceID": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -1769,6 +2132,168 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
               "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "BiquadFilter": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@detune": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@frequency": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 350,
+              "type": "number"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@qualityFactor": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@type": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "lowpass",
+                "highpass",
+                "bandpass",
+                "lowshelf",
+                "highshelf",
+                "peaking",
+                "notch",
+                "allpass"
+              ],
+              "default": "lowpass",
+              "type": "string"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -2375,6 +2900,213 @@
         }
       ]
     },
+    "BufferAudioSource": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@buffer": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "@bufferDuration": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@bufferlength": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@detune": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@length": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@loop": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@loopEnd": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@loopStart": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@numberOfChannels": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "integer"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@playbackRate": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@sampleRate": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@url": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "format": "uri-reference",
+                "type": "string"
+              }
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "CADAssembly": {
       "type": "object",
       "oneOf": [
@@ -2909,6 +3641,285 @@
             },
             "-surfaceNormals": {
               "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ChannelMerger": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ChannelSelector": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "@channelSelection": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "integer"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ChannelSplitter": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "-outputs": {
+              "$ref": "#/definitions/-X3DSoundChannelNode-X3DSoundProcessingNode-X3DSoundSourceNodeMFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -5065,6 +6076,149 @@
         }
       ]
     },
+    "Convolver": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@buffer": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@normalize": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "Coordinate": {
       "type": "object",
       "oneOf": [
@@ -5798,6 +6952,147 @@
         }
       ]
     },
+    "Delay": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@delayTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@maxDelayTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "DirectionalLight": {
       "type": "object",
       "oneOf": [
@@ -5895,6 +7190,18 @@
             "@on": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
+              "type": "boolean"
+            },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
               "type": "boolean"
             },
             "@DEF": {
@@ -6382,6 +7689,172 @@
             "@suspensionForce": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DynamicsCompressor": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@attack": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0.003,
+              "type": "number"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@knee": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 30,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@ratio": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 20,
+              "minimum": 1,
+              "default": 12,
+              "type": "number"
+            },
+            "@reduction": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 0,
+              "type": "number"
+            },
+            "@release": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0.25,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@threshold": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 0,
+              "minimum": -100,
+              "default": -24,
               "type": "number"
             },
             "@DEF": {
@@ -8149,6 +9622,135 @@
         }
       ]
     },
+    "Gain": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "GeneratedCubeMapTexture": {
       "type": "object",
       "oneOf": [
@@ -9439,7 +11041,7 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
-            "@farClippingPlane": {
+            "@farDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -9472,7 +11074,7 @@
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
             },
-            "@nearClippingPlane": {
+            "@nearDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -13478,6 +15080,157 @@
         }
       ]
     },
+    "ListenerPointSource": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@enableDoppler": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@interauralDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@orientation": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@position": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@trackCurrentView": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "LoadSensor": {
       "type": "object",
       "oneOf": [
@@ -14468,6 +16221,110 @@
         }
       ]
     },
+    "MicrophoneSource": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@mediaDeviceID": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "MotorJoint": {
       "type": "object",
       "oneOf": [
@@ -14727,6 +16584,11 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
               "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
             },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -16978,7 +18840,7 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
-            "@farClippingPlane": {
+            "@farDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -17023,7 +18885,7 @@
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
             },
-            "@nearClippingPlane": {
+            "@nearDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -17087,6 +18949,118 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": false,
               "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "OscillatorSource": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@detune": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@frequency": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -17274,6 +19248,11 @@
                 "type": "number"
               }
             },
+            "@castShadow": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "@colorKey": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
               "type": "array",
@@ -17377,6 +19356,94 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
               "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PeriodicWave": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@optionsImag": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "@optionsReal": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "@type": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "sine",
+                "square",
+                "sawtooth",
+                "triangle",
+                "custom"
+              ],
+              "default": "square",
+              "type": "string"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -18185,6 +20252,18 @@
               "default": 100,
               "type": "number"
             },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -18378,22 +20457,11 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
-            "@colorMode": {
-              "pattern": "^(\\s|\\S)*$",
-              "enum": [
-                "POINT_COLOR",
-                "TEXTURE_COLOR",
-                "TEXTURE_AND_POINT_COLOR"
-              ],
-              "default": "TEXTURE_AND_POINT_COLOR",
-              "type": "string"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@pointSizeAttenuation": {
-              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+            "@attenuation": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
               "items": [
                 {
                   "default": 1,
@@ -18408,9 +20476,10 @@
                   "type": "number"
                 }
               ],
-              "additionalItems": {
-                "type": "number"
-              }
+              "additionalItems": false
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@pointSizeMaxValue": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -21734,6 +23803,11 @@
                 "type": "number"
               }
             },
+            "@castShadow": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-geometry": {
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
             },
@@ -22381,6 +24455,10 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@direction": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
@@ -22401,6 +24479,11 @@
                 }
               ],
               "additionalItems": false
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
             },
             "@intensity": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -22455,6 +24538,180 @@
             },
             "-source": {
               "$ref": "#/definitions/-X3DSoundSourceNodeSFNode"
+            },
+            "@spatialize": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "SpatialSound": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@coneInnerAngle": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 6.2832,
+              "minimum": 0,
+              "default": 6.2832,
+              "type": "number"
+            },
+            "@coneOuterAngle": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 6.2832,
+              "minimum": 0,
+              "default": 6.2832,
+              "type": "number"
+            },
+            "@coneOuterGain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@direction": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@distanceModel": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "linear",
+                "inverse",
+                "exponential"
+              ],
+              "default": "inverse",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@enableDoppler": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@enableHRTF": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@intensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@location": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "@maxDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 10000,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@priority": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@referenceDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@rolloffFactor": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
             },
             "@spatialize": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -23100,6 +25357,18 @@
               "default": 100,
               "type": "number"
             },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -23268,6 +25537,245 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
               "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "StreamAudioDestination": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@mediaDeviceID": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "StreamAudioSource": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@length": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "@mediaStream": {
+              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
+              "type": "array",
+              "items": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -24261,6 +26769,375 @@
               "items": {
                 "type": "number"
               }
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "TextureProjector": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@ambientIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@aspectRatio": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "@color": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@direction": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@farDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": -1,
+              "default": -1,
+              "type": "number"
+            },
+            "@fieldOfView": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 3.1416,
+              "minimum": 0,
+              "default": 0.7854,
+              "type": "number"
+            },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@intensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@location": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@nearDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": -1,
+              "default": -1,
+              "type": "number"
+            },
+            "@on": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "-texture": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
+            "@upVector": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "TextureProjectorParallel": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@ambientIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@aspectRatio": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "@color": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@direction": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@farDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": -1,
+              "default": -1,
+              "type": "number"
+            },
+            "@fieldOfView": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": -1,
+                  "type": "number"
+                },
+                {
+                  "default": -1,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@intensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@location": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@nearDistance": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": -1,
+              "default": -1,
+              "type": "number"
+            },
+            "@on": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "-texture": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -25566,6 +28443,7 @@
             },
             "@frequency": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "minimum": 0,
               "default": 0,
               "type": "integer"
             },
@@ -26624,7 +29502,7 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
-            "@farClippingPlane": {
+            "@farDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -26651,7 +29529,7 @@
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
             },
-            "@nearClippingPlane": {
+            "@nearDistance": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "default": -1,
               "type": "number"
@@ -27393,6 +30271,145 @@
         }
       ]
     },
+    "WaveShaper": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@channelCount": {
+              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+              "type": "integer"
+            },
+            "@channelCountMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "max",
+                "clamped-max",
+                "explicit"
+              ],
+              "default": "max",
+              "type": "string"
+            },
+            "@channelInterpretation": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "speakers",
+                "discrete"
+              ],
+              "default": "speakers",
+              "type": "string"
+            },
+            "-children": {
+              "$ref": "#/definitions/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@elapsedTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "type": "number"
+            },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@gain": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 1,
+              "type": "number"
+            },
+            "@isActive": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@isPaused": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@oversample": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "none",
+                "2x",
+                "4x"
+              ],
+              "default": "none",
+              "type": "string"
+            },
+            "@pauseTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@resumeTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@startTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@stopTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": 0,
+              "type": "number"
+            },
+            "@tailTime": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "WindPhysicsModel": {
       "type": "object",
       "oneOf": [
@@ -27598,6 +30615,7 @@
               "ParticleSystems",
               "Picking",
               "PointingDeviceSensor",
+              "TextureProjector",
               "Rendering",
               "RigidBodyPhysics",
               "Scripting",
@@ -28154,6 +31172,112 @@
       ],
       "additionalProperties": false
     },
+    "-X3DMetadataObjectSFNode": {
+      "type": "object",
+      "properties": {
+        "MetadataBoolean": {
+          "$ref": "#/definitions/MetadataBoolean"
+        },
+        "MetadataDouble": {
+          "$ref": "#/definitions/MetadataDouble"
+        },
+        "MetadataFloat": {
+          "$ref": "#/definitions/MetadataFloat"
+        },
+        "MetadataInteger": {
+          "$ref": "#/definitions/MetadataInteger"
+        },
+        "MetadataSet": {
+          "$ref": "#/definitions/MetadataSet"
+        },
+        "MetadataString": {
+          "$ref": "#/definitions/MetadataString"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "Analyser": {
+            "$ref": "#/definitions/Analyser"
+          },
+          "AudioClip": {
+            "$ref": "#/definitions/AudioClip"
+          },
+          "AudioDestination": {
+            "$ref": "#/definitions/AudioDestination"
+          },
+          "BiquadFilter": {
+            "$ref": "#/definitions/BiquadFilter"
+          },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
+          "ChannelMerger": {
+            "$ref": "#/definitions/ChannelMerger"
+          },
+          "ChannelSelector": {
+            "$ref": "#/definitions/ChannelSelector"
+          },
+          "ChannelSplitter": {
+            "$ref": "#/definitions/ChannelSplitter"
+          },
+          "Convolver": {
+            "$ref": "#/definitions/Convolver"
+          },
+          "Delay": {
+            "$ref": "#/definitions/Delay"
+          },
+          "DynamicsCompressor": {
+            "$ref": "#/definitions/DynamicsCompressor"
+          },
+          "Gain": {
+            "$ref": "#/definitions/Gain"
+          },
+          "ListenerPointSource": {
+            "$ref": "#/definitions/ListenerPointSource"
+          },
+          "MicrophoneSource": {
+            "$ref": "#/definitions/MicrophoneSource"
+          },
+          "MovieTexture": {
+            "$ref": "#/definitions/MovieTexture"
+          },
+          "OscillatorSource": {
+            "$ref": "#/definitions/OscillatorSource"
+          },
+          "Sound": {
+            "$ref": "#/definitions/Sound"
+          },
+          "SpatialSound": {
+            "$ref": "#/definitions/SpatialSound"
+          },
+          "StreamAudioDestination": {
+            "$ref": "#/definitions/StreamAudioDestination"
+          },
+          "StreamAudioSource": {
+            "$ref": "#/definitions/StreamAudioSource"
+          },
+          "WaveShaper": {
+            "$ref": "#/definitions/WaveShaper"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DChildNodeMFNode": {
       "type": "array",
       "minItems": 1,
@@ -28349,6 +31473,12 @@
           "Layout": {
             "$ref": "#/definitions/Layout"
           },
+          "TextureProjector": {
+            "$ref": "#/definitions/TextureProjector"
+          },
+          "TextureProjectorParallel": {
+            "$ref": "#/definitions/TextureProjectorParallel"
+          },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
           },
@@ -28445,14 +31575,71 @@
           "Shape": {
             "$ref": "#/definitions/Shape"
           },
-          "Sound": {
-            "$ref": "#/definitions/Sound"
+          "ChannelMerger": {
+            "$ref": "#/definitions/ChannelMerger"
+          },
+          "ChannelSelector": {
+            "$ref": "#/definitions/ChannelSelector"
+          },
+          "ChannelSplitter": {
+            "$ref": "#/definitions/ChannelSplitter"
+          },
+          "AudioDestination": {
+            "$ref": "#/definitions/AudioDestination"
+          },
+          "StreamAudioDestination": {
+            "$ref": "#/definitions/StreamAudioDestination"
+          },
+          "Analyser": {
+            "$ref": "#/definitions/Analyser"
+          },
+          "BiquadFilter": {
+            "$ref": "#/definitions/BiquadFilter"
+          },
+          "Convolver": {
+            "$ref": "#/definitions/Convolver"
+          },
+          "Delay": {
+            "$ref": "#/definitions/Delay"
+          },
+          "DynamicsCompressor": {
+            "$ref": "#/definitions/DynamicsCompressor"
+          },
+          "Gain": {
+            "$ref": "#/definitions/Gain"
+          },
+          "WaveShaper": {
+            "$ref": "#/definitions/WaveShaper"
           },
           "AudioClip": {
             "$ref": "#/definitions/AudioClip"
           },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
+          "ListenerPointSource": {
+            "$ref": "#/definitions/ListenerPointSource"
+          },
+          "MicrophoneSource": {
+            "$ref": "#/definitions/MicrophoneSource"
+          },
           "MovieTexture": {
             "$ref": "#/definitions/MovieTexture"
+          },
+          "OscillatorSource": {
+            "$ref": "#/definitions/OscillatorSource"
+          },
+          "StreamAudioSource": {
+            "$ref": "#/definitions/StreamAudioSource"
+          },
+          "PeriodicWave": {
+            "$ref": "#/definitions/PeriodicWave"
+          },
+          "Sound": {
+            "$ref": "#/definitions/Sound"
+          },
+          "SpatialSound": {
+            "$ref": "#/definitions/SpatialSound"
           },
           "BooleanTrigger": {
             "$ref": "#/definitions/BooleanTrigger"
@@ -28536,26 +31723,11 @@
         "additionalProperties": false
       }
     },
-    "-X3DMetadataObjectSFNode": {
+    "-AcousticPropertiesSFNode": {
       "type": "object",
       "properties": {
-        "MetadataBoolean": {
-          "$ref": "#/definitions/MetadataBoolean"
-        },
-        "MetadataDouble": {
-          "$ref": "#/definitions/MetadataDouble"
-        },
-        "MetadataFloat": {
-          "$ref": "#/definitions/MetadataFloat"
-        },
-        "MetadataInteger": {
-          "$ref": "#/definitions/MetadataInteger"
-        },
-        "MetadataSet": {
-          "$ref": "#/definitions/MetadataSet"
-        },
-        "MetadataString": {
-          "$ref": "#/definitions/MetadataString"
+        "AcousticProperties": {
+          "$ref": "#/definitions/AcousticProperties"
         },
         "ProtoInstance": {
           "$ref": "#/definitions/ProtoInstance"
@@ -28934,6 +32106,73 @@
         "additionalProperties": false
       }
     },
+    "-X3DSoundChannelNode-X3DSoundProcessingNode-X3DSoundSourceNodeMFNode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "ChannelMerger": {
+            "$ref": "#/definitions/ChannelMerger"
+          },
+          "ChannelSelector": {
+            "$ref": "#/definitions/ChannelSelector"
+          },
+          "ChannelSplitter": {
+            "$ref": "#/definitions/ChannelSplitter"
+          },
+          "Analyser": {
+            "$ref": "#/definitions/Analyser"
+          },
+          "BiquadFilter": {
+            "$ref": "#/definitions/BiquadFilter"
+          },
+          "Convolver": {
+            "$ref": "#/definitions/Convolver"
+          },
+          "Delay": {
+            "$ref": "#/definitions/Delay"
+          },
+          "DynamicsCompressor": {
+            "$ref": "#/definitions/DynamicsCompressor"
+          },
+          "Gain": {
+            "$ref": "#/definitions/Gain"
+          },
+          "WaveShaper": {
+            "$ref": "#/definitions/WaveShaper"
+          },
+          "AudioClip": {
+            "$ref": "#/definitions/AudioClip"
+          },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
+          "ListenerPointSource": {
+            "$ref": "#/definitions/ListenerPointSource"
+          },
+          "MicrophoneSource": {
+            "$ref": "#/definitions/MicrophoneSource"
+          },
+          "MovieTexture": {
+            "$ref": "#/definitions/MovieTexture"
+          },
+          "OscillatorSource": {
+            "$ref": "#/definitions/OscillatorSource"
+          },
+          "StreamAudioSource": {
+            "$ref": "#/definitions/StreamAudioSource"
+          },
+          "ProtoInstance": {
+            "$ref": "#/definitions/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-X3DNBodyCollidableNodeSFNode": {
       "type": "object",
       "properties": {
@@ -29150,6 +32389,12 @@
         "Layout": {
           "$ref": "#/definitions/Layout"
         },
+        "TextureProjector": {
+          "$ref": "#/definitions/TextureProjector"
+        },
+        "TextureProjectorParallel": {
+          "$ref": "#/definitions/TextureProjectorParallel"
+        },
         "DirectionalLight": {
           "$ref": "#/definitions/DirectionalLight"
         },
@@ -29246,14 +32491,71 @@
         "Shape": {
           "$ref": "#/definitions/Shape"
         },
-        "Sound": {
-          "$ref": "#/definitions/Sound"
+        "ChannelMerger": {
+          "$ref": "#/definitions/ChannelMerger"
+        },
+        "ChannelSelector": {
+          "$ref": "#/definitions/ChannelSelector"
+        },
+        "ChannelSplitter": {
+          "$ref": "#/definitions/ChannelSplitter"
+        },
+        "AudioDestination": {
+          "$ref": "#/definitions/AudioDestination"
+        },
+        "StreamAudioDestination": {
+          "$ref": "#/definitions/StreamAudioDestination"
+        },
+        "Analyser": {
+          "$ref": "#/definitions/Analyser"
+        },
+        "BiquadFilter": {
+          "$ref": "#/definitions/BiquadFilter"
+        },
+        "Convolver": {
+          "$ref": "#/definitions/Convolver"
+        },
+        "Delay": {
+          "$ref": "#/definitions/Delay"
+        },
+        "DynamicsCompressor": {
+          "$ref": "#/definitions/DynamicsCompressor"
+        },
+        "Gain": {
+          "$ref": "#/definitions/Gain"
+        },
+        "WaveShaper": {
+          "$ref": "#/definitions/WaveShaper"
         },
         "AudioClip": {
           "$ref": "#/definitions/AudioClip"
         },
+        "BufferAudioSource": {
+          "$ref": "#/definitions/BufferAudioSource"
+        },
+        "ListenerPointSource": {
+          "$ref": "#/definitions/ListenerPointSource"
+        },
+        "MicrophoneSource": {
+          "$ref": "#/definitions/MicrophoneSource"
+        },
         "MovieTexture": {
           "$ref": "#/definitions/MovieTexture"
+        },
+        "OscillatorSource": {
+          "$ref": "#/definitions/OscillatorSource"
+        },
+        "StreamAudioSource": {
+          "$ref": "#/definitions/StreamAudioSource"
+        },
+        "PeriodicWave": {
+          "$ref": "#/definitions/PeriodicWave"
+        },
+        "Sound": {
+          "$ref": "#/definitions/Sound"
+        },
+        "SpatialSound": {
+          "$ref": "#/definitions/SpatialSound"
         },
         "BooleanTrigger": {
           "$ref": "#/definitions/BooleanTrigger"
@@ -29723,6 +33025,9 @@
           "TextureTransformMatrix3D": {
             "$ref": "#/definitions/TextureTransformMatrix3D"
           },
+          "AcousticProperties": {
+            "$ref": "#/definitions/AcousticProperties"
+          },
           "FillProperties": {
             "$ref": "#/definitions/FillProperties"
           },
@@ -29921,6 +33226,12 @@
           "Layout": {
             "$ref": "#/definitions/Layout"
           },
+          "TextureProjector": {
+            "$ref": "#/definitions/TextureProjector"
+          },
+          "TextureProjectorParallel": {
+            "$ref": "#/definitions/TextureProjectorParallel"
+          },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
           },
@@ -30017,11 +33328,68 @@
           "Shape": {
             "$ref": "#/definitions/Shape"
           },
-          "Sound": {
-            "$ref": "#/definitions/Sound"
+          "ChannelMerger": {
+            "$ref": "#/definitions/ChannelMerger"
+          },
+          "ChannelSelector": {
+            "$ref": "#/definitions/ChannelSelector"
+          },
+          "ChannelSplitter": {
+            "$ref": "#/definitions/ChannelSplitter"
+          },
+          "AudioDestination": {
+            "$ref": "#/definitions/AudioDestination"
+          },
+          "StreamAudioDestination": {
+            "$ref": "#/definitions/StreamAudioDestination"
+          },
+          "Analyser": {
+            "$ref": "#/definitions/Analyser"
+          },
+          "BiquadFilter": {
+            "$ref": "#/definitions/BiquadFilter"
+          },
+          "Convolver": {
+            "$ref": "#/definitions/Convolver"
+          },
+          "Delay": {
+            "$ref": "#/definitions/Delay"
+          },
+          "DynamicsCompressor": {
+            "$ref": "#/definitions/DynamicsCompressor"
+          },
+          "Gain": {
+            "$ref": "#/definitions/Gain"
+          },
+          "WaveShaper": {
+            "$ref": "#/definitions/WaveShaper"
           },
           "AudioClip": {
             "$ref": "#/definitions/AudioClip"
+          },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
+          "ListenerPointSource": {
+            "$ref": "#/definitions/ListenerPointSource"
+          },
+          "MicrophoneSource": {
+            "$ref": "#/definitions/MicrophoneSource"
+          },
+          "OscillatorSource": {
+            "$ref": "#/definitions/OscillatorSource"
+          },
+          "StreamAudioSource": {
+            "$ref": "#/definitions/StreamAudioSource"
+          },
+          "PeriodicWave": {
+            "$ref": "#/definitions/PeriodicWave"
+          },
+          "Sound": {
+            "$ref": "#/definitions/Sound"
+          },
+          "SpatialSound": {
+            "$ref": "#/definitions/SpatialSound"
           },
           "BooleanTrigger": {
             "$ref": "#/definitions/BooleanTrigger"
@@ -30785,6 +34153,9 @@
           "AudioClip": {
             "$ref": "#/definitions/AudioClip"
           },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
           "DISEntityTypeMapping": {
             "$ref": "#/definitions/DISEntityTypeMapping"
           },
@@ -31234,8 +34605,23 @@
         "AudioClip": {
           "$ref": "#/definitions/AudioClip"
         },
+        "BufferAudioSource": {
+          "$ref": "#/definitions/BufferAudioSource"
+        },
+        "ListenerPointSource": {
+          "$ref": "#/definitions/ListenerPointSource"
+        },
+        "MicrophoneSource": {
+          "$ref": "#/definitions/MicrophoneSource"
+        },
         "MovieTexture": {
           "$ref": "#/definitions/MovieTexture"
+        },
+        "OscillatorSource": {
+          "$ref": "#/definitions/OscillatorSource"
+        },
+        "StreamAudioSource": {
+          "$ref": "#/definitions/StreamAudioSource"
         },
         "ProtoInstance": {
           "$ref": "#/definitions/ProtoInstance"
@@ -31613,6 +34999,12 @@
           "Layout": {
             "$ref": "#/definitions/Layout"
           },
+          "TextureProjector": {
+            "$ref": "#/definitions/TextureProjector"
+          },
+          "TextureProjectorParallel": {
+            "$ref": "#/definitions/TextureProjectorParallel"
+          },
           "DirectionalLight": {
             "$ref": "#/definitions/DirectionalLight"
           },
@@ -31709,14 +35101,71 @@
           "Shape": {
             "$ref": "#/definitions/Shape"
           },
-          "Sound": {
-            "$ref": "#/definitions/Sound"
+          "ChannelMerger": {
+            "$ref": "#/definitions/ChannelMerger"
+          },
+          "ChannelSelector": {
+            "$ref": "#/definitions/ChannelSelector"
+          },
+          "ChannelSplitter": {
+            "$ref": "#/definitions/ChannelSplitter"
+          },
+          "AudioDestination": {
+            "$ref": "#/definitions/AudioDestination"
+          },
+          "StreamAudioDestination": {
+            "$ref": "#/definitions/StreamAudioDestination"
+          },
+          "Analyser": {
+            "$ref": "#/definitions/Analyser"
+          },
+          "BiquadFilter": {
+            "$ref": "#/definitions/BiquadFilter"
+          },
+          "Convolver": {
+            "$ref": "#/definitions/Convolver"
+          },
+          "Delay": {
+            "$ref": "#/definitions/Delay"
+          },
+          "DynamicsCompressor": {
+            "$ref": "#/definitions/DynamicsCompressor"
+          },
+          "Gain": {
+            "$ref": "#/definitions/Gain"
+          },
+          "WaveShaper": {
+            "$ref": "#/definitions/WaveShaper"
           },
           "AudioClip": {
             "$ref": "#/definitions/AudioClip"
           },
+          "BufferAudioSource": {
+            "$ref": "#/definitions/BufferAudioSource"
+          },
+          "ListenerPointSource": {
+            "$ref": "#/definitions/ListenerPointSource"
+          },
+          "MicrophoneSource": {
+            "$ref": "#/definitions/MicrophoneSource"
+          },
           "MovieTexture": {
             "$ref": "#/definitions/MovieTexture"
+          },
+          "OscillatorSource": {
+            "$ref": "#/definitions/OscillatorSource"
+          },
+          "StreamAudioSource": {
+            "$ref": "#/definitions/StreamAudioSource"
+          },
+          "PeriodicWave": {
+            "$ref": "#/definitions/PeriodicWave"
+          },
+          "Sound": {
+            "$ref": "#/definitions/Sound"
+          },
+          "SpatialSound": {
+            "$ref": "#/definitions/SpatialSound"
           },
           "BooleanTrigger": {
             "$ref": "#/definitions/BooleanTrigger"

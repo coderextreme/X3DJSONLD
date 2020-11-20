@@ -497,7 +497,7 @@ public class NancyPrototypes
         .addChild(new Viewpoint("SideView").setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57079).setPosition(2.5929,0.854,0.0))
         .addChild(new Viewpoint("TopView").setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57079).setPosition(0.0,3.4495,0.0))))
     .addChild(new WorldInfo().setInfo(new String[] {"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."}).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
-    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.15,1.53,0.75}).setSpeed(0.5).setType(new String[] {"EXAMINE"}))
+    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.15,1.53,0.75}).setSpeed(0.5).setType("\"EXAMINE\""))
     .addChild(new Group("Interface")
       .addChild(new Transform()
         .addChild(new ProximitySensor("HudProx").setCenter(0.0,20.0,0.0).setSize(500.0,100.0,500.0)))

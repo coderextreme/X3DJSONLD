@@ -101,7 +101,7 @@ public class t4
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setAvatarSize(new double[] {200.0,200.0,120.0}).setSpeed(3).setType(new String[] {"EXAMINE","FLY","WALK"}))
+    .addChild(new NavigationInfo().setAvatarSize(new double[] {200.0,200.0,120.0}).setSpeed(3).setType("\"EXAMINE\" \"FLY\" \"WALK\""))
     .addChild(new WorldInfo().setTitle("Arts Mapper"))
     .addChild(new Viewpoint().setDescription("looking North").setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071).setPosition(0.0,60.0,110.0))
     .addChild(new Transform().setTranslation(-468.0,0.0,315.0)

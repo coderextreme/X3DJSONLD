@@ -682,6 +682,15 @@ Recommended tool:
                                         <xsl:value-of select="$appinfo"/>
                                         <xsl:if test="not(ends-with($appinfo,'.'))">
                                             <xsl:text>.</xsl:text>
+                                            <xsl:message>
+                                                <xsl:text>*** Warning: AbstractNodeType name='</xsl:text>
+                                                <xsl:value-of select="@name"/><xsl:text>' inconsistency in XML Schema appinfo prose does not end with a period.</xsl:text>
+                                            </xsl:message>
+                                            <xsl:message>
+                                                <xsl:text>    "</xsl:text>
+                                                <xsl:value-of select="$appinfo"/>
+                                                <xsl:text>"</xsl:text>
+                                            </xsl:message>
                                         </xsl:if>
                                     </xsl:attribute>
                                 </xsl:if>
@@ -690,7 +699,7 @@ Recommended tool:
                                 <xsl:message>
                                     <xsl:text>*** Warning: AbstractNodeType name='</xsl:text>
                                     <xsl:value-of select="@name"/>
-                                    <xsl:text>' has no appinfo description.</xsl:text>
+                                    <xsl:text>' has no appinfo description in XML Schema.</xsl:text>
                                 </xsl:message>
                             </xsl:otherwise>
                         </xsl:choose>
@@ -922,7 +931,7 @@ Recommended tool:
                                     <xsl:message>
                                         <xsl:text>*** tooltip note: ConcreteNode name='</xsl:text>
                                         <xsl:value-of select="@name"/>
-                                        <xsl:text>' has no appinfo description.</xsl:text>
+                                        <xsl:text>' has no appinfo description in XML Schema or X3D Tooltips.</xsl:text>
                                     </xsl:message>
                                 </xsl:otherwise>
                             </xsl:choose>

@@ -163,7 +163,7 @@ public class CameraPrototypes
             .addConnect(new connect().setNodeField("bindTime").setProtoField("bindTime"))
             .addConnect(new connect().setNodeField("isBound").setProtoField("isBound"))))
         .addComments(" NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation ")
-        .addChild(new NavigationInfo("CameraNavInfo").setType(new String[] {"EXAMINE","FLY","ANY"})
+        .addChild(new NavigationInfo("CameraNavInfo").setType("\"EXAMINE\" \"FLY\" \"ANY\"")
           .setIS(new IS()
             .addConnect(new connect().setNodeField("set_bind").setProtoField("set_bind"))
             .addComments(" No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. ")
