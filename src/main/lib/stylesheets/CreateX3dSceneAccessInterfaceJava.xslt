@@ -703,6 +703,9 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DPointingDeviceSensorNode') or ($nodeTypeBase = 'X3DDragSensorNode') or ($nodeTypeBase = 'X3DTouchSensorNode')">
                     <xsl:text>PointingDeviceSensor</xsl:text>
                 </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DTextureProjectorNode')">
+                    <xsl:text>TextureProjector</xsl:text>
+                </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DColorNode')    or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
                                 ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode')">
                     <xsl:text>Rendering</xsl:text>
@@ -718,13 +721,15 @@ Additional references of interest:
                                 contains($nodeTypeBase, 'Shader') or ends-with($nodeTypeBase, 'VertexAttribute')">
                     <xsl:text>Shaders</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DShapeNode')      or ($nodeTypeBase = 'X3DAppearanceChildNode')  or 
-                                ($nodeTypeBase = 'X3DMaterialNode')   or ($nodeTypeBase = 'X3DOneSidedMaterialNode') or 
-                                ($nodeTypeBase = 'X3DAppearanceNode') or ($nodeTypeBase = 'Shape')                   or
-                                ($nodeTypeBase = 'FillProperties')    or ($nodeTypeBase = 'LineProperties')          or ($nodeTypeBase = 'PointProperties')">
+                <xsl:when test="($nodeTypeBase = 'X3DShapeNode')       or ($nodeTypeBase = 'X3DAppearanceChildNode')  or 
+                                ($nodeTypeBase = 'X3DMaterialNode')    or ($nodeTypeBase = 'X3DOneSidedMaterialNode') or 
+                                ($nodeTypeBase = 'X3DAppearanceNode')  or ($nodeTypeBase = 'Shape')                   or
+                                ($nodeTypeBase = 'FillProperties')     or ($nodeTypeBase = 'LineProperties')          or
+                                ($nodeTypeBase = 'AcousticProperties') or ($nodeTypeBase = 'PointProperties')">
                     <xsl:text>Shape</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DSoundNode') or ($nodeTypeBase = 'X3DSoundSourceNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DSoundChannelNode')    or ($nodeTypeBase = 'X3DSoundDestinationNode') or ($nodeTypeBase = 'X3DSoundNode') or 
+                                ($nodeTypeBase = 'X3DSoundProcessingNode') or ($nodeTypeBase = 'X3DSoundSourceNode')">
                     <xsl:text>Sound</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DFontStyleNode')">
@@ -7132,7 +7137,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                                 <xsl:value-of select="$javaPrimitiveType"/>
                                             </xsl:when>
                                             <xsl:otherwise>
-                                                <xsl:text>/* here 5b, saiPackage not found */</xsl:text>
+                                                <xsl:text>/* here 5b, saiPackage for </xsl:text>
+                                                <xsl:value-of select="$javaPrimitiveType"/>
+                                                <xsl:text> not found */</xsl:text>
                                                 <xsl:value-of select="$javaPrimitiveType"/>
                                             </xsl:otherwise>
                                         </xsl:choose>
@@ -15339,8 +15346,11 @@ setAttribute method invocations).
              else if (!parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME) &&
                       !parent.getElementName().equals(ProtoBody.NAME))
              {
+                 String naming = new String();
+                 if (!getName().isEmpty())
+                     naming = " name='" + getName() + "'";
                  String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
-                     ": illegal parent found: '" + parent.getElementName() + "'";
+                     ": " + NAME + " DEF='" + getDEF() + "'" + naming + " illegal parent found: '" + parent.getElementName() + "'";
                  validationResult.append(errorNotice).append("\n");
                  throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
              }
@@ -18102,6 +18112,7 @@ public String getAccessType(String fieldName)
 			<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="interfaceBlock">
 				<xsl:text><![CDATA[
+    /** Callback event handler */
 	public void readableFieldChanged(X3DFieldEvent event);
 ]]></xsl:text>
 			</xsl:with-param>
@@ -26201,7 +26212,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	{
 		return name;
 	}
-						
+    /** set new name for this field */
 	public void setName(String newValue)
 	{
 		if (name.contains(" ")) // TODO other validity checks for name
@@ -31031,6 +31042,9 @@ import javax.script.ScriptException;</xsl:text>
      *                                  Usage: <code>java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM] [-properties [propertiesFile]] [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]] [-canonical] [-validate] [-EXIFICIENT | -OpenEXI] | [-Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97 | -toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP] [-tofile [resultFile.*]] [-toImage [snapshotName.*]]</code>
      */
     public  static final String USAGE      = "Usage: java [-classpath X3DJSAIL.*.jar] org.web3d.x3d.jsail.CommandLine\n       [-help | -version | -home | -javadoc | -resources | -hints | -regexes | -tooltips | -X3DUOM]\n       [-properties [propertiesFile]]\n       [sourceModel.x3d | sourceModel.exi [-fromEXI] | sourceModel.gz [-fromGZIP] | sourceModel.zip [-fromZIP]]\n       [-canonical] [-validate] [-EXIFICIENT | -OpenEXI]\n       [-Tidy | -toX3D | -toXML | -toClassicVrml | -toJava | -toJSON | -toPython | -toVRML97]\n       [-toHTML | -toX3DOM | -toX_ITE | -toMarkdown | -toEXI | -toGZIP | -toZIP]\n       [-tofile [resultFile.*]] [-toImage [snapshotName.*]]";
+    /**
+     *      Usage command-line switches with descriptions
+     */
     public  static final String USAGE_LONG = 
         "-classpath X3DJSAIL.*.jar         # optional classpath, can be set as environment variable" + "\n" +
         "org.web3d.x3d.jsail.CommandLine   # invoke CommandLine application" + "\n" +
@@ -32921,6 +32935,12 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
 	 */
 	public static final String STYLESHEET_JAVA   = "X3dToJava.xslt";
+                
+	/** XSLT stylesheet to create Javascript (ECMAScript) source code (using X3DJSAIL library) from X3D scene: <i>../lib/stylesheets/X3dToNodeJS.xslt</i>.
+	 * TODO: documentation.
+	 * @see <a href="../../../../../../lib/stylesheets/X3dToNodeJS.xslt" target="_blank">X3dToNodeJS.xslt</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
+	 */
 	public static final String STYLESHEET_JAVASCRIPT   = "X3dToNodeJS.xslt";
 				
 	/** XSLT stylesheet to create JSON encoding from X3D scene: <i>../lib/stylesheets/X3dToJson.xslt</i>
@@ -34152,6 +34172,7 @@ import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
+import org.web3d.x3d.jsail.TextureProjector.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Texturing3D.*;
 import org.web3d.x3d.jsail.Time.*;
@@ -34971,6 +34992,7 @@ import org.web3d.x3d.sai.X3DException;
 									((Sound)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
 							else if (nodeName.equals("Sound") && (protoInstanceNodeType.equals("AudioClip") || protoInstanceNodeType.equals("MovieTexture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("source") || containerField.isEmpty())))
 									((Sound)elementObject).setSource ((ProtoInstance) childX3dElement);
+                            // TODO other audio-graph nodes
 
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("front") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
@@ -35501,6 +35523,13 @@ import org.web3d.x3d.sai.X3DException;
 					}
 					
 					String attributeType  = elementObject.getFieldType(attributeName); // X3DJSAIL utility
+                    if (attributeType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) || attributeType.contains("ERROR"))
+                    {
+                        errorNotice = "*** [X3DLoaderDOM error] Reflection parsing unexpectedly encountered " + attributeType + " type when parsing attribute, " + 
+                                        nodeName + " " + attributeName + "='" + attributeValue + "'";
+                        validationResult.append(errorNotice).append("\n");
+                        System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
+                    }
 					elementSetMethodName  = "set";
 					if (attributeName.equals("class"))
 						elementSetMethodName += "Css";
@@ -35542,8 +35571,9 @@ import org.web3d.x3d.sai.X3DException;
 						else if (attributeType.equals(SFNode.NAME) || attributeType.equals(MFNode.NAME))
 						{
 							// TODO logging
-							errorNotice = "*** [X3DLoaderDOM error] Reflection parsing unexpectedly encountered " + attributeType + " type when parsing attribute" + 
-											attributeName + ".";
+							errorNotice = "*** [X3DLoaderDOM error] Reflection parsing unexpectedly encountered " + attributeType + " type when parsing attribute, " + 
+                                        nodeName + " " + attributeName + "='" + attributeValue + "'" +
+                                        ", possily due to naming mismatch between XML Schema/X3DUOM, DOCTYPE, or default-values cleanup.";
 							validationResult.append(errorNotice).append("\n");
 							System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 							continue;
@@ -35959,7 +35989,8 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_MACOS = "/Application/blender.app/Contents/MacOS/blender"; // thanks Mike Bailey and Terry Norbraten
+	public static final String BLENDER_PATH_DEFAULT_MACOS = "/Applications/blender.app/Contents/MacOS/blender";
+    // thanks Mike Bailey, Terry Norbraten and Han Chen
 
 	/** Default Blender path default for Linux operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.

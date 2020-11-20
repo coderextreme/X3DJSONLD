@@ -99,7 +99,7 @@ public class gears
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("30 April 2017"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","WALK","ANY"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\""))
     .addChild(new Group()
       .addChild(new Shape().setBboxCenter(-4.868185499999999,25.359741,0.0).setBboxSize(77.23637099999999,100.502162,6.0)
         .setGeometry(new IndexedFaceSet("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setColorIndex(getOpenSCAD_Model_5_13_colorIndex()).setCoordIndex(getOpenSCAD_Model_5_13_coordIndex()).setNormalIndex(getOpenSCAD_Model_5_13_normalIndex())

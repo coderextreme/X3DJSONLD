@@ -356,11 +356,13 @@ def isX3DNode(value):
     return isinstance(value, _X3DNode)
 
 </xsl:text>
+        <!-- Abstract type sorting is necessary in order for Python dependencies to be defined in correct order -->
         <xsl:apply-templates select="//AbstractNodeTypes/AbstractNodeType[not(@name = 'X3DNode')]">
             <xsl:sort select="not((@name = 'X3DNode') or (@name = 'X3DBindableNode') or (@name = 'X3DChildNode') or (@name = 'X3DFollowerNode') or 
                                   (@name = 'X3DGeometricPropertyNode') or (@name = 'X3DVolumeRenderStyleNode') or (@name = 'X3DPointingDeviceSensorNode') or 
                                   (@name = 'X3DSensorNode') or (@name = 'X3DTextureNode') or (@name = 'X3DAppearanceChildNode') or 
-                                  (@name = 'X3DParametricGeometryNode') or (@name = 'X3DGeometryNode') or
+                                  (@name = 'X3DParametricGeometryNode') or (@name = 'X3DGeometryNode') or 
+                                  (@name = 'X3DSoundNode')  or (@name = 'X3DSoundChannelNode') or
                                   (@name = 'X3DTimeDependentNode') or (@name = 'X3DChildNode'))"/>
             <xsl:sort select="(@name = 'X3DBindableNode')"/>
             <xsl:sort select="(@name = 'X3DFollowerNode')"/>
@@ -369,10 +371,18 @@ def isX3DNode(value):
             <xsl:sort select="(@name = 'X3DPointingDeviceSensorNode')"/>
             <xsl:sort select="(@name = 'X3DSensorNode')"/>
             <xsl:sort select="(@name = 'X3DTextureNode')"/>
+            <xsl:sort select="(@name = 'X3DTexture2DNode')"/>
+            <xsl:sort select="(@name = 'X3DSingleTextureNode')"/>
+            <xsl:sort select="(@name = 'X3DSingleTextureCoordinateNode')"/>
+            <xsl:sort select="(@name = 'X3DTextureCoordinateNode')"/>
+            <xsl:sort select="(@name = 'X3DSingleTextureTransformNode')"/>
+            <xsl:sort select="(@name = 'X3DTextureTransformNode')"/>
             <xsl:sort select="(@name = 'X3DAppearanceChildNode')"/>
             <xsl:sort select="(@name = 'X3DParametricGeometryNode')"/>
             <xsl:sort select="(@name = 'X3DGeometryNode')"/>
             <xsl:sort select="(@name = 'X3DTimeDependentNode')"/>
+            <xsl:sort select="(@name = 'X3DSoundChannelNode')"/>
+            <xsl:sort select="(@name = 'X3DSoundNode')"/>
             <xsl:sort select="(@name = 'X3DChildNode')"/>
         </xsl:apply-templates>
         <xsl:text>###############################################

@@ -88,7 +88,7 @@ public class bubbles
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("not sure what this is")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\""))
     .addChild(new Viewpoint("Tour").setDescription("Tour Views"))
     .addChild(new Viewpoint().setDescription("sphere in road").setPosition(0.0,0.0,4.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"}))

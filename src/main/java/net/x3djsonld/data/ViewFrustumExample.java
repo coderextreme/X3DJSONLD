@@ -127,7 +127,7 @@ public class ViewFrustumExample
     .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
     .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(0.0,0.0,15.0))
     .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(0.8005,0.5926,0.0898,-0.3743).setPosition(-5.0,5.0,20.0))
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","ANY"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
     .addChild(new ExternProtoDeclare("ViewFrustum").setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new String[] {"ViewFrustumPrototype.x3d#ViewFrustum"})
       .addField(new field().setName("ViewpointNode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
       .addField(new field().setName("NavigationInfoNode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))

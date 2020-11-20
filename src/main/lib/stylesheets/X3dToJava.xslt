@@ -872,16 +872,26 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name() = 'Anchor') or (local-name() = 'Inline') or (local-name() = 'LoadSensor')">
                     <xsl:text>Networking.</xsl:text>
                 </xsl:when>
+                <xsl:when test="starts-with(local-name(), 'ProjectiveTexture')">
+                    <xsl:text>ProjectiveTextureMapping.</xsl:text>
+                </xsl:when>
                 <xsl:when test="(local-name() = 'Color') or (local-name() = 'ColorRGBA') or (local-name() = 'ElevationGrid') or (local-name() = 'Extrusion') or (local-name() = 'Normal') or
                                 (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedLineSet') or (local-name() = 'LineSet') or (local-name() = 'PointSet') or
                                 (local-name() = 'IndexedFanSet') or (local-name() = 'IndexedTriangleSet') or (local-name() = 'IndexedTriangleStripSet') or (local-name() = 'FanSet') or (local-name() = 'TriangleSet') or (local-name() = 'TriangleStripSet') or
                                 (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedLineSet') or (local-name() = 'LineSet') or (local-name() = 'PointSet')">
                     <xsl:text>Rendering.</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'Appearance') or (local-name() = 'Material') or (local-name() = 'TwoSidedMaterial') or (local-name() = 'LineProperties')">
+                <xsl:when test="(local-name() = 'Appearance') or ends-with(local-name(), 'Material') or (local-name() = 'TwoSidedMaterial') or (local-name() = 'LineProperties')">
                     <xsl:text>Shape.</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'AudioClip') or (local-name() = 'Sound')">
+                <!-- TODO other audio-graph nodes -->
+                <xsl:when test="(local-name() = 'AudioClip') or (local-name() = 'Sound') or (local-name() = 'SpatialSound') or
+                                (local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or 
+                                (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or 
+                                (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or 
+                                (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or 
+                                (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'PeriodicWave') or 
+                                (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
                     <xsl:text>Sound.</xsl:text>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'Text')">
@@ -1603,29 +1613,48 @@ POSSIBILITY OF SUCH DAMAGE.
                       not(local-name(..)='IntegerTrigger'	and	(local-name()='set_boolean' or local-name()='triggerValue'))
                       " />
         <xsl:variable name="notDefaultFieldValue1"
-                      select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
-                      not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                      select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
+                      not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='castShadow' and .='true') and
+                      not( local-name()='channelCountMode' and .='max') and
+                      not( local-name()='channelInterpretation' and .='speakers') and
+                      not( local-name()='detune' and (.='0' or .='0.0')) and
+                      not( local-name()='enabled' and .='true') and
+                      not( local-name()='gain' and (.='1' or .='1.0')) and
                       not( local-name()='load' and .='true') and
+                      not( local-name()='loop' and .='false') and
+                      not( local-name()='farDistance'  and (string(.)='-1' or string(.)='-1.0')) and
+                      not( local-name()='nearDistance' and (string(.)='-1' or string(.)='-1.0')) and
+                      not( local-name()='pitch' and (.='1' or .='1.0')) and
+                      not( local-name()='startTime' and (.='0' or .='0.0')) and
+                      not( local-name()='stopTime' and (.='0' or .='0.0')) and
+                      not( local-name()='pauseTime' and (.='0' or .='0.0')) and
+                      not( local-name()='resumeTime'  and (.='0' or .='0.0')) and
+                      not( local-name()='qualityFactor'  and (.='1' or .='1.0')) and
                       not( local-name()='refresh' and (.='0' or .='0.0')) and
+                      not( local-name()='tailTime' and (.='0' or .='0.0')) and
+                      not( local-name()='shadows' and .='false') and
+                      not( local-name()='shadowIntensity' and (.='1' or .='1.0')) and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
-                      ((local-name()='loop' and string(.)='false') or
-                      (local-name()='pitch' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='startTime' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')))) and
-                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='transparency' and (string(.)='0' or string(.)='0.0')))) and
-                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) and
-                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and string(.)='false') and
-                      not( local-name(..)='Box'	and ((local-name()='size' and (string(.)='2 2 2' or string(.)='2.0 2.0 2.0')) or (local-name()='solid' and string(.)='true'))) and
-                      not( local-name(..)='Collision'	and local-name()='enabled' and string(.)='true') and
-                      not( local-name(..)='Cone' and	((local-name()='bottomRadius' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='height' and (string(.)='2' or string(.)='2.0')) or
-                      (local-name()='side' and string(.)='true') or
-                      (local-name()='solid' and string(.)='true') or
-                      (local-name()='bottom' and string(.)='true')))"/>
+                      ((local-name()='loop' and .='false') or
+                      (local-name()='pitch' and (.='1' or .='1.0')) or
+                      (local-name()='startTime' and (.='0' or .='0.0')) or
+                      (local-name()='stopTime' and (.='0' or .='0.0')) or
+                      (local-name()='pauseTime' and (.='0' or .='0.0')) or
+                      (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
+                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
+                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
+                      not( local-name(..)='Box'	and ((local-name()='size' and (.='2 2 2' or .='2.0 2.0 2.0')) or (local-name()='solid' and .='true'))) and
+                      not( local-name(..)='Collision'	and local-name()='enabled' and .='true') and
+                      not( local-name(..)='Cone' and	
+                      ((local-name()='bottomRadius' and (.='1' or .='1.0')) or
+                      (local-name()='height' and (.='2' or .='2.0')) or
+                      (local-name()='side' and .='true') or
+                      (local-name()='solid' and .='true') or
+                      (local-name()='bottom' and .='true')))"/>
         <xsl:variable name="notDefaultFieldValue1a"
                       select="not( local-name(..)='Cylinder' and
                       ((local-name()='height' and (string(.)='2' or string(.)='2.0')) or
@@ -1707,10 +1736,14 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not( (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='metallic' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='normalScale' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='occlusionStrength' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='roughness' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='shininess' and string(.)='0.2') or
                       (local-name()='specularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='transparency' and (string(.)='0' or string(.)='0.0')))) and
@@ -1859,10 +1892,10 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='isActive' and string(.)='false')))" />
         <xsl:variable name="notDefaultFieldValue8"
                       select="not( local-name(..)='FillProperties' and
-                      (((local-name()='filled' and string(.)='true') or
-                      (local-name()='hatched' and string(.)='true') or
-                      local-name()='hatchStyle' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='hatchColor' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
+                      ((local-name()='filled' and .='true') or
+                      (local-name()='hatched' and .='true') or
+                      (local-name()='hatchStyle' and (.='1' or .='1.0')) or
+                      (local-name()='hatchColor' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
                       not( local-name(..)='LineProperties' and
                       ((local-name()='applied' and string(.)='true') or
                       (local-name()='linetype' and (string(.)='1')) or
@@ -1956,7 +1989,113 @@ POSSIBILITY OF SUCH DAMAGE.
                       not(local-name(..)='Viewport' and
                       ((local-name()='clipBoundary' and (string(.)='0 1 0 1' or string(.)='0.0 1.0 0.0 1.0')))) and
                       not( local-name(..)='KeySensor' and
-                      ((local-name()='enabled' and string(.)='true')))" />
+                      ((local-name()='enabled' and string(.)='true'))) and
+                      not(starts-with(local-name(..),'TextureProjector') and
+                       ((local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                        (local-name()='location'  and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                        (local-name()='upVector' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                        (local-name()='farDistance'  and (string(.)='10' or string(.)='10.0')) or
+                        (local-name()='nearDistance' and (string(.)='1'  or string(.)='1.0')) or
+                        (local-name()='global' and string(.)='true') or
+                        (local-name()='on' and string(.)='true'))) and
+                      not( local-name(..)='TextureProjectorParallel' and
+                      ((local-name()='fieldOfView' and (string(.)='-1 -1 1 1' or string(.)='-1.0 -1.0 1.0 1.0')))) and
+                      not( local-name(..)='TextureProjectorPerspective' and
+                       ((local-name()='upVector' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                        (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854')))))" />
+        <xsl:variable name="notDefaultFieldValue10"
+                      select="not( local-name(..)='AcousticProperties' and
+                      ((local-name()='containerField' and .='acousticProperties') or
+                      (local-name()='absorption' and (.='0' or .='0.0')) or
+                      (local-name()='diffuse' and (.='0' or .='0.0')) or
+                      (local-name()='refraction' and (.='0' or .='0.0')) or
+                      (local-name()='specular' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='Analyser' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='frequencyBinCount' and (.='1024' or .='1024.0')) or
+                      (local-name()='fftSize' and (.='2048' or .='2048.0')) or
+                      (local-name()='minDecibels' and (.='-100' or .='-100.0')) or
+                      (local-name()='maxDecibels' and (.='-30' or .='-30.0')) or
+                      (local-name()='smoothingTimeConstant' and (.='.8' or .='0.8')))) and
+                      not( local-name(..)='BufferAudioSource' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='bufferDuration' and (.='0' or .='0.0')) or
+                      (local-name()='type' and (.='lowpass')) or
+                      (local-name()='loopStart' and (.='0' or .='0.0')) or
+                      (local-name()='loopEnd' and (.='0' or .='0.0')) or
+                      (local-name()='numberOfChannels' and .='0') or
+                      (local-name()='playbackRate' and (.='1' or .='1.0')) or
+                      (local-name()='sampleRate' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='AudioDestination' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='maxChannelCount' and (.='2')))) and   
+                      not( local-name(..)='BiquadFilter' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='frequency' and (.='350' or .='350.0')) or
+                      (local-name()='qualityFactor' and (.='1' or .='1.0')) or
+                      (local-name()='type' and (.='lowpass')))) and
+                      not( local-name(..)='ChannelMerger' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='ChannelSelector' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='channelSelection' and (.='0')))) and
+                      not( local-name(..)='ChannelSplitter' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='Convolver' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='normalize' and (.='false')))) and
+                      not( local-name(..)='Delay' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='delayTime' and (.='0' or .='0.0')) or
+                      (local-name()='maxDelayTime' and (.='1' or .='1.0')))) and
+                      not( local-name(..)='DynamicsCompressor' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='attack' and (.='0.003' or .='.003')) or
+                      (local-name()='gain' and (.='1' or .='1.0')) or
+                      (local-name()='knee' and (.='30' or .='30.0')) or
+                      (local-name()='ratio' and (.='12' or .='12.0')) or
+                      (local-name()='release' and (.='.25' or .='0.25')) or
+                      (local-name()='threshold' and (.='-24' or .='-24.0')))) and
+                      not( local-name(..)='Gain' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='ListenerPointSource' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='interauralDistance' and (.='0' or .='0.0')) or
+                      (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
+                      (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      (local-name()='trackCurrentView' and (.='false')))) and
+                      not( local-name(..)='MicrophoneSource' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='OscillatorSource' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='frequency' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='PeriodicWave' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='type' and (.='square')))) and
+                      not( local-name(..)='SpatialSound' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='coneInnerAngle' and (.='6.2832')) or
+                      (local-name()='coneOuterAngle' and (.='6.2832')) or
+                      (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
+                      (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
+                      (local-name()='distanceModel' and (.='inverse')) or
+                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='enableHRTF' and (.='false')) or
+                      (local-name()='intensity' and (.='1' or .='1.0')) or
+                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      (local-name()='maxDistance' and (.='10000' or .='10000.0')) or
+                      (local-name()='priority' and (.='0' or .='0.0')) or
+                      (local-name()='referenceDistance' and (.='1' or .='1.0')) or
+                      (local-name()='rolloffFactor' and (.='1' or .='1.0')) or
+                      (local-name()='spatialize' and (.='true')))) and
+                      not( local-name(..)='StreamAudioDestination' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='StreamAudioSource' and
+                      ((local-name()='containerField' and .='children'))) and
+                      not( local-name(..)='WaveShaper' and
+                      ((local-name()='containerField' and .='children') or
+                      (local-name()='oversample' and (.='none'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
@@ -1976,6 +2115,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       local-name(..)='Sound' or
                       local-name(..)='Switch' or
                       local-name(..)='TextureBackground' or
+                      starts-with(local-name(..),'TextureProjector') or
                       local-name(..)='Transform' or
                       local-name(..)='Viewpoint' or
                       local-name(..)='WorldInfo' or
@@ -1994,18 +2134,18 @@ POSSIBILITY OF SUCH DAMAGE.
                       local-name(..)='Text' or
                       local-name(..)='XvlShell'))" />
         <xsl:variable name="notDefaultContainerField2"
-                      select="not((local-name()='containerField' and string(.)='source')	and (local-name(..)='AudioClip')) and
-                      not((local-name()='containerField' and string(.)='appearance')	and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')	and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
-                      not((local-name()='containerField' and string(.)='color')	and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
-                      not((local-name()='containerField' and string(.)='coord')	and (local-name(..)='Coordinate')) and
-                      not((local-name()='containerField' and string(.)='normal')	and (local-name(..)='Normal')) and
-                      not((local-name()='containerField' and string(.)='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
-                      not((local-name()='containerField' and string(.)='fontStyle')	and (local-name(..)='FontStyle')) and
-                      not((local-name()='containerField' and string(.)='texCoord')	and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
-                      not((local-name()='containerField' and string(.)='textureTransform')	and (local-name(..)='TextureTransform'))" />
+                      select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
+                      not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
+                      not((local-name()='containerField' and string(.)='material')         and (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
+                      not((local-name()='containerField' and string(.)='coord')            and (local-name(..)='Coordinate')) and
+                      not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
+                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
+                      not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
+                      not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
+                      not((local-name()='containerField' and string(.)='textureTransform') and (local-name(..)='TextureTransform'))" />
         <xsl:variable name="notDefaultContainerField3"
-                      select="not((local-name()='containerField' and string(.)='geometry')	and
+                      select="not((local-name()='containerField' and string(.)='geometry') and
                       ((local-name(..)='Arc2D') or (local-name(..)='ArcClose2D') or (local-name(..)='Circle2D') or (local-name(..)='Disk2D') or (local-name(..)='Polyline2D') or (local-name(..)='Polypoint2D') or (local-name(..)='Rectangle2D') or (local-name(..)='TriangleSet2D') or contains(local-name(..),'QuadSet'))) and
                       not((local-name()='containerField' and string(.)='voxels')	and
                       ((local-name(..)='IsoSurfaceVolumeData') or (local-name(..)='SegmentedVolumeData') or (local-name(..)='VolumeData'))) and
@@ -2401,6 +2541,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 $notDefaultFieldValue7 and
                 $notDefaultFieldValue8 and
                 $notDefaultFieldValue9 and
+                $notDefaultFieldValue10 and
                 $notDefaultCAD         and
                 $notDefaultDIS1        and
                 $notDefaultDIS2        and
@@ -2503,7 +2644,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:text>SFVec4f</xsl:text>
 					</xsl:when>
 					<xsl:when test="$isNumeric">
-						<xsl:text>MFnumber</xsl:text>
+						<xsl:text>MFnumberTypeError</xsl:text><!-- not a legal X3D type, this is an error sentinel -->
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text>SFString</xsl:text>
@@ -3427,6 +3568,10 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.PointingDeviceSensor.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
+		<xsl:if test="//*[starts-with(name(),'TextureProjector')]">
+			<xsl:text>import org.web3d.x3d.jsail.ProjectiveTextureMapping.*;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+		</xsl:if>
 		<xsl:if test="//*[name()='ClipPlane'] or //*[name()='Color'] or //*[name()='ColorRGA'] or //*[name()='Coordinate'] or
 					  //*[contains(local-name(),'LineSet')] or //*[contains(local-name(),'Triangle')] or //*[name()='Normal'] or 
 					  //*[name()='PointSet']">
@@ -3447,7 +3592,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.Shaders.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[name()='Appearance'] or //*[name()='FillProperties'] or //*[name()='LineProperties'] or //*[name()='Material'] or
+		<xsl:if test="//*[name()='Appearance'] or //*[name()='FillProperties'] or //*[name()='LineProperties'] or //*[ends-with(name(),'Material')] or
 					  //*[name()='Shape'] or //*[name()='TwoSidedMaterial']">
 			<xsl:text>import org.web3d.x3d.jsail.Shape.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -3597,16 +3742,21 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($attributeName='USE')                or
                           ($attributeName='containerField')     or
                           ($attributeName='appinfo')            or
+                          ($attributeName='channelCountMode')   or ($attributeName='channelInterpretation')   or
                           ($attributeName='documentation')      or
                           ($attributeName='name')               or
                           ($attributeName='class')              or
                           ($attributeName='description')        or
+                          ($attributeName='distanceModel')      or
                           ($attributeName='address')            or
                           ($attributeName='language')           or
+                          ($attributeName='mapping')            or
                           ($attributeName='marking')            or
                           ($attributeName='multicastAddress')   or
                           ($attributeName='networkMode')        or
+                          ($attributeName='oversample')         or
                           ($attributeName='reference')          or
+                          ($attributeName='type')               or
 					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
 					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                           (($parentElementName='component')                and not($attributeName='level')) or
@@ -3618,7 +3768,8 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
 					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
-						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
+                          (ends-with($parentElementName,'Material')	       and ends-with($attributeName,'Mapping')) or
+                          ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
 						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
 						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
 						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
@@ -3675,15 +3826,21 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
 					($attributeName='enabled')  or
+					($attributeName='enableDoppler')  or
+					($attributeName='enableHRTF')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
 					($attributeName='on')       or
+					($attributeName='load')     or
 					($attributeName='loop')     or
 					($attributeName='next')     or
 					($attributeName='previous') or
+					($attributeName='normalize') or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
-					($attributeName='solid') or
+					($attributeName='solid')             or
+					($attributeName='spatialize')        or
+					($attributeName='trackCurrentView')  or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($attributeName='viewAll') or
 					($attributeName='visible') or
@@ -3718,6 +3875,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='PlaneSensor' and $attributeName='autoOffset') or
 					($parentElementName='RigidBody' and ($attributeName='autoDamp' or $attributeName='autoDisable' or $attributeName='fixed' or $attributeName='useFiniteRotation' or $attributeName='useGlobalGravity')) or
 					($parentElementName='RigidBodyCollection' and ($attributeName='autoDisable' or $attributeName='preferAccuracy')) or
+					($parentElementName='Shape' and $attributeName='castShadow') or
 					($parentElementName='SphereSensor' and $attributeName='autoOffset') or
 					($parentElementName='StringSensor' and $attributeName='deletionAllowed') or
 					($parentElementName='Script' and ($attributeName='directOutput' or $attributeName='mustEvaluate')) or
@@ -3751,7 +3909,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					(contains($parentElementName,'Light') and $attributeName='color') or
 					($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
 					(contains($parentElementName,'Fog') and $attributeName='color') or
-					(contains($parentElementName,'Material') and contains($attributeName,'Color')) or
+					(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
 					($parentElementName='MultiTexture' and $attributeName='color')">
 			  <xsl:text>SFColor</xsl:text>
 		  </xsl:when>
@@ -3801,11 +3959,36 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFFloat -->
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
+                    ends-with($attributeName,'Rate')    or
+                    ($attributeName='absorption')       or
                     ($attributeName='ambientIntensity') or
+					($attributeName='attack')           or
+                    ($attributeName='coneInnerAngle')   or
+                    ($attributeName='coneOuterAngle')   or
+                    ($attributeName='coneOuterGain')    or
 					($attributeName='creaseAngle')      or
+                    ($attributeName='detune')           or
+                    ($attributeName='diffuse')          or
+					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
+					($attributeName='frequency')        or
+					($attributeName='gain')             or
 					($attributeName='intensity')        or
+					($attributeName='interauralDistance') or
+					($attributeName='knee')             or
+					($attributeName='maxDistance')      or
+					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+					($attributeName='priority')         or
+					($attributeName='qualityFactor')    or
                     ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+					($attributeName='ratio')            or
+					($attributeName='referenceDistance') or
+                    ($attributeName='refraction')       or
+                    ($attributeName='rolloffFactor')    or
+					($attributeName='shadowIntensity')  or
+					($attributeName='smoothingTimeConstant')  or
+                    ($attributeName='specular')         or
                     ($attributeName='startAngle')       or ($attributeName='endAngle') or
+					($attributeName='threshold')        or
                     ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
 					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
@@ -3833,7 +4016,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='HAnimSegment' and $attributeName='mass') or
 					($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
 					($parentElementName='LineProperties'       and ($attributeName='linewidthScaleFactor')) or
-					(ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity'     or $attributeName='shininess'     or $attributeName='transparency')) or
+					(ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity' or $attributeName='metallic' or $attributeName='normalScale' or $attributeName='occlusionStrength' or $attributeName='roughness' or $attributeName='shininess' or $attributeName='transparency')) or
 					($parentElementName='ParticleSystem'       and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
 					($parentElementName='TwoSidedMaterial'     and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
 					($parentElementName='MotorJoint'           and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
@@ -3856,7 +4039,9 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
 					($parentElementName='Sphere' and $attributeName='radius') or
 					($parentElementName='Text' and $attributeName='maxExtent') or
-					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
+					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or 
+                    (starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
+                    ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
 					($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
@@ -3868,6 +4053,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='MFFloat')  or 
                     ($attributeName='key')       or
+					(contains($parentElementName,'BufferAudioSource') and $attributeName='uffer') or
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -3895,10 +4081,15 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFTime -->
 		  <xsl:when test="
 					($localFieldType='SFTime')        or 
+				  contains($attributeName,'Time')     or
+				  contains($attributeName,'Duration') or
                     ($parentElementName='TimeSensor') or
 					($attributeName='cycleTime')      or
                     ($attributeName='duration')       or
 					($attributeName='elapsedTime')    or
+					($attributeName='loopStart')      or ($attributeName='loopEnd')    or
+                    ($attributeName='refresh')        or
+                    ($attributeName='release')        or
                     ($attributeName='tau')            or
                     ($attributeName='timestamp')      or
                     ($attributeName='readInterval')   or
@@ -3976,6 +4167,9 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='bboxCenter')  or
 					($attributeName='bboxSize')    or
 					($attributeName='center')      or
+					($attributeName='direction')    or
+					($attributeName='location')    or
+					($attributeName='position')    or
 					($attributeName='scale')       or
 					($attributeName='translation') or
 					($parentElementName='Billboard' and $attributeName='axisOfRotation') or
@@ -4002,6 +4196,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='SliderJoint' and ($attributeName='axis')) or
 					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
 					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location')) or
 					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
 					($parentElementName='TransformSensor' and ($attributeName='size')) or
 					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
@@ -4034,14 +4229,16 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFVec4f -->
 		  <xsl:when test="
 					($localFieldType='SFVec4f')    or 
-                    ($parentElementName='ClipPlane' and $attributeName='plane')">
+                    ($parentElementName='ClipPlane' and $attributeName='plane') or 
+                    ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
 					($localFieldType='SFRotation')    or
-					($attributeName='rotation') or
+					($attributeName='rotation')         or
+					($attributeName='orientation')      or
 					($attributeName='scaleOrientation') or
 					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
 					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
@@ -4089,6 +4286,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- MFInt32 --> <!-- must precede SFInt32 -->
 		  <xsl:when test="
 					($localFieldType='MFInt32')    or 
+            starts-with($attributeName,'numberOfChannels') or 
                     ($attributeName='colorIndex') or
 					($attributeName='coordIndex') or
 					($attributeName='normalIndex') or
@@ -4117,8 +4315,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
                     ($localFieldType='SFInt32')           or 
                      ends-with($attributeName,'ID')             or
-                    ($attributeName='farClippingPlane')         or
-                    ($attributeName='nearClippingPlane')        or
+					($attributeName='bufferLength')             or
+					($attributeName='channelSelection')         or
+					($attributeName='fftSize')                  or
+					($attributeName='frequencyBinCount')        or
+					($attributeName='maxChannelCount')          or
                     ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
@@ -4667,9 +4868,9 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:choose>
 						<xsl:when test="not(contains(string(.),'&quot;'))">
 							<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
-							<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
+							<!-- unquoted MFString values were approved for X3D XML encoding in May 2017
 							<xsl:message>
-								<xsl:text>*** No quotation marks found in MFString array to wrap individual SFString values, added them.</xsl:text>
+								<xsl:text>*** No quotation marks found in MFString array to wrap individual SFString values, adding them:</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>*** &lt;</xsl:text>
 								<xsl:value-of select="local-name(..)"/>
@@ -4682,7 +4883,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>='</xsl:text>
 								<xsl:value-of select="."/>
 								<xsl:text>'/&gt;</xsl:text>
-							</xsl:message>
+							</xsl:message> -->
 							<xsl:text>"</xsl:text>
 							<xsl:value-of select="."/>
 							<xsl:text>"</xsl:text>

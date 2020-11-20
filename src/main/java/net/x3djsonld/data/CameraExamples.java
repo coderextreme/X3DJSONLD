@@ -225,7 +225,7 @@ public class CameraExamples
       .addComments(" TODO non-photorealistic rendering (NPR) parameters "))
     .addComments(" =============== Lights, camera, action! ============== ")
     .addChild(new DirectionalLight().setDirection(0.0,-1.0,0.0).setGlobal(true).setIntensity(0.8))
-    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","ANY"}))
+    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
     .addChild(new Viewpoint().setDescription("Camera test scene entry view").setPosition(0.0,2.0,12.0))
     .addChild(new Viewpoint().setDescription("Camera test scene from above").setOrientation(1.0,0.0,0.0,-1.57079).setPosition(0.0,150.0,0.0))
     .addComments(" Keep prototype instances in same file while developing, then move later ")
