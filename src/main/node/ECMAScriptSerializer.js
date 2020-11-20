@@ -55,6 +55,7 @@ ECMAScriptSerializer.prototype = {
 	filterProperty : function(method) {
 		if (method !== "Scene"
 		    && method !== "X3DScript"
+		    && method !== "Script"
 		    && method !== "DEF"
 		    && method !== "USE"
 		    && method !== "ProtoDeclare"
