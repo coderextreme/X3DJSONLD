@@ -7,15 +7,15 @@
     "head": {
         "meta": [
           {
-            "@name":"John W",
+            "@name":"creator",
             "@content":"Carlson, I"
           },
           {
-            "@name":"John A",
+            "@name":"creator",
             "@content":"Carlson, II"
           },
           {
-            "@name":"John R",
+            "@name":"creator",
             "@content":"Carlson, III"
           },
           {

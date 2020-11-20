@@ -24,15 +24,15 @@ var X3D0 =  new X3D({
         new head({
           meta : new MFNode([
             new meta({
-              name : new SFString("John W"),
+              name : new SFString("creator"),
               content : new SFString("Carlson, I")}),
 
             new meta({
-              name : new SFString("John A"),
+              name : new SFString("creator"),
               content : new SFString("Carlson, II")}),
 
             new meta({
-              name : new SFString("John R"),
+              name : new SFString("creator"),
               content : new SFString("Carlson, III")})])})),
       Scene : new SFNode(
         new Scene({
