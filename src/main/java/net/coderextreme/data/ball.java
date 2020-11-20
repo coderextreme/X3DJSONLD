@@ -45,6 +45,7 @@ public class ball {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))

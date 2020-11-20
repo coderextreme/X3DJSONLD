@@ -14,6 +14,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(1))
         .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
         .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
