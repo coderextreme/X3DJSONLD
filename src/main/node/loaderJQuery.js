@@ -71,7 +71,9 @@ function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		try {
+			// xml = xml.replace(/X3DScript/g, "Script");
 			load_X_ITE_XML(xml, "#x_itexml");
+			// xml = xml.replace(/Script>/g, "X3DScript>");
 		} catch (e) {
 			alert("Problems with X_ITE xml "+ e);
 			console.error(e);
@@ -506,15 +508,15 @@ $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
 		loadJson(url);
-		threeLoadFile(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
-		threeLoadFile(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".xml")) {
 		loadXml(url);
-		threeLoadFile(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".wrl")) {
-		threeLoadFile(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".ply")) {
 		loadPly(url);
 	} else if (url.endsWith(".stl")) {
