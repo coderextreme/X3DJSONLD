@@ -256,7 +256,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_wrist"))
             .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_wrist"))
             .addSegments((new autoclass.HAnimSegment()).setUSE("Joe_sacrum"))
-            .addViewpoints((new autoclass.HAnimSite()).setUSE("Joe_RootFront_view"))))
+            .addSites((new autoclass.HAnimSite()).setUSE("Joe_RootFront_view"))))
         .addChild((new autoclass.Group())
           .addChild((new autoclass.TimeSensor()).setDEF("KickTimer").setCycleInterval(3.73).setLoop(true))
           .addComments((new autoclass.CommentsBlock("Interpolators")))

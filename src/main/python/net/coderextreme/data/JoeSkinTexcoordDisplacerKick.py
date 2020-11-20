@@ -1355,7 +1355,7 @@ HAnimHumanoid31.addSegments(HAnimSegment240)
 HAnimSite241 = x3d.HAnimSite()
 HAnimSite241.setUSE("Joe_RootFront_view")
 
-HAnimHumanoid31.addViewpoints(HAnimSite241)
+HAnimHumanoid31.addSites(HAnimSite241)
 
 Group30.addChildren(HAnimHumanoid31)
 

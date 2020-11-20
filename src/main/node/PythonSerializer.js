@@ -112,7 +112,15 @@ PythonSerializer.prototype = {
 							addpre = "add";
 							method = "Child";
 						} else {
-							addpre = "set";
+							if (attrs[a].nodeValue == "joints" 
+								|| attrs[a].nodeValue == "sites" 
+								|| attrs[a].nodeValue == "segments" 
+							) {
+								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							} else {
+								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							}
+							addpre = "";
 						}
 					}
 				}

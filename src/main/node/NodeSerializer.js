@@ -106,7 +106,14 @@ NodeSerializer.prototype = {
 							addpre = "";
 						} else if (method === "addValue") {
 						} else {
-							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							if (attrs[a].nodeValue == "joints" 
+								|| attrs[a].nodeValue == "sites" 
+								|| attrs[a].nodeValue == "segments" 
+							) {
+								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							} else {
+								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							}
 							addpre = "";
 						}
 					}

@@ -866,23 +866,23 @@ HAnimHumanoid37.addSegments(HAnimSegment182)
 HAnimSite183 = x3d.HAnimSite()
 HAnimSite183.setUSE("boxman_l_middistal_tip")
 
-HAnimHumanoid37.addViewpoints(HAnimSite183)
+HAnimHumanoid37.addSites(HAnimSite183)
 HAnimSite184 = x3d.HAnimSite()
 HAnimSite184.setUSE("boxman_r_middistal_tip")
 
-HAnimHumanoid37.addViewpoints(HAnimSite184)
+HAnimHumanoid37.addSites(HAnimSite184)
 HAnimSite185 = x3d.HAnimSite()
 HAnimSite185.setUSE("boxman_skull_tip")
 
-HAnimHumanoid37.addViewpoints(HAnimSite185)
+HAnimHumanoid37.addSites(HAnimSite185)
 HAnimSite186 = x3d.HAnimSite()
 HAnimSite186.setUSE("boxman_l_hand_tip")
 
-HAnimHumanoid37.addViewpoints(HAnimSite186)
+HAnimHumanoid37.addSites(HAnimSite186)
 HAnimSite187 = x3d.HAnimSite()
 HAnimSite187.setUSE("boxman_r_hand_tip")
 
-HAnimHumanoid37.addViewpoints(HAnimSite187)
+HAnimHumanoid37.addSites(HAnimSite187)
 HAnimSite188 = x3d.HAnimSite()
 HAnimSite188.setName("BoxMan_view")
 Viewpoint189 = x3d.Viewpoint()

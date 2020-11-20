@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="H-Anim" level="1"></component>
+<X3D xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="H-Anim" level="1"></component>
 <meta name="title" content="HAnimModelFootRight.x3d"></meta>
 <meta name="description" content="Right foot, using high-fidelity definitions for H-Anim version 2.2"></meta>
 <meta name="creator" content="YOO Kwan Hee and Don Brutzman"></meta>
@@ -277,59 +277,59 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint USE="hanim_HumanoidRoot"></HAnimJoint>
-<HAnimJoint USE="r_talocrural_joint"></HAnimJoint>
-<HAnimJoint USE="r_talocalcaneonavicular_joint"></HAnimJoint>
-<HAnimJoint USE="r_cuneonavicular_joint1"></HAnimJoint>
-<HAnimJoint USE="r_tarsometatarsal_joint1"></HAnimJoint>
-<HAnimJoint USE="r_metatarsophalangeal_joint1"></HAnimJoint>
-<HAnimJoint USE="r_f_Interphalangeal_joint"></HAnimJoint>
-<HAnimJoint USE="r_cuneonavicular_joint2"></HAnimJoint>
-<HAnimJoint USE="r_tarsometatarsal_joint2"></HAnimJoint>
-<HAnimJoint USE="r_metatarsophalangeal_joint2"></HAnimJoint>
-<HAnimJoint USE="r_f_proximal_Interphalangeal_joint2"></HAnimJoint>
-<HAnimJoint USE="r_f_distal_Interphalangeal_joint2"></HAnimJoint>
-<HAnimJoint USE="r_cuneonavicular_joint3"></HAnimJoint>
-<HAnimJoint USE="r_tarsometatarsal_joint3"></HAnimJoint>
-<HAnimJoint USE="r_metatarsophalangeal_joint3"></HAnimJoint>
-<HAnimJoint USE="r_f_proximal_Interphalangeal_joint3"></HAnimJoint>
-<HAnimJoint USE="r_f_distal_Interphalangeal_joint3"></HAnimJoint>
-<HAnimJoint USE="r_calcaneuscuboid_joint"></HAnimJoint>
-<HAnimJoint USE="r_transverse_tarsal_joint"></HAnimJoint>
-<HAnimJoint USE="r_tarsometatarsal_joint4"></HAnimJoint>
-<HAnimJoint USE="r_metatarsophalangeal_joint4"></HAnimJoint>
-<HAnimJoint USE="r_f_proximal_Interphalangeal_joint4"></HAnimJoint>
-<HAnimJoint USE="r_f_distal_Interphalangeal_joint4"></HAnimJoint>
-<HAnimJoint USE="r_tarsometatarsal_joint5"></HAnimJoint>
-<HAnimJoint USE="r_metatarsophalangeal_joint5"></HAnimJoint>
-<HAnimJoint USE="r_f_proximal_Interphalangeal_joint5"></HAnimJoint>
-<HAnimJoint USE="r_f_distal_Interphalangeal_joint5"></HAnimJoint>
-<HAnimSegment USE="r_talus"></HAnimSegment>
-<HAnimSegment USE="r_navicular"></HAnimSegment>
-<HAnimSegment USE="r_cuneiform1"></HAnimSegment>
-<HAnimSegment USE="r_metatarsal1"></HAnimSegment>
-<HAnimSegment USE="r_proximal_phalanges1"></HAnimSegment>
-<HAnimSegment USE="r_distal_phalanges1"></HAnimSegment>
-<HAnimSegment USE="r_cuneiform2"></HAnimSegment>
-<HAnimSegment USE="r_metatarsal2"></HAnimSegment>
-<HAnimSegment USE="r_proximal_phalanges2"></HAnimSegment>
-<HAnimSegment USE="r_middle_phalanges2"></HAnimSegment>
-<HAnimSegment USE="r_distal_phalanges2"></HAnimSegment>
-<HAnimSegment USE="r_cuneiform3"></HAnimSegment>
-<HAnimSegment USE="r_metatarsal3"></HAnimSegment>
-<HAnimSegment USE="r_proximal_phalanges3"></HAnimSegment>
-<HAnimSegment USE="r_middle_phalanges3"></HAnimSegment>
-<HAnimSegment USE="r_distal_phalanges3"></HAnimSegment>
-<HAnimSegment USE="r_calcaneus"></HAnimSegment>
-<HAnimSegment USE="r_cuboid"></HAnimSegment>
-<HAnimSegment USE="r_metatarsal4"></HAnimSegment>
-<HAnimSegment USE="r_proximal_phalanges4"></HAnimSegment>
-<HAnimSegment USE="r_middle_phalanges4"></HAnimSegment>
-<HAnimSegment USE="r_distal_phalanges4"></HAnimSegment>
-<HAnimSegment USE="r_metatarsal5"></HAnimSegment>
-<HAnimSegment USE="r_proximal_phalanges5"></HAnimSegment>
-<HAnimSegment USE="r_middle_phalanges5"></HAnimSegment>
-<HAnimSegment USE="r_distal_phalanges5"></HAnimSegment>
+<HAnimJoint containerField="joints" USE="hanim_HumanoidRoot"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_talocrural_joint"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_talocalcaneonavicular_joint"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_cuneonavicular_joint1"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_tarsometatarsal_joint1"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_metatarsophalangeal_joint1"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_Interphalangeal_joint"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_cuneonavicular_joint2"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_tarsometatarsal_joint2"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_metatarsophalangeal_joint2"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_proximal_Interphalangeal_joint2"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_distal_Interphalangeal_joint2"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_cuneonavicular_joint3"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_tarsometatarsal_joint3"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_metatarsophalangeal_joint3"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_proximal_Interphalangeal_joint3"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_distal_Interphalangeal_joint3"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_calcaneuscuboid_joint"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_transverse_tarsal_joint"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_tarsometatarsal_joint4"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_metatarsophalangeal_joint4"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_proximal_Interphalangeal_joint4"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_distal_Interphalangeal_joint4"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_tarsometatarsal_joint5"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_metatarsophalangeal_joint5"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_proximal_Interphalangeal_joint5"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="r_f_distal_Interphalangeal_joint5"></HAnimJoint>
+<HAnimSegment containerField="segments" USE="r_talus"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_navicular"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_cuneiform1"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_metatarsal1"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_proximal_phalanges1"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_distal_phalanges1"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_cuneiform2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_metatarsal2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_proximal_phalanges2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_middle_phalanges2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_distal_phalanges2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_cuneiform3"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_metatarsal3"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_proximal_phalanges3"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_middle_phalanges3"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_distal_phalanges3"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_calcaneus"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_cuboid"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_metatarsal4"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_proximal_phalanges4"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_middle_phalanges4"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_distal_phalanges4"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_metatarsal5"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_proximal_phalanges5"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_middle_phalanges5"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="r_distal_phalanges5"></HAnimSegment>
 </HAnimHumanoid>
 </Scene>
 </X3D>

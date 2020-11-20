@@ -30,14 +30,14 @@ ECMAScriptSerializer.prototype = {
 
 		str += "'use strict';\n"
 		str += "import fs from 'fs';\n"
-		str += "import { X3D } from './x3d.js';\n"
+		str += "import { X3D } from './x3d.mjs';\n"
 
 
 		// we figure out body first and print it out later
 		var body = "var "+element.nodeName+0+" =  new "+element.nodeName+"({\n";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
 		for (var key in this.precode) {
-			str += "import { "+key+" } from './x3d.js';\n"
+			str += "import { "+key+" } from './x3d.mjs';\n"
 			
 		}
 		str += body;
@@ -54,6 +54,9 @@ ECMAScriptSerializer.prototype = {
 
 	filterProperty : function(method) {
 		if (method !== "Scene"
+		    && method !== "X3DScript"
+		    && method !== "DEF"
+		    && method !== "USE"
 		    && method !== "ProtoDeclare"
 		    && method !== "ProtoInterface"
 		    && method !== "ProtoBody"
@@ -130,7 +133,9 @@ ECMAScriptSerializer.prototype = {
 						var prepre = "\n"+("  ".repeat(n));
 						method = this.filterProperty(method);
 						childs.push(prepre+method+" : "+strval);
-						this.precode[fieldAttrType] = true;
+						if (method !== 'type') {
+							this.precode[fieldAttrType] = true;
+						}
 					}
 				}
 			} catch (e) {
@@ -273,7 +278,9 @@ ECMAScriptSerializer.prototype = {
 					
 					var prepre = "\n"+("  ".repeat(n));
 					childs.push(prepre+method+" : new "+attrType +"("+strval+")");
-					this.precode[attrType] = true;
+					if (method !== 'type') {
+						this.precode[attrType] = true;
+					}
 				}
 			} catch (e) {
 				console.error(e);
@@ -352,7 +359,7 @@ ECMAScriptSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				childs.push("\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))');
+				childs.push("\n"+("  ".repeat(n))+'{ "#comment" : new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'") }');
 				this.precode["CommentsBlock"] = true;
 				if (y !== node.nodeValue) {
 					// console.error("ECMAScript Comment Replacing "+node.nodeValue+" with "+y);
