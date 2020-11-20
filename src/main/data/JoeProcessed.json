@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -14,19 +14,19 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"JoeSkinTexcoordDisplacerKick.x3d"
-          },
-          {
-            "@name":"info",
-            "@content":"Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim"
+            "@content":"JoeKick.x3d"
           },
           {
             "@name":"description",
-            "@content":"This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations."
+            "@content":"This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."
+          },
+          {
+            "@name":"creator",
+            "@content":"Joe Williams"
           },
           {
             "@name":"created",
-            "@content":"15 January 2004"
+            "@content":"9 January 2004"
           },
           {
             "@name":"translated",
@@ -34,47 +34,47 @@
           },
           {
             "@name":"modified",
-            "@content":"20 September 2020"
-          },
-          {
-            "@name":"creator",
-            "@content":"Joe D Williams"
-          },
-          {
-            "@name":"translators",
-            "@content":"Roy Walmsley and Don Brutzman"
-          },
-          {
-            "@name":"info",
-            "@content":"Transcoding from .vrml to .x3dv by Joe using BS studio circa 2012"
-          },
-          {
-            "@name":"info",
-            "@content":"translated from .x3dv to .xml for web3d archive"
+            "@content":"5 July 2020"
           },
           {
             "@name":"TODO",
-            "@content":"Record information relating a certain skin coordinate to a V1 Annex A Site name and location is now found in comment at end of this scene where each # number name string appears in the order of coordinate points in the skin mesh user code. Best organized to provide author data naming important HAnim humanoid skeletonspace to skinspace relations using structured MetadataSet containing MetadataString nodes"
+            "@content":"Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"
           },
           {
-            "@name":"info",
-            "@content":"modified to correct root and vc7 hierarchies"
+            "@name":"translators",
+            "@content":"Roy Walmsley, Don Brutzman, John Carlson"
+          },
+          {
+            "@name":"reference",
+            "@content":"../Characters/JoeSkinTexcoordDisplacerKick.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d"
-          },
-          {
-            "@name":"generator",
-            "@content":"BS studio translation from .x3dv by Joe using BS Contact"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d"
           },
           {
             "@name":"generator",
             "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
           },
           {
+            "@name":"generator",
+            "@content":"BS studio translation from .x3dv by Joe using BS Contact"
+          },
+          {
             "@name":"license",
             "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"20 November 2020"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           },
           {
             "@name":"translated",
@@ -94,7 +94,7 @@
         "-children":[
           { "WorldInfo":
             {
-              "@info":["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"],
+              "@info":["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"],
               "@title":"X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"
             }
           },
@@ -144,35 +144,35 @@
           },
           { "Viewpoint":
             {
-              "@DEF":"Scene_FrontView",
+              "@DEF":"Scene_IFrontView",
               "@centerOfRotation":[0,0.8,0],
-              "@description":"Scene Front View",
+              "@description":"Scene_Front View",
               "@position":[0,0.8,2.58]
             }
           },
           { "Viewpoint":
             {
-              "@DEF":"Scene_SideView",
+              "@DEF":"Scene_ISideView",
               "@centerOfRotation":[0,0.8,0],
-              "@description":"Scene Side View",
+              "@description":"Scene_Side View",
               "@orientation":[0,1,0,1.5708],
-              "@position":[2.6,0.5,0]
+              "@position":[2.6,0.8,0]
             }
           },
           { "Viewpoint":
             {
               "@DEF":"Scene_BackView",
               "@centerOfRotation":[0,1.5,0],
-              "@description":"Scene Back View",
+              "@description":"Scene_Back View",
               "@orientation":[0,1,0,3.14],
-              "@position":[0,2.5,-3]
+              "@position":[0,1.5,-3]
             }
           },
           { "Viewpoint":
             {
               "@DEF":"Scene_TopView",
               "@centerOfRotation":[0,1.5,0],
-              "@description":"Scene Top View",
+              "@description":"Scene_Top View",
               "@orientation":[1,0,0,-1.5708],
               "@position":[0,3.5,0]
             }
@@ -185,33 +185,30 @@
                   {
                     "@name":"Human",
                     "@DEF":"Joe_Human",
-                    "@version":"1.0",
-                    "-children":[
+                    "@loa":3,
+                    "@version":"2.0",
+                    "-metadata":
+                      { "MetadataSet":
+                        {
+                          "@name":"warnings",
+                          "@reference":"HAnim",
+                          "-value":[
+                            { "MetadataString":
+                              {
+                                "@name":"SymmetricalLeftRight",
+                                "@reference":"correction options: ignore, warn, average, left, right, largest, smallest",
+                                "@value":["ignore"]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                    "-skeleton":[
                       { "HAnimJoint":
                         {
-                          "@name":"HumanoidRoot",
-                          "@DEF":"Joe_HumanoidRoot",
+                          "@name":"humanoid_root",
+                          "@DEF":"Joe_humanoid_root",
                           "@center":[0,0.875,0],
-                          "-metadata":
-                            { "MetadataSet":
-                              {
-                                "@name":"warnings",
-                                "@reference":"HAnim",
-                                "-children":[
-                                  {
-                                    "#comment":"TODO experimental"
-                                  }
-                                ],
-                                "-metadata":
-                                  { "MetadataString":
-                                    {
-                                      "@name":"SymmetricalLeftRight",
-                                      "@reference":"correction options: ignore, warn, average, left, right, largest, smallest",
-                                      "@value":["ignore"]
-                                    }
-                                  }
-                              }
-                            },
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -299,32 +296,32 @@
                                             "-children":[
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"l_ankle",
-                                                  "@DEF":"Joe_l_ankle",
+                                                  "@name":"l_talocrural",
+                                                  "@DEF":"Joe_l_talocrural",
                                                   "@center":[0.115,0.069,0],
                                                   "@skinCoordIndex":[342,343,344,345],
                                                   "@skinCoordWeight":[1,1,1,1],
                                                   "-children":[
                                                     { "HAnimJoint":
                                                       {
-                                                        "@name":"l_subtalar",
-                                                        "@DEF":"Joe_l_subtalar",
+                                                        "@name":"l_tarsometatarsal_2",
+                                                        "@DEF":"Joe_l_tarsometatarsal_2",
                                                         "@center":[0.115,0.031,0.03],
                                                         "@skinCoordIndex":[346,347,348,71],
                                                         "@skinCoordWeight":[1,1,1,1],
                                                         "-children":[
                                                           { "HAnimJoint":
                                                             {
-                                                              "@name":"l_midtarsal",
-                                                              "@DEF":"Joe_l_midtarsal",
+                                                              "@name":"l_metatarsophalangeal_2",
+                                                              "@DEF":"Joe_l_metatarsophalangeal_2",
                                                               "@center":[0.115,0.037,0.09],
                                                               "@skinCoordIndex":[349,350,351,352],
                                                               "@skinCoordWeight":[1,1,1,1],
                                                               "-children":[
                                                                 { "HAnimJoint":
                                                                   {
-                                                                    "@name":"l_metatarsal",
-                                                                    "@DEF":"Joe_l_metatarsal",
+                                                                    "@name":"l_tarsal_distal_interphalangeal_2",
+                                                                    "@DEF":"Joe_l_tarsal_distal_interphalangeal_2",
                                                                     "@center":[0.115,0.02,0.122],
                                                                     "@skinCoordIndex":[353,354,355,356,357,358,359,360,361],
                                                                     "@skinCoordWeight":[1,1,1,1,1,1,1,1,1]
@@ -363,32 +360,32 @@
                                             "-children":[
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"r_ankle",
-                                                  "@DEF":"Joe_r_ankle",
+                                                  "@name":"r_talocrural",
+                                                  "@DEF":"Joe_r_talocrural",
                                                   "@center":[-0.115,0.069,0],
                                                   "@skinCoordIndex":[370,371,372,373],
                                                   "@skinCoordWeight":[1,1,1,1],
                                                   "-children":[
                                                     { "HAnimJoint":
                                                       {
-                                                        "@name":"r_subtalar",
-                                                        "@DEF":"Joe_r_subtalar",
+                                                        "@name":"r_tarsometatarsal_2",
+                                                        "@DEF":"Joe_r_tarsometatarsal_2",
                                                         "@center":[-0.1,0.015,-0.01],
                                                         "@skinCoordIndex":[374,375,376],
                                                         "@skinCoordWeight":[1,1,1],
                                                         "-children":[
                                                           { "HAnimJoint":
                                                             {
-                                                              "@name":"r_midtarsal",
-                                                              "@DEF":"Joe_r_midtarsal",
+                                                              "@name":"r_metatarsophalangeal_2",
+                                                              "@DEF":"Joe_r_metatarsophalangeal_2",
                                                               "@center":[-0.115,0.037,0.09],
                                                               "@skinCoordIndex":[377,378,379,380],
                                                               "@skinCoordWeight":[1,1,1,1],
                                                               "-children":[
                                                                 { "HAnimJoint":
                                                                   {
-                                                                    "@name":"r_metatarsal",
-                                                                    "@DEF":"Joe_r_metatarsal",
+                                                                    "@name":"r_tarsal_distal_interphalangeal_2",
+                                                                    "@DEF":"Joe_r_tarsal_distal_interphalangeal_2",
                                                                     "@center":[-0.1,0.01,0.14],
                                                                     "@skinCoordIndex":[381,382,383,384,385,386,387,388,389],
                                                                     "@skinCoordWeight":[1,1,1,1,1,1,1,1,1]
@@ -692,8 +689,8 @@
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "HAnimJoint":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"l_wrist",
-                                                                                                                                                                    "@DEF":"Joe_l_wrist",
+                                                                                                                                                                    "@name":"l_radiocarpal",
+                                                                                                                                                                    "@DEF":"Joe_l_radiocarpal",
                                                                                                                                                                     "@center":[0.2,0.87,-0.04],
                                                                                                                                                                     "@skinCoordIndex":[119,120,121,122,123,124,125,126],
                                                                                                                                                                     "@skinCoordWeight":[1,1,1,1,1,1,1,1],
@@ -946,8 +943,8 @@
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "HAnimJoint":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"r_wrist",
-                                                                                                                                                                    "@DEF":"Joe_r_wrist",
+                                                                                                                                                                    "@name":"r_radiocarpal",
+                                                                                                                                                                    "@DEF":"Joe_r_radiocarpal",
                                                                                                                                                                     "@center":[-0.2,0.89,-0.04],
                                                                                                                                                                     "@skinCoordIndex":[235,236,237,238,239,240,241,242],
                                                                                                                                                                     "@skinCoordWeight":[1,1,1,1,1,1,1,1],
@@ -1222,7 +1219,9 @@
                             }
                           ]
                         }
-                      },
+                      }
+                    ],
+                    "-skin":[
                       { "Shape":
                         {
                           "@DEF":"Joe_Shape",
@@ -1242,7 +1241,7 @@
                                   { "ImageTexture":
                                     {
                                       "@DEF":"JoeSkinImageTexture",
-                                      "@url":["JoeBodyTexture29.png"]
+                                      "@url":["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]
                                     }
                                   },
                                 "-textureTransform":
@@ -1269,141 +1268,29 @@
                                 "-texCoord":
                                   { "TextureCoordinate":
                                     {
-                                      "@point":[0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5]
+                                      "@point":[0,0,0.5,0.5,0.5,0,0,0.5]
                                     }
                                   }
                               }
                             }
                         }
+                      }
+                    ],
+                    "-skinCoord":
+                      { "Coordinate":
+                        {
+                          "@USE":"Joe_SkinCoord"
+                        }
                       },
+                    "-joints":[
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_HumanoidRoot"
+                          "@USE":"Joe_humanoid_root"
                         }
                       },
                       { "HAnimJoint":
                         {
                           "@USE":"Joe_sacroiliac"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vl1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt12"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt11"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt10"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt9"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt8"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt7"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt6"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vt1"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc7"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc6"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc5"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc4"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc3"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc2"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_vc1"
                         }
                       },
                       { "HAnimJoint":
@@ -1418,22 +1305,132 @@
                       },
                       { "HAnimJoint":
                         {
+                          "@USE":"Joe_vc1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt10"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt11"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt12"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt8"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt9"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
                           "@USE":"Joe_l_acromioclavicular"
                         }
                       },
                       { "HAnimJoint":
                         {
                           "@USE":"Joe_r_acromioclavicular"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_ankle"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_ankle"
                         }
                       },
                       { "HAnimJoint":
@@ -1538,12 +1535,12 @@
                       },
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_l_metatarsal"
+                          "@USE":"Joe_l_metatarsophalangeal_2"
                         }
                       },
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_r_metatarsal"
+                          "@USE":"Joe_r_metatarsophalangeal_2"
                         }
                       },
                       { "HAnimJoint":
@@ -1588,16 +1585,6 @@
                       },
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_l_midtarsal"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_midtarsal"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
                           "@USE":"Joe_l_pinky0"
                         }
                       },
@@ -1634,6 +1621,16 @@
                       { "HAnimJoint":
                         {
                           "@USE":"Joe_r_pinky3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_radiocarpal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_radiocarpal"
                         }
                       },
                       { "HAnimJoint":
@@ -1698,12 +1695,32 @@
                       },
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_l_subtalar"
+                          "@USE":"Joe_l_talocrural"
                         }
                       },
                       { "HAnimJoint":
                         {
-                          "@USE":"Joe_r_subtalar"
+                          "@USE":"Joe_r_talocrural"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_tarsal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_tarsal_distal_interphalangeal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_tarsometatarsal_2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_tarsometatarsal_2"
                         }
                       },
                       { "HAnimJoint":
@@ -1735,34 +1752,22 @@
                         {
                           "@USE":"Joe_r_thumb3"
                         }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_l_wrist"
-                        }
-                      },
-                      { "HAnimJoint":
-                        {
-                          "@USE":"Joe_r_wrist"
-                        }
-                      },
+                      }
+                    ],
+                    "-segments":[
                       { "HAnimSegment":
                         {
                           "@USE":"Joe_sacrum"
                         }
-                      },
+                      }
+                    ],
+                    "-sites":[
                       { "HAnimSite":
                         {
                           "@USE":"Joe_RootFront_view"
                         }
                       }
-                    ],
-                    "-skinCoord":
-                      { "Coordinate":
-                        {
-                          "@USE":"Joe_SkinCoord"
-                        }
-                      }
+                    ]
                   }
                 }
               ]
@@ -3220,7 +3225,7 @@
               "@fromField":"value_changed",
               "@fromNode":"HumanoidRoot_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_HumanoidRoot"
+              "@toNode":"Joe_humanoid_root"
             }
           },
           { "ROUTE":
@@ -3228,7 +3233,7 @@
               "@fromField":"value_changed",
               "@fromNode":"HumanoidRoot_TranslationInterpolator",
               "@toField":"set_translation",
-              "@toNode":"Joe_HumanoidRoot"
+              "@toNode":"Joe_humanoid_root"
             }
           },
           { "ROUTE":
@@ -3260,7 +3265,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ankle_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ankle"
+              "@toNode":"Joe_l_talocrural"
             }
           },
           { "ROUTE":
@@ -3268,7 +3273,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_subtalar_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_subtalar"
+              "@toNode":"Joe_l_tarsometatarsal_2"
             }
           },
           { "ROUTE":
@@ -3276,7 +3281,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_midtarsal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_midtarsal"
+              "@toNode":"Joe_l_metatarsophalangeal_2"
             }
           },
           { "ROUTE":
@@ -3284,7 +3289,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_metatarsal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_metatarsal"
+              "@toNode":"Joe_l_tarsal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -3308,7 +3313,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ankle_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ankle"
+              "@toNode":"Joe_r_talocrural"
             }
           },
           { "ROUTE":
@@ -3316,7 +3321,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_subtalar_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_subtalar"
+              "@toNode":"Joe_r_tarsometatarsal_2"
             }
           },
           { "ROUTE":
@@ -3324,7 +3329,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_midtarsal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_midtarsal"
+              "@toNode":"Joe_r_metatarsophalangeal_2"
             }
           },
           { "ROUTE":
@@ -3332,7 +3337,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_metatarsal_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_metatarsal"
+              "@toNode":"Joe_r_tarsal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -3628,7 +3633,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_wrist_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_wrist"
+              "@toNode":"Joe_l_radiocarpal"
             }
           },
           { "ROUTE":
@@ -3820,7 +3825,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_wrist_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_wrist"
+              "@toNode":"Joe_r_radiocarpal"
             }
           },
           { "ROUTE":
@@ -3979,9 +3984,6 @@
             {
               "@DEF":"DisplacersAnimationGroup",
               "-children":[
-                {
-                  "#comment":"TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"
-                },
                 { "ScalarInterpolator":
                   {
                     "@DEF":"skull_tipInterpolator",
@@ -4014,7 +4016,7 @@
               "-children":[
                 { "ScalarInterpolator":
                   {
-                    "@DEF":"SkinTextureTransformInterpolator",
+                    "@DEF":"SkinInterpolator",
                     "@key":[0,0.2,0.4,0.5,0.6,0.7,0.8,1],
                     "@keyValue":[0,0,0,0,0,1,2,0]
                   }
@@ -4024,13 +4026,13 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"KickTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"SkinTextureTransformInterpolator"
+                    "@toNode":"SkinInterpolator"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"SkinTextureTransformInterpolator",
+                    "@fromNode":"SkinInterpolator",
                     "@toField":"rotation",
                     "@toNode":"KickTextureTransform"
                   }
