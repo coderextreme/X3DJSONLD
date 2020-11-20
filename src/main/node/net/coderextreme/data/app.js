@@ -14,9 +14,9 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("John W").setContent("Carlson, I"))
-        .addMeta((new autoclass.meta()).setName("John A").setContent("Carlson, II"))
-        .addMeta((new autoclass.meta()).setName("John R").setContent("Carlson, III")))
+        .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, I"))
+        .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, II"))
+        .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, III")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Shape())
