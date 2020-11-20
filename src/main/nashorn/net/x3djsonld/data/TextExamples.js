@@ -79,35 +79,35 @@ TextExamples.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.0")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("TextExamples.x3d"))
-    .addMeta(new meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
-    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new meta().setName("created").setContent("7 April 2001"))
-    .addMeta(new meta().setName("modified").setContent("26 April 2016"))
-    .addMeta(new meta().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
-    .addMeta(new meta().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
-    .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("license").setContent("../license.html")))
-  .setScene(new Scene()
-    .addChild(new Transform().setTranslation(0.0,2.0,0.0)
-      .addChild(new Shape()
-        .setGeometry(new Text().setString(new MFString("\"Compare special character escaping\""))
-          .setFontStyle(new FontStyle("testFontStyle").setJustify(new MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8)))
-        .setAppearance(new Appearance("LightBlueAppearance")
-          .setMaterial(new Material().setDiffuseColor(0.1,0.7,0.7)))))
-    .addChild(new Transform().setTranslation(-3.0,0.0,0.0)
-      .addChild(new Shape()
-        .setGeometry(new Text().setString(new MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-        .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-    .addChild(new Transform().setTranslation(3.0,0.0,0.0)
-      .addChild(new Shape()
-        .setGeometry(new Text().setString(new MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-        .setAppearance(new Appearance().setUSE("LightBlueAppearance")))));
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("TextExamples.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
+    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName("created").setContent("7 April 2001"))
+    .addMeta(new metaObject().setName("modified").setContent("26 April 2016"))
+    .addMeta(new metaObject().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
+    .addMeta(new metaObject().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
+    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+  .setScene(new SceneObject()
+    .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
+      .addChild(new ShapeObject()
+        .setGeometry(new TextObject().setString(new MFStringObject("\"Compare special character escaping\""))
+          .setFontStyle(new FontStyleObject("testFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8)))
+        .setAppearance(new AppearanceObject("LightBlueAppearance")
+          .setMaterial(new MaterialObject().setDiffuseColor(0.1,0.7,0.7)))))
+    .addChild(new TransformObject().setTranslation(-3.0,0.0,0.0)
+      .addChild(new ShapeObject()
+        .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
+          .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
+        .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance"))))
+    .addChild(new TransformObject().setTranslation(3.0,0.0,0.0)
+      .addChild(new ShapeObject()
+        .setGeometry(new TextObject().setString(new MFStringObject("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
+          .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
+        .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance")))));
   },
   // end of initialize() method
 
@@ -141,11 +141,11 @@ TextExamples.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

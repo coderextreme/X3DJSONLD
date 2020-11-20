@@ -283,7 +283,7 @@ public class JoeKick {
             .addJoints(new HAnimJoint().setUSE("Joe_l_thumb3"))
             .addJoints(new HAnimJoint().setUSE("Joe_r_thumb3"))
             .addSegments(new HAnimSegment().setUSE("Joe_sacrum"))
-            .addViewpoints(new HAnimSite().setUSE("Joe_RootFront_view"))))
+            .addSites(new HAnimSite().setUSE("Joe_RootFront_view"))))
         .addChild(new Group()
           .addChild(new TimeSensor().setDEF("KickTimer").setCycleInterval(3.73d).setLoop(true))
           .addComments(new CommentsBlock("Interpolators"))
@@ -1352,7 +1352,7 @@ protected class MFFloat145 {
 }
 protected class MFString146 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"JoeBodyTexture29.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"});
   }
 }
 protected class MFInt32147 {

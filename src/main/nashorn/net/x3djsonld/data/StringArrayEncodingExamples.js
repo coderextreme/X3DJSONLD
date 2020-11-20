@@ -99,33 +99,33 @@ StringArrayEncodingExamples.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("StringArrayEncodingExamples.x3d"))
-    .addMeta(new meta().setName("description").setContent("Demonstrate simple X3D MFString (string array) encoding."))
-    .addMeta(new meta().setName("created").setContent("27 May 2017"))
-    .addMeta(new meta().setName("modified").setContent("27 May 2017"))
-    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new meta().setName("reference").setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
-    .addMeta(new meta().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
-    .addMeta(new meta().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
-    .addMeta(new meta().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
-    .addMeta(new meta().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
-    .addMeta(new meta().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
-    .addMeta(new meta().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
-    .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("license").setContent("../license.html")))
-  .setScene(new Scene()
-    .addChild(new Viewpoint("EntryView").setDescription("Hello MFString syntax"))
-    .addChild(new Background().setSkyColor(new MFColor(Java.to([0.6,1.0,0.8], Java.type("float[]")))))
-    .addChild(new Shape()
-      .setGeometry(new Text().setString(new MFString("\"One, Two, Three\" \"\" \"He said, \\\"Immel did it!\\\"\""))
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("StringArrayEncodingExamples.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("Demonstrate simple X3D MFString (string array) encoding."))
+    .addMeta(new metaObject().setName("created").setContent("27 May 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("27 May 2017"))
+    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName("reference").setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
+    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
+    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
+    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
+    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
+    .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
+    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
+    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+  .setScene(new SceneObject()
+    .addChild(new ViewpointObject("EntryView").setDescription("Hello MFString syntax"))
+    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([0.6,1.0,0.8], Java.type("float[]")))))
+    .addChild(new ShapeObject()
+      .setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Three\" \"\" \"He said, \\\"Immel did it!\\\"\""))
         .addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
         .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-        .setFontStyle(new FontStyle().setJustify(new MFString("\"MIDDLE\" \"MIDDLE\"")).setStyle("BOLD")))
-      .setAppearance(new Appearance()
-        .setMaterial(new Material().setDiffuseColor(0.6,0.4,0.2)))));
+        .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setStyle("BOLD")))
+      .setAppearance(new AppearanceObject()
+        .setMaterial(new MaterialObject().setDiffuseColor(0.6,0.4,0.2)))));
   },
   // end of initialize() method
 
@@ -159,11 +159,11 @@ StringArrayEncodingExamples.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

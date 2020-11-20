@@ -789,23 +789,23 @@ HAnimHumanoid29.addJoints(HAnimJoint163)
 HAnimSite164 = x3d.HAnimSite()
 HAnimSite164.setUSE("hanim_l_middle_distal_tip")
 
-HAnimHumanoid29.addViewpoints(HAnimSite164)
+HAnimHumanoid29.addSites(HAnimSite164)
 HAnimSite165 = x3d.HAnimSite()
 HAnimSite165.setUSE("hanim_r_middle_distal_tip")
 
-HAnimHumanoid29.addViewpoints(HAnimSite165)
+HAnimHumanoid29.addSites(HAnimSite165)
 HAnimSite166 = x3d.HAnimSite()
 HAnimSite166.setUSE("hanim_skull_tip")
 
-HAnimHumanoid29.addViewpoints(HAnimSite166)
+HAnimHumanoid29.addSites(HAnimSite166)
 HAnimSite167 = x3d.HAnimSite()
 HAnimSite167.setUSE("hanim_l_hand_tip")
 
-HAnimHumanoid29.addViewpoints(HAnimSite167)
+HAnimHumanoid29.addSites(HAnimSite167)
 HAnimSite168 = x3d.HAnimSite()
 HAnimSite168.setUSE("hanim_r_hand_tip")
 
-HAnimHumanoid29.addViewpoints(HAnimSite168)
+HAnimHumanoid29.addSites(HAnimSite168)
 HAnimSegment169 = x3d.HAnimSegment()
 HAnimSegment169.setUSE("hanim_sacrum")
 

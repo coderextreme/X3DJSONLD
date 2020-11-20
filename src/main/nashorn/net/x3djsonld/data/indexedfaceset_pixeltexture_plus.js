@@ -119,44 +119,44 @@ indexedfaceset_pixeltexture_plus.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Interchange").setVersion("3.0")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-front.jpg"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-rear.jpg"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-top.jpg"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-bottom.jpg"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-left.jpg"))
-    .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-right.jpg"))
-    .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
-    .addMeta(new meta().setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
-    .addMeta(new meta().setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
-    .addMeta(new meta().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
-    .addMeta(new meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
-    .addMeta(new meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
-    .addMeta(new meta().setName("translated").setContent("21 January 2001"))
-    .addMeta(new meta().setName("modified").setContent("13 January 2014"))
-    .addMeta(new meta().setName("description").setContent("Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."))
-    .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"))
-    .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("license").setContent("../../license.html")))
-  .setScene(new Scene()
-    .addChild(new Viewpoint().setDescription("Front View"))
-    .addChild(new Viewpoint().setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
-    .addChild(new Viewpoint().setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
-    .addChild(new Viewpoint().setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
-    .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
-    .addChild(new Viewpoint().setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
-    .addChild(new NavigationInfo().setType(new MFString("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
-    .addChild(new Shape()
-      .setAppearance(new Appearance()
-        .setMaterial(new Material())
-        .setTexture(new PixelTexture().setImage(Java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], Java.type("int[]")))))
-      .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(Java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], Java.type("int[]"))).setCoordIndex(Java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], Java.type("int[]")))
-        .setColor(new Color().setColor(new MFColor(Java.to([0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0], Java.type("float[]")))))
-        .setCoord(new Coordinate().setPoint(new MFVec3f(Java.to([-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0], Java.type("float[]")))))
-        .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(Java.to([-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0], Java.type("float[]"))))))));
+  this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-front.jpg"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-rear.jpg"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-top.jpg"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-bottom.jpg"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-left.jpg"))
+    .addMeta(new metaObject().setName("Image").setContent("indexedfaceset_pixeltexture_plus-right.jpg"))
+    .addMeta(new metaObject().setName("reference").setContent("http://www.nist.gov/vrml.html"))
+    .addMeta(new metaObject().setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
+    .addMeta(new metaObject().setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
+    .addMeta(new metaObject().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
+    .addMeta(new metaObject().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
+    .addMeta(new metaObject().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
+    .addMeta(new metaObject().setName("translated").setContent("21 January 2001"))
+    .addMeta(new metaObject().setName("modified").setContent("13 January 2014"))
+    .addMeta(new metaObject().setName("description").setContent("Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."))
+    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("license").setContent("../../license.html")))
+  .setScene(new SceneObject()
+    .addChild(new ViewpointObject().setDescription("Front View"))
+    .addChild(new ViewpointObject().setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
+    .addChild(new ViewpointObject().setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
+    .addChild(new ViewpointObject().setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild(new ViewpointObject().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
+    .addChild(new ViewpointObject().setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
+    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
+    .addChild(new ShapeObject()
+      .setAppearance(new AppearanceObject()
+        .setMaterial(new MaterialObject())
+        .setTexture(new PixelTextureObject().setImage(Java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], Java.type("int[]")))))
+      .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(Java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], Java.type("int[]"))).setCoordIndex(Java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], Java.type("int[]")))
+        .setColor(new ColorObject().setColor(new MFColorObject(Java.to([0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0], Java.type("float[]")))))
+        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(Java.to([-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0], Java.type("float[]")))))
+        .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(Java.to([-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0], Java.type("float[]"))))))));
   },
   // end of initialize() method
 
@@ -190,11 +190,11 @@ indexedfaceset_pixeltexture_plus.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

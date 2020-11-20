@@ -1,8 +1,8 @@
 /** 
  * X3DOM 1.8.2-dev
- * Build : 7568
- * Revision: 51c6b6fe3b252e873470d90eafcde0d7d278e98a
- * Date: Mon Jun 29 19:20:39 2020 -0500
+ * Build : 7301
+ * Revision: d3fb79a2f4b3b210e5f457f85239494ea712d130
+ * Date: Fri Nov 20 02:51:31 2020 -0600
  */
 /**
  * X3DOM JavaScript Library
@@ -29,9 +29,9 @@ var x3dom = {
 
 x3dom.about = {
     version  : "1.8.2-dev",
-    build    : "7568",
-    revision : "51c6b6fe3b252e873470d90eafcde0d7d278e98a",
-    date     : "Mon Jun 29 19:20:39 2020 -0500"
+    build    : "7301",
+    revision : "d3fb79a2f4b3b210e5f457f85239494ea712d130",
+    date     : "Fri Nov 20 02:51:31 2020 -0600"
 };
 
 /**
@@ -1807,8 +1807,8 @@ x3dom.X3DCanvas.prototype._watchForResize = function ()
     }
 
     var new_dim = [
-        parseInt( x3dom.getStyle( this.canvas, "width" ) ),
-        parseInt( x3dom.getStyle( this.canvas, "height" ) )
+        parseInt( x3dom.getStyle( this.canvas, "width" ) ) || 0,
+        parseInt( x3dom.getStyle( this.canvas, "height" ) ) || 0
     ];
 
     if ( ( this._current_dim[ 0 ] != new_dim[ 0 ] ) || ( this._current_dim[ 1 ] != new_dim[ 1 ] ) )
@@ -2354,6 +2354,15 @@ x3dom.Viewarea.prototype.tick = function ( timeStamp )
 
     if ( this._mixer.isActive() )
     {
+        if ( this._mixer._isVPtarget )
+        {
+            //mixer target may have changed due to current transform
+            //need to refresh from scratch
+            var vp = this._scene.getViewpoint();
+            vp.resetView();
+            var target = vp.getViewMatrix().mult( vp.getCurrentTransform().inverse() );
+            this._mixer.setEndMatrix( target );
+        }
         var mat = this._mixer.mix( timeStamp );
         this._scene.getViewpoint().setView( mat );
     }
@@ -2667,11 +2676,12 @@ x3dom.Viewarea.prototype.getViewMatrices = function ()
 /**
  * Get Light Matrix
  *
+ * @param lights
  * @returns {*}
  */
-x3dom.Viewarea.prototype.getLightMatrix = function ()
+x3dom.Viewarea.prototype.getLightMatrix = function ( lights )
 {
-    var lights = this._doc._nodeBag.lights;
+    lights = lights || this._doc._nodeBag.lights;
     var i,
         n = lights.length;
 
@@ -2697,27 +2707,28 @@ x3dom.Viewarea.prototype.getLightMatrix = function ()
 
             for ( i = 0; i < n; i++ )
             {
-                if ( x3dom.isa( lights[ i ], x3dom.nodeTypes.PointLight ) )
+                var light = lights[ i ];
+                if ( x3dom.isa( light, x3dom.nodeTypes.PointLight ) )
                 {
-                    var wcLoc = lights[ i ].getCurrentTransform().multMatrixPnt( lights[ i ]._vf.location );
+                    var wcLoc = light.getCurrentTransform().multMatrixPnt( light._vf.location );
                     dia = dia.subtract( wcLoc ).normalize();
                 }
                 else
                 {
-                    var dir = lights[ i ].getCurrentTransform().multMatrixVec( lights[ i ]._vf.direction );
+                    var dir = light.getCurrentTransform().multMatrixVec( light._vf.direction );
                     dir = dir.normalize().negate();
                     dia = dia.add( dir.multiply( 1.2 * ( dist1 > dist2 ? dist1 : dist2 ) ) );
                 }
 
-                l_arr[ i ] = lights[ i ].getViewMatrix( dia );
+                l_arr.push( light.getViewMatrix( dia ) );
             }
 
             return l_arr;
         }
     }
 
-    // TODO: this is only for testing
-    return [ this.getViewMatrix() ];
+    // TODO: was only for testing but now expected
+    return Array( n || 1 ).fill( this.getViewMatrix() );
 };
 
 /**
@@ -3129,16 +3140,40 @@ x3dom.Viewarea.prototype.showAll = function ( axis, updateCenterOfRotation )
  */
 x3dom.Viewarea.prototype.fit = function ( min, max, updateCenterOfRotation )
 {
+    var viewpoint = this._scene.getViewpoint();
+    var viewmat = this.getFitViewMatrix( min, max, viewpoint, updateCenterOfRotation );
+
+    if ( x3dom.isa( viewpoint, x3dom.nodeTypes.OrthoViewpoint ) )
+    {
+        this.orthoAnimateTo( dist / 2.01, Math.abs( viewpoint._fieldOfView[ 0 ] ) );
+        this.animateTo( viewmat, viewpoint );
+    }
+    else
+    {
+        this.animateTo( viewmat, viewpoint );
+    }
+};
+
+/**
+ * get fitViewMatrix and optionally set cor
+ *
+ * @param min
+ * @param max
+ * @param viewpoint
+ * @param updateCenterOfRotation
+ * @returns viewmatrix to fit scene
+ */
+x3dom.Viewarea.prototype.getFitViewMatrix = function ( min, max, viewpoint, updateCenterOfRotation )
+{
     if ( updateCenterOfRotation === undefined )
     {
         updateCenterOfRotation = true;
     }
 
-    var dia2 = max.subtract( min ).multiply( 0.5 );    // half diameter
+    var dia2 = max.subtract( min ).multiply( 0.5 );  // half diameter
     var center = min.add( dia2 );                    // center in wc
-    var bsr = dia2.length();                       // bounding sphere radius
+    var bsr = dia2.length();                         // bounding sphere radius
 
-    var viewpoint = this._scene.getViewpoint();
     var fov = viewpoint.getFieldOfView();
 
     var viewmat = x3dom.fields.SFMatrix4f.copy( this.getViewMatrix() );
@@ -3163,15 +3198,7 @@ x3dom.Viewarea.prototype.fit = function ( min, max, updateCenterOfRotation )
         viewpoint.setCenterOfRotation( center );
     }
 
-    if ( x3dom.isa( viewpoint, x3dom.nodeTypes.OrthoViewpoint ) )
-    {
-        this.orthoAnimateTo( dist / 2.01, Math.abs( viewpoint._fieldOfView[ 0 ] ) );
-        this.animateTo( viewmat, viewpoint );
-    }
-    else
-    {
-        this.animateTo( viewmat, viewpoint );
-    }
+    return viewmat;
 };
 
 /**
@@ -4183,7 +4210,8 @@ x3dom.fields.Eps = 0.000001;
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * Constructor. You must either specify all argument values or no argument. In the latter case, an identity matrix will be created.
+ * Constructor. You must either specify all argument values or no
+ * argument. In the latter case, an identity matrix will be created.
  *
  * @class Represents a 4x4 matrix in row major format.
  * @param {Number} [_00=1] - value at [0,0]
@@ -4326,7 +4354,8 @@ x3dom.fields.SFMatrix4f.zeroMatrix = function ()
 /**
  * Returns a new translation matrix.
  *
- * @param {x3dom.fields.SFVec3f} vec - vector that describes the desired translation
+ * @param {x3dom.fields.SFVec3f} vec - vector that describes the desired
+ *                                     translation
  * @returns {x3dom.fields.SFMatrix4f} the new identity matrix
  */
 x3dom.fields.SFMatrix4f.translation = function ( vec )
@@ -4396,7 +4425,8 @@ x3dom.fields.SFMatrix4f.rotationZ = function ( a )
 /**
  * Returns a new scale matrix.
  *
- * @param {x3dom.fields.SFVec3f} vec - vector containing scale factors along the three main axes
+ * @param {x3dom.fields.SFVec3f} vec - vector containing scale factors
+ *                                     along the three main axes
  * @returns {x3dom.fields.SFMatrix4f} the new scale matrix
  */
 x3dom.fields.SFMatrix4f.scale = function ( vec )
@@ -4487,10 +4517,12 @@ x3dom.fields.SFMatrix4f.perspective = function ( fov, aspect, near, far )
  * @param {Number} top          - top border value of the view area
  * @param {Number} near         - near clipping distance
  * @param {Number} far          - far clipping distance
- * @param {Number} [aspect=1.0] - desired aspect ratio (width / height) of the projected image
+ * @param {Number} [aspect=1.0] - desired aspect ratio (width / height)
+ *                                of the projected image
  * @returns {x3dom.fields.SFMatrix4f} the new projection matrix
  */
-x3dom.fields.SFMatrix4f.ortho = function ( left, right, bottom, top, near, far, aspect )
+x3dom.fields.SFMatrix4f.ortho = function ( left, right, bottom, top,
+    near, far, aspect )
 {
     var rl = ( right - left ) / 2;    // hs
     var tb = ( top - bottom ) / 2;    // vs
@@ -4539,7 +4571,8 @@ x3dom.fields.SFMatrix4f.prototype.setTranslate = function ( vec )
 /**
  * Sets the scale components of a homogenous transform matrix.
  *
- * @param {x3dom.fields.SFVec3f} vec - vector containing scale factors along the three main axes
+ * @param {x3dom.fields.SFVec3f} vec - vector containing scale factors
+ *                                     along the three main axes
  */
 x3dom.fields.SFMatrix4f.prototype.setScale = function ( vec )
 {
@@ -4551,7 +4584,8 @@ x3dom.fields.SFMatrix4f.prototype.setScale = function ( vec )
 /**
  * Sets the rotation components of a homogenous transform matrix.
  *
- * @param {x3dom.fields.Quaternion} quat - quaternion that describes the rotation
+ * @param {x3dom.fields.Quaternion} quat - quaternion that describes
+ *                                         the rotation
  */
 x3dom.fields.SFMatrix4f.prototype.setRotate = function ( quat )
 {
@@ -4577,7 +4611,8 @@ x3dom.fields.SFMatrix4f.prototype.setRotate = function ( quat )
 };
 
 /**
- * Creates a new matrix from a column major string representation, with values separated by commas
+ * Creates a new matrix from a column major string representation, with
+ * values separated by commas or whitespace
  *
  * @param {String} str - string to parse
  * @returns {x3dom.fields.SFMatrix4f} the new matrix
@@ -4669,9 +4704,11 @@ x3dom.fields.SFMatrix4f.parse = function ( str )
 };
 
 /**
- * Returns the result of multiplying this matrix with the given one, using "post-multiplication" / "right multiply".
+ * Returns the result of multiplying this matrix with the given one,
+ * using "post-multiplication" / "right multiply".
  *
- * @param {x3dom.fields.SFMatrix4f} that - matrix to multiply with this one
+ * @param {x3dom.fields.SFMatrix4f} that - matrix to multiply with this
+ *                                         one
  * @returns {x3dom.fields.SFMatrix4f} resulting matrix
  */
 x3dom.fields.SFMatrix4f.prototype.mult = function ( that )
@@ -4697,8 +4734,9 @@ x3dom.fields.SFMatrix4f.prototype.mult = function ( that )
 };
 
 /**
- * Transforms a given 3D point, using this matrix as a homogenous transform matrix
- * (ignores projection part of matrix for speedup in standard cases).
+ * Transforms a given 3D point, using this matrix as a homogenous
+ * transform matrix (ignores projection part of matrix for speedup in
+ * standard cases).
  *
  * @param {x3dom.fields.SFVec3f} vec - point to transform
  * @returns {x3dom.fields.SFVec3f} resulting point
@@ -4713,7 +4751,8 @@ x3dom.fields.SFMatrix4f.prototype.multMatrixPnt = function ( vec )
 };
 
 /**
- * Transforms a given 3D vector, using this matrix as a homogenous transform matrix.
+ * Transforms a given 3D vector, using this matrix as a homogenous
+ * transform matrix.
  *
  * @param {x3dom.fields.SFVec3f} vec - vector to transform
  * @returns {x3dom.fields.SFVec3f} resulting vector
@@ -4729,8 +4768,9 @@ x3dom.fields.SFMatrix4f.prototype.multMatrixVec = function ( vec )
 
 /**
  * Transforms a given 3D point, using this matrix as a transform matrix
- * (also includes projection part of matrix - required for e.g. modelview-projection matrix).
- * The resulting point is normalized by a w component.
+ * (also includes projection part of matrix - required for e.g.
+ * modelview-projection matrix). The resulting point is normalized by a
+ * w component.
  *
  * @param {x3dom.fields.SFVec3f} vec - point to transform
  * @returns {x3dom.fields.SFVec3f} resulting point
@@ -4751,8 +4791,9 @@ x3dom.fields.SFMatrix4f.prototype.multFullMatrixPnt = function ( vec )
 
 /**
  * Transforms a given 3D point, using this matrix as a transform matrix
- * (also includes projection part of matrix - required for e.g. modelview-projection matrix).
- * The resulting point is normalized by a w component.
+ * (also includes projection part of matrix - required for e.g.
+ * modelview-projection matrix). The resulting point is normalized by a
+ * w component.
  *
  * @param {x3dom.fields.SFVec4f} plane - plane to transform
  * @returns {x3dom.fields.SFVec4f} resulting plane
@@ -4880,7 +4921,8 @@ x3dom.fields.SFMatrix4f.prototype.setValues = function ( that )
 };
 
 /**
- * Fills the upper left 3x3 or 3x4 values of this matrix, using the given (three or four) column vectors.
+ * Fills the upper left 3x3 or 3x4 values of this matrix, using the
+ * given (three or four) column vectors.
  *
  * @param {x3dom.fields.SFVec3f} v1             - first column vector
  * @param {x3dom.fields.SFVec3f} v2             - second column vector
@@ -4914,7 +4956,8 @@ x3dom.fields.SFMatrix4f.prototype.setValue = function ( v1, v2, v3, v4 )
 /**
  * Fills the values of this matrix, using the given array.
  *
- * @param {Number[]} a - array, the first 16 values will be used to initialize the matrix
+ * @param {Number[]} a - array, the first 16 values will be used to
+ *                       initialize the matrix
  */
 x3dom.fields.SFMatrix4f.prototype.setFromArray = function ( a )
 {
@@ -4940,14 +4983,15 @@ x3dom.fields.SFMatrix4f.prototype.setFromArray = function ( a )
 
 /**
  * Fills the values of this matrix, using the given array.
- * @param {Number[]} a - array, the first 16 values will be used to initialize the matrix
+ * @param {Number[]} a - array, the first 16 values will be used to
+ *                       initialize the matrix
  */
 x3dom.fields.SFMatrix4f.fromArray = function ( a )
 {
     var m = new x3dom.fields.SFMatrix4f();
 
-    m._00 = a[ 0 ]; m._01 = a[ 4 ]; m._02 = a[ 8 ]; m._03 = a[ 12 ];
-    m._10 = a[ 1 ]; m._11 = a[ 5 ]; m._12 = a[ 9 ]; m._13 = a[ 13 ];
+    m._00 = a[ 0 ]; m._01 = a[ 4 ]; m._02 = a[  8 ]; m._03 = a[ 12 ];
+    m._10 = a[ 1 ]; m._11 = a[ 5 ]; m._12 = a[  9 ]; m._13 = a[ 13 ];
     m._20 = a[ 2 ]; m._21 = a[ 6 ]; m._22 = a[ 10 ]; m._23 = a[ 14 ];
     m._30 = a[ 3 ]; m._31 = a[ 7 ]; m._32 = a[ 11 ]; m._33 = a[ 15 ];
 
@@ -4955,8 +4999,15 @@ x3dom.fields.SFMatrix4f.fromArray = function ( a )
 };
 
 /**
- * Fills the values of this matrix, using the given array.
- * @param {Number[]} a - array, the first 16 values will be used to initialize the matrix
+ * Sets the rotation, translation, and scaling of this matrix using
+ * the respective transformation components, and returns this matrix.
+ *
+ * @param {x3dom.fields.Quaternion} rotation    - the rotation part
+ * @param {x3dom.fields.SFVec3f}    translation - the 3D translation
+ *                                                vector
+ * @param {x3dom.fields.SFVec3f}    scale       - the non-uniform scaling
+ *                                                factors
+ * @returns {x3dom.fields.SFMatrix4f} the modified matrix
  */
 x3dom.fields.SFMatrix4f.prototype.fromRotationTranslationScale = function ( rotation, translation, scale )
 {
@@ -5003,8 +5054,14 @@ x3dom.fields.SFMatrix4f.prototype.fromRotationTranslationScale = function ( rota
 };
 
 /**
- * Fills the values of this matrix, using the given array.
- * @param {Number[]} a - array, the first 16 values will be used to initialize the matrix
+ * Creates and returns a new 4x4 transformation matrix defined by the
+ * rotation, translation, and scaling components.
+ *
+ * @param {x3dom.fields.Quaternion} rotation    - the rotation part
+ * @param {x3dom.fields.SFVec3f}    translation - the 3D translation vector
+ * @param {x3dom.fields.SFVec3f}    scale       - the non-uniform scaling
+ *                                                factors
+ * @returns {x3dom.fields.SFMatrix4f} the created transformation matrix
  */
 x3dom.fields.SFMatrix4f.fromRotationTranslationScale = function ( rotation, translation, scale )
 {
@@ -5052,7 +5109,8 @@ x3dom.fields.SFMatrix4f.fromRotationTranslationScale = function ( rotation, tran
 };
 
 /**
- * Returns a column major version of this matrix, packed into a single array.
+ * Returns a column major version of this matrix, packed into a single
+ * array.
  *
  * @returns {Number[]} resulting array of 16 values
  */
@@ -5067,17 +5125,38 @@ x3dom.fields.SFMatrix4f.prototype.toGL = function ()
 };
 
 /**
- * Returns a column major version of this matrix, packed into a single array.
- * @returns {Number[]} resulting array of 16 values
+ * Creates and returns a new ``SFMatrix4f'' with the elements,
+ * construed as being in column-major format, copied from the supplied
+ * array.
+ *
+ * @param   {Number[]} array - an array of at least 16 numbers,
+ *                             the first 16 of which will be construed
+ *                             as the new matrix data in column-major
+ *                             format
+ * @returns {SFMatrix4f} a new matrix based upon the ``array''
+ *                       data transferred from its imputed column-major
+ *                       format into the row-major format
  */
 x3dom.fields.SFMatrix4f.fromGL = function ( array )
 {
-    return [
-        this._00, this._10, this._20, this._30,
-        this._01, this._11, this._21, this._31,
-        this._02, this._12, this._22, this._32,
-        this._03, this._13, this._23, this._33
-    ];
+    var newMatrix = new x3dom.fields.SFMatrix4f();
+    newMatrix._00 = array[ 0 ];
+    newMatrix._01 = array[ 4 ];
+    newMatrix._02 = array[ 8 ];
+    newMatrix._03 = array[ 12 ];
+    newMatrix._10 = array[ 1 ];
+    newMatrix._11 = array[ 5 ];
+    newMatrix._12 = array[ 9 ];
+    newMatrix._13 = array[ 13 ];
+    newMatrix._20 = array[ 2 ];
+    newMatrix._21 = array[ 6 ];
+    newMatrix._22 = array[ 10 ];
+    newMatrix._23 = array[ 14 ];
+    newMatrix._30 = array[ 3 ];
+    newMatrix._31 = array[ 7 ];
+    newMatrix._32 = array[ 11 ];
+    newMatrix._33 = array[ 15 ];
+    return newMatrix;
 };
 
 /**
@@ -5085,7 +5164,7 @@ x3dom.fields.SFMatrix4f.fromGL = function ( array )
  *
  * @param {Number} i - row index (starting with 0)
  * @param {Number} j - column index (starting with 0)
- * @returns {Number} the value
+ * @returns {Number} the entry at the specified position
  */
 x3dom.fields.SFMatrix4f.prototype.at = function ( i, j )
 {
@@ -5094,7 +5173,23 @@ x3dom.fields.SFMatrix4f.prototype.at = function ( i, j )
 };
 
 /**
- * Computes the square root of the matrix, assuming that its determinant is greater than zero.
+ * Sets the value of this matrix at a given position.
+ *
+ * @param {Number} i - row index (starting with 0)
+ * @param {Number} j - column index (starting with 0)
+ * @param {Number} newEntry - the new value to store at position (i, j)
+ * @returns {x3dom.fields.SFMatrix4f} this modified matrix
+ */
+x3dom.fields.SFMatrix4f.prototype.setAt = function ( i, j, newEntry )
+{
+    var field = "_" + i + j;
+    this[ field ] = newEntry;
+    return this;
+};
+
+/**
+ * Computes the square root of the matrix, assuming that its determinant
+ * is greater than zero.
  *
  * @returns {SFMatrix4f} a matrix containing the result
  */
@@ -5128,7 +5223,8 @@ x3dom.fields.SFMatrix4f.prototype.sqrt = function ()
 
 /**
  * Returns the largest absolute value of all entries in the matrix.
- * This is only a helper for calculating log and not the usual Infinity-norm for matrices.
+ * This is only a helper for calculating log and not the usual
+ * Infinity-norm for matrices.
  *
  * @returns {Number} the largest absolute value
  */
@@ -5266,8 +5362,9 @@ x3dom.fields.SFMatrix4f.prototype.normInf_3x3 = function ()
 };
 
 /**
- * Computes the transposed adjoint of the upper left 3x3 part of this matrix,
- * and stores it in the upper left part of a new 4x4 identity matrix.
+ * Computes the transposed adjoint of the upper left 3x3 part of this
+ * matrix, and stores it in the upper left part of a new 4x4 identity
+ * matrix.
  *
  * @returns {x3dom.fields.SFMatrix4f} the resulting matrix
  */
@@ -5312,14 +5409,19 @@ x3dom.fields.SFMatrix4f.prototype.equals = function ( that )
 /**
  * Decomposes the matrix into a translation, rotation, scale,
  * and scale orientation. Any projection information is discarded.
- * The decomposition depends upon choice of center point for rotation and scaling,
- * which is optional as the last parameter.
+ * The decomposition depends upon choice of center point for rotation
+ * and scaling, which is optional as the last parameter.
  *
- * @param {x3dom.fields.SFVec3f} translation         - 3D vector to be filled with the translation values
- * @param {x3dom.fields.Quaternion} rotation         - quaternion to be filled with the rotation values
- * @param {x3dom.fields.SFVec3f} scaleFactor         - 3D vector to be filled with the scale factors
- * @param {x3dom.fields.Quaternion} scaleOrientation - rotation (quaternion) to be applied before scaling
- * @param {x3dom.fields.SFVec3f} [center=undefined]  - center point for rotation and scaling, if not origin
+ * @param {x3dom.fields.SFVec3f}    translation -
+ *          3D vector to be filled with the translation values
+ * @param {x3dom.fields.Quaternion} rotation -
+ *          quaternion to be filled with the rotation values
+ * @param {x3dom.fields.SFVec3f}    scaleFactor -
+ *          3D vector to be filled with the scale factors
+ * @param {x3dom.fields.Quaternion} scaleOrientation -
+ *          rotation (quaternion) to be applied before scaling
+ * @param {x3dom.fields.SFVec3f}   [center=undefined] -
+ *          center point for rotation and scaling, if not origin
  */
 x3dom.fields.SFMatrix4f.prototype.getTransform = function (
     translation, rotation, scaleFactor, scaleOrientation, center )
@@ -5339,21 +5441,28 @@ x3dom.fields.SFMatrix4f.prototype.getTransform = function (
         m = x3dom.fields.SFMatrix4f.copy( this );
     }
 
-    var flip = m.decompose( translation, rotation, scaleFactor, scaleOrientation );
+    var flip = m.decompose( translation, rotation, scaleFactor,
+        scaleOrientation );
 
     scaleFactor.setValues( scaleFactor.multiply( flip ) );
 };
 
 /**
- * Computes the decomposition of the given 4x4 affine matrix M as M = T F R SO S SO^t,
- * where T is a translation matrix, F is +/- I (a reflection), R is a rotation matrix,
+ * Computes the decomposition of the given 4x4 affine matrix M as
+ * M = T F R SO S SO^t, where T is a translation matrix,
+ * F is +/- I (a reflection), R is a rotation matrix,
  * SO is a rotation matrix and S is a (nonuniform) scale matrix.
  *
- * @param {x3dom.fields.SFVec3f} t     - 3D vector to be filled with the translation values
- * @param {x3dom.fields.Quaternion} r  - quaternion to be filled with the rotation values
- * @param {x3dom.fields.SFVec3f} s     - 3D vector to be filled with the scale factors
- * @param {x3dom.fields.Quaternion} so - rotation (quaternion) to be applied before scaling
- * @returns {Number} signum of determinant of the transposed adjoint upper 3x3 matrix
+ * @param {x3dom.fields.SFVec3f} t     -
+ *          3D vector to be filled with the translation values
+ * @param {x3dom.fields.Quaternion} r  -
+ *          quaternion to be filled with the rotation values
+ * @param {x3dom.fields.SFVec3f} s     -
+ *          3D vector to be filled with the scale factors
+ * @param {x3dom.fields.Quaternion} so -
+ *          rotation (quaternion) to be applied before scaling
+ * @returns {Number} signum of determinant of the transposed adjoint
+ *                   upper 3x3 matrix
  */
 x3dom.fields.SFMatrix4f.prototype.decompose = function ( t, r, s, so )
 {
@@ -5394,11 +5503,13 @@ x3dom.fields.SFMatrix4f.prototype.decompose = function ( t, r, s, so )
 };
 
 /**
- * Performs a polar decomposition of this matrix A into two matrices Q and S, so that A = QS
+ * Performs a polar decomposition of this matrix A into two matrices
+ * Q and S, so that A = QS.
  *
  * @param {x3dom.fields.SFMatrix4f} Q - first resulting matrix
  * @param {x3dom.fields.SFMatrix4f} S - first resulting matrix
- * @returns {Number} determinant of the transposed adjoint upper 3x3 matrix
+ * @returns {Number} determinant of the transposed adjoint upper 3x3
+ *                   matrix
  */
 x3dom.fields.SFMatrix4f.prototype.polarDecompose = function ( Q, S )
 {
@@ -5461,8 +5572,8 @@ x3dom.fields.SFMatrix4f.prototype.polarDecompose = function ( Q, S )
     {
         for ( var j = i; j < 3; ++j )
         {
-            S[ "_" + j + i ] = 0.5 * ( S[ "_" + j + i ] + S[ "_" + i + j ] );
-            S[ "_" + i + j ] = 0.5 * ( S[ "_" + j + i ] + S[ "_" + i + j ] );
+            S.setAt( j, i, 0.5 * ( S.at( j, i ) + S.at( i, j ) ) );
+            S.setAt( i, j, 0.5 * ( S.at( j, i ) + S.at( i, j ) ) );
         }
     }
 
@@ -5484,7 +5595,9 @@ x3dom.fields.SFMatrix4f.prototype.spectralDecompose = function ( SO, k )
 
     for ( var iter = 0; iter < maxIterations; ++iter )
     {
-        var sm = Math.abs( offDiag[ 0 ] ) + Math.abs( offDiag[ 1 ] ) + Math.abs( offDiag[ 2 ] );
+        var sm =   Math.abs( offDiag[ 0 ] )
+                 + Math.abs( offDiag[ 1 ] )
+                 + Math.abs( offDiag[ 2 ] );
 
         if ( sm == 0 )
         {
@@ -5512,7 +5625,8 @@ x3dom.fields.SFMatrix4f.prototype.spectralDecompose = function ( SO, k )
                 else
                 {
                     var theta = 0.5 * h / offDiag[ i ];
-                    t = 1.0 / ( Math.abs( theta ) + Math.sqrt( theta * theta + 1.0 ) );
+                    t =   1.0 / ( Math.abs( theta )
+                        + Math.sqrt( theta * theta + 1.0 ) );
 
                     t = theta < 0.0 ? -t : t;
                 }
@@ -5535,11 +5649,11 @@ x3dom.fields.SFMatrix4f.prototype.spectralDecompose = function ( SO, k )
 
                 for ( var j = 2; j >= 0; --j )
                 {
-                    var a = SO[ "_" + j + p ];
-                    var b = SO[ "_" + j + q ];
+                    var a = SO.at( j, p );
+                    var b = SO.at( j, q );
 
-                    SO[ "_" + j + p ] -= s * ( b + tau * a );
-                    SO[ "_" + j + q ] += s * ( a - tau * b );
+                    SO.setAt( j, p, SO.at( j, p ) - s * ( b + tau * a ) );
+                    SO.setAt( j, q, SO.at( j, q ) + s * ( a - tau * b ) );
                 }
             }
         }
@@ -5551,7 +5665,8 @@ x3dom.fields.SFMatrix4f.prototype.spectralDecompose = function ( SO, k )
 };
 
 /**
- * Computes the logarithm of this matrix, assuming that its determinant is greater than zero.
+ * Computes the logarithm of this matrix, assuming that its determinant
+ * is greater than zero.
  *
  * @returns {x3dom.fields.SFMatrix4f} log of matrix
  */
@@ -5560,8 +5675,8 @@ x3dom.fields.SFMatrix4f.prototype.log = function ()
     var maxiter = 12;
     var eps = 1e-12;
 
-    var A = x3dom.fields.SFMatrix4f.copy( this ),
-        Z = x3dom.fields.SFMatrix4f.copy( this );
+    var A = x3dom.fields.SFMatrix4f.copy( this );
+    var Z = x3dom.fields.SFMatrix4f.copy( this );
 
     // Take repeated square roots to reduce spectral radius
     Z._00 -= 1;
@@ -5660,7 +5775,8 @@ x3dom.fields.SFMatrix4f.prototype.exp = function ()
 };
 
 /**
- * Computes a determinant for a 3x3 matrix m, given as values in row major order.
+ * Computes a determinant for a 3x3 matrix m, given as values in
+ * row major order.
  *
  * @param {Number} a1 - value of m at (0,0)
  * @param {Number} a2 - value of m at (0,1)
@@ -5673,7 +5789,9 @@ x3dom.fields.SFMatrix4f.prototype.exp = function ()
  * @param {Number} c3 - value of m at (2,2)
  * @returns {Number} determinant
  */
-x3dom.fields.SFMatrix4f.prototype.det3 = function ( a1, a2, a3, b1, b2, b3, c1, c2, c3 )
+x3dom.fields.SFMatrix4f.prototype.det3 = function ( a1, a2, a3,
+    b1, b2, b3,
+    c1, c2, c3 )
 {
     return ( ( a1 * b2 * c3 ) + ( a2 * b3 * c1 ) + ( a3 * b1 * c2 ) -
         ( a1 * b3 * c2 ) - ( a2 * b1 * c3 ) - ( a3 * b2 * c1 ) );
@@ -5715,7 +5833,7 @@ x3dom.fields.SFMatrix4f.prototype.det = function ()
 /**
  * Computes the inverse of this matrix, given that it is not singular.
  *
- * @returns {x3dom.fields.SFMatrix4f}
+ * @returns {x3dom.fields.SFMatrix4f} the inverse of this matrix
  */
 x3dom.fields.SFMatrix4f.prototype.inverse = function ()
 {
@@ -5744,7 +5862,8 @@ x3dom.fields.SFMatrix4f.prototype.inverse = function ()
     // if (Math.abs(rDet) < 1e-30)
     if ( rDet == 0 )
     {
-        x3dom.debug.logWarning( "Invert matrix: singular matrix, no inverse!" );
+        x3dom.debug.logWarning( "Invert matrix: singular matrix, " +
+                                "no inverse!" );
         return x3dom.fields.SFMatrix4f.identity();
     }
 
@@ -5771,10 +5890,14 @@ x3dom.fields.SFMatrix4f.prototype.inverse = function ()
 };
 
 /**
- * Returns an array of 2*3 = 6 euler angles (in radians), assuming that this is a rotation matrix.
- * The first three and the second three values are alternatives for the three euler angles,
- * where each of the two cases leads to the same resulting rotation.
- * @returns {Number[]}
+ * Returns an array of 2*3 = 6 euler angles (in radians), assuming that
+ * this is a rotation matrix. The first three and the second three
+ * values are alternatives for the three euler angles, where each of the
+ * two cases leads to the same resulting rotation.
+ *
+ * @returns {Number[]} an array of 6 Euler angles in radians, each
+ *                     consecutive triple of which represents one of the
+ *                     two alternative choices for the same rotation
  */
 x3dom.fields.SFMatrix4f.prototype.getEulerAngles = function ()
 {
@@ -5828,10 +5951,10 @@ x3dom.fields.SFMatrix4f.prototype.getEulerAngles = function ()
 };
 
 /**
- * Converts this matrix to a string representation, where all entries are separated by commas,
- * and where rows are additionally separated by linebreaks.
+ * Converts this matrix to a string representation, where all entries
+ * are separated by whitespaces.
  *
- * @returns {String}
+ * @returns {String} a string representation of this matrix
  */
 x3dom.fields.SFMatrix4f.prototype.toString = function ()
 {
@@ -5846,8 +5969,8 @@ x3dom.fields.SFMatrix4f.prototype.toString = function ()
 };
 
 /**
- * Fills the values of this matrix from a string, where the entries are separated
- * by commas and given in column-major order.
+ * Fills the values of this matrix from a string, where the entries are
+ * separated by commas or whitespace, and given in column-major order.
  *
  * @param {String} str - the string representation
  */
@@ -5861,22 +5984,22 @@ x3dom.fields.SFMatrix4f.prototype.setValueByStr = function ( str )
         str = RegExp.$1;
         needTranspose = true;
     }
-    var arr = Array.map( str.split( /[,\s]+/ ), function ( n ) { return +n; } );
+    var arr = str.split( /[,\s]+/ ).map( function ( n ){ return +n; } );
     if ( arr.length >= 16 )
     {
         if ( !needTranspose )
         {
-            this._00 = arr[ 0 ];  this._01 = arr[ 1 ];  this._02 = arr[ 2 ];  this._03 = arr[ 3 ];
-            this._10 = arr[ 4 ];  this._11 = arr[ 5 ];  this._12 = arr[ 6 ];  this._13 = arr[ 7 ];
-            this._20 = arr[ 8 ];  this._21 = arr[ 9 ];  this._22 = arr[ 10 ]; this._23 = arr[ 11 ];
+            this._00 = arr[ 0 ];  this._01 = arr[ 1 ]; this._02 = arr[ 2 ];  this._03 = arr[ 3 ];
+            this._10 = arr[ 4 ];  this._11 = arr[ 5 ]; this._12 = arr[ 6 ];  this._13 = arr[ 7 ];
+            this._20 = arr[ 8 ];  this._21 = arr[ 9 ]; this._22 = arr[ 10 ]; this._23 = arr[ 11 ];
             this._30 = arr[ 12 ]; this._31 = arr[ 13 ]; this._32 = arr[ 14 ]; this._33 = arr[ 15 ];
         }
         else
         {
-            this._00 = arr[ 0 ];  this._01 = arr[ 4 ];  this._02 = arr[ 8 ];  this._03 = arr[ 12 ];
-            this._10 = arr[ 1 ];  this._11 = arr[ 5 ];  this._12 = arr[ 9 ];  this._13 = arr[ 13 ];
-            this._20 = arr[ 2 ];  this._21 = arr[ 6 ];  this._22 = arr[ 10 ]; this._23 = arr[ 14 ];
-            this._30 = arr[ 3 ];  this._31 = arr[ 7 ];  this._32 = arr[ 11 ]; this._33 = arr[ 15 ];
+            this._00 = arr[ 0 ];  this._01 = arr[ 4 ]; this._02 = arr[ 8 ];  this._03 = arr[ 12 ];
+            this._10 = arr[ 1 ];  this._11 = arr[ 5 ]; this._12 = arr[ 9 ];  this._13 = arr[ 13 ];
+            this._20 = arr[ 2 ];  this._21 = arr[ 6 ]; this._22 = arr[ 10 ]; this._23 = arr[ 14 ];
+            this._30 = arr[ 3 ];  this._31 = arr[ 7 ]; this._32 = arr[ 11 ]; this._33 = arr[ 15 ];
         }
     }
     else if ( arr.length === 6 )
@@ -5897,6 +6020,9 @@ x3dom.fields.SFMatrix4f.prototype.setValueByStr = function ( str )
 /**
  * SFVec2f constructor.
  *
+ * Represents a two-dimensional vector, the components of which, all
+ * being numbers, can be accessed and modified directly.
+ *
  * @class Represents a SFVec2f
  */
 x3dom.fields.SFVec2f = function ( x, y )
@@ -5913,6 +6039,12 @@ x3dom.fields.SFVec2f = function ( x, y )
     }
 };
 
+/**
+ * Returns a copy of the given 2D vector.
+ *
+ * @param   {x3dom.fields.SFVec2f} v - the vector to copy
+ * @returns {x3dom.fields.SFVec2f} the copy of the input vector
+ */
 x3dom.fields.SFVec2f.copy = function ( v )
 {
     return new x3dom.fields.SFVec2f( v.x, v.y );
@@ -5925,17 +6057,40 @@ x3dom.fields.SFVec2f.parse = function ( str )
     return new x3dom.fields.SFVec2f( +m[ 1 ], +m[ 2 ] );
 };
 
+/**
+ * Returns a copy of this 2D vector.
+ *
+ * @returns {x3dom.fields.SFVec2f} the copy of this vector
+ */
 x3dom.fields.SFVec2f.prototype.copy = function ()
 {
     return x3dom.fields.SFVec2f.copy( this );
 };
 
+/**
+ * Sets this vector's components from another vector, and returns this
+ * modified vector.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the vector to copy from
+ * @returns {x3dom.fields.SFVec2f} this modified vector
+ */
 x3dom.fields.SFVec2f.prototype.setValues = function ( that )
 {
     this.x = that.x;
     this.y = that.y;
+
+    return this;
 };
 
+/**
+ * Returns the vector component at the given index.
+ *
+ * @param {Number} i - the index of the vector component to obtain,
+ *                     with 0 being the x-coordinate, 1 being the
+ *                     y-coordinate, and any other value defaulting to
+ *                     the x-coordinate
+ * @returns {Number} the vector component at the specified index
+ */
 x3dom.fields.SFVec2f.prototype.at = function ( i )
 {
     switch ( i )
@@ -5946,32 +6101,73 @@ x3dom.fields.SFVec2f.prototype.at = function ( i )
     }
 };
 
+/**
+ * Returns a new vector as the sum of adding another vector to this one.
+ *
+ * @param   {x3dom.fields.SFVec2f} that - the vector to add to this
+ *                                        vector
+ * @returns {x3dom.fields.SFVec2f} a new vector holding the sum
+ */
 x3dom.fields.SFVec2f.prototype.add = function ( that )
 {
     return new x3dom.fields.SFVec2f( this.x + that.x, this.y + that.y );
 };
 
+/**
+ * Returns a new vector as the difference between this vector and
+ * another one subtracted from it.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the vector to deduct from this
+ *                                      vector
+ * @returns {x3dom.fields.SFVec2f} a new vector holding the difference
+ */
 x3dom.fields.SFVec2f.prototype.subtract = function ( that )
 {
     return new x3dom.fields.SFVec2f( this.x - that.x, this.y - that.y );
 };
 
+/**
+ * Returns a negated version of this vector.
+ *
+ * @returns {x3dom.fields.SFVec2f} a negated version of this vector
+ */
 x3dom.fields.SFVec2f.prototype.negate = function ()
 {
     return new x3dom.fields.SFVec2f( -this.x, -this.y );
 };
 
+/**
+ * Returns the dot product between this vector and another one.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the right-hand side vector
+ * @returns {Number} the dot product between this and the other vector
+ */
 x3dom.fields.SFVec2f.prototype.dot = function ( that )
 {
     return this.x * that.x + this.y * that.y;
 };
 
+/**
+ * Returns the vector obtained by reflecting this vector at another one.
+ *
+ * @param {x3dom.fields.SFVec2f} n - the vector to reflect this one at
+ * @returns {x3dom.fields.SFVec2f} the reflection vector
+ */
 x3dom.fields.SFVec2f.prototype.reflect = function ( n )
 {
     var d2 = this.dot( n ) * 2;
     return new x3dom.fields.SFVec2f( this.x - d2 * n.x, this.y - d2 * n.y );
 };
 
+/**
+ * Returns a normalized version of this vector.
+ *
+ * If this vector's magnitude equals zero, the resulting will be the
+ * zero vector.
+ *
+ * @returns {x3dom.fields.SFVec2f} a new normalized vector based on
+ *                                 this one
+ */
 x3dom.fields.SFVec2f.prototype.normalize = function ()
 {
     var n = this.length();
@@ -5979,48 +6175,116 @@ x3dom.fields.SFVec2f.prototype.normalize = function ()
     return new x3dom.fields.SFVec2f( this.x * n, this.y * n );
 };
 
+/**
+ * Returns the product of the componentwise multiplication of this
+ * vector with another one.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the multiplicand (right) vector
+ * @returns {x3dom.fields.SFVec2f} a new vector as product of a
+ *                                 componentwise multiplication of this
+ *                                 vector with the other one
+ */
 x3dom.fields.SFVec2f.prototype.multComponents = function ( that )
 {
     return new x3dom.fields.SFVec2f( this.x * that.x, this.y * that.y );
 };
 
+/**
+ * Returns a scaled version of this vector.
+ *
+ * @param {Number} n - the scalar scaling factor for this vector
+ * @returns {x3dom.fields.SFVec2f} a new vector obtained by scaling this
+ *                                one by the given factor
+ */
 x3dom.fields.SFVec2f.prototype.multiply = function ( n )
 {
     return new x3dom.fields.SFVec2f( this.x * n, this.y * n );
 };
 
+/**
+ * Returns the quotient of this vector componentwise divided by another
+ * one.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the divisor vector to divide by
+ * @returns {x3dom.fields.SFVec2f} the quotient obtained by componentwise
+ *                                 division of this vector by the other
+ */
 x3dom.fields.SFVec2f.prototype.divideComponents = function ( that )
 {
     return new x3dom.fields.SFVec2f( this.x / that.x, this.y / that.y );
 };
 
+/**
+ * Returns a version of this vector with its components divided by
+ * the scalar factor.
+ *
+ * @param {Number} n - the scalar factor to divide the components by
+ * @returns {x3dom.fields.SFVec2f} a new vector obtained by dividing
+ *                                 this one's components by the scalar
+ */
 x3dom.fields.SFVec2f.prototype.divide = function ( n )
 {
     var denom = n ? ( 1.0 / n ) : 1.0;
     return new x3dom.fields.SFVec2f( this.x * denom, this.y * denom );
 };
 
+/**
+ * Checks whether this vector equals another one, as defined by the
+ * deviation tolerance among their components.
+ *
+ * @param {x3dom.fields.SFVec2f} that - the vector to compare to this one
+ * @param {Number}               eps  - the tolerance of deviation
+ *                                      within which not exactly equal
+ *                                      components are still considered
+ *                                      equal
+ * @returns {Boolean} ``true'' if both vectors are equal or
+ *                    approximately equal, ``false'' otherwise
+ */
 x3dom.fields.SFVec2f.prototype.equals = function ( that, eps )
 {
     return Math.abs( this.x - that.x ) < eps &&
-        Math.abs( this.y - that.y ) < eps;
+           Math.abs( this.y - that.y ) < eps;
 };
 
+/**
+ * Returns the length, or magnitude, of this vector.
+ *
+ * @returns {Number} the magnitude of this vector
+ */
 x3dom.fields.SFVec2f.prototype.length = function ()
 {
     return Math.sqrt( ( this.x * this.x ) + ( this.y * this.y ) );
 };
 
+/**
+ * Returns the components of this vector as an array of two numbers,
+ * suitable for interaction with OpenGL.
+ *
+ * @returns {Number[]} an array holding this vector's x- and
+ *                     y-coordinates in this order
+ */
 x3dom.fields.SFVec2f.prototype.toGL = function ()
 {
     return [ this.x, this.y ];
 };
 
+/**
+ * Returns a string representation of this vector.
+ *
+ * @returns {String} a string representation of this vector
+ */
 x3dom.fields.SFVec2f.prototype.toString = function ()
 {
     return this.x + " " + this.y;
 };
 
+/**
+ * Parses a string and sets this vector's components to the values
+ * obtained from it, returning this modified vector.
+ *
+ * @param {String} str - the string to parse the coordinates from
+ * @returns {x3dom.fields.SFVec2f} this modified vector
+ */
 x3dom.fields.SFVec2f.prototype.setValueByStr = function ( str )
 {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec( str );
@@ -6032,6 +6296,9 @@ x3dom.fields.SFVec2f.prototype.setValueByStr = function ( str )
 
 /**
  * SFVec3f constructor.
+ *
+ * Represents a three-dimensional vector, the components of which, all
+ * being numbers, can be accessed and modified directly.
  *
  * @class Represents a SFVec3f
  */
@@ -6051,24 +6318,56 @@ x3dom.fields.SFVec3f = function ( x, y, z )
     }
 };
 
+/**
+ * The 3D zero vector.
+ */
 x3dom.fields.SFVec3f.NullVector = new x3dom.fields.SFVec3f( 0, 0, 0 );
-x3dom.fields.SFVec3f.OneVector = new x3dom.fields.SFVec3f( 1, 1, 1 );
+/**
+ * A 3D vector whose components all equal one.
+ */
+x3dom.fields.SFVec3f.OneVector  = new x3dom.fields.SFVec3f( 1, 1, 1 );
 
+/**
+ * Returns a copy of the supplied 3D vector.
+ *
+ * @param {x3dom.fields.SFVec3f} v - the vector to copy
+ * @returns {x3dom.fields.SFVec3f} a copy of the input vector
+ */
 x3dom.fields.SFVec3f.copy = function ( v )
 {
     return new x3dom.fields.SFVec3f( v.x, v.y, v.z );
 };
 
+/**
+ * Returns a vector whose components are set to the smallest
+ * representable value.
+ *
+ * @returns {x3dom.fields.SFVec3f} a vector with the smallest
+ *                                 representable value for each component
+ */
 x3dom.fields.SFVec3f.MIN = function ()
 {
     return new x3dom.fields.SFVec3f( -Number.MAX_VALUE, -Number.MAX_VALUE, -Number.MAX_VALUE );
 };
 
+/**
+ * Returns a vector whose components are set to the largest
+ * representable value.
+ *
+ * @returns {x3dom.fields.SFVec3f} a vector with the largest
+ *                                 representable value for each component
+ */
 x3dom.fields.SFVec3f.MAX = function ()
 {
     return new x3dom.fields.SFVec3f( Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE );
 };
 
+/**
+ * Parses and returns a vector from a string representation.
+ *
+ * @param {String} str - the string to parse the vector data from
+ * @returns {x3dom.fields.SFVec3f} a new vector parsed from the string
+ */
 x3dom.fields.SFVec3f.parse = function ( str )
 {
     try
@@ -6084,11 +6383,24 @@ x3dom.fields.SFVec3f.parse = function ( str )
     }
 };
 
+/**
+ * Returns a copy of this vector.
+ *
+ * @returns {x3dom.fields.SFVec3f} a copy of this vector
+ */
 x3dom.fields.SFVec3f.prototype.copy = function ()
 {
     return x3dom.fields.SFVec3f.copy( this );
 };
 
+/**
+ * Sets the components of this vector from the supplied array.
+ *
+ * @param {Number[]} array - an array of at least three numbers, the
+ *                           first three of which will become this
+ *                           vector's x-, y-, and z-coordinates
+ * @returns {x3dom.fields.SFVec3f} this modified vector
+ */
 x3dom.fields.SFVec3f.prototype.fromArray = function ( array )
 {
     this.x = array[ 0 ];
@@ -6098,25 +6410,66 @@ x3dom.fields.SFVec3f.prototype.fromArray = function ( array )
     return this;
 };
 
+/**
+ * Creates and returns a new 3D vector containin the elements of the
+ * input array.
+ *
+ * @param {Number[]} array - an array of at least three numbers, the
+ *                           first three of which will become the new
+ *                           vector's x-, y-, and z-coordinates
+ * @returns {x3dom.fields.SFVec3f} a new vector with the input array's
+ *                                 values
+ */
 x3dom.fields.SFVec3f.fromArray = function ( array )
 {
     return new x3dom.fields.SFVec3f( array[ 0 ], array[ 1 ], array[ 2 ] );
 };
 
+/**
+ * Sets the components of this vector from another vector, and returns
+ * this modified vector.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the vector to copy from
+ * @returns {x3dom.fields.SFVec3f} this modified vector
+ */
 x3dom.fields.SFVec3f.prototype.setValues = function ( that )
 {
     this.x = that.x;
     this.y = that.y;
     this.z = that.z;
+
+    return this;
 };
 
+/**
+ * Sets the components of this vector from supplied coordinates, and
+ * returns this modified vector.
+ *
+ * @param {Number} x - the new x-coordinate
+ * @param {Number} y - the new y-coordinate
+ * @param {Number} z - the new z-coordinate
+ * @returns {x3dom.fields.SFVec3f} this modified vector
+ */
 x3dom.fields.SFVec3f.prototype.set = function ( x, y, z )
 {
     this.x = x;
     this.y = y;
     this.z = z;
+
+    return this;
 };
 
+/**
+ * Returns the vector component with at the given index.
+ *
+ * If the index does not designate a valid component, per default the
+ * x-coordinate is returned.
+ *
+ * @param {Number} i - the index of the vector component to access,
+ *                     starting at zero
+ * @returns {Number} the vector component at the given index, or the
+ *                   x-component if invalid
+ */
 x3dom.fields.SFVec3f.prototype.at = function ( i )
 {
     switch ( i )
@@ -6128,36 +6481,89 @@ x3dom.fields.SFVec3f.prototype.at = function ( i )
     }
 };
 
+/**
+ * Returns a new vector as the sum of adding another vector to this one.
+ *
+ * @param   {x3dom.fields.SFVec3f} that - the vector to add to this*
+                                          vector
+ * @returns {x3dom.fields.SFVec3f} a new vector holding the sum
+ */
 x3dom.fields.SFVec3f.prototype.add = function ( that )
 {
     return new x3dom.fields.SFVec3f( this.x + that.x, this.y + that.y, this.z + that.z );
 };
 
+/**
+ * Returns a new vector as the sum of adding another scaled vector,
+ * scaled by the supplied scalar value, to this one.
+ *
+ * @param   {x3dom.fields.SFVec3f} that - the vector to scale and add to
+ *                                        this one; will not be modified
+ * @param   {Number}               s    - the factor to scale the
+ *                                        ``that'' vector by
+ *                                        before the addition
+ * @returns {x3dom.fields.SFVec3f} a new vector holding the sum
+ */
 x3dom.fields.SFVec3f.prototype.addScaled = function ( that, s )
 {
     return new x3dom.fields.SFVec3f( this.x + s * that.x, this.y + s * that.y, this.z + s * that.z );
 };
 
+/**
+ * Returns a new vector as the difference between this vector and
+ * another one subtracted from it.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the vector to deduct from this
+ *                                      vector
+ * @returns {x3dom.fields.SFVec3f} a new vector holding the difference
+ */
 x3dom.fields.SFVec3f.prototype.subtract = function ( that )
 {
     return new x3dom.fields.SFVec3f( this.x - that.x, this.y - that.y, this.z - that.z );
 };
 
+/**
+ * Returns a new vector as the difference between two vectors.
+ *
+ * @param {x3dom.fields.SFVec3f} a - the vector to be deducted by the
+ *                                   second one
+ * @param {x3dom.fields.SFVec3f} b - the vector to deduct from the
+ *                                   first one
+ * @returns {x3dom.fields.SFVec3f} a new vector holding the difference
+ */
 x3dom.fields.SFVec3f.prototype.subtractVectors = function ( a, b )
 {
     return new x3dom.fields.SFVec3f( a.x - b.x, a.y - b.y, a.z - b.z );
 };
 
+/**
+ * Returns a version of this vector with all components negated.
+ *
+ * @returns {x3dom.fields.SFVec3f} a negated version of this vector
+ */
 x3dom.fields.SFVec3f.prototype.negate = function ()
 {
     return new x3dom.fields.SFVec3f( -this.x, -this.y, -this.z );
 };
 
+/**
+ * Returns the dot product between this vector and another one.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the right-hand side vector
+ * @returns {Number} the dot product between this vector and the other one
+ */
 x3dom.fields.SFVec3f.prototype.dot = function ( that )
 {
     return ( this.x * that.x + this.y * that.y + this.z * that.z );
 };
 
+/**
+ * Returns a new vector representing the cross product between this
+ * vector and another one.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the right-handside vector
+ * @returns {x3dom.fields.SFVec3f} the cross product of the two vectors
+ */
 x3dom.fields.SFVec3f.prototype.cross = function ( that )
 {
     return new x3dom.fields.SFVec3f( this.y * that.z - this.z * that.y,
@@ -6165,17 +6571,37 @@ x3dom.fields.SFVec3f.prototype.cross = function ( that )
         this.x * that.y - this.y * that.x );
 };
 
+/**
+ * Returns the vector obtained by reflecting this vector at another one.
+ *
+ * @param {x3dom.fields.SFVec3f} n - the vector to reflect this one at
+ * @returns {x3dom.fields.SFVec3f} the reflection vector
+ */
 x3dom.fields.SFVec3f.prototype.reflect = function ( n )
 {
     var d2 = this.dot( n ) * 2;
-    return new x3dom.fields.SFVec3f( this.x - d2 * n.x, this.y - d2 * n.y, this.z - d2 * n.z );
+    return new x3dom.fields.SFVec3f( this.x - d2 * n.x,
+        this.y - d2 * n.y,
+        this.z - d2 * n.z );
 };
 
+/**
+ * Returns the magnitude, or length, of this vector.
+ *
+ * @returns {Number} the magnitude of this vector
+ */
 x3dom.fields.SFVec3f.prototype.length = function ()
 {
-    return Math.sqrt( ( this.x * this.x ) + ( this.y * this.y ) + ( this.z * this.z ) );
+    return Math.sqrt( ( this.x * this.x ) +
+                      ( this.y * this.y ) +
+                      ( this.z * this.z ) );
 };
 
+/**
+ * Returns a normalized version of this vector.
+ *
+ * @returns {x3dom.fields.SFVec3f} a normalized version of this vector
+ */
 x3dom.fields.SFVec3f.prototype.normalize = function ()
 {
     var n = this.length();
@@ -6183,22 +6609,59 @@ x3dom.fields.SFVec3f.prototype.normalize = function ()
     return new x3dom.fields.SFVec3f( this.x * n, this.y * n, this.z * n );
 };
 
+/**
+ * Returns a new vector obtained by componentwise multiplication of
+ * this one with another vector.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the vector whose components
+ *                                      shall be multiplied with those
+ *                                      of this vector
+ * @returns {x3dom.fields.SFVec3f} the vector containing the
+ *                                 componentwise multiplication product
+ *                                 of this and the supplied vector
+ */
 x3dom.fields.SFVec3f.prototype.multComponents = function ( that )
 {
     return new x3dom.fields.SFVec3f( this.x * that.x, this.y * that.y, this.z * that.z );
 };
 
+/**
+ * Returns a new vector obtained by scaling this vector by the supplied
+ * scalar factor.
+ *
+ * @param {Number} n - the scalar scaling factor for this vector
+ * @returns {x3dom.fields.SFVec3f} a scaled version of this vector
+ */
 x3dom.fields.SFVec3f.prototype.multiply = function ( n )
 {
     return new x3dom.fields.SFVec3f( this.x * n, this.y * n, this.z * n );
 };
 
+/**
+ * Returns a new vector obtained by dividing this vector by the supplied
+ * scalar factor.
+ *
+ * @param {Number} n - the scalar division factor for this vector
+ * @returns {x3dom.fields.SFVec3f} a scaled version of this vector
+ */
 x3dom.fields.SFVec3f.prototype.divide = function ( n )
 {
     var denom = n ? ( 1.0 / n ) : 1.0;
     return new x3dom.fields.SFVec3f( this.x * denom, this.y * denom, this.z * denom );
 };
 
+/**
+ * Checks whether this vector equals another one, as defined by the
+ * deviation tolerance among their components.
+ *
+ * @param {x3dom.fields.SFVec3f} that - the vector to compare to this one
+ * @param {Number}               eps  - the tolerance of deviation
+ *                                      within which not exactly equal
+ *                                      components are still considered
+ *                                      equal
+ * @returns {Boolean} ``true'' if both vectors are equal or
+ *                    approximately equal, ``false'' otherwise
+ */
 x3dom.fields.SFVec3f.prototype.equals = function ( that, eps )
 {
     return Math.abs( this.x - that.x ) < eps &&
@@ -6206,16 +6669,35 @@ x3dom.fields.SFVec3f.prototype.equals = function ( that, eps )
         Math.abs( this.z - that.z ) < eps;
 };
 
+/**
+ * Returns a four-element array holding this vector's components in a
+ * mode suitable for interaction with OpenGL.
+ *
+ * @returns {Number[]} an array with this vector's x-, y-,
+ *                     and z-coordinates in this order
+ */
 x3dom.fields.SFVec3f.prototype.toGL = function ()
 {
     return [ this.x, this.y, this.z ];
 };
 
+/**
+ * Returns a string representation of this vector.
+ *
+ * @returns {String} a string representation of this vector
+ */
 x3dom.fields.SFVec3f.prototype.toString = function ()
 {
     return this.x + " " + this.y + " " + this.z;
 };
 
+/**
+ * Parses a string, sets this vector's components from the parsed data,
+ * and returns this vector.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.SFVec3f} this modified vector
+ */
 x3dom.fields.SFVec3f.prototype.setValueByStr = function ( str )
 {
     try
@@ -6239,6 +6721,9 @@ x3dom.fields.SFVec3f.prototype.setValueByStr = function ( str )
 /**
  * SFVec4f constructor.
  *
+ * Represents a four-dimensional vector, the components of which, all
+ * being numbers, can be accessed and modified directly.
+ *
  * @class Represents a SFVec4f
  */
 x3dom.fields.SFVec4f = function ( x, y, z, w )
@@ -6259,16 +6744,37 @@ x3dom.fields.SFVec4f = function ( x, y, z, w )
     }
 };
 
+/**
+ * Returns a copy of the given vector.
+ *
+ * @param {x3dom.fields.SFVec4f} v - the vector to copy
+ * @returns {x3dom.fields.SFVec4f} a copy of the input vector
+ */
 x3dom.fields.SFVec4f.copy = function ( v )
 {
     return new x3dom.fields.SFVec4f( v.x, v.y, v.z, v.w );
 };
 
+/**
+ * Returns a copy of this vector.
+ *
+ * @returns {x3dom.fields.SFVec4f} a copy of this vector
+ */
 x3dom.fields.SFVec4f.prototype.copy = function ()
 {
     return x3dom.fields.SFVec4f( this );
 };
 
+/**
+ * Parses a string and returns a new 4D vector with the parsed
+ * coordinates.
+ *
+ * The input string must contain four numbers to produce a valid result.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.SFVec3f} a new 4D vector containing the
+ *                                 parsed coordinates
+ */
 x3dom.fields.SFVec4f.parse = function ( str )
 {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec( str );
@@ -6276,6 +6782,13 @@ x3dom.fields.SFVec4f.parse = function ( str )
     return new x3dom.fields.SFVec4f( +m[ 1 ], +m[ 2 ], +m[ 3 ], +m[ 4 ] );
 };
 
+/**
+ * Parses a string, sets this vector's components from the parsed data,
+ * and returns this vector.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.SFVec4f} this modified vector
+ */
 x3dom.fields.SFVec4f.prototype.setValueByStr = function ( str )
 {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec( str );
@@ -6287,11 +6800,21 @@ x3dom.fields.SFVec4f.prototype.setValueByStr = function ( str )
     return this;
 };
 
+/**
+ * Returns an OpenGL-conformant array representation of this vector.
+ *
+ * @returns {Number[]} the four components of this vector
+ */
 x3dom.fields.SFVec4f.prototype.toGL = function ()
 {
     return [ this.x, this.y, this.z, this.w ];
 };
 
+/**
+ * Returns a string representation of this vector.
+ *
+ * @returns {String} a string representation of this vector
+ */
 x3dom.fields.SFVec4f.prototype.toString = function ()
 {
     return this.x + " " + this.y + " " + this.z + " " + this.w;
@@ -6299,6 +6822,15 @@ x3dom.fields.SFVec4f.prototype.toString = function ()
 
 /**
  * Quaternion constructor.
+ *
+ * Represents a quaternion, the four components of which, all being
+ * numbers, can be accessed and modified directly.
+ *
+ * Note that the coordinates, if supplied separately or in an array,
+ * are always construed in the order of x, y, z, and w. This fact is
+ * significant as some conventions prepend the scalar component w
+ * instead of listing it as the terminal entity. A quaternion in our
+ * sense, hence, is a quadruple (x, y, z, w).
  *
  * @class Represents a Quaternion
  */
@@ -6320,21 +6852,251 @@ x3dom.fields.Quaternion = function ( x, y, z, w )
     }
 };
 
+/**
+ * SFRotation constructor.
+ *
+ * Represents a SFRotation, the four components of which, all being
+ * numbers, can be accessed and modified directly.
+ * Access is by array index, modification by property name or array index.
+ *
+ * Instance creation adheres to the X3D SAI spec.
+ * Four numbers x, y, z, angle as arguments: x, y, and z are the axis of the rotation. angle is the angle of the rotation (in radians). Missing values default to 0.0, except y, which defaults to 1.0.
+ * One SFVec3f axis, one number angle as arguments: axis is the axis of rotation. angle is the angle of the rotation (in radians)
+ * Two SFVec3f as arguments: fromVector and toVector are normalized and the rotation value that matches the minimum rotation between the fromVector to the toVector is stored in the object.
+ * @class Represents a SFRotation
+ */
+x3dom.fields.SFRotation = new Proxy( x3dom.fields.Quaternion,
+    {
+        construct : function ( target, args )
+        {
+            args[ 0 ] = args[ 0 ] || 0;
+            args[ 1 ] = args[ 1 ] == undefined ? 1 : args[ 1 ];
+            args[ 2 ] = args[ 2 ] || 0;
+            args[ 3 ] = args[ 3 ] || 0;
+            var quat;
+            var handler = {
+                get : function ( target, prop )
+                {
+                    switch ( prop )
+                    {
+                        case "0":
+                        //case "x":
+                            return target.SFRotation.x;
+                            break;
+                        case "1":
+                        //case "y":
+                            return target.SFRotation.y;
+                            break;
+                        case "2":
+                        //case "z":
+                            return target.SFRotation.z;
+                            break;
+                        case "3":
+                        case "angle":
+                            return target.SFRotation.angle;
+                            break;
+                        default:
+                            return Reflect.get( target, prop );
+                    }
+                },
+                set : function ( target, prop, value )
+                {
+                    var rot = target.SFRotation;
+                    var propMap = {
+                        0     : "x",
+                        1     : "y",
+                        2     : "z",
+                        x     : "x",
+                        y     : "y",
+                        z     : "z",
+                        angle : "angle"
+                    };
+                    if ( prop in propMap )
+                    {
+                        rot[ propMap[ prop ] ] = value;
+                        target.setValues(
+                            new x3dom.fields.Quaternion.axisAngle(
+                                new x3dom.fields.SFVec3f( rot.x, rot.y, rot.z ), rot.angle
+                            )
+                        );
+                        return true;
+                    }
+                    x3dom.debug.logWarning( " SFRotation: property not available - " + prop );
+                    return false;
+                }
+            };
+
+            if ( args[ 0 ].constructor == x3dom.fields.SFVec3f )
+            {
+                if ( args[ 1 ].constructor == x3dom.fields.SFVec3f )
+                {
+                    quat = new x3dom.fields.Quaternion.rotateFromTo( args[ 0 ].normalize(), args[ 1 ].normalize() );
+                }
+                else
+                {
+                    quat = new x3dom.fields.Quaternion.axisAngle( args[ 0 ], args[ 1 ] );
+                }
+                //save properties
+                var aa = quat.toAxisAngle();
+                quat.SFRotation = {
+                    x     : aa[ 0 ].x,
+                    y     : aa[ 0 ].y,
+                    z     : aa[ 0 ].z,
+                    angle : aa[ 1 ]
+                };
+            }
+            else
+            {
+                quat = new x3dom.fields.Quaternion.axisAngle( new x3dom.fields.SFVec3f( args[ 0 ], args[ 1 ], args[ 2 ] ), args[ 3 ] );
+                quat.SFRotation = {
+                    x     : args[ 0 ],
+                    y     : args[ 1 ],
+                    z     : args[ 2 ],
+                    angle : args[ 3 ]
+                };
+            }
+            return new Proxy( quat, handler );
+        }
+    } );
+
+/**
+ * SAI function to return the axis of rotation.
+ *
+ * @returns {x3dom.fields.SFVec3f} the axis of rotation
+ */
+x3dom.fields.Quaternion.prototype.getAxis = function ()
+{
+    if ( "SFRotation" in this )
+    {
+        var axis = this.SFRotation;
+        return new x3dom.fields.SFVec3f( axis.x, axis.y, axis.z );
+    }
+    else
+    {
+        var aa = this.toAxisAngle();
+        return aa[ 0 ];
+    }
+};
+
+/**
+ * SAI function to set the axis of rotation.
+ * not well tested
+ * @param {x3dom.fields.SFVec3f} vec - the axis vector to set to.
+ * @returns {} void
+ */
+x3dom.fields.Quaternion.prototype.setAxis = function ( vec )
+{
+    var angle;
+    if ( "SFRotation" in this )
+    {
+        angle = this.SFRotation.angle;
+        this.SFRotation.x = vec.x;
+        this.SFRotation.y = vec.y;
+        this.SFRotation.z = vec.z;
+    }
+    else
+    {
+        angle = this.angle();
+    }
+    var q = new x3dom.fields.Quaternion.axisAngle( vec, angle );
+    this.setValues( q );
+};
+
+/**
+ * inverse: SAI function to return the inverse of this object's rotation.
+ * see below
+ * @returns {x3dom.fields.SFRotation} the inverted rotation
+ */
+
+/**
+ * multiply: SAI function to return the object multiplied by the passed value.
+ * see below
+ * @returns {x3dom.fields.SFRotation} the multiplied rotation
+ */
+
+/**
+ * SAI function to return the value of vec multiplied by the matrix corresponding to this object's rotation.
+ *
+ * @param {x3dom.fields.SFVec3f} vec - the vector to multiply with
+ * @returns {x3dom.fields.SFVec3f} the axis of rotation
+ */
+x3dom.fields.Quaternion.prototype.multiVec = function ( vec )
+{
+    var m = x3dom.fields.SFMatrix4f.identity();
+    m.setRotate( this );
+    return m.multMatrixVec( vec );
+};
+
+/**
+ * slerp: SAI function to return the value of the spherical linear interpolation between this object's rotation and dest at value 0 ≤ t ≤ 1.
+ * For t = 0, the value is this object`s rotation. For t = 1, the value is the dest rotation.
+ * see below, not well tested
+ * @param {x3dom.fields.SFRotation} dest - the destination rotation
+ * @param {x3dom.fields.SFFloat} t - the fraction
+ * @returns {x3dom.fields.SFRotation} the interpolated rotation
+ */
+
+/**
+ * Sets the components of this quaternion from another quaternion, and returns
+ * this modified quaternion.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to copy from
+ * @returns {x3dom.fields.Quaternion} this modified quaternion
+ */
+x3dom.fields.Quaternion.prototype.setValues = function ( that )
+{
+    this.x = that.x;
+    this.y = that.y;
+    this.z = that.z;
+    this.w = that.w;
+
+    return this;
+};
+
+/**
+ * Returns a copy of the supplied quaternion.
+ *
+ * @param {x3dom.fields.Quaternion} v - the quatenion to copy
+ * @returns {x3dom.fields.Quaternion} a copy of the supplied quaternion
+ */
 x3dom.fields.Quaternion.copy = function ( v )
 {
     return new x3dom.fields.Quaternion( v.x, v.y, v.z, v.w );
 };
 
+/**
+ * Returns the product obtained by multiplying this vector with
+ * another one.
+ *
+ * @param {x3dom.fields.Quaternion} that - the right (multiplicand)
+ *                                         quaternion
+ * @returns {x3dom.fields.Quaternion} the product of this quaternion
+ *                                    and the other one
+ */
 x3dom.fields.Quaternion.prototype.multiply = function ( that )
 {
-    return new x3dom.fields.Quaternion(
+    var product = new x3dom.fields.Quaternion(
         this.w * that.x + this.x * that.w + this.y * that.z - this.z * that.y,
         this.w * that.y + this.y * that.w + this.z * that.x - this.x * that.z,
         this.w * that.z + this.z * that.w + this.x * that.y - this.y * that.x,
         this.w * that.w - this.x * that.x - this.y * that.y - this.z * that.z
     );
+    if ( "SFRotation" in this )
+    {
+        var aa = product.toAxisAngle();
+        return new x3dom.fields.SFRotation( aa[ 0 ].x, aa[ 0 ].y, aa[ 0 ].z, aa[ 1 ] );
+    }
+    return product;
 };
 
+/**
+ * Sets this quaternion's components from an array of numbers.
+ *
+ * @param {Number[]} array - an array of at least four numbers, the first
+ *                        four of which will be used to set this
+ *                        quaternion's x-, y-, z-, and w-components
+ * @returns {x3dom.fields.Quaternion} this modified quaternion
+ */
 x3dom.fields.Quaternion.prototype.fromArray = function ( array )
 {
     this.x = array[ 0 ];
@@ -6345,11 +7107,27 @@ x3dom.fields.Quaternion.prototype.fromArray = function ( array )
     return this;
 };
 
+/**
+ * Sets this quaternion's components from an array of numbers.
+ *
+ * @param {Number[]} array - an array of at least four numbers, the first
+ *                           four of which will be used as the x-, y-,
+ *                           z-, and w-components in this order.
+ */
 x3dom.fields.Quaternion.fromArray = function ( array )
 {
     return new x3dom.fields.Quaternion( array[ 0 ], array[ 1 ], array[ 2 ], array[ 3 ] );
 };
 
+/**
+ * Parses the axis-angle representation of a rotation from a string
+ * and creates and returns a new quaternion equivalent to it.
+ *
+ * @param {String} str - the string to parse the axis-angle data from
+ * @returns {x3dom.fields.Quaternion} a new quaternion equivalent to the
+ *                                    axis-angle rotation expressed in
+ *                                    the parsed input string
+ */
 x3dom.fields.Quaternion.parseAxisAngle = function ( str )
 {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec( str );
@@ -6358,6 +7136,14 @@ x3dom.fields.Quaternion.parseAxisAngle = function ( str )
     return x3dom.fields.Quaternion.axisAngle( new x3dom.fields.SFVec3f( +m[ 1 ], +m[ 2 ], +m[ 3 ] ), +m[ 4 ] );
 };
 
+/**
+ * Creates and returns an axis-angle representation of this quaternion.
+ *
+ * @param {x3dom.fields.SFVec3f} axis - the rotation axis
+ * @param {Number}               a    - the rotation angle in radians
+ * @returns {x3dom.fields.Quaternion} a new quaternion equivalent to the
+ *                                    specified axis-angle representation
+ */
 x3dom.fields.Quaternion.axisAngle = function ( axis, a )
 {
     var t = axis.length();
@@ -6374,11 +7160,22 @@ x3dom.fields.Quaternion.axisAngle = function ( axis, a )
     }
 };
 
+/**
+ * Returns a copy of this quaternion.
+ *
+ * @returns {x3dom.fields.Quaternion} a copy of this quaternion
+ */
 x3dom.fields.Quaternion.prototype.copy = function ()
 {
     return x3dom.fields.Quaternion.copy( this );
 };
 
+/**
+ * Returns a rotation matrix representation of this quaternion.
+ *
+ * @returns {x3dom.fields.SFMatrix4} a new rotation matrix representing
+ *                                   this quaternion's rotation
+ */
 x3dom.fields.Quaternion.prototype.toMatrix = function ()
 {
     var xx = this.x * this.x;
@@ -6399,6 +7196,15 @@ x3dom.fields.Quaternion.prototype.toMatrix = function ()
     );
 };
 
+/**
+ * Returns an axis-angle representation of this quaternion as a
+ * two-element array containing the rotation axis and angle in radians
+ * in this order.
+ *
+ * @returns {Array} an array of two elements, the first of which is
+ *                  the ``SFVec3f'' axis-angle rotation axis,
+ *                  the second being the angle in radians.
+ */
 x3dom.fields.Quaternion.prototype.toAxisAngle = function ()
 {
     var x = 0,
@@ -6431,11 +7237,25 @@ x3dom.fields.Quaternion.prototype.toAxisAngle = function ()
     return [ new x3dom.fields.SFVec3f( x, y, z ), a ];
 };
 
+/**
+ * Returns this quaternion's rotation angle in radians.
+ *
+ * @returns {Number} this quaternion's rotation angle in radians
+ */
 x3dom.fields.Quaternion.prototype.angle = function ()
 {
     return 2 * Math.acos( this.w );
 };
 
+/**
+ * Sets this quaternion's components from the supplied rotation matrix,
+ * and returns the quaternion itself.
+ *
+ * @param {x3dom.fields.SFMatrix4f} matrix - the rotation matrix whose
+ *                                           rotation shall be copied
+ *                                           into this quaternion
+ * @returns {x3dom.fields.Quaternion} this modified quaternion
+ */
 x3dom.fields.Quaternion.prototype.setValue = function ( matrix )
 {
     var tr,
@@ -6516,6 +7336,18 @@ x3dom.fields.Quaternion.prototype.setValue = function ( matrix )
     }
 };
 
+/**
+ * Sets this quaternion from the Euler angles representation, and
+ * returns this quaternion.
+ *
+ * @param {Number} alpha - the rotation angle in radians about the
+ *                          first axis
+ * @param {Number} beta  - the rotation angle in radians about the
+ *                          second axis
+ * @param {Number} gamma - the rotation angle in radians about the
+ *                          third axis
+ * @returns {x3dom.fields.Quaternion} the modified quaternion
+ */
 x3dom.fields.Quaternion.prototype.setFromEuler = function ( alpha, beta, gamma )
 {
     var sx = Math.sin( alpha * 0.5 );
@@ -6529,41 +7361,99 @@ x3dom.fields.Quaternion.prototype.setFromEuler = function ( alpha, beta, gamma )
     this.y = ( cx * sy * cz ) + ( sx * cy * sz );
     this.z = ( cx * cy * sz ) - ( sx * sy * cz );
     this.w = ( cx * cy * cz ) + ( sx * sy * sz );
+
+    return this;
 };
 
+/**
+ * Returns the dot product of this quaternion and another one.
+ *
+ * @param {x3dom.fields.Quaternion} that - the right quaternion
+ * @returns {Number} the production of this quaternion and the other one
+ */
 x3dom.fields.Quaternion.prototype.dot = function ( that )
 {
     return this.x * that.x + this.y * that.y + this.z * that.z + this.w * that.w;
 };
 
+/**
+ * Returns a new quaternion obtained by adding to this quaternion
+ * the components of another one.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to add to this
+ *                                         one
+ * @returns {x3dom.fields.Quaternion} a new quaternion representing the
+ *                                    sum of this and the other quaternion
+ */
 x3dom.fields.Quaternion.prototype.add = function ( that )
 {
     return new x3dom.fields.Quaternion( this.x + that.x, this.y + that.y, this.z + that.z, this.w + that.w );
 };
 
+/**
+ * Returns a new quaternion as the difference between this quaternion
+ * and another one subtracted from it.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to deduct
+ *                                         from this one
+ * @returns {x3dom.fields.Quaternion} a new quaternion holding the
+ *                                    difference
+ */
 x3dom.fields.Quaternion.prototype.subtract = function ( that )
 {
     return new x3dom.fields.Quaternion( this.x - that.x, this.y - that.y, this.z - that.z, this.w - that.w );
 };
 
+/**
+ * Sets this quaternion's components from another quaternion, and
+ * returns this quaternion.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to copy from
+ * @returns {x3dom.fields.Quaternion} this modified quaternion
+ */
 x3dom.fields.Quaternion.prototype.setValues = function ( that )
 {
     this.x = that.x;
     this.y = that.y;
     this.z = that.z;
     this.w = that.w;
+
+    return this;
 };
 
+/**
+ * Checks whether this quaternion equals another one.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to juxtapose
+ *                                         with this one
+ * @param {Number}                  eps  - the tolerance of deviation
+ *                                         within which not exactly equal
+ *                                         components are still considered
+ *                                         equal
+ * @returns {Boolean} ``true'' if both quaternions are equal
+ *                    or approximately equal, ``false'' otherwise
+ */
 x3dom.fields.Quaternion.prototype.equals = function ( that, eps )
 {
     return ( this.dot( that ) >= 1.0 - eps );
 };
 
+/**
+ * Returns a scaled version of this quaternion.
+ *
+ * @param {Number} s - the scalar scale factor
+ * @returns {x3dom.fields.Quaternion} a scaled version of this quaternion
+ */
 x3dom.fields.Quaternion.prototype.multScalar = function ( s )
 {
     return new x3dom.fields.Quaternion( this.x * s, this.y * s, this.z * s, this.w * s );
 };
 
+/**
+ * Normalizes and returns this quaternion.
+ *
+ * @returns {x3dom.fields.Quaternion} this normalized quaternion
+ */
 x3dom.fields.Quaternion.prototype.normalize = function ()
 {
     var d2 = this.dot( this );
@@ -6581,6 +7471,13 @@ x3dom.fields.Quaternion.prototype.normalize = function ()
     return this;
 };
 
+/**
+ * Normalizes a quaternion and returns it.
+ *
+ * @param {x3dom.fields.Quaternion} that - the quaternion to be
+ *                                         normalized
+ * @returns {x3dom.fields.Quaternion} the normalized input quaternion
+ */
 x3dom.fields.Quaternion.normalize = function ( that )
 {
     var d2 = that.dot( that );
@@ -6598,16 +7495,55 @@ x3dom.fields.Quaternion.normalize = function ( that )
     return that;
 };
 
+/**
+ * Returns a negated version of this quaternion.
+ *
+ * The negation of a quaternion negates all of its components.
+ *
+ * @returns {x3dom.fields.Quaternion} the negated version of this
+ *                                    quaternion
+ */
 x3dom.fields.Quaternion.prototype.negate = function ()
 {
     return new x3dom.fields.Quaternion( -this.x, -this.y, -this.z, -this.w );
 };
 
+/**
+ * Returns an inverted version of this quaternion.
+ *
+ * The conjugate or inverse quaternion negates the x-, y-, and
+ * z-components, while retaining the w-coordinate's signum.
+ *
+ * @returns {x3dom.fields.Quaternion} the inverted version of this
+ *                                    quaternion
+ */
 x3dom.fields.Quaternion.prototype.inverse = function ()
 {
-    return new x3dom.fields.Quaternion( -this.x, -this.y, -this.z, this.w );
+    var inverse = new x3dom.fields.Quaternion( -this.x, -this.y, -this.z, this.w );
+    if ( "SFRotation" in this )
+    {
+        var aa = inverse.toAxisAngle();
+        return new x3dom.fields.SFRotation( aa[ 0 ].x, aa[ 0 ].y, aa[ 0 ].z, aa[ 1 ] );
+    }
+    return inverse;
 };
 
+/**
+ * Returns the result of performing a spherical linear interpolation,
+ * or slerp, between this quaternion and another one as defined
+ * by the supplied ratio.
+ *
+ * @param {x3dom.fields.Quaternion} that - the opposite end of the
+ *                                         interpolation
+ * @param {Number}                  t    - the ratio of the interpolation
+ *                                         between the two quaternions,
+ *                                         usually as a floating-point
+ *                                         value in the [0.0, 1.0]
+ * @returns {x3dom.fields.Quaternion} a new quaternion which represents
+ *                                    the interpolated value between
+ *                                    this and the opposite quaternion
+ *                                    at the given ratio
+ */
 x3dom.fields.Quaternion.prototype.slerp = function ( that, t )
 {
     // calculate the cosine
@@ -6626,8 +7562,8 @@ x3dom.fields.Quaternion.prototype.slerp = function ( that, t )
     }
 
     // calculate interpolating coeffs
-    var scalerot0,
-        scalerot1;
+    var scalerot0;
+    var scalerot1;
 
     if ( ( 1.0 - cosom ) > 0.00001 )
     {
@@ -6645,9 +7581,31 @@ x3dom.fields.Quaternion.prototype.slerp = function ( that, t )
     }
 
     // build the new quaternion
-    return this.multScalar( scalerot0 ).add( rot1.multScalar( scalerot1 ) );
+    var result = this.multScalar( scalerot0 ).add( rot1.multScalar( scalerot1 ) );
+    if ( "SFRotation" in this )
+    {
+        var aa = result.toAxisAngle();
+        return new x3dom.fields.SFRotation( aa[ 0 ].x, aa[ 0 ].y, aa[ 0 ].z, aa[ 1 ] );
+    }
+    return result;
 };
 
+/**
+ * Computes and returns a quaternion representing the rotation necessary
+ * to reach align the first vector with the second one.
+ *
+ * @param {x3dom.fields.SFVec3f} fromVec - the start vector which shall
+ *                                         be construed as being
+ *                                         intended to be aligned with
+ *                                         the ``toVec''
+ * @param {x3dom.fields.SFVec3f} toVec   - the vector whose orientation
+ *                                         shall be reached by the
+ *                                         ``fromVec''
+ * @returns {x3dom.fields.Quaternion} the quaternion which represents
+ *                                    the rotation necessary to align
+ *                                    the ``fromVec'' with the
+ *                                    ``toVec''
+ */
 x3dom.fields.Quaternion.rotateFromTo = function ( fromVec, toVec )
 {
     var from = fromVec.normalize();
@@ -6701,17 +7659,42 @@ x3dom.fields.Quaternion.rotateFromTo = function ( fromVec, toVec )
     return new x3dom.fields.Quaternion( axis.x, axis.y, axis.z, s );
 };
 
+/**
+ * Returns a four-element array of this quaternion's rotation in
+ * an axis-angle representation suitable for communication with OpenGL.
+ *
+ * @returns {Number[]} an array of four numbers holding the rotation
+ *                     axis' x-, y-, and z-coordinates, as well as the
+ *                     angle in radians
+ */
 x3dom.fields.Quaternion.prototype.toGL = function ()
 {
     var val = this.toAxisAngle();
     return [ val[ 0 ].x, val[ 0 ].y, val[ 0 ].z, val[ 1 ] ];
 };
 
+/**
+ * Returns a string representation of this quaternion.
+ *
+ * @returns {String} a string representation of this quaternion
+ */
 x3dom.fields.Quaternion.prototype.toString = function ()
 {
+    if ( "SFRotation" in this )
+    {
+        return this.SFRotation.x + " " + this.SFRotation.y + " " + this.SFRotation.z + " " + this.SFRotation.angle;
+    }
     return this.x + " " + this.y + " " + this.z + ", " + this.w;
 };
 
+/**
+ * Parses the axis-angle representation of a rotation from a string
+ * and sets this quaternion's rotation from it, finally returning this
+ * quaternion itself.
+ *
+ * @param {String} str - the string to parse the axis-angle data from
+ * @returns {x3dom.fields.Quaternion} this modified quaternion
+ */
 x3dom.fields.Quaternion.prototype.setValueByStr = function ( str )
 {
     var m = /^\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*,?\s*([+\-]?\d*\.*\d*[eE]?[+\-]?\d*?)\s*$/.exec( str );
@@ -6724,6 +7707,33 @@ x3dom.fields.Quaternion.prototype.setValueByStr = function ( str )
     return this;
 };
 
+/**
+ * Parses a string and creates and returns a color based upon it.
+ *
+ * The input string might represent the color information in a variety
+ * of formats, encompassing a CSS-conformant color name, an invocation
+ * of ``rgb(red, green, blue)'', an invocation of
+ * ``rgba(red, green, blue, alpha)'', or a hexadecimal representation of
+ * the kind ``#RRGGBBAA'', ``#RRGGBB'', ``#RGBA'', or ``#RGB''.
+ *
+ * The thus generated object exhibits the following structure:
+ *   {
+ *     r : <red>,
+ *     g : <green>,
+ *     b : <blue>,
+ *     a : <alpha>
+ *   }
+ * All components are normalized in the floating-point range [0.0, 1.0].
+ * If none of the above formats can be detected, all components are
+ * instead set to zero.
+ *
+ * @param {String} str - the string to parse the color information from
+ * @returns {Object} an object containing the four color components,
+ *                   each such represented by a property ``r'', ``g'',
+ *                   ``b'', ``a'', whose value is normalized in the range
+ *                   [0.0, 1.0]; failure to match a color format yields
+ *                   zero for all components
+ */
 function _colorParse ( str )
 {
     var red = 0.0,
@@ -6733,54 +7743,149 @@ function _colorParse ( str )
 
     // Definition of CSS color names
     var colorNames = {
-        aliceblue            : "#f0f8ff",          antiquewhite         : "#faebd7",         aqua                 : "#00ffff",
-        aquamarine           : "#7fffd4",         azure                : "#f0ffff",                beige                : "#f5f5dc",
-        bisque               : "#ffe4c4",             black                : "#000000",                blanchedalmond       : "#ffebcd",
-        blue                 : "#0000ff",               blueviolet           : "#8a2be2",           brown                : "#a52a2a",
-        burlywood            : "#deb887",          cadetblue            : "#5f9ea0",            chartreuse           : "#7fff00",
-        chocolate            : "#d2691e",          coral                : "#ff7f50",                cornflowerblue       : "#6495ed",
-        cornsilk             : "#fff8dc",           crimson              : "#dc143c",              cyan                 : "#00ffff",
-        darkblue             : "#00008b",           darkcyan             : "#008b8b",             darkgoldenrod        : "#b8860b",
-        darkgray             : "#a9a9a9",           darkgreen            : "#006400",            darkkhaki            : "#bdb76b",
-        darkmagenta          : "#8b008b",        darkolivegreen       : "#556b2f",       darkorange           : "#ff8c00",
-        darkorchid           : "#9932cc",         darkred              : "#8b0000",              darksalmon           : "#e9967a",
-        darkseagreen         : "#8fbc8f",       darkslateblue        : "#483d8b",        darkslategray        : "#2f4f4f",
-        darkturquoise        : "#00ced1",      darkviolet           : "#9400d3",           deeppink             : "#ff1493",
-        deepskyblue          : "#00bfff",        dimgray              : "#696969",              dodgerblue           : "#1e90ff",
-        feldspar             : "#d19275",           firebrick            : "#b22222",            floralwhite          : "#fffaf0",
-        forestgreen          : "#228b22",        fuchsia              : "#ff00ff",              gainsboro            : "#dcdcdc",
-        ghostwhite           : "#f8f8ff",         gold                 : "#ffd700",                 goldenrod            : "#daa520",
-        gray                 : "#808080",               green                : "#008000",                greenyellow          : "#adff2f",
-        honeydew             : "#f0fff0",           hotpink              : "#ff69b4",              indianred            : "#cd5c5c",
-        indigo               : "#4b0082",            ivory                : "#fffff0",                khaki                : "#f0e68c",
-        lavender             : "#e6e6fa",           lavenderblush        : "#fff0f5",        lawngreen            : "#7cfc00",
-        lemonchiffon         : "#fffacd",       lightblue            : "#add8e6",            lightcoral           : "#f08080",
-        lightcyan            : "#e0ffff",          lightgoldenrodyellow : "#fafad2", lightgrey            : "#d3d3d3",
-        lightgreen           : "#90ee90",         lightpink            : "#ffb6c1",            lightsalmon          : "#ffa07a",
-        lightseagreen        : "#20b2aa",      lightskyblue         : "#87cefa",         lightslateblue       : "#8470ff",
-        lightslategray       : "#778899",     lightsteelblue       : "#b0c4de",       lightyellow          : "#ffffe0",
-        lime                 : "#00ff00",               limegreen            : "#32cd32",            linen                : "#faf0e6",
-        magenta              : "#ff00ff",            maroon               : "#800000",               mediumaquamarine     : "#66cdaa",
-        mediumblue           : "#0000cd",         mediumorchid         : "#ba55d3",         mediumpurple         : "#9370d8",
-        mediumseagreen       : "#3cb371",     mediumslateblue      : "#7b68ee",      mediumspringgreen    : "#00fa9a",
-        mediumturquoise      : "#48d1cc",    mediumvioletred      : "#c71585",      midnightblue         : "#191970",
-        mintcream            : "#f5fffa",          mistyrose            : "#ffe4e1",            moccasin             : "#ffe4b5",
-        navajowhite          : "#ffdead",        navy                 : "#000080",                 oldlace              : "#fdf5e6",
-        olive                : "#808000",              olivedrab            : "#6b8e23",            orange               : "#ffa500",
-        orangered            : "#ff4500",          orchid               : "#da70d6",               palegoldenrod        : "#eee8aa",
-        palegreen            : "#98fb98",          paleturquoise        : "#afeeee",        palevioletred        : "#d87093",
-        papayawhip           : "#ffefd5",         peachpuff            : "#ffdab9",            peru                 : "#cd853f",
-        pink                 : "#ffc0cb",               plum                 : "#dda0dd",                 powderblue           : "#b0e0e6",
-        purple               : "#800080",             red                  : "#ff0000",                  rosybrown            : "#bc8f8f",
-        royalblue            : "#4169e1",          saddlebrown          : "#8b4513",          salmon               : "#fa8072",
-        sandybrown           : "#f4a460",         seagreen             : "#2e8b57",             seashell             : "#fff5ee",
-        sienna               : "#a0522d",             silver               : "#c0c0c0",               skyblue              : "#87ceeb",
-        slateblue            : "#6a5acd",          slategray            : "#708090",            snow                 : "#fffafa",
-        springgreen          : "#00ff7f",        steelblue            : "#4682b4",            tan                  : "#d2b48c",
-        teal                 : "#008080",               thistle              : "#d8bfd8",              tomato               : "#ff6347",
-        turquoise            : "#40e0d0",          violet               : "#ee82ee",               violetred            : "#d02090",
-        wheat                : "#f5deb3",              white                : "#ffffff",                whitesmoke           : "#f5f5f5",
-        yellow               : "#ffff00",             yellowgreen          : "#9acd32"
+        aliceblue            : "#f0f8ff",
+        antiquewhite         : "#faebd7",
+        aqua                 : "#00ffff",
+        aquamarine           : "#7fffd4",
+        azure                : "#f0ffff",
+        beige                : "#f5f5dc",
+        bisque               : "#ffe4c4",
+        black                : "#000000",
+        blanchedalmond       : "#ffebcd",
+        blue                 : "#0000ff",
+        blueviolet           : "#8a2be2",
+        brown                : "#a52a2a",
+        burlywood            : "#deb887",
+        cadetblue            : "#5f9ea0",
+        chartreuse           : "#7fff00",
+        chocolate            : "#d2691e",
+        coral                : "#ff7f50",
+        cornflowerblue       : "#6495ed",
+        cornsilk             : "#fff8dc",
+        crimson              : "#dc143c",
+        cyan                 : "#00ffff",
+        darkblue             : "#00008b",
+        darkcyan             : "#008b8b",
+        darkgoldenrod        : "#b8860b",
+        darkgray             : "#a9a9a9",
+        darkgreen            : "#006400",
+        darkkhaki            : "#bdb76b",
+        darkmagenta          : "#8b008b",
+        darkolivegreen       : "#556b2f",
+        darkorange           : "#ff8c00",
+        darkorchid           : "#9932cc",
+        darkred              : "#8b0000",
+        darksalmon           : "#e9967a",
+        darkseagreen         : "#8fbc8f",
+        darkslateblue        : "#483d8b",
+        darkslategray        : "#2f4f4f",
+        darkturquoise        : "#00ced1",
+        darkviolet           : "#9400d3",
+        deeppink             : "#ff1493",
+        deepskyblue          : "#00bfff",
+        dimgray              : "#696969",
+        dodgerblue           : "#1e90ff",
+        feldspar             : "#d19275",
+        firebrick            : "#b22222",
+        floralwhite          : "#fffaf0",
+        forestgreen          : "#228b22",
+        fuchsia              : "#ff00ff",
+        gainsboro            : "#dcdcdc",
+        ghostwhite           : "#f8f8ff",
+        gold                 : "#ffd700",
+        goldenrod            : "#daa520",
+        gray                 : "#808080",
+        green                : "#008000",
+        greenyellow          : "#adff2f",
+        honeydew             : "#f0fff0",
+        hotpink              : "#ff69b4",
+        indianred            : "#cd5c5c",
+        indigo               : "#4b0082",
+        ivory                : "#fffff0",
+        khaki                : "#f0e68c",
+        lavender             : "#e6e6fa",
+        lavenderblush        : "#fff0f5",
+        lawngreen            : "#7cfc00",
+        lemonchiffon         : "#fffacd",
+        lightblue            : "#add8e6",
+        lightcoral           : "#f08080",
+        lightcyan            : "#e0ffff",
+        lightgoldenrodyellow : "#fafad2",
+        lightgrey            : "#d3d3d3",
+        lightgreen           : "#90ee90",
+        lightpink            : "#ffb6c1",
+        lightsalmon          : "#ffa07a",
+        lightseagreen        : "#20b2aa",
+        lightskyblue         : "#87cefa",
+        lightslateblue       : "#8470ff",
+        lightslategray       : "#778899",
+        lightsteelblue       : "#b0c4de",
+        lightyellow          : "#ffffe0",
+        lime                 : "#00ff00",
+        limegreen            : "#32cd32",
+        linen                : "#faf0e6",
+        magenta              : "#ff00ff",
+        maroon               : "#800000",
+        mediumaquamarine     : "#66cdaa",
+        mediumblue           : "#0000cd",
+        mediumorchid         : "#ba55d3",
+        mediumpurple         : "#9370d8",
+        mediumseagreen       : "#3cb371",
+        mediumslateblue      : "#7b68ee",
+        mediumspringgreen    : "#00fa9a",
+        mediumturquoise      : "#48d1cc",
+        mediumvioletred      : "#c71585",
+        midnightblue         : "#191970",
+        mintcream            : "#f5fffa",
+        mistyrose            : "#ffe4e1",
+        moccasin             : "#ffe4b5",
+        navajowhite          : "#ffdead",
+        navy                 : "#000080",
+        oldlace              : "#fdf5e6",
+        olive                : "#808000",
+        olivedrab            : "#6b8e23",
+        orange               : "#ffa500",
+        orangered            : "#ff4500",
+        orchid               : "#da70d6",
+        palegoldenrod        : "#eee8aa",
+        palegreen            : "#98fb98",
+        paleturquoise        : "#afeeee",
+        palevioletred        : "#d87093",
+        papayawhip           : "#ffefd5",
+        peachpuff            : "#ffdab9",
+        peru                 : "#cd853f",
+        pink                 : "#ffc0cb",
+        plum                 : "#dda0dd",
+        powderblue           : "#b0e0e6",
+        purple               : "#800080",
+        red                  : "#ff0000",
+        rosybrown            : "#bc8f8f",
+        royalblue            : "#4169e1",
+        saddlebrown          : "#8b4513",
+        salmon               : "#fa8072",
+        sandybrown           : "#f4a460",
+        seagreen             : "#2e8b57",
+        seashell             : "#fff5ee",
+        sienna               : "#a0522d",
+        silver               : "#c0c0c0",
+        skyblue              : "#87ceeb",
+        slateblue            : "#6a5acd",
+        slategray            : "#708090",
+        snow                 : "#fffafa",
+        springgreen          : "#00ff7f",
+        steelblue            : "#4682b4",
+        tan                  : "#d2b48c",
+        teal                 : "#008080",
+        thistle              : "#d8bfd8",
+        tomato               : "#ff6347",
+        turquoise            : "#40e0d0",
+        violet               : "#ee82ee",
+        violetred            : "#d02090",
+        wheat                : "#f5deb3",
+        white                : "#ffffff",
+        whitesmoke           : "#f5f5f5",
+        yellow               : "#ffff00",
+        yellowgreen          : "#9acd32"
     };
 
     // Matches CSS rgb() function
@@ -6809,7 +7914,7 @@ function _colorParse ( str )
     }
 
     // Hexadecimal color codes
-    if ( str.substr && str.substr( 0, 1 ) === "#" )
+    if ( str != null && str.substr && str.substr( 0, 1 ) === "#" )
     {
         var hex = str.substr( 1 );
         var len = hex.length;
@@ -6848,6 +7953,11 @@ function _colorParse ( str )
 /**
  * SFColor constructor.
  *
+ * This class represents a color as a triple of floating-point ratios,
+ * usually confined to the range [0.0, 1.0], but not mandatorily
+ * restricted in this sense. The three color components or channels
+ * encompass red, green, and blue, that is, the RGB color model.
+ *
  * @class Represents a SFColor
  */
 x3dom.fields.SFColor = function ( r, g, b )
@@ -6866,6 +7976,20 @@ x3dom.fields.SFColor = function ( r, g, b )
     }
 };
 
+/**
+ * Parses a string and returns and creates a color from it.
+ *
+ * The input string must convey four numbers, which will be construed
+ * as the red, green, blue, and alpha channel in this order. If this
+ * format cannot be detected, the more potent rules of the method
+ * ``x3dom.fields.SFColor.colorParse'' will be applied, which see.
+ *
+ * @param {String} str - the string to parse the color information from
+ * @returns {x3dom.fields.SFColor} the color parsed from the string,
+ *                                 or a color with all components
+ *                                 zero-valued if none format could
+ *                                 be matched
+ */
 x3dom.fields.SFColor.parse = function ( str )
 {
     try
@@ -6879,69 +8003,363 @@ x3dom.fields.SFColor.parse = function ( str )
     }
 };
 
+/**
+ * Returns a copy of the specified color.
+ *
+ * @param   {x3dom.fields.SFColor} that - the color to copy
+ * @returns {x3dom.fields.SFColor} a copy of the input color
+ */
 x3dom.fields.SFColor.copy = function ( that )
 {
     return new x3dom.fields.SFColor( that.r, that.g, that.b );
 };
 
+/**
+ * Returns a copy of this color.
+ *
+ * @returns {x3dom.fields.SFColor} a copy of this color
+ */
 x3dom.fields.SFColor.prototype.copy = function ()
 {
     return x3dom.fields.SFColor.copy( this );
 };
 
+/**
+ * Sets the components of this color from the supplied hue, saturation
+ * and value as according to the HSV color model.
+ *
+ * @param {Number} h - the hue in degrees
+ * @param {Number} s - the saturation as a floating-point ratio in
+ *                     the range [0.0, 1.0]
+ * @param {Number} v - the value as a floating-point ratio in
+ *                     the range [0.0, 1.0]
+ * @returns {x3dom.fields.SFColor} this color itself
+ */
 x3dom.fields.SFColor.prototype.setHSV = function ( h, s, v )
 {
-    x3dom.debug.logWarning( "SFColor.setHSV() NYI" );
+    var hi = 0;
+    var f  = 0;
+    var p  = 0;
+    var q  = 0;
+    var t  = 0;
+    var r  = 0;
+    var g  = 0;
+    var b  = 0;
+
+    hi = Math.floor( h / 60.0 );
+    f  = ( h / 60.0 ) - hi;
+    p  = v * ( 1.0 - s );
+    q  = v * ( 1.0 - ( s * f ) );
+    t  = v * ( 1.0 - ( s * ( 1.0 - f ) ) );
+
+    switch ( hi )
+    {
+        case 0 :
+        case 6 :
+        {
+            r = v;
+            g = t;
+            b = p;
+            break;
+        }
+        case 1 :
+        {
+            r = q;
+            g = v;
+            b = p;
+            break;
+        }
+        case 2 :
+        {
+            r = p;
+            g = v;
+            b = t;
+            break;
+        }
+        case 3 :
+        {
+            r = p;
+            g = q;
+            b = v;
+            break;
+        }
+        case 4 :
+        {
+            r = t;
+            g = p;
+            b = v;
+            break;
+        }
+        case 5 :
+        {
+            r = v;
+            g = p;
+            b = q;
+            break;
+        }
+        default :
+        {
+            x3dom.debug.logWarning( "Using black for invalid case in setHSV: " + hi );
+            break;
+        }
+    };
+
+    this.r = r;
+    this.g = g;
+    this.b = b;
+
+    return this;
 };
 
+/**
+ * Returns the HSV color components corresponding to this color as an
+ * array of three numbers.
+ *
+ * In accordance with the widespread wont, the hue is delivered as an
+ * angle in degrees in the range [0.0, 360.0]; the saturation and value
+ * both are ratios in the range [0.0, 1.0].
+ *
+ * @see{@link https://www.rapidtables.com/convert/color/rgb-to-hsv.html}}
+ * @see{@link https://en.wikipedia.org/wiki/HSL_and_HSV}}
+ * @returns {Number[]} the three HSV color components corresponding to
+ *                     this color as elements of an array in the order
+ *                     hue, saturation, and value
+ */
 x3dom.fields.SFColor.prototype.getHSV = function ()
 {
-    var h = 0,
-        s = 0,
-        v = 0;
-    x3dom.debug.logWarning( "SFColor.getHSV() NYI" );
-    return [ h, s, v ];
+    var hue            = 0;       // H
+    var saturation     = 0;       // S
+    var val            = 0;       // V
+    var maxComponent   = {};      // C_max
+    var componentRange = 0;       // MAX - MIN
+
+    var minComponentValue  = this.r;
+    maxComponent.name  = "red";
+    maxComponent.value = this.r;
+
+    if ( this.g < minComponentValue )
+    {
+        minComponentValue = this.g;
+    }
+    if ( this.b < minComponentValue )
+    {
+        minComponentValue = this.b;
+    }
+
+    if ( this.g > maxComponent.value )
+    {
+        maxComponent.name  = "green";
+        maxComponent.value = this.g;
+    }
+    if ( this.b > maxComponent.value )
+    {
+        maxComponent.name  = "blue";
+        maxComponent.value = this.b;
+    }
+
+    componentRange = maxComponent.value - minComponentValue;
+
+    if ( componentRange == 0.0 )
+    {
+        hue = 0;
+    }
+    else if ( maxComponent.name == "red" )
+    {
+        hue = 60.0 * ( ( ( this.g - this.b ) / componentRange ) % 6 );
+    }
+    else if ( maxComponent.name == "green" )
+    {
+        hue = 60.0 * ( ( ( this.b - this.r ) / componentRange ) + 2.0 );
+    }
+    else if ( maxComponent.name == "blue" )
+    {
+        hue = 60.0 * ( ( ( this.r - this.g ) / componentRange ) + 4.0 );
+    }
+    else
+    {
+        throw ( "Unknown maximum component: " + maxComponent.name );
+    }
+
+    if ( hue < 0 )
+    {
+        hue = hue + 360;
+    }
+
+    if ( maxComponent.value == 0 )
+    {
+        saturation = 0;
+    }
+    else
+    {
+        saturation = componentRange / maxComponent.value;
+    }
+
+    val = maxComponent.value;
+
+    return [ hue, saturation, val ];
 };
 
+/**
+ * Sets this color's components to that of the supplied color and
+ * returns this modified color.
+ *
+ * @param {x3dom.fields.SFColor} color - the color to copy from
+ * @returns {x3dom.fields.SFColor} this modified color
+ */
 x3dom.fields.SFColor.prototype.setValues = function ( color )
 {
     this.r = color.r;
     this.g = color.g;
     this.b = color.b;
+    return this;
 };
 
+/**
+ * Checks whether this color equals another one in circumference of
+ * the specified tolerance.
+ *
+ * @param   {x3dom.fields.SFColor} that - a copy of this color
+ * @param   {Number}               eps  - the tolerance of deviation
+ *                                        between the two tested colors'
+ *                                        components within which they
+ *                                        might still be considered as
+ *                                        equal
+ * @returns {Boolean} ``true'' if the two colors are equal,
+ *                    ``false'' otherwise
+ */
 x3dom.fields.SFColor.prototype.equals = function ( that, eps )
 {
     return Math.abs( this.r - that.r ) < eps &&
-        Math.abs( this.g - that.g ) < eps &&
-        Math.abs( this.b - that.b ) < eps;
+           Math.abs( this.g - that.g ) < eps &&
+           Math.abs( this.b - that.b ) < eps;
 };
 
+/**
+ * Returns a new RGB color as the sum of this color and another one.
+ *
+ * @param {x3dom.fields.SFColor|x3dom.fields.SFColorRGBA} that -
+ *          the color to add to this one
+ * @returns {x3dom.fields.SFColor} a new color with its components being
+ *                                 that of this one augmented by the
+ *                                 supplied second color
+ */
 x3dom.fields.SFColor.prototype.add = function ( that )
 {
     return new x3dom.fields.SFColor( this.r + that.r, this.g + that.g, this.b + that.b );
 };
 
+/**
+ * Returns a new RGB color as the difference between this color and
+ * another one.
+ *
+ * @param {x3dom.fields.SFColor|x3dom.fields.SFColorRGBA} that -
+ *          the color to subtract from this one
+ * @returns {x3dom.fields.SFColor} a new color with its components
+ *                                 being that of this one reduced by the
+ *                                 supplied second color
+ */
 x3dom.fields.SFColor.prototype.subtract = function ( that )
 {
     return new x3dom.fields.SFColor( this.r - that.r, this.g - that.g, this.b - that.b );
 };
 
+/**
+ * Returns a version of this color whose components have been scaled by
+ * the supplied scalar factor.
+ *
+ * @param {Number} n - the scalar factor to scale each component by
+ * @returns {x3dom.fields.SFColor} a new color based upon this one
+ *                                 with each component scaled by the
+ *                                 supplied factor
+ */
 x3dom.fields.SFColor.prototype.multiply = function ( n )
 {
     return new x3dom.fields.SFColor( this.r * n, this.g * n, this.b * n );
 };
 
+/**
+ * Returns a single integer-encoded representation of this RGBA color.
+ *
+ * The generated encoding encompasses at most 24 bits, with each eight
+ * consecutive bits reserved for one of the color components. The bits
+ * 0 to  7 encode the blue channel; the bits  8 to 15 store the green
+ * channel; the bits 16 to 23 hold the red channel. The format is thus
+ * visually: RRRRRRRRGGGGGGGGBBBBBBBB.
+ *
+ * @returns {Number} a 32-bit integer representation of this color's
+ *                   components, encoded in its lower 24 bits.
+ */
+x3dom.fields.SFColor.prototype.toUint = function ()
+{
+    return ( ( Math.round( this.r * 255 ) << 16 ) |
+        ( Math.round( this.g * 255 ) << 8 ) |
+        Math.round( this.b * 255 ) ) >>> 0;
+};
+
+/**
+ * Sets this color's components from a single integer-encoded value
+ * holding all channel data in its bits, and returns this color.
+ *
+ * The supplied integer number is considered regarding its first 24
+ * bits, each consecutive eight of which represent the integer value
+ * of one component in the range of [0, 255]. The keys are as follows:
+ *   - Bits  0 to  7 encode the blue  channel .
+ *   - Bits  8 to 15 encode the green channel.
+ *   - Bits 16 to 23 encode the red   channel.
+ * The format is thus visually:
+ *   RRRRRRRRGGGGGGGGBBBBBBBB
+ *
+ * @param {Number} rgbInteger - a 32-bit integer representation of this
+ *                               color's new components
+ * @returns {x3dom.fields.SFColor} this modified color
+ */
+x3dom.fields.SFColor.prototype.setFromUint = function ( rgbInteger )
+{
+    this.r = ( ( ( rgbInteger >> 16 ) & 255 ) / 255 );
+    this.g = ( ( ( rgbInteger >>  8 ) & 255 ) / 255 );
+    this.b = ( ( ( rgbInteger >>  0 ) & 255 ) / 255 );
+    return this;
+};
+
+/**
+ * Returns the components of this color as an OpenGL-conformant array
+ * of three numbers.
+ *
+ * @returns {Number[]} an array of three numbers which represent this
+ *                     color's components in the order red, green, and
+ *                     blue
+ */
 x3dom.fields.SFColor.prototype.toGL = function ()
 {
     return [ this.r, this.g, this.b ];
 };
 
+/**
+ * Returns a string representation of this color.
+ *
+ * @returns {String} a string representation of this color
+ */
 x3dom.fields.SFColor.prototype.toString = function ()
 {
     return this.r + " " + this.g + " " + this.b;
 };
 
+/**
+ * Parses a string, sets this color's components from the parsed data,
+ * and returns this color.
+ *
+ * The underlying examination process is a two-step approach, the first
+ * of which endeavors to parse three numbers, separated by whitespaces
+ * and/or comma, to retrieve the color components from these. If this
+ * fails, a second step is undertaken, in which the input string is
+ * matched against the more versatile CSS rules, for which see
+ * {@link x3dom.fields.SFColor.colorParse}. Failure to obtain a
+ * result in this case leads to this color being left unmodified.
+ *
+ * @param {String} str - the string to parse, either as three numbers,
+ *                       or as a CSS color specification
+ * @returns {x3dom.fields.SFColor} this potentially modified color
+ */
 x3dom.fields.SFColor.prototype.setValueByStr = function ( str )
 {
     try
@@ -6961,6 +8379,22 @@ x3dom.fields.SFColor.prototype.setValueByStr = function ( str )
     return this;
 };
 
+/**
+ * Parses a string and creates and returns a color based upon it.
+ *
+ * The input string might represent the color information in a variety
+ * of formats, encompassing a CSS-conformant color name, an invocation
+ * of ``rgb(red, green, blue)'', an invocation of
+ * ``rgba(red, green, blue, alpha)'', or a hexadecimal representation of
+ * the kind ``#RRGGBBAA'', ``#RRGGBB'', ``#RGBA'', or ``#RGB''.
+ *
+ * @param {String} color - the string to parse the color information
+ *                         from
+ * @returns {x3dom.fields.SFColor} the color parsed from the string,
+ *                                 or a color with all components
+ *                                 zero-valued if none format could
+ *                                 be matched
+ */
 x3dom.fields.SFColor.colorParse = function ( color )
 {
     var rgb = _colorParse( color );
@@ -6969,6 +8403,13 @@ x3dom.fields.SFColor.colorParse = function ( color )
 
 /**
  * SFColorRGBA constructor.
+ *
+ * This class represents a color as a quadruple of floating-point ratios,
+ * usually confined to the range [0.0, 1.0], but not mandatorily
+ * restricted in this sense. The four color components or channels
+ * encompass red, green, blue, and alpha, that is, the RGBA color model.
+ * The alpha component defines the opacity of a color, which is the
+ * opposite of its transparency.
  *
  * @class Represents a SFColorRGBA
  */
@@ -6990,6 +8431,20 @@ x3dom.fields.SFColorRGBA = function ( r, g, b, a )
     }
 };
 
+/**
+ * Parses a string and returns and creates a color from it.
+ *
+ * The input string must convey four numbers, which will be construed
+ * as the red, green, blue, and alpha channel in this order. If this
+ * format cannot be detected, the more potent rules of the method
+ * ``x3dom.fields.SFColorRGBA.colorParse'' will be applied, which see.
+ *
+ * @param {String} str - the string to parse the color information from
+ * @returns {x3dom.fields.SFColorRGBA} the color parsed from the string,
+ *                                     or a color with all components
+ *                                     zero-valued if none format could
+ *                                     be matched
+ */
 x3dom.fields.SFColorRGBA.parse = function ( str )
 {
     try
@@ -7003,24 +8458,85 @@ x3dom.fields.SFColorRGBA.parse = function ( str )
     }
 };
 
+/**
+ * Returns a copy of the supplied color.
+ *
+ * @param   {x3dom.fields.SFColorRGBA} that - the color to copy
+ * @returns {x3dom.fields.SFColorRGBA} a copy of the input color
+ */
 x3dom.fields.SFColorRGBA.copy = function ( that )
 {
     return new x3dom.fields.SFColorRGBA( that.r, that.g, that.b, that.a );
 };
 
+/**
+ * Returns a copy of this color.
+ *
+ * @returns {x3dom.fields.SFColorRGBA} a copy of this color
+ */
 x3dom.fields.SFColorRGBA.prototype.copy = function ()
 {
     return x3dom.fields.SFColorRGBA.copy( this );
 };
 
+/**
+ * Sets the components of this color from the supplied hue, saturation
+ * and value as according to the HSV color model.
+ *
+ * @param {Number} h - the hue in degrees
+ * @param {Number} s - the saturation as a floating-point ratio in
+ *                     the range [0.0, 1.0]
+ * @param {Number} v - the value as a floating-point ratio in
+ *                     the range [0.0, 1.0]
+ * @returns {x3dom.fields.SFColorRGBA} this color itself
+ */
+x3dom.fields.SFColorRGBA.prototype.setHSV = x3dom.fields.SFColor.prototype.setHSV;
+
+/**
+ * Returns the HSV color components corresponding to this color as an
+ * array of three numbers.
+ *
+ * In accordance with the widespread wont, the hue is delivered as an
+ * angle in degrees in the range [0.0, 360.0]; the saturation and value
+ * both are ratios in the range [0.0, 1.0].
+ *
+ * @see{@link https://www.rapidtables.com/convert/color/rgb-to-hsv.html}}
+ * @see{@link https://en.wikipedia.org/wiki/HSL_and_HSV}}
+ * @returns {Number[]} the three HSV color components corresponding to
+ *                     this color as elements of an array in the order
+ *                     hue, saturation, and value
+ */
+x3dom.fields.SFColorRGBA.prototype.getHSV = x3dom.fields.SFColor.prototype.getHSV;
+
+/**
+ * Sets this color's components to that of the supplied color and
+ * returns this modified color.
+ *
+ * @param {x3dom.fields.SFColorRGBA} color - the color to copy from
+ * @returns {x3dom.fields.SFColorRGBA} this modified color
+ */
 x3dom.fields.SFColorRGBA.prototype.setValues = function ( color )
 {
     this.r = color.r;
     this.g = color.g;
     this.b = color.b;
     this.a = color.a;
+    return this;
 };
 
+/**
+ * Checks whether this color equals another one in circumference of
+ * the specified tolerance.
+ *
+ * @param   {x3dom.fields.SFColorRGBA} that - a copy of this color
+ * @param   {Number}                   eps  - the tolerance of deviation
+ *                                        between the two tested colors'
+ *                                        components within which they
+ *                                        might still be considered as
+ *                                        equal
+ * @returns {Boolean} ``true'' if the two colors are equal,
+ *                    ``false'' otherwise
+ */
 x3dom.fields.SFColorRGBA.prototype.equals = function ( that, eps )
 {
     return Math.abs( this.r - that.r ) < eps &&
@@ -7029,16 +8545,45 @@ x3dom.fields.SFColorRGBA.prototype.equals = function ( that, eps )
            Math.abs( this.a - that.a ) < eps;
 };
 
+/**
+ * Returns the components of this color as an OpenGL-conformant array
+ * of four numbers.
+ *
+ * @returns {Number[]} an array of four numbers which represent this
+ *                     color's components in the order red, green, blue,
+ *                     and alpha
+ */
 x3dom.fields.SFColorRGBA.prototype.toGL = function ()
 {
     return [ this.r, this.g, this.b, this.a ];
 };
 
+/**
+ * Returns a string representation of this color.
+ *
+ * @returns {String} a string representation of this color.
+ */
 x3dom.fields.SFColorRGBA.prototype.toString = function ()
 {
     return this.r + " " + this.g + " " + this.b + " " + this.a;
 };
 
+/**
+ * Parses a string, sets this color's components from the parsed data,
+ * and returns this color.
+ *
+ * The underlying examination process is a two-step approach, the first
+ * of which endeavors to parse four numbers, separated by whitespaces
+ * and/or comma, to retrieve the color components from these. If this
+ * fails, a second step is undertaken, in which the input string is
+ * matched against the more versatile CSS rules, for which see
+ * {@link x3dom.fields.SFColorRGBA.colorParse}. Failure to obtain a
+ * result in this case leads to this color being left unmodified.
+ *
+ * @param {String} str - the string to parse, either as four numbers,
+ *                       or as a CSS color specification
+ * @returns {x3dom.fields.SFColorRGBA} this potentially modified color
+ */
 x3dom.fields.SFColorRGBA.prototype.setValueByStr = function ( str )
 {
     try
@@ -7061,6 +8606,19 @@ x3dom.fields.SFColorRGBA.prototype.setValueByStr = function ( str )
     return this;
 };
 
+/**
+ * Returns a single integer-encoded representation of this RGBA color.
+ *
+ * The generated encoding encompasses at most 32 bits, with each eight
+ * consecutive bits reserved for one of the color components. The bits
+ * 0 to  7 encode the alpha channel; the bits  8 to 15 store the blue
+ * channel; the bits 16 to 23 hold the green channel; the bits 24 to 31
+ * represent the red channel. The format is thus visually:
+ * RRRRRRRRGGGGGGGGBBBBBBBBAAAAAAAA.
+ *
+ * @returns {Number} a 32-bit integer representation of this color's
+ *                   components
+ */
 x3dom.fields.SFColorRGBA.prototype.toUint = function ()
 {
     return ( ( Math.round( this.r * 255 ) << 24 ) |
@@ -7069,6 +8627,48 @@ x3dom.fields.SFColorRGBA.prototype.toUint = function ()
         Math.round( this.a * 255 ) ) >>> 0;
 };
 
+/**
+ * Sets this color's components from a single integer-encoded value
+ * holding all channel data in its bits, and returns this color.
+ *
+ * The supplied integer number is considered regarding its first 32
+ * bits, each consecutive eight of which represent the integer value
+ * of one component in the range of [0, 255]. The keys are as follows:
+ *   - Bits  0 to  7 encode the alpha channel .
+ *   - Bits  8 to 15 encode the blue  channel.
+ *   - Bits 16 to 23 encode the green channel.
+ *   - Bits 24 to 31 encode the red   channel.
+ * The format is thus visually:
+ *   RRRRRRRRGGGGGGGGBBBBBBBBAAAAAAAA
+ *
+ * @param {Number} rgbaInteger - a 32-bit integer representation of this
+ *                               color's new components
+ * @returns {x3dom.fields.SFColorRGBA} this modified color
+ */
+x3dom.fields.SFColorRGBA.prototype.setFromUint = function ( rgbaInteger )
+{
+    this.r = ( ( ( rgbaInteger >> 24 ) & 255 ) / 255 );
+    this.g = ( ( ( rgbaInteger >> 16 ) & 255 ) / 255 );
+    this.b = ( ( ( rgbaInteger >>  8 ) & 255 ) / 255 );
+    this.a = ( ( ( rgbaInteger >>  0 ) & 255 ) / 255 );
+    return this;
+};
+
+/**
+ * Parses a string and creates and returns a color based upon it.
+ *
+ * The input string might represent the color information in a variety
+ * of formats, encompassing a CSS-conformant color name, an invocation
+ * of ``rgb(red, green, blue)'', an invocation of
+ * ``rgba(red, green, blue, alpha)'', or a hexadecimal representation of
+ * the kind ``#RRGGBBAA'', ``#RRGGBB'', ``#RGBA'', or ``#RGB''.
+ *
+ * @param {String} color - the string to parse the color information from
+ * @returns {x3dom.fields.SFColorRGBA} the color parsed from the string,
+ *                                     or a color with all components
+ *                                     zero-valued if none format could
+ *                                     be matched
+ */
 x3dom.fields.SFColorRGBA.colorParse = function ( color )
 {
     var rgba = _colorParse( color );
@@ -7078,27 +8678,47 @@ x3dom.fields.SFColorRGBA.colorParse = function ( color )
 /**
  * SFImage constructor.
  *
+ * Such an image is specified by its width and height in pixels, as well
+ * as the number of color components, or color depth, and a flat array
+ * of integer pixel components in the range [0, 255].
+ *
+ * For more information consult {@link https://www.web3d.org/documents/specifications/19775-1/V3.2/Part01/fieldsDef.html#SFImageAndMFImage}.
+ *
  * @class Represents an SFImage
  */
 x3dom.fields.SFImage = function ( w, h, c, arr )
 {
     if ( arguments.length === 0 || !( arr && arr.map ) )
     {
-        this.width = 0;
+        this.width  = 0;
         this.height = 0;
-        this.comp = 0;
-        this.array = [];
+        this.comp   = 0;
+        this.array  = [];
     }
     else
     {
-        this.width = w;
+        this.width  = w;
         this.height = h;
-        this.comp = c;
-        var that = this.array;
+        this.comp   = c;
+        var that    = this.array;
         arr.map( function ( v ) { that.push( v ); }, this.array );
     }
 };
 
+/**
+ * Parses a string and returns a new image.
+ *
+ * The process involves the examination of whitespace-separated tokens
+ * in the input string, the tally of which design the actual output.
+ * If at most two tokens are found, the width and height are extracted
+ * in this order. If three tokens are found, the width, height, and
+ * number of components are extracted in this order. If four or more
+ * tokens are found, the width, height, number of components, and the
+ * available pixel data are extracted in this order.
+ *
+ * @param {String} str - the string to parse the image data from
+ * @returns {x3dom.fields.SFImage} a new image from the parsed string
+ */
 x3dom.fields.SFImage.parse = function ( str )
 {
     var img = new x3dom.fields.SFImage();
@@ -7106,6 +8726,12 @@ x3dom.fields.SFImage.parse = function ( str )
     return img;
 };
 
+/**
+ * Returns a copy of a supplied image.
+ *
+ * @param {x3dom.fields.SFImage} that - the image to copy
+ * @returns {x3dom.fields.SFImage} a copy of the supplied image
+ */
 x3dom.fields.SFImage.copy = function ( that )
 {
     var destination = new x3dom.fields.SFImage();
@@ -7118,11 +8744,30 @@ x3dom.fields.SFImage.copy = function ( that )
     return destination;
 };
 
+/**
+ * Returns a copy of this image.
+ *
+ * @returns {x3dom.fields.SFImage} a copy of this image
+ */
 x3dom.fields.SFImage.prototype.copy = function ()
 {
     return x3dom.fields.SFImage.copy( this );
 };
 
+/**
+ * Parses a string and sets this image's data from it.
+ *
+ * The process involves the examination of whitespace-separated tokens
+ * in the input string, the tally of which design the actual output.
+ * If at most two tokens are found, the width and height are extracted
+ * in this order. If three tokens are found, the width, height, and
+ * number of components are extracted in this order. If four or more
+ * tokens are found, the width, height, number of components, and the
+ * available pixel data are extracted in this order.
+ *
+ * @param {String} str - the string to parse the image data from
+ * @returns {x3dom.fields.SFImage} this modified image
+ */
 x3dom.fields.SFImage.prototype.setValueByStr = function ( str )
 {
     var mc = str.match( /(\w+)/g );
@@ -7190,6 +8835,16 @@ x3dom.fields.SFImage.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Sets the pixel color at a specified position of this image.
+ *
+ * @param {Number} x - the column index of the pixel to modify, starting
+ *                     at zero
+ * @param {Number} y - the row index of the pixel to modify, starting
+ *                     at zero
+ * @param {x3dom.fields.SFColor} color - the new pixel color
+ * @returns {x3dom.fields.SFImage} this modified image
+ */
 x3dom.fields.SFImage.prototype.setPixel = function ( x, y, color )
 {
     var startIdx = ( y * this.width + x ) * this.comp;
@@ -7216,25 +8871,40 @@ x3dom.fields.SFImage.prototype.setPixel = function ( x, y, color )
         this.array[ startIdx + 2 ] = color.b * 255;
         this.array[ startIdx + 3 ] = color.a * 255;
     }
+
+    return this;
 };
 
+/**
+ * Returns the pixel at a specified position in this image.
+ *
+ * @param {Number} x - the column index of the pixel to return, starting
+ *                     at zero
+ * @param {Number} y - the row index of the pixel to return, starting
+ *                     at zero
+ * @returns {x3dom.fields.SFColorRGBA} the pixel color at the specified
+ *                                     position
+ */
 x3dom.fields.SFImage.prototype.getPixel = function ( x, y )
 {
     var startIdx = ( y * this.width + x ) * this.comp;
 
     if ( this.comp === 1 && startIdx < this.array.length )
     {
-        return new x3dom.fields.SFColorRGBA( this.array[ startIdx ] / 255,
-            0,
-            0,
+        var intensity = this.array[ startIdx ] / 255;
+        return new x3dom.fields.SFColorRGBA( intensity,
+            intensity,
+            intensity,
             1 );
     }
     else if ( this.comp === 2 && ( startIdx + 1 ) < this.array.length )
     {
-        return new x3dom.fields.SFColorRGBA( this.array[ startIdx ] / 255,
-            this.array[ startIdx + 1 ] / 255,
-            0,
-            1 );
+        var intensity = this.array[ startIdx ]     / 255;
+        var alpha     = this.array[ startIdx + 1 ] / 255;
+        return new x3dom.fields.SFColorRGBA( intensity,
+            intensity,
+            intensity,
+            alpha );
     }
     else if ( this.comp === 3 && ( startIdx + 2 ) < this.array.length )
     {
@@ -7252,6 +8922,13 @@ x3dom.fields.SFImage.prototype.getPixel = function ( x, y )
     }
 };
 
+/**
+ * Sets the pixels from an array of colors.
+ *
+ * @param {x3dom.fields.SFColor[]|x3dom.fields.SFColorRGBA[]} pixels -
+ *          an array of the new pixel colors
+ * @returns {x3dom.fields.SFImage} this modified image
+ */
 x3dom.fields.SFImage.prototype.setPixels = function ( pixels )
 {
     var i,
@@ -7293,6 +8970,12 @@ x3dom.fields.SFImage.prototype.setPixels = function ( pixels )
     }
 };
 
+/**
+ * Returns an array with all pixels of this image, each represented by
+ * an ``SFColorRGBA'' object.
+ *
+ * @returns {x3dom.fields.SFColorRGBA[]} an array of RGBA pixel colors
+ */
 x3dom.fields.SFImage.prototype.getPixels = function ()
 {
     var i;
@@ -7302,9 +8985,10 @@ x3dom.fields.SFImage.prototype.getPixels = function ()
     {
         for ( i = 0; i < this.array.length; i += this.comp )
         {
-            pixels.push( new x3dom.fields.SFColorRGBA( this.array[ i ] / 255,
-                0,
-                0,
+            var intensity = this.array[ i ] / 255;
+            pixels.push( new x3dom.fields.SFColorRGBA( intensity,
+                intensity,
+                intensity,
                 1 ) );
         }
     }
@@ -7312,10 +8996,12 @@ x3dom.fields.SFImage.prototype.getPixels = function ()
     {
         for ( i = 0; i < this.array.length; i += this.comp )
         {
-            pixels.push( new x3dom.fields.SFColorRGBA( this.array[ i ] / 255,
-                this.array[ i + 1 ] / 255,
-                0,
-                1 ) );
+            var intensity = this.array[ i ]     / 255;
+            var alpha     = this.array[ i + 1 ] / 255;
+            pixels.push( new x3dom.fields.SFColorRGBA( intensity,
+                intensity,
+                intensity,
+                alpha ) );
         }
     }
     else if ( this.comp === 3 )
@@ -7342,6 +9028,13 @@ x3dom.fields.SFImage.prototype.getPixels = function ()
     return pixels;
 };
 
+/**
+ * Returns the image pixel data as an array of integer values conforming
+ * to OpenGL's format.
+ *
+ * @returns {Number[]} an array containing this image's pixel data as
+ *                     integer components
+ */
 x3dom.fields.SFImage.prototype.toGL = function ()
 {
     var a = [];
@@ -7360,6 +9053,10 @@ x3dom.fields.SFImage.prototype.toGL = function ()
 
 /**
  * MFColor constructor.
+ *
+ * An ``MFColorRGBA'' object stores an arbitrary number of
+ * ``SFColorRGBA'' instances in a one-dimensional array.
+ *
  * @class Represents a MFColor
  */
 x3dom.fields.MFColor = function ( colorArray )
@@ -7371,6 +9068,12 @@ x3dom.fields.MFColor = function ( colorArray )
     }
 };
 
+/**
+ * Returns a copy of the supplied color array.
+ *
+ * @param {x3dom.fields.MFColor} colorArray - the color array to copy
+ * @returns {x3dom.fields.MFColor} a copy of the supplied color array
+ */
 x3dom.fields.MFColor.copy = function ( colorArray )
 {
     var destination = new x3dom.fields.MFColor();
@@ -7380,6 +9083,14 @@ x3dom.fields.MFColor.copy = function ( colorArray )
 
 x3dom.fields.MFColor.prototype = x3dom.extend( [] );
 
+/**
+ * Parses a string and returns a new RGB color array based upon its
+ * received color data.
+ *
+ * @param {String} str - the string to parse the RGB color data from
+ * @returns {x3dom.fields.MFColor} a new RGB color array containing the
+ *                                 parsed RGB colors
+ */
 x3dom.fields.MFColor.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7392,11 +9103,23 @@ x3dom.fields.MFColor.parse = function ( str )
     return new x3dom.fields.MFColor( colors );
 };
 
+/**
+ * Returns a copy of this color array.
+ *
+ * @returns {x3dom.fields.MFColor} a copy of this color array
+ */
 x3dom.fields.MFColor.prototype.copy = function ()
 {
     return x3dom.fields.MFColor.copy( this );
 };
 
+/**
+ * Parses a string, transfers the extracted color data into this RGB
+ * color array, and returns the modified RGB color array.
+ *
+ * @param {String} str - the string to parse into this RGB color array
+ * @returns {x3dom.fields.MFColor} this modified RGB color array
+ */
 x3dom.fields.MFColor.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7407,6 +9130,15 @@ x3dom.fields.MFColor.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns a one-dimensional array of numbers which represents this
+ * color array's components in order of the maintained colors, being
+ * suitable for communication with OpenGL.
+ *
+ * @returns {Number[]} a one-dimensional array containing all stored
+ *                     colors' red, green, and blue components in this
+ *                     order
+ */
 x3dom.fields.MFColor.prototype.toGL = function ()
 {
     var a = [];
@@ -7424,6 +9156,9 @@ x3dom.fields.MFColor.prototype.toGL = function ()
 /**
  * MFColorRGBA constructor.
  *
+ * An ``MFColorRGBA'' object stores an arbitrary number of
+ * ``SFColorRGBA'' instances in a one-dimensional array.
+ *
  * @class Represents a MFColorRGBA
  */
 x3dom.fields.MFColorRGBA = function ( colorArray )
@@ -7435,6 +9170,14 @@ x3dom.fields.MFColorRGBA = function ( colorArray )
     }
 };
 
+/**
+ * Returns a copy of the supplied RGBA color array.
+ *
+ * @param {x3dom.fields.MFColorRGBA} colorArray - the color array to
+ *                                                copy
+ * @returns {x3dom.fields.MFColorRGBA} a copy of the supplied color
+ *                                     array
+ */
 x3dom.fields.MFColorRGBA.copy = function ( colorArray )
 {
     var destination = new x3dom.fields.MFColorRGBA();
@@ -7444,6 +9187,13 @@ x3dom.fields.MFColorRGBA.copy = function ( colorArray )
 
 x3dom.fields.MFColorRGBA.prototype = x3dom.extend( [] );
 
+/**
+ * Parses a string and returns a new RGBA color array from its data.
+ *
+ * @param {String} str - the string to parse into an RGBA color array
+ * @returns {x3dom.fields.MFColorRGBA} a new RGBA color array obtained
+ *                                     from the parsed string
+ */
 x3dom.fields.MFColorRGBA.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7456,11 +9206,23 @@ x3dom.fields.MFColorRGBA.parse = function ( str )
     return new x3dom.fields.MFColorRGBA( colors );
 };
 
+/**
+ * Returns a copy of this RGBA color array.
+ *
+ * @returns {x3dom.fields.MFColorRGBA} a copy of this color array
+ */
 x3dom.fields.MFColorRGBA.prototype.copy = function ()
 {
     return x3dom.fields.MFColorRGBA.copy( this );
 };
 
+/**
+ * Parses a string, transfers the extracted color data into this RGBA
+ * color array, and returns the modified RGBA color array.
+ *
+ * @param {String} str - the string to parse into this RGBA color array
+ * @returns {x3dom.fields.MFColorRGBA} this modified RGBA color array
+ */
 x3dom.fields.MFColorRGBA.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7471,6 +9233,15 @@ x3dom.fields.MFColorRGBA.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns a one-dimensional array of numbers which represents this
+ * color array's components in order of the maintained colors, being
+ * suitable for communication with OpenGL.
+ *
+ * @returns {Number[]} a one-dimensional array containing all stored
+ *                     colors' red, green, blue, and alpha components in
+ *                     this order
+ */
 x3dom.fields.MFColorRGBA.prototype.toGL = function ()
 {
     var a = [];
@@ -7489,6 +9260,9 @@ x3dom.fields.MFColorRGBA.prototype.toGL = function ()
 /**
  * MFRotation constructor.
  *
+ * An ``MFRotation'' object stores an arbitrary number of
+ * ``Quaternion'' instances in a one-dimensional array.
+ *
  * @class Represents a MFRotation
  */
 x3dom.fields.MFRotation = function ( rotArray )
@@ -7502,6 +9276,14 @@ x3dom.fields.MFRotation = function ( rotArray )
 
 x3dom.fields.MFRotation.prototype = x3dom.extend( [] );
 
+/**
+ * Returns a copy of the specified rotation array.
+ *
+ * @param {x3dom.fields.MFRotation} rotationArray - the rotation array
+ *                                                  to copy
+ * @returns {x3dom.fields.MFRotation} a copy of the supplied rotation
+ *                                    array
+ */
 x3dom.fields.MFRotation.copy = function ( rotationArray )
 {
     var destination = new x3dom.fields.MFRotation();
@@ -7509,11 +9291,23 @@ x3dom.fields.MFRotation.copy = function ( rotationArray )
     return destination;
 };
 
+/**
+ * Returns a copy of this rotation array.
+ *
+ * @returns {x3dom.fields.MFRotation} a copy of this rotation array
+ */
 x3dom.fields.MFRotation.prototype.copy = function ()
 {
     return x3dom.fields.MFRotation.copy( this );
 };
 
+/**
+ * Parses a string and returns a new rotation array based upon it.
+ *
+ * @param {String} str - the string to parse the rotation array from
+ * @returns {x3dom.fields.MFRotation} a new rotation array parsed from
+ *                                    the input string
+ */
 x3dom.fields.MFRotation.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7527,6 +9321,13 @@ x3dom.fields.MFRotation.parse = function ( str )
     return new x3dom.fields.MFRotation( vecs );
 };
 
+/**
+ * Parses a string, sets this rotation array's rotation from it, and
+ * returns this modified rotation array.
+ *
+ * @param {String} str - the string to parse the rotations from
+ * @returns {x3dom.fields.MFRotation} this modified rotation array
+ */
 x3dom.fields.MFRotation.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7537,6 +9338,15 @@ x3dom.fields.MFRotation.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns a one-dimensional array of numbers which represents this
+ * rotation array's components in order of the maintained rotations,
+ * being suitable for communication with OpenGL.
+ *
+ * @returns {Number[]} a one-dimensional array containing all stored
+ *                     rotations' x, y, z, and alpha components in this
+ *                     order
+ */
 x3dom.fields.MFRotation.prototype.toGL = function ()
 {
     var a = [];
@@ -7556,6 +9366,9 @@ x3dom.fields.MFRotation.prototype.toGL = function ()
 /**
  * MFVec3f constructor.
  *
+ * An ``MFVec3f'' object stores an arbitrary number of
+ * ``SFVec3f'' instances in a one-dimensional array.
+ *
  * @class Represents a MFVec3f
  */
 x3dom.fields.MFVec3f = function ( vec3Array )
@@ -7569,6 +9382,13 @@ x3dom.fields.MFVec3f = function ( vec3Array )
 
 x3dom.fields.MFVec3f.prototype = x3dom.extend( Array );
 
+/**
+ * Returns a copy of the specified 3D vector array.
+ *
+ * @param {x3dom.fields.MFVec3f} vecArray - the 3D vector array to copy
+ * @returns {x3dom.fields.MFVec3f} a copy of the supplied 3D vector
+ *                                 array
+ */
 x3dom.fields.MFVec3f.copy = function ( vec3Array )
 {
     var destination = new x3dom.fields.MFVec3f();
@@ -7576,6 +9396,13 @@ x3dom.fields.MFVec3f.copy = function ( vec3Array )
     return destination;
 };
 
+/**
+ * Parses a string and creates and returns a new 3D vector array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFVec3f} a new 3D vector array containing
+ *                                 the parsed vectors
+ */
 x3dom.fields.MFVec3f.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7588,11 +9415,23 @@ x3dom.fields.MFVec3f.parse = function ( str )
     return new x3dom.fields.MFVec3f( vecs );
 };
 
+/**
+ * Returns a copy of this vector array.
+ *
+ * @returns {x3dom.fields.MFVec3f} a copy of this object
+ */
 x3dom.fields.MFVec3f.prototype.copy = function ()
 {
     return x3dom.fields.MFVec3f.copy( this );
 };
 
+/**
+ * Parses a string and sets this 3D vector array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFVec3f} this modified 3D vector array
+ */
 x3dom.fields.MFVec3f.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7601,12 +9440,19 @@ x3dom.fields.MFVec3f.prototype.setValueByStr = function ( str )
     {
         this.push( new x3dom.fields.SFVec3f( +mc[ i + 0 ], +mc[ i + 1 ], +mc[ i + 2 ] ) );
     }
+    return this;
 };
 
+/**
+ * Sets this 3D vector array's elements from the given array.
+ *
+ * @param {Array} vec3Array - an array of ``SFVec3f'' objects
+ *                            to copy from
+ */
 x3dom.fields.MFVec3f.prototype.setValues = function ( vec3Array )
 {
-    var i,
-        n = Math.min( vec3Array.length, this.length );
+    var i;
+    var n = Math.min( vec3Array.length, this.length );
 
     for ( i = 0; i < n; i++ )
     {
@@ -7614,6 +9460,13 @@ x3dom.fields.MFVec3f.prototype.setValues = function ( vec3Array )
     }
 };
 
+/**
+ * Returns an OpenGL-conformant array representation of this 3D vector
+ * array, enlisting each 3D vector's coordinates in order.
+ *
+ * @returns {Number[]} an array of numbers containing each vector's
+ *                     x-, y-, and z-coordinates in this order
+ */
 x3dom.fields.MFVec3f.prototype.toGL = function ()
 {
     var a = [];
@@ -7628,6 +9481,11 @@ x3dom.fields.MFVec3f.prototype.toGL = function ()
     return a;
 };
 
+/**
+ * Returns a string representation of this 3D vector array.
+ *
+ * @returns {String} a string representation of this 3D vector array
+ */
 x3dom.fields.MFVec3f.prototype.toString = function ()
 {
     var str = "";
@@ -7642,6 +9500,9 @@ x3dom.fields.MFVec3f.prototype.toString = function ()
 /**
  * MFVec2f constructor.
  *
+ * An ``MFVec2f'' object stores an arbitrary number of
+ * ``SFVec2f'' instances in a one-dimensional array.
+ *
  * @class Represents a MFVec2f
  */
 x3dom.fields.MFVec2f = function ( vec2Array )
@@ -7655,6 +9516,13 @@ x3dom.fields.MFVec2f = function ( vec2Array )
 
 x3dom.fields.MFVec2f.prototype = x3dom.extend( [] );
 
+/**
+ * Returns a copy of the specified 2D vector array.
+ *
+ * @param {x3dom.fields.MFVec2f} vec2Array - the 2D vector array to copy
+ * @returns {x3dom.fields.MFVec2f} a copy of the supplied 2D vector
+ *                                 array
+ */
 x3dom.fields.MFVec2f.copy = function ( vec2Array )
 {
     var destination = new x3dom.fields.MFVec2f();
@@ -7662,6 +9530,13 @@ x3dom.fields.MFVec2f.copy = function ( vec2Array )
     return destination;
 };
 
+/**
+ * Parses a string and creates and returns a new 2D vector array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFVec3f} a new 2D vector array containing
+ *                                 the parsed vectors
+ */
 x3dom.fields.MFVec2f.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7674,11 +9549,23 @@ x3dom.fields.MFVec2f.parse = function ( str )
     return new x3dom.fields.MFVec2f( vecs );
 };
 
+/**
+ * Returns a copy of this 2D vector array.
+ *
+ * @returns {x3dom.fields.MFVec2f} a copy of this 2D vector array
+ */
 x3dom.fields.MFVec2f.prototype.copy = function ()
 {
     return x3dom.fields.MFVec2f.copy( this );
 };
 
+/**
+ * Parses a string and sets this 2D vector array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFVec2f} this modified 3D vector array
+ */
 x3dom.fields.MFVec2f.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7689,6 +9576,13 @@ x3dom.fields.MFVec2f.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns an OpenGL-conformant array representation of this 2D vector
+ * array, enlisting each 2D vector's coordinates in order.
+ *
+ * @returns {Number[]} an array of numbers containing each vector's
+ *                     x- and y-coordinates in this order
+ */
 x3dom.fields.MFVec2f.prototype.toGL = function ()
 {
     var a = [];
@@ -7705,6 +9599,9 @@ x3dom.fields.MFVec2f.prototype.toGL = function ()
 /**
  * MFInt32 constructor.
  *
+ * An ``MFInt32'' object stores an arbitrary number of integer
+ * values in a one-dimensional array.
+ *
  * @class Represents a MFInt32
  */
 x3dom.fields.MFInt32 = function ( array )
@@ -7718,6 +9615,12 @@ x3dom.fields.MFInt32 = function ( array )
 
 x3dom.fields.MFInt32.prototype = x3dom.extend( [] );
 
+/**
+ * Returns a copy of the supplied integer array.
+ *
+ * @param {x3dom.fields.MFInt32} intArray - the integer array to copy
+ * @returns {x3dom.fields.MFInt32} a copy of the supplied integer array
+ */
 x3dom.fields.MFInt32.copy = function ( intArray )
 {
     var destination = new x3dom.fields.MFInt32();
@@ -7725,6 +9628,14 @@ x3dom.fields.MFInt32.copy = function ( intArray )
     return destination;
 };
 
+/**
+ * Parses a string and returns a new integer array containing the
+ * extracted integer values.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFInt32} a new integer array containing the
+ *                                 parsed values
+ */
 x3dom.fields.MFInt32.parse = function ( str )
 {
     var mc = str.match( /([+\-]?\d+\s*){1},?\s*/g );
@@ -7737,11 +9648,23 @@ x3dom.fields.MFInt32.parse = function ( str )
     return new x3dom.fields.MFInt32( vals );
 };
 
+/**
+ * Returns a copy of this integer array.
+ *
+ * @returns {x3dom.fields.MFInt32} a copy of this integer array
+ */
 x3dom.fields.MFInt32.prototype.copy = function ()
 {
     return x3dom.fields.MFInt32.copy( this );
 };
 
+/**
+ * Parses a string and sets this integer array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFInt32} this modified integer array
+ */
 x3dom.fields.MFInt32.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7752,6 +9675,12 @@ x3dom.fields.MFInt32.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns an OpenGL-conformant array representation of this integer
+ * array as a one-dimensional array.
+ *
+ * @returns {Number[]} an array of numbers containing the integer values
+ */
 x3dom.fields.MFInt32.prototype.toGL = function ()
 {
     var a = [];
@@ -7767,6 +9696,9 @@ x3dom.fields.MFInt32.prototype.toGL = function ()
 /**
  * MFFloat constructor.
  *
+ * An ``MFFloat'' object stores an arbitrary number of
+ * floating-point numbers in a one-dimensional array.
+ *
  * @class Represents a MFFloat
  */
 x3dom.fields.MFFloat = function ( array )
@@ -7780,6 +9712,11 @@ x3dom.fields.MFFloat = function ( array )
 
 x3dom.fields.MFFloat.prototype = x3dom.extend( [] );
 
+/**
+ * Returns a copy of the supplied float array.
+ *
+ * @returns {x3dom.fields.MFFloat} a copy of the supplied float array
+ */
 x3dom.fields.MFFloat.copy = function ( floatArray )
 {
     var destination = new x3dom.fields.MFFloat();
@@ -7787,6 +9724,14 @@ x3dom.fields.MFFloat.copy = function ( floatArray )
     return destination;
 };
 
+/**
+ * Parses a string and returns a new float array containing the
+ * extracted floating-point values.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFFloat} a new float array containing the
+ *                                 parsed values
+ */
 x3dom.fields.MFFloat.parse = function ( str )
 {
     var mc = str.match( /([+\-0-9eE\.]+)/g );
@@ -7799,11 +9744,23 @@ x3dom.fields.MFFloat.parse = function ( str )
     return new x3dom.fields.MFFloat( vals );
 };
 
+/**
+ * Returns a copy of this float array.
+ *
+ * @returns {x3dom.fields.MFFloat} a copy of this float array
+ */
 x3dom.fields.MFFloat.prototype.copy = function ()
 {
     return x3dom.fields.MFFloat.copy( this );
 };
 
+/**
+ * Parses a string and sets this float array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFFloat} this modified float array
+ */
 x3dom.fields.MFFloat.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7814,6 +9771,13 @@ x3dom.fields.MFFloat.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns a one-dimensional array of numbers which represents this
+ * float array's numbers, being suitable for communication with OpenGL.
+ *
+ * @returns {Number[]} a one-dimensional array containing all stored
+ *                     floating-point numbers
+ */
 x3dom.fields.MFFloat.prototype.toGL = function ()
 {
     var a = [];
@@ -7829,6 +9793,9 @@ x3dom.fields.MFFloat.prototype.toGL = function ()
 /**
  * MFBoolean constructor.
  *
+ * An ``MFBoolean'' object stores an arbitrary number of
+ * ``Boolean'' values in a one-dimensional array.
+ *
  * @class Represents a MFBoolean
  */
 x3dom.fields.MFBoolean = function ( array )
@@ -7842,6 +9809,12 @@ x3dom.fields.MFBoolean = function ( array )
 
 x3dom.fields.MFBoolean.prototype = x3dom.extend( [] );
 
+/**
+ * Returns a copy of the supplied Boolean array.
+ *
+ * @returns {x3dom.fields.MFBoolean} the copy of the supplied Boolean
+ *                                   array
+ */
 x3dom.fields.MFBoolean.copy = function ( boolArray )
 {
     var destination = new x3dom.fields.MFBoolean();
@@ -7849,6 +9822,14 @@ x3dom.fields.MFBoolean.copy = function ( boolArray )
     return destination;
 };
 
+/**
+ * Parses a string and returns a new Boolean array containing the
+ * extracted Boolean values.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFBoolean} a new boolean array containing the
+ *                                 parsed values
+ */
 x3dom.fields.MFBoolean.parse = function ( str )
 {
     var mc = str.match( /(true|false|1|0)/ig );
@@ -7861,11 +9842,23 @@ x3dom.fields.MFBoolean.parse = function ( str )
     return new x3dom.fields.MFBoolean( vals );
 };
 
+/**
+ * Returns a copy of this Boolean array.
+ *
+ * @returns {Boolean} a copy of this Boolean array
+ */
 x3dom.fields.MFBoolean.prototype.copy = function ()
 {
     return x3dom.fields.MFBoolean.copy( this );
 };
 
+/**
+ * Parses a string and sets this Boolean array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFBoolean} this modified Boolean array
+ */
 x3dom.fields.MFBoolean.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
@@ -7876,6 +9869,17 @@ x3dom.fields.MFBoolean.prototype.setValueByStr = function ( str )
     }
 };
 
+/**
+ * Returns a one-dimensional array of integer numbers which represents
+ * this Boolean array's truth values, being suitable for communication
+ * with OpenGL.
+ *
+ * Each Boolean ``true'' value will be converted into the
+ * integer one (1), each ``false'' into the integer zero (0).
+ *
+ * @returns {Number[]} a one-dimensional array representing the Boolean
+ *                     truth values in a numerical fashion
+ */
 x3dom.fields.MFBoolean.prototype.toGL = function ()
 {
     var a = [];
@@ -7891,6 +9895,9 @@ x3dom.fields.MFBoolean.prototype.toGL = function ()
 /**
  * MFString constructor.
  *
+ * An ``MFString'' object stores an arbitrary number of
+ * ``String'' values in a one-dimensional array.
+
  * @class Represents a MFString
  */
 x3dom.fields.MFString = function ( strArray )
@@ -7904,6 +9911,12 @@ x3dom.fields.MFString = function ( strArray )
 
 x3dom.fields.MFString.prototype = x3dom.extend( [] );
 
+/**
+ * Creates and returns a copy of the supplied string array.
+ *
+ * @param {MFString} stringArray - the string array to copy
+ * @returns {MFString} a copy of the input string array
+ */
 x3dom.fields.MFString.copy = function ( stringArray )
 {
     var destination = new x3dom.fields.MFString();
@@ -7911,6 +9924,14 @@ x3dom.fields.MFString.copy = function ( stringArray )
     return destination;
 };
 
+/**
+ * Parses a string and returns a new string array containing the
+ * extracted string values.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFString} a new string array containing the
+ *                                  parsed values
+ */
 x3dom.fields.MFString.parse = function ( str )
 {
     var arr = [];
@@ -7918,8 +9939,8 @@ x3dom.fields.MFString.parse = function ( str )
     // ignore leading whitespace?
     if ( str.length && str[ 0 ] == "\"" )
     {
-        var m,
-            re = /"((?:[^\\"]|\\\\|\\")*)"/g;
+        var m;
+        var re = /"((?:[^\\"]|\\\\|\\")*)"/g;
         while ( ( m = re.exec( str ) ) )
         {
             var s = m[ 1 ].replace( /\\([\\"])/g, "$1" );
@@ -7936,19 +9957,31 @@ x3dom.fields.MFString.parse = function ( str )
     return new x3dom.fields.MFString( arr );
 };
 
+/**
+ * Returns a copy of this string array.
+ *
+ * @returns {MFString} a copy of this string array
+ */
 x3dom.fields.MFString.prototype.copy = function ()
 {
     return x3dom.fields.MFString.copy( this );
 };
 
+/**
+ * Parses a string and sets this string array's elements from the
+ * obtained data, finally returning this modified array.
+ *
+ * @param {String} str - the string to parse
+ * @returns {x3dom.fields.MFString} this modified string array
+ */
 x3dom.fields.MFString.prototype.setValueByStr = function ( str )
 {
     this.length = 0;
     // ignore leading whitespace?
     if ( str.length && str[ 0 ] == "\"" )
     {
-        var m,
-            re = /"((?:[^\\"]|\\\\|\\")*)"/g;
+        var m;
+        var re = /"((?:[^\\"]|\\\\|\\")*)"/g;
         while ( ( m = re.exec( str ) ) )
         {
             var s = m[ 1 ].replace( /\\([\\"])/, "$1" );
@@ -7965,6 +9998,11 @@ x3dom.fields.MFString.prototype.setValueByStr = function ( str )
     return this;
 };
 
+/**
+ * Returns a string representation of this string array.
+ *
+ * @returns {String} a string representation of this string array
+ */
 x3dom.fields.MFString.prototype.toString = function ()
 {
     var str = "";
@@ -7990,17 +10028,41 @@ x3dom.fields.SFNode = function ( type )
     this.node = null;
 };
 
+/**
+ * Checks whether this node refers to the specified one.
+ *
+ * @param {x3dom.fields.SFNode} node - the node to check for presence
+ * @returns {Boolean} ``true'' if this node contains the
+ *                    supplied one, ``false'' otherwise
+ */
 x3dom.fields.SFNode.prototype.hasLink = function ( node )
 {
     return ( node ? ( this.node === node ) : this.node );
 };
 
+/**
+ * Stores the specified node in this one, always returning the Boolean
+ * ``true'' value as a sign of success.
+ *
+ * @param {x3dom.fields.SFNode} node - the node to add
+ * @returns {Boolean} always ``true'' as a sign of successful
+ *                    storage of the supplied node
+ */
 x3dom.fields.SFNode.prototype.addLink = function ( node )
 {
     this.node = node;
     return true;
 };
 
+/**
+ * Removes the specified node from this one, if it matches the stored
+ * data, returning a Boolean success or failure value.
+ *
+ * @param {x3dom.fields.SFNode} node - the node to remove
+ * @returns {Boolean} ``true'' if the specified node was
+ *                    stored in this one and could be removed,
+ *                    ``false'' if not
+ */
 x3dom.fields.SFNode.prototype.rmLink = function ( node )
 {
     if ( this.node === node )
@@ -8017,6 +10079,9 @@ x3dom.fields.SFNode.prototype.rmLink = function ( node )
 /**
  * MFNode constructor.
  *
+ * Represents a collection of zero or more ``SFNode'' objects,
+ * thus being a node array.
+ *
  * @class Represents a MFNode
  */
 x3dom.fields.MFNode = function ( type )
@@ -8025,6 +10090,18 @@ x3dom.fields.MFNode = function ( type )
     this.nodes = [];
 };
 
+/**
+ * Checks whether this node array contains the specified node, returning
+ * a Boolean check result.
+ *
+ * @param {x3dom.fields.SFNode} node - the node to check for presence
+ * @returns {Boolean} ``true'' if either the specified node is
+ *                    contained in this node array, or if no node is
+ *                    supplied and the node array is not empty,
+ *                    ``false'' if the node is either not part
+ *                    of this node array, or is not supplied and the
+ *                    node array is empty
+ */
 x3dom.fields.MFNode.prototype.hasLink = function ( node )
 {
     if ( node )
@@ -8044,12 +10121,26 @@ x3dom.fields.MFNode.prototype.hasLink = function ( node )
     return false;
 };
 
+/**
+ * Adds the specified node to this node's children
+ *
+ * @param {SFNode} node - the node to append
+ * @returns {Boolean} always ``true''
+ */
 x3dom.fields.MFNode.prototype.addLink = function ( node )
 {
     this.nodes.push( node );
     return true;
 };
 
+/**
+ * Removes the first occurrence of a specified node from the child
+ * nodes list of this node, returning a Boolean success or failure flag.
+ *
+ * @param {x3dom.fields.SFNode} node - the node to remove
+ * @returns {Boolean} ``true'' if the node could be found and
+ *                    removed, ``false'' if not
+ */
 x3dom.fields.MFNode.prototype.rmLink = function ( node )
 {
     for ( var i = 0, n = this.nodes.length; i < n; i++ )
@@ -8063,6 +10154,11 @@ x3dom.fields.MFNode.prototype.rmLink = function ( node )
     return false;
 };
 
+/**
+ * Returns the number of child nodes stored in this node.
+ *
+ * @returns {Number} the number of child nodes
+ */
 x3dom.fields.MFNode.prototype.length = function ()
 {
     return this.nodes.length;
@@ -8078,7 +10174,8 @@ x3dom.fields.MFNode.prototype.length = function ()
  * @param {SFVec3f} pos - anchor point of the line
  * @param {SFVec3f} dir - direction of the line, must be normalized
  * @class Represents a Line (as internal helper).
- *        A line has an origin and a vector that describes a direction, it is infinite in both directions.
+ *        A line has an origin and a vector that describes a direction,
+ *        it is infinite in both directions.
  */
 x3dom.fields.Line = function ( pos, dir )
 {
@@ -8093,10 +10190,11 @@ x3dom.fields.Line = function ( pos, dir )
 };
 
 /**
- * For a given point, this function returns the closest point on this line.
+ * For a given point, this function returns the closest point on this
+ * line.
  *
  * @param p {x3dom.fields.SFVec3f} - the point
- * @returns {x3dom.fields.SFVec3f} the closest point
+ * @returns {x3dom.fields.SFVec3f} the closest point on this line
  */
 x3dom.fields.Line.prototype.closestPoint = function ( p )
 {
@@ -8109,7 +10207,8 @@ x3dom.fields.Line.prototype.closestPoint = function ( p )
 };
 
 /**
- * For a given point, this function returns the distance to the closest point on this line.
+ * For a given point, this function returns the distance to the closest
+ * point on this line.
  *
  * @param p {x3dom.fields.SFVec3f} - the point
  * @returns {Number} the distance to the closest point
@@ -8121,7 +10220,8 @@ x3dom.fields.Line.prototype.shortestDistance = function ( p )
     // project the distance vector on the line
     var projDist = distVec.dot( this.dir );
 
-    // subtract the projected distance vector, to obtain the part that is orthogonal to this line
+    // subtract the projected distance vector, to obtain the part that
+    // is orthogonal to this line
     return distVec.subtract( this.dir.multiply( projDist ) ).length();
 };
 
@@ -8131,7 +10231,8 @@ x3dom.fields.Line.prototype.shortestDistance = function ( p )
  * @param {SFVec3f} pos - anchor point of the ray
  * @param {SFVec3f} dir - direction of the ray, must be normalized
  * @class Represents a Ray (as internal helper).
- *        A ray is a special line that extends to only one direction from its origin.
+ *        A ray is a special line that extends to only one direction
+ *        from its origin.
  */
 x3dom.fields.Ray = function ( pos, dir )
 {
@@ -8147,7 +10248,9 @@ x3dom.fields.Ray = function ( pos, dir )
         var n = dir.length();
         if ( n ) { n = 1.0 / n; }
 
-        this.dir = new x3dom.fields.SFVec3f( dir.x * n, dir.y * n, dir.z * n );
+        this.dir = new x3dom.fields.SFVec3f( dir.x * n,
+            dir.y * n,
+            dir.z * n );
     }
 
     this.enter = 0;
@@ -8157,15 +10260,23 @@ x3dom.fields.Ray = function ( pos, dir )
     this.dist = Number.MAX_VALUE;
 };
 
+/**
+ * Returns a string representation of this ray.
+ *
+ * @returns {String} a string representation of this ray
+ */
 x3dom.fields.Ray.prototype.toString = function ()
 {
-    return "Ray: [" + this.pos.toString() + "; " + this.dir.toString() + "]";
+    return "Ray: [" + this.pos.toString() + "; " +
+                      this.dir.toString() + "]";
 };
 
 /**
- * Intersects this ray with a plane, defined by the given anchor point and normal.
- * The result returned is the point of intersection, if any. If no point of intersection exists, null is returned.
- * Null is also returned in case there is an infinite number of solutions (, i.e., if the ray origin lies in the plane).
+ * Intersects this ray with a plane, defined by the given anchor point
+ * and normal. The result returned is the point of intersection, if any.
+ * If no point of intersection exists, null is returned. Null is also
+ * returned in case there is an infinite number of solutions (, i.e., if
+ * the ray origin lies in the plane).
  *
  * @param {x3dom.fields.SFVec3f} p - anchor point
  * @param {x3dom.fields.SFVec3f} n - plane normal
@@ -8179,7 +10290,8 @@ x3dom.fields.Ray.prototype.intersectPlane = function ( p, n )
 
     var nDotDir = n.dot( this.dir );
 
-    // if the ray hits the plane, the plane normal and ray direction must be facing each other
+    // if the ray hits the plane, the plane normal and ray direction
+    // must be facing each other
     if ( nDotDir < 0.0 )
     {
         alpha = ( p.dot( n ) - this.pos.dot( n ) ) / nDotDir;
@@ -8191,18 +10303,19 @@ x3dom.fields.Ray.prototype.intersectPlane = function ( p, n )
 };
 
 /**
- * Intersect line with box volume given by low and high
+ * Intersect a line with a box volume specified by its the low and
+ * high points and demarcations of its main diagonal.
  *
- * @param {number} low
- * @param {number} high
+ * @param {x3dom.fields.SFVec3f} the lower  endpoint of the box diagonal
+ * @param {x3dom.fields.SFVec3f} the higher endpoint of the box diagonal
  */
 x3dom.fields.Ray.prototype.intersect = function ( low, high )
 {
     var isect = 0.0;
     var out = Number.MAX_VALUE;
-    var r,
-        te,
-        tl;
+    var r;
+    var te;
+    var tl;
 
     if ( this.dir.x > x3dom.fields.Eps )
     {
@@ -8394,7 +10507,8 @@ x3dom.fields.BoxVolume.copy = function ( other )
  */
 x3dom.fields.BoxVolume.prototype.equals = function ( other )
 {
-    return ( this.min.equals( other.min, 0.000000000001 ) && this.max.equals( other.max, 0.000000000001 ) );
+    return ( this.min.equals( other.min, 0.000000000001 ) &&
+             this.max.equals( other.max, 0.000000000001 ) );
 };
 
 /**
@@ -8429,7 +10543,8 @@ x3dom.fields.BoxVolume.prototype.setBounds = function ( min, max )
  * @param center
  * @param size
  */
-x3dom.fields.BoxVolume.prototype.setBoundsByCenterSize = function ( center, size )
+x3dom.fields.BoxVolume.prototype.setBoundsByCenterSize = function ( center,
+    size )
 {
     var halfSize = size.multiply( 0.5 );
     this.min = center.subtract( halfSize );
@@ -8502,7 +10617,8 @@ x3dom.fields.BoxVolume.prototype.invalidate = function ()
 /**
  * Box Volume Is Valid?
  *
- * @returns {boolean}
+ * @returns {Boolean} ``true'' if this box volume is valid,
+ *                    ``false'' otherwise
  */
 x3dom.fields.BoxVolume.prototype.isValid = function ()
 {
@@ -8850,7 +10966,13 @@ x3dom.fields.BoxVolume.prototype.transformFrom = function ( m, other )
 /**
  * FrustumVolume constructor.
  *
- * @param clipMat
+ * A ``FrustumVolume'' represents the concept of a truncated pyramid
+ * shape with particular emphasis on its use as a boundary in which
+ * intersections might occur. The frustum constitutes a very significant
+ * entity by its connotation with perspectives.
+ *
+ * @param {SFMatrix4f} clipMat - a matrix from which to set the
+ *                               boundaries (clipping) of this frustum
  * @class Represents a frustum (as internal helper).
  */
 x3dom.fields.FrustumVolume = function ( clipMat )
@@ -8907,7 +11029,8 @@ x3dom.fields.FrustumVolume = function ( clipMat )
 
     for ( i = 0; i < 6; i++ )
     {
-        var vectorLength = Math.sqrt( planeEquation[ i ].x * planeEquation[ i ].x +
+        var vectorLength = Math.sqrt(
+            planeEquation[ i ].x * planeEquation[ i ].x +
             planeEquation[ i ].y * planeEquation[ i ].y +
             planeEquation[ i ].z * planeEquation[ i ].z );
 
@@ -8978,8 +11101,8 @@ x3dom.fields.FrustumVolume.prototype.intersect = function ( vol, planeMask )
     }
 
     var that = this;
-    var min = vol.min,
-        max = vol.max;
+    var min = vol.min;
+    var max = vol.max;
 
     var setDirectionIndexPoint = function ( index )
     {
@@ -9773,7 +11896,7 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
 
                 if ( !( fromNode && toNode ) )
                 {
-                    x3dom.debug.logWarning( "not yet availabe route - can't find all DEFs for " + fnAtt + " -> " + tnAtt );
+                    x3dom.debug.logWarning( "not yet available route - can't find all DEFs for " + fnAtt + " -> " + tnAtt );
                     this.lateRoutes.push( // save to check after protoextern instances loaded
                         {
                             route : route,
@@ -9785,7 +11908,7 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
                 }
                 else
                 {
-                    x3dom.debug.logInfo( "ROUTE: from=" + fromNode._DEF + ", to=" + toNode._DEF );
+                    // x3dom.debug.logInfo( "ROUTE: from=" + fromNode._DEF + ", to=" + toNode._DEF );
                     fromNode.setupRoute( fnAtt, toNode, tnAtt );
                     // Store reference to namespace for being able to remove route later on
                     route._nodeNameSpace = this;
@@ -9850,7 +11973,10 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
                     if ( domNode.hasAttribute( "id" ) )
                     {
                         n._DEF = domNode.getAttribute( "id" );
-                        this.defMap[ n._DEF ] = n;
+                        if ( !( n._DEF in this.defMap ) )
+                        {
+                            this.defMap[ n._DEF ] = n;
+                        }
                     }
                 }
 
@@ -9870,7 +11996,7 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
                 domNode._x3domNode = n;
 
                 //register ProtoDeclares and convert ProtoInstance to new nodes
-                domNode.querySelectorAll( ":scope > *" ) //static nodelist
+                domNode.querySelectorAll( ":scope > *" )
                     . forEach( function ( childDomNode )
                     {
                         var tag = childDomNode.localName.toLowerCase();
@@ -9883,7 +12009,7 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
                     }, this );
 
                 // call children
-                domNode.childNodes.forEach( function ( childDomNode ) //live nodelist
+                domNode.childNodes.forEach( function ( childDomNode )
                 {
                     var c = this.setupTree( childDomNode, n );
                     if ( c )
@@ -9900,11 +12026,11 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
     else if ( domNode.localName )
     {
         var tagLC = domNode.localName.toLowerCase();
-        //check if externproto tag for direct syntax
+        //find not yet loaded externproto in case of direct syntax
         var protoDeclaration = this.protos.find( function ( declaration )
-            {
-                return tagLC == declaration.name.toLowerCase() && declaration.isExternProto;
-            } );
+        {
+            return tagLC == declaration.name.toLowerCase() && declaration.isExternProto;
+        } );
         if ( parent && tagLC == "x3dommetagroup" )
         {
             domNode.childNodes.forEach( function ( childDomNode )
@@ -9917,24 +12043,26 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
             }.bind( this ) );
         }
 
-        else if ( tagLC == "protodeclare" || tagLC == "externprotodeclare" || tagLC == "protoinstance" )
+        //silence warnings
+        else if ( tagLC == "protodeclare" || tagLC == "externprotodeclare"
+		|| tagLC == "protoinstance" || tagLC == "x3dscript" )
         {
-            n = null;//this.protoInstance( domNode, parent._xmlNode );
+            n = null;
         }
-
         else if ( domNode.localName.toLowerCase() == "is" )
         {
-            //silence warning
-            //check for connect, just because
             if ( domNode.querySelectorAll( "connect" ).length == 0 )
             {
                 x3dom.debug.logWarning( "IS statement without connect link: " + domNode.parentElement.localName );
             }
         }
+
+        //direct syntax
         else if ( protoDeclaration )
         {
             this.loadExternProtoAsync( protoDeclaration, domNode, domNode, domNode.parentElement );
         }
+
         else
         {
             // be nice to users who use nodes not (yet) known to the system
@@ -9945,10 +12073,30 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
     return n;
 };
 
+/**
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2020 Andreas Plesch, Waltham, MA
+ * Dual licensed under the MIT and GPL
+ *
+ * Based on code originally provided by
+ * Philip Taylor: http://philip.html5.org
+ */
+
+/**
+ * NodeNameSpace protoInstance
+ *
+ * called from setupTree to process a ProtoInstance node. creates another dom node in short syntax.
+ * This short dom node is then processed back in setupTree. Additionally, it triggers loading an
+ * ExternProto declaration if required.
+ *
+ * @param domNode - the ProtoInstance dom node
+ * @param domParent - the parent dom node
+ */
 x3dom.NodeNameSpace.prototype.protoInstance = function ( domNode, domParent )
 {
     if ( !domNode.localName ) {return;}
-    if ( domNode.localName.toLowerCase() !== "protoinstance" ) {return;}
     if ( domNode._x3dom ) {return;}
 
     var name = domNode.getAttribute( "name" );
@@ -9996,7 +12144,10 @@ x3dom.NodeNameSpace.prototype.protoInstance = function ( domNode, domParent )
             else
             {
                 var value = fieldValue.getAttribute( "value" );
-                protoInstanceDom.setAttribute( name, value );
+                if ( value )
+                {
+                    protoInstanceDom.setAttribute( name, value );
+                }
             }
         } );
 
@@ -10005,14 +12156,29 @@ x3dom.NodeNameSpace.prototype.protoInstance = function ( domNode, domParent )
         this.loadExternProtoAsync( protoDeclaration, protoInstanceDom, domNode, domParent );
         return;
     }
-    this.doc.mutationObserver.disconnect();//do not record
-    //domParent.appendChild( protoInstanceDom );
+    this.doc.mutationObserver.disconnect(); //avoid doubled processing
     domNode.insertAdjacentElement( "afterend", protoInstanceDom ); // do not use appendChild since scene parent may be already transferred
-    this.doc.mutationObserver.observe( this.doc._scene._xmlNode, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
+    var observedDOM = this.doc._x3dElem;
+    if ( this.doc._scene )
+    {
+        observedDOM = this.doc._scene._xmlNode;
+    }
+    this.doc.mutationObserver.observe( observedDOM, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
     domNode._x3dom = protoInstanceDom;
-    //this.doc.onNodeAdded( protoInstanceDom, parent._xmlNode );
 };
 
+/**
+ * NodeNameSpace loadExternProtoAsync
+ *
+ * called from protoInstance to load an extern protoDeclaration, and then instance the node.
+ *
+ * ExternProto declaration if required.
+ * @param protoDeclaration - the initial protoDeclaration stub, is replaced after loading
+ * @param protoInstanceDom - the short syntax proto instance dom node
+ * @param domNode - the regular syntax ProtoInstance dom node
+ * @param parentDom - the parent dom node
+ * @returns null - if downloading fails
+ */
 x3dom.NodeNameSpace.prototype.loadExternProtoAsync = function ( protoDeclaration, protoInstanceDom, domNode, parentDom )
 {
     //use queue to ensure processing in correct sequence
@@ -10037,7 +12203,7 @@ x3dom.NodeNameSpace.prototype.loadExternProtoAsync = function ( protoDeclaration
                 scene = doc.querySelector( "X3D" );
             }
             //find hash
-            var hash = url.split( "#" ).slice( -1 )[ 0 ];
+            var hash = url.includes( "#" ) ? url.split( "#" ).slice( -1 )[ 0 ] : "";
             var selector = hash == "" ? "ProtoDeclare" : "ProtoDeclare[name='" + hash + "']";
             var declareNode = scene.querySelector( selector );
             //transfer name
@@ -10049,18 +12215,21 @@ x3dom.NodeNameSpace.prototype.loadExternProtoAsync = function ( protoDeclaration
             } );
             that.protos.splice( currentIndex, 1 );
             that.protoDeclare( declareNode ); //add declaration as internal
+            //TODO check actual fields against fields in protoDeclaration
+            //warn if not matching but proceed ?
+            //that.protos[that.protos.length-1].fields ==? protoDeclaration.fields
+
             //add instance(s) in order
             var instance;
             while ( instance = protoDeclaration.instanceQueue.shift() ) //process in correct sequence
             {
                 that.doc.mutationObserver.disconnect();//do not record mutation
-                if (instance.domNode !== instance.protoInstanceDom )
+                if ( instance.domNode !== instance.protoInstanceDom ) //check for short syntax
                 {
                     instance.domNode.insertAdjacentElement( "afterend", instance.protoInstanceDom ); // do not use appendChild since scene parent may be already transferred
                 }
                 that.doc.mutationObserver.observe( that.doc._scene._xmlNode, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
                 that.doc.onNodeAdded( instance.protoInstanceDom, instance.parentDom );
-                //instance.domNode._x3dom = instance.protoInstanceDom;
 
                 that.lateRoutes.forEach( function ( route )
                 {
@@ -10084,20 +12253,36 @@ x3dom.NodeNameSpace.prototype.loadExternProtoAsync = function ( protoDeclaration
         } );
 };
 
+/**
+ * NodeNameSpace externProtoDeclare
+ *
+ * adds initial proto declaration to available prototype array
+ *
+ * @param domNode - the regular syntax ProtoInstance dom node
+ */
 x3dom.NodeNameSpace.prototype.externProtoDeclare = function ( domNode )
 {
     var name = domNode.getAttribute( "name" );
     var url = x3dom.fields.MFString.parse( domNode.getAttribute( "url" ) );
-    var protoDeclaration = new x3dom.ProtoDeclaration( this, name, null, null, true, url );
+    //TODO parse fields to check later against actual fields in file
+    var fields = null;
+    var protoDeclaration = new x3dom.ProtoDeclaration( this, name, null, fields, true, url );
     this.protos.push( protoDeclaration );
     //protoinstance checks for name and triggers loading
 };
 
+/**
+ * NodeNameSpace protoDeclare
+ *
+ * processes ProtoDeclare node, called from setupTree.
+ * generates a new protoDeclaration, and then uses it to register the new node to x3dom
+ *
+ * @param domNode - the regular syntax ProtoInstance dom node
+ */
 x3dom.NodeNameSpace.prototype.protoDeclare = function ( domNode )
 {
     var name = domNode.getAttribute( "name" );
 
-    //console.log( "found ProtoDeclare", name, domNode );
     var protoInterface = domNode.querySelector( "ProtoInterface" );
 
     var fields = [];
@@ -10176,337 +12361,6 @@ x3dom.NodeNameSpace.prototype.protoDeclare = function ( domNode )
         x3dom.debug.logWarning( "ProtoDeclare without a ProtoBody definition: " + domNode.name );
     }
     return "ProtoDeclare";
-};
-
-x3dom.ProtoDeclaration = function ( namespace, name, protoBody, fields, isExternProto, url )
-{
-    this._nameSpace = namespace; // main scene name space
-    this.name = name;
-    this._protoBody = protoBody || null;
-    this.fields = fields || [];
-    this.isExternProto = isExternProto || false;
-    this.url = url || [];
-    this.needsLoading = true;
-    this.instanceQueue = [];
-};
-
-x3dom.ProtoDeclaration.prototype.registerNode = function ()
-{
-    var that = this;
-    x3dom.registerNodeType(
-        that.name,
-        "Core", // ProtoComponent
-        defineClass( x3dom.nodeTypes.X3DNode,
-
-            /**
-             * generic Constructor for named prototype
-             * @constructs x3dom.nodeTypes[this.name]
-             * @x3d 3.3
-             * @component Core
-             * @status experimental
-             * @extends x3dom.nodeTypes.X3DNode
-             * @param {Object} [ctx=null] - context object, containing initial settings like namespace
-             * @classdesc X3DBindableNode is the abstract base type for all bindable children nodes.
-             */
-            function ( ctx )
-            {
-                x3dom.nodeTypes[ that.name ].superClass.call( this, ctx );
-
-                //fields
-                that.fields.filter( function ( field )
-                {
-                    return !field.dataType.endsWith( "ode" ); //_vf fields
-                } )
-                    . forEach( function ( field )
-                    {
-                    //set interface defaults
-                        if ( ctx && ctx.xmlNode && !ctx.xmlNode.hasAttribute( field.name ) )
-                        {
-                            ctx.xmlNode.setAttribute( field.name, field.value );
-                        }
-                        this[ "addField_" + field.dataType ]( ctx, field.name, field.value );
-                    }, this );
-                this._cf_hash = {};
-                that.fields.filter( function ( field )
-                {
-                    return field.dataType.endsWith( "ode" ); //_cf fields
-                } )
-                    . forEach( function ( field )
-                    {
-                    //set interface defaults for cf fields
-                        if ( ctx && ctx.xmlNode )
-                        {
-                            if ( ctx.xmlNode.querySelectorAll( "[containerField='" + field.name + "']" ).length == 0 )
-                            {
-                                field.cfValue.forEach( function ( sfnodedom )
-                                {
-                                    ctx.xmlNode.appendChild( sfnodedom.cloneNode( true ) );
-                                } );
-                            }
-                        }
-                        //find node type from IS in body
-                        var ISRoutes = that._protoBody._ISRoutes;
-                        var ISconnection = ISRoutes[ field.name ][ 0 ];
-                        var nodeField = ISconnection.nodeField;
-                        var ISDomNode = that._protoBody.querySelector( "[DEF=" + ISconnection.nodeDEF + "]" );
-                        //create temp node to get type
-                        var type = x3dom.nodeTypes.X3DNode;
-                        var IStype = ISDomNode.localName.toLowerCase();
-                        if ( IStype in x3dom.nodeTypesLC )
-                        {
-                            var ISNode = new x3dom.nodeTypesLC[ IStype ]( ctx );
-                            type = ISNode._cf[ nodeField ].type;
-                        }
-                        this[ "addField_" + field.dataType ]( field.name, type );//type should be registered x3dom type
-                        this._cf_hash[ field.name ] = "trigger";
-                    }, this );
-
-                //initial
-                var nameSpaceName = "protoNS";
-                if ( ctx.xmlNode.hasAttribute( "DEF" ) )
-                {
-                    nameSpaceName = ctx.xmlNode.getAttribute( "DEF" ) + "NS";
-                }
-                this.innerNameSpace = new x3dom.NodeNameSpace( nameSpaceName, ctx.doc ); // instance name space
-                this.innerNameSpace.setBaseURL( ctx.nameSpace.baseURL + that.name );
-                that._nameSpace.addSpace( this.innerNameSpace );
-
-                //transfer proto definitions if any
-                that._nameSpace.protos.forEach( function ( protoDeclaration )
-                {
-                    this.innerNameSpace.protos.push( protoDeclaration );
-                }, this );
-
-                this.nodes = [];
-                this.protoBodyClone = that._protoBody.cloneNode( true );
-                this.declaration = that;
-                this.isProtoInstance = true;
-                this._changing = false;
-                this._externTries = 0;
-                this._maxTries = 5;
-            },
-            {
-                nodeChanged : function ( nodeField )
-                {
-                    if ( this._changing ) {return;}
-
-                    this._changing = true;
-
-                    var body = this.protoBodyClone;
-
-                    //register ProtoDeclares and convert ProtoInstance to new nodes
-                    body.querySelectorAll( ":scope > *" ) //static nodelist
-                        .forEach( function ( childDomNode )
-                        {
-                            var tag = childDomNode.localName.toLowerCase();
-                            if ( tag == "protodeclare" )
-                            { this.innerNameSpace.protoDeclare( childDomNode ); }
-                            else if ( tag == "externprotodeclare" )
-                            { this.innerNameSpace.externProtoDeclare( childDomNode ); }
-                            else if ( tag == "protoinstance" )
-                            { this.innerNameSpace.protoInstance( childDomNode, body ); }
-                        },
-                        this );
-
-                    var children = this.protoBodyClone.childNodes;
-
-                    for ( var i = 0; i < children.length; i++ )
-                    {
-                        var c = this.innerNameSpace.setupTree.call( this.innerNameSpace, children[ i ], this );
-
-                        if ( c != null )
-                        {
-                            this.nodes.push( c );
-                        }
-                    };
-                    this.typeNode = this.nodes[ 0 ];
-                    this.helperNodes = this.nodes.slice( 1 );
-
-                    //set initial values
-                    for ( field in this._vf )
-                    {
-                        this.fieldChanged( field );
-                    }
-                    for ( field in this._cf )
-                    {
-                        var cf = this._cf[ field ];
-                        if ( "nodes" in cf )
-                        {
-                            if ( this._cf_hash[ field ] !== this._get_cf_hash( field )
-                                || field == nodeField ) //changed
-                            {
-                                this.fieldChanged( field );
-                            }
-                        }
-                        else
-                        {
-                            this.fieldChanged( field );
-                        }
-                    }
-
-                    //add fieldwatchers to nodeFields to forward event out
-                    //todo: only for output fields
-                    for ( field in this._vf )
-                    {
-                        var ISRoutes = this.declaration._protoBody._ISRoutes;
-                        if ( field in ISRoutes ) //misbehaved Protos may have unused fields
-                        {
-                            this._setupFieldWatchers( field );
-                        }
-                    };
-                    this._changing = false;
-
-                    //save a current hash of cf children
-                    for ( field in this._cf )
-                    {
-                        if ( "nodes" in this._cf[ field ] )
-                        {
-                            this._cf_hash[ field ] = this._get_cf_hash( field );
-                        }
-                    }
-                },
-
-                fieldChanged : function ( field )
-                {
-                    try
-                    {
-                        //todo: check if input field
-                        var ISRoutes = this.declaration._protoBody._ISRoutes;
-                        if ( ! ( field in ISRoutes ) ) {return;}
-                        ISRoutes[ field ].forEach( function ( ISNode )
-                        {
-                            var instanceNode = this.innerNameSpace.defMap[ ISNode.nodeDEF ];
-
-                            if ( instanceNode == undefined ) //probably unfinished externproto
-                            {
-                                var ISparent = this.protoBodyClone.querySelector( "[DEF=" + ISNode.nodeDEF + "]" );
-                                if ( ISparent.tagName.toLowerCase() == "protoinstance" )
-                                {
-                                    if ( this._externTries++ < this._maxTries )
-                                    {
-                                        x3dom.debug.logWarning( " ExternProto instance attempt: " + this._externTries );
-                                        //try again
-                                        var timer = setTimeout( this.fieldChanged.bind( this ), 1000, field );
-                                    }
-                                }
-                                return;
-                            }
-
-                            this._externTries = 0;
-                            //forward
-                            //potentially check for cf values
-                            //strip set_ and _changed
-                            var nodeField = this._normalizeName( ISNode.nodeField, instanceNode );
-                            if ( field in this._vf )
-                            {
-                                instanceNode._vf[ nodeField ] = this._vf[ field ];
-                                instanceNode.fieldChanged( nodeField );
-                            }
-                            else if ( field in this._cf )
-                            {
-                                instanceNode._cf[ nodeField ] = this._cf[ field ];//(re)add reference
-
-                                //transfer parents/children
-                                var nodes = [];
-                                if ( instanceNode._cfFieldTypes[ nodeField ] == "MFNode" )
-                                {
-                                    nodes = this._cf[ field ].nodes;
-                                }
-                                else if ( instanceNode._cfFieldTypes[ nodeField ] == "SFNode"
-                                            && this._cf[ field ].node )
-                                {
-                                    nodes = [ this._cf[ field ].node ];
-                                }
-                                else
-                                {
-                                    x3dom.debug.logWarning( "Unexpected field type: " + instanceNode._cfFieldTypes[ nodeField ] );
-                                }
-
-                                //first remove all field childnodes
-                                instanceNode._childNodes.forEach( function ( sfnode )
-                                {
-                                    instanceNode.removeChild( sfnode, nodeField, "force" );
-                                } );
-
-                                // then re-add new child nodes to instance
-                                nodes.forEach( function ( sfnode, i )
-                                {
-                                    instanceNode.addChild( sfnode, nodeField );
-                                } );
-
-                                if ( instanceNode._cfFieldTypes[ nodeField ] == "MFNode" )
-                                {
-                                    // now the _cf nodes array may contain duplicates
-                                    // remove the first one
-                                    for ( var i = 0; i < nodes.length; i++ )
-                                    {
-                                        var node = nodes[ i ];
-                                        for ( var j = nodes.length - 1; j > i; j-- )
-                                        {
-                                            if ( node == nodes[ j ] )
-                                            {
-                                                nodes.splice( j, 1 );
-                                            }
-                                        }
-                                    }
-                                }
-
-                                instanceNode.nodeChanged( nodeField );
-                            }
-                        }, this );
-                    }
-                    catch ( error )
-                    {
-                        x3dom.debug.logWarning( " Proto warning: " + error );
-                    };
-                },
-
-                _normalizeName : function ( name, node )
-                {
-                    if ( name in node._vf )
-                    {
-                        return name;
-                    }
-                    return name.replace( /^set_/, "" ).replace( /_changed$/, "" );
-                },
-
-                _setupFieldWatchers : function ( field )
-                {
-                    this.declaration._protoBody._ISRoutes[ field ].forEach( function ( ISNode )
-                    {
-                        var instanceNode = this.innerNameSpace.defMap[ ISNode.nodeDEF ];
-                        if ( instanceNode == undefined )
-                        {
-                            var ISparent = this.protoBodyClone.querySelector( "[DEF=" + ISNode.nodeDEF + "]" );
-                            if ( ISparent.tagName.toLowerCase() == "protoinstance" )
-                            {
-                                if ( this._externTries++ < this._maxTries )
-                                {
-                                    x3dom.debug.logWarning( " retrying ExternProto: " + this._externTries );
-                                    //try again
-                                    var timer = setTimeout( this._setupFieldWatchers.bind( this ), 1000, field );
-                                }
-                            }
-                            return;
-                        }
-                        var nodeField = this._normalizeName( ISNode.nodeField, instanceNode );
-                        if ( !instanceNode._fieldWatchers[ nodeField ] )
-                        {
-                            instanceNode._fieldWatchers[ nodeField ] = [];
-                        }
-                        instanceNode._fieldWatchers[ nodeField ].push(
-                            this.postMessage.bind( this, field ) ); // forward
-                    }, this );
-                },
-
-                _get_cf_hash : function ( field )
-                {
-                    var nodes = this._cf[ field ].nodes;
-                    return nodes.length;
-                }
-            }
-        )
-    );
 };
 
 // uid for generated proto defs
@@ -10714,10 +12568,11 @@ x3dom.gfx_webgl = ( function ()
                             x3dom.Utils.maxIndexableCoords = 4294967295;
                         }
 
-                        //Disable half float textures on apple devices
+                        //Disable half float and float textures on apple devices
                         if ( isAppleDevice )
                         {
                             x3dom.caps.HFP_TEXTURES = false;
+                            x3dom.caps.FP_TEXTURES = false;
                         }
 
                         //Disable texture lod on safari browsers
@@ -11574,6 +13429,9 @@ x3dom.gfx_webgl = ( function ()
 
                 interp._vf.key = new x3dom.fields.MFFloat( sky );
                 interp._vf.keyValue = new x3dom.fields.MFColor( colors );
+                interp._vf.RGB = true;
+
+                interp.fieldChanged( "keyValue" ); //update internals
 
                 for ( i = 0; i < N; i++ )
                 {
@@ -13305,6 +15163,18 @@ x3dom.gfx_webgl = ( function ()
             isParticleSet = true;
         }
 
+        var pointProperties = s_app ? s_app._cf.pointProperties.node : null;
+        pointProperties = pointProperties && x3dom.isa( s_geo, x3dom.nodeTypes.PointSet );
+
+        if ( pointProperties )
+        {
+            var pprop_vf = s_app._cf.pointProperties.node._vf;
+            sp.pointSizeAttenuation = pprop_vf.attenuation.toGL();
+            sp.pointSizeFactor = pprop_vf.pointSizeScaleFactor;
+            sp.minPointSize = pprop_vf.pointSizeMinValue;
+            sp.maxPointSize = pprop_vf.pointSizeMaxValue;
+        }
+
         q_n = s_gl.positions.length;
 
         for ( var q = 0; q < q_n; q++ )
@@ -14641,11 +16511,13 @@ x3dom.gfx_webgl = ( function ()
 
         x3dom.Utils.startMeasure( "shadow" );
 
+        var sLightMatrix = viewarea.getLightMatrix( slights );
+
         for ( var p = 0; p < numLights; p++ )
         {
             if ( slights[ p ]._vf.shadowIntensity > 0.0 )
             {
-                var lightMatrix = viewarea.getLightMatrix()[ p ];
+                var lightMatrix = sLightMatrix[ p ];
                 var shadowMaps = scene._webgl.fboShadow[ shadowCount ];
                 var offset = Math.max( 0.0, Math.min( 1.0, slights[ p ]._vf.shadowOffset ) );
 
@@ -15009,12 +16881,13 @@ x3dom.gfx_webgl = ( function ()
 
         var i,
             n,
-            m = rt._cf.excludeNodes.nodes.length;
+            ex = rt._cf.excludeNodes.nodes,
+            m = ex.length;
 
         var arr = new Array( m );
         for ( i = 0; i < m; i++ )
         {
-            var render = rt._cf.excludeNodes.nodes[ i ]._vf.render;
+            var render = ex[ i ].renderFlag && ex[ i ].renderFlag();
             if ( render === undefined )
             {
                 arr[ i ] = -1;
@@ -15030,7 +16903,7 @@ x3dom.gfx_webgl = ( function ()
                     arr[ i ] = 0;
                 }
             }
-            rt._cf.excludeNodes.nodes[ i ]._vf.render = false;
+            rt._cf.excludeNodes.nodes[ i ]._vf.visible = false;
         }
 
         this.stateManager.bindFramebuffer( gl.FRAMEBUFFER, rt._webgl.fbo.fbo );
@@ -15129,7 +17002,7 @@ x3dom.gfx_webgl = ( function ()
                 {
                     drawable = locScene.drawableCollection.get( i );
 
-                    if ( !drawable.shape._vf.render )
+                    if ( !drawable.shape.renderFlag() )
                     {
                         continue;
                     }
@@ -15157,7 +17030,7 @@ x3dom.gfx_webgl = ( function ()
         {
             if ( arr[ i ] !== 0 )
             {
-                rt._cf.excludeNodes.nodes[ i ]._vf.render = true;
+                rt._cf.excludeNodes.nodes[ i ]._vf.visible = true;
             }
         }
     };
@@ -15195,7 +17068,7 @@ x3dom.gfx_webgl = ( function ()
             var shape = drawable.shape;
             var s_gl = shape._webgl;
 
-            if ( !s_gl || !shape || !shape._vf.render )
+            if ( !s_gl || !shape || !shape.renderFlag() )
             {
                 continue;
             }
@@ -15344,7 +17217,7 @@ x3dom.gfx_webgl = ( function ()
         }
 
         var bgnd = scene.getBackground();
-        if ( bgnd._webgl.position !== undefined )
+        if ( bgnd._webgl && bgnd._webgl.position !== undefined )
         {
             gl.deleteBuffer( bgnd._webgl.buffers[ x3dom.BUFFER_IDX.INDEX ] );
             gl.deleteBuffer( bgnd._webgl.buffers[ x3dom.BUFFER_IDX.POSITION ] );
@@ -16707,7 +18580,7 @@ x3dom.Runtime.prototype.mousePosition = function ( event )
 };
 
 /**
- * Function: calcCanvasPos
+ * Function: calcCanvasPos, calcPagePos
  *
  * Returns the 2d screen position [cx, cy] for a given point [wx, wy, wz] in world coordinates.
  *
@@ -16733,6 +18606,8 @@ x3dom.Runtime.prototype.calcCanvasPos = function ( wx, wy, wz )
     return [ x, y ];
 };
 
+x3dom.Runtime.prototype.calcPagePos = x3dom.Runtime.prototype.calcCanvasPos;
+
 /**
  * Function: getBBoxPoints
  *
@@ -16756,7 +18631,7 @@ x3dom.Runtime.prototype.getBBoxPoints = function ()
 };
 
 /**
- * Function: calcPagePos
+ * Function: getSceneBRect
  *
  * @returns The 2d rect of the scene volume
  */
@@ -17043,7 +18918,7 @@ x3dom.Runtime.prototype.showObject = function ( obj, axis )
             case "posX": n0 = new x3dom.fields.SFVec3f( 1,  0,  0 ); break;
             case "negX": n0 = new x3dom.fields.SFVec3f( -1,  0,  0 ); break;
             case "posY": n0 = new x3dom.fields.SFVec3f( 0,  1,  0 ); break;
-            case "negY": n0 = new x3dom.fields.SFVec3f( 1, -1,  0 ); break;
+            case "negY": n0 = new x3dom.fields.SFVec3f( 0, -1,  0 ); break;
             case "posZ": n0 = new x3dom.fields.SFVec3f( 0,  0,  1 ); break;
             case "negZ": n0 = new x3dom.fields.SFVec3f( 0,  0, -1 ); break;
         }
@@ -19478,6 +21353,7 @@ x3dom.X3DDocument = function ( canvas, ctx, settings )
     this.downloadCount = 0;     // Counter for objects to be loaded
     this.previousDownloadCount = 0;
     this.mutationObserver = new MutationObserver( this.onMutation.bind( this ) );
+    this.X3DMutationObserver = new MutationObserver( this.onX3DMutation.bind( this ) );
 
     // bag for pro-active (or multi-core-like) elements
     this._nodeBag = {
@@ -19565,6 +21441,8 @@ x3dom.X3DDocument.prototype._setup = function ( sceneDoc )
     // sceneDoc is the X3D element here...
     var sceneElem = x3dom.findScene( sceneDoc );
 
+    this.X3DMutationObserver.observe( document, { attributes: false, attributeOldValue: false, childList: true, subtree: true } );
+    this.mutationObserver.observe( sceneDoc, { attributes: false, attributeOldValue: false, childList: true, subtree: false } );
     this.mutationObserver.observe( sceneElem, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
 
     // create and add BindableBag that holds all bindable stacks
@@ -19855,11 +21733,11 @@ x3dom.X3DDocument.prototype.onKeyPress = function ( charCode )
             {
                 states.display();
             }
-            x3dom.debug.logInfo( "a: show all | d: show helper buffers | s: small feature culling | t: light view | " +
-                                "m: toggle render mode | c: frustum culling | p: intersect type | r: reset view | \n" +
+            x3dom.debug.logInfo( "a: show all | i: fit view | d: show helper buffers | s: small feature culling | t: light view | " +
+                                "m: toggle render mode | c: frustum culling | p: intersect type | \n" +
                                 "e: examine mode | f: fly mode | y: freefly mode | w: walk mode | h: helicopter mode | " +
                                 "l: lookAt mode | o: lookaround | g: game mode | n: turntable | u: upright position | \n" +
-                                "v: print viewpoint info | pageUp: next view | pageDown: prev. view | " +
+                                "v: print viewpoint info | r: reset view | home: first view | end: last view | pageUp: next view | pageDown: prev. view | " +
                                 "+: increase speed | -: decrease speed " );
             break;
         case  43: /* + (incr. speed) */
@@ -20174,9 +22052,12 @@ x3dom.X3DDocument.prototype.getParentNode = function ( parentNode )
 
 x3dom.X3DDocument.prototype.onAttributeChanged = function ( target, attributeName, attributeValue )
 {
-    target._x3domNode.updateField( attributeName, attributeValue );
+    if ( "_x3domNode" in target )
+    {
+        target._x3domNode.updateField( attributeName, attributeValue );
 
-    this.needRender = true;
+        this.needRender = true;
+    }
 };
 
 x3dom.X3DDocument.prototype.onNodeRemoved =  function ( removedNode, target )
@@ -20241,7 +22122,20 @@ x3dom.X3DDocument.prototype.onNodeRemoved =  function ( removedNode, target )
                 domNode.getAttribute( "toField" ) );
         }
     }
-    else if ( domNode.localName && domNode.localName.toUpperCase() == "X3D" )
+};
+
+x3dom.X3DDocument.prototype.onX3DNodeRemoved =  function ( removedNode, target )
+{
+    var domNodes = [];
+    if ( "querySelector" in removedNode && removedNode.querySelector( "X3D" ) )
+    {
+        domNodes = removedNode.querySelectorAll( "X3D" );
+    }
+    if ( removedNode.localName && removedNode.localName.toUpperCase() == "X3D" )
+    {
+        domNodes = [ removedNode ];
+    }
+    domNodes.forEach( function ( domNode )
     {
         var runtime = domNode.runtime;
 
@@ -20271,7 +22165,7 @@ x3dom.X3DDocument.prototype.onNodeRemoved =  function ( removedNode, target )
             domNode.context = null;
             domNode.runtime = null;
         }
-    }
+    }, this );
 };
 
 x3dom.X3DDocument.prototype.onNodeAdded = function ( addedNode, target )
@@ -20279,7 +22173,7 @@ x3dom.X3DDocument.prototype.onNodeAdded = function ( addedNode, target )
     var child = addedNode,
         parentNode = this.getParentNode( target );
 
-    if ( parentNode.tagName && parentNode.tagName.toLowerCase() == "inline" )
+    if ( ( parentNode.tagName && parentNode.tagName.toLowerCase() == "inline" ) || ! ( "_x3domNode" in parentNode ) )
     {
         return;
     }
@@ -20288,8 +22182,18 @@ x3dom.X3DDocument.prototype.onNodeAdded = function ( addedNode, target )
 
     if ( !parent || !parent._nameSpace || !( child instanceof Element ) )
     {
-        x3dom.debug.logWarning( "No _nameSpace in onNodeInserted" );
+        x3dom.debug.logWarning( "No _nameSpace in onNodeAdded" );
         return;
+    }
+
+    if ( "_x3domNode" in child )
+    {
+        if ( child._x3domNode._parentNodes.includes( parent ) )
+        {
+            return;
+        }
+        parent.removeChild( child._x3domNode ); // may never happen
+        this.removeX3DOMBackendGraph( child );
     }
 
     if ( x3dom.caps.DOMNodeInsertedEvent_perSubtree )
@@ -20317,15 +22221,20 @@ x3dom.X3DDocument.prototype.onNodeAdded = function ( addedNode, target )
     }
 };
 
+x3dom.X3DDocument.prototype.onX3DNodeAdded = function ( addedNode, target )
+{
+    var domNode = addedNode;
+
+    if ( domNode.localName && domNode.localName.toUpperCase() == "X3D" )
+    {
+        //x3dom.reload();
+    }
+};
+
 x3dom.X3DDocument.prototype.onMutation = function ( records )
 {
     for ( var i = 0, n = records.length; i < n; i++ )
     {
-        if ( !records[ i ].target[ "_x3domNode" ] )
-        {
-            continue;
-        }
-
         if ( records[ i ].type === "attributes" && records[ i ].oldValue )
         {
             this.onAttributeChanged( records[ i ].target,
@@ -20349,6 +22258,31 @@ x3dom.X3DDocument.prototype.onMutation = function ( records )
                     this.onNodeAdded( records[ i ].addedNodes[ j ], records[ i ].target );
                 }
             }
+        }
+    }
+};
+
+x3dom.X3DDocument.prototype.onX3DMutation = function ( records )
+{
+    for ( var i = 0, n = records.length; i < n; i++ )
+    {
+        if ( records[ i ].type === "childList" )
+        {
+            if ( records[ i ].removedNodes.length )
+            {
+                for ( var j = 0, k = records[ i ].removedNodes.length; j < k; j++ )
+                {
+                    this.onX3DNodeRemoved( records[ i ].removedNodes[ j ], records[ i ].target );
+                }
+            }
+
+            //if ( records[ i ].addedNodes.length )
+            //{
+            //    for ( var j = 0, k = records[ i ].addedNodes.length; j < k; j++ )
+            //    {
+            //        this.onX3DNodeAdded( records[ i ].addedNodes[ j ], records[ i ].target );
+            //    }
+            //}
         }
     }
 };
@@ -20391,6 +22325,7 @@ x3dom.MatrixMixer = function ( beginTime, endTime )
     this._result = x3dom.fields.SFMatrix4f.identity();
 
     this._useQuaternion = false;
+    this._isVPtarget = false;
 };
 
 /**
@@ -23948,8 +25883,8 @@ x3dom.Utils.generateProperties = function ( viewarea, shape )
         property.POINTLINE2D      = !geometry.needLighting() ? 1 : 0;
         property.VERTEXID         = ( ( property.BINARYGEOMETRY ) && geometry._vf.idsPerVertex ) ? 1 : 0;
         property.IS_PARTICLE      = ( x3dom.isa( geometry, x3dom.nodeTypes.ParticleSet ) ) ? 1 : 0;
+        property.POINTPROPERTIES  = ( appearance && appearance._cf.pointProperties.node ) ? 1 : 0;
         property.TANGENTDATA      = ( geometry._mesh._tangents[ 0 ].length > 0 && geometry._mesh._binormals[ 0 ].length > 0 ) ? 1 : 0;
-
         property.PBR_MATERIAL     = ( property.APPMAT && x3dom.isa( material, x3dom.nodeTypes.PhysicalMaterial ) ) ? 1 : 0;
         property.TWOSIDEDMAT      = ( property.APPMAT && x3dom.isa( material, x3dom.nodeTypes.TwoSidedMaterial ) ) ? 1 : 0;
         property.SEPARATEBACKMAT  = ( property.TWOSIDEDMAT && material._vf.separateBackColor ) ? 1 : 0;
@@ -26422,6 +28357,28 @@ x3dom.BinaryContainerLoader.setupBufferGeo = function ( shape, sp, gl, viewarea,
         bufferGeo._mesh._numNormComponents = 3;
     };
 
+    var linkCache = function ( cache )
+    {
+        cache.shapes.push( shape );
+        shape._webgl._bufferGeoCache = cache;
+        //patch cleanupGLObjects to check for cache
+        var _cleanupGLObjects = shape._cleanupGLObjects;
+        shape._cleanupGLObjects = function ( force, delGL )
+        {
+            var _cache = this._webgl._bufferGeoCache;
+            var found = _cache.shapes.indexOf( this );
+            if ( found > -1 )
+            {
+                _cache.shapes.splice( found, 1 );
+            }
+            if ( _cache.shapes.length > 0 )
+            {
+                return;
+            }
+            _cleanupGLObjects.call( this, force, delGL );
+        };
+    };
+
     if ( bufferGeo._vf.buffer != "" )
     {
         URL = shape._nameSpace.getURL( bufferGeo._vf.buffer );
@@ -26432,6 +28389,7 @@ x3dom.BinaryContainerLoader.setupBufferGeo = function ( shape, sp, gl, viewarea,
 
             x3dom.BinaryContainerLoader.bufferGeoCache[ URL ] = {};
             x3dom.BinaryContainerLoader.bufferGeoCache[ URL ].buffers = [];
+            x3dom.BinaryContainerLoader.bufferGeoCache[ URL ].shapes = [];
             x3dom.BinaryContainerLoader.bufferGeoCache[ URL ].decrementDownload = true;
             x3dom.BinaryContainerLoader.bufferGeoCache[ URL ].promise = new Promise( function ( resolve, reject )
             {
@@ -26473,6 +28431,7 @@ x3dom.BinaryContainerLoader.setupBufferGeo = function ( shape, sp, gl, viewarea,
             initBufferViews( arraybuffer );
             initAccessors();
             computeNormals( arraybuffer );
+            linkCache( x3dom.BinaryContainerLoader.bufferGeoCache[ URL ] );
 
             if ( x3dom.BinaryContainerLoader.bufferGeoCache[ URL ].decrementDownload )
             {
@@ -26650,6 +28609,7 @@ x3dom.BinaryContainerLoader.getArrayBufferFromType = function ( componentType, a
         case 5126: return new Float32Array( arraybuffer, byteOffset, byteLength );
     }
 };
+
 /*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
@@ -26724,7 +28684,7 @@ x3dom.DrawableCollection.prototype.cull = function ( transform, graphState, sing
 {
     var node = graphState.boundedNode;  // get ref to SG node
 
-    if ( !node || !node._vf.render )
+    if ( !node || !node.renderFlag() )
     {
         return -1;
     }
@@ -30172,7 +32132,13 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function ( object, parentkey, elemen
             }
             else
             {
-                this.ConvertObject( key, object, element );
+                // this.ConvertObject( key, object, element );
+		if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
+			object[key]['@containerField'] = key.substr(5).toLowerCase()+"s";
+			this.ConvertObject(key, object, element, object[key]['@containerField']);
+		} else {
+			this.ConvertObject(key, object, element);
+		}
             }
         }
         else if ( typeof object[ key ] === "number" )
@@ -30969,25 +32935,22 @@ x3dom.PROTOS.prototype = {
 
     prototypeExpander : function ( file, object )
     {
-	    // Use Andreas' proto code
-	    /*
-        this.protos = {};
-        this.names = {};
-        this.protoField = {};
-        this.scriptField = {};
-        this.interfaceField = {};
-        this.envField = {};
-        this.scopecount = 0;
-        this.privatescope = [];
-        this.defs = {};
-        this.founddef = null;
-        object = this.externalPrototypeExpander( file, object );
-        object = this.realPrototypeExpander( file, object, false );
-        this.zapIs( object );
-        object = this.flattener( object );
+        //         this.protos = {};
+        //         this.names = {};
+        //         this.protoField = {};
+        //         this.scriptField = {};
+        //         this.interfaceField = {};
+        //         this.envField = {};
+        //         this.scopecount = 0;
+        //         this.privatescope = [];
+        //         this.defs = {};
+        //         this.founddef = null;
+        //         object = this.externalPrototypeExpander( file, object );
+        //         object = this.realPrototypeExpander( file, object, false );
+        //         this.zapIs( object );
+        //         object = this.flattener( object );
         // console.error("SCRIPTS", JSON.stringify(this.scriptField));
         // console.error("PROTOS", JSON.stringify(this.protoField, null, 2));
-	    */
         return object;
     },
 
@@ -31796,6 +33759,391 @@ x3dom.PROTOS.prototype = {
 };
 
 x3dom.protoExpander = new x3dom.PROTOS();
+
+/**
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2020 Andreas Plesch, Waltham, MA
+ * Dual licensed under the MIT and GPL
+ *
+ * Based on code originally provided by
+ * Philip Taylor: http://philip.html5.org
+ */
+
+/**
+ * ProtoDeclaration constructor
+ *
+ * @param namespace - namespace of containing scene
+ * @param name - name of new node
+ * @param protoBody - dom of ProtoBody
+ * @param fields - fields from ProtoInterface
+ * @param isExternProto - true for ExternProtoDeclare
+ * @param url - url MFString for ExternProtoDeclare
+ * @constructor
+ */
+x3dom.ProtoDeclaration = function ( namespace, name, protoBody, fields, isExternProto, url )
+{
+    this._nameSpace = namespace; // main scene name space
+    this.name = name;
+    this._protoBody = protoBody || null;
+    this.fields = fields || [];
+    this.isExternProto = isExternProto || false;
+    this.url = url || [];
+    this.needsLoading = true;
+    this.instanceQueue = [];
+};
+
+/**
+ * ProtoDeclaration registerNode
+ *
+ * registers node with x3dom
+ * takes fields from ProtoDeclaration and adds them to node
+ *
+ */
+x3dom.ProtoDeclaration.prototype.registerNode = function ()
+{
+    var that = this;
+    x3dom.registerNodeType(
+        that.name,
+        "Core", // ProtoComponent
+        defineClass( x3dom.nodeTypes.X3DNode,
+
+            /**
+             * generic Constructor for named prototype
+             * @constructs x3dom.nodeTypes[this.name]
+             * @x3d 3.3
+             * @component Core
+             * @status experimental
+             * @extends x3dom.nodeTypes.X3DNode
+             * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+             * @classdesc X3DBindableNode is the abstract base type for all bindable children nodes.
+             */
+            function ( ctx )
+            {
+                x3dom.nodeTypes[ that.name ].superClass.call( this, ctx );
+
+                //add fields
+                this._cf_hash = {};
+                that.fields.forEach( function ( field )
+                {
+                    if ( !field.dataType.endsWith( "ode" ) )//; //_vf fields
+                    {
+                    //set interface defaults
+                        if ( ctx && ctx.xmlNode && !ctx.xmlNode.hasAttribute( field.name ) )
+                        {
+                            if ( field.value )
+                            {
+                                ctx.xmlNode.setAttribute( field.name, field.value );
+                            }
+                        }
+                        this[ "addField_" + field.dataType ]( ctx, field.name, field.value );
+                    }
+                    else // _cf fields
+                    {
+                        //set interface defaults for cf fields
+                        if ( ctx && ctx.xmlNode )
+                        {
+                            if ( ctx.xmlNode.querySelectorAll( "[containerField='" + field.name + "']" ).length == 0 )
+                            {
+                                field.cfValue.forEach( function ( sfnodedom )
+                                {
+                                    ctx.xmlNode.appendChild( sfnodedom.cloneNode( true ) );
+                                } );
+                            }
+                        }
+                        //find node type from IS in body
+                        var type = x3dom.nodeTypes.X3DNode;
+                        var ISRoutes = that._protoBody._ISRoutes;
+                        if ( field.name in ISRoutes )
+                        {
+                            var ISconnection = ISRoutes[ field.name ][ 0 ];
+                            var nodeField = ISconnection.nodeField;
+                            var ISDomNode = that._protoBody.querySelector( "[DEF=" + ISconnection.nodeDEF + "]" );
+                            //create temp node to get type
+                            var IStype = ISDomNode.localName.toLowerCase();
+                            if ( IStype in x3dom.nodeTypesLC )
+                            {
+                                var ISctx = {
+                                    doc       : ctx.doc,
+                                    runtime   : ctx.runtime,
+                                    xmlNode   : ISDomNode.cloneNode( true ), // clone to avoid adding defaults
+                                    nameSpace : ctx.nameSpace
+                                };
+                                var ISNode = new x3dom.nodeTypesLC[ IStype ]( ISctx );
+                                type = ISNode._cf[ nodeField ].type;
+                            }
+                        }
+                        else
+                        {
+                            x3dom.debug.logWarning( that.name + " Proto: field without IS connection - " + field.name );
+                        }
+                        this[ "addField_" + field.dataType ]( field.name, type );//type should be registered x3dom type
+                        this._cf_hash[ field.name ] = "trigger";
+                    }
+                }, this );
+
+                //initialize
+                var nameSpaceName = "protoNS";
+                if ( ctx.xmlNode.hasAttribute( "DEF" ) )
+                {
+                    nameSpaceName = ctx.xmlNode.getAttribute( "DEF" ) + "NS";
+                }
+                this.innerNameSpace = new x3dom.NodeNameSpace( nameSpaceName, ctx.doc ); // instance name space
+                this.innerNameSpace.setBaseURL( ctx.nameSpace.baseURL + that.name );
+                that._nameSpace.addSpace( this.innerNameSpace );
+
+                //transfer proto definitions to instance namespace if any
+                that._nameSpace.protos.forEach( function ( protoDeclaration )
+                {
+                    this.innerNameSpace.protos.push( protoDeclaration );
+                }, this );
+
+                this.nodes = [];
+                this.protoBodyClone = that._protoBody.cloneNode( true );
+                this.declaration = that;
+                this.isProtoInstance = true;
+                this._changing = false;
+                this._externTries = 0;
+                this._maxTries = 5;
+            },
+            {
+                nodeChanged : function ( nodeField )
+                {
+                    if ( this._changing ) {return;}
+
+                    this._changing = true;
+
+                    var body = this.protoBodyClone;
+
+                    //register ProtoDeclares and convert ProtoInstance to new nodes
+                    body.querySelectorAll( ":scope > *" )
+                        .forEach( function ( childDomNode )
+                        {
+                            var tag = childDomNode.localName.toLowerCase();
+                            if ( tag == "protodeclare" )
+                            { this.innerNameSpace.protoDeclare( childDomNode ); }
+                            else if ( tag == "externprotodeclare" )
+                            { this.innerNameSpace.externProtoDeclare( childDomNode ); }
+                            else if ( tag == "protoinstance" )
+                            { this.innerNameSpace.protoInstance( childDomNode, body ); }
+                        },
+                        this );
+
+                    //generate nodes from body
+                    var children = this.protoBodyClone.childNodes;
+                    var i;
+
+                    for ( i = 0; i < children.length; i++ )
+                    {
+                        var c = this.innerNameSpace.setupTree.call( this.innerNameSpace, children[ i ], this );
+
+                        if ( c != null )
+                        {
+                            this.nodes.push( c );
+                        }
+                    };
+                    this.typeNode = this.nodes[ 0 ];
+                    this.helperNodes = this.nodes.slice( 1 );
+
+                    //transfer dom "on" attributes to typeNode dom
+                    var attributes = this._xmlNode.attributes;
+                    var attr;
+                    for ( i = 0; i < attributes.length; i++ )
+                    {
+                        attr = attributes[ i ];
+                        if ( attr.name.startsWith( "on" ) )
+                        {
+                            this.typeNode._xmlNode.setAttribute( attr.name, attr.value );
+                        }
+                    }
+
+                    //set initial values
+                    for ( var field in this._vf )
+                    {
+                        this.fieldChanged( field );
+                    }
+                    for ( field in this._cf )
+                    {
+                        var cf = this._cf[ field ];
+                        if ( "nodes" in cf ) //MFNode
+                        {
+                            //only process if changed to avoid re-adding
+                            if ( this._cf_hash[ field ] !== this._get_cf_hash( field )
+                                || field == nodeField ) // if passed, is changed
+                            {
+                                this.fieldChanged( field );
+                            }
+                        }
+                        else
+                        {
+                            this.fieldChanged( field );
+                        }
+                    }
+
+                    //add fieldwatchers to nodeFields to forward event out
+                    //todo: only for output fields
+                    for ( field in this._vf )
+                    {
+                        var ISRoutes = this.declaration._protoBody._ISRoutes;
+                        if ( field in ISRoutes ) //misbehaved Protos may have unused fields
+                        {
+                            this._setupFieldWatchers( field );
+                        }
+                    };
+                    this._changing = false;
+
+                    //save a current 'hash' of cf children
+                    for ( field in this._cf )
+                    {
+                        if ( "nodes" in this._cf[ field ] )
+                        {
+                            this._cf_hash[ field ] = this._get_cf_hash( field );
+                        }
+                    }
+                },
+
+                fieldChanged : function ( field )
+                {
+                    try //
+                    {
+                        //todo: check if input field
+                        var ISRoutes = this.declaration._protoBody._ISRoutes;
+                        if ( ! ( field in ISRoutes ) ) {return;}
+                        ISRoutes[ field ].forEach( function ( ISNode )
+                        {
+                            var instanceNode = this.innerNameSpace.defMap[ ISNode.nodeDEF ];
+
+                            if ( instanceNode == undefined ) //probably unfinished externproto
+                            {
+                                var ISparent = this.protoBodyClone.querySelector( "[DEF=" + ISNode.nodeDEF + "]" );
+                                if ( ISparent.tagName.toLowerCase() == "protoinstance" )
+                                {
+                                    if ( this._externTries++ < this._maxTries )
+                                    {
+                                        x3dom.debug.logWarning( " ExternProto instance attempt: " + this._externTries );
+                                        //try again
+                                        var timer = setTimeout( this.fieldChanged.bind( this ), 1000, field );
+                                    }
+                                }
+                                return;
+                            }
+
+                            this._externTries = 0;
+                            //forward
+                            //strip set_ and _changed
+                            var nodeField = this._normalizeName( ISNode.nodeField, instanceNode );
+                            if ( field in this._vf )
+                            {
+                                instanceNode._vf[ nodeField ] = this._vf[ field ];
+                                instanceNode.fieldChanged( nodeField );
+                            }
+                            else if ( field in this._cf )
+                            {
+                                instanceNode._cf[ nodeField ] = this._cf[ field ];//(re)add reference
+
+                                //transfer parents/children
+                                var nodes = [];
+                                if ( instanceNode._cfFieldTypes[ nodeField ] == "MFNode" )
+                                {
+                                    nodes = this._cf[ field ].nodes;
+                                }
+                                else if ( instanceNode._cfFieldTypes[ nodeField ] == "SFNode"
+                                            && this._cf[ field ].node )
+                                {
+                                    nodes = [ this._cf[ field ].node ];
+                                }
+                                else
+                                {
+                                    x3dom.debug.logWarning( "Unexpected field type: " + instanceNode._cfFieldTypes[ nodeField ] );
+                                }
+
+                                //first remove all field childnodes
+                                instanceNode._childNodes.forEach( function ( sfnode )
+                                {
+                                    instanceNode.removeChild( sfnode, nodeField, "force" );
+                                } );
+
+                                // then re-add new child nodes to instance
+                                nodes.forEach( function ( sfnode )
+                                {
+                                    instanceNode.addChild( sfnode, nodeField );
+                                } );
+
+                                if ( instanceNode._cfFieldTypes[ nodeField ] == "MFNode" )
+                                {
+                                    // now the _cf nodes array may contain duplicate references
+                                    // remove the first one
+                                    for ( var i = 0; i < nodes.length; i++ )
+                                    {
+                                        var node = nodes[ i ];
+                                        for ( var j = nodes.length - 1; j > i; j-- )
+                                        {
+                                            if ( node == nodes[ j ] )
+                                            {
+                                                nodes.splice( j, 1 );
+                                            }
+                                        }
+                                    }
+                                }
+
+                                instanceNode.nodeChanged( nodeField );
+                            }
+                        }, this );
+                    }
+                    catch ( error )
+                    {
+                        x3dom.debug.logWarning( "Proto warning: " + error );
+                    };
+                },
+
+                _normalizeName : function ( name, node )
+                {
+                    if ( name in node._vf )
+                    {
+                        return name;
+                    }
+                    return name.replace( /^set_/, "" ).replace( /_changed$/, "" );
+                },
+
+                _setupFieldWatchers : function ( field )
+                {
+                    this.declaration._protoBody._ISRoutes[ field ].forEach( function ( ISNode )
+                    {
+                        var instanceNode = this.innerNameSpace.defMap[ ISNode.nodeDEF ];
+                        if ( instanceNode == undefined )
+                        {
+                            var ISparent = this.protoBodyClone.querySelector( "[DEF=" + ISNode.nodeDEF + "]" );
+                            if ( ISparent.tagName.toLowerCase() == "protoinstance" )
+                            {
+                                if ( this._externTries++ < this._maxTries )
+                                {
+                                    x3dom.debug.logWarning( " retrying ExternProto: " + this._externTries );
+                                    //try again
+                                    var timer = setTimeout( this._setupFieldWatchers.bind( this ), 1000, field );
+                                }
+                            }
+                            return;
+                        }
+                        var nodeField = this._normalizeName( ISNode.nodeField, instanceNode );
+                        if ( !instanceNode._fieldWatchers[ nodeField ] )
+                        {
+                            instanceNode._fieldWatchers[ nodeField ] = [];
+                        }
+                        instanceNode._fieldWatchers[ nodeField ].push(
+                            this.postMessage.bind( this, field ) ); // forward
+                    }, this );
+                },
+
+                _get_cf_hash : function ( field )
+                {
+                    var nodes = this._cf[ field ].nodes;
+                    return nodes.length;
+                }
+            }
+        )
+    );
+};
 
 /*
  * X3DOM JavaScript Library
@@ -32695,8 +35043,16 @@ x3dom.shader.DynamicShader.prototype.generateVertexShader = function ( gl, prope
         shader += "attribute vec3 particleSize;\n";
     }
 
+    if ( properties.POINTPROPERTIES )
+    {
+        shader += "uniform vec3 pointSizeAttenuation;\n";
+        shader += "uniform float pointSizeFactor;\n";
+        shader += "uniform float minPointSize;\n";
+        shader += "uniform float maxPointSize;\n";
+    }
+
     //Lights & Fog
-    if ( properties.LIGHTS || properties.FOG || properties.CLIPPLANES )
+    if ( properties.LIGHTS || properties.FOG || properties.CLIPPLANES || properties.POINTPROPERTIES )
     {
         shader += "uniform vec3 eyePosition;\n";
         shader += "varying vec4 fragPosition;\n";
@@ -32861,7 +35217,7 @@ x3dom.shader.DynamicShader.prototype.generateVertexShader = function ( gl, prope
     //TexCoords
     if ( ( properties.TEXTURED ) && !properties.SPHEREMAPPING )
     {
-        if ( properties.IS_PARTICLE )
+        if ( properties.IS_PARTICLE || properties.POINTPROPERTIES )
         {
             shader += "vec2 vertTexCoord = vec2(0.0);\n";
         }
@@ -32985,7 +35341,7 @@ x3dom.shader.DynamicShader.prototype.generateVertexShader = function ( gl, prope
     }
 
     //Lights & Fog
-    if ( properties.LIGHTS || properties.FOG || properties.CLIPPLANES )
+    if ( properties.LIGHTS || properties.FOG || properties.CLIPPLANES || properties.POINTPROPERTIES )
     {
         shader += "fragPosition = (mat_mv * vec4(vertPosition, 1.0));\n";
         shader += "fragPositionWS = (modelMatrix * vec4(vertPosition, 1.0));\n";
@@ -33020,6 +35376,14 @@ x3dom.shader.DynamicShader.prototype.generateVertexShader = function ( gl, prope
         shader += "float spriteDist = (gl_Position.w > 0.000001) ? gl_Position.w : 0.000001;\n";
         shader += "float pointSize = floor(length(particleSize) * 256.0 / spriteDist + 0.5);\n";
         shader += "gl_PointSize = clamp(pointSize, 2.0, 256.0);\n";
+    }
+    else if ( properties.POINTPROPERTIES )
+    {
+        shader += "float r = length( fragPosition.xyz );\n";
+        shader += "vec3 a = pointSizeAttenuation;\n";
+        shader += "float attFactor = ( a.x + a.y * r + a.z * r * r );\n";
+        shader += "float pointSize =  pointSizeFactor * 1.0 / attFactor;\n";
+        shader += "gl_PointSize = clamp(pointSize, minPointSize, maxPointSize);\n";
     }
     else
     {
@@ -33370,17 +35734,34 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
         }
     }
 
+    if ( properties.IS_PARTICLE || properties.POINTPROPERTIES )
+    {
+        shader += "vec2 texcoord = clamp(gl_PointCoord, 0.01, 0.99);\n";
+        if ( properties.MULTITEXCOORD )
+        {
+            shader += "vec2 texcoord2 = texcoord;\n";
+        }
+    }
+    else if ( properties.TEXTURED )
+    {
+        shader += "vec2 texcoord = fragTexcoord;\n";
+        if ( properties.MULTITEXCOORD )
+        {
+            shader += "vec2 texcoord2 = fragTexcoord2;\n";
+        }
+    }
+
     if ( properties.UNLIT )
     {
         if ( properties.DIFFUSEMAP )
         {
             if ( properties.DIFFUSEMAPCHANNEL )
             {
-                shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(fragTexcoord2.x, 1.0 - fragTexcoord2.y))" ) + ";\n";
+                shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(texcoord2.x, 1.0 - texcoord2.y))" ) + ";\n";
             }
             else
             {
-                shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(fragTexcoord.x, 1.0 - fragTexcoord.y))" ) + ";\n";
+                shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(texcoord.x, 1.0 - texcoord.y))" ) + ";\n";
             }
 
             if ( properties.ALPHAMODE == "OPAQUE" )
@@ -33441,7 +35822,7 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
 
                     if ( !properties.TANGENTDATA && ( x3dom.caps.STD_DERIVATIVES || x3dom.caps.WEBGL_VERSION == 2 ) )
                     {
-                        shader += "normal = perturb_normal( n, fragPosition.xyz, vec2(fragTexcoord.x, 1.0 - fragTexcoord.y), _normalBias);\n";
+                        shader += "normal = perturb_normal( n, fragPosition.xyz, vec2(texcoord.x, 1.0 - texcoord.y), _normalBias);\n";
                     }
                     else
                     {
@@ -33449,14 +35830,14 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
                         shader += "vec3 b = normalize( fragBinormal );\n";
                         shader += "mat3 tangentToWorld = mat3(t, b, n);\n";
 
-                        shader += "normal = texture2D( normalMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y) ).rgb;\n";
+                        shader += "normal = texture2D( normalMap, vec2(texcoord.x, 1.0-texcoord.y) ).rgb;\n";
                         shader += "normal = 2.0 * normal - 1.0;\n";
                         shader += "normal = normalize( normal * tangentToWorld );\n";
                     }
                 }
                 else if ( properties.NORMALSPACE == "OBJECT" )
                 {
-                    shader += "normal = texture2D( normalMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y) ).rgb;\n";
+                    shader += "normal = texture2D( normalMap, vec2(texcoord.x, 1.0-texcoord.y) ).rgb;\n";
 
                     shader += "normal = 2.0 * normal - 1.0;\n";
                     shader += "normal = (mat_n * vec4(normal, 0.0)).xyz;\n";
@@ -33473,7 +35854,7 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             }
             else if ( properties.DIFFPLACEMENTMAP )
             {
-                shader += "texColor = texture2D(diffuseDisplacementMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y));\n";
+                shader += "texColor = texture2D(diffuseDisplacementMap, vec2(texcoord.x, 1.0-texcoord.y));\n";
             }
             else if ( properties.DIFFUSEMAP || properties.TEXT )
             {
@@ -33481,22 +35862,22 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
                 {
                     if ( properties.DIFFUSEMAPCHANNEL )
                     {
-                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, fragTexcoord2)" ) + ";\n";
+                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, texcoord2)" ) + ";\n";
                     }
                     else
                     {
-                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, fragTexcoord)" ) + ";\n";
+                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, texcoord)" ) + ";\n";
                     }
                 }
                 else
                 {
                     if ( properties.DIFFUSEMAPCHANNEL )
                     {
-                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(fragTexcoord2.x, 1.0 - fragTexcoord2.y))" ) + ";\n";
+                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(texcoord2.x, 1.0 - texcoord2.y))" ) + ";\n";
                     }
                     else
                     {
-                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(fragTexcoord.x, 1.0 - fragTexcoord.y))" ) + ";\n";
+                        shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, vec2(texcoord.x, 1.0 - texcoord.y))" ) + ";\n";
                     }
                 }
             }
@@ -33524,13 +35905,13 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
 
             if ( properties.SHINMAP )
             {
-                shader += "_shininess *= texture2D( shininessMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y) ).r;\n";
+                shader += "_shininess *= texture2D( shininessMap, vec2(texcoord.x, 1.0-texcoord.y) ).r;\n";
             }
 
             //Specularmap
             if ( properties.SPECMAP )
             {
-                shader += "_specularColor = texture2D(specularMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y)).rgb;\n";
+                shader += "_specularColor = texture2D(specularMap, vec2(texcoord.x, 1.0-texcoord.y)).rgb;\n";
             }
 
             //Specularmap
@@ -33538,11 +35919,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             {
                 if ( properties.EMISSIVEMAPCHANNEL )
                 {
-                    shader += "_emissiveColor = _emissiveColor * texture2D(emissiveMap, vec2(fragTexcoord2.x, 1.0-fragTexcoord2.y)).rgb;\n";
+                    shader += "_emissiveColor = _emissiveColor * texture2D(emissiveMap, vec2(texcoord2.x, 1.0-texcoord2.y)).rgb;\n";
                 }
                 else
                 {
-                    shader += "_emissiveColor = _emissiveColor * texture2D(emissiveMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y)).rgb;\n";
+                    shader += "_emissiveColor = _emissiveColor * texture2D(emissiveMap, vec2(texcoord.x, 1.0-texcoord.y)).rgb;\n";
                 }
             }
 
@@ -33551,11 +35932,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             {
                 if ( properties.ROUGHNESSMETALLICMAPCHANNEL )
                 {
-                    shader += "vec3 roughnessMetallic = texture2D(roughnessMetallicMap, vec2(fragTexcoord2.x, 1.0-fragTexcoord2.y)).rgb;\n";
+                    shader += "vec3 roughnessMetallic = texture2D(roughnessMetallicMap, vec2(texcoord2.x, 1.0-texcoord2.y)).rgb;\n";
                 }
                 else
                 {
-                    shader += "vec3 roughnessMetallic = texture2D(roughnessMetallicMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y)).rgb;\n";
+                    shader += "vec3 roughnessMetallic = texture2D(roughnessMetallicMap, vec2(texcoord.x, 1.0-texcoord.y)).rgb;\n";
                 }
                 shader += "_shininess = 1.0 - (roughnessMetallic.g * (1.0 - _shininess));\n";
                 shader += "_metallic  = roughnessMetallic.b * metallicFactor;\n";
@@ -33565,11 +35946,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             {
                 if ( properties.SPECULARGLOSSINESSMAPCHANNEL )
                 {
-                    shader += "vec4 specularGlossiness = " + x3dom.shader.decodeGamma( properties, "texture2D(specularGlossinessMap, vec2(fragTexcoord2.x, 1.0 - fragTexcoord2.y))" ) + ";\n";
+                    shader += "vec4 specularGlossiness = " + x3dom.shader.decodeGamma( properties, "texture2D(specularGlossinessMap, vec2(texcoord2.x, 1.0 - texcoord2.y))" ) + ";\n";
                 }
                 else
                 {
-                    shader += "vec4 specularGlossiness = " + x3dom.shader.decodeGamma( properties, "texture2D(specularGlossinessMap, vec2(fragTexcoord.x, 1.0 - fragTexcoord.y))" ) + ";\n";
+                    shader += "vec4 specularGlossiness = " + x3dom.shader.decodeGamma( properties, "texture2D(specularGlossinessMap, vec2(texcoord.x, 1.0 - texcoord.y))" ) + ";\n";
                 }
                 shader += "_shininess = specularGlossiness.a * _shininess;\n";
             }
@@ -33579,11 +35960,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             {
                 if ( properties.OCCLUSIONROUGHNESSMETALLICMAPCHANNEL )
                 {
-                    shader += "vec3 occlusionRoughnessMetallic = texture2D(occlusionRoughnessMetallicMap, vec2(fragTexcoord2.x, 1.0-fragTexcoord2.y)).rgb;\n";
+                    shader += "vec3 occlusionRoughnessMetallic = texture2D(occlusionRoughnessMetallicMap, vec2(texcoord2.x, 1.0-texcoord2.y)).rgb;\n";
                 }
                 else
                 {
-                    shader += "vec3 occlusionRoughnessMetallic = texture2D(occlusionRoughnessMetallicMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y)).rgb;\n";
+                    shader += "vec3 occlusionRoughnessMetallic = texture2D(occlusionRoughnessMetallicMap, vec2(texcoord.x, 1.0-texcoord.y)).rgb;\n";
                 }
 
                 shader += "_occlusion = occlusionRoughnessMetallic.r;\n";
@@ -33596,11 +35977,11 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
             {
                 if ( properties.OCCLUSIONMAPCHANNEL )
                 {
-                    shader += "_occlusion = texture2D(occlusionMap, vec2(fragTexcoord2.x, 1.0-fragTexcoord2.y)).r;\n";
+                    shader += "_occlusion = texture2D(occlusionMap, vec2(texcoord2.x, 1.0-texcoord2.y)).r;\n";
                 }
                 else
                 {
-                    shader += "_occlusion = texture2D(occlusionMap, vec2(fragTexcoord.x, 1.0-fragTexcoord.y)).r;\n";
+                    shader += "_occlusion = texture2D(occlusionMap, vec2(texcoord.x, 1.0-texcoord.y)).r;\n";
                 }
             }
         }
@@ -33673,6 +36054,18 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
         }
 
         shader += "color.rgb = _emissiveColor + ((ambient + diffuse) * color.rgb + specular * _specularColor) * _occlusion;\n";
+        if ( properties.IS_PARTICLE || properties.POINTPROPERTIES )
+        {
+            if ( properties.TEXTURED )
+            {
+                shader += "if (color.a < 0.01 ) discard;\n";
+            }
+            else
+            {
+                shader += "float pAlpha = 1.0 - clamp(length((gl_PointCoord - 0.5) * 2.0), 0.0, 1.0);\n";
+                shader += "if ( pAlpha < 0.01 ) discard;\n";
+            }
+        }
     }
     else
     {
@@ -33685,22 +36078,33 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
         {
             if ( properties.PIXELTEX )
             {
-                shader += "vec2 texCoord = fragTexcoord;\n";
+                if ( properties.IS_PARTICLE || properties.POINTPROPERTIES )
+                {
+                    shader += "vec2 texCoord = clamp(gl_PointCoord, 0.01, 0.99);\n";
+                }
+                else
+                {
+                    shader += "vec2 texCoord = fragTexcoord;\n";
+                }
             }
             else
             {
-                shader += "vec2 texCoord = vec2(fragTexcoord.x, 1.0-fragTexcoord.y);\n";
-            }
-
-            if ( properties.IS_PARTICLE )
-            {
-                shader += "texCoord = clamp(gl_PointCoord, 0.01, 0.99);\n";
+                if ( properties.IS_PARTICLE || properties.POINTPROPERTIES )
+                {
+                    shader += "vec2 texCoord = clamp(gl_PointCoord, 0.01, 0.99);\n";
+                    shader += "texCoord.y = 1.0 - texCoord.y;\n";
+                }
+                else
+                {
+                    shader += "vec2 texCoord = vec2(fragTexcoord.x, 1.0-fragTexcoord.y);\n";
+                }
             }
             shader += "texColor = " + x3dom.shader.decodeGamma( properties, "texture2D(diffuseMap, texCoord)" ) + ";\n";
             shader += "color.a = texColor.a;\n";
 
-            if ( properties.BLENDING || properties.IS_PARTICLE )
+            if ( properties.BLENDING || properties.IS_PARTICLE || properties.POINTPROPERTIES )
             {
+                shader += "if (color.a < 0.01 ) discard;\n";
                 shader += "color.rgb += _emissiveColor.rgb;\n";
                 shader += "color.rgb *= texColor.rgb;\n";
             }
@@ -33722,12 +36126,22 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
                 shader += "color.rgb *= vec3(pAlpha);\n";
                 shader += "color.a = pAlpha;\n";
             }
+            else if ( properties.POINTPROPERTIES && !properties.TEXTURED )
+            {
+                shader += "float pAlpha = 1.0 - clamp(length((gl_PointCoord - 0.5) * 2.0), 0.0, 1.0);\n";
+                shader += "if ( pAlpha < 0.01 ) discard;\n";
+            }
         }
         else if ( properties.IS_PARTICLE )
         {
             shader += "float pAlpha = 1.0 - clamp(length((gl_PointCoord - 0.5) * 2.0), 0.0, 1.0);\n";
             shader += "color.rgb *= vec3(pAlpha);\n";
             shader += "color.a = pAlpha;\n";
+        }
+        else if ( properties.POINTPROPERTIES && !properties.TEXTURED )
+        {
+            shader += "float pAlpha = 1.0 - clamp(length((gl_PointCoord - 0.5) * 2.0), 0.0, 1.0);\n";
+            shader += "if ( pAlpha < 0.01 ) discard;\n";
         }
     }
 
@@ -33741,7 +36155,7 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
     //Kill pixel
     if ( properties.TEXT )
     {
-        shader += "if (color.a <= 0.5) discard;\n";
+        shader += "if (color.a < (1.0 - _transparency) * 0.5) discard;\n";
     }
     else if ( properties.ALPHAMASK )
     {
@@ -35108,7 +37522,7 @@ x3dom.shader.BackgroundCubeTextureDDSShader.prototype.generateVertexShader = fun
 
     if ( !gl.getShaderParameter( vertexShader, gl.COMPILE_STATUS ) )
     {
-        x3dom.debug.logError( "[BackgroundCubeTextureShader] VertexShader " + gl.getShaderInfoLog( vertexShader ) );
+        x3dom.debug.logError( "[BackgroundCubeTextureDDSShader] VertexShader " + gl.getShaderInfoLog( vertexShader ) );
     }
 
     return vertexShader;
@@ -35126,9 +37540,12 @@ x3dom.shader.BackgroundCubeTextureDDSShader.prototype.generateFragmentShader = f
     shader += "#endif\n\n";
 
     shader += x3dom.shader.toneMapping();
-    shader += x3dom.shader.gammaCorrectionDecl( {} );
 
-    shader +=    "uniform float isVR;\n" +
+    var scene = gl.canvas.parent.doc._viewarea._scene;
+    var properties = { GAMMACORRECTION: scene.getEnvironment()._vf.gammaCorrectionDefault };
+    shader += x3dom.shader.gammaCorrectionDecl( properties );
+
+    shader +=   "uniform float isVR;\n" +
                 "varying float vrOffset;\n" +
                 "varying float fragEyeIdx;\n" +
                 "uniform float screenWidth;\n" +
@@ -35151,7 +37568,7 @@ x3dom.shader.BackgroundCubeTextureDDSShader.prototype.generateFragmentShader = f
                 "       color.rgb = tonemapeFilmic(color.rgb);\n" +
                 "    }\n" +
 
-                "   color = " + x3dom.shader.encodeGamma( {}, "color" ) + ";\n" +
+                "   color = " + x3dom.shader.encodeGamma( properties, "color" ) + ";\n" +
 
                 "   gl_FragColor = color;\n" +
                 "}\n";
@@ -35162,7 +37579,7 @@ x3dom.shader.BackgroundCubeTextureDDSShader.prototype.generateFragmentShader = f
 
     if ( !gl.getShaderParameter( fragmentShader, gl.COMPILE_STATUS ) )
     {
-        x3dom.debug.logError( "[BackgroundCubeTextureShader] FragmentShader " + gl.getShaderInfoLog( fragmentShader ) );
+        x3dom.debug.logError( "[BackgroundCubeTextureDDSShader] FragmentShader " + gl.getShaderInfoLog( fragmentShader ) );
     }
 
     return fragmentShader;
@@ -35953,7 +38370,7 @@ x3dom.registerNodeType(
 
             addChild : function ( node, containerFieldName )
             {
-                if ( "isProtoInstance" in node )
+                if ( node !== null && "isProtoInstance" in node )
                 {
                     this.addChild( node.typeNode, containerFieldName );
                     if ( node.helperNodes.length > 0 )
@@ -35964,7 +38381,8 @@ x3dom.registerNodeType(
                         {
                             switchNode.addChild( helper, "children" );
                         } );
-                        this._nameSpace.doc._scene.addChild2( switchNode );
+                        //this._nameSpace.doc._scene.addChild2( switchNode );
+                        this.addChild2( switchNode );
                     }
                 }
                 else
@@ -36001,19 +38419,19 @@ x3dom.registerNodeType(
                     {
                         node._parentNodes.push( this );
                         this._childNodes.push( node );
-                        if ( !"isProtoInstance" in this )
+                        if ( this !== null && !( "isProtoInstance" in this ) )
                         {
                             node.parentAdded( this );
                         }
                         return true;
                     }
-                    else if ( "isProtoInstance" in this )
+                    else if ( this !== null && "isProtoInstance" in this )
                     {
                         //child is not a field value, parent is protobody
                         //so child is "root node" of protobody
                         //and constitutes its nodes
                         //transfer nodes directly
-                        if ( "isProtoInstance" in node )
+                        if ( node !== null && "isProtoInstance" in node )
                         {
                             this.nodes.concat( node.nodes );
                         }
@@ -37281,7 +39699,6 @@ x3dom.registerNodeType(
         }
     )
 );
-
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -37604,6 +40021,16 @@ x3dom.registerNodeType(
             this.addField_SFBool( ctx, "render", true );
 
             /**
+             * Flag to enable/disable rendering, alias for render
+             * @var {x3dom.fields.SFBool} visible
+             * @memberof x3dom.nodeTypes.X3DBoundedObject
+             * @initvalue true
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool( ctx, "visible", true );
+
+            /**
              * Center of the bounding box
              * @var {x3dom.fields.SFVec3f} bboxCenter
              * @memberof x3dom.nodeTypes.X3DBoundedObject
@@ -37636,6 +40063,8 @@ x3dom.registerNodeType(
                 coverage     : -1,       // currently approx. number of pixels on screen
                 needCulling  : true      // to be able to disable culling per node
             };
+
+            this._render = true;
         },
         {
             fieldChanged : function ( fieldName )
@@ -37666,13 +40095,13 @@ x3dom.registerNodeType(
             {
                 var vol = this._graph.volume;
 
-                if ( !this.volumeValid() && this._vf.render )
+                if ( !this.volumeValid() && this.renderFlag && this.renderFlag() )
                 {
                     for ( var i = 0, n = this._childNodes.length; i < n; i++ )
                     {
                         var child = this._childNodes[ i ];
                         // render could be undefined, but undefined != true
-                        if ( !child || child._vf.render !== true )
+                        if ( !child || child.renderFlag && child.renderFlag() !== true )
                         {continue;}
 
                         var childVol = child.getVolume();
@@ -37755,10 +40184,30 @@ x3dom.registerNodeType(
             forceUpdateCoverage : function ()
             {
                 return false;
+            },
+
+            renderFlag : function ()
+            {
+                //sync
+                if ( this._render !== this._vf.render )
+                //render changed
+                {
+                    this._vf.visible = this._vf.render;
+                    this._render = this._vf.visible;
+                }
+                else if ( this._render !== this._vf.visible )
+                //visible changed
+                {
+                    this._vf.render = this._vf.visible;
+                    this._render = this._vf.visible;
+                }
+                //nothing changed
+                return this._render;
             }
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -37926,14 +40375,14 @@ x3dom.registerNodeType(
             {
                 var vol = this._graph.volume;
 
-                if ( !this.volumeValid() && this._vf.render )
+                if ( !this.volumeValid() && this.renderFlag && this.renderFlag() )
                 {
                     if ( this._vf.whichChoice >= 0 &&
                         this._vf.whichChoice < this._childNodes.length )
                     {
                         var child = this._childNodes[ this._vf.whichChoice ];
 
-                        var childVol = ( child && child._vf.render === true ) ? child.getVolume() : null;
+                        var childVol = ( child && child.renderFlag && child.renderFlag() === true ) ? child.getVolume() : null;
 
                         if ( childVol && childVol.isValid() )
                         {vol.extendBounds( childVol.min, childVol.max );}
@@ -38097,14 +40546,14 @@ x3dom.registerNodeType(
             {
                 var vol = this._graph.volume;
 
-                if ( !this.volumeValid() && this._vf.render )
+                if ( !this.volumeValid() && this.renderFlag && this.renderFlag() )
                 {
                     this._graph.localMatrix = this._trafo;
 
                     for ( var i = 0, n = this._childNodes.length; i < n; i++ )
                     {
                         var child = this._childNodes[ i ];
-                        if ( !child || child._vf.render !== true )
+                        if ( !child || child.renderFlag && child.renderFlag() !== true )
                         {continue;}
 
                         var childVol = child.getVolume();
@@ -39520,6 +41969,16 @@ x3dom.registerNodeType(
              */
             this.addField_SFNode( "color", x3dom.nodeTypes.X3DColorNode );
 
+            /**
+             * Stores a Normal node containing the normals for each point.
+             * @var {x3dom.fields.SFNode} normal
+             * @memberof x3dom.nodeTypes.PointSet
+             * @initvalue null
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFNode( "normal", x3dom.nodeTypes.Normal );
+
             this._mesh._primType = "POINTS";
         },
         {
@@ -39545,13 +42004,20 @@ x3dom.registerNodeType(
                     }
                 }
 
+                var normalNode = this._cf.normal.node;
+                var normals = new x3dom.fields.MFVec3f();
+                if ( normalNode )
+                {
+                    normals = normalNode._vf.vector;
+                }
+
                 this._mesh._numColComponents = numColComponents;
                 this._mesh._lit = false;
 
                 this._mesh._indices[ 0 ] = [];
                 this._mesh._positions[ 0 ] = positions.toGL();
                 this._mesh._colors[ 0 ] = colors.toGL();
-                this._mesh._normals[ 0 ] = [];
+                this._mesh._normals[ 0 ] = normals.toGL();
                 this._mesh._texCoords[ 0 ] = [];
 
                 this.invalidateVolume();
@@ -39590,10 +42056,16 @@ x3dom.registerNodeType(
                         node._dirty.colors = true;
                     } );
                 }
+            },
+
+            needLighting : function ()
+            {
+                return ( this._vf.lit && this._cf.normal.node );
             }
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -41860,7 +44332,7 @@ x3dom.registerNodeType(
 
                 if ( !coordNode || coordNode._vf.point.length < 3 )
                 {
-                    this._vf.render = false;
+                    this._vf.visible = false;
                     return;
                 }
 
@@ -42045,6 +44517,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -42785,12 +45258,14 @@ x3dom.registerNodeType(
 /** Static class ID counter (needed for caching) */
 x3dom.nodeTypes.ClipPlane.count = 0;
 
+
 /** @namespace x3dom.nodeTypes */
 /*
- * X3DOM X3DScript Library
+ * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
- * (C)2020 Fraunhofer IGD, Darmstadt, Germany
+ * (C)2009 Fraunhofer IGD, Darmstadt, Germany
+ * (C)2020 Andreas Plesch, Waltham, MA, U.S.A.
  * Dual licensed under the MIT and GPL
  */
 
@@ -42798,48 +45273,78 @@ x3dom.nodeTypes.ClipPlane.count = 0;
 x3dom.registerNodeType(
     "X3DScript",
     "Scripting",
-    defineClass( x3dom.nodeTypes.X3DChildNode,
+    defineClass( x3dom.nodeTypes.X3DScriptNode,
 
         /**
          * Constructor for X3DScript
          * @constructs x3dom.nodeTypes.X3DScript
-         * @x3d 4.0
-         * @component Scripting
-         * @status full
-         * @extends x3dom.nodeTypes.X3DChildNode
+         * @x3d 3.3
+         * @component Core
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DScriptNode
          * @param {Object} [ctx=null] - context object, containing initial settings like namespace
-         * @classdesc The X3DScript node defines the source for multiple object, particulary Script nodes found in nearly identical "ProtoInstantiated" nodes.
+         * @classdesc The Script node is used to program behaviour in a scene.
          */
         function ( ctx )
         {
-            x3dom.nodeTypes.X3DScript.superClass.call( this, ctx );
+            x3dom.nodeTypes.X3DChildNode.superClass.call( this, ctx );
 
             /**
-             * The X3DScript source is read from the URL specified by the url field. When the url field contains no values
-             *  ([]), this object instance is ignored.
-             * @var {x3dom.fields.MFString} url
+             * NYI. 
+             * Once the script has access to a X3D node (via an SFNode or MFNode value either in one of the Script node's fields or passed in as an attribute),
+             * the script is able to read the contents of that node's fields. If the Script node's directOutput field is TRUE,
+             * the script may also send events directly to any node to which it has access, and may dynamically establish or break routes.
+             * If directOutput is FALSE (the default), the script may only affect the rest of the world via events sent through its fields.
+             * The results are undefined if directOutput is FALSE and the script sends events directly to a node to which it has access.
+             * @var {x3dom.fields.SFBool} load
              * @memberof x3dom.nodeTypes.X3DScript
-             * @initvalue []
+             * @initvalue false
              * @field x3d
              * @instance
              */
-            this.addField_MFString( ctx, "url", [] );
+            this.addField_SFBool( ctx, "directOutput", false ); //NYI
 
-            this._id = ( ctx && ctx.xmlNode && ctx.xmlNode.id != "" ) ?
-                ctx.xmlNode.id : ++x3dom.nodeTypes.X3DScript.ScriptID;
+             /**
+             * NYI. 
+             * If the Script node's mustEvaluate field is FALSE, the browser may delay sending input events to the script until its outputs are needed by the browser. If the mustEvaluate field is TRUE, the browser shall send input events to the script as soon as possible, regardless of whether the outputs are needed. The mustEvaluate field shall be set to TRUE only if the Script node has effects that are not known to the browser (such as sending information across the network). Otherwise, poor performance may result.
+             * @var {x3dom.fields.SFBool} mustEvaluate
+             * @memberof x3dom.nodeTypes.X3DScript
+             * @initvalue false
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool( ctx, "mustEvaluate", false ); //NYI
+      
+            /**
+             * Contains all fields.x3dom mechanism to allow custom fields.
+             * @var {x3dom.fields.MFNode} fields
+             * @memberof x3dom.nodeTypes.X3DScript
+             * @initvalue x3dom.nodeTypes.Field
+             * @field x3dom
+             * @instance
+             */
+            this.addField_MFNode( "fields", x3dom.nodeTypes.Field );
 
+            this._domParser = new DOMParser();
+            this._source = "// ecmascript source code";
+            this.LANG = "ecmascript:";
+            this.CDATA = "[CDATA[";
+            this.endRegex = /\s*]]$/ ;
+            this._ctx = ctx;
+            this._callbacks = {};
         },
         {
             nodeChanged : function ()
             {
-                var ctx = {};
+		var script_text = "";
+
                 ctx.xmlNode = this._xmlNode;
 
                 if ( ctx.xmlNode !== undefined && ctx.xmlNode !== null )
                 {
                     var that = this;
 
-                    if ( that._vf.url.length && that._vf.url[ 0 ].indexOf( "\n" ) == -1 )
+                    if ( that._vf.url.length && that._vf.url[ 0 ] !== null && that._vf.url[ 0 ].indexOf( "\n" ) == -1 )
                     {
                         var xhr        = new XMLHttpRequest(),
                             url        = that._nameSpace.getURL( that._vf.url[ 0 ] ),
@@ -42848,12 +45353,13 @@ x3dom.registerNodeType(
                         that._id = "default";
                         that._vf.url = new x3dom.fields.MFString( [ this._getDefaultScript() ] );
 
+			    // TODO, url is an array
                         xhr.open( "GET", url, false );
                         xhr.onload = function ()
                         {
                             that._vf.url = new x3dom.fields.MFString( [] );
                             that._vf.url.push( xhr.response );
-			    eval ( xhr.response );
+			    script_text += xhr.response;
                             that._id = originalID;
                             that.fieldChanged( "url" );
                         };
@@ -42891,7 +45397,64 @@ x3dom.registerNodeType(
                             } );
                         }
                     }
-		    eval ( ctx.xmlNode.textContent );
+		    if (typeof scripts === 'undefined') {
+                        var scripts = [];
+                    }
+		    scripts.push(new Function (
+			    	// url comes before CDATA section, per
+                                `
+var MFBool = x3dom.fields.MFBoolean;
+var MFColor = x3dom.fields.MFColor;
+var MFColorRGBA = x3dom.fields.MFColorRGBA;
+var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFFloat = x3dom.fields.MFFloat;
+var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFInt32 = x3dom.fields.MFInt32;
+var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFNode = x3dom.fields.MFNode;
+var MFRotation = x3dom.fields.MFRotation;
+var MFString = x3dom.fields.MFString;
+var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFVec2f = x3dom.fields.MFVec2f;
+var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFVec3f = x3dom.fields.MFVec3f;
+var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
+var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
+
+var SFBool = Boolean;
+
+var SFColor = x3dom.fields.SFColor;
+var SFColorRGBA = x3dom.fields.SFColorRGBA;
+
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
+
+var SFImage = x3dom.fields.SFImage;
+var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFMatrix4f = x3dom.fields.SFMatrix4f;
+var SFNode = x3dom.fields.SFNode;
+var Quaternion = x3dom.fields.Quaternion;
+
+var SFString = String;
+var SFTime = Number;
+
+var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFVec2f = x3dom.fields.SFVec2f;
+var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFVec3f = x3dom.fields.SFVec3f;
+var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
+var SFVec4f = x3dom.fields.SFVec4f;
+				`
+                                +script_text+"\n"+
+                                `return this;`)());
+
                 }
                 // else hope that url field was already set somehow
 
@@ -42899,10 +45462,127 @@ x3dom.registerNodeType(
                 {
                     script.nodeChanged();
                 } );
+                // use textContent of dom node if it contains "ecmascript:"
+                // cdata sections in html docs get converted to comments by browser
+                // use the comment if it contains "ecmascript:"
+                var xml = this._xmlNode;
+                if ( xml.textContent.indexOf( this.LANG ) > -1 )
+                {
+                    this._source = xml.textContent;
+                    xml.textContent = "";
+                }
+                xml.childNodes.forEach( function ( node )
+                {
+                    if ( node.nodeType == node.COMMENT_NODE )
+                    {
+                        if ( node.textContent.indexOf( this.LANG ) > -1 )
+                        {
+                            this._source = node.textContent;
+                        }
+                    }
+                }, this );
+
+                //cleanup
+                this._source = this._source.replace( this.CDATA, "" );
+                this._source = this._source.replace( this.LANG, "" );
+                this._source = this._source.replace( this.endRegex, "" );
+
+                //make fields
+                this._cf.fields.nodes.forEach( function ( field )
+                {
+                    var fieldType = field._vf.type;
+                    var fieldName = field._vf.name;
+                    if ( fieldType.endsWith ('ode') ) // cf node
+                    {
+                        var type = x3dom.nodeTypes.X3DNode;
+                        //TODO; get type from default value
+                        this[ "addField_" + fieldType ]( fieldName, type );//type should be registered x3dom type
+                    }
+                    else
+                    {
+                        if ( field._vf.value ) this._ctx.xmlNode.setAttribute( fieldName, field._vf.value ); // use dom to set value
+                        this[ "addField_" + fieldType ]( this._ctx, fieldName, field._vf.value ); //or default value if none given
+                    }
+                }, this );
+
+                //find inputs and outputs, and fields to initialize
+                var outputs = [];
+                var inputs = [];
+                var initValues = [];
+                this._cf.fields.nodes.forEach( function ( field )
+                {
+                    var atype = field._vf.accessType;
+                    var fieldName = field._vf.name;
+                    switch (atype.toLowerCase())
+                    {
+                      case "outputonly" :
+                        outputs.push( fieldName );
+                        initValues.push( fieldName );
+                        break;
+                      case "inputoutput" :
+                        outputs.push( fieldName + "_changed" );
+                        inputs.push( "set_" + fieldName );
+                        initValues.push( fieldName );
+                        break;
+                      case "inputonly" :
+                        inputs.push( fieldName );
+                        break;
+                      case "initializeonly" :
+                        initValues.push( fieldName );
+                      default :
+                        x3dom.debug.logWarning( fieldName + " has unrecognized access type: " +  atype );
+                        break;
+                    }
+                });
+                //wrap source
+                var source = "return function wrapper ( scriptNode ) { \n";
+                var callbacks = ["initialize", "prepareEvents", "eventsProcessed", "shutdown", "getOutputs"].concat( inputs );
+                source += "var " + callbacks.join(",") + ";\n";
+                source += "var " + outputs.join(",") + ";\n";
+                initValues.forEach( function (field)
+                {
+                    source += "var " + field + " = scriptNode._vf['" + field +"'];\n";
+                });
+                Object.keys( x3dom.fields ).forEach( function ( field ) 
+                {
+                    source += "var " + field + " = x3dom.fields." + field + ";\n";  
+                });
+                //TODO add SFRotation, Browser, print ...
+                source += this._source;
+                source += "\n function getOutputs () { \n";
+                source += "return { " + outputs.map( function (c)
+                {
+                    return "\n" + c + " : " + c;
+                } ).join(",") + " } };";
+                source += "\n return { " + callbacks.map( function (c)
+                {
+                    return "\n" + c + " : " + c;
+                } ).join(",") + " } };"
+                //make script function
+                this._scriptFunction = new Function( source )();
+                this._callbacks = this._scriptFunction( this ); // pass in this node
+                //run initialize
+                if ( this._callbacks.initialize instanceof Function )
+                {
+                    this._callbacks.initialize( Date.now()/1000 );
+                }
             },
 
-            fieldChanged : function ( fieldName )
+            fieldChanged: function (fieldName)
             {
+                if ( this._callbacks[fieldName] instanceof Function )
+                {
+                    var preOutputs = this._callbacks.getOutputs();
+                    this._callbacks[fieldName]( this._vf[fieldName], Date.now()/1000 );
+                    var postOutputs = this._callbacks.getOutputs();
+                    for ( var output in postOutputs )
+                    {
+                        //if ( postOutputs[output] != preOutputs[output] )
+                        {
+                            this.postMessage( output, postOutputs[output] );
+                        }
+                    }
+                }
                 if ( fieldName === "url" )
                 {
                     this._parentNodes.forEach( function ( script )
@@ -42910,20 +45590,48 @@ x3dom.registerNodeType(
                         script.fieldChanged( "url" );
                     } );
                 }
-            },
-
-            parentAdded : function ( parent )
-            {
-                parent.nodeChanged();
-            },
-
-            _getDefaultScript : function ()
-            {
-                    return  "ecmascript:;\n";
             }
         }
     )
 );
+/*
+Script : X3DScriptNode {
+  SFNode    [in,out] metadata     NULL  [X3DMetadataObject]
+  MFString  [in,out] url          []    [URI]
+  SFBool    []       directOutput FALSE
+  SFBool    []       mustEvaluate FALSE
+  # And any number of:
+  fieldType [in]     fieldName
+  fieldType [in,out] fieldName    initialValue
+  fieldType [out]    fieldName
+  fieldType []       fieldName    initialValue
+}
+The Script node is used to program behaviour in a scene. Script nodes typically:
+
+signify a change or user action;
+receive events from other nodes;
+contain a program module that performs some computation;
+effect change somewhere else in the scene by sending events.
+Each Script node has associated programming language code, referenced by the url field, that is executed to carry out the Script node's function. That code is referred to as the "script" in the rest of this description. Details on the url field can be found in 9.2.1 URLs.
+
+Browsers are not required to support any specific language. Detailed information on scripting languages is described in 29.2 Concepts. Browsers supporting a scripting language for which a language binding is specified shall adhere to that language binding (see ISO/IEC 19777).
+
+Sometime before a script receives the first event it shall be initialized (any language-dependent or user-defined initialize() is performed). The script is able to receive and process events that are sent to it. Each event that can be received shall be declared in the Script node using the same syntax as is used in a prototype definition:
+
+    inputOnly type name
+The type can be any of the standard X3D fields (as defined in 5 Field type reference). Name shall be an identifier that is unique for this Script node.
+
+The Script node is able to generate events in response to the incoming events. Each event that may be generated shall be declared in the Script node using the following syntax:
+
+    outputOnly type name
+If the Script node's mustEvaluate field is FALSE, the browser may delay sending input events to the script until its outputs are needed by the browser. If the mustEvaluate field is TRUE, the browser shall send input events to the script as soon as possible, regardless of whether the outputs are needed. The mustEvaluate field shall be set to TRUE only if the Script node has effects that are not known to the browser (such as sending information across the network). Otherwise, poor performance may result.
+
+Once the script has access to a X3D node (via an SFNode or MFNode value either in one of the Script node's fields or passed in as an attribute), the script is able to read the contents of that node's fields. If the Script node's directOutput field is TRUE, the script may also send events directly to any node to which it has access, and may dynamically establish or break routes. If directOutput is FALSE (the default), the script may only affect the rest of the world via events sent through its fields. The results are undefined if directOutput is FALSE and the script sends events directly to a node to which it has access.
+
+A script is able to communicate directly with the X3D browser to get information such as the current time and the current world URL. This is strictly defined generally by the SAI services (see Part 2 of ISO/IEC 19775) and by the language bindings of the SAI (see ISO/IEC 19777) for the specific scripting language being used.
+
+The location of the Script node in the scene graph has no affect on its operation.
+*/
 
 /** @namespace x3dom.nodeTypes */
 /*
@@ -43028,6 +45736,16 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_SFNode( "lineProperties", x3dom.nodeTypes.LineProperties );
+
+            /**
+             * The pointProperties field, if specified, shall contain a PointProperties node. If pointProperties is NULL or unspecified, the pointProperties field has no effect.
+             * @var {x3dom.fields.SFNode} pointProperties
+             * @memberof x3dom.nodeTypes.Appearance
+             * @initvalue x3dom.nodeTypes.PointProperties
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFNode( "pointProperties", x3dom.nodeTypes.PointProperties );
 
             /**
              * Holds a ColorMaskMode node.
@@ -43223,6 +45941,7 @@ x3dom.nodeTypes.Appearance.defaultNode = function ()
     }
     return x3dom.nodeTypes.Appearance._defaultNode;
 };
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -43584,6 +46303,102 @@ x3dom.registerNodeType(
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
+ * (C)2020 Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+/* ### PointProperties ### */
+x3dom.registerNodeType(
+    "PointProperties",
+    "Shape",
+    defineClass( x3dom.nodeTypes.X3DAppearanceChildNode,
+
+        /**
+         * Constructor for PointProperties
+         * @constructs x3dom.nodeTypes.PointProperties
+         * @x3d 3.3
+         * @component Shape
+         * @status experimental
+         * @extends x3dom.nodeTypes.X3DAppearanceChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc The PointProperties node specifies additional properties to be applied to all point geometry.
+         */
+        function ( ctx )
+        {
+            x3dom.nodeTypes.PointProperties.superClass.call( this, ctx );
+
+            /**
+             SFFloat  [in,out] pointSizeScaleFactor  1 [1,∞)
+             SFFloat  [in,out] pointSizeMinValue     1 [0,∞)
+             SFFloat  [in,out] pointSizeMaxValue     1 [0,∞)
+             SFVec3f  [in,out] attenuation  1 0 0 [0,∞)
+             */
+            /**
+             * pointSizeScaleFactor is a value determining the nominal point size before modification by the sizing modifications, as determined by the pointSizeMinValue, pointSizeMaxValue, and pointSizeAttenuation values discussed below. The nominal rendered point size is a browser-dependent minimum renderable point size, multiplied by the pointSizeScaleFactor.
+             * @var {x3dom.fields.SFFloat} pointSizeScaleFactor
+             * @range [1, inf]
+             * @memberof x3dom.nodeTypes.PointProperties
+             * @initvalue 1
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFFloat( ctx, "pointSizeScaleFactor", 1 );
+
+            /**
+             * pointSizeMinValue is minimum allowed scaling factor on nominal browser point scaling. The provided value for pointSizeMinValue must be less than or equal to value for pointSizeMaxValue.
+             * @var {x3dom.fields.SFFloat} pointSizeMinValue
+             * @range [0, inf]
+             * @memberof x3dom.nodeTypes.PointProperties
+             * @initvalue 1
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFFloat( ctx, "pointSizeMinValue", 1 );
+
+            /**
+             * pointSizeMaxValue is maximum allowed scaling factor on nominal browser point scaling. The provided value for pointSizeMinValue must be less than or equal to value for pointSizeMaxValue.
+             * @var {x3dom.fields.SFFloat} pointSizeMaxValue
+             * @range [0, inf]
+             * @memberof x3dom.nodeTypes.PointProperties
+             * @initvalue 1
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFFloat( ctx, "pointSizeMaxValue", 1 );
+
+            /**
+             * The pointSizeMinValue, pointSizeMaxValue, and pointSizeAttenuation fields specify a depth perception in a point cloud rendering by making points close to the viewer appear larger. The modification of point size depending on distance from the view occurs in two steps, starting with the nominal point size as determined by the pointSizeScaleFactor field.
+             * @var {x3dom.fields.SFVec3f} attenuation
+             * @range [0, inf]
+             * @memberof x3dom.nodeTypes.PointProperties
+             * @initvalue 1 0 0
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFVec3f( ctx, "attenuation", 1, 0, 0 );
+        },
+        {
+            nodeChanged : function ()
+            {
+                if ( this._vf.pointSizeMinValue > this._vf.pointSizeMaxValue )
+                {
+                    x3dom.debug.logWarning( "pointSizeMinValue is larger than pointSizeMaxValue, will set to MaxValue" );
+                    this._vf.pointSizeMinValue = this._vf.pointSizeMaxValue;
+                }
+            },
+            fieldChanged : function ( fieldName )
+            {
+                this._nodeChanged();
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
+ * X3DOM JavaScript Library
+ * http://www.x3dom.org
+ *
  * (C)2009 Fraunhofer IGD, Darmstadt, Germany
  * Dual licensed under the MIT and GPL
  */
@@ -43607,9 +46422,32 @@ x3dom.registerNodeType(
         function ( ctx )
         {
             x3dom.nodeTypes.X3DMaterialNode.superClass.call( this, ctx );
+        },
+        {
+            _fieldChanged : function ( fieldName, fields )
+            {
+                if ( fields.indexOf( fieldName ) > -1 )
+                {
+                    this._parentNodes.forEach( function ( app )
+                    {
+                        app._parentNodes.forEach( function ( shape )
+                        {
+                            if ( x3dom.isa( shape, x3dom.nodeTypes.X3DShapeNode ) )
+                            {
+                                shape._dirty.material = true;
+                            }
+                        } );
+                        if ( x3dom.isa( app, x3dom.nodeTypes.X3DAppearanceNode ) )
+                        {
+                            app.checkSortType();
+                        }
+                    } );
+                }
+            }
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -43716,19 +46554,7 @@ x3dom.registerNodeType(
         {
             fieldChanged : function ( fieldName )
             {
-                if ( fieldName == "ambientIntensity" || fieldName == "diffuseColor" ||
-                    fieldName == "emissiveColor" || fieldName == "shininess" ||
-                    fieldName == "specularColor" || fieldName == "transparency" )
-                {
-                    this._parentNodes.forEach( function ( app )
-                    {
-                        app._parentNodes.forEach( function ( shape )
-                        {
-                            shape._dirty.material = true;
-                        } );
-                        app.checkSortType();
-                    } );
-                }
+                this._fieldChanged( fieldName, [ "ambientIntensity", "diffuseColor", "emissiveColor", "shininess", "specularColor", "transparency" ] );
             }
         }
     )
@@ -43743,6 +46569,7 @@ x3dom.nodeTypes.Material.defaultNode = function ()
     }
     return x3dom.nodeTypes.Material._defaultNode;
 };
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -43850,27 +46677,18 @@ x3dom.registerNodeType(
         {
             fieldChanged : function ( fieldName )
             {
-                if ( fieldName == "ambientIntensity" || fieldName == "diffuseColor" ||
-                    fieldName == "emissiveColor" || fieldName == "shininess" ||
-                    fieldName == "specularColor" || fieldName == "transparency" ||
-                    fieldName == "backAmbientIntensity" || fieldName == "backDiffuseColor" ||
-                    fieldName == "backEmissiveColor" || fieldName == "backShininess" ||
-                    fieldName == "backSpecularColor" || fieldName == "backTransparency" ||
-                    fieldName == "separateBackColor" )
-                {
-                    this._parentNodes.forEach( function ( app )
-                    {
-                        app._parentNodes.forEach( function ( shape )
-                        {
-                            shape._dirty.material = true;
-                        } );
-                        app.checkSortType();
-                    } );
-                }
+                this._fieldChanged( fieldName,
+                    [ "ambientIntensity", "diffuseColor",
+                        "emissiveColor", "shininess",
+                        "specularColor", "transparency",
+                        "backAmbientIntensity", "backDiffuseColor",
+                        "backEmissiveColor", "backShininess",
+                        "backSpecularColor", "backTransparency", "separateBackColor" ] );
             }
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -44152,18 +46970,7 @@ x3dom.registerNodeType(
         {
             fieldChanged : function ( fieldName )
             {
-                if ( fieldName == "baseColorFactor" || fieldName == "metallicFactor" ||
-                    fieldName == "roughnessFactor" || fieldName == "emissiveFactor" )
-                {
-                    this._parentNodes.forEach( function ( app )
-                    {
-                        app._parentNodes.forEach( function ( shape )
-                        {
-                            shape._dirty.material = true;
-                        } );
-                        app.checkSortType();
-                    } );
-                }
+                this._fieldChanged( fieldName, [ "baseColorFactor", "metallicFactor", "roughnessFactor", "emissiveFactor" ] );
 
                 if ( fieldName == "alphaMode" )
                 {
@@ -44171,9 +46978,15 @@ x3dom.registerNodeType(
                     {
                         app._parentNodes.forEach( function ( shape )
                         {
-                            shape._dirty.shader = true;
+                            if ( x3dom.isa( shape, x3dom.nodeTypes.X3DShapeNode ) )
+                            {
+                                shape._dirty.shader = true;
+                            }
                         } );
-                        app.checkSortType();
+                        if ( x3dom.isa( app, x3dom.nodeTypes.X3DAppearanceNode ) )
+                        {
+                            app.checkSortType();
+                        }
                     } );
                 }
             },
@@ -44389,7 +47202,7 @@ x3dom.registerNodeType(
             {
                 var vol = this._graph.volume;
 
-                if ( !this.volumeValid() && this._vf.render )
+                if ( !this.volumeValid() && this.renderFlag && this.renderFlag() )
                 {
                     var geo = this._cf.geometry.node;
                     var childVol = geo ? geo.getVolume() : null;
@@ -48230,31 +51043,33 @@ x3dom.registerNodeType(
 
             linearInterp : function ( time, interp )
             {
-                if ( this._vf.key.length == 0 )
+                var key = this._vf.key;
+                var keyValue = this._vf.keyValue;
+                if ( key.length == 0 )
                 {
                     return;
                 }
 
-                if ( time <= this._vf.key[ 0 ] )
+                if ( time <= key[ 0 ] ) // use interp to get copy
                 {
-                    return this._vf.keyValue[ 0 ];
+                    return interp( keyValue[ 0 ], keyValue[ 0 ], 0 );
                 }
-                else if ( time >= this._vf.key[ this._vf.key.length - 1 ] )
+                else if ( time >= key[ key.length - 1 ] )
                 {
-                    return this._vf.keyValue[ this._vf.key.length - 1 ];
+                    return interp( keyValue[ key.length - 1 ], keyValue[ key.length - 1 ], 1 );
                 }
 
-                for ( var i = 0, n = this._vf.key.length - 1; i < n; ++i )
+                for ( var i = 0, n = key.length - 1; i < n; ++i )
                 {
-                    if ( ( this._vf.key[ i ] < time ) && ( time <= this._vf.key[ i + 1 ] ) )
+                    if ( ( key[ i ] < time ) && ( time <= key[ i + 1 ] ) )
                     {
-                        return interp( this._vf.keyValue[ i ],
-                            this._vf.keyValue[ i + 1 ],
-                            ( time - this._vf.key[ i ] ) / ( this._vf.key[ i + 1 ] - this._vf.key[ i ] ) );
+                        return interp( keyValue[ i ],
+                            keyValue[ i + 1 ],
+                            ( time - key[ i ] ) / ( key[ i + 1 ] - key[ i ] ) );
                     }
                 }
 
-                return this._vf.keyValue[ 0 ];
+                return keyValue[ 0 ];
             },
 
             cubicSplineInterp : function ( time, interp )
@@ -48717,28 +51532,81 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_MFColor( ctx, "keyValue", [] );
+
+            /**
+             * Specifies whether the interpolator should interpolate in RGB space
+             * @var {x3dom.fields.SFBool} RGB
+             * @memberof x3dom.nodeTypes.ColorInterpolator
+             * @initvalue false
+             * @field x3dom
+             * @instance
+             */
+            this.addField_SFBool( ctx, "RGB", false );
+
+            this._lastValue = new x3dom.fields.SFColor();
+            this.fieldChanged( "keyValue" );
         },
         {
             fieldChanged : function ( fieldName )
             {
                 if ( fieldName === "set_fraction" )
                 {
-                    // FIXME; perform color interpolation in HSV space
-                    var value = this.linearInterp( this._vf.set_fraction, function ( a, b, t )
+                    var value,
+                        mix;
+                    if ( this._vf.RGB )
                     {
-                        return a.multiply( 1.0 - t ).add( b.multiply( t ) );
-                    } );
+                        value = this.linearInterp( this._vf.set_fraction, function ( a, b, t )
+                        {
+                            mix = a.multiply( 1.0 - t ).add( b.multiply( t ) );
+                            return mix;
+                        } );
+                    }
+                    else
+                    {
+                        // temporarily switch to HSV for interpolation
+                        this._vf.keyValue = this._keyValueHSV;
+                        value = this.linearInterp( this._vf.set_fraction, function ( aH, bH, t )
+                        {
+                            var a = aH.copy();
+                            var b = bH.copy();
+                            b.r = b.r > a.r ? b.r : b.r + 360; //ensure b.r > a.r
+                            if ( b.r - a.r < 180 )
+                            {
+                                // on small segment
+                                mix = a.multiply( 1.0 - t ).add( b.multiply( t ) );
+                            }
+                            else
+                            {
+                                // on large segment
+                                a.r = a.r + 360; // overtake b
+                                mix = a.multiply( 1.0 - t ).add( b.multiply( t ) );
+                            }
+                            return mix.setHSV( mix.r % 360, mix.g, mix.b );
+                        } );
+                        // switch back
+                        this._vf.keyValue = this._keyValue;
+                    }
 
-                    if ( value != undefined && value != this._lastValue )
+                    if ( value != undefined && !value.equals( this._lastValue, x3dom.fields.Eps ) )
                     {
                         this._lastValue = value;
                         this.postMessage( "value_changed", value );
                     }
                 }
+                if ( fieldName === "keyValue" )
+                {
+                    this._keyValueHSV = this._vf.keyValue.map( function ( color )
+                    {
+                        var hsv = color.getHSV();
+                        return new x3dom.fields.SFColor( hsv[ 0 ], hsv[ 1 ], hsv[ 2 ] );
+                    } );
+                    this._keyValue = this._vf.keyValue.copy();
+                }
             }
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -49579,9 +52447,20 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_SFBool( ctx, "loop", false );
+
+            /**
+             * Description for intended purpose of the node.
+             * @var {x3dom.fields.SFString} description
+             * @memberof x3dom.nodeTypes.X3DTimeDependentNode
+             * @initvalue ""
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFString( ctx, "description", "" );
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -49744,7 +52623,10 @@ x3dom.registerNodeType(
             this.addField_MFString( ctx, "url", [] );
 
             /**
-             * Specifies whether the X3D file specified by the url field is loaded. Hint: use LoadSensor to detect when loading is complete. TRUE: load immediately (it's also possible to load the URL at a later time by sending a TRUE event to the load field); FALSE: no action is taken (by sending a FALSE event to the load field of a previously loaded Inline, the contents of the Inline will be unloaded from the scene graph)
+             * Specifies whether the X3D file specified by the url field is loaded.
+             * TRUE: load immediately (it's also possible to load the URL at a later time by sending a TRUE event to the load field);
+             * FALSE: no action is taken (by sending a FALSE event to the load field of a previously loaded Inline,
+             * the contents of the Inline will be unloaded from the scene graph)
              * @var {x3dom.fields.SFBool} load
              * @memberof x3dom.nodeTypes.Inline
              * @initvalue true
@@ -49752,6 +52634,17 @@ x3dom.registerNodeType(
              * @instance
              */
             this.addField_SFBool( ctx, "load", true );
+
+            /**
+             * The description field specifies a textual description.
+             * This may be used by browser-specific user interfaces that wish to present users with more detailed information.
+             * @var {x3dom.fields.SFString} description
+             * @memberof x3dom.nodeTypes.Anchor
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFString( ctx, "description", "" );
 
             /**
              * Specifies the namespace of the Inline node.
@@ -49800,19 +52693,6 @@ x3dom.registerNodeType(
             {
                 if ( fieldName == "url" || fieldName == "load" )
                 {
-                    //Remove internally added nodes with same namespace, for prototypes
-                    var inline_nameSpace = this._childNodes[ 0 ] && this._childNodes[ 0 ]._nameSpace;
-
-                    var found = this._nameSpace.doc._scene._childNodes.filter( function ( node )
-                    {
-                        return node._nameSpace == inline_nameSpace;
-                    } );
-
-                    for ( var i = 0; i < found.length; i++ )
-                    {
-                        this._nameSpace.doc._scene.removeChild( found[ i ] );
-                    }
-
                     //Remove the childs of the x3domNode
                     for ( var i = 0; i < this._childNodes.length; i++ )
                     {
@@ -49831,7 +52711,6 @@ x3dom.registerNodeType(
                             }
                         }
                     }
-
                     this.loadInline();
                 }
                 else if ( fieldName == "render" )
@@ -50325,6 +53204,8 @@ x3dom.registerNodeType(
 
             /**
              * Color of the ground
+             * Multiple color values are possible.
+             * Define 1 more color than the number of ground angles.
              * @var {x3dom.fields.MFColor} groundColor
              * @memberof x3dom.nodeTypes.X3DBackgroundNode
              * @initvalue (0,0,0)
@@ -50336,6 +53217,7 @@ x3dom.registerNodeType(
 
             /**
              * Angle of the ground
+             * Multiple values are possible
              * @var {x3dom.fields.MFFloat} groundAngle
              * @memberof x3dom.nodeTypes.X3DBackgroundNode
              * @initvalue []
@@ -50347,6 +53229,8 @@ x3dom.registerNodeType(
 
             /**
              * Color of the sky
+             * Multiple color values are possible.
+             * Define 1 more color than the number of sky angles.
              * @var {x3dom.fields.MFColor} skyColor
              * @memberof x3dom.nodeTypes.X3DBackgroundNode
              * @initvalue (0,0,0)
@@ -50358,6 +53242,7 @@ x3dom.registerNodeType(
 
             /**
              * Angle of the sky
+             * Multiple values are possible
              * @var {x3dom.fields.MFFloat} skyAngle
              * @memberof x3dom.nodeTypes.X3DBackgroundNode
              * @initvalue []
@@ -50537,7 +53422,7 @@ x3dom.registerNodeType(
             x3dom.nodeTypes.Background.superClass.call( this, ctx );
 
             /**
-             *
+             * Image shown at the back of the background cube
              * @var {x3dom.fields.MFString} backUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
@@ -50548,65 +53433,65 @@ x3dom.registerNodeType(
             this.addField_MFString( ctx, "backUrl", [] );
 
             /**
-             *
+             * Image shown at the bottom of the background cube
              * @var {x3dom.fields.MFString} bottomUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
              * @range [URI]
-             * @field x3dom
+             * @field x3d
              * @instance
              */
             this.addField_MFString( ctx, "bottomUrl", [] );
 
             /**
-             *
+             * Image shown at the front of the background cube
              * @var {x3dom.fields.MFString} frontUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
              * @range [URI]
-             * @field x3dom
+             * @field x3d
              * @instance
              */
             this.addField_MFString( ctx, "frontUrl", [] );
 
             /**
-             *
+             * Image shown at the left of the background cube
              * @var {x3dom.fields.MFString} leftUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
              * @range [URI]
-             * @field x3dom
+             * @field x3d
              * @instance
              */
             this.addField_MFString( ctx, "leftUrl", [] );
 
             /**
-             *
+             * Image shown at the right of the background cube
              * @var {x3dom.fields.MFString} rightUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
              * @range [URI]
-             * @field x3dom
+             * @field x3d
              * @instance
              */
             this.addField_MFString( ctx, "rightUrl", [] );
 
             /**
-             *
+             * Image shown at the top of the background cube
              * @var {x3dom.fields.MFString} topUrl
              * @memberof x3dom.nodeTypes.Background
              * @initvalue []
              * @range [URI]
-             * @field x3dom
+             * @field x3d
              * @instance
              */
             this.addField_MFString( ctx, "topUrl", [] );
 
             /**
-             *
+             * Scale images of the background cube
              * @var {x3dom.fields.MFString} scaling
              * @memberof x3dom.nodeTypes.Background
-             * @initvalue []
+             * @initvalue false
              * @field x3dom
              * @instance
              */
@@ -51078,6 +53963,54 @@ x3dom.registerNodeType(
         {
             x3dom.nodeTypes.X3DViewpointNode.superClass.call( this, ctx );
 
+            /**
+             * Specifies the near clipping plane, alias for zNear
+             * @var {x3dom.fields.SFFloat} nearClippingPlane
+             * @range -1 or [0, inf]
+             * @memberof x3dom.nodeTypes.X3DViewpointNode
+             * @initvalue -1
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFFloat( ctx, "nearClippingPlane", -1 );
+
+            /**
+             * Specifies the far clipping plane, alias for zFar
+             * @var {x3dom.fields.SFFloat} farClippingPlane
+             * @range -1 or [0, inf]
+             * @memberof x3dom.nodeTypes.X3DViewpointNode
+             * @initvalue -1
+             * @field x3dom
+             * @instance
+             */
+            this.addField_SFFloat( ctx, "farClippingPlane", -1 );
+
+            /**
+             * When the viewAll field is set to TRUE or a viewpoint is bound with viewAll field TRUE,
+             * the current view is modified to change the centerOfRotation field to match center of the bounding box for the entire visible scene,
+             * and the orientation field is modified to aim at that point. Finally, the zoom position or fieldofview is adjusted to contain
+             * the entire scene in the current viewing window. If needed, the near and far clipping planes shall be adjusted to allow viewing
+             * the entire scene. When the value of the viewAll field is changed from TRUE to FALSE, no change in the current view occurs.
+             * @var {x3dom.fields.SFBool} viewAll
+             * @memberof x3dom.nodeTypes.X3DViewpointNode
+             * @initvalue false
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFBool( ctx, "viewAll", false );
+
+            /**
+             * Defines a dedicated NavigationInfo node for this X3DViewpointNode. The specified NavigationInfo node receives
+             * a set_bind TRUE event at the time when the parent node is bound and receives a set_bind FALSE at the time
+             * when the parent node is unbound.
+             * @var {x3dom.fields.SFBool} navigationInfo
+             * @memberof x3dom.nodeTypes.X3DViewpointNode
+             * @initvalue null
+             * @field x3d
+             * @instance
+             */
+            this.addField_SFNode( "navigationInfo", x3dom.nodeTypes.NavigationInfo );
+
             // attach some convenience accessor methods to dom/xml node
             if ( ctx && ctx.xmlNode )
             {
@@ -51115,20 +54048,30 @@ x3dom.registerNodeType(
             activate : function ( prev )
             {
                 var viewarea = this._nameSpace.doc._viewarea;
-                if ( prev && this._bindAnimation )
+                prev = prev || this;
+                var target = this;
+                if ( this._bindAnimation )
                 {
-                    viewarea.animateTo( this, prev._autoGen ? null : prev );
+                    if ( this._vf.viewAll )
+                    {
+                        var sceneBBox = this._runtime.getSceneBBox();
+                        target = viewarea.getFitViewMatrix( sceneBBox.min, sceneBBox.max, prev, true );
+                    }
+                    viewarea.animateTo( target, prev._autoGen ? null : prev );
                 }
                 viewarea._needNavigationMatrixUpdate = true;
 
+                if ( this._cf.navigationInfo.node )
+                {
+                    this._cf.navigationInfo.node.bind( true );
+                }
+
                 x3dom.nodeTypes.X3DBindableNode.prototype.activate.call( this, prev );
-                //x3dom.debug.logInfo ('activate ViewBindable ' + this._DEF + '/' + this._vf.description);
             },
 
             deactivate : function ( prev )
             {
                 x3dom.nodeTypes.X3DBindableNode.prototype.deactivate.call( this, prev );
-                //x3dom.debug.logInfo ('deactivate ViewBindable ' + this._DEF + '/' + this._vf.description);
             },
 
             getTransformation : function ()
@@ -51318,6 +54261,16 @@ x3dom.registerNodeType(
             this._projMatrix = null;
             this._lastAspect = 1.0;
 
+            //use x3d4 fields if provided
+            if ( this._vf.nearClippingPlane > -1 )
+            {
+                this._vf.zNear = this._vf.nearClippingPlane;
+            }
+            if ( this._vf.farClippingPlane > -1 )
+            {
+                this._vf.zFar = this._vf.farClippingPlane;
+            }
+
             // z-ratio: a value around 5000 would be better...
             this._zRatio = 10000;
             this._zNear = this._vf.zNear;
@@ -51329,6 +54282,17 @@ x3dom.registerNodeType(
         {
             fieldChanged : function ( fieldName )
             {
+                if ( fieldName == "nearClippingPlane" )
+                {
+                    this._vf.zNear = this._vf.nearClippingPlane;
+                    fieldName = "zNear";
+                }
+                else if ( fieldName == "farClippingPlane" )
+                {
+                    this._vf.zFar = this._vf.farClippingPlane;
+                    fieldName = "zFar";
+                }
+
                 if ( fieldName == "position" || fieldName == "orientation" )
                 {
                     this.resetView();
@@ -51345,6 +54309,14 @@ x3dom.registerNodeType(
                 {
                     // FIXME; call parent.fieldChanged();
                     this.bind( this._vf.bind );
+                    if ( this._cf.navigationInfo.node )
+                    {
+                        this._cf.navigationInfo.node.bind( this._vf.bind );
+                    }
+                }
+                else if ( fieldName == "viewAll" && this._vf.viewAll )
+                {
+                    this._nameSpace.doc._x3dElem.runtime.fitAll();
                 }
             },
 
@@ -51595,6 +54567,16 @@ x3dom.registerNodeType(
             this._projMatrix = null;
             this._lastAspect = 1.0;
 
+            //use x3d4 fields if provided
+            if ( this._vf.nearClippingPlane > -1 )
+            {
+                this._vf.zNear = this._vf.nearClippingPlane;
+            }
+            if ( this._vf.farClippingPlane > -1 )
+            {
+                this._vf.zFar = this._vf.farClippingPlane;
+            }
+
             this._zRatio = 10000;
             this._zNear = this._vf.zNear;
             this._zFar = this._vf.zFar;
@@ -51605,6 +54587,17 @@ x3dom.registerNodeType(
         {
             fieldChanged : function ( fieldName )
             {
+                if ( fieldName == "nearClippingPlane" )
+                {
+                    this._vf.zNear = this._vf.nearClippingPlane;
+                    fieldName = "zNear";
+                }
+                else if ( fieldName == "farClippingPlane" )
+                {
+                    this._vf.zFar = this._vf.farClippingPlane;
+                    fieldName = "zFar";
+                }
+
                 if ( fieldName == "position" || fieldName == "orientation" )
                 {
                     this.resetView();
@@ -51622,6 +54615,14 @@ x3dom.registerNodeType(
                 else if ( fieldName.indexOf( "bind" ) >= 0 )
                 {
                     this.bind( this._vf.bind );
+                    if ( this._cf.navigationInfo.node )
+                    {
+                        this._cf.navigationInfo.node.bind( this._vf.bind );
+                    }
+                }
+                else if ( fieldName == "viewAll" && this._vf.viewAll )
+                {
+                    this._nameSpace.doc._x3dElem.runtime.fitAll();
                 }
             },
 
@@ -52640,7 +55641,7 @@ x3dom.registerNodeType(
             {
                 var vol = this._graph.volume;
 
-                if ( !this.volumeValid() && this._vf.render )
+                if ( !this.volumeValid() && this.renderFlag && this.renderFlag() )
                 {
                     var child,
                         childVol;
@@ -52649,7 +55650,7 @@ x3dom.registerNodeType(
                     {
                         child = this._childNodes[ this._lastRangePos ];
 
-                        childVol = ( child && child._vf.render === true ) ? child.getVolume() : null;
+                        childVol = ( child && child.renderFlag && child.renderFlag() === true ) ? child.getVolume() : null;
 
                         if ( childVol && childVol.isValid() )
                         {vol.extendBounds( childVol.min, childVol.max );}
@@ -52658,7 +55659,7 @@ x3dom.registerNodeType(
                     {  // first time we're here
                         for ( var i = 0, n = this._childNodes.length; i < n; i++ )
                         {
-                            if ( !( child = this._childNodes[ i ] ) || child._vf.render !== true )
+                            if ( !( child = this._childNodes[ i ] ) || child.renderFlag && child.renderFlag() !== true )
                             {continue;}
 
                             childVol = child.getVolume();
@@ -53472,7 +56473,9 @@ x3dom.DefaultNavigation.prototype.animateTo = function ( view, target, prev, dur
     var prevTargetMat,
         prevMat;
 
-    if ( x3dom.isa( target, x3dom.nodeTypes.X3DViewpointNode ) )
+    view._mixer._isVPtarget = x3dom.isa( target, x3dom.nodeTypes.X3DViewpointNode );
+
+    if ( view._mixer._isVPtarget )
     {
         target = target.getViewMatrix().mult( target.getCurrentTransform().inverse() );
     }
@@ -54953,12 +57956,23 @@ x3dom.registerNodeType(
 
                 var that = this;
 
+                var audioID = 0;
+
                 this._startAudio = function ()
                 {
                     that._audio.loop = that._vf.loop ? "loop" : "";
                     if ( that._vf.enabled === true )
                     {
-                        that._audio.play();
+                        that._audio.play()
+                            .then( function ( success )
+                            {
+                                clearTimeout( audioID );
+                            } )
+                            .catch( function ( error )
+                            {
+                                x3dom.debug.logError( error );
+                                audioID = setTimeout( that._startAudio, 100 );
+                            } );
                     }
                 };
 
@@ -59188,14 +62202,14 @@ x3dom.registerNodeType(
         {
             x3dom.nodeTypes.Sphere.superClass.call( this, ctx );
 
-            // sky box background creates sphere with r = 10000
+            // sky box background creates sphere with r = 1000
 
             /**
              * The radius field specifies the radius of the sphere.
              * @var {x3dom.fields.SFFloat} radius
              * @range [0, inf]
              * @memberof x3dom.nodeTypes.Sphere
-             * @initvalue ctx?1:10000
+             * @initvalue ctx?1:1000
              * @field x3d
              * @instance
              */
@@ -60033,6 +63047,15 @@ x3dom.registerNodeType(
             }
             else
             {
+                this._calcMesh();
+                this._mesh._invalidate = true;
+
+                x3dom.geoCache[ geoCacheID ] = this._mesh;
+            }
+        },
+        {
+            _calcMesh : function ()
+            {
                 var bottomRadius = this._vf.bottomRadius,
                     height = this._vf.height;
                 var topRadius = this._vf.topRadius,
@@ -60146,14 +63169,10 @@ x3dom.registerNodeType(
                     }
                 }
 
-                this._mesh._invalidate = true;
                 this._mesh._numFaces = this._mesh._indices[ 0 ].length / 3;
                 this._mesh._numCoords = this._mesh._positions[ 0 ].length / 3;
+            },
 
-                x3dom.geoCache[ geoCacheID ] = this._mesh;
-            }
-        },
-        {
             fieldChanged : function ( fieldName )
             {
                 if ( fieldName == "bottomRadius" || fieldName == "topRadius" ||
@@ -60165,121 +63184,8 @@ x3dom.registerNodeType(
                     this._mesh._normals[ 0 ] = [];
                     this._mesh._texCoords[ 0 ] = [];
 
-                    var bottomRadius = this._vf.bottomRadius,
-                        height = this._vf.height;
-                    var topRadius = this._vf.topRadius,
-                        sides = this._vf.subdivision;
-
-                    var beta,
-                        x,
-                        z,
-                        delta = 2.0 * Math.PI / sides,
-
-                        incl = ( bottomRadius - topRadius ) / height,
-                        nlen = 1.0 / Math.sqrt( 1.0 + incl * incl ),
-
-                        j = 0,
-                        k = 0,
-                        h,
-                        base;
-
-                    if ( this._vf.side && height > 0 )
-                    {
-                        var px = 0,
-                            pz = 0;
-
-                        for ( j = 0, k = 0; j <= sides; j++ )
-                        {
-                            beta = j * delta;
-                            x = Math.sin( beta );
-                            z = -Math.cos( beta );
-
-                            if ( topRadius > x3dom.fields.Eps )
-                            {
-                                px = x * topRadius;
-                                pz = z * topRadius;
-                            }
-
-                            this._mesh._positions[ 0 ].push( px, height / 2, pz );
-                            this._mesh._normals[ 0 ].push( nSign * x / nlen, nSign * incl / nlen, nSign * z / nlen );
-                            this._mesh._texCoords[ 0 ].push( 1.0 - j / sides, 1 );
-
-                            this._mesh._positions[ 0 ].push( x * bottomRadius, -height / 2, z * bottomRadius );
-                            this._mesh._normals[ 0 ].push( nSign * x / nlen, nSign * incl / nlen, nSign * z / nlen );
-                            this._mesh._texCoords[ 0 ].push( 1.0 - j / sides, 0 );
-
-                            if ( j > 0 )
-                            {
-                                this._mesh._indices[ 0 ].push( k    );
-                                this._mesh._indices[ 0 ].push( k + 2 );
-                                this._mesh._indices[ 0 ].push( k + 1 );
-
-                                this._mesh._indices[ 0 ].push( k + 1 );
-                                this._mesh._indices[ 0 ].push( k + 2 );
-                                this._mesh._indices[ 0 ].push( k + 3 );
-
-                                k += 2;
-                            }
-                        }
-                    }
-
-                    if ( this._vf.bottom && bottomRadius > 0 )
-                    {
-                        base = this._mesh._positions[ 0 ].length / 3;
-
-                        for ( j = sides - 1; j >= 0; j-- )
-                        {
-                            beta = j * delta;
-                            x = bottomRadius * Math.sin( beta );
-                            z = -bottomRadius * Math.cos( beta );
-
-                            this._mesh._positions[ 0 ].push( x, -height / 2, z );
-                            this._mesh._normals[ 0 ].push( 0, nSign * -1, 0 );
-                            this._mesh._texCoords[ 0 ].push( x / bottomRadius / 2 + 0.5, z / bottomRadius / 2 + 0.5 );
-                        }
-
-                        h = base + 1;
-
-                        for ( j = 2; j < sides; j++ )
-                        {
-                            this._mesh._indices[ 0 ].push( h );
-                            this._mesh._indices[ 0 ].push( base );
-
-                            h = base + j;
-                            this._mesh._indices[ 0 ].push( h );
-                        }
-                    }
-
-                    if ( this._vf.top && topRadius > x3dom.fields.Eps )
-                    {
-                        base = this._mesh._positions[ 0 ].length / 3;
-
-                        for ( j = sides - 1; j >= 0; j-- )
-                        {
-                            beta = j * delta;
-                            x =  topRadius * Math.sin( beta );
-                            z = -topRadius * Math.cos( beta );
-
-                            this._mesh._positions[ 0 ].push( x, height / 2, z );
-                            this._mesh._normals[ 0 ].push( 0, nSign * 1, 0 );
-                            this._mesh._texCoords[ 0 ].push( x / topRadius / 2 + 0.5, 1.0 - z / topRadius / 2 + 0.5 );
-                        }
-
-                        h = base + 1;
-
-                        for ( j = 2; j < sides; j++ )
-                        {
-                            this._mesh._indices[ 0 ].push( base );
-                            this._mesh._indices[ 0 ].push( h );
-
-                            h = base + j;
-                            this._mesh._indices[ 0 ].push( h );
-                        }
-                    }
-
+                    this._calcMesh();
                     this.invalidateVolume();
-                    this._mesh._numFaces = this._mesh._indices[ 0 ].length / 3;
-                    this._mesh._numCoords = this._mesh._positions[ 0 ].length / 3;
 
                     this._parentNodes.forEach( function ( node )
                     {
@@ -60397,16 +63303,26 @@ x3dom.registerNodeType(
             }
             else
             {
-                var radius = this._vf.radius;
-                var height = this._vf.height / 2;
-                var nSign = ccw ? 1 : -1;
+                this._calcMesh();
+                this._mesh._invalidate = true;
 
-                var beta,
+                x3dom.geoCache[ geoCacheID ] = this._mesh;
+            }
+        },
+        {
+            _calcMesh : function ()
+            {
+                var radius = this._vf.radius,
+                    height = this._vf.height / 2,
+                    sides = this._vf.subdivision,
+                    nSign = this._vf.ccw ? 1 : -1,
+
+                    beta,
                     x,
                     z,
-                    delta = 2.0 * Math.PI / sides,
-                    j,
-                    k;
+                    j;
+                var delta = 2.0 * Math.PI / sides;
+                var k = 0;
 
                 if ( this._vf.side )
                 {
@@ -60492,14 +63408,10 @@ x3dom.registerNodeType(
                     }
                 }
 
-                this._mesh._invalidate = true;
                 this._mesh._numFaces = this._mesh._indices[ 0 ].length / 3;
                 this._mesh._numCoords = this._mesh._positions[ 0 ].length / 3;
+            },
 
-                x3dom.geoCache[ geoCacheID ] = this._mesh;
-            }
-        },
-        {
             fieldChanged : function ( fieldName )
             {
                 if ( fieldName === "radius" || fieldName === "height" )
@@ -60575,106 +63487,8 @@ x3dom.registerNodeType(
                     this._mesh._indices[ 0 ] = [];
                     this._mesh._normals[ 0 ] = [];
                     this._mesh._texCoords[ 0 ] = [];
-
-                    var radius = this._vf.radius,
-                        height = this._vf.height / 2,
-                        sides = this._vf.subdivision,
-                        nSign = this._vf.ccw ? 1 : -1,
-
-                        beta,
-                        x,
-                        z,
-                        j;
-                    var delta = 2.0 * Math.PI / sides;
-                    var k = 0;
-
-                    if ( this._vf.side )
-                    {
-                        for ( j = 0, k = 0; j <= sides; j++ )
-                        {
-                            beta = j * delta;
-                            x = Math.sin( beta );
-                            z = -Math.cos( beta );
-
-                            this._mesh._positions[ 0 ].push( x * radius, -height, z * radius );
-                            this._mesh._normals[ 0 ].push( nSign * x, 0, nSign * z );
-                            this._mesh._texCoords[ 0 ].push( 1.0 - j / sides, 0 );
-
-                            this._mesh._positions[ 0 ].push( x * radius, height, z * radius );
-                            this._mesh._normals[ 0 ].push( nSign * x, 0, nSign * z );
-                            this._mesh._texCoords[ 0 ].push( 1.0 - j / sides, 1 );
-
-                            if ( j > 0 )
-                            {
-                                this._mesh._indices[ 0 ].push( k + 0, k + 1, k + 2 );
-                                this._mesh._indices[ 0 ].push( k + 2, k + 1, k + 3 );
-
-                                k += 2;
-                            }
-                        }
-                    }
-
-                    if ( radius > 0 )
-                    {
-                        var h,
-                            base = this._mesh._positions[ 0 ].length / 3;
-
-                        if ( this._vf.top )
-                        {
-                            for ( j = sides - 1; j >= 0; j-- )
-                            {
-                                beta = j * delta;
-                                x = radius * Math.sin( beta );
-                                z = -radius * Math.cos( beta );
-
-                                this._mesh._positions[ 0 ].push( x, height, z );
-                                this._mesh._normals[ 0 ].push( 0, nSign * 1, 0 );
-                                this._mesh._texCoords[ 0 ].push( x / radius / 2 + 0.5, -z / radius / 2 + 0.5 );
-                            }
-
-                            h = base + 1;
-
-                            for ( j = 2; j < sides; j++ )
-                            {
-                                this._mesh._indices[ 0 ].push( base );
-                                this._mesh._indices[ 0 ].push( h );
-
-                                h = base + j;
-                                this._mesh._indices[ 0 ].push( h );
-                            }
-
-                            base = this._mesh._positions[ 0 ].length / 3;
-                        }
-
-                        if ( this._vf.bottom )
-                        {
-                            for ( j = sides - 1; j >= 0; j-- )
-                            {
-                                beta = j * delta;
-                                x = radius * Math.sin( beta );
-                                z = -radius * Math.cos( beta );
-
-                                this._mesh._positions[ 0 ].push( x, -height, z );
-                                this._mesh._normals[ 0 ].push( 0, nSign * -1, 0 );
-                                this._mesh._texCoords[ 0 ].push( x / radius / 2 + 0.5, z / radius / 2 + 0.5 );
-                            }
-
-                            h = base + 1;
-
-                            for ( j = 2; j < sides; j++ )
-                            {
-                                this._mesh._indices[ 0 ].push( h );
-                                this._mesh._indices[ 0 ].push( base );
-
-                                h = base + j;
-                                this._mesh._indices[ 0 ].push( h );
-                            }
-                        }
-                    }
-
+                    this._calcMesh();
                     this.invalidateVolume();
-                    this._mesh._numFaces = this._mesh._indices[ 0 ].length / 3;
-                    this._mesh._numCoords = this._mesh._positions[ 0 ].length / 3;
 
                     this._parentNodes.forEach( function ( node )
                     {
@@ -64354,11 +67168,27 @@ x3dom.registerNodeType(
             //---------------------------------------
             // PROPERTIES
             //---------------------------------------
+            this._hitPoint = new x3dom.fields.SFVec3f();
+            this._hitNormal = new x3dom.fields.SFVec3f();
+            this._hitRotation = new x3dom.fields.Quaternion();
+            this._up = new x3dom.fields.SFVec3f( 0, 1, 0 );
         },
         {
             //----------------------------------------------------------------------------------------------------------------------
             // PUBLIC FUNCTIONS
             //----------------------------------------------------------------------------------------------------------------------
+            pointerMoved : function ( event )
+            {
+                if ( this._vf.enabled )
+                {
+                    this.postMessage( "hitPoint_changed", this._hitPoint.fromArray( event.hitPnt ) );
+                    this._hitNormal.set( event.normalX, event.normalY, event.normalZ );
+                    this.postMessage( "hitNormal_changed", this._hitNormal );
+                    //non-standard field
+                    this.postMessage( "hitRotation_changed",
+                        x3dom.fields.Quaternion.rotateFromTo( this._up, this._hitNormal ) );
+                }
+            }
 
         }
     )
@@ -65620,6 +68450,10 @@ x3dom.registerNodeType(
                         this.postMessage( "toggle", toggled );
                     }
                     return;
+                }
+                if ( fieldName === "toggle" )
+                {
+                    this.postMessage( "toggle", this._vf.toggle );
                 }
             }
         }

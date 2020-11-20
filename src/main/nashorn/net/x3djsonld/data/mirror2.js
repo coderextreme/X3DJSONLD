@@ -61,69 +61,69 @@ mirror2.prototype = {
   {
 
 	/** Large attribute array: field value field, scene-graph level=5, element #42, 9 total values */
-	this.field_frontUrls_5_42_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
+	this.field_frontUrls_5_42_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=5, element #43, 9 total values */
-	this.field_backUrls_5_43_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
+	this.field_backUrls_5_43_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=5, element #44, 9 total values */
-	this.field_leftUrls_5_44_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
+	this.field_leftUrls_5_44_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=5, element #45, 9 total values */
-	this.field_rightUrls_5_45_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
+	this.field_rightUrls_5_45_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=5, element #46, 9 total values */
-	this.field_topUrls_5_46_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
+	this.field_topUrls_5_46_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"");
 
 	/** Large attribute array: field value field, scene-graph level=5, element #47, 9 total values */
-	this.field_bottomUrls_5_47_value = new SFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new head()
-    .addComponent(new component().setName("Shaders").setLevel(1))
-    .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-    .addComponent(new component().setName("Texturing").setLevel(1))
-    .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComponent(new component().setName("Shape").setLevel(4))
-    .addComponent(new component().setName("Grouping").setLevel(3))
-    .addMeta(new meta().setName("title").setContent("mirror2.x3d"))
-    .addMeta(new meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new meta().setName("generator").setContent("manual"))
-    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))
-    .addMeta(new meta().setName("description").setContent("a mirrored sphere")))
-  .setScene(new Scene()
-    .addChild(new Viewpoint().setDescription("Switch background and images texture").setPosition(0.0,5.0,100.0))
-    .addChild(new Background("cube").setBackUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\"")))
-    .addChild(new Transform()
-      .addChild(new Shape()
-        .setAppearance(new Appearance()
-          .setMaterial(new Material().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
-          .setTexture(new ComposedCubeMapTexture()
-            .setBack(new ImageTexture("backShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
-            .setBottom(new ImageTexture("bottomShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")))
-            .setFront(new ImageTexture("frontShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
-            .setLeft(new ImageTexture("leftShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
-            .setRight(new ImageTexture("rightShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
-            .setTop(new ImageTexture("topShader").setUrl(new MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\""))))
-          .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")
+	this.field_bottomUrls_5_47_value = new SFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"");
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addComponent(new componentObject().setName("Shaders").setLevel(1))
+    .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
+    .addComponent(new componentObject().setName("Texturing").setLevel(1))
+    .addComponent(new componentObject().setName("Rendering").setLevel(1))
+    .addComponent(new componentObject().setName("Shape").setLevel(4))
+    .addComponent(new componentObject().setName("Grouping").setLevel(3))
+    .addMeta(new metaObject().setName("title").setContent("mirror2.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("generator").setContent("manual"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("a mirrored sphere")))
+  .setScene(new SceneObject()
+    .addChild(new ViewpointObject().setDescription("Switch background and images texture").setPosition(0.0,5.0,100.0))
+    .addChild(new BackgroundObject("cube").setBackUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\"")))
+    .addChild(new TransformObject()
+      .addChild(new ShapeObject()
+        .setAppearance(new AppearanceObject()
+          .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
+          .setTexture(new ComposedCubeMapTextureObject()
+            .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png\"")))
+            .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png\"")))
+            .setFront(new ImageTextureObject("frontShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png\"")))
+            .setLeft(new ImageTextureObject("leftShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png\"")))
+            .setRight(new ImageTextureObject("rightShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png\"")))
+            .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png\""))))
+          .addShaders(new ComposedShaderObject("x_ite").setLanguage("GLSL")
             .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
-            .addField(new field().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
-            .addField(new field().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addField(new field().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\""))))
-          .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
+            .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\""))))
+          .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
-            .addField(new field().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
-            .addField(new field().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addField(new field().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPart().setUrl(new MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\"")))))
-        .setGeometry(new Sphere().setRadius(30)))
-      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
+            .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\"")))))
+        .setGeometry(new SphereObject().setRadius(30)))
+      .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -142,34 +142,34 @@ mirror2.prototype = {
 "		    bottom_changed[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
 "        }" + "\n")
-        .addField(new field().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_5_42_value))
-        .addField(new field().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_5_43_value))
-        .addField(new field().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_5_44_value))
-        .addField(new field().setAccessType("initializeOnly").setName("rightUrls").setType("MFString").setValue(this.field_rightUrls_5_45_value))
-        .addField(new field().setAccessType("initializeOnly").setName("topUrls").setType("MFString").setValue(this.field_topUrls_5_46_value))
-        .addField(new field().setAccessType("initializeOnly").setName("bottomUrls").setType("MFString").setValue(this.field_bottomUrls_5_47_value))
-        .addField(new field().setAccessType("outputOnly").setName("front_changed").setType("MFString"))
-        .addField(new field().setAccessType("outputOnly").setName("back_changed").setType("MFString"))
-        .addField(new field().setAccessType("outputOnly").setName("left_changed").setType("MFString"))
-        .addField(new field().setAccessType("outputOnly").setName("right_changed").setType("MFString"))
-        .addField(new field().setAccessType("outputOnly").setName("top_changed").setType("MFString"))
-        .addField(new field().setAccessType("outputOnly").setName("bottom_changed").setType("MFString"))
-        .addField(new field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-        .addField(new field().setAccessType("inputOutput").setName("old").setType("SFInt32").setValue("-1")))
-      .addChild(new TimeSensor("Clock").setCycleInterval(45).setLoop(true))
-      .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("front_changed").setToNode("cube").setToField("frontUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("back_changed").setToNode("cube").setToField("backUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("left_changed").setToNode("cube").setToField("leftUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("right_changed").setToNode("cube").setToField("rightUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("top_changed").setToNode("cube").setToField("topUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("cube").setToField("bottomUrl"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontShader").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backShader").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftShader").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))));
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(this.field_frontUrls_5_42_value))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(this.field_backUrls_5_43_value))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(this.field_leftUrls_5_44_value))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("rightUrls").setType("MFString").setValue(this.field_rightUrls_5_45_value))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("topUrls").setType("MFString").setValue(this.field_topUrls_5_46_value))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("bottomUrls").setType("MFString").setValue(this.field_bottomUrls_5_47_value))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("front_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("back_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("left_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("right_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("top_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("outputOnly").setName("bottom_changed").setType("MFString"))
+        .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFInt32").setValue("-1")))
+      .addChild(new TimeSensorObject("Clock").setCycleInterval(45).setLoop(true))
+      .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front_changed").setToNode("cube").setToField("frontUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back_changed").setToNode("cube").setToField("backUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left_changed").setToNode("cube").setToField("leftUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("cube").setToField("rightUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("cube").setToField("topUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("cube").setToField("bottomUrl"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontShader").setToField("url"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backShader").setToField("url"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftShader").setToField("url"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
+      .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))));
   },
   // end of initialize() method
 
@@ -203,11 +203,11 @@ mirror2.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

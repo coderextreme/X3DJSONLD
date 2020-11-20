@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelsHandsFeetIndex.html" target="_top">HAnimModelsHandsFeet catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/HAnimModelsHandsFeet.java">HAnimModelsHandsFeet.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelsHandsFeetIndex.html" target="_top">HAnimModelsHandsFeet catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -68,4 +68,4 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/exampl
+			<td> <a href="https://www.web3d.org/x3d/

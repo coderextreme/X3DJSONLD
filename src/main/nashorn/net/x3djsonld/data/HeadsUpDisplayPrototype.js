@@ -77,53 +77,53 @@ HeadsUpDisplayPrototype.prototype = {
   {
 
 	/** Large attribute array: field appinfo field, scene-graph level=5, element #12, 28 total values */
-	this.field_dragChildren_5_12_appinfo = new SFString("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.");
+	this.field_dragChildren_5_12_appinfo = new SFStringObject("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.");
 
 	/** Large attribute array: Text string field, scene-graph level=5, element #61, 21 total values */
-	this.Text_5_61_string = new MFString(new MFString("\"HeadsUpDisplayPrototype.x3d\" \"is a Prototype definition file.\" \"\" \"To see an example scene using this node\" \"click this text to view\" \"HeadsUpDisplayExample.x3d\""));
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.0")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new meta().setName("description").setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
-    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new meta().setName("created").setContent("9 November 2003"))
-    .addMeta(new meta().setName("modified").setContent("14 January 2014"))
-    .addMeta(new meta().setName("subject").setContent("HUD Heads Up Display"))
-    .addMeta(new meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("license").setContent("../../license.html")))
-  .setScene(new Scene()
-    .addChild(new ProtoDeclare().setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
-      .setProtoInterface(new ProtoInterface()
-        .addField(new field().setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("Displayed subscene positioned as a HUD.")
+	this.Text_5_61_string = new MFStringObject(new MFStringObject("\"HeadsUpDisplayPrototype.x3d\" \"is a Prototype definition file.\" \"\" \"To see an example scene using this node\" \"click this text to view\" \"HeadsUpDisplayExample.x3d\""));
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
+    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new metaObject().setName("created").setContent("9 November 2003"))
+    .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
+    .addMeta(new metaObject().setName("subject").setContent("HUD Heads Up Display"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("license").setContent("../../license.html")))
+  .setScene(new SceneObject()
+    .addChild(new ProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("Displayed subscene positioned as a HUD.")
           .addComments(" default is null array of nodes "))
-        .addField(new field().setAccessType("inputOutput").setName("dragChildren").setType("MFNode").setAppinfo(this.field_dragChildren_5_12_appinfo)
+        .addField(new fieldObject().setAccessType("inputOutput").setName("dragChildren").setType("MFNode").setAppinfo(this.field_dragChildren_5_12_appinfo)
           .addComments(" default is null array of nodes "))
-        .addField(new field().setAccessType("initializeOnly").setName("locationOffset").setType("SFVec3f").setValue("-2 -2 0").setAppinfo("Modified screen location and distance (for size)."))
-        .addField(new field().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
-      .setProtoBody(new ProtoBody()
-        .addChild(new Group()
-          .addChild(new ProximitySensor("WhereSensor").setSize(1000000000.0,1000000000.0,1000000000.0)
-            .setIS(new IS()
-              .addConnect(new connect().setNodeField("center").setProtoField("locationOffset"))))
-          .addChild(new Transform("FixedLocation")
-            .addChild(new Transform("MovableLocation")
-              .addChild(new Transform("LocationOffset")
-                .setIS(new IS()
-                  .addConnect(new connect().setNodeField("translation").setProtoField("locationOffset")))
-                .addChild(new Transform().setTranslation(0.0,0.0,-10.0)
-                  .addChild(new Group()
-                    .setIS(new IS()
-                      .addConnect(new connect().setNodeField("children").setProtoField("children"))))
-                  .addChild(new Group("PlaneMovementSensorGroup")
-                    .addChild(new Group("DragGeometry")
-                      .setIS(new IS()
-                        .addConnect(new connect().setNodeField("children").setProtoField("dragChildren"))))
-                    .addChild(new PlaneSensor("PlaneMovementSensor").setDescription("click and drag to move interface")
-                      .setIS(new IS()
-                        .addConnect(new connect().setNodeField("offset").setProtoField("locationOffset"))))
-                    .addChild(new VisibilitySensor("MovementVisibilitySensor"))
-                    .addChild(new Script("VisibilityControlScript").setSourceCode("\n" + 
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("locationOffset").setType("SFVec3f").setValue("-2 -2 0").setAppinfo("Modified screen location and distance (for size)."))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new GroupObject()
+          .addChild(new ProximitySensorObject("WhereSensor").setSize(1000000000.0,1000000000.0,1000000000.0)
+            .setIS(new ISObject()
+              .addConnect(new connectObject().setNodeField("center").setProtoField("locationOffset"))))
+          .addChild(new TransformObject("FixedLocation")
+            .addChild(new TransformObject("MovableLocation")
+              .addChild(new TransformObject("LocationOffset")
+                .setIS(new ISObject()
+                  .addConnect(new connectObject().setNodeField("translation").setProtoField("locationOffset")))
+                .addChild(new TransformObject().setTranslation(0.0,0.0,-10.0)
+                  .addChild(new GroupObject()
+                    .setIS(new ISObject()
+                      .addConnect(new connectObject().setNodeField("children").setProtoField("children"))))
+                  .addChild(new GroupObject("PlaneMovementSensorGroup")
+                    .addChild(new GroupObject("DragGeometry")
+                      .setIS(new ISObject()
+                        .addConnect(new connectObject().setNodeField("children").setProtoField("dragChildren"))))
+                    .addChild(new PlaneSensorObject("PlaneMovementSensor").setDescription("click and drag to move interface")
+                      .setIS(new ISObject()
+                        .addConnect(new connectObject().setNodeField("offset").setProtoField("locationOffset"))))
+                    .addChild(new VisibilitySensorObject("MovementVisibilitySensor"))
+                    .addChild(new ScriptObject("VisibilityControlScript").setSourceCode("\n" + 
 "                      " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -160,32 +160,32 @@ HeadsUpDisplayPrototype.prototype = {
 "	planeSensorTranslation = value;" + "\n" + 
 "	tracePrint('planeSensorTranslation=' + value);" + "\n" + 
 "}" + "\n")
-                      .addField(new field().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool"))
-                      .addField(new field().setAccessType("initializeOnly").setName("isVisible").setType("SFBool").setValue("true"))
-                      .addField(new field().setAccessType("initializeOnly").setName("planeSensorTranslation").setType("SFVec3f").setValue("0 0 0"))
-                      .addField(new field().setAccessType("inputOnly").setName("setIsVisible").setType("SFBool"))
-                      .addField(new field().setAccessType("inputOnly").setName("setPlaneSensorIsActive").setType("SFBool"))
-                      .addField(new field().setAccessType("inputOnly").setName("setPlaneSensorTranslation").setType("SFVec3f"))
-                      .addField(new field().setAccessType("outputOnly").setName("translationChanged").setType("SFVec3f"))
-                      .addField(new field().setAccessType("outputOnly").setName("translationOffsetChanged").setType("SFVec3f"))
-                      .setIS(new IS()
-                        .addConnect(new connect().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
-                    .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setPlaneSensorIsActive"))
-                    .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("VisibilityControlScript").setToField("setPlaneSensorTranslation"))
-                    .addChild(new ROUTE().setFromNode("MovementVisibilitySensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setIsVisible")))))
-              .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("MovableLocation").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("VisibilityControlScript").setFromField("translationChanged").setToNode("MovableLocation").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("VisibilityControlScript").setFromField("translationOffsetChanged").setToNode("PlaneMovementSensor").setToField("set_offset"))))
-          .addChild(new ROUTE().setFromNode("WhereSensor").setFromField("position_changed").setToNode("FixedLocation").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("WhereSensor").setFromField("orientation_changed").setToNode("FixedLocation").setToField("set_rotation")))))
+                      .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool"))
+                      .addField(new fieldObject().setAccessType("initializeOnly").setName("isVisible").setType("SFBool").setValue("true"))
+                      .addField(new fieldObject().setAccessType("initializeOnly").setName("planeSensorTranslation").setType("SFVec3f").setValue("0 0 0"))
+                      .addField(new fieldObject().setAccessType("inputOnly").setName("setIsVisible").setType("SFBool"))
+                      .addField(new fieldObject().setAccessType("inputOnly").setName("setPlaneSensorIsActive").setType("SFBool"))
+                      .addField(new fieldObject().setAccessType("inputOnly").setName("setPlaneSensorTranslation").setType("SFVec3f"))
+                      .addField(new fieldObject().setAccessType("outputOnly").setName("translationChanged").setType("SFVec3f"))
+                      .addField(new fieldObject().setAccessType("outputOnly").setName("translationOffsetChanged").setType("SFVec3f"))
+                      .setIS(new ISObject()
+                        .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
+                    .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setPlaneSensorIsActive"))
+                    .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("VisibilityControlScript").setToField("setPlaneSensorTranslation"))
+                    .addChild(new ROUTEObject().setFromNode("MovementVisibilitySensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setIsVisible")))))
+              .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("MovableLocation").setToField("set_translation"))
+              .addChild(new ROUTEObject().setFromNode("VisibilityControlScript").setFromField("translationChanged").setToNode("MovableLocation").setToField("set_translation"))
+              .addChild(new ROUTEObject().setFromNode("VisibilityControlScript").setFromField("translationOffsetChanged").setToNode("PlaneMovementSensor").setToField("set_offset"))))
+          .addChild(new ROUTEObject().setFromNode("WhereSensor").setFromField("position_changed").setToNode("FixedLocation").setToField("set_translation"))
+          .addChild(new ROUTEObject().setFromNode("WhereSensor").setFromField("orientation_changed").setToNode("FixedLocation").setToField("set_rotation")))))
     .addComments(" ==================== ")
-    .addChild(new Background().setGroundColor(new MFColor(Java.to([0.1,0.1,0.3], Java.type("float[]")))).setSkyColor(new MFColor(Java.to([0.5,0.5,0.1], Java.type("float[]")))))
-    .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new MFString("\"target=_blank\"")).setUrl(new MFString("\"HeadsUpDisplayExample.x3d\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d\" \"HeadsUpDisplayExample.wrl\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl\""))
-      .addChild(new Shape()
-        .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.0,1.0,1.0).setEmissiveColor(0.0,1.0,1.0)))
-        .setGeometry(new Text().setString(this.Text_5_61_string)
-          .setFontStyle(new FontStyle().setJustify(new MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8))))));
+    .addChild(new BackgroundObject().setGroundColor(new MFColorObject(Java.to([0.1,0.1,0.3], Java.type("float[]")))).setSkyColor(new MFColorObject(Java.to([0.5,0.5,0.1], Java.type("float[]")))))
+    .addChild(new AnchorObject().setDescription("HeadsUpDisplayExample").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"HeadsUpDisplayExample.x3d\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d\" \"HeadsUpDisplayExample.wrl\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl\""))
+      .addChild(new ShapeObject()
+        .setAppearance(new AppearanceObject()
+          .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,1.0).setEmissiveColor(0.0,1.0,1.0)))
+        .setGeometry(new TextObject().setString(this.Text_5_61_string)
+          .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8))))));
   },
   // end of initialize() method
 
@@ -219,11 +219,11 @@ HeadsUpDisplayPrototype.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

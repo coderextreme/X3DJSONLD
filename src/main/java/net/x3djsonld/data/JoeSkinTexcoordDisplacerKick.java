@@ -260,7 +260,7 @@ public class JoeSkinTexcoordDisplacerKick
         .addSkin(new Shape("Joe_Shape")
           .setAppearance(new Appearance("Joe_skin_Appearance")
             .setMaterial(new Material("Joe_skin_Material").setDiffuseColor(0.3,0.3,0.6).setEmissiveColor(0.3,0.3,0.6))
-            .setTexture(new ImageTexture("JoeSkinImageTexture").setUrl(new String[] {"JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeBodyTexture29.png"}))
+            .setTexture(new ImageTexture("JoeSkinImageTexture").setUrl(new String[] {"JoeBodyTexture29.png"}))
             .setTextureTransform(new TextureTransform("KickTextureTransform")))
           .setGeometry(new IndexedFaceSet("Joe_skin_IndexedFaceSet").setDEF("Joe_skin_IndexedFaceSet").setCreaseAngle(3.14).setCoordIndex(getJoe_skin_IndexedFaceSet_6_138_coordIndex())
             .setCoord(new Coordinate("Joe_SkinCoord").setPoint(getJoe_SkinCoord_7_138_point()))

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
+<X3D xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
 <meta name="title" content="KoreanCharacterMotionAnnexD01Jin.x3d"></meta>
 <meta name="creator" content="Jin Hoon Lee and Min Joo Lee"></meta>
 <meta name="translator" content="Chul Hee Jung and Myeong Won Lee"></meta>
@@ -203,42 +203,42 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint USE="hanim_humanoid_root"></HAnimJoint>
-<HAnimJoint USE="hanim_sacroiliac"></HAnimJoint>
-<HAnimJoint USE="hanim_vl5"></HAnimJoint>
-<HAnimJoint USE="hanim_skullbase"></HAnimJoint>
-<HAnimJoint USE="hanim_l_elbow"></HAnimJoint>
-<HAnimJoint USE="hanim_r_elbow"></HAnimJoint>
-<HAnimJoint USE="hanim_l_hip"></HAnimJoint>
-<HAnimJoint USE="hanim_r_hip"></HAnimJoint>
-<HAnimJoint USE="hanim_l_knee"></HAnimJoint>
-<HAnimJoint USE="hanim_r_knee"></HAnimJoint>
-<HAnimJoint USE="hanim_l_metatarsophalangeal"></HAnimJoint>
-<HAnimJoint USE="hanim_r_metatarsophalangeal"></HAnimJoint>
-<HAnimJoint USE="hanim_l_radiocarpal"></HAnimJoint>
-<HAnimJoint USE="hanim_r_radiocarpal"></HAnimJoint>
-<HAnimJoint USE="hanim_l_shoulder"></HAnimJoint>
-<HAnimJoint USE="hanim_r_shoulder"></HAnimJoint>
-<HAnimJoint USE="hanim_l_talocrural"></HAnimJoint>
-<HAnimJoint USE="hanim_r_talocrural"></HAnimJoint>
-<HAnimSegment USE="hanim_sacrum"></HAnimSegment>
-<HAnimSegment USE="hanim_pelvis"></HAnimSegment>
-<HAnimSegment USE="hanim_l5"></HAnimSegment>
-<HAnimSegment USE="hanim_skull"></HAnimSegment>
-<HAnimSegment USE="hanim_l_calf"></HAnimSegment>
-<HAnimSegment USE="hanim_r_calf"></HAnimSegment>
-<HAnimSegment USE="hanim_l_carpal"></HAnimSegment>
-<HAnimSegment USE="hanim_r_carpal"></HAnimSegment>
-<HAnimSegment USE="hanim_l_forearm"></HAnimSegment>
-<HAnimSegment USE="hanim_r_forearm"></HAnimSegment>
-<HAnimSegment USE="hanim_l_talus"></HAnimSegment>
-<HAnimSegment USE="hanim_r_talus"></HAnimSegment>
-<HAnimSegment USE="hanim_l_tarsal_proximal_phalanx_2"></HAnimSegment>
-<HAnimSegment USE="hanim_r_tarsal_proximal_phalanx_2"></HAnimSegment>
-<HAnimSegment USE="hanim_l_thigh"></HAnimSegment>
-<HAnimSegment USE="hanim_r_thigh"></HAnimSegment>
-<HAnimSegment USE="hanim_l_upperarm"></HAnimSegment>
-<HAnimSegment USE="hanim_r_upperarm"></HAnimSegment>
+<HAnimJoint containerField="joints" USE="hanim_humanoid_root"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_sacroiliac"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_vl5"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_skullbase"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_elbow"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_elbow"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_hip"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_hip"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_knee"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_knee"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_metatarsophalangeal"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_metatarsophalangeal"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_radiocarpal"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_radiocarpal"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_shoulder"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_shoulder"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_l_talocrural"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_r_talocrural"></HAnimJoint>
+<HAnimSegment containerField="segments" USE="hanim_sacrum"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_pelvis"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l5"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_skull"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_calf"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_calf"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_carpal"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_carpal"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_forearm"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_forearm"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_talus"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_talus"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_tarsal_proximal_phalanx_2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_tarsal_proximal_phalanx_2"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_thigh"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_thigh"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_l_upperarm"></HAnimSegment>
+<HAnimSegment containerField="segments" USE="hanim_r_upperarm"></HAnimSegment>
 </HAnimHumanoid>
 </Scene>
 </X3D>
