@@ -1,8 +1,8 @@
 /** 
  * X3DOM 1.8.2-dev
- * Build : 7288
- * Revision: 0de6b25b3218c5117fe652d79bd965cd3e58b517
- * Date: Sun Oct 25 14:20:06 2020 -0400
+ * Build : 7291
+ * Revision: de0b1a47c540f407bd6c365b2a8620e844998b10
+ * Date: Fri Nov 20 10:33:53 2020 -0600
  */
 /**
  * X3DOM JavaScript Library
@@ -29,9 +29,9 @@ var x3dom = {
 
 x3dom.about = {
     version  : "1.8.2-dev",
-    build    : "7288",
-    revision : "0de6b25b3218c5117fe652d79bd965cd3e58b517",
-    date     : "Sun Oct 25 14:20:06 2020 -0400"
+    build    : "7291",
+    revision : "de0b1a47c540f407bd6c365b2a8620e844998b10",
+    date     : "Fri Nov 20 10:33:53 2020 -0600"
 };
 
 /**
@@ -32132,12 +32132,15 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function ( object, parentkey, elemen
             else
             {
                 // this.ConvertObject( key, object, element );
-		if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
-			object[key]['@containerField'] = key.substr(5).toLowerCase()+"s";
-			this.ConvertObject(key, object, element, object[key]['@containerField']);
-		} else {
-			this.ConvertObject(key, object, element);
-		}
+                if ( key.indexOf( "HAnim" ) === 0 && key !== "HAnimHumanoid" && typeof object[ key ][ "@USE" ] != "undefined" )
+                {
+                    object[ key ][ "@containerField" ] = key.substr( 5 ).toLowerCase() + "s";
+                    this.ConvertObject( key, object, element, object[ key ][ "@containerField" ] );
+                }
+                else
+                {
+                    this.ConvertObject( key, object, element );
+                }
             }
         }
         else if ( typeof object[ key ] === "number" )
