@@ -73,7 +73,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/license.html")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

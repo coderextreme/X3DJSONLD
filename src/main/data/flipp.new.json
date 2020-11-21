@@ -32,11 +32,11 @@
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"translated",
-            "@content":"20 November 2020"
+            "@content":"21 November 2020"
           },
           {
             "@name":"generator",

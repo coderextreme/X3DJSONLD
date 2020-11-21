@@ -55,7 +55,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("specificationUrl"),
-              content : new SFString("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString")}),
+              content : new SFString("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString")}),
 
             new meta({
               name : new SFString("specificationSection"),
@@ -63,7 +63,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("specificationUrl"),
-              content : new SFString("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString")}),
+              content : new SFString("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString")}),
 
             new meta({
               name : new SFString("specificationSection"),
@@ -71,11 +71,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("specificationUrl"),
-              content : new SFString("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString")}),
+              content : new SFString("https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d")}),
 
             new meta({
               name : new SFString("generator"),

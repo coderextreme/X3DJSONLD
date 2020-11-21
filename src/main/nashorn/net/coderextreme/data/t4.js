@@ -32,7 +32,7 @@ var ProtoInstance17 = null;
         .addMeta(new meta().setName("creator").setContent("Andreas Plesch and John Carlson"))
         .addMeta(new meta().setName("source").setContent("t1.wrl"))
         .addMeta(new meta().setName("description").setContent("Test Case for Proto Expander"))
-        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","FLY","WALK"], Java.type("java.lang.String[]"))).setSpeed(3).setAvatarSize(Java.to([200,200,120], Java.type("float[]"))))
         .addChild(new WorldInfo().setTitle("Arts Mapper"))

@@ -14,12 +14,12 @@
     <meta content='https://en.wikipedia.org/wiki/"Hello,_World!"_program' name='reference'/>
     <meta content='http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world' name='reference'/>
     <meta content='http://www.HelloWorldExample.net' name='reference'/>
-    <meta content='http://www.web3D.org' name='reference'/>
-    <meta content='http://www.web3d.org/realtime-3d/news/internationalization-x3d' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/HelloWorld.x3d' name='reference'/>
+    <meta content='https://www.web3D.org' name='reference'/>
+    <meta content='https://www.web3d.org/realtime-3d/news/internationalization-x3d' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HelloWorld.x3d' name='reference'/>
     <meta content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes' name='reference'/>
     <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d' name='identifier'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='HelloWorld.wrl' name='reference'/>
     <meta content='HelloWorld.x3dv' name='reference'/>
@@ -36,7 +36,7 @@
         <Shape>
           <Appearance>
             <Material DEF='MaterialLightBlue' diffuseColor='0.1 0.5 1'/>
-            <ImageTexture DEF='ImageCloudlessEarth' url='"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"'/>
+            <ImageTexture DEF='ImageCloudlessEarth' url='"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"'/>
           </Appearance>
           <Sphere/>
         </Shape>

@@ -40,7 +40,7 @@ meta8.setContent("X3D for Web Authors, Table 5.18")
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("reference")
-meta9.setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html")
+meta9.setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()

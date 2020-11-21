@@ -42,11 +42,11 @@
           },
           {
             "@name":"license",
-            "@content":"http://www.web3d.org/x3d/content/examples/license.html"
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
           },
           {
             "@name":"translated",
-            "@content":"20 November 2020"
+            "@content":"21 November 2020"
           },
           {
             "@name":"generator",

@@ -87,8 +87,8 @@ function convertPlyToJson(file) {
 	    "encoding":"UTF-8",
 	    "@profile":"Interchange",
 	    "@version":"4.0",
-	    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
-	    "JSON schema":"http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+	    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+	    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
 	    "head": {
 		"meta": [
 		  {
@@ -117,7 +117,7 @@ function convertPlyToJson(file) {
 		  },
 		  {
 		    "@name":"identifier",
-		    "@content":"http://coderextreme.net/X3DJSONLD/template.json"
+		    "@content":"https://coderextreme.net/X3DJSONLD/template.json"
 		  },
 		  {
 		    "@name":"modified",
@@ -372,8 +372,8 @@ end_header
     "encoding":"UTF-8",
     "@profile":"Interchange",
     "@version":"4.4",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
         "meta": [
           {

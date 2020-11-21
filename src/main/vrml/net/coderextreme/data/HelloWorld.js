@@ -33,7 +33,7 @@ Appearance8.material = Material9;
 
 let ImageTexture10 = browser.currentScene.createNode("ImageTexture");
 ImageTexture10.DEF = "ImageCloudlessEarth";
-ImageTexture10.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
+ImageTexture10.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
 Appearance8.texture = ImageTexture10;
 
 Shape6.appearance = Appearance8;

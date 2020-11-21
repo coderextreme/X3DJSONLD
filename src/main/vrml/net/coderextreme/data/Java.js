@@ -36,7 +36,7 @@ Transform8.DEF = "LogoGeometryTransform";
 Transform8.translation = new SFVec3f(new float[0,1.5,0]);
 let Anchor9 = browser.currentScene.createNode("Anchor");
 Anchor9.description = "select for X3D Java SAI Library (X3DJSAIL) description";
-Anchor9.url = new MFString(new java.lang.String["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]);
+Anchor9.url = new MFString(new java.lang.String["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]);
 let Shape10 = browser.currentScene.createNode("Shape");
 Shape10.DEF = "BoxShape";
 let Appearance11 = browser.currentScene.createNode("Appearance");
@@ -48,7 +48,7 @@ Material12.transparency = 0.1;
 Appearance11.material = Material12;
 
 let ImageTexture13 = browser.currentScene.createNode("ImageTexture");
-ImageTexture13.url = new MFString(new java.lang.String["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]);
+ImageTexture13.url = new MFString(new java.lang.String["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]);
 Appearance11.texture = ImageTexture13;
 
 Shape10.appearance = Appearance11;
@@ -162,7 +162,7 @@ Shape34.DEF = "ProxyShape";
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 //alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
-//reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+//reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 let Text35 = browser.currentScene.createNode("Text");
 Text35.string = new MFString(new java.lang.String["One, Two, Text","","He said, \"Immel did it!\" \"\""]);
 Shape34.geometry = Text35;
@@ -732,8 +732,8 @@ Sound112.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 let AudioClip113 = browser.currentScene.createNode("AudioClip");
 AudioClip113.description = "chimes";
-AudioClip113.url = new MFString(new java.lang.String["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
-//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+AudioClip113.url = new MFString(new java.lang.String["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
+//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 Sound112.source = AudioClip113;
 
 browser.currentScene.children[29] = Sound112;
@@ -743,8 +743,8 @@ Sound114.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 let MovieTexture115 = browser.currentScene.createNode("MovieTexture");
 MovieTexture115.description = "mpgsys.mpg from ConformanceNist suite";
-MovieTexture115.url = new MFString(new java.lang.String["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
-//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+MovieTexture115.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
+//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"
 Sound114.source = MovieTexture115;
 

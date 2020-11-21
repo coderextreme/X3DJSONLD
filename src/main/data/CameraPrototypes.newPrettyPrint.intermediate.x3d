@@ -9,10 +9,10 @@
     <meta content='25 October 2016' name='modified'/>
     <meta content='Schematron rules, backed up by initialize() checks' name='TODO'/>
     <meta content='BeyondViewpointCameraNodesWeb3D2009.pdf' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' name='reference'/>
     <meta content='Camera nodes for Viewpoint navigation control' name='subject'/>
     <meta content='CameraExamples.x3d' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='identifier'/>
     <meta content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='reference'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
@@ -907,7 +907,7 @@ function alwaysPrint (outputValue)
     </ProtoDeclare>
     <!-- =============== Launch Prototype Example ============== -->
     <Background skyColor='0.282353 0.380392 0.470588'/>
-    <Anchor description='launch CameraExample scene' url='"CameraExamples.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" "CameraExamples.wrl" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"'>
+    <Anchor description='launch CameraExample scene' url='"CameraExamples.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" "CameraExamples.wrl" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"'>
       <Transform>
         <Shape>
           <Appearance>

@@ -60,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json")}),
 
             new meta({
               name : new SFString("generator"),

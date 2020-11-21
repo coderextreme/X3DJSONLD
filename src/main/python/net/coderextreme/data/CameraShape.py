@@ -40,7 +40,7 @@ meta8.setContent("CameraExamples.x3d")
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("identifier")
-meta9.setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d")
+meta9.setContent("https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()

@@ -10,7 +10,7 @@
     <meta content='Andreas Plesch and John Carlson' name='creator'/>
     <meta content='t1.wrl' name='source'/>
     <meta content='Test Case for Proto Expander' name='description'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
     <meta content='12 May 2020' name='translated'/>
     <meta content='DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js' name='generator'/>
     <meta content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>

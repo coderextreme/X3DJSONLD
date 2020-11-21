@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <meta content='Table5_18PixelTexture' name='title'/>
     <meta content='PixelTexture example for Table 5.18' name='description'/>
@@ -8,7 +8,7 @@
     <meta content='18 December 2006' name='created'/>
     <meta content='2 April 2017' name='modified'/>
     <meta content='http://X3dGraphics.com' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
     <meta content='Copyright 2006, Daly Realism and Don Brutzman' name='rights'/>
     <meta content='X3D, PixelTexture' name='subject'/>
     <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture' name='identifier'/>

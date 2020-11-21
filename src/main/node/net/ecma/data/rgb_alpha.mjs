@@ -65,7 +65,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("info"),
-              content : new SFString("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d")}),
+              content : new SFString("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d")}),
 
             new meta({
               name : new SFString("translator"),
@@ -85,7 +85,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d")}),
 
             new meta({
               name : new SFString("generator"),

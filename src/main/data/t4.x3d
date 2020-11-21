@@ -1,7 +1,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile="Immersive" version="3.3"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
-     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+     xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
 <head>
 	<component name='Networking' level='2'/>
 	<component name='Core' level='2'/>
@@ -11,7 +11,7 @@
 	<meta name='creator' content='Andreas Plesch and John Carlson'/>
 	<meta name="source" content="t1.wrl" />
 	<meta name='description' content='Test Case for Proto Expander'/>
-	<meta content='http://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+	<meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
 </head>
 <Scene>
 	<NavigationInfo

@@ -36,7 +36,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 November 2020"
+            "@content":"21 November 2020"
           },
           {
             "@name":"generator",

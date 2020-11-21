@@ -3,8 +3,8 @@ box_json =
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
         "-children":[
           { "NavigationInfo":

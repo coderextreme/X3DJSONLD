@@ -41,7 +41,7 @@ meta7.setContent("Example HelloWorldProgram creates an X3D model using the X3D J
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("reference")
-meta8.setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html")
+meta8.setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
@@ -66,7 +66,7 @@ meta12.setContent("X3D Java Scene Access Interface Library (X3DJSAIL)")
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("generator")
-meta13.setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")
+meta13.setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
@@ -111,12 +111,12 @@ meta21.setContent("HelloWorldProgramOutput.html")
 head1.addMeta(meta21)
 meta22 = x3d.meta()
 meta22.setName("reference")
-meta22.setContent("X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")
+meta22.setContent("X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")
 
 head1.addMeta(meta22)
 meta23 = x3d.meta()
 meta23.setName("identifier")
-meta23.setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")
+meta23.setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")
 
 head1.addMeta(meta23)
 meta24 = x3d.meta()
@@ -136,12 +136,12 @@ meta26.setContent("30 April 2018")
 head1.addMeta(meta26)
 meta27 = x3d.meta()
 meta27.setName("generator")
-meta27.setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
+meta27.setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 
 head1.addMeta(meta27)
 meta28 = x3d.meta()
 meta28.setName("reference")
-meta28.setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+meta28.setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 
 head1.addMeta(meta28)
 
@@ -191,7 +191,7 @@ Transform38.setDEF("LogoGeometryTransform")
 Transform38.setTranslation([0,1.5,0])
 Anchor39 = x3d.Anchor()
 Anchor39.setDescription("select for X3D Java SAI Library (X3DJSAIL) description")
-Anchor39.setUrl(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"])
+Anchor39.setUrl(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"])
 Shape40 = x3d.Shape()
 Shape40.setDEF("BoxShape")
 Appearance41 = x3d.Appearance()
@@ -203,7 +203,7 @@ Material42.setTransparency(0.1)
 
 Appearance41.setMaterial(Material42)
 ImageTexture43 = x3d.ImageTexture()
-ImageTexture43.setUrl(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])
+ImageTexture43.setUrl(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])
 
 Appearance41.setTexture(ImageTexture43)
 
@@ -309,7 +309,7 @@ Shape64.setDEF("ProxyShape")
 #alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 #alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 #alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\\\"\"})
-#reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+#reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 Text65 = x3d.Text()
 Text65.setString(["One, Two, Text","","He said, \"Immel did it!\" \"\""])
 
@@ -783,8 +783,8 @@ Sound142.setLocation([0,1.6,0])
 #set sound-ellipsoid location height at 1.6m to match typical avatar height
 AudioClip143 = x3d.AudioClip()
 AudioClip143.setDescription("chimes")
-AudioClip143.setUrl(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])
-#Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+AudioClip143.setUrl(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])
+#Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 
 Sound142.setSource(AudioClip143)
 
@@ -794,8 +794,8 @@ Sound144.setLocation([0,1.6,0])
 #set sound-ellipsoid location height at 1.6m to match typical avatar height
 MovieTexture145 = x3d.MovieTexture()
 MovieTexture145.setDescription("mpgsys.mpg from ConformanceNist suite")
-MovieTexture145.setUrl(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])
-#Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+MovieTexture145.setUrl(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])
+#Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 #Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"
 
 Sound144.setSource(MovieTexture145)

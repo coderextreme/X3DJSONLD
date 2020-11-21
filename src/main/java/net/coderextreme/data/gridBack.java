@@ -53,7 +53,7 @@ public class gridBack {
         .addMeta(new meta().setName("modified").setContent("12 January 2014"))
         .addMeta(new meta().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta(new meta().setName("subject").setContent("Universal Media Material Library"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()

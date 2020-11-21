@@ -35,7 +35,7 @@ meta7.setContent("13 March 2016")
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("generator")
-meta8.setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
+meta8.setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 
 head1.addMeta(meta8)
 

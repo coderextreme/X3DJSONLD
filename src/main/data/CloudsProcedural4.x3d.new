@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.2" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.2.xsd" ><head><meta name="title" content="CloudsProcedural4.x3d"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.2" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.2.xsd" ><head><meta name="title" content="CloudsProcedural4.x3d"></meta>
 <meta name="description" content="X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."></meta>
 <meta name="creator" content="Capt Darren W. Murphy"></meta>
 <meta name="created" content="1 November 2007"></meta>
 <meta name="modified" content="14 January 2014"></meta>
 <meta name="identifier" content="https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"></meta>
-<meta name="generator" content="X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"></meta>
+<meta name="generator" content="X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html"></meta>
 <meta name="license" content="../../license.html"></meta>
 <meta name="TODO" content="fix links"></meta>
 </head>

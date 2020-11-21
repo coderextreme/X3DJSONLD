@@ -50,7 +50,7 @@ meta10.setContent("This file was provided by the National Institute of Standards
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("info")
-meta11.setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d")
+meta11.setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
@@ -75,7 +75,7 @@ meta15.setContent("Test browser ability to map a RGB plus alpha opacity to geome
 head1.addMeta(meta15)
 meta16 = x3d.meta()
 meta16.setName("identifier")
-meta16.setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d")
+meta16.setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d")
 
 head1.addMeta(meta16)
 meta17 = x3d.meta()

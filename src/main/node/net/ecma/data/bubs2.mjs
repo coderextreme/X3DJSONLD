@@ -62,7 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")})])})),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

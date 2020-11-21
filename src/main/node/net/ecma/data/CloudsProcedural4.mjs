@@ -61,7 +61,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")}),
+              content : new SFString("X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html")}),
 
             new meta({
               name : new SFString("license"),

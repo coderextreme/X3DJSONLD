@@ -60,12 +60,12 @@ meta12.setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 X
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("specificationUrl")
-meta13.setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax")
+meta13.setContent("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("identifier")
-meta14.setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d")
+meta14.setContent("https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
@@ -327,7 +327,7 @@ ROUTE72.setToNode("TransformExampleUSE")
 Scene17.addChildren(ROUTE72)
 Inline73 = x3d.Inline()
 Inline73.setDEF("someInline")
-Inline73.setUrl(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])
+Inline73.setUrl(["someUrl.x3d","https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])
 
 Scene17.addChildren(Inline73)
 IMPORT74 = x3d.IMPORT()

@@ -304,7 +304,7 @@ browser.currentScene.children[15] = ROUTE56;
 
 let Inline57 = browser.currentScene.createNode("Inline");
 Inline57.DEF = "someInline";
-Inline57.url = new MFString(new java.lang.String["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]);
+Inline57.url = new MFString(new java.lang.String["someUrl.x3d","https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]);
 browser.currentScene.children[16] = Inline57;
 
 let IMPORT58 = browser.currentScene.createNode("IMPORT");

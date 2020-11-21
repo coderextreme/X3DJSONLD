@@ -53,7 +53,7 @@ public class t3 {
         .addMeta(new meta().setName("creator").setContent("Andreas Plesch and John Carlson"))
         .addMeta(new meta().setName("source").setContent("t1.wrl"))
         .addMeta(new meta().setName("description").setContent("Test Case for Proto Expander"))
-        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
         .addMeta(new meta().setName("translated").setContent("12 May 2020"))
         .addMeta(new meta().setName("generator").setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"))
         .addMeta(new meta().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))

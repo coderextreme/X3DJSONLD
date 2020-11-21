@@ -22,7 +22,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("modified").setContent("12 January 2014"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("Universal Media Material Library"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())

@@ -107,7 +107,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3d.org/specifications/java/X3DJSAIL.html")}),
+              content : new SFString("https://www.web3d.org/specifications/java/X3DJSAIL.html")}),
 
             new meta({
               name : new SFString("generator"),
@@ -127,7 +127,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")}),
+              content : new SFString("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")}),
 
             new meta({
               name : new SFString("generator"),
@@ -163,11 +163,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d")}),
+              content : new SFString("X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/specifications/java/examples/Java.x3d")}),
+              content : new SFString("https://www.web3d.org/specifications/java/examples/Java.x3d")}),
 
             new meta({
               name : new SFString("license"),
@@ -183,11 +183,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")})])})),
+              content : new SFString("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -218,7 +218,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Anchor({
                   description : new SFString("select for X3D Java SAI Library (X3DJSAIL) description"),
-                  url : new MFString(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]),
+                  url : new MFString(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("BoxShape"),
@@ -232,7 +232,7 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(0.1)})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])}))})),
+                              url : new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])}))})),
                       geometry : new SFNode(
                         new Box({
                           DEF : new SFString("test-NMTOKEN_regex.0123456789"),
@@ -313,7 +313,7 @@ var X3D0 =  new X3D({
                       { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'") },
                       { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'") },
                       { "#comment" : new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})") },
-                      { "#comment" : new CommentsBlock("reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html") },
+                      { "#comment" : new CommentsBlock("reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html") },
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["One, Two, Text","","He said, \"Immel did it!\" \"\""])}))}))}),
@@ -704,8 +704,8 @@ var X3D0 =  new X3D({
               source : new SFNode(
                 new AudioClip({
                   description : new SFString("chimes"),
-                  url : new MFString(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
-                  { "#comment" : new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d") }}))}),
+                  url : new MFString(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
+                  { "#comment" : new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d") }}))}),
 
             new Sound({
               location : new SFVec3f([0,1.6,0]),
@@ -713,8 +713,8 @@ var X3D0 =  new X3D({
               source : new SFNode(
                 new MovieTexture({
                   description : new SFString("mpgsys.mpg from ConformanceNist suite"),
-                  url : new MFString(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
-                  { "#comment" : new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d") },
+                  url : new MFString(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
+                  { "#comment" : new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d") },
                   { "#comment" : new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"") }}))}),
           { "#comment" : new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true") },
           { "#comment" : new CommentsBlock("Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false") },
