@@ -162,7 +162,7 @@ externally_visible const char * MAGIC_EXE = "%%%MAGIC EXE variable%%%";
 const char * LIB_PATH_VARNAME = "PATH";
 const char * LIB_PATH_VALUE   = "";
 const char * EXE_PATH_VARNAME = "PATH";
-const char * EXE_PATH_VALUE   = "/home/coderextreme/main/cplusplus/xerces-c-3.2.0/src:";
+const char * EXE_PATH_VALUE   = "/c/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/src:";
 const char * TARGET_PROGRAM_NAME = "x3djsonld"; /* hopefully, no .exe */
 
 #define LTWRAPPER_OPTION_PREFIX         "--lt-"
@@ -892,7 +892,8 @@ void lt_dump_script (FILE* f)
   fputs ("\n", f);
   fputs ("  if test -f \"$progdir/$program\"; then\n", f);
   fputs ("    # Add the dll search path components to the executable PATH\n", f);
-  fputs ("    PATH=/home/coderextreme/main/cplusplus/xerces-c-3.2.0/src:$PATH\n", f);
+  fputs ("    PATH=/c/Users/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/src:", f);
+  fputs ("$PATH\n", f);
   fputs ("\n", f);
   fputs ("    if test \"$libtool_execute_magic\" != \"%%%MAGIC variable%%%\"; then\n", f);
   fputs ("      # Run the actual program with our arguments.\n", f);
