@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><X3D profile="Immersive" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta content="browser.x3d" name="title"/><meta content="John Carlson" name="creator"/><meta content="manual" name="generator"/><meta content="https://coderextreme.net/X3DJSONLD/browser.x3d" name="identifier"/><meta content="a script test with embedded &#xA; between single quotes, a double backslash \\ a backslash \ and a closing quote &quot;" name="description"/><meta content="21 November 2020" name="translated"/><meta content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html" name="generator"/><meta content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" name="reference"/></head><Scene><Script DEF="Browser"><![CDATA[
+ecmascript:
+                function initialize() {
+		    Browser.print('DUDES
+'+'"DUDETTES');
+                }
+
+]]></Script><Script DEF="Clouds"><![CDATA[
+
+ecmascript:
+
+
+function cumulustranslation() // These values designate the boundary location of the cloud
+{
+var xxx = ' '+' '+
+'	Transform		
+'+
+'    ' + '               	
+';
+
+}
+
+]]></Script></Scene></X3D>
