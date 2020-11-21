@@ -515,7 +515,7 @@ int main(int argc, char **argv) {
 	DOMDocument *document = loader.loadJsonIntoDocument(jsobj);
 
 	// find version
-	const char *version = "3.3";
+	const char *version = "4.0";
 	const XMLCh *ver = loader.stripQuotes(X(version));
 	cerr << "version is " << version << endl;
 	cerr << "ver is " << StrX(ver) << endl;
