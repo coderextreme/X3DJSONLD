@@ -56,12 +56,12 @@ public class HelloWorld {
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
         .addMeta(new meta().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
         .addMeta(new meta().setName("reference").setContent("http://www.HelloWorldExample.net"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3D.org"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3D.org"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
         .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
-        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.wrl"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.x3dv"))
@@ -90,7 +90,7 @@ public class HelloWorld {
     }
 protected class MFString0 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
   }
 }
 protected class MFString1 {

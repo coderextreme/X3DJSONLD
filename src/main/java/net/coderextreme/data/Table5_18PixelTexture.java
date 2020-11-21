@@ -51,7 +51,7 @@ public class Table5_18PixelTexture {
         .addMeta(new meta().setName("created").setContent("18 December 2006"))
         .addMeta(new meta().setName("modified").setContent("2 April 2017"))
         .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html"))
         .addMeta(new meta().setName("rights").setContent("Copyright 2006, Daly Realism and Don Brutzman"))
         .addMeta(new meta().setName("subject").setContent("X3D, PixelTexture"))
         .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"))

@@ -2948,7 +2948,7 @@ browser.currentScene.children[4] = Background239;
 
 let Anchor240 = browser.currentScene.createNode("Anchor");
 Anchor240.description = "launch CameraExample scene";
-Anchor240.url = new MFString(new java.lang.String["CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]);
+Anchor240.url = new MFString(new java.lang.String["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]);
 let Transform241 = browser.currentScene.createNode("Transform");
 let Shape242 = browser.currentScene.createNode("Shape");
 let Text243 = browser.currentScene.createNode("Text");

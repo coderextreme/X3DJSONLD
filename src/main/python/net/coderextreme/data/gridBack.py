@@ -45,7 +45,7 @@ meta9.setContent("Universal Media Material Library")
 head1.addMeta(meta9)
 meta10 = x3d.meta()
 meta10.setName("identifier")
-meta10.setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json")
+meta10.setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()

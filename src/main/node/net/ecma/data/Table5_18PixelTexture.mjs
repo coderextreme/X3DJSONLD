@@ -53,7 +53,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/X3dResources.html")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/X3dResources.html")}),
 
             new meta({
               name : new SFString("rights"),

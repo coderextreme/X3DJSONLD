@@ -36,7 +36,7 @@
           },
           {
             "@name":"specificationUrl",
-            "@content":"http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"
+            "@content":"https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"
           },
           {
             "@name":"specificationSection",
@@ -44,7 +44,7 @@
           },
           {
             "@name":"specificationUrl",
-            "@content":"http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"
+            "@content":"https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"
           },
           {
             "@name":"specificationSection",
@@ -52,11 +52,11 @@
           },
           {
             "@name":"specificationUrl",
-            "@content":"http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"
+            "@content":"https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"
           },
           {
             "@name":"generator",
@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 November 2020"
+            "@content":"21 November 2020"
           },
           {
             "@name":"generator",

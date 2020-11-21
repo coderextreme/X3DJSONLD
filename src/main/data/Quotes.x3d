@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 
 <X3D profile="Immersive" version="3.3"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
     <head>
         <!-- comment #1 -->
         <!-- comment #2 -->
@@ -16,14 +16,14 @@
         <meta
             content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library" name="description"/>
         <meta
-            content="http://www.web3d.org/specifications/java/X3DJSAIL.html" name="reference"/>
+            content="https://www.web3d.org/specifications/java/X3DJSAIL.html" name="reference"/>
         <meta content="HelloWorldProgramOutput.java" name="generator"/>
         <meta content="6 September 2016" name="created"/>
         <meta content="7 April 2018" name="modified"/>
         <meta
             content="X3D Java Scene Access Interface Library (X3DJSAIL)" name="generator"/>
         <meta
-            content="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" name="generator"/>
+            content="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" name="generator"/>
         <meta content="Netbeans http://www.netbeans.org" name="generator"/>
         <meta content="Don Brutzman" name="creator"/>
         <meta
@@ -35,17 +35,17 @@
         <meta content="HelloWorldProgramOutput.wrl" name="reference"/>
         <meta content="HelloWorldProgramOutput.html" name="reference"/>
         <meta
-            content="X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" name="reference"/>
+            content="X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" name="reference"/>
         <meta
-            content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" name="identifier"/>
+            content="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" name="identifier"/>
         <meta content="../license.html" name="license"/>
         <meta
             content="tested sat: name value cannot contain embedded space character" name="info"/>
         <meta content="30 April 2018" name="translated"/>
         <meta
-            content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html" name="generator"/>
+            content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html" name="generator"/>
         <meta
-            content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" name="reference"/>
+            content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" name="reference"/>
     </head>
     <Scene>
         <ViewpointGroup description="Available viewpoints">
@@ -61,13 +61,13 @@
         <LayerSet DEF="scene.addChildLayerSetTest"/>
         <Transform DEF="LogoGeometryTransform" translation="0 1.5 0">
             <Anchor
-                description="select for X3D Java SAI Library (X3DJSAIL) description" url="&quot;../X3DJSAIL.html&quot; &quot;http://www.web3d.org/specifications/java/X3DJSAIL.html&quot;">
+                description="select for X3D Java SAI Library (X3DJSAIL) description" url="&quot;../X3DJSAIL.html&quot; &quot;https://www.web3d.org/specifications/java/X3DJSAIL.html&quot;">
                 <Shape DEF="BoxShape">
                     <Appearance containerField="appearance">
                         <Material DEF="GreenMaterial"
                             containerField="material"
                             diffuseColor="0 1 1" emissiveColor="0.8 0 0" transparency="0.1"/>
-                        <ImageTexture containerField="texture" url="&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;"/>
+                        <ImageTexture containerField="texture" url="&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;"/>
                     </Appearance>
                     <Box DEF="test-NMTOKEN_regex.0123456789"
                         class="untextured" containerField="geometry"/>
@@ -113,7 +113,7 @@
                     <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"' -->
                     <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""' -->
                     <!-- alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"\"}) -->
-                    <!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
+                    <!-- reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
                     <Text containerField="geometry" string="&quot;One, Two, Text&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot; \&quot;\&quot;&quot;"/>
                 </Shape>
             </Collision>
@@ -329,15 +329,15 @@ function clockTrigger (timeValue)
         </Group>
         <Sound location="0 1.6 0">
             <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
-            <AudioClip containerField="source" description="chimes" url="&quot;chimes.wav&quot; &quot;http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav&quot;">
-                <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d -->
+            <AudioClip containerField="source" description="chimes" url="&quot;chimes.wav&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav&quot;">
+                <!-- Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d -->
             </AudioClip>
         </Sound>
         <Sound location="0 1.6 0">
             <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
             <MovieTexture containerField="source"
-                description="mpgsys.mpg from ConformanceNist suite" url="&quot;mpgsys.mpg&quot; &quot;http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg&quot;">
-                <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
+                description="mpgsys.mpg from ConformanceNist suite" url="&quot;mpgsys.mpg&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg&quot;">
+                <!-- Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
                 <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
             </MovieTexture>
         </Sound>

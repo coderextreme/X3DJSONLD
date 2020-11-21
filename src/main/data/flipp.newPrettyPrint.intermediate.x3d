@@ -8,7 +8,7 @@
     <meta content='http://www.x3dom.org/x3dom/test/functional/flipp.x3d' name='identifier'/>
     <meta content='Yvonne Jung, metadata by John Carlson' name='creator'/>
     <meta content='13 March 2016' name='translated'/>
-    <meta content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
   </head>
   <Scene>
     <Viewpoint DEF='cam0' description='cam0 description' position='0 0 800'/>

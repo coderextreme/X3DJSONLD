@@ -100,11 +100,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("specificationUrl"),
-              content : new SFString("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax")}),
+              content : new SFString("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -307,7 +307,7 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("someInline"),
-              url : new MFString(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])}),
+              url : new MFString(["someUrl.x3d","https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])}),
 
             new IMPORT({
               aS : new SFString("someInlineRoot"),

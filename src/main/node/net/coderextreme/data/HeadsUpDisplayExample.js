@@ -22,7 +22,7 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("modified").setContent("24 October 2016"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("HeadsUpDisplayPrototype.x3d"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://X3dGraphics.com"))
-        .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+        .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html"))
         .addMeta((new autoclass.meta()).setName("rights").setContent("Copyright 2006, Daly Realism and Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d"))

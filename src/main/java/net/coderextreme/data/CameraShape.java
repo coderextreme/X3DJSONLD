@@ -52,7 +52,7 @@ public class CameraShape {
         .addMeta(new meta().setName("translated").setContent("2 June 2009"))
         .addMeta(new meta().setName("modified").setContent("13 January 2014"))
         .addMeta(new meta().setName("reference").setContent("CameraExamples.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../../license.html")))

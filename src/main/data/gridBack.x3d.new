@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="gridBack.json"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="gridBack.json"></meta>
 <meta name="description" content="Checkerboard grid background for X3D/VRML materials selection."></meta>
 <meta name="creator" content="David Roussel"></meta>
 <meta name="translator" content="James Harney, Don Brutzman NPS"></meta>
@@ -8,7 +8,7 @@
 <meta name="modified" content="12 January 2014"></meta>
 <meta name="reference" content="http://vrmlstuff.free.fr/materials"></meta>
 <meta name="subject" content="Universal Media Material Library"></meta>
-<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"></meta>
 <meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>

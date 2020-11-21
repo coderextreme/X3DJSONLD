@@ -20,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Yvonne Jung, metadata by John Carlson"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("13 March 2016"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setDEF("cam0").setDescription("cam0 description").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(800)])))
         .addChild((new autoclass.Viewpoint()).setDEF("cam1").setDescription("cam1 description").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(2000)])))

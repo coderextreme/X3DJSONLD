@@ -11,7 +11,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("creator").setContent("Class participants in course Introduction to VRML/X3D."))
         .addMeta(new meta().setName("created").setContent("14 February 2001"))
         .addMeta(new meta().setName("modified").setContent("27 November 2015"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()

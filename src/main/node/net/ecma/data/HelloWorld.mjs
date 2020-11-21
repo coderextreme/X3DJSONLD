@@ -76,15 +76,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3D.org")}),
+              content : new SFString("https://www.web3D.org")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3d.org/realtime-3d/news/internationalization-x3d")}),
+              content : new SFString("https://www.web3d.org/realtime-3d/news/internationalization-x3d")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d")}),
 
             new meta({
               name : new SFString("reference"),
@@ -96,7 +96,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/license.html")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")}),
 
             new meta({
               name : new SFString("generator"),
@@ -152,7 +152,7 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})])}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})])}),
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),

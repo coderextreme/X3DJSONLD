@@ -51,7 +51,7 @@ public class CloudsProcedural4 {
         .addMeta(new meta().setName("created").setContent("1 November 2007"))
         .addMeta(new meta().setName("modified").setContent("14 January 2014"))
         .addMeta(new meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html"))
         .addMeta(new meta().setName("license").setContent("../../license.html"))
         .addMeta(new meta().setName("TODO").setContent("fix links")))
       .setScene(new Scene()

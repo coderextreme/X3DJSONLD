@@ -35,7 +35,7 @@ meta7.setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsPro
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("generator")
-meta8.setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")
+meta8.setContent("X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()

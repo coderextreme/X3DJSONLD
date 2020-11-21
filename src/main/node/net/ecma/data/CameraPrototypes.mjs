@@ -73,7 +73,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html")}),
+              content : new SFString("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html")}),
 
             new meta({
               name : new SFString("subject"),
@@ -85,7 +85,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d")}),
 
             new meta({
               name : new SFString("reference"),
@@ -1939,7 +1939,7 @@ var X3D0 =  new X3D({
 
             new Anchor({
               description : new SFString("launch CameraExample scene"),
-              url : new MFString(["CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]),
+              url : new MFString(["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]),
               children : new MFNode([
                 new Transform({
                   children : new MFNode([

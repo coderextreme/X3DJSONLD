@@ -60,17 +60,17 @@ meta12.setContent("http://www.HelloWorldExample.net")
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("reference")
-meta13.setContent("http://www.web3D.org")
+meta13.setContent("https://www.web3D.org")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("reference")
-meta14.setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d")
+meta14.setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
 meta15.setName("reference")
-meta15.setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d")
+meta15.setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d")
 
 head1.addMeta(meta15)
 meta16 = x3d.meta()
@@ -85,7 +85,7 @@ meta17.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01Tec
 head1.addMeta(meta17)
 meta18 = x3d.meta()
 meta18.setName("license")
-meta18.setContent("http://www.web3d.org/x3d/content/examples/license.html")
+meta18.setContent("https://www.web3d.org/x3d/content/examples/license.html")
 
 head1.addMeta(meta18)
 meta19 = x3d.meta()
@@ -149,7 +149,7 @@ Material33.setDiffuseColor([0.1,0.5,1])
 Appearance32.setMaterial(Material33)
 ImageTexture34 = x3d.ImageTexture()
 ImageTexture34.setDEF("ImageCloudlessEarth")
-ImageTexture34.setUrl(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])
+ImageTexture34.setUrl(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])
 
 Appearance32.setTexture(ImageTexture34)
 

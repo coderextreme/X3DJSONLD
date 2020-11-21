@@ -10,7 +10,7 @@
     <meta content='Andreas Plesch and John Carlson' name='creator'/>
     <meta content='t1.wrl' name='source'/>
     <meta content='Test Case for Proto Expander' name='description'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>

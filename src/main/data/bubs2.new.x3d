@@ -8,7 +8,7 @@
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/geo.x3d' name='identifier'/>
     <meta content='13 March 2016' name='translated'/>
-    <meta content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>

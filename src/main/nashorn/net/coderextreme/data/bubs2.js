@@ -16,7 +16,7 @@ var ProtoInstance3 = null;
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geo.x3d"))
         .addMeta(new meta().setName("translated").setContent("13 March 2016"))
-        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setPosition(Java.to([0,0,4], Java.type("float[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Bubbles in action"))

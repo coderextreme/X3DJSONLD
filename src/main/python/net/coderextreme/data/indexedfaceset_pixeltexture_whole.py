@@ -65,7 +65,7 @@ meta13.setContent("This file was provided by the National Institute of Standards
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("info")
-meta14.setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d")
+meta14.setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
@@ -90,7 +90,7 @@ meta18.setContent("Test of browser ability to map the entire portion of an Pixel
 head1.addMeta(meta18)
 meta19 = x3d.meta()
 meta19.setName("identifier")
-meta19.setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_whole.x3d")
+meta19.setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_whole.x3d")
 
 head1.addMeta(meta19)
 meta20 = x3d.meta()

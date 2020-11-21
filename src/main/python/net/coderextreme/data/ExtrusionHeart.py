@@ -30,7 +30,7 @@ meta6.setContent("27 November 2015")
 head1.addMeta(meta6)
 meta7 = x3d.meta()
 meta7.setName("identifier")
-meta7.setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d")
+meta7.setContent("https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()

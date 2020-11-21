@@ -40,7 +40,7 @@ meta8.setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("specificationUrl")
-meta9.setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString")
+meta9.setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
@@ -50,7 +50,7 @@ meta10.setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.1
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("specificationUrl")
-meta11.setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString")
+meta11.setContent("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
@@ -60,12 +60,12 @@ meta12.setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML enc
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("specificationUrl")
-meta13.setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString")
+meta13.setContent("https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("identifier")
-meta14.setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d")
+meta14.setContent("https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()

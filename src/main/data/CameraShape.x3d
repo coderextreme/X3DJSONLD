@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd">
-<X3D profile='Interactive' version='3.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'>
+<X3D profile='Interactive' version='3.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'>
   <head>
     <meta content='CameraShape.x3d' name='title'/>
     <meta content='Simple video camera shape' name='description'/>
@@ -9,7 +9,7 @@
     <meta content='2 June 2009' name='translated'/>
     <meta content='13 January 2014' name='modified'/>
     <meta content='CameraExamples.x3d' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d' name='identifier'/>
     <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../../license.html' name='license'/>
