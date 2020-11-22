@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Interchange" version="3.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+<head>
+	<meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php" />
+	<meta name="source" content="LOA1ExampleSourceWithDiamonds.wrl" />
+</head>
+<Scene>
+	<ProtoDeclare name="Humanoid">
+		<ProtoInterface>
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="humanoidBody">
+				</field>
+				<field accessType="inputOutput" type="MFString" name="info" value='' />
+				<field accessType="inputOutput" type="MFNode" name="joints">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFNode" name="segments">
+				</field>
+				<field accessType="inputOutput" type="MFNode" name="sites">
+				</field>
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+				<field accessType="inputOutput" type="SFString" name="version" value="200x" />
+				<field accessType="inputOutput" type="MFNode" name="viewpoints">
+				</field>
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxCenter" value="0 0 0" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxSize" value="-1 -1 -1" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Transform>
+				<Group>
+					<IS>
+						<connect nodeField="children" protoField="humanoidBody" />
+					</IS>
+				</Group>
+				<Group>
+					<IS>
+						<connect nodeField="children" protoField="viewpoints" />
+					</IS>
+				</Group>
+				<IS>
+					<connect nodeField="center" protoField="center" />
+					<connect nodeField="rotation" protoField="rotation" />
+					<connect nodeField="scale" protoField="scale" />
+					<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+					<connect nodeField="translation" protoField="translation" />
+				</IS>
+			</Transform>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Joint">
+		<ProtoInterface>
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFRotation" name="limitOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFFloat" name="llimit" value="" />
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFFloat" name="stiffness" value="1 1 1" />
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+				<field accessType="inputOutput" type="MFFloat" name="ulimit" value="" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Group>
+				<Transform>
+					<IS>
+						<connect nodeField="children" protoField="children" />
+						<connect nodeField="center" protoField="center" />
+						<connect nodeField="rotation" protoField="rotation" />
+						<connect nodeField="scale" protoField="scale" />
+						<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+						<connect nodeField="translation" protoField="translation" />
+					</IS>
+				</Transform>
+				<Transform>
+					<Shape>
+						<IndexedFaceSet
+							coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1"
+							creaseAngle="0.5">
+							<Coordinate
+								point="0 0.00999999977648258 0 -0.00999999977648258 0 0 0 0 0.00999999977648258 0.00999999977648258 0 0 0 0 -0.00999999977648258 0 -0.00999999977648258 0" />
+						</IndexedFaceSet>
+						<Appearance>
+							<Material
+								diffuseColor="1 1 0" />
+						</Appearance>
+					</Shape>
+					<IS>
+						<connect nodeField="translation" protoField="center" />
+					</IS>
+				</Transform>
+			</Group>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Segment">
+		<ProtoInterface>
+				<field accessType="inputOnly" type="MFNode" name="addChildren" />
+				<field accessType="inputOnly" type="MFNode" name="removeChildren" />
+				<field accessType="inputOutput" type="SFVec3f" name="centerOfMass" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFNode" name="coord" value="NULL" />
+				<field accessType="inputOutput" type="MFNode" name="displacers">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFFloat" name="mass" value="0" />
+				<field accessType="inputOutput" type="SFVec3f" name="momentsOfInertia" value="1 1 1" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxCenter" value="0 0 0" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxSize" value="-1 -1 -1" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Group>
+				<IS>
+					<connect nodeField="children" protoField="children" />
+					<connect nodeField="bboxCenter" protoField="bboxCenter" />
+					<connect nodeField="bboxSize" protoField="bboxSize" />
+					<connect nodeField="addChildren" protoField="addChildren" />
+					<connect nodeField="removeChildren" protoField="removeChildren" />
+				</IS>
+			</Group>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Site">
+		<ProtoInterface>
+				<field accessType="inputOnly" type="MFNode" name="addChildren" />
+				<field accessType="inputOnly" type="MFNode" name="removeChildren" />
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Transform>
+				<IS>
+					<connect nodeField="children" protoField="children" />
+					<connect nodeField="center" protoField="center" />
+					<connect nodeField="rotation" protoField="rotation" />
+					<connect nodeField="scale" protoField="scale" />
+					<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+					<connect nodeField="translation" protoField="translation" />
+					<connect nodeField="addChildren" protoField="addChildren" />
+					<connect nodeField="removeChildren" protoField="removeChildren" />
+				</IS>
+			</Transform>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoInstance name="Humanoid" DEF="humanoid_2">
+		<fieldValue name="humanoidBody">
+			<ProtoInstance name="Joint" DEF="hanim_humanoid_root_2" containerField="humanoidBody">
+				<fieldValue name="stiffness"
+					value="1 1 1" />
+				<fieldValue name="name"
+					value="humanoid_root" />
+				<fieldValue name="center"
+					value="0 0.824000000953674 0.0276999995112419" />
+				<fieldValue name="children">
+					<ProtoInstance name="Joint" DEF="hanim_sacroiliac_2" containerField="children">
+						<fieldValue name="stiffness"
+							value="1 1 1" />
+						<fieldValue name="name"
+							value="sacroiliac" />
+						<fieldValue name="center"
+							value="0 0.914900004863739 0.0015999999595806" />
+						<fieldValue name="children">
+							<ProtoInstance name="Joint" DEF="hanim_l_hip_2" containerField="children">
+								<fieldValue name="stiffness"
+									value="1 1 1" />
+								<fieldValue name="name"
+									value="l_hip" />
+								<fieldValue name="center"
+									value="0.0961000025272369 0.912400007247925 -0.0000999999974737875" />
+								<fieldValue name="children">
+									<ProtoInstance name="Joint" DEF="hanim_l_knee_2" containerField="children">
+										<fieldValue name="stiffness"
+											value="1 1 1" />
+										<fieldValue name="name"
+											value="l_knee" />
+										<fieldValue name="center"
+											value="0.104000002145767 0.486699998378754 0.030799999833107" />
+										<fieldValue name="children">
+											<ProtoInstance name="Joint" DEF="hanim_l_talocrural_2" containerField="children">
+												<fieldValue name="stiffness"
+													value="1 1 1" />
+												<fieldValue name="name"
+													value="l_talocrural" />
+												<fieldValue name="center"
+													value="0.110100001096725 0.0656000003218651 -0.0736000016331673" />
+												<fieldValue name="children">
+													<ProtoInstance name="Joint" DEF="hanim_l_metatarsophalangeal__2" containerField="children">
+														<fieldValue name="stiffness"
+															value="1 1 1" />
+														<fieldValue name="name"
+															value="l_metatarsophalangeal_" />
+														<fieldValue name="center"
+															value="0.108599998056889 0.0000999999974737875 0.0368000008165836" />
+														<fieldValue name="children">
+															<ProtoInstance name="Segment" DEF="hanim_l_middistal_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_middistal" />
+																<fieldValue name="children">
+																	<ProtoInstance name="Site" DEF="hanim_l_middistal_tip_2" containerField="children">
+																		<fieldValue name="name"
+																			value="l_middistal_tip" />
+																		<fieldValue name="translation"
+																			value="0.135399997234344 0.0015999999595806 0.147599995136261" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_l_tarsal_interphalangeal_phalanx6" containerField="children">
+																		<fieldValue name="name"
+																			value="l_tarsal_interphalangeal_phalanx_5" />
+																		<fieldValue name="translation"
+																			value="0.182500004768372 0.00700000021606684 0.092799998819828" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_l_tarsal_interphalangeal_phalanx2" containerField="children">
+																		<fieldValue name="name"
+																			value="l_tarsal_interphalangeal_phalanx_1" />
+																		<fieldValue name="translation"
+																			value="0.0816000029444695 0.023199999704957 0.0105999996885657" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_l_tarsal_distal_phalanx3" containerField="children">
+																		<fieldValue name="name"
+																			value="l_tarsal_distal_phalanx_2" />
+																		<fieldValue name="translation"
+																			value="0.119499996304512 0.00789999961853027 0.143299996852875" />
+																	</ProtoInstance>
+																</fieldValue>
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+													<ProtoInstance name="Segment" DEF="hanim_l_hindfoot_2" containerField="children">
+														<fieldValue name="name"
+															value="l_hindfoot" />
+														<fieldValue name="children">
+															<ProtoInstance name="Site" DEF="hanim_l_lateral_malleolus_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_lateral_malleolus" />
+																<fieldValue name="translation"
+																	value="0.130799993872643 0.0597000010311604 -0.103200003504753" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_medial_malleolus_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_medial_malleolus" />
+																<fieldValue name="translation"
+																	value="0.0890000015497208 0.0715999975800514 -0.0881000012159348" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_sphyrion_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_sphyrion" />
+																<fieldValue name="translation"
+																	value="0.0890000015497208 0.0575000010430813 -0.0943000018596649" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_calcaneus_posterior_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_calcaneus_posterior" />
+																<fieldValue name="translation"
+																	value="0.09740000218153 0.025900000706315 -0.11710000038147" />
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+											<ProtoInstance name="Segment" DEF="hanim_l_calf_2" containerField="children">
+												<fieldValue name="name"
+													value="l_calf" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+									<ProtoInstance name="Segment" DEF="hanim_l_thigh_2" containerField="children">
+										<fieldValue name="name"
+											value="l_thigh" />
+										<fieldValue name="children">
+											<ProtoInstance name="Site" DEF="hanim_l_knee_crease_2" containerField="children">
+												<fieldValue name="name"
+													value="l_knee_crease" />
+												<fieldValue name="translation"
+													value="0.0992999970912933 0.488099992275238 -0.0308999996632338" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_l_femoral_lateral_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="l_femoral_lateral_epicondyles" />
+												<fieldValue name="translation"
+													value="0.159799993038177 0.496699988842011 0.0296999998390675" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_l_femoral_medial_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="l_femoral_lateral_epicondyles" />
+												<fieldValue name="translation"
+													value="0.0397999994456768 0.494599997997284 0.0303000006824732" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+							<ProtoInstance name="Joint" DEF="hanim_r_hip_2" containerField="children">
+								<fieldValue name="stiffness"
+									value="1 1 1" />
+								<fieldValue name="name"
+									value="r_hip" />
+								<fieldValue name="center"
+									value="-0.0949999988079071 0.917100012302399 0.00289999996311963" />
+								<fieldValue name="children">
+									<ProtoInstance name="Joint" DEF="hanim_r_knee_2" containerField="children">
+										<fieldValue name="stiffness"
+											value="1 1 1" />
+										<fieldValue name="name"
+											value="r_knee" />
+										<fieldValue name="center"
+											value="-0.0866999998688698 0.491299986839294 0.0318000018596649" />
+										<fieldValue name="children">
+											<ProtoInstance name="Joint" DEF="hanim_r_talocrural_2" containerField="children">
+												<fieldValue name="stiffness"
+													value="1 1 1" />
+												<fieldValue name="name"
+													value="r_talocrural" />
+												<fieldValue name="center"
+													value="-0.0800999999046326 0.0711999982595444 -0.0766000002622604" />
+												<fieldValue name="children">
+													<ProtoInstance name="Joint" DEF="hanim_r_metatarsophalangeal__2" containerField="children">
+														<fieldValue name="stiffness"
+															value="1 1 1" />
+														<fieldValue name="name"
+															value="r_metatarsophalangeal_" />
+														<fieldValue name="center"
+															value="-0.0800999999046326 0 0.0368000008165836" />
+														<fieldValue name="children">
+															<ProtoInstance name="Segment" DEF="hanim_r_middistal_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_middistal" />
+																<fieldValue name="children">
+																	<ProtoInstance name="Site" DEF="hanim_r_middistal_tip_2" containerField="children">
+																		<fieldValue name="name"
+																			value="r_middistal_tip" />
+																		<fieldValue name="translation"
+																			value="-0.104299999773502 -0.0227000005543232 0.144999995827675" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_r_tarsal_interphalangeal_phalanx6" containerField="children">
+																		<fieldValue name="name"
+																			value="r_tarsal_interphalangeal_phalanx_5" />
+																		<fieldValue name="translation"
+																			value="-0.152300000190735 0.0165999997407198 0.0895000025629997" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_r_tarsal_interphalangeal_phalanx2" containerField="children">
+																		<fieldValue name="name"
+																			value="r_tarsal_interphalangeal_phalanx_1" />
+																		<fieldValue name="translation"
+																			value="-0.0520999990403652 0.0260000005364418 0.012699999846518" />
+																	</ProtoInstance>
+																	<ProtoInstance name="Site" DEF="hanim_r_tarsal_distal_phalanx3" containerField="children">
+																		<fieldValue name="name"
+																			value="r_tarsal_distal_phalanx_2" />
+																		<fieldValue name="translation"
+																			value="-0.088299997150898 0.013399999588728 0.138300001621246" />
+																	</ProtoInstance>
+																</fieldValue>
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+													<ProtoInstance name="Segment" DEF="hanim_r_hindfoot_2" containerField="children">
+														<fieldValue name="name"
+															value="r_hindfoot" />
+														<fieldValue name="children">
+															<ProtoInstance name="Site" DEF="hanim_r_lateral_malleolus_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_lateral_malleolus" />
+																<fieldValue name="translation"
+																	value="-0.100599996745586 0.0658000037074089 -0.107500001788139" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_medial_malleolus_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_medial_malleolus" />
+																<fieldValue name="translation"
+																	value="-0.0590999983251095 0.0759999975562096 -0.092799998819828" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_sphyrion_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_sphyrion" />
+																<fieldValue name="translation"
+																	value="-0.0603000000119209 0.0610000006854534 -0.100199997425079" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_calcaneus_posterior_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_calcaneus_posterior" />
+																<fieldValue name="translation"
+																	value="-0.0692000016570091 0.0296999998390675 -0.122100003063679" />
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+											<ProtoInstance name="Segment" DEF="hanim_r_calf_2" containerField="children">
+												<fieldValue name="name"
+													value="r_calf" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+									<ProtoInstance name="Segment" DEF="hanim_r_thigh_2" containerField="children">
+										<fieldValue name="name"
+											value="r_thigh" />
+										<fieldValue name="children">
+											<ProtoInstance name="Site" DEF="hanim_r_knee_crease_2" containerField="children">
+												<fieldValue name="name"
+													value="r_knee_crease" />
+												<fieldValue name="translation"
+													value="-0.0825000032782555 0.4932000041008 -0.032600000500679" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_r_femoral_lateral_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="r_femoral_lateral_epicondyles" />
+												<fieldValue name="translation"
+													value="-0.142100006341934 0.499199986457825 0.0309999994933605" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_r_femoral_medial_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="r_femoral_lateral_epicondyles" />
+												<fieldValue name="translation"
+													value="-0.0220999997109175 0.501399993896484 0.0288999993354082" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+							<ProtoInstance name="Segment" DEF="hanim_pelvis_2" containerField="children">
+								<fieldValue name="name"
+									value="pelvis" />
+							</ProtoInstance>
+						</fieldValue>
+					</ProtoInstance>
+					<ProtoInstance name="Joint" DEF="hanim_vl5_2" containerField="children">
+						<fieldValue name="stiffness"
+							value="1 1 1" />
+						<fieldValue name="name"
+							value="vl5" />
+						<fieldValue name="center"
+							value="0.00279999990016222 1.05680000782013 -0.0776000022888184" />
+						<fieldValue name="children">
+							<ProtoInstance name="Joint" DEF="hanim_skullbase_2" containerField="children">
+								<fieldValue name="stiffness"
+									value="1 1 1" />
+								<fieldValue name="name"
+									value="skullbase" />
+								<fieldValue name="center"
+									value="0.00439999997615814 1.62090003490448 0.0236000008881092" />
+								<fieldValue name="children">
+									<ProtoInstance name="Segment" DEF="hanim_skull_2" containerField="children">
+										<fieldValue name="name"
+											value="skull" />
+										<fieldValue name="children">
+											<ProtoInstance name="Site" DEF="hanim_skull_tip_2" containerField="children">
+												<fieldValue name="name"
+													value="skull_tip" />
+												<fieldValue name="translation"
+													value="0.00499999988824129 1.75039994716644 0.00549999997019768" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_sellion_2" containerField="children">
+												<fieldValue name="name"
+													value="sellion" />
+												<fieldValue name="translation"
+													value="0.00579999992623925 1.63160002231598 0.0851999968290329" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_r_infraorbitale_2" containerField="children">
+												<fieldValue name="name"
+													value="r_infraorbitale" />
+												<fieldValue name="translation"
+													value="-0.023700000718236 1.61710000038147 0.0751999989151955" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_l_infraorbitale_2" containerField="children">
+												<fieldValue name="name"
+													value="l_infraorbitale" />
+												<fieldValue name="translation"
+													value="0.0340999998152256 1.61710000038147 0.0751999989151955" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_supramenton_2" containerField="children">
+												<fieldValue name="name"
+													value="supramenton" />
+												<fieldValue name="translation"
+													value="0.00609999988228083 1.54100000858307 0.0804999992251396" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_r_tragion_2" containerField="children">
+												<fieldValue name="name"
+													value="r_tragion" />
+												<fieldValue name="translation"
+													value="-0.0645999982953072 1.63469994068146 0.0302000008523464" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_r_gonion_2" containerField="children">
+												<fieldValue name="name"
+													value="r_gonion" />
+												<fieldValue name="translation"
+													value="-0.0520000010728836 1.55289995670319 0.0346999987959862" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_l_tragion_2" containerField="children">
+												<fieldValue name="name"
+													value="l_tragion" />
+												<fieldValue name="translation"
+													value="0.0738999992609024 1.63479995727539 0.0282000005245209" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_l_gonion_2" containerField="children">
+												<fieldValue name="name"
+													value="l_gonion" />
+												<fieldValue name="translation"
+													value="0.0631000027060509 1.55299997329712 0.0329999998211861" />
+											</ProtoInstance>
+											<ProtoInstance name="Site" DEF="hanim_nuchale_2" containerField="children">
+												<fieldValue name="name"
+													value="nuchale" />
+												<fieldValue name="translation"
+													value="0.00389999989420176 1.59720003604889 -0.0795999988913536" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+							<ProtoInstance name="Joint" DEF="hanim_l_shoulder_2" containerField="children">
+								<fieldValue name="stiffness"
+									value="1 1 1" />
+								<fieldValue name="name"
+									value="l_shoulder" />
+								<fieldValue name="center"
+									value="0.202900007367134 1.43760001659393 -0.0386999994516373" />
+								<fieldValue name="children">
+									<ProtoInstance name="Joint" DEF="hanim_l_elbow_2" containerField="children">
+										<fieldValue name="stiffness"
+											value="1 1 1" />
+										<fieldValue name="name"
+											value="l_elbow" />
+										<fieldValue name="center"
+											value="0.201399996876717 1.1356999874115 -0.0681999996304512" />
+										<fieldValue name="children">
+											<ProtoInstance name="Joint" DEF="hanim_l_radiocarpal_2" containerField="children">
+												<fieldValue name="stiffness"
+													value="1 1 1" />
+												<fieldValue name="name"
+													value="l_radiocarpal" />
+												<fieldValue name="center"
+													value="0.198400005698204 0.866299986839294 -0.0582999996840954" />
+												<fieldValue name="children">
+													<ProtoInstance name="Segment" DEF="hanim_l_hand_2" containerField="children">
+														<fieldValue name="name"
+															value="l_hand" />
+														<fieldValue name="children">
+															<ProtoInstance name="Site" DEF="hanim_l_hand_tip_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_hand_tip" />
+																<fieldValue name="translation"
+																	value="0.208000004291534 0.673099994659424 -0.049100000411272" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_metacarpal_phalanx3" containerField="children">
+																<fieldValue name="name"
+																	value="l_metacarpal_phalanx_2" />
+																<fieldValue name="translation"
+																	value="0.200900003314018 0.813899993896484 -0.023700000718236" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_dactylion_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_dactylion" />
+																<fieldValue name="translation"
+																	value="0.205599993467331 0.674300014972687 -0.048200000077486" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_ulnar_styloid_2" containerField="children">
+																<fieldValue name="name"
+																	value="l_ulnar_styloid" />
+																<fieldValue name="translation"
+																	value="-0.214200004935265 0.85290002822876 -0.064800001680851" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_l_metacarpal_phalanx6" containerField="children">
+																<fieldValue name="name"
+																	value="l_metacarpal_phalanx_5" />
+																<fieldValue name="translation"
+																	value="0.192900002002716 0.78600001335144 -0.112199999392033" />
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+											<ProtoInstance name="Segment" DEF="hanim_l_forearm_2" containerField="children">
+												<fieldValue name="name"
+													value="l_forearm" />
+												<fieldValue name="children">
+													<ProtoInstance name="Site" DEF="hanim_l_radial_styloid_2" containerField="children">
+														<fieldValue name="name"
+															value="l_radial_styloid" />
+														<fieldValue name="translation"
+															value="0.190099999308586 0.864499986171722 -0.0414999984204769" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_l_olecranon_2" containerField="children">
+														<fieldValue name="name"
+															value="l_olecranon" />
+														<fieldValue name="translation"
+															value="-0.196199998259544 1.13750004768372 -0.112300001084805" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_l_humeral_medial_epicondyles_2" containerField="children">
+														<fieldValue name="name"
+															value="l_humeral_medial_epicondyles" />
+														<fieldValue name="translation"
+															value="0.173500001430511 1.12720000743866 -0.111299999058247" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_l_radiale_2" containerField="children">
+														<fieldValue name="name"
+															value="l_radiale" />
+														<fieldValue name="translation"
+															value="0.218199998140335 1.12119996547699 -0.116700001060963" />
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+									<ProtoInstance name="Segment" DEF="hanim_l_upperarm_2" containerField="children">
+										<fieldValue name="name"
+											value="l_upperarm" />
+										<fieldValue name="children">
+											<ProtoInstance name="Site" DEF="hanim_l_humeral_lateral_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="l_humeral_lateral_epicondyles " />
+												<fieldValue name="translation"
+													value="0.228000000119209 1.14820003509521 -0.109999999403954" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+							<ProtoInstance name="Joint" DEF="hanim_r_shoulder_2" containerField="children">
+								<fieldValue name="stiffness"
+									value="1 1 1" />
+								<fieldValue name="name"
+									value="r_shoulder" />
+								<fieldValue name="center"
+									value="-0.190699994564056 1.4407000541687 -0.0324999988079071" />
+								<fieldValue name="children">
+									<ProtoInstance name="Joint" DEF="hanim_r_elbow_2" containerField="children">
+										<fieldValue name="stiffness"
+											value="1 1 1" />
+										<fieldValue name="name"
+											value="r_elbow" />
+										<fieldValue name="center"
+											value="-0.194900006055832 1.13880002498627 -0.061999998986721" />
+										<fieldValue name="children">
+											<ProtoInstance name="Joint" DEF="hanim_r_radiocarpal_2" containerField="children">
+												<fieldValue name="stiffness"
+													value="1 1 1" />
+												<fieldValue name="name"
+													value="r_radiocarpal" />
+												<fieldValue name="center"
+													value="-0.195899993181229 0.869400024414063 -0.0520999990403652" />
+												<fieldValue name="children">
+													<ProtoInstance name="Segment" DEF="hanim_r_hand_2" containerField="children">
+														<fieldValue name="name"
+															value="r_hand" />
+														<fieldValue name="children">
+															<ProtoInstance name="Site" DEF="hanim_r_hand_tip_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_hand_tip" />
+																<fieldValue name="translation"
+																	value="-0.196899995207787 0.675800025463104 -0.0427000001072884" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_metacarpal_phalanx3" containerField="children">
+																<fieldValue name="name"
+																	value="r_metacarpal_phalanx_2" />
+																<fieldValue name="translation"
+																	value="-0.197699993848801 0.816900014877319 -0.0176999997347593" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_dactylion_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_dactylion" />
+																<fieldValue name="translation"
+																	value="-0.194100007414818 0.677200019359589 -0.0423000007867813" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_ulnar_styloid_2" containerField="children">
+																<fieldValue name="name"
+																	value="r_ulnar_styloid" />
+																<fieldValue name="translation"
+																	value="-0.21170000731945 0.856199979782104 -0.0584000013768673" />
+															</ProtoInstance>
+															<ProtoInstance name="Site" DEF="hanim_r_metacarpal_phalanx6" containerField="children">
+																<fieldValue name="name"
+																	value="r_metacarpal_phalanx_5" />
+																<fieldValue name="translation"
+																	value="-0.192900002002716 0.788999974727631 -0.10639999806881" />
+															</ProtoInstance>
+														</fieldValue>
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+											<ProtoInstance name="Segment" DEF="hanim_r_forearm_2" containerField="children">
+												<fieldValue name="name"
+													value="r_forearm" />
+												<fieldValue name="children">
+													<ProtoInstance name="Site" DEF="hanim_r_radial_styloid_2" containerField="children">
+														<fieldValue name="name"
+															value="r_radial_styloid" />
+														<fieldValue name="translation"
+															value="-0.188400000333786 0.86760002374649 -0.0359999984502792" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_r_olecranon_2" containerField="children">
+														<fieldValue name="name"
+															value="r_olecranon" />
+														<fieldValue name="translation"
+															value="-0.190699994564056 1.14049994945526 -0.106499999761581" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_r_humeral_medial_epicondyles_2" containerField="children">
+														<fieldValue name="name"
+															value="r_humeral_medial_epicondyles" />
+														<fieldValue name="translation"
+															value="-0.167999997735024 1.12979996204376 -0.106200002133846" />
+													</ProtoInstance>
+													<ProtoInstance name="Site" DEF="hanim_r_radiale_2" containerField="children">
+														<fieldValue name="name"
+															value="r_radiale" />
+														<fieldValue name="translation"
+															value="-0.212999999523163 1.130499958992 -0.109099999070168" />
+													</ProtoInstance>
+												</fieldValue>
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+									<ProtoInstance name="Segment" DEF="hanim_r_upperarm_2" containerField="children">
+										<fieldValue name="name"
+											value="r_upperarm" />
+										<fieldValue name="children">
+											<ProtoInstance name="Site" DEF="hanim_r_humeral_lateral_epicondyles_2" containerField="children">
+												<fieldValue name="name"
+													value="r_humeral_lateral_epicondyles" />
+												<fieldValue name="translation"
+													value="-0.222399994730949 1.15170001983643 -0.103299997746944" />
+											</ProtoInstance>
+										</fieldValue>
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+							<ProtoInstance name="Segment" DEF="hanim_l5_2" containerField="children">
+								<fieldValue name="name"
+									value="l5" />
+								<fieldValue name="children">
+									<ProtoInstance name="Site" DEF="hanim_r_clavicale_2" containerField="children">
+										<fieldValue name="name"
+											value="r_clavicale" />
+										<fieldValue name="translation"
+											value="-0.0115000000223517 1.49430000782013 0.0399999991059303" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_suprasternale_2" containerField="children">
+										<fieldValue name="name"
+											value="suprasternale" />
+										<fieldValue name="translation"
+											value="0.00839999970048666 1.47140002250671 0.0551000013947487" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_clavicale_2" containerField="children">
+										<fieldValue name="name"
+											value="l_clavicale" />
+										<fieldValue name="translation"
+											value="0.0271000005304813 1.49430000782013 0.0394000001251698" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_thelion_2" containerField="children">
+										<fieldValue name="name"
+											value="r_thelion" />
+										<fieldValue name="translation"
+											value="-0.0736000016331673 1.33850002288818 0.121699996292591" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_thelion_2" containerField="children">
+										<fieldValue name="name"
+											value="l_thelion" />
+										<fieldValue name="translation"
+											value="0.0917999967932701 1.33819997310638 0.119199998676777" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_substernale_2" containerField="children">
+										<fieldValue name="name"
+											value="substernale" />
+										<fieldValue name="translation"
+											value="0.008500000461936 1.29949998855591 0.114699997007847" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_rib10_2" containerField="children">
+										<fieldValue name="name"
+											value="r_rib10" />
+										<fieldValue name="translation"
+											value="-0.0710999965667725 1.19410002231598 0.101599998772144" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_rib10_2" containerField="children">
+										<fieldValue name="name"
+											value="l_rib10" />
+										<fieldValue name="translation"
+											value="0.0870999991893768 1.19249999523163 0.099200002849102" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_cervicale_2" containerField="children">
+										<fieldValue name="name"
+											value="cervicale" />
+										<fieldValue name="translation"
+											value="0.0063999998383224 1.51999998092651 -0.0815000012516975" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_spine_2_lower_back_2" containerField="children">
+										<fieldValue name="name"
+											value="spine_2_lower_back" />
+										<fieldValue name="translation"
+											value="0.00490000005811453 1.19079995155334 -0.111299999058247" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_waist_preferred_posterior_2" containerField="children">
+										<fieldValue name="name"
+											value="waist_preferred_posterior" />
+										<fieldValue name="translation"
+											value="0.28999999165535 1.09150004386902 -0.109099999070168" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_acromion_2" containerField="children">
+										<fieldValue name="name"
+											value="r_acromion" />
+										<fieldValue name="translation"
+											value="-0.190500006079674 1.47909998893738 -0.0430999994277954" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_axilla_proximal_2" containerField="children">
+										<fieldValue name="name"
+											value="r_axilla_proximal" />
+										<fieldValue name="translation"
+											value="-0.162599995732307 1.40719997882843 -0.00310000008903444" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_axilla_distal_2" containerField="children">
+										<fieldValue name="name"
+											value="r_axilla_distal" />
+										<fieldValue name="translation"
+											value="-0.160300001502037 1.40980005264282 -0.0825999975204468" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_acromion_2" containerField="children">
+										<fieldValue name="name"
+											value="l_acromion" />
+										<fieldValue name="translation"
+											value="0.203199997544289 1.47599995136261 -0.0489999987185001" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_axilla_proximal_2" containerField="children">
+										<fieldValue name="name"
+											value="l_axilla_proximal" />
+										<fieldValue name="translation"
+											value="0.177699998021126 1.40649998188019 -0.00749999983236194" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_axilla_distal_2" containerField="children">
+										<fieldValue name="name"
+											value="l_axilla_distal" />
+										<fieldValue name="translation"
+											value="0.17059999704361 1.40719997882843 -0.0874999985098839" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_r_neck_base_2" containerField="children">
+										<fieldValue name="name"
+											value="r_neck_base" />
+										<fieldValue name="translation"
+											value="-0.0419000014662743 1.51489996910095 -0.0219999998807907" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_l_neck_base_2" containerField="children">
+										<fieldValue name="name"
+											value="l_neck_base" />
+										<fieldValue name="translation"
+											value="0.0645999982953072 1.51409995555878 -0.0379999987781048" />
+									</ProtoInstance>
+									<ProtoInstance name="Site" DEF="hanim_navel_2" containerField="children">
+										<fieldValue name="name"
+											value="navel" />
+										<fieldValue name="translation"
+											value="0.00689999992027879 1.09660005569458 0.101700000464916" />
+									</ProtoInstance>
+								</fieldValue>
+							</ProtoInstance>
+						</fieldValue>
+					</ProtoInstance>
+					<ProtoInstance name="Segment" DEF="hanim_sacrum_2" containerField="children">
+						<fieldValue name="name"
+							value="sacrum" />
+						<fieldValue name="children">
+							<ProtoInstance name="Site" DEF="hanim_r_asis_2" containerField="children">
+								<fieldValue name="name"
+									value="r_asis" />
+								<fieldValue name="translation"
+									value="-0.088699996471405 1.00209999084473 0.111199997365475" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_l_asis_2" containerField="children">
+								<fieldValue name="name"
+									value="l_asis" />
+								<fieldValue name="translation"
+									value="0.0925000011920929 0.998300015926361 0.105200000107288" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_r_iliocristale_2" containerField="children">
+								<fieldValue name="name"
+									value="r_iliocristale" />
+								<fieldValue name="translation"
+									value="-0.152500003576279 1.0628000497818 0.00350000010803342" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_r_trochanterion_2" containerField="children">
+								<fieldValue name="name"
+									value="r_trochanterion" />
+								<fieldValue name="translation"
+									value="-0.16889999806881 0.841899991035461 0.0351999998092651" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_l_iliocristale_2" containerField="children">
+								<fieldValue name="name"
+									value="l_iliocristale" />
+								<fieldValue name="translation"
+									value="0.161200001835823 1.05369997024536 0.0007999999797903" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_l_trochanterion_2" containerField="children">
+								<fieldValue name="name"
+									value="l_trochanterion" />
+								<fieldValue name="translation"
+									value="0.167699992656708 0.833599984645844 0.0303000006824732" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_r_psis_2" containerField="children">
+								<fieldValue name="name"
+									value="r_psis" />
+								<fieldValue name="translation"
+									value="-0.0715999975800514 1.01900005340576 -0.113799996674061" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_l_psis_2" containerField="children">
+								<fieldValue name="name"
+									value="l_psis" />
+								<fieldValue name="translation"
+									value="0.0773999989032745 1.01900005340576 -0.115099996328354" />
+							</ProtoInstance>
+							<ProtoInstance name="Site" DEF="hanim_crotch_2" containerField="children">
+								<fieldValue name="name"
+									value="crotch" />
+								<fieldValue name="translation"
+									value="0.00340000004507601 0.826600015163422 0.0256999991834164" />
+							</ProtoInstance>
+						</fieldValue>
+					</ProtoInstance>
+				</fieldValue>
+			</ProtoInstance>
+		</fieldValue>
+		<fieldValue name="joints">
+			<ProtoInstance USE="hanim_humanoid_root_2" containerField="joints" />
+			<ProtoInstance USE="hanim_sacroiliac_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_hip_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_knee_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_talocrural_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_metatarsophalangeal__2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_hip_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_knee_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_talocrural_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_metatarsophalangeal__2" containerField="joints" />
+			<ProtoInstance USE="hanim_vl5_2" containerField="joints" />
+			<ProtoInstance USE="hanim_skullbase_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_shoulder_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_elbow_2" containerField="joints" />
+			<ProtoInstance USE="hanim_l_radiocarpal_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_shoulder_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_elbow_2" containerField="joints" />
+			<ProtoInstance USE="hanim_r_radiocarpal_2" containerField="joints" />
+		</fieldValue>
+		<fieldValue name="segments">
+			<ProtoInstance USE="hanim_l_middistal_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_hindfoot_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_calf_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_thigh_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_middistal_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_hindfoot_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_calf_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_thigh_2" containerField="segments" />
+			<ProtoInstance USE="hanim_pelvis_2" containerField="segments" />
+			<ProtoInstance USE="hanim_skull_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_hand_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_forearm_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l_upperarm_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_hand_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_forearm_2" containerField="segments" />
+			<ProtoInstance USE="hanim_r_upperarm_2" containerField="segments" />
+			<ProtoInstance USE="hanim_l5_2" containerField="segments" />
+			<ProtoInstance USE="hanim_sacrum_2" containerField="segments" />
+		</fieldValue>
+		<fieldValue name="sites">
+			<ProtoInstance USE="hanim_l_middistal_tip_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_tarsal_interphalangeal_phalanx6" containerField="sites" />
+			<ProtoInstance USE="hanim_l_tarsal_interphalangeal_phalanx2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_tarsal_distal_phalanx3" containerField="sites" />
+			<ProtoInstance USE="hanim_l_lateral_malleolus_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_medial_malleolus_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_sphyrion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_calcaneus_posterior_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_knee_crease_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_femoral_lateral_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_femoral_medial_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_middistal_tip_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_tarsal_interphalangeal_phalanx6" containerField="sites" />
+			<ProtoInstance USE="hanim_r_tarsal_interphalangeal_phalanx2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_tarsal_distal_phalanx3" containerField="sites" />
+			<ProtoInstance USE="hanim_r_lateral_malleolus_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_medial_malleolus_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_sphyrion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_calcaneus_posterior_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_knee_crease_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_femoral_lateral_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_femoral_medial_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_skull_tip_2" containerField="sites" />
+			<ProtoInstance USE="hanim_sellion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_infraorbitale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_infraorbitale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_supramenton_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_tragion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_gonion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_tragion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_gonion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_nuchale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_hand_tip_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_metacarpal_phalanx3" containerField="sites" />
+			<ProtoInstance USE="hanim_l_dactylion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_ulnar_styloid_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_metacarpal_phalanx6" containerField="sites" />
+			<ProtoInstance USE="hanim_l_radial_styloid_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_olecranon_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_humeral_medial_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_radiale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_humeral_lateral_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_hand_tip_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_metacarpal_phalanx3" containerField="sites" />
+			<ProtoInstance USE="hanim_r_dactylion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_ulnar_styloid_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_metacarpal_phalanx6" containerField="sites" />
+			<ProtoInstance USE="hanim_r_radial_styloid_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_olecranon_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_humeral_medial_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_radiale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_humeral_lateral_epicondyles_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_clavicale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_suprasternale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_clavicale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_thelion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_thelion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_substernale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_rib10_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_rib10_2" containerField="sites" />
+			<ProtoInstance USE="hanim_cervicale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_spine_2_lower_back_2" containerField="sites" />
+			<ProtoInstance USE="hanim_waist_preferred_posterior_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_acromion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_axilla_proximal_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_axilla_distal_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_acromion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_axilla_proximal_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_axilla_distal_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_neck_base_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_neck_base_2" containerField="sites" />
+			<ProtoInstance USE="hanim_navel_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_asis_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_asis_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_iliocristale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_trochanterion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_iliocristale_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_trochanterion_2" containerField="sites" />
+			<ProtoInstance USE="hanim_r_psis_2" containerField="sites" />
+			<ProtoInstance USE="hanim_l_psis_2" containerField="sites" />
+			<ProtoInstance USE="hanim_crotch_2" containerField="sites" />
+		</fieldValue>
+		<fieldValue name="name"
+			value="humanoid" />
+		<fieldValue name="info"
+			value='"authorName=Matthew T. Beitler" "authorEmail=beitler@cis.upenn.edu or beitler@acm.org" "creationDate=05/12/99" "copyright=Copyright 1999-2003, Matthew T. Beitler" "humanoidVersion=JointCenters 200x, LOA&amp;#8209;1" "usageRestrictions=&#xA;    PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED, PROVIDED&#xA;    THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL&#xA;    AUTHOR IS INCLUDED.  This humanoid scene graph is provided&#xA;    &apos;as-is&apos; and without warranty of any kind, express, implied&#xA;    or otherwise, including without limitation, any warranty of&#xA;    merchantability or fitness for a particular purpose." "modificationDate=08/12/03"' />
+	</ProtoInstance>
+	<Group DEF="JointCenters_WorldInfo">
+		<WorldInfo
+			title="HANIM 200x Default Joint Centers, LOA&amp;#8209;1"
+			info='"&#xA;     HANIM 200x Default Joint Centers, Level-Of-Articulation 1&#xA;     --------------------------------------------------------&#xA;     HANIM 200x (VRML97) Author name:&#xA;       eMpTy (a.k.a. Matthew T. Beitler)&#xA;     HANIM 200x (VRML97) Author email:&#xA;       beitler@cis.upenn.edu or beitler@acm.org&#xA;     HANIM 200x (VRML97) Author homepage:&#xA;       http://www.cis.upenn.edu/~beitler&#xA;     HANIM 200x (VRML97) Compliance Date:&#xA;       August 12, 2003&#xA;     HANIM 200x Compliance Information:&#xA;       http://H-Anim.org/Specifications/H-Anim200x&#xA;     Construction Info (joint centers):&#xA;      The joint centers of this figure are based on the &#xA;      work of Norman Badler, director of the Center for&#xA;      Human modelling and Simulation at the University of&#xA;      Pennsylvania.  The original document which these&#xA;      joint centers are based on can be found at:&#xA;        http://www.cis.upenn.edu/~badler/anthro/89-71.ps&#xA;   "' />
+	</Group>
+	<NavigationInfo
+		avatarSize="0.25 1.60000002384186 0.75"
+		speed="1.5"
+		type='"EXAMINE" "ANY"' />
+</Scene>
+</X3D>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Interchange" version="3.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+<head>
+	<meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php" />
+	<meta name="source" content="LOA2ExampleSourceWithDiamonds.wrl" />
+</head>
+<Scene>
+	<ProtoDeclare name="Humanoid">
+		<ProtoInterface>
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="humanoidBody">
+				</field>
+				<field accessType="inputOutput" type="MFString" name="info" value='' />
+				<field accessType="inputOutput" type="MFNode" name="joints">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFNode" name="segments">
+				</field>
+				<field accessType="inputOutput" type="MFNode" name="sites">
+				</field>
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+				<field accessType="inputOutput" type="SFString" name="version" value="200x" />
+				<field accessType="inputOutput" type="MFNode" name="viewpoints">
+				</field>
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxCenter" value="0 0 0" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxSize" value="-1 -1 -1" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Transform>
+				<Group>
+					<IS>
+						<connect nodeField="children" protoField="humanoidBody" />
+					</IS>
+				</Group>
+				<Group>
+					<IS>
+						<connect nodeField="children" protoField="viewpoints" />
+					</IS>
+				</Group>
+				<IS>
+					<connect nodeField="center" protoField="center" />
+					<connect nodeField="rotation" protoField="rotation" />
+					<connect nodeField="scale" protoField="scale" />
+					<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+					<connect nodeField="translation" protoField="translation" />
+				</IS>
+			</Transform>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Joint">
+		<ProtoInterface>
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFRotation" name="limitOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFFloat" name="llimit" value="" />
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="MFFloat" name="stiffness" value="1 1 1" />
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+				<field accessType="inputOutput" type="MFFloat" name="ulimit" value="" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Group>
+				<Transform>
+					<IS>
+						<connect nodeField="children" protoField="children" />
+						<connect nodeField="center" protoField="center" />
+						<connect nodeField="rotation" protoField="rotation" />
+						<connect nodeField="scale" protoField="scale" />
+						<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+						<connect nodeField="translation" protoField="translation" />
+					</IS>
+				</Transform>
+				<Transform>
+					<Shape>
+						<IndexedFaceSet
+							coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1"
+							creaseAngle="0.5">
+							<Coordinate
+								point="0 0.00999999977648258 0 -0.00999999977648258 0 0 0 0 0.00999999977648258 0.00999999977648258 0 0 0 0 -0.00999999977648258 0 -0.00999999977648258 0" />
+						</IndexedFaceSet>
+						<Appearance>
+							<Material
+								diffuseColor="1 1 0" />
+						</Appearance>
+					</Shape>
+					<IS>
+						<connect nodeField="translation" protoField="center" />
+					</IS>
+				</Transform>
+			</Group>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Segment">
+		<ProtoInterface>
+				<field accessType="inputOnly" type="MFNode" name="addChildren" />
+				<field accessType="inputOnly" type="MFNode" name="removeChildren" />
+				<field accessType="inputOutput" type="SFVec3f" name="centerOfMass" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFNode" name="coord" value="NULL" />
+				<field accessType="inputOutput" type="MFNode" name="displacers">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFFloat" name="mass" value="0" />
+				<field accessType="inputOutput" type="SFVec3f" name="momentsOfInertia" value="1 1 1" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxCenter" value="0 0 0" />
+				<field accessType="initializeOnly" type="SFVec3f" name="bboxSize" value="-1 -1 -1" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Group>
+				<IS>
+					<connect nodeField="children" protoField="children" />
+					<connect nodeField="bboxCenter" protoField="bboxCenter" />
+					<connect nodeField="bboxSize" protoField="bboxSize" />
+					<connect nodeField="addChildren" protoField="addChildren" />
+					<connect nodeField="removeChildren" protoField="removeChildren" />
+				</IS>
+			</Group>
+		</ProtoBody>
+	</ProtoDeclare>
+	<ProtoDeclare name="Site">
+		<ProtoInterface>
+				<field accessType="inputOnly" type="MFNode" name="addChildren" />
+				<field accessType="inputOnly" type="MFNode" name="removeChildren" />
+				<field accessType="inputOutput" type="SFVec3f" name="center" value="0 0 0" />
+				<field accessType="inputOutput" type="MFNode" name="children">
+				</field>
+				<field accessType="inputOutput" type="SFString" name="name" value="" />
+				<field accessType="inputOutput" type="SFRotation" name="rotation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1" />
+				<field accessType="inputOutput" type="SFRotation" name="scaleOrientation" value="0 0 1 0" />
+				<field accessType="inputOutput" type="SFVec3f" name="translation" value="0 0 0" />
+		</ProtoInterface>
+		<ProtoBody>
+			<Transform>
+				<IS>
+					<connect nodeField="children" protoField="children" />
+					<connect nodeField="center" protoField="center" />
+					<connect nodeField="rotation" protoField="rotation" />
+					<connect nodeField="scale" protoField="scale" />
+					<connect nodeField="scaleOrientation" protoField="scaleOrientation" />
+					<connect nodeField="translation" protoField="translation" />
+					<connect nodeField="addChildren" protoField="addChildren" />
+					<connect nodeField="removeChildren" protoField="removeChildren" />
+				</IS>
+			</Transform>
+		</ProtoBody>
+	</ProtoDeclare>
+</Scene>
+</X3D>
