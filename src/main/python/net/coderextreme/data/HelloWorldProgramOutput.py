@@ -307,7 +307,7 @@ MetadataString64 = x3d.MetadataString()
 MetadataString64.setName("quotesTestC")
 MetadataString64.setValue(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""])
 
-MetadataSet63.addValue(MetadataString64)
+MetadataSet63.setValue(MetadataString64)
 MetadataString65 = x3d.MetadataString()
 MetadataString65.setName("extraChildTest")
 MetadataString65.setValue(["checks MetadataSet addValue() method"])

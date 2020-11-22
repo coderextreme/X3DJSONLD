@@ -56,7 +56,7 @@ ProtoInstance ProtoInstance1 = null;
         .addMeta(new meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
         .addMeta(new meta().setName("generator").setContent("manually written"))
-        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))

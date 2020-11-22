@@ -91,7 +91,7 @@ public class HAnimSpecificationLOA3Motion {
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,0.9149f,0.0016f}).setDescription("Humanoid LOA 3 Left Side").setOrientation(new float[] {0f,1f,0f,-1.5708f}).setPosition(new float[] {-2.6f,0.8f,0f}))
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,0.9149f,0.0016f}).setDescription("Humanoid LOA 3 Top").setOrientation(new float[] {1f,0f,0f,-1.5708f}).setPosition(new float[] {0f,3.5f,0f}))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setVersion("1.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f})
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f})
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addComments(new CommentsBlock("<HAnimJoint name='humanoid_root'/> visualization sphere within <HAnimSegment name='sacrum'/>"))
               .addChild(new TouchSensor().setDescription("HAnimJoint HumanoidRoot, HAnimSegment sacrum"))

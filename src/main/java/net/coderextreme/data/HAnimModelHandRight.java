@@ -65,7 +65,7 @@ public class HAnimModelHandRight {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelHandRight.x3d"))
         .addChild(new HAnimHumanoid().setName("Humanoid_Right_hand").setDEF("Humanoid_Right_hand").setVersion("2.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild(new HAnimJoint().setName("r_radiocarpal_joint").setDEF("r_radiocarpal_joint")
               .addChild(new HAnimSegment().setName("r_wrist").setDEF("r_wrist")
                 .addChild(new Transform()

@@ -65,7 +65,7 @@ public class HAnimModelFootRight {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelFootRight.x3d"))
         .addChild(new HAnimHumanoid().setName("Humanoid_Right_Foot").setDEF("Humanoid_Right_Foot").setVersion("2.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild(new HAnimJoint().setName("r_talocrural_joint").setDEF("r_talocrural_joint")
               .addChild(new HAnimSegment().setName("r_talus").setDEF("r_talus")
                 .addChild(new Transform()

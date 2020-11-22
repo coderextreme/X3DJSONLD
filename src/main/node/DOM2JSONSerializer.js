@@ -21,7 +21,7 @@ DOM2JSONSerializer.prototype = {
 			obj['X3D'] = {};
 		}
 		obj['X3D']['encoding'] = 'UTF-8';
-		obj['X3D']['JSON schema'] = 'http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json';
+		obj['X3D']['JSON schema'] = 'https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json';
 		if (typeof obj['X3D']['head'] !== 'undefined') {
 			var date = new Date();
 			var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ][date.getMonth()];
@@ -31,8 +31,8 @@ DOM2JSONSerializer.prototype = {
 			obj['X3D']['head']['meta'].push({ "@name":"translated", "@content":date.getDate()+" "+month+" "+date.getFullYear()});
  			obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js" });
 			//  fake X3dToJson.xslt
-  			// obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html" });
-			obj['X3D']['head']['meta'].push( { "@name":"reference", "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" });
+  			// obj['X3D']['head']['meta'].push({ "@name":"generator", "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html" });
+			obj['X3D']['head']['meta'].push( { "@name":"reference", "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" });
 		}
 		delete obj['X3D']['@xmlns:xsd'];
 

@@ -7094,7 +7094,7 @@ HAnimJoint398.addChildren(HAnimJoint421)
 
 HAnimJoint48.addChildren(HAnimJoint398)
 
-HAnimHumanoid47.addJoints(HAnimJoint48)
+HAnimHumanoid47.setSkeleton(HAnimJoint48)
 HAnimSite1586 = x3d.HAnimSite()
 HAnimSite1586.setName("l_inclined_view")
 HAnimSite1586.setDEF("hanim_l_inclined_view")

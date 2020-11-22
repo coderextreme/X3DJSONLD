@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><!--x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true--><head><!--comment #1--><!--comment #2--><!--comment #3--><!--comment #4--><component name="Navigation" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CADGeometry" level="2"></component>
@@ -58,7 +58,7 @@
 <ROUTE fromField="value_changed" fromNode="BoxPathAnimator" toField="set_translation" toNode="LogoGeometryTransform"></ROUTE>
 <Transform DEF="TextTransform" translation="0 -1.5 0"><Shape><Appearance><Material USE="GreenMaterial"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;"></MetadataString>
+<Text containerField="geometry" string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;" containerField="value"></MetadataString>
 <MetadataString name="extraChildTest" value="&quot;checks MetadataSet addValue() method&quot;"></MetadataString>
 </MetadataSet>
 <FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>

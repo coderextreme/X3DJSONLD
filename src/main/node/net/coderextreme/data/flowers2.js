@@ -25,7 +25,7 @@ var ProtoInstance1 = null;
         .addMeta((new autoclass.meta()).setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manually written"))
-        .addMeta((new autoclass.meta()).setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+        .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()))
         .addChild((new autoclass.Viewpoint()).setDescription("Two mathematical orbitals").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(50)])))

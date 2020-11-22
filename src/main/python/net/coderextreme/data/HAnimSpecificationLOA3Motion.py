@@ -7043,7 +7043,7 @@ HAnimJoint396.addChildren(HAnimJoint419)
 
 HAnimJoint46.addChildren(HAnimJoint396)
 
-HAnimHumanoid45.addJoints(HAnimJoint46)
+HAnimHumanoid45.setSkeleton(HAnimJoint46)
 #USE nodes for inverse kinematics (IK) engines and other tools
 #Top-level HAnimSite/Viewpoint nodes for viewing the humanoid without being affected by body motion
 HAnimSite1576 = x3d.HAnimSite()

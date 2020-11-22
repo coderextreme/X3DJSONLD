@@ -34,7 +34,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelFootRight.x3d"))
         .addChild((new autoclass.HAnimHumanoid()).setName("Humanoid_Right_Foot").setDEF("Humanoid_Right_Foot").setVersion("2.0")
-          .addJoints((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_HumanoidRoot")
+          .setSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild((new autoclass.HAnimJoint()).setName("r_talocrural_joint").setDEF("r_talocrural_joint")
               .addChild((new autoclass.HAnimSegment()).setName("r_talus").setDEF("r_talus")
                 .addChild((new autoclass.Transform())

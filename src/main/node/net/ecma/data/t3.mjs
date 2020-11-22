@@ -77,7 +77,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")})])})),
+              content : new SFString("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

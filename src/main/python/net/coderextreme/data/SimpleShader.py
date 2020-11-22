@@ -209,9 +209,9 @@ MetadataSet46.setDEF("nodes")
 MetadataSet46.setReference("http://titania.create3000.de")
 #NULL
 
-MetadataSet45.addValue(MetadataSet46)
+MetadataSet45.setValue(MetadataSet46)
 
-MetadataSet44.addValue(MetadataSet45)
+MetadataSet44.setValue(MetadataSet45)
 MetadataSet47 = x3d.MetadataSet()
 MetadataSet47.setName("NavigationInfo")
 MetadataSet47.setDEF("NavigationInfo")
@@ -222,7 +222,7 @@ MetadataString48.setDEF("type")
 MetadataString48.setReference("http://titania.create3000.de")
 MetadataString48.setValue(["EXAMINE"])
 
-MetadataSet47.addValue(MetadataString48)
+MetadataSet47.setValue(MetadataString48)
 
 MetadataSet44.addValue(MetadataSet47)
 MetadataSet49 = x3d.MetadataSet()
@@ -235,7 +235,7 @@ MetadataDouble50.setDEF("position")
 MetadataDouble50.setReference("http://titania.create3000.de")
 MetadataDouble50.setValue([6.24067728185014,0.00250837343276661,2.92117542307615])
 
-MetadataSet49.addValue(MetadataDouble50)
+MetadataSet49.setValue(MetadataDouble50)
 MetadataDouble51 = x3d.MetadataDouble()
 MetadataDouble51.setName("orientation")
 MetadataDouble51.setDEF("orientation")

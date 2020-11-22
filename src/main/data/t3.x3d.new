@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="Networking" level="2"></component>
 <component name="Core" level="2"></component>
 <meta name="title" content="t4.x3d"></meta>
@@ -11,7 +11,7 @@
 <meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
 <meta name="translated" content="12 May 2020"></meta>
 <meta name="generator" content="DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"></meta>
-<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="reference" content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" speed="3" avatarSize="200 200 120"></NavigationInfo>
 <WorldInfo title="Arts Mapper"></WorldInfo>

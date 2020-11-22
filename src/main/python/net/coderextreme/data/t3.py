@@ -60,7 +60,7 @@ meta12.setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSO
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("reference")
-meta13.setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+meta13.setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 
 head1.addMeta(meta13)
 

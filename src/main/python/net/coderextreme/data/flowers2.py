@@ -50,7 +50,7 @@ meta10.setContent("manually written")
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("license")
-meta11.setContent("http://www.web3d.org/x3d/content/examples/license.html")
+meta11.setContent("https://www.web3d.org/x3d/content/examples/license.html")
 
 head1.addMeta(meta11)
 

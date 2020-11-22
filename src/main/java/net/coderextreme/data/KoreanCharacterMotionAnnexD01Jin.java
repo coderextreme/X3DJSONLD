@@ -70,7 +70,7 @@ public class KoreanCharacterMotionAnnexD01Jin {
           .addComments(new CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=2.0\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,30.53f,-0.7076f})
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,30.53f,-0.7076f})
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new Transform().setTranslation(new float[] {0f,30.53f,-0.7076f})
                 .addChild(new Shape()

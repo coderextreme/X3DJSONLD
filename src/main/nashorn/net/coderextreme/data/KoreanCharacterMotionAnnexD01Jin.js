@@ -31,7 +31,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments(new CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=2.0\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setMetadata(new MetadataString().setName("humanoidVersion").setValue(Java.to(["2.0"], Java.type("java.lang.String[]")))))
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to([0,30.53,-0.7076], Java.type("float[]")))
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to([0,30.53,-0.7076], Java.type("float[]")))
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new Transform().setTranslation(Java.to([0,30.53,-0.7076], Java.type("float[]")))
                 .addChild(new Shape()

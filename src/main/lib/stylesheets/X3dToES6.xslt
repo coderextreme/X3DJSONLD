@@ -6,10 +6,10 @@
    <meta name="creator"     content="John Carlson" />
    <meta name="created"     content="19 April 2017" />
    <meta name="description" content="XSLT stylesheet to create X3DJSAIL Java program from X3D source." />
-   <meta name="reference"   content="X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html" />
-   <meta name="reference"   content="X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html" />
-   <meta name="modified from"         content="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToJavaScript.xslt" />
+   <meta name="reference"   content="X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html" />
+   <meta name="reference"   content="X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html" />
+   <meta name="modified from"         content="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToJavaScript.xslt" />
   </head>
 
 Recommended tools:
@@ -20,7 +20,7 @@ Recommended tools:
 
 <!-- TODO: 
 	 - integrate with X3D Examples Archives
-	   http://www.web3d.org/x3d/content/examples/X3dResources.html
+	   https://www.web3d.org/x3d/content/examples/X3dResources.html
   -->
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
@@ -433,11 +433,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>, </xsl:text>
 			</xsl:if>
 		</xsl:if>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
 			<xsl:text>, </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
 			<xsl:text> and </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
 			<xsl:text>.</xsl:text>
 			<xsl:text><![CDATA[ </p>]]></xsl:text>
 		
@@ -601,9 +601,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text><![CDATA[
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJavaScript.xslt" target="_blank">X3dToJavaScript.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJavaScript.xslt" target="_blank">X3dToJavaScript.xslt</a>
 		stylesheet to create Java source code from an <code>.x3d</code> scene.
 	</p>
 ]]></xsl:text>
