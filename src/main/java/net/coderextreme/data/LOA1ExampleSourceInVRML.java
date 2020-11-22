@@ -278,7 +278,7 @@ ProtoInstance ProtoInstance231 = null;
 ProtoInstance ProtoInstance232 = null;
 ProtoInstance ProtoInstance233 = null;
 ProtoInstance ProtoInstance234 = null;
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta(new meta().setName("source").setContent("LOA1ExampleSourceInVRML.wrl")))

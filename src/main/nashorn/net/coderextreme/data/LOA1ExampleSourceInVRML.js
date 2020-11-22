@@ -239,7 +239,7 @@ var ProtoInstance231 = null;
 var ProtoInstance232 = null;
 var ProtoInstance233 = null;
 var ProtoInstance234 = null;
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta(new meta().setName("source").setContent("LOA1ExampleSourceInVRML.wrl")))

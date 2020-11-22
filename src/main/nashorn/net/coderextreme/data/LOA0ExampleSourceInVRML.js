@@ -163,7 +163,7 @@ var ProtoInstance155 = null;
 var ProtoInstance156 = null;
 var ProtoInstance157 = null;
 var ProtoInstance158 = null;
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta(new meta().setName("source").setContent("LOA0ExampleSourceInVRML.wrl")))
