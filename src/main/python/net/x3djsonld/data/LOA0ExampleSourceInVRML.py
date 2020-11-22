@@ -1,0 +1,596 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Interchange',version='4.0',
+  head=head(
+    children=[
+    meta(name='generator',content='view3dscene, https://castle-engine.io/view3dscene.php'),
+    meta(name='source',content='LOA0ExampleSourceInVRML.wrl')]),
+  Scene=Scene(
+    children=[
+    ProtoDeclare(name='Humanoid',
+      ProtoInterface=ProtoInterface(
+        field=[
+        field(accessType='inputOutput',type='SFVec3f',name='center',value=(0,0,0)),
+        field(accessType='inputOutput',type='MFNode',name='humanoidBody'),
+        field(accessType='inputOutput',type='MFString',name='info',value=['']),
+        field(accessType='inputOutput',type='MFNode',name='joints'),
+        field(accessType='inputOutput',type='SFString',name='name',value=''),
+        field(accessType='inputOutput',type='SFRotation',name='rotation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='SFVec3f',name='scale',value=(1,1,1)),
+        field(accessType='inputOutput',type='SFRotation',name='scaleOrientation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='MFNode',name='segments'),
+        field(accessType='inputOutput',type='MFNode',name='sites'),
+        field(accessType='inputOutput',type='SFVec3f',name='translation',value=(0,0,0)),
+        field(accessType='inputOutput',type='SFString',name='version',value='200x'),
+        field(accessType='inputOutput',type='MFNode',name='viewpoints'),
+        field(accessType='initializeOnly',type='SFVec3f',name='bboxCenter',value=(0,0,0)),
+        field(accessType='initializeOnly',type='SFVec3f',name='bboxSize',value=(-1,-1,-1))]),
+      ProtoBody=ProtoBody(
+        children=[
+        Transform(
+          children=[
+          Group(
+            IS=IS(
+              connect=[
+              connect(nodeField='children',protoField='humanoidBody')])),
+          Group(
+            IS=IS(
+              connect=[
+              connect(nodeField='children',protoField='viewpoints')]))],
+          IS=IS(
+            connect=[
+            connect(nodeField='center',protoField='center'),
+            connect(nodeField='rotation',protoField='rotation'),
+            connect(nodeField='scale',protoField='scale'),
+            connect(nodeField='scaleOrientation',protoField='scaleOrientation'),
+            connect(nodeField='translation',protoField='translation')]))])),
+    ProtoDeclare(name='Joint',
+      ProtoInterface=ProtoInterface(
+        field=[
+        field(accessType='inputOutput',type='SFVec3f',name='center',value=(0,0,0)),
+        field(accessType='inputOutput',type='MFNode',name='children'),
+        field(accessType='inputOutput',type='SFRotation',name='limitOrientation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='MFFloat',name='llimit',value=[]),
+        field(accessType='inputOutput',type='SFString',name='name',value=''),
+        field(accessType='inputOutput',type='SFRotation',name='rotation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='SFVec3f',name='scale',value=(1,1,1)),
+        field(accessType='inputOutput',type='SFRotation',name='scaleOrientation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='MFFloat',name='stiffness',value=[1,1,1]),
+        field(accessType='inputOutput',type='SFVec3f',name='translation',value=(0,0,0)),
+        field(accessType='inputOutput',type='MFFloat',name='ulimit',value=[])]),
+      ProtoBody=ProtoBody(
+        children=[
+        Transform(
+          IS=IS(
+            connect=[
+            connect(nodeField='children',protoField='children'),
+            connect(nodeField='center',protoField='center'),
+            connect(nodeField='rotation',protoField='rotation'),
+            connect(nodeField='scale',protoField='scale'),
+            connect(nodeField='scaleOrientation',protoField='scaleOrientation'),
+            connect(nodeField='translation',protoField='translation')]))])),
+    ProtoDeclare(name='Segment',
+      ProtoInterface=ProtoInterface(
+        field=[
+        field(accessType='inputOnly',type='MFNode',name='addChildren'),
+        field(accessType='inputOnly',type='MFNode',name='removeChildren'),
+        field(accessType='inputOutput',type='SFVec3f',name='centerOfMass',value=(0,0,0)),
+        field(accessType='inputOutput',type='MFNode',name='children'),
+        field(accessType='inputOutput',type='SFNode',name='coord',value=None),
+        field(accessType='inputOutput',type='MFNode',name='displacers'),
+        field(accessType='inputOutput',type='SFString',name='name',value=''),
+        field(accessType='inputOutput',type='SFFloat',name='mass',value=0),
+        field(accessType='inputOutput',type='SFVec3f',name='momentsOfInertia',value=(1,1,1)),
+        field(accessType='initializeOnly',type='SFVec3f',name='bboxCenter',value=(0,0,0)),
+        field(accessType='initializeOnly',type='SFVec3f',name='bboxSize',value=(-1,-1,-1))]),
+      ProtoBody=ProtoBody(
+        children=[
+        Group(
+          IS=IS(
+            connect=[
+            connect(nodeField='children',protoField='children'),
+            connect(nodeField='bboxCenter',protoField='bboxCenter'),
+            connect(nodeField='bboxSize',protoField='bboxSize'),
+            connect(nodeField='addChildren',protoField='addChildren'),
+            connect(nodeField='removeChildren',protoField='removeChildren')]))])),
+    ProtoDeclare(name='Site',
+      ProtoInterface=ProtoInterface(
+        field=[
+        field(accessType='inputOnly',type='MFNode',name='addChildren'),
+        field(accessType='inputOnly',type='MFNode',name='removeChildren'),
+        field(accessType='inputOutput',type='SFVec3f',name='center',value=(0,0,0)),
+        field(accessType='inputOutput',type='MFNode',name='children'),
+        field(accessType='inputOutput',type='SFString',name='name',value=''),
+        field(accessType='inputOutput',type='SFRotation',name='rotation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='SFVec3f',name='scale',value=(1,1,1)),
+        field(accessType='inputOutput',type='SFRotation',name='scaleOrientation',value=(0,0,1,0)),
+        field(accessType='inputOutput',type='SFVec3f',name='translation',value=(0,0,0))]),
+      ProtoBody=ProtoBody(
+        children=[
+        Transform(
+          IS=IS(
+            connect=[
+            connect(nodeField='children',protoField='children'),
+            connect(nodeField='center',protoField='center'),
+            connect(nodeField='rotation',protoField='rotation'),
+            connect(nodeField='scale',protoField='scale'),
+            connect(nodeField='scaleOrientation',protoField='scaleOrientation'),
+            connect(nodeField='translation',protoField='translation'),
+            connect(nodeField='addChildren',protoField='addChildren'),
+            connect(nodeField='removeChildren',protoField='removeChildren')]))])),
+    ProtoInstance(name='Humanoid',DEF='humanoid_2',
+      fieldValue=[
+      fieldValue(name='humanoidBody',
+        children=[
+        ProtoInstance(name='Joint',DEF='hanim_humanoid_root_2',
+          fieldValue=[
+          fieldValue(name='stiffness',value=[1,1,1]),
+          fieldValue(name='name',value='humanoid_root'),
+          fieldValue(name='center',value=(0,0.824000000953674,0.0276999995112419)),
+          fieldValue(name='children',
+            children=[
+            ProtoInstance(name='Segment',DEF='hanim_sacrum_2',
+              fieldValue=[
+              fieldValue(name='name',value='sacrum'),
+              fieldValue(name='children',
+                children=[
+                ProtoInstance(name='Site',DEF='hanim_skull_tip_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='skull_tip'),
+                  fieldValue(name='translation',value=(0.00499999988824129,1.75039994716644,0.00549999997019768))]),
+                ProtoInstance(name='Site',DEF='hanim_sellion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='sellion'),
+                  fieldValue(name='translation',value=(0.00579999992623925,1.63160002231598,0.0851999968290329))]),
+                ProtoInstance(name='Site',DEF='hanim_r_infraorbitale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_infraorbitale'),
+                  fieldValue(name='translation',value=(-0.023700000718236,1.61710000038147,0.0751999989151955))]),
+                ProtoInstance(name='Site',DEF='hanim_l_infraorbitale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_infraorbitale'),
+                  fieldValue(name='translation',value=(0.0340999998152256,1.61710000038147,0.0751999989151955))]),
+                ProtoInstance(name='Site',DEF='hanim_supramenton_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='supramenton'),
+                  fieldValue(name='translation',value=(0.00609999988228083,1.54100000858307,0.0804999992251396))]),
+                ProtoInstance(name='Site',DEF='hanim_r_tragion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_tragion'),
+                  fieldValue(name='translation',value=(-0.0645999982953072,1.63469994068146,0.0302000008523464))]),
+                ProtoInstance(name='Site',DEF='hanim_r_gonion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_gonion'),
+                  fieldValue(name='translation',value=(-0.0520000010728836,1.55289995670319,0.0346999987959862))]),
+                ProtoInstance(name='Site',DEF='hanim_l_tragion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_tragion'),
+                  fieldValue(name='translation',value=(0.0738999992609024,1.63479995727539,0.0282000005245209))]),
+                ProtoInstance(name='Site',DEF='hanim_l_gonion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_gonion'),
+                  fieldValue(name='translation',value=(0.0631000027060509,1.55299997329712,0.0329999998211861))]),
+                ProtoInstance(name='Site',DEF='hanim_nuchale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='nuchale'),
+                  fieldValue(name='translation',value=(0.00389999989420176,1.59720003604889,-0.0795999988913536))]),
+                ProtoInstance(name='Site',DEF='hanim_r_clavicale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_clavicale'),
+                  fieldValue(name='translation',value=(-0.0115000000223517,1.49430000782013,0.0399999991059303))]),
+                ProtoInstance(name='Site',DEF='hanim_suprasternale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='suprasternale'),
+                  fieldValue(name='translation',value=(0.00839999970048666,1.47140002250671,0.0551000013947487))]),
+                ProtoInstance(name='Site',DEF='hanim_l_clavicale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_clavicale'),
+                  fieldValue(name='translation',value=(0.0271000005304813,1.49430000782013,0.0394000001251698))]),
+                ProtoInstance(name='Site',DEF='hanim_r_thelion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_thelion'),
+                  fieldValue(name='translation',value=(-0.0736000016331673,1.33850002288818,0.121699996292591))]),
+                ProtoInstance(name='Site',DEF='hanim_l_thelion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_thelion'),
+                  fieldValue(name='translation',value=(0.0917999967932701,1.33819997310638,0.119199998676777))]),
+                ProtoInstance(name='Site',DEF='hanim_substernale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='substernale'),
+                  fieldValue(name='translation',value=(0.008500000461936,1.29949998855591,0.114699997007847))]),
+                ProtoInstance(name='Site',DEF='hanim_r_rib10_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_rib10'),
+                  fieldValue(name='translation',value=(-0.0710999965667725,1.19410002231598,0.101599998772144))]),
+                ProtoInstance(name='Site',DEF='hanim_r_asis_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_asis'),
+                  fieldValue(name='translation',value=(-0.088699996471405,1.00209999084473,0.111199997365475))]),
+                ProtoInstance(name='Site',DEF='hanim_l_rib10_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_rib10'),
+                  fieldValue(name='translation',value=(0.0870999991893768,1.19249999523163,0.099200002849102))]),
+                ProtoInstance(name='Site',DEF='hanim_l_asis_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_asis'),
+                  fieldValue(name='translation',value=(0.0925000011920929,0.998300015926361,0.105200000107288))]),
+                ProtoInstance(name='Site',DEF='hanim_r_iliocristale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_iliocristale'),
+                  fieldValue(name='translation',value=(-0.152500003576279,1.0628000497818,0.00350000010803342))]),
+                ProtoInstance(name='Site',DEF='hanim_r_trochanterion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_trochanterion'),
+                  fieldValue(name='translation',value=(-0.16889999806881,0.841899991035461,0.0351999998092651))]),
+                ProtoInstance(name='Site',DEF='hanim_l_iliocristale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_iliocristale'),
+                  fieldValue(name='translation',value=(0.161200001835823,1.05369997024536,0.0007999999797903))]),
+                ProtoInstance(name='Site',DEF='hanim_l_trochanterion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_trochanterion'),
+                  fieldValue(name='translation',value=(0.167699992656708,0.833599984645844,0.0303000006824732))]),
+                ProtoInstance(name='Site',DEF='hanim_cervicale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='cervicale'),
+                  fieldValue(name='translation',value=(0.0063999998383224,1.51999998092651,-0.0815000012516975))]),
+                ProtoInstance(name='Site',DEF='hanim_spine_2_lower_back_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='spine_2_lower_back'),
+                  fieldValue(name='translation',value=(0.00490000005811453,1.19079995155334,-0.111299999058247))]),
+                ProtoInstance(name='Site',DEF='hanim_r_psis_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_psis'),
+                  fieldValue(name='translation',value=(-0.0715999975800514,1.01900005340576,-0.113799996674061))]),
+                ProtoInstance(name='Site',DEF='hanim_l_psis_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_psis'),
+                  fieldValue(name='translation',value=(0.0773999989032745,1.01900005340576,-0.115099996328354))]),
+                ProtoInstance(name='Site',DEF='hanim_waist_preferred_posterior_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='waist_preferred_posterior'),
+                  fieldValue(name='translation',value=(0.28999999165535,1.09150004386902,-0.109099999070168))]),
+                ProtoInstance(name='Site',DEF='hanim_r_acromion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_acromion'),
+                  fieldValue(name='translation',value=(-0.190500006079674,1.47909998893738,-0.0430999994277954))]),
+                ProtoInstance(name='Site',DEF='hanim_r_axilla_proximal_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_axilla_proximal'),
+                  fieldValue(name='translation',value=(-0.162599995732307,1.40719997882843,-0.00310000008903444))]),
+                ProtoInstance(name='Site',DEF='hanim_r_radial_styloid_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_radial_styloid'),
+                  fieldValue(name='translation',value=(-0.188400000333786,0.86760002374649,-0.0359999984502792))]),
+                ProtoInstance(name='Site',DEF='hanim_r_axilla_distal_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_axilla_distal'),
+                  fieldValue(name='translation',value=(-0.160300001502037,1.40980005264282,-0.0825999975204468))]),
+                ProtoInstance(name='Site',DEF='hanim_r_olecranon_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_olecranon'),
+                  fieldValue(name='translation',value=(-0.190699994564056,1.14049994945526,-0.106499999761581))]),
+                ProtoInstance(name='Site',DEF='hanim_r_humeral_lateral_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_humeral_lateral_epicondyles'),
+                  fieldValue(name='translation',value=(-0.222399994730949,1.15170001983643,-0.103299997746944))]),
+                ProtoInstance(name='Site',DEF='hanim_r_humeral_medial_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_humeral_medial_epicondyles'),
+                  fieldValue(name='translation',value=(-0.167999997735024,1.12979996204376,-0.106200002133846))]),
+                ProtoInstance(name='Site',DEF='hanim_r_radiale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_radiale'),
+                  fieldValue(name='translation',value=(-0.212999999523163,1.130499958992,-0.109099999070168))]),
+                ProtoInstance(name='Site',DEF='hanim_r_metacarpal_phalanx3',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_metacarpal_phalanx_2'),
+                  fieldValue(name='translation',value=(-0.197699993848801,0.816900014877319,-0.0176999997347593))]),
+                ProtoInstance(name='Site',DEF='hanim_r_dactylion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_dactylion'),
+                  fieldValue(name='translation',value=(-0.194100007414818,0.677200019359589,-0.0423000007867813))]),
+                ProtoInstance(name='Site',DEF='hanim_r_ulnar_styloid_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_ulnar_styloid'),
+                  fieldValue(name='translation',value=(-0.21170000731945,0.856199979782104,-0.0584000013768673))]),
+                ProtoInstance(name='Site',DEF='hanim_r_metacarpal_phalanx6',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_metacarpal_phalanx_5'),
+                  fieldValue(name='translation',value=(-0.192900002002716,0.788999974727631,-0.10639999806881))]),
+                ProtoInstance(name='Site',DEF='hanim_l_acromion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_acromion'),
+                  fieldValue(name='translation',value=(0.203199997544289,1.47599995136261,-0.0489999987185001))]),
+                ProtoInstance(name='Site',DEF='hanim_l_axilla_proximal_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_axilla_proximal'),
+                  fieldValue(name='translation',value=(0.177699998021126,1.40649998188019,-0.00749999983236194))]),
+                ProtoInstance(name='Site',DEF='hanim_l_radial_styloid_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_radial_styloid'),
+                  fieldValue(name='translation',value=(0.190099999308586,0.864499986171722,-0.0414999984204769))]),
+                ProtoInstance(name='Site',DEF='hanim_l_axilla_distal_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_axilla_distal'),
+                  fieldValue(name='translation',value=(0.17059999704361,1.40719997882843,-0.0874999985098839))]),
+                ProtoInstance(name='Site',DEF='hanim_l_olecranon_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_olecranon'),
+                  fieldValue(name='translation',value=(-0.196199998259544,1.13750004768372,-0.112300001084805))]),
+                ProtoInstance(name='Site',DEF='hanim_l_humeral_lateral_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_humeral_lateral_epicondyles '),
+                  fieldValue(name='translation',value=(0.228000000119209,1.14820003509521,-0.109999999403954))]),
+                ProtoInstance(name='Site',DEF='hanim_l_humeral_medial_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_humeral_medial_epicondyles'),
+                  fieldValue(name='translation',value=(0.173500001430511,1.12720000743866,-0.111299999058247))]),
+                ProtoInstance(name='Site',DEF='hanim_l_radiale_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_radiale'),
+                  fieldValue(name='translation',value=(0.218199998140335,1.12119996547699,-0.116700001060963))]),
+                ProtoInstance(name='Site',DEF='hanim_l_metacarpal_phalanx3',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_metacarpal_phalanx_2'),
+                  fieldValue(name='translation',value=(0.200900003314018,0.813899993896484,-0.023700000718236))]),
+                ProtoInstance(name='Site',DEF='hanim_l_dactylion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_dactylion'),
+                  fieldValue(name='translation',value=(0.205599993467331,0.674300014972687,-0.048200000077486))]),
+                ProtoInstance(name='Site',DEF='hanim_l_ulnar_styloid_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_ulnar_styloid'),
+                  fieldValue(name='translation',value=(-0.214200004935265,0.85290002822876,-0.064800001680851))]),
+                ProtoInstance(name='Site',DEF='hanim_l_metacarpal_phalanx6',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_metacarpal_phalanx_5'),
+                  fieldValue(name='translation',value=(0.192900002002716,0.78600001335144,-0.112199999392033))]),
+                ProtoInstance(name='Site',DEF='hanim_r_knee_crease_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_knee_crease'),
+                  fieldValue(name='translation',value=(-0.0825000032782555,0.4932000041008,-0.032600000500679))]),
+                ProtoInstance(name='Site',DEF='hanim_r_femoral_lateral_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_femoral_lateral_epicondyles'),
+                  fieldValue(name='translation',value=(-0.142100006341934,0.499199986457825,0.0309999994933605))]),
+                ProtoInstance(name='Site',DEF='hanim_r_femoral_medial_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_femoral_lateral_epicondyles'),
+                  fieldValue(name='translation',value=(-0.0220999997109175,0.501399993896484,0.0288999993354082))]),
+                ProtoInstance(name='Site',DEF='hanim_r_tarsal_interphalangeal_phalanx6',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_tarsal_interphalangeal_phalanx_5'),
+                  fieldValue(name='translation',value=(-0.152300000190735,0.0165999997407198,0.0895000025629997))]),
+                ProtoInstance(name='Site',DEF='hanim_r_lateral_malleolus_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_lateral_malleolus'),
+                  fieldValue(name='translation',value=(-0.100599996745586,0.0658000037074089,-0.107500001788139))]),
+                ProtoInstance(name='Site',DEF='hanim_r_medial_malleolus_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_medial_malleolus'),
+                  fieldValue(name='translation',value=(-0.0590999983251095,0.0759999975562096,-0.092799998819828))]),
+                ProtoInstance(name='Site',DEF='hanim_r_sphyrion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_sphyrion'),
+                  fieldValue(name='translation',value=(-0.0603000000119209,0.0610000006854534,-0.100199997425079))]),
+                ProtoInstance(name='Site',DEF='hanim_r_tarsal_interphalangeal_phalanx2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_tarsal_interphalangeal_phalanx_1'),
+                  fieldValue(name='translation',value=(-0.0520999990403652,0.0260000005364418,0.012699999846518))]),
+                ProtoInstance(name='Site',DEF='hanim_r_calcaneus_posterior_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_calcaneus_posterior'),
+                  fieldValue(name='translation',value=(-0.0692000016570091,0.0296999998390675,-0.122100003063679))]),
+                ProtoInstance(name='Site',DEF='hanim_r_tarsal_distal_phalanx3',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_tarsal_distal_phalanx_2'),
+                  fieldValue(name='translation',value=(-0.088299997150898,0.013399999588728,0.138300001621246))]),
+                ProtoInstance(name='Site',DEF='hanim_l_knee_crease_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_knee_crease'),
+                  fieldValue(name='translation',value=(0.0992999970912933,0.488099992275238,-0.0308999996632338))]),
+                ProtoInstance(name='Site',DEF='hanim_l_femoral_lateral_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_femoral_lateral_epicondyles'),
+                  fieldValue(name='translation',value=(0.159799993038177,0.496699988842011,0.0296999998390675))]),
+                ProtoInstance(name='Site',DEF='hanim_l_femoral_medial_epicondyles_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_femoral_lateral_epicondyles'),
+                  fieldValue(name='translation',value=(0.0397999994456768,0.494599997997284,0.0303000006824732))]),
+                ProtoInstance(name='Site',DEF='hanim_l_tarsal_interphalangeal_phalanx6',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_tarsal_interphalangeal_phalanx_5'),
+                  fieldValue(name='translation',value=(0.182500004768372,0.00700000021606684,0.092799998819828))]),
+                ProtoInstance(name='Site',DEF='hanim_l_lateral_malleolus_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_lateral_malleolus'),
+                  fieldValue(name='translation',value=(0.130799993872643,0.0597000010311604,-0.103200003504753))]),
+                ProtoInstance(name='Site',DEF='hanim_l_medial_malleolus_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_medial_malleolus'),
+                  fieldValue(name='translation',value=(0.0890000015497208,0.0715999975800514,-0.0881000012159348))]),
+                ProtoInstance(name='Site',DEF='hanim_l_sphyrion_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_sphyrion'),
+                  fieldValue(name='translation',value=(0.0890000015497208,0.0575000010430813,-0.0943000018596649))]),
+                ProtoInstance(name='Site',DEF='hanim_l_tarsal_interphalangeal_phalanx2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_tarsal_interphalangeal_phalanx_1'),
+                  fieldValue(name='translation',value=(0.0816000029444695,0.023199999704957,0.0105999996885657))]),
+                ProtoInstance(name='Site',DEF='hanim_l_calcaneus_posterior_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_calcaneus_posterior'),
+                  fieldValue(name='translation',value=(0.09740000218153,0.025900000706315,-0.11710000038147))]),
+                ProtoInstance(name='Site',DEF='hanim_l_tarsal_distal_phalanx3',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_tarsal_distal_phalanx_2'),
+                  fieldValue(name='translation',value=(0.119499996304512,0.00789999961853027,0.143299996852875))]),
+                ProtoInstance(name='Site',DEF='hanim_crotch_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='crotch'),
+                  fieldValue(name='translation',value=(0.00340000004507601,0.826600015163422,0.0256999991834164))]),
+                ProtoInstance(name='Site',DEF='hanim_r_neck_base_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='r_neck_base'),
+                  fieldValue(name='translation',value=(-0.0419000014662743,1.51489996910095,-0.0219999998807907))]),
+                ProtoInstance(name='Site',DEF='hanim_l_neck_base_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='l_neck_base'),
+                  fieldValue(name='translation',value=(0.0645999982953072,1.51409995555878,-0.0379999987781048))]),
+                ProtoInstance(name='Site',DEF='hanim_navel_2',
+                  fieldValue=[
+                  fieldValue(name='name',value='navel'),
+                  fieldValue(name='translation',value=(0.00689999992027879,1.09660005569458,0.101700000464916))])])])])])]),
+      fieldValue(name='joints',
+        children=[
+        ProtoInstance(USE='hanim_humanoid_root_2')]),
+      fieldValue(name='segments',
+        children=[
+        ProtoInstance(USE='hanim_sacrum_2')]),
+      fieldValue(name='sites',
+        children=[
+        ProtoInstance(USE='hanim_skull_tip_2'),
+        ProtoInstance(USE='hanim_sellion_2'),
+        ProtoInstance(USE='hanim_r_infraorbitale_2'),
+        ProtoInstance(USE='hanim_l_infraorbitale_2'),
+        ProtoInstance(USE='hanim_supramenton_2'),
+        ProtoInstance(USE='hanim_r_tragion_2'),
+        ProtoInstance(USE='hanim_r_gonion_2'),
+        ProtoInstance(USE='hanim_l_tragion_2'),
+        ProtoInstance(USE='hanim_l_gonion_2'),
+        ProtoInstance(USE='hanim_nuchale_2'),
+        ProtoInstance(USE='hanim_r_clavicale_2'),
+        ProtoInstance(USE='hanim_suprasternale_2'),
+        ProtoInstance(USE='hanim_l_clavicale_2'),
+        ProtoInstance(USE='hanim_r_thelion_2'),
+        ProtoInstance(USE='hanim_l_thelion_2'),
+        ProtoInstance(USE='hanim_substernale_2'),
+        ProtoInstance(USE='hanim_r_rib10_2'),
+        ProtoInstance(USE='hanim_r_asis_2'),
+        ProtoInstance(USE='hanim_l_rib10_2'),
+        ProtoInstance(USE='hanim_l_asis_2'),
+        ProtoInstance(USE='hanim_r_iliocristale_2'),
+        ProtoInstance(USE='hanim_r_trochanterion_2'),
+        ProtoInstance(USE='hanim_l_iliocristale_2'),
+        ProtoInstance(USE='hanim_l_trochanterion_2'),
+        ProtoInstance(USE='hanim_cervicale_2'),
+        ProtoInstance(USE='hanim_spine_2_lower_back_2'),
+        ProtoInstance(USE='hanim_r_psis_2'),
+        ProtoInstance(USE='hanim_l_psis_2'),
+        ProtoInstance(USE='hanim_waist_preferred_posterior_2'),
+        ProtoInstance(USE='hanim_r_acromion_2'),
+        ProtoInstance(USE='hanim_r_axilla_proximal_2'),
+        ProtoInstance(USE='hanim_r_radial_styloid_2'),
+        ProtoInstance(USE='hanim_r_axilla_distal_2'),
+        ProtoInstance(USE='hanim_r_olecranon_2'),
+        ProtoInstance(USE='hanim_r_humeral_lateral_epicondyles_2'),
+        ProtoInstance(USE='hanim_r_humeral_medial_epicondyles_2'),
+        ProtoInstance(USE='hanim_r_radiale_2'),
+        ProtoInstance(USE='hanim_r_metacarpal_phalanx3'),
+        ProtoInstance(USE='hanim_r_dactylion_2'),
+        ProtoInstance(USE='hanim_r_ulnar_styloid_2'),
+        ProtoInstance(USE='hanim_r_metacarpal_phalanx6'),
+        ProtoInstance(USE='hanim_l_acromion_2'),
+        ProtoInstance(USE='hanim_l_axilla_proximal_2'),
+        ProtoInstance(USE='hanim_l_radial_styloid_2'),
+        ProtoInstance(USE='hanim_l_axilla_distal_2'),
+        ProtoInstance(USE='hanim_l_olecranon_2'),
+        ProtoInstance(USE='hanim_l_humeral_lateral_epicondyles_2'),
+        ProtoInstance(USE='hanim_l_humeral_medial_epicondyles_2'),
+        ProtoInstance(USE='hanim_l_radiale_2'),
+        ProtoInstance(USE='hanim_l_metacarpal_phalanx3'),
+        ProtoInstance(USE='hanim_l_dactylion_2'),
+        ProtoInstance(USE='hanim_l_ulnar_styloid_2'),
+        ProtoInstance(USE='hanim_l_metacarpal_phalanx6'),
+        ProtoInstance(USE='hanim_r_knee_crease_2'),
+        ProtoInstance(USE='hanim_r_femoral_lateral_epicondyles_2'),
+        ProtoInstance(USE='hanim_r_femoral_medial_epicondyles_2'),
+        ProtoInstance(USE='hanim_r_tarsal_interphalangeal_phalanx6'),
+        ProtoInstance(USE='hanim_r_lateral_malleolus_2'),
+        ProtoInstance(USE='hanim_r_medial_malleolus_2'),
+        ProtoInstance(USE='hanim_r_sphyrion_2'),
+        ProtoInstance(USE='hanim_r_tarsal_interphalangeal_phalanx2'),
+        ProtoInstance(USE='hanim_r_calcaneus_posterior_2'),
+        ProtoInstance(USE='hanim_r_tarsal_distal_phalanx3'),
+        ProtoInstance(USE='hanim_l_knee_crease_2'),
+        ProtoInstance(USE='hanim_l_femoral_lateral_epicondyles_2'),
+        ProtoInstance(USE='hanim_l_femoral_medial_epicondyles_2'),
+        ProtoInstance(USE='hanim_l_tarsal_interphalangeal_phalanx6'),
+        ProtoInstance(USE='hanim_l_lateral_malleolus_2'),
+        ProtoInstance(USE='hanim_l_medial_malleolus_2'),
+        ProtoInstance(USE='hanim_l_sphyrion_2'),
+        ProtoInstance(USE='hanim_l_tarsal_interphalangeal_phalanx2'),
+        ProtoInstance(USE='hanim_l_calcaneus_posterior_2'),
+        ProtoInstance(USE='hanim_l_tarsal_distal_phalanx3'),
+        ProtoInstance(USE='hanim_crotch_2'),
+        ProtoInstance(USE='hanim_r_neck_base_2'),
+        ProtoInstance(USE='hanim_l_neck_base_2'),
+        ProtoInstance(USE='hanim_navel_2')]),
+      fieldValue(name='name',value='humanoid'),
+      fieldValue(name='info',value=["authorName=Matthew T. Beitler","authorEmail=beitler@graphics.cis.upenn.edu or beitler@acm.org","creationDate=05/12/99","copyright=Copyright 1999-2003, Matthew T. Beitler","humanoidVersion=JointCenters 200x, LOA0","usageRestrictions=
+    PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED, PROVIDED
+    THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL
+    AUTHOR IS INCLUDED.  This humanoid scene graph is provided
+    \'as-is\' and without warranty of any kind, express, implied
+    or otherwise, including without limitation, any warranty of
+    merchantability or fitness for a particular purpose.","modificationDate=08/12/03"])]),
+    Group(DEF='JointCenters_WorldInfo',
+      children=[
+      WorldInfo(title='HANIM 200x Default Joint Centers, LOA&#8209;0',info=["
+     HANIM 200x Default Joint Centers, Level-Of-Articulation 0
+     ---------------------------------------------------------
+     HANIM 200x (VRML97) Author name:
+       eMpTy (a.k.a. Matthew T. Beitler)
+     HANIM 200x (VRML97) Author email:
+       beitler@cis.upenn.edu or beitler@acm.org
+     HANIM 200x (VRML97) Author homepage:
+       http://www.cis.upenn.edu/~beitler
+     HANIM 200x (VRML97) Compliance Date:
+       August 12, 2003
+     HANIM 200x Compliance Information:
+       http://H-Anim.org/Specifications/H-Anim200x
+     Construction Info (joint centers):
+      The joint centers of this figure are based on the 
+      work of Norman Badler, director of the Center for
+      Human modelling and Simulation at the University of
+      Pennsylvania.  The original document which these
+      joint centers are based on can be found at:
+        http://www.cis.upenn.edu/~badler/anthro/89-71.ps
+   "])]),
+    NavigationInfo(avatarSize=[0.25,1.60000002384186,0.75],speed=1.5)])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful")

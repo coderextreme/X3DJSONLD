@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/Java.x3d">Java.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/Java.x3d">Java.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -28,7 +28,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">http://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">https://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -72,7 +72,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/Java.x3dv">Java.x3dv</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/Java.x3dv">Java.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -80,19 +80,19 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/Java.html">Java.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/Java.html">Java.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> X3dValidator <a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d</a> </td>
+			<td> X3dValidator <a href="https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/Java.x3d" target="_blank">http://www.web3d.org/specifications/java/examples/Java.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/Java.x3d" target="_blank">https://www.web3d.org/specifications/java/examples/Java.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
@@ -104,11 +104,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3dToJson.xslt, <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">http://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
+			<td> X3dToJson.xslt, <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">https://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> X3D JSON encoding: <a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding</a> </td>
+			<td> X3D JSON encoding: <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -151,12 +151,12 @@ Java.prototype = {
     .addUnit((new autoclass.unit()).setName("LengthUnitConversion").setConversionFactor(1.0).setCategory("length"))
     .addMeta((new autoclass.meta()).setName("title").setContent("Java.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Java.java"))
     .addMeta((new autoclass.meta()).setName("created").setContent("6 September 2016"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("6 June 2018"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans http://www.netbeans.org"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/Java.x3d"))
@@ -165,13 +165,13 @@ Java.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("Java.x3dv"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("Java.wrl"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("Java.html"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/specifications/java/examples/Java.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/specifications/java/examples/Java.x3d"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
     .addMeta((new autoclass.meta()).setName("info").setContent("tested sat: name value cannot contain embedded space character"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("06 June 2018"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ViewpointGroup()).setDescription("Available viewpoints"))
     .addChild((new autoclass.WorldInfo("WorldInfoDEF")).setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
@@ -180,11 +180,11 @@ Java.prototype = {
     .addMetadata((new autoclass.MetadataString("scene.addChildMetadata")).setName("test").setValue(new autoclass.MFString("\"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding\"")))
     .addLayerSet((new autoclass.LayerSet("scene.addChildLayerSetTest")))
     .addChild((new autoclass.Transform("LogoGeometryTransform")).setTranslation(0.0,1.5,0.0)
-      .addChild((new autoclass.Anchor()).setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new autoclass.MFString("\"../X3DJSAIL.html\" \"http://www.web3d.org/specifications/java/X3DJSAIL.html\""))
+      .addChild((new autoclass.Anchor()).setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new autoclass.MFString("\"../X3DJSAIL.html\" \"https://www.web3d.org/specifications/java/X3DJSAIL.html\""))
         .addChild((new autoclass.Shape("BoxShape"))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material("GreenMaterial")).setDiffuseColor(0.0,1.0,1.0).setTransparency(0.1).setEmissiveColor(0.8,0.0,0.0))
-            .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
+            .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
           .setGeometry((new autoclass.Box("test-NMTOKEN_regex.0123456789")).setCssClass("untextured")))))
     .addChild((new autoclass.Shape("LineShape"))
       .setAppearance((new autoclass.Appearance())
@@ -213,7 +213,7 @@ Java.prototype = {
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' ")
           .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-          .addComments(" reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
+          .addComments(" reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"One, Two, Text\" \"\" \"He said, \\\"Immel did it!\\\" \\\"\\\"\"")))))
       .addComments(" It's a beautiful world ")
       .addComments(" ... for you! ")
@@ -357,12 +357,12 @@ Java.prototype = {
       .addComments(" SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344 "))
     .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource((new autoclass.AudioClip()).setDescription("chimes").setUrl(new autoclass.MFString("\"chimes.wav\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
-        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
+      .setSource((new autoclass.AudioClip()).setDescription("chimes").setUrl(new autoclass.MFString("\"chimes.wav\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
     .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource((new autoclass.MovieTexture()).setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new autoclass.MFString("\"mpgsys.mpg\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
-        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
+      .setSource((new autoclass.MovieTexture()).setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new autoclass.MFString("\"mpgsys.mpg\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
         .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" ")))
     .addComments(" Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true ")
     .addComments(" Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false ")

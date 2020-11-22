@@ -42,11 +42,11 @@ newModel=X3D(profile='Immersive',version='3.0',
     meta(content='http://h-anim.org/Specifications/H-Anim2001',name='reference'),
     meta(content='http://h-anim.org/Models',name='reference'),
     meta(content='http://h-anim.org/Nodes',name='reference'),
-    meta(content='http://www.web3d.org/x3d/content/X3dToVrml97.xslt',name='reference'),
+    meta(content='https://www.web3d.org/x3d/content/X3dToVrml97.xslt',name='reference'),
     meta(content='(C) 2000 James Smith - james@vapourtech.com',name='rights'),
     meta(content='http://www.vapourtech.com',name='reference'),
     meta(content='BoxManC H-Anim 2.0',name='subject'),
-    meta(content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d',name='identifier'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
@@ -292,7 +292,7 @@ newModel=X3D(profile='Immersive',version='3.0',
       Viewpoint(DEF='Front_View',description='Front View',position=(0,1,3)),
       Viewpoint(DEF='Side_View',description='Side View',orientation=(0,1,0,1.57),position=(3,1,0)),
       Viewpoint(DEF='Top_View',description='Top View',orientation=(1,0,0,-1.57),position=(0,3,0))]),
-    # ExternProtoDeclare name='LOA1_WalkAnimation' url='"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation" "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation" "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation" "LOA1_WalkAnimation.x3d#LOA1_WalkAnimation" "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation" "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"'>
+    # ExternProtoDeclare name='LOA1_WalkAnimation' url='"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation" "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation" "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation" "LOA1_WalkAnimation.x3d#LOA1_WalkAnimation" "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation" "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"'>
       <field accessType='inputOutput' name='cycleInterval' type='SFTime'/>
       <field accessType='inputOutput' name='enabled' type='SFBool'/>
       <field accessType='inputOutput' name='loop' type='SFBool'/>

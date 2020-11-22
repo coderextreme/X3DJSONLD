@@ -25,9 +25,9 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(content='Carlson, I',name='John W'),
-    meta(content='Carlson, II',name='John A'),
-    meta(content='Carlson, III',name='John R')]),
+    meta(content='Carlson, I',name='creator'),
+    meta(content='Carlson, II',name='creator'),
+    meta(content='Carlson, III',name='creator')]),
   Scene=Scene(
     children=[
     Group(

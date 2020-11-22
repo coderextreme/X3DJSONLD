@@ -52,7 +52,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/license.html" target="_blank">http://www.web3d.org/x3d/content/examples/license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -94,7 +94,7 @@ flowers2.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manually written"))
-    .addMeta((new autoclass.meta()).setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+    .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()))
     .addChild((new autoclass.Viewpoint()).setDescription("Two mathematical orbitals").setPosition(0.0,0.0,50.0))

@@ -56,15 +56,15 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3D.org" target="_blank">http://www.web3D.org</a> </td>
+			<td> <a href="https://www.web3D.org" target="_blank">https://www.web3D.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/realtime-3d/news/internationalization-x3d" target="_blank">http://www.web3d.org/realtime-3d/news/internationalization-x3d</a> </td>
+			<td> <a href="https://www.web3d.org/realtime-3d/news/internationalization-x3d" target="_blank">https://www.web3d.org/realtime-3d/news/internationalization-x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HelloWorld.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HelloWorld.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HelloWorld.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -76,7 +76,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/license.html" target="_blank">http://www.web3d.org/x3d/content/examples/license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -144,12 +144,12 @@ HelloWorld.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
     .addMeta(new metaObject().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
     .addMeta(new metaObject().setName("reference").setContent("http://www.HelloWorldExample.net"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3D.org"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3D.org"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
     .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
     .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta(new metaObject().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta(new metaObject().setName("reference").setContent("HelloWorld.wrl"))
@@ -167,7 +167,7 @@ HelloWorld.prototype = {
           .setGeometry(new SphereObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(0.1,0.5,1.0))
-            .setTexture(new ImageTextureObject("ImageCloudlessEarth").setUrl(new MFStringObject("\"earth-topo.png\" \"earth-topo.jpg\" \"earth-topo-small.gif\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif\""))))))
+            .setTexture(new ImageTextureObject("ImageCloudlessEarth").setUrl(new MFStringObject("\"earth-topo.png\" \"earth-topo.jpg\" \"earth-topo-small.gif\" \"https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\" \"https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg\" \"https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif\""))))))
       .addChild(new TransformObject().setTranslation(0.0,-2.0,0.0)
         .addChild(new ShapeObject()
           .setGeometry(new TextObject("TextMessage").setString(new MFStringObject("\"Hello\" \"world!\""))

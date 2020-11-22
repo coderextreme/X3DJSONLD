@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/license.html" target="_blank">http://www.web3d.org/x3d/content/examples/license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
@@ -57,7 +57,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> X3D JSON encoding: <a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding</a> </td>
+			<td> X3D JSON encoding: <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -96,10 +96,10 @@ public class t3
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Andreas Plesch and John Carlson"))
     .addMeta(new meta().setName(meta.NAME_SOURCE     ).setContent("t1.wrl"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Test Case for Proto Expander"))
-    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("12 May 2020"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setAvatarSize(new double[] {200.0,200.0,120.0}).setSpeed(3).setType("\"EXAMINE\" \"FLY\" \"WALK\""))
     .addChild(new WorldInfo().setTitle("Arts Mapper"))

@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='identifier',content='http://www.x3dom.org/x3dom/test/functional/flipp.x3d'),
     meta(name='creator',content='Yvonne Jung, metadata by John Carlson'),
     meta(name='translated',content='13 March 2016'),
-    meta(name='generator',content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html')]),
+    meta(name='generator',content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')]),
   Scene=Scene(
     children=[
     Viewpoint(DEF='cam0',description='cam0 description',position=(0,0,800)),

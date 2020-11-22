@@ -19,15 +19,15 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John W </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, I </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John A </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, II </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John R </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, III </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
@@ -43,6 +43,9 @@ var autoclass = require('./X3Dautoclass');
 		stylesheet to create NodeJS source code from an <code>.x3d</code> scene.
 	</p>
 
+	* @author Carlson, I
+	* @author Carlson, II
+	* @author Carlson, III
  */
 
 function app
@@ -60,9 +63,9 @@ app.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("John W").setContent("Carlson, I"))
-    .addMeta((new autoclass.meta()).setName("John A").setContent("Carlson, II"))
-    .addMeta((new autoclass.meta()).setName("John R").setContent("Carlson, III")))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, I"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, II"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, III")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())

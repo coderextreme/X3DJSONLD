@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -65,7 +65,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -115,10 +115,10 @@ public class CameraPrototypes
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("25 October 2016"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("Schematron rules, backed up by initialize() checks"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
     .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("Camera nodes for Viewpoint navigation control"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CameraExamples.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
@@ -968,7 +968,7 @@ public class CameraPrototypes
         .addComments(" Add any ROUTEs here, going from Script to other nodes within ProtoBody ")))
     .addComments(" =============== Launch Prototype Example ============== ")
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.282353,0.380392,0.470588})))
-    .addChild(new Anchor().setDescription("launch CameraExample scene").setUrl(new String[] {"CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"})
+    .addChild(new Anchor().setDescription("launch CameraExample scene").setUrl(new String[] {"CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"})
       .addChild(new Transform()
         .addChild(new Shape()
           .setGeometry(new Text().setString(new String[] {"CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"})

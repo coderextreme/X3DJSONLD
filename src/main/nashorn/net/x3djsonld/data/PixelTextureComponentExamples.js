@@ -40,7 +40,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">http://www.web3d.org/x3d/content/examples/X3dResources.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">https://www.web3d.org/x3d/content/examples/X3dResources.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> rights </i> </td>
@@ -103,7 +103,7 @@ PixelTextureComponentExamples.prototype = {
     .addMeta(new metaObject().setName("modified").setContent("7 January 2014"))
     .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com"))
     .addMeta(new metaObject().setName("reference").setContent("X3D for Web Authors, Table 5.18"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html"))
     .addMeta(new metaObject().setName("rights").setContent("Copyright (c) 2006, Daly Realism and Don Brutzman"))
     .addMeta(new metaObject().setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
     .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"))

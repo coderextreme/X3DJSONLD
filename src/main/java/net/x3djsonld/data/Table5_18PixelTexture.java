@@ -46,7 +46,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">http://www.web3d.org/x3d/content/examples/X3dResources.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">https://www.web3d.org/x3d/content/examples/X3dResources.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> rights </i> </td>
@@ -103,7 +103,7 @@ public class Table5_18PixelTexture
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("18 December 2006"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 April 2017"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html"))
     .addMeta(new meta().setName(meta.NAME_RIGHTS     ).setContent("Copyright 2006, Daly Realism and Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("X3D, PixelTexture"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"))

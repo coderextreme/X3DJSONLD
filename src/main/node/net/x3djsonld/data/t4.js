@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/license.html" target="_blank">http://www.web3d.org/x3d/content/examples/license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -85,7 +85,7 @@ t4.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Andreas Plesch and John Carlson"))
     .addMeta((new autoclass.meta()).setName("source").setContent("t1.wrl"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Test Case for Proto Expander"))
-    .addMeta((new autoclass.meta()).setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+    .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"FLY\" \"WALK\"")).setAvatarSize(java.newArray("float", [200.0,200.0,120.0])).setSpeed(3))
     .addChild((new autoclass.WorldInfo()).setTitle("Arts Mapper"))

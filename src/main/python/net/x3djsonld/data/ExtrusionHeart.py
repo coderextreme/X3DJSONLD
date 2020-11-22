@@ -30,7 +30,7 @@ newModel=X3D(profile='Immersive',version='3.0',
     meta(content='Class participants in course Introduction to VRML/X3D.',name='creator'),
     meta(content='14 February 2001',name='created'),
     meta(content='27 November 2015',name='modified'),
-    meta(content='http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d',name='identifier'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
