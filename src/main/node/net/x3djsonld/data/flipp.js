@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3dToJson.xslt, <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">http://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
+			<td> X3dToJson.xslt, <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">https://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -207,7 +207,7 @@ flipp.prototype = {
     .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Yvonne Jung, metadata by John Carlson"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("13 March 2016"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint("cam0")).setDescription("cam0 description").setPosition(0.0,0.0,800.0))
     .addChild((new autoclass.Viewpoint("cam1")).setDescription("cam1 description").setPosition(0.0,0.0,2000.0))

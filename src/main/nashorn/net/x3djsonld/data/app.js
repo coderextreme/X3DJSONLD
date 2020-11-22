@@ -11,15 +11,15 @@ load('X3Dautoclass.js');
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John W </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, I </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John A </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, II </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John R </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, III </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
@@ -35,6 +35,9 @@ load('X3Dautoclass.js');
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
+	* @author Carlson, I
+	* @author Carlson, II
+	* @author Carlson, III
  */
 
 function app
@@ -52,9 +55,9 @@ app.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("John W").setContent("Carlson, I"))
-    .addMeta(new metaObject().setName("John A").setContent("Carlson, II"))
-    .addMeta(new metaObject().setName("John R").setContent("Carlson, III")))
+    .addMeta(new metaObject().setName("creator").setContent("Carlson, I"))
+    .addMeta(new metaObject().setName("creator").setContent("Carlson, II"))
+    .addMeta(new metaObject().setName("creator").setContent("Carlson, III")))
   .setScene(new SceneObject()
     .addChild(new GroupObject()
       .addChild(new ShapeObject()

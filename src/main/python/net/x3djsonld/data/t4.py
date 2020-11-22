@@ -33,7 +33,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='creator',content='Andreas Plesch and John Carlson'),
     meta(name='source',content='t1.wrl'),
     meta(name='description',content='Test Case for Proto Expander'),
-    meta(content='http://www.web3d.org/x3d/content/examples/license.html',name='license')]),
+    meta(content='https://www.web3d.org/x3d/content/examples/license.html',name='license')]),
   Scene=Scene(
     children=[
     NavigationInfo(type=["EXAMINE","FLY","WALK"],speed=3,avatarSize=[200,200,120]),

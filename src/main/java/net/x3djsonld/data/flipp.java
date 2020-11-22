@@ -48,7 +48,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3dToJson.xslt, <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">http://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
+			<td> X3dToJson.xslt, <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">https://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -85,7 +85,7 @@ public class flipp
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Yvonne Jung, metadata by John Carlson"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("13 March 2016"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
   .setScene(new Scene()
     .addChild(new Viewpoint("cam0").setDescription("cam0 description").setPosition(0.0,0.0,800.0))
     .addChild(new Viewpoint("cam1").setDescription("cam1 description").setPosition(0.0,0.0,2000.0))

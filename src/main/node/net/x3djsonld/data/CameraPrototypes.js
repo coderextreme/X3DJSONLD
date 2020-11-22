@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -60,7 +60,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -130,10 +130,10 @@ CameraPrototypes.prototype = {
     .addMeta((new autoclass.meta()).setName("modified").setContent("25 October 2016"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Schematron rules, backed up by initialize() checks"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
     .addMeta((new autoclass.meta()).setName("subject").setContent("Camera nodes for Viewpoint navigation control"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("CameraExamples.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
@@ -983,7 +983,7 @@ CameraPrototypes.prototype = {
         .addComments(" Add any ROUTEs here, going from Script to other nodes within ProtoBody ")))
     .addComments(" =============== Launch Prototype Example ============== ")
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.282353,0.380392,0.470588]))))
-    .addChild((new autoclass.Anchor()).setDescription("launch CameraExample scene").setUrl(new autoclass.MFString("\"CameraExamples.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d\" \"CameraExamples.wrl\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl\""))
+    .addChild((new autoclass.Anchor()).setDescription("launch CameraExample scene").setUrl(new autoclass.MFString("\"CameraExamples.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d\" \"CameraExamples.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl\""))
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(this.Text_6_254_string)

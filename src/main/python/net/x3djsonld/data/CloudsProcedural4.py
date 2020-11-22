@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='3.2',
     meta(content='1 November 2007',name='created'),
     meta(content='14 January 2014',name='modified'),
     meta(content='https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d',name='identifier'),
-    meta(content='X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html',name='generator'),
+    meta(content='X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html',name='generator'),
     meta(content='../../license.html',name='license'),
     meta(content='fix links',name='TODO')]),
   Scene=Scene(

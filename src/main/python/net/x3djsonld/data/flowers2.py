@@ -34,7 +34,7 @@ newModel=X3D(profile='Immersive',version='3.0',
     meta(content='2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)',name='description'),
     meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d',name='identifier'),
     meta(content='manually written',name='generator'),
-    meta(content='http://www.web3d.org/x3d/content/examples/license.html',name='license')]),
+    meta(content='https://www.web3d.org/x3d/content/examples/license.html',name='license')]),
   Scene=Scene(
     children=[
     NavigationInfo(),

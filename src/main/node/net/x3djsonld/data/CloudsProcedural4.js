@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit, <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a> </td>
+			<td> X3D-Edit, <a href="https://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">https://www.web3d.org/x3d/content/README.X3D-Edit.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -91,7 +91,7 @@ CloudsProcedural4.prototype = {
     .addMeta((new autoclass.meta()).setName("created").setContent("1 November 2007"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("14 January 2014"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("fix links")))
   .setScene((new autoclass.Scene())

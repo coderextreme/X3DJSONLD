@@ -35,12 +35,12 @@ newModel=X3D(profile='Immersive',version='3.3',
     unit(name='LengthUnitConversion',category='length',conversionFactor=1.0),
     meta(name='title',content='Java.x3d'),
     meta(name='description',content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library'),
-    meta(name='reference',content='http://www.web3d.org/specifications/java/X3DJSAIL.html'),
+    meta(name='reference',content='https://www.web3d.org/specifications/java/X3DJSAIL.html'),
     meta(name='generator',content='Java.java'),
     meta(name='created',content='6 September 2016'),
     meta(name='modified',content='6 June 2018'),
     meta(name='generator',content='X3D Java Scene Access Interface Library (X3DJSAIL)'),
-    meta(name='generator',content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'),
+    meta(name='generator',content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'),
     meta(name='generator',content='Netbeans http://www.netbeans.org'),
     meta(name='creator',content='Don Brutzman'),
     meta(name='reference',content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/Java.x3d'),
@@ -49,13 +49,13 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='reference',content='Java.x3dv'),
     meta(name='reference',content='Java.wrl'),
     meta(name='reference',content='Java.html'),
-    meta(name='reference',content='X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d'),
-    meta(name='identifier',content='http://www.web3d.org/specifications/java/examples/Java.x3d'),
+    meta(name='reference',content='X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d'),
+    meta(name='identifier',content='https://www.web3d.org/specifications/java/examples/Java.x3d'),
     meta(name='license',content='../license.html'),
     meta(name='info',content='tested sat: name value cannot contain embedded space character'),
     meta(name='translated',content='06 June 2018'),
-    meta(name='generator',content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html'),
-    meta(name='reference',content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]),
+    meta(name='generator',content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'),
+    meta(name='reference',content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]),
   Scene=Scene(
     children=[
     ViewpointGroup(description='Available viewpoints'),
@@ -66,12 +66,12 @@ newModel=X3D(profile='Immersive',version='3.3',
     LayerSet(DEF='scene.addChildLayerSetTest'),
     Transform(DEF='LogoGeometryTransform',translation=(0,1.5,0),
       children=[
-      Anchor(description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"],
+      Anchor(description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
         children=[
         Shape(DEF='BoxShape',
           appearance=Appearance(
             material=Material(DEF='GreenMaterial',diffuseColor=(0,1,1),emissiveColor=(0.8,0,0),transparency=0.1),
-            texture=ImageTexture(url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])),
+            texture=ImageTexture(url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])),
           geometry=Box(DEF='test-NMTOKEN_regex.0123456789',class_='untextured'))])]),
     Shape(DEF='LineShape',
       appearance=Appearance(
@@ -102,7 +102,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           #  alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"' 
           #  alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""' 
           #  alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \"Immel did it!\""}) 
-          #  reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
+          #  reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
           geometry=Text(string=["One, Two, Text","","He said, \"Immel did it!\" \"\""])))]
       #  It's a beautiful world 
       #  ... for you! 
@@ -232,13 +232,13 @@ newModel=X3D(profile='Immersive',version='3.3',
       ),
     Sound(location=(0,1.6,0),
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
-      source=AudioClip(description='chimes',url=["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
-        #  Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
+      source=AudioClip(description='chimes',url=["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+        #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
         )),
     Sound(location=(0,1.6,0),
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
-      source=MovieTexture(description='mpgsys.mpg from ConformanceNist suite',url=["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
-        #  Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
+      source=MovieTexture(description='mpgsys.mpg from ConformanceNist suite',url=["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+        #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
         #  Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" 
         )),
     #  Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true 

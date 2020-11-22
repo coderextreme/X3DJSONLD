@@ -33,7 +33,7 @@ newModel=X3D(profile='Interchange',version='3.0',
     meta(content='12 January 2014',name='modified'),
     meta(content='http://vrmlstuff.free.fr/materials',name='reference'),
     meta(content='Universal Media Material Library',name='subject'),
-    meta(content='http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json',name='identifier'),
     meta(content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(

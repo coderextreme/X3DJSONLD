@@ -33,10 +33,10 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='creator',content='Andreas Plesch and John Carlson'),
     meta(name='source',content='t1.wrl'),
     meta(name='description',content='Test Case for Proto Expander'),
-    meta(content='http://www.web3d.org/x3d/content/examples/license.html',name='license'),
+    meta(content='https://www.web3d.org/x3d/content/examples/license.html',name='license'),
     meta(name='translated',content='12 May 2020'),
     meta(name='generator',content='DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js'),
-    meta(name='reference',content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]),
+    meta(name='reference',content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]),
   Scene=Scene(
     children=[
     NavigationInfo(type=["EXAMINE","FLY","WALK"],speed=3,avatarSize=[200,200,120]),

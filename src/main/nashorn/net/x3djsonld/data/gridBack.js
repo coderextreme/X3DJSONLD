@@ -44,7 +44,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -106,7 +106,7 @@ gridBack.prototype = {
     .addMeta(new metaObject().setName("modified").setContent("12 January 2014"))
     .addMeta(new metaObject().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
     .addMeta(new metaObject().setName("subject").setContent("Universal Media Material Library"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
     .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()

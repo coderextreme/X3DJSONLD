@@ -76,7 +76,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/X3dToVrml97.xslt" target="_blank">http://www.web3d.org/x3d/content/X3dToVrml97.xslt</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/X3dToVrml97.xslt" target="_blank">https://www.web3d.org/x3d/content/X3dToVrml97.xslt</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> rights </i> </td>
@@ -92,7 +92,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -249,11 +249,11 @@ BoxManC.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("http://h-anim.org/Specifications/H-Anim2001"))
     .addMeta(new metaObject().setName("reference").setContent("http://h-anim.org/Models"))
     .addMeta(new metaObject().setName("reference").setContent("http://h-anim.org/Nodes"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/X3dToVrml97.xslt"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/X3dToVrml97.xslt"))
     .addMeta(new metaObject().setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta(new metaObject().setName("reference").setContent("http://www.vapourtech.com"))
     .addMeta(new metaObject().setName("subject").setContent("BoxManC H-Anim 2.0"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
@@ -435,7 +435,7 @@ BoxManC.prototype = {
       .addViewpoints(new ViewpointObject("Front_View").setDescription("Front View").setPosition(0.0,1.0,3.0))
       .addViewpoints(new ViewpointObject("Side_View").setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57).setPosition(3.0,1.0,0.0))
       .addViewpoints(new ViewpointObject("Top_View").setDescription("Top View").setPosition(0.0,3.0,0.0).setOrientation(1.0,0.0,0.0,-1.57)))
-    .addComments(Java.to(["ExternProtoDeclare name='LOA1_WalkAnimation' url='\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\"'>",
+    .addComments(Java.to(["ExternProtoDeclare name='LOA1_WalkAnimation' url='\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\"'>",
 "      <field accessType='inputOutput' name='cycleInterval' type='SFTime'/>",
 "      <field accessType='inputOutput' name='enabled' type='SFBool'/>",
 "      <field accessType='inputOutput' name='loop' type='SFBool'/>",

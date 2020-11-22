@@ -18,15 +18,15 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John W </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, I </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John A </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, II </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> John R </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, III </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
@@ -42,6 +42,9 @@ import org.web3d.x3d.jsail.Shape.*;
 		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 
+	* @author Carlson, I
+	* @author Carlson, II
+	* @author Carlson, III
  */
 
 public class app
@@ -57,9 +60,9 @@ public class app
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addMeta(new meta().setName("John W").setContent("Carlson, I"))
-    .addMeta(new meta().setName("John A").setContent("Carlson, II"))
-    .addMeta(new meta().setName("John R").setContent("Carlson, III")))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, I"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, II"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, III")))
   .setScene(new Scene()
     .addChild(new Group()
       .addChild(new Shape()

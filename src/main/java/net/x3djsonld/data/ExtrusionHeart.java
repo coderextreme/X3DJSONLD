@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -84,7 +84,7 @@ public class ExtrusionHeart
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Class participants in course Introduction to VRML/X3D."))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("14 February 2001"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("27 November 2015"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()

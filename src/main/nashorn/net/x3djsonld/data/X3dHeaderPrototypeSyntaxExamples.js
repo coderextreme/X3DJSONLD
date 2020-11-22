@@ -36,11 +36,11 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> specificationUrl </i> </td>
-			<td> <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax" target="_blank">http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax</a> </td>
+			<td> <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax" target="_blank">https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -92,8 +92,8 @@ X3dHeaderPrototypeSyntaxExamples.prototype = {
     .addMeta(new metaObject().setName("modified").setContent("27 May 2017"))
     .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
     .addMeta(new metaObject().setName("specificationSection").setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"))
-    .addMeta(new metaObject().setName("specificationUrl").setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"))
+    .addMeta(new metaObject().setName("specificationUrl").setContent("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
@@ -157,7 +157,7 @@ X3dHeaderPrototypeSyntaxExamples.prototype = {
     .addChild(new OrientationInterpolatorObject("Spinner").setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.28318], Java.type("float[]")))))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("Spinner").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("Spinner").setFromField("value_changed").setToNode("TransformExampleUSE").setToField("rotation"))
-    .addChild(new InlineObject("someInline").setUrl(new MFStringObject("\"someUrl.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d\"")))
+    .addChild(new InlineObject("someInline").setUrl(new MFStringObject("\"someUrl.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d\"")))
     .addChild(new IMPORTObject().setImportedDEF("someName").setInlineDEF("someInline").setAS("someInlineRoot"))
     .addChild(new PositionInterpolatorObject("StayInPlace").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,0.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("StayInPlace").setToField("set_fraction"))

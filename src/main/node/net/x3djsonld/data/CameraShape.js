@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -173,7 +173,7 @@ CameraShape.prototype = {
     .addMeta((new autoclass.meta()).setName("translated").setContent("2 June 2009"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("13 January 2014"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("CameraExamples.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
