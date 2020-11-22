@@ -1056,7 +1056,7 @@ HAnimJoint23.addChildren(HAnimJoint170)
 
 HAnimJoint22.addChildren(HAnimJoint23)
 
-HAnimHumanoid21.addJoints(HAnimJoint22)
+HAnimHumanoid21.setSkeleton(HAnimJoint22)
 HAnimJoint256 = x3d.HAnimJoint()
 HAnimJoint256.setUSE("hanim_HumanoidRoot")
 

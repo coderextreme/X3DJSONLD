@@ -4,10 +4,10 @@
 // identifier:  http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js
 // created:      3 November 2013
 // revised:     18 October  2015
-// reference:   http://www.web3d.org/x3d/content/X3dTooltips.html#Script
-// reference:   http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts
-// reference:   http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/scripting.html
-// reference:   http://www.web3d.org/x3d/specifications/ISO-IEC-19777-1-X3DLanguageBindings-ECMAScript/Part1/X3D_ECMAScript.html
+// reference:   https://www.web3d.org/x3d/content/X3dTooltips.html#Script
+// reference:   https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts
+// reference:   https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/scripting.html
+// reference:   https://www.web3d.org/x3d/specifications/ISO-IEC-19777-1-X3DLanguageBindings-ECMAScript/Part1/X3D_ECMAScript.html
 // license:     ../license.html
 
 // ================================================================

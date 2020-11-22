@@ -3,7 +3,7 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Displacer" appinfo="A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment." documentation="http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="coordIndex" accessType="inputOutput" type="MFInt32"></field>
 <field name="displacements" accessType="inputOutput" type="MFVec3f"></field>
@@ -51,7 +51,7 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = ProtoDeclare2;
 
 let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Humanoid" appinfo="The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model." documentation="http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html" ><ProtoInterface><!--H-Anim v1.1 field definitions--><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="version" accessType="inputOutput" appinfo="legal values: 1.1 or 2.0" type="SFString" value="1.1"></field>
 <field name="humanoidVersion" accessType="inputOutput" appinfo="Version of the humanoid being modeled. Hint: H-anim version 2.0" type="SFString"></field>
@@ -333,7 +333,7 @@ ProtoDeclare9.protoBody = ProtoBody30;
 browser.currentScene.children[1] = ProtoDeclare9;
 
 let ProtoDeclare49 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Joint" appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid." documentation="http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="ulimit" accessType="inputOutput" type="MFFloat"></field>
 <field name="llimit" accessType="inputOutput" type="MFFloat"></field>
@@ -552,7 +552,7 @@ ProtoDeclare49.protoBody = ProtoBody68;
 browser.currentScene.children[2] = ProtoDeclare49;
 
 let ProtoDeclare81 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Segment" appinfo="The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node." documentation="http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="mass" accessType="inputOutput" type="SFFloat" value="0"></field>
 <field name="centerOfMass" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -698,7 +698,7 @@ ProtoDeclare81.protoBody = ProtoBody94;
 browser.currentScene.children[3] = ProtoDeclare81;
 
 let ProtoDeclare102 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Site" appinfo="The Site node can be used for three purposes: (a) to define an &quot;end effector&quot; location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view &quot;through the eyes&quot; of the humanoid for use in multi-user worlds)." documentation="http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="rotation" accessType="inputOutput" type="SFRotation" value="0 0 1 0"></field>

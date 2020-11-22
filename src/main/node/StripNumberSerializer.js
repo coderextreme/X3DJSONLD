@@ -207,7 +207,7 @@ StripNumberSerializer.prototype = {
 		var encoding = "UTF-8";
 		var xml = '';
 		xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
-		xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+		xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "https://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
 		xml += XMLSerializer.serializeToString(element);
 		return xml;
 	}

@@ -54,7 +54,7 @@ public class BindingOperations {
         .addMeta(new meta().setName("reference").setContent("BindingStackOperations.png"))
         .addMeta(new meta().setName("reference").setContent("X3D for Web Authors, Section 2.5.1, Figure 4.1"))
         .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html"))
         .addMeta(new meta().setName("rights").setContent("Copyright Don Brutzman and Leonard Daly 2007"))
         .addMeta(new meta().setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
         .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d"))

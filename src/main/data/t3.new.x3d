@@ -13,7 +13,7 @@
     <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
     <meta content='12 May 2020' name='translated'/>
     <meta content='DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js' name='generator'/>
-    <meta content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>

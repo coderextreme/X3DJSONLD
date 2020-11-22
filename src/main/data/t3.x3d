@@ -11,7 +11,7 @@
 <meta content="https://www.web3d.org/x3d/content/examples/license.html" name="license"></meta>
 <meta name="translated" content="12 May 2020"></meta>
 <meta name="generator" content="DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"></meta>
-<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="reference" content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" speed="3" avatarSize="200 200 120"></NavigationInfo>
 <WorldInfo title="Arts Mapper"></WorldInfo>

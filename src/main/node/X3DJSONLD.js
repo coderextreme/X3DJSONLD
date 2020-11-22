@@ -486,7 +486,14 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			if (key === 'X3D') {
 				this.ConvertToX3DOM(xmlDoc, object[key], key, element, path);
 			} else {
-				if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
+				if (key === "-skin" || key === "-skeleton" || key === "-value") {
+					let firstNode = object[key][0];
+					for (var skv in firstNode) {
+						firstNode[skv]['@containerField'] = key.substr(1);
+						console.log(firstNode[skv]);
+						this.ConvertObject(xmlDoc, key, object, element, path, firstNode[skv]['@containerField']);
+					}
+				} else if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
 					object[key]['@containerField'] = key.substr(5).toLowerCase()+"s";
 					this.ConvertObject(xmlDoc, key, object, element, path, object[key]['@containerField']);
 				} else {

@@ -39,7 +39,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments((new autoclass.CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=2.0\"'")))
           .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(java.newArray("java.lang.String", ["2.0"]))))
-          .addJoints((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(30.53), java.newFloat(-0.7076)]))
+          .setSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(30.53), java.newFloat(-0.7076)]))
             .addChild((new autoclass.HAnimSegment()).setName("sacrum").setDEF("hanim_sacrum")
               .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(30.53), java.newFloat(-0.7076)]))
                 .addChild((new autoclass.Shape())

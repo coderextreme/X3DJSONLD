@@ -50,7 +50,7 @@ meta10.setContent("http://X3dGraphics.com")
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("reference")
-meta11.setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html")
+meta11.setContent("https://www.web3d.org/x3d/content/examples/X3dResources.html")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()

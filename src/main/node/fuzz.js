@@ -55,7 +55,7 @@ function generateObject(schemajson, n, node, force) {
 			if (typeof enumer !== 'undefined') {
 				obj = enumer[Math.floor(Math.random()*enumer.length)];
 			} else if (schemajson.format === 'uri') {
-				obj =  "http://coderextreme.net/X3DJSONLD";
+				obj =  "https://coderextreme.net/X3DJSONLD";
 			} else if (schemajson.format === 'uri-reference') {
 				obj =  "../X3DJSONLD";
 			} else {

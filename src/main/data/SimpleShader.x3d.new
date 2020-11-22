@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.2" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.2.xsd" ><head><component name="Shaders" level="1"></component>
 <meta name="title" content="SimpleShader.x3d"></meta>
 <meta name="description" content="Simple shader example"></meta>
@@ -41,11 +41,11 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<WorldInfo title="SimpleShader"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="nodes" DEF="nodes" reference="http://titania.create3000.de"><!--NULL--></MetadataSet>
+<WorldInfo title="SimpleShader"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet name="nodes" DEF="nodes" reference="http://titania.create3000.de" containerField="value"><!--NULL--></MetadataSet>
 </MetadataSet>
-<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;"></MetadataString>
+<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="6.24067728185014 0.00250837343276661 2.92117542307615"></MetadataDouble>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="6.24067728185014 0.00250837343276661 2.92117542307615" containerField="value"></MetadataDouble>
 <MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191"></MetadataDouble>
 <MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="-0.808320198626341 -0.358072370409949 0.22817191560906"></MetadataDouble>
 </MetadataSet>

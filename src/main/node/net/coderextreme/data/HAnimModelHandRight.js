@@ -34,7 +34,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelHandRight.x3d"))
         .addChild((new autoclass.HAnimHumanoid()).setName("Humanoid_Right_hand").setDEF("Humanoid_Right_hand").setVersion("2.0")
-          .addJoints((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_HumanoidRoot")
+          .setSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild((new autoclass.HAnimJoint()).setName("r_radiocarpal_joint").setDEF("r_radiocarpal_joint")
               .addChild((new autoclass.HAnimSegment()).setName("r_wrist").setDEF("r_wrist")
                 .addChild((new autoclass.Transform())

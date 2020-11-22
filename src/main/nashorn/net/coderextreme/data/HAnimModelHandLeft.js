@@ -26,7 +26,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelHandLeft.x3d"))
         .addChild(new HAnimHumanoid().setName("Humanoid_Left_hand").setDEF("Humanoid_Left_hand").setVersion("2.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild(new HAnimJoint().setName("l_radiocarpal_joint").setDEF("l_radiocarpal_joint")
               .addChild(new HAnimSegment().setName("l_wrist").setDEF("l_wrist")
                 .addChild(new Transform()

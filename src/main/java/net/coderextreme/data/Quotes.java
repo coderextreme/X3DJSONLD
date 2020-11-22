@@ -114,7 +114,7 @@ ProtoInstance ProtoInstance3 = null;
               .addComments(new CommentsBlock("Comment example A, plain quotation marks: He said, \"Immel did it!\""))
               .addComments(new CommentsBlock("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"))
               .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
-                .addValue(new MetadataString().setName("quotesTestC").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
+                .setValue(new MetadataString().setName("quotesTestC").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray()))))
               .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))))
           .addChild(new Collision()

@@ -35,7 +35,7 @@ function ProcessJSON(json, file) {
 	}
 	fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
 
-	var NS = "http://www.web3d.org/specifications/x3d";
+	var NS = "https://www.web3d.org/specifications/x3d";
 	loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		var classes = new LOG();
 		var routecode = new LOG();

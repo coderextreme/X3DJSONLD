@@ -52,7 +52,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new Viewpoint().setCenterOfRotation(Java.to([0,0.9149,0.0016], Java.type("float[]"))).setDescription("Humanoid LOA 3 Left Side").setOrientation(Java.to([0,1,0,-1.5708], Java.type("float[]"))).setPosition(Java.to([-2.6,0.8,0], Java.type("float[]"))))
         .addChild(new Viewpoint().setCenterOfRotation(Java.to([0,0.9149,0.0016], Java.type("float[]"))).setDescription("Humanoid LOA 3 Top").setOrientation(Java.to([1,0,0,-1.5708], Java.type("float[]"))).setPosition(Java.to([0,3.5,0], Java.type("float[]"))))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setInfo(Java.to(["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"], Java.type("java.lang.String[]"))).setVersion("1.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to([0,0.824,0.0277], Java.type("float[]")))
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(Java.to([0,0.824,0.0277], Java.type("float[]")))
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addComments(new CommentsBlock("<HAnimJoint name='humanoid_root'/> visualization sphere within <HAnimSegment name='sacrum'/>"))
               .addChild(new TouchSensor().setDescription("HAnimJoint HumanoidRoot, HAnimSegment sacrum"))

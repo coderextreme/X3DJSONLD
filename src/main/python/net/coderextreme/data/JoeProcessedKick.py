@@ -164,7 +164,7 @@ MetadataString30.setName("SymmetricalLeftRight")
 MetadataString30.setReference("correction options: ignore, warn, average, left, right, largest, smallest")
 MetadataString30.setValue(["ignore"])
 
-MetadataSet29.setMetadata(MetadataString30)
+MetadataSet29.setValue(MetadataString30)
 
 HAnimHumanoid28.setMetadata(MetadataSet29)
 HAnimJoint31 = x3d.HAnimJoint()
@@ -914,7 +914,7 @@ HAnimJoint53.addChildren(HAnimJoint54)
 
 HAnimJoint31.addChildren(HAnimJoint53)
 
-HAnimHumanoid28.addJoints(HAnimJoint31)
+HAnimHumanoid28.setSkeleton(HAnimJoint31)
 Shape134 = x3d.Shape()
 Shape134.setDEF("Joe_Shape")
 Appearance135 = x3d.Appearance()
@@ -952,7 +952,7 @@ IndexedFaceSet139.setTexCoord(TextureCoordinate141)
 
 Shape134.setGeometry(IndexedFaceSet139)
 
-HAnimHumanoid28.addSkin(Shape134)
+HAnimHumanoid28.setSkin(Shape134)
 Coordinate142 = x3d.Coordinate()
 Coordinate142.setUSE("Joe_SkinCoord")
 

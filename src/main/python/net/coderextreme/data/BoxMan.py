@@ -610,7 +610,7 @@ HAnimJoint84.addChildren(HAnimJoint108)
 
 HAnimJoint38.addChildren(HAnimJoint84)
 
-HAnimHumanoid37.addJoints(HAnimJoint38)
+HAnimHumanoid37.setSkeleton(HAnimJoint38)
 ## sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)
 #top-level joint references
 #top-level segment references
@@ -726,7 +726,7 @@ Shape144.setGeometry(IndexedLineSet147)
 
 Group123.addChildren(Shape144)
 
-HAnimHumanoid37.addSkin(Group123)
+HAnimHumanoid37.setSkin(Group123)
 HAnimJoint149 = x3d.HAnimJoint()
 HAnimJoint149.setUSE("boxman_r_wrist")
 

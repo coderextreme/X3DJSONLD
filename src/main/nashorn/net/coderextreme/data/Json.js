@@ -84,7 +84,7 @@ var ProtoInstance4 = null;
               .addComments(new CommentsBlock("Comment example A, plain quotation marks: He said, \"Immel did it!\""))
               .addComments(new CommentsBlock("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"))
               .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
-                .addValue(new MetadataString().setName("quotesTestC").setValue(Java.to(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""], Java.type("java.lang.String[]"))))
+                .setValue(new MetadataString().setName("quotesTestC").setValue(Java.to(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""], Java.type("java.lang.String[]"))))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(Java.to(["checks MetadataSetObject addValue() method"], Java.type("java.lang.String[]")))))
               .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))))))
           .addChild(new Collision()

@@ -67,7 +67,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments((new autoclass.CommentsBlock("Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation")))
           .addComments((new autoclass.CommentsBlock("TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default")))
           .addComments((new autoclass.CommentsBlock("right between the eyes, stationary position not animating except with body itself")))
-          .addJoints((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)]))
+          .setSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)]))
             .addChild((new autoclass.HAnimSegment()).setName("sacrum").setDEF("hanim_sacrum")
               .addComments((new autoclass.CommentsBlock("<HAnimJoint name='humanoid_root'/> visualization sphere is placed within <HAnimSegment name='sacrum'/>")))
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint HumanoidRoot, HAnimSegment sacrum"))

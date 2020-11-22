@@ -32133,7 +32133,18 @@ x3dom.JSONParser.prototype.ConvertToX3DOM = function ( object, parentkey, elemen
             else
             {
                 // this.ConvertObject( key, object, element );
-                if ( key.indexOf( "HAnim" ) === 0 && key !== "HAnimHumanoid" && typeof object[ key ][ "@USE" ] != "undefined" )
+                if ( key === "-skin" || key === "-skeleton" || key === "-value" )
+                {
+                    var firstNode = object[ key ][ 0 ];
+                    for ( var skv in firstNode )
+                    {
+                        firstNode[ skv ][ "@containerField" ] = key.substr( 1 );
+                        console.log( firstNode[ skv ] );
+                        this.ConvertObject( key, object, element, firstNode[ skv ][ "@containerField" ] );
+                    }
+                }
+                else if ( key.indexOf( "HAnim" ) === 0 && key !== "HAnimHumanoid" && typeof object[ key ][ "@USE" ] != "undefined" )
+
                 {
                     object[ key ][ "@containerField" ] = key.substr( 5 ).toLowerCase() + "s";
                     this.ConvertObject( key, object, element, object[ key ][ "@containerField" ] );
@@ -38373,7 +38384,7 @@ x3dom.registerNodeType(
 
             addChild : function ( node, containerFieldName )
             {
-                if ( "isProtoInstance" in node )
+                if ( node !== null && "isProtoInstance" in node )
                 {
                     this.addChild( node.typeNode, containerFieldName );
                     if ( node.helperNodes.length > 0 )
@@ -38434,7 +38445,7 @@ x3dom.registerNodeType(
                         //so child is "root node" of protobody
                         //and constitutes its nodes
                         //transfer nodes directly
-                        if ( "isProtoInstance" in node )
+                        if ( node !== null && "isProtoInstance" in node )
                         {
                             this.nodes.concat( node.nodes );
                         }
