@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Interchange";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Humanoid" ><ProtoInterface><field name="center" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
