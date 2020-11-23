@@ -439,6 +439,9 @@ class ClassPrinter:
 				{
 					"type": "object",
 					"properties": {
+						"@class": {
+							"type": "string"
+						},
 						"@USE": {
 							"type": "string"
 						},
