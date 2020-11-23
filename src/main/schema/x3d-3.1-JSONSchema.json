@@ -935,6 +935,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1028,6 +1031,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1099,6 +1105,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1172,6 +1181,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1259,6 +1271,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1374,6 +1389,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1539,6 +1557,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1633,6 +1654,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1702,6 +1726,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1785,6 +1812,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1847,6 +1877,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1908,6 +1941,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -1976,6 +2012,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2053,6 +2092,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2133,6 +2175,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2217,6 +2262,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2374,6 +2422,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2433,6 +2484,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2522,6 +2576,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2585,6 +2642,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2672,6 +2732,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2735,6 +2798,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2806,6 +2872,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2893,6 +2962,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -2964,6 +3036,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3044,6 +3119,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3097,6 +3175,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3158,6 +3239,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3219,6 +3303,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3280,6 +3367,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3360,6 +3450,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3440,6 +3533,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3525,6 +3621,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3669,6 +3768,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3781,6 +3883,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3851,6 +3956,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -3984,6 +4092,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4559,6 +4670,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4794,6 +4908,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4876,6 +4993,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -4947,6 +5067,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5041,6 +5164,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5103,6 +5229,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5248,6 +5377,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5317,6 +5449,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5384,6 +5519,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5533,6 +5671,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5622,6 +5763,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5771,6 +5915,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5843,6 +5990,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -5914,6 +6064,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6010,6 +6163,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6126,6 +6282,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6302,6 +6461,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6375,6 +6537,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6538,6 +6703,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -6737,6 +6905,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7076,6 +7247,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7287,6 +7461,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7531,6 +7708,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7593,6 +7773,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7665,6 +7848,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7742,6 +7928,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -7908,6 +8097,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8010,6 +8202,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8117,6 +8312,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8224,6 +8422,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8331,6 +8532,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8438,6 +8642,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8525,6 +8732,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8608,6 +8818,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8674,6 +8887,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8764,6 +8980,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8833,6 +9052,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8906,6 +9128,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -8989,6 +9214,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9076,6 +9304,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9176,6 +9407,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9292,6 +9526,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9356,6 +9593,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9420,6 +9660,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9488,6 +9731,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9556,6 +9802,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9624,6 +9873,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9688,6 +9940,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9756,6 +10011,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -9886,6 +10144,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10038,6 +10299,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10094,6 +10358,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10150,6 +10417,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10322,6 +10592,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10385,6 +10658,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10465,6 +10741,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10552,6 +10831,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10644,6 +10926,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10733,6 +11018,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10863,6 +11151,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -10952,6 +11243,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11034,6 +11328,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11162,6 +11459,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11231,6 +11531,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11300,6 +11603,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11407,6 +11713,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11540,6 +11849,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11621,6 +11933,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11714,6 +12029,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11785,6 +12103,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -11861,6 +12182,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12009,6 +12333,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12141,6 +12468,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12206,6 +12536,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12267,6 +12600,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12328,6 +12664,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12409,6 +12748,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12490,6 +12832,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12574,6 +12919,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12644,6 +12992,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12763,6 +13114,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -12854,6 +13208,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13071,6 +13428,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13141,6 +13501,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13216,6 +13579,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13298,6 +13664,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13383,6 +13752,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13471,6 +13843,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13550,6 +13925,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13769,6 +14147,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13899,6 +14280,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -13963,6 +14347,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14081,6 +14468,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14248,6 +14638,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14321,6 +14714,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14396,6 +14792,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14475,6 +14874,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14557,6 +14959,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14686,6 +15091,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14747,6 +15155,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14808,6 +15219,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14869,6 +15283,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -14947,6 +15364,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15035,6 +15455,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15143,6 +15566,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15267,6 +15693,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15383,6 +15812,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15444,6 +15876,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15545,6 +15980,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -15698,6 +16136,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16005,6 +16446,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16104,6 +16548,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16195,6 +16642,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16261,6 +16711,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16360,6 +16813,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16497,6 +16953,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
@@ -16589,6 +17048,9 @@
         {
           "type": "object",
           "properties": {
+            "@class": {
+              "type": "string"
+            },
             "@USE": {
               "type": "string"
             },
