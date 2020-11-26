@@ -14,7 +14,7 @@ Background3.groundColor = new MFColor(new float[0.6,0.6,0.6]);
 Background3.skyColor = new MFColor(new float[0.75,0.75,0.75]);
 browser.currentScene.children[1] = Background3;
 
-//When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet
+//When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet
 let HAnimHumanoid4 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid4.name = "Humanoid";
 HAnimHumanoid4.DEF = "boxman_Humanoid";
@@ -681,208 +681,208 @@ Group90.children[4] = Shape111;
 
 HAnimHumanoid4.skin[1] = Group90;
 
-let HAnimJoint116 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint116.USE = "boxman_r_wrist";
-HAnimHumanoid4.joints[2] = HAnimJoint116;
+let HAnimSite116 = browser.currentScene.createNode("HAnimSite");
+HAnimSite116.name = "BoxMan_view";
+HAnimSite116.DEF = "boxman_BoxMan_view";
+let Viewpoint117 = browser.currentScene.createNode("Viewpoint");
+Viewpoint117.DEF = "Inclined_View";
+Viewpoint117.description = "Inclined View";
+Viewpoint117.orientation = new SFRotation(new float[0,1,0,0.78]);
+Viewpoint117.position = new SFVec3f(new float[2,0.9,2]);
+HAnimSite116.children = new MFNode();
 
-let HAnimJoint117 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint117.USE = "boxman_r_elbow";
-HAnimHumanoid4.joints[3] = HAnimJoint117;
+HAnimSite116.children[0] = Viewpoint117;
 
-let HAnimJoint118 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint118.USE = "boxman_r_shoulder";
-HAnimHumanoid4.joints[4] = HAnimJoint118;
+let Viewpoint118 = browser.currentScene.createNode("Viewpoint");
+Viewpoint118.DEF = "Front_View";
+Viewpoint118.description = "Front View";
+Viewpoint118.position = new SFVec3f(new float[0,1,3]);
+HAnimSite116.children[1] = Viewpoint118;
 
-let HAnimJoint119 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint119.USE = "boxman_l_wrist";
-HAnimHumanoid4.joints[5] = HAnimJoint119;
+let Viewpoint119 = browser.currentScene.createNode("Viewpoint");
+Viewpoint119.DEF = "Right_View";
+Viewpoint119.description = "Right-side View";
+Viewpoint119.orientation = new SFRotation(new float[0,1,0,-1.57]);
+Viewpoint119.position = new SFVec3f(new float[-3,1,0]);
+HAnimSite116.children[2] = Viewpoint119;
 
-let HAnimJoint120 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint120.USE = "boxman_l_elbow";
-HAnimHumanoid4.joints[6] = HAnimJoint120;
+let Viewpoint120 = browser.currentScene.createNode("Viewpoint");
+Viewpoint120.DEF = "Left_View";
+Viewpoint120.description = "Left-side View";
+Viewpoint120.orientation = new SFRotation(new float[0,1,0,1.57]);
+Viewpoint120.position = new SFVec3f(new float[3,1,0]);
+HAnimSite116.children[3] = Viewpoint120;
 
-let HAnimJoint121 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint121.USE = "boxman_l_shoulder";
-HAnimHumanoid4.joints[7] = HAnimJoint121;
+let Viewpoint121 = browser.currentScene.createNode("Viewpoint");
+Viewpoint121.DEF = "Top_View";
+Viewpoint121.description = "Top View";
+Viewpoint121.orientation = new SFRotation(new float[1,0,0,-1.57]);
+Viewpoint121.position = new SFVec3f(new float[0,3,0]);
+HAnimSite116.children[4] = Viewpoint121;
+
+HAnimHumanoid4.viewpoints[2] = HAnimSite116;
 
 let HAnimJoint122 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint122.USE = "boxman_skullbase";
-HAnimHumanoid4.joints[8] = HAnimJoint122;
+HAnimJoint122.USE = "boxman_humanoid_root";
+HAnimHumanoid4.joints[3] = HAnimJoint122;
 
 let HAnimJoint123 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint123.USE = "boxman_vl5";
-HAnimHumanoid4.joints[9] = HAnimJoint123;
+HAnimJoint123.USE = "boxman_skullbase";
+HAnimHumanoid4.joints[4] = HAnimJoint123;
 
 let HAnimJoint124 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint124.USE = "boxman_r_midtarsal";
-HAnimHumanoid4.joints[10] = HAnimJoint124;
+HAnimJoint124.USE = "boxman_vl5";
+HAnimHumanoid4.joints[5] = HAnimJoint124;
 
 let HAnimJoint125 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint125.USE = "boxman_r_ankle";
-HAnimHumanoid4.joints[11] = HAnimJoint125;
+HAnimJoint125.USE = "boxman_l_ankle";
+HAnimHumanoid4.joints[6] = HAnimJoint125;
 
 let HAnimJoint126 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint126.USE = "boxman_r_knee";
-HAnimHumanoid4.joints[12] = HAnimJoint126;
+HAnimJoint126.USE = "boxman_r_ankle";
+HAnimHumanoid4.joints[7] = HAnimJoint126;
 
 let HAnimJoint127 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint127.USE = "boxman_r_hip";
-HAnimHumanoid4.joints[13] = HAnimJoint127;
+HAnimJoint127.USE = "boxman_l_elbow";
+HAnimHumanoid4.joints[8] = HAnimJoint127;
 
 let HAnimJoint128 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint128.USE = "boxman_l_midtarsal";
-HAnimHumanoid4.joints[14] = HAnimJoint128;
+HAnimJoint128.USE = "boxman_r_elbow";
+HAnimHumanoid4.joints[9] = HAnimJoint128;
 
 let HAnimJoint129 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint129.USE = "boxman_l_ankle";
-HAnimHumanoid4.joints[15] = HAnimJoint129;
+HAnimJoint129.USE = "boxman_l_hip";
+HAnimHumanoid4.joints[10] = HAnimJoint129;
 
 let HAnimJoint130 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint130.USE = "boxman_l_knee";
-HAnimHumanoid4.joints[16] = HAnimJoint130;
+HAnimJoint130.USE = "boxman_r_hip";
+HAnimHumanoid4.joints[11] = HAnimJoint130;
 
 let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint131.USE = "boxman_l_hip";
-HAnimHumanoid4.joints[17] = HAnimJoint131;
+HAnimJoint131.USE = "boxman_l_knee";
+HAnimHumanoid4.joints[12] = HAnimJoint131;
 
 let HAnimJoint132 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint132.USE = "boxman_humanoid_root";
-HAnimHumanoid4.joints[18] = HAnimJoint132;
+HAnimJoint132.USE = "boxman_r_knee";
+HAnimHumanoid4.joints[13] = HAnimJoint132;
 
-let HAnimSegment133 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment133.USE = "boxman_sacrum";
-HAnimHumanoid4.segments[19] = HAnimSegment133;
+let HAnimJoint133 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint133.USE = "boxman_l_midtarsal";
+HAnimHumanoid4.joints[14] = HAnimJoint133;
 
-let HAnimSegment134 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment134.USE = "boxman_l_thigh";
-HAnimHumanoid4.segments[20] = HAnimSegment134;
+let HAnimJoint134 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint134.USE = "boxman_r_midtarsal";
+HAnimHumanoid4.joints[15] = HAnimJoint134;
 
-let HAnimSegment135 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment135.USE = "boxman_l_calf";
-HAnimHumanoid4.segments[21] = HAnimSegment135;
+let HAnimJoint135 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint135.USE = "boxman_l_shoulder";
+HAnimHumanoid4.joints[16] = HAnimJoint135;
 
-let HAnimSegment136 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment136.USE = "boxman_l_hindfoot";
-HAnimHumanoid4.segments[22] = HAnimSegment136;
+let HAnimJoint136 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint136.USE = "boxman_r_shoulder";
+HAnimHumanoid4.joints[17] = HAnimJoint136;
 
-let HAnimSegment137 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment137.USE = "boxman_l_middistal";
-HAnimHumanoid4.segments[23] = HAnimSegment137;
+let HAnimJoint137 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint137.USE = "boxman_l_wrist";
+HAnimHumanoid4.joints[18] = HAnimJoint137;
 
-let HAnimSegment138 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment138.USE = "boxman_r_thigh";
-HAnimHumanoid4.segments[24] = HAnimSegment138;
+let HAnimJoint138 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint138.USE = "boxman_r_wrist";
+HAnimHumanoid4.joints[19] = HAnimJoint138;
 
 let HAnimSegment139 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment139.USE = "boxman_r_calf";
-HAnimHumanoid4.segments[25] = HAnimSegment139;
+HAnimSegment139.USE = "boxman_l5";
+HAnimHumanoid4.segments[20] = HAnimSegment139;
 
 let HAnimSegment140 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment140.USE = "boxman_r_hindfoot";
-HAnimHumanoid4.segments[26] = HAnimSegment140;
+HAnimSegment140.USE = "boxman_sacrum";
+HAnimHumanoid4.segments[21] = HAnimSegment140;
 
 let HAnimSegment141 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment141.USE = "boxman_r_middistal";
-HAnimHumanoid4.segments[27] = HAnimSegment141;
+HAnimSegment141.USE = "boxman_skull";
+HAnimHumanoid4.segments[22] = HAnimSegment141;
 
 let HAnimSegment142 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment142.USE = "boxman_l5";
-HAnimHumanoid4.segments[28] = HAnimSegment142;
+HAnimSegment142.USE = "boxman_l_calf";
+HAnimHumanoid4.segments[23] = HAnimSegment142;
 
 let HAnimSegment143 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment143.USE = "boxman_skull";
-HAnimHumanoid4.segments[29] = HAnimSegment143;
+HAnimSegment143.USE = "boxman_r_calf";
+HAnimHumanoid4.segments[24] = HAnimSegment143;
 
 let HAnimSegment144 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment144.USE = "boxman_l_upperarm";
-HAnimHumanoid4.segments[30] = HAnimSegment144;
+HAnimSegment144.USE = "boxman_l_forearm";
+HAnimHumanoid4.segments[25] = HAnimSegment144;
 
 let HAnimSegment145 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment145.USE = "boxman_l_forearm";
-HAnimHumanoid4.segments[31] = HAnimSegment145;
+HAnimSegment145.USE = "boxman_r_forearm";
+HAnimHumanoid4.segments[26] = HAnimSegment145;
 
 let HAnimSegment146 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment146.USE = "boxman_l_hand";
-HAnimHumanoid4.segments[32] = HAnimSegment146;
+HAnimHumanoid4.segments[27] = HAnimSegment146;
 
 let HAnimSegment147 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment147.USE = "boxman_r_upperarm";
-HAnimHumanoid4.segments[33] = HAnimSegment147;
+HAnimSegment147.USE = "boxman_r_hand";
+HAnimHumanoid4.segments[28] = HAnimSegment147;
 
 let HAnimSegment148 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment148.USE = "boxman_r_forearm";
-HAnimHumanoid4.segments[34] = HAnimSegment148;
+HAnimSegment148.USE = "boxman_l_hindfoot";
+HAnimHumanoid4.segments[29] = HAnimSegment148;
 
 let HAnimSegment149 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment149.USE = "boxman_r_hand";
-HAnimHumanoid4.segments[35] = HAnimSegment149;
+HAnimSegment149.USE = "boxman_r_hindfoot";
+HAnimHumanoid4.segments[30] = HAnimSegment149;
 
-let HAnimSite150 = browser.currentScene.createNode("HAnimSite");
-HAnimSite150.USE = "boxman_l_middistal_tip";
-HAnimHumanoid4.viewpoints[36] = HAnimSite150;
+let HAnimSegment150 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment150.USE = "boxman_l_middistal";
+HAnimHumanoid4.segments[31] = HAnimSegment150;
 
-let HAnimSite151 = browser.currentScene.createNode("HAnimSite");
-HAnimSite151.USE = "boxman_r_middistal_tip";
-HAnimHumanoid4.viewpoints[37] = HAnimSite151;
+let HAnimSegment151 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment151.USE = "boxman_r_middistal";
+HAnimHumanoid4.segments[32] = HAnimSegment151;
 
-let HAnimSite152 = browser.currentScene.createNode("HAnimSite");
-HAnimSite152.USE = "boxman_skull_tip";
-HAnimHumanoid4.viewpoints[38] = HAnimSite152;
+let HAnimSegment152 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment152.USE = "boxman_l_thigh";
+HAnimHumanoid4.segments[33] = HAnimSegment152;
 
-let HAnimSite153 = browser.currentScene.createNode("HAnimSite");
-HAnimSite153.USE = "boxman_l_hand_tip";
-HAnimHumanoid4.viewpoints[39] = HAnimSite153;
+let HAnimSegment153 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment153.USE = "boxman_r_thigh";
+HAnimHumanoid4.segments[34] = HAnimSegment153;
 
-let HAnimSite154 = browser.currentScene.createNode("HAnimSite");
-HAnimSite154.USE = "boxman_r_hand_tip";
-HAnimHumanoid4.viewpoints[40] = HAnimSite154;
+let HAnimSegment154 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment154.USE = "boxman_l_upperarm";
+HAnimHumanoid4.segments[35] = HAnimSegment154;
 
-let HAnimSite155 = browser.currentScene.createNode("HAnimSite");
-HAnimSite155.name = "BoxMan_view";
-HAnimSite155.DEF = "boxman_BoxMan_view";
-let Viewpoint156 = browser.currentScene.createNode("Viewpoint");
-Viewpoint156.DEF = "Inclined_View";
-Viewpoint156.description = "Inclined View";
-Viewpoint156.orientation = new SFRotation(new float[0,1,0,0.78]);
-Viewpoint156.position = new SFVec3f(new float[2,0.9,2]);
-HAnimSite155.children = new MFNode();
+let HAnimSegment155 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment155.USE = "boxman_r_upperarm";
+HAnimHumanoid4.segments[36] = HAnimSegment155;
 
-HAnimSite155.children[0] = Viewpoint156;
+let HAnimSite156 = browser.currentScene.createNode("HAnimSite");
+HAnimSite156.USE = "boxman_skull_tip";
+HAnimHumanoid4.viewpoints[37] = HAnimSite156;
 
-let Viewpoint157 = browser.currentScene.createNode("Viewpoint");
-Viewpoint157.DEF = "Front_View";
-Viewpoint157.description = "Front View";
-Viewpoint157.position = new SFVec3f(new float[0,1,3]);
-HAnimSite155.children[1] = Viewpoint157;
+let HAnimSite157 = browser.currentScene.createNode("HAnimSite");
+HAnimSite157.USE = "boxman_l_hand_tip";
+HAnimHumanoid4.viewpoints[38] = HAnimSite157;
 
-let Viewpoint158 = browser.currentScene.createNode("Viewpoint");
-Viewpoint158.DEF = "Right_View";
-Viewpoint158.description = "Right-side View";
-Viewpoint158.orientation = new SFRotation(new float[0,1,0,-1.57]);
-Viewpoint158.position = new SFVec3f(new float[-3,1,0]);
-HAnimSite155.children[2] = Viewpoint158;
+let HAnimSite158 = browser.currentScene.createNode("HAnimSite");
+HAnimSite158.USE = "boxman_r_hand_tip";
+HAnimHumanoid4.viewpoints[39] = HAnimSite158;
 
-let Viewpoint159 = browser.currentScene.createNode("Viewpoint");
-Viewpoint159.DEF = "Left_View";
-Viewpoint159.description = "Left-side View";
-Viewpoint159.orientation = new SFRotation(new float[0,1,0,1.57]);
-Viewpoint159.position = new SFVec3f(new float[3,1,0]);
-HAnimSite155.children[3] = Viewpoint159;
+let HAnimSite159 = browser.currentScene.createNode("HAnimSite");
+HAnimSite159.USE = "boxman_l_middistal_tip";
+HAnimHumanoid4.viewpoints[40] = HAnimSite159;
 
-let Viewpoint160 = browser.currentScene.createNode("Viewpoint");
-Viewpoint160.DEF = "Top_View";
-Viewpoint160.description = "Top View";
-Viewpoint160.orientation = new SFRotation(new float[1,0,0,-1.57]);
-Viewpoint160.position = new SFVec3f(new float[0,3,0]);
-HAnimSite155.children[4] = Viewpoint160;
-
-HAnimHumanoid4.viewpoints[41] = HAnimSite155;
+let HAnimSite160 = browser.currentScene.createNode("HAnimSite");
+HAnimSite160.USE = "boxman_r_middistal_tip";
+HAnimHumanoid4.viewpoints[41] = HAnimSite160;
 
 browser.currentScene.children[2] = HAnimHumanoid4;
 
 let ExternProtoDeclare161 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare161.name = "LOA1_WalkAnimation";
-ExternProtoDeclare161.url = new MFString(new java.lang.String["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]);
+ExternProtoDeclare161.url = new MFString(new java.lang.String["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]);
 let field162 = browser.currentScene.createNode("field");
 field162.name = "cycleInterval";
 field162.accessType = "inputOutput";

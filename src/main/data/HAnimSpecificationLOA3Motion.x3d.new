@@ -5,8 +5,7 @@
 <meta name="description" content="HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."></meta>
 <meta name="reference" content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"></meta>
 <meta name="created" content="24 April 2013"></meta>
-<meta name="modified" content="4 July 2020"></meta>
-<meta name="TODO" content="Convert to X3D4 HAnim2"></meta>
+<meta name="modified" content="11 July 2020"></meta>
 <meta name="Image" content="HAnimSpecificationLOA3MotionH3DViewer.png"></meta>
 <meta name="Image" content="HAnimSpecificationLOA3MotionInstantReality.png"></meta>
 <meta name="Image" content="HAnimSpecificationLOA3MotionOctagaVS.png"></meta>
@@ -27,7 +26,7 @@
 <meta name="reference" content="originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"></meta>
 <meta name="reference" content="originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Background skyColor="0.3 0.3 0.3"></Background>
@@ -43,7 +42,7 @@
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side Close" orientation="0 1 0 -1.2" position="-1 0.8 0.5"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side" orientation="0 1 0 -1.5708" position="-2.6 0.8 0"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Top" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=2.0&quot; &quot;height=1.7504&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><!--<HAnimJoint name='humanoid_root'></HAnimJoint> visualization sphere within <HAnimSegment name='sacrum'></HAnimSegment>--><TouchSensor description="HAnimJoint HumanoidRoot, HAnimSegment sacrum"></TouchSensor>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=1.0&quot; &quot;height=1.7504&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><!--<HAnimJoint name='humanoid_root'></HAnimJoint> visualization sphere within <HAnimSegment name='sacrum'></HAnimSegment>--><TouchSensor description="HAnimJoint HumanoidRoot, HAnimSegment sacrum"></TouchSensor>
 <Transform translation="0 0.824 0.0277"><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.006"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="1 0.5 0" transparency="0.5"></Material>
 </Appearance>
@@ -1942,8 +1941,8 @@
 <HAnimSite containerField="sites" USE="hanim_r_ulnar_styloid_pt"></HAnimSite>
 </HAnimHumanoid>
 <Group DEF="StopAnimation"><TimeSensor DEF="StopTimer" cycleInterval="5.73" loop="true"></TimeSensor>
-<PositionInterpolator DEF="Stop_HumanoidRoot_TranslationInterpolator" key="0 0.5 1" keyValue="0 0 0 0 0 0 0 0 0"></PositionInterpolator>
-<OrientationInterpolator DEF="Stop_HumanoidRoot_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
+<PositionInterpolator DEF="Stop_humanoid_root_TranslationInterpolator" key="0 0.5 1" keyValue="0 0 0 0 0 0 0 0 0"></PositionInterpolator>
+<OrientationInterpolator DEF="Stop_humanoid_root_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
 <OrientationInterpolator DEF="Stop_sacroiliac_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
 <OrientationInterpolator DEF="Stop_l_hip_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
 <OrientationInterpolator DEF="Stop_l_knee_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
@@ -2032,8 +2031,8 @@
 <OrientationInterpolator DEF="Stop_r_pinky1_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
 <OrientationInterpolator DEF="Stop_r_pinky2_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
 <OrientationInterpolator DEF="Stop_r_pinky3_RotationInterpolator" key="0 0.5 1" keyValue="0 0 1 0 0 0 1 0 0 0 1 0"></OrientationInterpolator>
-<ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_HumanoidRoot_TranslationInterpolator"></ROUTE>
-<ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_HumanoidRoot_RotationInterpolator"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_humanoid_root_TranslationInterpolator"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_humanoid_root_RotationInterpolator"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_sacroiliac_RotationInterpolator"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_l_hip_RotationInterpolator"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_l_knee_RotationInterpolator"></ROUTE>
@@ -2122,8 +2121,8 @@
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky1_RotationInterpolator"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky2_RotationInterpolator"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky3_RotationInterpolator"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRoot_TranslationInterpolator" toField="translation" toNode="hanim_humanoid_root"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRoot_RotationInterpolator" toField="rotation" toNode="hanim_humanoid_root"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_humanoid_root_TranslationInterpolator" toField="translation" toNode="hanim_humanoid_root"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_humanoid_root_RotationInterpolator" toField="rotation" toNode="hanim_humanoid_root"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="Stop_sacroiliac_RotationInterpolator" toField="rotation" toNode="hanim_sacroiliac"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="Stop_l_hip_RotationInterpolator" toField="rotation" toNode="hanim_l_hip"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="Stop_l_knee_RotationInterpolator" toField="rotation" toNode="hanim_l_knee"></ROUTE>

@@ -373,7 +373,7 @@ JoeSkinTexcoordDisplacerKick.prototype = {
         .addSkin((new autoclass.Shape("Joe_Shape"))
           .setAppearance((new autoclass.Appearance("Joe_skin_Appearance"))
             .setMaterial((new autoclass.Material("Joe_skin_Material")).setDiffuseColor(0.3,0.3,0.6).setEmissiveColor(0.3,0.3,0.6))
-            .setTexture((new autoclass.ImageTexture("JoeSkinImageTexture")).setUrl(new autoclass.MFString("\"JoeBodyTexture29.png\"")))
+            .setTexture((new autoclass.ImageTexture("JoeSkinImageTexture")).setUrl(new autoclass.MFString("\"JoeBodyTexture29.png\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeBodyTexture29.png\"")))
             .setTextureTransform((new autoclass.TextureTransform("KickTextureTransform"))))
           .setGeometry((new autoclass.IndexedFaceSet("Joe_skin_IndexedFaceSet")).setDEF("Joe_skin_IndexedFaceSet").setCreaseAngle(3.14).setCoordIndex(this.Joe_skin_IndexedFaceSet_6_138_coordIndex)
             .setCoord((new autoclass.Coordinate("Joe_SkinCoord")).setPoint(this.Joe_SkinCoord_7_138_point))
