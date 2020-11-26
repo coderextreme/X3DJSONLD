@@ -7,7 +7,7 @@
     "head": {
         "component": [
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":1
           }
         ],
@@ -18,7 +18,7 @@
           },
           {
             "@name":"description",
-            "@content":"Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"
+            "@content":"Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"
           },
           {
             "@name":"creator",
@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 October 2019"
+            "@content":"5 July 2020"
           },
           {
             "@name":"warning",
@@ -50,27 +50,23 @@
           },
           {
             "@name":"reference",
-            "@content":"https://www.web3d.org/working-groups/humanoid-animation-h-anim"
+            "@content":"https://www.web3d.org/working-groups/humanoid-animation-HAnim"
           },
           {
             "@name":"reference",
-            "@content":"https://www.web3d.org/files/specifications/19774/V1.0"
+            "@content":"https://www.web3d.org/documents/specifications/19774/V2.0"
           },
           {
             "@name":"reference",
-            "@content":"https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"
+            "@content":"https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"
           },
           {
             "@name":"subject",
-            "@content":"X3D H-Anim humanoid animation"
-          },
-          {
-            "@name":"warning",
-            "@content":"scene, DOCTYPE and Schema under development."
+            "@content":"X3D HAnim humanoid animation"
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d"
           },
           {
             "@name":"generator",
@@ -82,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 November 2020"
+            "@content":"23 November 2020"
           },
           {
             "@name":"generator",
@@ -118,7 +114,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"]
+                    "@url":["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"]
                   }
                 },
                 {
@@ -147,7 +143,7 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"]
+                    "@url":["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"]
                   }
                 },
                 { "Transform":
@@ -167,7 +163,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"]
+                    "@url":["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"]
                   }
                 },
                 { "Transform":
@@ -187,7 +183,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"]
+                    "@url":["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"]
                   }
                 },
                 { "Transform":

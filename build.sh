@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=${PATH}:~/apache-maven-3.5.2/bin
+
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
 svn up .
@@ -43,7 +45,6 @@ cp X3Dautoclass.js net/x3djsonld/data
 popd
 
 # maven build
-export PATH=${PATH}:~/apache-maven-3.5.2/bin
 mvn clean install && sh FixNeedClassName.sh && mvn install
 
 echo Press Return to Continue

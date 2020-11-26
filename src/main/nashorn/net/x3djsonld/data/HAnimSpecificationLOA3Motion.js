@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d">HAnimSpecificationLOA3Motion.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d">HAnimSpecificationLOA3Motion.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -28,35 +28,31 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 July 2020 </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
-			<td> Convert to X3D4 HAnim2 </td>
+			<td> 11 July 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionH3DViewer.png">HAnimSpecificationLOA3MotionH3DViewer.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3MotionH3DViewer.png">HAnimSpecificationLOA3MotionH3DViewer.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionInstantReality.png">HAnimSpecificationLOA3MotionInstantReality.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3MotionInstantReality.png">HAnimSpecificationLOA3MotionInstantReality.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionOctagaVS.png">HAnimSpecificationLOA3MotionOctagaVS.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3MotionOctagaVS.png">HAnimSpecificationLOA3MotionOctagaVS.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionView3dscene.png">HAnimSpecificationLOA3MotionView3dscene.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3MotionView3dscene.png">HAnimSpecificationLOA3MotionView3dscene.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -64,15 +60,15 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -84,7 +80,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -104,11 +100,11 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -116,11 +112,11 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -152,110 +148,110 @@ HAnimSpecificationLOA3Motion.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #33, 93 total values */
-	this.WorldInfo_4_33_info = new MFStringObject(new MFStringObject("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
+	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #32, 93 total values */
+	this.WorldInfo_4_32_info = new MFStringObject(new MFStringObject("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
 
-	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #44, 16 total values */
-	this.hanim_humanoid_3_44_info = new MFStringObject(new MFStringObject("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=2.0\" \"height=1.7504\""));
+	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #43, 16 total values */
+	this.hanim_humanoid_3_43_info = new MFStringObject(new MFStringObject("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=1.0\" \"height=1.7504\""));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2588, 44 total numbers made up of 11 4-tuple values */
-	this.Walk_r_ankle_RotationInterpolator_4_2588_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2587, 44 total numbers made up of 11 4-tuple values */
+	this.Walk_r_ankle_RotationInterpolator_4_2587_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2589, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_r_knee_RotationInterpolator_4_2589_keyValue = new MFRotationObject(Java.to([1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2588, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_r_knee_RotationInterpolator_4_2588_keyValue = new MFRotationObject(Java.to([1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2590, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_r_hip_RotationInterpolator_4_2590_keyValue = new MFRotationObject(Java.to([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2589, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_r_hip_RotationInterpolator_4_2589_keyValue = new MFRotationObject(Java.to([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2592, 32 total numbers made up of 8 4-tuple values */
-	this.Walk_l_knee_RotationInterpolator_4_2592_keyValue = new MFRotationObject(Java.to([1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2591, 32 total numbers made up of 8 4-tuple values */
+	this.Walk_l_knee_RotationInterpolator_4_2591_keyValue = new MFRotationObject(Java.to([1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2593, 32 total numbers made up of 8 4-tuple values */
-	this.Walk_l_hip_RotationInterpolator_4_2593_keyValue = new MFRotationObject(Java.to([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2592, 32 total numbers made up of 8 4-tuple values */
+	this.Walk_l_hip_RotationInterpolator_4_2592_keyValue = new MFRotationObject(Java.to([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2595, 16 total numbers made up of 4 4-tuple values */
-	this.Walk_r_wrist_RotationInterpolator_4_2595_keyValue = new MFRotationObject(Java.to([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2594, 16 total numbers made up of 4 4-tuple values */
+	this.Walk_r_wrist_RotationInterpolator_4_2594_keyValue = new MFRotationObject(Java.to([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2598, 16 total numbers made up of 4 4-tuple values */
-	this.Walk_l_wrist_RotationInterpolator_4_2598_keyValue = new MFRotationObject(Java.to([0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2597, 16 total numbers made up of 4 4-tuple values */
+	this.Walk_l_wrist_RotationInterpolator_4_2597_keyValue = new MFRotationObject(Java.to([0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_head_RotationInterpolator' keyValue field, scene-graph level=4, element #2601, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_head_RotationInterpolator_4_2601_keyValue = new MFRotationObject(Java.to([0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_head_RotationInterpolator' keyValue field, scene-graph level=4, element #2600, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_head_RotationInterpolator_4_2600_keyValue = new MFRotationObject(Java.to([0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_upper_body_RotationInterpolator' keyValue field, scene-graph level=4, element #2603, 24 total numbers made up of 6 4-tuple values */
-	this.Walk_upper_body_RotationInterpolator_4_2603_keyValue = new MFRotationObject(Java.to([0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_upper_body_RotationInterpolator' keyValue field, scene-graph level=4, element #2602, 24 total numbers made up of 6 4-tuple values */
+	this.Walk_upper_body_RotationInterpolator_4_2602_keyValue = new MFRotationObject(Java.to([0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826], Java.type("float[]")));
 
-	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2605, 19 total numbers */
-	this.Walk_whole_body_TranslationInterpolator_4_2605_key = new MFFloatObject(Java.to([0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0], Java.type("float[]")));
+	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2604, 19 total numbers */
+	this.Walk_whole_body_TranslationInterpolator_4_2604_key = new MFFloatObject(Java.to([0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0], Java.type("float[]")));
 
-	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2605, 57 total numbers made up of 19 3-tuple values */
-	this.Walk_whole_body_TranslationInterpolator_4_2605_keyValue = new MFVec3fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2604, 57 total numbers made up of 19 3-tuple values */
+	this.Walk_whole_body_TranslationInterpolator_4_2604_keyValue = new MFVec3fObject() /* splitting up long array to improve readability */
 	.append(new MFVec3fObject(Java.to([0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_l_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2675, 20 total numbers made up of 5 4-tuple values */
-	this.Run_l_hip_RotationInterpolator_Run_4_2675_keyValue = new MFRotationObject(Java.to([-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Run_l_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2674, 20 total numbers made up of 5 4-tuple values */
+	this.Run_l_hip_RotationInterpolator_Run_4_2674_keyValue = new MFRotationObject(Java.to([-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_r_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2678, 20 total numbers made up of 5 4-tuple values */
-	this.Run_r_hip_RotationInterpolator_Run_4_2678_keyValue = new MFRotationObject(Java.to([0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Run_r_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2677, 20 total numbers made up of 5 4-tuple values */
+	this.Run_r_hip_RotationInterpolator_Run_4_2677_keyValue = new MFRotationObject(Java.to([0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_l_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2681, 20 total numbers made up of 5 4-tuple values */
-	this.Run_l_shoulder_RotationInterpolator_Run_4_2681_keyValue = new MFRotationObject(Java.to([0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Run_l_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2680, 20 total numbers made up of 5 4-tuple values */
+	this.Run_l_shoulder_RotationInterpolator_Run_4_2680_keyValue = new MFRotationObject(Java.to([0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_r_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2684, 20 total numbers made up of 5 4-tuple values */
-	this.Run_r_shoulder_RotationInterpolator_Run_4_2684_keyValue = new MFRotationObject(Java.to([-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Run_r_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2683, 20 total numbers made up of 5 4-tuple values */
+	this.Run_r_shoulder_RotationInterpolator_Run_4_2683_keyValue = new MFRotationObject(Java.to([-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_upper_body_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2690, 20 total numbers made up of 5 4-tuple values */
-	this.Run_upper_body_RotationInterpolator_Run_4_2690_keyValue = new MFRotationObject(Java.to([0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Run_upper_body_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2689, 20 total numbers made up of 5 4-tuple values */
+	this.Run_upper_body_RotationInterpolator_Run_4_2689_keyValue = new MFRotationObject(Java.to([0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2762, 56 total numbers made up of 14 4-tuple values */
-	this.Jump_r_ankle_RotationInterpolator_4_2762_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2761, 56 total numbers made up of 14 4-tuple values */
+	this.Jump_r_ankle_RotationInterpolator_4_2761_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,1.3,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2764, 44 total numbers made up of 11 4-tuple values */
-	this.Jump_r_hip_RotationInterpolator_4_2764_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2763, 44 total numbers made up of 11 4-tuple values */
+	this.Jump_r_hip_RotationInterpolator_4_2763_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,1.63,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,1.55,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2765, 56 total numbers made up of 14 4-tuple values */
-	this.Jump_l_ankle_RotationInterpolator_4_2765_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2764, 56 total numbers made up of 14 4-tuple values */
+	this.Jump_l_ankle_RotationInterpolator_4_2764_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2767, 44 total numbers made up of 11 4-tuple values */
-	this.Jump_l_hip_RotationInterpolator_4_2767_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2766, 44 total numbers made up of 11 4-tuple values */
+	this.Jump_l_hip_RotationInterpolator_4_2766_keyValue = new MFRotationObject() /* splitting up long array to improve readability */
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2769, 24 total numbers made up of 6 4-tuple values */
-	this.Jump_r_wrist_RotationInterpolator_4_2769_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2768, 24 total numbers made up of 6 4-tuple values */
+	this.Jump_r_wrist_RotationInterpolator_4_2768_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2771, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_r_shoulder_RotationInterpolator_4_2771_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2770, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_r_shoulder_RotationInterpolator_4_2770_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2772, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_l_wrist_RotationInterpolator_4_2772_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2771, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_l_wrist_RotationInterpolator_4_2771_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0], Java.type("float[]")));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2774, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_l_shoulder_RotationInterpolator_4_2774_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0], Java.type("float[]")));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2773, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_l_shoulder_RotationInterpolator_4_2773_keyValue = new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0], Java.type("float[]")));
 
-	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2779, 22 total numbers */
-	this.Jump_whole_body_TranslationInterpolator_4_2779_key = new MFFloatObject(Java.to([0.0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1.0], Java.type("float[]")));
+	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2778, 22 total numbers */
+	this.Jump_whole_body_TranslationInterpolator_4_2778_key = new MFFloatObject(Java.to([0.0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1.0], Java.type("float[]")));
 
-	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2779, 66 total numbers made up of 22 3-tuple values */
-	this.Jump_whole_body_TranslationInterpolator_4_2779_keyValue = new MFVec3fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2778, 66 total numbers made up of 22 3-tuple values */
+	this.Jump_whole_body_TranslationInterpolator_4_2778_keyValue = new MFVec3fObject() /* splitting up long array to improve readability */
 	.append(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0.0,0.35,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([0.000141,-0.01626,-0.004935,0.0,0.0,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: IndexedLineSet DEF='Orbit1' coordIndex field, scene-graph level=7, element #2939, 62 total numbers */
-	this.Orbit1_7_2939_coordIndex = new MFInt32Object(Java.to([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1], Java.type("int[]")));
+	/** Large attribute array: IndexedLineSet DEF='Orbit1' coordIndex field, scene-graph level=7, element #2938, 62 total numbers */
+	this.Orbit1_7_2938_coordIndex = new MFInt32Object(Java.to([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1], Java.type("int[]")));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=8, element #2939, 183 total numbers made up of 61 3-tuple values */
-	this.Coordinate_8_2939_point = new MFVec3fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: Coordinate point field, scene-graph level=8, element #2938, 183 total numbers made up of 61 3-tuple values */
+	this.Coordinate_8_2938_point = new MFVec3fObject() /* splitting up long array to improve readability */
 	.append(new MFVec3fObject(Java.to([1.0,0.0,0.0,0.995,0.0,-0.105,0.979,0.0,-0.208,0.951,0.0,-0.309,0.914,0.0,-0.407,0.866,0.0,-0.5,0.809,0.0,-0.588,0.743,0.0,-0.669,0.669,0.0,-0.743,0.588,0.0,-0.809], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([0.5,0.0,-0.866,0.407,0.0,-0.914,0.309,0.0,-0.951,0.208,0.0,-0.978,0.105,0.0,-0.995,0.0,0.0,-1.0,-0.105,0.0,-0.994522,-0.208,0.0,-0.978,-0.309,0.0,-0.951,-0.407,0.0,-0.914], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([-0.5,0.0,-0.866,-0.588,0.0,-0.809,-0.669,0.0,-0.743,-0.743,0.0,-0.669,-0.809,0.0,-0.588,-0.866,0.0,-0.5,-0.914,0.0,-0.407,-0.951,0.0,-0.309,-0.978,0.0,-0.208,-0.995,0.0,-0.105], Java.type("float[]"))))
@@ -270,8 +266,7 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addMeta(new metaObject().setName("description").setContent("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."))
     .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
     .addMeta(new metaObject().setName("created").setContent("24 April 2013"))
-    .addMeta(new metaObject().setName("modified").setContent("4 July 2020"))
-    .addMeta(new metaObject().setName("TODO").setContent("Convert to X3D4 HAnim2"))
+    .addMeta(new metaObject().setName("modified").setContent("11 July 2020"))
     .addMeta(new metaObject().setName("Image").setContent("HAnimSpecificationLOA3MotionH3DViewer.png"))
     .addMeta(new metaObject().setName("Image").setContent("HAnimSpecificationLOA3MotionInstantReality.png"))
     .addMeta(new metaObject().setName("Image").setContent("HAnimSpecificationLOA3MotionOctagaVS.png"))
@@ -292,13 +287,13 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"))
     .addMeta(new metaObject().setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([0.3,0.3,0.3], Java.type("float[]")))))
     .addChild(new NavigationInfoObject())
     .addChild(new GroupObject("Original_WorldInfo")
-      .addChild(new WorldInfoObject().setInfo(this.WorldInfo_4_33_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
+      .addChild(new WorldInfoObject().setInfo(this.WorldInfo_4_32_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
     .addComments(" TODO move viewpoints to be internal to HAnimHumanoid ")
     .addComments(" Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human. ")
     .addChild(new ViewpointObject().setDescription("Humanoid LOA 3 Front").setPosition(0.0,0.4,4.0).setCenterOfRotation(0.0,0.9149,0.0016))
@@ -310,7 +305,7 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addChild(new ViewpointObject().setDescription("Humanoid LOA 3 Left Side Close").setPosition(-1.0,0.8,0.5).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.2))
     .addChild(new ViewpointObject().setDescription("Humanoid LOA 3 Left Side").setPosition(-2.6,0.8,0.0).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.5708))
     .addChild(new ViewpointObject().setDescription("Humanoid LOA 3 Top").setCenterOfRotation(0.0,0.9149,0.0016).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
-    .addChild(new HAnimHumanoidObject("hanim_humanoid").setName("humanoid").setInfo(this.hanim_humanoid_3_44_info).setVersion("1.0")
+    .addChild(new HAnimHumanoidObject("hanim_humanoid").setName("humanoid").setInfo(this.hanim_humanoid_3_43_info).setVersion("1.0")
       .addSkeleton(new HAnimJointObject("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.824,0.0277)
         .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum")
           .addComments(" <HAnimJoint name='humanoid_root'/> visualization sphere within <HAnimSegment name='sacrum'/> ")
@@ -2605,8 +2600,8 @@ HAnimSpecificationLOA3Motion.prototype = {
       .addSites(new HAnimSiteObject().setUSE("hanim_r_ulnar_styloid_pt")))
     .addChild(new GroupObject("StopAnimation")
       .addChild(new TimeSensorObject("StopTimer").setCycleInterval(5.73).setLoop(true))
-      .addChild(new PositionInterpolatorObject("Stop_HumanoidRoot_TranslationInterpolator").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Stop_HumanoidRoot_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
+      .addChild(new PositionInterpolatorObject("Stop_humanoid_root_TranslationInterpolator").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Stop_humanoid_root_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Stop_sacroiliac_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Stop_l_hip_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Stop_l_knee_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
@@ -2695,8 +2690,8 @@ HAnimSpecificationLOA3Motion.prototype = {
       .addChild(new OrientationInterpolatorObject("Stop_r_pinky1_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Stop_r_pinky2_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Stop_r_pinky3_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
-      .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRoot_TranslationInterpolator").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRoot_RotationInterpolator").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_TranslationInterpolator").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_RotationInterpolator").setToField("set_fraction"))
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_sacroiliac_RotationInterpolator").setToField("set_fraction"))
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_hip_RotationInterpolator").setToField("set_fraction"))
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_knee_RotationInterpolator").setToField("set_fraction"))
@@ -2785,8 +2780,8 @@ HAnimSpecificationLOA3Motion.prototype = {
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky1_RotationInterpolator").setToField("set_fraction"))
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky2_RotationInterpolator").setToField("set_fraction"))
       .addChild(new ROUTEObject().setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky3_RotationInterpolator").setToField("set_fraction"))
-      .addChild(new ROUTEObject().setFromNode("Stop_HumanoidRoot_TranslationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("translation"))
-      .addChild(new ROUTEObject().setFromNode("Stop_HumanoidRoot_RotationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Stop_humanoid_root_TranslationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("translation"))
+      .addChild(new ROUTEObject().setFromNode("Stop_humanoid_root_RotationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("rotation"))
       .addChild(new ROUTEObject().setFromNode("Stop_sacroiliac_RotationInterpolator").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("rotation"))
       .addChild(new ROUTEObject().setFromNode("Stop_l_hip_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_hip").setToField("rotation"))
       .addChild(new ROUTEObject().setFromNode("Stop_l_knee_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_knee").setToField("rotation"))
@@ -3250,24 +3245,24 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addChild(new GroupObject("WalkAnimation")
       .addChild(new TimeSensorObject("WalkTimer").setCycleInterval(1.73).setLoop(true))
       .addChild(new OrientationInterpolatorObject("Walk_r_metatarsal_PitchInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.7,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_r_ankle_RotationInterpolator").setKeyValue(this.Walk_r_ankle_RotationInterpolator_4_2588_keyValue).setKey(Java.to([0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_r_knee_RotationInterpolator").setKey(Java.to([0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))).setKeyValue(this.Walk_r_knee_RotationInterpolator_4_2589_keyValue))
-      .addChild(new OrientationInterpolatorObject("Walk_r_hip_RotationInterpolator").setKeyValue(this.Walk_r_hip_RotationInterpolator_4_2590_keyValue).setKey(Java.to([0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_r_ankle_RotationInterpolator").setKeyValue(this.Walk_r_ankle_RotationInterpolator_4_2587_keyValue).setKey(Java.to([0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_r_knee_RotationInterpolator").setKey(Java.to([0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))).setKeyValue(this.Walk_r_knee_RotationInterpolator_4_2588_keyValue))
+      .addChild(new OrientationInterpolatorObject("Walk_r_hip_RotationInterpolator").setKeyValue(this.Walk_r_hip_RotationInterpolator_4_2589_keyValue).setKey(Java.to([0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_l_ankle_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714], Java.type("float[]")))).setKey(Java.to([0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_l_knee_RotationInterpolator").setKey(Java.to([0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))).setKeyValue(this.Walk_l_knee_RotationInterpolator_4_2592_keyValue))
-      .addChild(new OrientationInterpolatorObject("Walk_l_hip_RotationInterpolator").setKeyValue(this.Walk_l_hip_RotationInterpolator_4_2593_keyValue).setKey(Java.to([0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_l_knee_RotationInterpolator").setKey(Java.to([0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))).setKeyValue(this.Walk_l_knee_RotationInterpolator_4_2591_keyValue))
+      .addChild(new OrientationInterpolatorObject("Walk_l_hip_RotationInterpolator").setKeyValue(this.Walk_l_hip_RotationInterpolator_4_2592_keyValue).setKey(Java.to([0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_lower_body_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056], Java.type("float[]")))).setKey(Java.to([0.0,0.5,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_r_wrist_RotationInterpolator").setKeyValue(this.Walk_r_wrist_RotationInterpolator_4_2595_keyValue).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_r_wrist_RotationInterpolator").setKeyValue(this.Walk_r_wrist_RotationInterpolator_4_2594_keyValue).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_r_elbow_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508], Java.type("float[]")))).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_r_shoulder_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346], Java.type("float[]")))).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_l_wrist_RotationInterpolator").setKeyValue(this.Walk_l_wrist_RotationInterpolator_4_2598_keyValue).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_l_wrist_RotationInterpolator").setKeyValue(this.Walk_l_wrist_RotationInterpolator_4_2597_keyValue).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_l_elbow_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878], Java.type("float[]")))).setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_l_shoulder_RotationInterpolator").setKey(Java.to([0.0,0.375,0.9167,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189], Java.type("float[]")))))
-      .addChild(new OrientationInterpolatorObject("Walk_head_RotationInterpolator").setKeyValue(this.Walk_head_RotationInterpolator_4_2601_keyValue).setKey(Java.to([0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Walk_head_RotationInterpolator").setKeyValue(this.Walk_head_RotationInterpolator_4_2600_keyValue).setKey(Java.to([0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_neck_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Walk_upper_body_RotationInterpolator").setKey(Java.to([0.0,0.2083,0.375,0.75,0.8333,1.0], Java.type("float[]"))).setKeyValue(this.Walk_upper_body_RotationInterpolator_4_2603_keyValue))
+      .addChild(new OrientationInterpolatorObject("Walk_upper_body_RotationInterpolator").setKey(Java.to([0.0,0.2083,0.375,0.75,0.8333,1.0], Java.type("float[]"))).setKeyValue(this.Walk_upper_body_RotationInterpolator_4_2602_keyValue))
       .addChild(new OrientationInterpolatorObject("Walk_whole_body_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-      .addChild(new PositionInterpolatorObject("Walk_whole_body_TranslationInterpolator").setKeyValue(this.Walk_whole_body_TranslationInterpolator_4_2605_keyValue).setKey(this.Walk_whole_body_TranslationInterpolator_4_2605_key))
+      .addChild(new PositionInterpolatorObject("Walk_whole_body_TranslationInterpolator").setKeyValue(this.Walk_whole_body_TranslationInterpolator_4_2604_keyValue).setKey(this.Walk_whole_body_TranslationInterpolator_4_2604_key))
       .addChild(new OrientationInterpolatorObject("Walk_l_sternoclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_l_acromioclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Walk_r_sternoclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
@@ -3337,22 +3332,22 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addChild(new GroupObject("RunAnimation")
       .addChild(new TimeSensorObject("RunTimer").setCycleInterval(0.9).setLoop(true))
       .addChild(new OrientationInterpolatorObject("Run_r_metatarsal_PitchInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.7,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Run_l_hip_RotationInterpolator_Run").setKeyValue(this.Run_l_hip_RotationInterpolator_Run_4_2675_keyValue).setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Run_l_hip_RotationInterpolator_Run").setKeyValue(this.Run_l_hip_RotationInterpolator_Run_4_2674_keyValue).setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_l_knee_RotationInterpolator_Run").setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,1.01,1.0,0.0,0.0,0.426,1.0,0.0,0.0,0.705,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.01], Java.type("float[]")))))
       .addChild(new OrientationInterpolatorObject("Run_l_ankle_RotationInterpolator_Run").setKey(Java.to([0.0,0.22,0.3,0.4,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.0374,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03574], Java.type("float[]")))))
-      .addChild(new OrientationInterpolatorObject("Run_r_hip_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))).setKeyValue(this.Run_r_hip_RotationInterpolator_Run_4_2678_keyValue))
+      .addChild(new OrientationInterpolatorObject("Run_r_hip_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))).setKeyValue(this.Run_r_hip_RotationInterpolator_Run_4_2677_keyValue))
       .addChild(new OrientationInterpolatorObject("Run_r_knee_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.705,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.01,1.0,0.0,0.0,0.426,1.0,0.0,0.0,0.705], Java.type("float[]")))))
       .addChild(new OrientationInterpolatorObject("Run_r_ankle_RotationInterpolator_Run").setKey(Java.to([0.0,0.4,0.71,0.8,0.82,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.32,-1.0,0.0,0.0,0.374,-1.0,0.0,0.0,0.3478,1.0,0.0,0.0,0.2323], Java.type("float[]")))))
-      .addChild(new OrientationInterpolatorObject("Run_l_shoulder_RotationInterpolator_Run").setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))).setKeyValue(this.Run_l_shoulder_RotationInterpolator_Run_4_2681_keyValue))
+      .addChild(new OrientationInterpolatorObject("Run_l_shoulder_RotationInterpolator_Run").setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))).setKeyValue(this.Run_l_shoulder_RotationInterpolator_Run_4_2680_keyValue))
       .addChild(new OrientationInterpolatorObject("Run_l_elbow_RotationInterpolator_Run").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,1.85,-0.99,-0.19,0.18,1.35,-1.0,0.0,0.0,0.975,-0.99,-0.09,-0.02,1.55,-1.0,0.0,0.0,1.85], Java.type("float[]")))).setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_l_wrist_RotationInterpolator_Run").setKeyValue(new MFRotationObject(Java.to([-0.25,-1.0,0.08,0.14,0.25,1.0,0.08,0.14,0.0,0.0,1.0,0.0,-0.25,1.0,0.08,-0.14,-0.25,1.0,0.08,0.14], Java.type("float[]")))).setKey(Java.to([0.0,0.25,0.5,0.75,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Run_r_shoulder_RotationInterpolator_Run").setKeyValue(this.Run_r_shoulder_RotationInterpolator_Run_4_2684_keyValue).setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Run_r_shoulder_RotationInterpolator_Run").setKeyValue(this.Run_r_shoulder_RotationInterpolator_Run_4_2683_keyValue).setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_r_elbow_RotationInterpolator_Run").setKeyValue(new MFRotationObject(Java.to([-1.0,0.0,0.0,0.975,-0.99,0.09,0.02,1.55,-1.0,0.0,0.0,1.85,-0.99,0.19,-0.18,1.35,-1.0,0.0,0.0,0.975], Java.type("float[]")))).setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_r_wrist_RotationInterpolator_Run").setKeyValue(new MFRotationObject(Java.to([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_lower_body_RotationInterpolator_Run").setKeyValue(new MFRotationObject(Java.to([0.0,-1.0,0.0,0.125,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.125,0.0,0.0,1.0,0.0,0.0,-1.0,0.0,0.125], Java.type("float[]")))).setKey(Java.to([0.0,0.2182,0.4909,0.7455,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_head_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.08,1.0,0.0,0.0,0.12,1.0,0.0,0.0,0.3,1.0,0.0,0.0,0.3,1.0,0.0,0.0,0.08], Java.type("float[]")))))
       .addChild(new OrientationInterpolatorObject("Run_neck_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7091,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([0.7,0.0,0.0,0.4,-0.7,-0.7,0.0,0.4,0.0,0.0,0.0,0.4,-0.7,0.7,0.0,0.4,0.7,0.0,0.0,0.4], Java.type("float[]")))))
-      .addChild(new OrientationInterpolatorObject("Run_upper_body_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7636,1.0], Java.type("float[]"))).setKeyValue(this.Run_upper_body_RotationInterpolator_Run_4_2690_keyValue))
+      .addChild(new OrientationInterpolatorObject("Run_upper_body_RotationInterpolator_Run").setKey(Java.to([0.0,0.2545,0.4909,0.7636,1.0], Java.type("float[]"))).setKeyValue(this.Run_upper_body_RotationInterpolator_Run_4_2689_keyValue))
       .addChild(new OrientationInterpolatorObject("Run_whole_body_RotationInterpolator_Run").setKey(Java.to([0.0,0.25,0.5,0.75,1.0], Java.type("float[]"))).setKeyValue(new MFRotationObject(Java.to([1.0,0.0,0.0,0.06,1.0,0.0,0.0,0.167,1.0,0.0,0.0,0.06,1.0,0.0,0.0,0.168,1.0,0.0,0.0,0.06], Java.type("float[]")))))
       .addChild(new PositionInterpolatorObject("Run_whole_body_TranslationInterpolator_Run").setKeyValue(new MFVec3fObject(Java.to([0.0,-0.01,0.0,0.0,-0.037,0.0,0.0,-0.049,0.0,0.0,-0.037,0.0,0.0,-0.01,0.0,0.0,-0.037,0.0,0.0,-0.049,0.0,0.0,-0.037,0.0,0.0,-0.01,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Run_l_sternoclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
@@ -3424,24 +3419,24 @@ HAnimSpecificationLOA3Motion.prototype = {
     .addChild(new GroupObject("JumpAnimation")
       .addChild(new TimeSensorObject("JumpTimer").setCycleInterval(3.73).setLoop(true))
       .addChild(new OrientationInterpolatorObject("Jump_r_metatarsal_PitchInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.7,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_r_ankle_RotationInterpolator").setKeyValue(this.Jump_r_ankle_RotationInterpolator_4_2762_keyValue).setKey(Java.to([0.0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_r_ankle_RotationInterpolator").setKeyValue(this.Jump_r_ankle_RotationInterpolator_4_2761_keyValue).setKey(Java.to([0.0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_r_knee_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.5,1.0,0.0,0.0,1.7,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.25,0.3,0.64,0.76,0.88,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_r_hip_RotationInterpolator").setKeyValue(this.Jump_r_hip_RotationInterpolator_4_2764_keyValue).setKey(Java.to([0.0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_l_ankle_RotationInterpolator").setKeyValue(this.Jump_l_ankle_RotationInterpolator_4_2765_keyValue).setKey(Java.to([0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_r_hip_RotationInterpolator").setKeyValue(this.Jump_r_hip_RotationInterpolator_4_2763_keyValue).setKey(Java.to([0.0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_l_ankle_RotationInterpolator").setKeyValue(this.Jump_l_ankle_RotationInterpolator_4_2764_keyValue).setKey(Java.to([0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_l_knee_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_l_hip_RotationInterpolator").setKeyValue(this.Jump_l_hip_RotationInterpolator_4_2767_keyValue).setKey(Java.to([0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_l_hip_RotationInterpolator").setKeyValue(this.Jump_l_hip_RotationInterpolator_4_2766_keyValue).setKey(Java.to([0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_lower_body_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.48,0.76,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_r_wrist_RotationInterpolator").setKeyValue(this.Jump_r_wrist_RotationInterpolator_4_2769_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_r_wrist_RotationInterpolator").setKeyValue(this.Jump_r_wrist_RotationInterpolator_4_2768_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_r_elbow_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_r_shoulder_RotationInterpolator").setKeyValue(this.Jump_r_shoulder_RotationInterpolator_4_2771_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,0.88,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_l_wrist_RotationInterpolator").setKeyValue(this.Jump_l_wrist_RotationInterpolator_4_2772_keyValue).setKey(Java.to([0.0,0.48,0.52,0.64,0.76,0.88,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_r_shoulder_RotationInterpolator").setKeyValue(this.Jump_r_shoulder_RotationInterpolator_4_2770_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,0.88,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_l_wrist_RotationInterpolator").setKeyValue(this.Jump_l_wrist_RotationInterpolator_4_2771_keyValue).setKey(Java.to([0.0,0.48,0.52,0.64,0.76,0.88,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_l_elbow_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,1.13,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,0.4,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.58,0.72,1.0], Java.type("float[]"))))
-      .addChild(new OrientationInterpolatorObject("Jump_l_shoulder_RotationInterpolator").setKeyValue(this.Jump_l_shoulder_RotationInterpolator_4_2774_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,0.88,1.0], Java.type("float[]"))))
+      .addChild(new OrientationInterpolatorObject("Jump_l_shoulder_RotationInterpolator").setKeyValue(this.Jump_l_shoulder_RotationInterpolator_4_2773_keyValue).setKey(Java.to([0.0,0.28,0.32,0.64,0.76,0.88,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_head_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.48,0.76,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_neck_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.48,0.76,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_upper_body_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.05,1.0,0.0,0.0,1.051,-1.0,0.0,0.0,0.257,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.22,0.28,0.34,0.71,0.88,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_whole_body_RotationInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.28,0.32,0.48,0.64,0.76,1.0], Java.type("float[]"))))
-      .addChild(new PositionInterpolatorObject("Jump_whole_body_TranslationInterpolator").setKeyValue(this.Jump_whole_body_TranslationInterpolator_4_2779_keyValue).setKey(this.Jump_whole_body_TranslationInterpolator_4_2779_key))
+      .addChild(new PositionInterpolatorObject("Jump_whole_body_TranslationInterpolator").setKeyValue(this.Jump_whole_body_TranslationInterpolator_4_2778_keyValue).setKey(this.Jump_whole_body_TranslationInterpolator_4_2778_key))
       .addChild(new OrientationInterpolatorObject("Jump_l_sternoclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.22,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_l_acromioclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.05,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
       .addChild(new OrientationInterpolatorObject("Jump_r_sternoclavicular_RollInterpolator").setKeyValue(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0,0.0,0.0,1.0,-0.2,0.0,0.0,1.0,-0.22,0.0,0.0,1.0,-0.2,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,0.2,0.4,0.6,0.8,1.0], Java.type("float[]"))))
@@ -3606,8 +3601,8 @@ HAnimSpecificationLOA3Motion.prototype = {
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setEmissiveColor(0.424956,0.483976,1.0).setDiffuseColor(0.9,0.0,0.7)))
-            .setGeometry(new IndexedLineSetObject("Orbit1").setDEF("Orbit1").setCoordIndex(this.Orbit1_7_2939_coordIndex)
-              .setCoord(new CoordinateObject().setPoint(this.Coordinate_8_2939_point)))))
+            .setGeometry(new IndexedLineSetObject("Orbit1").setDEF("Orbit1").setCoordIndex(this.Orbit1_7_2938_coordIndex)
+              .setCoord(new CoordinateObject().setPoint(this.Coordinate_8_2938_point)))))
         .addChild(new TransformObject("Circle1").setScale(0.5,1.0,0.5)
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()

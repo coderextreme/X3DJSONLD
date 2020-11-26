@@ -1053,8 +1053,8 @@ POSSIBILITY OF SUCH DAMAGE.
                                     ((local-name(..)='CollisionCollection') and (local-name()='appliedParameters')) or
                                     ((local-name(..)='GeoViewpoint')        and (local-name()='navType')) or
                                      (local-name()='objectType')">
-                        <!-- debug fieldValue, Text -->
-                        <xsl:if test="$debugTrace">
+                    <!-- debug fieldValue, Text -->
+                    <xsl:if test="$debugTrace">
                             <xsl:if test="(local-name(..) = 'fieldValue') and (local-name() = 'value')">
                                 <xsl:message>
                                     <xsl:text>[@* MFString handling] </xsl:text>
@@ -1502,6 +1502,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:template name="escape-quote-characters-recurse">
       <xsl:param name="inputText"><xsl:text></xsl:text></xsl:param> <!-- possibly normalized white space -->
       <xsl:param name="inputType"><xsl:text>unknown</xsl:text></xsl:param>
+      <xsl:param name="firstPass"><xsl:value-of select="true()"/></xsl:param>
 	  
       <xsl:variable name="inputString">
 		  <xsl:value-of select="$inputText"/>
@@ -1546,6 +1547,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring($inputString,2)"/><!-- initial character index is 1 -->
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <xsl:when test="starts-with($inputString,'\&quot;')">
@@ -1554,22 +1556,31 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring($inputString,3)"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <xsl:when test="starts-with($inputString,'&quot;&quot; ')">
           <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0c]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
-          <xsl:text>,"",</xsl:text><!-- pass initial (intermediate) "" empty string -->
+          <xsl:if test="not($firstPass)">
+              <xsl:text>,</xsl:text><!-- separate values -->
+          </xsl:if>
+          <xsl:text>"",</xsl:text><!-- pass initial (intermediate) "" empty string -->
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring($inputString,4)"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <xsl:when test="starts-with($inputString,'&quot;&quot;')">
           <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][1.0c]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
-          <xsl:text>,""</xsl:text><!-- pass initial (trailing) "" empty string -->
+          <xsl:if test="not($firstPass)">
+              <xsl:text>,</xsl:text><!-- separate values -->
+          </xsl:if>
+          <xsl:text>""</xsl:text><!-- pass through "" empty string -->
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring($inputString,3)"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <xsl:when test="not(contains($inputString,'&quot;')) and not(contains($inputString,'\'))">
@@ -1586,6 +1597,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- comment: XML-escaped \&amp;quot; (before regular \&quot;) needs to be handled
@@ -1595,6 +1607,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:value-of select="substring-before($inputString,'\&amp;quot;')"/>
           <xsl:text disable-output-escaping="yes">\"</xsl:text>< !- - JSON escaped quote is same as X3D escaped quote - - >
           <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
               <xsl:with-param name="inputText" select="substring-after($inputString,'\&amp;quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
           </xsl:call-template>
@@ -1608,6 +1621,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'&amp;quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when> -->
         <!-- comment: escaped quote needs to be left alone -->
@@ -1619,6 +1633,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- comment: backslash (no following quotes ") needs to be escaped -->
@@ -1630,6 +1645,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- comment: backslash (preceding ") needs to be escaped -->
@@ -1641,6 +1657,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- comment: unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
@@ -1651,6 +1668,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- SFString with quoted value -->
@@ -1660,6 +1678,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring($inputString,2,string-length($inputString) - 1)"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when>
         <!-- SFString or MFString containing escaped quotation mark \" -->
@@ -1669,8 +1688,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
                 <xsl:text>\"</xsl:text>
                 <xsl:call-template name="escape-quote-characters-recurse">
-                        <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
-                        <xsl:with-param name="inputType" select="$inputType"/>
+                    <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
+                    <xsl:with-param name="inputType" select="$inputType"/>
+                    <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                 </xsl:call-template>
         </xsl:when>
         <!-- SFString or MFString containing escaped backslash \\ -->
@@ -1679,8 +1699,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="substring-before($inputString,'\\')"/>
                 <xsl:text>\\</xsl:text>
                 <xsl:call-template name="escape-quote-characters-recurse">
-                        <xsl:with-param name="inputText" select="substring-after($inputString,'\\')"/>
-                        <xsl:with-param name="inputType" select="$inputType"/>
+                    <xsl:with-param name="inputText" select="substring-after($inputString,'\\')"/>
+                    <xsl:with-param name="inputType" select="$inputType"/>
+                    <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                 </xsl:call-template>
         </xsl:when>
         <!-- SFString or MFString containing empty string "" -->
@@ -1689,7 +1710,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text>""</xsl:text>
                 <xsl:if test="(string-length(normalize-space(substring($inputString,3))) > 0) and 
                                               not(normalize-space(substring($inputString,3)) = ',')">
-                      <xsl:text>,</xsl:text>
+                      <xsl:if test="not($firstPass)">
+                          <xsl:text>,</xsl:text><!-- separate values -->
+                      </xsl:if>
                       <xsl:variable name="remainder">
                               <xsl:choose>
                                       <xsl:when test="starts-with(normalize-space(substring($inputString,3)),',') and
@@ -1717,23 +1740,26 @@ POSSIBILITY OF SUCH DAMAGE.
                                       <xsl:text>"</xsl:text>
                                       <xsl:variable name="remainder2" select="normalize-space(substring-after($remainder,'&quot;'))"/>
                                       <xsl:call-template name="escape-quote-characters-recurse">
-                                              <xsl:with-param name="inputText" select="$remainder2"/>
-                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="inputText" select="$remainder2"/>
+                                            <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                                       </xsl:call-template>
                               </xsl:when>
                               <xsl:when test="starts-with(normalize-space($remainder),'&quot;')">
                                       <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.7]</xsl:text></xsl:message></xsl:if>
                                       <xsl:text>"</xsl:text>
                                       <xsl:call-template name="escape-quote-characters-recurse">
-                                              <xsl:with-param name="inputText" select="substring-after(substring($inputString,3),'&quot;')"/>
-                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="inputText" select="substring-after(substring($inputString,3),'&quot;')"/>
+                                            <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                                       </xsl:call-template>
                               </xsl:when>
                               <xsl:otherwise>
                                       <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.8]</xsl:text></xsl:message></xsl:if>
                                       <xsl:call-template name="escape-quote-characters-recurse">
-                                              <xsl:with-param name="inputText" select="substring($inputString,3)"/>
-                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="inputText" select="substring($inputString,3)"/>
+                                            <xsl:with-param name="inputType" select="$inputType"/>
+                                            <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                                       </xsl:call-template>
                               </xsl:otherwise>
                       </xsl:choose>
@@ -1758,6 +1784,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- IMPORTANT: starting and ending quotes indicate outer delimiters of MFString array; output " and process/split string values hereafter... -->
@@ -1768,6 +1795,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring($inputString,2)"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- strings: skip past escaped quote character \" (a literal value, not a delimiter) then recurse to process remainder -->
@@ -1778,6 +1806,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- MFString value next contains quotes delimiter between SFString array elements, but check no preceding unescaped quote -->
@@ -1788,6 +1817,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; &quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- pass through delimiter " " as "," -->
@@ -1798,6 +1828,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; &quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- pass through delimeter "," as "," -->
@@ -1808,6 +1839,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;,&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
 		<!-- TODO need to generalize handling of unnormalized comma-whitespace, perhaps with regular expression -->
@@ -1828,6 +1860,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:call-template name="escape-quote-characters-recurse">
                         <xsl:with-param name="inputText" select="substring-after($remainder7.3,'&quot;')"/>
                         <xsl:with-param name="inputType" select="$inputType"/>
+                        <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                     </xsl:call-template>
                 </xsl:when>
                 <xsl:otherwise>
@@ -1835,6 +1868,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:call-template name="escape-quote-characters-recurse">
                         <xsl:with-param name="inputText" select="$remainder7.3"/>
                         <xsl:with-param name="inputType" select="$inputType"/>
+                        <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
                     </xsl:call-template>
               </xsl:otherwise>
             </xsl:choose>
@@ -1847,6 +1881,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; ,&quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when> -->
         <!-- pass through delimeter " , " as ","
@@ -1857,6 +1892,7 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:call-template name="escape-quote-characters-recurse">
               <xsl:with-param name=inputText" select="substring-after($inputString,'&quot; , &quot;')"/>
               <xsl:with-param name="inputType" select="$inputType"/>
+              <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
           </xsl:call-template>
         </xsl:when> -->
         <!-- unescaped quote needs \ escape character inserted, occurs before quotes delimiter -->
@@ -1867,6 +1903,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- final string and final end quote is passed through, quoted. ignore trailing comma, if any. -->
@@ -1878,6 +1915,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- finish quoted SFString value and continue with next quoted SFString value -->
@@ -1889,6 +1927,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
@@ -1899,6 +1938,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="escape-quote-characters-recurse">
                 <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
+                <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
         <!-- remaining case: all done -->

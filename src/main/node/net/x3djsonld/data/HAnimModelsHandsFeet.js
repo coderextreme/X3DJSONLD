@@ -10,21 +10,21 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/HAnimModelsHandsFeet.java">HAnimModelsHandsFeet.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelsHandsFeetIndex.html" target="_top">HAnimModelsHandsFeet catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0. </p>
+ <p> Related links: HAnimModelsHandsFeet.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HAnimModelsHandsFeet&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/HAnimModelsHandsFeet.x3d">HAnimModelsHandsFeet.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d">HAnimModelsHandsFeet.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2 </td>
+			<td> Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -36,7 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 5 July 2020 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -48,35 +48,31 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/HAnimModelsHandsFeet.png">HAnimModelsHandsFeet.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.png">HAnimModelsHandsFeet.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/HAnimModelsHandsFeetWithFour1mGrids.png">HAnimModelsHandsFeetWithFour1mGrids.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeetWithFour1mGrids.png">HAnimModelsHandsFeetWithFour1mGrids.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/working-groups/humanoid-animation-h-anim" target="_blank">https://www.web3d.org/working-groups/humanoid-animation-h-anim</a> </td>
+			<td> <a href="https://www.web3d.org/working-groups/humanoid-animation-HAnim" target="_blank">https://www.web3d.org/working-groups/humanoid-animation-HAnim</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/files/specifications/19774/V1.0" target="_blank">https://www.web3d.org/files/specifications/19774/V1.0</a> </td>
+			<td> <a href="https://www.web3d.org/documents/specifications/19774/V2.0" target="_blank">https://www.web3d.org/documents/specifications/19774/V2.0</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html" target="_blank">https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html" target="_blank">https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
-			<td> X3D H-Anim humanoid animation </td>
-		</tr>
-		<tr style="color:burntorange">
-			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
-			<td> scene, DOCTYPE and Schema under development. </td>
+			<td> X3D HAnim humanoid animation </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -84,7 +80,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -117,22 +113,21 @@ HAnimModelsHandsFeet.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("HAnimModelsHandsFeet.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("8 February 2015"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("not yet to scale"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimModelsHandsFeet.png"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
-    .addMeta((new autoclass.meta()).setName("subject").setContent("X3D H-Anim humanoid animation"))
-    .addMeta((new autoclass.meta()).setName("warning").setContent("scene, DOCTYPE and Schema under development."))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/documents/specifications/19774/V2.0"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"))
+    .addMeta((new autoclass.meta()).setName("subject").setContent("X3D HAnim humanoid animation"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
@@ -140,20 +135,20 @@ HAnimModelsHandsFeet.prototype = {
     .addChild((new autoclass.Viewpoint()).setDescription("Hands and feet 10m"))
     .addChild((new autoclass.Viewpoint()).setDescription("Hands and feet 1.7m").setPosition(0.0,0.0,1.7))
     .addChild((new autoclass.Transform()).setTranslation(-1.0,1.0,0.0)
-      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelHandLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d\" \"HAnimModelHandLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl\"")))
+      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelHandLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d\" \"HAnimModelHandLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl\"")))
       .addComments(" Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model ")
       .addChild((new autoclass.Transform("GridXY_20x20Fixed_AdjustScale")).setScale(.1,.1,.1)
         .addChild((new autoclass.Inline("GridXY_20x20Fixed")).setUrl(new autoclass.MFString("\"GridXY_20x20Fixed.x3d\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"GridXY_20x20Fixed.wrl\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\"")))))
     .addChild((new autoclass.Transform()).setTranslation(1.0,1.0,0.0)
-      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelHandRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d\" \"HAnimModelHandRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl\"")))
+      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelHandRight.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d\" \"HAnimModelHandRight.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl\"")))
       .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale")))
     .addChild((new autoclass.Transform()).setTranslation(-1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d\" \"HAnimModelFootLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl\"")))
+      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d\" \"HAnimModelFootLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl\"")))
       .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale")))
     .addChild((new autoclass.Transform()).setTranslation(1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d\" \"HAnimModelFootRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl\"")))
+      .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootRight.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d\" \"HAnimModelFootRight.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl\"")))
       .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale"))));
   },
   // end of initialize() method

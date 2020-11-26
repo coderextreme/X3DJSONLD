@@ -24,7 +24,7 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("H-Anim"),
+              name : new SFString("HAnim"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
@@ -33,7 +33,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2")}),
+              content : new SFString("Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0")}),
 
             new meta({
               name : new SFString("creator"),
@@ -45,7 +45,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("5 July 2020")}),
 
             new meta({
               name : new SFString("warning"),
@@ -65,27 +65,23 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3d.org/working-groups/humanoid-animation-h-anim")}),
+              content : new SFString("https://www.web3d.org/working-groups/humanoid-animation-HAnim")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3d.org/files/specifications/19774/V1.0")}),
+              content : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html")}),
+              content : new SFString("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html")}),
 
             new meta({
               name : new SFString("subject"),
-              content : new SFString("X3D H-Anim humanoid animation")}),
-
-            new meta({
-              name : new SFString("warning"),
-              content : new SFString("scene, DOCTYPE and Schema under development.")}),
+              content : new SFString("X3D HAnim humanoid animation")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -111,7 +107,7 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([-1,1,0]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"])}),
+                  url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"])}),
               { "#comment" : new CommentsBlock("Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model") },
 
                 new Transform({
@@ -126,7 +122,7 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([1,1,0]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"])}),
+                  url : new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
@@ -136,7 +132,7 @@ var X3D0 =  new X3D({
               { "#comment" : new CommentsBlock("rotation='0 0 1 3.141593'") },
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"])}),
+                  url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
@@ -146,7 +142,7 @@ var X3D0 =  new X3D({
               { "#comment" : new CommentsBlock("rotation='0 0 1 3.141593'") },
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"])}),
+                  url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])})])}))});

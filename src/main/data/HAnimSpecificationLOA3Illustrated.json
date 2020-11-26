@@ -30,11 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
-          },
-          {
-            "@name":"TODO",
-            "@content":"Convert to X3D4 HAnim2"
+            "@content":"11 July 2020"
           },
           {
             "@name":"creator",
@@ -126,7 +122,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"license",
@@ -134,7 +130,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 November 2020"
+            "@content":"23 November 2020"
           },
           {
             "@name":"generator",

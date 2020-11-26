@@ -82,11 +82,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2020")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("Convert to X3D4 HAnim2")}),
+              content : new SFString("11 July 2020")}),
 
             new meta({
               name : new SFString("Image"),
@@ -170,7 +166,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d")}),
 
             new meta({
               name : new SFString("license"),
@@ -245,7 +241,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("humanoid"),
               DEF : new SFString("hanim_humanoid"),
-              info : new MFString(["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]),
+              info : new MFString(["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"]),
               version : new SFString("1.0"),
               joints : new SFNode(
                 new HAnimJoint({
@@ -6757,12 +6753,12 @@ var X3D0 =  new X3D({
                   loop : new SFBool(true)}),
 
                 new PositionInterpolator({
-                  DEF : new SFString("Stop_HumanoidRoot_TranslationInterpolator"),
+                  DEF : new SFString("Stop_humanoid_root_TranslationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFVec3f([0,0,0,0,0,0,0,0,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("Stop_HumanoidRoot_RotationInterpolator"),
+                  DEF : new SFString("Stop_humanoid_root_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
@@ -7210,13 +7206,13 @@ var X3D0 =  new X3D({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("StopTimer"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("Stop_HumanoidRoot_TranslationInterpolator")}),
+                  toNode : new SFString("Stop_humanoid_root_TranslationInterpolator")}),
 
                 new ROUTE({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("StopTimer"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("Stop_HumanoidRoot_RotationInterpolator")}),
+                  toNode : new SFString("Stop_humanoid_root_RotationInterpolator")}),
 
                 new ROUTE({
                   fromField : new SFString("fraction_changed"),
@@ -7748,13 +7744,13 @@ var X3D0 =  new X3D({
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("Stop_HumanoidRoot_TranslationInterpolator"),
+                  fromNode : new SFString("Stop_humanoid_root_TranslationInterpolator"),
                   toField : new SFString("translation"),
                   toNode : new SFString("hanim_humanoid_root")}),
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("Stop_HumanoidRoot_RotationInterpolator"),
+                  fromNode : new SFString("Stop_humanoid_root_RotationInterpolator"),
                   toField : new SFString("rotation"),
                   toNode : new SFString("hanim_humanoid_root")}),
 

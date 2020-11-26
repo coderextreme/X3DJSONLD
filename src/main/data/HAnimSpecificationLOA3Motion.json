@@ -30,11 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
-          },
-          {
-            "@name":"TODO",
-            "@content":"Convert to X3D4 HAnim2"
+            "@content":"11 July 2020"
           },
           {
             "@name":"Image",
@@ -118,7 +114,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d"
           },
           {
             "@name":"license",
@@ -126,7 +122,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 November 2020"
+            "@content":"23 November 2020"
           },
           {
             "@name":"generator",
@@ -240,7 +236,7 @@
             {
               "@name":"humanoid",
               "@DEF":"hanim_humanoid",
-              "@info":["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"],
+              "@info":["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"],
               "@version":"1.0",
               "-skeleton":[
                 { "HAnimJoint":
@@ -12782,14 +12778,14 @@
                 },
                 { "PositionInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRoot_TranslationInterpolator",
+                    "@DEF":"Stop_humanoid_root_TranslationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,0,0,0,0,0,0,0]
                   }
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRoot_RotationInterpolator",
+                    "@DEF":"Stop_humanoid_root_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -13415,7 +13411,7 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"StopTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"Stop_HumanoidRoot_TranslationInterpolator"
+                    "@toNode":"Stop_humanoid_root_TranslationInterpolator"
                   }
                 },
                 { "ROUTE":
@@ -13423,7 +13419,7 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"StopTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"Stop_HumanoidRoot_RotationInterpolator"
+                    "@toNode":"Stop_humanoid_root_RotationInterpolator"
                   }
                 },
                 { "ROUTE":
@@ -14133,7 +14129,7 @@
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"Stop_HumanoidRoot_TranslationInterpolator",
+                    "@fromNode":"Stop_humanoid_root_TranslationInterpolator",
                     "@toField":"translation",
                     "@toNode":"hanim_humanoid_root"
                   }
@@ -14141,7 +14137,7 @@
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"Stop_HumanoidRoot_RotationInterpolator",
+                    "@fromNode":"Stop_humanoid_root_RotationInterpolator",
                     "@toField":"rotation",
                     "@toNode":"hanim_humanoid_root"
                   }

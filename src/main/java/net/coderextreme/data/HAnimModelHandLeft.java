@@ -45,29 +45,36 @@ public class HAnimModelHandLeft {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addComponent(new component().setName("H-Anim").setLevel(1))
+        .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("HAnimModelHandLeft.x3d"))
-        .addMeta(new meta().setName("description").setContent("Left hand, using high-fidelity definitions for H-Anim version 2.2"))
-        .addMeta(new meta().setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
+        .addMeta(new meta().setName("description").setContent("Left hand, using high-fidelity definitions for HAnim version 2.0"))
+        .addMeta(new meta().setName("creator").setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
         .addMeta(new meta().setName("created").setContent("26 January 2015"))
-        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("modified").setContent("5 July 2020"))
         .addMeta(new meta().setName("warning").setContent("not yet to scale"))
         .addMeta(new meta().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
-        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
-        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
-        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
-        .addMeta(new meta().setName("subject").setContent("X3D H-Anim humanoid animation"))
-        .addMeta(new meta().setName("warning").setContent("scene, DOCTYPE and Schema under development."))
+        .addMeta(new meta().setName("info").setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774/V2.0"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"))
+        .addMeta(new meta().setName("subject").setContent("X3D HAnim humanoid animation"))
         .addMeta(new meta().setName("TODO").setContent("Integrate and confirm Segment/Joint names, Viewpoints."))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelHandLeft.x3d"))
-        .addChild(new HAnimHumanoid().setName("Humanoid_Left_hand").setDEF("Humanoid_Left_hand").setVersion("2.0")
-          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
-            .addChild(new HAnimJoint().setName("l_radiocarpal_joint").setDEF("l_radiocarpal_joint")
-              .addChild(new HAnimSegment().setName("l_wrist").setDEF("l_wrist")
+        .addChild(new HAnimHumanoid().setName("Hand_Left").setDEF("hanim_Hand_Left").setVersion("2.0")
+          .addComments(new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"))
+          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+            .setMetadata(new MetadataString().setName("authorName").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
+          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
+            .addComments(new CommentsBlock("Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model"))
+            .addChild(new HAnimJoint().setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setDescription("connection joint of hand to leg above")
+              .addChild(new HAnimSegment().setName("l_wrist").setDEF("hanim_l_wrist").setDescription("test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint")
                 .addChild(new Transform()
                   .addChild(new Shape().setDEF("HAnimJointShape")
                     .setGeometry(new Sphere().setRadius(0.025f))
@@ -76,21 +83,21 @@ public class HAnimModelHandLeft {
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material()))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC12").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray())))))
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC12").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())))))
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material()))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt322().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))))
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt323().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f4().getArray())))))
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material()))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC45").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt324().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f5().getArray()))))))
-              .addComments(new CommentsBlock("MC12"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_12").setCenter(new float[] {0.1f,0.1f,0f})
-                .addChild(new HAnimSegment().setName("l_trapezoid").setDEF("l_trapezoid")
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC45").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt325().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f6().getArray()))))))
+              .addComments(new CommentsBlock("MC2"))
+              .addChild(new HAnimJoint().setName("l_midcarpal_2").setDEF("hanim_l_midcarpal_2").setCenter(new float[] {0.1f,0.1f,0f})
+                .addChild(new HAnimSegment().setName("l_trapezoid").setDEF("hanim_l_trapezoid")
                   .addChild(new Transform().setTranslation(new float[] {0.1f,0.1f,0f})
                     .addChild(new Shape().setDEF("HAnimNewJointShape")
                       .setGeometry(new Sphere().setRadius(0.025f))
@@ -99,529 +106,534 @@ public class HAnimModelHandLeft {
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()))
-                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt326().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f7().getArray())))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt327().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray())))))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()))
-                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt328().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f9().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt329().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray()))))))
                 .addComments(new CommentsBlock("thumb finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_1").setDEF("l_carpometacarpal_joint_1").setCenter(new float[] {0.2f,0.15f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal_1").setDEF("l_metacarpal_1")
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_1").setDEF("hanim_l_carpometacarpal_1").setCenter(new float[] {0.2f,0.15f,0f})
+                  .addChild(new HAnimSegment().setName("l_metacarpal_1").setDEF("hanim_l_metacarpal_1")
                     .addChild(new Transform().setTranslation(new float[] {0.2f,0.15f,0f})
                       .addChild(new Shape().setUSE("HAnimJointShape")))
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material()))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3210().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f11().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_1").setDEF("l_metacarpophalangeal_joint_1").setCenter(new float[] {0.3f,0.3f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges1").setDEF("l_proximal_phalanges1")
+                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3211().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f12().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_1").setDEF("hanim_l_metacarpophalangeal_1").setCenter(new float[] {0.3f,0.3f,0f})
+                    .addChild(new HAnimSegment().setName("l_carpal_proximal_phalanx_1").setDEF("hanim_l_carpal_proximal_phalanx_1")
                       .addChild(new Transform().setTranslation(new float[] {0.3f,0.3f,0f})
                         .addChild(new Shape().setUSE("HAnimJointShape")))
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material()))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3212().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f13().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_interphalangeal_joint_1").setDEF("l_interphalangeal_joint_1").setCenter(new float[] {0.35f,0.4f,0f})
-                      .addChild(new HAnimSegment().setName("l_distal_phalanges1").setDEF("l_distal_phalanges1")
+                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3213().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f14().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_carpal_interphalangeal_1").setDEF("hanim_l_carpal_interphalangeal_1").setCenter(new float[] {0.35f,0.4f,0f})
+                      .addChild(new HAnimSegment().setName("l_carpal_distal_phalanx_1").setDEF("hanim_l_carpal_distal_phalanx_1")
                         .addChild(new Transform().setTranslation(new float[] {0.35f,0.4f,0f})
                           .addChild(new Shape().setUSE("HAnimJointShape")))
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))
-                          .setGeometry(new IndexedLineSet().setDEF("fingertip_l_interphalangeal_joint_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3214().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f15().getArray())))))))))
+                          .setGeometry(new IndexedLineSet().setDEF("fingertip_l_carpal_interphalangeal_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3215().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f16().getArray())))))))))
                 .addComments(new CommentsBlock("index finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_2").setDEF("l_carpometacarpal_joint_2").setCenter(new float[] {0.1f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal2").setDEF("l_metacarpal2")
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_2").setDEF("hanim_l_carpometacarpal_2").setCenter(new float[] {0.1f,0.2f,0f})
+                  .addChild(new HAnimSegment().setName("l_metacarpal_2").setDEF("hanim_l_metacarpal_2")
                     .addChild(new Transform().setTranslation(new float[] {0.1f,0.2f,0f})
                       .addChild(new Shape().setUSE("HAnimJointShape")))
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material()))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC2toMCP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3216().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f17().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_2").setDEF("l_metacarpophalangeal_joint_2").setCenter(new float[] {0.15f,0.5f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges2")
+                      .setGeometry(new IndexedLineSet().setDEF("CMC2toMCP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3217().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f18().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_2").setDEF("hanim_l_metacarpophalangeal_2").setCenter(new float[] {0.15f,0.5f,0f})
+                    .addChild(new HAnimSegment().setName("l_carpal_proximal_phalanx_2").setDEF("hanim_l_carpal_proximal_phalanx_2")
                       .addChild(new Transform().setTranslation(new float[] {0.15f,0.5f,0f})
                         .addChild(new Shape().setUSE("HAnimJointShape")))
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material()))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP2toPIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3218().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f19().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_2").setDEF("l_proximal_interphalangeal_joint_2").setCenter(new float[] {0.2f,0.7f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges2").setDEF("l_middle_phalanges2")
+                        .setGeometry(new IndexedLineSet().setDEF("MCP2toPIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3219().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f20().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_carpal_proximal_interphalangeal_2").setDEF("hanim_l_carpal_proximal_interphalangeal_2").setCenter(new float[] {0.2f,0.7f,0f})
+                      .addChild(new HAnimSegment().setName("l_carpal_middle_phalanx_2").setDEF("hanim_l_carpal_middle_phalanx_2")
                         .addChild(new Transform().setTranslation(new float[] {0.2f,0.7f,0f})
                           .addChild(new Shape().setUSE("HAnimJointShape")))
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP2toDIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3220().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f21().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_2").setDEF("l_distal_interphalangeal_joint_2").setCenter(new float[] {0.24f,0.87f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges2").setDEF("l_distal_phalanges2")
+                          .setGeometry(new IndexedLineSet().setDEF("PIP2toDIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3221().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f22().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_carpal_distal_interphalangeal_2").setDEF("hanim_l_carpal_distal_interphalangeal_2").setCenter(new float[] {0.24f,0.87f,0f})
+                        .addChild(new HAnimSegment().setName("l_carpal_distal_phalanx_2").setDEF("hanim_l_carpal_distal_phalanx_2")
                           .addChild(new Transform().setTranslation(new float[] {0.24f,0.87f,0f})
                             .addChild(new Shape().setUSE("HAnimJointShape")))
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material()))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3222().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f23().getArray())))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_carpal_distal_interphalangeal_2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3223().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f24().getArray())))))))))))
               .addComments(new CommentsBlock("MC3"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_3").setDEF("l_midcarpal_joint_3").setCenter(new float[] {0f,0.07f,0f})
-                .addChild(new HAnimSegment().setName("l_capitate").setDEF("l_capitate")
+              .addChild(new HAnimJoint().setName("l_midcarpal_3").setDEF("hanim_l_midcarpal_3").setCenter(new float[] {0f,0.07f,0f})
+                .addChild(new HAnimSegment().setName("l_capitate").setDEF("hanim_l_capitate")
                   .addChild(new Transform().setTranslation(new float[] {0f,0.07f,0f})
                     .addChild(new Shape().setUSE("HAnimNewJointShape")))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()))
-                    .setGeometry(new IndexedLineSet().setDEF("MC3toCMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3224().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f25().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC3toCMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3225().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f26().getArray()))))))
                 .addComments(new CommentsBlock("Middle fingle"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_3").setDEF("l_carpometacarpal_joint_3").setCenter(new float[] {0f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal3").setDEF("l_metacarpal3")
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_3").setDEF("hanim_l_carpometacarpal_3").setCenter(new float[] {0f,0.2f,0f})
+                  .addChild(new HAnimSegment().setName("l_metacarpal_3").setDEF("hanim_l_metacarpal_3")
                     .addChild(new Transform().setTranslation(new float[] {0f,0.2f,0f})
                       .addChild(new Shape().setUSE("HAnimJointShape")))
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material()))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC3toMCP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3226().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f27().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_3").setDEF("l_metacarpophalangeal_joint_3").setCenter(new float[] {0.03f,0.5f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges3").setDEF("l_proximal_phalanges3")
+                      .setGeometry(new IndexedLineSet().setDEF("CMC3toMCP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3227().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f28().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_3").setDEF("hanim_l_metacarpophalangeal_3").setCenter(new float[] {0.03f,0.5f,0f})
+                    .addChild(new HAnimSegment().setName("l_carpal_proximal_phalanx_3").setDEF("hanim_l_carpal_proximal_phalanx_3")
                       .addChild(new Transform().setTranslation(new float[] {0.03f,0.5f,0f})
                         .addChild(new Shape().setUSE("HAnimJointShape")))
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material()))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP3toPIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3228().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f29().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_3").setDEF("l_proximal_interphalangeal_joint_3").setCenter(new float[] {0.05f,0.75f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges3").setDEF("l_middle_phalanges3")
+                        .setGeometry(new IndexedLineSet().setDEF("MCP3toPIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3229().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f30().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_carpal_proximal_interphalangeal_3").setDEF("hanim_l_carpal_proximal_interphalangeal_3").setCenter(new float[] {0.05f,0.75f,0f})
+                      .addChild(new HAnimSegment().setName("l_carpal_middle_phalanx_3").setDEF("hanim_l_carpal_middle_phalanx_3")
                         .addChild(new Transform().setTranslation(new float[] {0.05f,0.75f,0f})
                           .addChild(new Shape().setUSE("HAnimJointShape")))
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP3toDIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3230().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f31().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_3").setDEF("l_distal_interphalangeal_joint_3").setCenter(new float[] {0.08f,0.96f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges3").setDEF("l_distal_phalanges3")
+                          .setGeometry(new IndexedLineSet().setDEF("PIP3toDIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3231().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f32().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_carpal_distal_interphalangeal_3").setDEF("hanim_l_carpal_distal_interphalangeal_3").setCenter(new float[] {0.08f,0.96f,0f})
+                        .addChild(new HAnimSegment().setName("l_carpal_distal_phalanx_3").setDEF("hanim_l_carpal_distal_phalanx_3")
                           .addChild(new Transform().setTranslation(new float[] {0.08f,0.96f,0f})
                             .addChild(new Shape().setUSE("HAnimJointShape")))
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material()))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3232().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f33().getArray())))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_carpal_distal_interphalangeal_3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3233().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f34().getArray())))))))))))
               .addComments(new CommentsBlock("MC45"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_45").setCenter(new float[] {-0.1f,0.1f,0f})
-                .addChild(new HAnimSegment().setName("l_hamate").setDEF("l_hamate")
+              .addChild(new HAnimJoint().setName("l_midcarpal_4_5").setDEF("hanim_l_midcarpal_4_5").setCenter(new float[] {-0.1f,0.1f,0f})
+                .addChild(new HAnimSegment().setName("l_hamate").setDEF("hanim_l_hamate")
                   .addChild(new Transform().setTranslation(new float[] {-0.1f,0.1f,0f})
                     .addChild(new Shape().setUSE("HAnimNewJointShape")))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()))
-                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3234().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f35().getArray())))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3235().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f36().getArray())))))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()))
-                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3236().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f37().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3237().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f38().getArray()))))))
                 .addComments(new CommentsBlock("ring finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_4").setDEF("l_carpometacarpal_joint_4").setCenter(new float[] {-0.1f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal4").setDEF("l_metacarpal4")
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_4").setDEF("hanim_l_carpometacarpal_4").setCenter(new float[] {-0.1f,0.2f,0f})
+                  .addChild(new HAnimSegment().setName("l_metacarpal_4").setDEF("hanim_l_metacarpal_4")
                     .addChild(new Transform().setTranslation(new float[] {-0.1f,0.2f,0f})
                       .addChild(new Shape().setUSE("HAnimJointShape")))
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material()))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC4toMCP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3238().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f39().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_4").setDEF("l_metacarpophalangeal_joint_4").setCenter(new float[] {-0.1f,0.47f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges4").setDEF("l_proximal_phalanges4")
+                      .setGeometry(new IndexedLineSet().setDEF("CMC4toMCP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3239().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f40().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_4").setDEF("hanim_l_metacarpophalangeal_4").setCenter(new float[] {-0.1f,0.47f,0f})
+                    .addChild(new HAnimSegment().setName("l_carpal_proximal_phalanx_4").setDEF("hanim_l_carpal_proximal_phalanx_4")
                       .addChild(new Transform().setTranslation(new float[] {-0.1f,0.47f,0f})
                         .addChild(new Shape().setUSE("HAnimJointShape")))
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material()))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP4toPIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3240().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f41().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_4").setDEF("l_proximal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.7f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges4").setDEF("l_middle_phalanges4")
+                        .setGeometry(new IndexedLineSet().setDEF("MCP4toPIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3241().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f42().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_carpal_proximal_interphalangeal_4").setDEF("hanim_l_carpal_proximal_interphalangeal_4").setCenter(new float[] {-0.1f,0.7f,0f})
+                      .addChild(new HAnimSegment().setName("l_carpal_middle_phalanx_4").setDEF("hanim_l_carpal_middle_phalanx_4")
                         .addChild(new Transform().setTranslation(new float[] {-0.1f,0.7f,0f})
                           .addChild(new Shape().setUSE("HAnimJointShape")))
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP4toDIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3242().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f43().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_4").setDEF("l_distal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.93f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanx4").setDEF("l_distal_phalanx4")
+                          .setGeometry(new IndexedLineSet().setDEF("PIP4toDIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3243().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f44().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_carpal_distal_interphalangeal_4").setDEF("hanim_l_carpal_distal_interphalangeal_4").setCenter(new float[] {-0.1f,0.93f,0f})
+                        .addChild(new HAnimSegment().setName("l_carpal_distal_phalanx_4").setDEF("hanim_l_carpal_distal_phalanx_4")
                           .addChild(new Transform().setTranslation(new float[] {-0.1f,0.93f,0f})
                             .addChild(new Shape().setUSE("HAnimJointShape")))
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material()))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3244().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f45().getArray()))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_carpal_distal_interphalangeal_4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3245().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f46().getArray()))))))))))
                 .addComments(new CommentsBlock("pinky finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_5").setDEF("l_carpometacarpal_joint_5").setCenter(new float[] {-0.15f,0.17f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal5").setDEF("l_metacarpal5")
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_5").setDEF("hanim_l_carpometacarpal_5").setCenter(new float[] {-0.15f,0.17f,0f})
+                  .addChild(new HAnimSegment().setName("l_metacarpal_5").setDEF("hanim_l_metacarpal_5")
                     .addChild(new Transform().setTranslation(new float[] {-0.15f,0.17f,0f})
                       .addChild(new Shape().setUSE("HAnimJointShape")))
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material()))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC5toMCP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3246().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f47().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_5").setDEF("l_metacarpophalangeal_joint_5").setCenter(new float[] {-0.2f,0.4f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges5")
+                      .setGeometry(new IndexedLineSet().setDEF("CMC5toMCP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3247().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f48().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_5").setDEF("hanim_l_metacarpophalangeal_5").setCenter(new float[] {-0.2f,0.4f,0f})
+                    .addChild(new HAnimSegment().setName("l_carpal_proximal_phalanx_5").setDEF("hanim_l_carpal_proximal_phalanx_5")
                       .addChild(new Transform().setTranslation(new float[] {-0.2f,0.4f,0f})
                         .addChild(new Shape().setUSE("HAnimJointShape")))
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material()))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP5toPIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3248().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f49().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_5").setDEF("l_proximal_interphalangeal_joint_5").setCenter(new float[] {-0.23f,0.63f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges5").setDEF("l_middle_phalanges5")
+                        .setGeometry(new IndexedLineSet().setDEF("MCP5toPIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3249().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f50().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_carpal_proximal_interphalangeal_5").setDEF("hanim_l_carpal_proximal_interphalangeal_5").setCenter(new float[] {-0.23f,0.63f,0f})
+                      .addChild(new HAnimSegment().setName("l_carpal_middle_phalanx_5").setDEF("hanim_l_carpal_middle_phalanx_5")
                         .addChild(new Transform().setTranslation(new float[] {-0.23f,0.63f,0f})
                           .addChild(new Shape().setUSE("HAnimJointShape")))
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP5toDIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3250().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f51().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_5").setDEF("l_distal_interphalangeal_joint_5").setCenter(new float[] {-0.25f,0.79f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges5").setDEF("l_distal_phalanges5")
+                          .setGeometry(new IndexedLineSet().setDEF("PIP5toDIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3251().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f52().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_carpal_distal_interphalangeal_5").setDEF("hanim_l_carpal_distal_interphalangeal_5").setCenter(new float[] {-0.25f,0.79f,0f})
+                        .addChild(new HAnimSegment().setName("l_carpal_distal_phalanx_5").setDEF("hanim_l_carpal_distal_phalanx_5")
                           .addChild(new Transform().setTranslation(new float[] {-0.25f,0.79f,0f})
                             .addChild(new Shape().setUSE("HAnimJointShape")))
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material()))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3252().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f53().getArray())))))))))))))
-          .addJoints(new HAnimJoint().setUSE("hanim_HumanoidRoot"))
-          .addJoints(new HAnimJoint().setUSE("l_radiocarpal_joint"))
-          .addJoints(new HAnimJoint().setUSE("l_midcarpal_joint_12"))
-          .addJoints(new HAnimJoint().setUSE("l_carpometacarpal_joint_1"))
-          .addJoints(new HAnimJoint().setUSE("l_metacarpophalangeal_joint_1"))
-          .addJoints(new HAnimJoint().setUSE("l_interphalangeal_joint_1"))
-          .addJoints(new HAnimJoint().setUSE("l_carpometacarpal_joint_2"))
-          .addJoints(new HAnimJoint().setUSE("l_metacarpophalangeal_joint_2"))
-          .addJoints(new HAnimJoint().setUSE("l_proximal_interphalangeal_joint_2"))
-          .addJoints(new HAnimJoint().setUSE("l_distal_interphalangeal_joint_2"))
-          .addJoints(new HAnimJoint().setUSE("l_midcarpal_joint_3"))
-          .addJoints(new HAnimJoint().setUSE("l_carpometacarpal_joint_3"))
-          .addJoints(new HAnimJoint().setUSE("l_metacarpophalangeal_joint_3"))
-          .addJoints(new HAnimJoint().setUSE("l_proximal_interphalangeal_joint_3"))
-          .addJoints(new HAnimJoint().setUSE("l_distal_interphalangeal_joint_3"))
-          .addJoints(new HAnimJoint().setUSE("l_midcarpal_joint_45"))
-          .addJoints(new HAnimJoint().setUSE("l_carpometacarpal_joint_4"))
-          .addJoints(new HAnimJoint().setUSE("l_metacarpophalangeal_joint_4"))
-          .addJoints(new HAnimJoint().setUSE("l_proximal_interphalangeal_joint_4"))
-          .addJoints(new HAnimJoint().setUSE("l_distal_interphalangeal_joint_4"))
-          .addJoints(new HAnimJoint().setUSE("l_carpometacarpal_joint_5"))
-          .addJoints(new HAnimJoint().setUSE("l_metacarpophalangeal_joint_5"))
-          .addJoints(new HAnimJoint().setUSE("l_proximal_interphalangeal_joint_5"))
-          .addJoints(new HAnimJoint().setUSE("l_distal_interphalangeal_joint_5"))
-          .addSegments(new HAnimSegment().setUSE("l_wrist"))
-          .addSegments(new HAnimSegment().setUSE("l_trapezoid"))
-          .addSegments(new HAnimSegment().setUSE("l_metacarpal_1"))
-          .addSegments(new HAnimSegment().setUSE("l_proximal_phalanges1"))
-          .addSegments(new HAnimSegment().setUSE("l_distal_phalanges1"))
-          .addSegments(new HAnimSegment().setUSE("l_metacarpal2"))
-          .addSegments(new HAnimSegment().setUSE("l_proximal_phalanges2"))
-          .addSegments(new HAnimSegment().setUSE("l_middle_phalanges2"))
-          .addSegments(new HAnimSegment().setUSE("l_distal_phalanges2"))
-          .addSegments(new HAnimSegment().setUSE("l_capitate"))
-          .addSegments(new HAnimSegment().setUSE("l_metacarpal3"))
-          .addSegments(new HAnimSegment().setUSE("l_proximal_phalanges3"))
-          .addSegments(new HAnimSegment().setUSE("l_middle_phalanges3"))
-          .addSegments(new HAnimSegment().setUSE("l_distal_phalanges3"))
-          .addSegments(new HAnimSegment().setUSE("l_hamate"))
-          .addSegments(new HAnimSegment().setUSE("l_metacarpal4"))
-          .addSegments(new HAnimSegment().setUSE("l_proximal_phalanges4"))
-          .addSegments(new HAnimSegment().setUSE("l_middle_phalanges4"))
-          .addSegments(new HAnimSegment().setUSE("l_distal_phalanx4"))
-          .addSegments(new HAnimSegment().setUSE("l_metacarpal5"))
-          .addSegments(new HAnimSegment().setUSE("l_proximal_phalanges5"))
-          .addSegments(new HAnimSegment().setUSE("l_middle_phalanges5"))
-          .addSegments(new HAnimSegment().setUSE("l_distal_phalanges5"))))      ;
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_carpal_distal_interphalangeal_5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3253().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f54().getArray())))))))))))))
+          .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_2"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_3"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_4"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_5"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_interphalangeal_1"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_2"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_3"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_4"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_5"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_1"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_2"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_3"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_4"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_5"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_1"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_2"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_3"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_4"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_5"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_2"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_3"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_4_5"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_capitate"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_1"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_2"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_3"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_4"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_5"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_middle_phalanx_2"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_middle_phalanx_3"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_middle_phalanx_4"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_middle_phalanx_5"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_proximal_phalanx_1"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_proximal_phalanx_2"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_proximal_phalanx_3"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_proximal_phalanx_4"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_proximal_phalanx_5"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_hamate"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_1"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_2"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_3"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_4"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_5"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_trapezoid"))
+          .addSegments(new HAnimSegment().setUSE("hanim_l_wrist"))))      ;
     return X3D0;
     }
-protected class MFInt320 {
+protected class MFString0 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Kwan-Hee YOO, Don Brutzman and Joe Williams"});
+  }
+}
+protected class MFInt321 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f1 {
+protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0.1f,0.1f,0f});
   }
 }
-protected class MFInt322 {
+protected class MFInt323 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f3 {
+protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0.07f,0f});
   }
 }
-protected class MFInt324 {
+protected class MFInt325 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f5 {
+protected class MFVec3f6 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,-0.1f,0.1f,0f});
   }
 }
-protected class MFInt326 {
+protected class MFInt327 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f7 {
+protected class MFVec3f8 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.1f,0f,0.2f,0.15f,0f});
   }
 }
-protected class MFInt328 {
+protected class MFInt329 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f9 {
+protected class MFVec3f10 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.1f,0f,0.1f,0.2f,0f});
   }
 }
-protected class MFInt3210 {
+protected class MFInt3211 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f11 {
+protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2f,0.15f,0f,0.3f,0.3f,0f});
   }
 }
-protected class MFInt3212 {
+protected class MFInt3213 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f13 {
+protected class MFVec3f14 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.3f,0.3f,0f,0.35f,0.4f,0f});
   }
 }
-protected class MFInt3214 {
+protected class MFInt3215 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f15 {
+protected class MFVec3f16 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.35f,0.4f,0f,0.36f,0.45f,0f});
   }
 }
-protected class MFInt3216 {
+protected class MFInt3217 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f17 {
+protected class MFVec3f18 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.2f,0f,0.15f,0.5f,0f});
   }
 }
-protected class MFInt3218 {
+protected class MFInt3219 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f19 {
+protected class MFVec3f20 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.15f,0.5f,0f,0.2f,0.7f,0f});
   }
 }
-protected class MFInt3220 {
+protected class MFInt3221 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f21 {
+protected class MFVec3f22 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2f,0.7f,0f,0.24f,0.87f,0f});
   }
 }
-protected class MFInt3222 {
+protected class MFInt3223 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f23 {
+protected class MFVec3f24 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.24f,0.87f,0f,0.26f,0.93f,0f});
   }
 }
-protected class MFInt3224 {
+protected class MFInt3225 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f25 {
+protected class MFVec3f26 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.07f,0f,0f,0.2f,0f});
   }
 }
-protected class MFInt3226 {
+protected class MFInt3227 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f27 {
+protected class MFVec3f28 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.2f,0f,0.03f,0.5f,0f});
   }
 }
-protected class MFInt3228 {
+protected class MFInt3229 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f29 {
+protected class MFVec3f30 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.03f,0.5f,0f,0.05f,0.75f,0f});
   }
 }
-protected class MFInt3230 {
+protected class MFInt3231 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f31 {
+protected class MFVec3f32 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.05f,0.75f,0f,0.08f,0.96f,0f});
   }
 }
-protected class MFInt3232 {
+protected class MFInt3233 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f33 {
+protected class MFVec3f34 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.08f,0.96f,0f,0.09f,1.05f,0f});
   }
 }
-protected class MFInt3234 {
+protected class MFInt3235 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f35 {
+protected class MFVec3f36 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.1f,0.2f,0f});
   }
 }
-protected class MFInt3236 {
+protected class MFInt3237 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f37 {
+protected class MFVec3f38 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.15f,0.17f,0f});
   }
 }
-protected class MFInt3238 {
+protected class MFInt3239 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f39 {
+protected class MFVec3f40 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.2f,0f,-0.1f,0.47f,0f});
   }
 }
-protected class MFInt3240 {
+protected class MFInt3241 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f41 {
+protected class MFVec3f42 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.47f,0f,-0.1f,0.7f,0f});
   }
 }
-protected class MFInt3242 {
+protected class MFInt3243 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f43 {
+protected class MFVec3f44 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.7f,0f,-0.1f,0.93f,0f});
   }
 }
-protected class MFInt3244 {
+protected class MFInt3245 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f45 {
+protected class MFVec3f46 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.93f,0f,-0.1f,1f,0f});
   }
 }
-protected class MFInt3246 {
+protected class MFInt3247 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f47 {
+protected class MFVec3f48 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.15f,0.17f,0f,-0.2f,0.4f,0f});
   }
 }
-protected class MFInt3248 {
+protected class MFInt3249 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f49 {
+protected class MFVec3f50 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2f,0.4f,0f,-0.23f,0.63f,0f});
   }
 }
-protected class MFInt3250 {
+protected class MFInt3251 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f51 {
+protected class MFVec3f52 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.23f,0.63f,0f,-0.25f,0.79f,0f});
   }
 }
-protected class MFInt3252 {
+protected class MFInt3253 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f53 {
+protected class MFVec3f54 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.25f,0.79f,0f,-0.26f,0.85f,0f});
   }

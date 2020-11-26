@@ -20,7 +20,7 @@ browser.currentScene.children[2] = Viewpoint4;
 let Transform5 = browser.currentScene.createNode("Transform");
 Transform5.translation = new SFVec3f(new float[-1,1,0]);
 let Inline6 = browser.currentScene.createNode("Inline");
-Inline6.url = new MFString(new java.lang.String["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"]);
+Inline6.url = new MFString(new java.lang.String["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"]);
 Transform5.children = new MFNode();
 
 Transform5.children[0] = Inline6;
@@ -43,7 +43,7 @@ browser.currentScene.children[3] = Transform5;
 let Transform9 = browser.currentScene.createNode("Transform");
 Transform9.translation = new SFVec3f(new float[1,1,0]);
 let Inline10 = browser.currentScene.createNode("Inline");
-Inline10.url = new MFString(new java.lang.String["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"]);
+Inline10.url = new MFString(new java.lang.String["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"]);
 Transform9.children = new MFNode();
 
 Transform9.children[0] = Inline10;
@@ -58,7 +58,7 @@ let Transform12 = browser.currentScene.createNode("Transform");
 Transform12.translation = new SFVec3f(new float[-1,-1,0]);
 //rotation='0 0 1 3.141593'
 let Inline13 = browser.currentScene.createNode("Inline");
-Inline13.url = new MFString(new java.lang.String["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"]);
+Inline13.url = new MFString(new java.lang.String["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"]);
 Transform12.children = new MFNode();
 
 Transform12.children[0] = Inline13;
@@ -73,7 +73,7 @@ let Transform15 = browser.currentScene.createNode("Transform");
 Transform15.translation = new SFVec3f(new float[1,-1,0]);
 //rotation='0 0 1 3.141593'
 let Inline16 = browser.currentScene.createNode("Inline");
-Inline16.url = new MFString(new java.lang.String["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"]);
+Inline16.url = new MFString(new java.lang.String["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"]);
 Transform15.children = new MFNode();
 
 Transform15.children[0] = Inline16;

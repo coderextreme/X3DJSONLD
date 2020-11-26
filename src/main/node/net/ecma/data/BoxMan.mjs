@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("H-Anim"),
+              name : new SFString("HAnim"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
@@ -58,7 +58,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare).")}),
+              content : new SFString("A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare).")}),
 
             new meta({
               name : new SFString("creator"),
@@ -78,11 +78,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 May 2020")}),
+              content : new SFString("4 July 2020")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://h-anim.org")}),
+              content : new SFString("http://HAnim.org")}),
 
             new meta({
               name : new SFString("reference"),
@@ -130,7 +130,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl")}),
+              content : new SFString("http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl")}),
 
             new meta({
               name : new SFString("reference"),
@@ -138,15 +138,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://h-anim.org/Specifications/H-Anim2001")}),
+              content : new SFString("http://HAnim.org/Specifications/HAnim2001")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://h-anim.org/Models")}),
+              content : new SFString("http://HAnim.org/Models")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://h-anim.org/Nodes")}),
+              content : new SFString("http://HAnim.org/Nodes")}),
 
             new meta({
               name : new SFString("reference"),
@@ -162,7 +162,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("subject"),
-              content : new SFString("BoxMan H-Anim 2.0")}),
+              content : new SFString("BoxMan HAnim 2.0")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -185,7 +185,7 @@ var X3D0 =  new X3D({
             new Background({
               groundColor : new MFColor([0.6,0.6,0.6]),
               skyColor : new MFColor([0.75,0.75,0.75])}),
-          { "#comment" : new CommentsBlock("When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet") },
+          { "#comment" : new CommentsBlock("When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet") },
 
             new HAnimHumanoid({
               name : new SFString("Humanoid"),
@@ -626,123 +626,6 @@ var X3D0 =  new X3D({
                           coord : new SFNode(
                             new Coordinate({
                               USE : new SFString("SKINCOORD")}))}))})])})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_wrist")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_elbow")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_shoulder")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_wrist")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_elbow")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_shoulder")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_skullbase")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_vl5")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_midtarsal")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_ankle")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_knee")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_r_hip")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_midtarsal")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_ankle")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_knee")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_l_hip")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("boxman_humanoid_root")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_sacrum")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_thigh")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_calf")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_hindfoot")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_middistal")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_thigh")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_calf")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_hindfoot")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_middistal")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l5")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_skull")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_upperarm")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_forearm")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_l_hand")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_upperarm")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_forearm")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("boxman_r_hand")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("boxman_l_middistal_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("boxman_r_middistal_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("boxman_skull_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("boxman_l_hand_tip")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("boxman_r_hand_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   name : new SFString("BoxMan_view"),
@@ -775,11 +658,128 @@ var X3D0 =  new X3D({
                       DEF : new SFString("Top_View"),
                       description : new SFString("Top View"),
                       orientation : new SFRotation([1,0,0,-1.57]),
-                      position : new SFVec3f([0,3,0])})])}))}),
+                      position : new SFVec3f([0,3,0])})])})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_humanoid_root")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_skullbase")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_vl5")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_ankle")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_ankle")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_elbow")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_elbow")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_hip")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_hip")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_knee")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_knee")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_midtarsal")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_midtarsal")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_shoulder")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_shoulder")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_l_wrist")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("boxman_r_wrist")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l5")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_sacrum")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_skull")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_calf")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_calf")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_forearm")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_forearm")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_hand")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_hand")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_hindfoot")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_hindfoot")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_middistal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_middistal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_thigh")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_thigh")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_l_upperarm")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("boxman_r_upperarm")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("boxman_skull_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("boxman_l_hand_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("boxman_r_hand_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("boxman_l_middistal_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("boxman_r_middistal_tip")}))}),
 
             new ExternProtoDeclare({
               name : new SFString("LOA1_WalkAnimation"),
-              url : new MFString(["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]),
+              url : new MFString(["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFTIME,

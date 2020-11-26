@@ -25,33 +25,40 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='HAnimModelHandRight.x3d',name='title'),
-    meta(content='Right hand using high-fidelity definitions for H-Anim version 2.2',name='description'),
-    meta(content='YOO Kwan Hee and Don Brutzman',name='creator'),
+    meta(content='Right hand using high-fidelity definitions for HAnim version 2.0',name='description'),
+    meta(content='Kwan-Hee YOO, Don Brutzman and Joe Williams',name='creator'),
     meta(content='26 January 2015',name='created'),
-    meta(content='20 October 2019',name='modified'),
+    meta(content='5 July 2020',name='modified'),
     meta(content='not yet to scale',name='warning'),
     meta(content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?',name='warning'),
-    meta(content='https://www.web3d.org/working-groups/humanoid-animation-h-anim',name='reference'),
-    meta(content='https://www.web3d.org/files/specifications/19774/V1.0',name='reference'),
-    meta(content='https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html',name='reference'),
-    meta(content='X3D H-Anim humanoid animation',name='subject'),
-    meta(content='scene, DOCTYPE and Schema under development.',name='warning'),
+    meta(content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body',name='info'),
+    meta(content='https://www.web3d.org/working-groups/humanoid-animation-HAnim',name='reference'),
+    meta(content='https://www.web3d.org/documents/specifications/19774/V2.0',name='reference'),
+    meta(content='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands',name='reference'),
+    meta(content='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints',name='reference'),
+    meta(content='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4',name='reference'),
+    meta(content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html',name='reference'),
+    meta(content='X3D HAnim humanoid animation',name='subject'),
     meta(content='Integrate and confirm Segment/Joint names, Viewpoints.',name='TODO'),
-    meta(content='https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d',name='identifier'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
     WorldInfo(title='HAnimModelHandRight.x3d'),
-    HAnimHumanoid(DEF='Humanoid_Right_hand',name='Humanoid_Right_hand',version='2.0',
+    HAnimHumanoid(DEF='hanim_Hand_Right',name='Hand_Right',version='2.0',
+      #  HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' 
+      metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
+        metadata=MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])),
       skeleton=[
-      HAnimJoint(DEF='hanim_HumanoidRoot',name='humanoid_root',
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',
+        #  Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model 
         children=[
-        HAnimJoint(DEF='r_radiocarpal_joint',name='r_radiocarpal_joint',
+        HAnimJoint(DEF='hanim_r_radiocarpal',description='connection joint of hand to leg above',name='r_radiocarpal',
           children=[
-          HAnimSegment(DEF='r_wrist',name='r_wrist',
+          HAnimSegment(DEF='hanim_r_wrist',description='test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint',name='r_wrist',
             children=[
             Transform(
               children=[
@@ -75,9 +82,9 @@ newModel=X3D(profile='Immersive',version='4.0',
               geometry=IndexedLineSet(DEF='RCToMC45',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
           #  MC12 
-          HAnimJoint(DEF='r_midcarpal_joint_12',center=(-0.1,0.1,0),name='r_midcarpal_joint_12',
+          HAnimJoint(DEF='hanim_r_midcarpal_12',center=(-0.1,0.1,0),name='r_midcarpal_12',
             children=[
-            HAnimSegment(DEF='r_trapezoid',name='r_trapezoid',
+            HAnimSegment(DEF='hanim_r_trapezoid',name='r_trapezoid',
               children=[
               Transform(translation=(-0.1,0.1,0),
                 children=[
@@ -96,9 +103,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=IndexedLineSet(DEF='MC12toCMC2',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
             #  thumb finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_1',center=(-0.2,0.15,0),name='r_carpometacarpal_joint_1',
+            HAnimJoint(DEF='hanim_r_carpometacarpal_1',center=(-0.2,0.15,0),name='r_carpometacarpal_1',
               children=[
-              HAnimSegment(DEF='r_metacarpal_1',name='r_metacarpal_1',
+              HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                 children=[
                 Transform(translation=(-0.2,0.15,0),
                   children=[
@@ -108,9 +115,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(),),
                   geometry=IndexedLineSet(DEF='CMC1toMCP1',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.2,0.15,0),(-0.3,0.3,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_1',center=(-0.3,0.3,0),name='r_metacarpophalangeal_joint_1',
+              HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',center=(-0.3,0.3,0),name='r_metacarpophalangeal_1',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges1',name='r_proximal_phalanges1',
+                HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                   children=[
                   Transform(translation=(-0.3,0.3,0),
                     children=[
@@ -120,9 +127,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(),),
                     geometry=IndexedLineSet(DEF='MCP11toIP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.3,0.3,0),(-0.35,0.4,0)])))]),
-                HAnimJoint(DEF='r_interphalangeal_joint_1',center=(-0.35,0.4,0),name='r_interphalangeal_joint_1',
+                HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',center=(-0.35,0.4,0),name='r_carpal_interphalangeal_1',
                   children=[
-                  HAnimSegment(DEF='r_distal_phalanges1',name='r_distal_phalanges1',
+                  HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
                     children=[
                     Transform(translation=(-0.35,0.4,0),
                       children=[
@@ -130,12 +137,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(
                       appearance=Appearance(
                         material=Material(),),
-                      geometry=IndexedLineSet(DEF='fingertip_r_interphalangeal_joint_1',coordIndex=[0,1],
+                      geometry=IndexedLineSet(DEF='fingertip_r_carpal_interphalangeal_1',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),
             #  index finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_2',center=(-0.1,0.2,0),name='r_carpometacarpal_joint_2',
+            HAnimJoint(DEF='hanim_r_carpometacarpal_2',center=(-0.1,0.2,0),name='r_carpometacarpal_2',
               children=[
-              HAnimSegment(DEF='r_metacarpal_2',name='r_metacarpal_2',
+              HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                 children=[
                 Transform(translation=(-0.1,0.2,0),
                   children=[
@@ -145,9 +152,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(),),
                   geometry=IndexedLineSet(DEF='CMC2toMCP2',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,0.2,0),(-0.15,0.5,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_2',center=(-0.15,0.5,0),name='r_metacarpophalangeal_joint_2',
+              HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',center=(-0.15,0.5,0),name='r_metacarpophalangeal_2',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges2',name='r_proximal_phalanges2',
+                HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                   children=[
                   Transform(translation=(-0.15,0.5,0),
                     children=[
@@ -157,9 +164,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(),),
                     geometry=IndexedLineSet(DEF='MCP2toPIP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.15,0.5,0),(-0.2,0.7,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_2',center=(-0.2,0.7,0),name='r_proximal_interphalangeal_joint_2',
+                HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',center=(-0.2,0.7,0),name='r_carpal_proximal_interphalangeal_2',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges2',name='r_middle_phalanges2',
+                  HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                     children=[
                     Transform(translation=(-0.2,0.7,0),
                       children=[
@@ -169,9 +176,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(),),
                       geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.2,0.7,0),(-0.24,0.87,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_2',center=(-0.24,0.87,0),name='r_distal_interphalangeal_joint_2',
+                  HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',center=(-0.24,0.87,0),name='r_carpal_distal_interphalangeal_2',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges2',name='r_distal_phalanges2',
+                    HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
                       children=[
                       Transform(translation=(-0.24,0.87,0),
                         children=[
@@ -179,12 +186,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         appearance=Appearance(
                           material=Material(),),
-                        geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_2',coordIndex=[0,1],
+                        geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_2',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])])]),
           #  MC3 
-          HAnimJoint(DEF='r_midcarpal_joint_3',center=(0.0,0.07,0),name='r_midcarpal_joint_3',
+          HAnimJoint(DEF='hanim_r_midcarpal_3',center=(0.0,0.07,0),name='r_midcarpal_3',
             children=[
-            HAnimSegment(DEF='r_capitate',name='r_capitate',
+            HAnimSegment(DEF='hanim_r_capitate',name='r_capitate',
               children=[
               Transform(translation=(0.0,0.07,0),
                 children=[
@@ -195,9 +202,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=IndexedLineSet(DEF='MC3toCMC3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
             #  Middle fingle 
-            HAnimJoint(DEF='r_carpometacarpal_joint_3',center=(0.0,0.2,0),name='r_carpometacarpal_joint_3',
+            HAnimJoint(DEF='hanim_r_carpometacarpal_3',center=(0.0,0.2,0),name='r_carpometacarpal_3',
               children=[
-              HAnimSegment(DEF='r_metacarpal_3',name='r_metacarpal_3',
+              HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                 children=[
                 Transform(translation=(0.0,0.2,0),
                   children=[
@@ -207,9 +214,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(),),
                   geometry=IndexedLineSet(DEF='CMC3toMCP3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,0.2,0),(-0.03,0.5,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_3',center=(-0.03,0.5,0),name='r_metacarpophalangeal_joint_3',
+              HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',center=(-0.03,0.5,0),name='r_metacarpophalangeal_3',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges3',name='r_proximal_phalanges3',
+                HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                   children=[
                   Transform(translation=(-0.03,0.5,0),
                     children=[
@@ -219,9 +226,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(),),
                     geometry=IndexedLineSet(DEF='MCP3toPIP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.03,0.5,0),(-0.05,0.75,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_3',center=(-0.05,0.75,0),name='r_proximal_interphalangeal_joint_3',
+                HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',center=(-0.05,0.75,0),name='r_carpal_proximal_interphalangeal_3',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges3',name='r_middle_phalanges3',
+                  HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                     children=[
                     Transform(translation=(-0.05,0.75,0),
                       children=[
@@ -231,9 +238,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(),),
                       geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.05,0.75,0),(-0.08,0.96,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_3',center=(-0.08,0.96,0),name='r_distal_interphalangeal_joint_3',
+                  HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',center=(-0.08,0.96,0),name='r_carpal_distal_interphalangeal_3',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges3',name='r_distal_phalanges3',
+                    HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
                       children=[
                       Transform(translation=(-0.08,0.96,0),
                         children=[
@@ -241,12 +248,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         appearance=Appearance(
                           material=Material(),),
-                        geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_3',coordIndex=[0,1],
+                        geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_3',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])])]),
           #  MC45 
-          HAnimJoint(DEF='r_midcarpal_joint_45',center=(0.1,0.1,0),name='r_midcarpal_joint_45',
+          HAnimJoint(DEF='hanim_r_midcarpal_4_5',center=(0.1,0.1,0),name='r_midcarpal_4_5',
             children=[
-            HAnimSegment(DEF='r_hamate',name='r_hamate',
+            HAnimSegment(DEF='hanim_r_hamate',name='r_hamate',
               children=[
               Transform(translation=(0.1,0.1,0),
                 children=[
@@ -262,9 +269,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=IndexedLineSet(DEF='MC45toCMC5',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
             #  ring finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_4',center=(0.1,0.2,0),name='r_carpometacarpal_joint_4',
+            HAnimJoint(DEF='hanim_r_carpometacarpal_4',center=(0.1,0.2,0),name='r_carpometacarpal_4',
               children=[
-              HAnimSegment(DEF='r_metacarpal_4',name='r_metacarpal_4',
+              HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                 children=[
                 Transform(translation=(0.1,0.2,0),
                   children=[
@@ -274,9 +281,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(),),
                   geometry=IndexedLineSet(DEF='CMC4toMCP4',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,0.2,0),(0.1,0.47,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_4',center=(0.1,0.47,0),name='r_metacarpophalangeal_joint_4',
+              HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',center=(0.1,0.47,0),name='r_metacarpophalangeal_4',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges4',name='r_proximal_phalanges4',
+                HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                   children=[
                   Transform(translation=(0.1,0.47,0),
                     children=[
@@ -286,9 +293,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(),),
                     geometry=IndexedLineSet(DEF='MCP4toPIP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.1,0.47,0),(0.1,0.7,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_4',center=(0.1,0.7,0),name='r_proximal_interphalangeal_joint_4',
+                HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',center=(0.1,0.7,0),name='r_carpal_proximal_interphalangeal_4',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges4',name='r_middle_phalanges4',
+                  HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                     children=[
                     Transform(translation=(0.1,0.7,0),
                       children=[
@@ -298,9 +305,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(),),
                       geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.1,0.7,0),(0.1,0.93,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_4',center=(0.1,0.93,0),name='r_distal_interphalangeal_joint_4',
+                  HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',center=(0.1,0.93,0),name='r_carpal_distal_interphalangeal_4',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanx4',name='r_distal_phalanx4',
+                    HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
                       children=[
                       Transform(translation=(0.1,0.93,0),
                         children=[
@@ -308,12 +315,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         appearance=Appearance(
                           material=Material(),),
-                        geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_4',coordIndex=[0,1],
+                        geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_4',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
             #  pinky finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_5',center=(0.15,0.17,0),name='r_carpometacarpal_joint_5',
+            HAnimJoint(DEF='hanim_r_carpometacarpal_5',center=(0.15,0.17,0),name='r_carpometacarpal_5',
               children=[
-              HAnimSegment(DEF='r_metacarpal_5',name='r_metacarpal_5',
+              HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                 children=[
                 Transform(translation=(0.15,0.17,0),
                   children=[
@@ -323,9 +330,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(),),
                   geometry=IndexedLineSet(DEF='CMC5toMCP5',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.15,0.17,0),(0.2,0.4,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_5',center=(0.2,0.4,0),name='r_metacarpophalangeal_joint_5',
+              HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',center=(0.2,0.4,0),name='r_metacarpophalangeal_5',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges5',name='r_proximal_phalanges2',
+                HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                   children=[
                   Transform(translation=(0.2,0.4,0),
                     children=[
@@ -335,9 +342,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(),),
                     geometry=IndexedLineSet(DEF='MCP5toPIP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.2,0.4,0),(0.23,0.63,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_5',center=(0.23,0.63,0),name='r_proximal_interphalangeal_joint_5',
+                HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',center=(0.23,0.63,0),name='r_carpal_proximal_interphalangeal_5',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges5',name='r_middle_phalanges5',
+                  HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                     children=[
                     Transform(translation=(0.23,0.63,0),
                       children=[
@@ -347,9 +354,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(),),
                       geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.23,0.63,0),(0.25,0.79,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_5',center=(0.25,0.79,0),name='r_distal_interphalangeal_joint_5',
+                  HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',center=(0.25,0.79,0),name='r_carpal_distal_interphalangeal_5',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges5',name='r_distal_phalanges5',
+                    HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
                       children=[
                       Transform(translation=(0.25,0.79,0),
                         children=[
@@ -357,57 +364,57 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(
                         appearance=Appearance(
                           material=Material(),),
-                        geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_5',coordIndex=[0,1],
+                        geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_5',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.25,0.79,0),(0.26,0.85,0)])))])])])])])])])]),],
       joints=[
-      HAnimJoint(USE='hanim_HumanoidRoot'),
-      HAnimJoint(USE='r_radiocarpal_joint'),
-      HAnimJoint(USE='r_midcarpal_joint_12'),
-      HAnimJoint(USE='r_carpometacarpal_joint_1'),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_1'),
-      HAnimJoint(USE='r_interphalangeal_joint_1'),
-      HAnimJoint(USE='r_carpometacarpal_joint_2'),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_2'),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_2'),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_2'),
-      HAnimJoint(USE='r_midcarpal_joint_3'),
-      HAnimJoint(USE='r_carpometacarpal_joint_3'),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_3'),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_3'),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_3'),
-      HAnimJoint(USE='r_midcarpal_joint_45'),
-      HAnimJoint(USE='r_carpometacarpal_joint_4'),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_4'),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_4'),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_4'),
-      HAnimJoint(USE='r_carpometacarpal_joint_5'),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_5'),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_5'),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_5')],
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_r_carpal_interphalangeal_1'),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_r_carpometacarpal_1'),
+      HAnimJoint(USE='hanim_r_carpometacarpal_2'),
+      HAnimJoint(USE='hanim_r_carpometacarpal_3'),
+      HAnimJoint(USE='hanim_r_carpometacarpal_4'),
+      HAnimJoint(USE='hanim_r_carpometacarpal_5'),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_1'),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_2'),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_3'),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_4'),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_5'),
+      HAnimJoint(USE='hanim_r_midcarpal_12'),
+      HAnimJoint(USE='hanim_r_midcarpal_3'),
+      HAnimJoint(USE='hanim_r_midcarpal_4_5'),
+      HAnimJoint(USE='hanim_r_radiocarpal')],
       segments=[
-      HAnimSegment(USE='r_wrist'),
-      HAnimSegment(USE='r_trapezoid'),
-      HAnimSegment(USE='r_metacarpal_1'),
-      HAnimSegment(USE='r_proximal_phalanges1'),
-      HAnimSegment(USE='r_distal_phalanges1'),
-      HAnimSegment(USE='r_metacarpal_2'),
-      HAnimSegment(USE='r_proximal_phalanges2'),
-      HAnimSegment(USE='r_middle_phalanges2'),
-      HAnimSegment(USE='r_distal_phalanges2'),
-      HAnimSegment(USE='r_capitate'),
-      HAnimSegment(USE='r_metacarpal_3'),
-      HAnimSegment(USE='r_proximal_phalanges3'),
-      HAnimSegment(USE='r_middle_phalanges3'),
-      HAnimSegment(USE='r_distal_phalanges3'),
-      HAnimSegment(USE='r_hamate'),
-      HAnimSegment(USE='r_metacarpal_4'),
-      HAnimSegment(USE='r_proximal_phalanges4'),
-      HAnimSegment(USE='r_middle_phalanges4'),
-      HAnimSegment(USE='r_distal_phalanx4'),
-      HAnimSegment(USE='r_metacarpal_5'),
-      HAnimSegment(USE='r_proximal_phalanges5'),
-      HAnimSegment(USE='r_middle_phalanges5'),
-      HAnimSegment(USE='r_distal_phalanges5')])])
+      HAnimSegment(USE='hanim_r_capitate'),
+      HAnimSegment(USE='hanim_r_carpal_distal_phalanx_1'),
+      HAnimSegment(USE='hanim_r_carpal_distal_phalanx_2'),
+      HAnimSegment(USE='hanim_r_carpal_distal_phalanx_3'),
+      HAnimSegment(USE='hanim_r_carpal_distal_phalanx_4'),
+      HAnimSegment(USE='hanim_r_carpal_distal_phalanx_5'),
+      HAnimSegment(USE='hanim_r_carpal_middle_phalanx_2'),
+      HAnimSegment(USE='hanim_r_carpal_middle_phalanx_3'),
+      HAnimSegment(USE='hanim_r_carpal_middle_phalanx_4'),
+      HAnimSegment(USE='hanim_r_carpal_middle_phalanx_5'),
+      HAnimSegment(USE='hanim_r_carpal_proximal_phalanx_1'),
+      HAnimSegment(USE='hanim_r_carpal_proximal_phalanx_2'),
+      HAnimSegment(USE='hanim_r_carpal_proximal_phalanx_3'),
+      HAnimSegment(USE='hanim_r_carpal_proximal_phalanx_4'),
+      HAnimSegment(USE='hanim_r_carpal_proximal_phalanx_5'),
+      HAnimSegment(USE='hanim_r_hamate'),
+      HAnimSegment(USE='hanim_r_metacarpal_1'),
+      HAnimSegment(USE='hanim_r_metacarpal_2'),
+      HAnimSegment(USE='hanim_r_metacarpal_3'),
+      HAnimSegment(USE='hanim_r_metacarpal_4'),
+      HAnimSegment(USE='hanim_r_metacarpal_5'),
+      HAnimSegment(USE='hanim_r_trapezoid'),
+      HAnimSegment(USE='hanim_r_wrist')])])
 ) # X3D model complete
 
 ###############################################

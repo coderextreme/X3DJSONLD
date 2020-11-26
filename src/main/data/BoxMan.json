@@ -7,7 +7,7 @@
     "head": {
         "component": [
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":1
           }
         ],
@@ -18,7 +18,7 @@
           },
           {
             "@name":"description",
-            "@content":"A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."
+            "@content":"A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."
           },
           {
             "@name":"creator",
@@ -38,11 +38,11 @@
           },
           {
             "@name":"modified",
-            "@content":"23 May 2020"
+            "@content":"4 July 2020"
           },
           {
             "@name":"reference",
-            "@content":"http://h-anim.org"
+            "@content":"http://HAnim.org"
           },
           {
             "@name":"reference",
@@ -90,7 +90,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl"
+            "@content":"http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"
           },
           {
             "@name":"reference",
@@ -98,15 +98,15 @@
           },
           {
             "@name":"reference",
-            "@content":"http://h-anim.org/Specifications/H-Anim2001"
+            "@content":"http://HAnim.org/Specifications/HAnim2001"
           },
           {
             "@name":"reference",
-            "@content":"http://h-anim.org/Models"
+            "@content":"http://HAnim.org/Models"
           },
           {
             "@name":"reference",
-            "@content":"http://h-anim.org/Nodes"
+            "@content":"http://HAnim.org/Nodes"
           },
           {
             "@name":"reference",
@@ -122,7 +122,7 @@
           },
           {
             "@name":"subject",
-            "@content":"BoxMan H-Anim 2.0"
+            "@content":"BoxMan HAnim 2.0"
           },
           {
             "@name":"identifier",
@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 November 2020"
+            "@content":"23 November 2020"
           },
           {
             "@name":"generator",
@@ -165,7 +165,7 @@
             }
           },
           {
-            "#comment":"When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet"
+            "#comment":"When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet"
           },
           { "HAnimHumanoid":
             {
@@ -1004,207 +1004,6 @@
                   }
                 }
               ],
-              "-joints":[
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_wrist"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_wrist"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_elbow"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_shoulder"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_skullbase"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_vl5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_midtarsal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_ankle"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_r_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_midtarsal"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_ankle"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_knee"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_l_hip"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"boxman_humanoid_root"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_sacrum"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_hindfoot"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_middistal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_hindfoot"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_middistal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_skull"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_l_hand"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"boxman_r_hand"
-                  }
-                }
-              ],
-              "-sites":[
-                { "HAnimSite":
-                  {
-                    "@USE":"boxman_l_middistal_tip"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"boxman_r_middistal_tip"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"boxman_skull_tip"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"boxman_l_hand_tip"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"boxman_r_hand_tip"
-                  }
-                }
-              ],
               "-viewpoints":[
                 { "HAnimSite":
                   {
@@ -1253,13 +1052,214 @@
                     ]
                   }
                 }
+              ],
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_humanoid_root"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_skullbase"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_vl5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_ankle"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_ankle"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_midtarsal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_midtarsal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_l_wrist"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"boxman_r_wrist"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_sacrum"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_skull"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_hand"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_hand"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_middistal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_middistal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_l_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"boxman_r_upperarm"
+                  }
+                }
+              ],
+              "-sites":[
+                { "HAnimSite":
+                  {
+                    "@USE":"boxman_skull_tip"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"boxman_l_hand_tip"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"boxman_r_hand_tip"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"boxman_l_middistal_tip"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"boxman_r_middistal_tip"
+                  }
+                }
               ]
             }
           },
           { "ExternProtoDeclare":
             {
               "@name":"LOA1_WalkAnimation",
-              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
+              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
               "field": [
                 {
                   "@name":"cycleInterval",
