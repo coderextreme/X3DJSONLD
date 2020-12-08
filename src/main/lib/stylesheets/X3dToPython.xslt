@@ -682,7 +682,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       not( local-name()='pauseTime' and (.='0' or .='0.0')) and
                       not( local-name()='resumeTime'  and (.='0' or .='0.0')) and
                       not( local-name()='qualityFactor'  and (.='1' or .='1.0')) and
-                      not( local-name()='refresh' and (.='0' or .='0.0')) and
+                      not( local-name()='autoRefresh' and (.='0' or .='0.0')) and
+                      not( local-name()='autoRefreshTimeLimit' and (.='3600' or .='3600.0')) and
                       not( local-name()='tailTime' and (.='0' or .='0.0')) and
                       not( local-name()='shadows' and .='false') and
                       not( local-name()='shadowIntensity' and (.='1' or .='1.0')) and
@@ -2112,7 +2113,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='cycleTime')      or
                     ($attributeName='duration')       or
 					($attributeName='elapsedTime')    or
-                    ($attributeName='refresh')        or
+                    ($attributeName='autoRefresh')    or
+                    ($attributeName='autoRefreshTimeLimit') or
                     ($attributeName='tau')            or
                     ($attributeName='timestamp')      or
                     ($attributeName='readInterval')   or
