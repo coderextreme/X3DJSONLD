@@ -21,6 +21,9 @@
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
 	<!--  extension-element-prefixes="xs" -->
+    
+    <xsl:param name="verbose"><xsl:text>false</xsl:text></xsl:param>
+    
     <xsl:output method="html"/> <!-- output methods:  xml html text -->
     
     <!-- ======================================================= -->
@@ -29,6 +32,10 @@
     
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text><!-- start element complete -->
         <xsl:text>&#10;</xsl:text>
+  
+        <xsl:message>
+            <xsl:text>Notation: * means expected conversion, ! means unexpected problem, [prose] shows contained value </xsl:text>
+        </xsl:message>
         
         <!-- process elements and comments -->
         <xsl:apply-templates select="* | comment()"/>
@@ -38,6 +45,28 @@
     <!-- ===================================================== -->
     
     <xsl:template match="*"> <!-- rule to process each element -->
+    
+        <xsl:variable name="questionableConstructs" select="
+            (lower-case(local-name()) = 'center') or (lower-case(local-name()) = 'tt')"/>
+        <xsl:if test="$questionableConstructs">
+            <xsl:message>
+                <xsl:text>!!! element </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:choose>
+                    <xsl:when test="(lower-case(local-name()) = 'center') or (local-name() = 'tt')">
+                        <xsl:text> is a deprecated construct, HTML recommends using CSS style instead</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> is an obsolete construct, use a better approach</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:if test="(local-name() = 'tt')">
+                    <xsl:text> [</xsl:text>
+                    <xsl:value-of select="text()" disable-output-escaping="yes"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:if>
+            </xsl:message>
+        </xsl:if>
         
         <!-- ensure no upper/mixed case element name -->
         <xsl:variable name="elementName">
@@ -65,39 +94,48 @@
         <xsl:variable name="hasContainedText" select="(string-length(normalize-space(.)) > 0)"/>
                 
         <!-- common initial processing for each element -->
-        <xsl:text>&#10;</xsl:text>
-        <xsl:value-of select="$indent"/>
+        <xsl:if test="not((local-name() = 'a') or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'span'))">
+            <!-- no line breaks for inline HTML elements -->
+            <xsl:text>&#10;</xsl:text>
+            <xsl:value-of select="$indent"/>
+        </xsl:if>        
         
         <xsl:choose>
             <xsl:when test="contains(@class,'proposedDeletion')">
-                <xsl:message>
-                    <xsl:text>*** omitted </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text> class='</xsl:text>
-                    <xsl:value-of select="@class"/>
-                    <xsl:text>'</xsl:text>
-                    <!--
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text> element </xsl:text>
-                    -->
-                    <xsl:if test="$hasContainedText">
-                        <xsl:text> (</xsl:text>
-                        <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:text>)</xsl:text>
-                    </xsl:if>
-                </xsl:message>
+                <xsl:if test="($verbose = 'true')">
+                    <xsl:message>
+                        <xsl:text>*** omitted </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> class='</xsl:text>
+                        <xsl:value-of select="@class"/>
+                        <xsl:text>'</xsl:text>
+                        <!--
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> element </xsl:text>
+                        -->
+                        <xsl:if test="$hasContainedText">
+                            <xsl:text> [</xsl:text>
+                            <xsl:value-of select="normalize-space(string(.))"/>
+                            <xsl:text>]</xsl:text>
+                        </xsl:if>
+                    </xsl:message>
+                </xsl:if>
+                <!-- omit copying this element -->
             </xsl:when>
-            <xsl:when test="(count(*) > 0) or $hasContainedText">
+            <xsl:when test="(count(*) > 0) or comment() or $hasContainedText">
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:apply-templates select="@*"/> <!-- process attributes for this element -->
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- start element complete -->
 
-                <xsl:apply-templates select="* | text()"/>  <!-- recurse on child elements, include contained text -->
+                <xsl:apply-templates select="* | text() | comment()"/>  <!-- recurse on child elements, include contained text -->
 
                 <!-- common final processing for each element -->
-                <xsl:text>&#10;</xsl:text>
-                <xsl:value-of select="$indent"/>
+                <xsl:if test="not((local-name() = 'a') or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'span'))">
+                    <!-- no line breaks for inline HTML elements -->
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                </xsl:if>
                 <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- end element -->
@@ -118,20 +156,86 @@
             </xsl:otherwise>
         </xsl:choose>
         
+        <!-- additional diagnostics -->
+        <xsl:choose>
+            <!-- potentially malformed i b em strong -->
+            <xsl:when test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
+                             (*[(local-name() != 'a') and (local-name() != 'br') and (local-name() != 'span') and (local-name() != 'sub') and (local-name() != 'sup')])">
+                <xsl:if test="not(local-name() = 'b') and (*[local-name() = 'i']) and (//p[contains(.,'Architecture and base components')])">
+                    <xsl:message>
+                    <xsl:text>!!! </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> element contains embedded element </xsl:text>
+                    <xsl:value-of select="local-name(*[1])"/>
+                    <xsl:text> with text </xsl:text>
+                    <xsl:text>[</xsl:text>
+                    <xsl:value-of select="string(.)"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:message>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test="((local-name() = 'b') or (local-name() = 'i') or (local-name() = 'em') or (local-name() = 'strong')) and 
+                             (starts-with(.,' ') or starts-with(normalize-space(.),',') or starts-with(normalize-space(.),';') or starts-with(normalize-space(.),':') or starts-with(normalize-space(.),'.') or 
+                                ends-with(.,' ') or   ends-with(normalize-space(.),',') or   ends-with(normalize-space(.),';') or   ends-with(normalize-space(.),':') or   ends-with(normalize-space(.),'.') or   ends-with(normalize-space(.),'-'))">
+                <xsl:if test="not(ends-with(normalize-space(.),'e.g.')) and not(ends-with(normalize-space(.),'ecmascript:')) and 
+                              not(ends-with(normalize-space(.),'i.e.')) and not(ends-with(normalize-space(.),'javascript:'))">
+                    <xsl:message>
+                        <xsl:text>!!! </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> element has embedded whitespace/punctuation: </xsl:text>
+                        <xsl:text>[</xsl:text>
+                            <xsl:variable name="containedText">
+                                <xsl:for-each select="../text() | ../*/text()">
+                                    <xsl:value-of select="."/>
+                                    <xsl:text> </xsl:text>
+                                </xsl:for-each>
+                            </xsl:variable>
+                            <xsl:value-of select="normalize-space($containedText)" disable-output-escaping="yes"/>
+                        <xsl:text>]</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+            </xsl:when>
+        </xsl:choose>
+        
     </xsl:template>
 
     <!-- ===================================================== -->
     
     <xsl:template match="@*"> <!-- rule to process each attribute -->
+    
+        <!-- conversions: <a name=""/> to <a id=""/> -->
         
         <xsl:variable name="allowedClassName" select="(local-name() = 'class') and
-            ((. = 'editorsNote') or (. = 'editorialChange') or
-             (. = 'auto-style1') or (. = 'cube') or (. = 'CenterDiv') or (. = 'HeadingPart') or (. = 'HeadingClause') or 
-             (. = 'example') or (. = 'IndexEntry') or (. = 'x3dbar') or (. = 'x3dlogo') or
-             ((local-name(..) = 'p')     and ((. = 'AnnexHeadingBottom') or (. = 'AnnexType') or (. = 'Example') or (. = 'Footnote') or (. = 'FigureCaption') or (. = 'TableCaption'))) or
-             ((local-name(..) = 'pre')   and ((. = 'diagram') or (. = 'listing'))) or
-             ((local-name(..) = 'table') and ((. = 'cont')    or (. = 'main')  or (. = 'topics'))) or
-             ((local-name(..) = 'th')    and ((. = 'cont1')   or (. = 'main1') or (. = 'cont2') or (. = 'cont3'))))"/>
+            ((. = 'auto-style1')   or (. = 'cube')       or (. = 'CenterDiv')   or (. = 'HeadingPart') or (. = 'HeadingClause') or 
+             (. = 'code')          or (. = 'deprecated') or (. = 'equation')    or (. = 'editorsNote') or (. = 'editorialChange') or
+             (. = 'terms')         or (. = 'TermRef')    or
+             (. = 'example')       or (. = 'IndexEntry') or (. = 'Params') or
+             (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
+             (. = 'RunningHeader') or (. = 'RunningHeaderLeft')  or (. = 'RunningHeaderCenter') or (. = 'RunningHeaderRight') or 
+             (. = 'Version') or
+
+             ((local-name(..) = 'p')     and ((. = 'Example')       or (. = 'Footnote')       or (. = 'AnnexType')  or (. = 'AnnexHeadingBottom') or 
+                                              (. = 'SubRef')        or (. = 'CellBodyCenter') or (. = 'CellBodyRight') or 
+                                              (. = 'FigureCaption') or (. = 'TableCaption'))) or
+             ((local-name(..) = 'pre')   and ((. = 'diagram')       or (. = 'listing')        or (. = 'node')))     or
+             ((local-name(..) = 'span')  and ((. = 'note')          or (. = 'times')))        or
+             ((local-name(..) = 'table') and ((. = 'cont')          or (. = 'main')           or (. = 'topics')))   or
+             ((local-name(..) = 'tr')    and ((. = 'Version')       or (. = 'Versiontr')      or (. = 'Versionmr')  or (. = 'Versionbr'))) or
+             ((local-name(..) = 'th')    and ((. = 'cont1')         or (. = 'main1')          or (. = 'cont2')      or (. = 'cont3') or 
+                                              (. = 'Version')       or (. = 'VersionX')       or (. = 'Version1'))) or
+             ((local-name(..) = 'td')    and ((. = 'center')        or (. = 'Version')        or (. = 'Version2')      or 
+                                              (. = 'Versiontr')     or (. = 'Version2tr')     or (. = 'VersiontrX') or 
+                                              (. = 'Versionmr')     or (. = 'Version2mr')     or (. = 'VersionmrX') or  
+                                              (. = 'Versionbr')     or (. = 'Version2br')     or (. = 'VersionbrX'))))"/>
+
+        <!-- source html deserves further scrutiny -->
+        <xsl:variable name="isEditorial"  select="(local-name() = 'class') and contains(., 'editor')"/>
+
+        <!-- TODO source html deserves further scrutiny -->
+        <xsl:variable name="isEquation"   select="(local-name() = 'class') and starts-with(., 'equation')"/>
+        
+        <!-- TODO source html deserves further scrutiny -->
+        <xsl:variable name="isLocalStyle" select="(local-name() = 'class') and starts-with(., 'local')"/>
         
         <!-- ensure no upper/mixed case attribute name -->
         <xsl:variable name="attributeName">
@@ -149,21 +253,72 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        
+
         <xsl:choose>
-            <xsl:when test="(local-name() = 'class') and contains(.,'proposed')">
+            <xsl:when test="(local-name() = 'class') and (contains(.,'proposed') or $isEquation or $isLocalStyle)">
                 <!-- omit -->
             </xsl:when>
             <xsl:otherwise>
-                <xsl:if test="(local-name() = 'class') and not($allowedClassName)">
+                <xsl:if test="(local-name() = 'class') and (not($allowedClassName) or $isEditorial)">
+                    <!-- class style diagnostics -->
                     <xsl:message>
-                        <xsl:text>!!! found </xsl:text>
-                        <xsl:value-of select="local-name(..)"/>
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="local-name()"/>
-                        <xsl:text>='</xsl:text>
-                        <xsl:value-of select="."/>
-                        <xsl:text>' (style class not recognized, nevertheless included this attribute)</xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="($verbose = 'true') and (../text() = '&#960;')"><!-- pi -->
+                                <xsl:text>***</xsl:text>
+                                <xsl:text> found </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="."/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:if test="(local-name(..) = 'span') and (local-name() = 'class') and (. = 'times')">
+                                    <xsl:text> (as in Times Roman font)</xsl:text>
+                                    <xsl:text> [</xsl:text>
+                                    <xsl:choose>
+                                        <xsl:when test="(../text() = '&#960;')"><!-- pi -->
+                                            <xsl:text disable-output-escaping="yes">&amp;</xsl:text><xsl:text>pi;</xsl:text><!-- &#960; -->
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="normalize-space(../text())" disable-output-escaping="yes"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <xsl:text>]</xsl:text>
+                                </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>!!!</xsl:text>
+                                <xsl:text> found </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="."/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="$isEditorial">
+                                <xsl:text> for specification review/resolution </xsl:text>
+                                <xsl:if test="(string-length(../@title) > 0)">
+                                    <xsl:text>(</xsl:text>
+                                    <xsl:value-of select="../@title"/>
+                                    <xsl:text>) </xsl:text>
+                                </xsl:if>
+                                <xsl:text>[</xsl:text>
+                                <xsl:variable name="containedText">
+                                    <xsl:for-each select="../text() | ../*/text()">
+                                        <xsl:value-of select="."/>
+                                        <xsl:text> </xsl:text>
+                                    </xsl:for-each>
+                                </xsl:variable>
+                                <xsl:value-of select="normalize-space($containedText)" disable-output-escaping="yes"/>
+                                <xsl:text>]</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text> (check X3D.css stylesheet for unrecognized style class, nevertheless included this attribute)</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <!-- how to concat text blocks?
                         <xsl:if test="(string-length(normalize-space(concat(../text()))) > 1)">
                             <xsl:text> (</xsl:text>
@@ -181,16 +336,37 @@
             </xsl:otherwise>
         </xsl:choose>
         
+        <!-- additional diagnostics -->
+        <xsl:choose>
+            <!-- malformed url -->
+            <xsl:when test="(((local-name(..) = 'a') and (local-name() = 'href')) or ((local-name(..) = 'a') and (local-name() = 'href'))) and 
+                             (not(starts-with(.,'http:..') or starts-with(.,'https:..') or contains(.,'#') or contains(.,'/') or 
+                                    ends-with(.,'.html')) or
+                              contains(.,'[') or contains(.,']'))">
+                <xsl:message>
+                    <xsl:text>!!! malformed html url: </xsl:text>
+                    <xsl:value-of select="local-name(..)"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$attributeName"/>
+                    <xsl:text>='</xsl:text>
+                    <xsl:value-of select="."/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>
+            </xsl:when>
+        </xsl:choose>
+        
     </xsl:template>
 
     <!-- ===================================================== -->
     
     <xsl:template match="comment()"> <!-- rule to process each comment -->
     
-        <xsl:text>&#10;</xsl:text>
-        <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
-        <xsl:value-of select="."/>
-        <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
+        <xsl:if test="(string-length(.) > 0)">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
+            <xsl:value-of select="."/>
+            <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
+        </xsl:if>
         
     </xsl:template>
 
@@ -200,12 +376,24 @@
     
         <xsl:if test="(string-length(normalize-space(.)) > 0)">
             <xsl:choose>
+                <xsl:when test="(local-name(..) = 'span') and (../@class = 'times') and (. = '&#960;')">
+                    <xsl:if test="($verbose = 'true')">
+                        <xsl:message>
+                            <xsl:text>*** reconstructing pi character entity in resulting html output</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                    <xsl:text disable-output-escaping="yes">&amp;pi;</xsl:text><!-- &#960; -->
+                </xsl:when>
                 <xsl:when test="(local-name(..) = 'style') or (local-name(..) = 'script')">
                     <xsl:value-of select="."/>
                 </xsl:when>
+                <!-- normalize space inside of b, i, a elements -->
+                <xsl:when test="(local-name(..) = 'a') or (local-name(..) = 'b') or (local-name(..) = 'i')">
+                    <xsl:value-of select="normalize-space(.)"/>
+                </xsl:when>
                 <xsl:otherwise>
                     <!-- only produce non-whitespace output -->
-                    <xsl:value-of select="normalize-space(.)"/>
+                    <xsl:value-of select="."/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>

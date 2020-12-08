@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-11-07-08:00 16:31:20.723-08:00 -->
+<!-- Generated 2020-12-06-08:00 14:47:32.677-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3025,7 +3025,6 @@
          <enumeration value="channelsEnabled"/>
          <enumeration value="collisionType"/>
          <enumeration value="color"/>
-         <enumeration value="colorMode"/>
          <enumeration value="colorSteps"/>
          <enumeration value="contactNormal"/>
          <enumeration value="contourStepSize"/>
@@ -4495,16 +4494,21 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#X3DUrlObject"
                               appinfo="X3DUrlObject indicates that a node has content loaded from a Uniform Resource Locator (URL) and can be tracked via a LoadSensor. Such child nodes have containerField='watchList' to indicate their relationship to the parent LoadSensor node.">
             <componentInfo name="Networking" level="1"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"/>
             <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="load"
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"/>
             <field name="url" type="MFString" accessType="inputOutput">
                <componentInfo name="Networking" level="4"/>
             </field>
@@ -6604,6 +6608,16 @@
             <componentInfo name="Scripting" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"/>
             <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="IS"
                    type="SFNode"
@@ -6619,11 +6633,6 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"/>
             <field name="url" type="MFString" accessType="inputOutput">
                <componentInfo name="Networking" level="4"/>
             </field>
@@ -8398,6 +8407,18 @@
                    inheritedFrom="X3DGroupingNode">
                <componentInfo name="Grouping" level="2"/>
             </field>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="bboxCenter"
                    type="SFVec3f"
                    accessType="initializeOnly"
@@ -8441,12 +8462,6 @@
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
             <field name="parameter" type="MFString" accessType="inputOutput"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="removeChildren"
                    type="MFNode"
                    accessType="inputOnly"
@@ -8711,6 +8726,18 @@
             <componentInfo name="Sound" level="1"/>
             <Inheritance baseType="X3DSoundSourceNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -8777,12 +8804,6 @@
                    accessType="inputOutput"
                    default="1.0"
                    minExclusive="0"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="resumeTime"
                    type="SFTime"
                    accessType="inputOutput"
@@ -9799,6 +9820,18 @@
             <componentInfo name="Sound" level="2"/>
             <Inheritance baseType="X3DSoundSourceNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="buffer"
                    type="MFFloat"
                    accessType="inputOutput"
@@ -9921,12 +9954,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="1"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="resumeTime"
                    type="SFTime"
                    accessType="inputOutput"
@@ -13098,6 +13125,18 @@
             <componentInfo name="DIS" level="2"/>
             <Inheritance baseType="X3DInfoNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="category"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -13149,12 +13188,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="specific"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -15246,6 +15279,18 @@
             <componentInfo name="Geospatial" level="1"/>
             <Inheritance baseType="X3DInfoNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="data"
                    type="MFNode"
                    accessType="inputOutput"
@@ -15271,12 +15316,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="summary" type="MFString" accessType="inputOutput"/>
             <field name="url"
                    type="MFString"
@@ -19467,6 +19506,18 @@
             <componentInfo name="CubeMapTexturing" level="2"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -19488,12 +19539,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="textureProperties"
                    type="SFNode"
                    accessType="initializeOnly"
@@ -19534,6 +19579,18 @@
             <componentInfo name="Texturing" level="1"/>
             <Inheritance baseType="X3DTexture2DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -19555,12 +19612,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatS"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -19612,6 +19663,18 @@
             <componentInfo name="Texturing3D" level="2"/>
             <Inheritance baseType="X3DTexture3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -19633,12 +19696,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatR"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -20346,6 +20403,18 @@
             <Inheritance baseType="X3DChildNode"/>
             <AdditionalInheritance baseType="X3DBoundedObject"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="bboxCenter"
                    type="SFVec3f"
                    accessType="initializeOnly"
@@ -20383,12 +20452,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -22470,6 +22533,18 @@
             <Inheritance baseType="X3DSoundSourceNode"/>
             <AdditionalInheritance baseType="X3DTexture2DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -22536,12 +22611,6 @@
                    accessType="inputOutput"
                    default="1.0"
                    minExclusive="0"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatS"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -24283,6 +24352,18 @@
                    type="SFBool"
                    accessType="inputOnly"
                    inheritedFrom="X3DShaderNode"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -24325,12 +24406,6 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -27293,6 +27368,18 @@
                               appinfo="Script contains author-programmed event behaviors for a scene.">
             <componentInfo name="Scripting" level="1"/>
             <Inheritance baseType="X3DScriptNode"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DScriptNode"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DScriptNode"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -27326,12 +27413,6 @@
                    type="SFBool"
                    accessType="initializeOnly"
                    default="false"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DScriptNode"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -27525,6 +27606,18 @@
             <componentInfo name="Shaders" level="1"/>
             <Inheritance baseType="X3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -27546,12 +27639,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
@@ -27597,6 +27684,18 @@
             <Inheritance baseType="X3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
             <AdditionalInheritance baseType="X3DProgrammableShaderObject"/>
+            <field name="autoRefresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
+            <field name="autoRefreshTimeLimit"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="3600"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -27622,12 +27721,6 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="refresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"
-                   inheritedFrom="X3DUrlObject"/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
