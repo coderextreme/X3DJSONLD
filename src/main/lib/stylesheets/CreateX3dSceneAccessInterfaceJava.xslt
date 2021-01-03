@@ -2045,7 +2045,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                 </xsl:variable>
                                 <xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
-                                        <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
+                                        <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- and not(contains($javaType,'X3DUrlObject'))  (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
                                             <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="contains($javaType,'&lt;')">
@@ -3580,7 +3580,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 													  ($name = 'ImageCubeMapTexture') or ($name = 'ImageTexture3D') or ($name = 'ImageTexture') or ($name = 'Inline')
 													  or ($name = 'MovieTexture') or ($name = 'PackagedShader') or ($name = 'Script') or ($name = 'ShaderPart')
 													  or ($name = 'ShaderProgram')">
-												<xsl:text>, "watchList"</xsl:text>
+												<xsl:text>, "children"</xsl:text><!-- formerly watchList in X3D3 -->
 										</xsl:if>
 										<xsl:text> };</xsl:text>
 										<xsl:if test="(string-length(InterfaceDefinition/containerField/@type) > 0)">
@@ -8784,8 +8784,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
 										<xsl:when test="($name = 'ComposedCubeMapTexture') and 
-														((@name = 'back') or (@name = 'bottom') or (@name = 'front') or
-														 (@name = 'left') or (@name = 'right')  or (@name = 'top'))">
+														((@name = 'backTexture') or (@name = 'bottomTexture') or (@name = 'frontTexture') or
+														 (@name = 'leftTexture') or (@name = 'rightTexture')  or (@name = 'topTexture'))">
 											<!-- ImageTexture check -->
 											<xsl:text>			((X3DConcreteNode)</xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
@@ -10138,7 +10138,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ]]></xsl:text>
                                     </xsl:if>
                                     <xsl:text>
-		children.add(newValue);
+		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
 		((X3DConcreteElement) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setParent(this); // parentTest3
 //      if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstance)
 //          ((ProtoInstance) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField("children");
@@ -11192,8 +11192,8 @@ setAttribute method invocations).
                                         <xsl:text>&#10;</xsl:text>
                                 </xsl:when>
                                 <xsl:when test="(($name = 'ComposedCubeMapTexture') and 
-                                                    ((@name = 'back') or (@name = 'bottom') or (@name = 'front') or
-                                                     (@name = 'left') or (@name = 'right')  or (@name = 'top'))) or
+                                                    ((@name = 'backTexture') or (@name = 'bottomTexture') or (@name = 'frontTexture') or
+                                                     (@name = 'leftTexture') or (@name = 'rightTexture')  or (@name = 'topTexture'))) or
                                                 (($name = 'Appearance') and (@name = 'material'))">
                                         <!-- ImageTexture check -->
                                         <xsl:text>			newProtoInstanceNode.setContainerFieldOverride("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
@@ -35028,29 +35028,29 @@ import org.web3d.x3d.sai.X3DException;
                             // TODO other audio-graph nodes
 
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("front") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setFrontTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("front") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setFront ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setFrontTexture ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("back") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setBack ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBackTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("back") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setBack ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBackTexture ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("left") || containerField.isEmpty()) || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setLeft ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setLeftTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("left") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setLeft ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setLeftTexture ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("right") || containerField.isEmpty()) || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setRight ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setRightTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("right") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setRight ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setRightTexture ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("top") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setTop ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setTopTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("top") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setTop ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setTopTexture ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("bottom") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setBottom ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBottomTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("bottom") || containerField.isEmpty()))
-									((ComposedCubeMapTexture)elementObject).setBottom ((ProtoInstance) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBottomTexture ((ProtoInstance) childX3dElement);
 							// these checks follow preceding containerField-specific tests
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture"))
 							{
@@ -35150,13 +35150,13 @@ import org.web3d.x3d.sai.X3DException;
                                                                        childElementName.equals("GeoMetadata")    || childElementName.equals("ImageCubeMapTexture") || childElementName.equals("ImageTexture3D") ||
                                                                        childElementName.equals("ImageTexture")   || childElementName.equals("Inline")              || childElementName.equals("MovieTexture") ||
                                                                        childElementName.equals("PackagedShader") || childElementName.equals("Script")              || childElementName.equals("ShaderPart") ||
-                                                                       childElementName.equals("ShaderProgramObject")) && (containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
-									((LoadSensor)elementObject).addWatchList((X3DNode) childX3dElement);
+                                                                       childElementName.equals("ShaderProgramObject")) && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
+									((LoadSensor)elementObject).addChildren((X3DNode) childX3dElement); // formerly addWatchList in X3D3
 							else if (nodeName.equals("LoadSensor") && (protoInstanceNodeType.equals("Anchor")         || protoInstanceNodeType.equals("AudioClip")           || protoInstanceNodeType.equals("DISEntityTypeMapping") ||
                                                                        protoInstanceNodeType.equals("GeoMetadata")    || protoInstanceNodeType.equals("ImageCubeMapTexture") || protoInstanceNodeType.equals("ImageTexture3D") ||
                                                                        protoInstanceNodeType.equals("ImageTexture")   || protoInstanceNodeType.equals("Inline")              || protoInstanceNodeType.equals("MovieTexture") ||
                                                                        protoInstanceNodeType.equals("PackagedShader") || protoInstanceNodeType.equals("Script")              || protoInstanceNodeType.equals("ShaderPart") ||
-                                                                       protoInstanceNodeType.equals("ShaderProgramObject")) && (containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
+                                                                       protoInstanceNodeType.equals("ShaderProgramObject")) && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
 									((CADFace)elementObject).setShape((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("CADFace") && (childElementName.equals("Shape") || childElementName.equals("LOD") || childElementName.equals("Transform")) && containerField.equals("shape"))
@@ -35170,10 +35170,10 @@ import org.web3d.x3d.sai.X3DException;
 									((Scene)elementObject).addChild((EspduTransform) childX3dElement);
 							else if ((childElementName.equals(EspduTransform.NAME)) && containerField.equals("children"))
 									((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
-							else if (nodeName.equals("DISEntityManager") && (childElementName.equals("DISEntityTypeMapping")) && containerField.equals("mapping"))
-									((DISEntityManager)elementObject).addMapping((DISEntityTypeMapping) childX3dElement);
+							else if (nodeName.equals("DISEntityManager") && (childElementName.equals("DISEntityTypeMapping")) && (containerField.equals("children") || containerField.equals("mapping")))
+									((DISEntityManager)elementObject).addChildren((DISEntityTypeMapping) childX3dElement); // formerly addMapping in X3D3
 							else if (nodeName.equals("DISEntityManager") && protoInstanceNodeType.equals("DISEntityTypeMapping"))
-									((DISEntityManager)elementObject).addMapping((ProtoInstance) childX3dElement);
+									((DISEntityManager)elementObject).addChildren((ProtoInstance) childX3dElement);        // formerly addMapping in X3D3
 
 							else if (nodeName.equals("GeoCoordinate") && childElementName.equals("GeoOrigin"))
 									((GeoCoordinate)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);

@@ -1341,7 +1341,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
 					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
 					<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
-                    <xsl:text>.addMapping(</xsl:text>
+                    <xsl:text>.addChild(</xsl:text><!-- X3D synonym, now superceded: addMapping -->
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
