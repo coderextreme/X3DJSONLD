@@ -1,4 +1,4 @@
-/* xerces-c-3.2.0/src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
+/* src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -66,7 +66,7 @@
 #define XERCES_U64BIT_INT uint64_t
 #define XERCES_XMLCH_T char16_t
 #define XERCES_SIZE_T size_t
-#define XERCES_SSIZE_T ssize_t
+#define XERCES_SSIZE_T unsigned long
 
 #define XERCES_HAS_CPP_NAMESPACE 1
 #define XERCES_STD_NAMESPACE 1
@@ -110,7 +110,7 @@
 typedef XERCES_SIZE_T				XMLSize_t;
 typedef XERCES_SSIZE_T				XMLSSize_t;
 #define XERCES_SIZE_MAX SIZE_MAX
-#define XERCES_SSIZE_MAX SSIZE_MAX
+#define XERCES_SSIZE_MAX ULONG_MAX
 
 // ---------------------------------------------------------------------------
 //  Define our version of the XML character
