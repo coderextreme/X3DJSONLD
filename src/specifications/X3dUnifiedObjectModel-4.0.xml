@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-12-06-08:00 14:47:32.677-08:00 -->
+<!-- Generated 2020-12-13-08:00 20:41:02.641-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -199,14 +199,14 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesAudioClip"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesAudioClip lists the allowed containerField enumeration values for AudioClip node: default &#34;source&#34; if parent node is Sound node, &#34;inputs&#34; if parent is part of audio graph, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesAudioClip lists the allowed containerField enumeration values for AudioClip node: default &#34;source&#34; if parent node is Sound node, &#34;inputs&#34; if parent is part of audio graph, otherwise &#34;children&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                       appinfo="parent node is X3DSoundChannelNode, X3DSoundDestinationNode, or X3DSoundProcessingNode"/>
          <enumeration value="source"
                       appinfo="parent node is Sound node (legacy X3D3 SFNode source is allowed content model, prefer X3D4 MFNode children)"/>
-         <enumeration value="watchList"
-                      appinfo="this node is AudioClip, parent node is LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="this node is AudioClip, parent node is LoadSensor (formerly named watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesAudioGraph"
                   baseType="xs:NMTOKEN"
@@ -228,10 +228,11 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesDISEntityTypeMapping"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesDISEntityTypeMapping lists the allowed containerField enumeration values for DISEntityTypeMapping node: default &#34;mapping&#34; if parent node is DISEntityManager node, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesDISEntityTypeMapping lists the allowed containerField enumeration values for DISEntityTypeMapping node: default &#34;mapping&#34; if parent node is DISEntityManager node, otherwise &#34;children&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="mapping" appinfo="parent node is DISEntityManager node"/>
-         <enumeration value="watchList" appinfo="parent node is LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesGroupLODShapeTransform"
                   baseType="xs:NMTOKEN"
@@ -282,17 +283,19 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesPackagedShader"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesPackagedShader lists the allowed containerField enumeration values for PackagedShader node: default &#34;shaders&#34; if parent node is DISEntityManager node, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesPackagedShader lists the allowed containerField enumeration values for PackagedShader node: default &#34;shaders&#34; if parent node is DISEntityManager node, otherwise &#34;children&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="shaders" appinfo="parent node is an Appearance node"/>
-         <enumeration value="watchList" appinfo="parent node is LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesShaderPart"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesShaderPart lists the allowed containerField enumeration values for ShaderPart node: default &#34;shaders&#34; if parent node is DISEntityManager node, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesShaderPart lists the allowed containerField enumeration values for ShaderPart node: default &#34;shaders&#34; if parent node is DISEntityManager node, otherwise &#34;children&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="parts" appinfo="parent node is ComposedShader node"/>
-         <enumeration value="watchList" appinfo="parent node is LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesSoundSource"
                   baseType="xs:NMTOKEN"
@@ -331,23 +334,25 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DTexture2DNode"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DTexture2DNode lists the allowed containerField enumeration values for PixelTexture and MultiTexture (which can contain ImageTexture, MovieTexture, PixelTexture). Note that watchList is not allowed."
+                  appinfo="containerFieldChoicesX3DTexture2DNode lists the allowed containerField enumeration values for PixelTexture and MultiTexture (which can contain ImageTexture, MovieTexture, PixelTexture)."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="texture" appinfo="default, parent node is Appearance"/>
          <enumeration value="source"
                       appinfo="parent node is Sound node: legacy X3D3 SFNode source is allowed content model (AudioClip or MovieTexture only), prefer X3D4 MFNode children."/>
-         <enumeration value="back" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="bottom" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="front" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="left" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="right" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="top" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="backTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="bottomTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="frontTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="leftTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="rightTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="topTexture" appinfo="parent node is TextureBackground"/>
+         <enumeration value="backTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="bottomTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="frontTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="leftTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="rightTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="topTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DTexture3DNode"
                   baseType="xs:NMTOKEN"
@@ -361,38 +366,39 @@
                       appinfo="(default) parent node such as Appearance that include a texture field"/>
          <enumeration value="voxels"
                       appinfo="parent node has abstract type X3DVolumeDataNode"/>
-         <enumeration value="watchList"
-                      appinfo="special case for ImageTexture3D with parent node LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="special case for ImageTexture3D with parent node LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DUrlObject"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and Script nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and Script nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;children&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                       appinfo="parent node has abstract type X3DGroupingNode"/>
-         <enumeration value="watchList" appinfo="parent node is LoadSensor"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3dUrlObjectTexture"
                   baseType="xs:NMTOKEN"
                   appinfo="containerFieldChoicesX3dUrlObjectTexture lists the allowed containerField enumeration values for X3DTexture2DNode (ImageTexture, MovieTexture) ."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="texture" appinfo="default, parent node is Appearance"/>
-         <enumeration value="watchList"
-                      appinfo="parent node is LoadSensor (invalid for PixelTexture)"/>
+         <enumeration value="children"
+                      appinfo="parent node is LoadSensor (invalid for PixelTexture) (formerly watchList in X3D3)"/>
          <enumeration value="source"
                       appinfo="parent node is Sound (only valid for MovieTexture)"/>
-         <enumeration value="back" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="bottom" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="front" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="left" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="right" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="top" appinfo="parent node is ComposedCubeMapTexture"/>
-         <enumeration value="backTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="bottomTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="frontTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="leftTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="rightTexture" appinfo="parent node is TextureBackground"/>
-         <enumeration value="topTexture" appinfo="parent node is TextureBackground"/>
+         <enumeration value="backTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="bottomTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="frontTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="leftTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="rightTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="topTexture"
+                      appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
       </SimpleType>
       <SimpleType name="distanceModelChoices"
                   baseType="SFString"
@@ -2998,16 +3004,16 @@
          <enumeration value="axis3Torque"/>
          <enumeration value="axisOfRotation"/>
          <enumeration value="axisRotation"/>
-         <enumeration value="back"/>
          <enumeration value="backAmbientIntensity"/>
          <enumeration value="backDiffuseColor"/>
          <enumeration value="backEmissiveColor"/>
          <enumeration value="backShininess"/>
          <enumeration value="backSpecularColor"/>
+         <enumeration value="backTexture"/>
          <enumeration value="backTransparency"/>
          <enumeration value="backUrl"/>
          <enumeration value="beamWidth"/>
-         <enumeration value="bottom"/>
+         <enumeration value="bottomTexture"/>
          <enumeration value="bottomUrl"/>
          <enumeration value="bounce"/>
          <enumeration value="boundaryOpacity"/>
@@ -3101,7 +3107,7 @@
          <enumeration value="frequency"/>
          <enumeration value="frictionCoefficients"/>
          <enumeration value="frictionDirection"/>
-         <enumeration value="front"/>
+         <enumeration value="frontTexture"/>
          <enumeration value="frontUrl"/>
          <enumeration value="function"/>
          <enumeration value="fuse"/>
@@ -3133,7 +3139,7 @@
          <enumeration value="keyVelocity"/>
          <enumeration value="jump"/>
          <enumeration value="keyValue"/>
-         <enumeration value="left"/>
+         <enumeration value="leftTexture"/>
          <enumeration value="leftUrl"/>
          <enumeration value="length"/>
          <enumeration value="lengthOfModulationParameters"/>
@@ -3236,7 +3242,7 @@
          <enumeration value="retainedOpacity"/>
          <enumeration value="retainUserOffsets"/>
          <enumeration value="resumeTime"/>
-         <enumeration value="right"/>
+         <enumeration value="rightTexture"/>
          <enumeration value="rightUrl"/>
          <enumeration value="rotation"/>
          <enumeration value="sampleRate"/>
@@ -3300,7 +3306,7 @@
          <enumeration value="title"/>
          <enumeration value="toggle"/>
          <enumeration value="tolerance"/>
-         <enumeration value="top"/>
+         <enumeration value="topTexture"/>
          <enumeration value="topUrl"/>
          <enumeration value="torques"/>
          <enumeration value="transitionTime"/>
@@ -4492,7 +4498,7 @@
       </AbstractObjectType>
       <AbstractObjectType name="X3DUrlObject">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#X3DUrlObject"
-                              appinfo="X3DUrlObject indicates that a node has content loaded from a Uniform Resource Locator (URL) and can be tracked via a LoadSensor. Such child nodes have containerField='watchList' to indicate their relationship to the parent LoadSensor node.">
+                              appinfo="X3DUrlObject indicates that a node has content loaded from a Uniform Resource Locator (URL) and can be tracked via a LoadSensor. Such child nodes have containerField='children' to indicate their relationship to the parent LoadSensor node.">
             <componentInfo name="Networking" level="1"/>
             <field name="autoRefresh"
                    type="SFTime"
@@ -11598,12 +11604,14 @@
                               appinfo="ComposedCubeMapTexture is a texture node that defines a cubic environment map source as an explicit set of images drawn from individual 2D texture nodes.">
             <componentInfo name="CubeMapTexturing" level="1"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
-            <field name="back"
+            <field name="backTexture"
+                   synonym="back"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTexture2DNode"/>
-            <field name="bottom"
+            <field name="bottomTexture"
+                   synonym="bottom"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
@@ -11612,7 +11620,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DTextureNode"/>
-            <field name="front"
+            <field name="frontTexture"
+                   synonym="front"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
@@ -11623,7 +11632,8 @@
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
-            <field name="left"
+            <field name="leftTexture"
+                   synonym="left"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
@@ -11634,12 +11644,14 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field name="right"
+            <field name="rightTexture"
+                   synonym="right"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTexture2DNode"/>
-            <field name="top"
+            <field name="topTexture"
+                   synonym="top"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
@@ -13071,16 +13083,17 @@
                    type="SFInt32"
                    accessType="inputOutput"
                    default="0"/>
+            <field name="children"
+                   synonym="mapping"
+                   type="MFNode"
+                   accessType="inputOutput"
+                   acceptableNodeTypes="DISEntityTypeMapping"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
-            <field name="mapping"
-                   type="MFNode"
-                   accessType="inputOutput"
-                   acceptableNodeTypes="DISEntityTypeMapping"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -13221,7 +13234,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"/>
-            <containerField default="mapping" type="containerFieldChoicesDISEntityTypeMapping"/>
+            <containerField default="children" type="containerFieldChoicesDISEntityTypeMapping"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -21527,6 +21540,11 @@
                               appinfo="LoadSensor generates events as watchList child nodes are either loaded or fail to load.">
             <componentInfo name="Networking" level="3"/>
             <Inheritance baseType="X3DNetworkSensorNode"/>
+            <field name="children"
+                   synonym="watchList"
+                   type="MFNode"
+                   accessType="inputOutput"
+                   acceptableNodeTypes="X3DUrlObject"/>
             <field name="enabled"
                    type="SFBool"
                    accessType="inputOutput"
@@ -21556,10 +21574,6 @@
                    accessType="inputOutput"
                    default="0"
                    minInclusive="0"/>
-            <field name="watchList"
-                   type="MFNode"
-                   accessType="inputOutput"
-                   acceptableNodeTypes="X3DUrlObject"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -24466,15 +24480,16 @@
                    accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DShapeNode"/>
-            <field name="colorKey"
-                   type="MFFloat"
-                   accessType="initializeOnly"
-                   minInclusive="0"/>
-            <field name="colorRamp"
+            <field name="color"
+                   synonym="colorRamp"
                    type="SFNode"
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"/>
+            <field name="colorKey"
+                   type="MFFloat"
+                   accessType="initializeOnly"
+                   minInclusive="0"/>
             <field name="createParticles"
                    type="SFBool"
                    accessType="inputOutput"
@@ -24554,15 +24569,16 @@
                    type="MFNode"
                    accessType="initializeOnly"
                    acceptableNodeTypes="X3DParticlePhysicsModelNode"/>
+            <field name="texCoord"
+                   synonym="texCoordRamp"
+                   type="SFNode"
+                   accessType="initializeOnly"
+                   default="NULL"
+                   acceptableNodeTypes="TextureCoordinate|TextureCoordinateGenerator"/>
             <field name="texCoordKey"
                    type="MFFloat"
                    accessType="initializeOnly"
                    minInclusive="0"/>
-            <field name="texCoordRamp"
-                   type="SFNode"
-                   accessType="initializeOnly"
-                   default="NULL"
-                   acceptableNodeTypes="TextureCoordinate"/>
             <field name="visible"
                    type="SFBool"
                    accessType="inputOutput"
@@ -24600,6 +24616,7 @@
                <NodeContentModel name="WindPhysicsModel"/>
                <NodeContentModel name="ProtoInstance"/>
                <NodeContentModel name="TextureCoordinate" minOccurs="0"/>
+               <NodeContentModel name="TextureCoordinateGenerator" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>

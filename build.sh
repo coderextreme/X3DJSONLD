@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export PATH=${PATH}:~/apache-maven-3.5.2/bin
+export PATH=${PATH}:~/apache-maven-3.6.3/bin
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
@@ -12,7 +12,7 @@ cp /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-* src/specific
 
 # build X3DJSAIL
 pushd /c/x3d-code/www.web3d.org/x3d/stylesheets
-~/apache-ant-1.10.7/bin/ant create.X3DJSAIL
+~/apache-ant-1.10.9/bin/ant create.X3DJSAIL
 cp java/jars/*.jar ~/pythonSAI
 mvn install:install-file -Dfile=~/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSONLD -Dversion=4.0-SNAPSHOT -Dpackaging=jar
 popd

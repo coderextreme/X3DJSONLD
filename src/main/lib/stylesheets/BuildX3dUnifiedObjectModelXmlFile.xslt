@@ -1525,8 +1525,11 @@ Recommended tool:
             <!-- TODO if there is an xs:annotation/xs:appinfo/attribute specifying the accessType use that preferentially -->
             <xsl:when test="xs:annotation/xs:appinfo/xs:attribute[@name='accessType']">
                 <xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name='accessType']/@fixed"/>
+                <xsl:message>
+                    <xsl:text>*** found preferential accessType</xsl:text>
+                </xsl:message>
             </xsl:when>
-            <!-- Now we can choose the Schema defined value for all the rest -->
+            <!-- Now we can choose the Schema-defined value for all the rest -->
             <xsl:when test="//xs:simpleType[@name='inputOnlyAccessTypes']//xs:enumeration[@value=$fieldName]">inputOnly</xsl:when>
             <xsl:when test="//xs:simpleType[@name='outputOnlyAccessTypes']//xs:enumeration[@value=$fieldName]">outputOnly</xsl:when>
             <xsl:when test="//xs:simpleType[@name='inputOutputAccessTypes']//xs:enumeration[@value=$fieldName]">inputOutput</xsl:when>
@@ -1535,14 +1538,22 @@ Recommended tool:
             <xsl:otherwise>inputOutput</xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-	<!-- debug diagnostic
-	<xsl:if test="(($containerName='MetadataSet') or ($containerName='MetadataString')) and (@name='name')">
+    <xsl:variable name="synonym">
+        <xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name='synonym']/@fixed"/>
+    </xsl:variable>
+	<!-- debug diagnostic ((($containerName='MetadataSet') or ($containerName='MetadataString')) and (@name='name')) 
+    -->
+	<xsl:if test="(string-length($synonym) > 0) or (($containerName = 'ParticleSystem') and (($fieldName = 'color') or ($fieldName = 'texCoord')))">
 		<xsl:message>
 			<xsl:text>*** doField found </xsl:text>
 			<xsl:value-of select="$containerName"/>
 			<xsl:text> field name=</xsl:text>
 			<xsl:value-of select="@name"/>
 			<xsl:text> with</xsl:text>
+            <xsl:if test="(string-length($synonym) > 0)">
+                <xsl:text> synonym </xsl:text>
+                <xsl:value-of select="$synonym"/>
+            </xsl:if>
 		</xsl:message>
 		<xsl:message>
 			<xsl:text>    $givenType=</xsl:text><xsl:value-of select="$givenType"/>
@@ -1550,11 +1561,13 @@ Recommended tool:
 			<xsl:text>, $baseType=</xsl:text><xsl:value-of select="$baseType"/>
 			<xsl:text>, $fieldType=</xsl:text><xsl:value-of select="$fieldType"/>
 			<xsl:text>, $fieldAccessType=</xsl:text><xsl:value-of select="$fieldAccessType"/>
+			<xsl:text>, $synonym=</xsl:text><xsl:value-of select="$synonym"/>
+			<xsl:text>, @default=</xsl:text><xsl:value-of select="@default"/>
 			<xsl:text>, parent=</xsl:text><xsl:value-of select="local-name(..)"/>
             <xsl:text>, additionalInterfaceMatch=</xsl:text><xsl:value-of select="$additionalInterfaceMatch"/>
             <xsl:text>, originInheritedFrom=</xsl:text><xsl:value-of select="$originInheritedFrom"/>
 		</xsl:message>
-	</xsl:if> -->
+	</xsl:if>
 	
 	<!-- some schema field definitions include optional enumerations in the xs:annotation/xs:appinfo section, 
 	     let those take precedence over validation definitions in order to avoid duplicate field definitions here -->
@@ -1610,6 +1623,9 @@ Recommended tool:
                 </xsl:if> -->
                 <xsl:element name="field">
                     <xsl:attribute name="name" select="$fieldName"/>
+                    <xsl:if test="(string-length($synonym) > 0)">
+                        <xsl:attribute name="synonym" select="$synonym"/>
+                    </xsl:if>
                     <xsl:attribute name="type" select="$fieldType"/>
                     <xsl:attribute name="accessType" select="$fieldAccessType"/>
                     <!-- default -->
