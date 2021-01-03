@@ -421,7 +421,7 @@ public class HelloWorldProgramOutput
       .addChild(new SignalPdu())
       .addChild(new TransmitterPdu().setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
       .addChild(new DISEntityManager()
-        .addMapping(new DISEntityTypeMapping()))));
+        .addChild(new DISEntityTypeMapping()))));
     }
 	// end of initialize() method
 
