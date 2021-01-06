@@ -10,7 +10,6 @@
     "glob": "*",
     "java": "*",
     "jsonlint": "^1.6.3",
-    "jvm-npm": "0.1.1",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
@@ -23,7 +22,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "sh build.sh",
+    "postinstall": "REM sh build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }
