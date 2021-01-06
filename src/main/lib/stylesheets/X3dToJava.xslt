@@ -1184,6 +1184,54 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
+                <!-- field name changes X3D4 changed method names /www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#fieldNameChanges -->
+				<xsl:when test="(local-name(..) = 'ComposedCubeMapTexture') and contains(local-name(), 'Texture')">
+					<!-- back to backTexure, front to frontTexture, etc. -->
+                    <xsl:text>.set</xsl:text>
+                    <!-- upper camel case containerField -->
+                    <xsl:value-of select="translate(substring($containerField,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                    <xsl:value-of select="substring($containerField,2)"/>
+                    <xsl:if test="not(ends-with(@containerField,'Texture'))">
+                        <xsl:text>Texture</xsl:text>
+                    </xsl:if>
+                    <xsl:text>(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
+					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
+					<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
+                    <xsl:text>.addChild(</xsl:text><!-- X3D synonym, now superceded: addMapping -->
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** found DISEntityManager DISEntityTypeMapping</xsl:text>
+                    </xsl:message>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'LoadSensor')">
+					<!-- ignoring ($containerField = 'watchList') or whatever -->
+                    <xsl:text>.addChild(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'color'))">
+					<!-- ignoring ($containerField = 'colorRamp') -->
+					<xsl:text>.addColor(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'texCoord'))">
+					<!-- ignoring ($containerField = 'texCoordRamp') -->
+					<xsl:text>.addTexCoord(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'color'))">
+					<!-- ignoring ($containerField = 'watchList') or whatever -->
+					<xsl:text>.addColor(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
 				<xsl:when test="(($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
 					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1280,11 +1328,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'LoadSensor') and ($containerField = 'watchList')">
-					<xsl:text>.addWatchList(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
 				<xsl:when test="(local-name(..) = 'MetadataSet') and ($containerField = 'value')">
 					<xsl:text>.addValue(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1335,13 +1378,6 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'IS') and (local-name() = 'connect')">
 					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
 					<xsl:text>.addConnect(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
-				<xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
-					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
-					<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
-                    <xsl:text>.addChild(</xsl:text><!-- X3D synonym, now superceded: addMapping -->
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -3781,6 +3817,10 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($parentElementName='WorldInfo'                  and $attributeName='title') or
                           ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
+		  </xsl:when>
+		  <!-- experimental FontStyle -->
+		  <xsl:when test="ends-with($parentElementName,'FontStyle') and ($attributeName='glyphStyle')">
+			  <xsl:text>SFString</xsl:text> 
 		  </xsl:when>
 		  <!-- SFDouble -->
 		  <xsl:when test="($localFieldType='SFDouble')          or 

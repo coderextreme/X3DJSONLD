@@ -1903,15 +1903,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:choose>
             <xsl:when test="(@name = 'X3DNode')">
             <xsl:text>
-    def __init__(self, DEF="", USE="", class_="", metadata=None, IS=None):
+    def __init__(self, DEF="", USE="", class_="", style_="", metadata=None, IS=None):
         self.DEF = DEF
         self.USE = USE
         self.class_ = class_
+        self.style_ = style_
         self.IS = IS
         self.metadata = metadata
         # if _DEBUG: print('... in </xsl:text>
                 <xsl:value-of select="@name"/>
-                <xsl:text> __init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
+                <xsl:text> __init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
     @property # getter - - - - - - - - - -
     def DEF(self):
         """ Unique ID name for this node, referenceable by other nodes. """
@@ -1946,6 +1947,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             class_ = SFString.DEFAULT_VALUE(self)
         assertValidSFString(class_)
         self.__class_ = class_
+    @property # getter - - - - - - - - - -
+    def style_(self):
+        """ Space-separated list of classes, reserved for use by CSS cascading stylesheets. """
+        return self.__style_
+    @style_.setter
+    def style_(self, style_):
+        if  style_ is None:
+            style_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(style_)
+        self.__style_ = style_
     @property # getter - - - - - - - - - -
     def IS(self):
         """ The IS statement connects node fields defined inside a ProtoBody declaration back to corresponding ProtoInterface fields. """
@@ -2027,13 +2038,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
                      see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
                 <xsl:text>
-    def __init__(self, DEF, USE, class_, IS, metadata):
+    def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>
-                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
-        super().__init__(DEF, USE, class_, IS, metadata) # fields for _X3DNode only</xsl:text>
+                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
+        super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
             </xsl:when>
         </xsl:choose>
 
@@ -2308,11 +2319,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
                 <xsl:sort select="(@name = 'class')"/>
+                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2387,11 +2399,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
                 <xsl:sort select="(@name = 'class')"/>
+                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
                 
                 <xsl:variable name="fieldName">
                     <xsl:call-template name="fieldName">
@@ -2448,7 +2461,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
                      see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
                 <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
-        super().__init__(DEF, USE, class_, IS, metadata) # fields for _X3DNode only</xsl:text>
+        super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
         </xsl:if>
         
         <!-- field initializations -->
@@ -2456,11 +2469,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:sort select="(@name = 'metadata')"/>
             <xsl:sort select="(@name = 'IS')"/>
             <xsl:sort select="(@name = 'class')"/>
+            <xsl:sort select="(@name = 'style')"/>
             <xsl:sort select="(@name = 'USE')"/>
             <xsl:sort select="(@name = 'DEF')"/>
             <xsl:sort select="(@type='MFNode')"/>
             <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-            <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')"/>
+            <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2484,11 +2498,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
                 <xsl:sort select="(@name = 'class')"/>
+                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2909,7 +2924,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:choose>
                         <xsl:text>
             result += " </xsl:text>
-                        <xsl:value-of select="$fieldName"/>
+                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ and style_ attributes -->
                         <xsl:text>='" + </xsl:text>
                         <xsl:choose>
                             <!-- always stringify value in field/fieldValue since it is arbitrary type -->
@@ -3164,7 +3179,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:choose>
                         <xsl:text>
             result += " </xsl:text>
-                        <xsl:value-of select="$fieldName"/>
+                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ and style_ attributes -->
                         <xsl:text> </xsl:text>
                         <xsl:text>" + </xsl:text>
                         <xsl:choose>
@@ -3307,7 +3322,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
             <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
             <xsl:choose>
-                <xsl:when test="(local-name() = 'class') or (local-name() = 'global') or (local-name() = 'type')">
+                <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global') or (local-name() = 'type')">
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>_</xsl:text>
                 </xsl:when>
@@ -3477,7 +3492,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
     
         <xsl:choose>
-            <xsl:when test="($name='class') or ($name='global')">
+            <xsl:when test="($name='class') or ($name='style') or ($name='global')">
                 <xsl:value-of select="$name"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>

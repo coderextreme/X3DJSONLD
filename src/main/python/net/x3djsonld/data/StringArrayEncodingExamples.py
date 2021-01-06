@@ -48,7 +48,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       geometry=Text(string=["One, Two, Three","","He said, \"Immel did it!\""],
         #  alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' 
         #  alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) 
-        fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],style='BOLD')),
+        fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],style_='BOLD')),
       appearance=Appearance(
         material=Material(diffuseColor=(0.6,0.4,0.2))))])
 ) # X3D model complete

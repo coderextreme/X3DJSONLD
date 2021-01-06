@@ -110,7 +110,7 @@ newModel=X3D(profile='Immersive',version='3.0',
               appearance=Appearance(
                 material=Material(DEF='TextMat',diffuseColor=(1.0,1.0,1.0))),
               geometry=Text(string=["ArtDeco00"],
-                fontStyle=FontStyle(DEF='Style',family=["SANS"],justify=["MIDDLE","MIDDLE"],size=0.3,style='BOLD')))])])]),
+                fontStyle=FontStyle(DEF='Style',family=["SANS"],justify=["MIDDLE","MIDDLE"],size=0.3,style_='BOLD')))])])]),
       Viewpoint(DEF='View01',description='ArtDeco01',position=(-2.25,3.75,3.0)),
       Transform(translation=(-2.25,3.75,0.0),
         children=[

@@ -66,7 +66,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       TouchSensor(DEF='RandomTextClickedSensor',description='Select to see a new strategy'),
       Shape(
         geometry=Text(string=["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"],
-          fontStyle=FontStyle(DEF='MessageFont',family=["SANS"],justify=["MIDDLE","MIDDLE"],style='BOLD')),
+          fontStyle=FontStyle(DEF='MessageFont',family=["SANS"],justify=["MIDDLE","MIDDLE"],style_='BOLD')),
         appearance=Appearance(
           material=Material(diffuseColor=(1,1,1)))),
       Transform(scale=(10,3,1),
@@ -92,7 +92,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       children=[
       Shape(
         geometry=Text(DEF='CardText',
-          fontStyle=FontStyle(family=["SANS"],justify=["MIDDLE","MIDDLE"],style='BOLD')),
+          fontStyle=FontStyle(family=["SANS"],justify=["MIDDLE","MIDDLE"],style_='BOLD')),
         appearance=Appearance(
           material=Material(diffuseColor=(1,1,1)))),
       ROUTE(fromField='string_changed',fromNode='TextScript',toField='string',toNode='CardText'),

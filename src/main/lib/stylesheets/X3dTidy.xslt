@@ -903,6 +903,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                                                     <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
                                                     <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                                                    <xsl:otherwise>
+                                                        <xsl:call-template name="fieldNameChanges"/>
+                                                    </xsl:otherwise>
                                                 </xsl:choose>
                                             </xsl:variable><!-- [@containerField = $expectedContainerField] -->
                                             <xsl:if test="not(ancestor::*[local-name() = 'HAnimHumanoid']/*[local-name() = $nodeType][@USE = $nodeDEF])">
@@ -1855,6 +1858,9 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                     <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
                     <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                    <xsl:otherwise>
+                        <xsl:call-template name="fieldNameChanges"/>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
             <xsl:if test="(string-length($expectedContainerField) > 0)">
@@ -4367,6 +4373,9 @@ POSSIBILITY OF SUCH DAMAGE.
                         <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                         <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
                         <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                        <xsl:otherwise>
+                            <xsl:call-template name="fieldNameChanges"/>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:if test="(string-length($expectedContainerField) > 0)">
@@ -5677,6 +5686,106 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:otherwise>
                 <xsl:value-of select="$nameValue"/><!-- no change or empty value -->
             </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="fieldNameChanges">
+        <!-- X3D4 Field name changes https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#fieldNameChanges -->
+        <xsl:choose>
+            <xsl:when test="$isX3D3 and (local-name(..) = 'ComposedCubeMapTexture') and contains(local-name(),'Texture') and    (contains(@containerField, 'Texture'))">
+                <xsl:value-of select="substring-before(@containerField, 'Texture')"/>
+                <xsl:message>
+                    <xsl:text>*** ComposedCubeMapTexture contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>' rather than '</xsl:text>
+                    <xsl:value-of select="substring-before(@containerField, 'Texture')"/>
+                    <xsl:text>', which is allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D4 and (local-name(..) = 'ComposedCubeMapTexture') and contains(local-name(),'Texture') and not(contains(@containerField, 'Texture'))">
+                <xsl:value-of select="@containerField"/>
+                <xsl:text>Texture</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** ComposedCubeMapTexture contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>' rather than '</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>Texture</xsl:text>
+                    <xsl:text>', which is allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D3 and (local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping') and not(@containerField = 'mapping')">
+                <xsl:text>mapping</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** DISEntityManager contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>' rather than 'mapping', which is only allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D4 and (local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping') and not(@containerField = 'children')">
+                <xsl:text>children</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** DISEntityManager contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>' rather than 'children', which is only allowed value in X3D4</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D3 and (local-name(..) = 'LoadSensor') and (@containerField = 'children')">
+                <xsl:text>watchList</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** LoadSensor contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='children' rather than 'watchList', which is only allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D4 and (local-name(..) = 'LoadSensor') and (@containerField = 'watchList')">
+                <xsl:text>children</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** LoadSensor contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='watchList' rather than 'children', which is only allowed value in X3D4</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D3 and (local-name(..) = 'ParticleSystem') and (@containerField = 'color')">
+                <xsl:text>colorRamp</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** ParticleSystem contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='color' rather than 'colorRamp', which is only allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D4 and (local-name(..) = 'ParticleSystem') and (@containerField = 'colorRamp')">
+                <xsl:text>color</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** ParticleSystem contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='colorRamp' rather than 'color', which is only allowed value in X3D4</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D3 and (local-name(..) = 'ParticleSystem') and (@containerField = 'texCoord')">
+                <xsl:text>texCoordRamp</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** ParticleSystem contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='texCoord' rather than 'texCoordRamp', which is only allowed value in X3D3</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="$isX3D4 and (local-name(..) = 'ParticleSystem') and (@containerField = 'texCoordRamp')">
+                <xsl:text>texCoord</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** ParticleSystem contains </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> with containerField='texCoordRamp' rather than 'texCoord', which is only allowed value in X3D4</xsl:text>
+                </xsl:message>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
 

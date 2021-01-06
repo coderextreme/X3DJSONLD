@@ -355,7 +355,7 @@
                         <xsl:text> "</xsl:text>
                         <xsl:value-of select="@appinfo"/>
                         <xsl:text>"</xsl:text>
-                        <xsl:text>&#10;</xsl:text>
+                            <xsl:text>&#10;</xsl:text>
                     </xsl:for-each>
                 </xsl:when>
                 <xsl:otherwise>
@@ -647,6 +647,58 @@
                         <xsl:text>:</xsl:text><!-- local namespace -->
                         <xsl:text>hasChild</xsl:text>
                     </xsl:if>
+
+                    <!-- simple type has default value -->
+                    <xsl:if test="not(contains(@type,'Node')) and (string-length(@default) > 0)">
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  :</xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>Default </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'SFBool')">
+                                <xsl:text>xsd:</xsl:text>
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'SFInt32') or (@type = 'SFFloat') or (@type = 'SFDouble') or (@type = 'SFTime')">
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <!-- numeric arrays -->
+                            <xsl:when test="contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or
+                                            contains(@type,'Image') or contains(@type,'Matrix') or
+                                            (@type = 'MFInt32')     or (@type = 'MFFloat')      or (@type = 'MFDouble')">
+                                <xsl:text>( </xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text> )</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'MFString')">
+                                <xsl:text>( </xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text> )</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'SFString')">
+                                <xsl:text>"</xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text>"</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>"</xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text>"</xsl:text>
+                                <xsl:message>
+                                    <xsl:text>*** warning: unhandled </xsl:text>
+                                    <xsl:value-of select="../../@name"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="@type"/>
+                                    <xsl:text> default=</xsl:text>
+                                    <xsl:value-of select="@default"/>
+                            </xsl:message>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    
                     <xsl:text> .</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <!-- diagnostic: same name, mismatched inheritedFrom -->
@@ -788,6 +840,57 @@
                         <xsl:text>  rdfs:subPropertyOf </xsl:text>
                         <xsl:text>:</xsl:text><!-- local namespace -->
                         <xsl:text>hasChild</xsl:text>
+                    </xsl:if>
+
+                    <!-- simple type has default value -->
+                    <xsl:if test="not(contains(@type,'Node')) and (string-length(@default) > 0)">
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  :</xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>Default </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'SFBool')">
+                                <xsl:text>xsd:</xsl:text>
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'SFInt32') or (@type = 'SFFloat') or (@type = 'SFDouble') or (@type = 'SFTime')">
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <!-- numeric arrays -->
+                            <xsl:when test="contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or
+                                            contains(@type,'Image') or contains(@type,'Matrix') or
+                                            (@type = 'MFInt32')     or (@type = 'MFFloat')      or (@type = 'MFDouble')">
+                                <xsl:text>( </xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text> )</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'MFString')">
+                                <xsl:text>( </xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text> )</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(@type = 'SFString')">
+                                <xsl:text>"</xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text>"</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>"</xsl:text>
+                                <xsl:value-of select="@default"/>
+                                <xsl:text>"</xsl:text>
+                                <xsl:message>
+                                    <xsl:text>*** warning: unhandled </xsl:text>
+                                    <xsl:value-of select="../../@name"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="@type"/>
+                                    <xsl:text> default=</xsl:text>
+                                    <xsl:value-of select="@default"/>
+                            </xsl:message>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:if>
 
                     <xsl:text> .</xsl:text>
