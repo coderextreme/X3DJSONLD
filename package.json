@@ -15,7 +15,8 @@
     "three": "*",
     "xml2js": "*",
     "xmldom": "*",
-    "xmlhttprequest": "*"
+    "xmlhttprequest": "*",
+    "xslt3": "^2.0.2"
   },
   "devDependencies": {
     "jsdoc": "*"
