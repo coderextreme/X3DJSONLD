@@ -12,10 +12,6 @@
           },
           {
             "@name":"EnvironmentalEffects",
-            "@level":1
-          },
-          {
-            "@name":"EnvironmentalEffects",
             "@level":3
           },
           {
@@ -45,6 +41,11 @@
           {
             "@name":"Core",
             "@level":1
+          }
+        ],
+        "-children":[
+          {
+            "#comment":"component name='EnvironmentalEffects' level='1'></component"
           }
         ],
         "meta": [
