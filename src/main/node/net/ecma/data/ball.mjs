@@ -6,9 +6,11 @@ import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
 import { component } from './x3d.mjs';
 import { SFInt32 } from './x3d.mjs';
+import { CommentsBlock } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
+import { WorldInfo } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { Background } from './x3d.mjs';
@@ -21,7 +23,6 @@ import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { ComposedCubeMapTexture } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ComposedShader } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ShaderPart } from './x3d.mjs';
@@ -34,10 +35,6 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
-              level : new SFInt32(1)})),
-          component : new SFNode(
-            new component({
-              name : new SFString("EnvironmentalEffects"),
               level : new SFInt32(1)})),
           component : new SFNode(
             new component({
@@ -71,6 +68,7 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("Core"),
               level : new SFInt32(1)})),
+          { "#comment" : new CommentsBlock("component name='EnvironmentalEffects' level='1'></component") },
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -94,6 +92,9 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("ball.x3d")}),
+
             new NavigationInfo({
               type : ["ANY","EXAMINE","FLY","LOOKAT"]}),
 
@@ -122,22 +123,22 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           DEF : new SFString("texture"),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
                       { "#comment" : new CommentsBlock("<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>") },

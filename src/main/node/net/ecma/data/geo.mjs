@@ -108,22 +108,22 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           DEF : new SFString("texture"),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}))})),
                       shaders : new SFNode(

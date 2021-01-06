@@ -130,22 +130,22 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.5,0.5])})),
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}))})),
                       shaders : new SFNode(

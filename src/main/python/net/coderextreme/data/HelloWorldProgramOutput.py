@@ -966,7 +966,7 @@ Transform175.addChildren(TransmitterPdu183)
 DISEntityManager184 = x3d.DISEntityManager()
 DISEntityTypeMapping185 = x3d.DISEntityTypeMapping()
 
-DISEntityManager184.addMapping(DISEntityTypeMapping185)
+DISEntityManager184.addChildren(DISEntityTypeMapping185)
 
 Transform175.addChildren(DISEntityManager184)
 

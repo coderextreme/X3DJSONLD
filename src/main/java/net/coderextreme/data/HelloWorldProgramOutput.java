@@ -327,7 +327,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(new SignalPdu())
           .addChild(new TransmitterPdu())
           .addChild(new DISEntityManager()
-            .addMapping(new DISEntityTypeMapping()))))      ;
+            .addChild(new DISEntityTypeMapping()))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValue().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1

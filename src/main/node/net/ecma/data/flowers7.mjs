@@ -112,27 +112,27 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           DEF : new SFString("texture"),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("backShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("bottomShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("frontShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("leftShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("rightShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("topShader"),
                               url : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])}))})),

@@ -929,9 +929,9 @@ Transform141.children[4] = TransmitterPdu149;
 
 let DISEntityManager150 = browser.currentScene.createNode("DISEntityManager");
 let DISEntityTypeMapping151 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityManager150.mapping = new MFNode();
+DISEntityManager150.children = new MFNode();
 
-DISEntityManager150.mapping[0] = DISEntityTypeMapping151;
+DISEntityManager150.children[0] = DISEntityTypeMapping151;
 
 Transform141.children[5] = DISEntityManager150;
 

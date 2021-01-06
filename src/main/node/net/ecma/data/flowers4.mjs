@@ -105,22 +105,22 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.5,0.5])})),
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])})),
-                          top : new SFNode(
+                          topTexture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
                       shaders : new SFNode(
