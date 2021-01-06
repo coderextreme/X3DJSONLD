@@ -249,6 +249,7 @@ Design summary:
 			<xs:attribute name="minInclusive" type="xs:token" default=""/>
 			<xs:attribute name="name" type="xs:token" default=""/>
 			<xs:attribute name="simpleType" type="xs:token" default=""/>
+			<xs:attribute name="synonym" type="xs:token" default=""/>
 			<xs:attribute name="type" type="fieldTypeValues" default="SFBool"/>
 			<xs:attribute name="use" default="optional">
 				<xs:simpleType>
