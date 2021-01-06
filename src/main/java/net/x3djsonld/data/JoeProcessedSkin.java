@@ -18,12 +18,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations. </p>
- <p> Related links: JoeSkinTexcoordDisplacerKick.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: JoeProcessedSkin.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeSkinTexcoordDisplacerKick&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeProcessedSkin&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -106,10 +106,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Joe D Williams
  */
 
-public class JoeSkinTexcoordDisplacerKick
+public class JoeProcessedSkin
 {
 	/** Default constructor to create this object. */
-	public JoeSkinTexcoordDisplacerKick ()
+	public JoeProcessedSkin ()
 	{
 	  initialize();
 	}
@@ -853,7 +853,7 @@ public class JoeSkinTexcoordDisplacerKick
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JoeSkinTexcoordDisplacerKick model
+	 * @return JoeProcessedSkin model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -871,7 +871,7 @@ public class JoeSkinTexcoordDisplacerKick
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new JoeSkinTexcoordDisplacerKick().getX3dModel();
+        X3D thisExampleX3dModel = new JoeProcessedSkin().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -902,13 +902,13 @@ public class JoeSkinTexcoordDisplacerKick
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"JoeSkinTexcoordDisplacerKick\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"JoeProcessedSkin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"JoeSkinTexcoordDisplacerKick\" self-validation test results: ");
+			System.out.print("Java program \"JoeProcessedSkin\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();

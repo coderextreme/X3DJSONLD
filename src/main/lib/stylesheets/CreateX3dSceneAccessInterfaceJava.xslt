@@ -928,7 +928,7 @@ Additional references of interest:
 				</xsl:when>
 				<xsl:when test="(string-length($subPackage) > 0)">
 					<xsl:text>/</xsl:text>
-					<xsl:value-of select="translate($subPackage,'-','')"/><!-- no componentName hypens allowed (e.g. H-Anim) -->
+					<xsl:value-of select="translate($subPackage,'-','')"/><!-- no componentName hypens allowed (e.g. HAnim) -->
 				</xsl:when>
 			</xsl:choose>
 			<xsl:text>/</xsl:text>
@@ -988,7 +988,7 @@ Additional references of interest:
 			</xsl:choose>
 			<xsl:if test="string-length($subPackage) > 0">
 				<xsl:text>.</xsl:text>
-				<xsl:value-of select="translate($subPackage,'/-','.')"/><!-- trailing slash to dot., no componentName hypens allowed (e.g. H-Anim) -->
+				<xsl:value-of select="translate($subPackage,'/-','.')"/><!-- trailing slash to dot., no componentName hypens allowed (e.g. HAnim) -->
 			</xsl:if>
 			<xsl:text>;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -1956,7 +1956,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						<xsl:when test="not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface)">
 							<!-- Source code: member object declarations -->
 							<xsl:for-each select="InterfaceDefinition/field[((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')) and
-												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')]">
+												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')]">
 
 								<xsl:if test="position()=1">
 									<xsl:text>&#10;</xsl:text>
@@ -1998,6 +1998,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:when test="(@name = 'class')">
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>cssClass</xsl:text>
+										</xsl:when>
+										<xsl:when test="(@name = 'style')">
+											<!-- similarly named for consistency -->
+											<xsl:text>cssStyle</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
 											<xsl:value-of select="translate(substring(@name,1,1),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
@@ -3091,7 +3095,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                             <xsl:for-each select="InterfaceDefinition/field[((@type='SFString') or (@type='MFString') or (string-length(normalize-space(@default)) > 0)) and 
                                                   starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                   not(@type='MFNode') and
-                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')]
+                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')]
                                                   [(@accessType='initializeOnly') or (@accessType='inputOutput')]">
     <!-- not(@type='SFNode') and -->
                                 <xsl:variable name="fieldName" select="translate(@name,'-','_')"/>
@@ -3440,7 +3444,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							</xsl:if>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<!-- Source code: _TOFIELD, FROM_FIELD definitions -->
-								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'class'))]">
+								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style'))]">
 									<xsl:if test="position()=1">
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	// String constants for field names usable in ROUTE statements</xsl:text>
@@ -3574,12 +3578,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
 												<xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
 											</xsl:when>
+                                            <!-- X3D3 synonyms for X3D4 field regularization -->
+											<xsl:when test="starts-with($name,'DISEntityTypeMapping')">
+												<xsl:text>, "mapping"</xsl:text>
+											</xsl:when>
 										</xsl:choose>
-										<!-- X3DUrlObject nodes can be a child of LoadSensor -->
-										<xsl:if test="($name = 'Anchor') or ($name = 'AudioClip') or ($name = 'DISEntityTypeMapping') or ($name = 'GeoMetadata') or
-													  ($name = 'ImageCubeMapTexture') or ($name = 'ImageTexture3D') or ($name = 'ImageTexture') or ($name = 'Inline')
-													  or ($name = 'MovieTexture') or ($name = 'PackagedShader') or ($name = 'Script') or ($name = 'ShaderPart')
-													  or ($name = 'ShaderProgram')">
+										<!-- X3DUrlObject nodes can also be a child of LoadSensor -->
+										<xsl:if test="($name = 'Anchor')              or ($name = 'AudioClip')      or ($name = 'DISEntityTypeMapping') or ($name = 'GeoMetadata') or
+													  ($name = 'ImageCubeMapTexture') or ($name = 'ImageTexture3D') or ($name = 'ImageTexture')         or ($name = 'Inline') or
+													  ($name = 'MovieTexture')        or ($name = 'PackagedShader') or ($name = 'Script')               or ($name = 'ShaderPart') or
+													  ($name = 'ShaderProgram')">
 												<xsl:text>, "children"</xsl:text><!-- formerly watchList in X3D3 -->
 										</xsl:if>
 										<xsl:text> };</xsl:text>
@@ -3592,7 +3600,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<!-- initialize each field with default values -->
 									<xsl:for-each select="InterfaceDefinition/field[
 													not(starts-with(@name,'set_')) and not(ends-with(@name,'_changed')) and
-													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and
+													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style') and
 												 ((@accessType='inputOutput') or (@accessType='initializeOnly') or (string-length(@accessType)=0))]">
 										<xsl:variable name="isX3dStatement">
 											<xsl:call-template name="isX3dStatement">
@@ -3622,6 +3630,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>cssClass</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@name = 'style')">
+											<!-- similarly named for consistency -->
+												<xsl:text>cssStyle</xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="translate(@name,'-','_')"/> <!-- translate name here to avoid xpath problems -->
@@ -6821,6 +6833,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>CssClass</xsl:text>
 									</xsl:when>
+									<xsl:when test="(@name = 'style')">
+										<!-- similarly named for consistency -->
+										<xsl:text>CssStyle</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:value-of select="translate(substring(@name,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
 										<xsl:value-of select="substring(@name,2)"/>
@@ -6861,6 +6877,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>cssClass</xsl:text>
 									</xsl:when>
+									<xsl:when test="(@name = 'style')">
+										<!-- similarly named for consistency -->
+										<xsl:text>cssClass</xsl:text>
+									</xsl:when>
 									<xsl:otherwise>
 										<xsl:value-of select="translate(substring($CamelCaseName,1,1),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
 										<xsl:value-of select="substring($CamelCaseName,2)"/>
@@ -6883,7 +6903,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<xsl:if test="((@accessType='outputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and ((@name = 'address') or (not(starts-with(@name,'add')) 
 										  and not(starts-with(@name,'remove'))
-										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class')))))">
+										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')))))">
 								<!-- javadoc from BuildSpecificationLanguageBindingJava.xslt-->
 								<xsl:text>	/**</xsl:text>
 								<xsl:text>&#10;</xsl:text>
@@ -7322,7 +7342,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- http://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
 												<!-- http://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
 											</xsl:when>
-											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'class')">
+											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')">
                                                 <xsl:text>		// override abstract method in X3DConcreteNode</xsl:text>
                                                 <xsl:text>&#10;</xsl:text>
                                                 <xsl:text>		return super.get</xsl:text>
@@ -7464,7 +7484,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<!-- javadoc: set/add method accessor(s) -->
 							<xsl:if test="((@accessType='inputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))
-                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class')))">
+                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')))">
 								
 								<xsl:variable name="newValueInstanceAcceptableNodeTypesTest">
 									<xsl:if test="contains(@acceptableNodeTypes, '|')">
@@ -8137,7 +8157,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<!-- might avoid final in case someone is subclassing someday, but logic is tricky and so conservative here -->
-								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
+								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style') or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
 									<xsl:text>final </xsl:text>
 								</xsl:if>
 								<xsl:value-of select="$thisClassName"/>
@@ -8159,6 +8179,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>CssClass</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@name = 'style')">
+                                                <!-- similarly named for consistency -->
+												<xsl:text>CssStyle</xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
@@ -8469,6 +8493,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											</xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<xsl:text>		setConcreteCssClass(</xsl:text>
+												<xsl:value-of select="$newValue"/>
+												<xsl:text>); // private superclass method</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@name = 'style')">
+												<xsl:text>		setConcreteCssStyle(</xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
@@ -10140,8 +10169,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                     <xsl:text>
 		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
 		((X3DConcreteElement) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setParent(this); // parentTest3
-//      if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstance)
-//          ((ProtoInstance) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField("children");
+//      if  (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstance)
+//           ((ProtoInstance) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField("children");
+</xsl:text>
+                                    <xsl:if test="($name = 'LoadSensor')">
+                                    <xsl:text>
+        if  (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstance)
+             ((ProtoInstance)   </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField        ("children");
+        else ((X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerFieldOverride("children");</xsl:text>
+                                    </xsl:if>
+                                    <xsl:text>
 		return this;
 	}
 </xsl:text>
@@ -13019,6 +13056,10 @@ setAttribute method invocations).
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
+						<xsl:when test="(@name = 'style')">
+							<!-- similarly named for consistency -->
+							<xsl:text>CssStyle</xsl:text>
+						</xsl:when>
 						<xsl:otherwise>
 							<xsl:value-of select="translate(substring($fieldName,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
 							<xsl:value-of select="substring($fieldName,2)"/>
@@ -13747,6 +13788,10 @@ setAttribute method invocations).
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
+						<xsl:when test="(@name = 'style')">
+							<!-- similarly named for consistency -->
+							<xsl:text>CssStyle</xsl:text>
+						</xsl:when>
 						<xsl:otherwise>
 							<xsl:value-of select="translate(substring($fieldName,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
 							<xsl:value-of select="substring($fieldName,2)"/>
@@ -13841,9 +13886,12 @@ setAttribute method invocations).
 				{
 					stringClassicVRML]]></xsl:text>
 				<xsl:text><![CDATA[.append("]]></xsl:text>
-				<!-- unsupported attribute -->
+				<!-- unsupported attributes, style and class -->
 				<xsl:if test="(@name = 'class')">
-					<xsl:text># </xsl:text>
+					<xsl:text> # </xsl:text>
+				</xsl:if>
+				<xsl:if test="(@name = 'style')">
+					<xsl:text> # </xsl:text>
 				</xsl:if>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text> ")</xsl:text>
@@ -14606,7 +14654,7 @@ setAttribute method invocations).
 	 * using both datatype-specification value checks and regular expression (regex) checking of corresponding string values.
 	 * @return validation results (if any)
 	 */
-	/* @Override */
+	@Override
 	public String validate()
 	{
 		validationResult = new StringBuilder(); // prepare for updated results
@@ -14666,6 +14714,10 @@ setAttribute method invocations).
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>CssClass</xsl:text>
 										</xsl:when>
+                                        <xsl:when test="(@name = 'style')">
+                                            <!-- similarly named for consistency -->
+                                            <xsl:text>CssStyle</xsl:text>
+                                        </xsl:when>
 										<xsl:otherwise>
 											<xsl:value-of select="translate(substring(@name,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
 											<xsl:value-of select="substring($fieldName,2)"/>
@@ -30663,7 +30715,7 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="sourceFilePath">
 				<xsl:value-of select="$saiPackageDirectorySource"/>
 				<xsl:text>/</xsl:text>
-				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. H-Anim) -->
+				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. HAnim) -->
 				<xsl:text>/</xsl:text>
 				<xsl:text>package.html</xsl:text>
 			</xsl:variable>
@@ -30916,7 +30968,7 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="sourceFilePath">
 				<xsl:value-of select="$concretePackageDirectorySource"/>
 				<xsl:text>/</xsl:text>
-				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. H-Anim) -->
+				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. HAnim) -->
 				<xsl:text>/</xsl:text>
 				<xsl:text>package.html</xsl:text>
 			</xsl:variable>
@@ -33812,12 +33864,13 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
 
-	/** The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <ul>
-	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
-	 * </ul>
+	/** The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
 	private String cssClass = CLASS_DEFAULT_VALUE;
+
+	/** The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	private String cssStyle = STYLE_DEFAULT_VALUE;
 
 	// String constants for default field values match X3D Schema definitions
 
@@ -33830,6 +33883,9 @@ showing default attribute values, and other custom settings.</p>
 	/** SFString field named <i>class</i> has default value equal to an empty string. */
 	public static final String CLASS_DEFAULT_VALUE = "";
 
+	/** SFString field named <i>style</i> has default value equal to an empty string. */
+	public static final String STYLE_DEFAULT_VALUE = "";
+
 	/** containerFieldOverride describes non-default field relationship of a node to its parent.
 	 * Programmer usage is not ordinarily needed when using this API. */
 	private String containerFieldOverride = new String();
@@ -33841,6 +33897,7 @@ showing default attribute values, and other custom settings.</p>
 		     DEF = DEF_DEFAULT_VALUE;
 		     USE = USE_DEFAULT_VALUE;
 		cssClass = CLASS_DEFAULT_VALUE;
+		cssStyle = STYLE_DEFAULT_VALUE;
 	}
 	/**
 	 * Provide String value from inputOutput SFString field named <i>DEF</i>.
@@ -33891,16 +33948,30 @@ showing default attribute values, and other custom settings.</p>
 	/**
 	 * Provide String value from inputOutput SFString field named <i>class</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <ul>
-	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
-	 * </ul>
+	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @return value of class field
 	 */
 	public String getCssClass()
 	{
 		return cssClass;
+	}
+	/**
+	 * Provide String value from inputOutput SFString field named <i>style</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @return value of style field
+	 */
+	public String getCssStyle()
+	{
+		return cssStyle;
 	}
 	
 	/** Protected internal superclass method to keep DEF private, scene authors should use method setDEF(newValue) instead.
@@ -33944,9 +34015,11 @@ showing default attribute values, and other custom settings.</p>
 	}
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @param newValue is new value for the cssClass field.
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the class field.
 	 */
 	protected void setConcreteCssClass(String newValue)
 	{
@@ -33954,6 +34027,21 @@ showing default attribute values, and other custom settings.</p>
 			newValue = new String(); // Principle of Least Astonishment (POLA) #4
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		cssClass = newValue;
+	}
+	/** Protected internal superclass method to keep cssStyles private, scene authors should use method setCssStyle(newValue) instead.
+	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the style field.
+	 */
+	protected void setConcreteCssStyle(String newValue)
+	{
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #4
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		cssStyle = newValue;
 	}
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * @param DEFlabel is new value for the DEF field.
@@ -33971,13 +34059,23 @@ showing default attribute values, and other custom settings.</p>
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <ul>
-	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
-	 * </ul>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param cssClass is new value for the class field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
 	abstract public X3DConcreteNode setCssClass(String cssClass);
+    
+	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
+	 * <i>Tooltip:</i> The style attribute provides an inline block of CSS source for element styling, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param cssStyle is new value for the class field.
+	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
+	abstract public X3DConcreteNode setCssStyle(String cssStyle);
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
@@ -34757,8 +34855,8 @@ import org.web3d.x3d.sai.X3DException;
 						String         containerField = new String();
 						if (children.item(i).getAttributes().getNamedItem("containerField") != null)
 						{
-							containerField =
-							children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
+							containerField = children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
+                            // TODO containerField synonyms
 							if ((childX3dElement instanceof X3DConcreteNode) && !(containerField == null) && !containerField.isEmpty())
 								 ((X3DConcreteNode)childX3dElement).setContainerFieldOverride(containerField);
 						}
@@ -35027,29 +35125,29 @@ import org.web3d.x3d.sai.X3DException;
 									((Sound)elementObject).setSource ((ProtoInstance) childX3dElement);
                             // TODO other audio-graph nodes
 
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("front") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("front") || containerField.equals("frontTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setFrontTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("front") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("front") || containerField.equals("frontTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setFrontTexture ((ProtoInstance) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("back") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("back") || containerField.equals("backTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setBackTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("back") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("back") || containerField.equals("backTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setBackTexture ((ProtoInstance) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("left") || containerField.isEmpty()) || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("left") || containerField.equals("leftTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setLeftTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("left") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("left") || containerField.equals("leftTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setLeftTexture ((ProtoInstance) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("right") || containerField.isEmpty()) || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("right") || containerField.equals("rightTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setRightTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("right") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("right") || containerField.equals("rightTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setRightTexture ((ProtoInstance) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("top") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("top") || containerField.equals("topTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setTopTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("top") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("top") || containerField.equals("topTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setTopTexture ((ProtoInstance) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("bottom") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture")                                                            && (containerField.equals("bottom") || containerField.equals("bottomTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setBottomTexture ((X3DTexture2DNode) childX3dElement);
-							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("bottom") || containerField.isEmpty()))
+							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("bottom") || containerField.equals("bottomTexture") || containerField.isEmpty()))
 									((ComposedCubeMapTexture)elementObject).setBottomTexture ((ProtoInstance) childX3dElement);
 							// these checks follow preceding containerField-specific tests
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture"))
@@ -35150,14 +35248,18 @@ import org.web3d.x3d.sai.X3DException;
                                                                        childElementName.equals("GeoMetadata")    || childElementName.equals("ImageCubeMapTexture") || childElementName.equals("ImageTexture3D") ||
                                                                        childElementName.equals("ImageTexture")   || childElementName.equals("Inline")              || childElementName.equals("MovieTexture") ||
                                                                        childElementName.equals("PackagedShader") || childElementName.equals("Script")              || childElementName.equals("ShaderPart") ||
-                                                                       childElementName.equals("ShaderProgramObject")) && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
+                                                                       childElementName.equals("ShaderProgram"))      
+                                                                   && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") ||      
+                                                                       containerField.equals("parts")    || containerField.equals("mapping")   || containerField.equals("shaders") || containerField.equals("source"))) // children is new name in X3D4, otherwise still a common, unambiguous error
 									((LoadSensor)elementObject).addChildren((X3DNode) childX3dElement); // formerly addWatchList in X3D3
 							else if (nodeName.equals("LoadSensor") && (protoInstanceNodeType.equals("Anchor")         || protoInstanceNodeType.equals("AudioClip")           || protoInstanceNodeType.equals("DISEntityTypeMapping") ||
                                                                        protoInstanceNodeType.equals("GeoMetadata")    || protoInstanceNodeType.equals("ImageCubeMapTexture") || protoInstanceNodeType.equals("ImageTexture3D") ||
                                                                        protoInstanceNodeType.equals("ImageTexture")   || protoInstanceNodeType.equals("Inline")              || protoInstanceNodeType.equals("MovieTexture") ||
                                                                        protoInstanceNodeType.equals("PackagedShader") || protoInstanceNodeType.equals("Script")              || protoInstanceNodeType.equals("ShaderPart") ||
-                                                                       protoInstanceNodeType.equals("ShaderProgramObject")) && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
-									((CADFace)elementObject).setShape((ProtoInstance) childX3dElement);
+                                                                       protoInstanceNodeType.equals("ShaderProgram"))      
+                                                                   && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") ||      
+                                                                       containerField.equals("parts")    || containerField.equals("mapping")   || containerField.equals("shaders") || containerField.equals("source"))) // children is new name in X3D4, otherwise still a common, unambiguous error
+									((LoadSensor)elementObject).addChildren((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("CADFace") && (childElementName.equals("Shape") || childElementName.equals("LOD") || childElementName.equals("Transform")) && containerField.equals("shape"))
 									((CADFace)elementObject).setShape((X3DNode) childX3dElement);
@@ -35472,7 +35574,8 @@ import org.web3d.x3d.sai.X3DException;
                                 // Note that Scene statement was already handled earlier
                                 if (!(elementObject instanceof X3DGroupingNode))
                                 {
-                                    errorNotice = "*** [X3DLoaderDOM error] Parent-child node relationship not found! Please report this problem to brutzman@nps.edu";
+                                    errorNotice = "*** [X3DLoaderDOM error] Parent-child node relationship not found! (parent " + nodeName + ", child " + childElementName + 
+                                                   ", containerField='" + containerField + "') Please report this problem to brutzman@nps.edu";
                                     validationResult.append(errorNotice);
                                     System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                                 }
@@ -35554,6 +35657,8 @@ import org.web3d.x3d.sai.X3DException;
 						// System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 						continue;
 					}
+                    if (nodeName.endsWith("FontStyle") && attributeName.equals("style"))
+                        attributeName = "glyphStyle"; // TODO resolve X3D4 renaming experimentation
 					
 					String attributeType  = elementObject.getFieldType(attributeName); // X3DJSAIL utility
                     if (attributeType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) || attributeType.contains("ERROR"))
@@ -38904,7 +39009,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.isEmpty() && ]]></xsl:text>
                 </xsl:if>
                 <xsl:if test="($elementName = 'component') and  (@name = 'name')">
-                    <!-- H-Anim enumeration is poorly named, deserves specification change -->
+                    <!-- HAnim enumeration is poorly named, deserves specification change -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
                 </xsl:if>
                 <xsl:text>!org.web3d.x3d.jsail.fields.SFString.meetsX3dInteroperabilityNamingConventions(newValue))</xsl:text>

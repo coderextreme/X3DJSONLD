@@ -27,12 +27,12 @@
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'></Material>
 		    <ComposedCubeMapTexture containerField='texture'>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"' containerField='back'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottom'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"' containerField='front'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"' containerField='left'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"' containerField='backTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottomTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"' containerField='frontTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"' containerField='leftTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"' containerField='rightTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"' containerField='topTexture'/>
 		    </ComposedCubeMapTexture>
 		    <ComposedShader DEF="x_ite" containerField='shaders' language='GLSL'>
 		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>

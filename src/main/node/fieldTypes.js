@@ -4,6 +4,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DAppearanceChildNode" : {
 	"IS" : "SFNode",
@@ -11,6 +12,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DAppearanceNode" : {
 	"IS" : "SFNode",
@@ -18,6 +20,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DChildNode" : {
 	"IS" : "SFNode",
@@ -25,6 +28,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DBindableNode" : {
 	"bindTime" : "SFTime",
@@ -35,6 +39,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DBackgroundNode" : {
 	"bindTime" : "SFTime",
@@ -50,6 +55,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DFollowerNode" : {
 	"IS" : "SFNode",
@@ -58,6 +64,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DChaserNode" : {
 	"duration" : "SFTime",
@@ -67,6 +74,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DGeometricPropertyNode" : {
 	"IS" : "SFNode",
@@ -74,6 +82,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DColorNode" : {
 	"IS" : "SFNode",
@@ -81,6 +90,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DVolumeRenderStyleNode" : {
 	"enabled" : "SFBool",
@@ -89,6 +99,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DComposableVolumeRenderStyleNode" : {
 	"enabled" : "SFBool",
@@ -97,6 +108,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DGeometryNode" : {
 	"IS" : "SFNode",
@@ -104,6 +116,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DComposedGeometryNode" : {
 	"attrib" : "MFNode",
@@ -121,6 +134,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DCoordinateNode" : {
 	"IS" : "SFNode",
@@ -128,6 +142,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DDamperNode" : {
 	"IS" : "SFNode",
@@ -139,6 +154,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSensorNode" : {
 	"enabled" : "SFBool",
@@ -148,6 +164,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DPointingDeviceSensorNode" : {
 	"description" : "SFString",
@@ -159,6 +176,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DDragSensorNode" : {
 	"autoOffset" : "SFBool",
@@ -172,6 +190,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DEnvironmentalSensorNode" : {
 	"enabled" : "SFBool",
@@ -182,6 +201,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTextureNode" : {
 	"description" : "SFString",
@@ -190,6 +210,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DEnvironmentTextureNode" : {
 	"description" : "SFString",
@@ -198,6 +219,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DFontStyleNode" : {
 	"IS" : "SFNode",
@@ -205,6 +227,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DBoundedObject" : {
 	"bboxCenter" : "SFVec3f",
@@ -225,6 +248,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DInfoNode" : {
 	"IS" : "SFNode",
@@ -232,6 +256,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DInterpolatorNode" : {
 	"IS" : "SFNode",
@@ -241,6 +266,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DKeyDeviceSensorNode" : {
 	"enabled" : "SFBool",
@@ -250,6 +276,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DPickableObject" : {
 	"pickable" : "SFBool",
@@ -264,6 +291,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DLayoutNode" : {
 	"IS" : "SFNode",
@@ -271,6 +299,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DLightNode" : {
 	"ambientIntensity" : "SFFloat",
@@ -284,6 +313,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DMaterialNode" : {
 	"IS" : "SFNode",
@@ -291,6 +321,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNBodyCollidableNode" : {
 	"bboxCenter" : "SFVec3f",
@@ -305,6 +336,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNBodyCollisionSpaceNode" : {
 	"bboxCenter" : "SFVec3f",
@@ -317,6 +349,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNetworkSensorNode" : {
 	"enabled" : "SFBool",
@@ -326,6 +359,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNormalNode" : {
 	"IS" : "SFNode",
@@ -333,6 +367,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNurbsControlCurveNode" : {
 	"controlPoint" : "MFVec2d",
@@ -341,6 +376,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DParametricGeometryNode" : {
 	"IS" : "SFNode",
@@ -348,6 +384,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DNurbsSurfaceGeometryNode" : {
 	"controlPoint" : "SFNode",
@@ -369,6 +406,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DOneSidedMaterialNode" : {
 	"emissiveColor" : "SFColor",
@@ -380,6 +418,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DParticleEmitterNode" : {
 	"IS" : "SFNode",
@@ -391,6 +430,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DParticlePhysicsModelNode" : {
 	"enabled" : "SFBool",
@@ -399,6 +439,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DPickSensorNode" : {
 	"enabled" : "SFBool",
@@ -415,6 +456,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DProductStructureChildNode" : {
 	"IS" : "SFNode",
@@ -423,6 +465,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DPrototypeInstance" : {
 	"IS" : "SFNode",
@@ -437,6 +480,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DUrlObject" : {
 	"autoRefresh" : "SFTime",
@@ -456,6 +500,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSequencerNode" : {
 	"IS" : "SFNode",
@@ -467,6 +512,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DShaderNode" : {
 	"activate" : "SFBool",
@@ -478,6 +524,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DShapeNode" : {
 	"appearance" : "SFNode",
@@ -492,6 +539,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTextureCoordinateNode" : {
 	"IS" : "SFNode",
@@ -499,6 +547,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSingleTextureCoordinateNode" : {
 	"IS" : "SFNode",
@@ -507,6 +556,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSingleTextureNode" : {
 	"description" : "SFString",
@@ -515,6 +565,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTextureTransformNode" : {
 	"IS" : "SFNode",
@@ -522,6 +573,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSingleTextureTransformNode" : {
 	"IS" : "SFNode",
@@ -530,6 +582,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSoundNode" : {
 	"description" : "SFString",
@@ -539,6 +592,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSoundChannelNode" : {
 	"channelCount" : "SFInt32",
@@ -552,6 +606,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSoundDestinationNode" : {
 	"channelCount" : "SFInt32",
@@ -567,6 +622,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTimeDependentNode" : {
 	"description" : "SFString",
@@ -582,6 +638,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSoundProcessingNode" : {
 	"channelCount" : "SFInt32",
@@ -603,6 +660,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DSoundSourceNode" : {
 	"description" : "SFString",
@@ -620,6 +678,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTexture2DNode" : {
 	"description" : "SFString",
@@ -631,6 +690,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTexture3DNode" : {
 	"description" : "SFString",
@@ -643,6 +703,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTextureProjectorNode" : {
 	"ambientIntensity" : "SFFloat",
@@ -664,6 +725,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTouchSensorNode" : {
 	"description" : "SFString",
@@ -676,6 +738,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DTriggerNode" : {
 	"IS" : "SFNode",
@@ -683,6 +746,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DVertexAttributeNode" : {
 	"IS" : "SFNode",
@@ -691,6 +755,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DViewpointNode" : {
 	"bindTime" : "SFTime",
@@ -709,6 +774,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DViewportNode" : {
 	"addChildren" : "MFNode",
@@ -723,6 +789,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DVolumeDataNode" : {
 	"bboxCenter" : "SFVec3f",
@@ -735,6 +802,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "X3DFogObject" : {
 	"color" : "SFColor",
@@ -749,6 +817,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "AcousticProperties" : {
 	"absorption" : "SFFloat",
@@ -762,6 +831,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Analyser" : {
 	"channelCount" : "SFInt32",
@@ -789,6 +859,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Anchor" : {
 	"addChildren" : "MFNode",
@@ -809,6 +880,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Appearance" : {
 	"acousticProperties" : "SFNode",
@@ -824,6 +896,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Arc2D" : {
 	"endAngle" : "SFFloat",
@@ -834,6 +907,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ArcClose2D" : {
 	"closureType" : "SFString",
@@ -846,6 +920,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "AudioClip" : {
 	"autoRefresh" : "SFTime",
@@ -870,6 +945,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "AudioDestination" : {
 	"channelCount" : "SFInt32",
@@ -888,6 +964,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Background" : {
 	"backUrl" : "MFString",
@@ -909,6 +986,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BallJoint" : {
 	"anchorPoint" : "SFVec3f",
@@ -922,6 +1000,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Billboard" : {
 	"addChildren" : "MFNode",
@@ -937,6 +1016,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BiquadFilter" : {
 	"channelCount" : "SFInt32",
@@ -963,6 +1043,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BlendedVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -979,6 +1060,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BooleanFilter" : {
 	"inputFalse" : "SFBool",
@@ -990,6 +1072,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BooleanSequencer" : {
 	"IS" : "SFNode",
@@ -1003,6 +1086,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BooleanToggle" : {
 	"IS" : "SFNode",
@@ -1012,6 +1096,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BooleanTrigger" : {
 	"IS" : "SFNode",
@@ -1021,6 +1106,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BoundaryEnhancementVolumeStyle" : {
 	"boundaryOpacity" : "SFFloat",
@@ -1032,6 +1118,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BoundedPhysicsModel" : {
 	"enabled" : "SFBool",
@@ -1041,6 +1128,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Box" : {
 	"IS" : "SFNode",
@@ -1050,6 +1138,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "BufferAudioSource" : {
 	"autoRefresh" : "SFTime",
@@ -1086,6 +1175,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CADAssembly" : {
 	"addChildren" : "MFNode",
@@ -1101,6 +1191,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CADFace" : {
 	"bboxCenter" : "SFVec3f",
@@ -1114,6 +1205,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CADLayer" : {
 	"addChildren" : "MFNode",
@@ -1129,6 +1221,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CADPart" : {
 	"addChildren" : "MFNode",
@@ -1149,6 +1242,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CartoonVolumeStyle" : {
 	"colorSteps" : "SFInt32",
@@ -1161,6 +1255,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ChannelMerger" : {
 	"channelCount" : "SFInt32",
@@ -1175,6 +1270,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ChannelSelector" : {
 	"channelCount" : "SFInt32",
@@ -1190,6 +1286,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ChannelSplitter" : {
 	"channelCount" : "SFInt32",
@@ -1205,6 +1302,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Circle2D" : {
 	"IS" : "SFNode",
@@ -1213,6 +1311,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ClipPlane" : {
 	"enabled" : "SFBool",
@@ -1222,6 +1321,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CollidableOffset" : {
 	"bboxCenter" : "SFVec3f",
@@ -1237,6 +1337,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CollidableShape" : {
 	"bboxCenter" : "SFVec3f",
@@ -1252,6 +1353,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Collision" : {
 	"addChildren" : "MFNode",
@@ -1270,6 +1372,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CollisionCollection" : {
 	"appliedParameters" : "MFString",
@@ -1291,6 +1394,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CollisionSensor" : {
 	"collider" : "SFNode",
@@ -1303,6 +1407,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CollisionSpace" : {
 	"bboxCenter" : "SFVec3f",
@@ -1317,6 +1422,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Color" : {
 	"color" : "MFColor",
@@ -1325,6 +1431,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ColorChaser" : {
 	"duration" : "SFTime",
@@ -1339,6 +1446,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ColorDamper" : {
 	"initialDestination" : "SFColor",
@@ -1355,6 +1463,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ColorInterpolator" : {
 	"IS" : "SFNode",
@@ -1366,6 +1475,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ColorRGBA" : {
 	"color" : "MFColorRGBA",
@@ -1374,6 +1484,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ComposedCubeMapTexture" : {
 	"backTexture" : "SFNode",
@@ -1388,6 +1499,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ComposedShader" : {
 	"activate" : "SFBool",
@@ -1401,6 +1513,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ComposedTexture3D" : {
 	"description" : "SFString",
@@ -1414,6 +1527,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ComposedVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -1423,6 +1537,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Cone" : {
 	"bottom" : "SFBool",
@@ -1435,6 +1550,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ConeEmitter" : {
 	"angle" : "SFFloat",
@@ -1449,6 +1565,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Contact" : {
 	"appliedParameters" : "MFString",
@@ -1472,6 +1589,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Contour2D" : {
 	"addChildren" : "MFNode",
@@ -1482,6 +1600,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ContourPolyline2D" : {
 	"controlPoint" : "MFVec2d",
@@ -1490,6 +1609,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Convolver" : {
 	"buffer" : "MFFloat",
@@ -1514,6 +1634,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Coordinate" : {
 	"IS" : "SFNode",
@@ -1522,6 +1643,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CoordinateChaser" : {
 	"duration" : "SFTime",
@@ -1536,6 +1658,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CoordinateDamper" : {
 	"initialDestination" : "MFVec3f",
@@ -1552,6 +1675,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CoordinateDouble" : {
 	"IS" : "SFNode",
@@ -1560,6 +1684,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CoordinateInterpolator" : {
 	"IS" : "SFNode",
@@ -1571,6 +1696,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CoordinateInterpolator2D" : {
 	"IS" : "SFNode",
@@ -1582,6 +1708,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Cylinder" : {
 	"bottom" : "SFBool",
@@ -1595,6 +1722,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "CylinderSensor" : {
 	"autoOffset" : "SFBool",
@@ -1614,6 +1742,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Delay" : {
 	"channelCount" : "SFInt32",
@@ -1638,6 +1767,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "DirectionalLight" : {
 	"ambientIntensity" : "SFFloat",
@@ -1653,6 +1783,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "DISEntityManager" : {
 	"addedEntities" : "MFNode",
@@ -1667,6 +1798,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "DISEntityTypeMapping" : {
 	"autoRefresh" : "SFTime",
@@ -1686,6 +1818,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Disk2D" : {
 	"innerRadius" : "SFFloat",
@@ -1696,6 +1829,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "DoubleAxisHingeJoint" : {
 	"anchorPoint" : "SFVec3f",
@@ -1728,6 +1862,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "DynamicsCompressor" : {
 	"attack" : "SFFloat",
@@ -1756,6 +1891,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "EaseInEaseOut" : {
 	"easeInEaseOut" : "MFVec2f",
@@ -1767,6 +1903,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "EdgeEnhancementVolumeStyle" : {
 	"edgeColor" : "SFColorRGBA",
@@ -1778,6 +1915,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ElevationGrid" : {
 	"attrib" : "MFNode",
@@ -1801,6 +1939,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "EspduTransform" : {
 	"addChildren" : "MFNode",
@@ -1900,6 +2039,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ExplosionEmitter" : {
 	"IS" : "SFNode",
@@ -1912,6 +2052,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Extrusion" : {
 	"beginCap" : "SFBool",
@@ -1933,6 +2074,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "FillProperties" : {
 	"filled" : "SFBool",
@@ -1944,6 +2086,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "FloatVertexAttribute" : {
 	"IS" : "SFNode",
@@ -1954,6 +2097,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Fog" : {
 	"bindTime" : "SFTime",
@@ -1967,6 +2111,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "FogCoordinate" : {
 	"depth" : "MFFloat",
@@ -1975,9 +2120,11 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "FontStyle" : {
 	"family" : "MFString",
+	"glyphStyle" : "SFString",
 	"horizontal" : "SFBool",
 	"IS" : "SFNode",
 	"justify" : "MFString",
@@ -1986,11 +2133,11 @@ var fieldTypes = {"X3DNode" : {
 	"metadata" : "SFNode",
 	"size" : "SFFloat",
 	"spacing" : "SFFloat",
-	"style" : "SFString",
 	"topToBottom" : "SFBool",
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ForcePhysicsModel" : {
 	"enabled" : "SFBool",
@@ -2000,6 +2147,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Gain" : {
 	"channelCount" : "SFInt32",
@@ -2022,6 +2170,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeneratedCubeMapTexture" : {
 	"description" : "SFString",
@@ -2033,6 +2182,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoCoordinate" : {
 	"geoOrigin" : "SFNode",
@@ -2043,6 +2193,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoElevationGrid" : {
 	"ccw" : "SFBool",
@@ -2068,6 +2219,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoLocation" : {
 	"addChildren" : "MFNode",
@@ -2085,6 +2237,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoLOD" : {
 	"bboxCenter" : "SFVec3f",
@@ -2108,6 +2261,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoMetadata" : {
 	"autoRefresh" : "SFTime",
@@ -2122,6 +2276,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoOrigin" : {
 	"geoCoords" : "SFVec3d",
@@ -2132,6 +2287,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoPositionInterpolator" : {
 	"geoOrigin" : "SFNode",
@@ -2146,6 +2302,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoProximitySensor" : {
 	"center" : "SFVec3d",
@@ -2166,6 +2323,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoTouchSensor" : {
 	"description" : "SFString",
@@ -2184,6 +2342,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoTransform" : {
 	"addChildren" : "MFNode",
@@ -2205,6 +2364,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "GeoViewpoint" : {
 	"bindTime" : "SFTime",
@@ -2229,6 +2389,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Group" : {
 	"addChildren" : "MFNode",
@@ -2243,6 +2404,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimDisplacer" : {
 	"coordIndex" : "MFInt32",
@@ -2255,6 +2417,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimHumanoid" : {
 	"bboxCenter" : "SFVec3f",
@@ -2291,6 +2454,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimJoint" : {
 	"addChildren" : "MFNode",
@@ -2319,6 +2483,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimMotion" : {
 	"channels" : "MFString",
@@ -2342,6 +2507,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimSegment" : {
 	"addChildren" : "MFNode",
@@ -2363,6 +2529,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "HAnimSite" : {
 	"addChildren" : "MFNode",
@@ -2384,6 +2551,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ImageCubeMapTexture" : {
 	"autoRefresh" : "SFTime",
@@ -2397,6 +2565,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ImageTexture" : {
 	"autoRefresh" : "SFTime",
@@ -2412,6 +2581,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ImageTexture3D" : {
 	"autoRefresh" : "SFTime",
@@ -2428,6 +2598,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedFaceSet" : {
 	"attrib" : "MFNode",
@@ -2455,6 +2626,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedLineSet" : {
 	"attrib" : "MFNode",
@@ -2472,6 +2644,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedQuadSet" : {
 	"attrib" : "MFNode",
@@ -2491,6 +2664,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedTriangleFanSet" : {
 	"attrib" : "MFNode",
@@ -2510,6 +2684,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedTriangleSet" : {
 	"attrib" : "MFNode",
@@ -2529,6 +2704,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IndexedTriangleStripSet" : {
 	"attrib" : "MFNode",
@@ -2548,6 +2724,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Inline" : {
 	"autoRefresh" : "SFTime",
@@ -2564,6 +2741,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IntegerSequencer" : {
 	"IS" : "SFNode",
@@ -2577,6 +2755,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IntegerTrigger" : {
 	"integerKey" : "SFInt32",
@@ -2587,6 +2766,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "IsoSurfaceVolumeData" : {
 	"bboxCenter" : "SFVec3f",
@@ -2605,6 +2785,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "KeySensor" : {
 	"actionKeyPress" : "SFInt32",
@@ -2621,6 +2802,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Layer" : {
 	"addChildren" : "MFNode",
@@ -2635,6 +2817,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LayerSet" : {
 	"activeLayer" : "SFInt32",
@@ -2645,6 +2828,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Layout" : {
 	"align" : "MFString",
@@ -2658,6 +2842,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LayoutGroup" : {
 	"addChildren" : "MFNode",
@@ -2674,6 +2859,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LayoutLayer" : {
 	"addChildren" : "MFNode",
@@ -2689,6 +2875,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LinePickSensor" : {
 	"enabled" : "SFBool",
@@ -2708,6 +2895,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LineProperties" : {
 	"applied" : "SFBool",
@@ -2718,6 +2906,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LineSet" : {
 	"attrib" : "MFNode",
@@ -2731,6 +2920,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ListenerPointSource" : {
 	"children" : "MFNode",
@@ -2754,6 +2944,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LoadSensor" : {
 	"children" : "MFNode",
@@ -2768,6 +2959,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LocalFog" : {
 	"color" : "SFColor",
@@ -2779,6 +2971,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "LOD" : {
 	"addChildren" : "MFNode",
@@ -2797,6 +2990,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Material" : {
 	"ambientIntensity" : "SFFloat",
@@ -2826,6 +3020,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Matrix3VertexAttribute" : {
 	"IS" : "SFNode",
@@ -2835,6 +3030,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Matrix4VertexAttribute" : {
 	"IS" : "SFNode",
@@ -2844,6 +3040,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataBoolean" : {
 	"IS" : "SFNode",
@@ -2854,6 +3051,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataDouble" : {
 	"IS" : "SFNode",
@@ -2864,6 +3062,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataFloat" : {
 	"IS" : "SFNode",
@@ -2874,6 +3073,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataInteger" : {
 	"IS" : "SFNode",
@@ -2884,6 +3084,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataSet" : {
 	"IS" : "SFNode",
@@ -2894,6 +3095,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MetadataString" : {
 	"IS" : "SFNode",
@@ -2904,6 +3106,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MicrophoneSource" : {
 	"children" : "MFNode",
@@ -2923,6 +3126,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MotorJoint" : {
 	"autoCalc" : "SFBool",
@@ -2956,6 +3160,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MovieTexture" : {
 	"autoRefresh" : "SFTime",
@@ -2984,6 +3189,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MultiTexture" : {
 	"alpha" : "SFFloat",
@@ -2998,6 +3204,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MultiTextureCoordinate" : {
 	"IS" : "SFNode",
@@ -3006,6 +3213,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "MultiTextureTransform" : {
 	"IS" : "SFNode",
@@ -3014,6 +3222,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NavigationInfo" : {
 	"avatarSize" : "MFFloat",
@@ -3032,6 +3241,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Normal" : {
 	"IS" : "SFNode",
@@ -3040,6 +3250,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NormalInterpolator" : {
 	"IS" : "SFNode",
@@ -3051,6 +3262,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsCurve" : {
 	"closed" : "SFBool",
@@ -3064,6 +3276,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsCurve2D" : {
 	"closed" : "SFBool",
@@ -3077,6 +3290,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsOrientationInterpolator" : {
 	"controlPoint" : "SFNode",
@@ -3090,6 +3304,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsPatchSurface" : {
 	"controlPoint" : "SFNode",
@@ -3111,6 +3326,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsPositionInterpolator" : {
 	"controlPoint" : "SFNode",
@@ -3124,6 +3340,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsSet" : {
 	"addGeometry" : "MFNode",
@@ -3139,6 +3356,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsSurfaceInterpolator" : {
 	"controlPoint" : "SFNode",
@@ -3157,6 +3375,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsSweptSurface" : {
 	"ccw" : "SFBool",
@@ -3168,6 +3387,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsSwungSurface" : {
 	"ccw" : "SFBool",
@@ -3179,6 +3399,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsTextureCoordinate" : {
 	"controlPoint" : "MFVec2f",
@@ -3194,6 +3415,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "NurbsTrimmedSurface" : {
 	"addTrimmingContour" : "MFNode",
@@ -3218,6 +3440,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OpacityMapVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -3227,6 +3450,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OrientationChaser" : {
 	"duration" : "SFTime",
@@ -3241,6 +3465,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OrientationDamper" : {
 	"initialDestination" : "SFRotation",
@@ -3257,6 +3482,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OrientationInterpolator" : {
 	"IS" : "SFNode",
@@ -3268,6 +3494,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OrthoViewpoint" : {
 	"bindTime" : "SFTime",
@@ -3289,6 +3516,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "OscillatorSource" : {
 	"children" : "MFNode",
@@ -3309,6 +3537,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PackagedShader" : {
 	"activate" : "SFBool",
@@ -3326,6 +3555,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ParticleSystem" : {
 	"appearance" : "SFNode",
@@ -3333,7 +3563,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxDisplay" : "SFBool",
 	"bboxSize" : "SFVec3f",
 	"castShadow" : "SFBool",
-	"color" : "SFNode",
+	"color" : "MFNode",
 	"colorKey" : "MFFloat",
 	"createParticles" : "SFBool",
 	"emitter" : "SFNode",
@@ -3354,6 +3584,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PeriodicWave" : {
 	"description" : "SFString",
@@ -3366,6 +3597,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PhysicalMaterial" : {
 	"baseColor" : "SFColor",
@@ -3390,6 +3622,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PickableGroup" : {
 	"addChildren" : "MFNode",
@@ -3406,6 +3639,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PixelTexture" : {
 	"description" : "SFString",
@@ -3418,6 +3652,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PixelTexture3D" : {
 	"description" : "SFString",
@@ -3431,6 +3666,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PlaneSensor" : {
 	"autoOffset" : "SFBool",
@@ -3449,6 +3685,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PointEmitter" : {
 	"direction" : "SFVec3f",
@@ -3462,6 +3699,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PointLight" : {
 	"ambientIntensity" : "SFFloat",
@@ -3479,6 +3717,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PointPickSensor" : {
 	"enabled" : "SFBool",
@@ -3496,6 +3735,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PointProperties" : {
 	"attenuation" : "SFVec3f",
@@ -3507,6 +3747,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PointSet" : {
 	"attrib" : "MFNode",
@@ -3519,6 +3760,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Polyline2D" : {
 	"IS" : "SFNode",
@@ -3527,6 +3769,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PolylineEmitter" : {
 	"coord" : "SFNode",
@@ -3542,6 +3785,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Polypoint2D" : {
 	"IS" : "SFNode",
@@ -3550,6 +3794,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionChaser" : {
 	"duration" : "SFTime",
@@ -3564,6 +3809,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionChaser2D" : {
 	"duration" : "SFTime",
@@ -3578,6 +3824,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionDamper" : {
 	"initialDestination" : "SFVec3f",
@@ -3594,6 +3841,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionDamper2D" : {
 	"initialDestination" : "SFVec2f",
@@ -3610,6 +3858,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionInterpolator" : {
 	"IS" : "SFNode",
@@ -3621,6 +3870,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PositionInterpolator2D" : {
 	"IS" : "SFNode",
@@ -3632,6 +3882,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "PrimitivePickSensor" : {
 	"enabled" : "SFBool",
@@ -3648,6 +3899,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ProgramShader" : {
 	"activate" : "SFBool",
@@ -3660,6 +3912,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ProjectionVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -3670,6 +3923,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ProtoInstance" : {
 	"fieldValue" : "MFNode",
@@ -3679,6 +3933,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ProximitySensor" : {
 	"center" : "SFVec3f",
@@ -3695,6 +3950,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "QuadSet" : {
 	"attrib" : "MFNode",
@@ -3712,6 +3968,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ReceiverPdu" : {
 	"address" : "SFString",
@@ -3751,6 +4008,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Rectangle2D" : {
 	"IS" : "SFNode",
@@ -3760,6 +4018,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "RigidBody" : {
 	"angularDampingFactor" : "SFFloat",
@@ -3792,6 +4051,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "RigidBodyCollection" : {
 	"autoDisable" : "SFBool",
@@ -3817,6 +4077,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ScalarChaser" : {
 	"duration" : "SFTime",
@@ -3831,6 +4092,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ScalarDamper" : {
 	"initialDestination" : "SFFloat",
@@ -3847,6 +4109,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ScalarInterpolator" : {
 	"IS" : "SFNode",
@@ -3858,9 +4121,11 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ScreenFontStyle" : {
 	"family" : "MFString",
+	"glyphStyle" : "SFString",
 	"horizontal" : "SFBool",
 	"IS" : "SFNode",
 	"justify" : "MFString",
@@ -3869,11 +4134,11 @@ var fieldTypes = {"X3DNode" : {
 	"metadata" : "SFNode",
 	"pointSize" : "SFFloat",
 	"spacing" : "SFFloat",
-	"style" : "SFString",
 	"topToBottom" : "SFBool",
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ScreenGroup" : {
 	"addChildren" : "MFNode",
@@ -3888,6 +4153,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Script" : {
 	"autoRefresh" : "SFTime",
@@ -3903,6 +4169,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SegmentedVolumeData" : {
 	"bboxCenter" : "SFVec3f",
@@ -3919,6 +4186,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ShadedVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -3932,6 +4200,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ShaderPart" : {
 	"autoRefresh" : "SFTime",
@@ -3945,6 +4214,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ShaderProgram" : {
 	"autoRefresh" : "SFTime",
@@ -3959,6 +4229,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Shape" : {
 	"appearance" : "SFNode",
@@ -3973,6 +4244,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SignalPdu" : {
 	"address" : "SFString",
@@ -4012,6 +4284,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SilhouetteEnhancementVolumeStyle" : {
 	"enabled" : "SFBool",
@@ -4024,6 +4297,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SingleAxisHingeJoint" : {
 	"anchorPoint" : "SFVec3f",
@@ -4044,6 +4318,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SliderJoint" : {
 	"axis" : "SFVec3f",
@@ -4062,6 +4337,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Sound" : {
 	"description" : "SFString",
@@ -4081,6 +4357,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SpatialSound" : {
 	"children" : "MFNode",
@@ -4106,6 +4383,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Sphere" : {
 	"IS" : "SFNode",
@@ -4115,6 +4393,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SphereSensor" : {
 	"autoOffset" : "SFBool",
@@ -4130,6 +4409,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SplinePositionInterpolator" : {
 	"closed" : "SFBool",
@@ -4144,6 +4424,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SplinePositionInterpolator2D" : {
 	"closed" : "SFBool",
@@ -4158,6 +4439,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SplineScalarInterpolator" : {
 	"closed" : "SFBool",
@@ -4172,6 +4454,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SpotLight" : {
 	"ambientIntensity" : "SFFloat",
@@ -4192,6 +4475,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SquadOrientationInterpolator" : {
 	"IS" : "SFNode",
@@ -4204,6 +4488,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "StaticGroup" : {
 	"bboxCenter" : "SFVec3f",
@@ -4216,6 +4501,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "StreamAudioDestination" : {
 	"channelCount" : "SFInt32",
@@ -4233,6 +4519,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "StreamAudioSource" : {
 	"channelCount" : "SFInt32",
@@ -4256,6 +4543,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "StringSensor" : {
 	"deletionAllowed" : "SFBool",
@@ -4268,6 +4556,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "SurfaceEmitter" : {
 	"coordIndex" : "MFInt32",
@@ -4282,6 +4571,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Switch" : {
 	"addChildren" : "MFNode",
@@ -4297,6 +4587,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TexCoordChaser2D" : {
 	"duration" : "SFTime",
@@ -4311,6 +4602,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TexCoordDamper2D" : {
 	"initialDestination" : "MFVec2f",
@@ -4327,6 +4619,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Text" : {
 	"fontStyle" : "SFNode",
@@ -4342,6 +4635,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureBackground" : {
 	"backTexture" : "SFNode",
@@ -4363,6 +4657,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureCoordinate" : {
 	"IS" : "SFNode",
@@ -4372,6 +4667,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureCoordinate3D" : {
 	"IS" : "SFNode",
@@ -4381,6 +4677,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureCoordinate4D" : {
 	"IS" : "SFNode",
@@ -4390,6 +4687,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureCoordinateGenerator" : {
 	"IS" : "SFNode",
@@ -4400,6 +4698,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureProjector" : {
 	"ambientIntensity" : "SFFloat",
@@ -4423,6 +4722,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureProjectorParallel" : {
 	"ambientIntensity" : "SFFloat",
@@ -4445,6 +4745,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureProperties" : {
 	"anisotropicDegree" : "SFFloat",
@@ -4463,6 +4764,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureTransform" : {
 	"center" : "SFVec2f",
@@ -4474,6 +4776,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureTransform3D" : {
 	"center" : "SFVec3f",
@@ -4485,6 +4788,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TextureTransformMatrix3D" : {
 	"IS" : "SFNode",
@@ -4493,6 +4797,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TimeSensor" : {
 	"cycleInterval" : "SFTime",
@@ -4514,6 +4819,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TimeTrigger" : {
 	"IS" : "SFNode",
@@ -4523,6 +4829,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ToneMappedVolumeStyle" : {
 	"coolColor" : "SFColorRGBA",
@@ -4534,6 +4841,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TouchSensor" : {
 	"description" : "SFString",
@@ -4549,6 +4857,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Transform" : {
 	"addChildren" : "MFNode",
@@ -4568,6 +4877,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TransformSensor" : {
 	"center" : "SFVec3f",
@@ -4584,6 +4894,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TransmitterPdu" : {
 	"address" : "SFString",
@@ -4639,6 +4950,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TriangleFanSet" : {
 	"attrib" : "MFNode",
@@ -4657,6 +4969,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TriangleSet" : {
 	"attrib" : "MFNode",
@@ -4674,6 +4987,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TriangleSet2D" : {
 	"IS" : "SFNode",
@@ -4683,6 +4997,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TriangleStripSet" : {
 	"attrib" : "MFNode",
@@ -4701,6 +5016,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "TwoSidedMaterial" : {
 	"ambientIntensity" : "SFFloat",
@@ -4721,6 +5037,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "UniversalJoint" : {
 	"anchorPoint" : "SFVec3f",
@@ -4742,6 +5059,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "UnlitMaterial" : {
 	"emissiveColor" : "SFColor",
@@ -4756,6 +5074,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Viewpoint" : {
 	"bindTime" : "SFTime",
@@ -4777,6 +5096,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "ViewpointGroup" : {
 	"center" : "SFVec3f",
@@ -4790,6 +5110,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "Viewport" : {
 	"addChildren" : "MFNode",
@@ -4805,6 +5126,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "VisibilitySensor" : {
 	"center" : "SFVec3f",
@@ -4818,6 +5140,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "VolumeData" : {
 	"bboxCenter" : "SFVec3f",
@@ -4832,6 +5155,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "VolumeEmitter" : {
 	"coord" : "SFNode",
@@ -4848,6 +5172,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "VolumePickSensor" : {
 	"enabled" : "SFBool",
@@ -4864,6 +5189,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "WaveShaper" : {
 	"channelCount" : "SFInt32",
@@ -4887,6 +5213,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "WindPhysicsModel" : {
 	"direction" : "SFVec3f",
@@ -4899,6 +5226,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "WorldInfo" : {
 	"info" : "MFString",
@@ -4908,6 +5236,7 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
+	"style" : "SFString",
 },
 "component" : {
 	"level" : "SFInt32",

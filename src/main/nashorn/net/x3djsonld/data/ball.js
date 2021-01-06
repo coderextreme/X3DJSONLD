@@ -62,7 +62,7 @@ ball.prototype = {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addComponent(new componentObject().setName("Scripting").setLevel(1))
-    .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(1))
+    .addComments("component name='EnvironmentalEffects' level='1'></component")
     .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
     .addComponent(new componentObject().setName("Shaders").setLevel(1))
     .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
@@ -77,6 +77,154 @@ ball.prototype = {
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ball.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a prismatic sphere")))
   .setScene(new SceneObject()
+    .addChild(new WorldInfoObject().setTitle("ball.x3d"))
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\"")))
     .addChild(new ViewpointObject().setDescription("Tour Views"))
-    .addChil
+    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild(new TransformObject()
+      .addChild(new ShapeObject()
+        .setGeometry(new SphereObject())
+        .setAppearance(new AppearanceObject()
+          .setMaterial(new MaterialObject().setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7))
+          .setTexture(new ComposedCubeMapTextureObject("texture")
+            .setBackTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+            .setBottomTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+            .setFrontTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+            .setLeftTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+            .setRightTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+            .setTopTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+          .addComments(Java.to(["",
+"                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
+"			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
+"                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>",
+"                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
+"                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
+"                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>",
+"                        </ShaderProgram>",
+"			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
+"		    </ProgramShader>"], Java.type("java.lang.String[]")))
+          .addComments(Java.to(["",
+"                <ComposedShader language='GLSL'>",
+"		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>",
+"		  <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">",
+"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>",
+"		  </field>",
+"		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
+"		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
+"		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
+"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"                </ComposedShader>"], Java.type("java.lang.String[]")))
+          .addComments(Java.to(["",
+"                <ComposedShader language='GLSL'>",
+"		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>",
+"		  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
+"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>",
+"		  </field>",
+"		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
+"		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
+"		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
+"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"                </ComposedShader>"], Java.type("java.lang.String[]")))
+          .addComments(Java.to(["",
+"                <ComposedShader language='GLSL'>",
+"		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>",
+"		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>",
+"		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
+"		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
+"		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
+"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"                </ComposedShader>"], Java.type("java.lang.String[]")))
+          .addComments(Java.to([""], Java.type("java.lang.String[]")))
+          .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+            .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
+              .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs\"")))
+            .addParts(new ShaderPartObject("common").setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+          .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("cube").setType("SFNode")
+              .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
+            .addParts(new ShaderPartObject().setUSE("common")))))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return ball model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var       metaResult = "";
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		// first list informational meta elements of interest
+		var metaList = this.getX3dModel().getHead().getMetaList();
+		for (var m in metaList) {
+			meta = metaList[m];
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
+			{
+				metaResult += meta.toStringX3D();
+			}
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = metaResult;
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new ball();
+		print ("ball execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new ball().main();

@@ -201,6 +201,17 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                 (local-name() = 'IS')             or (local-name() = 'connect')">
                     <xsl:value-of select="local-name()"/>
                 </xsl:when>
+                <!-- X3D Scene Authoring Hints, X3D4 Field name changes planned for improved consistency https://x3d-code/www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#fieldNameChanges -->
+                <xsl:when test="(local-name(..) = 'LoadSensor')">
+                    <xsl:text>children</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'ComposedCubeMapTexture') and not(ends-with(@containerField,'Texture'))">
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>Texture</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'ParticleSystem') and ends-with(@containerField,'Ramp')">
+                    <xsl:value-of select="substring-before(@containerField,'Ramp')"/>
+                </xsl:when>
                 <xsl:when test="(local-name() = 'ProtoInstance')">
                     <xsl:value-of select="@containerField"/>
                 </xsl:when>
@@ -612,7 +623,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
         <xsl:choose>
-            <xsl:when test="(local-name() = 'class') or (local-name() = 'global')">
+            <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global')">
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>
@@ -1581,6 +1592,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 $notDefaultContainerField3  and
                 not(local-name()='containerField' and string(.)='') and
                 not(local-name()='class' and string(.)='') and
+                not(local-name()='style' and string(.)='') and
                 $notFieldSpace and
                 not(contains(local-name(),'set_')) and
                 not(contains(local-name(),'_changed')) and
@@ -1811,6 +1823,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                           ($attributeName='documentation')      or
                           ($attributeName='name')               or
                           ($attributeName='class')              or
+                          ($attributeName='style')              or
                           ($attributeName='description')        or
                           ($attributeName='address')            or
                           ($attributeName='language')           or
@@ -1847,7 +1860,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
-		  <xsl:when test="($attributeName='class')       or
+		  <xsl:when test="($attributeName='class')       or ($attributeName='style')       or
                           ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
 					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
