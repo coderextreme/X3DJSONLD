@@ -38,27 +38,27 @@ let ComposedCubeMapTexture10 = browser.currentScene.createNode("ComposedCubeMapT
 ComposedCubeMapTexture10.DEF = "texture";
 let ImageTexture11 = browser.currentScene.createNode("ImageTexture");
 ImageTexture11.url = new MFString(new java.lang.String["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]);
-ComposedCubeMapTexture10.top = ImageTexture11;
+ComposedCubeMapTexture10.topTexture = ImageTexture11;
 
 let ImageTexture12 = browser.currentScene.createNode("ImageTexture");
 ImageTexture12.url = new MFString(new java.lang.String["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]);
-ComposedCubeMapTexture10.top = ImageTexture12;
+ComposedCubeMapTexture10.topTexture = ImageTexture12;
 
 let ImageTexture13 = browser.currentScene.createNode("ImageTexture");
 ImageTexture13.url = new MFString(new java.lang.String["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]);
-ComposedCubeMapTexture10.top = ImageTexture13;
+ComposedCubeMapTexture10.topTexture = ImageTexture13;
 
 let ImageTexture14 = browser.currentScene.createNode("ImageTexture");
 ImageTexture14.url = new MFString(new java.lang.String["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]);
-ComposedCubeMapTexture10.top = ImageTexture14;
+ComposedCubeMapTexture10.topTexture = ImageTexture14;
 
 let ImageTexture15 = browser.currentScene.createNode("ImageTexture");
 ImageTexture15.url = new MFString(new java.lang.String["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]);
-ComposedCubeMapTexture10.top = ImageTexture15;
+ComposedCubeMapTexture10.topTexture = ImageTexture15;
 
 let ImageTexture16 = browser.currentScene.createNode("ImageTexture");
 ImageTexture16.url = new MFString(new java.lang.String["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]);
-ComposedCubeMapTexture10.top = ImageTexture16;
+ComposedCubeMapTexture10.topTexture = ImageTexture16;
 
 Appearance8.texture = ComposedCubeMapTexture10;
 

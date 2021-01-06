@@ -296,7 +296,7 @@ var ProtoInstance6 = null;
           .addChild((new autoclass.SignalPdu()))
           .addChild((new autoclass.TransmitterPdu()))
           .addChild((new autoclass.DISEntityManager())
-            .addMapping((new autoclass.DISEntityTypeMapping())))))      ;
+            .addChild((new autoclass.DISEntityTypeMapping())))))      ;
 ProtoInstance0
               .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1

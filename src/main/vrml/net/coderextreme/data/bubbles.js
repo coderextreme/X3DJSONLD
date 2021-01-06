@@ -43,27 +43,27 @@ Appearance9.material = Material10;
 let ComposedCubeMapTexture11 = browser.currentScene.createNode("ComposedCubeMapTexture");
 let ImageTexture12 = browser.currentScene.createNode("ImageTexture");
 ImageTexture12.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]);
-ComposedCubeMapTexture11.top = ImageTexture12;
+ComposedCubeMapTexture11.topTexture = ImageTexture12;
 
 let ImageTexture13 = browser.currentScene.createNode("ImageTexture");
 ImageTexture13.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]);
-ComposedCubeMapTexture11.top = ImageTexture13;
+ComposedCubeMapTexture11.topTexture = ImageTexture13;
 
 let ImageTexture14 = browser.currentScene.createNode("ImageTexture");
 ImageTexture14.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]);
-ComposedCubeMapTexture11.top = ImageTexture14;
+ComposedCubeMapTexture11.topTexture = ImageTexture14;
 
 let ImageTexture15 = browser.currentScene.createNode("ImageTexture");
 ImageTexture15.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]);
-ComposedCubeMapTexture11.top = ImageTexture15;
+ComposedCubeMapTexture11.topTexture = ImageTexture15;
 
 let ImageTexture16 = browser.currentScene.createNode("ImageTexture");
 ImageTexture16.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]);
-ComposedCubeMapTexture11.top = ImageTexture16;
+ComposedCubeMapTexture11.topTexture = ImageTexture16;
 
 let ImageTexture17 = browser.currentScene.createNode("ImageTexture");
 ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]);
-ComposedCubeMapTexture11.top = ImageTexture17;
+ComposedCubeMapTexture11.topTexture = ImageTexture17;
 
 Appearance9.texture = ComposedCubeMapTexture11;
 

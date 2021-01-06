@@ -54,32 +54,32 @@ let ComposedCubeMapTexture14 = browser.currentScene.createNode("ComposedCubeMapT
 let ImageTexture15 = browser.currentScene.createNode("ImageTexture");
 ImageTexture15.DEF = "backShader";
 ImageTexture15.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"]);
-ComposedCubeMapTexture14.top = ImageTexture15;
+ComposedCubeMapTexture14.topTexture = ImageTexture15;
 
 let ImageTexture16 = browser.currentScene.createNode("ImageTexture");
 ImageTexture16.DEF = "bottomShader";
 ImageTexture16.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"]);
-ComposedCubeMapTexture14.top = ImageTexture16;
+ComposedCubeMapTexture14.topTexture = ImageTexture16;
 
 let ImageTexture17 = browser.currentScene.createNode("ImageTexture");
 ImageTexture17.DEF = "frontShader";
 ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"]);
-ComposedCubeMapTexture14.top = ImageTexture17;
+ComposedCubeMapTexture14.topTexture = ImageTexture17;
 
 let ImageTexture18 = browser.currentScene.createNode("ImageTexture");
 ImageTexture18.DEF = "leftShader";
 ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"]);
-ComposedCubeMapTexture14.top = ImageTexture18;
+ComposedCubeMapTexture14.topTexture = ImageTexture18;
 
 let ImageTexture19 = browser.currentScene.createNode("ImageTexture");
 ImageTexture19.DEF = "rightShader";
 ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"]);
-ComposedCubeMapTexture14.top = ImageTexture19;
+ComposedCubeMapTexture14.topTexture = ImageTexture19;
 
 let ImageTexture20 = browser.currentScene.createNode("ImageTexture");
 ImageTexture20.DEF = "topShader";
 ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"]);
-ComposedCubeMapTexture14.top = ImageTexture20;
+ComposedCubeMapTexture14.topTexture = ImageTexture20;
 
 Appearance12.texture = ComposedCubeMapTexture14;
 

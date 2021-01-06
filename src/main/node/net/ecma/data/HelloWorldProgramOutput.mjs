@@ -871,6 +871,6 @@ var X3D0 =  new X3D({
                 new TransmitterPdu({}),
 
                 new DISEntityManager({
-                  mapping : new SFNode(
-                    new DISEntityTypeMapping({}))})])})])}))});
+                  children : new MFNode([
+                    new DISEntityTypeMapping({})])})])})])}))});
 console.log(X3D0.toXMLNode());

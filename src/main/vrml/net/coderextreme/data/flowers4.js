@@ -28,27 +28,27 @@ Appearance6.material = Material7;
 let ComposedCubeMapTexture8 = browser.currentScene.createNode("ComposedCubeMapTexture");
 let ImageTexture9 = browser.currentScene.createNode("ImageTexture");
 ImageTexture9.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
-ComposedCubeMapTexture8.top = ImageTexture9;
+ComposedCubeMapTexture8.topTexture = ImageTexture9;
 
 let ImageTexture10 = browser.currentScene.createNode("ImageTexture");
 ImageTexture10.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-ComposedCubeMapTexture8.top = ImageTexture10;
+ComposedCubeMapTexture8.topTexture = ImageTexture10;
 
 let ImageTexture11 = browser.currentScene.createNode("ImageTexture");
 ImageTexture11.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]);
-ComposedCubeMapTexture8.top = ImageTexture11;
+ComposedCubeMapTexture8.topTexture = ImageTexture11;
 
 let ImageTexture12 = browser.currentScene.createNode("ImageTexture");
 ImageTexture12.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
-ComposedCubeMapTexture8.top = ImageTexture12;
+ComposedCubeMapTexture8.topTexture = ImageTexture12;
 
 let ImageTexture13 = browser.currentScene.createNode("ImageTexture");
 ImageTexture13.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
-ComposedCubeMapTexture8.top = ImageTexture13;
+ComposedCubeMapTexture8.topTexture = ImageTexture13;
 
 let ImageTexture14 = browser.currentScene.createNode("ImageTexture");
 ImageTexture14.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
-ComposedCubeMapTexture8.top = ImageTexture14;
+ComposedCubeMapTexture8.topTexture = ImageTexture14;
 
 Appearance6.texture = ComposedCubeMapTexture8;
 

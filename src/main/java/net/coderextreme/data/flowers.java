@@ -71,12 +71,12 @@ ProtoInstance ProtoInstance2 = null;
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
                   .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                    .setBack(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray())))
-                    .setBottom(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())))
-                    .setFront(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
-                    .setLeft(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray())))
-                    .setRight(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))
-                    .setTop(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString11().getArray()))))
+                    .setBackTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray())))
+                    .setBottomTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())))
+                    .setFrontTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
+                    .setLeftTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray())))
+                    .setRightTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))
+                    .setTopTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString11().getArray()))))
                   .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
                     .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
@@ -164,8 +164,8 @@ ProtoInstance ProtoInstance2 = null;
 "					d += Math.random() * 2 - 1;\n"+
 "					break;\n"+
 "				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
+"				tdelta = tdelta + 0.5;\n"+
+"				pdelta = pdelta + 0.5;\n"+
 "				if (a > 1) {\n"+
 "					a =  0.5;\n"+
 "				}\n"+

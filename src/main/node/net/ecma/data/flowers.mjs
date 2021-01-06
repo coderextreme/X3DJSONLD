@@ -118,22 +118,22 @@ var X3D0 =  new X3D({
                               texture : new SFNode(
                                 new ComposedCubeMapTexture({
                                   DEF : new SFString("texture"),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])})),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])})),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])})),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])})),
-                                  top : new SFNode(
+                                  topTexture : new SFNode(
                                     new ImageTexture({
                                       url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
                               shaders : new SFNode(
@@ -399,8 +399,8 @@ var X3D0 =  new X3D({
 "					d += Math.random() * 2 - 1;\n"+
 "					break;\n"+
 "				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
+"				tdelta = tdelta + 0.5;\n"+
+"				pdelta = pdelta + 0.5;\n"+
 "				if (a > 1) {\n"+
 "					a =  0.5;\n"+
 "				}\n"+
