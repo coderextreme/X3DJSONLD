@@ -19,6 +19,7 @@
       <meta name='description' content='a prismatic sphere'></meta>
      </head>
      <Scene>
+    	<WorldInfo title='ball.x3d'/>
         <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
         <Viewpoint description='Tour Views'/>
 	<Background

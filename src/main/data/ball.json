@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"05 January 2021"
+            "@content":"06 January 2021"
           },
           {
             "@name":"generator",
@@ -84,6 +84,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"ball.x3d"
+            }
+          },
           { "NavigationInfo":
             {
               "@type":["ANY","EXAMINE","FLY","LOOKAT"]
