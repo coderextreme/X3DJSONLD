@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -59,7 +59,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -164,7 +164,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "-back": {
+                          "-backTexture": {
                             "ImageTexture": {
                               "@DEF": "backShader",
                               "@url": [
@@ -173,7 +173,7 @@
                               ]
                             }
                           },
-                          "-bottom": {
+                          "-bottomTexture": {
                             "ImageTexture": {
                               "@DEF": "bottomShader",
                               "@url": [
@@ -182,7 +182,7 @@
                               ]
                             }
                           },
-                          "-front": {
+                          "-frontTexture": {
                             "ImageTexture": {
                               "@DEF": "frontShader",
                               "@url": [
@@ -191,7 +191,7 @@
                               ]
                             }
                           },
-                          "-left": {
+                          "-leftTexture": {
                             "ImageTexture": {
                               "@DEF": "leftShader",
                               "@url": [
@@ -200,7 +200,7 @@
                               ]
                             }
                           },
-                          "-right": {
+                          "-rightTexture": {
                             "ImageTexture": {
                               "@DEF": "rightShader",
                               "@url": [
@@ -209,7 +209,7 @@
                               ]
                             }
                           },
-                          "-top": {
+                          "-topTexture": {
                             "ImageTexture": {
                               "@DEF": "topShader",
                               "@url": [

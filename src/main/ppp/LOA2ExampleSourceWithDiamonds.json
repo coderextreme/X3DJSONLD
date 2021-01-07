@@ -1,0 +1,41 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Interchange",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "generator",
+          "@content": "view3dscene, https://castle-engine.io/view3dscene.php"
+        },
+        {
+          "@name": "source",
+          "@content": "LOA2ExampleSourceWithDiamonds.wrl"
+        },
+        {
+          "@name": "translated",
+          "@content": "07 January 2021"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {},
+        {},
+        {}
+      ]
+    }
+  }
+}

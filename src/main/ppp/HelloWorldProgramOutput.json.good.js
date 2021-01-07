@@ -370,6 +370,47 @@ X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialMod
 X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+if (typeof X3DJSON['Script']['Scene'] === 'undefined') {
+X3DJSON['Script']['Scene'] = {};
+}
+if (typeof X3DJSON['Script']['Scene']['../data/HelloWorldProgramOutput.json'] === 'undefined') {
+X3DJSON['Script']['Scene']['../data/HelloWorldProgramOutput.json'] = {};
+}
+
+X3DJSON['Script']['Scene']['../data/HelloWorldProgramOutput.json'][''] = function() {
+};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'] = {};
+}
+
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''] = new X3DJSON['Script']['Scene']['../data/HelloWorldProgramOutput.json']['']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['']['ACTION'] = {};
+X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['']['ACTION'],X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json']['']);
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''].initialize === "function") X3DJSON['Obj']['Scene']['../data/HelloWorldProgramOutput.json'][''].initialize();
     if (X3DJSON.nodeUtil('Scene','OrbitClock')) {
 X3DJSON.nodeUtil('Scene','OrbitClock').addEventListener('outputchange', function(event) {
 }, false);

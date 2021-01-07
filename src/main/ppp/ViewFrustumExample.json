@@ -1,0 +1,185 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ViewFrustumExample.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "translated",
+          "@content": "16 August 2008"
+        },
+        {
+          "@name": "modified",
+          "@content": "20 October 2019"
+        },
+        {
+          "@name": "reference",
+          "@content": "ViewFrustumPrototype.x3d"
+        },
+        {
+          "@name": "drawing",
+          "@content": "ViewFrustumComputation.png"
+        },
+        {
+          "@name": "Image",
+          "@content": "ViewFrustumOverheadView.png"
+        },
+        {
+          "@name": "Image",
+          "@content": "ViewFrustumObliqueView.png"
+        },
+        {
+          "@name": "Image",
+          "@content": "ViewpointCalculator.png"
+        },
+        {
+          "@name": "Image",
+          "@content": "ViewpointCalculatorComposed.png"
+        },
+        {
+          "@name": "subject",
+          "@content": "view culling frustum"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "07 January 2021"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "ViewFrustumExample.x3d"
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "ViewFrustum from above, looking down",
+            "@orientation": [
+              1,
+              0,
+              0,
+              -1.57
+            ],
+            "@position": [
+              0,
+              40,
+              0
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "ViewFrustum from point of view"
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "ViewFrustum behind point of view",
+            "@position": [
+              0,
+              0,
+              15
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "ViewFrustum oblique side view",
+            "@orientation": [
+              0.8005,
+              0.5926,
+              0.0898,
+              -0.3743
+            ],
+            "@position": [
+              -5,
+              5,
+              20
+            ]
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "FLY",
+              "ANY"
+            ]
+          }
+        },
+        {},
+        {
+          "#comment": "Example use"
+        },
+        {},
+        {
+          "#comment": "Visualization assists"
+        },
+        {
+          "Inline": {
+            "@DEF": "GridXZ",
+            "@url": [
+              "GridXZ_20x20Fixed.x3d"
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              5,
+              5,
+              5
+            ],
+            "-children": [
+              {
+                "Inline": {
+                  "@DEF": "CoordinateAxes",
+                  "@url": [
+                    "CoordinateAxes.x3d"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

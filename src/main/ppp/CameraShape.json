@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Interactive",
     "@version": "3.1",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.1.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -37,7 +37,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
         },
         {
           "@name": "generator",
@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",

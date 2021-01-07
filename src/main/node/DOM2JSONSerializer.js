@@ -124,9 +124,12 @@ DOM2JSONSerializer.prototype = {
 						// look at object model
 						var attrType = "SFString";
 						try {
-							attrType = fieldTypes[element.nodeName][attr];
+							if (typeof element.nodeName !== 'undefined' && element.nodeName !== 'undefined') {
+								attrType = fieldTypes[element.nodeName][attr];
+							}
 						} catch (e) {
-							console.error("Missing", attr, "in fieldTypes.js element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
+							console.log(e);
+							console.error("Missing", attr, "in fieldTypes.js element", element.nodeName); // , " = ", fieldTypes[element.nodeName], "setting to SFString");
 						}
 
 						if (attrs[a].nodeValue === 'NULL' &&
@@ -310,7 +313,7 @@ DOM2JSONSerializer.prototype = {
 		var subobject = {};
 		if (node.nodeType === 1) {
 			var attrName = this.descendAttribute(node, "containerField", element, mapToMethod);
-			subobject = this.subSerializeToString(node, fieldTypes, n, mapToMethod);
+			subobject = this.subSerializeToString(node, fieldTypes, n, n + 1, mapToMethod);
 			if (node.nodeName === "meta" ||
 				node.nodeName === "unit" ||
 				node.nodeName === "component" ||
@@ -406,8 +409,8 @@ DOM2JSONSerializer.prototype = {
 				element.nodeName === "field" ||
 				element.nodeName === "fieldValue" ||
 				element.nodeName === "connect" ||
-				element.nodeName == "Scene" ||
-				element.nodeName == "head") {
+				element.nodeName === "Scene" ||
+				element.nodeName === "head") {
 				object = fields;
 				// console.error(object);
 			} else {

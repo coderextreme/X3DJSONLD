@@ -1,10 +1,10 @@
 {
   "X3D": {
     "encoding": "UTF-8",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "@profile": "Immersive",
     "@version": "3.3",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -33,11 +33,11 @@
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -105,7 +105,7 @@
         {},
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleA_transform",
+            "@DEF": "DECLBubble_bubbleA_body_trans",
             "-children": [
               {
                 "Shape": {
@@ -247,7 +247,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toNode": "DECLBubble_bubbleA_body_trans",
                   "@toField": "set_translation"
                 }
               },
@@ -255,7 +255,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toNode": "DECLBubble_bubbleA_body_trans",
                   "@toField": "set_scale"
                 }
               },
@@ -272,7 +272,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleB_transform",
+            "@DEF": "DECLBubble_bubbleB_body_trans",
             "-children": [
               {
                 "Shape": {
@@ -414,7 +414,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toNode": "DECLBubble_bubbleB_body_trans",
                   "@toField": "set_translation"
                 }
               },
@@ -422,7 +422,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toNode": "DECLBubble_bubbleB_body_trans",
                   "@toField": "set_scale"
                 }
               },
@@ -439,7 +439,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleC_transform",
+            "@DEF": "DECLBubble_bubbleC_body_trans",
             "-children": [
               {
                 "Shape": {
@@ -581,7 +581,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toNode": "DECLBubble_bubbleC_body_trans",
                   "@toField": "set_translation"
                 }
               },
@@ -589,7 +589,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toNode": "DECLBubble_bubbleC_body_trans",
                   "@toField": "set_scale"
                 }
               },
@@ -606,7 +606,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleD_transform",
+            "@DEF": "DECLBubble_bubbleD_body_trans",
             "-children": [
               {
                 "Shape": {
@@ -748,7 +748,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toNode": "DECLBubble_bubbleD_body_trans",
                   "@toField": "set_translation"
                 }
               },
@@ -756,7 +756,7 @@
                 "ROUTE": {
                   "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toNode": "DECLBubble_bubbleD_body_trans",
                   "@toField": "set_scale"
                 }
               },
