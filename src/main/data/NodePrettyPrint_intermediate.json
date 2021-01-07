@@ -1,13 +1,8 @@
 {
   "X3D": {
-    "@profile": "Full",
-    "@version": "4.0",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "-children": [
-      {
-        "#comment": " x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true "
-      }
-    ],
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "-children": [
         {
@@ -29,26 +24,6 @@
           "@level": 3
         },
         {
-          "@name": "Shaders",
-          "@level": 1
-        },
-        {
-          "@name": "CADGeometry",
-          "@level": 2
-        },
-        {
-          "@name": "DIS",
-          "@level": 2
-        },
-        {
-          "@name": "H-Anim",
-          "@level": 1
-        },
-        {
-          "@name": "Grouping",
-          "@level": 1
-        },
-        {
           "@name": "Layering",
           "@level": 1
         }
@@ -63,11 +38,6 @@
           "@name": "LengthUnitConversion",
           "@category": "length",
           "@conversionFactor": 1
-        },
-        {
-          "@name": "ForceFromPoundsToNewtons",
-          "@category": "force",
-          "@conversionFactor": 4.4482
         }
       ],
       "meta": [
@@ -76,11 +46,7 @@
           "@name": "title"
         },
         {
-          "@content": "continued development and testing in progress",
-          "@name": "info"
-        },
-        {
-          "@content": "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)",
+          "@content": "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library",
           "@name": "description"
         },
         {
@@ -96,7 +62,7 @@
           "@name": "created"
         },
         {
-          "@content": "20 December 2020",
+          "@content": "28 June 2018",
           "@name": "modified"
         },
         {
@@ -140,7 +106,7 @@
           "@name": "reference"
         },
         {
-          "@content": "https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
+          "@content": "X3dValidator https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
           "@name": "reference"
         },
         {
@@ -150,6 +116,10 @@
         {
           "@content": "../license.html",
           "@name": "license"
+        },
+        {
+          "@content": "tested sat: name value cannot contain embedded space character",
+          "@name": "info"
         },
         {
           "@name": "translated",
@@ -167,11 +137,6 @@
     },
     "Scene": {
       "-children": [
-        {
-          "MetadataSet": {
-            "@name": "topLevelSceneMetadata"
-          }
-        },
         {
           "ViewpointGroup": {
             "@description": "Available viewpoints",
@@ -199,23 +164,6 @@
                   ]
                 }
               }
-            ]
-          }
-        },
-        {
-          "NavigationInfo": {
-            "@avatarSize": [
-              0.25,
-              1.6,
-              0.75
-            ],
-            "@transitionType": [
-              "LINEAR"
-            ],
-            "@type": [
-              "EXAMINE",
-              "FLY",
-              "ANY"
             ]
           }
         },
@@ -263,7 +211,6 @@
             "-children": [
               {
                 "Anchor": {
-                  "@DEF": "siteAnchor",
                   "@description": "select for X3D Java SAI Library (X3DJSAIL) description",
                   "@url": [
                     "../X3DJSAIL.html",
@@ -491,7 +438,7 @@
                                   "MetadataString": {
                                     "@name": "extraChildTest",
                                     "@value": [
-                                      "checks MetadataSet addValue() method"
+                                      "checks MetadataSetObject addValue() method"
                                     ]
                                   }
                                 }
@@ -533,7 +480,7 @@
                           "#comment": " alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' "
                         },
                         {
-                          "#comment": " alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
+                          "#comment": " alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"}) "
                         },
                         {
                           "#comment": " reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html "
@@ -641,13 +588,18 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
+                    "",
                     "ecmascript:",
                     "",
                     "function colorInput (eventValue) // Example source code",
                     "{",
                     "   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
                     "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
-                    "}"
+                    "}",
+                    "",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -754,7 +706,7 @@
                   }
                 },
                 {
-                  "#comment": " [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" "
+                  "#comment": " [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\" "
                 },
                 {
                   "#comment": " presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types "
@@ -790,7 +742,7 @@
             ],
             "-children": [
               {
-                "#comment": " [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" "
+                "#comment": " [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\" "
               }
             ],
             "field": [
@@ -862,7 +814,7 @@
                       "@name": "ArtDeco02Material",
                       "-children": [
                         {
-                          "#comment": " [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" "
+                          "#comment": " [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\" "
                         }
                       ],
                       "fieldValue": [
@@ -893,7 +845,7 @@
                   "@DEF": "TestAppearance3",
                   "-children": [
                     {
-                      "#comment": " ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. "
+                      "#comment": " ArtDeco02Material ProtoInstance USE goes here... "
                     }
                   ],
                   "-material": {
@@ -914,10 +866,9 @@
         },
         {
           "Inline": {
-            "@DEF": "inlineScene",
+            "@DEF": "inlineSceneDef",
             "@url": [
-              "someOtherScene.x3d",
-              "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"
+              "someOtherScene.x3d"
             ]
           }
         },
@@ -925,7 +876,7 @@
           "IMPORT": {
             "@AS": "WorldInfoDEF2",
             "@importedDEF": "WorldInfoDEF",
-            "@inlineDEF": "inlineScene"
+            "@inlineDEF": "inlineSceneDef"
           }
         },
         {
@@ -1074,6 +1025,8 @@
                     },
                     "#sourceText": [
                       "",
+                      "",
+                      "",
                       "ecmascript:",
                       "function initialize ()",
                       "{",
@@ -1089,14 +1042,17 @@
                       "    red   = newColor.r;",
                       "    green = newColor.g;",
                       "    blue  = newColor.b;",
-                      "    ",
+                      "",
                       "    // note different modulation rates for each color component, % is modulus operator",
                       "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
                       "\tif (enabled)",
                       "\t{",
                       "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
                       "\t}",
-                      "}"
+                      "}",
+                      "",
+                      "",
+                      ""
                     ]
                   }
                 }
@@ -1199,7 +1155,7 @@
                 "#comment": " SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true "
               },
               {
-                "#comment": " regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "
+                "#comment": " regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "
               }
             ]
           }
@@ -1256,7 +1212,7 @@
                     "#comment": " Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d "
                   },
                   {
-                    "#comment": " Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\" "
+                    "#comment": " Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" "
                   }
                 ]
               }
@@ -1264,16 +1220,16 @@
           }
         },
         {
-          "#comment": " Test success: Anchor.isNode()=true, siteAnchor.isNode()=true "
+          "#comment": " Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true "
         },
         {
-          "#comment": " Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false "
+          "#comment": " Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false "
         },
         {
-          "#comment": " Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false "
+          "#comment": " Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false "
         },
         {
-          "#comment": " Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true "
+          "#comment": " Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true "
         },
         {
           "#comment": " Test success: CommentsBlock.isNode()=false, testComments.isNode()=false "
@@ -1307,309 +1263,6 @@
                 "Extrusion": {
                   "@DEF": "ExampleExtrusion"
                 }
-              }
-            ]
-          }
-        },
-        {
-          "Group": {
-            "-children": [
-              {
-                "#comment": " Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes "
-              },
-              {
-                "ProtoDeclare": {
-                  "@name": "NewWorldInfo",
-                  "ProtoInterface": {
-                    "field": [
-                      {
-                        "@name": "description",
-                        "@accessType": "initializeOnly",
-                        "@type": "SFString"
-                      }
-                    ]
-                  },
-                  "ProtoBody": {
-                    "-children": [
-                      {
-                        "WorldInfo": {}
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "ProtoInstance": {
-                  "@DEF": "Proto1",
-                  "@name": "NewWorldInfo",
-                  "fieldValue": [
-                    {
-                      "@name": "description",
-                      "@value": "testing 1 2 3"
-                    }
-                  ]
-                }
-              },
-              {
-                "Group": {
-                  "@DEF": "Node2",
-                  "-children": [
-                    {
-                      "#comment": " intentionally empty "
-                    }
-                  ]
-                }
-              },
-              {
-                "ProtoInstance": {
-                  "@DEF": "Proto3",
-                  "@name": "NewWorldInfo"
-                }
-              },
-              {
-                "Transform": {
-                  "@DEF": "Node4",
-                  "-children": [
-                    {
-                      "#comment": " intentionally empty "
-                    }
-                  ]
-                }
-              },
-              {
-                "#comment": " Test satisfactorily creates MFNode children array as an ordered list with mixed content "
-              }
-            ]
-          }
-        },
-        {
-          "ProtoDeclare": {
-            "@name": "ShaderProto",
-            "ProtoBody": {
-              "-children": [
-                {
-                  "ProgramShader": {}
-                }
-              ]
-            }
-          }
-        },
-        {
-          "Shape": {
-            "-children": [
-              {
-                "Appearance": {
-                  "-children": [
-                    {
-                      "#comment": " Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes "
-                    },
-                    {
-                      "#comment": " Test satisfactorily creates MFNode shaders array as an ordered list with mixed content "
-                    },
-                    {
-                      "ProgramShader": {
-                        "@DEF": "TestShader1",
-                        "-children": [
-                          {
-                            "ShaderProgram": {
-                              "@DEF": "TestShader2"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "ComposedShader": {
-                        "@DEF": "TestShader4",
-                        "-children": [
-                          {
-                            "ShaderPart": {
-                              "@DEF": "TestShader5"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "-shaders": [
-                    {
-                      "ProtoInstance": {
-                        "@DEF": "TestShader3",
-                        "@name": "ShaderProto"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "Transform": {
-            "@DEF": "SpecialtyNodes",
-            "-children": [
-              {
-                "CADLayer": {
-                  "-children": [
-                    {
-                      "CADAssembly": {
-                        "-children": [
-                          {
-                            "CADPart": {
-                              "-children": [
-                                {
-                                  "CADFace": {}
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "EspduTransform": {
-                  "@geoSystem": [
-                    "GD",
-                    "WE"
-                  ]
-                }
-              },
-              {
-                "ReceiverPdu": {
-                  "@geoSystem": [
-                    "GD",
-                    "WE"
-                  ]
-                }
-              },
-              {
-                "SignalPdu": {
-                  "@geoSystem": [
-                    "GD",
-                    "WE"
-                  ]
-                }
-              },
-              {
-                "TransmitterPdu": {
-                  "@geoSystem": [
-                    "GD",
-                    "WE"
-                  ]
-                }
-              },
-              {
-                "DISEntityManager": {
-                  "-children": [
-                    {
-                      "DISEntityTypeMapping": {}
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "EspduTransform": {
-            "@geoSystem": [
-              "GD",
-              "WE"
-            ],
-            "-children": [
-              {
-                "WorldInfo": {}
-              }
-            ]
-          }
-        },
-        {
-          "ReceiverPdu": {
-            "@geoSystem": [
-              "GD",
-              "WE"
-            ]
-          }
-        },
-        {
-          "SignalPdu": {
-            "@geoSystem": [
-              "GD",
-              "WE"
-            ]
-          }
-        },
-        {
-          "TransmitterPdu": {
-            "@geoSystem": [
-              "GD",
-              "WE"
-            ]
-          }
-        },
-        {
-          "DISEntityManager": {
-            "-children": [
-              {
-                "DISEntityTypeMapping": {}
-              }
-            ]
-          }
-        },
-        {
-          "LoadSensor": {
-            "-children": [
-              {
-                "#comment": " Contained nodes typically must be USE references for nodes previously DEFined in the scene "
-              },
-              {
-                "#comment": " The following nodes are test cases for all X3DUrlObject nodes "
-              },
-              {
-                "Anchor": {
-                  "@USE": "siteAnchor"
-                }
-              },
-              {
-                "Inline": {
-                  "@USE": "inlineScene"
-                }
-              },
-              {
-                "DISEntityTypeMapping": {}
-              },
-              {
-                "GeoMetadata": {}
-              },
-              {
-                "AudioClip": {}
-              },
-              {
-                "ImageCubeMapTexture": {}
-              },
-              {
-                "ImageTexture3D": {}
-              },
-              {
-                "ImageTexture": {}
-              },
-              {
-                "MovieTexture": {}
-              },
-              {
-                "Script": {}
-              },
-              {
-                "PackagedShader": {}
-              },
-              {
-                "ShaderPart": {}
-              },
-              {
-                "ShaderProgram": {}
               }
             ]
           }
