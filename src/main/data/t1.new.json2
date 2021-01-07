@@ -1,0 +1,2362 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Networking",
+            "@level":2
+          }
+        ],
+        "meta": [
+          {
+            "@name":"generator",
+            "@content":"view3dscene, https://castle-engine.io/view3dscene.php"
+          },
+          {
+            "@name":"source",
+            "@content":"t1.wrl"
+          },
+          {
+            "@name":"translated",
+            "@content":"06 January 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE","FLY","WALK"],
+              "@speed":3,
+              "@avatarSize":[200,200,120]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ],
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"Arts Mapper"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ],
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"looking North",
+              "@position":[0,60,110],
+              "@orientation":[1,0,0,-0.699999988079071],
+              "@fieldOfView":0.785398125648499
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ],
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"looking East",
+              "@position":[-140,30,0],
+              "@orientation":[0,0.400000005960464,0,-1.39999997615814],
+              "@fieldOfView":0.785398125648499
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ],
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Overhead",
+              "@position":[0,150,0],
+              "@orientation":[1,0,0,-1.57000005245209],
+              "@fieldOfView":0.785398125648499
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ],
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"school",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[0.5,0,1]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@coordIndex":[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1],
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Coordinate":
+                                        {
+                                          "@point":[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"institute",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.200000002980232,
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Box":
+                                  {
+                                    "@size":[0.699999988079071,0.699999988079071,0.699999988079071]
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"disart_org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,0]
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":0.699999988079071
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"org",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"posi",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"col",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFColor",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                        "-IllegalChildNodeFieldNameNotFound":[
+                          { "Shape":
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Appearance":
+                                    "-IllegalChildNodeFieldNameNotFound":[
+                                      { "Material":
+                                        {
+                                          "@transparency":0.400000005960464,
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"col"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                }
+                              ],
+                              "-IllegalChildNodeFieldNameNotFound":[
+                                { "Sphere":
+                                  {
+                                    "@radius":1.10000002384186
+                                  }
+                                }
+                              ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"posi"
+                              }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"l",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.600000023841858,0]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"r",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0,0.300000011920929,1]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"n",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[1,0,0.200000002980232]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"i",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"pos",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"org",
+                        "fieldValue": [
+                          {
+                            "@name":"col",
+                            "@value":[0.600000023841858,0,0.600000023841858]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"posi",
+                                "@protoField":"pos"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          }
+        ]
+    }
+  }
+}
