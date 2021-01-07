@@ -6,6 +6,7 @@
   "dependencies": {
     "ajv": "^6.12.6",
     "ajv-i18n": "*",
+    "axios": "^0.21.1",
     "express": "*",
     "glob": "*",
     "java": "*",
