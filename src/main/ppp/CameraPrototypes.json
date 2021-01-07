@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.2",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.2.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.2.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -37,7 +37,7 @@
         },
         {
           "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
+          "@content": "https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
         },
         {
           "@name": "subject",
@@ -49,7 +49,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
         },
         {
           "@name": "reference",
@@ -65,7 +65,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -112,9 +112,9 @@
             "@description": "launch CameraExample scene",
             "@url": [
               "CameraExamples.x3d",
-              "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d",
+              "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d",
               "CameraExamples.wrl",
-              "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"
+              "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"
             ],
             "-children": [
               {

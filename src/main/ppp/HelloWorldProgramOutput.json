@@ -1,10 +1,10 @@
 {
   "X3D": {
     "encoding": "UTF-8",
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@profile": "Full",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "-children": [
       {
         "#comment": "x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true"
@@ -99,7 +99,7 @@
         },
         {
           "@name": "modified",
-          "@content": "4 April 2020"
+          "@content": "20 December 2020"
         },
         {
           "@name": "generator",
@@ -155,7 +155,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -249,6 +249,7 @@
             "-children": [
               {
                 "Anchor": {
+                  "@DEF": "siteAnchor",
                   "@description": "select for X3D Java SAI Library (X3DJSAIL) description",
                   "@url": [
                     "../X3DJSAIL.html",
@@ -466,7 +467,7 @@
                               "MetadataString": {
                                 "@name": "extraChildTest",
                                 "@value": [
-                                  "checks MetadataSetObject addValue() method"
+                                  "checks MetadataSet addValue() method"
                                 ]
                               }
                             }
@@ -478,7 +479,8 @@
                           "@justify": [
                             "MIDDLE",
                             "MIDDLE"
-                          ]
+                          ],
+                          "@glyphStyle": "PLAIN"
                         }
                       }
                     }
@@ -761,7 +763,7 @@
         },
         {
           "Inline": {
-            "@DEF": "inlineSceneDef",
+            "@DEF": "inlineScene",
             "@url": [
               "someOtherScene.x3d",
               "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"
@@ -772,7 +774,7 @@
           "IMPORT": {
             "@AS": "WorldInfoDEF2",
             "@importedDEF": "WorldInfoDEF",
-            "@inlineDEF": "inlineSceneDef"
+            "@inlineDEF": "inlineScene"
           }
         },
         {
@@ -970,7 +972,7 @@
                 "#comment": "SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true"
               },
               {
-                "#comment": "regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
+                "#comment": "regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
               }
             ]
           }
@@ -1027,7 +1029,7 @@
                     "#comment": "Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                   },
                   {
-                    "#comment": "Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""
+                    "#comment": "Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\""
                   }
                 ]
               }
@@ -1035,16 +1037,16 @@
           }
         },
         {
-          "#comment": "Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
+          "#comment": "Test success: Anchor.isNode()=true, siteAnchor.isNode()=true"
         },
         {
-          "#comment": "Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
+          "#comment": "Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false"
         },
         {
-          "#comment": "Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
+          "#comment": "Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false"
         },
         {
-          "#comment": "Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
+          "#comment": "Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true"
         },
         {
           "#comment": "Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
@@ -1206,11 +1208,97 @@
               },
               {
                 "DISEntityManager": {
-                  "-mapping": [
+                  "-children": [
                     {
                       "DISEntityTypeMapping": {}
                     }
                   ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "EspduTransform": {
+            "-children": [
+              {
+                "WorldInfo": {}
+              }
+            ]
+          }
+        },
+        {
+          "ReceiverPdu": {}
+        },
+        {
+          "SignalPdu": {}
+        },
+        {
+          "TransmitterPdu": {}
+        },
+        {
+          "DISEntityManager": {
+            "-children": [
+              {
+                "DISEntityTypeMapping": {}
+              }
+            ]
+          }
+        },
+        {
+          "LoadSensor": {
+            "-children": [
+              {
+                "#comment": "Contained nodes typically must be USE references for nodes previously DEFined in the scene"
+              },
+              {
+                "#comment": "The following nodes are test cases for all X3DUrlObject nodes"
+              },
+              {
+                "Anchor": {
+                  "@USE": "siteAnchor"
+                }
+              },
+              {
+                "Inline": {
+                  "@USE": "inlineScene"
+                }
+              },
+              {
+                "DISEntityTypeMapping": {}
+              },
+              {
+                "GeoMetadata": {}
+              },
+              {
+                "AudioClip": {}
+              },
+              {
+                "ImageCubeMapTexture": {}
+              },
+              {
+                "ImageTexture3D": {}
+              },
+              {
+                "ImageTexture": {}
+              },
+              {
+                "MovieTexture": {}
+              },
+              {
+                "Script": {}
+              },
+              {
+                "PackagedShader": {}
+              },
+              {
+                "ShaderPart": {
+                  "@type": "VERTEX"
+                }
+              },
+              {
+                "ShaderProgram": {
+                  "@type": "VERTEX"
                 }
               }
             ]

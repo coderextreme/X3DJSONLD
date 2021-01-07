@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -63,7 +63,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -156,7 +156,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "-back": {
+                          "-backTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
@@ -164,7 +164,7 @@
                               ]
                             }
                           },
-                          "-bottom": {
+                          "-bottomTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
@@ -172,7 +172,7 @@
                               ]
                             }
                           },
-                          "-front": {
+                          "-frontTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
@@ -180,7 +180,7 @@
                               ]
                             }
                           },
-                          "-left": {
+                          "-leftTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
@@ -188,7 +188,7 @@
                               ]
                             }
                           },
-                          "-right": {
+                          "-rightTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
@@ -196,7 +196,7 @@
                               ]
                             }
                           },
-                          "-top": {
+                          "-topTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_top.png",

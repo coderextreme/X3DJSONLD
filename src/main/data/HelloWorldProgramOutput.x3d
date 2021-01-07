@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <!-- x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true -->
   <head>
     <!-- comment #1 -->
@@ -23,7 +23,7 @@
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='9 June 2020' name='modified'/>
+    <meta content='20 December 2020' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -39,6 +39,7 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
+    <MetadataSet name='topLevelSceneMetadata'/>
     <ViewpointGroup description='Available viewpoints'>
       <Viewpoint DEF='DefaultView' description='Hello X3DJSAIL'/>
       <Viewpoint DEF='TopDownView' description='top-down view from above' orientation='1 0 0 -1.570796' position='0 100 0'/>
@@ -50,7 +51,7 @@
     <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
     <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
-      <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
+      <Anchor DEF='siteAnchor' description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
         <Shape DEF='BoxShape'>
           <Appearance>
             <Material DEF='GreenMaterial' diffuseColor='0 1 1' emissiveColor='0.8 0 0' transparency='0.1'/>
@@ -180,8 +181,8 @@ function colorInput (eventValue) // Example source code
       </Appearance>
       <Cylinder height='0.001' radius='0.001'/>
     </Shape>
-    <Inline DEF='inlineSceneDef' url='"someOtherScene.x3d" "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"'/>
-    <IMPORT AS='WorldInfoDEF2' importedDEF='WorldInfoDEF' inlineDEF='inlineSceneDef'/>
+    <Inline DEF='inlineScene' url='"someOtherScene.x3d" "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"'/>
+    <IMPORT AS='WorldInfoDEF2' importedDEF='WorldInfoDEF' inlineDEF='inlineScene'/>
     <EXPORT AS='WorldInfoDEF3' localDEF='WorldInfoDEF'/>
     <ProtoDeclare name='MaterialModulator' appinfo='mimic a Material node and modulate fields as an animation effect' documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html'>
       <ProtoInterface>
@@ -280,7 +281,7 @@ function clockTrigger (timeValue)
       <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
       <MovieTexture containerField='source' description='mpgsys.mpg from ConformanceNist suite' url='"mpgsys.mpg" "https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"'>
         <!-- Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
-        <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList" -->
+        <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "children" -->
       </MovieTexture>
     </Sound>
     <!-- Test success: Anchor.isNode()=true, siteAnchor.isNode()=true -->
@@ -353,5 +354,31 @@ function clockTrigger (timeValue)
         <DISEntityTypeMapping/>
       </DISEntityManager>
     </Transform>
+    <EspduTransform geoSystem='"GD" "WE"'>
+      <WorldInfo/>
+    </EspduTransform>
+    <ReceiverPdu geoSystem='"GD" "WE"'/>
+    <SignalPdu geoSystem='"GD" "WE"'/>
+    <TransmitterPdu geoSystem='"GD" "WE"'/>
+    <DISEntityManager>
+      <DISEntityTypeMapping/>
+    </DISEntityManager>
+    <LoadSensor>
+      <!-- Contained nodes typically must be USE references for nodes previously DEFined in the scene -->
+      <!-- The following nodes are test cases for all X3DUrlObject nodes -->
+      <Anchor USE='siteAnchor'/>
+      <Inline USE='inlineScene'/>
+      <DISEntityTypeMapping/>
+      <GeoMetadata/>
+      <AudioClip containerField='children'/>
+      <ImageCubeMapTexture containerField='children'/>
+      <ImageTexture3D containerField='children'/>
+      <ImageTexture containerField='children'/>
+      <MovieTexture containerField='children'/>
+      <Script/>
+      <PackagedShader containerField='children'/>
+      <ShaderPart containerField='children'/>
+      <ShaderProgram containerField='children'/>
+    </LoadSensor>
   </Scene>
 </X3D>

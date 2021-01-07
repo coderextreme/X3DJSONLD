@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -55,7 +55,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -143,7 +143,7 @@
                       "-texture": {
                         "ComposedCubeMapTexture": {
                           "@DEF": "texture",
-                          "-back": {
+                          "-backTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bBK.png",
@@ -151,7 +151,7 @@
                               ]
                             }
                           },
-                          "-bottom": {
+                          "-bottomTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bBT.png",
@@ -159,7 +159,7 @@
                               ]
                             }
                           },
-                          "-front": {
+                          "-frontTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bFR.png",
@@ -167,7 +167,7 @@
                               ]
                             }
                           },
-                          "-left": {
+                          "-leftTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bLF.png",
@@ -175,7 +175,7 @@
                               ]
                             }
                           },
-                          "-right": {
+                          "-rightTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bRT.png",
@@ -183,7 +183,7 @@
                               ]
                             }
                           },
-                          "-top": {
+                          "-topTexture": {
                             "ImageTexture": {
                               "@url": [
                                 "resources/images/bTP.png",

@@ -2,7 +2,7 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"4.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -18,7 +18,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
           },
           {
             "@name":"description",
@@ -42,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 January 2021"
+            "@content":"07 January 2021"
           },
           {
             "@name":"generator",

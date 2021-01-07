@@ -286,7 +286,7 @@ X3DJSON.nodeUtil('Scene','Keyframe_r_knee').addEventListener('outputchange', fun
 X3DJSON.nodeUtil('Scene','Keyframe_l_talocrural').addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Keyframe_l_talocrural')) {
-X3DJSON.nodeUtil('Scene','Keyframe_l_talocrural').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil('Scene','Keyframe_r_metatarsophalangeal')) {
+X3DJSON.nodeUtil('Scene','Keyframe_r_metatarsophalangeal').addEventListener('outputchange', function(event) {
 }, false);
 }

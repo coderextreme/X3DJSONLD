@@ -364,8 +364,8 @@ ecmascript:
 					this.proxy.d += Math.random() * 2 - 1;
 					break;
 				}
-				this.proxy.tdelta += 0.5;
-				this.proxy.pdelta += 0.5;
+				this.proxy.tdelta = this.proxy.tdelta + 0.5;
+				this.proxy.pdelta = this.proxy.pdelta + 0.5;
 				if (this.proxy.a > 1) {
 					this.proxy.a =  0.5;
 				}
@@ -644,8 +644,8 @@ ecmascript:
 					this.proxy.d += Math.random() * 2 - 1;
 					break;
 				}
-				this.proxy.tdelta += 0.5;
-				this.proxy.pdelta += 0.5;
+				this.proxy.tdelta = this.proxy.tdelta + 0.5;
+				this.proxy.pdelta = this.proxy.pdelta + 0.5;
 				if (this.proxy.a > 1) {
 					this.proxy.a =  0.5;
 				}
@@ -924,8 +924,8 @@ ecmascript:
 					this.proxy.d += Math.random() * 2 - 1;
 					break;
 				}
-				this.proxy.tdelta += 0.5;
-				this.proxy.pdelta += 0.5;
+				this.proxy.tdelta = this.proxy.tdelta + 0.5;
+				this.proxy.pdelta = this.proxy.pdelta + 0.5;
 				if (this.proxy.a > 1) {
 					this.proxy.a =  0.5;
 				}

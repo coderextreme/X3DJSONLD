@@ -3,8 +3,8 @@
     "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 June 2020"
+          "@content": "07 January 2021"
         },
         {
           "@name": "generator",
@@ -107,7 +107,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE2000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -115,7 +115,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -123,7 +123,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -131,7 +131,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -139,7 +139,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -147,7 +147,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
@@ -514,7 +514,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE4000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -522,7 +522,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -530,7 +530,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -538,7 +538,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -546,7 +546,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -554,7 +554,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
@@ -921,7 +921,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE6000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -929,7 +929,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -937,7 +937,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -945,7 +945,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -953,7 +953,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -961,7 +961,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
@@ -1328,7 +1328,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE8000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -1336,7 +1336,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -1344,7 +1344,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -1352,7 +1352,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -1360,7 +1360,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -1368,7 +1368,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
@@ -1735,7 +1735,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE10000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -1743,7 +1743,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -1751,7 +1751,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -1759,7 +1759,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -1767,7 +1767,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -1775,7 +1775,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
@@ -2142,7 +2142,7 @@
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
                                       "@DEF": "DECLFlowerProto_INSTANCE12000_texture",
-                                      "-back": {
+                                      "-backTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -2150,7 +2150,7 @@
                                           ]
                                         }
                                       },
-                                      "-bottom": {
+                                      "-bottomTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -2158,7 +2158,7 @@
                                           ]
                                         }
                                       },
-                                      "-front": {
+                                      "-frontTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -2166,7 +2166,7 @@
                                           ]
                                         }
                                       },
-                                      "-left": {
+                                      "-leftTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -2174,7 +2174,7 @@
                                           ]
                                         }
                                       },
-                                      "-right": {
+                                      "-rightTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -2182,7 +2182,7 @@
                                           ]
                                         }
                                       },
-                                      "-top": {
+                                      "-topTexture": {
                                         "ImageTexture": {
                                           "@url": [
                                             "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
