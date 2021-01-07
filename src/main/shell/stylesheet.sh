@@ -8,10 +8,12 @@ export X3DJSONLD=c:/Users/$USERNAME/X3DJSONLD
 # for RunSaxon
 export CLASS=net.coderextreme.RunSaxon
 export CLASSPATH=".;${X3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java"
+export OVERWRITE=---overwrite
 
+echo 'ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java ${CLASS} ${OVERWRITE} --${STYLESHEET} -json'
 echo "Install ${CLASS}, or if already installed, hit return after restarting"
 read
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java ${CLASS} --${STYLESHEET} -json
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java ${CLASS} ${OVERWRITE} --${STYLESHEET} -json
 echo "${NPM} install -g ${XSLT}"
 ${NPM} install -g ${XSLT} || echo "Install ${NPM}!"
 echo "Work in progress. Look at ${RESULTS} for results"
