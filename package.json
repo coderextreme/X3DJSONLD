@@ -11,7 +11,7 @@
     "glob": "*",
     "java": "*",
     "jsonlint": "^1.6.3",
-    "lodash": "4.17.14",
+    "lodash": "4.17.19",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
