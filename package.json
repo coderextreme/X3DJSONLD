@@ -6,26 +6,26 @@
   "dependencies": {
     "ajv": "^6.12.6",
     "ajv-i18n": "*",
-    "axios": "^0.21.1",
+    "axios": ">=0.21.1",
     "express": "*",
     "glob": "*",
     "java": "*",
     "jsonlint": "^1.6.3",
-    "lodash": "4.17.19",
+    "lodash": ">=4.17.19",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
     "xml2js": "*",
     "xmldom": "*",
     "xmlhttprequest": "*",
-    "xslt3": "^2.0.2"
+    "xslt3": "*"
   },
   "devDependencies": {
     "jsdoc": "*"
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "sh build.sh",
+    "postinstall": "REM sh build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }
