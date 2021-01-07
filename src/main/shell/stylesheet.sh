@@ -1,7 +1,24 @@
+#!/bin/bash
+export PROCESSORS=${PROCESSORS-8}
+export XSLT=xslt3
+export RESULTS=stylesheetout.txt
+export NPM=npm
+export STYLESHEET=../lib/stylesheets/X3dToJson.xslt
+export X3DJSONLD=c:/Users/$USERNAME/X3DJSONLD
+export CLASS=net.coderextreme.RunSaxon
+# for RunSaxon
+export CLASSPATH=".;${X3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java"
+
+echo "Install ${CLASS}"
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java ${CLASS} --${STYLESHEET} -json
+echo "${NPM} install -g ${XSLT}"
+${NPM} install -g ${XSLT} || echo "Install ${NPM}!"
+echo "Work in progress. Look at ${RESULTS} for results"
 for i in `ls -d "$@"| grep -v "\.new"`
 do
-echo ../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.json2
-../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.json2
-echo diff -w `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`json2
-diff -w `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`json2
-done
+echo ${XSLT} -xsl:${STYLESHEET} -s:$i -o:`dirname $i`/`basename $i .x3d`.new.json2
+${XSLT} -xsl:${STYLESHEET} -s:$i -o:`dirname $i`/`basename $i .x3d`.new.json2 2>&1
+echo diff -w `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
+diff -w `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
+done | tee ${RESULTS}
+echo "Finished. Look at ${RESULTS} for results"
