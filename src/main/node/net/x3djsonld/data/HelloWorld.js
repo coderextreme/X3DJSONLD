@@ -10,7 +10,7 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Simple X3D scene example: Hello World!. </p>
+ * <p> Simple X3D model example: Hello World!. </p>
  <p> Related links: <a href="../../../Chapter01TechnicalOverview/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Chapter01TechnicalOverview/HelloWorldIndex.html" target="_top">HelloWorld catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -24,7 +24,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Simple X3D scene example: Hello World! </td>
+			<td> Simple X3D model example: Hello World! </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 14 April 2017 </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -64,7 +64,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3D.org" target="_blank">https://www.web3D.org</a> </td>
+			<td> <a href="https://www.web3d.org" target="_blank">https://www.web3d.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -76,7 +76,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes</a> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -141,10 +141,11 @@ NeedClassName.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
+    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorld.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("Simple X3D scene example: Hello World!"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Simple X3D model example: Hello World!"))
     .addMeta((new autoclass.meta()).setName("created").setContent("30 October 2000"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("14 April 2017"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("HelloWorld.tall.png"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
@@ -152,14 +153,13 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.HelloWorldExample.net"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3D.org"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
     .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta((new autoclass.meta()).setName("reference").setContent("HelloWorld.wrl"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HelloWorld.x3dv"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HelloWorld.x3db"))
@@ -167,7 +167,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("HelloWorld.json")))
   .setScene((new autoclass.Scene())
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
-    .addChild((new autoclass.WorldInfo()).setTitle("Hello world!"))
+    .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"Example scene to illustrate a simple X3D model\"")).setTitle("Hello World!"))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Viewpoint("ViewUpClose")).setDescription("Hello world!").setCenterOfRotation(0.0,-1.0,0.0).setPosition(0.0,-1.0,7.0))
       .addChild((new autoclass.Transform()).setRotation(0.0,1.0,0.0,3.0)

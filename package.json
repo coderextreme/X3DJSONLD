@@ -15,7 +15,7 @@
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
-    "xml2js": "*",
+    "xml2js": "^0.4.23",
     "xmldom": "*",
     "xmlhttprequest": "*",
     "xslt3": "*"
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "sh build.sh",
+    "postinstall": "bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }

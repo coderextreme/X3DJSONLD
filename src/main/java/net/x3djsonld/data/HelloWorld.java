@@ -11,7 +11,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Simple X3D scene example: Hello World!. </p>
+ * <p> Simple X3D model example: Hello World!. </p>
  <p> Related links: <a href="../../../Chapter01TechnicalOverview/HelloWorld.java">HelloWorld.java</a> source, <a href="../../../Chapter01TechnicalOverview/HelloWorldIndex.html" target="_top">HelloWorld catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Simple X3D scene example: Hello World! </td>
+			<td> Simple X3D model example: Hello World! </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
@@ -34,7 +34,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 14 April 2017 </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -66,7 +66,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3D.org" target="_blank">https://www.web3D.org</a> </td>
+			<td> <a href="https://www.web3d.org" target="_blank">https://www.web3d.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -78,7 +78,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes</a> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -141,10 +141,11 @@ public class HelloWorld
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
+    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HelloWorld.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple X3D scene example: Hello World!"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple X3D model example: Hello World!"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("30 October 2000"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 October 2019"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HelloWorld.tall.png"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikipedia.org/wiki/Hello_world"))
@@ -152,14 +153,13 @@ public class HelloWorld
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.HelloWorldExample.net"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3D.org"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.wrl"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.x3dv"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.x3db"))
@@ -167,7 +167,7 @@ public class HelloWorld
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.json")))
   .setScene(new Scene()
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
-    .addChild(new WorldInfo().setTitle("Hello world!"))
+    .addChild(new WorldInfo().setInfo(new String[] {"Example scene to illustrate a simple X3D model"}).setTitle("Hello World!"))
     .addChild(new Group()
       .addChild(new Viewpoint("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0,-1.0,0.0).setPosition(0.0,-1.0,7.0))
       .addChild(new Transform().setRotation(0.0,1.0,0.0,3.0)

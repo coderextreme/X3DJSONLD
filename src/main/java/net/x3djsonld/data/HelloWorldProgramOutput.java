@@ -2,10 +2,12 @@ package net.x3djsonld.data;
 
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
+import org.web3d.x3d.jsail.CubeMapTexturing.*;
 import org.web3d.x3d.jsail.DIS.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
+import org.web3d.x3d.jsail.Geospatial.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Layering.*;
@@ -19,6 +21,7 @@ import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Texturing.*;
+import org.web3d.x3d.jsail.Texturing3D.*;
 import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc annotations follow, see below for source.
@@ -58,7 +61,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 9 June 2020 </td>
+			<td> 20 December 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -139,7 +142,7 @@ public class HelloWorldProgramOutput
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
   .addComments(" x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true ")
   .setHead(new head()
     .addComments(" comment #1 ")
@@ -162,7 +165,7 @@ public class HelloWorldProgramOutput
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("HelloWorldProgramOutput.java"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("6 September 2016"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("9 June 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 December 2020"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans http://www.netbeans.org"))
@@ -177,6 +180,7 @@ public class HelloWorldProgramOutput
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
+    .addMetadata(new MetadataSet().setName("topLevelSceneMetadata"))
     .addChild(new ViewpointGroup().setDescription("Available viewpoints")
       .addChild(new Viewpoint("DefaultView").setDescription("Hello X3DJSAIL"))
       .addChild(new Viewpoint("TopDownView").setDescription("top-down view from above").setOrientation(1.0,0.0,0.0,-1.570796).setPosition(0.0,100.0,0.0)))
@@ -187,7 +191,7 @@ public class HelloWorldProgramOutput
     .addMetadata(new MetadataString("scene.addChildMetadata").setName("test").setValue(new String[] {"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"}))
     .addLayerSet(new LayerSet("scene.addChildLayerSetTest"))
     .addChild(new Transform("LogoGeometryTransform").setTranslation(0.0,1.5,0.0)
-      .addChild(new Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new String[] {"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"})
+      .addChild(new Anchor("siteAnchor").setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new String[] {"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"})
         .addChild(new Shape("BoxShape")
           .setAppearance(new Appearance()
             .setMaterial(new Material("GreenMaterial").setDiffuseColor(0.0,1.0,1.0).setEmissiveColor(0.8,0.0,0.0).setTransparency(0.1))
@@ -213,7 +217,7 @@ public class HelloWorldProgramOutput
           .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
             .setMetadata(new MetadataString().setName("quotesTestC").setValue(new String[] {"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""}))
             .setMetadata(new MetadataString().setName("extraChildTest").setValue(new String[] {"checks MetadataSet addValue() method"})))
-          .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))
+          .setFontStyle(new FontStyle().setGlyphStyle("PLAIN").setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))
       .addChild(new Collision()
         .addComments(" test containerField='proxy' ")
         .setProxy(new Shape("ProxyShape")
@@ -285,8 +289,8 @@ public class HelloWorldProgramOutput
         .addComments(" ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. ")
         .setMaterial(new ProtoInstance().setUSE("ArtDeco02MaterialDEF").setContainerField("material")))
       .setGeometry(new Cylinder().setHeight(0.001).setRadius(0.001)))
-    .addChild(new Inline("inlineSceneDef").setUrl(new String[] {"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}))
-    .addChild(new IMPORT().setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef").setAS("WorldInfoDEF2"))
+    .addChild(new Inline("inlineScene").setUrl(new String[] {"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}))
+    .addChild(new IMPORT().setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene").setAS("WorldInfoDEF2"))
     .addChild(new EXPORT().setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
     .addChild(new ProtoDeclare("MaterialModulator").setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
       .setProtoInterface(new ProtoInterface()
@@ -371,7 +375,7 @@ public class HelloWorldProgramOutput
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
       .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new String[] {"mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"})
         .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
-        .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" ")))
+        .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\" ")))
     .addComments(" Test success: Anchor.isNode()=true, siteAnchor.isNode()=true ")
     .addComments(" Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false ")
     .addComments(" Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false ")
@@ -421,7 +425,30 @@ public class HelloWorldProgramOutput
       .addChild(new SignalPdu())
       .addChild(new TransmitterPdu().setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
       .addChild(new DISEntityManager()
-        .addChild(new DISEntityTypeMapping()))));
+        .addChild(new DISEntityTypeMapping())))
+    .addChild(new EspduTransform()
+      .addChild(new WorldInfo()))
+    .addChild(new ReceiverPdu().setReceivedPower(0.0))
+    .addChild(new SignalPdu())
+    .addChild(new TransmitterPdu().setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
+    .addChild(new DISEntityManager()
+      .addChild(new DISEntityTypeMapping()))
+    .addChild(new LoadSensor()
+      .addComments(" Contained nodes typically must be USE references for nodes previously DEFined in the scene ")
+      .addComments(" The following nodes are test cases for all X3DUrlObject nodes ")
+      .addChild(new Anchor().setUSE("siteAnchor"))
+      .addChild(new Inline().setUSE("inlineScene"))
+      .addChild(new DISEntityTypeMapping())
+      .addChild(new GeoMetadata())
+      .addChild(new AudioClip())
+      .addChild(new ImageCubeMapTexture())
+      .addChild(new ImageTexture3D())
+      .addChild(new ImageTexture())
+      .addChild(new MovieTexture())
+      .addChild(new Script())
+      .addChild(new PackagedShader())
+      .addChild(new ShaderPart())
+      .addChild(new ShaderProgram())));
     }
 	// end of initialize() method
 

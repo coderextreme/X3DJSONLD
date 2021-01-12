@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: KoreanCharacter07No.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacter07No&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function KoreanCharacter07No
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function KoreanCharacter07No
     this.initialize();
     return this;
   }
-KoreanCharacter07No.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -680,4 +680,4 @@ KoreanCharacter07No.prototype = {
 	.append(new MFVec2fObject(Java.to([0.8623,0.8054,0.8634,0.7738,0.8488,0.7239,0.8675,0.7307,0.8668,0.7471,0.8479,0.7428,0.8287,0.6872,0.8324,0.6989,0.8031,0.6976,0.7960,0.6869], Java.type("float[]"))))
 	.append(new MFVec2fObject(Java.to([0.9068,0.8159,0.8772,0.7470,0.8618,0.8384,0.8488,0.8381,0.8518,0.8048,0.8330,0.8723,0.8411,0.8560,0.8496,0.8590,0.8101,0.8874,0.8354,0.8862], Java.type("float[]"))))
 	.append(new MFVec2fObject(Java.to([0.8788,0.8420,0.8586,0.8649,0.8337,0.7451,0.8338,0.7706,0.8192,0.7714,0.8160,0.7486,0.8799,0.7203,0.8535,0.7074,0.8375,0.8047,0.8220,0.8046], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([0.8119,0.7284,0.8325,0.7256,0.8352,0.8351,0.8203,0.8322,0.8369,0.8548,0.8127,0.8657,0.816
+	.append(new MFVec2fObject(Java.to([0.8119,0.7284,0.8325,0.7256,0.8352,0.8351,0.8203,0.8322,0.8369,0.8548,0.8127,0.8657,0.8169,0.8500,0.9600,0.8269,0

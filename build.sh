@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-export PATH=${PATH}:~/apache-maven-3.6.3/bin
+export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
@@ -12,9 +12,9 @@ cp /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-* src/specific
 
 # build X3DJSAIL
 pushd /c/x3d-code/www.web3d.org/x3d/stylesheets
-~/apache-ant-1.10.9/bin/ant create.X3DJSAIL
+ant create.X3DJSAIL
 cp java/jars/*.jar ~/pythonSAI
-mvn install:install-file -Dfile=C:/Users/coderextreme/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSAIL -Dversion=4.0-SNAPSHOT -Dpackaging=jar
+mvn install:install-file -Dfile=/home/coderextreme/pythonSAI/X3DJSAIL.4.0.full.jar -DgroupId=org.web3d.x3d -DartifactId=X3DJSAIL -Dversion=4.0-SNAPSHOT -Dpackaging=jar
 popd
 
 # copy stylesheets
@@ -22,12 +22,12 @@ popd
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
 # install python packages
-pip install bs4
-pip install lxml
+pip3 install bs4
+pip3 install lxml
 
 # generate schemas
 pushd src/main/shell
-sh generateSchema.sh
+bash generateSchema.sh
 popd
 
 # generate helpful JavaScript classes
@@ -45,12 +45,12 @@ cp X3Dautoclass.js net/x3djsonld/data
 popd
 
 # maven build
-mvn clean install && sh FixNeedClassName.sh && mvn install
+mvn clean install && bash FixNeedClassName.sh && mvn install
 
 echo Press Return to Continue
 read
 
 # build */net/coderextreme/data/*
 pushd src/main/shell
-sh local.sh
+bash local.sh
 popd

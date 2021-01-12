@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 export X3DJSONLD=../X3DJSONLD

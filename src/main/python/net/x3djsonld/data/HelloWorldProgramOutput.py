@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Full',version='4.0',
   #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true 
   head=head(
     children=[
@@ -46,7 +46,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='9 June 2020',name='modified'),
+    meta(content='20 December 2020',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans http://www.netbeans.org',name='generator'),
@@ -62,6 +62,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
+    MetadataSet(name='topLevelSceneMetadata'),
     ViewpointGroup(description='Available viewpoints',
       children=[
       Viewpoint(DEF='DefaultView',description='Hello X3DJSAIL'),
@@ -74,7 +75,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     LayerSet(DEF='scene.addChildLayerSetTest'),
     Transform(DEF='LogoGeometryTransform',translation=(0,1.5,0),
       children=[
-      Anchor(description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
+      Anchor(DEF='siteAnchor',description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
         children=[
         Shape(DEF='BoxShape',
           appearance=Appearance(
@@ -103,7 +104,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             value=[
             MetadataString(name='quotesTestC',value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
             MetadataString(name='extraChildTest',value=["checks MetadataSet addValue() method"])]),
-          fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"]))),
+          fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],glyphStyle=PLAIN))),
       Collision(
         #  test containerField='proxy' 
         proxy=Shape(DEF='ProxyShape',
@@ -177,8 +178,8 @@ newModel=X3D(profile='Immersive',version='3.3',
         #  ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. 
         material=ProtoInstance(USE='ArtDeco02MaterialDEF')),
       geometry=Cylinder(height=0.001,radius=0.001)),
-    Inline(DEF='inlineSceneDef',url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
-    IMPORT(AS='WorldInfoDEF2',importedDEF='WorldInfoDEF',inlineDEF='inlineSceneDef'),
+    Inline(DEF='inlineScene',url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
+    IMPORT(AS='WorldInfoDEF2',importedDEF='WorldInfoDEF',inlineDEF='inlineScene'),
     EXPORT(AS='WorldInfoDEF3',localDEF='WorldInfoDEF'),
     ProtoDeclare(name='MaterialModulator',appinfo='mimic a Material node and modulate fields as an animation effect',documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html',
       ProtoInterface=ProtoInterface(
@@ -248,7 +249,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
       source=MovieTexture(description='mpgsys.mpg from ConformanceNist suite',url=["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
         #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
-        #  Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList" 
+        #  Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "children" 
         )),
     #  Test success: Anchor.isNode()=true, siteAnchor.isNode()=true 
     #  Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false 
@@ -311,8 +312,34 @@ newModel=X3D(profile='Immersive',version='3.3',
       SignalPdu(),
       TransmitterPdu(relativeAntennaLocation=(0,0,0),transmitFrequencyBandwidth=0.0),
       DISEntityManager(
-        mapping=[
-        DISEntityTypeMapping(),])])])
+        children=[
+        DISEntityTypeMapping(),])]),
+    EspduTransform(
+      children=[
+      WorldInfo(),]),
+    ReceiverPdu(receivedPower=0.0),
+    SignalPdu(),
+    TransmitterPdu(relativeAntennaLocation=(0,0,0),transmitFrequencyBandwidth=0.0),
+    DISEntityManager(
+      children=[
+      DISEntityTypeMapping(),]),
+    LoadSensor(
+      #  Contained nodes typically must be USE references for nodes previously DEFined in the scene 
+      #  The following nodes are test cases for all X3DUrlObject nodes 
+      children=[
+      Anchor(USE='siteAnchor'),
+      Inline(USE='inlineScene'),
+      DISEntityTypeMapping(),
+      GeoMetadata(),
+      AudioClip(),
+      ImageCubeMapTexture(),
+      ImageTexture3D(),
+      ImageTexture(),
+      MovieTexture(),
+      Script(),
+      PackagedShader(),
+      ShaderPart(),
+      ShaderProgram(),])])
 ) # X3D model complete
 
 ###############################################

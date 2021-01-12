@@ -1,574 +1,488 @@
-{
-  "X3D": {
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-      "meta": [
-        {
-          "@content": "ViewFrustumPrototype.x3d",
-          "@name": "title"
-        },
-        {
-          "@content": "Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype.",
-          "@name": "description"
-        },
-        {
-          "@content": "Don Brutzman",
-          "@name": "creator"
-        },
-        {
-          "@content": "16 August 2008",
-          "@name": "translated"
-        },
-        {
-          "@content": "20 October 2019",
-          "@name": "modified"
-        },
-        {
-          "@content": "ViewFrustumExample.x3d",
-          "@name": "reference"
-        },
-        {
-          "@content": "ViewFrustumComputation.png",
-          "@name": "drawing"
-        },
-        {
-          "@content": "ViewFrustumOverheadView.png",
-          "@name": "Image"
-        },
-        {
-          "@content": "ViewFrustumObliqueView.png",
-          "@name": "Image"
-        },
-        {
-          "@content": "view culling frustum",
-          "@name": "subject"
-        },
-        {
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "7 January 2021"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-        }
-      ]
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ViewFrustumPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"translated",
+            "@content":"16 August 2008"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 October 2019"
+          },
+          {
+            "@name":"reference",
+            "@content":"ViewFrustumExample.x3d"
+          },
+          {
+            "@name":"drawing",
+            "@content":"ViewFrustumComputation.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"ViewFrustumOverheadView.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"ViewFrustumObliqueView.png"
+          },
+          {
+            "@name":"subject",
+            "@content":"view culling frustum"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"11 January 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
     },
     "Scene": {
-      "-children": [
-        {
-          "WorldInfo": {
-            "@title": "ViewFrustumPrototype.x3d"
-          }
-        },
-        {
-          "ProtoDeclare": {
-            "@appinfo": "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes",
-            "@name": "ViewFrustum",
-            "ProtoInterface": {
-              "field": [
-                {
-                  "@accessType": "initializeOnly",
-                  "@appinfo": "required: insert Viewpoint DEF or USE node for view of interest",
-                  "@name": "ViewpointNode",
-                  "@type": "SFNode",
-                  "-children": [
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"ViewFrustumPrototype.x3d"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ViewFrustum",
+              "@appinfo":"Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes",
+              "ProtoInterface": {
+                  "field": [
                     {
-                      "#comment": " NULL node, ProtoInstance must provide "
-                    }
-                  ]
-                },
-                {
-                  "@accessType": "initializeOnly",
-                  "@appinfo": "required: insert NavigationInfo DEF or USE node of interest",
-                  "@name": "NavigationInfoNode",
-                  "@type": "SFNode",
-                  "-children": [
-                    {
-                      "#comment": " NULL node, ProtoInstance must provide "
-                    }
-                  ]
-                },
-                {
-                  "@accessType": "inputOutput",
-                  "@appinfo": "whether or not frustum geometry is rendered",
-                  "@name": "visible",
-                  "@type": "SFBool",
-                  "@value": true
-                },
-                {
-                  "@accessType": "inputOutput",
-                  "@appinfo": "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9",
-                  "@name": "lineColor",
-                  "@type": "SFColor",
-                  "@value": [
-                    0.9,
-                    0.9,
-                    0.9
-                  ]
-                },
-                {
-                  "@accessType": "inputOutput",
-                  "@appinfo": "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8",
-                  "@name": "frustumColor",
-                  "@type": "SFColor",
-                  "@value": [
-                    0.8,
-                    0.8,
-                    0.8
-                  ]
-                },
-                {
-                  "@accessType": "inputOutput",
-                  "@appinfo": "transparency of ViewFrustum hull geometry, default value 0.5",
-                  "@name": "transparency",
-                  "@type": "SFFloat",
-                  "@value": 0.5
-                },
-                {
-                  "@accessType": "inputOutput",
-                  "@appinfo": "assumed ratio height/width, default value 0.75",
-                  "@name": "aspectRatio",
-                  "@type": "SFFloat",
-                  "@value": 0.75
-                },
-                {
-                  "@accessType": "initializeOnly",
-                  "@appinfo": "debug support, default false",
-                  "@name": "trace",
-                  "@type": "SFBool",
-                  "@value": false
-                }
-              ]
-            },
-            "ProtoBody": {
-              "-children": [
-                {
-                  "Switch": {
-                    "@DEF": "VisibilitySwitch",
-                    "@whichChoice": -1,
-                    "-children": [
-                      {
-                        "Transform": {
-                          "@DEF": "PositionTransform",
-                          "@rotation": [
-                            0,
-                            1,
-                            0,
-                            3.14159
-                          ],
-                          "-children": [
-                            {
-                              "Transform": {
-                                "@DEF": "OrientationTransform",
-                                "-children": [
-                                  {
-                                    "Shape": {
-                                      "-children": [
-                                        {
-                                          "IndexedLineSet": {
-                                            "@DEF": "FrustumLines",
-                                            "@coordIndex": [
-                                              0,
-                                              1,
-                                              2,
-                                              3,
-                                              0,
-                                              -1,
-                                              4,
-                                              5,
-                                              6,
-                                              7,
-                                              4,
-                                              -1,
-                                              0,
-                                              4,
-                                              -1,
-                                              1,
-                                              5,
-                                              -1,
-                                              2,
-                                              6,
-                                              -1,
-                                              3,
-                                              7,
-                                              -1
-                                            ],
-                                            "-children": [
-                                              {
-                                                "Coordinate": {
-                                                  "@DEF": "FrustumCoordinate",
-                                                  "@point": [
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0,
-                                                    0
-                                                  ]
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        {
-                                          "Appearance": {
-                                            "-children": [
-                                              {
-                                                "Material": {
-                                                  "IS": {
-                                                    "connect": [
-                                                      {
-                                                        "@nodeField": "emissiveColor",
-                                                        "@protoField": "lineColor"
-                                                      }
-                                                    ]
-                                                  }
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "Shape": {
-                                      "-children": [
-                                        {
-                                          "Extrusion": {
-                                            "@DEF": "FrustumExtrusion"
-                                          }
-                                        },
-                                        {
-                                          "Appearance": {
-                                            "@DEF": "FrustumAppearance",
-                                            "-children": [
-                                              {
-                                                "Material": {
-                                                  "IS": {
-                                                    "connect": [
-                                                      {
-                                                        "@nodeField": "diffuseColor",
-                                                        "@protoField": "frustumColor"
-                                                      },
-                                                      {
-                                                        "@nodeField": "transparency",
-                                                        "@protoField": "transparency"
-                                                      }
-                                                    ]
-                                                  }
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "Shape": {
-                                      "-children": [
-                                        {
-                                          "Sphere": {
-                                            "@radius": 0.08
-                                          }
-                                        },
-                                        {
-                                          "Appearance": {
-                                            "@USE": "FrustumAppearance"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "Script": {
-                    "@DEF": "GeometryComputationScript",
-                    "@directOutput": true,
-                    "@url": [
-                      "ViewFrustumPrototypeScript.js"
-                    ],
-                    "field": [
-                      {
-                        "@accessType": "inputOutput",
-                        "@appinfo": "Whether or not frustum geometry is rendered",
-                        "@name": "visible",
-                        "@type": "SFBool"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@appinfo": "Adjust Switch selection to make geometry visible or not",
-                        "@name": "visibilitySwitchSelection",
-                        "@type": "SFInt32"
-                      },
-                      {
-                        "@accessType": "initializeOnly",
-                        "@name": "ViewpointNode",
-                        "@type": "SFNode",
-                        "-children": [
-                          {
-                            "#comment": " initialization node (if any) goes here "
-                          }
-                        ]
-                      },
-                      {
-                        "@accessType": "initializeOnly",
-                        "@name": "NavigationInfoNode",
-                        "@type": "SFNode",
-                        "-children": [
-                          {
-                            "#comment": " initialization node (if any) goes here "
-                          }
-                        ]
-                      },
-                      {
-                        "@accessType": "initializeOnly",
-                        "@name": "FrustumCoordinate",
-                        "@type": "SFNode",
-                        "-children": [
-                          {
-                            "Coordinate": {
-                              "@USE": "FrustumCoordinate"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "@accessType": "initializeOnly",
-                        "@name": "FrustumExtrusion",
-                        "@type": "SFNode",
-                        "-children": [
-                          {
-                            "Extrusion": {
-                              "@USE": "FrustumExtrusion"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "@accessType": "inputOnly",
-                        "@name": "recompute",
-                        "@type": "SFBool"
-                      },
-                      {
-                        "@accessType": "inputOutput",
-                        "@appinfo": "assumed ratio height/width",
-                        "@name": "aspectRatio",
-                        "@type": "SFFloat"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@name": "position_changed",
-                        "@type": "SFVec3f"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@name": "orientation_changed",
-                        "@type": "SFRotation"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@name": "spine_changed",
-                        "@type": "MFVec3f"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@name": "scale_changed",
-                        "@type": "MFVec2f"
-                      },
-                      {
-                        "@accessType": "outputOnly",
-                        "@name": "point_changed",
-                        "@type": "MFVec3f"
-                      },
-                      {
-                        "@accessType": "initializeOnly",
-                        "@name": "trace",
-                        "@type": "SFBool"
-                      }
-                    ],
-                    "IS": {
-                      "connect": [
+                      "@name":"ViewpointNode",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"required: insert Viewpoint DEF or USE node for view of interest",
+                      "@type":"SFNode",
+                      "-children":[
                         {
-                          "@nodeField": "visible",
-                          "@protoField": "visible"
-                        },
-                        {
-                          "@nodeField": "ViewpointNode",
-                          "@protoField": "ViewpointNode"
-                        },
-                        {
-                          "@nodeField": "NavigationInfoNode",
-                          "@protoField": "NavigationInfoNode"
-                        },
-                        {
-                          "@nodeField": "aspectRatio",
-                          "@protoField": "aspectRatio"
-                        },
-                        {
-                          "@nodeField": "trace",
-                          "@protoField": "trace"
+                          "#comment":"NULL node, ProtoInstance must provide"
                         }
                       ]
-                    }
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "visibilitySwitchSelection",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "whichChoice",
-                    "@toNode": "VisibilitySwitch"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "position_changed",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "translation",
-                    "@toNode": "PositionTransform"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "orientation_changed",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "rotation",
-                    "@toNode": "OrientationTransform"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "spine_changed",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "set_spine",
-                    "@toNode": "FrustumExtrusion"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "scale_changed",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "set_scale",
-                    "@toNode": "FrustumExtrusion"
-                  }
-                },
-                {
-                  "ROUTE": {
-                    "@fromField": "point_changed",
-                    "@fromNode": "GeometryComputationScript",
-                    "@toField": "point",
-                    "@toNode": "FrustumCoordinate"
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "#comment": " Example use is in separate scene "
-        },
-        {
-          "Anchor": {
-            "@description": "ViewFrustum Example",
-            "@url": [
-              "ViewFrustumExample.x3d"
-            ],
-            "-children": [
-              {
-                "Shape": {
-                  "-children": [
+                    },
                     {
-                      "Appearance": {
-                        "-children": [
-                          {
-                            "Material": {
-                              "@diffuseColor": [
-                                0.8,
-                                0.4,
-                                0
+                      "@name":"NavigationInfoNode",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"required: insert NavigationInfo DEF or USE node of interest",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"NULL node, ProtoInstance must provide"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"visible",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"whether or not frustum geometry is rendered",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"lineColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"RGB color of ViewFrustum outline, default value 0.9 0.9 0.9",
+                      "@type":"SFColor",
+                      "@value":[0.9,0.9,0.9]
+                    },
+                    {
+                      "@name":"frustumColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8",
+                      "@type":"SFColor",
+                      "@value":[0.8,0.8,0.8]
+                    },
+                    {
+                      "@name":"transparency",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"transparency of ViewFrustum hull geometry, default value 0.5",
+                      "@type":"SFFloat",
+                      "@value":0.5
+                    },
+                    {
+                      "@name":"aspectRatio",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"assumed ratio height/width, default value 0.75",
+                      "@type":"SFFloat",
+                      "@value":0.75
+                    },
+                    {
+                      "@name":"trace",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"debug support, default false",
+                      "@type":"SFBool",
+                      "@value":false
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Switch":
+                      {
+                        "@DEF":"VisibilitySwitch",
+                        "@whichChoice":-1,
+                        "-children":[
+                          { "Transform":
+                            {
+                              "@DEF":"PositionTransform",
+                              "@rotation":[0,1,0,3.14159],
+                              "-children":[
+                                { "Transform":
+                                  {
+                                    "@DEF":"OrientationTransform",
+                                    "-children":[
+                                      { "Shape":
+                                        {
+                                          "-geometry":
+                                            { "IndexedLineSet":
+                                              {
+                                                "@DEF":"FrustumLines",
+                                                "@coordIndex":[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1],
+                                                "-coord":
+                                                  { "Coordinate":
+                                                    {
+                                                      "@DEF":"FrustumCoordinate",
+                                                      "@point":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "-material":
+                                                  { "Material":
+                                                    {
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"emissiveColor",
+                                                              "@protoField":"lineColor"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      },
+                                      { "Shape":
+                                        {
+                                          "-geometry":
+                                            { "Extrusion":
+                                              {
+                                                "@DEF":"FrustumExtrusion"
+                                              }
+                                            },
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "@DEF":"FrustumAppearance",
+                                                "-material":
+                                                  { "Material":
+                                                    {
+                                                      "IS": {
+                                                          "connect": [
+                                                            {
+                                                              "@nodeField":"diffuseColor",
+                                                              "@protoField":"frustumColor"
+                                                            },
+                                                            {
+                                                              "@nodeField":"transparency",
+                                                              "@protoField":"transparency"
+                                                            }
+                                                          ]
+                                                      }
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      },
+                                      { "Shape":
+                                        {
+                                          "-geometry":
+                                            { "Sphere":
+                                              {
+                                                "@radius":0.08
+                                              }
+                                            },
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "@USE":"FrustumAppearance"
+                                              }
+                                            }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
                               ]
                             }
                           }
                         ]
                       }
                     },
-                    {
-                      "Text": {
-                        "@string": [
-                          "ViewFrustumPrototype.x3d",
-                          "is a Prototype declaration file.",
-                          "For an example scene using the prototype,",
-                          "click this text and view",
-                          "ViewFrustumExample.x3d"
-                        ],
-                        "-children": [
+                    { "Script":
+                      {
+                        "@DEF":"GeometryComputationScript",
+                        "@directOutput":true,
+                        "@url":["ViewFrustumPrototypeScript.js"],
+                        "field": [
                           {
-                            "FontStyle": {
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@size": 0.8
-                            }
+                            "@name":"visible",
+                            "@accessType":"inputOutput",
+                            "@appinfo":"Whether or not frustum geometry is rendered",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"visibilitySwitchSelection",
+                            "@accessType":"outputOnly",
+                            "@appinfo":"Adjust Switch selection to make geometry visible or not",
+                            "@type":"SFInt32"
+                          },
+                          {
+                            "@name":"ViewpointNode",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              {
+                                "#comment":"initialization node (if any) goes here"
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"NavigationInfoNode",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              {
+                                "#comment":"initialization node (if any) goes here"
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"FrustumCoordinate",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Coordinate":
+                                {
+                                  "@USE":"FrustumCoordinate"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"FrustumExtrusion",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "Extrusion":
+                                {
+                                  "@USE":"FrustumExtrusion"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"recompute",
+                            "@accessType":"inputOnly",
+                            "@type":"SFBool"
+                          },
+                          {
+                            "@name":"aspectRatio",
+                            "@accessType":"inputOutput",
+                            "@appinfo":"assumed ratio height/width",
+                            "@type":"SFFloat"
+                          },
+                          {
+                            "@name":"position_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"orientation_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"SFRotation"
+                          },
+                          {
+                            "@name":"spine_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"scale_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec2f"
+                          },
+                          {
+                            "@name":"point_changed",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"trace",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool"
                           }
-                        ]
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"visible",
+                                "@protoField":"visible"
+                              },
+                              {
+                                "@nodeField":"ViewpointNode",
+                                "@protoField":"ViewpointNode"
+                              },
+                              {
+                                "@nodeField":"NavigationInfoNode",
+                                "@protoField":"NavigationInfoNode"
+                              },
+                              {
+                                "@nodeField":"aspectRatio",
+                                "@protoField":"aspectRatio"
+                              },
+                              {
+                                "@nodeField":"trace",
+                                "@protoField":"trace"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"visibilitySwitchSelection",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"whichChoice",
+                        "@toNode":"VisibilitySwitch"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"position_changed",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"translation",
+                        "@toNode":"PositionTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"orientation_changed",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"rotation",
+                        "@toNode":"OrientationTransform"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"spine_changed",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"set_spine",
+                        "@toNode":"FrustumExtrusion"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"scale_changed",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"set_scale",
+                        "@toNode":"FrustumExtrusion"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"point_changed",
+                        "@fromNode":"GeometryComputationScript",
+                        "@toField":"point",
+                        "@toNode":"FrustumCoordinate"
                       }
                     }
                   ]
-                }
               }
-            ]
+            }
+          },
+          {
+            "#comment":"Example use is in separate scene"
+          },
+          { "Anchor":
+            {
+              "@description":"ViewFrustum Example",
+              "@url":["ViewFrustumExample.x3d"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.4,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.8
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
           }
-        }
-      ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+        ]
+    }
   }
 }
