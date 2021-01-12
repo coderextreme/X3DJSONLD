@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Run the Test Suite
 

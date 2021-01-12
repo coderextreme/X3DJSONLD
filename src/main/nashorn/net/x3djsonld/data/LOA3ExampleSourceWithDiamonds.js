@@ -2,8 +2,8 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene LOA3ExampleSourceWithDiamonds. </p>
- <p> Related links: LOA3ExampleSourceWithDiamonds.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene NeedClassName. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -33,7 +33,7 @@ load('X3Dautoclass.js');
 
  */
 
-function LOA3ExampleSourceWithDiamonds
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -42,7 +42,7 @@ function LOA3ExampleSourceWithDiamonds
     this.initialize();
     return this;
   }
-LOA3ExampleSourceWithDiamonds.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -1397,7 +1397,7 @@ LOA3ExampleSourceWithDiamonds.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return LOA3ExampleSourceWithDiamonds model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -1459,8 +1459,8 @@ LOA3ExampleSourceWithDiamonds.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new LOA3ExampleSourceWithDiamonds();
-		print ("LOA3ExampleSourceWithDiamonds execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new LOA3ExampleSourceWithDiamonds().main();
+new NeedClassName().main();

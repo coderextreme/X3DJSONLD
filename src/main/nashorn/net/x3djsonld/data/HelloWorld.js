@@ -2,8 +2,8 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Simple X3D scene example: Hello World!. </p>
- <p> Related links: <a href="../../../Chapter01TechnicalOverview/HelloWorld.java">HelloWorld.java</a> source, <a href="../../../Chapter01TechnicalOverview/HelloWorldIndex.html" target="_top">HelloWorld catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Simple X3D model example: Hello World!. </p>
+ <p> Related links: <a href="../../../Chapter01TechnicalOverview/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Chapter01TechnicalOverview/HelloWorldIndex.html" target="_top">HelloWorld catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -16,7 +16,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Simple X3D scene example: Hello World! </td>
+			<td> Simple X3D model example: Hello World! </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
@@ -24,7 +24,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 14 April 2017 </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -56,7 +56,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3D.org" target="_blank">https://www.web3D.org</a> </td>
+			<td> <a href="https://www.web3d.org" target="_blank">https://www.web3d.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -68,7 +68,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes</a> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -118,7 +118,7 @@ load('X3Dautoclass.js');
 	* @author Don Brutzman
  */
 
-function HelloWorld
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -127,16 +127,17 @@ function HelloWorld
     this.initialize();
     return this;
   }
-HelloWorld.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
+    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta(new metaObject().setName("title").setContent("HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Simple X3D scene example: Hello World!"))
+    .addMeta(new metaObject().setName("description").setContent("Simple X3D model example: Hello World!"))
     .addMeta(new metaObject().setName("created").setContent("30 October 2000"))
-    .addMeta(new metaObject().setName("modified").setContent("14 April 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
     .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
     .addMeta(new metaObject().setName("Image").setContent("HelloWorld.tall.png"))
     .addMeta(new metaObject().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
@@ -144,14 +145,13 @@ HelloWorld.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
     .addMeta(new metaObject().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
     .addMeta(new metaObject().setName("reference").setContent("http://www.HelloWorldExample.net"))
-    .addMeta(new metaObject().setName("reference").setContent("https://www.web3D.org"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org"))
     .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
     .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
     .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
     .addMeta(new metaObject().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
     .addMeta(new metaObject().setName("reference").setContent("HelloWorld.wrl"))
     .addMeta(new metaObject().setName("reference").setContent("HelloWorld.x3dv"))
     .addMeta(new metaObject().setName("reference").setContent("HelloWorld.x3db"))
@@ -159,7 +159,7 @@ HelloWorld.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("HelloWorld.json")))
   .setScene(new SceneObject()
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
-    .addChild(new WorldInfoObject().setTitle("Hello world!"))
+    .addChild(new WorldInfoObject().setInfo(new MFStringObject("\"Example scene to illustrate a simple X3D model\"")).setTitle("Hello World!"))
     .addChild(new GroupObject()
       .addChild(new ViewpointObject("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0,-1.0,0.0).setPosition(0.0,-1.0,7.0))
       .addChild(new TransformObject().setRotation(0.0,1.0,0.0,3.0)
@@ -179,7 +179,7 @@ HelloWorld.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return HelloWorld model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -241,8 +241,8 @@ HelloWorld.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new HelloWorld();
-		print ("HelloWorld execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new HelloWorld().main();
+new NeedClassName().main();

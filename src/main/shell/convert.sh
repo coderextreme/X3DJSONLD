@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # convert files from X3D to JSON
 

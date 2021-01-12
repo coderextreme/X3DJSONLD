@@ -38,6 +38,14 @@ var autoclass = require('./X3Dautoclass');
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
 			<td> 4 April 2017 </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -73,8 +81,11 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
-    .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017")))
+    .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene((new autoclass.Scene())
+    .addChild((new autoclass.WorldInfo()).setTitle("ifscubeworks.x3d"))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(java.newArray("int", [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1])).setCoordIndex(java.newArray("int", [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1])).setNormalIndex(java.newArray("int", [0,0,1,2,3,4,5]))
