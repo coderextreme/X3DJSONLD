@@ -38,6 +38,14 @@ import org.web3d.x3d.jsail.Shape.*;
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
 			<td> 4 April 2017 </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -71,8 +79,11 @@ public class ifscubeworks
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017")))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("ifscubeworks.x3d"))
     .addChild(new Group()
       .addChild(new Shape()
         .setGeometry(new IndexedFaceSet("IndexedFaceSet").setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}).setNormalIndex(new int[] {0,0,1,2,3,4,5})

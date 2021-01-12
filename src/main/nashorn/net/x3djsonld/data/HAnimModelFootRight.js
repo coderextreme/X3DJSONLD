@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Right foot, using high-fidelity definitions for HAnim version 2.0. </p>
- <p> Related links: HAnimModelFootRight.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HAnimModelFootRight&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -114,7 +114,7 @@ load('X3Dautoclass.js');
 	* @author Kwan-Hee YOO, Don Brutzman and Joe Williams
  */
 
-function HAnimModelFootRight
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -123,7 +123,7 @@ function HAnimModelFootRight
     this.initialize();
     return this;
   }
-HAnimModelFootRight.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -486,7 +486,7 @@ HAnimModelFootRight.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return HAnimModelFootRight model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -548,8 +548,8 @@ HAnimModelFootRight.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new HAnimModelFootRight();
-		print ("HAnimModelFootRight execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new HAnimModelFootRight().main();
+new NeedClassName().main();

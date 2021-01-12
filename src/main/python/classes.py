@@ -49,7 +49,8 @@ class ClassPrinter:
 code = ""
 code += 'CommentsBlock = Java.type("org.web3d.x3d.jsail.Core.CommentsBlock")\n'
 
-soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-4.0.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
+
 
 classes = {}
 

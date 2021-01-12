@@ -2,8 +2,8 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene app. </p>
- <p> Related links: app.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene NeedClassName. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -40,7 +40,7 @@ load('X3Dautoclass.js');
 	* @author Carlson, III
  */
 
-function app
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -49,7 +49,7 @@ function app
     this.initialize();
     return this;
   }
-app.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -70,7 +70,7 @@ app.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return app model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -132,8 +132,8 @@ app.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new app();
-		print ("app execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new app().main();
+new NeedClassName().main();

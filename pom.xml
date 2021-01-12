@@ -23,9 +23,9 @@
 
 		<!-- maven plugin versions -->
 		<exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
-		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
-		<xml-maven-plugin.version>1.0.1</xml-maven-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>2.22.22</maven-surefire-plugin.version>
+		<xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
 	</properties>
 	<licenses>
 		<license>
@@ -97,17 +97,17 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.8.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>14</source>
+					<target>14</target>
 					<fork>true</fork>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>xml-maven-plugin</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.2</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>

@@ -1,2 +1,2 @@
-#!/bin/sh
-sh several.sh ../data/browser.x3d
+#!/bin/bash
+bash several.sh ../data/browser.x3d

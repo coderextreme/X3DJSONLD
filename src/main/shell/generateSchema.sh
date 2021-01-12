@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 3.0
 python ../python/etgenerateJSONschema.py < /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-3.0.xml | jsonlint > ../schema/x3d-3.0-JSONSchema.json

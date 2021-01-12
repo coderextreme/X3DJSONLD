@@ -27,7 +27,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     component(level=1,name='HAnim'),
     meta(content='JohnBoy.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
+    meta(name='identifier',content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h.pl'),
     meta(content='John Carlson',name='creator'),
