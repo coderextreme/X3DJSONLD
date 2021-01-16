@@ -2,7 +2,7 @@
   "X3D": {
     "@profile": "Interactive",
     "@version": "3.1",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.1.xsd",
     "head": {
       "meta": [
         {
@@ -35,7 +35,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"
         },
         {
           "@name": "generator",
@@ -51,7 +51,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -59,7 +59,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -161,33 +161,37 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-appearance": {
-                          "Appearance": {
-                            "@DEF": "CameraAppearance",
-                            "-material": {
-                              "Material": {
-                                "@DEF": "lambert1_0",
-                                "@ambientIntensity": 0.25,
-                                "@diffuseColor": [
-                                  0.372322,
-                                  0.371574,
-                                  0.373173
-                                ],
-                                "@shininess": 0.02,
-                                "@specularColor": [
-                                  0.890909,
-                                  0.887832,
-                                  0.890909
-                                ],
-                                "-children": [
-                                  {
-                                    "#comment": "Universal Media Library: Metals 30"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "@DEF": "CameraAppearance",
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@DEF": "lambert1_0",
+                                    "@ambientIntensity": 0.25,
+                                    "@diffuseColor": [
+                                      0.372322,
+                                      0.371574,
+                                      0.373173
+                                    ],
+                                    "@shininess": 0.02,
+                                    "@specularColor": [
+                                      0.890909,
+                                      0.887832,
+                                      0.890909
+                                    ],
+                                    "-children": [
+                                      {
+                                        "#comment": "Universal Media Library: Metals 30"
+                                      }
+                                    ]
                                   }
-                                ]
-                              }
+                                }
+                              ]
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -442,11 +446,13 @@
                             }
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "@USE": "CameraAppearance"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "@USE": "CameraAppearance"
+                            }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -713,11 +719,13 @@
                             }
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "@USE": "CameraAppearance"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "@USE": "CameraAppearance"
+                            }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -2274,11 +2282,13 @@
                             }
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "@USE": "CameraAppearance"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "@USE": "CameraAppearance"
+                            }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -3896,11 +3906,13 @@
                             }
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "@USE": "CameraAppearance"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "@USE": "CameraAppearance"
+                            }
                           }
-                        }
+                        ]
                       }
                     }
                   ]
@@ -3926,11 +3938,13 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "@USE": "CameraAppearance"
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "@USE": "CameraAppearance"
+                                  }
                                 }
-                              },
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@USE": "pCylinder1_0Geo"
@@ -3957,11 +3971,13 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "@USE": "CameraAppearance"
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "@USE": "CameraAppearance"
+                                  }
                                 }
-                              },
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@USE": "pCube1_0Geo"
@@ -3988,11 +4004,13 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "@USE": "CameraAppearance"
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "@USE": "CameraAppearance"
+                                  }
                                 }
-                              },
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@USE": "pPipe1_0Geo"
@@ -4019,11 +4037,13 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "@USE": "CameraAppearance"
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "@USE": "CameraAppearance"
+                                  }
                                 }
-                              },
+                              ],
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@USE": "pSphere1_0Geo"
@@ -4043,6 +4063,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

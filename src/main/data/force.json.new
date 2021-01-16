@@ -2,7 +2,7 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "component": [
         {
@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -45,7 +45,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -90,19 +90,23 @@
                                 "-geometry": {
                                   "Sphere": {}
                                 },
-                                "-appearance": {
-                                  "Appearance": {
-                                    "-material": {
-                                      "Material": {
-                                        "@diffuseColor": [
-                                          1,
-                                          0,
-                                          0
-                                        ]
-                                      }
+                                "-children": [
+                                  {
+                                    "Appearance": {
+                                      "-children": [
+                                        {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              0,
+                                              0
+                                            ]
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
-                                }
+                                ]
                               }
                             },
                             {
@@ -120,30 +124,36 @@
                                           "@string": [
                                             "Node"
                                           ],
-                                          "-fontStyle": {
-                                            "FontStyle": {
-                                              "@justify": [
-                                                "MIDDLE",
-                                                "MIDDLE"
-                                              ],
-                                              "@size": 5
+                                          "-children": [
+                                            {
+                                              "FontStyle": {
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 5
+                                              }
                                             }
-                                          }
+                                          ]
                                         }
                                       },
-                                      "-appearance": {
-                                        "Appearance": {
-                                          "-material": {
-                                            "Material": {
-                                              "@diffuseColor": [
-                                                0,
-                                                0,
-                                                1
-                                              ]
-                                            }
+                                      "-children": [
+                                        {
+                                          "Appearance": {
+                                            "-children": [
+                                              {
+                                                "Material": {
+                                                  "@diffuseColor": [
+                                                    0,
+                                                    0,
+                                                    1
+                                                  ]
+                                                }
+                                              }
+                                            ]
                                           }
                                         }
-                                      }
+                                      ]
                                     }
                                   }
                                 ]
@@ -335,19 +345,23 @@
                               ]
                             }
                           },
-                          "-appearance": {
-                            "Appearance": {
-                              "-material": {
-                                "Material": {
-                                  "@diffuseColor": [
-                                    0,
-                                    1,
-                                    0
-                                  ]
-                                }
+                          "-children": [
+                            {
+                              "Appearance": {
+                                "-children": [
+                                  {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0,
+                                        1,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             }
-                          }
+                          ]
                         }
                       },
                       {
@@ -700,6 +714,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

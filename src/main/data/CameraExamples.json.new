@@ -2,7 +2,7 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "meta": [
         {
@@ -83,7 +83,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -91,7 +91,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -1527,42 +1527,48 @@
                               "Click to animate",
                               "SimpleShotsTest"
                             ],
-                            "-fontStyle": {
-                              "FontStyle": {
-                                "@justify": [
-                                  "MIDDLE",
-                                  "MIDDLE"
-                                ]
+                            "-children": [
+                              {
+                                "FontStyle": {
+                                  "@justify": [
+                                    "MIDDLE",
+                                    "MIDDLE"
+                                  ]
+                                }
                               }
-                            }
+                            ]
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@DEF": "ArtDeco5",
-                                "@ambientIntensity": 0.24,
-                                "@diffuseColor": [
-                                  0.945455,
-                                  0.318988,
-                                  0.321717
-                                ],
-                                "@shininess": 0.01,
-                                "@specularColor": [
-                                  0.072727,
-                                  0.021705,
-                                  0.010732
-                                ],
-                                "-children": [
-                                  {
-                                    "#comment": "Universal Media Library: ArtDeco 5"
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@DEF": "ArtDeco5",
+                                    "@ambientIntensity": 0.24,
+                                    "@diffuseColor": [
+                                      0.945455,
+                                      0.318988,
+                                      0.321717
+                                    ],
+                                    "@shininess": 0.01,
+                                    "@specularColor": [
+                                      0.072727,
+                                      0.021705,
+                                      0.010732
+                                    ],
+                                    "-children": [
+                                      {
+                                        "#comment": "Universal Media Library: ArtDeco 5"
+                                      }
+                                    ]
                                   }
-                                ]
-                              }
+                                }
+                              ]
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1571,15 +1577,19 @@
                     {
                       "Shape": {
                         "@DEF": "TransparentBox",
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@transparency": 1
-                              }
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@transparency": 1
+                                  }
+                                }
+                              ]
                             }
                           }
-                        },
+                        ],
                         "-geometry": {
                           "Box": {
                             "@size": [
@@ -1615,21 +1625,25 @@
                         "-geometry": {
                           "Box": {}
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {}
-                            },
-                            "-texture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "images/CameraMoveZoom.png",
-                                  "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"
-                                ]
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "images/CameraMoveZoom.png",
+                                    "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"
+                                  ]
+                                }
                               }
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1647,23 +1661,29 @@
                                   "@string": [
                                     "Zoom in, out"
                                   ],
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ]
+                                  "-children": [
+                                    {
+                                      "FontStyle": {
+                                        "@justify": [
+                                          "MIDDLE",
+                                          "MIDDLE"
+                                        ]
+                                      }
                                     }
-                                  }
+                                  ]
                                 }
                               },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {}
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "-children": [
+                                      {
+                                        "Material": {}
+                                      }
+                                    ]
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         ]
@@ -1686,21 +1706,25 @@
                         "-geometry": {
                           "Box": {}
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {}
-                            },
-                            "-texture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "images/CameraMoveDolly.png",
-                                  "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"
-                                ]
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "images/CameraMoveDolly.png",
+                                    "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"
+                                  ]
+                                }
                               }
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1718,23 +1742,29 @@
                                   "@string": [
                                     "Dolly left, right"
                                   ],
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ]
+                                  "-children": [
+                                    {
+                                      "FontStyle": {
+                                        "@justify": [
+                                          "MIDDLE",
+                                          "MIDDLE"
+                                        ]
+                                      }
                                     }
-                                  }
+                                  ]
                                 }
                               },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {}
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "-children": [
+                                      {
+                                        "Material": {}
+                                      }
+                                    ]
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         ]
@@ -1757,21 +1787,25 @@
                         "-geometry": {
                           "Box": {}
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {}
-                            },
-                            "-texture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "images/CameraMovePan.png",
-                                  "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"
-                                ]
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "images/CameraMovePan.png",
+                                    "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"
+                                  ]
+                                }
                               }
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1789,23 +1823,29 @@
                                   "@string": [
                                     "Pan left, right"
                                   ],
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ]
+                                  "-children": [
+                                    {
+                                      "FontStyle": {
+                                        "@justify": [
+                                          "MIDDLE",
+                                          "MIDDLE"
+                                        ]
+                                      }
                                     }
-                                  }
+                                  ]
                                 }
                               },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {}
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "-children": [
+                                      {
+                                        "Material": {}
+                                      }
+                                    ]
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         ]
@@ -1828,21 +1868,25 @@
                         "-geometry": {
                           "Box": {}
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {}
-                            },
-                            "-texture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "images/CameraMoveBoom.png",
-                                  "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"
-                                ]
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "images/CameraMoveBoom.png",
+                                    "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"
+                                  ]
+                                }
                               }
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1860,23 +1904,29 @@
                                   "@string": [
                                     "Boom up, down"
                                   ],
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ]
+                                  "-children": [
+                                    {
+                                      "FontStyle": {
+                                        "@justify": [
+                                          "MIDDLE",
+                                          "MIDDLE"
+                                        ]
+                                      }
                                     }
-                                  }
+                                  ]
                                 }
                               },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {}
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "-children": [
+                                      {
+                                        "Material": {}
+                                      }
+                                    ]
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         ]
@@ -1899,21 +1949,25 @@
                         "-geometry": {
                           "Box": {}
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {}
-                            },
-                            "-texture": {
-                              "ImageTexture": {
-                                "@url": [
-                                  "images/CameraMoveTilt.png",
-                                  "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"
-                                ]
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "images/CameraMoveTilt.png",
+                                    "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"
+                                  ]
+                                }
                               }
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -1931,23 +1985,29 @@
                                   "@string": [
                                     "Tilt left, right"
                                   ],
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ]
+                                  "-children": [
+                                    {
+                                      "FontStyle": {
+                                        "@justify": [
+                                          "MIDDLE",
+                                          "MIDDLE"
+                                        ]
+                                      }
                                     }
-                                  }
+                                  ]
                                 }
                               },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {}
+                              "-children": [
+                                {
+                                  "Appearance": {
+                                    "-children": [
+                                      {
+                                        "Material": {}
+                                      }
+                                    ]
                                   }
                                 }
-                              }
+                              ]
                             }
                           }
                         ]
@@ -2253,25 +2313,31 @@
                               "Click to animate",
                               "AimPointTest"
                             ],
-                            "-fontStyle": {
-                              "FontStyle": {
-                                "@justify": [
-                                  "MIDDLE",
-                                  "MIDDLE"
-                                ]
+                            "-children": [
+                              {
+                                "FontStyle": {
+                                  "@justify": [
+                                    "MIDDLE",
+                                    "MIDDLE"
+                                  ]
+                                }
                               }
-                            }
+                            ]
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@USE": "ArtDeco5"
-                              }
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@USE": "ArtDeco5"
+                                  }
+                                }
+                              ]
                             }
                           }
-                        }
+                        ]
                       }
                     },
                     {
@@ -2386,19 +2452,23 @@
                             }
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@emissiveColor": [
-                                  0.8,
-                                  0.8,
-                                  0.4
-                                ]
-                              }
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@emissiveColor": [
+                                      0.8,
+                                      0.8,
+                                      0.4
+                                    ]
+                                  }
+                                }
+                              ]
                             }
                           }
-                        }
+                        ]
                       }
                     }
                   ]
@@ -2583,21 +2653,25 @@
             "-children": [
               {
                 "Shape": {
-                  "-appearance": {
-                    "Appearance": {
-                      "-material": {
-                        "Material": {
-                          "@ambientIntensity": 0.01,
-                          "@diffuseColor": [
-                            1,
-                            1,
-                            1
-                          ],
-                          "@shininess": 0.05
-                        }
+                  "-children": [
+                    {
+                      "Appearance": {
+                        "-children": [
+                          {
+                            "Material": {
+                              "@ambientIntensity": 0.01,
+                              "@diffuseColor": [
+                                1,
+                                1,
+                                1
+                              ],
+                              "@shininess": 0.05
+                            }
+                          }
+                        ]
                       }
                     }
-                  },
+                  ],
                   "-geometry": {
                     "IndexedFaceSet": {
                       "@colorIndex": [
@@ -3099,18 +3173,20 @@
                           ]
                         }
                       },
-                      "-color": {
-                        "Color": {
-                          "@color": [
-                            0.435294,
-                            0.741176,
-                            0,
-                            0,
-                            0.560784,
-                            0.580392
-                          ]
+                      "-children": [
+                        {
+                          "Color": {
+                            "@color": [
+                              0.435294,
+                              0.741176,
+                              0,
+                              0,
+                              0.560784,
+                              0.580392
+                            ]
+                          }
                         }
-                      }
+                      ]
                     }
                   }
                 }
@@ -3234,21 +3310,25 @@
                   "-geometry": {
                     "Box": {}
                   },
-                  "-appearance": {
-                    "Appearance": {
-                      "-material": {
-                        "Material": {}
-                      },
-                      "-texture": {
-                        "ImageTexture": {
-                          "@url": [
-                            "../earth-topo.png",
-                            "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"
-                          ]
+                  "-children": [
+                    {
+                      "Appearance": {
+                        "-children": [
+                          {
+                            "Material": {}
+                          }
+                        ],
+                        "-texture": {
+                          "ImageTexture": {
+                            "@url": [
+                              "../earth-topo.png",
+                              "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"
+                            ]
+                          }
                         }
                       }
                     }
-                  }
+                  ]
                 }
               }
             ]
@@ -3394,30 +3474,36 @@
                               "Click on this text to see",
                               "CameraExample scene"
                             ],
-                            "-fontStyle": {
-                              "FontStyle": {
-                                "@justify": [
-                                  "MIDDLE",
-                                  "MIDDLE"
-                                ],
-                                "@size": 0.5
+                            "-children": [
+                              {
+                                "FontStyle": {
+                                  "@justify": [
+                                    "MIDDLE",
+                                    "MIDDLE"
+                                  ],
+                                  "@size": 0.5
+                                }
                               }
-                            }
+                            ]
                           }
                         },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  1,
-                                  1,
-                                  0.2
-                                ]
-                              }
+                        "-children": [
+                          {
+                            "Appearance": {
+                              "-children": [
+                                {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      1,
+                                      0.2
+                                    ]
+                                  }
+                                }
+                              ]
                             }
                           }
-                        }
+                        ]
                       }
                     }
                   ]
@@ -3429,6 +3515,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

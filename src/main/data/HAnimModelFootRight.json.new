@@ -2,11 +2,11 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "4.0",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "component": [
         {
-          "@name": "H-Anim",
+          "@name": "HAnim",
           "@level": 1
         }
       ],
@@ -17,11 +17,11 @@
         },
         {
           "@name": "description",
-          "@content": "Right foot, using high-fidelity definitions for H-Anim version 2.2"
+          "@content": "Right foot, using high-fidelity definitions for HAnim version 2.0"
         },
         {
           "@name": "creator",
-          "@content": "YOO Kwan Hee and Don Brutzman"
+          "@content": "Kwan-Hee YOO, Don Brutzman and Joe Williams"
         },
         {
           "@name": "created",
@@ -29,11 +29,27 @@
         },
         {
           "@name": "modified",
-          "@content": "20 October 2019"
+          "@content": "5 July 2020"
         },
         {
           "@name": "warning",
           "@content": "not yet to scale"
+        },
+        {
+          "@name": "TODO",
+          "@content": "Update all values to match HAnim2 A.7 Level of articulation four LOA-4"
+        },
+        {
+          "@name": "TODO",
+          "@content": "Add links to figures"
+        },
+        {
+          "@name": "TODO",
+          "@content": "Add Viewpoints to enable inspection"
+        },
+        {
+          "@name": "info",
+          "@content": "TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"
         },
         {
           "@name": "warning",
@@ -41,23 +57,31 @@
         },
         {
           "@name": "reference",
-          "@content": "https://www.web3d.org/working-groups/humanoid-animation-h-anim"
+          "@content": "https://www.web3d.org/working-groups/humanoid-animation-HAnim"
         },
         {
           "@name": "reference",
-          "@content": "https://www.web3d.org/files/specifications/19774/V1.0"
+          "@content": "https://www.web3d.org/documents/specifications/19774/V2.0"
         },
         {
           "@name": "reference",
-          "@content": "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"
+          "@content": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"
         },
         {
           "@name": "subject",
-          "@content": "X3D H-Anim humanoid animation"
-        },
-        {
-          "@name": "warning",
-          "@content": "scene, DOCTYPE and Schema under development."
+          "@content": "X3D HAnim humanoid animation"
         },
         {
           "@name": "TODO",
@@ -65,7 +89,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d"
         },
         {
           "@name": "generator",
@@ -77,7 +101,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -85,7 +109,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -98,24 +122,47 @@
         },
         {
           "HAnimHumanoid": {
-            "@name": "Humanoid_Right_Foot",
-            "@DEF": "Humanoid_Right_Foot",
+            "@name": "Foot_Right",
+            "@DEF": "hanim_Foot_Right",
             "@version": "2.0",
-            "-joints": [
+            "-children": [
+              {
+                "#comment": "HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"
+              }
+            ],
+            "-metadata": {
+              "MetadataSet": {
+                "@name": "HAnimHumanoid.info",
+                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                "-metadata": {
+                  "MetadataString": {
+                    "@name": "authorName",
+                    "@value": [
+                      "Kwan-Hee YOO, Don Brutzman and Joe Williams"
+                    ]
+                  }
+                }
+              }
+            },
+            "-skeleton": [
               {
                 "HAnimJoint": {
                   "@name": "humanoid_root",
-                  "@DEF": "hanim_HumanoidRoot",
+                  "@DEF": "hanim_humanoid_root",
                   "-children": [
                     {
+                      "#comment": "Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model"
+                    },
+                    {
                       "HAnimJoint": {
-                        "@name": "r_talocrural_joint",
-                        "@DEF": "r_talocrural_joint",
+                        "@name": "r_talocrural",
+                        "@DEF": "hanim_r_talocrural",
+                        "@description": "connection joint of foot to leg above",
                         "-children": [
                           {
                             "HAnimSegment": {
                               "@name": "r_talus",
-                              "@DEF": "r_talus",
+                              "@DEF": "hanim_r_talus",
                               "-children": [
                                 {
                                   "Transform": {
@@ -128,20 +175,24 @@
                                               "@radius": 0.025
                                             }
                                           },
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "@DEF": "HAnimJointAppearance",
-                                              "-material": {
-                                                "Material": {
-                                                  "@diffuseColor": [
-                                                    0,
-                                                    0,
-                                                    1
-                                                  ]
-                                                }
+                                          "-children": [
+                                            {
+                                              "Appearance": {
+                                                "@DEF": "HAnimJointAppearance",
+                                                "-children": [
+                                                  {
+                                                    "Material": {
+                                                      "@diffuseColor": [
+                                                        0,
+                                                        0,
+                                                        1
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
                                               }
                                             }
-                                          }
+                                          ]
                                         }
                                       }
                                     ]
@@ -149,13 +200,17 @@
                                 },
                                 {
                                   "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {}
+                                    "-children": [
+                                      {
+                                        "Appearance": {
+                                          "-children": [
+                                            {
+                                              "Material": {}
+                                            }
+                                          ]
                                         }
                                       }
-                                    },
+                                    ],
                                     "-geometry": {
                                       "IndexedLineSet": {
                                         "@DEF": "TCtoTCN",
@@ -181,13 +236,17 @@
                                 },
                                 {
                                   "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {}
+                                    "-children": [
+                                      {
+                                        "Appearance": {
+                                          "-children": [
+                                            {
+                                              "Material": {}
+                                            }
+                                          ]
                                         }
                                       }
-                                    },
+                                    ],
                                     "-geometry": {
                                       "IndexedLineSet": {
                                         "@DEF": "TCtoCC",
@@ -219,8 +278,8 @@
                           },
                           {
                             "HAnimJoint": {
-                              "@name": "r_talocalcaneonavicular_joint",
-                              "@DEF": "r_talocalcaneonavicular_joint",
+                              "@name": "r_talocalcaneonavicular",
+                              "@DEF": "hanim_r_talocalcaneonavicular",
                               "@center": [
                                 0,
                                 -0.3,
@@ -230,7 +289,7 @@
                                 {
                                   "HAnimSegment": {
                                     "@name": "r_navicular",
-                                    "@DEF": "r_navicular",
+                                    "@DEF": "hanim_r_navicular",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -250,13 +309,17 @@
                                       },
                                       {
                                         "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {}
+                                          "-children": [
+                                            {
+                                              "Appearance": {
+                                                "-children": [
+                                                  {
+                                                    "Material": {}
+                                                  }
+                                                ]
                                               }
                                             }
-                                          },
+                                          ],
                                           "-geometry": {
                                             "IndexedLineSet": {
                                               "@DEF": "TCNtoCN1",
@@ -282,13 +345,17 @@
                                       },
                                       {
                                         "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {}
+                                          "-children": [
+                                            {
+                                              "Appearance": {
+                                                "-children": [
+                                                  {
+                                                    "Material": {}
+                                                  }
+                                                ]
                                               }
                                             }
-                                          },
+                                          ],
                                           "-geometry": {
                                             "IndexedLineSet": {
                                               "@DEF": "TCNtoCN2",
@@ -314,13 +381,17 @@
                                       },
                                       {
                                         "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {}
+                                          "-children": [
+                                            {
+                                              "Appearance": {
+                                                "-children": [
+                                                  {
+                                                    "Material": {}
+                                                  }
+                                                ]
                                               }
                                             }
-                                          },
+                                          ],
                                           "-geometry": {
                                             "IndexedLineSet": {
                                               "@DEF": "TCNtoCN3",
@@ -352,8 +423,8 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "r_cuneonavicular_joint1",
-                                    "@DEF": "r_cuneonavicular_joint1",
+                                    "@name": "r_cuneonavicular_1",
+                                    "@DEF": "hanim_r_cuneonavicular_1",
                                     "@center": [
                                       0.1,
                                       -0.45,
@@ -362,8 +433,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@name": "r_cuneiform1",
-                                          "@DEF": "r_cuneiform1",
+                                          "@name": "r_cuneiform_1",
+                                          "@DEF": "hanim_r_cuneiform_1",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -383,13 +454,17 @@
                                             },
                                             {
                                               "Shape": {
-                                                "-appearance": {
-                                                  "Appearance": {
-                                                    "-material": {
-                                                      "Material": {}
+                                                "-children": [
+                                                  {
+                                                    "Appearance": {
+                                                      "-children": [
+                                                        {
+                                                          "Material": {}
+                                                        }
+                                                      ]
                                                     }
                                                   }
-                                                },
+                                                ],
                                                 "-geometry": {
                                                   "IndexedLineSet": {
                                                     "@DEF": "CN1toTMT1",
@@ -418,8 +493,8 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_tarsometatarsal_joint1",
-                                          "@DEF": "r_tarsometatarsal_joint1",
+                                          "@name": "r_tarsometatarsal_1",
+                                          "@DEF": "hanim_r_tarsometatarsal_1",
                                           "@center": [
                                             0.1,
                                             -0.6,
@@ -428,8 +503,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_metatarsal1",
-                                                "@DEF": "r_metatarsal1",
+                                                "@name": "r_metatarsal_1",
+                                                "@DEF": "hanim_r_metatarsal_1",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -449,13 +524,17 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "-appearance": {
-                                                        "Appearance": {
-                                                          "-material": {
-                                                            "Material": {}
+                                                      "-children": [
+                                                        {
+                                                          "Appearance": {
+                                                            "-children": [
+                                                              {
+                                                                "Material": {}
+                                                              }
+                                                            ]
                                                           }
                                                         }
-                                                      },
+                                                      ],
                                                       "-geometry": {
                                                         "IndexedLineSet": {
                                                           "@DEF": "TMT1toMTP1",
@@ -484,8 +563,8 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal_joint1",
-                                                "@DEF": "r_metatarsophalangeal_joint1",
+                                                "@name": "r_metatarsophalangeal_1",
+                                                "@DEF": "hanim_r_metatarsophalangeal_1",
                                                 "@center": [
                                                   0.1,
                                                   -0.9,
@@ -494,8 +573,8 @@
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@name": "r_proximal_phalanges1",
-                                                      "@DEF": "r_proximal_phalanges1",
+                                                      "@name": "r_tarsal_proximal_phalanx_1",
+                                                      "@DEF": "hanim_r_tarsal_proximal_phalanx_1",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -515,13 +594,17 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {}
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {}
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "IndexedLineSet": {
                                                                 "@DEF": "MTP1toIP1",
@@ -550,8 +633,8 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
-                                                      "@name": "r_f_Interphalangeal_joint",
-                                                      "@DEF": "r_f_Interphalangeal_joint",
+                                                      "@name": "r_tarsal_interphalangeal_1",
+                                                      "@DEF": "hanim_r_tarsal_interphalangeal_1",
                                                       "@center": [
                                                         0.1,
                                                         -1.05,
@@ -560,8 +643,8 @@
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@name": "r_distal_phalanges1",
-                                                            "@DEF": "r_distal_phalanges1",
+                                                            "@name": "r_tarsal_distal_phalanx_1",
+                                                            "@DEF": "hanim_r_tarsal_distal_phalanx_1",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -581,16 +664,20 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "-appearance": {
-                                                                    "Appearance": {
-                                                                      "-material": {
-                                                                        "Material": {}
+                                                                  "-children": [
+                                                                    {
+                                                                      "Appearance": {
+                                                                        "-children": [
+                                                                          {
+                                                                            "Material": {}
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     }
-                                                                  },
+                                                                  ],
                                                                   "-geometry": {
                                                                     "IndexedLineSet": {
-                                                                      "@DEF": "tiptoe_r_f_Interphalangeal_joint",
+                                                                      "@DEF": "tiptoe_r_interphalangeal_",
                                                                       "@coordIndex": [
                                                                         0,
                                                                         1
@@ -631,8 +718,8 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "r_cuneonavicular_joint2",
-                                    "@DEF": "r_cuneonavicular_joint2",
+                                    "@name": "r_cuneonavicular_2",
+                                    "@DEF": "hanim_r_cuneonavicular_2",
                                     "@center": [
                                       0,
                                       -0.45,
@@ -641,8 +728,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@name": "r_cuneiform2",
-                                          "@DEF": "r_cuneiform2",
+                                          "@name": "r_cuneiform_2",
+                                          "@DEF": "hanim_r_cuneiform_2",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -662,13 +749,17 @@
                                             },
                                             {
                                               "Shape": {
-                                                "-appearance": {
-                                                  "Appearance": {
-                                                    "-material": {
-                                                      "Material": {}
+                                                "-children": [
+                                                  {
+                                                    "Appearance": {
+                                                      "-children": [
+                                                        {
+                                                          "Material": {}
+                                                        }
+                                                      ]
                                                     }
                                                   }
-                                                },
+                                                ],
                                                 "-geometry": {
                                                   "IndexedLineSet": {
                                                     "@DEF": "CN2toTMT2",
@@ -697,8 +788,8 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_tarsometatarsal_joint2",
-                                          "@DEF": "r_tarsometatarsal_joint2",
+                                          "@name": "r_tarsometatarsal_2",
+                                          "@DEF": "hanim_r_tarsometatarsal_2",
                                           "@center": [
                                             -0.05,
                                             -0.6,
@@ -707,8 +798,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_metatarsal2",
-                                                "@DEF": "r_metatarsal2",
+                                                "@name": "r_metatarsal_2",
+                                                "@DEF": "hanim_r_metatarsal_2",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -728,13 +819,17 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "-appearance": {
-                                                        "Appearance": {
-                                                          "-material": {
-                                                            "Material": {}
+                                                      "-children": [
+                                                        {
+                                                          "Appearance": {
+                                                            "-children": [
+                                                              {
+                                                                "Material": {}
+                                                              }
+                                                            ]
                                                           }
                                                         }
-                                                      },
+                                                      ],
                                                       "-geometry": {
                                                         "IndexedLineSet": {
                                                           "@DEF": "TMT2toMTP2",
@@ -763,8 +858,8 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal_joint2",
-                                                "@DEF": "r_metatarsophalangeal_joint2",
+                                                "@name": "r_metatarsophalangeal_2",
+                                                "@DEF": "hanim_r_metatarsophalangeal_2",
                                                 "@center": [
                                                   -0.05,
                                                   -0.9,
@@ -773,8 +868,8 @@
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@name": "r_proximal_phalanges2",
-                                                      "@DEF": "r_proximal_phalanges2",
+                                                      "@name": "r_tarsal_proximal_phalanx_2",
+                                                      "@DEF": "hanim_r_tarsal_proximal_phalanx_2",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -794,13 +889,17 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {}
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {}
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "IndexedLineSet": {
                                                                 "@DEF": "MTP2toPIP2",
@@ -829,8 +928,8 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
-                                                      "@name": "r_f_proximal_Interphalangeal_joint2",
-                                                      "@DEF": "r_f_proximal_Interphalangeal_joint2",
+                                                      "@name": "r_tarsal_proximal_interphalangeal_2",
+                                                      "@DEF": "hanim_r_tarsal_proximal_interphalangeal_2",
                                                       "@center": [
                                                         -0.05,
                                                         -1.05,
@@ -839,8 +938,8 @@
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@name": "r_middle_phalanges2",
-                                                            "@DEF": "r_middle_phalanges2",
+                                                            "@name": "r_tarsal_middle_phalanx_2",
+                                                            "@DEF": "hanim_r_tarsal_middle_phalanx_2",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -860,13 +959,17 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "-appearance": {
-                                                                    "Appearance": {
-                                                                      "-material": {
-                                                                        "Material": {}
+                                                                  "-children": [
+                                                                    {
+                                                                      "Appearance": {
+                                                                        "-children": [
+                                                                          {
+                                                                            "Material": {}
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     }
-                                                                  },
+                                                                  ],
                                                                   "-geometry": {
                                                                     "IndexedLineSet": {
                                                                       "@DEF": "PIP2toDIP2",
@@ -895,8 +998,8 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
-                                                            "@name": "r_f_distal_Interphalangeal_joint2",
-                                                            "@DEF": "r_f_distal_Interphalangeal_joint2",
+                                                            "@name": "r_tarsal_distal_interphalangeal_2",
+                                                            "@DEF": "hanim_r_tarsal_distal_interphalangeal_2",
                                                             "@center": [
                                                               -0.05,
                                                               -1.12,
@@ -905,8 +1008,8 @@
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@name": "r_distal_phalanges2",
-                                                                  "@DEF": "r_distal_phalanges2",
+                                                                  "@name": "r_tarsal_distal_phalanx_2",
+                                                                  "@DEF": "hanim_r_tarsal_distal_phalanx_2",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -926,16 +1029,20 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "-appearance": {
-                                                                          "Appearance": {
-                                                                            "-material": {
-                                                                              "Material": {}
+                                                                        "-children": [
+                                                                          {
+                                                                            "Appearance": {
+                                                                              "-children": [
+                                                                                {
+                                                                                  "Material": {}
+                                                                                }
+                                                                              ]
                                                                             }
                                                                           }
-                                                                        },
+                                                                        ],
                                                                         "-geometry": {
                                                                           "IndexedLineSet": {
-                                                                            "@DEF": "tiptoe_r_f_distal_Interphalangeal_joint2",
+                                                                            "@DEF": "tiptoe_r_tarsal_distal_interphalangeal_2",
                                                                             "@coordIndex": [
                                                                               0,
                                                                               1
@@ -979,8 +1086,8 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "r_cuneonavicular_joint3",
-                                    "@DEF": "r_cuneonavicular_joint3",
+                                    "@name": "r_cuneonavicular_3",
+                                    "@DEF": "hanim_r_cuneonavicular_3",
                                     "@center": [
                                       -0.1,
                                       -0.4,
@@ -989,8 +1096,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@name": "r_cuneiform3",
-                                          "@DEF": "r_cuneiform3",
+                                          "@name": "r_cuneiform_3",
+                                          "@DEF": "hanim_r_cuneiform_3",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1010,13 +1117,17 @@
                                             },
                                             {
                                               "Shape": {
-                                                "-appearance": {
-                                                  "Appearance": {
-                                                    "-material": {
-                                                      "Material": {}
+                                                "-children": [
+                                                  {
+                                                    "Appearance": {
+                                                      "-children": [
+                                                        {
+                                                          "Material": {}
+                                                        }
+                                                      ]
                                                     }
                                                   }
-                                                },
+                                                ],
                                                 "-geometry": {
                                                   "IndexedLineSet": {
                                                     "@DEF": "CN3toTMT3",
@@ -1045,8 +1156,8 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_tarsometatarsal_joint3",
-                                          "@DEF": "r_tarsometatarsal_joint3",
+                                          "@name": "r_tarsometatarsal_3",
+                                          "@DEF": "hanim_r_tarsometatarsal_3",
                                           "@center": [
                                             -0.15,
                                             -0.6,
@@ -1055,8 +1166,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_metatarsal3",
-                                                "@DEF": "r_metatarsal3",
+                                                "@name": "r_metatarsal_3",
+                                                "@DEF": "hanim_r_metatarsal_3",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1076,13 +1187,17 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "-appearance": {
-                                                        "Appearance": {
-                                                          "-material": {
-                                                            "Material": {}
+                                                      "-children": [
+                                                        {
+                                                          "Appearance": {
+                                                            "-children": [
+                                                              {
+                                                                "Material": {}
+                                                              }
+                                                            ]
                                                           }
                                                         }
-                                                      },
+                                                      ],
                                                       "-geometry": {
                                                         "IndexedLineSet": {
                                                           "@DEF": "TMT3toMTP3",
@@ -1111,8 +1226,8 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal_joint3",
-                                                "@DEF": "r_metatarsophalangeal_joint3",
+                                                "@name": "r_metatarsophalangeal_3",
+                                                "@DEF": "hanim_r_metatarsophalangeal_3",
                                                 "@center": [
                                                   -0.15,
                                                   -0.9,
@@ -1121,8 +1236,8 @@
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@name": "r_proximal_phalanges3",
-                                                      "@DEF": "r_proximal_phalanges3",
+                                                      "@name": "r_tarsal_proximal_phalanx_3",
+                                                      "@DEF": "hanim_r_tarsal_proximal_phalanx_3",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1142,13 +1257,17 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {}
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {}
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "IndexedLineSet": {
                                                                 "@DEF": "MTP3toPIP3",
@@ -1177,8 +1296,8 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
-                                                      "@name": "r_f_proximal_Interphalangeal_joint3",
-                                                      "@DEF": "r_f_proximal_Interphalangeal_joint3",
+                                                      "@name": "r_tarsal_proximal_interphalangeal_3",
+                                                      "@DEF": "hanim_r_tarsal_proximal_interphalangeal_3",
                                                       "@center": [
                                                         -0.15,
                                                         -1.05,
@@ -1187,8 +1306,8 @@
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@name": "r_middle_phalanges3",
-                                                            "@DEF": "r_middle_phalanges3",
+                                                            "@name": "r_tarsal_middle_phalanx_3",
+                                                            "@DEF": "hanim_r_tarsal_middle_phalanx_3",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1208,13 +1327,17 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "-appearance": {
-                                                                    "Appearance": {
-                                                                      "-material": {
-                                                                        "Material": {}
+                                                                  "-children": [
+                                                                    {
+                                                                      "Appearance": {
+                                                                        "-children": [
+                                                                          {
+                                                                            "Material": {}
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     }
-                                                                  },
+                                                                  ],
                                                                   "-geometry": {
                                                                     "IndexedLineSet": {
                                                                       "@DEF": "PIP3toDIP3",
@@ -1243,8 +1366,8 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
-                                                            "@name": "r_f_distal_Interphalangeal_joint3",
-                                                            "@DEF": "r_f_distal_Interphalangeal_joint3",
+                                                            "@name": "r_tarsal_distal_interphalangeal_3",
+                                                            "@DEF": "hanim_r_tarsal_distal_interphalangeal_3",
                                                             "@center": [
                                                               -0.15,
                                                               -1.13,
@@ -1253,8 +1376,8 @@
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@name": "r_distal_phalanges3",
-                                                                  "@DEF": "r_distal_phalanges3",
+                                                                  "@name": "r_tarsal_distal_phalanx_3",
+                                                                  "@DEF": "hanim_r_tarsal_distal_phalanx_3",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1274,16 +1397,20 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "-appearance": {
-                                                                          "Appearance": {
-                                                                            "-material": {
-                                                                              "Material": {}
+                                                                        "-children": [
+                                                                          {
+                                                                            "Appearance": {
+                                                                              "-children": [
+                                                                                {
+                                                                                  "Material": {}
+                                                                                }
+                                                                              ]
                                                                             }
                                                                           }
-                                                                        },
+                                                                        ],
                                                                         "-geometry": {
                                                                           "IndexedLineSet": {
-                                                                            "@DEF": "tiptoe_r_f_distal_Interphalangeal_joint3",
+                                                                            "@DEF": "tiptoe_r_tarsal_distal_interphalangeal_3",
                                                                             "@coordIndex": [
                                                                               0,
                                                                               1
@@ -1330,8 +1457,8 @@
                           },
                           {
                             "HAnimJoint": {
-                              "@name": "r_calcaneuscuboid_joint",
-                              "@DEF": "r_calcaneuscuboid_joint",
+                              "@name": "r_calcaneocuboid",
+                              "@DEF": "hanim_r_calcaneocuboid",
                               "@center": [
                                 -0.2,
                                 0.3,
@@ -1341,7 +1468,7 @@
                                 {
                                   "HAnimSegment": {
                                     "@name": "r_calcaneus",
-                                    "@DEF": "r_calcaneus",
+                                    "@DEF": "hanim_r_calcaneus",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -1361,13 +1488,17 @@
                                       },
                                       {
                                         "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {}
+                                          "-children": [
+                                            {
+                                              "Appearance": {
+                                                "-children": [
+                                                  {
+                                                    "Material": {}
+                                                  }
+                                                ]
                                               }
                                             }
-                                          },
+                                          ],
                                           "-geometry": {
                                             "IndexedLineSet": {
                                               "@DEF": "CCtoTT",
@@ -1399,8 +1530,8 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "r_transverse_tarsal_joint",
-                                    "@DEF": "r_transverse_tarsal_joint",
+                                    "@name": "r_transversetarsal",
+                                    "@DEF": "hanim_r_transversetarsal",
                                     "@center": [
                                       -0.21,
                                       -0.3,
@@ -1410,7 +1541,7 @@
                                       {
                                         "HAnimSegment": {
                                           "@name": "r_cuboid",
-                                          "@DEF": "r_cuboid",
+                                          "@DEF": "hanim_r_cuboid",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1430,13 +1561,17 @@
                                             },
                                             {
                                               "Shape": {
-                                                "-appearance": {
-                                                  "Appearance": {
-                                                    "-material": {
-                                                      "Material": {}
+                                                "-children": [
+                                                  {
+                                                    "Appearance": {
+                                                      "-children": [
+                                                        {
+                                                          "Material": {}
+                                                        }
+                                                      ]
                                                     }
                                                   }
-                                                },
+                                                ],
                                                 "-geometry": {
                                                   "IndexedLineSet": {
                                                     "@DEF": "TTtoTMT4",
@@ -1462,13 +1597,17 @@
                                             },
                                             {
                                               "Shape": {
-                                                "-appearance": {
-                                                  "Appearance": {
-                                                    "-material": {
-                                                      "Material": {}
+                                                "-children": [
+                                                  {
+                                                    "Appearance": {
+                                                      "-children": [
+                                                        {
+                                                          "Material": {}
+                                                        }
+                                                      ]
                                                     }
                                                   }
-                                                },
+                                                ],
                                                 "-geometry": {
                                                   "IndexedLineSet": {
                                                     "@DEF": "TTtoTMT5",
@@ -1500,8 +1639,8 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_tarsometatarsal_joint4",
-                                          "@DEF": "r_tarsometatarsal_joint4",
+                                          "@name": "r_tarsometatarsal_4",
+                                          "@DEF": "hanim_r_tarsometatarsal_4",
                                           "@center": [
                                             -0.25,
                                             -0.58,
@@ -1510,8 +1649,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_metatarsal4",
-                                                "@DEF": "r_metatarsal4",
+                                                "@name": "r_metatarsal_4",
+                                                "@DEF": "hanim_r_metatarsal_4",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1531,13 +1670,17 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "-appearance": {
-                                                        "Appearance": {
-                                                          "-material": {
-                                                            "Material": {}
+                                                      "-children": [
+                                                        {
+                                                          "Appearance": {
+                                                            "-children": [
+                                                              {
+                                                                "Material": {}
+                                                              }
+                                                            ]
                                                           }
                                                         }
-                                                      },
+                                                      ],
                                                       "-geometry": {
                                                         "IndexedLineSet": {
                                                           "@DEF": "TMT4toMTP4",
@@ -1566,8 +1709,8 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal_joint4",
-                                                "@DEF": "r_metatarsophalangeal_joint4",
+                                                "@name": "r_metatarsophalangeal_4",
+                                                "@DEF": "hanim_r_metatarsophalangeal_4",
                                                 "@center": [
                                                   -0.25,
                                                   -0.87,
@@ -1576,8 +1719,8 @@
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@name": "r_proximal_phalanges4",
-                                                      "@DEF": "r_proximal_phalanges4",
+                                                      "@name": "r_tarsal_proximal_phalanx_4",
+                                                      "@DEF": "hanim_r_tarsal_proximal_phalanx_4",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1597,13 +1740,17 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {}
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {}
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "IndexedLineSet": {
                                                                 "@DEF": "MTP4toPIP4",
@@ -1632,8 +1779,8 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
-                                                      "@name": "r_f_proximal_Interphalangeal_joint4",
-                                                      "@DEF": "r_f_proximal_Interphalangeal_joint4",
+                                                      "@name": "r_tarsal_proximal_interphalangeal_4",
+                                                      "@DEF": "hanim_r_tarsal_proximal_interphalangeal_4",
                                                       "@center": [
                                                         -0.25,
                                                         -1,
@@ -1642,8 +1789,8 @@
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@name": "r_middle_phalanges4",
-                                                            "@DEF": "r_middle_phalanges4",
+                                                            "@name": "r_tarsal_middle_phalanx_4",
+                                                            "@DEF": "hanim_r_tarsal_middle_phalanx_4",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1663,13 +1810,17 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "-appearance": {
-                                                                    "Appearance": {
-                                                                      "-material": {
-                                                                        "Material": {}
+                                                                  "-children": [
+                                                                    {
+                                                                      "Appearance": {
+                                                                        "-children": [
+                                                                          {
+                                                                            "Material": {}
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     }
-                                                                  },
+                                                                  ],
                                                                   "-geometry": {
                                                                     "IndexedLineSet": {
                                                                       "@DEF": "PIP4toDIP4",
@@ -1698,8 +1849,8 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
-                                                            "@name": "r_f_distal_Interphalangeal_joint4",
-                                                            "@DEF": "r_f_distal_Interphalangeal_joint4",
+                                                            "@name": "r_tarsal_distal_interphalangeal_4",
+                                                            "@DEF": "hanim_r_tarsal_distal_interphalangeal_4",
                                                             "@center": [
                                                               -0.25,
                                                               -1.1,
@@ -1708,8 +1859,8 @@
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@name": "r_distal_phalanges4",
-                                                                  "@DEF": "r_distal_phalanges4",
+                                                                  "@name": "r_tarsal_distal_phalanx_4",
+                                                                  "@DEF": "hanim_r_tarsal_distal_phalanx_4",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1729,16 +1880,20 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "-appearance": {
-                                                                          "Appearance": {
-                                                                            "-material": {
-                                                                              "Material": {}
+                                                                        "-children": [
+                                                                          {
+                                                                            "Appearance": {
+                                                                              "-children": [
+                                                                                {
+                                                                                  "Material": {}
+                                                                                }
+                                                                              ]
                                                                             }
                                                                           }
-                                                                        },
+                                                                        ],
                                                                         "-geometry": {
                                                                           "IndexedLineSet": {
-                                                                            "@DEF": "tiptoe_r_f_distal_Interphalangeal_joint4",
+                                                                            "@DEF": "tiptoe_r_tarsal_distal_interphalangeal_4",
                                                                             "@coordIndex": [
                                                                               0,
                                                                               1
@@ -1779,8 +1934,8 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_tarsometatarsal_joint5",
-                                          "@DEF": "r_tarsometatarsal_joint5",
+                                          "@name": "r_tarsometatarsal_5",
+                                          "@DEF": "hanim_r_tarsometatarsal_5",
                                           "@center": [
                                             -0.33,
                                             -0.52,
@@ -1789,8 +1944,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_metatarsal5",
-                                                "@DEF": "r_metatarsal5",
+                                                "@name": "r_metatarsal_5",
+                                                "@DEF": "hanim_r_metatarsal_5",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1810,13 +1965,17 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "-appearance": {
-                                                        "Appearance": {
-                                                          "-material": {
-                                                            "Material": {}
+                                                      "-children": [
+                                                        {
+                                                          "Appearance": {
+                                                            "-children": [
+                                                              {
+                                                                "Material": {}
+                                                              }
+                                                            ]
                                                           }
                                                         }
-                                                      },
+                                                      ],
                                                       "-geometry": {
                                                         "IndexedLineSet": {
                                                           "@DEF": "TMT5toMTP5",
@@ -1845,8 +2004,8 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal_joint5",
-                                                "@DEF": "r_metatarsophalangeal_joint5",
+                                                "@name": "r_metatarsophalangeal_5",
+                                                "@DEF": "hanim_r_metatarsophalangeal_5",
                                                 "@center": [
                                                   -0.34,
                                                   -0.8,
@@ -1855,8 +2014,8 @@
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@name": "r_proximal_phalanges5",
-                                                      "@DEF": "r_proximal_phalanges5",
+                                                      "@name": "r_tarsal_proximal_phalanx_5",
+                                                      "@DEF": "hanim_r_tarsal_proximal_phalanx_5",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1876,13 +2035,17 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {}
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {}
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "IndexedLineSet": {
                                                                 "@DEF": "MTP5toPIP5",
@@ -1911,8 +2074,8 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
-                                                      "@name": "r_f_proximal_Interphalangeal_joint5",
-                                                      "@DEF": "r_f_proximal_Interphalangeal_joint5",
+                                                      "@name": "r_tarsal_proximal_interphalangeal_5",
+                                                      "@DEF": "hanim_r_tarsal_proximal_interphalangeal_5",
                                                       "@center": [
                                                         -0.34,
                                                         -0.95,
@@ -1921,8 +2084,8 @@
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@name": "r_middle_phalanges5",
-                                                            "@DEF": "r_middle_phalanges5",
+                                                            "@name": "r_tarsal_middle_phalanx_5",
+                                                            "@DEF": "hanim_r_tarsal_middle_phalanx_5",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1942,13 +2105,17 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "-appearance": {
-                                                                    "Appearance": {
-                                                                      "-material": {
-                                                                        "Material": {}
+                                                                  "-children": [
+                                                                    {
+                                                                      "Appearance": {
+                                                                        "-children": [
+                                                                          {
+                                                                            "Material": {}
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     }
-                                                                  },
+                                                                  ],
                                                                   "-geometry": {
                                                                     "IndexedLineSet": {
                                                                       "@DEF": "PIP5toDIP5",
@@ -1977,8 +2144,8 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
-                                                            "@name": "r_f_distal_Interphalangeal_joint5",
-                                                            "@DEF": "r_f_distal_Interphalangeal_joint5",
+                                                            "@name": "r_tarsal_distal_interphalangeal_5",
+                                                            "@DEF": "hanim_r_tarsal_distal_interphalangeal_5",
                                                             "@center": [
                                                               -0.34,
                                                               -1.05,
@@ -1987,8 +2154,8 @@
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@name": "r_distal_phalanges5",
-                                                                  "@DEF": "r_distal_phalanges5",
+                                                                  "@name": "r_tarsal_distal_phalanx_5",
+                                                                  "@DEF": "hanim_r_tarsal_distal_phalanx_5",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -2008,16 +2175,20 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "-appearance": {
-                                                                          "Appearance": {
-                                                                            "-material": {
-                                                                              "Material": {}
+                                                                        "-children": [
+                                                                          {
+                                                                            "Appearance": {
+                                                                              "-children": [
+                                                                                {
+                                                                                  "Material": {}
+                                                                                }
+                                                                              ]
                                                                             }
                                                                           }
-                                                                        },
+                                                                        ],
                                                                         "-geometry": {
                                                                           "IndexedLineSet": {
-                                                                            "@DEF": "tiptoe_r_f_distal_Interphalangeal_joint5",
+                                                                            "@DEF": "tiptoe_r_tarsal_distal_interphalangeal_5",
                                                                             "@coordIndex": [
                                                                               0,
                                                                               1
@@ -2064,272 +2235,274 @@
                     }
                   ]
                 }
-              },
+              }
+            ],
+            "-joints": [
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_HumanoidRoot"
+                  "@USE": "hanim_humanoid_root"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_talocrural_joint"
+                  "@USE": "hanim_r_calcaneocuboid"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_talocalcaneonavicular_joint"
+                  "@USE": "hanim_r_cuneonavicular_1"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_cuneonavicular_joint1"
+                  "@USE": "hanim_r_cuneonavicular_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_tarsometatarsal_joint1"
+                  "@USE": "hanim_r_cuneonavicular_3"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_metatarsophalangeal_joint1"
+                  "@USE": "hanim_r_metatarsophalangeal_1"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_Interphalangeal_joint"
+                  "@USE": "hanim_r_metatarsophalangeal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_cuneonavicular_joint2"
+                  "@USE": "hanim_r_metatarsophalangeal_3"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_tarsometatarsal_joint2"
+                  "@USE": "hanim_r_metatarsophalangeal_4"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_metatarsophalangeal_joint2"
+                  "@USE": "hanim_r_metatarsophalangeal_5"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_proximal_Interphalangeal_joint2"
+                  "@USE": "hanim_r_talocalcaneonavicular"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_distal_Interphalangeal_joint2"
+                  "@USE": "hanim_r_talocrural"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_cuneonavicular_joint3"
+                  "@USE": "hanim_r_tarsal_distal_interphalangeal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_tarsometatarsal_joint3"
+                  "@USE": "hanim_r_tarsal_distal_interphalangeal_3"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_metatarsophalangeal_joint3"
+                  "@USE": "hanim_r_tarsal_distal_interphalangeal_4"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_proximal_Interphalangeal_joint3"
+                  "@USE": "hanim_r_tarsal_distal_interphalangeal_5"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_distal_Interphalangeal_joint3"
+                  "@USE": "hanim_r_tarsal_interphalangeal_1"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_calcaneuscuboid_joint"
+                  "@USE": "hanim_r_tarsal_proximal_interphalangeal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_transverse_tarsal_joint"
+                  "@USE": "hanim_r_tarsal_proximal_interphalangeal_3"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_tarsometatarsal_joint4"
+                  "@USE": "hanim_r_tarsal_proximal_interphalangeal_4"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_metatarsophalangeal_joint4"
+                  "@USE": "hanim_r_tarsal_proximal_interphalangeal_5"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_proximal_Interphalangeal_joint4"
+                  "@USE": "hanim_r_tarsometatarsal_1"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_distal_Interphalangeal_joint4"
+                  "@USE": "hanim_r_tarsometatarsal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_tarsometatarsal_joint5"
+                  "@USE": "hanim_r_tarsometatarsal_3"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_metatarsophalangeal_joint5"
+                  "@USE": "hanim_r_tarsometatarsal_4"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_proximal_Interphalangeal_joint5"
+                  "@USE": "hanim_r_tarsometatarsal_5"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "r_f_distal_Interphalangeal_joint5"
+                  "@USE": "hanim_r_transversetarsal"
                 }
               }
             ],
             "-segments": [
               {
                 "HAnimSegment": {
-                  "@USE": "r_talus"
+                  "@USE": "hanim_r_calcaneus"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_navicular"
+                  "@USE": "hanim_r_cuboid"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_cuneiform1"
+                  "@USE": "hanim_r_cuneiform_1"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_metatarsal1"
+                  "@USE": "hanim_r_cuneiform_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_proximal_phalanges1"
+                  "@USE": "hanim_r_cuneiform_3"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_distal_phalanges1"
+                  "@USE": "hanim_r_metatarsal_1"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_cuneiform2"
+                  "@USE": "hanim_r_metatarsal_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_metatarsal2"
+                  "@USE": "hanim_r_metatarsal_3"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_proximal_phalanges2"
+                  "@USE": "hanim_r_metatarsal_4"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_middle_phalanges2"
+                  "@USE": "hanim_r_metatarsal_5"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_distal_phalanges2"
+                  "@USE": "hanim_r_navicular"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_cuneiform3"
+                  "@USE": "hanim_r_talus"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_metatarsal3"
+                  "@USE": "hanim_r_tarsal_distal_phalanx_1"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_proximal_phalanges3"
+                  "@USE": "hanim_r_tarsal_distal_phalanx_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_middle_phalanges3"
+                  "@USE": "hanim_r_tarsal_distal_phalanx_3"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_distal_phalanges3"
+                  "@USE": "hanim_r_tarsal_distal_phalanx_4"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_calcaneus"
+                  "@USE": "hanim_r_tarsal_distal_phalanx_5"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_cuboid"
+                  "@USE": "hanim_r_tarsal_middle_phalanx_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_metatarsal4"
+                  "@USE": "hanim_r_tarsal_middle_phalanx_3"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_proximal_phalanges4"
+                  "@USE": "hanim_r_tarsal_middle_phalanx_4"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_middle_phalanges4"
+                  "@USE": "hanim_r_tarsal_middle_phalanx_5"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_distal_phalanges4"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_1"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_metatarsal5"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_proximal_phalanges5"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_3"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_middle_phalanges5"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_4"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "r_distal_phalanges5"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_5"
                 }
               }
             ]
@@ -2338,6 +2511,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

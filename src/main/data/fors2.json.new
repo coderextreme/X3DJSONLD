@@ -35,7 +35,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -43,7 +43,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -91,31 +91,31 @@
                             },
                             {
                               "#comment": "comment after Appearance"
+                            },
+                            {
+                              "Appearance": {
+                                "-children": [
+                                  {
+                                    "#comment": "comment before Material"
+                                  },
+                                  {
+                                    "#comment": "comment after Material"
+                                  },
+                                  {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
                             }
                           ],
                           "-geometry": {
                             "Sphere": {}
-                          },
-                          "-appearance": {
-                            "Appearance": {
-                              "-children": [
-                                {
-                                  "#comment": "comment before Material"
-                                },
-                                {
-                                  "#comment": "comment after Material"
-                                }
-                              ],
-                              "-material": {
-                                "Material": {
-                                  "@diffuseColor": [
-                                    1,
-                                    0,
-                                    0
-                                  ]
-                                }
-                              }
-                            }
                           }
                         }
                       }
@@ -302,19 +302,23 @@
                         ]
                       }
                     },
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {
-                            "@diffuseColor": [
-                              0,
-                              1,
-                              0
-                            ]
-                          }
+                    "-children": [
+                      {
+                        "Appearance": {
+                          "-children": [
+                            {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          ]
                         }
                       }
-                    }
+                    ]
                   }
                 },
                 {
@@ -484,6 +488,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }
