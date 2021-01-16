@@ -2,7 +2,7 @@
   "X3D": {
     "@profile": "Interchange",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "meta": [
         {
@@ -47,7 +47,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -55,7 +55,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -67,6 +67,22 @@
             "-children": [
               {
                 "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
+              },
+              {
+                "Appearance": {
+                  "-children": [
+                    {
+                      "Material": {
+                        "@DEF": "MaterialNode",
+                        "@diffuseColor": [
+                          1,
+                          0.75,
+                          0.25
+                        ]
+                      }
+                    }
+                  ]
+                }
               }
             ],
             "-geometry": {
@@ -870,26 +886,12 @@
                   }
                 }
               }
-            },
-            "-appearance": {
-              "Appearance": {
-                "-material": {
-                  "Material": {
-                    "@DEF": "MaterialNode",
-                    "@diffuseColor": [
-                      1,
-                      0.75,
-                      0.25
-                    ]
-                  }
-                }
-              }
             }
           }
         }
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }
