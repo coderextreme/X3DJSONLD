@@ -2,11 +2,11 @@
   "X3D": {
     "@profile": "Immersive",
     "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "component": [
         {
-          "@name": "H-Anim",
+          "@name": "HAnim",
           "@level": 1
         }
       ],
@@ -17,7 +17,7 @@
         },
         {
           "@name": "description",
-          "@content": "A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."
+          "@content": "A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."
         },
         {
           "@name": "creator",
@@ -37,11 +37,11 @@
         },
         {
           "@name": "modified",
-          "@content": "23 May 2020"
+          "@content": "4 July 2020"
         },
         {
           "@name": "reference",
-          "@content": "http://h-anim.org"
+          "@content": "http://HAnim.org"
         },
         {
           "@name": "reference",
@@ -89,7 +89,7 @@
         },
         {
           "@name": "reference",
-          "@content": "http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl"
+          "@content": "http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"
         },
         {
           "@name": "reference",
@@ -97,15 +97,15 @@
         },
         {
           "@name": "reference",
-          "@content": "http://h-anim.org/Specifications/H-Anim2001"
+          "@content": "http://HAnim.org/Specifications/HAnim2001"
         },
         {
           "@name": "reference",
-          "@content": "http://h-anim.org/Models"
+          "@content": "http://HAnim.org/Models"
         },
         {
           "@name": "reference",
-          "@content": "http://h-anim.org/Nodes"
+          "@content": "http://HAnim.org/Nodes"
         },
         {
           "@name": "reference",
@@ -121,7 +121,7 @@
         },
         {
           "@name": "subject",
-          "@content": "BoxMan H-Anim 2.0"
+          "@content": "BoxMan HAnim 2.0"
         },
         {
           "@name": "identifier",
@@ -137,7 +137,7 @@
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -145,7 +145,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -176,7 +176,7 @@
           }
         },
         {
-          "#comment": "When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet"
+          "#comment": "When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet"
         },
         {
           "HAnimHumanoid": {
@@ -189,7 +189,7 @@
               "humanoidVersion=1.0"
             ],
             "@version": "1.0",
-            "-joints": [
+            "-skeleton": [
               {
                 "HAnimJoint": {
                   "@name": "humanoid_root",
@@ -244,19 +244,23 @@
                                 {
                                   "Shape": {
                                     "@DEF": "SphereYellow",
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              0
-                                            ]
-                                          }
+                                    "-children": [
+                                      {
+                                        "Appearance": {
+                                          "-children": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  1,
+                                                  1,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
                                         }
                                       }
-                                    },
+                                    ],
                                     "-geometry": {
                                       "Sphere": {
                                         "@radius": 0.02
@@ -584,19 +588,23 @@
                                                         {
                                                           "Shape": {
                                                             "@DEF": "SphereRed",
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      0,
-                                                                      0
-                                                                    ]
-                                                                  }
+                                                            "-children": [
+                                                              {
+                                                                "Appearance": {
+                                                                  "-children": [
+                                                                    {
+                                                                      "Material": {
+                                                                        "@diffuseColor": [
+                                                                          1,
+                                                                          0,
+                                                                          0
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
                                                                 }
                                                               }
-                                                            },
+                                                            ],
                                                             "-geometry": {
                                                               "Sphere": {
                                                                 "@radius": 0.02
@@ -1492,91 +1500,6 @@
                     }
                   ]
                 }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_wrist"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_elbow"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_shoulder"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_wrist"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_elbow"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_shoulder"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_skullbase"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_vl5"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_midtarsal"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_ankle"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_knee"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_r_hip"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_midtarsal"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_ankle"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_knee"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_l_hip"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "boxman_humanoid_root"
-                }
               }
             ],
             "-children": [
@@ -1591,6 +1514,93 @@
               },
               {
                 "#comment": "top-level site references"
+              },
+              {
+                "HAnimSite": {
+                  "@name": "BoxMan_view",
+                  "@DEF": "boxman_BoxMan_view",
+                  "-children": [
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Inclined_View",
+                        "@description": "Inclined View",
+                        "@orientation": [
+                          0,
+                          1,
+                          0,
+                          0.78
+                        ],
+                        "@position": [
+                          2,
+                          0.9,
+                          2
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Front_View",
+                        "@description": "Front View",
+                        "@position": [
+                          0,
+                          1,
+                          3
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Right_View",
+                        "@description": "Right-side View",
+                        "@orientation": [
+                          0,
+                          1,
+                          0,
+                          -1.57
+                        ],
+                        "@position": [
+                          -3,
+                          1,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Left_View",
+                        "@description": "Left-side View",
+                        "@orientation": [
+                          0,
+                          1,
+                          0,
+                          1.57
+                        ],
+                        "@position": [
+                          3,
+                          1,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Top_View",
+                        "@description": "Top View",
+                        "@orientation": [
+                          1,
+                          0,
+                          0,
+                          -1.57
+                        ],
+                        "@position": [
+                          0,
+                          3,
+                          0
+                        ]
+                      }
+                    }
+                  ]
+                }
               }
             ],
             "-skinCoord": {
@@ -2278,21 +2288,23 @@
                   {
                     "Shape": {
                       "@DEF": "TrouserSkin",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                1
-                              ],
-                              "@transparency": 0.5
-                            }
-                          }
-                        }
-                      },
                       "-children": [
+                        {
+                          "Appearance": {
+                            "-children": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    0,
+                                    0,
+                                    1
+                                  ],
+                                  "@transparency": 0.5
+                                }
+                              }
+                            ]
+                          }
+                        },
                         {
                           "#comment": "# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)"
                         }
@@ -3201,21 +3213,23 @@
                   {
                     "Shape": {
                       "@DEF": "ShoeSkin",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ],
-                              "@transparency": 0.5
-                            }
-                          }
-                        }
-                      },
                       "-children": [
+                        {
+                          "Appearance": {
+                            "-children": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    0,
+                                    0,
+                                    0
+                                  ],
+                                  "@transparency": 0.5
+                                }
+                              }
+                            ]
+                          }
+                        },
                         {
                           "#comment": "# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)"
                         }
@@ -3508,21 +3522,23 @@
                   {
                     "Shape": {
                       "@DEF": "ShirtSkin",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                1,
-                                1,
-                                0
-                              ],
-                              "@transparency": 0.5
-                            }
-                          }
-                        }
-                      },
                       "-children": [
+                        {
+                          "Appearance": {
+                            "-children": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    1,
+                                    1,
+                                    0
+                                  ],
+                                  "@transparency": 0.5
+                                }
+                              }
+                            ]
+                          }
+                        },
                         {
                           "#comment": "# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)"
                         }
@@ -3943,21 +3959,23 @@
                   {
                     "Shape": {
                       "@DEF": "HeadHandsFleshToneSkin",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                1,
-                                0.75,
-                                0.75
-                              ],
-                              "@transparency": 0.5
-                            }
-                          }
-                        }
-                      },
                       "-children": [
+                        {
+                          "Appearance": {
+                            "-children": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    1,
+                                    0.75,
+                                    0.75
+                                  ],
+                                  "@transparency": 0.5
+                                }
+                              }
+                            ]
+                          }
+                        },
                         {
                           "#comment": "# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)"
                         }
@@ -4194,20 +4212,22 @@
                   {
                     "Shape": {
                       "@DEF": "SkinLines",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                0,
-                                0,
-                                0
-                              ]
-                            }
-                          }
-                        }
-                      },
                       "-children": [
+                        {
+                          "Appearance": {
+                            "-children": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
                         {
                           "#comment": "Combined set of prior IFS coordIndex values"
                         }
@@ -6004,55 +6024,102 @@
                 ]
               }
             },
+            "-joints": [
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_humanoid_root"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_skullbase"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_vl5"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_ankle"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_ankle"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_elbow"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_elbow"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_hip"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_hip"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_knee"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_knee"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_midtarsal"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_midtarsal"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_shoulder"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_shoulder"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_l_wrist"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "boxman_r_wrist"
+                }
+              }
+            ],
             "-segments": [
               {
                 "HAnimSegment": {
-                  "@USE": "boxman_sacrum"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_l_thigh"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_l_calf"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_l_hindfoot"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_l_middistal"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_r_thigh"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_r_calf"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_r_hindfoot"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_r_middistal"
-                }
-              },
-              {
-                "HAnimSegment": {
                   "@USE": "boxman_l5"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_sacrum"
                 }
               },
               {
@@ -6062,7 +6129,12 @@
               },
               {
                 "HAnimSegment": {
-                  "@USE": "boxman_l_upperarm"
+                  "@USE": "boxman_l_calf"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_r_calf"
                 }
               },
               {
@@ -6072,36 +6144,61 @@
               },
               {
                 "HAnimSegment": {
-                  "@USE": "boxman_l_hand"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "boxman_r_upperarm"
-                }
-              },
-              {
-                "HAnimSegment": {
                   "@USE": "boxman_r_forearm"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_l_hand"
                 }
               },
               {
                 "HAnimSegment": {
                   "@USE": "boxman_r_hand"
                 }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_l_hindfoot"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_r_hindfoot"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_l_middistal"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_r_middistal"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_l_thigh"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_r_thigh"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_l_upperarm"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "boxman_r_upperarm"
+                }
               }
             ],
-            "-viewpoints": [
-              {
-                "HAnimSite": {
-                  "@USE": "boxman_l_middistal_tip"
-                }
-              },
-              {
-                "HAnimSite": {
-                  "@USE": "boxman_r_middistal_tip"
-                }
-              },
+            "-sites": [
               {
                 "HAnimSite": {
                   "@USE": "boxman_skull_tip"
@@ -6119,89 +6216,12 @@
               },
               {
                 "HAnimSite": {
-                  "@name": "BoxMan_view",
-                  "@DEF": "boxman_BoxMan_view",
-                  "-children": [
-                    {
-                      "Viewpoint": {
-                        "@DEF": "Inclined_View",
-                        "@description": "Inclined View",
-                        "@orientation": [
-                          0,
-                          1,
-                          0,
-                          0.78
-                        ],
-                        "@position": [
-                          2,
-                          0.9,
-                          2
-                        ]
-                      }
-                    },
-                    {
-                      "Viewpoint": {
-                        "@DEF": "Front_View",
-                        "@description": "Front View",
-                        "@position": [
-                          0,
-                          1,
-                          3
-                        ]
-                      }
-                    },
-                    {
-                      "Viewpoint": {
-                        "@DEF": "Right_View",
-                        "@description": "Right-side View",
-                        "@orientation": [
-                          0,
-                          1,
-                          0,
-                          -1.57
-                        ],
-                        "@position": [
-                          -3,
-                          1,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Viewpoint": {
-                        "@DEF": "Left_View",
-                        "@description": "Left-side View",
-                        "@orientation": [
-                          0,
-                          1,
-                          0,
-                          1.57
-                        ],
-                        "@position": [
-                          3,
-                          1,
-                          0
-                        ]
-                      }
-                    },
-                    {
-                      "Viewpoint": {
-                        "@DEF": "Top_View",
-                        "@description": "Top View",
-                        "@orientation": [
-                          1,
-                          0,
-                          0,
-                          -1.57
-                        ],
-                        "@position": [
-                          0,
-                          3,
-                          0
-                        ]
-                      }
-                    }
-                  ]
+                  "@USE": "boxman_l_middistal_tip"
+                }
+              },
+              {
+                "HAnimSite": {
+                  "@USE": "boxman_r_middistal_tip"
                 }
               }
             ]
@@ -6213,10 +6233,10 @@
             "@url": [
               "LOA1_WalkAnimation.wrl#LOA1_WalkAnimation",
               "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation",
-              "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation",
+              "http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation",
               "LOA1_WalkAnimation.x3d#LOA1_WalkAnimation",
               "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation",
-              "http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"
+              "http://HAnim.org/Models/HAnim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"
             ],
             "field": [
               {
@@ -6584,6 +6604,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }
