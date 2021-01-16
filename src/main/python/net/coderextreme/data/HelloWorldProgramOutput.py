@@ -1,7 +1,7 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setProfile("Full")
+X3D0.setVersion("4.0")
 #x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 head1 = x3d.head()
 #comment #1
@@ -93,7 +93,7 @@ meta17.setContent("6 September 2016")
 head1.addMeta(meta17)
 meta18 = x3d.meta()
 meta18.setName("modified")
-meta18.setContent("9 June 2020")
+meta18.setContent("20 December 2020")
 
 head1.addMeta(meta18)
 meta19 = x3d.meta()
@@ -211,6 +211,7 @@ Transform42 = x3d.Transform()
 Transform42.setDEF("LogoGeometryTransform")
 Transform42.setTranslation([0,1.5,0])
 Anchor43 = x3d.Anchor()
+Anchor43.setDEF("siteAnchor")
 Anchor43.setDescription("select for X3D Java SAI Library (X3DJSAIL) description")
 Anchor43.setUrl(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"])
 Shape44 = x3d.Shape()
@@ -317,6 +318,7 @@ MetadataSet63.addValue(MetadataString65)
 Text62.setMetadata(MetadataSet63)
 FontStyle66 = x3d.FontStyle()
 FontStyle66.setJustify(["MIDDLE","MIDDLE"])
+FontStyle66.setGlyphStyle("PLAIN")
 
 Text62.setFontStyle(FontStyle66)
 
@@ -572,14 +574,14 @@ Shape106.setGeometry(Cylinder109)
 
 Scene32.addChildren(Shape106)
 Inline110 = x3d.Inline()
-Inline110.setDEF("inlineSceneDef")
+Inline110.setDEF("inlineScene")
 Inline110.setUrl(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])
 
 Scene32.addChildren(Inline110)
 IMPORT111 = x3d.IMPORT()
 IMPORT111.setAS("WorldInfoDEF2")
 IMPORT111.setImportedDEF("WorldInfoDEF")
-IMPORT111.setInlineDEF("inlineSceneDef")
+IMPORT111.setInlineDEF("inlineScene")
 
 Scene32.addChildren(IMPORT111)
 EXPORT112 = x3d.EXPORT()
@@ -818,7 +820,7 @@ MovieTexture149 = x3d.MovieTexture()
 MovieTexture149.setDescription("mpgsys.mpg from ConformanceNist suite")
 MovieTexture149.setUrl(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])
 #Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
-#Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
+#Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\"
 
 Sound148.setSource(MovieTexture149)
 
@@ -971,6 +973,75 @@ DISEntityManager184.addChildren(DISEntityTypeMapping185)
 Transform175.addChildren(DISEntityManager184)
 
 Scene32.addChildren(Transform175)
+EspduTransform186 = x3d.EspduTransform()
+WorldInfo187 = x3d.WorldInfo()
+
+EspduTransform186.addChildren(WorldInfo187)
+
+Scene32.addChildren(EspduTransform186)
+ReceiverPdu188 = x3d.ReceiverPdu()
+
+Scene32.addChildren(ReceiverPdu188)
+SignalPdu189 = x3d.SignalPdu()
+
+Scene32.addChildren(SignalPdu189)
+TransmitterPdu190 = x3d.TransmitterPdu()
+
+Scene32.addChildren(TransmitterPdu190)
+DISEntityManager191 = x3d.DISEntityManager()
+DISEntityTypeMapping192 = x3d.DISEntityTypeMapping()
+
+DISEntityManager191.addChildren(DISEntityTypeMapping192)
+
+Scene32.addChildren(DISEntityManager191)
+LoadSensor193 = x3d.LoadSensor()
+#Contained nodes typically must be USE references for nodes previously DEFined in the scene
+#The following nodes are test cases for all X3DUrlObject nodes
+Anchor194 = x3d.Anchor()
+Anchor194.setUSE("siteAnchor")
+
+LoadSensor193.addChildren(Anchor194)
+Inline195 = x3d.Inline()
+Inline195.setUSE("inlineScene")
+
+LoadSensor193.addChildren(Inline195)
+DISEntityTypeMapping196 = x3d.DISEntityTypeMapping()
+
+LoadSensor193.addChildren(DISEntityTypeMapping196)
+GeoMetadata197 = x3d.GeoMetadata()
+
+LoadSensor193.addChildren(GeoMetadata197)
+AudioClip198 = x3d.AudioClip()
+
+LoadSensor193.addChildren(AudioClip198)
+ImageCubeMapTexture199 = x3d.ImageCubeMapTexture()
+
+LoadSensor193.addChildren(ImageCubeMapTexture199)
+ImageTexture3D200 = x3d.ImageTexture3D()
+
+LoadSensor193.addChildren(ImageTexture3D200)
+ImageTexture201 = x3d.ImageTexture()
+
+LoadSensor193.addChildren(ImageTexture201)
+MovieTexture202 = x3d.MovieTexture()
+
+LoadSensor193.addChildren(MovieTexture202)
+Script203 = x3d.Script()
+
+LoadSensor193.addChildren(Script203)
+PackagedShader204 = x3d.PackagedShader()
+
+LoadSensor193.addChildren(PackagedShader204)
+ShaderPart205 = x3d.ShaderPart()
+ShaderPart205.setType("VERTEX")
+
+LoadSensor193.addChildren(ShaderPart205)
+ShaderProgram206 = x3d.ShaderProgram()
+ShaderProgram206.setType("VERTEX")
+
+LoadSensor193.addChildren(ShaderProgram206)
+
+Scene32.addChildren(LoadSensor193)
 
 X3D0.setScene(Scene32)
 X3D0.toFileX3D("../data/HelloWorldProgramOutput_RoundTrip.x3d")

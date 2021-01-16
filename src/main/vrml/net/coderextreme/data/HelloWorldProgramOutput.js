@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
-X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.profile = "Full";
+X3D0.version = "4.0";
 //x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 let ViewpointGroup2 = browser.currentScene.createNode("ViewpointGroup");
 ViewpointGroup2.description = "Available viewpoints";
@@ -54,6 +54,7 @@ let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "LogoGeometryTransform";
 Transform11.translation = new SFVec3f(new float[0,1.5,0]);
 let Anchor12 = browser.currentScene.createNode("Anchor");
+Anchor12.DEF = "siteAnchor";
 Anchor12.description = "select for X3D Java SAI Library (X3DJSAIL) description";
 Anchor12.url = new MFString(new java.lang.String["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]);
 let Shape13 = browser.currentScene.createNode("Shape");
@@ -166,6 +167,7 @@ Text31.metadata = MetadataSet32;
 
 let FontStyle35 = browser.currentScene.createNode("FontStyle");
 FontStyle35.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle35.glyphStyle = "PLAIN";
 Text31.fontStyle = FontStyle35;
 
 Shape28.geometry = Text31;
@@ -456,14 +458,14 @@ Shape75.geometry = Cylinder78;
 browser.currentScene.children[23] = Shape75;
 
 let Inline79 = browser.currentScene.createNode("Inline");
-Inline79.DEF = "inlineSceneDef";
+Inline79.DEF = "inlineScene";
 Inline79.url = new MFString(new java.lang.String["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]);
 browser.currentScene.children[24] = Inline79;
 
 let IMPORT80 = browser.currentScene.createNode("IMPORT");
 IMPORT80.AS = "WorldInfoDEF2";
 IMPORT80.importedDEF = "WorldInfoDEF";
-IMPORT80.inlineDEF = "inlineSceneDef";
+IMPORT80.inlineDEF = "inlineScene";
 browser.currentScene.children[25] = IMPORT80;
 
 let EXPORT81 = browser.currentScene.createNode("EXPORT");
@@ -765,7 +767,7 @@ let MovieTexture118 = browser.currentScene.createNode("MovieTexture");
 MovieTexture118.description = "mpgsys.mpg from ConformanceNist suite";
 MovieTexture118.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
 //Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
-//Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
+//Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\"
 Sound117.source = MovieTexture118;
 
 browser.currentScene.children[31] = Sound117;
@@ -953,4 +955,79 @@ DISEntityManager153.children[0] = DISEntityTypeMapping154;
 Transform144.children[5] = DISEntityManager153;
 
 browser.currentScene.children[36] = Transform144;
+
+let EspduTransform155 = browser.currentScene.createNode("EspduTransform");
+let WorldInfo156 = browser.currentScene.createNode("WorldInfo");
+EspduTransform155.children = new MFNode();
+
+EspduTransform155.children[0] = WorldInfo156;
+
+browser.currentScene.children[37] = EspduTransform155;
+
+let ReceiverPdu157 = browser.currentScene.createNode("ReceiverPdu");
+browser.currentScene.children[38] = ReceiverPdu157;
+
+let SignalPdu158 = browser.currentScene.createNode("SignalPdu");
+browser.currentScene.children[39] = SignalPdu158;
+
+let TransmitterPdu159 = browser.currentScene.createNode("TransmitterPdu");
+browser.currentScene.children[40] = TransmitterPdu159;
+
+let DISEntityManager160 = browser.currentScene.createNode("DISEntityManager");
+let DISEntityTypeMapping161 = browser.currentScene.createNode("DISEntityTypeMapping");
+DISEntityManager160.children = new MFNode();
+
+DISEntityManager160.children[0] = DISEntityTypeMapping161;
+
+browser.currentScene.children[41] = DISEntityManager160;
+
+let LoadSensor162 = browser.currentScene.createNode("LoadSensor");
+//Contained nodes typically must be USE references for nodes previously DEFined in the scene
+//The following nodes are test cases for all X3DUrlObject nodes
+let Anchor163 = browser.currentScene.createNode("Anchor");
+Anchor163.USE = "siteAnchor";
+LoadSensor162.children = new MFNode();
+
+LoadSensor162.children[0] = Anchor163;
+
+let Inline164 = browser.currentScene.createNode("Inline");
+Inline164.USE = "inlineScene";
+LoadSensor162.children[1] = Inline164;
+
+let DISEntityTypeMapping165 = browser.currentScene.createNode("DISEntityTypeMapping");
+LoadSensor162.children[2] = DISEntityTypeMapping165;
+
+let GeoMetadata166 = browser.currentScene.createNode("GeoMetadata");
+LoadSensor162.children[3] = GeoMetadata166;
+
+let AudioClip167 = browser.currentScene.createNode("AudioClip");
+LoadSensor162.children[4] = AudioClip167;
+
+let ImageCubeMapTexture168 = browser.currentScene.createNode("ImageCubeMapTexture");
+LoadSensor162.children[5] = ImageCubeMapTexture168;
+
+let ImageTexture3D169 = browser.currentScene.createNode("ImageTexture3D");
+LoadSensor162.children[6] = ImageTexture3D169;
+
+let ImageTexture170 = browser.currentScene.createNode("ImageTexture");
+LoadSensor162.children[7] = ImageTexture170;
+
+let MovieTexture171 = browser.currentScene.createNode("MovieTexture");
+LoadSensor162.children[8] = MovieTexture171;
+
+let Script172 = browser.currentScene.createNode("Script");
+LoadSensor162.children[9] = Script172;
+
+let PackagedShader173 = browser.currentScene.createNode("PackagedShader");
+LoadSensor162.children[10] = PackagedShader173;
+
+let ShaderPart174 = browser.currentScene.createNode("ShaderPart");
+ShaderPart174.type = "VERTEX";
+LoadSensor162.children[11] = ShaderPart174;
+
+let ShaderProgram175 = browser.currentScene.createNode("ShaderProgram");
+ShaderProgram175.type = "VERTEX";
+LoadSensor162.children[12] = ShaderProgram175;
+
+browser.currentScene.children[42] = LoadSensor162;
 
