@@ -4,11 +4,12 @@ import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
+import { CommentsBlock } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
+import { MFString } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
@@ -20,7 +21,6 @@ import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
 var X3D0 =  new X3D({
@@ -29,6 +29,7 @@ var X3D0 =  new X3D({
       version : new SFString("3.3"),
       head : new SFNode(
         new head({
+          { "#comment" : new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON") },
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -36,7 +37,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("Simple X3D scene example: Hello World!")}),
+              content : new SFString("Simple X3D model example: Hello World!")}),
 
             new meta({
               name : new SFString("created"),
@@ -44,7 +45,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("14 April 2017")}),
+              content : new SFString("20 October 2019")}),
 
             new meta({
               name : new SFString("creator"),
@@ -76,7 +77,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3D.org")}),
+              content : new SFString("https://www.web3d.org")}),
 
             new meta({
               name : new SFString("reference"),
@@ -88,7 +89,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes")}),
+              content : new SFString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -120,14 +121,14 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HelloWorld.json")}),
-          { "#comment" : new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON") }])})),
+              content : new SFString("HelloWorld.json")})])})),
       Scene : new SFNode(
         new Scene({
           { "#comment" : new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)") },
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("Hello world!")}),
+              info : new MFString(["Example scene to illustrate a simple X3D model"]),
+              title : new SFString("Hello World!")}),
 
             new Group({
               children : new MFNode([

@@ -45,10 +45,11 @@ public class HelloWorld {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
+        .addComments(new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"))
         .addMeta(new meta().setName("title").setContent("HelloWorld.x3d"))
-        .addMeta(new meta().setName("description").setContent("Simple X3D scene example: Hello World!"))
+        .addMeta(new meta().setName("description").setContent("Simple X3D model example: Hello World!"))
         .addMeta(new meta().setName("created").setContent("30 October 2000"))
-        .addMeta(new meta().setName("modified").setContent("14 April 2017"))
+        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("Image").setContent("HelloWorld.tall.png"))
         .addMeta(new meta().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
@@ -56,10 +57,10 @@ public class HelloWorld {
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
         .addMeta(new meta().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
         .addMeta(new meta().setName("reference").setContent("http://www.HelloWorldExample.net"))
-        .addMeta(new meta().setName("reference").setContent("https://www.web3D.org"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
@@ -67,11 +68,10 @@ public class HelloWorld {
         .addMeta(new meta().setName("reference").setContent("HelloWorld.x3dv"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.x3db"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.xhtml"))
-        .addMeta(new meta().setName("reference").setContent("HelloWorld.json"))
-        .addComments(new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON")))
+        .addMeta(new meta().setName("reference").setContent("HelloWorld.json")))
       .setScene(new Scene()
         .addComments(new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)"))
-        .addChild(new WorldInfo().setTitle("Hello world!"))
+        .addChild(new WorldInfo().setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setTitle("Hello World!"))
         .addChild(new Group()
           .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new float[] {0f,-1f,0f}).setDescription("Hello world!").setPosition(new float[] {0f,-1f,7f}))
           .addChild(new Transform().setRotation(new float[] {0f,1f,0f,3f})
@@ -79,26 +79,31 @@ public class HelloWorld {
               .setGeometry(new Sphere())
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {0.1f,0.5f,1f}))
-                .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))))
+                .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))))))
           .addChild(new Transform().setTranslation(new float[] {0f,-2f,0f})
             .addChild(new Shape()
-              .setGeometry(new Text().setDEF("TextMessage").setString(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
-                .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))))
+              .setGeometry(new Text().setDEF("TextMessage").setString(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))
+                .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray()))))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("MaterialLightBlue")))))))      ;
     return X3D0;
     }
 protected class MFString0 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Example scene to illustrate a simple X3D model"});
   }
 }
 protected class MFString1 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Hello","world!"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
   }
 }
 protected class MFString2 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Hello","world!"});
+  }
+}
+protected class MFString3 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }

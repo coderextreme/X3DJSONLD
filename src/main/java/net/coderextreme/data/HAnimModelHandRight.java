@@ -71,7 +71,7 @@ public class HAnimModelHandRight {
           .addComments(new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setMetadata(new MetadataString().setName("authorName").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
-          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
+          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
             .addComments(new CommentsBlock("Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model"))
             .addChild(new HAnimJoint().setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setDescription("connection joint of hand to leg above")
               .addChild(new HAnimSegment().setName("r_wrist").setDEF("hanim_r_wrist").setDescription("test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint")

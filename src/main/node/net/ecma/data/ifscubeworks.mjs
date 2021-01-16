@@ -7,6 +7,7 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
+import { WorldInfo } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
@@ -42,10 +43,21 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("created"),
-              content : new SFString("4 April 2017")})])})),
+              content : new SFString("4 April 2017")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("ifscubeworks.x3d")}),
+
             new Group({
               children : new MFNode([
                 new Shape({

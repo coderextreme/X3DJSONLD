@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube. </p>
- <p> Related links: <a href="../../../../GeometricProperties/TextureCoordinate/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plusIndex.html" target="_top">indexedfaceset_pixeltexture_plus catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.java">indexedfaceset_pixeltexture_plus.java</a> source, <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plusIndex.html" target="_top">indexedfaceset_pixeltexture_plus catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -106,7 +106,7 @@ load('X3Dautoclass.js');
 	* @author http://www.itl.nist.gov/div897/ctg/vrml/members.html
  */
 
-function NeedClassName
+function indexedfaceset_pixeltexture_plus
   /** Default constructor to create this object. */
   ()
   {
@@ -115,7 +115,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+indexedfaceset_pixeltexture_plus.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -162,7 +162,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return indexedfaceset_pixeltexture_plus model
    */
   getX3dModel : function()
   {	  
@@ -224,8 +224,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new NeedClassName();
-		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new indexedfaceset_pixeltexture_plus();
+		print ("indexedfaceset_pixeltexture_plus execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new indexedfaceset_pixeltexture_plus().main();

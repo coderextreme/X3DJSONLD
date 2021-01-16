@@ -27,8 +27,16 @@
             "@content":"4 April 2017"
           },
           {
+            "@name":"license",
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
             "@name":"translated",
-            "@content":"06 January 2021"
+            "@content":"15 January 2021"
           },
           {
             "@name":"generator",
@@ -42,6 +50,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"ifscubeworks.x3d"
+            }
+          },
           { "Group":
             {
               "-children":[
