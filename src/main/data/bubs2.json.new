@@ -1,6 +1,6 @@
 {
   "X3D": {
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
     "@profile": "Immersive",
     "@version": "3.3",
     "head": {
@@ -31,11 +31,11 @@
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "translated",
-          "@content": "9 October 2020"
+          "@content": "16 January 2021"
         },
         {
           "@name": "generator",
@@ -43,7 +43,7 @@
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -116,20 +116,24 @@
                               "@radius": 0.25
                             }
                           },
-                          "-appearance": {
-                            "Appearance": {
-                              "-material": {
-                                "Material": {
-                                  "@diffuseColor": [
-                                    1,
-                                    0,
-                                    0
-                                  ],
-                                  "@transparency": 0.2
-                                }
+                          "-children": [
+                            {
+                              "Appearance": {
+                                "-children": [
+                                  {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ],
+                                      "@transparency": 0.2
+                                    }
+                                  }
+                                ]
                               }
                             }
-                          }
+                          ]
                         }
                       },
                       {
@@ -302,6 +306,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }
