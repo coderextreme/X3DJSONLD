@@ -462,6 +462,7 @@
             <xsl:variable name="inheritanceName"           select="../Inheritance/@baseType"/>
             <xsl:variable name="additionalInheritanceName" select="../AdditionalInheritance/@baseType"/>
             <xsl:variable name="upperFieldName"            select="concat(upper-case(substring(@name,1,1)),substring(@name,2))"/>
+            <xsl:variable name="upperSynonymName"          select="concat(upper-case(substring(@name,1,1)),substring(@synonym,2))"/>
             <xsl:variable name="isNodeType"                select="(@type = 'SFNode') or (@type = 'MFNode')"/>
             <xsl:variable name="inheritedFrom"             select="@inheritedFrom"/>
             <xsl:variable name="accessTypePropertyName"    select="concat('accessType',upper-case(substring(@accessType,1,1)),substring(@accessType,2))"/>
@@ -922,6 +923,54 @@
                         <xsl:text>:</xsl:text><!-- local namespace -->
                         <xsl:text>has</xsl:text>
                         <xsl:value-of select="$upperFieldName"/>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+
+                        <xsl:text>  rdfs:subPropertyOf </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>hasParent</xsl:text>
+                        <xsl:value-of select="$elementName"/><!-- name of parent node -->
+                        <xsl:text> .</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
+                    <xsl:if test="contains(@type,'Node') and (string-length(@synonym) > 0)"><!-- SFNode or MFNode -->
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>has</xsl:text>
+                        <xsl:value-of select="$upperSynonymName"/>
+                        <xsl:text> a owl:ObjectProperty</xsl:text>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  owl:equivalentProperty </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>has</xsl:text>
+                        <xsl:value-of select="$upperFieldName"/>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  rdfs:subPropertyOf </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>hasChild</xsl:text>
+                        <xsl:text> .</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>field</xsl:text>
+                        <xsl:value-of select="$upperSynonymName"/>
+                        <xsl:text>HasParent</xsl:text>
+                        <xsl:if test="not(@name = 'children')">
+                            <xsl:value-of select="$elementName"/><!-- name of parent node -->
+                        </xsl:if>
+                        <!-- alternate less-preferred phrasing: is "upperFieldNameOf" e.g. isChildrenOf -->
+                        <xsl:text> a owl:ObjectProperty</xsl:text>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  owl:equivalentProperty </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:text>field</xsl:text>
+                        <xsl:value-of select="$upperFieldName"/>
+                        <xsl:text>HasParent</xsl:text>
+                        <xsl:if test="not(@name = 'children')">
+                            <xsl:value-of select="$elementName"/><!-- name of parent node -->
+                        </xsl:if>
                         <xsl:text> ;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
 
