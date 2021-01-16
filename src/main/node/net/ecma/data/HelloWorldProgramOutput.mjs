@@ -85,10 +85,15 @@ import { SignalPdu } from './x3d.mjs';
 import { TransmitterPdu } from './x3d.mjs';
 import { DISEntityManager } from './x3d.mjs';
 import { DISEntityTypeMapping } from './x3d.mjs';
+import { LoadSensor } from './x3d.mjs';
+import { GeoMetadata } from './x3d.mjs';
+import { ImageCubeMapTexture } from './x3d.mjs';
+import { ImageTexture3D } from './x3d.mjs';
+import { PackagedShader } from './x3d.mjs';
 var X3D0 =  new X3D({
 
-      profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      profile : new SFString("Full"),
+      version : new SFString("4.0"),
       { "#comment" : new CommentsBlock("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true") },
       head : new SFNode(
         new head({
@@ -166,7 +171,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("9 June 2020")}),
+              content : new SFString("20 December 2020")}),
 
             new meta({
               name : new SFString("generator"),
@@ -261,6 +266,7 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([0,1.5,0]),
               children : new MFNode([
                 new Anchor({
+                  DEF : new SFString("siteAnchor"),
                   description : new SFString("select for X3D Java SAI Library (X3DJSAIL) description"),
                   url : new MFString(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]),
                   children : new MFNode([
@@ -347,7 +353,8 @@ var X3D0 =  new X3D({
                               value : new MFString(["checks MetadataSet addValue() method"])}))}),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"])}))])}))}),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
+                          glyphStyle : new SFString("PLAIN")}))])}))}),
 
                 new Collision({
                   { "#comment" : new CommentsBlock("test containerField='proxy'") },
@@ -552,13 +559,13 @@ var X3D0 =  new X3D({
                   radius : new SFFloat(0.001)}))}),
 
             new Inline({
-              DEF : new SFString("inlineSceneDef"),
+              DEF : new SFString("inlineScene"),
               url : new MFString(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])}),
 
             new IMPORT({
               aS : new SFString("WorldInfoDEF2"),
               importedDEF : new SFString("WorldInfoDEF"),
-              inlineDEF : new SFString("inlineSceneDef")}),
+              inlineDEF : new SFString("inlineScene")}),
 
             new EXPORT({
               aS : new SFString("WorldInfoDEF3"),
@@ -760,7 +767,7 @@ var X3D0 =  new X3D({
                   description : new SFString("mpgsys.mpg from ConformanceNist suite"),
                   url : new MFString(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
                   { "#comment" : new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d") },
-                  { "#comment" : new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"") }}))}),
+                  { "#comment" : new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\"") }}))}),
           { "#comment" : new CommentsBlock("Test success: Anchor.isNode()=true, siteAnchor.isNode()=true") },
           { "#comment" : new CommentsBlock("Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false") },
           { "#comment" : new CommentsBlock("Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false") },
@@ -872,5 +879,53 @@ var X3D0 =  new X3D({
 
                 new DISEntityManager({
                   children : new MFNode([
-                    new DISEntityTypeMapping({})])})])})])}))});
+                    new DISEntityTypeMapping({})])})])}),
+
+            new EspduTransform({
+              children : new MFNode([
+                new WorldInfo({})])}),
+
+            new ReceiverPdu({}),
+
+            new SignalPdu({}),
+
+            new TransmitterPdu({}),
+
+            new DISEntityManager({
+              children : new MFNode([
+                new DISEntityTypeMapping({})])}),
+
+            new LoadSensor({
+              { "#comment" : new CommentsBlock("Contained nodes typically must be USE references for nodes previously DEFined in the scene") },
+              { "#comment" : new CommentsBlock("The following nodes are test cases for all X3DUrlObject nodes") },
+              children : new MFNode([
+                new Anchor({
+                  USE : new SFString("siteAnchor")}),
+
+                new Inline({
+                  USE : new SFString("inlineScene")}),
+
+                new DISEntityTypeMapping({}),
+
+                new GeoMetadata({}),
+
+                new AudioClip({}),
+
+                new ImageCubeMapTexture({}),
+
+                new ImageTexture3D({}),
+
+                new ImageTexture({}),
+
+                new MovieTexture({}),
+
+                new Script({}),
+
+                new PackagedShader({}),
+
+                new ShaderPart({
+                  type : "VERTEX"}),
+
+                new ShaderProgram({
+                  type : "VERTEX"})])})])}))});
 console.log(X3D0.toXMLNode());

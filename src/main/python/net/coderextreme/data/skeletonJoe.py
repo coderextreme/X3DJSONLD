@@ -15,7 +15,7 @@ meta3.setContent("JohnBoy.x3d")
 head1.addMeta(meta3)
 meta4 = x3d.meta()
 meta4.setName("identifier")
-meta4.setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")
+meta4.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()

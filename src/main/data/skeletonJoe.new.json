@@ -18,7 +18,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"
           },
           {
             "@name":"description",
@@ -42,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 January 2021"
+            "@content":"15 January 2021"
           },
           {
             "@name":"generator",
