@@ -74,7 +74,7 @@ public class HAnimModelFootRight {
           .addComments(new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setMetadata(new MetadataString().setName("authorName").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
-          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
+          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
             .addComments(new CommentsBlock("Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model"))
             .addChild(new HAnimJoint().setName("r_talocrural").setDEF("hanim_r_talocrural").setDescription("connection joint of foot to leg above")
               .addChild(new HAnimSegment().setName("r_talus").setDEF("hanim_r_talus")
