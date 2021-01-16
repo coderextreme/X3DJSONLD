@@ -236,6 +236,14 @@ JavaSerializer.prototype = {
 			method = "Joints"
 			addpre = "add";
 		}
+		if (addpre+method === "setSkeleton") {
+			method = "Skeleton"
+			addpre = "add";
+		}
+		if (addpre+method === "setSkin") {
+			method = "Skin"
+			addpre = "add";
+		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";
@@ -428,6 +436,9 @@ JavaSerializer.prototype = {
 					}
 					if (attr === "class") {
 						method = "setCssClass";
+					}
+					if (attr === "style") {
+						method = "setCssStyle";
 					}
 					
 					str += '.'+method+"("+strval+")";

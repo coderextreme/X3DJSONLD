@@ -4,7 +4,8 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 //Example scene to illustrate X3D nodes and fields (XML elements and attributes)
 let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.title = "Hello world!";
+WorldInfo2.info = new MFString(new java.lang.String["Example scene to illustrate a simple X3D model"]);
+WorldInfo2.title = "Hello World!";
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo2;

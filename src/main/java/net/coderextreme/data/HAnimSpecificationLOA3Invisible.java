@@ -94,7 +94,7 @@ public class HAnimSpecificationLOA3Invisible {
           .addComments(new CommentsBlock("Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation"))
           .addComments(new CommentsBlock("TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default"))
           .addComments(new CommentsBlock("right between the eyes, stationary position not animating except with body itself"))
-          .setSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f})
+          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f})
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum"))
             .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f})
               .addChild(new HAnimSegment().setName("pelvis").setDEF("hanim_pelvis")
