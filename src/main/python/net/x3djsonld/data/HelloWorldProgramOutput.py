@@ -104,7 +104,7 @@ newModel=X3D(profile='Full',version='4.0',
             value=[
             MetadataString(name='quotesTestC',value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
             MetadataString(name='extraChildTest',value=["checks MetadataSet addValue() method"])]),
-          fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],glyphStyle=PLAIN))),
+          fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"]))),
       Collision(
         #  test containerField='proxy' 
         proxy=Shape(DEF='ProxyShape',

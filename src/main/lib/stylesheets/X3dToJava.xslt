@@ -1204,9 +1204,11 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>.addChild(</xsl:text><!-- X3D synonym, now superceded: addMapping -->
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
+                    <!-- debug diagnostic
                     <xsl:message>
                         <xsl:text>*** found DISEntityManager DISEntityTypeMapping</xsl:text>
                     </xsl:message>
+                    -->
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'LoadSensor')">
 					<!-- ignoring ($containerField = 'watchList') or whatever -->
@@ -3818,10 +3820,7 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
-		  <!-- experimental FontStyle -->
-		  <xsl:when test="ends-with($parentElementName,'FontStyle') and ($attributeName='glyphStyle')">
-			  <xsl:text>SFString</xsl:text> 
-		  </xsl:when>
+		  <!-- FontStyle style->glyphStyle renaming rejected, can accept any kind of value for style field, Mantis 1335 -->
 		  <!-- SFDouble -->
 		  <xsl:when test="($localFieldType='SFDouble')          or 
                           ($parentElementName='unit'      and $attributeName='conversionFactor')">
