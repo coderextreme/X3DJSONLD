@@ -168,5 +168,4 @@ HAnim2SpecificationLOA3Invisible.prototype = {
     .addMeta(new metaObject().setName("TODO").setContent("insert MetadataInteger nodes indicating LOA for each Joint and Segment"))
     .addMeta(new metaObject().setName("reference").setContent("Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."))
     .addMeta(new metaObject().setName("reference").setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"))
-    .addMeta(new metaObject().setName("reference").setContent("tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf"))
-    .addMeta(new
+    .addMeta(new metaObject().setName("reference").setContent("tabl

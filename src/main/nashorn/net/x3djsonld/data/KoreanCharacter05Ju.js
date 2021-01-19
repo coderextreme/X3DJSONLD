@@ -558,4 +558,4 @@ KoreanCharacter05Ju.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
     .addMeta(new metaObject().setName("reference").setContent("KoreanCharactersIllustrated.pdf"))
     .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter05Ju.x3d"))
-    .addMeta(new metaObjec
+  

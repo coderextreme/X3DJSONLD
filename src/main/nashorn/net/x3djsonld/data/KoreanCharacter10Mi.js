@@ -729,5 +729,4 @@ KoreanCharacter10Mi.prototype = {
     .addMeta(new metaObject().setName("generator").setContent("Suwon University HAnim Editor"))
     .addMeta(new metaObject().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
-  .setScene(new Sce
+    .addMeta(new metaObject().setName("license").setContent("../license.html

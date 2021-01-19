@@ -719,4 +719,4 @@ KoreanCharacter08Da.prototype = {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
   .setHead(new headObject()
     .addComponent(new componentObject().setName("HAnim").setLevel(1))
-    .addMeta(new metaObject().setName("title").set
+    .addMeta(new metaObjec

@@ -181,4 +181,3 @@ JoeProcessedKick.prototype = {
     .addMeta(new metaObject().setName("translators").setContent("Roy Walmsley, Don Brutzman, John Carlson"))
     .addMeta(new metaObject().setName("reference").setContent("../Characters/JoeSkinTexcoordDisplacerKick.x3d"))
     .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d"))
-    .addMeta

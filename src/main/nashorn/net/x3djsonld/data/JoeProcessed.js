@@ -187,4 +187,4 @@ JoeProcessed.prototype = {
     .addMeta(new metaObject().setName("description").setContent("This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."))
     .addMeta(new metaObject().setName("creator").setContent("Joe Williams"))
     .addMeta(new metaObject().setName("created").setContent("9 January 2004"))
-    .addMeta(new metaObject().setName("translated").setContent("12 Janua
+    .addMeta(new metaObject().setName("translated").setContent("12 January 2

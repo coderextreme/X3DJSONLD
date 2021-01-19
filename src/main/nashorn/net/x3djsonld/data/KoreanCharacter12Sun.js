@@ -685,4 +685,4 @@ KoreanCharacter12Sun.prototype = {
 	.append(new MFVec2fObject(Java.to([0.3194,0.9376,0.3112,0.9359,0.3009,0.9445,0.3002,0.9515], Java.type("float[]"))));
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
   .setHead(new headObject()
-    .addComponent(new componentObject().setNa
+    .addComponent
