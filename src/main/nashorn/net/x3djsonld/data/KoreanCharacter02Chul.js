@@ -630,4 +630,4 @@ KoreanCharacter02Chul.prototype = {
     .addMeta(new metaObject().setName("title").setContent("KoreanCharacter02Chul.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
     .addMeta(new metaObject().setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
-    .addMeta(new metaObject().setName("cre
+    .addMe

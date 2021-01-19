@@ -725,4 +725,4 @@ KoreanCharacter06Ga.prototype = {
   .setScene(new SceneObject()
     .addChild(new WorldInfoObject().setTitle("KoreanCharacter06Ga.x3d"))
     .addChild(new NavigationInfoObject().setSpeed(1.5))
-    .addChild(new ViewpointObject().setDes
+    .addChild(new 

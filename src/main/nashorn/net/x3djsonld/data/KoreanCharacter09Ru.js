@@ -712,4 +712,4 @@ KoreanCharacter09Ru.prototype = {
   .setScene(new SceneObject()
     .addChild(new WorldInfoObject().setTitle("KoreanCharacter09Ru.x3d"))
     .addChild(new NavigationInfoObject().setSpeed(1.5))
-    .addChild(new ViewpointObject().setDescription("Ru
+    .addChild(new ViewpointObj
