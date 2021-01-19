@@ -2485,7 +2485,7 @@ Invocation:
       <xsl:variable name="grandParentNodeType">
 	<xsl:value-of select="//xs:schema/xs:complexType[@name=$parentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/@base"/>
       </xsl:variable>
-     <xsl:variable name="greatGrandParentNodeType">
+      <xsl:variable name="greatGrandParentNodeType">
 	<xsl:value-of select="//xs:schema/xs:complexType[@name=$grandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/@base"/>
       </xsl:variable>
       <xsl:variable name="greatGreatGrandParentNodeType">
@@ -2493,16 +2493,16 @@ Invocation:
       </xsl:variable>
       <xsl:variable name="attributeNodeList" select="
 		      //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$grandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$parentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$nodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
 		    | //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$grandParentNodeType]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$parentNodeType]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$nodeType]/xs:attribute
-		    | xs:complexType/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:attribute
+		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:attribute
+		    | xs:complexType/xs:complexContent/*[                                                  (local-name()='extension') or (local-name()='restriction')]/xs:attribute
 		    | xs:complexType/xs:attribute">
       </xsl:variable>
       <xsl:variable name="elementNodeList">
@@ -2560,7 +2560,7 @@ Invocation:
                     
                     <xsl:if test="not(starts-with(@name,'additionalInterface'))">
                       <xsl:value-of select="@name"/>
-		      <xsl:text>='</xsl:text>
+                      <xsl:text>='</xsl:text>
                       <!-- default xor fixed value -->
                       <xsl:choose>
                         <!-- insert X3D version number to indicate source schema for this output -->

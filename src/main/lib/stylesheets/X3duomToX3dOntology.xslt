@@ -512,7 +512,8 @@
             <!-- Avoid duplicating field names, since that has been handled during X3DUOM construction. Nevertheless list them as informative comments. -->
             <xsl:choose>
                 <xsl:when test="(string-length(@inheritedFrom) > 0) or 
-                                ((($fieldName = 'IS') or ($fieldName = 'metadata')) and not($elementName = 'X3DNode'))">
+                                ((($fieldName = 'IS') or ($fieldName = 'metadata'))
+                                 and not($elementName = 'X3DNode'))">
                     <xsl:text># </xsl:text>
                     <xsl:text>:</xsl:text>
                     <xsl:choose>
@@ -648,7 +649,7 @@
                         <xsl:text>:</xsl:text><!-- local namespace -->
                         <xsl:text>hasChild</xsl:text>
                     </xsl:if>
-
+                    
                     <!-- simple type has default value -->
                     <xsl:if test="not(contains(@type,'Node')) and (string-length(@default) > 0)">
                         <xsl:text> ;</xsl:text>
@@ -810,10 +811,12 @@
                         <xsl:when test="(string-length(@simpleType) > 0)">
                             <xsl:choose>
                                 <xsl:when test="ends-with(@simpleType,'Values')">
-                                    <xsl:if test="not(contains($baseType,':'))">
+                                    <xsl:if test="not(contains(@simpleType,':'))">
                                          <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
                                     </xsl:if>
-                                    <xsl:value-of select="$baseType"/>
+                                    <xsl:value-of select="@simpleType"/>
+                                    <xsl:text> ; # alternate enumeration values allowed, baseType </xsl:text>
+                                    <xsl:value-of select="@baseType"/>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:if test="not(contains(@simpleType,':'))">
@@ -829,9 +832,20 @@
                             </xsl:if>
                             <xsl:value-of select="$baseType"/>
                         </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                        <xsl:when test="(string-length(@type) > 0)">
+                            <xsl:if test="not(contains(@type,':'))">
+                                 <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                            </xsl:if>
                             <xsl:value-of select="@type"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message>
+                                <xsl:text>*** warning: </xsl:text>
+                                <xsl:value-of select="../../@name"/>
+                                <xsl:text>  </xsl:text>
+                                <xsl:value-of select="@name"/>
+                                <xsl:text> missing rdfs:range type </xsl:text>
+                            </xsl:message>
                         </xsl:otherwise>
                     </xsl:choose>
 
@@ -841,6 +855,17 @@
                         <xsl:text>  rdfs:subPropertyOf </xsl:text>
                         <xsl:text>:</xsl:text><!-- local namespace -->
                         <xsl:text>hasChild</xsl:text>
+                    </xsl:if>
+
+                    <xsl:if test="(string-length(@description) > 0)"><!-- overloaded -->
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>  rdfs:label </xsl:text>
+                        <xsl:text>"</xsl:text>
+                        <xsl:variable name="quote"><xsl:text>"</xsl:text></xsl:variable>
+                        <xsl:variable name="apos" ><xsl:text>'</xsl:text></xsl:variable>
+                        <xsl:value-of select="translate(@description,$quote,$apos)"/>
+                        <xsl:text>"</xsl:text>
                     </xsl:if>
 
                     <!-- simple type has default value -->
@@ -895,10 +920,6 @@
                     </xsl:if>
 
                     <xsl:text> .</xsl:text>
-                    <xsl:if test="ends-with(@simpleType,'Values')">
-                        <xsl:text> # alternate enumerations allowed, supported values found in </xsl:text>
-                        <xsl:value-of select="@simpleType"/>
-                    </xsl:if>
                     <xsl:text>&#10;</xsl:text>
 <!--
 :hasParentAppearance owl:inverseOf :hasFillProperties . #old

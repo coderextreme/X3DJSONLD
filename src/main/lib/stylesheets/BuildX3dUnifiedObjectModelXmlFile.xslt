@@ -780,7 +780,7 @@ Recommended tool:
 							<!-- debug diagnostic
 							<xsl:if test="($abstractNodeTypeName='X3DViewpointNode') and (@name='description')">
 								<xsl:message>
-									<xsl:text>*** Found X3DViewpointNode description in XML schema...</xsl:text>
+									<xsl:text>*** found X3DViewpointNode description in XML schema...</xsl:text>
 								</xsl:message>
 							</xsl:if> -->
                             <xsl:call-template name="doField">
@@ -1541,20 +1541,21 @@ Recommended tool:
     <xsl:variable name="synonym">
         <xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name='synonym']/@fixed"/>
     </xsl:variable>
-	<!-- debug diagnostic ((($containerName='MetadataSet') or ($containerName='MetadataString')) and (@name='name')) 
+	<!-- doField debug diagnostic ((($containerName='MetadataSet') or ($containerName='MetadataString')) and (@name='name')) 
     -->
 	<xsl:if test="(string-length($synonym) > 0) or (($containerName = 'ParticleSystem') and (($fieldName = 'color') or ($fieldName = 'texCoord')))">
 		<xsl:message>
-			<xsl:text>*** doField found </xsl:text>
+			<xsl:text>*** found </xsl:text>
 			<xsl:value-of select="$containerName"/>
 			<xsl:text> field name=</xsl:text>
 			<xsl:value-of select="@name"/>
 			<xsl:text> with</xsl:text>
             <xsl:if test="(string-length($synonym) > 0)">
-                <xsl:text> synonym </xsl:text>
+                <xsl:text> synonym=</xsl:text>
                 <xsl:value-of select="$synonym"/>
             </xsl:if>
 		</xsl:message>
+	    <!-- debug diagnostic 
 		<xsl:message>
 			<xsl:text>    $givenType=</xsl:text><xsl:value-of select="$givenType"/>
 			<xsl:text>, $fieldName=</xsl:text><xsl:value-of select="$fieldName"/>
@@ -1567,6 +1568,7 @@ Recommended tool:
             <xsl:text>, additionalInterfaceMatch=</xsl:text><xsl:value-of select="$additionalInterfaceMatch"/>
             <xsl:text>, originInheritedFrom=</xsl:text><xsl:value-of select="$originInheritedFrom"/>
 		</xsl:message>
+        -->
 	</xsl:if>
 	
 	<!-- some schema field definitions include optional enumerations in the xs:annotation/xs:appinfo section, 
