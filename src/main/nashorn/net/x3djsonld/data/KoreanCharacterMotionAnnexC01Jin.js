@@ -1668,5 +1668,4 @@ KoreanCharacterMotionAnnexC01Jin.prototype = {
     .addMeta(new metaObject().setName("modified").setContent("12 July 2020"))
     .addMeta(new metaObject().setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta(new metaObject().setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
-    .addMeta(new metaObject().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
-    .addMeta(new metaObject().se
+    .addMeta(new metaObject().setName("reference").setContent("KoreanChar

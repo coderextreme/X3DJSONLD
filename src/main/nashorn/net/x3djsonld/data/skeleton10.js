@@ -81,4 +81,4 @@ skeleton10.prototype = {
     .addChild(new TransformObject()
       .addComments(" DEF for markerfor XYZ axes ")
       .addChild(new ShapeObject("AxisLinesShape")
-        .addComment
+        .addComments(" RGB line
