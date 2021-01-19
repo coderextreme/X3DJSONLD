@@ -154,7 +154,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 January 2021"
+            "@content":"18 January 2021"
           },
           {
             "@name":"generator",
@@ -392,8 +392,7 @@
                           "-fontStyle":
                             { "FontStyle":
                               {
-                                "@justify":["MIDDLE","MIDDLE"],
-                                "@glyphStyle":"PLAIN"
+                                "@justify":["MIDDLE","MIDDLE"]
                               }
                             }
                         }
@@ -1646,8 +1645,7 @@
                           "-fontStyle":
                             { "FontStyle":
                               {
-                                "@justify":["MIDDLE","MIDDLE"],
-                                "@glyphStyle":"PLAIN"
+                                "@justify":["MIDDLE","MIDDLE"]
                               }
                             }
                         }

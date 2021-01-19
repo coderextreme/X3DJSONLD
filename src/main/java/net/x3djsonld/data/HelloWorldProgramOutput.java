@@ -217,7 +217,7 @@ public class HelloWorldProgramOutput
           .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
             .setMetadata(new MetadataString().setName("quotesTestC").setValue(new String[] {"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""}))
             .setMetadata(new MetadataString().setName("extraChildTest").setValue(new String[] {"checks MetadataSet addValue() method"})))
-          .setFontStyle(new FontStyle().setGlyphStyle("PLAIN").setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))
+          .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))
       .addChild(new Collision()
         .addComments(" test containerField='proxy' ")
         .setProxy(new Shape("ProxyShape")

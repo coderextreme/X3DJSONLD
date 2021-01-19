@@ -1132,6 +1132,13 @@ import org.web3d.x3d.util.exi.SerializeEXISchema;
 import org.web3d.x3d.jsail.Layering.LayerSet; // special case, as are Metadata* nodes
 </xsl:text>
 					</xsl:if>
+					<xsl:if test="ends-with($name, 'FontStyle')">
+						<!-- FontStyle, ScreenFontSyle imports (since X3DNode implementation is indirect) -->
+						<xsl:text>
+import org.web3d.x3d.jsail.*;      // making sure, special case *FontStyle nodes
+import org.web3d.x3d.jsail.Core.*; // making sure, special case *FontStyle nodes
+</xsl:text>
+					</xsl:if>
 					<xsl:if test="($inConcretePackage = 'true') and not($thisClassName = 'X3DConcreteField') and not($thisClassName = 'CommentsBlock')">
 						<xsl:text>
 import java.util.Arrays;
@@ -1956,7 +1963,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						<xsl:when test="not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface)">
 							<!-- Source code: member object declarations -->
 							<xsl:for-each select="InterfaceDefinition/field[((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')) and
-												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')]">
+												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]">
 
 								<xsl:if test="position()=1">
 									<xsl:text>&#10;</xsl:text>
@@ -1999,7 +2006,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>cssClass</xsl:text>
 										</xsl:when>
-										<xsl:when test="(@name = 'style')">
+										<xsl:when test="((@name = 'style') and not(ends-with($name, 'FontStyle')))">
 											<!-- similarly named for consistency -->
 											<xsl:text>cssStyle</xsl:text>
 										</xsl:when>
@@ -3095,7 +3102,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                             <xsl:for-each select="InterfaceDefinition/field[((@type='SFString') or (@type='MFString') or (string-length(normalize-space(@default)) > 0)) and 
                                                   starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                   not(@type='MFNode') and
-                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')]
+                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]
                                                   [(@accessType='initializeOnly') or (@accessType='inputOutput')]">
     <!-- not(@type='SFNode') and -->
                                 <xsl:variable name="fieldName" select="translate(@name,'-','_')"/>
@@ -3351,7 +3358,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<!-- otherwise ignore preceding field definitions since each field variation (set_ or _changed or plain name) has different accessType -->
 										<xsl:value-of select="($name = 'ParticleSystem') and ($fieldName = 'geometry') and (count(preceding-sibling::*[@name = $fieldName]) > 0)"/>
 									</xsl:variable>
-									<xsl:if test="not($hasPrecedingFieldDefinition = 'true')">
+									<xsl:if test="not($hasPrecedingFieldDefinition = 'true') and 
+                                                  not(contains($name, 'FontStyle') and ($fieldName = 'style'))"> <!-- overloaded with CSS style -->
 										<xsl:text>
 			case "</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>":
 				result = "</xsl:text><xsl:value-of select="@accessType"/><xsl:text>";
@@ -3444,7 +3452,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							</xsl:if>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<!-- Source code: _TOFIELD, FROM_FIELD definitions -->
-								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style'))]">
+								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($name, 'FontStyle'))))]">
 									<xsl:if test="position()=1">
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	// String constants for field names usable in ROUTE statements</xsl:text>
@@ -3600,7 +3608,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<!-- initialize each field with default values -->
 									<xsl:for-each select="InterfaceDefinition/field[
 													not(starts-with(@name,'set_')) and not(ends-with(@name,'_changed')) and
-													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style') and
+													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) and
 												 ((@accessType='inputOutput') or (@accessType='initializeOnly') or (string-length(@accessType)=0))]">
 										<xsl:variable name="isX3dStatement">
 											<xsl:call-template name="isX3dStatement">
@@ -3631,7 +3639,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>cssClass</xsl:text>
 											</xsl:when>
-											<xsl:when test="(@name = 'style')">
+											<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
 											<!-- similarly named for consistency -->
 												<xsl:text>cssStyle</xsl:text>
 											</xsl:when>
@@ -6833,7 +6841,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>CssClass</xsl:text>
 									</xsl:when>
-									<xsl:when test="(@name = 'style')">
+									<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
 										<!-- similarly named for consistency -->
 										<xsl:text>CssStyle</xsl:text>
 									</xsl:when>
@@ -6877,7 +6885,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>cssClass</xsl:text>
 									</xsl:when>
-									<xsl:when test="(@name = 'style')">
+									<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
 										<!-- similarly named for consistency -->
 										<xsl:text>cssClass</xsl:text>
 									</xsl:when>
@@ -6903,7 +6911,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<xsl:if test="((@accessType='outputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and ((@name = 'address') or (not(starts-with(@name,'add')) 
 										  and not(starts-with(@name,'remove'))
-										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')))))">
+										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))))">
 								<!-- javadoc from BuildSpecificationLanguageBindingJava.xslt-->
 								<xsl:text>	/**</xsl:text>
 								<xsl:text>&#10;</xsl:text>
@@ -7141,6 +7149,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 <xsl:value-of select="$baseType"/>
 <xsl:text>, $additionalInheritanceBaseType=</xsl:text>
 <xsl:value-of select="$additionalInheritanceBaseType"/>
+<xsl:text>, $thisClassName=</xsl:text>
+<xsl:value-of select="$thisClassName"/>
+<xsl:text>, $CamelCaseName=</xsl:text>
+<xsl:value-of select="$CamelCaseName"/>
+<xsl:text>, $memberObjectName=</xsl:text>
+<xsl:value-of select="$memberObjectName"/>
+<xsl:text>, $memberObjectName=</xsl:text>
+<xsl:value-of select="$normalizedMemberObjectName"/>
 <xsl:text>)</xsl:text>
 <xsl:text>&#10;</xsl:text>
 </xsl:if>
@@ -7152,8 +7168,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($thisClassName = 'ProtoInstance') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1? -->
-									<xsl:text>&#10;</xsl:text>
+									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1?
+									<xsl:text>&#10;</xsl:text> -->
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<xsl:choose>
@@ -7272,6 +7288,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		else return value]]></xsl:text>
 											</xsl:when>
+                                            <!-- special case -->
+                                            <xsl:when test="((@name = 'style') and ends-with($thisClassName, 'FontStyle'))">
+												<xsl:text>		return style</xsl:text>
+											</xsl:when>
 											<!-- check if SFNode subtype cast necessary -->
 											<xsl:when test="(@type = 'SFNode') and not($javaPrimitiveType = $javaType) and not($isX3dStatement = 'true')">
 												<xsl:text>		return (</xsl:text>
@@ -7342,7 +7362,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- http://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
 												<!-- http://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
 											</xsl:when>
-											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')">
+											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))">
                                                 <xsl:text>		// override abstract method in X3DConcreteNode</xsl:text>
                                                 <xsl:text>&#10;</xsl:text>
                                                 <xsl:text>		return super.get</xsl:text>
@@ -7481,10 +7501,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<!-- end of get accessors -->
 							</xsl:if>
 
-							<!-- javadoc: set/add method accessor(s) -->
+							<!-- javadoc: set/add method accessor(s) -->    
 							<xsl:if test="((@accessType='inputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))
-                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style')))">
+                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))">
 								
 								<xsl:variable name="newValueInstanceAcceptableNodeTypesTest">
 									<xsl:if test="contains(@acceptableNodeTypes, '|')">
@@ -8157,7 +8177,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<!-- might avoid final in case someone is subclassing someday, but logic is tricky and so conservative here -->
-								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or (@name = 'style') or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
+								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
 									<xsl:text>final </xsl:text>
 								</xsl:if>
 								<xsl:value-of select="$thisClassName"/>
@@ -8180,7 +8200,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>CssClass</xsl:text>
 											</xsl:when>
-											<xsl:when test="(@name = 'style')">
+											<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
                                                 <!-- similarly named for consistency -->
 												<xsl:text>CssStyle</xsl:text>
 											</xsl:when>
@@ -8496,7 +8516,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
-											<xsl:when test="(@name = 'style')">
+											<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
 												<xsl:text>		setConcreteCssStyle(</xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
@@ -10183,7 +10203,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 </xsl:text>
 								</xsl:if>
-								<!-- special addChild methods for Contour2D -->
+								
+                                <!-- special addChild methods for Contour2D -->
 								<xsl:if test="(($name = 'Contour2D') and (@name = 'children'))
 											   and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -10277,8 +10298,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												    (($isInterface = 'true') and //AbstractObjectType[@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
 												    (($thisClassName = 'ProtoInstance') and 
 												      (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')))">
-										<xsl:text>	/* @Override */ // or here2?</xsl:text>
-										<xsl:text>&#10;</xsl:text>
+										<!--<xsl:text>	/* @Override */ // or here2?</xsl:text>
+										<xsl:text>&#10;</xsl:text>-->
 									</xsl:if>
 									<xsl:text>	public </xsl:text>
 									<!-- allow method pipelining, if appropropriate -->
@@ -10489,6 +10510,51 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:choose>
 								</xsl:if>
 
+                                <!-- special CssStyle methods for FontStyle, ScreenFontStyle -->
+								<xsl:if test="((@name = 'style') and ends-with($name, 'FontStyle'))
+											   and not($isX3dStatement = 'true') and not($isInterface = 'true')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+    // special CssStyle methods for FontStyle, ScreenFontStyle
+////	/**
+////	 * Provide String value from inputOutput SFString field named <i>style</i>.
+////	 * @return value of style field
+////	 */
+////    @Override
+////	public String getCssStyle()
+////	{
+////		// override abstract method in X3DConcreteNode
+////		return super.getCssStyle();
+////	}
+
+	/**
+	 * Accessor method to assign String value to inputOutput SFString field named <i>style</i>.
+	 * @param newValue is new value for the style field.
+	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setCssStyle(String newValue)
+	{
+		// set-newValue-validity-checks #0
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #5
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		setConcreteCssStyle(newValue); // private superclass method
+		return this;
+	}
+
+	/**
+	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
+	 * @param newValue is new value for the style field.
+	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setCssStyle(SFString newValue)
+	{
+			// set-newValue-validity-checks #1 gets handled by set-primitive method
+			setCssStyle(newValue.getPrimitiveValue());
+			return this;
+	}
+]]></xsl:text>
+								</xsl:if>
+                                
 								<xsl:if test="(@type = 'MFNode') and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))">
 									<!-- source code: addMFNodeSomething(SFNodeValue) method -->
 	<!-- debug -->
@@ -12825,6 +12891,72 @@ setAttribute method invocations).
 							
 						<!-- toStringX3D, toStringXML -->
 						<xsl:if test="not(starts-with($thisClassName, 'X3DConcrete'))">
+                            
+          <!-- handle field synonyms -->
+                            <xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Utility method to adjust field synonyms
+	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#fieldNameChanges">X3D Scene Authoring Hints: X3D4 Field name changes for improved consistency</a>
+     */
+    private void handleFieldSynonyms()
+    {]]></xsl:text>
+    <xsl:choose>
+        <xsl:when test="InterfaceDefinition/field[string-length(@synonym) > 0]">
+            <xsl:text>
+        String correctedContainerField;</xsl:text>
+            <xsl:for-each select="InterfaceDefinition/field[string-length(@synonym) > 0][@type = 'SFNode']">
+                <xsl:if test="(position() = 1)">
+                    <xsl:text disable-output-escaping="yes"><![CDATA[
+        if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("3"))
+             correctedContainerField = "]]></xsl:text><xsl:value-of select="@synonym"/><xsl:text>";
+        else correctedContainerField = "</xsl:text>   <xsl:value-of select="@name"/><xsl:text>";
+</xsl:text>
+                </xsl:if>
+                <xsl:variable name="CamelCaseName"><!-- upper camel case -->
+                    <xsl:value-of select="translate(substring(@name,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                    <xsl:value-of select="substring(@name,2)"/>
+                </xsl:variable>
+                <xsl:text>
+        if      (get</xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>() != null)
+                 ((X3DConcreteNode) get</xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()).setContainerFieldOverride(correctedContainerField);
+        else if (get</xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>ProtoInstance() != null)
+                 ((X3DConcreteNode) get</xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>ProtoInstance()).setContainerFieldOverride(correctedContainerField);
+</xsl:text>
+            </xsl:for-each>
+            <xsl:for-each select="InterfaceDefinition/field[string-length(@synonym) > 0][@type = 'MFNode']">
+                <xsl:if test="(position() = 1)">
+                    <xsl:text disable-output-escaping="yes"><![CDATA[
+        if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("3"))
+             correctedContainerField = "]]></xsl:text><xsl:value-of select="@synonym"/><xsl:text>";
+        else correctedContainerField = "</xsl:text>   <xsl:value-of select="@name"/><xsl:text>";
+</xsl:text>
+                </xsl:if>
+                <xsl:text>
+        for (org.web3d.x3d.sai.Core.X3DNode element : </xsl:text><xsl:value-of select="@name"/><xsl:text>)
+        {</xsl:text>
+                <xsl:for-each select="tokenize(@acceptableNodeTypes,'\|\s*')">
+                    <xsl:variable name="saiPackage">
+                        <xsl:call-template name="saiPackage">
+                            <xsl:with-param name="nodeType" select="."/>
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:text>
+            if (element instanceof</xsl:text><xsl:value-of select="$saiPackage"/>.<xsl:value-of select="."/><xsl:text>)
+                ((X3DConcreteNode) element).setContainerFieldOverride(correctedContainerField);</xsl:text>
+                </xsl:for-each>
+                <xsl:text>
+        }
+ </xsl:text>
+            </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>
+            // no synonyms to handle
+</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+            <xsl:text>	}</xsl:text>
+
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 		
 	/**
@@ -12840,7 +12972,7 @@ setAttribute method invocations).
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 * @return X3D string
 	 */
-	/* @Override */
+	@Override
 	public String toStringX3D(int indentLevel)
 	{]]></xsl:text>
 	<xsl:if test="not($name = 'CommentsBlock')">
@@ -12903,14 +13035,17 @@ setAttribute method invocations).
 				<xsl:text>false</xsl:text><!-- TODO account for CommentsBlock -->
 			</xsl:when>
 		</xsl:choose>
-		<xsl:text>;
-</xsl:text><!-- hasChild definition complete -->
+		<xsl:text>;</xsl:text><!-- hasChild definition complete -->
 	</xsl:if>
 	<xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (isUSE())
 			hasChild = false; // USE nodes only include attributes for USE and non-default containerField]]></xsl:text><!-- append to member name -->
 	</xsl:if>
+    <!-- handle field synonyms -->
+	<xsl:text>
+        handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
+
 	<xsl:text disable-output-escaping="yes"><![CDATA[
 		StringBuilder indent = new StringBuilder();
 		int  indentIncrement = ConfigurationProperties.getIndentIncrement();
@@ -13056,7 +13191,7 @@ setAttribute method invocations).
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
-						<xsl:when test="(@name = 'style')">
+						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
 							<!-- similarly named for consistency -->
 							<xsl:text>CssStyle</xsl:text>
 						</xsl:when>
@@ -13414,7 +13549,7 @@ setAttribute method invocations).
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
-	/* @Override */
+	@Override     
 	public String toStringClassicVRML(int indentLevel)
 	{
 		StringBuilder stringClassicVRML = new StringBuilder();]]></xsl:text>
@@ -13427,6 +13562,7 @@ setAttribute method invocations).
 		<xsl:if test="(not($isX3dStatement = 'true') and not($name = 'CommentsBlock')) or ($name = 'ProtoInstance')">
 			<xsl:text>(IS != null) || </xsl:text>
 		</xsl:if>
+        
 		<xsl:variable name="fieldsList" select="InterfaceDefinition/field[(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and 
 														((@accessType='initializeOnly') or (@accessType='inputOutput'))]"/>
 		<xsl:for-each select="$fieldsList">
@@ -13493,6 +13629,10 @@ setAttribute method invocations).
 			hasChild      = false; // USE nodes include no other fields
 		}]]></xsl:text><!-- append to member name -->
 	</xsl:if>
+    <!-- handle field synonyms, TODO do not perform if serializing VRML97 -->
+	<xsl:text>
+        if (!serializingVRML97output)
+            handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
 	<xsl:if test="not((@name = 'X3D') or (@name = 'head') or (@name = 'meta') or (@name = 'unit') or (@name = 'component') or (@name = 'Scene'))">
 		<!-- toDO in progress, ignore: avoid defining indentCharacter for nodes with no indentation, helps to ensure that consistent logic follows -->
 	</xsl:if>
@@ -13788,7 +13928,7 @@ setAttribute method invocations).
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
-						<xsl:when test="(@name = 'style')">
+						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
 							<!-- similarly named for consistency -->
 							<xsl:text>CssStyle</xsl:text>
 						</xsl:when>
@@ -13890,7 +14030,7 @@ setAttribute method invocations).
 				<xsl:if test="(@name = 'class')">
 					<xsl:text> # </xsl:text>
 				</xsl:if>
-				<xsl:if test="(@name = 'style')">
+				<xsl:if test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
 					<xsl:text> # </xsl:text>
 				</xsl:if>
 				<xsl:value-of select="$fieldName"/>
@@ -14210,6 +14350,9 @@ setAttribute method invocations).
 						<!-- toStringVRML97() -->
 						<xsl:if test="not(starts-with($thisClassName, 'X3DConcrete'))">
 							<xsl:text disable-output-escaping="yes"><![CDATA[
+    
+    private boolean serializingVRML97output = false; // whether to avoid handling field name synonyms
+                                
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
@@ -14219,10 +14362,14 @@ setAttribute method invocations).
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
 	 * @return VRML97 string
 	 */
-	/* @Override */
+	@Override
 	public String toStringVRML97(int indentLevel)
 	{
-		return toStringClassicVRML(indentLevel)]]></xsl:text>
+        serializingVRML97output = true;
+        String result = toStringClassicVRML(indentLevel);
+        serializingVRML97output = false;
+                                
+		return result]]></xsl:text>
 	<xsl:choose>
 		<xsl:when test="($name = 'X3D')">
 			<!-- TODO fix this hack more thoroughly, possibly via ConfigurationProperties or else by optional parameter in method signature -->
@@ -14714,7 +14861,7 @@ setAttribute method invocations).
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>CssClass</xsl:text>
 										</xsl:when>
-                                        <xsl:when test="(@name = 'style')">
+                                        <xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
                                             <!-- similarly named for consistency -->
                                             <xsl:text>CssStyle</xsl:text>
                                         </xsl:when>
@@ -33745,7 +33892,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @return ClassicVRML string
 	 */
 	abstract public String toStringClassicVRML(int indentLevel); // must be overridden
-				
+
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @see X3D#FILE_EXTENSION_VRML97
@@ -35657,8 +35804,7 @@ import org.web3d.x3d.sai.X3DException;
 						// System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 						continue;
 					}
-                    if (nodeName.endsWith("FontStyle") && attributeName.equals("style"))
-                        attributeName = "glyphStyle"; // TODO resolve X3D4 renaming experimentation
+                    // FontStyle style->glyphStyle renaming rejected, can accept any kind of value for style field, Mantis 1335
 					
 					String attributeType  = elementObject.getFieldType(attributeName); // X3DJSAIL utility
                     if (attributeType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) || attributeType.contains("ERROR"))

@@ -180,4 +180,315 @@ HelloWorldProgramOutput.prototype = {
         .addChild((new autoclass.Shape("BoxShape"))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material("GreenMaterial")).setDiffuseColor(0.0,1.0,1.0).setTransparency(0.1).setEmissiveColor(0.8,0.0,0.0))
-            .setTexture((new 
+            .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
+          .setGeometry((new autoclass.Box("test-NMTOKEN_regex.0123456789")).setCssClass("untextured")))))
+    .addChild((new autoclass.Shape("LineShape"))
+      .setAppearance((new autoclass.Appearance())
+        .setMaterial((new autoclass.Material()).setEmissiveColor(0.6,0.19607843,0.8)))
+      .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,2,3,4,0]))
+        .addComments(" Coordinate 3-tuple point count: 6 ")
+        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0]))))))
+    .addChild((new autoclass.PositionInterpolator("BoxPathAnimator")).setKey(java.newArray("float", [0.0,0.125,0.375,0.625,0.875,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0]))))
+    .addChild((new autoclass.TimeSensor("OrbitClock")).setCycleInterval(8.0).setLoop(true))
+    .addChild((new autoclass.ROUTE()).setFromNode("OrbitClock").setFromField("fraction_changed").setToNode("BoxPathAnimator").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("BoxPathAnimator").setFromField("value_changed").setToNode("LogoGeometryTransform").setToField("set_translation"))
+    .addChild((new autoclass.Transform("TextTransform")).setTranslation(0.0,-1.5,0.0)
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setUSE("GreenMaterial")))
+        .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"X3D Java\" \"SAI Library\" \"X3DJSAIL\""))
+          .addComments(" Comment example A, plain quotation marks: He said, \"Immel did it!\" ")
+          .addComments(" Comment example B, XML character entities: He said, &quot;Immel did it!&quot; ")
+          .setMetadata((new autoclass.MetadataSet()).setName("EscapedQuotationMarksMetadataSet")
+            .addValue((new autoclass.MetadataString()).setName("quotesTestC").setValue(new autoclass.MFString("\"MFString example C, backslash-escaped quotes: He said, \\\"Immel did it!\\\"\"")))
+            .addValue((new autoclass.MetadataString()).setName("extraChildTest").setValue(new autoclass.MFString("\"checks MetadataSet addValue() method\""))))
+          .setFontStyle((new autoclass.FontStyle()).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")))))
+      .addChild((new autoclass.Collision())
+        .addComments(" test containerField='proxy' ")
+        .setProxy((new autoclass.Shape("ProxyShape"))
+          .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
+          .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' ")
+          .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
+          .addComments(" reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
+          .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"One, Two, Text\" \"\" \"He said, \\\"Immel did it!\\\" \\\"\\\"\"")))))
+      .addComments(" It's a beautiful world ")
+      .addComments(" ... for you! ")
+      .addComments(" https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) "))
+    .addComments(" repeatedly spin 180 degrees as a readable special effect ")
+    .addChild((new autoclass.OrientationInterpolator("SpinInterpolator")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,4.712389,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.5707964]))))
+    .addChild((new autoclass.TimeSensor("SpinClock")).setCycleInterval(5.0).setLoop(true))
+    .addChild((new autoclass.ROUTE()).setFromNode("SpinClock").setFromField("fraction_changed").setToNode("SpinInterpolator").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("SpinInterpolator").setFromField("value_changed").setToNode("TextTransform").setToField("rotation"))
+    .addChild((new autoclass.Group("BackgroundGroup"))
+      .addChild((new autoclass.Background("GradualBackground")))
+      .addChild((new autoclass.Script("colorTypeConversionScript")).setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"function colorInput (eventValue) // Example source code" + "\n" + 
+"{" + "\n" + 
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event" + "\n" + 
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');" + "\n" + 
+"}" + "\n")
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("colorInput").setType("SFColor"))
+        .addField((new autoclass.field()).setAccessType("outputOnly").setName("colorsOutput").setType("MFColor")))
+      .addChild((new autoclass.ColorInterpolator("ColorAnimator")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFColor(java.newArray("float", [0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0])))
+        .addComments(" AZURE to INDIGO and back again "))
+      .addChild((new autoclass.TimeSensor("ColorClock")).setCycleInterval(60.0).setLoop(true))
+      .addChild((new autoclass.ROUTE()).setFromNode("colorTypeConversionScript").setFromField("colorsOutput").setToNode("GradualBackground").setToField("skyColor"))
+      .addChild((new autoclass.ROUTE()).setFromNode("ColorAnimator").setFromField("value_changed").setToNode("colorTypeConversionScript").setToField("colorInput"))
+      .addChild((new autoclass.ROUTE()).setFromNode("ColorClock").setFromField("fraction_changed").setToNode("ColorAnimator").setToField("set_fraction")))
+    .addChild((new autoclass.ProtoDeclare()).setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
+      .setProtoInterface((new autoclass.ProtoInterface())
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("description").setType("SFString").setValue("ArtDeco01Material prototype is a Material node").setAppinfo("tooltip for descriptionField"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("enabled").setType("SFBool").setValue("true")))
+      .setProtoBody((new autoclass.ProtoBody())
+        .addComments(" Initial node of ProtoBody determines prototype node type ")
+        .addChild((new autoclass.Material()).setShininess(0.127273).setAmbientIntensity(0.25).setSpecularColor(0.276305,0.11431,0.139857).setDiffuseColor(0.282435,0.085159,0.134462))
+        .addComments(" [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" ")
+        .addComments(" presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types ")
+        .addChild((new autoclass.TouchSensor()).setDescription("within ProtoBody")
+          .setIS((new autoclass.IS())
+            .addConnect((new autoclass.connect()).setNodeField("description").setProtoField("description"))
+            .addConnect((new autoclass.connect()).setNodeField("enabled").setProtoField("enabled"))))))
+    .addChild((new autoclass.ExternProtoDeclare()).setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new autoclass.MFString("\"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material\""))
+      .addComments(" [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" ")
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("tooltip for descriptionField")))
+    .addComments(" Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place ")
+    .addChild((new autoclass.Shape("TestShape1"))
+      .setAppearance((new autoclass.Appearance("TestAppearance1"))
+        .addComments(" ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java ")
+        .setMaterial((new autoclass.ProtoInstance()).setName("ArtDeco01Material")
+          .addComments(" [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\" ")
+          .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco01Material can substitute for a Material node"))))
+      .setGeometry((new autoclass.Sphere()).setRadius(0.001)))
+    .addChild((new autoclass.Shape("TestShape2"))
+      .setAppearance((new autoclass.Appearance("TestAppearance2"))
+        .addComments(" ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java ")
+        .setMaterial((new autoclass.ProtoInstance("ArtDeco02MaterialDEF", "ArtDeco02Material")).setDEF("ArtDeco02MaterialDEF").setName("ArtDeco02Material")
+          .addComments(" [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" ")
+          .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco02Material can substitute for another Material node"))))
+      .setGeometry((new autoclass.Cone()).setBottomRadius(0.001).setHeight(0.001)))
+    .addChild((new autoclass.Shape("TestShape3"))
+      .setAppearance((new autoclass.Appearance("TestAppearance3"))
+        .addComments(" ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. ")
+        .setMaterial((new autoclass.ProtoInstance()).setUSE("ArtDeco02MaterialDEF")))
+      .setGeometry((new autoclass.Cylinder()).setHeight(0.001).setRadius(0.001)))
+    .addChild((new autoclass.Inline("inlineScene")).setUrl(new autoclass.MFString("\"someOtherScene.x3d\" \"https://www.web3d.org/specifications/java/examples/someOtherScene.x3d\"")))
+    .addChild((new autoclass.IMPORT()).setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene").setAS("WorldInfoDEF2"))
+    .addChild((new autoclass.EXPORT()).setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
+    .addChild((new autoclass.ProtoDeclare()).setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+      .setProtoInterface((new autoclass.ProtoInterface())
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("enabled").setType("SFBool").setValue("true"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("diffuseColor").setType("SFColor").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("emissiveColor").setType("SFColor").setValue("0.05 0.05 0.5"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("specularColor").setType("SFColor").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("transparency").setType("SFFloat").setValue("0.0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("shininess").setType("SFFloat").setValue("0.0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("ambientIntensity").setType("SFFloat").setValue("0.0")))
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Material("MaterialNode"))
+          .setIS((new autoclass.IS())
+            .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor"))
+            .addConnect((new autoclass.connect()).setNodeField("emissiveColor").setProtoField("emissiveColor"))
+            .addConnect((new autoclass.connect()).setNodeField("specularColor").setProtoField("specularColor"))
+            .addConnect((new autoclass.connect()).setNodeField("transparency").setProtoField("transparency"))
+            .addConnect((new autoclass.connect()).setNodeField("shininess").setProtoField("shininess"))
+            .addConnect((new autoclass.connect()).setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
+        .addComments(" Only first node (the node type) is renderable, others are along for the ride ")
+        .addChild((new autoclass.Script("MaterialModulatorScript")).setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"function initialize ()" + "\n" + 
+"{" + "\n" + 
+"    newColor = diffuseColor; // start with correct color" + "\n" + 
+"}" + "\n" + 
+"function set_enabled (newValue)" + "\n" + 
+"{" + "\n" + 
+"	enabled = newValue;" + "\n" + 
+"}" + "\n" + 
+"function clockTrigger (timeValue)" + "\n" + 
+"{" + "\n" + 
+"    if (!enabled) return;" + "\n" + 
+"    red   = newColor.r;" + "\n" + 
+"    green = newColor.g;" + "\n" + 
+"    blue  = newColor.b;" + "\n" + 
+"    " + "\n" + 
+"    // note different modulation rates for each color component, % is modulus operator" + "\n" + 
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);" + "\n" + 
+"	if (enabled)" + "\n" + 
+"	{" + "\n" + 
+"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');" + "\n" + 
+"	}" + "\n" + 
+"}" + "\n")
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("enabled").setType("SFBool"))
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("diffuseColor").setType("SFColor"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("newColor").setType("SFColor"))
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("clockTrigger").setType("SFTime"))
+          .setIS((new autoclass.IS())
+            .addConnect((new autoclass.connect()).setNodeField("enabled").setProtoField("enabled"))
+            .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor"))))))
+    .addComments(" Test success: declarative statement createDeclarativeShapeTests() ")
+    .addChild((new autoclass.Group("DeclarativeGroupExample"))
+      .addChild((new autoclass.Shape())
+        .setMetadata((new autoclass.MetadataString("FindableMetadataStringTest")).setName("findThisNameValue").setValue(new autoclass.MFString("\"test case\"")))
+        .setAppearance((new autoclass.Appearance("DeclarativeAppearanceExample"))
+          .addComments(" DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance ")
+          .setMaterial((new autoclass.ProtoInstance("MyMaterialModulator", "MaterialModulator")).setDEF("MyMaterialModulator").setName("MaterialModulator")))
+        .setGeometry((new autoclass.Cone()).setBottomRadius(0.05).setHeight(0.1).setBottom(false)))
+      .addComments(" Test success: declarativeGroup.addChild() singleton pipeline method "))
+    .addComments(" Test success: declarative statement addChild() ")
+    .addComments(" Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> ")
+    .addComments(" Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> ")
+    .addComments(" Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found ")
+    .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found ")
+    .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found ")
+    .addChild((new autoclass.Group("TestFieldObjectsGroup"))
+      .addComments(" testFieldObjects() results ")
+      .addComments(" SFBool default=true, true=true, false=false, negate()=true ")
+      .addComments(" MFBool default=, initial=true false true, negate()=false true false ")
+      .addComments(" SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 ")
+      .addComments(" MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 ")
+      .addComments(" ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= ")
+      .addComments(" SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true ")
+      .addComments(" regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "))
+    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
+      .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
+      .setSource((new autoclass.AudioClip()).setDescription("chimes").setUrl(new autoclass.MFString("\"chimes.wav\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
+    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
+      .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
+      .setSource((new autoclass.MovieTexture()).setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new autoclass.MFString("\"mpgsys.mpg\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
+        .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\" ")))
+    .addComments(" Test success: Anchor.isNode()=true, siteAnchor.isNode()=true ")
+    .addComments(" Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false ")
+    .addComments(" Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false ")
+    .addComments(" Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
+    .addComments(" Test success: CommentsBlock.isNode()=false, testComments.isNode()=false ")
+    .addComments(" Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true ")
+    .addChild((new autoclass.Shape("ExtrusionShape"))
+      .addComments(" ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' ")
+      .addComments(" ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' ")
+      .setAppearance((new autoclass.Appearance("TransparentAppearance"))
+        .setMaterial((new autoclass.Material()).setTransparency(1.0)))
+      .setGeometry((new autoclass.Extrusion("ExampleExtrusion"))))
+    .addChild((new autoclass.Group())
+      .addComments(" Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes ")
+      .addChild((new autoclass.ProtoDeclare()).setName("NewWorldInfo")
+        .setProtoInterface((new autoclass.ProtoInterface())
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("description").setType("SFString")))
+        .setProtoBody((new autoclass.ProtoBody())
+          .addChild((new autoclass.WorldInfo()))))
+      .addChild((new autoclass.ProtoInstance("Proto1", "NewWorldInfo")).setDEF("Proto1").setName("NewWorldInfo")
+        .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("testing 1 2 3")))
+      .addChild((new autoclass.Group("Node2"))
+        .addComments(" intentionally empty "))
+      .addChild((new autoclass.ProtoInstance("Proto3", "NewWorldInfo")).setDEF("Proto3").setName("NewWorldInfo"))
+      .addChild((new autoclass.Transform("Node4"))
+        .addComments(" intentionally empty "))
+      .addComments(" Test satisfactorily creates MFNode children array as an ordered list with mixed content "))
+    .addChild((new autoclass.ProtoDeclare()).setName("ShaderProto")
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.ProgramShader()))))
+    .addChild((new autoclass.Shape())
+      .setAppearance((new autoclass.Appearance())
+        .addComments(" Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes ")
+        .addComments(" Test satisfactorily creates MFNode shaders array as an ordered list with mixed content ")
+        .addShaders((new autoclass.ProgramShader("TestShader1"))
+          .setPrograms((new autoclass.ShaderProgram("TestShader2"))))
+        .addShaders((new autoclass.ProtoInstance("TestShader3", "ShaderProto")).setDEF("TestShader3").setName("ShaderProto"))
+        .addShaders((new autoclass.ComposedShader("TestShader4"))
+          .addParts((new autoclass.ShaderPart("TestShader5"))))))
+    .addChild((new autoclass.Transform("SpecialtyNodes"))
+      .addChild((new autoclass.CADLayer())
+        .addChild((new autoclass.CADAssembly())
+          .addChild((new autoclass.CADPart())
+            .addChild((new autoclass.CADFace())))))
+      .addChild((new autoclass.EspduTransform()))
+      .addChild((new autoclass.ReceiverPdu()).setReceivedPower(0.0))
+      .addChild((new autoclass.SignalPdu()))
+      .addChild((new autoclass.TransmitterPdu()).setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
+      .addChild((new autoclass.DISEntityManager())
+        .addChild((new autoclass.DISEntityTypeMapping()))))
+    .addChild((new autoclass.EspduTransform())
+      .addChild((new autoclass.WorldInfo())))
+    .addChild((new autoclass.ReceiverPdu()).setReceivedPower(0.0))
+    .addChild((new autoclass.SignalPdu()))
+    .addChild((new autoclass.TransmitterPdu()).setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
+    .addChild((new autoclass.DISEntityManager())
+      .addChild((new autoclass.DISEntityTypeMapping())))
+    .addChild((new autoclass.LoadSensor())
+      .addComments(" Contained nodes typically must be USE references for nodes previously DEFined in the scene ")
+      .addComments(" The following nodes are test cases for all X3DUrlObject nodes ")
+      .addChild((new autoclass.Anchor()).setUSE("siteAnchor"))
+      .addChild((new autoclass.Inline()).setUSE("inlineScene"))
+      .addChild((new autoclass.DISEntityTypeMapping()))
+      .addChild((new autoclass.GeoMetadata()))
+      .addChild((new autoclass.AudioClip()))
+      .addChild((new autoclass.ImageCubeMapTexture()))
+      .addChild((new autoclass.ImageTexture3D()))
+      .addChild((new autoclass.ImageTexture()))
+      .addChild((new autoclass.MovieTexture()))
+      .addChild((new autoclass.Script()))
+      .addChild((new autoclass.PackagedShader()))
+      .addChild((new autoclass.ShaderPart()))
+      .addChild((new autoclass.ShaderProgram()))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return HelloWorldProgramOutput model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = "";
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new HelloWorldProgramOutput();
+		console.log ("HelloWorldProgramOutput execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new HelloWorldProgramOutput().main();

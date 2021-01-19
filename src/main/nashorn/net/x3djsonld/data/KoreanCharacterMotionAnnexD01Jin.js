@@ -614,4 +614,4 @@ KoreanCharacterMotionAnnexD01Jin.prototype = {
 	.append(new MFVec2fObject(Java.to([0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857], Java.type("float[]"))));
 
 	/** Large attribute array: HAnimMotion channels field, scene-graph level=3, element #241, 75 total values */
-	this.HAnimMotion_3_241_channels = new SFStringObject("6 Xposition Ypositi
+	this.HAnimMotion_3_241_channels = new SFStringObject("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3
