@@ -907,6 +907,7 @@ Recommended tool:
                                                 </xsl:if>
                                             </xsl:if>
                                         </xsl:variable>
+                                        <!-- first sentence is topic sentence -->
                                         <xsl:value-of select="normalize-space(substring-before(substring-after($nodeTooltip,']'),'.'))"/>
                                     </xsl:otherwise>
                                 </xsl:choose>
@@ -1340,7 +1341,7 @@ Recommended tool:
     <xsl:param name="containerName"/>
     <xsl:param name="isStatement">false</xsl:param>
 	<!-- debug diagnostic
-	<xsl:if test="(@name='profile')">
+	<xsl:if test="(@name='style')">
 		<xsl:message>
 			<xsl:text>*** doField name=</xsl:text>
 			<xsl:value-of select="@name"/>
@@ -1588,7 +1589,7 @@ Recommended tool:
                     <xsl:value-of select="$fieldName"/>
                     <xsl:text> $originInheritedFrom=</xsl:text>
                     <xsl:value-of select="$originInheritedFrom"/>
-                    <xsl:text>: avoid duplicate field, provided by annotation and </xsl:text>
+                    <xsl:text>: avoid duplicate field, defined by schema annotation and also by </xsl:text>
                     <xsl:value-of select="//xs:element[@name = $containerName]//xs:extension/@base"/>
                 </xsl:message>
             </xsl:when>
@@ -1879,12 +1880,77 @@ Recommended tool:
                             </xsl:attribute>
                         </xsl:when>
                     </xsl:choose>
+                    <!-- TODO verify -->
                     <xsl:variable name="initialX3dVersion" select="@initialX3dVersion"/>
                     <xsl:if test="(string-length($initialX3dVersion) > 0)">
                         <xsl:attribute name="initialX3dVersion">
                             <xsl:value-of select="$initialX3dVersion"/>
                         </xsl:attribute>
                     </xsl:if>
+                    <!-- description -->
+                    <xsl:choose>
+                        <xsl:when test="($containerName = 'X3DNode') and (//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo[string-length(normalize-space(.)) > 0])">
+                            <!-- DEF, USE, class -->
+                            <xsl:attribute name="description" select="normalize-space(//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
+                        </xsl:when>
+                        <xsl:when test="($containerName = 'X3DNode') and (($fieldName = 'IS') or ($fieldName = 'metadata'))">
+                            <!-- IS, metadata -->
+                            <xsl:attribute name="description" select="normalize-space(//xs:complexType[@name='X3DNode']/xs:annotation/xs:appinfo/xs:element[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- description from tooltip -->
+                            <xsl:variable name="tooltipText"><!-- /attribute[@name = $fieldName] -->
+                                <xsl:choose>
+                                    <xsl:when test="($fieldName = 'DEF') or ($fieldName = 'USE') or ($fieldName = 'class') or (($fieldName = 'style') and not(ends-with($containerName,'FontStyle')))">
+                                        <xsl:value-of select="$x3d.tooltips.document//element[@name = 'Anchor']/attribute[@name = $fieldName]/@tooltip" disable-output-escaping="yes"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="$x3d.tooltips.document//element[@name = $containerName]/attribute[@name = $fieldName]/@tooltip" disable-output-escaping="yes"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:variable>
+                            <xsl:variable name="fieldTooltip">
+                                <xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
+                                    <xsl:value-of select="substring-after(replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi'),']')" disable-output-escaping="yes"/>
+                                    <!-- consistent javadoc punctuation -->
+                                    <xsl:if test="not(ends-with(normalize-space($tooltipText),'.'))">
+                                        <xsl:text>.</xsl:text>
+                                    </xsl:if>
+                                </xsl:if>
+                            </xsl:variable>
+                            <xsl:variable name="fieldTooltip2">
+                                <xsl:choose>
+                                    <xsl:when test="contains($fieldTooltip,'infinity)')">
+                                        <xsl:value-of select="substring-after($fieldTooltip,'infinity)')"/>
+                                    </xsl:when>
+                                    <xsl:when test="starts-with(normalize-space($fieldTooltip),'(') or starts-with(normalize-space($fieldTooltip),'[')">
+                                        <!-- remove bounds information -->
+                                        <xsl:choose>
+                                            <xsl:when test="contains($fieldTooltip,']')">
+                                                <xsl:value-of select="substring-after($fieldTooltip,']')"/>
+                                            </xsl:when>
+                                            <xsl:when test="contains($fieldTooltip,')')">
+                                                <xsl:value-of select="substring-after($fieldTooltip,')')"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$fieldTooltip"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="normalize-space($fieldTooltip)"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:variable>
+                            <xsl:if test="(string-length(normalize-space($fieldTooltip2)) > 0)">
+                                <xsl:attribute name="description">
+                                    <!-- first sentence is topic sentence -->
+                                    <xsl:value-of select="normalize-space(substring-before($fieldTooltip2,'.'))"/>
+                                    <xsl:text>.</xsl:text>
+                                </xsl:attribute>
+                            </xsl:if>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <!--xsl:message>test found...</xsl:message-->
                     <xsl:if test="($fieldAccessType='inputOutput') or ($fieldAccessType='initializeOnly') or ($isStatement='no')">
                         <!-- TODO: Improve this code -->
@@ -1993,19 +2059,6 @@ Recommended tool:
                             <xsl:attribute name="level" select="following-sibling::*[1]/@fixed"/>
                         </xsl:element>
                     </xsl:for-each>
-                    <!-- description -->
-                    <xsl:if test="($containerName = 'X3DNode')">
-                        <xsl:choose>
-                            <xsl:when test="//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo[string-length(normalize-space(.)) > 0]">
-                                <!-- DEF, USE, class -->
-                                <xsl:attribute name="description" select="normalize-space(//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
-                            </xsl:when>
-                            <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
-                                <!-- IS, metadata -->
-                                <xsl:attribute name="description" select="normalize-space(//xs:complexType[@name='X3DNode']/xs:annotation/xs:appinfo/xs:element[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
-                            </xsl:when>
-                        </xsl:choose>
-                    </xsl:if>
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>

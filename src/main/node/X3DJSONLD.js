@@ -486,7 +486,7 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			if (key === 'X3D') {
 				this.ConvertToX3DOM(xmlDoc, object[key], key, element, path);
 			} else {
-				if (key === "-skin" || key === "-skeleton" || key === "-value") {
+				if (key === "-skin" || key === "-skeleton" /*|| key === "-value"*/) {
 					let firstNode = object[key][0];
 					for (var skv in firstNode) {
 						firstNode[skv]['@containerField'] = key.substr(1);

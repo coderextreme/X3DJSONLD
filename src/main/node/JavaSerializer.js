@@ -437,9 +437,11 @@ JavaSerializer.prototype = {
 					if (attr === "class") {
 						method = "setCssClass";
 					}
+					/*
 					if (attr === "style") {
 						method = "setCssStyle";
 					}
+					*/
 					
 					str += '.'+method+"("+strval+")";
 				}
