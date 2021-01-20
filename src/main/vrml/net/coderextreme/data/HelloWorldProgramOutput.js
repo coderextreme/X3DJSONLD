@@ -167,7 +167,6 @@ Text31.metadata = MetadataSet32;
 
 let FontStyle35 = browser.currentScene.createNode("FontStyle");
 FontStyle35.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle35.glyphStyle = "PLAIN";
 Text31.fontStyle = FontStyle35;
 
 Shape28.geometry = Text31;
