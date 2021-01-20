@@ -85,7 +85,7 @@ var ProtoInstance6 = null;
               .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
                 .setValue(new MetadataString().setName("quotesTestC").setValue(Java.to(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""], Java.type("java.lang.String[]"))))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(Java.to(["checks MetadataSet addValue() method"], Java.type("java.lang.String[]")))))
-              .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setGlyphStyle("PLAIN"))))
+              .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))))))
           .addChild(new Collision()
             .addComments(new CommentsBlock("test containerField='proxy'"))
             .setProxy(new Shape().setDEF("ProxyShape")

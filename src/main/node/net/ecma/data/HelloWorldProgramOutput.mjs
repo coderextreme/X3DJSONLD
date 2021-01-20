@@ -353,8 +353,7 @@ var X3D0 =  new X3D({
                               value : new MFString(["checks MetadataSet addValue() method"])}))}),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"]),
-                          glyphStyle : new SFString("PLAIN")}))])}))}),
+                          justify : new MFString(["MIDDLE","MIDDLE"])}))])}))}),
 
                 new Collision({
                   { "#comment" : new CommentsBlock("test containerField='proxy'") },

@@ -318,7 +318,6 @@ MetadataSet63.addValue(MetadataString65)
 Text62.setMetadata(MetadataSet63)
 FontStyle66 = x3d.FontStyle()
 FontStyle66.setJustify(["MIDDLE","MIDDLE"])
-FontStyle66.setGlyphStyle("PLAIN")
 
 Text62.setFontStyle(FontStyle66)
 

@@ -124,7 +124,7 @@ ProtoInstance ProtoInstance6 = null;
               .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
                 .setValue(new MetadataString().setName("quotesTestC").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray()))))
-              .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())).setGlyphStyle("PLAIN"))))
+              .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))))
           .addChild(new Collision()
             .addComments(new CommentsBlock("test containerField='proxy'"))
             .setProxy(new Shape().setDEF("ProxyShape")
