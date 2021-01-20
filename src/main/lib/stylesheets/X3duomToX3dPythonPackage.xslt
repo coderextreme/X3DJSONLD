@@ -3322,7 +3322,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
             <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
             <xsl:choose>
-                <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global') or (local-name() = 'type')">
+                <xsl:when test="(local-name() = 'class') or ((local-name() = 'style') and not(ends-with(ancestor::ConcreteNode/@name, 'FontStyle'))) or (local-name() = 'global') or (local-name() = 'type')">
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>_</xsl:text>
                 </xsl:when>
@@ -3492,7 +3492,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
     
         <xsl:choose>
-            <xsl:when test="($name='class') or ($name='style') or ($name='global')">
+            <xsl:when test="($name='class') or (($name='style') and not(ends-with(ancestor::ConcreteNode/@name, 'FontStyle'))) or ($name='global')">
                 <xsl:value-of select="$name"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>
