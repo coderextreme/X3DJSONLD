@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> view3dscene, <a href="https://castle-engine.io/view3dscene.php" target="_blank">https://castle-engine.io/view3dscene.php</a> </td>
+			<td> tovrmlx3d, <a href="http://castle-engine.sourceforge.net/view3dscene.php#section_converting" target="_blank">http://castle-engine.sourceforge.net/view3dscene.php#section_converting</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> source </i> </td>
@@ -52,9 +52,9 @@ public class LOA2ExampleSourceWithDiamonds
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
   .setHead(new head()
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
     .addMeta(new meta().setName(meta.NAME_SOURCE     ).setContent("LOA2ExampleSourceWithDiamonds.wrl")))
   .setScene(new Scene()
     .addChild(new ProtoDeclare("Humanoid").setName("Humanoid")
@@ -114,7 +114,7 @@ public class LOA2ExampleSourceWithDiamonds
           .addChild(new Transform()
             .addChild(new Shape()
               .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setCoordIndex(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1})
-                .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.00999999977648258,0.0,-0.00999999977648258,0.0,0.0,0.0,0.0,0.00999999977648258,0.00999999977648258,0.0,0.0,0.0,0.0,-0.00999999977648258,0.0,-0.00999999977648258,0.0}))))
+                .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0099999997764825821,0.0,-0.0099999997764825821,0.0,0.0,0.0,0.0,0.0099999997764825821,0.0099999997764825821,0.0,0.0,0.0,0.0,-0.0099999997764825821,0.0,-0.0099999997764825821,0.0}))))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0))))
             .setIS(new IS()

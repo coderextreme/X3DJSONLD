@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> view3dscene, <a href="https://castle-engine.io/view3dscene.php" target="_blank">https://castle-engine.io/view3dscene.php</a> </td>
+			<td> tovrmlx3d, <a href="http://castle-engine.sourceforge.net/view3dscene.php#section_converting" target="_blank">http://castle-engine.sourceforge.net/view3dscene.php#section_converting</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> source </i> </td>
@@ -56,10 +56,10 @@ LOA2ExampleSourceWithDiamonds.prototype = {
   {
 
 	/** Large attribute array: Coordinate point field, scene-graph level=9, element #55, 18 total numbers made up of 6 3-tuple values */
-	this.Coordinate_9_55_point = new autoclass.MFVec3f(java.newArray("float", [0.0,0.00999999977648258,0.0,-0.00999999977648258,0.0,0.0,0.0,0.0,0.00999999977648258,0.00999999977648258,0.0,0.0,0.0,0.0,-0.00999999977648258,0.0,-0.00999999977648258,0.0]));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
+	this.Coordinate_9_55_point = new autoclass.MFVec3f(java.newArray("float", [0.0,0.0099999997764825821,0.0,-0.0099999997764825821,0.0,0.0,0.0,0.0,0.0099999997764825821,0.0099999997764825821,0.0,0.0,0.0,0.0,-0.0099999997764825821,0.0,-0.0099999997764825821,0.0]));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
     .addMeta((new autoclass.meta()).setName("source").setContent("LOA2ExampleSourceWithDiamonds.wrl")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("Humanoid")
