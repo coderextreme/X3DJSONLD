@@ -132,7 +132,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 January 2021"
+            "@content":"19 January 2021"
           },
           {
             "@name":"generator",
@@ -194,8 +194,7 @@
                               {
                                 "@DEF":"MessageFont",
                                 "@family":["SANS"],
-                                "@justify":["MIDDLE","MIDDLE"],
-                                "@style":"BOLD"
+                                "@justify":["MIDDLE","MIDDLE"]
                               }
                             }
                         }
@@ -335,8 +334,7 @@
                             { "FontStyle":
                               {
                                 "@family":["SANS"],
-                                "@justify":["MIDDLE","MIDDLE"],
-                                "@style":"BOLD"
+                                "@justify":["MIDDLE","MIDDLE"]
                               }
                             }
                         }

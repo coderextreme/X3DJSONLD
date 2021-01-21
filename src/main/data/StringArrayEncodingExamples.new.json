@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 January 2021"
+            "@content":"19 January 2021"
           },
           {
             "@name":"generator",
@@ -121,8 +121,7 @@
                     "-fontStyle":
                       { "FontStyle":
                         {
-                          "@justify":["MIDDLE","MIDDLE"],
-                          "@style":"BOLD"
+                          "@justify":["MIDDLE","MIDDLE"]
                         }
                       }
                   }
