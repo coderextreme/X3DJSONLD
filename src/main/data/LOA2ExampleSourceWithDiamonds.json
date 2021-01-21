@@ -1,14 +1,14 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Interchange",
-    "@version":"4.0",
-    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@version":"3.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
             "@name":"generator",
-            "@content":"view3dscene, https://castle-engine.io/view3dscene.php"
+            "@content":"tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"
           },
           {
             "@name":"source",
@@ -16,7 +16,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 January 2021"
+            "@content":"20 January 2021"
           },
           {
             "@name":"generator",
@@ -299,7 +299,7 @@
                                           "-coord":
                                             { "Coordinate":
                                               {
-                                                "@point":[0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0]
+                                                "@point":[0,0.0099999997764825821,0,-0.0099999997764825821,0,0,0,0,0.0099999997764825821,0.0099999997764825821,0,0,0,0,-0.0099999997764825821,0,-0.0099999997764825821,0]
                                               }
                                             }
                                         }
