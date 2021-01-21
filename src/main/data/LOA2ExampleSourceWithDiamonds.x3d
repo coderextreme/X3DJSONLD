@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile="Interchange" version="4.0"
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Interchange" version="3.0"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
-     xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+     xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
 <head>
-	<meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php" />
+	<meta name="generator" content="tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting" />
 	<meta name="source" content="LOA2ExampleSourceWithDiamonds.wrl" />
 </head>
 <Scene>
@@ -86,7 +86,7 @@
 							coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1"
 							creaseAngle="0.5">
 							<Coordinate
-								point="0 0.00999999977648258 0 -0.00999999977648258 0 0 0 0 0.00999999977648258 0.00999999977648258 0 0 0 0 -0.00999999977648258 0 -0.00999999977648258 0" />
+								point="0 0.0099999997764825821 0 -0.0099999997764825821 0 0 0 0 0.0099999997764825821 0.0099999997764825821 0 0 0 0 -0.0099999997764825821 0 -0.0099999997764825821 0" />
 						</IndexedFaceSet>
 						<Appearance>
 							<Material
