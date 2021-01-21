@@ -304,7 +304,7 @@ ROUTE48 = x3d.ROUTE()
 ROUTE48.setFromNode("OrbitScript")
 ROUTE48.setFromField("coordIndexes")
 ROUTE48.setToNode("Orbit")
-ROUTE48.setToField("coordIndex")
+ROUTE48.setToField("set_coordIndex")
 
 Group24.addChildren(ROUTE48)
 ROUTE49 = x3d.ROUTE()

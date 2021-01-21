@@ -156,7 +156,7 @@ ProtoInstance ProtoInstance34 = null;
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDEF("TextMat").setDiffuseColor(new float[] {1f,1f,1f})))
                   .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString42().getArray()))
-                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new org.web3d.x3d.jsail.fields.MFString(new MFString43().getArray())).setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString44().getArray())).setSize(0.3f).setCssStyle("BOLD")))))))
+                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new org.web3d.x3d.jsail.fields.MFString(new MFString43().getArray())).setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString44().getArray())).setSize(0.3f).setStyle("BOLD")))))))
           .addChild(new Viewpoint().setDEF("View01").setDescription("ArtDeco01").setPosition(new float[] {-2.25f,3.75f,3f}))
           .addChild(new Transform().setTranslation(new float[] {-2.25f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco01 view").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString45().getArray()))
