@@ -122,7 +122,7 @@ let ProtoDeclare6 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 				}
 				generateCoordinates();
 			}]]></Script>
-<ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex"></ROUTE>
+<ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="set_coordIndex"></ROUTE>
 <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"></ROUTE>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="OrbitPath" fromField="value_changed" toNode="OrbitTransform" toField="rotation"></ROUTE>
@@ -376,7 +376,7 @@ let ROUTE37 = browser.currentScene.createNode("ROUTE");
 ROUTE37.fromNode = "OrbitScript";
 ROUTE37.fromField = "coordIndexes";
 ROUTE37.toNode = "Orbit";
-ROUTE37.toField = "coordIndex";
+ROUTE37.toField = "set_coordIndex";
 Group13.children[4] = ROUTE37;
 
 let ROUTE38 = browser.currentScene.createNode("ROUTE");

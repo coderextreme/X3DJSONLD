@@ -102,7 +102,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "	generateCoordinates(resolution);\n"+
 "}"))
         .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
-        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
     X3D0.toFileX3D("../data/flower3.new.x3d");

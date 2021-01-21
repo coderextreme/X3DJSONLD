@@ -164,7 +164,7 @@ let ROUTE17 = browser.currentScene.createNode("ROUTE");
 ROUTE17.fromNode = "OrbitScript";
 ROUTE17.fromField = "coordIndexes";
 ROUTE17.toNode = "Orbit";
-ROUTE17.toField = "coordIndex";
+ROUTE17.toField = "set_coordIndex";
 browser.currentScene.children[7] = ROUTE17;
 
 let ROUTE18 = browser.currentScene.createNode("ROUTE");
