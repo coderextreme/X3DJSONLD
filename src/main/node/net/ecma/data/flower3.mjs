@@ -191,7 +191,7 @@ var X3D0 =  new X3D({
               fromNode : new SFString("OrbitScript"),
               fromField : new SFString("coordIndexes"),
               toNode : new SFString("Orbit"),
-              toField : new SFString("coordIndex")}),
+              toField : new SFString("set_coordIndex")}),
 
             new ROUTE({
               fromNode : new SFString("OrbitScript"),
