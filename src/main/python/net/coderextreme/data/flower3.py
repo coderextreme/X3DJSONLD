@@ -181,7 +181,7 @@ ROUTE23 = x3d.ROUTE()
 ROUTE23.setFromNode("OrbitScript")
 ROUTE23.setFromField("coordIndexes")
 ROUTE23.setToNode("Orbit")
-ROUTE23.setToField("coordIndex")
+ROUTE23.setToField("set_coordIndex")
 
 Scene7.addChildren(ROUTE23)
 ROUTE24 = x3d.ROUTE()
