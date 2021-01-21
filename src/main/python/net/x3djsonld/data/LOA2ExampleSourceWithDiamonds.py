@@ -22,10 +22,10 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Interchange',version='4.0',
+newModel=X3D(profile='Interchange',version='3.0',
   head=head(
     children=[
-    meta(name='generator',content='view3dscene, https://castle-engine.io/view3dscene.php'),
+    meta(name='generator',content='tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting'),
     meta(name='source',content='LOA2ExampleSourceWithDiamonds.wrl')]),
   Scene=Scene(
     children=[
@@ -97,7 +97,7 @@ newModel=X3D(profile='Interchange',version='4.0',
             children=[
             Shape(
               geometry=IndexedFaceSet(coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1],creaseAngle=0.5,
-                coord=Coordinate(point=[(0,0.00999999977648258,0),(-0.00999999977648258,0,0),(0,0,0.00999999977648258),(0.00999999977648258,0,0),(0,0,-0.00999999977648258),(0,-0.00999999977648258,0)])),
+                coord=Coordinate(point=[(0,0.0099999997764825821,0),(-0.0099999997764825821,0,0),(0,0,0.0099999997764825821),(0.0099999997764825821,0,0),(0,0,-0.0099999997764825821),(0,-0.0099999997764825821,0)])),
               appearance=Appearance(
                 material=Material(diffuseColor=(1,1,0))))],
             IS=IS(
