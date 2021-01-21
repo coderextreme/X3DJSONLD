@@ -67,26 +67,21 @@
           { "NavigationInfo":
             {
             }
-          }
-        ],
-        "-children":[
+          },
           { "Viewpoint":
             {
               "@description":"Two mathematical orbitals",
               "@position":[0,0,50]
             }
-          }
-        ],
-        "-children":[
+          },
           { "Group":
-              "-IllegalChildNodeFieldNameNotFound":[
+            {
+              "-children":[
                 { "DirectionalLight":
                   {
                     "@direction":[1,1,1]
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ProtoDeclare":
                   {
                     "@name":"orbit",
@@ -121,25 +116,22 @@
                     "ProtoBody": {
                         "-children":[
                           { "Group":
-                              "-IllegalChildNodeFieldNameNotFound":[
+                            {
+                              "-children":[
                                 { "TimeSensor":
                                   {
                                     "@DEF":"Clock",
-                                    "@cycleInterval":16,
+                                    "@cycleInterval":16.0,
                                     "@loop":true
                                   }
-                                }
-                              ],
-                              "-IllegalChildNodeFieldNameNotFound":[
+                                },
                                 { "OrientationInterpolator":
                                   {
                                     "@DEF":"OrbitPath",
-                                    "@key":[0.0,0.50,1.0],
-                                    "@keyValue":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28]
+                                    "@key":[0,0.5,1],
+                                    "@keyValue":[1,0,0,0,1,0,0,3.14,1,0,0,6.28]
                                   }
-                                }
-                              ],
-                              "-IllegalChildNodeFieldNameNotFound":[
+                                },
                                 { "Transform":
                                   {
                                     "@DEF":"OrbitTransform",
@@ -151,12 +143,20 @@
                                           }
                                         ]
                                     },
-                                    "-IllegalChildNodeFieldNameNotFound":[
+                                    "-children":[
                                       { "Shape":
-                                          "-IllegalChildNodeFieldNameNotFound":[
+                                        {
+                                          "-children":[
+                                            {
+                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                            }
+                                          ],
+                                          "-appearance":
                                             { "Appearance":
-                                                "-IllegalChildNodeFieldNameNotFound":[
+                                              {
+                                                "-material":
                                                   { "Material":
+                                                    {
                                                       "IS": {
                                                           "connect": [
                                                             {
@@ -173,39 +173,31 @@
                                                             }
                                                           ]
                                                       }
+                                                    }
                                                   }
-                                                ]
-                                            }
-                                          ],
-                                          "-children":[
-                                            {
-                                              "#comment":"<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
-                                            }
-                                          ],
-                                          "-IllegalChildNodeFieldNameNotFound":[
+                                              }
+                                            },
+                                          "-geometry":
                                             { "IndexedFaceSet":
                                               {
+                                                "@DEF":"Orbit",
                                                 "@ccw":false,
                                                 "@convex":false,
                                                 "@coordIndex":[0,1,2,-1],
-                                                "@DEF":"Orbit",
-                                                "-IllegalChildNodeFieldNameNotFound":[
+                                                "-coord":
                                                   { "Coordinate":
                                                     {
                                                       "@DEF":"OrbitCoordinates",
                                                       "@point":[0,0,1,0,1,0,1,0,0]
                                                     }
                                                   }
-                                                ]
                                               }
                                             }
-                                          ]
+                                        }
                                       }
                                     ]
                                   }
-                                }
-                              ],
-                              "-IllegalChildNodeFieldNameNotFound":[
+                                },
                                 { "Script":
                                   {
                                     "@DEF":"OrbitScript",
@@ -229,25 +221,25 @@
                                         "@name":"e",
                                         "@accessType":"inputOutput",
                                         "@type":"SFFloat",
-                                        "@value":5
+                                        "@value":5.0
                                       },
                                       {
                                         "@name":"f",
                                         "@accessType":"inputOutput",
                                         "@type":"SFFloat",
-                                        "@value":5
+                                        "@value":5.0
                                       },
                                       {
                                         "@name":"g",
                                         "@accessType":"inputOutput",
                                         "@type":"SFFloat",
-                                        "@value":5
+                                        "@value":5.0
                                       },
                                       {
                                         "@name":"h",
                                         "@accessType":"inputOutput",
                                         "@type":"SFFloat",
-                                        "@value":5
+                                        "@value":5.0
                                       },
                                       {
                                         "@name":"resolution",
@@ -258,8 +250,8 @@
                                     ],
                                     "#sourceText":[
 "",
-"\t\t\t",
-"\t\t\tecmascript:",
+"",
+"ecmascript:",
 "",
 "\t\t\tvar e = 5;",
 "\t\t\tvar f = 5;",
@@ -333,60 +325,58 @@
 "\t\t\t\t}",
 "\t\t\t\tgenerateCoordinates();",
 "\t\t\t}",
-"\t\t\t      "
+"",
+""
 ]
                                   }
-                                }
-                              ],
-                              "-children":[
+                                },
                                 { "ROUTE":
                                   {
-                                    "@fromNode":"OrbitScript",
                                     "@fromField":"coordIndexes",
-                                    "@toNode":"Orbit",
-                                    "@toField":"set_coordIndex"
-                                  }
-                                },
-                                { "ROUTE":
-                                  {
                                     "@fromNode":"OrbitScript",
+                                    "@toField":"set_coordIndex",
+                                    "@toNode":"Orbit"
+                                  }
+                                },
+                                { "ROUTE":
+                                  {
                                     "@fromField":"coordinates",
-                                    "@toNode":"OrbitCoordinates",
-                                    "@toField":"point"
+                                    "@fromNode":"OrbitScript",
+                                    "@toField":"point",
+                                    "@toNode":"OrbitCoordinates"
                                   }
                                 },
                                 { "ROUTE":
                                   {
-                                    "@fromNode":"Clock",
                                     "@fromField":"fraction_changed",
-                                    "@toNode":"OrbitScript",
-                                    "@toField":"set_fraction"
+                                    "@fromNode":"Clock",
+                                    "@toField":"set_fraction",
+                                    "@toNode":"OrbitScript"
                                   }
                                 },
                                 { "ROUTE":
                                   {
-                                    "@fromNode":"OrbitPath",
                                     "@fromField":"value_changed",
-                                    "@toNode":"OrbitTransform",
-                                    "@toField":"rotation"
+                                    "@fromNode":"OrbitPath",
+                                    "@toField":"rotation",
+                                    "@toNode":"OrbitTransform"
                                   }
                                 },
                                 { "ROUTE":
                                   {
-                                    "@fromNode":"Clock",
                                     "@fromField":"fraction_changed",
-                                    "@toNode":"OrbitPath",
-                                    "@toField":"set_fraction"
+                                    "@fromNode":"Clock",
+                                    "@toField":"set_fraction",
+                                    "@toNode":"OrbitPath"
                                   }
                                 }
                               ]
+                            }
                           }
                         ]
                     }
                   }
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
+                },
                 { "ProtoInstance":
                   {
                     "@name":"orbit",
@@ -409,9 +399,7 @@
                       }
                     ]
                   }
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
+                },
                 { "ProtoInstance":
                   {
                     "@name":"orbit",
@@ -436,6 +424,7 @@
                   }
                 }
               ]
+            }
           }
         ]
     }
