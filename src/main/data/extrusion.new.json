@@ -47,40 +47,38 @@
     "Scene": {
         "-children":[
           { "Group":
-              "-IllegalChildNodeFieldNameNotFound":[
+            {
+              "-children":[
                 { "Shape":
-                    "-IllegalChildNodeFieldNameNotFound":[
-                      { "Extrusion":
-                        {
-                          "@DEF":"extrusion",
-                          "@spine":[-50,-50,0,50,50,0],
-                          "@creaseAngle":0.785,
-                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
-                        }
-                      }
-                    ],
-                    "-IllegalChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-IllegalChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0,1,0]
                               }
                             }
-                          ]
+                        }
+                      },
+                    "-geometry":
+                      { "Extrusion":
+                        {
+                          "@DEF":"extrusion",
+                          "@creaseAngle":0.785,
+                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
+                          "@spine":[-50,-50,0,50,50,0]
+                        }
                       }
-                    ]
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
+                  }
+                },
                 { "TimeSensor":
                   {
                     "@DEF":"TourTime",
                     "@loop":true
                   }
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
+                },
                 { "Script":
                   {
                     "@DEF":"MoveCylinder",
@@ -112,26 +110,25 @@
 ""
 ]
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ROUTE":
                   {
-                    "@fromNode":"TourTime",
                     "@fromField":"cycleTime",
-                    "@toNode":"MoveCylinder",
-                    "@toField":"set_cycle"
+                    "@fromNode":"TourTime",
+                    "@toField":"set_cycle",
+                    "@toNode":"MoveCylinder"
                   }
                 },
                 { "ROUTE":
                   {
-                    "@fromNode":"MoveCylinder",
                     "@fromField":"spine_changed",
-                    "@toNode":"extrusion",
-                    "@toField":"set_spine"
+                    "@fromNode":"MoveCylinder",
+                    "@toField":"set_spine",
+                    "@toNode":"extrusion"
                   }
                 }
               ]
+            }
           }
         ]
     }

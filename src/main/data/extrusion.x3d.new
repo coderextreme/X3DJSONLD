@@ -23,7 +23,7 @@
 		        spine = new MFVec3f([endA, endB]);
                 }]]></Script>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="MoveCylinder" toField="set_cycle"></ROUTE>
-<ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="spine"></ROUTE>
+<ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="set_spine"></ROUTE>
 </Group>
 </Scene>
 </X3D>
