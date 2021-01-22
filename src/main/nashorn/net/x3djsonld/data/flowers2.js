@@ -202,7 +202,7 @@ flowers2.prototype = {
               .addField(new fieldObject().setAccessType("inputOutput").setName("g").setType("SFFloat").setValue("5"))
               .addField(new fieldObject().setAccessType("inputOutput").setName("h").setType("SFFloat").setValue("5"))
               .addField(new fieldObject().setAccessType("inputOutput").setName("resolution").setType("SFInt32").setValue("50")))
-            .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+            .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
             .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
             .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
