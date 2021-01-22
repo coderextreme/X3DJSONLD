@@ -96,7 +96,7 @@ extrusion.prototype = {
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
       .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-      .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))));
+      .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))));
   },
   // end of initialize() method
 

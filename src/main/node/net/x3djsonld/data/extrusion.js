@@ -104,7 +104,7 @@ extrusion.prototype = {
         .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
       .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-      .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))));
+      .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))));
   },
   // end of initialize() method
 

@@ -31,5 +31,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "		        spine = new MFVec3f([endA, endB]);\n"+
 "                }"))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))))      ;
+          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))))      ;
     X3D0.toFileX3D("../data/extrusion.new.x3d");

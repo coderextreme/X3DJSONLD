@@ -105,5 +105,5 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("MoveCylinder"),
                   fromField : new SFString("spine_changed"),
                   toNode : new SFString("extrusion"),
-                  toField : new SFString("spine")})])})])}))});
+                  toField : new SFString("set_spine")})])})])}))});
 console.log(X3D0.toXMLNode());
