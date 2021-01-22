@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 ###############################################
 
 # X3D Package for Python x3d.py
@@ -4490,7 +4492,7 @@ class SFBool(_X3DField):
         return 'SFBool'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFBoolAndMFBool'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFBoolAndMFBool'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFBool'
@@ -4544,7 +4546,7 @@ class MFBool(_X3DField):
         return 'MFBool'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFBoolAndMFBool'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFBoolAndMFBool'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFBool'
@@ -4613,7 +4615,7 @@ class SFColor(_X3DField):
         return 'SFColor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFColorAndMFColor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFColorAndMFColor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColor'
@@ -4672,7 +4674,7 @@ class MFColor(_X3DField):
         return 'MFColor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFColorAndMFColor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFColorAndMFColor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFColor'
@@ -4746,7 +4748,7 @@ class SFColorRGBA(_X3DField):
         return 'SFColorRGBA'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFColorRGBA'
@@ -4805,7 +4807,7 @@ class MFColorRGBA(_X3DField):
         return 'MFColorRGBA'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFColorRGBA'
@@ -4879,7 +4881,7 @@ class SFDouble(_X3DField):
         return 'SFDouble'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFDoubleAndMFDouble'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFDoubleAndMFDouble'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFDouble'
@@ -4932,7 +4934,7 @@ class MFDouble(_X3DField):
         return 'MFDouble'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFDoubleAndMFDouble'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFDoubleAndMFDouble'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFDouble'
@@ -5000,7 +5002,7 @@ class SFFloat(_X3DField):
         return 'SFFloat'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFFloatAndMFFloat'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFFloatAndMFFloat'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFFloat'
@@ -5053,7 +5055,7 @@ class MFFloat(_X3DField):
         return 'MFFloat'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFFloatAndMFFloat'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFFloatAndMFFloat'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFFloat'
@@ -5121,7 +5123,7 @@ class SFImage(_X3DField):
         return 'SFImage'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFImageAndMFImage'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFImageAndMFImage'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFImage'
@@ -5174,7 +5176,7 @@ class MFImage(_X3DField):
         return 'MFImage'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFImageAndMFImage'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFImageAndMFImage'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFImage'
@@ -5242,7 +5244,7 @@ class SFInt32(_X3DField):
         return 'SFInt32'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFInt32AndMFInt32'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFInt32AndMFInt32'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFInt32'
@@ -5295,7 +5297,7 @@ class MFInt32(_X3DField):
         return 'MFInt32'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFInt32AndMFInt32'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFInt32AndMFInt32'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFInt32'
@@ -5363,7 +5365,7 @@ class SFMatrix3d(_X3DField):
         return 'SFMatrix3d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix3d'
@@ -5416,7 +5418,7 @@ class MFMatrix3d(_X3DField):
         return 'MFMatrix3d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix3d'
@@ -5484,7 +5486,7 @@ class SFMatrix3f(_X3DField):
         return 'SFMatrix3f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix3f'
@@ -5537,7 +5539,7 @@ class MFMatrix3f(_X3DField):
         return 'MFMatrix3f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix3f'
@@ -5605,7 +5607,7 @@ class SFMatrix4d(_X3DField):
         return 'SFMatrix4d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix4d'
@@ -5658,7 +5660,7 @@ class MFMatrix4d(_X3DField):
         return 'MFMatrix4d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix4d'
@@ -5726,7 +5728,7 @@ class SFMatrix4f(_X3DField):
         return 'SFMatrix4f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFMatrix4f'
@@ -5779,7 +5781,7 @@ class MFMatrix4f(_X3DField):
         return 'MFMatrix4f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFMatrix4f'
@@ -5847,7 +5849,7 @@ class SFNode(_X3DField):
         return 'SFNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFNodeAndMFNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFNodeAndMFNode'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFNode'
@@ -5907,7 +5909,7 @@ class MFNode(_X3DField):
         return 'MFNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFNodeAndMFNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFNodeAndMFNode'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFNode'
@@ -5993,7 +5995,7 @@ class SFRotation(_X3DField):
         return 'SFRotation'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFRotationAndMFRotation'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFRotationAndMFRotation'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFRotation'
@@ -6052,7 +6054,7 @@ class MFRotation(_X3DField):
         return 'MFRotation'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFRotationAndMFRotation'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFRotationAndMFRotation'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFRotation'
@@ -6126,7 +6128,7 @@ class SFString(_X3DField):
         return 'SFString'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFStringAndMFString'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFStringAndMFString'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFString'
@@ -6179,7 +6181,7 @@ class MFString(_X3DField):
         return 'MFString'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFStringAndMFString'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFStringAndMFString'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFString'
@@ -6255,7 +6257,7 @@ class SFTime(_X3DField):
         return 'SFTime'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFTimeAndMFTime'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFTimeAndMFTime'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFTime'
@@ -6308,7 +6310,7 @@ class MFTime(_X3DField):
         return 'MFTime'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFTimeAndMFTime'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFTimeAndMFTime'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFTime'
@@ -6376,7 +6378,7 @@ class SFVec2d(_X3DField):
         return 'SFVec2d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec2dAndMFVec2d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec2dAndMFVec2d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec2d'
@@ -6429,7 +6431,7 @@ class MFVec2d(_X3DField):
         return 'MFVec2d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec2dAndMFVec2d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec2dAndMFVec2d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec2d'
@@ -6497,7 +6499,7 @@ class SFVec2f(_X3DField):
         return 'SFVec2f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec2fAndMFVec2f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec2fAndMFVec2f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec2f'
@@ -6556,7 +6558,7 @@ class MFVec2f(_X3DField):
         return 'MFVec2f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec2fAndMFVec2f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec2fAndMFVec2f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec2f'
@@ -6630,7 +6632,7 @@ class SFVec3d(_X3DField):
         return 'SFVec3d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec3dAndMFVec3d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec3dAndMFVec3d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec3d'
@@ -6683,7 +6685,7 @@ class MFVec3d(_X3DField):
         return 'MFVec3d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec3dAndMFVec3d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec3dAndMFVec3d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec3d'
@@ -6751,7 +6753,7 @@ class SFVec3f(_X3DField):
         return 'SFVec3f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec3fAndMFVec3f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec3fAndMFVec3f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec3f'
@@ -6810,7 +6812,7 @@ class MFVec3f(_X3DField):
         return 'MFVec3f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec3fAndMFVec3f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec3fAndMFVec3f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec3f'
@@ -6884,7 +6886,7 @@ class SFVec4d(_X3DField):
         return 'SFVec4d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec4dAndMFVec4d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec4dAndMFVec4d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec4d'
@@ -6937,7 +6939,7 @@ class MFVec4d(_X3DField):
         return 'MFVec4d'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec4dAndMFVec4d'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec4dAndMFVec4d'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec4d'
@@ -7005,7 +7007,7 @@ class SFVec4f(_X3DField):
         return 'SFVec4f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec4fAndMFVec4f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec4fAndMFVec4f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFVec4f'
@@ -7064,7 +7066,7 @@ class MFVec4f(_X3DField):
         return 'MFVec4f'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/fieldsDef.html#SFVec4fAndMFVec4f'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/fieldsDef.html#SFVec4fAndMFVec4f'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFVec4f'
@@ -7143,7 +7145,7 @@ class _X3DNode(object):
         return '_X3DNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DNode'
     def __init__(self, DEF="", USE="", class_="", style_="", metadata=None, IS=None):
         self.DEF = DEF
         self.USE = USE
@@ -7272,7 +7274,7 @@ class _X3DChildNode(_X3DNode):
         return '_X3DChildNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DChildNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DChildNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DChildNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7286,7 +7288,7 @@ class _X3DSoundNode(_X3DChildNode):
         return '_X3DSoundNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#X3DSoundNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#X3DSoundNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSoundNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7300,7 +7302,7 @@ class _X3DSoundChannelNode(_X3DSoundNode):
         return '_X3DSoundChannelNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#X3DSoundChannelNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#X3DSoundChannelNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSoundChannelNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7314,7 +7316,7 @@ class _X3DTimeDependentNode(_X3DChildNode):
         return '_X3DTimeDependentNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/time.html#X3DTimeDependentNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/time.html#X3DTimeDependentNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTimeDependentNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7328,7 +7330,7 @@ class _X3DGeometryNode(_X3DNode):
         return '_X3DGeometryNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DGeometryNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DGeometryNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DGeometryNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7342,7 +7344,7 @@ class _X3DParametricGeometryNode(_X3DGeometryNode):
         return '_X3DParametricGeometryNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#X3DParametricGeometryNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#X3DParametricGeometryNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DParametricGeometryNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7356,7 +7358,7 @@ class _X3DAppearanceChildNode(_X3DNode):
         return '_X3DAppearanceChildNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DAppearanceChildNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#X3DAppearanceChildNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DAppearanceChildNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7370,7 +7372,7 @@ class _X3DTextureNode(_X3DAppearanceChildNode):
         return '_X3DTextureNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DTextureNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DTextureNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTextureNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7384,7 +7386,7 @@ class _X3DSensorNode(_X3DChildNode):
         return '_X3DSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7398,7 +7400,7 @@ class _X3DPointingDeviceSensorNode(_X3DSensorNode):
         return '_X3DPointingDeviceSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#X3DPointingDeviceSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#X3DPointingDeviceSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DPointingDeviceSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7412,7 +7414,7 @@ class _X3DVolumeRenderStyleNode(_X3DNode):
         return '_X3DVolumeRenderStyleNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#X3DVolumeRenderStyleNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#X3DVolumeRenderStyleNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DVolumeRenderStyleNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7426,7 +7428,7 @@ class _X3DGeometricPropertyNode(_X3DNode):
         return '_X3DGeometricPropertyNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DGeometricPropertyNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DGeometricPropertyNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DGeometricPropertyNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7440,7 +7442,7 @@ class _X3DFollowerNode(_X3DChildNode):
         return '_X3DFollowerNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#X3DFollowerNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#X3DFollowerNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DFollowerNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7454,7 +7456,7 @@ class _X3DBindableNode(_X3DChildNode):
         return '_X3DBindableNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DBindableNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DBindableNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DBindableNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7468,7 +7470,7 @@ class _X3DAppearanceNode(_X3DNode):
         return '_X3DAppearanceNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DAppearanceNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#X3DAppearanceNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DAppearanceNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7482,7 +7484,7 @@ class _X3DBackgroundNode(_X3DBindableNode):
         return '_X3DBackgroundNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#X3DBackgroundNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#X3DBackgroundNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DBackgroundNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7496,7 +7498,7 @@ class _X3DChaserNode(_X3DFollowerNode):
         return '_X3DChaserNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#X3DChaserNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#X3DChaserNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DChaserNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7510,7 +7512,7 @@ class _X3DColorNode(_X3DGeometricPropertyNode):
         return '_X3DColorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DColorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DColorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DColorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7524,7 +7526,7 @@ class _X3DComposableVolumeRenderStyleNode(_X3DVolumeRenderStyleNode):
         return '_X3DComposableVolumeRenderStyleNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#X3DComposableVolumeRenderStyleNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#X3DComposableVolumeRenderStyleNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DComposableVolumeRenderStyleNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7538,7 +7540,7 @@ class _X3DComposedGeometryNode(_X3DGeometryNode):
         return '_X3DComposedGeometryNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DComposedGeometryNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DComposedGeometryNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DComposedGeometryNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7552,7 +7554,7 @@ class _X3DCoordinateNode(_X3DGeometricPropertyNode):
         return '_X3DCoordinateNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DCoordinateNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DCoordinateNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DCoordinateNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7566,7 +7568,7 @@ class _X3DDamperNode(_X3DFollowerNode):
         return '_X3DDamperNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#X3DDamperNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#X3DDamperNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DDamperNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7580,7 +7582,7 @@ class _X3DDragSensorNode(_X3DPointingDeviceSensorNode):
         return '_X3DDragSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#X3DDragSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#X3DDragSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DDragSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7594,7 +7596,7 @@ class _X3DEnvironmentalSensorNode(_X3DSensorNode):
         return '_X3DEnvironmentalSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalSensor.html#X3DEnvironmentalSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalSensor.html#X3DEnvironmentalSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DEnvironmentalSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7608,7 +7610,7 @@ class _X3DEnvironmentTextureNode(_X3DTextureNode):
         return '_X3DEnvironmentTextureNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalTexturing#X3DEnvironmentTextureNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalTexturing#X3DEnvironmentTextureNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DEnvironmentTextureNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7622,7 +7624,7 @@ class _X3DFontStyleNode(_X3DNode):
         return '_X3DFontStyleNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/text.html#X3DFontStyleNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/text.html#X3DFontStyleNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DFontStyleNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7636,7 +7638,7 @@ class _X3DGroupingNode(_X3DChildNode):
         return '_X3DGroupingNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#X3DGroupingNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#X3DGroupingNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DGroupingNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7650,7 +7652,7 @@ class _X3DInfoNode(_X3DChildNode):
         return '_X3DInfoNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#X3DInfoNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#X3DInfoNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DInfoNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7664,7 +7666,7 @@ class _X3DInterpolatorNode(_X3DChildNode):
         return '_X3DInterpolatorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#X3DInterpolatorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#X3DInterpolatorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DInterpolatorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7678,7 +7680,7 @@ class _X3DKeyDeviceSensorNode(_X3DSensorNode):
         return '_X3DKeyDeviceSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/keyDeviceSensor.html#X3DKeyDeviceSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/keyDeviceSensor.html#X3DKeyDeviceSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DKeyDeviceSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7692,7 +7694,7 @@ class _X3DLayerNode(_X3DNode):
         return '_X3DLayerNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layering.html#X3DLayerNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layering.html#X3DLayerNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DLayerNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7706,7 +7708,7 @@ class _X3DLayoutNode(_X3DChildNode):
         return '_X3DLayoutNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#X3DLayoutNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#X3DLayoutNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DLayoutNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7720,7 +7722,7 @@ class _X3DLightNode(_X3DChildNode):
         return '_X3DLightNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/lighting.html#X3DLightNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/lighting.html#X3DLightNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DLightNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7734,7 +7736,7 @@ class _X3DMaterialNode(_X3DAppearanceChildNode):
         return '_X3DMaterialNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DMaterialNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#X3DMaterialNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DMaterialNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7748,7 +7750,7 @@ class _X3DNBodyCollidableNode(_X3DChildNode):
         return '_X3DNBodyCollidableNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#X3DNBodyCollidableNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#X3DNBodyCollidableNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNBodyCollidableNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7762,7 +7764,7 @@ class _X3DNBodyCollisionSpaceNode(_X3DNode):
         return '_X3DNBodyCollisionSpaceNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#X3DNBodyCollisionSpaceNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#X3DNBodyCollisionSpaceNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNBodyCollisionSpaceNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7776,7 +7778,7 @@ class _X3DNetworkSensorNode(_X3DSensorNode):
         return '_X3DNetworkSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#X3DNetworkSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/networking.html#X3DNetworkSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNetworkSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7790,7 +7792,7 @@ class _X3DNormalNode(_X3DGeometricPropertyNode):
         return '_X3DNormalNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#X3DNormalNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#X3DNormalNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNormalNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7804,7 +7806,7 @@ class _X3DNurbsControlCurveNode(_X3DNode):
         return '_X3DNurbsControlCurveNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#X3DNurbsControlCurveNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#X3DNurbsControlCurveNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNurbsControlCurveNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7818,7 +7820,7 @@ class _X3DNurbsSurfaceGeometryNode(_X3DParametricGeometryNode):
         return '_X3DNurbsSurfaceGeometryNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#X3DNurbsSurfaceGeometryNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#X3DNurbsSurfaceGeometryNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DNurbsSurfaceGeometryNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7832,7 +7834,7 @@ class _X3DOneSidedMaterialNode(_X3DMaterialNode):
         return '_X3DOneSidedMaterialNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DOneSidedMaterialNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#X3DOneSidedMaterialNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DOneSidedMaterialNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7846,7 +7848,7 @@ class _X3DParticleEmitterNode(_X3DNode):
         return '_X3DParticleEmitterNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#X3DParticleEmitterNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#X3DParticleEmitterNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DParticleEmitterNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7860,7 +7862,7 @@ class _X3DParticlePhysicsModelNode(_X3DNode):
         return '_X3DParticlePhysicsModelNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#X3DParticlePhysicsModelNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#X3DParticlePhysicsModelNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DParticlePhysicsModelNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7874,7 +7876,7 @@ class _X3DPickSensorNode(_X3DSensorNode):
         return '_X3DPickSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#X3DPickSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#X3DPickSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DPickSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7888,7 +7890,7 @@ class _X3DProductStructureChildNode(_X3DChildNode):
         return '_X3DProductStructureChildNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#X3DProductStructureChildNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#X3DProductStructureChildNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DProductStructureChildNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7902,7 +7904,7 @@ class _X3DPrototypeInstance(_X3DNode):
         return '_X3DPrototypeInstance'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DPrototypeInstance'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DPrototypeInstance'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DPrototypeInstance __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7916,7 +7918,7 @@ class _X3DRigidJointNode(_X3DNode):
         return '_X3DRigidJointNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#X3DRigidJointNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#X3DRigidJointNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DRigidJointNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7930,7 +7932,7 @@ class _X3DScriptNode(_X3DChildNode):
         return '_X3DScriptNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/scripting.html#X3DScriptNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/scripting.html#X3DScriptNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DScriptNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7944,7 +7946,7 @@ class _X3DSequencerNode(_X3DChildNode):
         return '_X3DSequencerNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#X3DSequencerNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#X3DSequencerNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSequencerNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7958,7 +7960,7 @@ class _X3DShaderNode(_X3DAppearanceChildNode):
         return '_X3DShaderNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#X3DShaderNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#X3DShaderNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DShaderNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7972,7 +7974,7 @@ class _X3DShapeNode(_X3DChildNode):
         return '_X3DShapeNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DShapeNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#X3DShapeNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DShapeNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -7986,7 +7988,7 @@ class _X3DSoundDestinationNode(_X3DSoundNode):
         return '_X3DSoundDestinationNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#X3DSoundDestinationNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#X3DSoundDestinationNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSoundDestinationNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8000,7 +8002,7 @@ class _X3DSoundProcessingNode(_X3DTimeDependentNode):
         return '_X3DSoundProcessingNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#X3DSoundProcessingNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#X3DSoundProcessingNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSoundProcessingNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8014,7 +8016,7 @@ class _X3DSoundSourceNode(_X3DTimeDependentNode):
         return '_X3DSoundSourceNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#X3DSoundSourceNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#X3DSoundSourceNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSoundSourceNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8028,7 +8030,7 @@ class _X3DTexture3DNode(_X3DTextureNode):
         return '_X3DTexture3DNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#X3DTexture3DNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#X3DTexture3DNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTexture3DNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8042,7 +8044,7 @@ class _X3DTextureProjectorNode(_X3DLightNode):
         return '_X3DTextureProjectorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/TextureProjector.html#X3DTextureProjectorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/TextureProjector.html#X3DTextureProjectorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTextureProjectorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8056,7 +8058,7 @@ class _X3DTouchSensorNode(_X3DPointingDeviceSensorNode):
         return '_X3DTouchSensorNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#X3DTouchSensorNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#X3DTouchSensorNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTouchSensorNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8070,7 +8072,7 @@ class _X3DTriggerNode(_X3DChildNode):
         return '_X3DTriggerNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#X3DTriggerNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#X3DTriggerNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTriggerNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8084,7 +8086,7 @@ class _X3DVertexAttributeNode(_X3DGeometricPropertyNode):
         return '_X3DVertexAttributeNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#X3DVertexAttributeNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#X3DVertexAttributeNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DVertexAttributeNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8098,7 +8100,7 @@ class _X3DViewpointNode(_X3DBindableNode):
         return '_X3DViewpointNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#X3DViewpointNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#X3DViewpointNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DViewpointNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8112,7 +8114,7 @@ class _X3DViewportNode(_X3DGroupingNode):
         return '_X3DViewportNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layering.html#X3DViewportNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layering.html#X3DViewportNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DViewportNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8126,7 +8128,7 @@ class _X3DVolumeDataNode(_X3DChildNode):
         return '_X3DVolumeDataNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#X3DVolumeDataNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#X3DVolumeDataNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DVolumeDataNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8140,7 +8142,7 @@ class _X3DTextureTransformNode(_X3DAppearanceChildNode):
         return '_X3DTextureTransformNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DTextureTransformNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DTextureTransformNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTextureTransformNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8154,7 +8156,7 @@ class _X3DSingleTextureTransformNode(_X3DTextureTransformNode):
         return '_X3DSingleTextureTransformNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureTransformNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DSingleTextureTransformNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSingleTextureTransformNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8168,7 +8170,7 @@ class _X3DTextureCoordinateNode(_X3DGeometricPropertyNode):
         return '_X3DTextureCoordinateNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DTextureCoordinateNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DTextureCoordinateNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTextureCoordinateNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8182,7 +8184,7 @@ class _X3DSingleTextureCoordinateNode(_X3DTextureCoordinateNode):
         return '_X3DSingleTextureCoordinateNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureCoordinateNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DSingleTextureCoordinateNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSingleTextureCoordinateNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8196,7 +8198,7 @@ class _X3DSingleTextureNode(_X3DTextureNode):
         return '_X3DSingleTextureNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DSingleTextureNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DSingleTextureNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8210,7 +8212,7 @@ class _X3DTexture2DNode(_X3DSingleTextureNode):
         return '_X3DTexture2DNode'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DTexture2DNode'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#X3DTexture2DNode'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractNodeType X3DTexture2DNode __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8230,7 +8232,7 @@ class _X3DBoundedObject(_X3DNode):
         return '_X3DBoundedObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#X3DBoundedObject'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#X3DBoundedObject'
 
 class _X3DFogObject(_X3DNode):
     """
@@ -8241,7 +8243,7 @@ class _X3DFogObject(_X3DNode):
         return '_X3DFogObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#X3DFogOjbect'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#X3DFogOjbect'
 
 class _X3DMetadataObject(_X3DNode):
     """
@@ -8252,7 +8254,7 @@ class _X3DMetadataObject(_X3DNode):
         return '_X3DMetadataObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#X3DMetadataObject'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#X3DMetadataObject'
     def __init__(self, DEF, USE, class_, style_, IS, metadata):
         # if _DEBUG: print('... in AbstractObjectType X3DMetadataObject __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
@@ -8266,7 +8268,7 @@ class _X3DPickableObject(_X3DNode):
         return '_X3DPickableObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#X3DPickableObject'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#X3DPickableObject'
 
 class _X3DProgrammableShaderObject(_X3DNode):
     """
@@ -8277,7 +8279,7 @@ class _X3DProgrammableShaderObject(_X3DNode):
         return '_X3DProgrammableShaderObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#X3DProgrammableShaderObject'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#X3DProgrammableShaderObject'
 
 class _X3DUrlObject(_X3DNode):
     """
@@ -8288,7 +8290,7 @@ class _X3DUrlObject(_X3DNode):
         return '_X3DUrlObject'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#X3DUrlObject'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/networking.html#X3DUrlObject'
 
 ###############################################
 
@@ -8406,7 +8408,7 @@ class component(_X3DStatement):
         return 'component'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#Components'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#Components'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#component'
@@ -8593,7 +8595,7 @@ class EXPORT(_X3DStatement):
         return 'EXPORT'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#EXPORTSemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#EXPORTSemantics'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#EXPORT'
@@ -8693,7 +8695,7 @@ class ExternProtoDeclare(_X3DStatement):
         return 'ExternProtoDeclare'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#Externalprototypesemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#Externalprototypesemantics'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ExternProtoDeclare'
@@ -9246,7 +9248,7 @@ class IMPORT(_X3DStatement):
         return 'IMPORT'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#IMPORTSemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#IMPORTSemantics'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IMPORT'
@@ -9363,7 +9365,7 @@ class IS(_X3DStatement):
         return 'IS'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#PROTOdefinitionsemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#PROTOdefinitionsemantics'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IS'
@@ -9924,7 +9926,7 @@ class ROUTE(_X3DStatement):
         return 'ROUTE'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/concepts.html#ModifyingObjectsRoutes'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#ModifyingObjectsRoutes'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ROUTE'
@@ -10130,7 +10132,7 @@ class unit(_X3DStatement):
         return 'unit'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#UNITStatement'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#UNITStatement'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#unit'
@@ -10489,7 +10491,7 @@ class AcousticProperties(_X3DAppearanceChildNode):
         return 'AcousticProperties'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#AcousticProperties'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#AcousticProperties'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#AcousticProperties'
@@ -10504,7 +10506,7 @@ class AcousticProperties(_X3DAppearanceChildNode):
             ('specular', 0, FieldType.SFFloat, AccessType.inputOutput, 'AcousticProperties'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -10705,7 +10707,7 @@ class Analyser(_X3DSoundProcessingNode):
         return 'Analyser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Analyser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Analyser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Analyser'
@@ -10730,7 +10732,7 @@ class Analyser(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Analyser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -11096,7 +11098,7 @@ class Anchor(_X3DGroupingNode, _X3DUrlObject):
         return 'Anchor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#Anchor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/networking.html#Anchor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Anchor'
@@ -11116,7 +11118,7 @@ class Anchor(_X3DGroupingNode, _X3DUrlObject):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -11399,7 +11401,7 @@ class Appearance(_X3DAppearanceNode):
         return 'Appearance'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#Appearance'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#Appearance'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Appearance'
@@ -11416,7 +11418,7 @@ class Appearance(_X3DAppearanceNode):
             ('shaders', list(), FieldType.MFNode, AccessType.inputOutput, 'Appearance'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -11668,7 +11670,7 @@ class Arc2D(_X3DGeometryNode):
         return 'Arc2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Arc2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Arc2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Arc2D'
@@ -11680,7 +11682,7 @@ class Arc2D(_X3DGeometryNode):
             ('startAngle', 0, FieldType.SFFloat, AccessType.initializeOnly, 'Arc2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -11834,7 +11836,7 @@ class ArcClose2D(_X3DGeometryNode):
         return 'ArcClose2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#ArcClose2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#ArcClose2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ArcClose2D'
@@ -11848,7 +11850,7 @@ class ArcClose2D(_X3DGeometryNode):
             ('startAngle', 0, FieldType.SFFloat, AccessType.initializeOnly, 'ArcClose2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -12035,7 +12037,7 @@ class AudioClip(_X3DSoundSourceNode, _X3DUrlObject):
         return 'AudioClip'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#AudioClip'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#AudioClip'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#AudioClip'
@@ -12057,7 +12059,7 @@ class AudioClip(_X3DSoundSourceNode, _X3DUrlObject):
             ('url', list(), FieldType.MFString, AccessType.inputOutput, 'X3DUrlObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -12368,7 +12370,7 @@ class AudioDestination(_X3DSoundDestinationNode):
         return 'AudioDestination'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#AudioDestination'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#AudioDestination'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#AudioDestination'
@@ -12384,7 +12386,7 @@ class AudioDestination(_X3DSoundDestinationNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'AudioDestination'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -12603,7 +12605,7 @@ class Background(_X3DBackgroundNode):
         return 'Background'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#Background'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#Background'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Background'
@@ -12623,7 +12625,7 @@ class Background(_X3DBackgroundNode):
             ('transparency', 0, FieldType.SFFloat, AccessType.inputOutput, 'X3DBackgroundNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -12907,7 +12909,7 @@ class BallJoint(_X3DRigidJointNode):
         return 'BallJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#BallJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#BallJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BallJoint'
@@ -12920,7 +12922,7 @@ class BallJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -13089,7 +13091,7 @@ class Billboard(_X3DGroupingNode):
         return 'Billboard'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#Billboard'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#Billboard'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Billboard'
@@ -13104,7 +13106,7 @@ class Billboard(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -13305,7 +13307,7 @@ class BiquadFilter(_X3DSoundProcessingNode):
         return 'BiquadFilter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#BiquadFilter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#BiquadFilter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BiquadFilter'
@@ -13329,7 +13331,7 @@ class BiquadFilter(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'BiquadFilter'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -13680,7 +13682,7 @@ class BlendedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'BlendedVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#BlendedVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#BlendedVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BlendedVolumeStyle'
@@ -13698,7 +13700,7 @@ class BlendedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('weightTransferFunction2', None, FieldType.SFNode, AccessType.inputOutput, 'BlendedVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -13957,7 +13959,7 @@ class BooleanFilter(_X3DChildNode):
         return 'BooleanFilter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#BooleanFilter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#BooleanFilter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BooleanFilter'
@@ -13966,7 +13968,7 @@ class BooleanFilter(_X3DChildNode):
         return [
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14067,7 +14069,7 @@ class BooleanSequencer(_X3DSequencerNode):
         return 'BooleanSequencer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#BooleanSequencer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#BooleanSequencer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BooleanSequencer'
@@ -14078,7 +14080,7 @@ class BooleanSequencer(_X3DSequencerNode):
             ('keyValue', list(), FieldType.MFBool, AccessType.inputOutput, 'BooleanSequencer'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14211,7 +14213,7 @@ class BooleanToggle(_X3DChildNode):
         return 'BooleanToggle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#BooleanToggle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#BooleanToggle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BooleanToggle'
@@ -14221,7 +14223,7 @@ class BooleanToggle(_X3DChildNode):
             ('toggle', False, FieldType.SFBool, AccessType.inputOutput, 'BooleanToggle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14338,7 +14340,7 @@ class BooleanTrigger(_X3DTriggerNode):
         return 'BooleanTrigger'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#BooleanTrigger'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#BooleanTrigger'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BooleanTrigger'
@@ -14347,7 +14349,7 @@ class BooleanTrigger(_X3DTriggerNode):
         return [
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14448,7 +14450,7 @@ class BoundaryEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'BoundaryEnhancementVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#BoundaryEnhancementVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#BoundaryEnhancementVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BoundaryEnhancementVolumeStyle'
@@ -14461,7 +14463,7 @@ class BoundaryEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('retainedOpacity', 0.2, FieldType.SFFloat, AccessType.inputOutput, 'BoundaryEnhancementVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14629,7 +14631,7 @@ class BoundedPhysicsModel(_X3DParticlePhysicsModelNode):
         return 'BoundedPhysicsModel'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#BoundedPhysicsModel'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#BoundedPhysicsModel'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BoundedPhysicsModel'
@@ -14640,7 +14642,7 @@ class BoundedPhysicsModel(_X3DParticlePhysicsModelNode):
             ('geometry', None, FieldType.SFNode, AccessType.inputOutput, 'BoundedPhysicsModel'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14776,7 +14778,7 @@ class Box(_X3DGeometryNode):
         return 'Box'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#Box'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#Box'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Box'
@@ -14787,7 +14789,7 @@ class Box(_X3DGeometryNode):
             ('solid', True, FieldType.SFBool, AccessType.initializeOnly, 'Box'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -14920,7 +14922,7 @@ class BufferAudioSource(_X3DSoundSourceNode, _X3DUrlObject):
         return 'BufferAudioSource'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#BufferAudioSource'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#BufferAudioSource'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#BufferAudioSource'
@@ -14952,7 +14954,7 @@ class BufferAudioSource(_X3DSoundSourceNode, _X3DUrlObject):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'BufferAudioSource'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -15435,7 +15437,7 @@ class CADAssembly(_X3DGroupingNode, _X3DProductStructureChildNode):
         return 'CADAssembly'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#CADAssembly'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#CADAssembly'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADAssembly'
@@ -15450,7 +15452,7 @@ class CADAssembly(_X3DGroupingNode, _X3DProductStructureChildNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -15651,7 +15653,7 @@ class CADFace(_X3DProductStructureChildNode, _X3DBoundedObject):
         return 'CADFace'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#CADFace'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#CADFace'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADFace'
@@ -15666,7 +15668,7 @@ class CADFace(_X3DProductStructureChildNode, _X3DBoundedObject):
             ('shape', None, FieldType.SFNode, AccessType.inputOutput, 'CADFace'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -15867,7 +15869,7 @@ class CADLayer(_X3DGroupingNode):
         return 'CADLayer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#CADLayer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#CADLayer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADLayer'
@@ -15882,7 +15884,7 @@ class CADLayer(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -16083,7 +16085,7 @@ class CADPart(_X3DProductStructureChildNode, _X3DGroupingNode):
         return 'CADPart'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#CADPart'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#CADPart'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CADPart'
@@ -16103,7 +16105,7 @@ class CADPart(_X3DProductStructureChildNode, _X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'CADPart'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -16384,7 +16386,7 @@ class CartoonVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'CartoonVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#CartoonVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#CartoonVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CartoonVolumeStyle'
@@ -16398,7 +16400,7 @@ class CartoonVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('surfaceNormals', None, FieldType.SFNode, AccessType.inputOutput, 'CartoonVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -16585,7 +16587,7 @@ class ChannelMerger(_X3DSoundChannelNode):
         return 'ChannelMerger'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#ChannelMerger'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#ChannelMerger'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ChannelMerger'
@@ -16600,7 +16602,7 @@ class ChannelMerger(_X3DSoundChannelNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'ChannelMerger'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -16802,7 +16804,7 @@ class ChannelSelector(_X3DSoundChannelNode):
         return 'ChannelSelector'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#ChannelSelector'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#ChannelSelector'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ChannelSelector'
@@ -16818,7 +16820,7 @@ class ChannelSelector(_X3DSoundChannelNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'ChannelSelector'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -17037,7 +17039,7 @@ class ChannelSplitter(_X3DSoundChannelNode):
         return 'ChannelSplitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#ChannelSplitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#ChannelSplitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ChannelSplitter'
@@ -17053,7 +17055,7 @@ class ChannelSplitter(_X3DSoundChannelNode):
             ('outputs', list(), FieldType.MFNode, AccessType.inputOutput, 'ChannelSplitter'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -17274,7 +17276,7 @@ class Circle2D(_X3DGeometryNode):
         return 'Circle2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Circle2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Circle2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Circle2D'
@@ -17284,7 +17286,7 @@ class Circle2D(_X3DGeometryNode):
             ('radius', 1, FieldType.SFFloat, AccessType.initializeOnly, 'Circle2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -17402,7 +17404,7 @@ class ClipPlane(_X3DChildNode):
         return 'ClipPlane'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#ClipPlane'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#ClipPlane'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ClipPlane'
@@ -17413,7 +17415,7 @@ class ClipPlane(_X3DChildNode):
             ('plane', (0, 1, 0, 0), FieldType.SFVec4f, AccessType.inputOutput, 'ClipPlane'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -17548,7 +17550,7 @@ class CollidableOffset(_X3DNBodyCollidableNode):
         return 'CollidableOffset'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#CollidableOffset'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#CollidableOffset'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollidableOffset'
@@ -17565,7 +17567,7 @@ class CollidableOffset(_X3DNBodyCollidableNode):
             ('collidable', None, FieldType.SFNode, AccessType.initializeOnly, 'CollidableOffset'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -17797,7 +17799,7 @@ class CollidableShape(_X3DNBodyCollidableNode):
         return 'CollidableShape'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#CollidableShape'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#CollidableShape'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollidableShape'
@@ -17814,7 +17816,7 @@ class CollidableShape(_X3DNBodyCollidableNode):
             ('shape', None, FieldType.SFNode, AccessType.initializeOnly, 'CollidableShape'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -18046,7 +18048,7 @@ class Collision(_X3DGroupingNode, _X3DSensorNode):
         return 'Collision'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#Collision'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#Collision'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Collision'
@@ -18062,7 +18064,7 @@ class Collision(_X3DGroupingNode, _X3DSensorNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -18282,7 +18284,7 @@ class CollisionCollection(_X3DChildNode, _X3DBoundedObject):
         return 'CollisionCollection'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#CollisionCollection'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#CollisionCollection'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollisionCollection'
@@ -18305,7 +18307,7 @@ class CollisionCollection(_X3DChildNode, _X3DBoundedObject):
             ('collidables', list(), FieldType.MFNode, AccessType.inputOutput, 'CollisionCollection'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -18640,7 +18642,7 @@ class CollisionSensor(_X3DSensorNode):
         return 'CollisionSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#CollisionSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#CollisionSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollisionSensor'
@@ -18651,7 +18653,7 @@ class CollisionSensor(_X3DSensorNode):
             ('collider', None, FieldType.SFNode, AccessType.inputOutput, 'CollisionSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -18786,7 +18788,7 @@ class CollisionSpace(_X3DNBodyCollisionSpaceNode):
         return 'CollisionSpace'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#CollisionSpace'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#CollisionSpace'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CollisionSpace'
@@ -18802,7 +18804,7 @@ class CollisionSpace(_X3DNBodyCollisionSpaceNode):
             ('collidables', list(), FieldType.MFNode, AccessType.inputOutput, 'CollisionSpace'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19018,7 +19020,7 @@ class Color(_X3DColorNode):
         return 'Color'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#Color'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#Color'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Color'
@@ -19028,7 +19030,7 @@ class Color(_X3DColorNode):
             ('color', list(), FieldType.MFColor, AccessType.inputOutput, 'Color'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19146,7 +19148,7 @@ class ColorChaser(_X3DChaserNode):
         return 'ColorChaser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#ColorChaser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#ColorChaser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorChaser'
@@ -19158,7 +19160,7 @@ class ColorChaser(_X3DChaserNode):
             ('initialValue', (0.8, 0.8, 0.8), FieldType.SFColor, AccessType.initializeOnly, 'ColorChaser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19310,7 +19312,7 @@ class ColorDamper(_X3DDamperNode):
         return 'ColorDamper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#ColorDamper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#ColorDamper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorDamper'
@@ -19324,7 +19326,7 @@ class ColorDamper(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19510,7 +19512,7 @@ class ColorInterpolator(_X3DInterpolatorNode):
         return 'ColorInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#ColorInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#ColorInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorInterpolator'
@@ -19521,7 +19523,7 @@ class ColorInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFColor, AccessType.inputOutput, 'ColorInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19655,7 +19657,7 @@ class ColorRGBA(_X3DColorNode):
         return 'ColorRGBA'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#ColorRGBA'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#ColorRGBA'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorRGBA'
@@ -19665,7 +19667,7 @@ class ColorRGBA(_X3DColorNode):
             ('color', list(), FieldType.MFColorRGBA, AccessType.inputOutput, 'ColorRGBA'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -19783,7 +19785,7 @@ class ComposedCubeMapTexture(_X3DEnvironmentTextureNode):
         return 'ComposedCubeMapTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalTexturing#ComposedCubeMapTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalTexturing#ComposedCubeMapTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedCubeMapTexture'
@@ -19799,7 +19801,7 @@ class ComposedCubeMapTexture(_X3DEnvironmentTextureNode):
             ('topTexture', None, FieldType.SFNode, AccessType.inputOutput, 'ComposedCubeMapTexture'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -20030,7 +20032,7 @@ class ComposedShader(_X3DShaderNode): # , _X3DProgrammableShaderObject # TODO fi
         return 'ComposedShader'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#ComposedShader'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#ComposedShader'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedShader'
@@ -20042,7 +20044,7 @@ class ComposedShader(_X3DShaderNode): # , _X3DProgrammableShaderObject # TODO fi
             ('parts', list(), FieldType.MFNode, AccessType.inputOutput, 'ComposedShader'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'ComposedShader'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'ComposedShader')]
@@ -20200,7 +20202,7 @@ class ComposedTexture3D(_X3DTexture3DNode):
         return 'ComposedTexture3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#ComposedTexture3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#ComposedTexture3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedTexture3D'
@@ -20215,7 +20217,7 @@ class ComposedTexture3D(_X3DTexture3DNode):
             ('texture', list(), FieldType.MFNode, AccessType.inputOutput, 'ComposedTexture3D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -20416,7 +20418,7 @@ class ComposedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'ComposedVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#ComposedVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#ComposedVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ComposedVolumeStyle'
@@ -20427,7 +20429,7 @@ class ComposedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('renderStyle', list(), FieldType.MFNode, AccessType.inputOutput, 'ComposedVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -20563,7 +20565,7 @@ class Cone(_X3DGeometryNode):
         return 'Cone'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#Cone'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#Cone'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Cone'
@@ -20577,7 +20579,7 @@ class Cone(_X3DGeometryNode):
             ('solid', True, FieldType.SFBool, AccessType.initializeOnly, 'Cone'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -20760,7 +20762,7 @@ class ConeEmitter(_X3DParticleEmitterNode):
         return 'ConeEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#ConeEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#ConeEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ConeEmitter'
@@ -20776,7 +20778,7 @@ class ConeEmitter(_X3DParticleEmitterNode):
             ('variation', 0.25, FieldType.SFFloat, AccessType.inputOutput, 'X3DParticleEmitterNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -20996,7 +20998,7 @@ class Contact(_X3DNode):
         return 'Contact'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#Contact'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#Contact'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Contact'
@@ -21021,7 +21023,7 @@ class Contact(_X3DNode):
             ('geometry2', None, FieldType.SFNode, AccessType.inputOutput, 'Contact'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -21392,7 +21394,7 @@ class Contour2D(_X3DNode):
         return 'Contour2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#Contour2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#Contour2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Contour2D'
@@ -21402,7 +21404,7 @@ class Contour2D(_X3DNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Contour2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -21522,7 +21524,7 @@ class ContourPolyline2D(_X3DNurbsControlCurveNode):
         return 'ContourPolyline2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#ContourPolyline2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#ContourPolyline2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ContourPolyline2D'
@@ -21532,7 +21534,7 @@ class ContourPolyline2D(_X3DNurbsControlCurveNode):
             ('controlPoint', list(), FieldType.MFVec2d, AccessType.inputOutput, 'X3DNurbsControlCurveNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -21649,7 +21651,7 @@ class Convolver(_X3DSoundProcessingNode):
         return 'Convolver'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Convolver'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Convolver'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Convolver'
@@ -21671,7 +21673,7 @@ class Convolver(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Convolver'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -21988,7 +21990,7 @@ class Coordinate(_X3DCoordinateNode):
         return 'Coordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#Coordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#Coordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Coordinate'
@@ -21998,7 +22000,7 @@ class Coordinate(_X3DCoordinateNode):
             ('point', list(), FieldType.MFVec3f, AccessType.inputOutput, 'Coordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22115,7 +22117,7 @@ class CoordinateChaser(_X3DChaserNode):
         return 'CoordinateChaser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#CoordinateChaser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#CoordinateChaser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateChaser'
@@ -22127,7 +22129,7 @@ class CoordinateChaser(_X3DChaserNode):
             ('initialValue', [(0, 0, 0)], FieldType.MFVec3f, AccessType.initializeOnly, 'CoordinateChaser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22277,7 +22279,7 @@ class CoordinateDamper(_X3DDamperNode):
         return 'CoordinateDamper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#CoordinateDamper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#CoordinateDamper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateDamper'
@@ -22291,7 +22293,7 @@ class CoordinateDamper(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22475,7 +22477,7 @@ class CoordinateDouble(_X3DCoordinateNode):
         return 'CoordinateDouble'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#CoordinateDouble'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#CoordinateDouble'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateDouble'
@@ -22485,7 +22487,7 @@ class CoordinateDouble(_X3DCoordinateNode):
             ('point', list(), FieldType.MFVec3d, AccessType.inputOutput, 'CoordinateDouble'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22602,7 +22604,7 @@ class CoordinateInterpolator(_X3DInterpolatorNode):
         return 'CoordinateInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#CoordinateInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#CoordinateInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateInterpolator'
@@ -22613,7 +22615,7 @@ class CoordinateInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFVec3f, AccessType.inputOutput, 'CoordinateInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22746,7 +22748,7 @@ class CoordinateInterpolator2D(_X3DInterpolatorNode):
         return 'CoordinateInterpolator2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#CoordinateInterpolator2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#CoordinateInterpolator2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CoordinateInterpolator2D'
@@ -22757,7 +22759,7 @@ class CoordinateInterpolator2D(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFVec2f, AccessType.inputOutput, 'CoordinateInterpolator2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -22890,7 +22892,7 @@ class Cylinder(_X3DGeometryNode):
         return 'Cylinder'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#Cylinder'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#Cylinder'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Cylinder'
@@ -22905,7 +22907,7 @@ class Cylinder(_X3DGeometryNode):
             ('top', True, FieldType.SFBool, AccessType.inputOutput, 'Cylinder'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -23104,7 +23106,7 @@ class CylinderSensor(_X3DDragSensorNode):
         return 'CylinderSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#CylinderSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#CylinderSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#CylinderSensor'
@@ -23121,7 +23123,7 @@ class CylinderSensor(_X3DDragSensorNode):
             ('offset', 0, FieldType.SFFloat, AccessType.inputOutput, 'CylinderSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -23356,7 +23358,7 @@ class Delay(_X3DSoundProcessingNode):
         return 'Delay'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Delay'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Delay'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Delay'
@@ -23378,7 +23380,7 @@ class Delay(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Delay'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -23695,7 +23697,7 @@ class DirectionalLight(_X3DLightNode):
         return 'DirectionalLight'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/lighting.html#DirectionalLight'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/lighting.html#DirectionalLight'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#DirectionalLight'
@@ -23712,7 +23714,7 @@ class DirectionalLight(_X3DLightNode):
             ('shadows', False, FieldType.SFBool, AccessType.inputOutput, 'X3DLightNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -23944,7 +23946,7 @@ class DISEntityManager(_X3DChildNode):
         return 'DISEntityManager'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#DISEntityManager'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#DISEntityManager'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#DISEntityManager'
@@ -23958,7 +23960,7 @@ class DISEntityManager(_X3DChildNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'DISEntityManager'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -23984,7 +23986,7 @@ class DISEntityManager(_X3DChildNode):
         self.style_ = style_
     @property # getter - - - - - - - - - -
     def address(self):
-        """Multicast network address, or else "localhost" example: 224."""
+        """Multicast network address, or else 'localhost'."""
         return self.__address
     @address.setter
     def address(self, address):
@@ -24142,7 +24144,7 @@ class DISEntityTypeMapping(_X3DInfoNode, _X3DUrlObject):
         return 'DISEntityTypeMapping'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#DISEntityTypeMapping'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#DISEntityTypeMapping'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#DISEntityTypeMapping'
@@ -24163,7 +24165,7 @@ class DISEntityTypeMapping(_X3DInfoNode, _X3DUrlObject):
             ('url', list(), FieldType.MFString, AccessType.inputOutput, 'X3DUrlObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -24471,7 +24473,7 @@ class Disk2D(_X3DGeometryNode):
         return 'Disk2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Disk2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Disk2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Disk2D'
@@ -24483,7 +24485,7 @@ class Disk2D(_X3DGeometryNode):
             ('solid', False, FieldType.SFBool, AccessType.initializeOnly, 'Disk2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -24634,7 +24636,7 @@ class DoubleAxisHingeJoint(_X3DRigidJointNode):
         return 'DoubleAxisHingeJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#DoubleAxisHingeJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#DoubleAxisHingeJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#DoubleAxisHingeJoint'
@@ -24660,7 +24662,7 @@ class DoubleAxisHingeJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -25037,7 +25039,7 @@ class DynamicsCompressor(_X3DSoundProcessingNode):
         return 'DynamicsCompressor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#DynamicsCompressor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#DynamicsCompressor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#DynamicsCompressor'
@@ -25062,7 +25064,7 @@ class DynamicsCompressor(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'DynamicsCompressor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -25430,7 +25432,7 @@ class EaseInEaseOut(_X3DChildNode):
         return 'EaseInEaseOut'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#EaseInEaseOut'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#EaseInEaseOut'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#EaseInEaseOut'
@@ -25441,7 +25443,7 @@ class EaseInEaseOut(_X3DChildNode):
             ('key', list(), FieldType.MFFloat, AccessType.inputOutput, 'EaseInEaseOut'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -25574,7 +25576,7 @@ class EdgeEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'EdgeEnhancementVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#EdgeEnhancementVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#EdgeEnhancementVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#EdgeEnhancementVolumeStyle'
@@ -25587,7 +25589,7 @@ class EdgeEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('surfaceNormals', None, FieldType.SFNode, AccessType.inputOutput, 'EdgeEnhancementVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -25757,7 +25759,7 @@ class ElevationGrid(_X3DGeometryNode):
         return 'ElevationGrid'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#ElevationGrid'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#ElevationGrid'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ElevationGrid'
@@ -25781,7 +25783,7 @@ class ElevationGrid(_X3DGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'ElevationGrid'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -26142,7 +26144,7 @@ class EspduTransform(_X3DGroupingNode, _X3DNetworkSensorNode):
         return 'EspduTransform'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#EspduTransform'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#EspduTransform'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#EspduTransform'
@@ -26214,7 +26216,7 @@ class EspduTransform(_X3DGroupingNode, _X3DNetworkSensorNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -26356,7 +26358,7 @@ class EspduTransform(_X3DGroupingNode, _X3DNetworkSensorNode):
         self.style_ = style_
     @property # getter - - - - - - - - - -
     def address(self):
-        """Multicast network address, or else "localhost" Example: 224."""
+        """Multicast network address, or else 'localhost'; Example: 224."""
         return self.__address
     @address.setter
     def address(self, address):
@@ -27329,7 +27331,7 @@ class ExplosionEmitter(_X3DParticleEmitterNode):
         return 'ExplosionEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#ExplosionEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#ExplosionEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ExplosionEmitter'
@@ -27343,7 +27345,7 @@ class ExplosionEmitter(_X3DParticleEmitterNode):
             ('variation', 0.25, FieldType.SFFloat, AccessType.inputOutput, 'X3DParticleEmitterNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -27528,7 +27530,7 @@ class Extrusion(_X3DGeometryNode):
         return 'Extrusion'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#Extrusion'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#Extrusion'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Extrusion'
@@ -27547,7 +27549,7 @@ class Extrusion(_X3DGeometryNode):
             ('spine', [(0, 0, 0, 0, 1, 0)], FieldType.MFVec3f, AccessType.initializeOnly, 'Extrusion'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -27809,7 +27811,7 @@ class FillProperties(_X3DAppearanceChildNode):
         return 'FillProperties'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#FillProperties'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#FillProperties'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FillProperties'
@@ -27822,7 +27824,7 @@ class FillProperties(_X3DAppearanceChildNode):
             ('hatchStyle', 1, FieldType.SFInt32, AccessType.inputOutput, 'FillProperties'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -27988,7 +27990,7 @@ class FloatVertexAttribute(_X3DVertexAttributeNode):
         return 'FloatVertexAttribute'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#FloatVertexAttribute'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#FloatVertexAttribute'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FloatVertexAttribute'
@@ -28000,7 +28002,7 @@ class FloatVertexAttribute(_X3DVertexAttributeNode):
             ('value', list(), FieldType.MFFloat, AccessType.inputOutput, 'FloatVertexAttribute'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -28151,7 +28153,7 @@ class Fog(_X3DBindableNode, _X3DFogObject):
         return 'Fog'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#Fog'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#Fog'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Fog'
@@ -28163,7 +28165,7 @@ class Fog(_X3DBindableNode, _X3DFogObject):
             ('visibilityRange', 0, FieldType.SFFloat, AccessType.inputOutput, 'X3DFogObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -28315,7 +28317,7 @@ class FogCoordinate(_X3DGeometricPropertyNode):
         return 'FogCoordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#FogCoordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#FogCoordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FogCoordinate'
@@ -28325,7 +28327,7 @@ class FogCoordinate(_X3DGeometricPropertyNode):
             ('depth', list(), FieldType.MFFloat, AccessType.inputOutput, 'FogCoordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -28443,7 +28445,7 @@ class FontStyle(_X3DFontStyleNode):
         return 'FontStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/text.html#FontStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/text.html#FontStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FontStyle'
@@ -28451,7 +28453,6 @@ class FontStyle(_X3DFontStyleNode):
         ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [
             ('family', ["SERIF"], FieldType.MFString, AccessType.initializeOnly, 'FontStyle'),
-            ('glyphStyle', 'PLAIN', FieldType.SFString, AccessType.inputOutput, 'FontStyle'),
             ('horizontal', True, FieldType.SFBool, AccessType.initializeOnly, 'FontStyle'),
             ('justify', ["BEGIN"], FieldType.MFString, AccessType.initializeOnly, 'FontStyle'),
             ('language', '', FieldType.SFString, AccessType.initializeOnly, 'FontStyle'),
@@ -28461,13 +28462,12 @@ class FontStyle(_X3DFontStyleNode):
             ('topToBottom', True, FieldType.SFBool, AccessType.initializeOnly, 'FontStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style', 'PLAIN', FieldType.SFString, AccessType.inputOutput, 'FontStyle'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
     def __init__(self,
                  family=["SERIF"],
-                 glyphStyle='PLAIN',
                  horizontal=True,
                  justify=["BEGIN"],
                  language='',
@@ -28477,14 +28477,13 @@ class FontStyle(_X3DFontStyleNode):
                  topToBottom=True,
                  DEF='',
                  USE='',
-                 style_='',
+                 style='PLAIN',
                  class_='',
                  IS=None,
                  metadata=None):
         # if _DEBUG: print('... in ConcreteNode FontStyle __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
         self.family = family
-        self.glyphStyle = glyphStyle
         self.horizontal = horizontal
         self.justify = justify
         self.language = language
@@ -28492,7 +28491,7 @@ class FontStyle(_X3DFontStyleNode):
         self.size = size
         self.spacing = spacing
         self.topToBottom = topToBottom
-        self.style_ = style_
+        self.style = style
     @property # getter - - - - - - - - - -
     def family(self):
         """Array of quoted font family names in preference order, browsers use the first supported family."""
@@ -28503,17 +28502,6 @@ class FontStyle(_X3DFontStyleNode):
             family = ["SERIF"] # default
         assertValidMFString(family)
         self.__family = family
-    @property # getter - - - - - - - - - -
-    def glyphStyle(self):
-        """Pick one of four values for text style."""
-        return self.__glyphStyle
-    @glyphStyle.setter
-    def glyphStyle(self, glyphStyle):
-        if  glyphStyle is None:
-            glyphStyle = 'PLAIN' # default
-        assertValidSFString(glyphStyle)
-        assertValidFontStyle('glyphStyle', glyphStyle)
-        self.__glyphStyle = glyphStyle
     @property # getter - - - - - - - - - -
     def horizontal(self):
         """Whether text direction is horizontal (true) or vertical (false)."""
@@ -28547,6 +28535,7 @@ class FontStyle(_X3DFontStyleNode):
         self.__language = language
     @property # getter - - - - - - - - - -
     def leftToRight(self):
+        """Whether text direction is left-to-right (true) or right-to-left (false)."""
         return self.__leftToRight
     @leftToRight.setter
     def leftToRight(self, leftToRight):
@@ -28556,7 +28545,7 @@ class FontStyle(_X3DFontStyleNode):
         self.__leftToRight = leftToRight
     @property # getter - - - - - - - - - -
     def size(self):
-        """(0,+infinity) Nominal height (in local coordinate system) of text glyphs Also sets default spacing between adjacent lines of text."""
+        """(0,+infinity) Nominal height (in local coordinate system) of text glyphs, also sets default spacing between adjacent lines of text."""
         return self.__size
     @size.setter
     def size(self, size):
@@ -28587,14 +28576,16 @@ class FontStyle(_X3DFontStyleNode):
         assertValidSFBool(topToBottom)
         self.__topToBottom = topToBottom
     @property # getter - - - - - - - - - -
-    def style_(self): # Appended underscore to field name to avoid naming collision with Python reserved word
-        return self.__style_
-    @style_.setter
-    def style_(self, style_):
-        if  style_ is None:
-            style_ = SFString.DEFAULT_VALUE(self)
-        assertValidSFString(style_)
-        self.__style_ = style_
+    def style(self):
+        """Pick one of four values for text style (PLAIN | BOLD | ITALIC | MIDDLE)."""
+        return self.__style
+    @style.setter
+    def style(self, style):
+        if  style is None:
+            style = 'PLAIN' # default
+        assertValidSFString(style)
+        assertValidFontStyle('style', style)
+        self.__style = style
     # hasChild() function - - - - - - - - - -
     def hasChild(self):
         ''' Whether or not this node has any child node, statement or comment '''
@@ -28616,8 +28607,6 @@ class FontStyle(_X3DFontStyleNode):
             result += " class='" + self.class_ + "'"
         if self.family != ["SERIF"]:
             result += " family='" + MFString(self.family).XML() + "'"
-        if self.glyphStyle != 'PLAIN':
-            result += " glyphStyle='" + self.glyphStyle + "'"
         if not self.horizontal: # default=true
             result += " horizontal='" + SFBool(self.horizontal).XML() + "'"
         if self.justify != ["BEGIN"]:
@@ -28630,8 +28619,8 @@ class FontStyle(_X3DFontStyleNode):
             result += " size='" + SFFloat(self.size).XML() + "'"
         if self.spacing != 1.0:
             result += " spacing='" + SFFloat(self.spacing).XML() + "'"
-        if self.style_:
-            result += " style='" + self.style_ + "'"
+        if self.style != 'PLAIN':
+            result += " style='" + self.style + "'"
         if not self.topToBottom: # default=true
             result += " topToBottom='" + SFBool(self.topToBottom).XML() + "'"
         if not self.hasChild():
@@ -28673,8 +28662,6 @@ class FontStyle(_X3DFontStyleNode):
             result += " class " +  '"' + self.class_ + '"' + ""
         if self.family != ["SERIF"]:
             result += " family " + MFString(self.family).VRML() + ""
-        if self.glyphStyle != 'PLAIN':
-            result += " glyphStyle " +  '"' + self.glyphStyle + '"' + ""
         if not self.horizontal: # default=true
             result += " horizontal " + SFBool(self.horizontal).VRML() + ""
         if self.justify != ["BEGIN"]:
@@ -28687,8 +28674,8 @@ class FontStyle(_X3DFontStyleNode):
             result += " size " + SFFloat(self.size).VRML() + ""
         if self.spacing != 1.0:
             result += " spacing " + SFFloat(self.spacing).VRML() + ""
-        if self.style_:
-            result += " style " +  '"' + self.style_ + '"' + ""
+        if self.style != 'PLAIN':
+            result += " style " +  '"' + self.style + '"' + ""
         if not self.topToBottom: # default=true
             result += " topToBottom " + SFBool(self.topToBottom).VRML() + ""
         if self.IS: # output this SFNode
@@ -28709,7 +28696,7 @@ class ForcePhysicsModel(_X3DParticlePhysicsModelNode):
         return 'ForcePhysicsModel'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#ForcePhysicsModel'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#ForcePhysicsModel'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ForcePhysicsModel'
@@ -28720,7 +28707,7 @@ class ForcePhysicsModel(_X3DParticlePhysicsModelNode):
             ('force', (0, -9.8, 0), FieldType.SFVec3f, AccessType.inputOutput, 'ForcePhysicsModel'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -28750,7 +28737,7 @@ class ForcePhysicsModel(_X3DParticlePhysicsModelNode):
         self.__enabled = enabled
     @property # getter - - - - - - - - - -
     def force(self):
-        """(-infinity,+infinity) force field indicates strength and direction of the propelling force on the particles (e."""
+        """(-infinity,+infinity) force field indicates strength and direction of the propelling force on the particles (for example, default is Earth's gravity)."""
         return self.__force
     @force.setter
     def force(self, force):
@@ -28853,7 +28840,7 @@ class Gain(_X3DSoundProcessingNode):
         return 'Gain'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Gain'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Gain'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Gain'
@@ -28873,7 +28860,7 @@ class Gain(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Gain'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -29156,7 +29143,7 @@ class GeneratedCubeMapTexture(_X3DEnvironmentTextureNode):
         return 'GeneratedCubeMapTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalTexturing#GeneratedCubeMapTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalTexturing#GeneratedCubeMapTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeneratedCubeMapTexture'
@@ -29169,7 +29156,7 @@ class GeneratedCubeMapTexture(_X3DEnvironmentTextureNode):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'GeneratedCubeMapTexture'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -29338,7 +29325,7 @@ class GeoCoordinate(_X3DCoordinateNode):
         return 'GeoCoordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoCoordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoCoordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoCoordinate'
@@ -29350,7 +29337,7 @@ class GeoCoordinate(_X3DCoordinateNode):
             ('geoOrigin', None, FieldType.SFNode, AccessType.initializeOnly, 'GeoCoordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -29502,7 +29489,7 @@ class GeoElevationGrid(_X3DGeometryNode):
         return 'GeoElevationGrid'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoElevationGrid'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoElevationGrid'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoElevationGrid'
@@ -29528,7 +29515,7 @@ class GeoElevationGrid(_X3DGeometryNode):
             ('texCoord', None, FieldType.SFNode, AccessType.inputOutput, 'GeoElevationGrid'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -29919,7 +29906,7 @@ class GeoLocation(_X3DGroupingNode):
         return 'GeoLocation'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoLocation'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoLocation'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoLocation'
@@ -29936,7 +29923,7 @@ class GeoLocation(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -30172,7 +30159,7 @@ class GeoLOD(_X3DChildNode, _X3DBoundedObject):
         return 'GeoLOD'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoLOD'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoLOD'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoLOD'
@@ -30195,7 +30182,7 @@ class GeoLOD(_X3DChildNode, _X3DBoundedObject):
             ('rootNode', list(), FieldType.MFNode, AccessType.initializeOnly, 'GeoLOD'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -30528,7 +30515,7 @@ class GeoMetadata(_X3DInfoNode, _X3DUrlObject):
         return 'GeoMetadata'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoMetadata'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoMetadata'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoMetadata'
@@ -30544,7 +30531,7 @@ class GeoMetadata(_X3DInfoNode, _X3DUrlObject):
             ('data', list(), FieldType.MFNode, AccessType.inputOutput, 'GeoMetadata'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -30762,7 +30749,7 @@ class GeoOrigin(_X3DNode):
         return 'GeoOrigin'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoOrigin'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoOrigin'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoOrigin'
@@ -30774,7 +30761,7 @@ class GeoOrigin(_X3DNode):
             ('rotateYUp', False, FieldType.SFBool, AccessType.initializeOnly, 'GeoOrigin'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -30923,7 +30910,7 @@ class GeoPositionInterpolator(_X3DInterpolatorNode):
         return 'GeoPositionInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoPositionInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoPositionInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoPositionInterpolator'
@@ -30936,7 +30923,7 @@ class GeoPositionInterpolator(_X3DInterpolatorNode):
             ('geoOrigin', None, FieldType.SFNode, AccessType.initializeOnly, 'GeoPositionInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -31104,7 +31091,7 @@ class GeoProximitySensor(_X3DEnvironmentalSensorNode):
         return 'GeoProximitySensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoProximitySensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoProximitySensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoProximitySensor'
@@ -31119,7 +31106,7 @@ class GeoProximitySensor(_X3DEnvironmentalSensorNode):
             ('geoOrigin', None, FieldType.SFNode, AccessType.initializeOnly, 'GeoProximitySensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -31320,7 +31307,7 @@ class GeoTouchSensor(_X3DTouchSensorNode):
         return 'GeoTouchSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoTouchSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoTouchSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoTouchSensor'
@@ -31333,7 +31320,7 @@ class GeoTouchSensor(_X3DTouchSensorNode):
             ('geoOrigin', None, FieldType.SFNode, AccessType.initializeOnly, 'GeoTouchSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -31501,7 +31488,7 @@ class GeoTransform(_X3DGroupingNode):
         return 'GeoTransform'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoTransform'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoTransform'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoTransform'
@@ -31522,7 +31509,7 @@ class GeoTransform(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -31822,7 +31809,7 @@ class GeoViewpoint(_X3DViewpointNode):
         return 'GeoViewpoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geospatial.html#GeoViewpoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geospatial.html#GeoViewpoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#GeoViewpoint'
@@ -31845,7 +31832,7 @@ class GeoViewpoint(_X3DViewpointNode):
             ('navigationInfo', None, FieldType.SFNode, AccessType.inputOutput, 'X3DViewpointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -32177,7 +32164,7 @@ class Group(_X3DGroupingNode):
         return 'Group'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#Group'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#Group'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Group'
@@ -32191,7 +32178,7 @@ class Group(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -32376,7 +32363,7 @@ class HAnimDisplacer(_X3DGeometricPropertyNode):
         return 'HAnimDisplacer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html#HAnimDisplacer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/hanim.html#HAnimDisplacer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimDisplacer'
@@ -32390,7 +32377,7 @@ class HAnimDisplacer(_X3DGeometricPropertyNode):
             ('weight', 0.0, FieldType.SFFloat, AccessType.inputOutput, 'HAnimDisplacer'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -32572,7 +32559,7 @@ class HAnimHumanoid(_X3DChildNode, _X3DBoundedObject):
         return 'HAnimHumanoid'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html#HAnimHumanoid'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/hanim.html#HAnimHumanoid'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimHumanoid'
@@ -32610,7 +32597,7 @@ class HAnimHumanoid(_X3DChildNode, _X3DBoundedObject):
             ('viewpoints', list(), FieldType.MFNode, AccessType.inputOutput, 'HAnimHumanoid'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -33213,7 +33200,7 @@ class HAnimJoint(_X3DChildNode, _X3DBoundedObject):
         return 'HAnimJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html#HAnimJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/hanim.html#HAnimJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimJoint'
@@ -33241,7 +33228,7 @@ class HAnimJoint(_X3DChildNode, _X3DBoundedObject):
             ('displacers', list(), FieldType.MFNode, AccessType.inputOutput, 'HAnimJoint'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -33679,7 +33666,7 @@ class HAnimMotion(_X3DChildNode):
             ('values', list(), FieldType.MFFloat, AccessType.inputOutput, 'HAnimMotion'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -33796,7 +33783,7 @@ class HAnimMotion(_X3DChildNode):
         self.__frameDuration = frameDuration
     @property # getter - - - - - - - - - -
     def frameIncrement(self):
-        """[-infinity,+infinity) frameIncrement field controls whether playback direction is forwards or backwards, and also whether frames are skipped (e."""
+        """[-infinity,+infinity) frameIncrement field controls whether playback direction is forwards or backwards, and also whether frames are skipped (for example, subsampled replay)."""
         return self.__frameIncrement
     @frameIncrement.setter
     def frameIncrement(self, frameIncrement):
@@ -34011,7 +33998,7 @@ class HAnimSegment(_X3DGroupingNode):
         return 'HAnimSegment'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html#HAnimSegment'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/hanim.html#HAnimSegment'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimSegment'
@@ -34032,7 +34019,7 @@ class HAnimSegment(_X3DGroupingNode):
             ('displacers', list(), FieldType.MFNode, AccessType.inputOutput, 'HAnimSegment'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -34337,7 +34324,7 @@ class HAnimSite(_X3DGroupingNode):
         return 'HAnimSite'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html#HAnimSite'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/hanim.html#HAnimSite'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimSite'
@@ -34358,7 +34345,7 @@ class HAnimSite(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -34656,7 +34643,7 @@ class ImageCubeMapTexture(_X3DEnvironmentTextureNode, _X3DUrlObject):
         return 'ImageCubeMapTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalTexturing#ImageCubeMapTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalTexturing#ImageCubeMapTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageCubeMapTexture'
@@ -34671,7 +34658,7 @@ class ImageCubeMapTexture(_X3DEnvironmentTextureNode, _X3DUrlObject):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'ImageCubeMapTexture'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -34872,7 +34859,7 @@ class ImageTexture(_X3DTexture2DNode, _X3DUrlObject):
         return 'ImageTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#ImageTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#ImageTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageTexture'
@@ -34889,7 +34876,7 @@ class ImageTexture(_X3DTexture2DNode, _X3DUrlObject):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'X3DTexture2DNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -35122,7 +35109,7 @@ class ImageTexture3D(_X3DTexture3DNode, _X3DUrlObject):
         return 'ImageTexture3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#ImageTexture3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#ImageTexture3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageTexture3D'
@@ -35140,7 +35127,7 @@ class ImageTexture3D(_X3DTexture3DNode, _X3DUrlObject):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'X3DTexture3DNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -35389,7 +35376,7 @@ class IndexedFaceSet(_X3DComposedGeometryNode):
         return 'IndexedFaceSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#IndexedFaceSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#IndexedFaceSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedFaceSet'
@@ -35414,7 +35401,7 @@ class IndexedFaceSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -35794,7 +35781,7 @@ class IndexedLineSet(_X3DGeometryNode):
         return 'IndexedLineSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#IndexedLineSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#IndexedLineSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedLineSet'
@@ -35811,7 +35798,7 @@ class IndexedLineSet(_X3DGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'IndexedLineSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -36056,7 +36043,7 @@ class IndexedQuadSet(_X3DComposedGeometryNode):
         return 'IndexedQuadSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#IndexedQuadSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#IndexedQuadSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedQuadSet'
@@ -36076,7 +36063,7 @@ class IndexedQuadSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -36372,7 +36359,7 @@ class IndexedTriangleFanSet(_X3DComposedGeometryNode):
         return 'IndexedTriangleFanSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#IndexedTriangleFanSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#IndexedTriangleFanSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedTriangleFanSet'
@@ -36392,7 +36379,7 @@ class IndexedTriangleFanSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -36688,7 +36675,7 @@ class IndexedTriangleSet(_X3DComposedGeometryNode):
         return 'IndexedTriangleSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#IndexedTriangleSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#IndexedTriangleSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedTriangleSet'
@@ -36708,7 +36695,7 @@ class IndexedTriangleSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -37004,7 +36991,7 @@ class IndexedTriangleStripSet(_X3DComposedGeometryNode):
         return 'IndexedTriangleStripSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#IndexedTriangleStripSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#IndexedTriangleStripSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedTriangleStripSet'
@@ -37024,7 +37011,7 @@ class IndexedTriangleStripSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -37320,7 +37307,7 @@ class Inline(_X3DChildNode, _X3DBoundedObject, _X3DUrlObject):
         return 'Inline'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#Inline'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/networking.html#Inline'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Inline'
@@ -37338,7 +37325,7 @@ class Inline(_X3DChildNode, _X3DBoundedObject, _X3DUrlObject):
             ('visible', True, FieldType.SFBool, AccessType.inputOutput, 'X3DBoundedObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -37586,7 +37573,7 @@ class IntegerSequencer(_X3DSequencerNode):
         return 'IntegerSequencer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#IntegerSequencer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#IntegerSequencer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IntegerSequencer'
@@ -37597,7 +37584,7 @@ class IntegerSequencer(_X3DSequencerNode):
             ('keyValue', list(), FieldType.MFInt32, AccessType.inputOutput, 'IntegerSequencer'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -37730,7 +37717,7 @@ class IntegerTrigger(_X3DTriggerNode):
         return 'IntegerTrigger'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#IntegerTrigger'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#IntegerTrigger'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IntegerTrigger'
@@ -37740,7 +37727,7 @@ class IntegerTrigger(_X3DTriggerNode):
             ('integerKey', -1, FieldType.SFInt32, AccessType.inputOutput, 'IntegerTrigger'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -37857,7 +37844,7 @@ class IsoSurfaceVolumeData(_X3DVolumeDataNode):
         return 'IsoSurfaceVolumeData'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#IsoSurfaceVolumeData'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#IsoSurfaceVolumeData'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IsoSurfaceVolumeData'
@@ -37877,7 +37864,7 @@ class IsoSurfaceVolumeData(_X3DVolumeDataNode):
             ('renderStyle', list(), FieldType.MFNode, AccessType.inputOutput, 'IsoSurfaceVolumeData'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -38166,7 +38153,7 @@ class KeySensor(_X3DKeyDeviceSensorNode):
         return 'KeySensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/keyDeviceSensor.html#KeySensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/keyDeviceSensor.html#KeySensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#KeySensor'
@@ -38176,7 +38163,7 @@ class KeySensor(_X3DKeyDeviceSensorNode):
             ('enabled', True, FieldType.SFBool, AccessType.inputOutput, 'X3DSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -38293,7 +38280,7 @@ class Layer(_X3DLayerNode):
         return 'Layer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layering.html#Layer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layering.html#Layer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Layer'
@@ -38307,7 +38294,7 @@ class Layer(_X3DLayerNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'Layer'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -38494,7 +38481,7 @@ class LayerSet(_X3DNode):
         return 'LayerSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layering.html#LayerSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layering.html#LayerSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayerSet'
@@ -38506,7 +38493,7 @@ class LayerSet(_X3DNode):
             ('layers', list(), FieldType.MFNode, AccessType.inputOutput, 'LayerSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -38660,7 +38647,7 @@ class Layout(_X3DLayoutNode): #  # TODO fix additional inheritance method resolu
         return 'Layout'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#Layout'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#Layout'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Layout'
@@ -38675,7 +38662,7 @@ class Layout(_X3DLayoutNode): #  # TODO fix additional inheritance method resolu
             ('sizeUnits', ["WORLD", "WORLD"], FieldType.MFString, AccessType.inputOutput, 'Layout'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -38876,7 +38863,7 @@ class LayoutGroup(_X3DNode): # , _X3DGroupingNode # TODO fix additional inherita
         return 'LayoutGroup'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#LayoutGroup'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#LayoutGroup'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayoutGroup'
@@ -38892,7 +38879,7 @@ class LayoutGroup(_X3DNode): # , _X3DGroupingNode # TODO fix additional inherita
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'LayoutGroup'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -39115,7 +39102,7 @@ class LayoutLayer(_X3DLayerNode): #  # TODO fix additional inheritance method re
         return 'LayoutLayer'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#LayoutLayer'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#LayoutLayer'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayoutLayer'
@@ -39130,7 +39117,7 @@ class LayoutLayer(_X3DLayerNode): #  # TODO fix additional inheritance method re
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'LayoutLayer'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -39336,7 +39323,7 @@ class LinePickSensor(_X3DPickSensorNode):
         return 'LinePickSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#LinePickSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#LinePickSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LinePickSensor'
@@ -39352,7 +39339,7 @@ class LinePickSensor(_X3DPickSensorNode):
             ('pickTarget', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DPickSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -39572,7 +39559,7 @@ class LineProperties(_X3DAppearanceChildNode):
         return 'LineProperties'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#LineProperties'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#LineProperties'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LineProperties'
@@ -39584,7 +39571,7 @@ class LineProperties(_X3DAppearanceChildNode):
             ('linewidthScaleFactor', 0, FieldType.SFFloat, AccessType.inputOutput, 'LineProperties'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -39734,7 +39721,7 @@ class LineSet(_X3DGeometryNode):
         return 'LineSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#LineSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#LineSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LineSet'
@@ -39749,7 +39736,7 @@ class LineSet(_X3DGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'LineSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -39961,7 +39948,7 @@ class ListenerPointSource(_X3DSoundSourceNode):
         return 'ListenerPointSource'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#ListenerPointSource'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#ListenerPointSource'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ListenerPointSource'
@@ -39983,7 +39970,7 @@ class ListenerPointSource(_X3DSoundSourceNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'ListenerPointSource'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -40296,7 +40283,7 @@ class LoadSensor(_X3DNetworkSensorNode):
         return 'LoadSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/networking.html#LoadSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/networking.html#LoadSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LoadSensor'
@@ -40308,7 +40295,7 @@ class LoadSensor(_X3DNetworkSensorNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'LoadSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -40461,7 +40448,7 @@ class LocalFog(_X3DChildNode, _X3DFogObject):
         return 'LocalFog'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#LocalFog'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#LocalFog'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LocalFog'
@@ -40474,7 +40461,7 @@ class LocalFog(_X3DChildNode, _X3DFogObject):
             ('visibilityRange', 0, FieldType.SFFloat, AccessType.inputOutput, 'X3DFogObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -40642,7 +40629,7 @@ class LOD(_X3DGroupingNode):
         return 'LOD'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#LOD'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#LOD'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#LOD'
@@ -40659,7 +40646,7 @@ class LOD(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -40892,7 +40879,7 @@ class Material(_X3DOneSidedMaterialNode):
         return 'Material'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#Material'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#Material'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Material'
@@ -40923,7 +40910,7 @@ class Material(_X3DOneSidedMaterialNode):
             ('specularTexture', None, FieldType.SFNode, AccessType.inputOutput, 'Material'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -41405,7 +41392,7 @@ class Matrix3VertexAttribute(_X3DVertexAttributeNode):
         return 'Matrix3VertexAttribute'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#Matrix3VertexAttribute'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#Matrix3VertexAttribute'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Matrix3VertexAttribute'
@@ -41416,7 +41403,7 @@ class Matrix3VertexAttribute(_X3DVertexAttributeNode):
             ('value', list(), FieldType.MFMatrix3f, AccessType.inputOutput, 'Matrix3VertexAttribute'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -41549,7 +41536,7 @@ class Matrix4VertexAttribute(_X3DVertexAttributeNode):
         return 'Matrix4VertexAttribute'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#Matrix4VertexAttribute'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#Matrix4VertexAttribute'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Matrix4VertexAttribute'
@@ -41560,7 +41547,7 @@ class Matrix4VertexAttribute(_X3DVertexAttributeNode):
             ('value', list(), FieldType.MFMatrix4f, AccessType.inputOutput, 'Matrix4VertexAttribute'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -41693,7 +41680,7 @@ class MetadataBoolean(_X3DNode): # , _X3DMetadataObject # TODO fix additional in
         return 'MetadataBoolean'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataBoolean'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataBoolean'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataBoolean'
@@ -41705,7 +41692,7 @@ class MetadataBoolean(_X3DNode): # , _X3DMetadataObject # TODO fix additional in
             ('value', list(), FieldType.MFBool, AccessType.inputOutput, 'MetadataBoolean'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -41854,7 +41841,7 @@ class MetadataDouble(_X3DNode): # , _X3DMetadataObject # TODO fix additional inh
         return 'MetadataDouble'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataDouble'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataDouble'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataDouble'
@@ -41866,7 +41853,7 @@ class MetadataDouble(_X3DNode): # , _X3DMetadataObject # TODO fix additional inh
             ('value', list(), FieldType.MFDouble, AccessType.inputOutput, 'MetadataDouble'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -42015,7 +42002,7 @@ class MetadataFloat(_X3DNode): # , _X3DMetadataObject # TODO fix additional inhe
         return 'MetadataFloat'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataFloat'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataFloat'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataFloat'
@@ -42027,7 +42014,7 @@ class MetadataFloat(_X3DNode): # , _X3DMetadataObject # TODO fix additional inhe
             ('value', list(), FieldType.MFFloat, AccessType.inputOutput, 'MetadataFloat'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -42176,7 +42163,7 @@ class MetadataInteger(_X3DNode): # , _X3DMetadataObject # TODO fix additional in
         return 'MetadataInteger'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataInteger'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataInteger'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataInteger'
@@ -42188,7 +42175,7 @@ class MetadataInteger(_X3DNode): # , _X3DMetadataObject # TODO fix additional in
             ('value', list(), FieldType.MFInt32, AccessType.inputOutput, 'MetadataInteger'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -42337,7 +42324,7 @@ class MetadataSet(_X3DNode): # , _X3DMetadataObject # TODO fix additional inheri
         return 'MetadataSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataSet'
@@ -42349,7 +42336,7 @@ class MetadataSet(_X3DNode): # , _X3DMetadataObject # TODO fix additional inheri
             ('value', list(), FieldType.MFNode, AccessType.inputOutput, 'MetadataSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'MetadataSet'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'MetadataSet')]
@@ -42500,7 +42487,7 @@ class MetadataString(_X3DNode): # , _X3DMetadataObject # TODO fix additional inh
         return 'MetadataString'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#MetadataString'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#MetadataString'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataString'
@@ -42512,7 +42499,7 @@ class MetadataString(_X3DNode): # , _X3DMetadataObject # TODO fix additional inh
             ('value', list(), FieldType.MFString, AccessType.inputOutput, 'MetadataString'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -42661,7 +42648,7 @@ class MicrophoneSource(_X3DSoundSourceNode):
         return 'MicrophoneSource'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#MicrophoneSource'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#MicrophoneSource'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MicrophoneSource'
@@ -42679,7 +42666,7 @@ class MicrophoneSource(_X3DSoundSourceNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'MicrophoneSource'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -42927,7 +42914,7 @@ class MotorJoint(_X3DRigidJointNode):
         return 'MotorJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#MotorJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#MotorJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MotorJoint'
@@ -42956,7 +42943,7 @@ class MotorJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -43383,7 +43370,7 @@ class MovieTexture(_X3DSoundSourceNode, _X3DTexture2DNode, _X3DUrlObject):
         return 'MovieTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#MovieTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#MovieTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MovieTexture'
@@ -43409,7 +43396,7 @@ class MovieTexture(_X3DSoundSourceNode, _X3DTexture2DNode, _X3DUrlObject):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'MovieTexture'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -43784,7 +43771,7 @@ class MultiTexture(_X3DTextureNode):
         return 'MultiTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#MultiTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#MultiTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MultiTexture'
@@ -43800,7 +43787,7 @@ class MultiTexture(_X3DTextureNode):
             ('texture', list(), FieldType.MFNode, AccessType.inputOutput, 'MultiTexture'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44018,7 +44005,7 @@ class MultiTextureCoordinate(_X3DTextureCoordinateNode):
         return 'MultiTextureCoordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#MultiTextureCoordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#MultiTextureCoordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MultiTextureCoordinate'
@@ -44028,7 +44015,7 @@ class MultiTextureCoordinate(_X3DTextureCoordinateNode):
             ('texCoord', list(), FieldType.MFNode, AccessType.inputOutput, 'MultiTextureCoordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44148,7 +44135,7 @@ class MultiTextureTransform(_X3DTextureTransformNode):
         return 'MultiTextureTransform'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#MultiTextureTransform'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#MultiTextureTransform'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MultiTextureTransform'
@@ -44158,7 +44145,7 @@ class MultiTextureTransform(_X3DTextureTransformNode):
             ('textureTransform', list(), FieldType.MFNode, AccessType.inputOutput, 'MultiTextureTransform'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44278,7 +44265,7 @@ class NavigationInfo(_X3DBindableNode):
         return 'NavigationInfo'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#NavigationInfo'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#NavigationInfo'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NavigationInfo'
@@ -44294,7 +44281,7 @@ class NavigationInfo(_X3DBindableNode):
             ('visibilityLimit', 0, FieldType.SFFloat, AccessType.inputOutput, 'NavigationInfo'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44511,7 +44498,7 @@ class Normal(_X3DNormalNode):
         return 'Normal'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#Normal'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#Normal'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Normal'
@@ -44521,7 +44508,7 @@ class Normal(_X3DNormalNode):
             ('vector', list(), FieldType.MFVec3f, AccessType.inputOutput, 'Normal'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44640,7 +44627,7 @@ class NormalInterpolator(_X3DInterpolatorNode):
         return 'NormalInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#NormalInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#NormalInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NormalInterpolator'
@@ -44651,7 +44638,7 @@ class NormalInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFVec3f, AccessType.inputOutput, 'NormalInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -44784,7 +44771,7 @@ class NurbsCurve(_X3DParametricGeometryNode):
         return 'NurbsCurve'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsCurve'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsCurve'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsCurve'
@@ -44799,7 +44786,7 @@ class NurbsCurve(_X3DParametricGeometryNode):
             ('controlPoint', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsCurve'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -45000,7 +44987,7 @@ class NurbsCurve2D(_X3DNurbsControlCurveNode):
         return 'NurbsCurve2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsCurve2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsCurve2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsCurve2D'
@@ -45015,7 +45002,7 @@ class NurbsCurve2D(_X3DNurbsControlCurveNode):
             ('weight', list(), FieldType.MFDouble, AccessType.inputOutput, 'NurbsCurve2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -45214,7 +45201,7 @@ class NurbsOrientationInterpolator(_X3DChildNode):
         return 'NurbsOrientationInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsOrientationInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsOrientationInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsOrientationInterpolator'
@@ -45227,7 +45214,7 @@ class NurbsOrientationInterpolator(_X3DChildNode):
             ('controlPoint', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsOrientationInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -45396,7 +45383,7 @@ class NurbsPatchSurface(_X3DNurbsSurfaceGeometryNode):
         return 'NurbsPatchSurface'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsPatchSurface'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsPatchSurface'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsPatchSurface'
@@ -45419,7 +45406,7 @@ class NurbsPatchSurface(_X3DNurbsSurfaceGeometryNode):
             ('texCoord', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNurbsSurfaceGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -45755,7 +45742,7 @@ class NurbsPositionInterpolator(_X3DChildNode):
         return 'NurbsPositionInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsPositionInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsPositionInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsPositionInterpolator'
@@ -45768,7 +45755,7 @@ class NurbsPositionInterpolator(_X3DChildNode):
             ('controlPoint', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsPositionInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -45937,7 +45924,7 @@ class NurbsSet(_X3DChildNode, _X3DBoundedObject):
         return 'NurbsSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSet'
@@ -45952,7 +45939,7 @@ class NurbsSet(_X3DChildNode, _X3DBoundedObject):
             ('geometry', list(), FieldType.MFNode, AccessType.inputOutput, 'NurbsSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -46154,7 +46141,7 @@ class NurbsSurfaceInterpolator(_X3DChildNode):
         return 'NurbsSurfaceInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsSurfaceInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsSurfaceInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSurfaceInterpolator'
@@ -46171,7 +46158,7 @@ class NurbsSurfaceInterpolator(_X3DChildNode):
             ('controlPoint', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsSurfaceInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -46407,7 +46394,7 @@ class NurbsSweptSurface(_X3DParametricGeometryNode):
         return 'NurbsSweptSurface'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsSweptSurface'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsSweptSurface'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSweptSurface'
@@ -46420,7 +46407,7 @@ class NurbsSweptSurface(_X3DParametricGeometryNode):
             ('trajectoryCurve', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsSweptSurface'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -46589,7 +46576,7 @@ class NurbsSwungSurface(_X3DParametricGeometryNode):
         return 'NurbsSwungSurface'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsSwungSurface'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsSwungSurface'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsSwungSurface'
@@ -46602,7 +46589,7 @@ class NurbsSwungSurface(_X3DParametricGeometryNode):
             ('trajectoryCurve', None, FieldType.SFNode, AccessType.inputOutput, 'NurbsSwungSurface'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -46771,7 +46758,7 @@ class NurbsTextureCoordinate(_X3DNode):
         return 'NurbsTextureCoordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsTextureCoordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsTextureCoordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsTextureCoordinate'
@@ -46788,7 +46775,7 @@ class NurbsTextureCoordinate(_X3DNode):
             ('weight', list(), FieldType.MFFloat, AccessType.inputOutput, 'NurbsTextureCoordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -47022,7 +47009,7 @@ class NurbsTrimmedSurface(_X3DNurbsSurfaceGeometryNode):
         return 'NurbsTrimmedSurface'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/nurbs.html#NurbsTrimmedSurface'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/nurbs.html#NurbsTrimmedSurface'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NurbsTrimmedSurface'
@@ -47046,7 +47033,7 @@ class NurbsTrimmedSurface(_X3DNurbsSurfaceGeometryNode):
             ('trimmingContour', list(), FieldType.MFNode, AccessType.inputOutput, 'NurbsTrimmedSurface'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -47401,7 +47388,7 @@ class OpacityMapVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'OpacityMapVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#OpacityMapVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#OpacityMapVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OpacityMapVolumeStyle'
@@ -47412,7 +47399,7 @@ class OpacityMapVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('transferFunction', None, FieldType.SFNode, AccessType.inputOutput, 'OpacityMapVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -47547,7 +47534,7 @@ class OrientationChaser(_X3DChaserNode):
         return 'OrientationChaser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#OrientationChaser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#OrientationChaser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OrientationChaser'
@@ -47559,7 +47546,7 @@ class OrientationChaser(_X3DChaserNode):
             ('initialValue', (0, 1, 0, 0), FieldType.SFRotation, AccessType.initializeOnly, 'OrientationChaser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -47709,7 +47696,7 @@ class OrientationDamper(_X3DDamperNode):
         return 'OrientationDamper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#OrientationDamper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#OrientationDamper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OrientationDamper'
@@ -47723,7 +47710,7 @@ class OrientationDamper(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -47907,7 +47894,7 @@ class OrientationInterpolator(_X3DInterpolatorNode):
         return 'OrientationInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#OrientationInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#OrientationInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OrientationInterpolator'
@@ -47918,7 +47905,7 @@ class OrientationInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFRotation, AccessType.inputOutput, 'OrientationInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -48051,7 +48038,7 @@ class OrthoViewpoint(_X3DViewpointNode):
         return 'OrthoViewpoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#OrthoViewpoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#OrthoViewpoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OrthoViewpoint'
@@ -48071,7 +48058,7 @@ class OrthoViewpoint(_X3DViewpointNode):
             ('navigationInfo', None, FieldType.SFNode, AccessType.inputOutput, 'X3DViewpointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -48349,7 +48336,7 @@ class OscillatorSource(_X3DSoundSourceNode):
         return 'OscillatorSource'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#OscillatorSource'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#OscillatorSource'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#OscillatorSource'
@@ -48368,7 +48355,7 @@ class OscillatorSource(_X3DSoundSourceNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'OscillatorSource'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -48632,7 +48619,7 @@ class PackagedShader(_X3DShaderNode): # , _X3DUrlObject, _X3DProgrammableShaderO
         return 'PackagedShader'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#PackagedShader'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#PackagedShader'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PackagedShader'
@@ -48648,7 +48635,7 @@ class PackagedShader(_X3DShaderNode): # , _X3DUrlObject, _X3DProgrammableShaderO
             ('field', list(), FieldType.MFNode, AccessType.inputOutput, 'PackagedShader'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'PackagedShader'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'PackagedShader')]
@@ -48869,7 +48856,7 @@ class ParticleSystem(_X3DShapeNode):
         return 'ParticleSystem'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#ParticleSystem'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#ParticleSystem'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ParticleSystem'
@@ -48898,7 +48885,7 @@ class ParticleSystem(_X3DShapeNode):
             ('physics', list(), FieldType.MFNode, AccessType.initializeOnly, 'ParticleSystem'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -49343,7 +49330,7 @@ class PeriodicWave(_X3DSoundNode):
         return 'PeriodicWave'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#PeriodicWave'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#PeriodicWave'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PeriodicWave'
@@ -49357,7 +49344,7 @@ class PeriodicWave(_X3DSoundNode):
             ('type', 'square', FieldType.SFString, AccessType.inputOutput, 'PeriodicWave'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -49538,7 +49525,7 @@ class PhysicalMaterial(_X3DOneSidedMaterialNode):
         return 'PhysicalMaterial'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#PhysicalMaterial'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#PhysicalMaterial'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PhysicalMaterial'
@@ -49564,7 +49551,7 @@ class PhysicalMaterial(_X3DOneSidedMaterialNode):
             ('occlusionTexture', None, FieldType.SFNode, AccessType.inputOutput, 'PhysicalMaterial'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -49957,7 +49944,7 @@ class PickableGroup(_X3DGroupingNode, _X3DPickableObject):
         return 'PickableGroup'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#PickableGroup'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#PickableGroup'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PickableGroup'
@@ -49973,7 +49960,7 @@ class PickableGroup(_X3DGroupingNode, _X3DPickableObject):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -50190,7 +50177,7 @@ class PixelTexture(_X3DTexture2DNode):
         return 'PixelTexture'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#PixelTexture'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#PixelTexture'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PixelTexture'
@@ -50204,7 +50191,7 @@ class PixelTexture(_X3DTexture2DNode):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'X3DTexture2DNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -50387,7 +50374,7 @@ class PixelTexture3D(_X3DTexture3DNode):
         return 'PixelTexture3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#PixelTexture3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#PixelTexture3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PixelTexture3D'
@@ -50402,7 +50389,7 @@ class PixelTexture3D(_X3DTexture3DNode):
             ('textureProperties', None, FieldType.SFNode, AccessType.initializeOnly, 'X3DTexture3DNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -50601,7 +50588,7 @@ class PlaneSensor(_X3DDragSensorNode):
         return 'PlaneSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#PlaneSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#PlaneSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PlaneSensor'
@@ -50617,7 +50604,7 @@ class PlaneSensor(_X3DDragSensorNode):
             ('offset', (0, 0, 0), FieldType.SFVec3f, AccessType.inputOutput, 'PlaneSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -50830,7 +50817,7 @@ class PointEmitter(_X3DParticleEmitterNode):
         return 'PointEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#PointEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#PointEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointEmitter'
@@ -50845,7 +50832,7 @@ class PointEmitter(_X3DParticleEmitterNode):
             ('variation', 0.25, FieldType.SFFloat, AccessType.inputOutput, 'X3DParticleEmitterNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -51046,7 +51033,7 @@ class PointLight(_X3DLightNode):
         return 'PointLight'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/lighting.html#PointLight'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/lighting.html#PointLight'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointLight'
@@ -51065,7 +51052,7 @@ class PointLight(_X3DLightNode):
             ('shadows', False, FieldType.SFBool, AccessType.inputOutput, 'X3DLightNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -51331,7 +51318,7 @@ class PointPickSensor(_X3DPickSensorNode):
         return 'PointPickSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#PointPickSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#PointPickSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointPickSensor'
@@ -51347,7 +51334,7 @@ class PointPickSensor(_X3DPickSensorNode):
             ('pickTarget', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DPickSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -51580,7 +51567,7 @@ class PointProperties(_X3DAppearanceChildNode):
             ('pointSizeScaleFactor', 1, FieldType.SFFloat, AccessType.inputOutput, 'PointProperties'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -51747,7 +51734,7 @@ class PointSet(_X3DGeometryNode):
         return 'PointSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#PointSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#PointSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PointSet'
@@ -51761,7 +51748,7 @@ class PointSet(_X3DGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'PointSet'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -51956,7 +51943,7 @@ class Polyline2D(_X3DGeometryNode):
         return 'Polyline2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Polyline2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Polyline2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Polyline2D'
@@ -51966,7 +51953,7 @@ class Polyline2D(_X3DGeometryNode):
             ('lineSegments', list(), FieldType.MFVec2f, AccessType.initializeOnly, 'Polyline2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52083,7 +52070,7 @@ class PolylineEmitter(_X3DParticleEmitterNode):
         return 'PolylineEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#PolylineEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#PolylineEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PolylineEmitter'
@@ -52099,7 +52086,7 @@ class PolylineEmitter(_X3DParticleEmitterNode):
             ('coord', None, FieldType.SFNode, AccessType.inputOutput, 'PolylineEmitter'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52322,7 +52309,7 @@ class Polypoint2D(_X3DGeometryNode):
         return 'Polypoint2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Polypoint2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Polypoint2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Polypoint2D'
@@ -52332,7 +52319,7 @@ class Polypoint2D(_X3DGeometryNode):
             ('point', list(), FieldType.MFVec2f, AccessType.inputOutput, 'Polypoint2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52449,7 +52436,7 @@ class PositionChaser(_X3DChaserNode):
         return 'PositionChaser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#PositionChaser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#PositionChaser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionChaser'
@@ -52461,7 +52448,7 @@ class PositionChaser(_X3DChaserNode):
             ('initialValue', (0, 0, 0), FieldType.SFVec3f, AccessType.initializeOnly, 'PositionChaser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52611,7 +52598,7 @@ class PositionChaser2D(_X3DChaserNode):
         return 'PositionChaser2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#PositionChaser2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#PositionChaser2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionChaser2D'
@@ -52623,7 +52610,7 @@ class PositionChaser2D(_X3DChaserNode):
             ('initialValue', (0, 0), FieldType.SFVec2f, AccessType.initializeOnly, 'PositionChaser2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52773,7 +52760,7 @@ class PositionDamper(_X3DDamperNode):
         return 'PositionDamper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#PositionDamper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#PositionDamper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionDamper'
@@ -52787,7 +52774,7 @@ class PositionDamper(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -52971,7 +52958,7 @@ class PositionDamper2D(_X3DDamperNode):
         return 'PositionDamper2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#PositionDamper2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#PositionDamper2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionDamper2D'
@@ -52985,7 +52972,7 @@ class PositionDamper2D(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -53169,7 +53156,7 @@ class PositionInterpolator(_X3DInterpolatorNode):
         return 'PositionInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#PositionInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#PositionInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionInterpolator'
@@ -53180,7 +53167,7 @@ class PositionInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFVec3f, AccessType.inputOutput, 'PositionInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -53313,7 +53300,7 @@ class PositionInterpolator2D(_X3DInterpolatorNode):
         return 'PositionInterpolator2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#PositionInterpolator2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#PositionInterpolator2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionInterpolator2D'
@@ -53324,7 +53311,7 @@ class PositionInterpolator2D(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFVec2f, AccessType.inputOutput, 'PositionInterpolator2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -53457,7 +53444,7 @@ class PrimitivePickSensor(_X3DPickSensorNode):
         return 'PrimitivePickSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#PrimitivePickSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#PrimitivePickSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#PrimitivePickSensor'
@@ -53473,7 +53460,7 @@ class PrimitivePickSensor(_X3DPickSensorNode):
             ('pickTarget', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DPickSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -53693,7 +53680,7 @@ class ProgramShader(_X3DShaderNode): #  # TODO fix additional inheritance method
         return 'ProgramShader'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#ProgramShader'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#ProgramShader'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProgramShader'
@@ -53704,7 +53691,7 @@ class ProgramShader(_X3DShaderNode): #  # TODO fix additional inheritance method
             ('programs', list(), FieldType.MFNode, AccessType.inputOutput, 'ProgramShader'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -53840,7 +53827,7 @@ class ProjectionVolumeStyle(_X3DVolumeRenderStyleNode):
         return 'ProjectionVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#ProjectionVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#ProjectionVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProjectionVolumeStyle'
@@ -53852,7 +53839,7 @@ class ProjectionVolumeStyle(_X3DVolumeRenderStyleNode):
             ('type', 'MAX', FieldType.SFString, AccessType.inputOutput, 'ProjectionVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -54014,7 +54001,7 @@ class ProtoInstance(_X3DPrototypeInstance, _X3DChildNode):
             ('fieldValue', list(), FieldType.MFNode, AccessType.inputOutput, 'ProtoInstance'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -54153,7 +54140,7 @@ class ProximitySensor(_X3DEnvironmentalSensorNode):
         return 'ProximitySensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalSensor.html#ProximitySensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalSensor.html#ProximitySensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProximitySensor'
@@ -54165,7 +54152,7 @@ class ProximitySensor(_X3DEnvironmentalSensorNode):
             ('size', (0, 0, 0), FieldType.SFVec3f, AccessType.initializeOnly, 'X3DEnvironmentalSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -54315,7 +54302,7 @@ class QuadSet(_X3DComposedGeometryNode):
         return 'QuadSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/CADGeometry.html#QuadSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/CADGeometry.html#QuadSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#QuadSet'
@@ -54334,7 +54321,7 @@ class QuadSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -54613,7 +54600,7 @@ class ReceiverPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         return 'ReceiverPdu'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#ReceiverPdu'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#ReceiverPdu'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ReceiverPdu'
@@ -54648,7 +54635,7 @@ class ReceiverPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
             ('writeInterval', 1.0, FieldType.SFTime, AccessType.inputOutput, 'ReceiverPdu'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -54716,7 +54703,7 @@ class ReceiverPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         self.style_ = style_
     @property # getter - - - - - - - - - -
     def address(self):
-        """Multicast network address, or else "localhost" Example: 224."""
+        """Multicast network address, or else 'localhost'; Example: 224."""
         return self.__address
     @address.setter
     def address(self, address):
@@ -55169,7 +55156,7 @@ class Rectangle2D(_X3DGeometryNode):
         return 'Rectangle2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#Rectangle2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#Rectangle2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Rectangle2D'
@@ -55180,7 +55167,7 @@ class Rectangle2D(_X3DGeometryNode):
             ('solid', False, FieldType.SFBool, AccessType.initializeOnly, 'Rectangle2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -55314,7 +55301,7 @@ class RigidBody(_X3DNode):
         return 'RigidBody'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#RigidBody'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#RigidBody'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#RigidBody'
@@ -55348,7 +55335,7 @@ class RigidBody(_X3DNode):
             ('geometry', list(), FieldType.MFNode, AccessType.inputOutput, 'RigidBody'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -55852,7 +55839,7 @@ class RigidBodyCollection(_X3DChildNode):
         return 'RigidBodyCollection'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#RigidBodyCollection'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#RigidBodyCollection'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#RigidBodyCollection'
@@ -55878,7 +55865,7 @@ class RigidBodyCollection(_X3DChildNode):
             ('joints', list(), FieldType.MFNode, AccessType.inputOutput, 'RigidBodyCollection'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -56259,7 +56246,7 @@ class ScalarChaser(_X3DChaserNode):
         return 'ScalarChaser'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#ScalarChaser'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#ScalarChaser'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScalarChaser'
@@ -56271,7 +56258,7 @@ class ScalarChaser(_X3DChaserNode):
             ('initialValue', 0, FieldType.SFFloat, AccessType.initializeOnly, 'ScalarChaser'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -56421,7 +56408,7 @@ class ScalarDamper(_X3DDamperNode):
         return 'ScalarDamper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#ScalarDamper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#ScalarDamper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScalarDamper'
@@ -56435,7 +56422,7 @@ class ScalarDamper(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -56619,7 +56606,7 @@ class ScalarInterpolator(_X3DInterpolatorNode):
         return 'ScalarInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#ScalarInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#ScalarInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScalarInterpolator'
@@ -56630,7 +56617,7 @@ class ScalarInterpolator(_X3DInterpolatorNode):
             ('keyValue', list(), FieldType.MFFloat, AccessType.inputOutput, 'ScalarInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -56763,7 +56750,7 @@ class ScreenFontStyle(_X3DFontStyleNode):
         return 'ScreenFontStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#ScreenFontStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#ScreenFontStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScreenFontStyle'
@@ -56771,7 +56758,6 @@ class ScreenFontStyle(_X3DFontStyleNode):
         ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [
             ('family', ["SERIF"], FieldType.MFString, AccessType.initializeOnly, 'ScreenFontStyle'),
-            ('glyphStyle', 'PLAIN', FieldType.SFString, AccessType.inputOutput, 'ScreenFontStyle'),
             ('horizontal', True, FieldType.SFBool, AccessType.initializeOnly, 'ScreenFontStyle'),
             ('justify', ["BEGIN"], FieldType.MFString, AccessType.initializeOnly, 'ScreenFontStyle'),
             ('language', '', FieldType.SFString, AccessType.initializeOnly, 'ScreenFontStyle'),
@@ -56781,13 +56767,12 @@ class ScreenFontStyle(_X3DFontStyleNode):
             ('topToBottom', True, FieldType.SFBool, AccessType.initializeOnly, 'ScreenFontStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style', 'PLAIN', FieldType.SFString, AccessType.inputOutput, 'ScreenFontStyle'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
     def __init__(self,
                  family=["SERIF"],
-                 glyphStyle='PLAIN',
                  horizontal=True,
                  justify=["BEGIN"],
                  language='',
@@ -56797,14 +56782,13 @@ class ScreenFontStyle(_X3DFontStyleNode):
                  topToBottom=True,
                  DEF='',
                  USE='',
-                 style_='',
+                 style='PLAIN',
                  class_='',
                  IS=None,
                  metadata=None):
         # if _DEBUG: print('... in ConcreteNode ScreenFontStyle __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
         super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only
         self.family = family
-        self.glyphStyle = glyphStyle
         self.horizontal = horizontal
         self.justify = justify
         self.language = language
@@ -56812,7 +56796,7 @@ class ScreenFontStyle(_X3DFontStyleNode):
         self.pointSize = pointSize
         self.spacing = spacing
         self.topToBottom = topToBottom
-        self.style_ = style_
+        self.style = style
     @property # getter - - - - - - - - - -
     def family(self):
         """Array of quoted font family names in preference order, browsers use the first supported family."""
@@ -56823,17 +56807,6 @@ class ScreenFontStyle(_X3DFontStyleNode):
             family = ["SERIF"] # default
         assertValidMFString(family)
         self.__family = family
-    @property # getter - - - - - - - - - -
-    def glyphStyle(self):
-        """Pick one of four values for text style."""
-        return self.__glyphStyle
-    @glyphStyle.setter
-    def glyphStyle(self, glyphStyle):
-        if  glyphStyle is None:
-            glyphStyle = 'PLAIN' # default
-        assertValidSFString(glyphStyle)
-        assertValidFontStyle('glyphStyle', glyphStyle)
-        self.__glyphStyle = glyphStyle
     @property # getter - - - - - - - - - -
     def horizontal(self):
         """Whether text direction is horizontal (true) or vertical (false)."""
@@ -56867,6 +56840,7 @@ class ScreenFontStyle(_X3DFontStyleNode):
         self.__language = language
     @property # getter - - - - - - - - - -
     def leftToRight(self):
+        """Whether text direction is left-to-right (true) or right-to-left (false)."""
         return self.__leftToRight
     @leftToRight.setter
     def leftToRight(self, leftToRight):
@@ -56907,14 +56881,16 @@ class ScreenFontStyle(_X3DFontStyleNode):
         assertValidSFBool(topToBottom)
         self.__topToBottom = topToBottom
     @property # getter - - - - - - - - - -
-    def style_(self): # Appended underscore to field name to avoid naming collision with Python reserved word
-        return self.__style_
-    @style_.setter
-    def style_(self, style_):
-        if  style_ is None:
-            style_ = SFString.DEFAULT_VALUE(self)
-        assertValidSFString(style_)
-        self.__style_ = style_
+    def style(self):
+        """Pick one of four values for text style (PLAIN | BOLD | ITALIC | MIDDLE)."""
+        return self.__style
+    @style.setter
+    def style(self, style):
+        if  style is None:
+            style = 'PLAIN' # default
+        assertValidSFString(style)
+        assertValidFontStyle('style', style)
+        self.__style = style
     # hasChild() function - - - - - - - - - -
     def hasChild(self):
         ''' Whether or not this node has any child node, statement or comment '''
@@ -56936,8 +56912,6 @@ class ScreenFontStyle(_X3DFontStyleNode):
             result += " class='" + self.class_ + "'"
         if self.family != ["SERIF"]:
             result += " family='" + MFString(self.family).XML() + "'"
-        if self.glyphStyle != 'PLAIN':
-            result += " glyphStyle='" + self.glyphStyle + "'"
         if not self.horizontal: # default=true
             result += " horizontal='" + SFBool(self.horizontal).XML() + "'"
         if self.justify != ["BEGIN"]:
@@ -56950,8 +56924,8 @@ class ScreenFontStyle(_X3DFontStyleNode):
             result += " pointSize='" + SFFloat(self.pointSize).XML() + "'"
         if self.spacing != 1.0:
             result += " spacing='" + SFFloat(self.spacing).XML() + "'"
-        if self.style_:
-            result += " style='" + self.style_ + "'"
+        if self.style != 'PLAIN':
+            result += " style='" + self.style + "'"
         if not self.topToBottom: # default=true
             result += " topToBottom='" + SFBool(self.topToBottom).XML() + "'"
         if not self.hasChild():
@@ -56993,8 +56967,6 @@ class ScreenFontStyle(_X3DFontStyleNode):
             result += " class " +  '"' + self.class_ + '"' + ""
         if self.family != ["SERIF"]:
             result += " family " + MFString(self.family).VRML() + ""
-        if self.glyphStyle != 'PLAIN':
-            result += " glyphStyle " +  '"' + self.glyphStyle + '"' + ""
         if not self.horizontal: # default=true
             result += " horizontal " + SFBool(self.horizontal).VRML() + ""
         if self.justify != ["BEGIN"]:
@@ -57007,8 +56979,8 @@ class ScreenFontStyle(_X3DFontStyleNode):
             result += " pointSize " + SFFloat(self.pointSize).VRML() + ""
         if self.spacing != 1.0:
             result += " spacing " + SFFloat(self.spacing).VRML() + ""
-        if self.style_:
-            result += " style " +  '"' + self.style_ + '"' + ""
+        if self.style != 'PLAIN':
+            result += " style " +  '"' + self.style + '"' + ""
         if not self.topToBottom: # default=true
             result += " topToBottom " + SFBool(self.topToBottom).VRML() + ""
         if self.IS: # output this SFNode
@@ -57029,7 +57001,7 @@ class ScreenGroup(_X3DGroupingNode):
         return 'ScreenGroup'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layout.html#ScreenGroup'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layout.html#ScreenGroup'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ScreenGroup'
@@ -57043,7 +57015,7 @@ class ScreenGroup(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -57228,7 +57200,7 @@ class Script(_X3DScriptNode):
         return 'Script'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/scripting.html#Script'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/scripting.html#Script'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Script'
@@ -57245,7 +57217,7 @@ class Script(_X3DScriptNode):
             ('field', list(), FieldType.MFNode, AccessType.inputOutput, 'Script'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -57482,7 +57454,7 @@ class SegmentedVolumeData(_X3DVolumeDataNode):
         return 'SegmentedVolumeData'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#SegmentedVolumeData'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#SegmentedVolumeData'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SegmentedVolumeData'
@@ -57500,7 +57472,7 @@ class SegmentedVolumeData(_X3DVolumeDataNode):
             ('renderStyle', list(), FieldType.MFNode, AccessType.inputOutput, 'SegmentedVolumeData'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -57755,7 +57727,7 @@ class ShadedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'ShadedVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#ShadedVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#ShadedVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ShadedVolumeStyle'
@@ -57770,7 +57742,7 @@ class ShadedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('surfaceNormals', None, FieldType.SFNode, AccessType.inputOutput, 'ShadedVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -57971,7 +57943,7 @@ class ShaderPart(_X3DNode): # , _X3DUrlObject # TODO fix additional inheritance 
         return 'ShaderPart'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#ShaderPart'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#ShaderPart'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ShaderPart'
@@ -57986,7 +57958,7 @@ class ShaderPart(_X3DNode): # , _X3DUrlObject # TODO fix additional inheritance 
             ('url', list(), FieldType.MFString, AccessType.inputOutput, 'X3DUrlObject'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -58185,7 +58157,7 @@ class ShaderProgram(_X3DNode): # , _X3DUrlObject, _X3DProgrammableShaderObject #
         return 'ShaderProgram'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shaders.html#ShaderProgram'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shaders.html#ShaderProgram'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ShaderProgram'
@@ -58201,7 +58173,7 @@ class ShaderProgram(_X3DNode): # , _X3DUrlObject, _X3DProgrammableShaderObject #
             ('field', list(), FieldType.MFNode, AccessType.inputOutput, 'ShaderProgram'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -58422,7 +58394,7 @@ class Shape(_X3DShapeNode):
         return 'Shape'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#Shape'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#Shape'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Shape'
@@ -58438,7 +58410,7 @@ class Shape(_X3DShapeNode):
             ('geometry', None, FieldType.SFNode, AccessType.inputOutput, 'X3DShapeNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -58657,7 +58629,7 @@ class SignalPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         return 'SignalPdu'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#SignalPdu'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#SignalPdu'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SignalPdu'
@@ -58692,7 +58664,7 @@ class SignalPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
             ('writeInterval', 1.0, FieldType.SFTime, AccessType.inputOutput, 'SignalPdu'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -58760,7 +58732,7 @@ class SignalPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         self.style_ = style_
     @property # getter - - - - - - - - - -
     def address(self):
-        """Multicast network address, or else "localhost" example: 224."""
+        """Multicast network address, or else 'localhost'."""
         return self.__address
     @address.setter
     def address(self, address):
@@ -59213,7 +59185,7 @@ class SilhouetteEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'SilhouetteEnhancementVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#SilhouetteEnhancementVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#SilhouetteEnhancementVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SilhouetteEnhancementVolumeStyle'
@@ -59227,7 +59199,7 @@ class SilhouetteEnhancementVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('surfaceNormals', None, FieldType.SFNode, AccessType.inputOutput, 'SilhouetteEnhancementVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -59413,7 +59385,7 @@ class SingleAxisHingeJoint(_X3DRigidJointNode):
         return 'SingleAxisHingeJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#SingleAxisHingeJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#SingleAxisHingeJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SingleAxisHingeJoint'
@@ -59431,7 +59403,7 @@ class SingleAxisHingeJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -59680,7 +59652,7 @@ class SliderJoint(_X3DRigidJointNode):
         return 'SliderJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#SliderJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#SliderJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SliderJoint'
@@ -59698,7 +59670,7 @@ class SliderJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -59946,7 +59918,7 @@ class Sound(_X3DSoundNode):
         return 'Sound'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Sound'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Sound'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sound'
@@ -59967,7 +59939,7 @@ class Sound(_X3DSoundNode):
             ('source', None, FieldType.SFNode, AccessType.inputOutput, 'Sound'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -60269,7 +60241,7 @@ class SpatialSound(_X3DSoundNode):
         return 'SpatialSound'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#Sound'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#Sound'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SpatialSound'
@@ -60296,7 +60268,7 @@ class SpatialSound(_X3DSoundNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'SpatialSound'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -60698,7 +60670,7 @@ class Sphere(_X3DGeometryNode):
         return 'Sphere'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry3D.html#Sphere'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry3D.html#Sphere'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sphere'
@@ -60709,7 +60681,7 @@ class Sphere(_X3DGeometryNode):
             ('solid', True, FieldType.SFBool, AccessType.initializeOnly, 'Sphere'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -60843,7 +60815,7 @@ class SphereSensor(_X3DDragSensorNode):
         return 'SphereSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#SphereSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#SphereSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SphereSensor'
@@ -60856,7 +60828,7 @@ class SphereSensor(_X3DDragSensorNode):
             ('offset', (0, 1, 0, 0), FieldType.SFRotation, AccessType.inputOutput, 'SphereSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -61021,7 +60993,7 @@ class SplinePositionInterpolator(_X3DInterpolatorNode):
         return 'SplinePositionInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#SplinePositionInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#SplinePositionInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SplinePositionInterpolator'
@@ -61035,7 +61007,7 @@ class SplinePositionInterpolator(_X3DInterpolatorNode):
             ('normalizeVelocity', False, FieldType.SFBool, AccessType.inputOutput, 'SplinePositionInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -61216,7 +61188,7 @@ class SplinePositionInterpolator2D(_X3DInterpolatorNode):
         return 'SplinePositionInterpolator2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#SplinePositionInterpolator2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#SplinePositionInterpolator2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SplinePositionInterpolator2D'
@@ -61230,7 +61202,7 @@ class SplinePositionInterpolator2D(_X3DInterpolatorNode):
             ('normalizeVelocity', False, FieldType.SFBool, AccessType.inputOutput, 'SplinePositionInterpolator2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -61411,7 +61383,7 @@ class SplineScalarInterpolator(_X3DInterpolatorNode):
         return 'SplineScalarInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#SplineScalarInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#SplineScalarInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SplineScalarInterpolator'
@@ -61425,7 +61397,7 @@ class SplineScalarInterpolator(_X3DInterpolatorNode):
             ('normalizeVelocity', False, FieldType.SFBool, AccessType.inputOutput, 'SplineScalarInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -61606,7 +61578,7 @@ class SpotLight(_X3DLightNode):
         return 'SpotLight'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/lighting.html#SpotLight'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/lighting.html#SpotLight'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SpotLight'
@@ -61628,7 +61600,7 @@ class SpotLight(_X3DLightNode):
             ('shadows', False, FieldType.SFBool, AccessType.inputOutput, 'X3DLightNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -61946,7 +61918,7 @@ class SquadOrientationInterpolator(_X3DInterpolatorNode):
         return 'SquadOrientationInterpolator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/interpolators.html#SquadOrientationInterpolator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/interpolators.html#SquadOrientationInterpolator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SquadOrientationInterpolator'
@@ -61958,7 +61930,7 @@ class SquadOrientationInterpolator(_X3DInterpolatorNode):
             ('normalizeVelocity', False, FieldType.SFBool, AccessType.inputOutput, 'SquadOrientationInterpolator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -62107,7 +62079,7 @@ class StaticGroup(_X3DChildNode, _X3DBoundedObject):
         return 'StaticGroup'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#StaticGroup'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#StaticGroup'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#StaticGroup'
@@ -62121,7 +62093,7 @@ class StaticGroup(_X3DChildNode, _X3DBoundedObject):
             ('children', list(), FieldType.MFNode, AccessType.initializeOnly, 'StaticGroup'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -62306,7 +62278,7 @@ class StreamAudioDestination(_X3DSoundDestinationNode):
         return 'StreamAudioDestination'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#StreamAudioDestination'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#StreamAudioDestination'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#StreamAudioDestination'
@@ -62321,7 +62293,7 @@ class StreamAudioDestination(_X3DSoundDestinationNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'StreamAudioDestination'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -62523,7 +62495,7 @@ class StreamAudioSource(_X3DSoundSourceNode):
         return 'StreamAudioSource'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#StreamAudioSource'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#StreamAudioSource'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#StreamAudioSource'
@@ -62543,7 +62515,7 @@ class StreamAudioSource(_X3DSoundSourceNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'StreamAudioSource'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -62825,7 +62797,7 @@ class StringSensor(_X3DKeyDeviceSensorNode):
         return 'StringSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/keyDeviceSensor.html#StringSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/keyDeviceSensor.html#StringSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#StringSensor'
@@ -62836,7 +62808,7 @@ class StringSensor(_X3DKeyDeviceSensorNode):
             ('enabled', True, FieldType.SFBool, AccessType.inputOutput, 'X3DSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -62969,7 +62941,7 @@ class SurfaceEmitter(_X3DParticleEmitterNode):
         return 'SurfaceEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#SurfaceEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#SurfaceEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SurfaceEmitter'
@@ -62984,7 +62956,7 @@ class SurfaceEmitter(_X3DParticleEmitterNode):
             ('surface', None, FieldType.SFNode, AccessType.initializeOnly, 'SurfaceEmitter'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -63189,7 +63161,7 @@ class Switch(_X3DGroupingNode):
         return 'Switch'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#Switch'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#Switch'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Switch'
@@ -63204,7 +63176,7 @@ class Switch(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -63406,7 +63378,7 @@ class TexCoordChaser2D(_X3DChaserNode):
         return 'TexCoordChaser2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#TexCoordChaser2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#TexCoordChaser2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TexCoordChaser2D'
@@ -63418,7 +63390,7 @@ class TexCoordChaser2D(_X3DChaserNode):
             ('initialValue', list(), FieldType.MFVec2f, AccessType.initializeOnly, 'TexCoordChaser2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -63568,7 +63540,7 @@ class TexCoordDamper2D(_X3DDamperNode):
         return 'TexCoordDamper2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/followers.html#TexCoordDamper2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/followers.html#TexCoordDamper2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TexCoordDamper2D'
@@ -63582,7 +63554,7 @@ class TexCoordDamper2D(_X3DDamperNode):
             ('tolerance', -1, FieldType.SFFloat, AccessType.inputOutput, 'X3DDamperNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -63766,7 +63738,7 @@ class Text(_X3DGeometryNode):
         return 'Text'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/text.html#Text'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/text.html#Text'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Text'
@@ -63780,7 +63752,7 @@ class Text(_X3DGeometryNode):
             ('fontStyle', None, FieldType.SFNode, AccessType.inputOutput, 'Text'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -63965,7 +63937,7 @@ class TextureBackground(_X3DBackgroundNode):
         return 'TextureBackground'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalEffects.html#TextureBackground'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalEffects.html#TextureBackground'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureBackground'
@@ -63985,7 +63957,7 @@ class TextureBackground(_X3DBackgroundNode):
             ('topTexture', None, FieldType.SFNode, AccessType.inputOutput, 'TextureBackground'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -64287,7 +64259,7 @@ class TextureCoordinate(_X3DSingleTextureCoordinateNode):
         return 'TextureCoordinate'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#TextureCoordinate'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#TextureCoordinate'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureCoordinate'
@@ -64298,7 +64270,7 @@ class TextureCoordinate(_X3DSingleTextureCoordinateNode):
             ('point', list(), FieldType.MFVec2f, AccessType.inputOutput, 'TextureCoordinate'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -64431,7 +64403,7 @@ class TextureCoordinate3D(_X3DSingleTextureCoordinateNode):
         return 'TextureCoordinate3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#TextureCoordinate3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#TextureCoordinate3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureCoordinate3D'
@@ -64442,7 +64414,7 @@ class TextureCoordinate3D(_X3DSingleTextureCoordinateNode):
             ('point', list(), FieldType.MFVec3f, AccessType.inputOutput, 'TextureCoordinate3D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -64575,7 +64547,7 @@ class TextureCoordinate4D(_X3DSingleTextureCoordinateNode):
         return 'TextureCoordinate4D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#TextureCoordinate4D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#TextureCoordinate4D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureCoordinate4D'
@@ -64586,7 +64558,7 @@ class TextureCoordinate4D(_X3DSingleTextureCoordinateNode):
             ('point', list(), FieldType.MFVec4f, AccessType.inputOutput, 'TextureCoordinate4D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -64719,7 +64691,7 @@ class TextureCoordinateGenerator(_X3DSingleTextureCoordinateNode):
         return 'TextureCoordinateGenerator'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#TextureCoordinateGenerator'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#TextureCoordinateGenerator'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureCoordinateGenerator'
@@ -64731,7 +64703,7 @@ class TextureCoordinateGenerator(_X3DSingleTextureCoordinateNode):
             ('parameter', list(), FieldType.MFFloat, AccessType.inputOutput, 'TextureCoordinateGenerator'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -64881,7 +64853,7 @@ class TextureProjector(_X3DTextureProjectorNode):
         return 'TextureProjector'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/TextureProjector.html#TextureProjector'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/TextureProjector.html#TextureProjector'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureProjector'
@@ -64905,7 +64877,7 @@ class TextureProjector(_X3DTextureProjectorNode):
             ('texture', None, FieldType.SFNode, AccessType.inputOutput, 'X3DTextureProjectorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -65255,7 +65227,7 @@ class TextureProjectorParallel(_X3DTextureProjectorNode):
         return 'TextureProjectorParallel'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/TextureProjector.html#TextureProjectorParallel'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/TextureProjector.html#TextureProjectorParallel'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureProjectorParallel'
@@ -65278,7 +65250,7 @@ class TextureProjectorParallel(_X3DTextureProjectorNode):
             ('texture', None, FieldType.SFNode, AccessType.inputOutput, 'X3DTextureProjectorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -65611,7 +65583,7 @@ class TextureProperties(_X3DNode):
         return 'TextureProperties'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#TextureProperties'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#TextureProperties'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureProperties'
@@ -65631,7 +65603,7 @@ class TextureProperties(_X3DNode):
             ('texturePriority', 0, FieldType.SFFloat, AccessType.inputOutput, 'TextureProperties'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -65918,7 +65890,7 @@ class TextureTransform(_X3DTextureTransformNode):
         return 'TextureTransform'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#TextureTransform'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texturing.html#TextureTransform'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureTransform'
@@ -65931,7 +65903,7 @@ class TextureTransform(_X3DTextureTransformNode):
             ('translation', (0, 0), FieldType.SFVec2f, AccessType.inputOutput, 'TextureTransform'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66096,7 +66068,7 @@ class TextureTransform3D(_X3DTextureTransformNode):
         return 'TextureTransform3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#TextureTransform3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#TextureTransform3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureTransform3D'
@@ -66109,7 +66081,7 @@ class TextureTransform3D(_X3DTextureTransformNode):
             ('translation', (0, 0, 0), FieldType.SFVec3f, AccessType.inputOutput, 'TextureTransform3D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66274,7 +66246,7 @@ class TextureTransformMatrix3D(_X3DTextureTransformNode):
         return 'TextureTransformMatrix3D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texture3D.html#TextureTransformMatrix3D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/texture3D.html#TextureTransformMatrix3D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TextureTransformMatrix3D'
@@ -66284,7 +66256,7 @@ class TextureTransformMatrix3D(_X3DTextureTransformNode):
             ('matrix', (1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), FieldType.SFMatrix4f, AccessType.inputOutput, 'TextureTransformMatrix3D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66401,7 +66373,7 @@ class TimeSensor(_X3DTimeDependentNode, _X3DSensorNode):
         return 'TimeSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/time.html#TimeSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/time.html#TimeSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TimeSensor'
@@ -66418,7 +66390,7 @@ class TimeSensor(_X3DTimeDependentNode, _X3DSensorNode):
             ('stopTime', 0, FieldType.SFTime, AccessType.inputOutput, 'X3DTimeDependentNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66648,7 +66620,7 @@ class TimeTrigger(_X3DTriggerNode):
         return 'TimeTrigger'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/eventUtilities.html#TimeTrigger'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/eventUtilities.html#TimeTrigger'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TimeTrigger'
@@ -66657,7 +66629,7 @@ class TimeTrigger(_X3DTriggerNode):
         return [
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66758,7 +66730,7 @@ class ToneMappedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
         return 'ToneMappedVolumeStyle'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#ToneMappedVolumeStyle'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#ToneMappedVolumeStyle'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ToneMappedVolumeStyle'
@@ -66771,7 +66743,7 @@ class ToneMappedVolumeStyle(_X3DComposableVolumeRenderStyleNode):
             ('surfaceNormals', None, FieldType.SFNode, AccessType.inputOutput, 'ToneMappedVolumeStyle'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -66940,7 +66912,7 @@ class TouchSensor(_X3DTouchSensorNode):
         return 'TouchSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/pointingDeviceSensor.html#TouchSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/pointingDeviceSensor.html#TouchSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TouchSensor'
@@ -66951,7 +66923,7 @@ class TouchSensor(_X3DTouchSensorNode):
             ('enabled', True, FieldType.SFBool, AccessType.inputOutput, 'X3DSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -67084,7 +67056,7 @@ class Transform(_X3DGroupingNode):
         return 'Transform'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/grouping.html#Transform'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/grouping.html#Transform'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Transform'
@@ -67103,7 +67075,7 @@ class Transform(_X3DGroupingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -67368,7 +67340,7 @@ class TransformSensor(_X3DEnvironmentalSensorNode):
         return 'TransformSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalSensor.html#TransformSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalSensor.html#TransformSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TransformSensor'
@@ -67381,7 +67353,7 @@ class TransformSensor(_X3DEnvironmentalSensorNode):
             ('targetObject', None, FieldType.SFNode, AccessType.inputOutput, 'TransformSensor'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -67550,7 +67522,7 @@ class TransmitterPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         return 'TransmitterPdu'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/dis.html#TransmitterPdu'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#TransmitterPdu'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TransmitterPdu'
@@ -67601,7 +67573,7 @@ class TransmitterPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
             ('writeInterval', 1.0, FieldType.SFTime, AccessType.inputOutput, 'TransmitterPdu'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -67701,7 +67673,7 @@ class TransmitterPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         self.style_ = style_
     @property # getter - - - - - - - - - -
     def address(self):
-        """Multicast network address, or else "localhost" example: 224."""
+        """Multicast network address, or else 'localhost'."""
         return self.__address
     @address.setter
     def address(self, address):
@@ -68379,7 +68351,7 @@ class TriangleFanSet(_X3DComposedGeometryNode):
         return 'TriangleFanSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#TriangleFanSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#TriangleFanSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TriangleFanSet'
@@ -68399,7 +68371,7 @@ class TriangleFanSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -68695,7 +68667,7 @@ class TriangleSet(_X3DComposedGeometryNode):
         return 'TriangleSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#TriangleSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#TriangleSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TriangleSet'
@@ -68714,7 +68686,7 @@ class TriangleSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -68993,7 +68965,7 @@ class TriangleSet2D(_X3DGeometryNode):
         return 'TriangleSet2D'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/geometry2D.html#TriangleSet2D'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/geometry2D.html#TriangleSet2D'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TriangleSet2D'
@@ -69004,7 +68976,7 @@ class TriangleSet2D(_X3DGeometryNode):
             ('vertices', list(), FieldType.MFVec2f, AccessType.inputOutput, 'TriangleSet2D'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -69137,7 +69109,7 @@ class TriangleStripSet(_X3DComposedGeometryNode):
         return 'TriangleStripSet'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rendering.html#TriangleStripSet'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rendering.html#TriangleStripSet'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TriangleStripSet'
@@ -69157,7 +69129,7 @@ class TriangleStripSet(_X3DComposedGeometryNode):
             ('attrib', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DComposedGeometryNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -69453,7 +69425,7 @@ class TwoSidedMaterial(_X3DMaterialNode):
         return 'TwoSidedMaterial'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#TwoSidedMaterial'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#TwoSidedMaterial'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#TwoSidedMaterial'
@@ -69475,7 +69447,7 @@ class TwoSidedMaterial(_X3DMaterialNode):
             ('transparency', 0, FieldType.SFFloat, AccessType.inputOutput, 'TwoSidedMaterial'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -69796,7 +69768,7 @@ class UniversalJoint(_X3DRigidJointNode):
         return 'UniversalJoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/rigidBodyPhysics.html#UniversalJoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/rigidBodyPhysics.html#UniversalJoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#UniversalJoint'
@@ -69815,7 +69787,7 @@ class UniversalJoint(_X3DRigidJointNode):
             ('body2', None, FieldType.SFNode, AccessType.inputOutput, 'X3DRigidJointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -70084,7 +70056,7 @@ class UnlitMaterial(_X3DOneSidedMaterialNode):
         return 'UnlitMaterial'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#UnlitMaterial'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/shape.html#UnlitMaterial'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#UnlitMaterial'
@@ -70100,7 +70072,7 @@ class UnlitMaterial(_X3DOneSidedMaterialNode):
             ('normalTexture', None, FieldType.SFNode, AccessType.inputOutput, 'UnlitMaterial'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -70322,7 +70294,7 @@ class Viewpoint(_X3DViewpointNode):
         return 'Viewpoint'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#Viewpoint'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#Viewpoint'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Viewpoint'
@@ -70342,7 +70314,7 @@ class Viewpoint(_X3DViewpointNode):
             ('navigationInfo', None, FieldType.SFNode, AccessType.inputOutput, 'X3DViewpointNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -70622,7 +70594,7 @@ class ViewpointGroup(_X3DChildNode):
         return 'ViewpointGroup'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/navigation.html#ViewpointGroup'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/navigation.html#ViewpointGroup'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ViewpointGroup'
@@ -70637,7 +70609,7 @@ class ViewpointGroup(_X3DChildNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'ViewpointGroup'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -70837,7 +70809,7 @@ class Viewport(_X3DViewportNode):
         return 'Viewport'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/layering.html#Viewport'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/layering.html#Viewport'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#Viewport'
@@ -70852,7 +70824,7 @@ class Viewport(_X3DViewportNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DGroupingNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -71054,7 +71026,7 @@ class VisibilitySensor(_X3DEnvironmentalSensorNode):
         return 'VisibilitySensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/environmentalSensor.html#VisibilitySensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/environmentalSensor.html#VisibilitySensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#VisibilitySensor'
@@ -71066,7 +71038,7 @@ class VisibilitySensor(_X3DEnvironmentalSensorNode):
             ('size', (0, 0, 0), FieldType.SFVec3f, AccessType.initializeOnly, 'X3DEnvironmentalSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -71216,7 +71188,7 @@ class VolumeData(_X3DVolumeDataNode):
         return 'VolumeData'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/volume.html#VolumeData'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/volume.html#VolumeData'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#VolumeData'
@@ -71232,7 +71204,7 @@ class VolumeData(_X3DVolumeDataNode):
             ('voxels', None, FieldType.SFNode, AccessType.inputOutput, 'VolumeData'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -71453,7 +71425,7 @@ class VolumeEmitter(_X3DParticleEmitterNode):
         return 'VolumeEmitter'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#VolumeEmitter'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#VolumeEmitter'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#VolumeEmitter'
@@ -71470,7 +71442,7 @@ class VolumeEmitter(_X3DParticleEmitterNode):
             ('coord', None, FieldType.SFNode, AccessType.inputOutput, 'VolumeEmitter'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -71709,7 +71681,7 @@ class VolumePickSensor(_X3DPickSensorNode):
         return 'VolumePickSensor'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/picking.html#VolumePickSensor'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/picking.html#VolumePickSensor'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#VolumePickSensor'
@@ -71725,7 +71697,7 @@ class VolumePickSensor(_X3DPickSensorNode):
             ('pickTarget', list(), FieldType.MFNode, AccessType.inputOutput, 'X3DPickSensorNode'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -71945,7 +71917,7 @@ class WaveShaper(_X3DSoundProcessingNode):
         return 'WaveShaper'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/sound.html#WaveShaper'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#WaveShaper'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#WaveShaper'
@@ -71966,7 +71938,7 @@ class WaveShaper(_X3DSoundProcessingNode):
             ('children', list(), FieldType.MFNode, AccessType.inputOutput, 'WaveShaper'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -72266,7 +72238,7 @@ class WindPhysicsModel(_X3DParticlePhysicsModelNode):
         return 'WindPhysicsModel'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/particleSystems.html#WindPhysicsModel'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/particleSystems.html#WindPhysicsModel'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#WindPhysicsModel'
@@ -72280,7 +72252,7 @@ class WindPhysicsModel(_X3DParticlePhysicsModelNode):
             ('turbulence', 0, FieldType.SFFloat, AccessType.inputOutput, 'WindPhysicsModel'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]
@@ -72464,7 +72436,7 @@ class WorldInfo(_X3DInfoNode):
         return 'WorldInfo'
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/core.html#WorldInfo'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/core.html#WorldInfo'
     def TOOLTIP_URL(self):
         ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#WorldInfo'
@@ -72475,7 +72447,7 @@ class WorldInfo(_X3DInfoNode):
             ('title', '', FieldType.SFString, AccessType.inputOutput, 'WorldInfo'),
             ('DEF', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('USE', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
-            ('style_', '', FieldType.SFString, AccessType.initializeOnly, 'globalAttributes'),
+            ('style_', '', FieldType.SFString, AccessType.inputOutput, 'globalAttributes'),
             ('class_', '', FieldType.SFString, AccessType.inputOutput, 'X3DNode'),
             ('IS', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode'),
             ('metadata', None, FieldType.SFNode, AccessType.inputOutput, 'X3DNode')]

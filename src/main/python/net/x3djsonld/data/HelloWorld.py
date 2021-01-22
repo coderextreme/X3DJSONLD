@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 ###############################################
 #
 # Now available: developmental python x3d.py package on PyPi for import.
