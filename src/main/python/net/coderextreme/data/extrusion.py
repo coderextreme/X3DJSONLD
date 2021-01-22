@@ -96,7 +96,7 @@ ROUTE19 = x3d.ROUTE()
 ROUTE19.setFromNode("MoveCylinder")
 ROUTE19.setFromField("spine_changed")
 ROUTE19.setToNode("extrusion")
-ROUTE19.setToField("spine")
+ROUTE19.setToField("set_spine")
 
 Group9.addChildren(ROUTE19)
 
