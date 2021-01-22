@@ -59,7 +59,7 @@ newModel=X3D(profile='Immersive',version='3.3',
 	
       ),
     TimeSensor(DEF='Clock',cycleInterval=16,loop=True),
-    ROUTE(fromNode='OrbitScript',fromField='coordIndexes',toNode='Orbit',toField='coordIndex'),
+    ROUTE(fromNode='OrbitScript',fromField='coordIndexes',toNode='Orbit',toField='set_coordIndex'),
     ROUTE(fromNode='OrbitScript',fromField='coordinates',toNode='OrbitCoordinates',toField='point'),
     ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='OrbitScript',toField='set_fraction')])
 ) # X3D model complete
