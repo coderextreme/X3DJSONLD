@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='set_cycle',accessType='inputOnly',type='SFTime'),
         field(name='spine',accessType='inputOutput',type='MFVec3f',value=[(-50,-50,0),(50,50,0)])]),
       ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='MoveCylinder',toField='set_cycle'),
-      ROUTE(fromNode='MoveCylinder',fromField='spine_changed',toNode='extrusion',toField='spine')])])
+      ROUTE(fromNode='MoveCylinder',fromField='spine_changed',toNode='extrusion',toField='set_spine')])])
 ) # X3D model complete
 
 ###############################################
