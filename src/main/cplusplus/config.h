@@ -71,16 +71,16 @@
 #define HAVE_GMTIME_R 1
 
 /* Define to 1 if you have the `iconv' function. */
-/* #undef HAVE_ICONV */
+#define HAVE_ICONV 1
 
 /* Define to 1 if you have the `iconv_close' function. */
-/* #undef HAVE_ICONV_CLOSE */
+#define HAVE_ICONV_CLOSE 1
 
 /* Define to 1 if you have the <iconv.h> header file. */
-/* #undef HAVE_ICONV_H */
+#define HAVE_ICONV_H 1
 
 /* Define to 1 if you have the `iconv_open' function. */
-/* #undef HAVE_ICONV_OPEN */
+#define HAVE_ICONV_OPEN 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
@@ -89,7 +89,7 @@
 #define HAVE_LANGINFO_H 1
 
 /* Define to 1 if you have the `nsl' library (-lnsl). */
-/* #undef HAVE_LIBNSL */
+#define HAVE_LIBNSL 1
 
 /* Define to 1 if you have the `socket' library (-lsocket). */
 /* #undef HAVE_LIBSOCKET */
@@ -107,7 +107,7 @@
 #define HAVE_LSTRING /**/
 
 /* Define to 1 if you have the <machine/endian.h> header file. */
-#define HAVE_MACHINE_ENDIAN_H 1
+/* #undef HAVE_MACHINE_ENDIAN_H */
 
 /* Define to 1 if you have the `mblen' function. */
 #define HAVE_MBLEN 1
@@ -328,7 +328,7 @@
 #define SIZEOF_SHORT 2
 
 /* The size of `wchar_t', as computed by sizeof. */
-#define SIZEOF_WCHAR_T 2
+#define SIZEOF_WCHAR_T 4
 
 /* The size of `__int64', as computed by sizeof. */
 #define SIZEOF___INT64 0
@@ -350,7 +350,7 @@
 
 /* Define to have SSE2 instruction support detected at runtime using __cpuid
    */
-#define XERCES_HAVE_CPUID_INTRINSIC 1
+/* #undef XERCES_HAVE_CPUID_INTRINSIC */
 
 /* Define to 1 if cstdint is functional. */
 #define XERCES_HAVE_CSTDINT 1
@@ -363,7 +363,7 @@
 #define XERCES_HAVE_GETCPUID 1
 
 /* Define to 1 if you have intrin.h */
-#define XERCES_HAVE_INTRIN_H 1
+/* #undef XERCES_HAVE_INTRIN_H */
 
 /* Define to 1 if we have inttypes.h */
 #define XERCES_HAVE_INTTYPES_H 1
@@ -397,10 +397,10 @@
 /* #undef XERCES_PATH_DELIMITER_BACKSLASH */
 
 /* Define as the platform's export attribute */
-#define XERCES_PLATFORM_EXPORT __declspec(dllexport)
+#define XERCES_PLATFORM_EXPORT 
 
 /* Define as the platform's import attribute */
-#define XERCES_PLATFORM_IMPORT __declspec(dllimport)
+#define XERCES_PLATFORM_IMPORT 
 
 /* An appropriate signed 16 bit integer type */
 #define XERCES_S16BIT_INT int16_t
@@ -457,10 +457,10 @@
 /* #undef XERCES_USE_MUTEXMGR_NOTHREAD */
 
 /* Define to use the POSIX mutex mgr */
-/* #undef XERCES_USE_MUTEXMGR_POSIX */
+#define XERCES_USE_MUTEXMGR_POSIX 1
 
 /* Define to use the Windows mutex mgr */
-#define XERCES_USE_MUTEXMGR_WINDOWS 1
+/* #undef XERCES_USE_MUTEXMGR_WINDOWS */
 
 /* Define to use the Mac OS X CFURL NetAccessor */
 /* #undef XERCES_USE_NETACCESSOR_CFURL */
@@ -475,10 +475,10 @@
 /* #undef XERCES_USE_NETACCESSOR_WINSOCK */
 
 /* Define to use the GNU iconv transcoder */
-/* #undef XERCES_USE_TRANSCODER_GNUICONV */
+#define XERCES_USE_TRANSCODER_GNUICONV 1
 
 /* Define to use the iconv transcoder */
-#define XERCES_USE_TRANSCODER_ICONV 1
+/* #undef XERCES_USE_TRANSCODER_ICONV */
 
 /* Define to use the ICU-based transcoder */
 /* #undef XERCES_USE_TRANSCODER_ICU */

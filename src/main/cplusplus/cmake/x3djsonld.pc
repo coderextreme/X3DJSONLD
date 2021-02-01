@@ -1,11 +1,11 @@
-prefix=C:/Program Files (x86)/x3djsonld
-exec_prefix=C:/Program Files (x86)/x3djsonld
-libdir=C:/Program Files (x86)/x3djsonld/lib
-includedir=C:/Program Files (x86)/x3djsonld/include
+prefix=
+exec_prefix=
+libdir=
+includedir=
 
 Name: X3djsonld-C++
-Description: Validating XML parser library for C++
+Description: X3D JSON To XML converter for C++
 Version: 
-Libs: -LC:/Program Files (x86)/x3djsonld/lib -lx3djsonld
+Libs: -L -lx3djsonld
 Libs.private: 
-Cflags: -IC:/Program Files (x86)/x3djsonld/include
+Cflags: -I
