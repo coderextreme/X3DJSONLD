@@ -1,4 +1,4 @@
-/* src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
+/* xerces-c-3.2.0/src/xercesc/util/Xerces_autoconf_config.hpp.  Generated from Xerces_autoconf_config.hpp.in by configure.  */
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -54,7 +54,7 @@
 #define XERCES_HAVE_STDINT_H 1
 #define XERCES_HAVE_SYS_TYPES_H 1
 #define XERCES_HAVE_INTTYPES_H 1
-#define XERCES_HAVE_INTRIN_H 1
+/* #undef XERCES_HAVE_INTRIN_H */
 #define XERCES_HAVE_EMMINTRIN_H 1
 /* #undef XERCES_INCLUDE_WCHAR_H */
 
@@ -66,7 +66,7 @@
 #define XERCES_U64BIT_INT uint64_t
 #define XERCES_XMLCH_T char16_t
 #define XERCES_SIZE_T size_t
-#define XERCES_SSIZE_T unsigned long
+#define XERCES_SSIZE_T ssize_t
 
 #define XERCES_HAS_CPP_NAMESPACE 1
 #define XERCES_STD_NAMESPACE 1
@@ -74,12 +74,12 @@
 /* #undef XERCES_NO_NATIVE_BOOL */
 #define XERCES_LSTRSUPPORT 1
 
-#define XERCES_HAVE_CPUID_INTRINSIC 1
+/* #undef XERCES_HAVE_CPUID_INTRINSIC */
 #define XERCES_HAVE_SSE2_INTRINSIC 1
 #define XERCES_HAVE_GETCPUID 1
 
-#define XERCES_PLATFORM_EXPORT __declspec(dllexport)
-#define XERCES_PLATFORM_IMPORT __declspec(dllimport)
+#define XERCES_PLATFORM_EXPORT 
+#define XERCES_PLATFORM_IMPORT 
 
 /* #undef XERCES_NO_MATCHING_DELETE_OPERATOR */
 
@@ -110,7 +110,7 @@
 typedef XERCES_SIZE_T				XMLSize_t;
 typedef XERCES_SSIZE_T				XMLSSize_t;
 #define XERCES_SIZE_MAX SIZE_MAX
-#define XERCES_SSIZE_MAX ULONG_MAX
+#define XERCES_SSIZE_MAX SSIZE_MAX
 
 // ---------------------------------------------------------------------------
 //  Define our version of the XML character

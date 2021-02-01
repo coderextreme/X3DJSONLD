@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/X3DJSONLD.dir/X3DJSONLD.cpp.o CMakeFiles/X3DJSONLD.dir/gason.cpp.o CMakeFiles/X3DJSONLD.dir/DOMPrint.cpp.o CMakeFiles/X3DJSONLD.dir/pretty-print.cpp.o CMakeFiles/X3DJSONLD.dir/__/xerces-c-3.2.0/samples/src/DOMPrint/DOMPrintErrorHandler.cpp.o  -o X3DJSONLD  -lxerces-c_3_2D 
