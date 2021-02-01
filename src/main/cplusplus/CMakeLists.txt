@@ -24,6 +24,6 @@ set(EXTRA_DIST
 
 include_directories(
 .
-xerces-c-3.2.0/src
-xerces-c-3.2.0
+xerces-c-3.2.3/src
+xerces-c-3.2.3
 )

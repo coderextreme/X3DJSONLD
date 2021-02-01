@@ -1,5 +1,5 @@
 # CMake build for x3djsonld
-# John Carlson, derived from xerces-c-3.2.0
+# John Carlson, derived from xerces-c-3.2.3
 
 # Definitions required for building
 add_definitions(
@@ -13,8 +13,8 @@ include_directories(
   ${PROJECT_BINARY_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}
   .
-  ../xerces-c-3.2.0/src
-  ../xerces-c-3.2.0
+  ../xerces-c-3.2.3/src
+  ../xerces-c-3.2.3
 )
 
 set(EXTRA_DIST
@@ -23,7 +23,7 @@ set(EXTRA_DIST
 
 macro(add_sample_executable name ${installdir})
   add_executable(${name} ${ARGN})
-  target_link_libraries(${name} xerces-c_3_2D)
+  target_link_libraries(${name} xerces-c)
   set_target_properties(${name}
 	 PROPERTIES
 	 FOLDER "Samples"
@@ -41,8 +41,8 @@ add_sample_executable(X3DJSONLD "${CMAKE_INSTALL_BINDIR}"
   DOMPrint.cpp
   DOMPrint.h
   pretty-print.cpp
-  ../xerces-c-3.2.0/samples/src/DOMPrint/DOMTreeErrorReporter.hpp
-  ../xerces-c-3.2.0/samples/src/DOMPrint/DOMPrintFilter.hpp
-  ../xerces-c-3.2.0/samples/src/DOMPrint/DOMPrintErrorHandler.cpp
-  ../xerces-c-3.2.0/samples/src/DOMPrint/DOMPrintErrorHandler.hpp
+  ../xerces-c-3.2.3/samples/src/DOMPrint/DOMTreeErrorReporter.hpp
+  ../xerces-c-3.2.3/samples/src/DOMPrint/DOMPrintFilter.hpp
+  ../xerces-c-3.2.3/samples/src/DOMPrint/DOMPrintErrorHandler.cpp
+  ../xerces-c-3.2.3/samples/src/DOMPrint/DOMPrintErrorHandler.hpp
   )

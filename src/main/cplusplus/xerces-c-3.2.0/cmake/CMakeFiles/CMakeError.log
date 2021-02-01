@@ -1,0 +1,427 @@
+Performing C++ SOURCE FILE Test CXX_FLAG_Wimplicit_atomic_properties failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f0932/fast && /usr/bin/gmake -f CMakeFiles/cmTC_f0932.dir/build.make CMakeFiles/cmTC_f0932.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f0932.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wextra -Wformat=2 -DCXX_FLAG_Wimplicit_atomic_properties   -Wimplicit-atomic-properties -std=gnu++14 -o CMakeFiles/cmTC_f0932.dir/src.cxx.o -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Wimplicit-atomic-properties'
+gmake[1]: *** [CMakeFiles/cmTC_f0932.dir/build.make:66: CMakeFiles/cmTC_f0932.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_f0932/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the include file machine/endian.h exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_15419/fast && /usr/bin/gmake -f CMakeFiles/cmTC_15419.dir/build.make CMakeFiles/cmTC_15419.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_15419.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wextra -Wformat=2 -Wmissing-declarations -Wno-long-long -Woverlength-strings -Woverloaded-virtual -Wredundant-decls -Wreorder -Wswitch-default -Wunused-variable -Wwrite-strings -Wno-variadic-macros -fstrict-aliasing    -std=gnu++14 -o CMakeFiles/cmTC_15419.dir/CheckIncludeFile.cxx.o -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: machine/endian.h: No such file or directory
+    1 | #include <machine/endian.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_15419.dir/build.make:66: CMakeFiles/cmTC_15419.dir/CheckIncludeFile.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_15419/fast] Error 2
+
+
+
+Determining if the function stricmp exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_75840/fast && /usr/bin/gmake -f CMakeFiles/cmTC_75840.dir/build.make CMakeFiles/cmTC_75840.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_75840.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=stricmp   -o CMakeFiles/cmTC_75840.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_75840
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75840.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=stricmp    -rdynamic CMakeFiles/cmTC_75840.dir/CheckFunctionExists.c.o  -o cmTC_75840 
+/usr/bin/ld: CMakeFiles/cmTC_75840.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `stricmp'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_75840.dir/build.make:87: cmTC_75840] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_75840/fast] Error 2
+
+
+
+Determining if the function strnicmp exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5cfb1/fast && /usr/bin/gmake -f CMakeFiles/cmTC_5cfb1.dir/build.make CMakeFiles/cmTC_5cfb1.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5cfb1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strnicmp   -o CMakeFiles/cmTC_5cfb1.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5cfb1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5cfb1.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strnicmp    -rdynamic CMakeFiles/cmTC_5cfb1.dir/CheckFunctionExists.c.o  -o cmTC_5cfb1 
+/usr/bin/ld: CMakeFiles/cmTC_5cfb1.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `strnicmp'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_5cfb1.dir/build.make:87: cmTC_5cfb1] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_5cfb1/fast] Error 2
+
+
+
+Determining if the function wcsupr exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d963b/fast && /usr/bin/gmake -f CMakeFiles/cmTC_d963b.dir/build.make CMakeFiles/cmTC_d963b.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d963b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=wcsupr   -o CMakeFiles/cmTC_d963b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d963b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d963b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=wcsupr    -rdynamic CMakeFiles/cmTC_d963b.dir/CheckFunctionExists.c.o  -o cmTC_d963b 
+/usr/bin/ld: CMakeFiles/cmTC_d963b.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `wcsupr'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_d963b.dir/build.make:87: cmTC_d963b] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_d963b/fast] Error 2
+
+
+
+Determining if the function wcslwr exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_85c5a/fast && /usr/bin/gmake -f CMakeFiles/cmTC_85c5a.dir/build.make CMakeFiles/cmTC_85c5a.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85c5a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=wcslwr   -o CMakeFiles/cmTC_85c5a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85c5a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85c5a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=wcslwr    -rdynamic CMakeFiles/cmTC_85c5a.dir/CheckFunctionExists.c.o  -o cmTC_85c5a 
+/usr/bin/ld: CMakeFiles/cmTC_85c5a.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `wcslwr'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_85c5a.dir/build.make:87: cmTC_85c5a] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_85c5a/fast] Error 2
+
+
+
+Determining if the function wcsnicmp exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_17b8a/fast && /usr/bin/gmake -f CMakeFiles/cmTC_17b8a.dir/build.make CMakeFiles/cmTC_17b8a.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_17b8a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=wcsnicmp   -o CMakeFiles/cmTC_17b8a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_17b8a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17b8a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=wcsnicmp    -rdynamic CMakeFiles/cmTC_17b8a.dir/CheckFunctionExists.c.o  -o cmTC_17b8a 
+/usr/bin/ld: CMakeFiles/cmTC_17b8a.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `wcsnicmp'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_17b8a.dir/build.make:87: cmTC_17b8a] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_17b8a/fast] Error 2
+
+
+
+Determining if the function wcsicmp exists failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_cc35d/fast && /usr/bin/gmake -f CMakeFiles/cmTC_cc35d.dir/build.make CMakeFiles/cmTC_cc35d.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc35d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=wcsicmp   -o CMakeFiles/cmTC_cc35d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cc35d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc35d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=wcsicmp    -rdynamic CMakeFiles/cmTC_cc35d.dir/CheckFunctionExists.c.o  -o cmTC_cc35d 
+/usr/bin/ld: CMakeFiles/cmTC_cc35d.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `wcsicmp'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_cc35d.dir/build.make:87: cmTC_cc35d] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_cc35d/fast] Error 2
+
+
+
+Determining size of __int64 failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_021df/fast && /usr/bin/gmake -f CMakeFiles/cmTC_021df.dir/build.make CMakeFiles/cmTC_021df.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_021df.dir/SIZEOF___INT64.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_021df.dir/SIZEOF___INT64.c.o   -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:23:22: error: ‘__int64’ undeclared here (not in a function); did you mean ‘__int64_t’?
+   23 | #define SIZE (sizeof(__int64))
+      |                      ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:25:12: note: in expansion of macro ‘SIZE’
+   25 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_021df.dir/build.make:66: CMakeFiles/cmTC_021df.dir/SIZEOF___INT64.c.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_021df/fast] Error 2
+
+
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining size of unsigned __int64 failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7689f/fast && /usr/bin/gmake -f CMakeFiles/cmTC_7689f.dir/build.make CMakeFiles/cmTC_7689f.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7689f.dir/SIZEOF_UNSIGNED__INT64.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7689f.dir/SIZEOF_UNSIGNED__INT64.c.o   -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:23:31: error: expected ‘)’ before ‘__int64’
+   23 | #define SIZE (sizeof(unsigned __int64))
+      |                     ~         ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:25:12: note: in expansion of macro ‘SIZE’
+   25 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:23:31: error: expected ‘)’ before ‘__int64’
+   23 | #define SIZE (sizeof(unsigned __int64))
+      |                     ~         ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:26:12: note: in expansion of macro ‘SIZE’
+   26 |   ('0' + ((SIZE / 1000)%10)),
+      |            ^~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:23:31: error: expected ‘)’ before ‘__int64’
+   23 | #define SIZE (sizeof(unsigned __int64))
+      |                     ~         ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:27:12: note: in expansion of macro ‘SIZE’
+   27 |   ('0' + ((SIZE / 100)%10)),
+      |            ^~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:23:31: error: expected ‘)’ before ‘__int64’
+   23 | #define SIZE (sizeof(unsigned __int64))
+      |                     ~         ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:28:12: note: in expansion of macro ‘SIZE’
+   28 |   ('0' + ((SIZE / 10)%10)),
+      |            ^~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:23:31: error: expected ‘)’ before ‘__int64’
+   23 | #define SIZE (sizeof(unsigned __int64))
+      |                     ~         ^~~~~~~
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:29:12: note: in expansion of macro ‘SIZE’
+   29 |   ('0' +  (SIZE    % 10)),
+      |            ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_7689f.dir/build.make:66: CMakeFiles/cmTC_7689f.dir/SIZEOF_UNSIGNED__INT64.c.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_7689f/fast] Error 2
+
+
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CheckTypeSize/SIZEOF_UNSIGNED__INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(unsigned __int64))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_cc574/fast && /usr/bin/gmake -f CMakeFiles/cmTC_cc574.dir/build.make CMakeFiles/cmTC_cc574.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cc574.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_cc574.dir/src.c.o   -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_cc574
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc574.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_cc574.dir/src.c.o  -o cmTC_cc574 
+/usr/bin/ld: CMakeFiles/cmTC_cc574.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_cc574.dir/build.make:87: cmTC_cc574] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_cc574/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test XERCES_HAVE_INTRIN_H failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8f89c/fast && /usr/bin/gmake -f CMakeFiles/cmTC_8f89c.dir/build.make CMakeFiles/cmTC_8f89c.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8f89c.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wextra -Wformat=2 -Wmissing-declarations -Wno-long-long -Woverlength-strings -Woverloaded-virtual -Wredundant-decls -Wreorder -Wswitch-default -Wunused-variable -Wwrite-strings -Wno-variadic-macros -fstrict-aliasing -msse2 -DXERCES_HAVE_INTRIN_H   -std=gnu++14 -o CMakeFiles/cmTC_8f89c.dir/src.cxx.o -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: intrin.h: No such file or directory
+    2 | #include <intrin.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_8f89c.dir/build.make:66: CMakeFiles/cmTC_8f89c.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_8f89c/fast] Error 2
+
+
+Source file was:
+
+#include <intrin.h>
+
+int main() {
+  return 0;
+}
+Performing C++ SOURCE FILE Test XERCES_HAVE_CPUID_INTRINSIC failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1d262/fast && /usr/bin/gmake -f CMakeFiles/cmTC_1d262.dir/build.make CMakeFiles/cmTC_1d262.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1d262.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wextra -Wformat=2 -Wmissing-declarations -Wno-long-long -Woverlength-strings -Woverloaded-virtual -Wredundant-decls -Wreorder -Wswitch-default -Wunused-variable -Wwrite-strings -Wno-variadic-macros -fstrict-aliasing -msse2 -DXERCES_HAVE_CPUID_INTRINSIC   -std=gnu++14 -o CMakeFiles/cmTC_1d262.dir/src.cxx.o -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: intrin.h: No such file or directory
+    2 | #include <intrin.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_1d262.dir/build.make:66: CMakeFiles/cmTC_1d262.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_1d262/fast] Error 2
+
+
+Source file was:
+
+#include <intrin.h>
+
+int main() {
+  int CPUInfo[4];
+  __cpuid(CPUInfo, 1);
+  return 0;
+}
+Performing C++ SOURCE FILE Test ICONV_USES_CONST_POINTER failed with the following output:
+Change Dir: /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_feb6b/fast && /usr/bin/gmake -f CMakeFiles/cmTC_feb6b.dir/build.make CMakeFiles/cmTC_feb6b.dir/build
+gmake[1]: Entering directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_feb6b.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wextra -Wformat=2 -Wmissing-declarations -Wno-long-long -Woverlength-strings -Woverloaded-virtual -Wredundant-decls -Wreorder -Wswitch-default -Wunused-variable -Wwrite-strings -Wno-variadic-macros -fstrict-aliasing -msse2 -DICONV_USES_CONST_POINTER   -std=gnu++14 -o CMakeFiles/cmTC_feb6b.dir/src.cxx.o -c /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
+/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx:10:13: error: invalid conversion from ‘const char**’ to ‘char**’ [-fpermissive]
+   10 |   iconv(cv, &fromPtr, &fromLen, &toPtr, &toLen);
+      |             ^~~~~~~~
+      |             |
+      |             const char**
+In file included from /home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/include/iconv.h:42:54: note:   initializing argument 2 of ‘size_t iconv(iconv_t, char**, size_t*, char**, size_t*)’
+   42 | extern size_t iconv (iconv_t __cd, char **__restrict __inbuf,
+      |                                    ~~~~~~~~~~~~~~~~~~^~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_feb6b.dir/build.make:66: CMakeFiles/cmTC_feb6b.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/coderextreme/X3DJSONLD/src/main/cplusplus/xerces-c-3.2.0/cmake/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:121: cmTC_feb6b/fast] Error 2
+
+
+Source file was:
+
+#include <iconv.h>
+
+int main(void) {
+  const char *fromPtr=0;
+  size_t     fromLen=0;
+  char       *toPtr=0;
+  size_t     toLen=0;
+  iconv_t    cv=0;
+  iconv(cv, &fromPtr, &fromLen, &toPtr, &toLen);
+  return 0;
+}
