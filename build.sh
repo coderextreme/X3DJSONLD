@@ -23,7 +23,7 @@ popd
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
 # install python packages
-pip3 install bs4
+pip3 install beautifulsoup4
 pip3 install lxml
 pip3 install jnius
 
