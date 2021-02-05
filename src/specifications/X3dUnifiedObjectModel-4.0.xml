@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-02-04-08:00 17:43:28.947-08:00 -->
+<!-- Generated 2021-02-04-08:00 23:42:56.228-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -15609,6 +15609,118 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
+      <ConcreteNode name="EnvironmentLight">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/lighting.html#DirectionalLight"
+                              appinfo="TODO add contained nodes.">
+            <componentInfo name="Lighting" level="1"/>
+            <Inheritance baseType="X3DLightNode"/>
+            <field name="ambientIntensity"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DLightNode"
+                   baseType="intensityType"
+                   description="Brightness of ambient (nondirectional background) emission from the light."/>
+            <field name="color"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="1 1 1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DLightNode"
+                   description="color of light, applied to colors of objects."/>
+            <field name="global"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   description="Global lights illuminate all objects within their volume of lighting influence."/>
+            <field name="intensity"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DLightNode"
+                   baseType="intensityType"
+                   description="Brightness of direct emission from the light."/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"
+                   description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
+            <field name="on"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DLightNode"
+                   description="Enables/disables this light source."/>
+            <field name="radius"
+                   type="SFFloat"
+                   accessType="initializeOnly"
+                   default="100"
+                   minInclusive="0"
+                   description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
+               <componentInfo name="Lighting" level="3"/>
+            </field>
+            <field name="rotation"
+                   type="SFRotation"
+                   accessType="inputOutput"
+                   default="0 0 1 0"
+                   description="Orientation (axis, angle in radians) of light rotation relative to local coordinate system."/>
+            <field name="shadowIntensity"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DLightNode"
+                   baseType="intensityType"
+                   description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
+            <field name="shadows"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   inheritedFrom="X3DLightNode"
+                   description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry."/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"
+                   description="DEF defines a unique ID name for this node, referenceable by other nodes."/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"
+                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"
+                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+            <field name="style"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="globalAttributes"
+                   description="The style attribute provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+            <containerField default="children" type="xs:NMTOKEN"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </ConcreteNode>
       <ConcreteNode name="EspduTransform">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/dis.html#EspduTransform"
                               appinfo="EspduTransform is a networked Transform node that can contain most nodes.">
@@ -19185,12 +19297,14 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DCoordinateNode"/>
+                   acceptableNodeTypes="X3DCoordinateNode"
+                   description="Array of Coordinate nodes to handle non-default source pose so that both skin and skeleton can be in same binding pose."/>
             <field name="skinBindingNormal"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DNormalNode"/>
+                   acceptableNodeTypes="X3DNormalNode"
+                   description="Array of Normal nodes to handle non-default source pose so that both skin and skeleton can be in same binding pose."/>
             <field name="skinCoord"
                    type="SFNode"
                    accessType="inputOutput"

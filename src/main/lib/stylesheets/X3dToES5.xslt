@@ -687,7 +687,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>Object(</xsl:text>
+		<xsl:text>(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -1266,7 +1266,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='maxPosition' and (.='-1 -1' or .='-1.0 -1.0')) or
                       (local-name()='minPosition' and (.='0 0' or .='0.0 0.0')) or
                       (local-name()='offset' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
-                      not( local-name(..)='PointLight' and
+                      not( ((local-name(..)='PointLight') or (local-name(..)='EnvironmentLight')) and
                       ((local-name()='ambientIntensity' and (.='0' or .='0.0'))or
                       (local-name()='attenuation' and (.='1 0 0' or .='1.0 0.0 0.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
@@ -3449,7 +3449,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 			<xsl:text>new </xsl:text>
 			<xsl:value-of select="$attributeType"/>
-			<xsl:text>Object(</xsl:text>
+			<xsl:text>(</xsl:text>
 			<xsl:choose>
 				<xsl:when test="($tupleCount > $tupleSplitSize)">
 					<xsl:message>
@@ -3477,7 +3477,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>.append(</xsl:text>
 								<xsl:text>new </xsl:text>
 								<xsl:value-of select="$attributeType"/>
-								<xsl:text>Object(</xsl:text>
+								<xsl:text>(</xsl:text>
 								<xsl:text>Java.to([</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputString">
@@ -3522,7 +3522,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>Object(</xsl:text>
+				<xsl:text>(</xsl:text>
 				<xsl:text>Java.to([</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
@@ -3668,7 +3668,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not($includesFieldTypeObject)">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>Object(</xsl:text>
+					<xsl:text>(</xsl:text>
 				</xsl:if>
 				<xsl:call-template name="output-attribute-value">
 					<xsl:with-param name="inputString"   select="."/>

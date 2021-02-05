@@ -1145,6 +1145,147 @@
         }
       ]
     },
+    "EnvironmentLight": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "type": "string"
+            },
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@ambientIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@color": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@intensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
+            "@radius": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 100,
+              "type": "number"
+            },
+            "@rotation": {
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
+            },
+            "@shadowIntensity": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@shadows": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@style": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "BufferAudioSource": {
       "type": "object",
       "oneOf": [
@@ -33764,6 +33905,9 @@
           "CoordinateInterpolator": {
             "$ref": "#/definitions/CoordinateInterpolator"
           },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
+          },
           "BufferAudioSource": {
             "$ref": "#/definitions/BufferAudioSource"
           },
@@ -34822,6 +34966,9 @@
           "CoordinateInterpolator": {
             "$ref": "#/definitions/CoordinateInterpolator"
           },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
+          },
           "BufferAudioSource": {
             "$ref": "#/definitions/BufferAudioSource"
           },
@@ -35348,6 +35495,9 @@
           },
           "TextureCoordinate": {
             "$ref": "#/definitions/TextureCoordinate"
+          },
+          "EnvironmentLight": {
+            "$ref": "#/definitions/EnvironmentLight"
           },
           "BufferAudioSource": {
             "$ref": "#/definitions/BufferAudioSource"
@@ -36663,6 +36813,9 @@
         },
         "CoordinateInterpolator": {
           "$ref": "#/definitions/CoordinateInterpolator"
+        },
+        "EnvironmentLight": {
+          "$ref": "#/definitions/EnvironmentLight"
         },
         "BufferAudioSource": {
           "$ref": "#/definitions/BufferAudioSource"
