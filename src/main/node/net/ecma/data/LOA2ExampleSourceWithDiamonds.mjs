@@ -27,13 +27,13 @@ import { SFColor } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
             new meta({
               name : new SFString("generator"),
-              content : new SFString("view3dscene, https://castle-engine.io/view3dscene.php")}),
+              content : new SFString("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting")}),
 
             new meta({
               name : new SFString("source"),
@@ -279,7 +279,7 @@ var X3D0 =  new X3D({
                                   creaseAngle : new SFFloat(0.5),
                                   coord : new SFNode(
                                     new Coordinate({
-                                      point : new MFVec3f([0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0])}))})),
+                                      point : new MFVec3f([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0])}))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(

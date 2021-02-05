@@ -66,7 +66,7 @@ let ROUTE12 = browser.currentScene.createNode("ROUTE");
 ROUTE12.fromNode = "MoveCylinder";
 ROUTE12.fromField = "spine_changed";
 ROUTE12.toNode = "extrusion";
-ROUTE12.toField = "spine";
+ROUTE12.toField = "set_spine";
 Group2.children[4] = ROUTE12;
 
 browser.currentScene.children = new MFNode();

@@ -1118,8 +1118,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- HAnimHumanoid can contain Metadata*  with containerField = metadata -->
                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
-                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
+                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
                 </xsl:choose>
             </xsl:variable>
             <xsl:if test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">
@@ -1683,6 +1683,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
                       (local-name()='pauseTime' and (.='0' or .='0.0')) or
                       (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
+                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
                       not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
                       not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
                       not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
@@ -1770,7 +1771,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                      not( local-name(..)='Inline' and local-name()='load' and string(.)='true') and
+                       not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -3800,6 +3801,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                           (($parentElementName='component')                and not($attributeName='level')) or
                           (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
+					      ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
 					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
@@ -4032,6 +4034,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
 					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
+					($parentElementName='Appearance'       and $attributeName='alphaCutoff') or
 					($parentElementName='AudioClip' and $attributeName='pitch') or
 					($parentElementName='BlendedVolumeStyle' and starts-with($attributeName,'weightConstant')) or
 					($parentElementName='BoundaryEnhancementVolumeStyle' and (($attributeName='boundaryOpacity') or ($attributeName='opacityFactor') or ($attributeName='retainedOpacity'))) or

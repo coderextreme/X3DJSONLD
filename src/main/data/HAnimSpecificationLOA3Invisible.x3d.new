@@ -5,7 +5,8 @@
 <meta name="description" content="HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."></meta>
 <meta name="reference" content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"></meta>
 <meta name="created" content="24 April 2013"></meta>
-<meta name="modified" content="11 July 2020"></meta>
+<meta name="modified" content="4 July 2020"></meta>
+<meta name="TODO" content="Convert to X3D4 HAnim2"></meta>
 <meta name="creator" content="Matthew T. Beitler, Joe D. Williams, Don Brutzman"></meta>
 <meta name="reference" content="HAnimSpecificationLOA3Illustrated.x3d"></meta>
 <meta name="reference" content="HAnimSpecificationLOA3Motion.x3d"></meta>
@@ -25,7 +26,7 @@
 <meta name="reference" content="originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"></meta>
 <meta name="reference" content="HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Invisible.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Background skyColor="0.3 0.3 0.3"></Background>
@@ -41,7 +42,7 @@
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side Close" orientation="0 1 0 -1.2" position="-1 0.8 0.5"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side" orientation="0 1 0 -1.5708" position="-2.6 0.8 0"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Top" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=1.0&quot; &quot;height=1.7504&quot;" version="1.0"><!--Only one root HAnimJoint is expected--><!--USE nodes go here for access by inverse kinematics (IK) engines and other tools--><!--Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation--><!--TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default--><!--right between the eyes, stationary position not animating except with body itself--><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=2.0&quot; &quot;height=1.7504&quot;" version="1.0"><!--Only one root HAnimJoint is expected--><!--USE nodes go here for access by inverse kinematics (IK) engines and other tools--><!--Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation--><!--TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default--><!--right between the eyes, stationary position not animating except with body itself--><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
 <HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><HAnimSite name="r_iliocristale_pt" DEF="hanim_r_iliocristale_pt" translation="-0.1525 1.0628 0.0035"></HAnimSite>
 <HAnimSite name="r_trochanterion_pt" DEF="hanim_r_trochanterion_pt" translation="-0.1689 0.8419 0.0352"></HAnimSite>
 <HAnimSite name="l_iliocristale_pt" DEF="hanim_l_iliocristale_pt" translation="0.1612 1.0537 0.0008"></HAnimSite>

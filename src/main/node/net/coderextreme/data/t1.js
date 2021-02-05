@@ -70,15 +70,14 @@ var ProtoInstance54 = null;
 var ProtoInstance55 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setName("Networking").setLevel(2))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta((new autoclass.meta()).setName("source").setContent("t1.wrl")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","FLY","WALK"])).setSpeed(java.newFloat(3)).setAvatarSize(java.newArray("float", [java.newFloat(200), java.newFloat(200), java.newFloat(120)])))
         .addChild((new autoclass.WorldInfo()).setTitle("Arts Mapper"))
-        .addChild((new autoclass.Viewpoint()).setDescription("looking North").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(60), java.newFloat(110)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-0.699999988079071)])).setFieldOfView(java.newFloat(0.785398125648499)))
-        .addChild((new autoclass.Viewpoint()).setDescription("looking East").setPosition(java.newArray("float", [java.newFloat(-140), java.newFloat(30), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(0.400000005960464), java.newFloat(0), java.newFloat(-1.39999997615814)])).setFieldOfView(java.newFloat(0.785398125648499)))
-        .addChild((new autoclass.Viewpoint()).setDescription("Overhead").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(150), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57000005245209)])).setFieldOfView(java.newFloat(0.785398125648499)))
+        .addChild((new autoclass.Viewpoint()).setDescription("looking North").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(60), java.newFloat(110)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-0.699999988079071)])).setFieldOfView(java.newFloat(0.7853981256484985)))
+        .addChild((new autoclass.Viewpoint()).setDescription("looking East").setPosition(java.newArray("float", [java.newFloat(-140), java.newFloat(30), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(0.4000000059604645), java.newFloat(0), java.newFloat(-1.399999976158142)])).setFieldOfView(java.newFloat(0.7853981256484985)))
+        .addChild((new autoclass.Viewpoint()).setDescription("Overhead").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(150), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.5700000524520874)])).setFieldOfView(java.newFloat(0.7853981256484985)))
         .addChild((new autoclass.ProtoDeclare()).setName("school")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("pos").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
@@ -86,9 +85,9 @@ var ProtoInstance55 = null;
             .addChild((new autoclass.Transform())
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.200000002980232)).setDiffuseColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.20000000298023224)).setDiffuseColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0), java.newFloat(1)]))))
                 .setGeometry((new autoclass.IndexedFaceSet()).setCoordIndex(java.newArray("int", [0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1]))
-                  .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(0.349999994039536), java.newFloat(0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(0.349999994039536), java.newFloat(0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(-0.349999994039536), java.newFloat(0), java.newFloat(0.349999994039536), java.newFloat(0)])))))
+                  .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(0.3499999940395355), java.newFloat(0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(0.3499999940395355), java.newFloat(0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(-0.3499999940395355), java.newFloat(0), java.newFloat(0.3499999940395355), java.newFloat(0)])))))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("pos"))))))
         .addChild((new autoclass.ProtoDeclare()).setName("institute")
@@ -98,7 +97,7 @@ var ProtoInstance55 = null;
             .addChild((new autoclass.Transform())
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.200000002980232)).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0)]))))
+                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.20000000298023224)).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0)]))))
                 .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(0.699999988079071), java.newFloat(0.699999988079071), java.newFloat(0.699999988079071)]))))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("pos"))))))
@@ -121,10 +120,10 @@ var ProtoInstance55 = null;
             .addChild((new autoclass.Transform())
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.400000005960464))
+                  .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.4000000059604645))
                     .setIS((new autoclass.IS())
                       .addConnect((new autoclass.connect()).setNodeField("emissiveColor").setProtoField("col")))))
-                .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(1.10000002384186))))
+                .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(1.100000023841858))))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("posi"))))))
         .addChild((new autoclass.ProtoDeclare()).setName("l")
@@ -263,129 +262,129 @@ var ProtoInstance55 = null;
             .addChild(ProtoInstance55 = (new autoclass.ProtoInstance()).setName("school")))
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
-              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.200000002980232)).setEmissiveColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))
+              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.20000000298023224)).setEmissiveColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))
             .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]))
-              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(435.799987792969), java.newFloat(0.100000001490116), java.newFloat(-335.299987792969), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(434.600006103516), java.newFloat(0.100000001490116), java.newFloat(-338.600006103516), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(432.700012207031), java.newFloat(0.100000001490116), java.newFloat(-336.600006103516), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(434.700012207031), java.newFloat(0.100000001490116), java.newFloat(-336.899993896484), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(474.700012207031), java.newFloat(0.100000001490116), java.newFloat(-318.799987792969), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(485.600006103516), java.newFloat(0.100000001490116), java.newFloat(-309), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(434.799987792969), java.newFloat(0.100000001490116), java.newFloat(-371.5), java.newFloat(454), java.newFloat(0.0199999995529652), java.newFloat(-361.299987792969), java.newFloat(457.399993896484), java.newFloat(0.100000001490116), java.newFloat(-359.600006103516), java.newFloat(454), java.newFloat(0.0199999995529652), java.newFloat(-361.299987792969), java.newFloat(454.200012207031), java.newFloat(0.100000001490116), java.newFloat(-358.600006103516), java.newFloat(454), java.newFloat(0.0199999995529652), java.newFloat(-361.299987792969), java.newFloat(450.600006103516), java.newFloat(0.100000001490116), java.newFloat(-358.600006103516), java.newFloat(458.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-304.299987792969), java.newFloat(473.5), java.newFloat(0.100000001490116), java.newFloat(-287.5), java.newFloat(458.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-304.299987792969), java.newFloat(458), java.newFloat(0.100000001490116), java.newFloat(-304.5), java.newFloat(491.600006103516), java.newFloat(0.0199999995529652), java.newFloat(-335.700012207031), java.newFloat(491.399993896484), java.newFloat(0.100000001490116), java.newFloat(-336.799987792969), java.newFloat(491.600006103516), java.newFloat(0.0199999995529652), java.newFloat(-335.700012207031), java.newFloat(496.899993896484), java.newFloat(0.100000001490116), java.newFloat(-368.899993896484), java.newFloat(467), java.newFloat(0.0199999995529652), java.newFloat(-243.899993896484), java.newFloat(477.100006103516), java.newFloat(0.100000001490116), java.newFloat(-260), java.newFloat(467), java.newFloat(0.0199999995529652), java.newFloat(-243.899993896484), java.newFloat(459), java.newFloat(0.100000001490116), java.newFloat(-236.399993896484), java.newFloat(458.700012207031), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(469.5), java.newFloat(0.100000001490116), java.newFloat(-249.800003051758), java.newFloat(458.700012207031), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(456.700012207031), java.newFloat(0.100000001490116), java.newFloat(-261.799987792969)])))))
+              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(435.79998779296875), java.newFloat(0.10000000149011612), java.newFloat(-335.29998779296875), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(434.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-338.6000061035156), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(432.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-336.6000061035156), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(434.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-336.8999938964844), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(474.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-318.79998779296875), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(485.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-309), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(434.79998779296875), java.newFloat(0.10000000149011612), java.newFloat(-371.5), java.newFloat(454), java.newFloat(0.019999999552965164), java.newFloat(-361.29998779296875), java.newFloat(457.3999938964844), java.newFloat(0.10000000149011612), java.newFloat(-359.6000061035156), java.newFloat(454), java.newFloat(0.019999999552965164), java.newFloat(-361.29998779296875), java.newFloat(454.20001220703125), java.newFloat(0.10000000149011612), java.newFloat(-358.6000061035156), java.newFloat(454), java.newFloat(0.019999999552965164), java.newFloat(-361.29998779296875), java.newFloat(450.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-358.6000061035156), java.newFloat(458.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-304.29998779296875), java.newFloat(473.5), java.newFloat(0.10000000149011612), java.newFloat(-287.5), java.newFloat(458.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-304.29998779296875), java.newFloat(458), java.newFloat(0.10000000149011612), java.newFloat(-304.5), java.newFloat(491.6000061035156), java.newFloat(0.019999999552965164), java.newFloat(-335.70001220703125), java.newFloat(491.3999938964844), java.newFloat(0.10000000149011612), java.newFloat(-336.79998779296875), java.newFloat(491.6000061035156), java.newFloat(0.019999999552965164), java.newFloat(-335.70001220703125), java.newFloat(496.8999938964844), java.newFloat(0.10000000149011612), java.newFloat(-368.8999938964844), java.newFloat(467), java.newFloat(0.019999999552965164), java.newFloat(-243.89999389648438), java.newFloat(477.1000061035156), java.newFloat(0.10000000149011612), java.newFloat(-260), java.newFloat(467), java.newFloat(0.019999999552965164), java.newFloat(-243.89999389648438), java.newFloat(459), java.newFloat(0.10000000149011612), java.newFloat(-236.39999389648438), java.newFloat(458.70001220703125), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(469.5), java.newFloat(0.10000000149011612), java.newFloat(-249.8000030517578), java.newFloat(458.70001220703125), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(456.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-261.79998779296875)])))))
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
-              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.200000002980232)).setEmissiveColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))
+              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.20000000298023224)).setEmissiveColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))
             .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]))
-              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(400), java.newFloat(0.0199999995529652), java.newFloat(-385), java.newFloat(400.600006103516), java.newFloat(0.100000001490116), java.newFloat(-392.899993896484), java.newFloat(400), java.newFloat(0.0199999995529652), java.newFloat(-385), java.newFloat(416.700012207031), java.newFloat(0.100000001490116), java.newFloat(-383.399993896484), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(438.299987792969), java.newFloat(0.100000001490116), java.newFloat(-338.600006103516), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(434.799987792969), java.newFloat(0.100000001490116), java.newFloat(-336), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(437.600006103516), java.newFloat(0.100000001490116), java.newFloat(-332.600006103516), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(436.299987792969), java.newFloat(0.100000001490116), java.newFloat(-333.399993896484), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(435.200012207031), java.newFloat(0.100000001490116), java.newFloat(-336.799987792969), java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(432.5), java.newFloat(0.100000001490116), java.newFloat(-332.5), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(436.100006103516), java.newFloat(0.100000001490116), java.newFloat(-334.899993896484), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(440.5), java.newFloat(0.100000001490116), java.newFloat(-355.5), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(436.299987792969), java.newFloat(0.100000001490116), java.newFloat(-371.700012207031), java.newFloat(429.899993896484), java.newFloat(0.0199999995529652), java.newFloat(-360.299987792969), java.newFloat(431.200012207031), java.newFloat(0.100000001490116), java.newFloat(-361.200012207031), java.newFloat(457.100006103516), java.newFloat(0.0199999995529652), java.newFloat(-300.799987792969), java.newFloat(456.799987792969), java.newFloat(0.100000001490116), java.newFloat(-302.600006103516), java.newFloat(457.100006103516), java.newFloat(0.0199999995529652), java.newFloat(-300.799987792969), java.newFloat(453.299987792969), java.newFloat(0.100000001490116), java.newFloat(-318.600006103516), java.newFloat(442.399993896484), java.newFloat(0.0199999995529652), java.newFloat(-314.5), java.newFloat(444.600006103516), java.newFloat(0.100000001490116), java.newFloat(-313.700012207031), java.newFloat(442.399993896484), java.newFloat(0.0199999995529652), java.newFloat(-314.5), java.newFloat(440.600006103516), java.newFloat(0.100000001490116), java.newFloat(-310.399993896484), java.newFloat(467), java.newFloat(0.0199999995529652), java.newFloat(-243.899993896484), java.newFloat(474.700012207031), java.newFloat(0.100000001490116), java.newFloat(-259.100006103516), java.newFloat(457.399993896484), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(466.899993896484), java.newFloat(0.100000001490116), java.newFloat(-243.800003051758)])))))
+              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(400), java.newFloat(0.019999999552965164), java.newFloat(-385), java.newFloat(400.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-392.8999938964844), java.newFloat(400), java.newFloat(0.019999999552965164), java.newFloat(-385), java.newFloat(416.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-383.3999938964844), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(438.29998779296875), java.newFloat(0.10000000149011612), java.newFloat(-338.6000061035156), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(434.79998779296875), java.newFloat(0.10000000149011612), java.newFloat(-336), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(437.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-332.6000061035156), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(436.29998779296875), java.newFloat(0.10000000149011612), java.newFloat(-333.3999938964844), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(435.20001220703125), java.newFloat(0.10000000149011612), java.newFloat(-336.79998779296875), java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(432.5), java.newFloat(0.10000000149011612), java.newFloat(-332.5), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(436.1000061035156), java.newFloat(0.10000000149011612), java.newFloat(-334.8999938964844), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(440.5), java.newFloat(0.10000000149011612), java.newFloat(-355.5), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(436.29998779296875), java.newFloat(0.10000000149011612), java.newFloat(-371.70001220703125), java.newFloat(429.8999938964844), java.newFloat(0.019999999552965164), java.newFloat(-360.29998779296875), java.newFloat(431.20001220703125), java.newFloat(0.10000000149011612), java.newFloat(-361.20001220703125), java.newFloat(457.1000061035156), java.newFloat(0.019999999552965164), java.newFloat(-300.79998779296875), java.newFloat(456.79998779296875), java.newFloat(0.10000000149011612), java.newFloat(-302.6000061035156), java.newFloat(457.1000061035156), java.newFloat(0.019999999552965164), java.newFloat(-300.79998779296875), java.newFloat(453.29998779296875), java.newFloat(0.10000000149011612), java.newFloat(-318.6000061035156), java.newFloat(442.3999938964844), java.newFloat(0.019999999552965164), java.newFloat(-314.5), java.newFloat(444.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-313.70001220703125), java.newFloat(442.3999938964844), java.newFloat(0.019999999552965164), java.newFloat(-314.5), java.newFloat(440.6000061035156), java.newFloat(0.10000000149011612), java.newFloat(-310.3999938964844), java.newFloat(467), java.newFloat(0.019999999552965164), java.newFloat(-243.89999389648438), java.newFloat(474.70001220703125), java.newFloat(0.10000000149011612), java.newFloat(-259.1000061035156), java.newFloat(457.3999938964844), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(466.8999938964844), java.newFloat(0.10000000149011612), java.newFloat(-243.8000030517578)])))))
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
-              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.200000002980232)).setEmissiveColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(1)]))))
+              .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.20000000298023224)).setEmissiveColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(1)]))))
             .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1]))
-              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(430), java.newFloat(0.0199999995529652), java.newFloat(-335), java.newFloat(429.899993896484), java.newFloat(0.100000001490116), java.newFloat(-360.299987792969), java.newFloat(442.399993896484), java.newFloat(0.0199999995529652), java.newFloat(-314.5), java.newFloat(429.899993896484), java.newFloat(0.100000001490116), java.newFloat(-319.600006103516), java.newFloat(457.399993896484), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(467), java.newFloat(0.100000001490116), java.newFloat(-243.899993896484), java.newFloat(458.700012207031), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(457.399993896484), java.newFloat(0.100000001490116), java.newFloat(-262.700012207031), java.newFloat(458.700012207031), java.newFloat(0.0199999995529652), java.newFloat(-262.700012207031), java.newFloat(467), java.newFloat(0.100000001490116), java.newFloat(-243.899993896484)])))))))      ;
+              .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(430), java.newFloat(0.019999999552965164), java.newFloat(-335), java.newFloat(429.8999938964844), java.newFloat(0.10000000149011612), java.newFloat(-360.29998779296875), java.newFloat(442.3999938964844), java.newFloat(0.019999999552965164), java.newFloat(-314.5), java.newFloat(429.8999938964844), java.newFloat(0.10000000149011612), java.newFloat(-319.6000061035156), java.newFloat(457.3999938964844), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(467), java.newFloat(0.10000000149011612), java.newFloat(-243.89999389648438), java.newFloat(458.70001220703125), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(457.3999938964844), java.newFloat(0.10000000149011612), java.newFloat(-262.70001220703125), java.newFloat(458.70001220703125), java.newFloat(0.019999999552965164), java.newFloat(-262.70001220703125), java.newFloat(467), java.newFloat(0.10000000149011612), java.newFloat(-243.89999389648438)])))))))      ;
 ProtoInstance0
-              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.600000023841858 0"));
+              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.6000000238418579 0"));
 ProtoInstance1
-              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.300000011920929 1"));
+              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.30000001192092896 1"));
 ProtoInstance2
-              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("1 0 0.200000002980232"));
+              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("1 0 0.20000000298023224"));
 ProtoInstance3
-              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0.600000023841858 0 0.600000023841858"));
+              .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0.6000000238418579 0 0.6000000238418579"));
 ProtoInstance4
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.299987792969 0.100000001490116 -335.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.29998779296875 0.10000000149011612 -335.6000061035156"));
 ProtoInstance5
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("400 0.100000001490116 -385"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("400 0.10000000149011612 -385"));
 ProtoInstance6
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("400.600006103516 0.100000001490116 -392.899993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("400.6000061035156 0.10000000149011612 -392.8999938964844"));
 ProtoInstance7
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("416.700012207031 0.100000001490116 -383.399993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("416.70001220703125 0.10000000149011612 -383.3999938964844"));
 ProtoInstance8
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("429.899993896484 0.100000001490116 -319.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("429.8999938964844 0.10000000149011612 -319.6000061035156"));
 ProtoInstance9
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("430 0.100000001490116 -335"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("430 0.10000000149011612 -335"));
 ProtoInstance10
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.799987792969 0.100000001490116 -335.299987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.79998779296875 0.10000000149011612 -335.29998779296875"));
 ProtoInstance11
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("438.299987792969 0.100000001490116 -338.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("438.29998779296875 0.10000000149011612 -338.6000061035156"));
 ProtoInstance12
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("429.899993896484 0.100000001490116 -360.299987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("429.8999938964844 0.10000000149011612 -360.29998779296875"));
 ProtoInstance13
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.600006103516 0.100000001490116 -338.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.6000061035156 0.10000000149011612 -338.6000061035156"));
 ProtoInstance14
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.799987792969 0.100000001490116 -336"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.79998779296875 0.10000000149011612 -336"));
 ProtoInstance15
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("432.700012207031 0.100000001490116 -336.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("432.70001220703125 0.10000000149011612 -336.6000061035156"));
 ProtoInstance16
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("437.600006103516 0.100000001490116 -332.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("437.6000061035156 0.10000000149011612 -332.6000061035156"));
 ProtoInstance17
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.700012207031 0.100000001490116 -336.899993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.70001220703125 0.10000000149011612 -336.8999938964844"));
 ProtoInstance18
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.299987792969 0.100000001490116 -333.399993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.29998779296875 0.10000000149011612 -333.3999938964844"));
 ProtoInstance19
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.200012207031 0.100000001490116 -336.799987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("435.20001220703125 0.10000000149011612 -336.79998779296875"));
 ProtoInstance20
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("432.5 0.100000001490116 -332.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("432.5 0.10000000149011612 -332.5"));
 ProtoInstance21
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("474.700012207031 0.100000001490116 -318.799987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("474.70001220703125 0.10000000149011612 -318.79998779296875"));
 ProtoInstance22
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.100006103516 0.100000001490116 -334.899993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.1000061035156 0.10000000149011612 -334.8999938964844"));
 ProtoInstance23
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("485.600006103516 0.100000001490116 -309"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("485.6000061035156 0.10000000149011612 -309"));
 ProtoInstance24
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440.5 0.100000001490116 -355.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440.5 0.10000000149011612 -355.5"));
 ProtoInstance25
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.799987792969 0.100000001490116 -371.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("434.79998779296875 0.10000000149011612 -371.5"));
 ProtoInstance26
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.299987792969 0.100000001490116 -371.700012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("436.29998779296875 0.10000000149011612 -371.70001220703125"));
 ProtoInstance27
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("431.200012207031 0.100000001490116 -361.200012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("431.20001220703125 0.10000000149011612 -361.20001220703125"));
 ProtoInstance28
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("455.899993896484 0.100000001490116 -341.299987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("455.8999938964844 0.10000000149011612 -341.29998779296875"));
 ProtoInstance29
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.100006103516 0.100000001490116 -341.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.1000061035156 0.10000000149011612 -341.5"));
 ProtoInstance30
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("454 0.100000001490116 -361.299987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("454 0.10000000149011612 -361.29998779296875"));
 ProtoInstance31
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.399993896484 0.100000001490116 -359.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.3999938964844 0.10000000149011612 -359.6000061035156"));
 ProtoInstance32
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("454.200012207031 0.100000001490116 -358.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("454.20001220703125 0.10000000149011612 -358.6000061035156"));
 ProtoInstance33
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("450.600006103516 0.100000001490116 -358.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("450.6000061035156 0.10000000149011612 -358.6000061035156"));
 ProtoInstance34
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440 0.100000001490116 -350"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440 0.10000000149011612 -350"));
 ProtoInstance35
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458.899993896484 0.100000001490116 -304.299987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458.8999938964844 0.10000000149011612 -304.29998779296875"));
 ProtoInstance36
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("473.5 0.100000001490116 -287.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("473.5 0.10000000149011612 -287.5"));
 ProtoInstance37
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458 0.100000001490116 -304.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458 0.10000000149011612 -304.5"));
 ProtoInstance38
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.100006103516 0.100000001490116 -300.799987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.1000061035156 0.10000000149011612 -300.79998779296875"));
 ProtoInstance39
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.799987792969 0.100000001490116 -302.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.79998779296875 0.10000000149011612 -302.6000061035156"));
 ProtoInstance40
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("453.299987792969 0.100000001490116 -318.600006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("453.29998779296875 0.10000000149011612 -318.6000061035156"));
 ProtoInstance41
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("442.399993896484 0.100000001490116 -314.5"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("442.3999938964844 0.10000000149011612 -314.5"));
 ProtoInstance42
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("444.600006103516 0.100000001490116 -313.700012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("444.6000061035156 0.10000000149011612 -313.70001220703125"));
 ProtoInstance43
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440.600006103516 0.100000001490116 -310.399993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("440.6000061035156 0.10000000149011612 -310.3999938964844"));
 ProtoInstance44
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("491.600006103516 0.100000001490116 -335.700012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("491.6000061035156 0.10000000149011612 -335.70001220703125"));
 ProtoInstance45
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("491.399993896484 0.100000001490116 -336.799987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("491.3999938964844 0.10000000149011612 -336.79998779296875"));
 ProtoInstance46
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("496.899993896484 0.100000001490116 -368.899993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("496.8999938964844 0.10000000149011612 -368.8999938964844"));
 ProtoInstance47
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("467 0.100000001490116 -243.899993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("467 0.10000000149011612 -243.89999389648438"));
 ProtoInstance48
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("477.100006103516 0.100000001490116 -260"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("477.1000061035156 0.10000000149011612 -260"));
 ProtoInstance49
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("474.700012207031 0.100000001490116 -259.100006103516"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("474.70001220703125 0.10000000149011612 -259.1000061035156"));
 ProtoInstance50
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("459 0.100000001490116 -236.399993896484"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("459 0.10000000149011612 -236.39999389648438"));
 ProtoInstance51
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.399993896484 0.100000001490116 -262.700012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("457.3999938964844 0.10000000149011612 -262.70001220703125"));
 ProtoInstance52
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458.700012207031 0.100000001490116 -262.700012207031"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("458.70001220703125 0.10000000149011612 -262.70001220703125"));
 ProtoInstance53
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("466.899993896484 0.100000001490116 -243.800003051758"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("466.8999938964844 0.10000000149011612 -243.8000030517578"));
 ProtoInstance54
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("469.5 0.100000001490116 -249.800003051758"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("469.5 0.10000000149011612 -249.8000030517578"));
 ProtoInstance55
-              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.700012207031 0.100000001490116 -261.799987792969"));
+              .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.70001220703125 0.10000000149011612 -261.79998779296875"));
     X3D0.toFileX3D("../data/t1.new.x3d");

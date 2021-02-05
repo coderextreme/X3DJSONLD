@@ -86,7 +86,7 @@ browser.currentScene.children[11] = Viewpoint14;
 let HAnimHumanoid15 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid15.name = "humanoid";
 HAnimHumanoid15.DEF = "hanim_humanoid";
-HAnimHumanoid15.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"]);
+HAnimHumanoid15.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]);
 HAnimHumanoid15.version = "1.0";
 //Only one root HAnimJoint is expected
 //USE nodes go here for access by inverse kinematics (IK) engines and other tools

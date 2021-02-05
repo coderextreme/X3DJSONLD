@@ -4,9 +4,9 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta(new meta().setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta(new meta().setName("source").setContent("LOA2ExampleSourceWithDiamonds.wrl")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("Humanoid")
@@ -66,7 +66,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new Transform()
                 .addChild(new Shape()
                   .setGeometry(new IndexedFaceSet().setCoordIndex(Java.to([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], Java.type("int[]"))).setCreaseAngle(0.5)
-                    .setCoord(new Coordinate().setPoint(Java.to([0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0], Java.type("float[]")))))
+                    .setCoord(new Coordinate().setPoint(Java.to([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0], Java.type("float[]")))))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([1,1,0], Java.type("float[]"))))))
                 .setIS(new IS()

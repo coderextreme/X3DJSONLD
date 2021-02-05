@@ -30,6 +30,10 @@ load('X3Dautoclass.js');
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
 			<td> a generic proto to connect two objects </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -65,8 +69,10 @@ x3dconnectorProto.prototype = {
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
+    .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects"))
+    .addMeta(new metaObject().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new SceneObject()
+    .addChild(new WorldInfoObject().setTitle("Connector Proto"))
     .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([0.4,0.4,0.4], Java.type("float[]")))))
     .addChild(new TransformObject("G1")
@@ -188,8 +194,8 @@ x3dconnectorProto.prototype = {
         .addChild(new TransformObject().setUSE("transC1")))
       .addFieldValue(new fieldValueObject().setName("rotscalenode")
         .addChild(new TransformObject().setUSE("rotscaleC1")))
-      .addFieldValue(new fieldValueObject().setName("set_startpoint"))
-      .addFieldValue(new fieldValueObject().setName("set_endpoint")))
+      .addFieldValue(new fieldValueObject().setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue(new fieldValueObject().setName("set_endpoint").setValue("0 0 0")))
     .addChild(new ProtoInstanceObject("connector2", "x3dconnector").setDEF("connector2").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new TransformObject().setUSE("G1")))
@@ -199,8 +205,8 @@ x3dconnectorProto.prototype = {
         .addChild(new TransformObject().setUSE("transC2")))
       .addFieldValue(new fieldValueObject().setName("rotscalenode")
         .addChild(new TransformObject().setUSE("rotscaleC2")))
-      .addFieldValue(new fieldValueObject().setName("set_startpoint"))
-      .addFieldValue(new fieldValueObject().setName("set_endpoint")))
+      .addFieldValue(new fieldValueObject().setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue(new fieldValueObject().setName("set_endpoint").setValue("0 0 0")))
     .addChild(new ProtoInstanceObject("connector3", "x3dconnector").setDEF("connector3").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new TransformObject().setUSE("G1")))
@@ -210,8 +216,8 @@ x3dconnectorProto.prototype = {
         .addChild(new TransformObject().setUSE("transC3")))
       .addFieldValue(new fieldValueObject().setName("rotscalenode")
         .addChild(new TransformObject().setUSE("rotscaleC3")))
-      .addFieldValue(new fieldValueObject().setName("set_startpoint"))
-      .addFieldValue(new fieldValueObject().setName("set_endpoint")))
+      .addFieldValue(new fieldValueObject().setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue(new fieldValueObject().setName("set_endpoint").setValue("0 0 0")))
     .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
     .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))

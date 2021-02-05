@@ -1115,6 +1115,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
                       (local-name()='pauseTime' and (.='0' or .='0.0')) or
                       (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
+                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
                       not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
                       not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
                       not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
@@ -1202,7 +1203,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='solid' and .='true') or
                       (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and .='true') and
-                      not( local-name(..)='Inline' and local-name()='load' and .='true') and
+                       not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and .='true') or
                       (local-name()='timeOut' and (.='0' or .='0.0')))) and

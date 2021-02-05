@@ -5,8 +5,10 @@
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"></meta>
 <meta name="description" content="a generic proto to connect two objects"></meta>
+<meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
 </head>
-<Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
+<Scene><WorldInfo title="Connector Proto"></WorldInfo>
+<Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="G1"><Shape><Appearance><Material diffuseColor="0.7 0.2 0.2"></Material>
 </Appearance>
@@ -125,8 +127,8 @@
 </fieldValue>
 <fieldValue name="rotscalenode"><Transform USE="rotscaleC1"></Transform>
 </fieldValue>
-<fieldValue name="set_startpoint"></fieldValue>
-<fieldValue name="set_endpoint"></fieldValue>
+<fieldValue name="set_startpoint" value="0 0 0"></fieldValue>
+<fieldValue name="set_endpoint" value="0 0 0"></fieldValue>
 </ProtoInstance>
 <ProtoInstance name="x3dconnector" DEF="connector2"><fieldValue name="startnode"><Transform USE="G1"></Transform>
 </fieldValue>
@@ -136,8 +138,8 @@
 </fieldValue>
 <fieldValue name="rotscalenode"><Transform USE="rotscaleC2"></Transform>
 </fieldValue>
-<fieldValue name="set_startpoint"></fieldValue>
-<fieldValue name="set_endpoint"></fieldValue>
+<fieldValue name="set_startpoint" value="0 0 0"></fieldValue>
+<fieldValue name="set_endpoint" value="0 0 0"></fieldValue>
 </ProtoInstance>
 <ProtoInstance name="x3dconnector" DEF="connector3"><fieldValue name="startnode"><Transform USE="G1"></Transform>
 </fieldValue>
@@ -147,8 +149,8 @@
 </fieldValue>
 <fieldValue name="rotscalenode"><Transform USE="rotscaleC3"></Transform>
 </fieldValue>
-<fieldValue name="set_startpoint"></fieldValue>
-<fieldValue name="set_endpoint"></fieldValue>
+<fieldValue name="set_startpoint" value="0 0 0"></fieldValue>
+<fieldValue name="set_endpoint" value="0 0 0"></fieldValue>
 </ProtoInstance>
 <ROUTE fromNode="G1" fromField="translation_changed" toNode="connector1" toField="set_startpoint"></ROUTE>
 <ROUTE fromNode="G2" fromField="translation_changed" toNode="connector1" toField="set_endpoint"></ROUTE>

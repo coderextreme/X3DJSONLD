@@ -239,9 +239,481 @@ var ProtoInstance231 = null;
 var ProtoInstance232 = null;
 var ProtoInstance233 = null;
 var ProtoInstance234 = null;
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+var ProtoInstance235 = null;
+var ProtoInstance236 = null;
+var ProtoInstance237 = null;
+var ProtoInstance238 = null;
+var ProtoInstance239 = null;
+var ProtoInstance240 = null;
+var ProtoInstance241 = null;
+var ProtoInstance242 = null;
+var ProtoInstance243 = null;
+var ProtoInstance244 = null;
+var ProtoInstance245 = null;
+var ProtoInstance246 = null;
+var ProtoInstance247 = null;
+var ProtoInstance248 = null;
+var ProtoInstance249 = null;
+var ProtoInstance250 = null;
+var ProtoInstance251 = null;
+var ProtoInstance252 = null;
+var ProtoInstance253 = null;
+var ProtoInstance254 = null;
+var ProtoInstance255 = null;
+var ProtoInstance256 = null;
+var ProtoInstance257 = null;
+var ProtoInstance258 = null;
+var ProtoInstance259 = null;
+var ProtoInstance260 = null;
+var ProtoInstance261 = null;
+var ProtoInstance262 = null;
+var ProtoInstance263 = null;
+var ProtoInstance264 = null;
+var ProtoInstance265 = null;
+var ProtoInstance266 = null;
+var ProtoInstance267 = null;
+var ProtoInstance268 = null;
+var ProtoInstance269 = null;
+var ProtoInstance270 = null;
+var ProtoInstance271 = null;
+var ProtoInstance272 = null;
+var ProtoInstance273 = null;
+var ProtoInstance274 = null;
+var ProtoInstance275 = null;
+var ProtoInstance276 = null;
+var ProtoInstance277 = null;
+var ProtoInstance278 = null;
+var ProtoInstance279 = null;
+var ProtoInstance280 = null;
+var ProtoInstance281 = null;
+var ProtoInstance282 = null;
+var ProtoInstance283 = null;
+var ProtoInstance284 = null;
+var ProtoInstance285 = null;
+var ProtoInstance286 = null;
+var ProtoInstance287 = null;
+var ProtoInstance288 = null;
+var ProtoInstance289 = null;
+var ProtoInstance290 = null;
+var ProtoInstance291 = null;
+var ProtoInstance292 = null;
+var ProtoInstance293 = null;
+var ProtoInstance294 = null;
+var ProtoInstance295 = null;
+var ProtoInstance296 = null;
+var ProtoInstance297 = null;
+var ProtoInstance298 = null;
+var ProtoInstance299 = null;
+var ProtoInstance300 = null;
+var ProtoInstance301 = null;
+var ProtoInstance302 = null;
+var ProtoInstance303 = null;
+var ProtoInstance304 = null;
+var ProtoInstance305 = null;
+var ProtoInstance306 = null;
+var ProtoInstance307 = null;
+var ProtoInstance308 = null;
+var ProtoInstance309 = null;
+var ProtoInstance310 = null;
+var ProtoInstance311 = null;
+var ProtoInstance312 = null;
+var ProtoInstance313 = null;
+var ProtoInstance314 = null;
+var ProtoInstance315 = null;
+var ProtoInstance316 = null;
+var ProtoInstance317 = null;
+var ProtoInstance318 = null;
+var ProtoInstance319 = null;
+var ProtoInstance320 = null;
+var ProtoInstance321 = null;
+var ProtoInstance322 = null;
+var ProtoInstance323 = null;
+var ProtoInstance324 = null;
+var ProtoInstance325 = null;
+var ProtoInstance326 = null;
+var ProtoInstance327 = null;
+var ProtoInstance328 = null;
+var ProtoInstance329 = null;
+var ProtoInstance330 = null;
+var ProtoInstance331 = null;
+var ProtoInstance332 = null;
+var ProtoInstance333 = null;
+var ProtoInstance334 = null;
+var ProtoInstance335 = null;
+var ProtoInstance336 = null;
+var ProtoInstance337 = null;
+var ProtoInstance338 = null;
+var ProtoInstance339 = null;
+var ProtoInstance340 = null;
+var ProtoInstance341 = null;
+var ProtoInstance342 = null;
+var ProtoInstance343 = null;
+var ProtoInstance344 = null;
+var ProtoInstance345 = null;
+var ProtoInstance346 = null;
+var ProtoInstance347 = null;
+var ProtoInstance348 = null;
+var ProtoInstance349 = null;
+var ProtoInstance350 = null;
+var ProtoInstance351 = null;
+var ProtoInstance352 = null;
+var ProtoInstance353 = null;
+var ProtoInstance354 = null;
+var ProtoInstance355 = null;
+var ProtoInstance356 = null;
+var ProtoInstance357 = null;
+var ProtoInstance358 = null;
+var ProtoInstance359 = null;
+var ProtoInstance360 = null;
+var ProtoInstance361 = null;
+var ProtoInstance362 = null;
+var ProtoInstance363 = null;
+var ProtoInstance364 = null;
+var ProtoInstance365 = null;
+var ProtoInstance366 = null;
+var ProtoInstance367 = null;
+var ProtoInstance368 = null;
+var ProtoInstance369 = null;
+var ProtoInstance370 = null;
+var ProtoInstance371 = null;
+var ProtoInstance372 = null;
+var ProtoInstance373 = null;
+var ProtoInstance374 = null;
+var ProtoInstance375 = null;
+var ProtoInstance376 = null;
+var ProtoInstance377 = null;
+var ProtoInstance378 = null;
+var ProtoInstance379 = null;
+var ProtoInstance380 = null;
+var ProtoInstance381 = null;
+var ProtoInstance382 = null;
+var ProtoInstance383 = null;
+var ProtoInstance384 = null;
+var ProtoInstance385 = null;
+var ProtoInstance386 = null;
+var ProtoInstance387 = null;
+var ProtoInstance388 = null;
+var ProtoInstance389 = null;
+var ProtoInstance390 = null;
+var ProtoInstance391 = null;
+var ProtoInstance392 = null;
+var ProtoInstance393 = null;
+var ProtoInstance394 = null;
+var ProtoInstance395 = null;
+var ProtoInstance396 = null;
+var ProtoInstance397 = null;
+var ProtoInstance398 = null;
+var ProtoInstance399 = null;
+var ProtoInstance400 = null;
+var ProtoInstance401 = null;
+var ProtoInstance402 = null;
+var ProtoInstance403 = null;
+var ProtoInstance404 = null;
+var ProtoInstance405 = null;
+var ProtoInstance406 = null;
+var ProtoInstance407 = null;
+var ProtoInstance408 = null;
+var ProtoInstance409 = null;
+var ProtoInstance410 = null;
+var ProtoInstance411 = null;
+var ProtoInstance412 = null;
+var ProtoInstance413 = null;
+var ProtoInstance414 = null;
+var ProtoInstance415 = null;
+var ProtoInstance416 = null;
+var ProtoInstance417 = null;
+var ProtoInstance418 = null;
+var ProtoInstance419 = null;
+var ProtoInstance420 = null;
+var ProtoInstance421 = null;
+var ProtoInstance422 = null;
+var ProtoInstance423 = null;
+var ProtoInstance424 = null;
+var ProtoInstance425 = null;
+var ProtoInstance426 = null;
+var ProtoInstance427 = null;
+var ProtoInstance428 = null;
+var ProtoInstance429 = null;
+var ProtoInstance430 = null;
+var ProtoInstance431 = null;
+var ProtoInstance432 = null;
+var ProtoInstance433 = null;
+var ProtoInstance434 = null;
+var ProtoInstance435 = null;
+var ProtoInstance436 = null;
+var ProtoInstance437 = null;
+var ProtoInstance438 = null;
+var ProtoInstance439 = null;
+var ProtoInstance440 = null;
+var ProtoInstance441 = null;
+var ProtoInstance442 = null;
+var ProtoInstance443 = null;
+var ProtoInstance444 = null;
+var ProtoInstance445 = null;
+var ProtoInstance446 = null;
+var ProtoInstance447 = null;
+var ProtoInstance448 = null;
+var ProtoInstance449 = null;
+var ProtoInstance450 = null;
+var ProtoInstance451 = null;
+var ProtoInstance452 = null;
+var ProtoInstance453 = null;
+var ProtoInstance454 = null;
+var ProtoInstance455 = null;
+var ProtoInstance456 = null;
+var ProtoInstance457 = null;
+var ProtoInstance458 = null;
+var ProtoInstance459 = null;
+var ProtoInstance460 = null;
+var ProtoInstance461 = null;
+var ProtoInstance462 = null;
+var ProtoInstance463 = null;
+var ProtoInstance464 = null;
+var ProtoInstance465 = null;
+var ProtoInstance466 = null;
+var ProtoInstance467 = null;
+var ProtoInstance468 = null;
+var ProtoInstance469 = null;
+var ProtoInstance470 = null;
+var ProtoInstance471 = null;
+var ProtoInstance472 = null;
+var ProtoInstance473 = null;
+var ProtoInstance474 = null;
+var ProtoInstance475 = null;
+var ProtoInstance476 = null;
+var ProtoInstance477 = null;
+var ProtoInstance478 = null;
+var ProtoInstance479 = null;
+var ProtoInstance480 = null;
+var ProtoInstance481 = null;
+var ProtoInstance482 = null;
+var ProtoInstance483 = null;
+var ProtoInstance484 = null;
+var ProtoInstance485 = null;
+var ProtoInstance486 = null;
+var ProtoInstance487 = null;
+var ProtoInstance488 = null;
+var ProtoInstance489 = null;
+var ProtoInstance490 = null;
+var ProtoInstance491 = null;
+var ProtoInstance492 = null;
+var ProtoInstance493 = null;
+var ProtoInstance494 = null;
+var ProtoInstance495 = null;
+var ProtoInstance496 = null;
+var ProtoInstance497 = null;
+var ProtoInstance498 = null;
+var ProtoInstance499 = null;
+var ProtoInstance500 = null;
+var ProtoInstance501 = null;
+var ProtoInstance502 = null;
+var ProtoInstance503 = null;
+var ProtoInstance504 = null;
+var ProtoInstance505 = null;
+var ProtoInstance506 = null;
+var ProtoInstance507 = null;
+var ProtoInstance508 = null;
+var ProtoInstance509 = null;
+var ProtoInstance510 = null;
+var ProtoInstance511 = null;
+var ProtoInstance512 = null;
+var ProtoInstance513 = null;
+var ProtoInstance514 = null;
+var ProtoInstance515 = null;
+var ProtoInstance516 = null;
+var ProtoInstance517 = null;
+var ProtoInstance518 = null;
+var ProtoInstance519 = null;
+var ProtoInstance520 = null;
+var ProtoInstance521 = null;
+var ProtoInstance522 = null;
+var ProtoInstance523 = null;
+var ProtoInstance524 = null;
+var ProtoInstance525 = null;
+var ProtoInstance526 = null;
+var ProtoInstance527 = null;
+var ProtoInstance528 = null;
+var ProtoInstance529 = null;
+var ProtoInstance530 = null;
+var ProtoInstance531 = null;
+var ProtoInstance532 = null;
+var ProtoInstance533 = null;
+var ProtoInstance534 = null;
+var ProtoInstance535 = null;
+var ProtoInstance536 = null;
+var ProtoInstance537 = null;
+var ProtoInstance538 = null;
+var ProtoInstance539 = null;
+var ProtoInstance540 = null;
+var ProtoInstance541 = null;
+var ProtoInstance542 = null;
+var ProtoInstance543 = null;
+var ProtoInstance544 = null;
+var ProtoInstance545 = null;
+var ProtoInstance546 = null;
+var ProtoInstance547 = null;
+var ProtoInstance548 = null;
+var ProtoInstance549 = null;
+var ProtoInstance550 = null;
+var ProtoInstance551 = null;
+var ProtoInstance552 = null;
+var ProtoInstance553 = null;
+var ProtoInstance554 = null;
+var ProtoInstance555 = null;
+var ProtoInstance556 = null;
+var ProtoInstance557 = null;
+var ProtoInstance558 = null;
+var ProtoInstance559 = null;
+var ProtoInstance560 = null;
+var ProtoInstance561 = null;
+var ProtoInstance562 = null;
+var ProtoInstance563 = null;
+var ProtoInstance564 = null;
+var ProtoInstance565 = null;
+var ProtoInstance566 = null;
+var ProtoInstance567 = null;
+var ProtoInstance568 = null;
+var ProtoInstance569 = null;
+var ProtoInstance570 = null;
+var ProtoInstance571 = null;
+var ProtoInstance572 = null;
+var ProtoInstance573 = null;
+var ProtoInstance574 = null;
+var ProtoInstance575 = null;
+var ProtoInstance576 = null;
+var ProtoInstance577 = null;
+var ProtoInstance578 = null;
+var ProtoInstance579 = null;
+var ProtoInstance580 = null;
+var ProtoInstance581 = null;
+var ProtoInstance582 = null;
+var ProtoInstance583 = null;
+var ProtoInstance584 = null;
+var ProtoInstance585 = null;
+var ProtoInstance586 = null;
+var ProtoInstance587 = null;
+var ProtoInstance588 = null;
+var ProtoInstance589 = null;
+var ProtoInstance590 = null;
+var ProtoInstance591 = null;
+var ProtoInstance592 = null;
+var ProtoInstance593 = null;
+var ProtoInstance594 = null;
+var ProtoInstance595 = null;
+var ProtoInstance596 = null;
+var ProtoInstance597 = null;
+var ProtoInstance598 = null;
+var ProtoInstance599 = null;
+var ProtoInstance600 = null;
+var ProtoInstance601 = null;
+var ProtoInstance602 = null;
+var ProtoInstance603 = null;
+var ProtoInstance604 = null;
+var ProtoInstance605 = null;
+var ProtoInstance606 = null;
+var ProtoInstance607 = null;
+var ProtoInstance608 = null;
+var ProtoInstance609 = null;
+var ProtoInstance610 = null;
+var ProtoInstance611 = null;
+var ProtoInstance612 = null;
+var ProtoInstance613 = null;
+var ProtoInstance614 = null;
+var ProtoInstance615 = null;
+var ProtoInstance616 = null;
+var ProtoInstance617 = null;
+var ProtoInstance618 = null;
+var ProtoInstance619 = null;
+var ProtoInstance620 = null;
+var ProtoInstance621 = null;
+var ProtoInstance622 = null;
+var ProtoInstance623 = null;
+var ProtoInstance624 = null;
+var ProtoInstance625 = null;
+var ProtoInstance626 = null;
+var ProtoInstance627 = null;
+var ProtoInstance628 = null;
+var ProtoInstance629 = null;
+var ProtoInstance630 = null;
+var ProtoInstance631 = null;
+var ProtoInstance632 = null;
+var ProtoInstance633 = null;
+var ProtoInstance634 = null;
+var ProtoInstance635 = null;
+var ProtoInstance636 = null;
+var ProtoInstance637 = null;
+var ProtoInstance638 = null;
+var ProtoInstance639 = null;
+var ProtoInstance640 = null;
+var ProtoInstance641 = null;
+var ProtoInstance642 = null;
+var ProtoInstance643 = null;
+var ProtoInstance644 = null;
+var ProtoInstance645 = null;
+var ProtoInstance646 = null;
+var ProtoInstance647 = null;
+var ProtoInstance648 = null;
+var ProtoInstance649 = null;
+var ProtoInstance650 = null;
+var ProtoInstance651 = null;
+var ProtoInstance652 = null;
+var ProtoInstance653 = null;
+var ProtoInstance654 = null;
+var ProtoInstance655 = null;
+var ProtoInstance656 = null;
+var ProtoInstance657 = null;
+var ProtoInstance658 = null;
+var ProtoInstance659 = null;
+var ProtoInstance660 = null;
+var ProtoInstance661 = null;
+var ProtoInstance662 = null;
+var ProtoInstance663 = null;
+var ProtoInstance664 = null;
+var ProtoInstance665 = null;
+var ProtoInstance666 = null;
+var ProtoInstance667 = null;
+var ProtoInstance668 = null;
+var ProtoInstance669 = null;
+var ProtoInstance670 = null;
+var ProtoInstance671 = null;
+var ProtoInstance672 = null;
+var ProtoInstance673 = null;
+var ProtoInstance674 = null;
+var ProtoInstance675 = null;
+var ProtoInstance676 = null;
+var ProtoInstance677 = null;
+var ProtoInstance678 = null;
+var ProtoInstance679 = null;
+var ProtoInstance680 = null;
+var ProtoInstance681 = null;
+var ProtoInstance682 = null;
+var ProtoInstance683 = null;
+var ProtoInstance684 = null;
+var ProtoInstance685 = null;
+var ProtoInstance686 = null;
+var ProtoInstance687 = null;
+var ProtoInstance688 = null;
+var ProtoInstance689 = null;
+var ProtoInstance690 = null;
+var ProtoInstance691 = null;
+var ProtoInstance692 = null;
+var ProtoInstance693 = null;
+var ProtoInstance694 = null;
+var ProtoInstance695 = null;
+var ProtoInstance696 = null;
+var ProtoInstance697 = null;
+var ProtoInstance698 = null;
+var ProtoInstance699 = null;
+var ProtoInstance700 = null;
+var ProtoInstance701 = null;
+var ProtoInstance702 = null;
+var ProtoInstance703 = null;
+var ProtoInstance704 = null;
+var ProtoInstance705 = null;
+var ProtoInstance706 = null;
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta(new meta().setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta(new meta().setName("source").setContent("LOA1ExampleSourceWithDiamonds.wrl")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("Humanoid")
@@ -301,7 +773,7 @@ var ProtoInstance234 = null;
               .addChild(new Transform()
                 .addChild(new Shape()
                   .setGeometry(new IndexedFaceSet().setCoordIndex(Java.to([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], Java.type("int[]"))).setCreaseAngle(0.5)
-                    .setCoord(new Coordinate().setPoint(Java.to([0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0], Java.type("float[]")))))
+                    .setCoord(new Coordinate().setPoint(Java.to([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0], Java.type("float[]")))))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([1,1,0], Java.type("float[]"))))))
                 .setIS(new IS()
@@ -349,136 +821,136 @@ var ProtoInstance234 = null;
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation"))
                 .addConnect(new connect().setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect(new connect().setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid").setDEF("humanoid_2"))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid").setDEF("humanoid"))
         .addChild(new Group().setDEF("JointCenters_WorldInfo")
           .addChild(new WorldInfo().setTitle("HANIM 200x Default Joint Centers, LOA&#8209;1").setInfo(Java.to([" HANIM 200x Default Joint Centers, Level-Of-Articulation 1 -------------------------------------------------------- HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://H-Anim.org/Specifications/H-Anim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human modelling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "], Java.type("java.lang.String[]")))))
-        .addChild(new NavigationInfo().setAvatarSize(Java.to([0.25,1.60000002384186,0.75], Java.type("float[]"))).setSpeed(1.5)))      ;
+        .addChild(new NavigationInfo().setAvatarSize(Java.to([0.25,1.600000023841858,0.75], Java.type("float[]"))).setSpeed(1.5)))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("humanoidBody")
-            .addChild(ProtoInstance1 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root_2")));
+            .addChild(ProtoInstance1 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("joints")
-            .addChild(ProtoInstance118 = new ProtoInstance().setUSE("hanim_humanoid_root_2"))
-            .addChild(ProtoInstance119 = new ProtoInstance().setUSE("hanim_sacroiliac_2"))
-            .addChild(ProtoInstance120 = new ProtoInstance().setUSE("hanim_l_hip_2"))
-            .addChild(ProtoInstance121 = new ProtoInstance().setUSE("hanim_l_knee_2"))
-            .addChild(ProtoInstance122 = new ProtoInstance().setUSE("hanim_l_talocrural_2"))
-            .addChild(ProtoInstance123 = new ProtoInstance().setUSE("hanim_l_metatarsophalangeal__2"))
-            .addChild(ProtoInstance124 = new ProtoInstance().setUSE("hanim_r_hip_2"))
-            .addChild(ProtoInstance125 = new ProtoInstance().setUSE("hanim_r_knee_2"))
-            .addChild(ProtoInstance126 = new ProtoInstance().setUSE("hanim_r_talocrural_2"))
-            .addChild(ProtoInstance127 = new ProtoInstance().setUSE("hanim_r_metatarsophalangeal__2"))
-            .addChild(ProtoInstance128 = new ProtoInstance().setUSE("hanim_vl5_2"))
-            .addChild(ProtoInstance129 = new ProtoInstance().setUSE("hanim_skullbase_2"))
-            .addChild(ProtoInstance130 = new ProtoInstance().setUSE("hanim_l_shoulder_2"))
-            .addChild(ProtoInstance131 = new ProtoInstance().setUSE("hanim_l_elbow_2"))
-            .addChild(ProtoInstance132 = new ProtoInstance().setUSE("hanim_l_radiocarpal_2"))
-            .addChild(ProtoInstance133 = new ProtoInstance().setUSE("hanim_r_shoulder_2"))
-            .addChild(ProtoInstance134 = new ProtoInstance().setUSE("hanim_r_elbow_2"))
-            .addChild(ProtoInstance135 = new ProtoInstance().setUSE("hanim_r_radiocarpal_2")));
+            .addChild(ProtoInstance118 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root"))
+            .addChild(ProtoInstance235 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac"))
+            .addChild(ProtoInstance275 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
+            .addChild(ProtoInstance294 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee"))
+            .addChild(ProtoInstance308 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+            .addChild(ProtoInstance320 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+            .addChild(ProtoInstance326 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip"))
+            .addChild(ProtoInstance345 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee"))
+            .addChild(ProtoInstance359 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+            .addChild(ProtoInstance371 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+            .addChild(ProtoInstance377 = new ProtoInstance().setName("Joint").setDEF("hanim_vl5"))
+            .addChild(ProtoInstance443 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase"))
+            .addChild(ProtoInstance455 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
+            .addChild(ProtoInstance471 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow"))
+            .addChild(ProtoInstance484 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+            .addChild(ProtoInstance491 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
+            .addChild(ProtoInstance507 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow"))
+            .addChild(ProtoInstance520 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("segments")
-            .addChild(ProtoInstance136 = new ProtoInstance().setUSE("hanim_l_middistal_2"))
-            .addChild(ProtoInstance137 = new ProtoInstance().setUSE("hanim_l_hindfoot_2"))
-            .addChild(ProtoInstance138 = new ProtoInstance().setUSE("hanim_l_calf_2"))
-            .addChild(ProtoInstance139 = new ProtoInstance().setUSE("hanim_l_thigh_2"))
-            .addChild(ProtoInstance140 = new ProtoInstance().setUSE("hanim_r_middistal_2"))
-            .addChild(ProtoInstance141 = new ProtoInstance().setUSE("hanim_r_hindfoot_2"))
-            .addChild(ProtoInstance142 = new ProtoInstance().setUSE("hanim_r_calf_2"))
-            .addChild(ProtoInstance143 = new ProtoInstance().setUSE("hanim_r_thigh_2"))
-            .addChild(ProtoInstance144 = new ProtoInstance().setUSE("hanim_pelvis_2"))
-            .addChild(ProtoInstance145 = new ProtoInstance().setUSE("hanim_skull_2"))
-            .addChild(ProtoInstance146 = new ProtoInstance().setUSE("hanim_l_hand_2"))
-            .addChild(ProtoInstance147 = new ProtoInstance().setUSE("hanim_l_forearm_2"))
-            .addChild(ProtoInstance148 = new ProtoInstance().setUSE("hanim_l_upperarm_2"))
-            .addChild(ProtoInstance149 = new ProtoInstance().setUSE("hanim_r_hand_2"))
-            .addChild(ProtoInstance150 = new ProtoInstance().setUSE("hanim_r_forearm_2"))
-            .addChild(ProtoInstance151 = new ProtoInstance().setUSE("hanim_r_upperarm_2"))
-            .addChild(ProtoInstance152 = new ProtoInstance().setUSE("hanim_l5_2"))
-            .addChild(ProtoInstance153 = new ProtoInstance().setUSE("hanim_sacrum_2")));
+            .addChild(ProtoInstance527 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal"))
+            .addChild(ProtoInstance532 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot"))
+            .addChild(ProtoInstance537 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf"))
+            .addChild(ProtoInstance538 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh"))
+            .addChild(ProtoInstance542 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal"))
+            .addChild(ProtoInstance547 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot"))
+            .addChild(ProtoInstance552 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf"))
+            .addChild(ProtoInstance553 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh"))
+            .addChild(ProtoInstance557 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis"))
+            .addChild(ProtoInstance558 = new ProtoInstance().setName("Segment").setDEF("hanim_skull"))
+            .addChild(ProtoInstance569 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand"))
+            .addChild(ProtoInstance575 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm"))
+            .addChild(ProtoInstance580 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm"))
+            .addChild(ProtoInstance582 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand"))
+            .addChild(ProtoInstance588 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm"))
+            .addChild(ProtoInstance593 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm"))
+            .addChild(ProtoInstance595 = new ProtoInstance().setName("Segment").setDEF("hanim_l5"))
+            .addChild(ProtoInstance616 = new ProtoInstance().setName("Segment").setDEF("hanim_sacrum")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("sites")
-            .addChild(ProtoInstance154 = new ProtoInstance().setUSE("hanim_l_middistal_tip_2"))
-            .addChild(ProtoInstance155 = new ProtoInstance().setUSE("hanim_l_tarsal_interphalangeal_phalanx6"))
-            .addChild(ProtoInstance156 = new ProtoInstance().setUSE("hanim_l_tarsal_interphalangeal_phalanx2"))
-            .addChild(ProtoInstance157 = new ProtoInstance().setUSE("hanim_l_tarsal_distal_phalanx3"))
-            .addChild(ProtoInstance158 = new ProtoInstance().setUSE("hanim_l_lateral_malleolus_2"))
-            .addChild(ProtoInstance159 = new ProtoInstance().setUSE("hanim_l_medial_malleolus_2"))
-            .addChild(ProtoInstance160 = new ProtoInstance().setUSE("hanim_l_sphyrion_2"))
-            .addChild(ProtoInstance161 = new ProtoInstance().setUSE("hanim_l_calcaneus_posterior_2"))
-            .addChild(ProtoInstance162 = new ProtoInstance().setUSE("hanim_l_knee_crease_2"))
-            .addChild(ProtoInstance163 = new ProtoInstance().setUSE("hanim_l_femoral_lateral_epicondyles_2"))
-            .addChild(ProtoInstance164 = new ProtoInstance().setUSE("hanim_l_femoral_medial_epicondyles_2"))
-            .addChild(ProtoInstance165 = new ProtoInstance().setUSE("hanim_r_middistal_tip_2"))
-            .addChild(ProtoInstance166 = new ProtoInstance().setUSE("hanim_r_tarsal_interphalangeal_phalanx6"))
-            .addChild(ProtoInstance167 = new ProtoInstance().setUSE("hanim_r_tarsal_interphalangeal_phalanx2"))
-            .addChild(ProtoInstance168 = new ProtoInstance().setUSE("hanim_r_tarsal_distal_phalanx3"))
-            .addChild(ProtoInstance169 = new ProtoInstance().setUSE("hanim_r_lateral_malleolus_2"))
-            .addChild(ProtoInstance170 = new ProtoInstance().setUSE("hanim_r_medial_malleolus_2"))
-            .addChild(ProtoInstance171 = new ProtoInstance().setUSE("hanim_r_sphyrion_2"))
-            .addChild(ProtoInstance172 = new ProtoInstance().setUSE("hanim_r_calcaneus_posterior_2"))
-            .addChild(ProtoInstance173 = new ProtoInstance().setUSE("hanim_r_knee_crease_2"))
-            .addChild(ProtoInstance174 = new ProtoInstance().setUSE("hanim_r_femoral_lateral_epicondyles_2"))
-            .addChild(ProtoInstance175 = new ProtoInstance().setUSE("hanim_r_femoral_medial_epicondyles_2"))
-            .addChild(ProtoInstance176 = new ProtoInstance().setUSE("hanim_skull_tip_2"))
-            .addChild(ProtoInstance177 = new ProtoInstance().setUSE("hanim_sellion_2"))
-            .addChild(ProtoInstance178 = new ProtoInstance().setUSE("hanim_r_infraorbitale_2"))
-            .addChild(ProtoInstance179 = new ProtoInstance().setUSE("hanim_l_infraorbitale_2"))
-            .addChild(ProtoInstance180 = new ProtoInstance().setUSE("hanim_supramenton_2"))
-            .addChild(ProtoInstance181 = new ProtoInstance().setUSE("hanim_r_tragion_2"))
-            .addChild(ProtoInstance182 = new ProtoInstance().setUSE("hanim_r_gonion_2"))
-            .addChild(ProtoInstance183 = new ProtoInstance().setUSE("hanim_l_tragion_2"))
-            .addChild(ProtoInstance184 = new ProtoInstance().setUSE("hanim_l_gonion_2"))
-            .addChild(ProtoInstance185 = new ProtoInstance().setUSE("hanim_nuchale_2"))
-            .addChild(ProtoInstance186 = new ProtoInstance().setUSE("hanim_l_hand_tip_2"))
-            .addChild(ProtoInstance187 = new ProtoInstance().setUSE("hanim_l_metacarpal_phalanx3"))
-            .addChild(ProtoInstance188 = new ProtoInstance().setUSE("hanim_l_dactylion_2"))
-            .addChild(ProtoInstance189 = new ProtoInstance().setUSE("hanim_l_ulnar_styloid_2"))
-            .addChild(ProtoInstance190 = new ProtoInstance().setUSE("hanim_l_metacarpal_phalanx6"))
-            .addChild(ProtoInstance191 = new ProtoInstance().setUSE("hanim_l_radial_styloid_2"))
-            .addChild(ProtoInstance192 = new ProtoInstance().setUSE("hanim_l_olecranon_2"))
-            .addChild(ProtoInstance193 = new ProtoInstance().setUSE("hanim_l_humeral_medial_epicondyles_2"))
-            .addChild(ProtoInstance194 = new ProtoInstance().setUSE("hanim_l_radiale_2"))
-            .addChild(ProtoInstance195 = new ProtoInstance().setUSE("hanim_l_humeral_lateral_epicondyles_2"))
-            .addChild(ProtoInstance196 = new ProtoInstance().setUSE("hanim_r_hand_tip_2"))
-            .addChild(ProtoInstance197 = new ProtoInstance().setUSE("hanim_r_metacarpal_phalanx3"))
-            .addChild(ProtoInstance198 = new ProtoInstance().setUSE("hanim_r_dactylion_2"))
-            .addChild(ProtoInstance199 = new ProtoInstance().setUSE("hanim_r_ulnar_styloid_2"))
-            .addChild(ProtoInstance200 = new ProtoInstance().setUSE("hanim_r_metacarpal_phalanx6"))
-            .addChild(ProtoInstance201 = new ProtoInstance().setUSE("hanim_r_radial_styloid_2"))
-            .addChild(ProtoInstance202 = new ProtoInstance().setUSE("hanim_r_olecranon_2"))
-            .addChild(ProtoInstance203 = new ProtoInstance().setUSE("hanim_r_humeral_medial_epicondyles_2"))
-            .addChild(ProtoInstance204 = new ProtoInstance().setUSE("hanim_r_radiale_2"))
-            .addChild(ProtoInstance205 = new ProtoInstance().setUSE("hanim_r_humeral_lateral_epicondyles_2"))
-            .addChild(ProtoInstance206 = new ProtoInstance().setUSE("hanim_r_clavicale_2"))
-            .addChild(ProtoInstance207 = new ProtoInstance().setUSE("hanim_suprasternale_2"))
-            .addChild(ProtoInstance208 = new ProtoInstance().setUSE("hanim_l_clavicale_2"))
-            .addChild(ProtoInstance209 = new ProtoInstance().setUSE("hanim_r_thelion_2"))
-            .addChild(ProtoInstance210 = new ProtoInstance().setUSE("hanim_l_thelion_2"))
-            .addChild(ProtoInstance211 = new ProtoInstance().setUSE("hanim_substernale_2"))
-            .addChild(ProtoInstance212 = new ProtoInstance().setUSE("hanim_r_rib10_2"))
-            .addChild(ProtoInstance213 = new ProtoInstance().setUSE("hanim_l_rib10_2"))
-            .addChild(ProtoInstance214 = new ProtoInstance().setUSE("hanim_cervicale_2"))
-            .addChild(ProtoInstance215 = new ProtoInstance().setUSE("hanim_spine_2_lower_back_2"))
-            .addChild(ProtoInstance216 = new ProtoInstance().setUSE("hanim_waist_preferred_posterior_2"))
-            .addChild(ProtoInstance217 = new ProtoInstance().setUSE("hanim_r_acromion_2"))
-            .addChild(ProtoInstance218 = new ProtoInstance().setUSE("hanim_r_axilla_proximal_2"))
-            .addChild(ProtoInstance219 = new ProtoInstance().setUSE("hanim_r_axilla_distal_2"))
-            .addChild(ProtoInstance220 = new ProtoInstance().setUSE("hanim_l_acromion_2"))
-            .addChild(ProtoInstance221 = new ProtoInstance().setUSE("hanim_l_axilla_proximal_2"))
-            .addChild(ProtoInstance222 = new ProtoInstance().setUSE("hanim_l_axilla_distal_2"))
-            .addChild(ProtoInstance223 = new ProtoInstance().setUSE("hanim_r_neck_base_2"))
-            .addChild(ProtoInstance224 = new ProtoInstance().setUSE("hanim_l_neck_base_2"))
-            .addChild(ProtoInstance225 = new ProtoInstance().setUSE("hanim_navel_2"))
-            .addChild(ProtoInstance226 = new ProtoInstance().setUSE("hanim_r_asis_2"))
-            .addChild(ProtoInstance227 = new ProtoInstance().setUSE("hanim_l_asis_2"))
-            .addChild(ProtoInstance228 = new ProtoInstance().setUSE("hanim_r_iliocristale_2"))
-            .addChild(ProtoInstance229 = new ProtoInstance().setUSE("hanim_r_trochanterion_2"))
-            .addChild(ProtoInstance230 = new ProtoInstance().setUSE("hanim_l_iliocristale_2"))
-            .addChild(ProtoInstance231 = new ProtoInstance().setUSE("hanim_l_trochanterion_2"))
-            .addChild(ProtoInstance232 = new ProtoInstance().setUSE("hanim_r_psis_2"))
-            .addChild(ProtoInstance233 = new ProtoInstance().setUSE("hanim_l_psis_2"))
-            .addChild(ProtoInstance234 = new ProtoInstance().setUSE("hanim_crotch_2")));
+            .addChild(ProtoInstance626 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+            .addChild(ProtoInstance627 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+            .addChild(ProtoInstance628 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+            .addChild(ProtoInstance629 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2"))
+            .addChild(ProtoInstance630 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+            .addChild(ProtoInstance631 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+            .addChild(ProtoInstance632 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+            .addChild(ProtoInstance633 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior"))
+            .addChild(ProtoInstance634 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+            .addChild(ProtoInstance635 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+            .addChild(ProtoInstance636 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles"))
+            .addChild(ProtoInstance637 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+            .addChild(ProtoInstance638 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+            .addChild(ProtoInstance639 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+            .addChild(ProtoInstance640 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2"))
+            .addChild(ProtoInstance641 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+            .addChild(ProtoInstance642 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+            .addChild(ProtoInstance643 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+            .addChild(ProtoInstance644 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior"))
+            .addChild(ProtoInstance645 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+            .addChild(ProtoInstance646 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+            .addChild(ProtoInstance647 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles"))
+            .addChild(ProtoInstance648 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+            .addChild(ProtoInstance649 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+            .addChild(ProtoInstance650 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+            .addChild(ProtoInstance651 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+            .addChild(ProtoInstance652 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+            .addChild(ProtoInstance653 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+            .addChild(ProtoInstance654 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+            .addChild(ProtoInstance655 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+            .addChild(ProtoInstance656 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+            .addChild(ProtoInstance657 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale"))
+            .addChild(ProtoInstance658 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+            .addChild(ProtoInstance659 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+            .addChild(ProtoInstance660 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+            .addChild(ProtoInstance661 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+            .addChild(ProtoInstance662 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5"))
+            .addChild(ProtoInstance663 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+            .addChild(ProtoInstance664 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+            .addChild(ProtoInstance665 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+            .addChild(ProtoInstance666 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale"))
+            .addChild(ProtoInstance667 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles"))
+            .addChild(ProtoInstance668 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+            .addChild(ProtoInstance669 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+            .addChild(ProtoInstance670 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+            .addChild(ProtoInstance671 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+            .addChild(ProtoInstance672 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5"))
+            .addChild(ProtoInstance673 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+            .addChild(ProtoInstance674 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+            .addChild(ProtoInstance675 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+            .addChild(ProtoInstance676 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale"))
+            .addChild(ProtoInstance677 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles"))
+            .addChild(ProtoInstance678 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale"))
+            .addChild(ProtoInstance679 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale"))
+            .addChild(ProtoInstance680 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale"))
+            .addChild(ProtoInstance681 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion"))
+            .addChild(ProtoInstance682 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion"))
+            .addChild(ProtoInstance683 = new ProtoInstance().setName("Site").setDEF("hanim_substernale"))
+            .addChild(ProtoInstance684 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10"))
+            .addChild(ProtoInstance685 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10"))
+            .addChild(ProtoInstance686 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale"))
+            .addChild(ProtoInstance687 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back"))
+            .addChild(ProtoInstance688 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior"))
+            .addChild(ProtoInstance689 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion"))
+            .addChild(ProtoInstance690 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal"))
+            .addChild(ProtoInstance691 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal"))
+            .addChild(ProtoInstance692 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion"))
+            .addChild(ProtoInstance693 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal"))
+            .addChild(ProtoInstance694 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal"))
+            .addChild(ProtoInstance695 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base"))
+            .addChild(ProtoInstance696 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base"))
+            .addChild(ProtoInstance697 = new ProtoInstance().setName("Site").setDEF("hanim_navel"))
+            .addChild(ProtoInstance698 = new ProtoInstance().setName("Site").setDEF("hanim_r_asis"))
+            .addChild(ProtoInstance699 = new ProtoInstance().setName("Site").setDEF("hanim_l_asis"))
+            .addChild(ProtoInstance700 = new ProtoInstance().setName("Site").setDEF("hanim_r_iliocristale"))
+            .addChild(ProtoInstance701 = new ProtoInstance().setName("Site").setDEF("hanim_r_trochanterion"))
+            .addChild(ProtoInstance702 = new ProtoInstance().setName("Site").setDEF("hanim_l_iliocristale"))
+            .addChild(ProtoInstance703 = new ProtoInstance().setName("Site").setDEF("hanim_l_trochanterion"))
+            .addChild(ProtoInstance704 = new ProtoInstance().setName("Site").setDEF("hanim_r_psis"))
+            .addChild(ProtoInstance705 = new ProtoInstance().setName("Site").setDEF("hanim_l_psis"))
+            .addChild(ProtoInstance706 = new ProtoInstance().setName("Site").setDEF("hanim_crotch")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("name").setValue("humanoid"));
 ProtoInstance0
@@ -488,239 +960,239 @@ ProtoInstance1
 ProtoInstance1
               .addFieldValue(new fieldValue().setName("name").setValue("humanoid_root"));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("center").setValue("0 0.824000000953674 0.0276999995112419"));
+              .addFieldValue(new fieldValue().setName("center").setValue("0 0.8240000009536743 0.027699999511241913"));
 ProtoInstance1
               .addFieldValue(new fieldValue().setName("children")
-                .addChild(ProtoInstance2 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac_2"))
-                .addChild(ProtoInstance42 = new ProtoInstance().setName("Joint").setDEF("hanim_vl5_2"))
-                .addChild(ProtoInstance108 = new ProtoInstance().setName("Segment").setDEF("hanim_sacrum_2")));
+                .addChild(ProtoInstance2 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac"))
+                .addChild(ProtoInstance42 = new ProtoInstance().setName("Joint").setDEF("hanim_vl5"))
+                .addChild(ProtoInstance108 = new ProtoInstance().setName("Segment").setDEF("hanim_sacrum")));
 ProtoInstance2
                   .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance2
                   .addFieldValue(new fieldValue().setName("name").setValue("sacroiliac"));
 ProtoInstance2
-                  .addFieldValue(new fieldValue().setName("center").setValue("0 0.914900004863739 0.0015999999595806"));
+                  .addFieldValue(new fieldValue().setName("center").setValue("0 0.914900004863739 0.0015999999595806003"));
 ProtoInstance2
                   .addFieldValue(new fieldValue().setName("children")
-                    .addChild(ProtoInstance3 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip_2"))
-                    .addChild(ProtoInstance22 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip_2"))
-                    .addChild(ProtoInstance41 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis_2")));
+                    .addChild(ProtoInstance3 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
+                    .addChild(ProtoInstance22 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip"))
+                    .addChild(ProtoInstance41 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis")));
 ProtoInstance3
                       .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance3
                       .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
 ProtoInstance3
-                      .addFieldValue(new fieldValue().setName("center").setValue("0.0961000025272369 0.912400007247925 -0.0000999999974737875"));
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.09610000252723694 0.9124000072479248 -0.00009999999747378752"));
 ProtoInstance3
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance4 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee_2"))
-                        .addChild(ProtoInstance18 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh_2")));
+                        .addChild(ProtoInstance4 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee"))
+                        .addChild(ProtoInstance18 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh")));
 ProtoInstance4
                           .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance4
                           .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
 ProtoInstance4
-                          .addFieldValue(new fieldValue().setName("center").setValue("0.104000002145767 0.486699998378754 0.030799999833107"));
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.10400000214576721 0.48669999837875366 0.030799999833106995"));
 ProtoInstance4
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance5 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural_2"))
-                            .addChild(ProtoInstance17 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf_2")));
+                            .addChild(ProtoInstance5 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+                            .addChild(ProtoInstance17 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf")));
 ProtoInstance5
                               .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance5
                               .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
 ProtoInstance5
-                              .addFieldValue(new fieldValue().setName("center").setValue("0.110100001096725 0.0656000003218651 -0.0736000016331673"));
+                              .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
 ProtoInstance5
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance6 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal__2"))
-                                .addChild(ProtoInstance12 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot_2")));
+                                .addChild(ProtoInstance6 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                                .addChild(ProtoInstance12 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
 ProtoInstance6
                                   .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance6
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
 ProtoInstance6
-                                  .addFieldValue(new fieldValue().setName("center").setValue("0.108599998056889 0.0000999999974737875 0.0368000008165836"));
+                                  .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
 ProtoInstance6
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance7 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal_2")));
+                                    .addChild(ProtoInstance7 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
 ProtoInstance7
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
 ProtoInstance7
                                       .addFieldValue(new fieldValue().setName("children")
-                                        .addChild(ProtoInstance8 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip_2"))
-                                        .addChild(ProtoInstance9 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx6"))
-                                        .addChild(ProtoInstance10 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx2"))
-                                        .addChild(ProtoInstance11 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx3")));
+                                        .addChild(ProtoInstance8 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                                        .addChild(ProtoInstance9 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                                        .addChild(ProtoInstance10 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                                        .addChild(ProtoInstance11 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
 ProtoInstance8
                                           .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
 ProtoInstance8
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.135399997234344 0.0015999999595806 0.147599995136261"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
 ProtoInstance9
                                           .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
 ProtoInstance9
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.182500004768372 0.00700000021606684 0.092799998819828"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
 ProtoInstance10
                                           .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
 ProtoInstance10
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0816000029444695 0.023199999704957 0.0105999996885657"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
 ProtoInstance11
                                           .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
 ProtoInstance11
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.119499996304512 0.00789999961853027 0.143299996852875"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
 ProtoInstance12
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
 ProtoInstance12
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance13 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus_2"))
-                                    .addChild(ProtoInstance14 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus_2"))
-                                    .addChild(ProtoInstance15 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion_2"))
-                                    .addChild(ProtoInstance16 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior_2")));
+                                    .addChild(ProtoInstance13 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                                    .addChild(ProtoInstance14 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                                    .addChild(ProtoInstance15 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                                    .addChild(ProtoInstance16 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
 ProtoInstance13
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
 ProtoInstance13
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.130799993872643 0.0597000010311604 -0.103200003504753"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
 ProtoInstance14
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
 ProtoInstance14
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0890000015497208 0.0715999975800514 -0.0881000012159348"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
 ProtoInstance15
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
 ProtoInstance15
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0890000015497208 0.0575000010430813 -0.0943000018596649"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
 ProtoInstance16
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
 ProtoInstance16
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.025900000706315 -0.11710000038147"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
 ProtoInstance17
                               .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
 ProtoInstance18
                           .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
 ProtoInstance18
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance19 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease_2"))
-                            .addChild(ProtoInstance20 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles_2"))
-                            .addChild(ProtoInstance21 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles_2")));
+                            .addChild(ProtoInstance19 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+                            .addChild(ProtoInstance20 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+                            .addChild(ProtoInstance21 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles")));
 ProtoInstance19
                               .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
 ProtoInstance19
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0992999970912933 0.488099992275238 -0.0308999996632338"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
 ProtoInstance20
                               .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
 ProtoInstance20
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.159799993038177 0.496699988842011 0.0296999998390675"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
 ProtoInstance21
                               .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
 ProtoInstance21
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0397999994456768 0.494599997997284 0.0303000006824732"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
 ProtoInstance22
                       .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance22
                       .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
 ProtoInstance22
-                      .addFieldValue(new fieldValue().setName("center").setValue("-0.0949999988079071 0.917100012302399 0.00289999996311963"));
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.0949999988079071 0.9171000123023987 0.002899999963119626"));
 ProtoInstance22
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance23 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee_2"))
-                        .addChild(ProtoInstance37 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh_2")));
+                        .addChild(ProtoInstance23 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee"))
+                        .addChild(ProtoInstance37 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh")));
 ProtoInstance23
                           .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance23
                           .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
 ProtoInstance23
-                          .addFieldValue(new fieldValue().setName("center").setValue("-0.0866999998688698 0.491299986839294 0.0318000018596649"));
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.08669999986886978 0.49129998683929443 0.03180000185966492"));
 ProtoInstance23
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance24 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural_2"))
-                            .addChild(ProtoInstance36 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf_2")));
+                            .addChild(ProtoInstance24 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+                            .addChild(ProtoInstance36 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf")));
 ProtoInstance24
                               .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance24
                               .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
 ProtoInstance24
-                              .addFieldValue(new fieldValue().setName("center").setValue("-0.0800999999046326 0.0711999982595444 -0.0766000002622604"));
+                              .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
 ProtoInstance24
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance25 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal__2"))
-                                .addChild(ProtoInstance31 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot_2")));
+                                .addChild(ProtoInstance25 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                                .addChild(ProtoInstance31 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
 ProtoInstance25
                                   .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance25
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
 ProtoInstance25
-                                  .addFieldValue(new fieldValue().setName("center").setValue("-0.0800999999046326 0 0.0368000008165836"));
+                                  .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
 ProtoInstance25
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance26 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal_2")));
+                                    .addChild(ProtoInstance26 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
 ProtoInstance26
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
 ProtoInstance26
                                       .addFieldValue(new fieldValue().setName("children")
-                                        .addChild(ProtoInstance27 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip_2"))
-                                        .addChild(ProtoInstance28 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx6"))
-                                        .addChild(ProtoInstance29 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx2"))
-                                        .addChild(ProtoInstance30 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx3")));
+                                        .addChild(ProtoInstance27 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                                        .addChild(ProtoInstance28 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                                        .addChild(ProtoInstance29 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                                        .addChild(ProtoInstance30 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
 ProtoInstance27
                                           .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
 ProtoInstance27
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.104299999773502 -0.0227000005543232 0.144999995827675"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
 ProtoInstance28
                                           .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
 ProtoInstance28
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.152300000190735 0.0165999997407198 0.0895000025629997"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
 ProtoInstance29
                                           .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
 ProtoInstance29
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.0520999990403652 0.0260000005364418 0.012699999846518"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
 ProtoInstance30
                                           .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
 ProtoInstance30
-                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.088299997150898 0.013399999588728 0.138300001621246"));
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
 ProtoInstance31
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
 ProtoInstance31
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance32 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus_2"))
-                                    .addChild(ProtoInstance33 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus_2"))
-                                    .addChild(ProtoInstance34 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion_2"))
-                                    .addChild(ProtoInstance35 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior_2")));
+                                    .addChild(ProtoInstance32 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                                    .addChild(ProtoInstance33 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                                    .addChild(ProtoInstance34 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                                    .addChild(ProtoInstance35 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
 ProtoInstance32
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
 ProtoInstance32
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.100599996745586 0.0658000037074089 -0.107500001788139"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
 ProtoInstance33
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
 ProtoInstance33
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.0590999983251095 0.0759999975562096 -0.092799998819828"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
 ProtoInstance34
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
 ProtoInstance34
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.0603000000119209 0.0610000006854534 -0.100199997425079"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
 ProtoInstance35
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
 ProtoInstance35
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.0692000016570091 0.0296999998390675 -0.122100003063679"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
 ProtoInstance36
                               .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
 ProtoInstance37
                           .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
 ProtoInstance37
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance38 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease_2"))
-                            .addChild(ProtoInstance39 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles_2"))
-                            .addChild(ProtoInstance40 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles_2")));
+                            .addChild(ProtoInstance38 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+                            .addChild(ProtoInstance39 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+                            .addChild(ProtoInstance40 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles")));
 ProtoInstance38
                               .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
 ProtoInstance38
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.0825000032782555 0.4932000041008 -0.032600000500679"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
 ProtoInstance39
                               .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
 ProtoInstance39
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.142100006341934 0.499199986457825 0.0309999994933605"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
 ProtoInstance40
                               .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
 ProtoInstance40
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.0220999997109175 0.501399993896484 0.0288999993354082"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
 ProtoInstance41
                       .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
 ProtoInstance42
@@ -728,409 +1200,3483 @@ ProtoInstance42
 ProtoInstance42
                   .addFieldValue(new fieldValue().setName("name").setValue("vl5"));
 ProtoInstance42
-                  .addFieldValue(new fieldValue().setName("center").setValue("0.00279999990016222 1.05680000782013 -0.0776000022888184"));
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.00279999990016222 1.0568000078201294 -0.07760000228881836"));
 ProtoInstance42
                   .addFieldValue(new fieldValue().setName("children")
-                    .addChild(ProtoInstance43 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase_2"))
-                    .addChild(ProtoInstance55 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder_2"))
-                    .addChild(ProtoInstance71 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder_2"))
-                    .addChild(ProtoInstance87 = new ProtoInstance().setName("Segment").setDEF("hanim_l5_2")));
+                    .addChild(ProtoInstance43 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase"))
+                    .addChild(ProtoInstance55 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
+                    .addChild(ProtoInstance71 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
+                    .addChild(ProtoInstance87 = new ProtoInstance().setName("Segment").setDEF("hanim_l5")));
 ProtoInstance43
                       .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance43
                       .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
 ProtoInstance43
-                      .addFieldValue(new fieldValue().setName("center").setValue("0.00439999997615814 1.62090003490448 0.0236000008881092"));
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.004399999976158142 1.62090003490448 0.023600000888109207"));
 ProtoInstance43
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance44 = new ProtoInstance().setName("Segment").setDEF("hanim_skull_2")));
+                        .addChild(ProtoInstance44 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
 ProtoInstance44
                           .addFieldValue(new fieldValue().setName("name").setValue("skull"));
 ProtoInstance44
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance45 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip_2"))
-                            .addChild(ProtoInstance46 = new ProtoInstance().setName("Site").setDEF("hanim_sellion_2"))
-                            .addChild(ProtoInstance47 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale_2"))
-                            .addChild(ProtoInstance48 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale_2"))
-                            .addChild(ProtoInstance49 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton_2"))
-                            .addChild(ProtoInstance50 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion_2"))
-                            .addChild(ProtoInstance51 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion_2"))
-                            .addChild(ProtoInstance52 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion_2"))
-                            .addChild(ProtoInstance53 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion_2"))
-                            .addChild(ProtoInstance54 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale_2")));
+                            .addChild(ProtoInstance45 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+                            .addChild(ProtoInstance46 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+                            .addChild(ProtoInstance47 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+                            .addChild(ProtoInstance48 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+                            .addChild(ProtoInstance49 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+                            .addChild(ProtoInstance50 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+                            .addChild(ProtoInstance51 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+                            .addChild(ProtoInstance52 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+                            .addChild(ProtoInstance53 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+                            .addChild(ProtoInstance54 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale")));
 ProtoInstance45
                               .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
 ProtoInstance45
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.00499999988824129 1.75039994716644 0.00549999997019768"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
 ProtoInstance46
                               .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
 ProtoInstance46
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.00579999992623925 1.63160002231598 0.0851999968290329"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
 ProtoInstance47
                               .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
 ProtoInstance47
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.023700000718236 1.61710000038147 0.0751999989151955"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
 ProtoInstance48
                               .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
 ProtoInstance48
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.61710000038147 0.0751999989151955"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
 ProtoInstance49
                               .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
 ProtoInstance49
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.00609999988228083 1.54100000858307 0.0804999992251396"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
 ProtoInstance50
                               .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
 ProtoInstance50
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.0645999982953072 1.63469994068146 0.0302000008523464"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
 ProtoInstance51
                               .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
 ProtoInstance51
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.0520000010728836 1.55289995670319 0.0346999987959862"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
 ProtoInstance52
                               .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
 ProtoInstance52
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.63479995727539 0.0282000005245209"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
 ProtoInstance53
                               .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
 ProtoInstance53
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0631000027060509 1.55299997329712 0.0329999998211861"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
 ProtoInstance54
                               .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
 ProtoInstance54
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.00389999989420176 1.59720003604889 -0.0795999988913536"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
 ProtoInstance55
                       .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance55
                       .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
 ProtoInstance55
-                      .addFieldValue(new fieldValue().setName("center").setValue("0.202900007367134 1.43760001659393 -0.0386999994516373"));
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.2029000073671341 1.437600016593933 -0.03869999945163727"));
 ProtoInstance55
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance56 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow_2"))
-                        .addChild(ProtoInstance69 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm_2")));
+                        .addChild(ProtoInstance56 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow"))
+                        .addChild(ProtoInstance69 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm")));
 ProtoInstance56
                           .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance56
                           .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
 ProtoInstance56
-                          .addFieldValue(new fieldValue().setName("center").setValue("0.201399996876717 1.1356999874115 -0.0681999996304512"));
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.2013999968767166 1.135699987411499 -0.0681999996304512"));
 ProtoInstance56
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance57 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal_2"))
-                            .addChild(ProtoInstance64 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm_2")));
+                            .addChild(ProtoInstance57 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+                            .addChild(ProtoInstance64 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm")));
 ProtoInstance57
                               .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance57
                               .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
 ProtoInstance57
-                              .addFieldValue(new fieldValue().setName("center").setValue("0.198400005698204 0.866299986839294 -0.0582999996840954"));
+                              .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
 ProtoInstance57
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance58 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand_2")));
+                                .addChild(ProtoInstance58 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
 ProtoInstance58
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
 ProtoInstance58
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance59 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip_2"))
-                                    .addChild(ProtoInstance60 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx3"))
-                                    .addChild(ProtoInstance61 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion_2"))
-                                    .addChild(ProtoInstance62 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid_2"))
-                                    .addChild(ProtoInstance63 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx6")));
+                                    .addChild(ProtoInstance59 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                                    .addChild(ProtoInstance60 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                                    .addChild(ProtoInstance61 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                                    .addChild(ProtoInstance62 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                                    .addChild(ProtoInstance63 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
 ProtoInstance59
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
 ProtoInstance59
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.208000004291534 0.673099994659424 -0.049100000411272"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
 ProtoInstance60
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
 ProtoInstance60
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.200900003314018 0.813899993896484 -0.023700000718236"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
 ProtoInstance61
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
 ProtoInstance61
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.205599993467331 0.674300014972687 -0.048200000077486"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
 ProtoInstance62
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
 ProtoInstance62
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.214200004935265 0.85290002822876 -0.064800001680851"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
 ProtoInstance63
                                       .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
 ProtoInstance63
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.192900002002716 0.78600001335144 -0.112199999392033"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
 ProtoInstance64
                               .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
 ProtoInstance64
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance65 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid_2"))
-                                .addChild(ProtoInstance66 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon_2"))
-                                .addChild(ProtoInstance67 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles_2"))
-                                .addChild(ProtoInstance68 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale_2")));
+                                .addChild(ProtoInstance65 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                                .addChild(ProtoInstance66 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                                .addChild(ProtoInstance67 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                                .addChild(ProtoInstance68 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
 ProtoInstance65
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
 ProtoInstance65
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.190099999308586 0.864499986171722 -0.0414999984204769"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
 ProtoInstance66
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
 ProtoInstance66
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.196199998259544 1.13750004768372 -0.112300001084805"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
 ProtoInstance67
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
 ProtoInstance67
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.173500001430511 1.12720000743866 -0.111299999058247"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
 ProtoInstance68
                                   .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
 ProtoInstance68
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.218199998140335 1.12119996547699 -0.116700001060963"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
 ProtoInstance69
                           .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
 ProtoInstance69
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance70 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles_2")));
+                            .addChild(ProtoInstance70 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles")));
 ProtoInstance70
                               .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
 ProtoInstance70
-                              .addFieldValue(new fieldValue().setName("translation").setValue("0.228000000119209 1.14820003509521 -0.109999999403954"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
 ProtoInstance71
                       .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance71
                       .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
 ProtoInstance71
-                      .addFieldValue(new fieldValue().setName("center").setValue("-0.190699994564056 1.4407000541687 -0.0324999988079071"));
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.1906999945640564 1.4407000541687012 -0.032499998807907104"));
 ProtoInstance71
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance72 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow_2"))
-                        .addChild(ProtoInstance85 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm_2")));
+                        .addChild(ProtoInstance72 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow"))
+                        .addChild(ProtoInstance85 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm")));
 ProtoInstance72
                           .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance72
                           .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
 ProtoInstance72
-                          .addFieldValue(new fieldValue().setName("center").setValue("-0.194900006055832 1.13880002498627 -0.061999998986721"));
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.1949000060558319 1.138800024986267 -0.06199999898672104"));
 ProtoInstance72
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance73 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal_2"))
-                            .addChild(ProtoInstance80 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm_2")));
+                            .addChild(ProtoInstance73 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal"))
+                            .addChild(ProtoInstance80 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm")));
 ProtoInstance73
                               .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
 ProtoInstance73
                               .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
 ProtoInstance73
-                              .addFieldValue(new fieldValue().setName("center").setValue("-0.195899993181229 0.869400024414063 -0.0520999990403652"));
+                              .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
 ProtoInstance73
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance74 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand_2")));
+                                .addChild(ProtoInstance74 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
 ProtoInstance74
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
 ProtoInstance74
                                   .addFieldValue(new fieldValue().setName("children")
-                                    .addChild(ProtoInstance75 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip_2"))
-                                    .addChild(ProtoInstance76 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx3"))
-                                    .addChild(ProtoInstance77 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion_2"))
-                                    .addChild(ProtoInstance78 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid_2"))
-                                    .addChild(ProtoInstance79 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx6")));
+                                    .addChild(ProtoInstance75 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                                    .addChild(ProtoInstance76 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                                    .addChild(ProtoInstance77 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                                    .addChild(ProtoInstance78 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                                    .addChild(ProtoInstance79 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
 ProtoInstance75
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
 ProtoInstance75
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.196899995207787 0.675800025463104 -0.0427000001072884"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
 ProtoInstance76
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
 ProtoInstance76
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.197699993848801 0.816900014877319 -0.0176999997347593"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
 ProtoInstance77
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
 ProtoInstance77
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.194100007414818 0.677200019359589 -0.0423000007867813"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
 ProtoInstance78
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
 ProtoInstance78
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945 0.856199979782104 -0.0584000013768673"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
 ProtoInstance79
                                       .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
 ProtoInstance79
-                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.192900002002716 0.788999974727631 -0.10639999806881"));
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
 ProtoInstance80
                               .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
 ProtoInstance80
                               .addFieldValue(new fieldValue().setName("children")
-                                .addChild(ProtoInstance81 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid_2"))
-                                .addChild(ProtoInstance82 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon_2"))
-                                .addChild(ProtoInstance83 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles_2"))
-                                .addChild(ProtoInstance84 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale_2")));
+                                .addChild(ProtoInstance81 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                                .addChild(ProtoInstance82 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                                .addChild(ProtoInstance83 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                                .addChild(ProtoInstance84 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
 ProtoInstance81
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
 ProtoInstance81
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.86760002374649 -0.0359999984502792"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
 ProtoInstance82
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
 ProtoInstance82
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.190699994564056 1.14049994945526 -0.106499999761581"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
 ProtoInstance83
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
 ProtoInstance83
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.167999997735024 1.12979996204376 -0.106200002133846"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
 ProtoInstance84
                                   .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
 ProtoInstance84
-                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.212999999523163 1.130499958992 -0.109099999070168"));
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
 ProtoInstance85
                           .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
 ProtoInstance85
                           .addFieldValue(new fieldValue().setName("children")
-                            .addChild(ProtoInstance86 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles_2")));
+                            .addChild(ProtoInstance86 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles")));
 ProtoInstance86
                               .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
 ProtoInstance86
-                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.222399994730949 1.15170001983643 -0.103299997746944"));
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
 ProtoInstance87
                       .addFieldValue(new fieldValue().setName("name").setValue("l5"));
 ProtoInstance87
                       .addFieldValue(new fieldValue().setName("children")
-                        .addChild(ProtoInstance88 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale_2"))
-                        .addChild(ProtoInstance89 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale_2"))
-                        .addChild(ProtoInstance90 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale_2"))
-                        .addChild(ProtoInstance91 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion_2"))
-                        .addChild(ProtoInstance92 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion_2"))
-                        .addChild(ProtoInstance93 = new ProtoInstance().setName("Site").setDEF("hanim_substernale_2"))
-                        .addChild(ProtoInstance94 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10_2"))
-                        .addChild(ProtoInstance95 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10_2"))
-                        .addChild(ProtoInstance96 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale_2"))
-                        .addChild(ProtoInstance97 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back_2"))
-                        .addChild(ProtoInstance98 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior_2"))
-                        .addChild(ProtoInstance99 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion_2"))
-                        .addChild(ProtoInstance100 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal_2"))
-                        .addChild(ProtoInstance101 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal_2"))
-                        .addChild(ProtoInstance102 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion_2"))
-                        .addChild(ProtoInstance103 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal_2"))
-                        .addChild(ProtoInstance104 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal_2"))
-                        .addChild(ProtoInstance105 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base_2"))
-                        .addChild(ProtoInstance106 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base_2"))
-                        .addChild(ProtoInstance107 = new ProtoInstance().setName("Site").setDEF("hanim_navel_2")));
+                        .addChild(ProtoInstance88 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale"))
+                        .addChild(ProtoInstance89 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale"))
+                        .addChild(ProtoInstance90 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale"))
+                        .addChild(ProtoInstance91 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion"))
+                        .addChild(ProtoInstance92 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion"))
+                        .addChild(ProtoInstance93 = new ProtoInstance().setName("Site").setDEF("hanim_substernale"))
+                        .addChild(ProtoInstance94 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10"))
+                        .addChild(ProtoInstance95 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10"))
+                        .addChild(ProtoInstance96 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale"))
+                        .addChild(ProtoInstance97 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back"))
+                        .addChild(ProtoInstance98 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior"))
+                        .addChild(ProtoInstance99 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion"))
+                        .addChild(ProtoInstance100 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal"))
+                        .addChild(ProtoInstance101 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal"))
+                        .addChild(ProtoInstance102 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion"))
+                        .addChild(ProtoInstance103 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal"))
+                        .addChild(ProtoInstance104 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal"))
+                        .addChild(ProtoInstance105 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base"))
+                        .addChild(ProtoInstance106 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base"))
+                        .addChild(ProtoInstance107 = new ProtoInstance().setName("Site").setDEF("hanim_navel")));
 ProtoInstance88
                           .addFieldValue(new fieldValue().setName("name").setValue("r_clavicale"));
 ProtoInstance88
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.0115000000223517 1.49430000782013 0.0399999991059303"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.011500000022351742 1.4943000078201294 0.03999999910593033"));
 ProtoInstance89
                           .addFieldValue(new fieldValue().setName("name").setValue("suprasternale"));
 ProtoInstance89
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.47140002250671 0.0551000013947487"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.4714000225067139 0.05510000139474869"));
 ProtoInstance90
                           .addFieldValue(new fieldValue().setName("name").setValue("l_clavicale"));
 ProtoInstance90
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0271000005304813 1.49430000782013 0.0394000001251698"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.02710000053048134 1.4943000078201294 0.039400000125169754"));
 ProtoInstance91
                           .addFieldValue(new fieldValue().setName("name").setValue("r_thelion"));
 ProtoInstance91
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.0736000016331673 1.33850002288818 0.121699996292591"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.07360000163316727 1.3385000228881836 0.1216999962925911"));
 ProtoInstance92
                           .addFieldValue(new fieldValue().setName("name").setValue("l_thelion"));
 ProtoInstance92
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0917999967932701 1.33819997310638 0.119199998676777"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.09179999679327011 1.3381999731063843 0.11919999867677689"));
 ProtoInstance93
                           .addFieldValue(new fieldValue().setName("name").setValue("substernale"));
 ProtoInstance93
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461936 1.29949998855591 0.114699997007847"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461935997 1.2994999885559082 0.11469999700784683"));
 ProtoInstance94
                           .addFieldValue(new fieldValue().setName("name").setValue("r_rib10"));
 ProtoInstance94
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.0710999965667725 1.19410002231598 0.101599998772144"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.07109999656677246 1.194100022315979 0.10159999877214432"));
 ProtoInstance95
                           .addFieldValue(new fieldValue().setName("name").setValue("l_rib10"));
 ProtoInstance95
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0870999991893768 1.19249999523163 0.099200002849102"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08709999918937683 1.1924999952316284 0.09920000284910202"));
 ProtoInstance96
                           .addFieldValue(new fieldValue().setName("name").setValue("cervicale"));
 ProtoInstance96
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0063999998383224 1.51999998092651 -0.0815000012516975"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.006399999838322401 1.5199999809265137 -0.08150000125169754"));
 ProtoInstance97
                           .addFieldValue(new fieldValue().setName("name").setValue("spine_2_lower_back"));
 ProtoInstance97
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.00490000005811453 1.19079995155334 -0.111299999058247"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.004900000058114529 1.1907999515533447 -0.11129999905824661"));
 ProtoInstance98
                           .addFieldValue(new fieldValue().setName("name").setValue("waist_preferred_posterior"));
 ProtoInstance98
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165535 1.09150004386902 -0.109099999070168"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165534973 1.0915000438690186 -0.10909999907016754"));
 ProtoInstance99
                           .addFieldValue(new fieldValue().setName("name").setValue("r_acromion"));
 ProtoInstance99
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.190500006079674 1.47909998893738 -0.0430999994277954"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19050000607967377 1.479099988937378 -0.04309999942779541"));
 ProtoInstance100
                           .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_proximal"));
 ProtoInstance100
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.162599995732307 1.40719997882843 -0.00310000008903444"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.16259999573230743 1.4071999788284302 -0.003100000089034438"));
 ProtoInstance101
                           .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_distal"));
 ProtoInstance101
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.160300001502037 1.40980005264282 -0.0825999975204468"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.16030000150203705 1.4098000526428223 -0.08259999752044678"));
 ProtoInstance102
                           .addFieldValue(new fieldValue().setName("name").setValue("l_acromion"));
 ProtoInstance102
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.203199997544289 1.47599995136261 -0.0489999987185001"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.20319999754428864 1.4759999513626099 -0.04899999871850014"));
 ProtoInstance103
                           .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_proximal"));
 ProtoInstance103
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.177699998021126 1.40649998188019 -0.00749999983236194"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.1776999980211258 1.406499981880188 -0.007499999832361937"));
 ProtoInstance104
                           .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_distal"));
 ProtoInstance104
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704361 1.40719997882843 -0.0874999985098839"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704360962 1.4071999788284302 -0.08749999850988388"));
 ProtoInstance105
                           .addFieldValue(new fieldValue().setName("name").setValue("r_neck_base"));
 ProtoInstance105
-                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.0419000014662743 1.51489996910095 -0.0219999998807907"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.04190000146627426 1.5148999691009521 -0.02199999988079071"));
 ProtoInstance106
                           .addFieldValue(new fieldValue().setName("name").setValue("l_neck_base"));
 ProtoInstance106
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0645999982953072 1.51409995555878 -0.0379999987781048"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.06459999829530716 1.5140999555587769 -0.03799999877810478"));
 ProtoInstance107
                           .addFieldValue(new fieldValue().setName("name").setValue("navel"));
 ProtoInstance107
-                          .addFieldValue(new fieldValue().setName("translation").setValue("0.00689999992027879 1.09660005569458 0.101700000464916"));
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
 ProtoInstance108
                   .addFieldValue(new fieldValue().setName("name").setValue("sacrum"));
 ProtoInstance108
                   .addFieldValue(new fieldValue().setName("children")
-                    .addChild(ProtoInstance109 = new ProtoInstance().setName("Site").setDEF("hanim_r_asis_2"))
-                    .addChild(ProtoInstance110 = new ProtoInstance().setName("Site").setDEF("hanim_l_asis_2"))
-                    .addChild(ProtoInstance111 = new ProtoInstance().setName("Site").setDEF("hanim_r_iliocristale_2"))
-                    .addChild(ProtoInstance112 = new ProtoInstance().setName("Site").setDEF("hanim_r_trochanterion_2"))
-                    .addChild(ProtoInstance113 = new ProtoInstance().setName("Site").setDEF("hanim_l_iliocristale_2"))
-                    .addChild(ProtoInstance114 = new ProtoInstance().setName("Site").setDEF("hanim_l_trochanterion_2"))
-                    .addChild(ProtoInstance115 = new ProtoInstance().setName("Site").setDEF("hanim_r_psis_2"))
-                    .addChild(ProtoInstance116 = new ProtoInstance().setName("Site").setDEF("hanim_l_psis_2"))
-                    .addChild(ProtoInstance117 = new ProtoInstance().setName("Site").setDEF("hanim_crotch_2")));
+                    .addChild(ProtoInstance109 = new ProtoInstance().setName("Site").setDEF("hanim_r_asis"))
+                    .addChild(ProtoInstance110 = new ProtoInstance().setName("Site").setDEF("hanim_l_asis"))
+                    .addChild(ProtoInstance111 = new ProtoInstance().setName("Site").setDEF("hanim_r_iliocristale"))
+                    .addChild(ProtoInstance112 = new ProtoInstance().setName("Site").setDEF("hanim_r_trochanterion"))
+                    .addChild(ProtoInstance113 = new ProtoInstance().setName("Site").setDEF("hanim_l_iliocristale"))
+                    .addChild(ProtoInstance114 = new ProtoInstance().setName("Site").setDEF("hanim_l_trochanterion"))
+                    .addChild(ProtoInstance115 = new ProtoInstance().setName("Site").setDEF("hanim_r_psis"))
+                    .addChild(ProtoInstance116 = new ProtoInstance().setName("Site").setDEF("hanim_l_psis"))
+                    .addChild(ProtoInstance117 = new ProtoInstance().setName("Site").setDEF("hanim_crotch")));
 ProtoInstance109
                       .addFieldValue(new fieldValue().setName("name").setValue("r_asis"));
 ProtoInstance109
-                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.088699996471405 1.00209999084473 0.111199997365475"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.08869999647140503 1.0020999908447266 0.1111999973654747"));
 ProtoInstance110
                       .addFieldValue(new fieldValue().setName("name").setValue("l_asis"));
 ProtoInstance110
-                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0925000011920929 0.998300015926361 0.105200000107288"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0925000011920929 0.9983000159263611 0.10520000010728836"));
 ProtoInstance111
                       .addFieldValue(new fieldValue().setName("name").setValue("r_iliocristale"));
 ProtoInstance111
-                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.152500003576279 1.0628000497818 0.00350000010803342"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1525000035762787 1.0628000497817993 0.0035000001080334187"));
 ProtoInstance112
                       .addFieldValue(new fieldValue().setName("name").setValue("r_trochanterion"));
 ProtoInstance112
-                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.16889999806881 0.841899991035461 0.0351999998092651"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1688999980688095 0.8418999910354614 0.03519999980926514"));
 ProtoInstance113
                       .addFieldValue(new fieldValue().setName("name").setValue("l_iliocristale"));
 ProtoInstance113
-                      .addFieldValue(new fieldValue().setName("translation").setValue("0.161200001835823 1.05369997024536 0.0007999999797903"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.16120000183582306 1.0536999702453613 0.0007999999797903001"));
 ProtoInstance114
                       .addFieldValue(new fieldValue().setName("name").setValue("l_trochanterion"));
 ProtoInstance114
-                      .addFieldValue(new fieldValue().setName("translation").setValue("0.167699992656708 0.833599984645844 0.0303000006824732"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.16769999265670776 0.8335999846458435 0.030300000682473183"));
 ProtoInstance115
                       .addFieldValue(new fieldValue().setName("name").setValue("r_psis"));
 ProtoInstance115
-                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.0715999975800514 1.01900005340576 -0.113799996674061"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.07159999758005142 1.0190000534057617 -0.11379999667406082"));
 ProtoInstance116
                       .addFieldValue(new fieldValue().setName("name").setValue("l_psis"));
 ProtoInstance116
-                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0773999989032745 1.01900005340576 -0.115099996328354"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.07739999890327454 1.0190000534057617 -0.11509999632835388"));
 ProtoInstance117
                       .addFieldValue(new fieldValue().setName("name").setValue("crotch"));
 ProtoInstance117
-                      .addFieldValue(new fieldValue().setName("translation").setValue("0.00340000004507601 0.826600015163422 0.0256999991834164"));
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0034000000450760126 0.8266000151634216 0.025699999183416367"));
+ProtoInstance118
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance118
+              .addFieldValue(new fieldValue().setName("name").setValue("humanoid_root"));
+ProtoInstance118
+              .addFieldValue(new fieldValue().setName("center").setValue("0 0.8240000009536743 0.027699999511241913"));
+ProtoInstance118
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance119 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac"))
+                .addChild(ProtoInstance159 = new ProtoInstance().setName("Joint").setDEF("hanim_vl5"))
+                .addChild(ProtoInstance225 = new ProtoInstance().setName("Segment").setDEF("hanim_sacrum")));
+ProtoInstance119
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance119
+                  .addFieldValue(new fieldValue().setName("name").setValue("sacroiliac"));
+ProtoInstance119
+                  .addFieldValue(new fieldValue().setName("center").setValue("0 0.914900004863739 0.0015999999595806003"));
+ProtoInstance119
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance120 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
+                    .addChild(ProtoInstance139 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip"))
+                    .addChild(ProtoInstance158 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis")));
+ProtoInstance120
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance120
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
+ProtoInstance120
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.09610000252723694 0.9124000072479248 -0.00009999999747378752"));
+ProtoInstance120
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance121 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee"))
+                        .addChild(ProtoInstance135 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh")));
+ProtoInstance121
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance121
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
+ProtoInstance121
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.10400000214576721 0.48669999837875366 0.030799999833106995"));
+ProtoInstance121
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance122 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+                            .addChild(ProtoInstance134 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf")));
+ProtoInstance122
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance122
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
+ProtoInstance122
+                              .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
+ProtoInstance122
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance123 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                                .addChild(ProtoInstance129 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance123
+                                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance123
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance123
+                                  .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance123
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance124 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance124
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance124
+                                      .addFieldValue(new fieldValue().setName("children")
+                                        .addChild(ProtoInstance125 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                                        .addChild(ProtoInstance126 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                                        .addChild(ProtoInstance127 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                                        .addChild(ProtoInstance128 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance125
+                                          .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance125
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance126
+                                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance126
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance127
+                                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance127
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance128
+                                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance128
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance129
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance129
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance130 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                                    .addChild(ProtoInstance131 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                                    .addChild(ProtoInstance132 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                                    .addChild(ProtoInstance133 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance130
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance130
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance131
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance131
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance132
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance132
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance133
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance133
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance134
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+ProtoInstance135
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
+ProtoInstance135
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance136 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+                            .addChild(ProtoInstance137 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+                            .addChild(ProtoInstance138 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles")));
+ProtoInstance136
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
+ProtoInstance136
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
+ProtoInstance137
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance137
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
+ProtoInstance138
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance138
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
+ProtoInstance139
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance139
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
+ProtoInstance139
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.0949999988079071 0.9171000123023987 0.002899999963119626"));
+ProtoInstance139
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance140 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee"))
+                        .addChild(ProtoInstance154 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh")));
+ProtoInstance140
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance140
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
+ProtoInstance140
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.08669999986886978 0.49129998683929443 0.03180000185966492"));
+ProtoInstance140
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance141 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+                            .addChild(ProtoInstance153 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf")));
+ProtoInstance141
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance141
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
+ProtoInstance141
+                              .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
+ProtoInstance141
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance142 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                                .addChild(ProtoInstance148 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance142
+                                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance142
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance142
+                                  .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance142
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance143 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance143
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance143
+                                      .addFieldValue(new fieldValue().setName("children")
+                                        .addChild(ProtoInstance144 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                                        .addChild(ProtoInstance145 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                                        .addChild(ProtoInstance146 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                                        .addChild(ProtoInstance147 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance144
+                                          .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance144
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance145
+                                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance145
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance146
+                                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance146
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance147
+                                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance147
+                                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance148
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance148
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance149 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                                    .addChild(ProtoInstance150 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                                    .addChild(ProtoInstance151 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                                    .addChild(ProtoInstance152 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance149
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance149
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance150
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance150
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance151
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance151
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance152
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance152
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance153
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+ProtoInstance154
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
+ProtoInstance154
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance155 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+                            .addChild(ProtoInstance156 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+                            .addChild(ProtoInstance157 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles")));
+ProtoInstance155
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
+ProtoInstance155
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
+ProtoInstance156
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance156
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
+ProtoInstance157
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance157
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
+ProtoInstance158
+                      .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
+ProtoInstance159
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance159
+                  .addFieldValue(new fieldValue().setName("name").setValue("vl5"));
+ProtoInstance159
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.00279999990016222 1.0568000078201294 -0.07760000228881836"));
+ProtoInstance159
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance160 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase"))
+                    .addChild(ProtoInstance172 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
+                    .addChild(ProtoInstance188 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
+                    .addChild(ProtoInstance204 = new ProtoInstance().setName("Segment").setDEF("hanim_l5")));
+ProtoInstance160
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance160
+                      .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
+ProtoInstance160
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.004399999976158142 1.62090003490448 0.023600000888109207"));
+ProtoInstance160
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance161 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
+ProtoInstance161
+                          .addFieldValue(new fieldValue().setName("name").setValue("skull"));
+ProtoInstance161
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance162 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+                            .addChild(ProtoInstance163 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+                            .addChild(ProtoInstance164 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+                            .addChild(ProtoInstance165 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+                            .addChild(ProtoInstance166 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+                            .addChild(ProtoInstance167 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+                            .addChild(ProtoInstance168 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+                            .addChild(ProtoInstance169 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+                            .addChild(ProtoInstance170 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+                            .addChild(ProtoInstance171 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale")));
+ProtoInstance162
+                              .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
+ProtoInstance162
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
+ProtoInstance163
+                              .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
+ProtoInstance163
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
+ProtoInstance164
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
+ProtoInstance164
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
+ProtoInstance165
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
+ProtoInstance165
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
+ProtoInstance166
+                              .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
+ProtoInstance166
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
+ProtoInstance167
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
+ProtoInstance167
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
+ProtoInstance168
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
+ProtoInstance168
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
+ProtoInstance169
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
+ProtoInstance169
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
+ProtoInstance170
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
+ProtoInstance170
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
+ProtoInstance171
+                              .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
+ProtoInstance171
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
+ProtoInstance172
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance172
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
+ProtoInstance172
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.2029000073671341 1.437600016593933 -0.03869999945163727"));
+ProtoInstance172
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance173 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow"))
+                        .addChild(ProtoInstance186 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm")));
+ProtoInstance173
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance173
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
+ProtoInstance173
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.2013999968767166 1.135699987411499 -0.0681999996304512"));
+ProtoInstance173
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance174 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+                            .addChild(ProtoInstance181 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm")));
+ProtoInstance174
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance174
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
+ProtoInstance174
+                              .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
+ProtoInstance174
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance175 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance175
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance175
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance176 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                                    .addChild(ProtoInstance177 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                                    .addChild(ProtoInstance178 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                                    .addChild(ProtoInstance179 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                                    .addChild(ProtoInstance180 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance176
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance176
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance177
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance177
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance178
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance178
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance179
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance179
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance180
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance180
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance181
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+ProtoInstance181
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance182 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                                .addChild(ProtoInstance183 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                                .addChild(ProtoInstance184 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                                .addChild(ProtoInstance185 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
+ProtoInstance182
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance182
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance183
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance183
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance184
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance184
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance185
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance185
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance186
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
+ProtoInstance186
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance187 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles")));
+ProtoInstance187
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
+ProtoInstance187
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
+ProtoInstance188
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance188
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
+ProtoInstance188
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.1906999945640564 1.4407000541687012 -0.032499998807907104"));
+ProtoInstance188
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance189 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow"))
+                        .addChild(ProtoInstance202 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm")));
+ProtoInstance189
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance189
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
+ProtoInstance189
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.1949000060558319 1.138800024986267 -0.06199999898672104"));
+ProtoInstance189
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance190 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal"))
+                            .addChild(ProtoInstance197 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm")));
+ProtoInstance190
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance190
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
+ProtoInstance190
+                              .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
+ProtoInstance190
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance191 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance191
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance191
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance192 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                                    .addChild(ProtoInstance193 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                                    .addChild(ProtoInstance194 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                                    .addChild(ProtoInstance195 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                                    .addChild(ProtoInstance196 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance192
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance192
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance193
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance193
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance194
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance194
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance195
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance195
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance196
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance196
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance197
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+ProtoInstance197
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance198 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                                .addChild(ProtoInstance199 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                                .addChild(ProtoInstance200 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                                .addChild(ProtoInstance201 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
+ProtoInstance198
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance198
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance199
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance199
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance200
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance200
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance201
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance201
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance202
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
+ProtoInstance202
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance203 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles")));
+ProtoInstance203
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
+ProtoInstance203
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
+ProtoInstance204
+                      .addFieldValue(new fieldValue().setName("name").setValue("l5"));
+ProtoInstance204
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance205 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale"))
+                        .addChild(ProtoInstance206 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale"))
+                        .addChild(ProtoInstance207 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale"))
+                        .addChild(ProtoInstance208 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion"))
+                        .addChild(ProtoInstance209 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion"))
+                        .addChild(ProtoInstance210 = new ProtoInstance().setName("Site").setDEF("hanim_substernale"))
+                        .addChild(ProtoInstance211 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10"))
+                        .addChild(ProtoInstance212 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10"))
+                        .addChild(ProtoInstance213 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale"))
+                        .addChild(ProtoInstance214 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back"))
+                        .addChild(ProtoInstance215 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior"))
+                        .addChild(ProtoInstance216 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion"))
+                        .addChild(ProtoInstance217 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal"))
+                        .addChild(ProtoInstance218 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal"))
+                        .addChild(ProtoInstance219 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion"))
+                        .addChild(ProtoInstance220 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal"))
+                        .addChild(ProtoInstance221 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal"))
+                        .addChild(ProtoInstance222 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base"))
+                        .addChild(ProtoInstance223 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base"))
+                        .addChild(ProtoInstance224 = new ProtoInstance().setName("Site").setDEF("hanim_navel")));
+ProtoInstance205
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_clavicale"));
+ProtoInstance205
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.011500000022351742 1.4943000078201294 0.03999999910593033"));
+ProtoInstance206
+                          .addFieldValue(new fieldValue().setName("name").setValue("suprasternale"));
+ProtoInstance206
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.4714000225067139 0.05510000139474869"));
+ProtoInstance207
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_clavicale"));
+ProtoInstance207
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.02710000053048134 1.4943000078201294 0.039400000125169754"));
+ProtoInstance208
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_thelion"));
+ProtoInstance208
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.07360000163316727 1.3385000228881836 0.1216999962925911"));
+ProtoInstance209
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_thelion"));
+ProtoInstance209
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.09179999679327011 1.3381999731063843 0.11919999867677689"));
+ProtoInstance210
+                          .addFieldValue(new fieldValue().setName("name").setValue("substernale"));
+ProtoInstance210
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461935997 1.2994999885559082 0.11469999700784683"));
+ProtoInstance211
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_rib10"));
+ProtoInstance211
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.07109999656677246 1.194100022315979 0.10159999877214432"));
+ProtoInstance212
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_rib10"));
+ProtoInstance212
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08709999918937683 1.1924999952316284 0.09920000284910202"));
+ProtoInstance213
+                          .addFieldValue(new fieldValue().setName("name").setValue("cervicale"));
+ProtoInstance213
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.006399999838322401 1.5199999809265137 -0.08150000125169754"));
+ProtoInstance214
+                          .addFieldValue(new fieldValue().setName("name").setValue("spine_2_lower_back"));
+ProtoInstance214
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.004900000058114529 1.1907999515533447 -0.11129999905824661"));
+ProtoInstance215
+                          .addFieldValue(new fieldValue().setName("name").setValue("waist_preferred_posterior"));
+ProtoInstance215
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165534973 1.0915000438690186 -0.10909999907016754"));
+ProtoInstance216
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_acromion"));
+ProtoInstance216
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19050000607967377 1.479099988937378 -0.04309999942779541"));
+ProtoInstance217
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_proximal"));
+ProtoInstance217
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.16259999573230743 1.4071999788284302 -0.003100000089034438"));
+ProtoInstance218
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_distal"));
+ProtoInstance218
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.16030000150203705 1.4098000526428223 -0.08259999752044678"));
+ProtoInstance219
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_acromion"));
+ProtoInstance219
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.20319999754428864 1.4759999513626099 -0.04899999871850014"));
+ProtoInstance220
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_proximal"));
+ProtoInstance220
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.1776999980211258 1.406499981880188 -0.007499999832361937"));
+ProtoInstance221
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_distal"));
+ProtoInstance221
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704360962 1.4071999788284302 -0.08749999850988388"));
+ProtoInstance222
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_neck_base"));
+ProtoInstance222
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.04190000146627426 1.5148999691009521 -0.02199999988079071"));
+ProtoInstance223
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_neck_base"));
+ProtoInstance223
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.06459999829530716 1.5140999555587769 -0.03799999877810478"));
+ProtoInstance224
+                          .addFieldValue(new fieldValue().setName("name").setValue("navel"));
+ProtoInstance224
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
+ProtoInstance225
+                  .addFieldValue(new fieldValue().setName("name").setValue("sacrum"));
+ProtoInstance225
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance226 = new ProtoInstance().setName("Site").setDEF("hanim_r_asis"))
+                    .addChild(ProtoInstance227 = new ProtoInstance().setName("Site").setDEF("hanim_l_asis"))
+                    .addChild(ProtoInstance228 = new ProtoInstance().setName("Site").setDEF("hanim_r_iliocristale"))
+                    .addChild(ProtoInstance229 = new ProtoInstance().setName("Site").setDEF("hanim_r_trochanterion"))
+                    .addChild(ProtoInstance230 = new ProtoInstance().setName("Site").setDEF("hanim_l_iliocristale"))
+                    .addChild(ProtoInstance231 = new ProtoInstance().setName("Site").setDEF("hanim_l_trochanterion"))
+                    .addChild(ProtoInstance232 = new ProtoInstance().setName("Site").setDEF("hanim_r_psis"))
+                    .addChild(ProtoInstance233 = new ProtoInstance().setName("Site").setDEF("hanim_l_psis"))
+                    .addChild(ProtoInstance234 = new ProtoInstance().setName("Site").setDEF("hanim_crotch")));
+ProtoInstance226
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_asis"));
+ProtoInstance226
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.08869999647140503 1.0020999908447266 0.1111999973654747"));
+ProtoInstance227
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_asis"));
+ProtoInstance227
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0925000011920929 0.9983000159263611 0.10520000010728836"));
+ProtoInstance228
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_iliocristale"));
+ProtoInstance228
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1525000035762787 1.0628000497817993 0.0035000001080334187"));
+ProtoInstance229
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_trochanterion"));
+ProtoInstance229
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1688999980688095 0.8418999910354614 0.03519999980926514"));
+ProtoInstance230
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_iliocristale"));
+ProtoInstance230
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.16120000183582306 1.0536999702453613 0.0007999999797903001"));
+ProtoInstance231
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_trochanterion"));
+ProtoInstance231
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.16769999265670776 0.8335999846458435 0.030300000682473183"));
+ProtoInstance232
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_psis"));
+ProtoInstance232
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.07159999758005142 1.0190000534057617 -0.11379999667406082"));
+ProtoInstance233
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_psis"));
+ProtoInstance233
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.07739999890327454 1.0190000534057617 -0.11509999632835388"));
+ProtoInstance234
+                      .addFieldValue(new fieldValue().setName("name").setValue("crotch"));
+ProtoInstance234
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0034000000450760126 0.8266000151634216 0.025699999183416367"));
+ProtoInstance235
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance235
+              .addFieldValue(new fieldValue().setName("name").setValue("sacroiliac"));
+ProtoInstance235
+              .addFieldValue(new fieldValue().setName("center").setValue("0 0.914900004863739 0.0015999999595806003"));
+ProtoInstance235
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance236 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
+                .addChild(ProtoInstance255 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip"))
+                .addChild(ProtoInstance274 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis")));
+ProtoInstance236
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance236
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
+ProtoInstance236
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.09610000252723694 0.9124000072479248 -0.00009999999747378752"));
+ProtoInstance236
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance237 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee"))
+                    .addChild(ProtoInstance251 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh")));
+ProtoInstance237
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance237
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
+ProtoInstance237
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.10400000214576721 0.48669999837875366 0.030799999833106995"));
+ProtoInstance237
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance238 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+                        .addChild(ProtoInstance250 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf")));
+ProtoInstance238
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance238
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
+ProtoInstance238
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
+ProtoInstance238
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance239 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                            .addChild(ProtoInstance245 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance239
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance239
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance239
+                              .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance239
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance240 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance240
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance240
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance241 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                                    .addChild(ProtoInstance242 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                                    .addChild(ProtoInstance243 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                                    .addChild(ProtoInstance244 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance241
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance241
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance242
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance242
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance243
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance243
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance244
+                                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance244
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance245
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance245
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance246 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                                .addChild(ProtoInstance247 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                                .addChild(ProtoInstance248 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                                .addChild(ProtoInstance249 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance246
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance246
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance247
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance247
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance248
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance248
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance249
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance249
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance250
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+ProtoInstance251
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
+ProtoInstance251
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance252 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+                        .addChild(ProtoInstance253 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+                        .addChild(ProtoInstance254 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles")));
+ProtoInstance252
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
+ProtoInstance252
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
+ProtoInstance253
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance253
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
+ProtoInstance254
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance254
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
+ProtoInstance255
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance255
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
+ProtoInstance255
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.0949999988079071 0.9171000123023987 0.002899999963119626"));
+ProtoInstance255
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance256 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee"))
+                    .addChild(ProtoInstance270 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh")));
+ProtoInstance256
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance256
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
+ProtoInstance256
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.08669999986886978 0.49129998683929443 0.03180000185966492"));
+ProtoInstance256
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance257 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+                        .addChild(ProtoInstance269 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf")));
+ProtoInstance257
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance257
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
+ProtoInstance257
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
+ProtoInstance257
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance258 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                            .addChild(ProtoInstance264 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance258
+                              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance258
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance258
+                              .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance258
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance259 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance259
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance259
+                                  .addFieldValue(new fieldValue().setName("children")
+                                    .addChild(ProtoInstance260 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                                    .addChild(ProtoInstance261 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                                    .addChild(ProtoInstance262 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                                    .addChild(ProtoInstance263 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance260
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance260
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance261
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance261
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance262
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance262
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance263
+                                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance263
+                                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance264
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance264
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance265 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                                .addChild(ProtoInstance266 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                                .addChild(ProtoInstance267 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                                .addChild(ProtoInstance268 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance265
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance265
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance266
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance266
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance267
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance267
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance268
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance268
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance269
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+ProtoInstance270
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
+ProtoInstance270
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance271 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+                        .addChild(ProtoInstance272 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+                        .addChild(ProtoInstance273 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles")));
+ProtoInstance271
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
+ProtoInstance271
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
+ProtoInstance272
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance272
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
+ProtoInstance273
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance273
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
+ProtoInstance274
+                  .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
+ProtoInstance275
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance275
+              .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
+ProtoInstance275
+              .addFieldValue(new fieldValue().setName("center").setValue("0.09610000252723694 0.9124000072479248 -0.00009999999747378752"));
+ProtoInstance275
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance276 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee"))
+                .addChild(ProtoInstance290 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh")));
+ProtoInstance276
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance276
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
+ProtoInstance276
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.10400000214576721 0.48669999837875366 0.030799999833106995"));
+ProtoInstance276
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance277 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+                    .addChild(ProtoInstance289 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf")));
+ProtoInstance277
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance277
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
+ProtoInstance277
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
+ProtoInstance277
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance278 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                        .addChild(ProtoInstance284 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance278
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance278
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance278
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance278
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance279 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance279
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance279
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance280 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                                .addChild(ProtoInstance281 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                                .addChild(ProtoInstance282 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                                .addChild(ProtoInstance283 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance280
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance280
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance281
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance281
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance282
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance282
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance283
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance283
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance284
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance284
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance285 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                            .addChild(ProtoInstance286 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                            .addChild(ProtoInstance287 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                            .addChild(ProtoInstance288 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance285
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance285
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance286
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance286
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance287
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance287
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance288
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance288
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance289
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+ProtoInstance290
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
+ProtoInstance290
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance291 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+                    .addChild(ProtoInstance292 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+                    .addChild(ProtoInstance293 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles")));
+ProtoInstance291
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
+ProtoInstance291
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
+ProtoInstance292
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance292
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
+ProtoInstance293
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance293
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
+ProtoInstance294
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance294
+              .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
+ProtoInstance294
+              .addFieldValue(new fieldValue().setName("center").setValue("0.10400000214576721 0.48669999837875366 0.030799999833106995"));
+ProtoInstance294
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance295 = new ProtoInstance().setName("Joint").setDEF("hanim_l_talocrural"))
+                .addChild(ProtoInstance307 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf")));
+ProtoInstance295
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance295
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
+ProtoInstance295
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
+ProtoInstance295
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance296 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                    .addChild(ProtoInstance302 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance296
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance296
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance296
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance296
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance297 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance297
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance297
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance298 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                            .addChild(ProtoInstance299 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                            .addChild(ProtoInstance300 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                            .addChild(ProtoInstance301 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance298
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance298
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance299
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance299
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance300
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance300
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance301
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance301
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance302
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance302
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance303 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                        .addChild(ProtoInstance304 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                        .addChild(ProtoInstance305 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                        .addChild(ProtoInstance306 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance303
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance303
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance304
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance304
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance305
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance305
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance306
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance306
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance307
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+ProtoInstance308
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance308
+              .addFieldValue(new fieldValue().setName("name").setValue("l_talocrural"));
+ProtoInstance308
+              .addFieldValue(new fieldValue().setName("center").setValue("0.11010000109672546 0.06560000032186508 -0.07360000163316727"));
+ProtoInstance308
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance309 = new ProtoInstance().setName("Joint").setDEF("hanim_l_metatarsophalangeal_"))
+                .addChild(ProtoInstance315 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance309
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance309
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance309
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance309
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance310 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance310
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance310
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance311 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                        .addChild(ProtoInstance312 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                        .addChild(ProtoInstance313 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                        .addChild(ProtoInstance314 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance311
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance311
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance312
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance312
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance313
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance313
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance314
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance314
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance315
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance315
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance316 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                    .addChild(ProtoInstance317 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                    .addChild(ProtoInstance318 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                    .addChild(ProtoInstance319 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance316
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance316
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance317
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance317
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance318
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance318
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance319
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance319
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance320
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance320
+              .addFieldValue(new fieldValue().setName("name").setValue("l_metatarsophalangeal_"));
+ProtoInstance320
+              .addFieldValue(new fieldValue().setName("center").setValue("0.10859999805688858 0.00009999999747378752 0.03680000081658363"));
+ProtoInstance320
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance321 = new ProtoInstance().setName("Segment").setDEF("hanim_l_middistal")));
+ProtoInstance321
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance321
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance322 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                    .addChild(ProtoInstance323 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                    .addChild(ProtoInstance324 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                    .addChild(ProtoInstance325 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance322
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance322
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance323
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance323
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance324
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance324
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance325
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance325
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance326
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance326
+              .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
+ProtoInstance326
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.0949999988079071 0.9171000123023987 0.002899999963119626"));
+ProtoInstance326
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance327 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee"))
+                .addChild(ProtoInstance341 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh")));
+ProtoInstance327
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance327
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
+ProtoInstance327
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.08669999986886978 0.49129998683929443 0.03180000185966492"));
+ProtoInstance327
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance328 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+                    .addChild(ProtoInstance340 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf")));
+ProtoInstance328
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance328
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
+ProtoInstance328
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
+ProtoInstance328
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance329 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                        .addChild(ProtoInstance335 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance329
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance329
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance329
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance329
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance330 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance330
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance330
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance331 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                                .addChild(ProtoInstance332 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                                .addChild(ProtoInstance333 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                                .addChild(ProtoInstance334 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance331
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance331
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance332
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance332
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance333
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance333
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance334
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance334
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance335
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance335
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance336 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                            .addChild(ProtoInstance337 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                            .addChild(ProtoInstance338 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                            .addChild(ProtoInstance339 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance336
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance336
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance337
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance337
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance338
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance338
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance339
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance339
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance340
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+ProtoInstance341
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
+ProtoInstance341
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance342 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+                    .addChild(ProtoInstance343 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+                    .addChild(ProtoInstance344 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles")));
+ProtoInstance342
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
+ProtoInstance342
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
+ProtoInstance343
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance343
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
+ProtoInstance344
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance344
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
+ProtoInstance345
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance345
+              .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
+ProtoInstance345
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.08669999986886978 0.49129998683929443 0.03180000185966492"));
+ProtoInstance345
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance346 = new ProtoInstance().setName("Joint").setDEF("hanim_r_talocrural"))
+                .addChild(ProtoInstance358 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf")));
+ProtoInstance346
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance346
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
+ProtoInstance346
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
+ProtoInstance346
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance347 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                    .addChild(ProtoInstance353 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance347
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance347
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance347
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance347
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance348 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance348
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance348
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance349 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                            .addChild(ProtoInstance350 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                            .addChild(ProtoInstance351 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                            .addChild(ProtoInstance352 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance349
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance349
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance350
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance350
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance351
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance351
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance352
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance352
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance353
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance353
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance354 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                        .addChild(ProtoInstance355 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                        .addChild(ProtoInstance356 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                        .addChild(ProtoInstance357 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance354
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance354
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance355
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance355
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance356
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance356
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance357
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance357
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance358
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+ProtoInstance359
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance359
+              .addFieldValue(new fieldValue().setName("name").setValue("r_talocrural"));
+ProtoInstance359
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0.07119999825954437 -0.07660000026226044"));
+ProtoInstance359
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance360 = new ProtoInstance().setName("Joint").setDEF("hanim_r_metatarsophalangeal_"))
+                .addChild(ProtoInstance366 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance360
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance360
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance360
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance360
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance361 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance361
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance361
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance362 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                        .addChild(ProtoInstance363 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                        .addChild(ProtoInstance364 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                        .addChild(ProtoInstance365 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance362
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance362
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance363
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance363
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance364
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance364
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance365
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance365
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance366
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance366
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance367 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                    .addChild(ProtoInstance368 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                    .addChild(ProtoInstance369 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                    .addChild(ProtoInstance370 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance367
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance367
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance368
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance368
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance369
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance369
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance370
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance370
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance371
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance371
+              .addFieldValue(new fieldValue().setName("name").setValue("r_metatarsophalangeal_"));
+ProtoInstance371
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.08009999990463257 0 0.03680000081658363"));
+ProtoInstance371
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance372 = new ProtoInstance().setName("Segment").setDEF("hanim_r_middistal")));
+ProtoInstance372
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance372
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance373 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                    .addChild(ProtoInstance374 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                    .addChild(ProtoInstance375 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                    .addChild(ProtoInstance376 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance373
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance373
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance374
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance374
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance375
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance375
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance376
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance376
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance377
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance377
+              .addFieldValue(new fieldValue().setName("name").setValue("vl5"));
+ProtoInstance377
+              .addFieldValue(new fieldValue().setName("center").setValue("0.00279999990016222 1.0568000078201294 -0.07760000228881836"));
+ProtoInstance377
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance378 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase"))
+                .addChild(ProtoInstance390 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
+                .addChild(ProtoInstance406 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
+                .addChild(ProtoInstance422 = new ProtoInstance().setName("Segment").setDEF("hanim_l5")));
+ProtoInstance378
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance378
+                  .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
+ProtoInstance378
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.004399999976158142 1.62090003490448 0.023600000888109207"));
+ProtoInstance378
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance379 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
+ProtoInstance379
+                      .addFieldValue(new fieldValue().setName("name").setValue("skull"));
+ProtoInstance379
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance380 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+                        .addChild(ProtoInstance381 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+                        .addChild(ProtoInstance382 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+                        .addChild(ProtoInstance383 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+                        .addChild(ProtoInstance384 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+                        .addChild(ProtoInstance385 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+                        .addChild(ProtoInstance386 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+                        .addChild(ProtoInstance387 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+                        .addChild(ProtoInstance388 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+                        .addChild(ProtoInstance389 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale")));
+ProtoInstance380
+                          .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
+ProtoInstance380
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
+ProtoInstance381
+                          .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
+ProtoInstance381
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
+ProtoInstance382
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
+ProtoInstance382
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
+ProtoInstance383
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
+ProtoInstance383
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
+ProtoInstance384
+                          .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
+ProtoInstance384
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
+ProtoInstance385
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
+ProtoInstance385
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
+ProtoInstance386
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
+ProtoInstance386
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
+ProtoInstance387
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
+ProtoInstance387
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
+ProtoInstance388
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
+ProtoInstance388
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
+ProtoInstance389
+                          .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
+ProtoInstance389
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
+ProtoInstance390
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance390
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
+ProtoInstance390
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.2029000073671341 1.437600016593933 -0.03869999945163727"));
+ProtoInstance390
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance391 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow"))
+                    .addChild(ProtoInstance404 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm")));
+ProtoInstance391
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance391
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
+ProtoInstance391
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.2013999968767166 1.135699987411499 -0.0681999996304512"));
+ProtoInstance391
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance392 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+                        .addChild(ProtoInstance399 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm")));
+ProtoInstance392
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance392
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
+ProtoInstance392
+                          .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
+ProtoInstance392
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance393 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance393
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance393
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance394 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                                .addChild(ProtoInstance395 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                                .addChild(ProtoInstance396 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                                .addChild(ProtoInstance397 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                                .addChild(ProtoInstance398 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance394
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance394
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance395
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance395
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance396
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance396
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance397
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance397
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance398
+                                  .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance398
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance399
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+ProtoInstance399
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance400 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                            .addChild(ProtoInstance401 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                            .addChild(ProtoInstance402 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                            .addChild(ProtoInstance403 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
+ProtoInstance400
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance400
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance401
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance401
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance402
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance402
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance403
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance403
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance404
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
+ProtoInstance404
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance405 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles")));
+ProtoInstance405
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
+ProtoInstance405
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
+ProtoInstance406
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance406
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
+ProtoInstance406
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.1906999945640564 1.4407000541687012 -0.032499998807907104"));
+ProtoInstance406
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance407 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow"))
+                    .addChild(ProtoInstance420 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm")));
+ProtoInstance407
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance407
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
+ProtoInstance407
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.1949000060558319 1.138800024986267 -0.06199999898672104"));
+ProtoInstance407
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance408 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal"))
+                        .addChild(ProtoInstance415 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm")));
+ProtoInstance408
+                          .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance408
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
+ProtoInstance408
+                          .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
+ProtoInstance408
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance409 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance409
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance409
+                              .addFieldValue(new fieldValue().setName("children")
+                                .addChild(ProtoInstance410 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                                .addChild(ProtoInstance411 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                                .addChild(ProtoInstance412 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                                .addChild(ProtoInstance413 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                                .addChild(ProtoInstance414 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance410
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance410
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance411
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance411
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance412
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance412
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance413
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance413
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance414
+                                  .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance414
+                                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance415
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+ProtoInstance415
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance416 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                            .addChild(ProtoInstance417 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                            .addChild(ProtoInstance418 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                            .addChild(ProtoInstance419 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
+ProtoInstance416
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance416
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance417
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance417
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance418
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance418
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance419
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance419
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance420
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
+ProtoInstance420
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance421 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles")));
+ProtoInstance421
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
+ProtoInstance421
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
+ProtoInstance422
+                  .addFieldValue(new fieldValue().setName("name").setValue("l5"));
+ProtoInstance422
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance423 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale"))
+                    .addChild(ProtoInstance424 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale"))
+                    .addChild(ProtoInstance425 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale"))
+                    .addChild(ProtoInstance426 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion"))
+                    .addChild(ProtoInstance427 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion"))
+                    .addChild(ProtoInstance428 = new ProtoInstance().setName("Site").setDEF("hanim_substernale"))
+                    .addChild(ProtoInstance429 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10"))
+                    .addChild(ProtoInstance430 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10"))
+                    .addChild(ProtoInstance431 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale"))
+                    .addChild(ProtoInstance432 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back"))
+                    .addChild(ProtoInstance433 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior"))
+                    .addChild(ProtoInstance434 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion"))
+                    .addChild(ProtoInstance435 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal"))
+                    .addChild(ProtoInstance436 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal"))
+                    .addChild(ProtoInstance437 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion"))
+                    .addChild(ProtoInstance438 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal"))
+                    .addChild(ProtoInstance439 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal"))
+                    .addChild(ProtoInstance440 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base"))
+                    .addChild(ProtoInstance441 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base"))
+                    .addChild(ProtoInstance442 = new ProtoInstance().setName("Site").setDEF("hanim_navel")));
+ProtoInstance423
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_clavicale"));
+ProtoInstance423
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.011500000022351742 1.4943000078201294 0.03999999910593033"));
+ProtoInstance424
+                      .addFieldValue(new fieldValue().setName("name").setValue("suprasternale"));
+ProtoInstance424
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.4714000225067139 0.05510000139474869"));
+ProtoInstance425
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_clavicale"));
+ProtoInstance425
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.02710000053048134 1.4943000078201294 0.039400000125169754"));
+ProtoInstance426
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_thelion"));
+ProtoInstance426
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.07360000163316727 1.3385000228881836 0.1216999962925911"));
+ProtoInstance427
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_thelion"));
+ProtoInstance427
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.09179999679327011 1.3381999731063843 0.11919999867677689"));
+ProtoInstance428
+                      .addFieldValue(new fieldValue().setName("name").setValue("substernale"));
+ProtoInstance428
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461935997 1.2994999885559082 0.11469999700784683"));
+ProtoInstance429
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_rib10"));
+ProtoInstance429
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.07109999656677246 1.194100022315979 0.10159999877214432"));
+ProtoInstance430
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_rib10"));
+ProtoInstance430
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.08709999918937683 1.1924999952316284 0.09920000284910202"));
+ProtoInstance431
+                      .addFieldValue(new fieldValue().setName("name").setValue("cervicale"));
+ProtoInstance431
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.006399999838322401 1.5199999809265137 -0.08150000125169754"));
+ProtoInstance432
+                      .addFieldValue(new fieldValue().setName("name").setValue("spine_2_lower_back"));
+ProtoInstance432
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.004900000058114529 1.1907999515533447 -0.11129999905824661"));
+ProtoInstance433
+                      .addFieldValue(new fieldValue().setName("name").setValue("waist_preferred_posterior"));
+ProtoInstance433
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165534973 1.0915000438690186 -0.10909999907016754"));
+ProtoInstance434
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_acromion"));
+ProtoInstance434
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19050000607967377 1.479099988937378 -0.04309999942779541"));
+ProtoInstance435
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_proximal"));
+ProtoInstance435
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.16259999573230743 1.4071999788284302 -0.003100000089034438"));
+ProtoInstance436
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_distal"));
+ProtoInstance436
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.16030000150203705 1.4098000526428223 -0.08259999752044678"));
+ProtoInstance437
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_acromion"));
+ProtoInstance437
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20319999754428864 1.4759999513626099 -0.04899999871850014"));
+ProtoInstance438
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_proximal"));
+ProtoInstance438
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.1776999980211258 1.406499981880188 -0.007499999832361937"));
+ProtoInstance439
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_distal"));
+ProtoInstance439
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704360962 1.4071999788284302 -0.08749999850988388"));
+ProtoInstance440
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_neck_base"));
+ProtoInstance440
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.04190000146627426 1.5148999691009521 -0.02199999988079071"));
+ProtoInstance441
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_neck_base"));
+ProtoInstance441
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.06459999829530716 1.5140999555587769 -0.03799999877810478"));
+ProtoInstance442
+                      .addFieldValue(new fieldValue().setName("name").setValue("navel"));
+ProtoInstance442
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
+ProtoInstance443
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance443
+              .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
+ProtoInstance443
+              .addFieldValue(new fieldValue().setName("center").setValue("0.004399999976158142 1.62090003490448 0.023600000888109207"));
+ProtoInstance443
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance444 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
+ProtoInstance444
+                  .addFieldValue(new fieldValue().setName("name").setValue("skull"));
+ProtoInstance444
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance445 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+                    .addChild(ProtoInstance446 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+                    .addChild(ProtoInstance447 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+                    .addChild(ProtoInstance448 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+                    .addChild(ProtoInstance449 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+                    .addChild(ProtoInstance450 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+                    .addChild(ProtoInstance451 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+                    .addChild(ProtoInstance452 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+                    .addChild(ProtoInstance453 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+                    .addChild(ProtoInstance454 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale")));
+ProtoInstance445
+                      .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
+ProtoInstance445
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
+ProtoInstance446
+                      .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
+ProtoInstance446
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
+ProtoInstance447
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
+ProtoInstance447
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
+ProtoInstance448
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
+ProtoInstance448
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
+ProtoInstance449
+                      .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
+ProtoInstance449
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
+ProtoInstance450
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
+ProtoInstance450
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
+ProtoInstance451
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
+ProtoInstance451
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
+ProtoInstance452
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
+ProtoInstance452
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
+ProtoInstance453
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
+ProtoInstance453
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
+ProtoInstance454
+                      .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
+ProtoInstance454
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
+ProtoInstance455
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance455
+              .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
+ProtoInstance455
+              .addFieldValue(new fieldValue().setName("center").setValue("0.2029000073671341 1.437600016593933 -0.03869999945163727"));
+ProtoInstance455
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance456 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow"))
+                .addChild(ProtoInstance469 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm")));
+ProtoInstance456
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance456
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
+ProtoInstance456
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.2013999968767166 1.135699987411499 -0.0681999996304512"));
+ProtoInstance456
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance457 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+                    .addChild(ProtoInstance464 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm")));
+ProtoInstance457
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance457
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
+ProtoInstance457
+                      .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
+ProtoInstance457
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance458 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance458
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance458
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance459 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                            .addChild(ProtoInstance460 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                            .addChild(ProtoInstance461 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                            .addChild(ProtoInstance462 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                            .addChild(ProtoInstance463 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance459
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance459
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance460
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance460
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance461
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance461
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance462
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance462
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance463
+                              .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance463
+                              .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance464
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+ProtoInstance464
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance465 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                        .addChild(ProtoInstance466 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                        .addChild(ProtoInstance467 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                        .addChild(ProtoInstance468 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
+ProtoInstance465
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance465
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance466
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance466
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance467
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance467
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance468
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance468
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance469
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
+ProtoInstance469
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance470 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles")));
+ProtoInstance470
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
+ProtoInstance470
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
+ProtoInstance471
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance471
+              .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
+ProtoInstance471
+              .addFieldValue(new fieldValue().setName("center").setValue("0.2013999968767166 1.135699987411499 -0.0681999996304512"));
+ProtoInstance471
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance472 = new ProtoInstance().setName("Joint").setDEF("hanim_l_radiocarpal"))
+                .addChild(ProtoInstance479 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm")));
+ProtoInstance472
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance472
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
+ProtoInstance472
+                  .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
+ProtoInstance472
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance473 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance473
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance473
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance474 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                        .addChild(ProtoInstance475 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                        .addChild(ProtoInstance476 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                        .addChild(ProtoInstance477 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                        .addChild(ProtoInstance478 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance474
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance474
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance475
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance475
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance476
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance476
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance477
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance477
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance478
+                          .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance478
+                          .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance479
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+ProtoInstance479
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance480 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                    .addChild(ProtoInstance481 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                    .addChild(ProtoInstance482 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                    .addChild(ProtoInstance483 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
+ProtoInstance480
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance480
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance481
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance481
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance482
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance482
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance483
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance483
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance484
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance484
+              .addFieldValue(new fieldValue().setName("name").setValue("l_radiocarpal"));
+ProtoInstance484
+              .addFieldValue(new fieldValue().setName("center").setValue("0.19840000569820404 0.8662999868392944 -0.05829999968409538"));
+ProtoInstance484
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance485 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance485
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance485
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance486 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                    .addChild(ProtoInstance487 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                    .addChild(ProtoInstance488 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                    .addChild(ProtoInstance489 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                    .addChild(ProtoInstance490 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance486
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance486
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance487
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance487
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance488
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance488
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance489
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance489
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance490
+                      .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance490
+                      .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance491
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance491
+              .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
+ProtoInstance491
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.1906999945640564 1.4407000541687012 -0.032499998807907104"));
+ProtoInstance491
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance492 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow"))
+                .addChild(ProtoInstance505 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm")));
+ProtoInstance492
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance492
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
+ProtoInstance492
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.1949000060558319 1.138800024986267 -0.06199999898672104"));
+ProtoInstance492
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance493 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal"))
+                    .addChild(ProtoInstance500 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm")));
+ProtoInstance493
+                      .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance493
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
+ProtoInstance493
+                      .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
+ProtoInstance493
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance494 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance494
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance494
+                          .addFieldValue(new fieldValue().setName("children")
+                            .addChild(ProtoInstance495 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                            .addChild(ProtoInstance496 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                            .addChild(ProtoInstance497 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                            .addChild(ProtoInstance498 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                            .addChild(ProtoInstance499 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance495
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance495
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance496
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance496
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance497
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance497
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance498
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance498
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance499
+                              .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance499
+                              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance500
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+ProtoInstance500
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance501 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                        .addChild(ProtoInstance502 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                        .addChild(ProtoInstance503 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                        .addChild(ProtoInstance504 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
+ProtoInstance501
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance501
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance502
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance502
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance503
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance503
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance504
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance504
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance505
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
+ProtoInstance505
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance506 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles")));
+ProtoInstance506
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
+ProtoInstance506
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
+ProtoInstance507
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance507
+              .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
+ProtoInstance507
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.1949000060558319 1.138800024986267 -0.06199999898672104"));
+ProtoInstance507
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance508 = new ProtoInstance().setName("Joint").setDEF("hanim_r_radiocarpal"))
+                .addChild(ProtoInstance515 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm")));
+ProtoInstance508
+                  .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance508
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
+ProtoInstance508
+                  .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
+ProtoInstance508
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance509 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance509
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance509
+                      .addFieldValue(new fieldValue().setName("children")
+                        .addChild(ProtoInstance510 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                        .addChild(ProtoInstance511 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                        .addChild(ProtoInstance512 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                        .addChild(ProtoInstance513 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                        .addChild(ProtoInstance514 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance510
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance510
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance511
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance511
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance512
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance512
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance513
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance513
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance514
+                          .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance514
+                          .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance515
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+ProtoInstance515
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance516 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                    .addChild(ProtoInstance517 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                    .addChild(ProtoInstance518 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                    .addChild(ProtoInstance519 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
+ProtoInstance516
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance516
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance517
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance517
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance518
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance518
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance519
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance519
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance520
+              .addFieldValue(new fieldValue().setName("stiffness").setValue("1 1 1"));
+ProtoInstance520
+              .addFieldValue(new fieldValue().setName("name").setValue("r_radiocarpal"));
+ProtoInstance520
+              .addFieldValue(new fieldValue().setName("center").setValue("-0.19589999318122864 0.8694000244140625 -0.05209999904036522"));
+ProtoInstance520
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance521 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance521
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance521
+                  .addFieldValue(new fieldValue().setName("children")
+                    .addChild(ProtoInstance522 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                    .addChild(ProtoInstance523 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                    .addChild(ProtoInstance524 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                    .addChild(ProtoInstance525 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                    .addChild(ProtoInstance526 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance522
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance522
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance523
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance523
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance524
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance524
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance525
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance525
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance526
+                      .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance526
+                      .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance527
+              .addFieldValue(new fieldValue().setName("name").setValue("l_middistal"));
+ProtoInstance527
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance528 = new ProtoInstance().setName("Site").setDEF("hanim_l_middistal_tip"))
+                .addChild(ProtoInstance529 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_5"))
+                .addChild(ProtoInstance530 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_interphalangeal_phalanx_1"))
+                .addChild(ProtoInstance531 = new ProtoInstance().setName("Site").setDEF("hanim_l_tarsal_distal_phalanx_2")));
+ProtoInstance528
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance528
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance529
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance529
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance530
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance530
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance531
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance531
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance532
+              .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+ProtoInstance532
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance533 = new ProtoInstance().setName("Site").setDEF("hanim_l_lateral_malleolus"))
+                .addChild(ProtoInstance534 = new ProtoInstance().setName("Site").setDEF("hanim_l_medial_malleolus"))
+                .addChild(ProtoInstance535 = new ProtoInstance().setName("Site").setDEF("hanim_l_sphyrion"))
+                .addChild(ProtoInstance536 = new ProtoInstance().setName("Site").setDEF("hanim_l_calcaneus_posterior")));
+ProtoInstance533
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance533
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance534
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance534
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance535
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance535
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance536
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance536
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance537
+              .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+ProtoInstance538
+              .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
+ProtoInstance538
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance539 = new ProtoInstance().setName("Site").setDEF("hanim_l_knee_crease"))
+                .addChild(ProtoInstance540 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_lateral_epicondyles"))
+                .addChild(ProtoInstance541 = new ProtoInstance().setName("Site").setDEF("hanim_l_femoral_medial_epicondyles")));
+ProtoInstance539
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
+ProtoInstance539
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
+ProtoInstance540
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance540
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
+ProtoInstance541
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance541
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
+ProtoInstance542
+              .addFieldValue(new fieldValue().setName("name").setValue("r_middistal"));
+ProtoInstance542
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance543 = new ProtoInstance().setName("Site").setDEF("hanim_r_middistal_tip"))
+                .addChild(ProtoInstance544 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_5"))
+                .addChild(ProtoInstance545 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_interphalangeal_phalanx_1"))
+                .addChild(ProtoInstance546 = new ProtoInstance().setName("Site").setDEF("hanim_r_tarsal_distal_phalanx_2")));
+ProtoInstance543
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance543
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance544
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance544
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance545
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance545
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance546
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance546
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance547
+              .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+ProtoInstance547
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance548 = new ProtoInstance().setName("Site").setDEF("hanim_r_lateral_malleolus"))
+                .addChild(ProtoInstance549 = new ProtoInstance().setName("Site").setDEF("hanim_r_medial_malleolus"))
+                .addChild(ProtoInstance550 = new ProtoInstance().setName("Site").setDEF("hanim_r_sphyrion"))
+                .addChild(ProtoInstance551 = new ProtoInstance().setName("Site").setDEF("hanim_r_calcaneus_posterior")));
+ProtoInstance548
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance548
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance549
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance549
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance550
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance550
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance551
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance551
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance552
+              .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+ProtoInstance553
+              .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
+ProtoInstance553
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance554 = new ProtoInstance().setName("Site").setDEF("hanim_r_knee_crease"))
+                .addChild(ProtoInstance555 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_lateral_epicondyles"))
+                .addChild(ProtoInstance556 = new ProtoInstance().setName("Site").setDEF("hanim_r_femoral_medial_epicondyles")));
+ProtoInstance554
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
+ProtoInstance554
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
+ProtoInstance555
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance555
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
+ProtoInstance556
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance556
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
+ProtoInstance557
+              .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
+ProtoInstance558
+              .addFieldValue(new fieldValue().setName("name").setValue("skull"));
+ProtoInstance558
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance559 = new ProtoInstance().setName("Site").setDEF("hanim_skull_tip"))
+                .addChild(ProtoInstance560 = new ProtoInstance().setName("Site").setDEF("hanim_sellion"))
+                .addChild(ProtoInstance561 = new ProtoInstance().setName("Site").setDEF("hanim_r_infraorbitale"))
+                .addChild(ProtoInstance562 = new ProtoInstance().setName("Site").setDEF("hanim_l_infraorbitale"))
+                .addChild(ProtoInstance563 = new ProtoInstance().setName("Site").setDEF("hanim_supramenton"))
+                .addChild(ProtoInstance564 = new ProtoInstance().setName("Site").setDEF("hanim_r_tragion"))
+                .addChild(ProtoInstance565 = new ProtoInstance().setName("Site").setDEF("hanim_r_gonion"))
+                .addChild(ProtoInstance566 = new ProtoInstance().setName("Site").setDEF("hanim_l_tragion"))
+                .addChild(ProtoInstance567 = new ProtoInstance().setName("Site").setDEF("hanim_l_gonion"))
+                .addChild(ProtoInstance568 = new ProtoInstance().setName("Site").setDEF("hanim_nuchale")));
+ProtoInstance559
+                  .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
+ProtoInstance559
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
+ProtoInstance560
+                  .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
+ProtoInstance560
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
+ProtoInstance561
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
+ProtoInstance561
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
+ProtoInstance562
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
+ProtoInstance562
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
+ProtoInstance563
+                  .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
+ProtoInstance563
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
+ProtoInstance564
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
+ProtoInstance564
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
+ProtoInstance565
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
+ProtoInstance565
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
+ProtoInstance566
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
+ProtoInstance566
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
+ProtoInstance567
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
+ProtoInstance567
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
+ProtoInstance568
+                  .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
+ProtoInstance568
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
+ProtoInstance569
+              .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+ProtoInstance569
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance570 = new ProtoInstance().setName("Site").setDEF("hanim_l_hand_tip"))
+                .addChild(ProtoInstance571 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_2"))
+                .addChild(ProtoInstance572 = new ProtoInstance().setName("Site").setDEF("hanim_l_dactylion"))
+                .addChild(ProtoInstance573 = new ProtoInstance().setName("Site").setDEF("hanim_l_ulnar_styloid"))
+                .addChild(ProtoInstance574 = new ProtoInstance().setName("Site").setDEF("hanim_l_metacarpal_phalanx_5")));
+ProtoInstance570
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance570
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance571
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance571
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance572
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance572
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance573
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance573
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance574
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance574
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance575
+              .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+ProtoInstance575
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance576 = new ProtoInstance().setName("Site").setDEF("hanim_l_radial_styloid"))
+                .addChild(ProtoInstance577 = new ProtoInstance().setName("Site").setDEF("hanim_l_olecranon"))
+                .addChild(ProtoInstance578 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_medial_epicondyles"))
+                .addChild(ProtoInstance579 = new ProtoInstance().setName("Site").setDEF("hanim_l_radiale")));
+ProtoInstance576
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance576
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance577
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance577
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance578
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance578
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance579
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance579
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance580
+              .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
+ProtoInstance580
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance581 = new ProtoInstance().setName("Site").setDEF("hanim_l_humeral_lateral_epicondyles")));
+ProtoInstance581
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
+ProtoInstance581
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
+ProtoInstance582
+              .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+ProtoInstance582
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance583 = new ProtoInstance().setName("Site").setDEF("hanim_r_hand_tip"))
+                .addChild(ProtoInstance584 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_2"))
+                .addChild(ProtoInstance585 = new ProtoInstance().setName("Site").setDEF("hanim_r_dactylion"))
+                .addChild(ProtoInstance586 = new ProtoInstance().setName("Site").setDEF("hanim_r_ulnar_styloid"))
+                .addChild(ProtoInstance587 = new ProtoInstance().setName("Site").setDEF("hanim_r_metacarpal_phalanx_5")));
+ProtoInstance583
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance583
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance584
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance584
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance585
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance585
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance586
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance586
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance587
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance587
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance588
+              .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+ProtoInstance588
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance589 = new ProtoInstance().setName("Site").setDEF("hanim_r_radial_styloid"))
+                .addChild(ProtoInstance590 = new ProtoInstance().setName("Site").setDEF("hanim_r_olecranon"))
+                .addChild(ProtoInstance591 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_medial_epicondyles"))
+                .addChild(ProtoInstance592 = new ProtoInstance().setName("Site").setDEF("hanim_r_radiale")));
+ProtoInstance589
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance589
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance590
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance590
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance591
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance591
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance592
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance592
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance593
+              .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
+ProtoInstance593
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance594 = new ProtoInstance().setName("Site").setDEF("hanim_r_humeral_lateral_epicondyles")));
+ProtoInstance594
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
+ProtoInstance594
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
+ProtoInstance595
+              .addFieldValue(new fieldValue().setName("name").setValue("l5"));
+ProtoInstance595
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance596 = new ProtoInstance().setName("Site").setDEF("hanim_r_clavicale"))
+                .addChild(ProtoInstance597 = new ProtoInstance().setName("Site").setDEF("hanim_suprasternale"))
+                .addChild(ProtoInstance598 = new ProtoInstance().setName("Site").setDEF("hanim_l_clavicale"))
+                .addChild(ProtoInstance599 = new ProtoInstance().setName("Site").setDEF("hanim_r_thelion"))
+                .addChild(ProtoInstance600 = new ProtoInstance().setName("Site").setDEF("hanim_l_thelion"))
+                .addChild(ProtoInstance601 = new ProtoInstance().setName("Site").setDEF("hanim_substernale"))
+                .addChild(ProtoInstance602 = new ProtoInstance().setName("Site").setDEF("hanim_r_rib10"))
+                .addChild(ProtoInstance603 = new ProtoInstance().setName("Site").setDEF("hanim_l_rib10"))
+                .addChild(ProtoInstance604 = new ProtoInstance().setName("Site").setDEF("hanim_cervicale"))
+                .addChild(ProtoInstance605 = new ProtoInstance().setName("Site").setDEF("hanim_spine_2_lower_back"))
+                .addChild(ProtoInstance606 = new ProtoInstance().setName("Site").setDEF("hanim_waist_preferred_posterior"))
+                .addChild(ProtoInstance607 = new ProtoInstance().setName("Site").setDEF("hanim_r_acromion"))
+                .addChild(ProtoInstance608 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_proximal"))
+                .addChild(ProtoInstance609 = new ProtoInstance().setName("Site").setDEF("hanim_r_axilla_distal"))
+                .addChild(ProtoInstance610 = new ProtoInstance().setName("Site").setDEF("hanim_l_acromion"))
+                .addChild(ProtoInstance611 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_proximal"))
+                .addChild(ProtoInstance612 = new ProtoInstance().setName("Site").setDEF("hanim_l_axilla_distal"))
+                .addChild(ProtoInstance613 = new ProtoInstance().setName("Site").setDEF("hanim_r_neck_base"))
+                .addChild(ProtoInstance614 = new ProtoInstance().setName("Site").setDEF("hanim_l_neck_base"))
+                .addChild(ProtoInstance615 = new ProtoInstance().setName("Site").setDEF("hanim_navel")));
+ProtoInstance596
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_clavicale"));
+ProtoInstance596
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.011500000022351742 1.4943000078201294 0.03999999910593033"));
+ProtoInstance597
+                  .addFieldValue(new fieldValue().setName("name").setValue("suprasternale"));
+ProtoInstance597
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.4714000225067139 0.05510000139474869"));
+ProtoInstance598
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_clavicale"));
+ProtoInstance598
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.02710000053048134 1.4943000078201294 0.039400000125169754"));
+ProtoInstance599
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_thelion"));
+ProtoInstance599
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.07360000163316727 1.3385000228881836 0.1216999962925911"));
+ProtoInstance600
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_thelion"));
+ProtoInstance600
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.09179999679327011 1.3381999731063843 0.11919999867677689"));
+ProtoInstance601
+                  .addFieldValue(new fieldValue().setName("name").setValue("substernale"));
+ProtoInstance601
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461935997 1.2994999885559082 0.11469999700784683"));
+ProtoInstance602
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_rib10"));
+ProtoInstance602
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.07109999656677246 1.194100022315979 0.10159999877214432"));
+ProtoInstance603
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_rib10"));
+ProtoInstance603
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.08709999918937683 1.1924999952316284 0.09920000284910202"));
+ProtoInstance604
+                  .addFieldValue(new fieldValue().setName("name").setValue("cervicale"));
+ProtoInstance604
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.006399999838322401 1.5199999809265137 -0.08150000125169754"));
+ProtoInstance605
+                  .addFieldValue(new fieldValue().setName("name").setValue("spine_2_lower_back"));
+ProtoInstance605
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.004900000058114529 1.1907999515533447 -0.11129999905824661"));
+ProtoInstance606
+                  .addFieldValue(new fieldValue().setName("name").setValue("waist_preferred_posterior"));
+ProtoInstance606
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165534973 1.0915000438690186 -0.10909999907016754"));
+ProtoInstance607
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_acromion"));
+ProtoInstance607
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.19050000607967377 1.479099988937378 -0.04309999942779541"));
+ProtoInstance608
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_proximal"));
+ProtoInstance608
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.16259999573230743 1.4071999788284302 -0.003100000089034438"));
+ProtoInstance609
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_distal"));
+ProtoInstance609
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.16030000150203705 1.4098000526428223 -0.08259999752044678"));
+ProtoInstance610
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_acromion"));
+ProtoInstance610
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.20319999754428864 1.4759999513626099 -0.04899999871850014"));
+ProtoInstance611
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_proximal"));
+ProtoInstance611
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.1776999980211258 1.406499981880188 -0.007499999832361937"));
+ProtoInstance612
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_distal"));
+ProtoInstance612
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704360962 1.4071999788284302 -0.08749999850988388"));
+ProtoInstance613
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_neck_base"));
+ProtoInstance613
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.04190000146627426 1.5148999691009521 -0.02199999988079071"));
+ProtoInstance614
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_neck_base"));
+ProtoInstance614
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.06459999829530716 1.5140999555587769 -0.03799999877810478"));
+ProtoInstance615
+                  .addFieldValue(new fieldValue().setName("name").setValue("navel"));
+ProtoInstance615
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
+ProtoInstance616
+              .addFieldValue(new fieldValue().setName("name").setValue("sacrum"));
+ProtoInstance616
+              .addFieldValue(new fieldValue().setName("children")
+                .addChild(ProtoInstance617 = new ProtoInstance().setName("Site").setDEF("hanim_r_asis"))
+                .addChild(ProtoInstance618 = new ProtoInstance().setName("Site").setDEF("hanim_l_asis"))
+                .addChild(ProtoInstance619 = new ProtoInstance().setName("Site").setDEF("hanim_r_iliocristale"))
+                .addChild(ProtoInstance620 = new ProtoInstance().setName("Site").setDEF("hanim_r_trochanterion"))
+                .addChild(ProtoInstance621 = new ProtoInstance().setName("Site").setDEF("hanim_l_iliocristale"))
+                .addChild(ProtoInstance622 = new ProtoInstance().setName("Site").setDEF("hanim_l_trochanterion"))
+                .addChild(ProtoInstance623 = new ProtoInstance().setName("Site").setDEF("hanim_r_psis"))
+                .addChild(ProtoInstance624 = new ProtoInstance().setName("Site").setDEF("hanim_l_psis"))
+                .addChild(ProtoInstance625 = new ProtoInstance().setName("Site").setDEF("hanim_crotch")));
+ProtoInstance617
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_asis"));
+ProtoInstance617
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.08869999647140503 1.0020999908447266 0.1111999973654747"));
+ProtoInstance618
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_asis"));
+ProtoInstance618
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.0925000011920929 0.9983000159263611 0.10520000010728836"));
+ProtoInstance619
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_iliocristale"));
+ProtoInstance619
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1525000035762787 1.0628000497817993 0.0035000001080334187"));
+ProtoInstance620
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_trochanterion"));
+ProtoInstance620
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.1688999980688095 0.8418999910354614 0.03519999980926514"));
+ProtoInstance621
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_iliocristale"));
+ProtoInstance621
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.16120000183582306 1.0536999702453613 0.0007999999797903001"));
+ProtoInstance622
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_trochanterion"));
+ProtoInstance622
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.16769999265670776 0.8335999846458435 0.030300000682473183"));
+ProtoInstance623
+                  .addFieldValue(new fieldValue().setName("name").setValue("r_psis"));
+ProtoInstance623
+                  .addFieldValue(new fieldValue().setName("translation").setValue("-0.07159999758005142 1.0190000534057617 -0.11379999667406082"));
+ProtoInstance624
+                  .addFieldValue(new fieldValue().setName("name").setValue("l_psis"));
+ProtoInstance624
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.07739999890327454 1.0190000534057617 -0.11509999632835388"));
+ProtoInstance625
+                  .addFieldValue(new fieldValue().setName("name").setValue("crotch"));
+ProtoInstance625
+                  .addFieldValue(new fieldValue().setName("translation").setValue("0.0034000000450760126 0.8266000151634216 0.025699999183416367"));
+ProtoInstance626
+              .addFieldValue(new fieldValue().setName("name").setValue("l_middistal_tip"));
+ProtoInstance626
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.13539999723434448 0.0015999999595806003 0.147599995136261"));
+ProtoInstance627
+              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance627
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.18250000476837158 0.007000000216066837 0.09279999881982803"));
+ProtoInstance628
+              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance628
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.08160000294446945 0.02319999970495701 0.010599999688565731"));
+ProtoInstance629
+              .addFieldValue(new fieldValue().setName("name").setValue("l_tarsal_distal_phalanx_2"));
+ProtoInstance629
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.11949999630451202 0.007899999618530273 0.14329999685287476"));
+ProtoInstance630
+              .addFieldValue(new fieldValue().setName("name").setValue("l_lateral_malleolus"));
+ProtoInstance630
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.13079999387264252 0.059700001031160355 -0.10320000350475311"));
+ProtoInstance631
+              .addFieldValue(new fieldValue().setName("name").setValue("l_medial_malleolus"));
+ProtoInstance631
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.07159999758005142 -0.08810000121593475"));
+ProtoInstance632
+              .addFieldValue(new fieldValue().setName("name").setValue("l_sphyrion"));
+ProtoInstance632
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.08900000154972076 0.057500001043081284 -0.09430000185966492"));
+ProtoInstance633
+              .addFieldValue(new fieldValue().setName("name").setValue("l_calcaneus_posterior"));
+ProtoInstance633
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.09740000218153 0.02590000070631504 -0.11710000038146973"));
+ProtoInstance634
+              .addFieldValue(new fieldValue().setName("name").setValue("l_knee_crease"));
+ProtoInstance634
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.09929999709129333 0.48809999227523804 -0.030899999663233757"));
+ProtoInstance635
+              .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance635
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.1597999930381775 0.4966999888420105 0.02969999983906746"));
+ProtoInstance636
+              .addFieldValue(new fieldValue().setName("name").setValue("l_femoral_lateral_epicondyles"));
+ProtoInstance636
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.039799999445676804 0.49459999799728394 0.030300000682473183"));
+ProtoInstance637
+              .addFieldValue(new fieldValue().setName("name").setValue("r_middistal_tip"));
+ProtoInstance637
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.10429999977350235 -0.022700000554323196 0.14499999582767487"));
+ProtoInstance638
+              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_5"));
+ProtoInstance638
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.15230000019073486 0.016599999740719795 0.08950000256299973"));
+ProtoInstance639
+              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_interphalangeal_phalanx_1"));
+ProtoInstance639
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.05209999904036522 0.026000000536441803 0.01269999984651804"));
+ProtoInstance640
+              .addFieldValue(new fieldValue().setName("name").setValue("r_tarsal_distal_phalanx_2"));
+ProtoInstance640
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08829999715089798 0.013399999588727951 0.13830000162124634"));
+ProtoInstance641
+              .addFieldValue(new fieldValue().setName("name").setValue("r_lateral_malleolus"));
+ProtoInstance641
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1005999967455864 0.0658000037074089 -0.10750000178813934"));
+ProtoInstance642
+              .addFieldValue(new fieldValue().setName("name").setValue("r_medial_malleolus"));
+ProtoInstance642
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.05909999832510948 0.07599999755620956 -0.09279999881982803"));
+ProtoInstance643
+              .addFieldValue(new fieldValue().setName("name").setValue("r_sphyrion"));
+ProtoInstance643
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06030000001192093 0.061000000685453415 -0.10019999742507935"));
+ProtoInstance644
+              .addFieldValue(new fieldValue().setName("name").setValue("r_calcaneus_posterior"));
+ProtoInstance644
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06920000165700912 0.02969999983906746 -0.12210000306367874"));
+ProtoInstance645
+              .addFieldValue(new fieldValue().setName("name").setValue("r_knee_crease"));
+ProtoInstance645
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08250000327825546 0.49320000410079956 -0.032600000500679016"));
+ProtoInstance646
+              .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance646
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1421000063419342 0.4991999864578247 0.03099999949336052"));
+ProtoInstance647
+              .addFieldValue(new fieldValue().setName("name").setValue("r_femoral_lateral_epicondyles"));
+ProtoInstance647
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.022099999710917473 0.5013999938964844 0.02889999933540821"));
+ProtoInstance648
+              .addFieldValue(new fieldValue().setName("name").setValue("skull_tip"));
+ProtoInstance648
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.004999999888241291 1.7503999471664429 0.005499999970197678"));
+ProtoInstance649
+              .addFieldValue(new fieldValue().setName("name").setValue("sellion"));
+ProtoInstance649
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.005799999926239252 1.631600022315979 0.0851999968290329"));
+ProtoInstance650
+              .addFieldValue(new fieldValue().setName("name").setValue("r_infraorbitale"));
+ProtoInstance650
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.02370000071823597 1.6171000003814697 0.07519999891519547"));
+ProtoInstance651
+              .addFieldValue(new fieldValue().setName("name").setValue("l_infraorbitale"));
+ProtoInstance651
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.0340999998152256 1.6171000003814697 0.07519999891519547"));
+ProtoInstance652
+              .addFieldValue(new fieldValue().setName("name").setValue("supramenton"));
+ProtoInstance652
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.006099999882280827 1.5410000085830688 0.08049999922513962"));
+ProtoInstance653
+              .addFieldValue(new fieldValue().setName("name").setValue("r_tragion"));
+ProtoInstance653
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.06459999829530716 1.6346999406814575 0.03020000085234642"));
+ProtoInstance654
+              .addFieldValue(new fieldValue().setName("name").setValue("r_gonion"));
+ProtoInstance654
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.052000001072883606 1.552899956703186 0.034699998795986176"));
+ProtoInstance655
+              .addFieldValue(new fieldValue().setName("name").setValue("l_tragion"));
+ProtoInstance655
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.0738999992609024 1.6347999572753906 0.028200000524520874"));
+ProtoInstance656
+              .addFieldValue(new fieldValue().setName("name").setValue("l_gonion"));
+ProtoInstance656
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.06310000270605087 1.5529999732971191 0.032999999821186066"));
+ProtoInstance657
+              .addFieldValue(new fieldValue().setName("name").setValue("nuchale"));
+ProtoInstance657
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.0038999998942017555 1.5972000360488892 -0.07959999889135361"));
+ProtoInstance658
+              .addFieldValue(new fieldValue().setName("name").setValue("l_hand_tip"));
+ProtoInstance658
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.20800000429153442 0.6730999946594238 -0.04910000041127205"));
+ProtoInstance659
+              .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_2"));
+ProtoInstance659
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.20090000331401825 0.8138999938964844 -0.02370000071823597"));
+ProtoInstance660
+              .addFieldValue(new fieldValue().setName("name").setValue("l_dactylion"));
+ProtoInstance660
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.20559999346733093 0.6743000149726868 -0.04820000007748604"));
+ProtoInstance661
+              .addFieldValue(new fieldValue().setName("name").setValue("l_ulnar_styloid"));
+ProtoInstance661
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.2142000049352646 0.8529000282287598 -0.06480000168085098"));
+ProtoInstance662
+              .addFieldValue(new fieldValue().setName("name").setValue("l_metacarpal_phalanx_5"));
+ProtoInstance662
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.19290000200271606 0.7860000133514404 -0.11219999939203262"));
+ProtoInstance663
+              .addFieldValue(new fieldValue().setName("name").setValue("l_radial_styloid"));
+ProtoInstance663
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.19009999930858612 0.8644999861717224 -0.04149999842047691"));
+ProtoInstance664
+              .addFieldValue(new fieldValue().setName("name").setValue("l_olecranon"));
+ProtoInstance664
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19619999825954437 1.1375000476837158 -0.11230000108480453"));
+ProtoInstance665
+              .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_medial_epicondyles"));
+ProtoInstance665
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.17350000143051147 1.1272000074386597 -0.11129999905824661"));
+ProtoInstance666
+              .addFieldValue(new fieldValue().setName("name").setValue("l_radiale"));
+ProtoInstance666
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.21819999814033508 1.1211999654769897 -0.11670000106096268"));
+ProtoInstance667
+              .addFieldValue(new fieldValue().setName("name").setValue("l_humeral_lateral_epicondyles"));
+ProtoInstance667
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.2280000001192093 1.1482000350952148 -0.10999999940395355"));
+ProtoInstance668
+              .addFieldValue(new fieldValue().setName("name").setValue("r_hand_tip"));
+ProtoInstance668
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19689999520778656 0.6758000254631042 -0.04270000010728836"));
+ProtoInstance669
+              .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_2"));
+ProtoInstance669
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19769999384880066 0.8169000148773193 -0.01769999973475933"));
+ProtoInstance670
+              .addFieldValue(new fieldValue().setName("name").setValue("r_dactylion"));
+ProtoInstance670
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1941000074148178 0.6772000193595886 -0.04230000078678131"));
+ProtoInstance671
+              .addFieldValue(new fieldValue().setName("name").setValue("r_ulnar_styloid"));
+ProtoInstance671
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.21170000731945038 0.8561999797821045 -0.058400001376867294"));
+ProtoInstance672
+              .addFieldValue(new fieldValue().setName("name").setValue("r_metacarpal_phalanx_5"));
+ProtoInstance672
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19290000200271606 0.7889999747276306 -0.10639999806880951"));
+ProtoInstance673
+              .addFieldValue(new fieldValue().setName("name").setValue("r_radial_styloid"));
+ProtoInstance673
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.188400000333786 0.8676000237464905 -0.035999998450279236"));
+ProtoInstance674
+              .addFieldValue(new fieldValue().setName("name").setValue("r_olecranon"));
+ProtoInstance674
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1906999945640564 1.1404999494552612 -0.10649999976158142"));
+ProtoInstance675
+              .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_medial_epicondyles"));
+ProtoInstance675
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1679999977350235 1.1297999620437622 -0.10620000213384628"));
+ProtoInstance676
+              .addFieldValue(new fieldValue().setName("name").setValue("r_radiale"));
+ProtoInstance676
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.21299999952316284 1.1304999589920044 -0.10909999907016754"));
+ProtoInstance677
+              .addFieldValue(new fieldValue().setName("name").setValue("r_humeral_lateral_epicondyles"));
+ProtoInstance677
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.2223999947309494 1.1517000198364258 -0.10329999774694443"));
+ProtoInstance678
+              .addFieldValue(new fieldValue().setName("name").setValue("r_clavicale"));
+ProtoInstance678
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.011500000022351742 1.4943000078201294 0.03999999910593033"));
+ProtoInstance679
+              .addFieldValue(new fieldValue().setName("name").setValue("suprasternale"));
+ProtoInstance679
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.00839999970048666 1.4714000225067139 0.05510000139474869"));
+ProtoInstance680
+              .addFieldValue(new fieldValue().setName("name").setValue("l_clavicale"));
+ProtoInstance680
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.02710000053048134 1.4943000078201294 0.039400000125169754"));
+ProtoInstance681
+              .addFieldValue(new fieldValue().setName("name").setValue("r_thelion"));
+ProtoInstance681
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.07360000163316727 1.3385000228881836 0.1216999962925911"));
+ProtoInstance682
+              .addFieldValue(new fieldValue().setName("name").setValue("l_thelion"));
+ProtoInstance682
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.09179999679327011 1.3381999731063843 0.11919999867677689"));
+ProtoInstance683
+              .addFieldValue(new fieldValue().setName("name").setValue("substernale"));
+ProtoInstance683
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.008500000461935997 1.2994999885559082 0.11469999700784683"));
+ProtoInstance684
+              .addFieldValue(new fieldValue().setName("name").setValue("r_rib10"));
+ProtoInstance684
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.07109999656677246 1.194100022315979 0.10159999877214432"));
+ProtoInstance685
+              .addFieldValue(new fieldValue().setName("name").setValue("l_rib10"));
+ProtoInstance685
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.08709999918937683 1.1924999952316284 0.09920000284910202"));
+ProtoInstance686
+              .addFieldValue(new fieldValue().setName("name").setValue("cervicale"));
+ProtoInstance686
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.006399999838322401 1.5199999809265137 -0.08150000125169754"));
+ProtoInstance687
+              .addFieldValue(new fieldValue().setName("name").setValue("spine_2_lower_back"));
+ProtoInstance687
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.004900000058114529 1.1907999515533447 -0.11129999905824661"));
+ProtoInstance688
+              .addFieldValue(new fieldValue().setName("name").setValue("waist_preferred_posterior"));
+ProtoInstance688
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.28999999165534973 1.0915000438690186 -0.10909999907016754"));
+ProtoInstance689
+              .addFieldValue(new fieldValue().setName("name").setValue("r_acromion"));
+ProtoInstance689
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.19050000607967377 1.479099988937378 -0.04309999942779541"));
+ProtoInstance690
+              .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_proximal"));
+ProtoInstance690
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.16259999573230743 1.4071999788284302 -0.003100000089034438"));
+ProtoInstance691
+              .addFieldValue(new fieldValue().setName("name").setValue("r_axilla_distal"));
+ProtoInstance691
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.16030000150203705 1.4098000526428223 -0.08259999752044678"));
+ProtoInstance692
+              .addFieldValue(new fieldValue().setName("name").setValue("l_acromion"));
+ProtoInstance692
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.20319999754428864 1.4759999513626099 -0.04899999871850014"));
+ProtoInstance693
+              .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_proximal"));
+ProtoInstance693
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.1776999980211258 1.406499981880188 -0.007499999832361937"));
+ProtoInstance694
+              .addFieldValue(new fieldValue().setName("name").setValue("l_axilla_distal"));
+ProtoInstance694
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.17059999704360962 1.4071999788284302 -0.08749999850988388"));
+ProtoInstance695
+              .addFieldValue(new fieldValue().setName("name").setValue("r_neck_base"));
+ProtoInstance695
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.04190000146627426 1.5148999691009521 -0.02199999988079071"));
+ProtoInstance696
+              .addFieldValue(new fieldValue().setName("name").setValue("l_neck_base"));
+ProtoInstance696
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.06459999829530716 1.5140999555587769 -0.03799999877810478"));
+ProtoInstance697
+              .addFieldValue(new fieldValue().setName("name").setValue("navel"));
+ProtoInstance697
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
+ProtoInstance698
+              .addFieldValue(new fieldValue().setName("name").setValue("r_asis"));
+ProtoInstance698
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.08869999647140503 1.0020999908447266 0.1111999973654747"));
+ProtoInstance699
+              .addFieldValue(new fieldValue().setName("name").setValue("l_asis"));
+ProtoInstance699
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.0925000011920929 0.9983000159263611 0.10520000010728836"));
+ProtoInstance700
+              .addFieldValue(new fieldValue().setName("name").setValue("r_iliocristale"));
+ProtoInstance700
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1525000035762787 1.0628000497817993 0.0035000001080334187"));
+ProtoInstance701
+              .addFieldValue(new fieldValue().setName("name").setValue("r_trochanterion"));
+ProtoInstance701
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.1688999980688095 0.8418999910354614 0.03519999980926514"));
+ProtoInstance702
+              .addFieldValue(new fieldValue().setName("name").setValue("l_iliocristale"));
+ProtoInstance702
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.16120000183582306 1.0536999702453613 0.0007999999797903001"));
+ProtoInstance703
+              .addFieldValue(new fieldValue().setName("name").setValue("l_trochanterion"));
+ProtoInstance703
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.16769999265670776 0.8335999846458435 0.030300000682473183"));
+ProtoInstance704
+              .addFieldValue(new fieldValue().setName("name").setValue("r_psis"));
+ProtoInstance704
+              .addFieldValue(new fieldValue().setName("translation").setValue("-0.07159999758005142 1.0190000534057617 -0.11379999667406082"));
+ProtoInstance705
+              .addFieldValue(new fieldValue().setName("name").setValue("l_psis"));
+ProtoInstance705
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.07739999890327454 1.0190000534057617 -0.11509999632835388"));
+ProtoInstance706
+              .addFieldValue(new fieldValue().setName("name").setValue("crotch"));
+ProtoInstance706
+              .addFieldValue(new fieldValue().setName("translation").setValue("0.0034000000450760126 0.8266000151634216 0.025699999183416367"));
     X3D0.toFileX3D("../data/LOA1ExampleSourceWithDiamonds.new.x3d");

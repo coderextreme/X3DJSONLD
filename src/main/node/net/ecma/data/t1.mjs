@@ -4,8 +4,6 @@ import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
-import { component } from './x3d.mjs';
-import { SFInt32 } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
@@ -45,14 +43,10 @@ var X3D0 =  new X3D({
       version : new SFString("3.0"),
       head : new SFNode(
         new head({
-          component : new SFNode(
-            new component({
-              name : new SFString("Networking"),
-              level : new SFInt32(2)})),
           meta : new MFNode([
             new meta({
               name : new SFString("generator"),
-              content : new SFString("view3dscene, https://castle-engine.io/view3dscene.php")}),
+              content : new SFString("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting")}),
 
             new meta({
               name : new SFString("source"),
@@ -72,19 +66,19 @@ var X3D0 =  new X3D({
               description : new SFString("looking North"),
               position : new SFVec3f([0,60,110]),
               orientation : new SFRotation([1,0,0,-0.699999988079071]),
-              fieldOfView : new SFFloat(0.785398125648499)}),
+              fieldOfView : new SFFloat(0.7853981256484985)}),
 
             new Viewpoint({
               description : new SFString("looking East"),
               position : new SFVec3f([-140,30,0]),
-              orientation : new SFRotation([0,0.400000005960464,0,-1.39999997615814]),
-              fieldOfView : new SFFloat(0.785398125648499)}),
+              orientation : new SFRotation([0,0.4000000059604645,0,-1.399999976158142]),
+              fieldOfView : new SFFloat(0.7853981256484985)}),
 
             new Viewpoint({
               description : new SFString("Overhead"),
               position : new SFVec3f([0,150,0]),
-              orientation : new SFRotation([1,0,0,-1.57000005245209]),
-              fieldOfView : new SFFloat(0.785398125648499)}),
+              orientation : new SFRotation([1,0,0,-1.5700000524520874]),
+              fieldOfView : new SFFloat(0.7853981256484985)}),
 
             new ProtoDeclare({
               name : new SFString("school"),
@@ -106,14 +100,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  transparency : new SFFloat(0.200000002980232),
+                                  transparency : new SFFloat(0.20000000298023224),
                                   diffuseColor : new SFColor([0.5,0,1])}))})),
                           geometry : new SFNode(
                             new IndexedFaceSet({
                               coordIndex : new MFInt32([0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1]),
                               coord : new SFNode(
                                 new Coordinate({
-                                  point : new MFVec3f([-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0])}))}))}),
+                                  point : new MFVec3f([-0.3499999940395355,-0.3499999940395355,0.3499999940395355,0.3499999940395355,-0.3499999940395355,0.3499999940395355,0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,0,0.3499999940395355,0])}))}))}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -141,7 +135,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  transparency : new SFFloat(0.200000002980232),
+                                  transparency : new SFFloat(0.20000000298023224),
                                   diffuseColor : new SFColor([1,1,0])}))})),
                           geometry : new SFNode(
                             new Box({
@@ -210,7 +204,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  transparency : new SFFloat(0.400000005960464),
+                                  transparency : new SFFloat(0.4000000059604645),
                                   IS : new SFNode(
                                     new IS({
                                       connect : new MFNode([
@@ -219,7 +213,7 @@ var X3D0 =  new X3D({
                                           protoField : new SFString("col")})])}))}))})),
                           geometry : new SFNode(
                             new Sphere({
-                              radius : new SFFloat(1.10000002384186)}))}),
+                              radius : new SFFloat(1.100000023841858)}))}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -245,7 +239,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("col"),
-                          value : new SFString("0 0.600000023841858 0")}),
+                          value : new SFString("0 0.6000000238418579 0")}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -271,7 +265,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("col"),
-                          value : new SFString("0 0.300000011920929 1")}),
+                          value : new SFString("0 0.30000001192092896 1")}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -297,7 +291,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("col"),
-                          value : new SFString("1 0 0.200000002980232")}),
+                          value : new SFString("1 0 0.20000000298023224")}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -323,7 +317,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("col"),
-                          value : new SFString("0.600000023841858 0 0.600000023841858")}),
+                          value : new SFString("0.6000000238418579 0 0.6000000238418579")}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -346,7 +340,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("435.299987792969 0.100000001490116 -335.600006103516")})])})])}),
+                          value : new SFString("435.29998779296875 0.10000000149011612 -335.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -357,7 +351,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("400 0.100000001490116 -385")})])})])}),
+                          value : new SFString("400 0.10000000149011612 -385")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/576.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -368,7 +362,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("400.600006103516 0.100000001490116 -392.899993896484")})])})])}),
+                          value : new SFString("400.6000061035156 0.10000000149011612 -392.8999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/579.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -379,7 +373,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("416.700012207031 0.100000001490116 -383.399993896484")})])})])}),
+                          value : new SFString("416.70001220703125 0.10000000149011612 -383.3999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -390,7 +384,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("429.899993896484 0.100000001490116 -319.600006103516")})])})])}),
+                          value : new SFString("429.8999938964844 0.10000000149011612 -319.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -401,7 +395,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("430 0.100000001490116 -335")})])})])}),
+                          value : new SFString("430 0.10000000149011612 -335")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/591.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -412,7 +406,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("435.799987792969 0.100000001490116 -335.299987792969")})])})])}),
+                          value : new SFString("435.79998779296875 0.10000000149011612 -335.29998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/592.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -423,7 +417,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("438.299987792969 0.100000001490116 -338.600006103516")})])})])}),
+                          value : new SFString("438.29998779296875 0.10000000149011612 -338.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -434,7 +428,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("429.899993896484 0.100000001490116 -360.299987792969")})])})])}),
+                          value : new SFString("429.8999938964844 0.10000000149011612 -360.29998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/594.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -445,7 +439,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("434.600006103516 0.100000001490116 -338.600006103516")})])})])}),
+                          value : new SFString("434.6000061035156 0.10000000149011612 -338.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/595.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -456,7 +450,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("434.799987792969 0.100000001490116 -336")})])})])}),
+                          value : new SFString("434.79998779296875 0.10000000149011612 -336")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/597.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -467,7 +461,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("432.700012207031 0.100000001490116 -336.600006103516")})])})])}),
+                          value : new SFString("432.70001220703125 0.10000000149011612 -336.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/598.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -478,7 +472,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("437.600006103516 0.100000001490116 -332.600006103516")})])})])}),
+                          value : new SFString("437.6000061035156 0.10000000149011612 -332.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/600.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -489,7 +483,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("434.700012207031 0.100000001490116 -336.899993896484")})])})])}),
+                          value : new SFString("434.70001220703125 0.10000000149011612 -336.8999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/601.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -500,7 +494,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("436.299987792969 0.100000001490116 -333.399993896484")})])})])}),
+                          value : new SFString("436.29998779296875 0.10000000149011612 -333.3999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/603.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -511,7 +505,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("435.200012207031 0.100000001490116 -336.799987792969")})])})])}),
+                          value : new SFString("435.20001220703125 0.10000000149011612 -336.79998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/604.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -522,7 +516,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("432.5 0.100000001490116 -332.5")})])})])}),
+                          value : new SFString("432.5 0.10000000149011612 -332.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/605.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -533,7 +527,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("474.700012207031 0.100000001490116 -318.799987792969")})])})])}),
+                          value : new SFString("474.70001220703125 0.10000000149011612 -318.79998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/606.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -544,7 +538,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("436.100006103516 0.100000001490116 -334.899993896484")})])})])}),
+                          value : new SFString("436.1000061035156 0.10000000149011612 -334.8999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/607.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -555,7 +549,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("485.600006103516 0.100000001490116 -309")})])})])}),
+                          value : new SFString("485.6000061035156 0.10000000149011612 -309")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/608.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -566,7 +560,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("440.5 0.100000001490116 -355.5")})])})])}),
+                          value : new SFString("440.5 0.10000000149011612 -355.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/609.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -577,7 +571,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("434.799987792969 0.100000001490116 -371.5")})])})])}),
+                          value : new SFString("434.79998779296875 0.10000000149011612 -371.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/610.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -588,7 +582,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("436.299987792969 0.100000001490116 -371.700012207031")})])})])}),
+                          value : new SFString("436.29998779296875 0.10000000149011612 -371.70001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/611.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -599,7 +593,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("431.200012207031 0.100000001490116 -361.200012207031")})])})])}),
+                          value : new SFString("431.20001220703125 0.10000000149011612 -361.20001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -610,7 +604,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("455.899993896484 0.100000001490116 -341.299987792969")})])})])}),
+                          value : new SFString("455.8999938964844 0.10000000149011612 -341.29998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -621,7 +615,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("456.100006103516 0.100000001490116 -341.5")})])})])}),
+                          value : new SFString("456.1000061035156 0.10000000149011612 -341.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -632,7 +626,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("454 0.100000001490116 -361.299987792969")})])})])}),
+                          value : new SFString("454 0.10000000149011612 -361.29998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/625.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -643,7 +637,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("457.399993896484 0.100000001490116 -359.600006103516")})])})])}),
+                          value : new SFString("457.3999938964844 0.10000000149011612 -359.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/626.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -654,7 +648,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("454.200012207031 0.100000001490116 -358.600006103516")})])})])}),
+                          value : new SFString("454.20001220703125 0.10000000149011612 -358.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/628.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -665,7 +659,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("450.600006103516 0.100000001490116 -358.600006103516")})])})])}),
+                          value : new SFString("450.6000061035156 0.10000000149011612 -358.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -676,7 +670,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("440 0.100000001490116 -350")})])})])}),
+                          value : new SFString("440 0.10000000149011612 -350")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -687,7 +681,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("458.899993896484 0.100000001490116 -304.299987792969")})])})])}),
+                          value : new SFString("458.8999938964844 0.10000000149011612 -304.29998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/635.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -698,7 +692,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("473.5 0.100000001490116 -287.5")})])})])}),
+                          value : new SFString("473.5 0.10000000149011612 -287.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/637.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -709,7 +703,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("458 0.100000001490116 -304.5")})])})])}),
+                          value : new SFString("458 0.10000000149011612 -304.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -720,7 +714,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("457.100006103516 0.100000001490116 -300.799987792969")})])})])}),
+                          value : new SFString("457.1000061035156 0.10000000149011612 -300.79998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/640.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -731,7 +725,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("456.799987792969 0.100000001490116 -302.600006103516")})])})])}),
+                          value : new SFString("456.79998779296875 0.10000000149011612 -302.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/642.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -742,7 +736,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("453.299987792969 0.100000001490116 -318.600006103516")})])})])}),
+                          value : new SFString("453.29998779296875 0.10000000149011612 -318.6000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -753,7 +747,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("442.399993896484 0.100000001490116 -314.5")})])})])}),
+                          value : new SFString("442.3999938964844 0.10000000149011612 -314.5")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/650.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -764,7 +758,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("444.600006103516 0.100000001490116 -313.700012207031")})])})])}),
+                          value : new SFString("444.6000061035156 0.10000000149011612 -313.70001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/652.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -775,7 +769,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("440.600006103516 0.100000001490116 -310.399993896484")})])})])}),
+                          value : new SFString("440.6000061035156 0.10000000149011612 -310.3999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -786,7 +780,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("491.600006103516 0.100000001490116 -335.700012207031")})])})])}),
+                          value : new SFString("491.6000061035156 0.10000000149011612 -335.70001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/660.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -797,7 +791,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("491.399993896484 0.100000001490116 -336.799987792969")})])})])}),
+                          value : new SFString("491.3999938964844 0.10000000149011612 -336.79998779296875")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/662.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -808,7 +802,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("496.899993896484 0.100000001490116 -368.899993896484")})])})])}),
+                          value : new SFString("496.8999938964844 0.10000000149011612 -368.8999938964844")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -819,7 +813,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("467 0.100000001490116 -243.899993896484")})])})])}),
+                          value : new SFString("467 0.10000000149011612 -243.89999389648438")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/667.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -830,7 +824,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("477.100006103516 0.100000001490116 -260")})])})])}),
+                          value : new SFString("477.1000061035156 0.10000000149011612 -260")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/668.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -841,7 +835,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("474.700012207031 0.100000001490116 -259.100006103516")})])})])}),
+                          value : new SFString("474.70001220703125 0.10000000149011612 -259.1000061035156")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/669.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -852,7 +846,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("459 0.100000001490116 -236.399993896484")})])})])}),
+                          value : new SFString("459 0.10000000149011612 -236.39999389648438")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -863,7 +857,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("457.399993896484 0.100000001490116 -262.700012207031")})])})])}),
+                          value : new SFString("457.3999938964844 0.10000000149011612 -262.70001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -874,7 +868,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("458.700012207031 0.100000001490116 -262.700012207031")})])})])}),
+                          value : new SFString("458.70001220703125 0.10000000149011612 -262.70001220703125")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/672.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -885,7 +879,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("466.899993896484 0.100000001490116 -243.800003051758")})])})])}),
+                          value : new SFString("466.8999938964844 0.10000000149011612 -243.8000030517578")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/677.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -896,7 +890,7 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("469.5 0.100000001490116 -249.800003051758")})])})])}),
+                          value : new SFString("469.5 0.10000000149011612 -249.8000030517578")})])})])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/678.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
@@ -907,47 +901,47 @@ var X3D0 =  new X3D({
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("pos"),
-                          value : new SFString("456.700012207031 0.100000001490116 -261.799987792969")})])})])}),
+                          value : new SFString("456.70001220703125 0.10000000149011612 -261.79998779296875")})])})])}),
 
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          transparency : new SFFloat(0.200000002980232),
+                          transparency : new SFFloat(0.20000000298023224),
                           emissiveColor : new SFColor([1,0,0])}))})),
                   geometry : new SFNode(
                     new IndexedLineSet({
                       coordIndex : new MFInt32([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f([430,0.0199999995529652,-335,435.799987792969,0.100000001490116,-335.299987792969,430,0.0199999995529652,-335,434.600006103516,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,432.700012207031,0.100000001490116,-336.600006103516,430,0.0199999995529652,-335,434.700012207031,0.100000001490116,-336.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,474.700012207031,0.100000001490116,-318.799987792969,429.899993896484,0.0199999995529652,-360.299987792969,485.600006103516,0.100000001490116,-309,429.899993896484,0.0199999995529652,-360.299987792969,434.799987792969,0.100000001490116,-371.5,454,0.0199999995529652,-361.299987792969,457.399993896484,0.100000001490116,-359.600006103516,454,0.0199999995529652,-361.299987792969,454.200012207031,0.100000001490116,-358.600006103516,454,0.0199999995529652,-361.299987792969,450.600006103516,0.100000001490116,-358.600006103516,458.899993896484,0.0199999995529652,-304.299987792969,473.5,0.100000001490116,-287.5,458.899993896484,0.0199999995529652,-304.299987792969,458,0.100000001490116,-304.5,491.600006103516,0.0199999995529652,-335.700012207031,491.399993896484,0.100000001490116,-336.799987792969,491.600006103516,0.0199999995529652,-335.700012207031,496.899993896484,0.100000001490116,-368.899993896484,467,0.0199999995529652,-243.899993896484,477.100006103516,0.100000001490116,-260,467,0.0199999995529652,-243.899993896484,459,0.100000001490116,-236.399993896484,458.700012207031,0.0199999995529652,-262.700012207031,469.5,0.100000001490116,-249.800003051758,458.700012207031,0.0199999995529652,-262.700012207031,456.700012207031,0.100000001490116,-261.799987792969])}))}))}),
+                          point : new MFVec3f([430,0.019999999552965164,-335,435.79998779296875,0.10000000149011612,-335.29998779296875,430,0.019999999552965164,-335,434.6000061035156,0.10000000149011612,-338.6000061035156,430,0.019999999552965164,-335,432.70001220703125,0.10000000149011612,-336.6000061035156,430,0.019999999552965164,-335,434.70001220703125,0.10000000149011612,-336.8999938964844,429.8999938964844,0.019999999552965164,-360.29998779296875,474.70001220703125,0.10000000149011612,-318.79998779296875,429.8999938964844,0.019999999552965164,-360.29998779296875,485.6000061035156,0.10000000149011612,-309,429.8999938964844,0.019999999552965164,-360.29998779296875,434.79998779296875,0.10000000149011612,-371.5,454,0.019999999552965164,-361.29998779296875,457.3999938964844,0.10000000149011612,-359.6000061035156,454,0.019999999552965164,-361.29998779296875,454.20001220703125,0.10000000149011612,-358.6000061035156,454,0.019999999552965164,-361.29998779296875,450.6000061035156,0.10000000149011612,-358.6000061035156,458.8999938964844,0.019999999552965164,-304.29998779296875,473.5,0.10000000149011612,-287.5,458.8999938964844,0.019999999552965164,-304.29998779296875,458,0.10000000149011612,-304.5,491.6000061035156,0.019999999552965164,-335.70001220703125,491.3999938964844,0.10000000149011612,-336.79998779296875,491.6000061035156,0.019999999552965164,-335.70001220703125,496.8999938964844,0.10000000149011612,-368.8999938964844,467,0.019999999552965164,-243.89999389648438,477.1000061035156,0.10000000149011612,-260,467,0.019999999552965164,-243.89999389648438,459,0.10000000149011612,-236.39999389648438,458.70001220703125,0.019999999552965164,-262.70001220703125,469.5,0.10000000149011612,-249.8000030517578,458.70001220703125,0.019999999552965164,-262.70001220703125,456.70001220703125,0.10000000149011612,-261.79998779296875])}))}))}),
 
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          transparency : new SFFloat(0.200000002980232),
+                          transparency : new SFFloat(0.20000000298023224),
                           emissiveColor : new SFColor([0,1,0])}))})),
                   geometry : new SFNode(
                     new IndexedLineSet({
                       coordIndex : new MFInt32([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f([400,0.0199999995529652,-385,400.600006103516,0.100000001490116,-392.899993896484,400,0.0199999995529652,-385,416.700012207031,0.100000001490116,-383.399993896484,430,0.0199999995529652,-335,438.299987792969,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,434.799987792969,0.100000001490116,-336,430,0.0199999995529652,-335,437.600006103516,0.100000001490116,-332.600006103516,430,0.0199999995529652,-335,436.299987792969,0.100000001490116,-333.399993896484,430,0.0199999995529652,-335,435.200012207031,0.100000001490116,-336.799987792969,430,0.0199999995529652,-335,432.5,0.100000001490116,-332.5,429.899993896484,0.0199999995529652,-360.299987792969,436.100006103516,0.100000001490116,-334.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,440.5,0.100000001490116,-355.5,429.899993896484,0.0199999995529652,-360.299987792969,436.299987792969,0.100000001490116,-371.700012207031,429.899993896484,0.0199999995529652,-360.299987792969,431.200012207031,0.100000001490116,-361.200012207031,457.100006103516,0.0199999995529652,-300.799987792969,456.799987792969,0.100000001490116,-302.600006103516,457.100006103516,0.0199999995529652,-300.799987792969,453.299987792969,0.100000001490116,-318.600006103516,442.399993896484,0.0199999995529652,-314.5,444.600006103516,0.100000001490116,-313.700012207031,442.399993896484,0.0199999995529652,-314.5,440.600006103516,0.100000001490116,-310.399993896484,467,0.0199999995529652,-243.899993896484,474.700012207031,0.100000001490116,-259.100006103516,457.399993896484,0.0199999995529652,-262.700012207031,466.899993896484,0.100000001490116,-243.800003051758])}))}))}),
+                          point : new MFVec3f([400,0.019999999552965164,-385,400.6000061035156,0.10000000149011612,-392.8999938964844,400,0.019999999552965164,-385,416.70001220703125,0.10000000149011612,-383.3999938964844,430,0.019999999552965164,-335,438.29998779296875,0.10000000149011612,-338.6000061035156,430,0.019999999552965164,-335,434.79998779296875,0.10000000149011612,-336,430,0.019999999552965164,-335,437.6000061035156,0.10000000149011612,-332.6000061035156,430,0.019999999552965164,-335,436.29998779296875,0.10000000149011612,-333.3999938964844,430,0.019999999552965164,-335,435.20001220703125,0.10000000149011612,-336.79998779296875,430,0.019999999552965164,-335,432.5,0.10000000149011612,-332.5,429.8999938964844,0.019999999552965164,-360.29998779296875,436.1000061035156,0.10000000149011612,-334.8999938964844,429.8999938964844,0.019999999552965164,-360.29998779296875,440.5,0.10000000149011612,-355.5,429.8999938964844,0.019999999552965164,-360.29998779296875,436.29998779296875,0.10000000149011612,-371.70001220703125,429.8999938964844,0.019999999552965164,-360.29998779296875,431.20001220703125,0.10000000149011612,-361.20001220703125,457.1000061035156,0.019999999552965164,-300.79998779296875,456.79998779296875,0.10000000149011612,-302.6000061035156,457.1000061035156,0.019999999552965164,-300.79998779296875,453.29998779296875,0.10000000149011612,-318.6000061035156,442.3999938964844,0.019999999552965164,-314.5,444.6000061035156,0.10000000149011612,-313.70001220703125,442.3999938964844,0.019999999552965164,-314.5,440.6000061035156,0.10000000149011612,-310.3999938964844,467,0.019999999552965164,-243.89999389648438,474.70001220703125,0.10000000149011612,-259.1000061035156,457.3999938964844,0.019999999552965164,-262.70001220703125,466.8999938964844,0.10000000149011612,-243.8000030517578])}))}))}),
 
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          transparency : new SFFloat(0.200000002980232),
+                          transparency : new SFFloat(0.20000000298023224),
                           emissiveColor : new SFColor([1,0,1])}))})),
                   geometry : new SFNode(
                     new IndexedLineSet({
                       coordIndex : new MFInt32([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1]),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f([430,0.0199999995529652,-335,429.899993896484,0.100000001490116,-360.299987792969,442.399993896484,0.0199999995529652,-314.5,429.899993896484,0.100000001490116,-319.600006103516,457.399993896484,0.0199999995529652,-262.700012207031,467,0.100000001490116,-243.899993896484,458.700012207031,0.0199999995529652,-262.700012207031,457.399993896484,0.100000001490116,-262.700012207031,458.700012207031,0.0199999995529652,-262.700012207031,467,0.100000001490116,-243.899993896484])}))}))})])})])}))});
+                          point : new MFVec3f([430,0.019999999552965164,-335,429.8999938964844,0.10000000149011612,-360.29998779296875,442.3999938964844,0.019999999552965164,-314.5,429.8999938964844,0.10000000149011612,-319.6000061035156,457.3999938964844,0.019999999552965164,-262.70001220703125,467,0.10000000149011612,-243.89999389648438,458.70001220703125,0.019999999552965164,-262.70001220703125,457.3999938964844,0.10000000149011612,-262.70001220703125,458.70001220703125,0.019999999552965164,-262.70001220703125,467,0.10000000149011612,-243.89999389648438])}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

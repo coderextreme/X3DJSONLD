@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Interchange";
-X3D0.version = "4.0";
+X3D0.version = "3.0";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Humanoid" ><ProtoInterface><field name="center" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -231,7 +231,7 @@ let ProtoDeclare33 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <connect nodeField="translation" protoField="translation"></connect>
 </IS>
 </Transform>
-<Transform><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" point="0 0.00999999977648258 0 -0.00999999977648258 0 0 0 0 0.00999999977648258 0.00999999977648258 0 0 0 0 -0.00999999977648258 0 -0.00999999977648258 0"></Coordinate>
+<Transform><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" point="0 0.009999999776482582 0 -0.009999999776482582 0 0 0 0 0.009999999776482582 0.009999999776482582 0 0 0 0 -0.009999999776482582 0 -0.009999999776482582 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
@@ -369,7 +369,7 @@ let IndexedFaceSet58 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet58.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
 IndexedFaceSet58.creaseAngle = 0.5;
 let Coordinate59 = browser.currentScene.createNode("Coordinate");
-Coordinate59.point = new MFVec3f(new float[0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0]);
+Coordinate59.point = new MFVec3f(new float[0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0]);
 IndexedFaceSet58.coord = Coordinate59;
 
 Shape57.geometry = IndexedFaceSet58;

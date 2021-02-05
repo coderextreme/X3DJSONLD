@@ -38,6 +38,10 @@ var autoclass = require('./X3Dautoclass');
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
 			<td> a generic proto to connect two objects </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -73,8 +77,10 @@ x3dconnectorProto.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene((new autoclass.Scene())
+    .addChild((new autoclass.WorldInfo()).setTitle("Connector Proto"))
     .addChild((new autoclass.Viewpoint()).setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4]))))
     .addChild((new autoclass.Transform("G1"))
@@ -196,8 +202,8 @@ x3dconnectorProto.prototype = {
         .addChild((new autoclass.Transform()).setUSE("transC1")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
         .addChild((new autoclass.Transform()).setUSE("rotscaleC1")))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint")))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint").setValue("0 0 0")))
     .addChild((new autoclass.ProtoInstance("connector2", "x3dconnector")).setDEF("connector2").setName("x3dconnector")
       .addFieldValue((new autoclass.fieldValue()).setName("startnode")
         .addChild((new autoclass.Transform()).setUSE("G1")))
@@ -207,8 +213,8 @@ x3dconnectorProto.prototype = {
         .addChild((new autoclass.Transform()).setUSE("transC2")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
         .addChild((new autoclass.Transform()).setUSE("rotscaleC2")))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint")))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint").setValue("0 0 0")))
     .addChild((new autoclass.ProtoInstance("connector3", "x3dconnector")).setDEF("connector3").setName("x3dconnector")
       .addFieldValue((new autoclass.fieldValue()).setName("startnode")
         .addChild((new autoclass.Transform()).setUSE("G1")))
@@ -218,8 +224,8 @@ x3dconnectorProto.prototype = {
         .addChild((new autoclass.Transform()).setUSE("transC3")))
       .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
         .addChild((new autoclass.Transform()).setUSE("rotscaleC3")))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"))
-      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint")))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint").setValue("0 0 0"))
+      .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint").setValue("0 0 0")))
     .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild((new autoclass.ROUTE()).setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
     .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))

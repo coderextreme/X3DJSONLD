@@ -901,8 +901,8 @@ POSSIBILITY OF SUCH DAMAGE.
                                                     </xsl:when>
                                                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                                                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                                                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
-                                                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                                                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
+                                                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
                                                     <xsl:otherwise>
                                                         <xsl:call-template name="fieldNameChanges"/>
                                                     </xsl:otherwise>
@@ -1856,8 +1856,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:when>
                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
-                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
+                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
                     <xsl:otherwise>
                         <xsl:call-template name="fieldNameChanges"/>
                     </xsl:otherwise>
@@ -2422,6 +2422,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
                       (local-name()='pauseTime' and (.='0' or .='0.0')) or
                       (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
+                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
                       not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
                       not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
                       not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
@@ -2509,7 +2510,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='solid' and .='true') or
                       (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and .='true') and
-                      not( local-name(..)='Inline' and local-name()='load' and .='true') and
+                      not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and .='true') or
                       (local-name()='timeOut' and (.='0' or .='0.0')))) and
@@ -3510,7 +3511,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name(..)='component') and (local-name()='name') and (.='HAnim' and //X3D[starts-with(@version,'3')])">
                     <xsl:text>H-Anim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D4: change component name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D3: change component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='H-Anim'</xsl:text>
                     </xsl:message>
@@ -4371,8 +4372,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:when>
                         <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                         <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
-                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
+                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
                         <xsl:otherwise>
                             <xsl:call-template name="fieldNameChanges"/>
                         </xsl:otherwise>

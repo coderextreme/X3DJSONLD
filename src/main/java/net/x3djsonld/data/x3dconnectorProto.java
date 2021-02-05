@@ -41,6 +41,10 @@ import org.web3d.x3d.jsail.Shape.*;
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
 			<td> a generic proto to connect two objects </td>
 		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/license.html" target="_blank">https://www.web3d.org/x3d/content/examples/license.html</a> </td>
+		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
 		</tr>
@@ -74,8 +78,10 @@ public class x3dconnectorProto
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Lost, Doug Sanden I think"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a generic proto to connect two objects")))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a generic proto to connect two objects"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("Connector Proto"))
     .addChild(new Viewpoint().setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.4,0.4,0.4})))
     .addChild(new Transform("G1")
@@ -197,8 +203,8 @@ public class x3dconnectorProto
         .addChild(new Transform().setUSE("transC1")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
         .addChild(new Transform().setUSE("rotscaleC1")))
-      .addFieldValue(new fieldValue().setName("set_startpoint"))
-      .addFieldValue(new fieldValue().setName("set_endpoint")))
+      .addFieldValue(new fieldValue().setName("set_startpoint").setValue(new SFVec3f(0.0,0.0,0.0)))
+      .addFieldValue(new fieldValue().setName("set_endpoint").setValue(new SFVec3f(0.0,0.0,0.0))))
     .addChild(new ProtoInstance("x3dconnector", "connector2").setContainerField("children")
       .addFieldValue(new fieldValue().setName("startnode")
         .addChild(new Transform().setUSE("G1")))
@@ -208,8 +214,8 @@ public class x3dconnectorProto
         .addChild(new Transform().setUSE("transC2")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
         .addChild(new Transform().setUSE("rotscaleC2")))
-      .addFieldValue(new fieldValue().setName("set_startpoint"))
-      .addFieldValue(new fieldValue().setName("set_endpoint")))
+      .addFieldValue(new fieldValue().setName("set_startpoint").setValue(new SFVec3f(0.0,0.0,0.0)))
+      .addFieldValue(new fieldValue().setName("set_endpoint").setValue(new SFVec3f(0.0,0.0,0.0))))
     .addChild(new ProtoInstance("x3dconnector", "connector3").setContainerField("children")
       .addFieldValue(new fieldValue().setName("startnode")
         .addChild(new Transform().setUSE("G1")))
@@ -219,8 +225,8 @@ public class x3dconnectorProto
         .addChild(new Transform().setUSE("transC3")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
         .addChild(new Transform().setUSE("rotscaleC3")))
-      .addFieldValue(new fieldValue().setName("set_startpoint"))
-      .addFieldValue(new fieldValue().setName("set_endpoint")))
+      .addFieldValue(new fieldValue().setName("set_startpoint").setValue(new SFVec3f(0.0,0.0,0.0)))
+      .addFieldValue(new fieldValue().setName("set_endpoint").setValue(new SFVec3f(0.0,0.0,0.0))))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
