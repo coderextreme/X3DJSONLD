@@ -11121,6 +11121,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@global": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
             "@load": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
@@ -13717,10 +13722,10 @@
             "-skin": {
               "$ref": "#/definitions/-Group-Transform-Shape-IndexedFaceSetMFNode"
             },
-            "-skinBindingCoords": {
+            "-skinBindingCoord": {
               "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
             },
-            "-skinBindingNormals": {
+            "-skinBindingNormal": {
               "$ref": "#/definitions/-X3DNormalNodeSFNode"
             },
             "-skinCoord": {
@@ -20896,6 +20901,24 @@
             },
             "-acousticProperties": {
               "$ref": "#/definitions/-AcousticPropertiesSFNode"
+            },
+            "@alphaCutoff": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0.5,
+              "type": "number"
+            },
+            "@alphaMode": {
+              "pattern": "^(\\s|\\S)*$",
+              "enum": [
+                "AUTO",
+                "OPAQUE",
+                "MASK",
+                "BLEND"
+              ],
+              "default": "AUTO",
+              "type": "string"
             },
             "-fillProperties": {
               "$ref": "#/definitions/-FillPropertiesSFNode"
