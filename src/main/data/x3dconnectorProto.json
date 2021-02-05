@@ -27,8 +27,12 @@
             "@content":"a generic proto to connect two objects"
           },
           {
+            "@name":"license",
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
+          },
+          {
             "@name":"translated",
-            "@content":"19 January 2021"
+            "@content":"05 February 2021"
           },
           {
             "@name":"generator",
@@ -42,6 +46,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"Connector Proto"
+            }
+          },
           { "Viewpoint":
             {
               "@position":[0,0,5],
@@ -535,10 +544,12 @@
                   ]
                 },
                 {
-                  "@name":"set_startpoint"
+                  "@name":"set_startpoint",
+                  "@value":[0,0,0]
                 },
                 {
-                  "@name":"set_endpoint"
+                  "@name":"set_endpoint",
+                  "@value":[0,0,0]
                 }
               ]
             }
@@ -589,10 +600,12 @@
                   ]
                 },
                 {
-                  "@name":"set_startpoint"
+                  "@name":"set_startpoint",
+                  "@value":[0,0,0]
                 },
                 {
-                  "@name":"set_endpoint"
+                  "@name":"set_endpoint",
+                  "@value":[0,0,0]
                 }
               ]
             }
@@ -643,10 +656,12 @@
                   ]
                 },
                 {
-                  "@name":"set_startpoint"
+                  "@name":"set_startpoint",
+                  "@value":[0,0,0]
                 },
                 {
-                  "@name":"set_endpoint"
+                  "@name":"set_endpoint",
+                  "@value":[0,0,0]
                 }
               ]
             }

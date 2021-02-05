@@ -43,9 +43,9 @@ public class LOA2ExampleSourceWithDiamonds {
     new LOA2ExampleSourceWithDiamonds().initialize().toFileJSON("../data/LOA2ExampleSourceWithDiamonds.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta(new meta().setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta(new meta().setName("source").setContent("LOA2ExampleSourceWithDiamonds.wrl")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("Humanoid")
@@ -162,7 +162,7 @@ protected class MFInt320 {
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.00999999977648258f,0f,-0.00999999977648258f,0f,0f,0f,0f,0.00999999977648258f,0.00999999977648258f,0f,0f,0f,0f,-0.00999999977648258f,0f,-0.00999999977648258f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.009999999776482582f,0f,-0.009999999776482582f,0f,0f,0f,0f,0.009999999776482582f,0.009999999776482582f,0f,0f,0f,0f,-0.009999999776482582f,0f,-0.009999999776482582f,0f});
   }
 }
 }

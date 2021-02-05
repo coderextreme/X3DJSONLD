@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 January 2021"
+            "@content":"05 February 2021"
           },
           {
             "@name":"generator",
@@ -51,7 +51,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -83,7 +83,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -114,7 +114,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -146,7 +146,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -209,7 +209,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -340,7 +340,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -373,7 +373,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":
@@ -399,7 +399,7 @@
               "@fromNode":"OrbitScript",
               "@fromField":"coordIndexes",
               "@toNode":"Orbit",
-              "@toField":"coordIndex"
+              "@toField":"set_coordIndex"
             }
           },
           { "ROUTE":

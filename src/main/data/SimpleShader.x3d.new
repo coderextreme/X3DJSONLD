@@ -15,13 +15,12 @@
 <meta name="reference" content="originals/simpleShader.x3dv"></meta>
 <meta name="reference" content="ShaderTutorialInstantReality.pdf"></meta>
 <meta name="generator" content="Titania V3.0.3, http://titania.create3000.de"></meta>
-<meta name="comment" content="World of Titania"></meta>
+<meta name="info" content="World of Titania"></meta>
 <meta name="outputStyle" content="nicest"></meta>
-<meta name="warning" content="under development"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
 <meta name="license" content="../../license.html"></meta>
-</head>
+<!--meta content='under development' name='warning'/--></head>
 <Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>

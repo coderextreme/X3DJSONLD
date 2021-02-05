@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 January 2021"
+            "@content":"05 February 2021"
           },
           {
             "@name":"generator",
@@ -448,8 +448,8 @@
                                               },
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"l_metatarsophalangeal",
-                                                  "@DEF":"hanim_l_metatarsophalangeal",
+                                                  "@name":"l_metatarsophalangeal_2",
+                                                  "@DEF":"hanim_l_metatarsophalangeal_2",
                                                   "@center":[3.854,3.64,0.7402],
                                                   "-children":[
                                                     { "HAnimSegment":
@@ -708,8 +708,8 @@
                                               },
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"r_metatarsophalangeal",
-                                                  "@DEF":"hanim_r_metatarsophalangeal",
+                                                  "@name":"r_metatarsophalangeal_2",
+                                                  "@DEF":"hanim_r_metatarsophalangeal_2",
                                                   "@center":[-3.854,3.64,0.7402],
                                                   "-children":[
                                                     { "HAnimSegment":
@@ -1360,12 +1360,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_metatarsophalangeal"
+                    "@USE":"hanim_l_metatarsophalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_metatarsophalangeal"
+                    "@USE":"hanim_r_metatarsophalangeal_2"
                   }
                 },
                 { "HAnimJoint":

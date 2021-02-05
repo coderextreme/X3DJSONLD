@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 January 2021"
+            "@content":"04 February 2021"
           },
           {
             "@name":"generator",
@@ -524,7 +524,8 @@
                                                   "@DEF":"Style",
                                                   "@family":["SANS"],
                                                   "@justify":["MIDDLE","MIDDLE"],
-                                                  "@size":0.3
+                                                  "@size":0.3,
+                                                  "@style":"BOLD"
                                                 }
                                               }
                                           }

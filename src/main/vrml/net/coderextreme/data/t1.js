@@ -18,30 +18,30 @@ let Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.description = "looking North";
 Viewpoint4.position = new SFVec3f(new float[0,60,110]);
 Viewpoint4.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
-Viewpoint4.fieldOfView = 0.785398125648499;
+Viewpoint4.fieldOfView = 0.7853981256484985;
 browser.currentScene.children[2] = Viewpoint4;
 
 let Viewpoint5 = browser.currentScene.createNode("Viewpoint");
 Viewpoint5.description = "looking East";
 Viewpoint5.position = new SFVec3f(new float[-140,30,0]);
-Viewpoint5.orientation = new SFRotation(new float[0,0.400000005960464,0,-1.39999997615814]);
-Viewpoint5.fieldOfView = 0.785398125648499;
+Viewpoint5.orientation = new SFRotation(new float[0,0.4000000059604645,0,-1.399999976158142]);
+Viewpoint5.fieldOfView = 0.7853981256484985;
 browser.currentScene.children[3] = Viewpoint5;
 
 let Viewpoint6 = browser.currentScene.createNode("Viewpoint");
 Viewpoint6.description = "Overhead";
 Viewpoint6.position = new SFVec3f(new float[0,150,0]);
-Viewpoint6.orientation = new SFRotation(new float[1,0,0,-1.57000005245209]);
-Viewpoint6.fieldOfView = 0.785398125648499;
+Viewpoint6.orientation = new SFRotation(new float[1,0,0,-1.5700000524520874]);
+Viewpoint6.fieldOfView = 0.7853981256484985;
 browser.currentScene.children[4] = Viewpoint6;
 
 let ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="school" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.200000002980232" diffuseColor="0.5 0 1"></Material>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="0.5 0 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.349999994039536 -0.349999994039536 0.349999994039536 0.349999994039536 -0.349999994039536 0.349999994039536 0.349999994039536 -0.349999994039536 -0.349999994039536 -0.349999994039536 -0.349999994039536 -0.349999994039536 0 0.349999994039536 0"></Coordinate>
+<IndexedFaceSet containerField="geometry" coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 0 0.3499999940395355 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
@@ -67,7 +67,7 @@ let Transform11 = browser.currentScene.createNode("Transform");
 let Shape12 = browser.currentScene.createNode("Shape");
 let Appearance13 = browser.currentScene.createNode("Appearance");
 let Material14 = browser.currentScene.createNode("Material");
-Material14.transparency = 0.200000002980232;
+Material14.transparency = 0.20000000298023224;
 Material14.diffuseColor = new SFColor(new float[0.5,0,1]);
 Appearance13.material = Material14;
 
@@ -76,7 +76,7 @@ Shape12.appearance = Appearance13;
 let IndexedFaceSet15 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet15.coordIndex = new MFInt32(new int[0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1]);
 let Coordinate16 = browser.currentScene.createNode("Coordinate");
-Coordinate16.point = new MFVec3f(new float[-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0,0.349999994039536,0]);
+Coordinate16.point = new MFVec3f(new float[-0.3499999940395355,-0.3499999940395355,0.3499999940395355,0.3499999940395355,-0.3499999940395355,0.3499999940395355,0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,-0.3499999940395355,0,0.3499999940395355,0]);
 IndexedFaceSet15.coord = Coordinate16;
 
 Shape12.geometry = IndexedFaceSet15;
@@ -107,7 +107,7 @@ let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="institute" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.200000002980232" diffuseColor="1 1 0"></Material>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="1 1 0"></Material>
 </Appearance>
 <Box containerField="geometry" size="0.699999988079071 0.699999988079071 0.699999988079071"></Box>
 </Shape>
@@ -134,7 +134,7 @@ let Transform23 = browser.currentScene.createNode("Transform");
 let Shape24 = browser.currentScene.createNode("Shape");
 let Appearance25 = browser.currentScene.createNode("Appearance");
 let Material26 = browser.currentScene.createNode("Material");
-Material26.transparency = 0.200000002980232;
+Material26.transparency = 0.20000000298023224;
 Material26.diffuseColor = new SFColor(new float[1,1,0]);
 Appearance25.material = Material26;
 
@@ -233,11 +233,11 @@ let ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.4000000059604645"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.10000002384186"></Sphere>
+<Sphere containerField="geometry" radius="1.100000023841858"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -269,7 +269,7 @@ let Transform46 = browser.currentScene.createNode("Transform");
 let Shape47 = browser.currentScene.createNode("Shape");
 let Appearance48 = browser.currentScene.createNode("Appearance");
 let Material49 = browser.currentScene.createNode("Material");
-Material49.transparency = 0.400000005960464;
+Material49.transparency = 0.4000000059604645;
 let IS50 = browser.currentScene.createNode("IS");
 let connect51 = browser.currentScene.createNode("connect");
 connect51.nodeField = "emissiveColor";
@@ -285,7 +285,7 @@ Appearance48.material = Material49;
 Shape47.appearance = Appearance48;
 
 let Sphere52 = browser.currentScene.createNode("Sphere");
-Sphere52.radius = 1.10000002384186;
+Sphere52.radius = 1.100000023841858;
 Shape47.geometry = Sphere52;
 
 Transform46.children = new MFNode();
@@ -314,7 +314,7 @@ let ProtoDeclare55 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="l" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.600000023841858 0"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.6000000238418579 0"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
@@ -338,7 +338,7 @@ let ProtoInstance59 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance59.name = "org";
 let fieldValue60 = browser.currentScene.createNode("fieldValue");
 fieldValue60.name = "col";
-fieldValue60.value = "0 0.600000023841858 0";
+fieldValue60.value = "0 0.6000000238418579 0";
 ProtoInstance59.fieldValue = new MFNode();
 
 ProtoInstance59.fieldValue[0] = fieldValue60;
@@ -365,7 +365,7 @@ let ProtoDeclare63 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.30000001192092896 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
@@ -389,7 +389,7 @@ let ProtoInstance67 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance67.name = "org";
 let fieldValue68 = browser.currentScene.createNode("fieldValue");
 fieldValue68.name = "col";
-fieldValue68.value = "0 0.300000011920929 1";
+fieldValue68.value = "0 0.30000001192092896 1";
 ProtoInstance67.fieldValue = new MFNode();
 
 ProtoInstance67.fieldValue[0] = fieldValue68;
@@ -416,7 +416,7 @@ let ProtoDeclare71 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="n" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.200000002980232"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.20000000298023224"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
@@ -440,7 +440,7 @@ let ProtoInstance75 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance75.name = "org";
 let fieldValue76 = browser.currentScene.createNode("fieldValue");
 fieldValue76.name = "col";
-fieldValue76.value = "1 0 0.200000002980232";
+fieldValue76.value = "1 0 0.20000000298023224";
 ProtoInstance75.fieldValue = new MFNode();
 
 ProtoInstance75.fieldValue[0] = fieldValue76;
@@ -467,7 +467,7 @@ let ProtoDeclare79 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="i" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.600000023841858 0 0.600000023841858"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.6000000238418579 0 0.6000000238418579"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
@@ -491,7 +491,7 @@ let ProtoInstance83 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance83.name = "org";
 let fieldValue84 = browser.currentScene.createNode("fieldValue");
 fieldValue84.name = "col";
-fieldValue84.value = "0.600000023841858 0 0.600000023841858";
+fieldValue84.value = "0.6000000238418579 0 0.6000000238418579";
 ProtoInstance83.fieldValue = new MFNode();
 
 ProtoInstance83.fieldValue[0] = fieldValue84;
@@ -529,7 +529,7 @@ let ProtoInstance90 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance90.name = "institute";
 let fieldValue91 = browser.currentScene.createNode("fieldValue");
 fieldValue91.name = "pos";
-fieldValue91.value = "435.299987792969 0.100000001490116 -335.600006103516";
+fieldValue91.value = "435.29998779296875 0.10000000149011612 -335.6000061035156";
 ProtoInstance90.fieldValue = new MFNode();
 
 ProtoInstance90.fieldValue[0] = fieldValue91;
@@ -547,7 +547,7 @@ let ProtoInstance93 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance93.name = "r";
 let fieldValue94 = browser.currentScene.createNode("fieldValue");
 fieldValue94.name = "pos";
-fieldValue94.value = "400 0.100000001490116 -385";
+fieldValue94.value = "400 0.10000000149011612 -385";
 ProtoInstance93.fieldValue = new MFNode();
 
 ProtoInstance93.fieldValue[0] = fieldValue94;
@@ -565,7 +565,7 @@ let ProtoInstance96 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance96.name = "school";
 let fieldValue97 = browser.currentScene.createNode("fieldValue");
 fieldValue97.name = "pos";
-fieldValue97.value = "400.600006103516 0.100000001490116 -392.899993896484";
+fieldValue97.value = "400.6000061035156 0.10000000149011612 -392.8999938964844";
 ProtoInstance96.fieldValue = new MFNode();
 
 ProtoInstance96.fieldValue[0] = fieldValue97;
@@ -583,7 +583,7 @@ let ProtoInstance99 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance99.name = "school";
 let fieldValue100 = browser.currentScene.createNode("fieldValue");
 fieldValue100.name = "pos";
-fieldValue100.value = "416.700012207031 0.100000001490116 -383.399993896484";
+fieldValue100.value = "416.70001220703125 0.10000000149011612 -383.3999938964844";
 ProtoInstance99.fieldValue = new MFNode();
 
 ProtoInstance99.fieldValue[0] = fieldValue100;
@@ -601,7 +601,7 @@ let ProtoInstance102 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance102.name = "i";
 let fieldValue103 = browser.currentScene.createNode("fieldValue");
 fieldValue103.name = "pos";
-fieldValue103.value = "429.899993896484 0.100000001490116 -319.600006103516";
+fieldValue103.value = "429.8999938964844 0.10000000149011612 -319.6000061035156";
 ProtoInstance102.fieldValue = new MFNode();
 
 ProtoInstance102.fieldValue[0] = fieldValue103;
@@ -619,7 +619,7 @@ let ProtoInstance105 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance105.name = "i";
 let fieldValue106 = browser.currentScene.createNode("fieldValue");
 fieldValue106.name = "pos";
-fieldValue106.value = "430 0.100000001490116 -335";
+fieldValue106.value = "430 0.10000000149011612 -335";
 ProtoInstance105.fieldValue = new MFNode();
 
 ProtoInstance105.fieldValue[0] = fieldValue106;
@@ -637,7 +637,7 @@ let ProtoInstance108 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance108.name = "institute";
 let fieldValue109 = browser.currentScene.createNode("fieldValue");
 fieldValue109.name = "pos";
-fieldValue109.value = "435.799987792969 0.100000001490116 -335.299987792969";
+fieldValue109.value = "435.79998779296875 0.10000000149011612 -335.29998779296875";
 ProtoInstance108.fieldValue = new MFNode();
 
 ProtoInstance108.fieldValue[0] = fieldValue109;
@@ -655,7 +655,7 @@ let ProtoInstance111 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance111.name = "school";
 let fieldValue112 = browser.currentScene.createNode("fieldValue");
 fieldValue112.name = "pos";
-fieldValue112.value = "438.299987792969 0.100000001490116 -338.600006103516";
+fieldValue112.value = "438.29998779296875 0.10000000149011612 -338.6000061035156";
 ProtoInstance111.fieldValue = new MFNode();
 
 ProtoInstance111.fieldValue[0] = fieldValue112;
@@ -673,7 +673,7 @@ let ProtoInstance114 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance114.name = "n";
 let fieldValue115 = browser.currentScene.createNode("fieldValue");
 fieldValue115.name = "pos";
-fieldValue115.value = "429.899993896484 0.100000001490116 -360.299987792969";
+fieldValue115.value = "429.8999938964844 0.10000000149011612 -360.29998779296875";
 ProtoInstance114.fieldValue = new MFNode();
 
 ProtoInstance114.fieldValue[0] = fieldValue115;
@@ -691,7 +691,7 @@ let ProtoInstance117 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance117.name = "institute";
 let fieldValue118 = browser.currentScene.createNode("fieldValue");
 fieldValue118.name = "pos";
-fieldValue118.value = "434.600006103516 0.100000001490116 -338.600006103516";
+fieldValue118.value = "434.6000061035156 0.10000000149011612 -338.6000061035156";
 ProtoInstance117.fieldValue = new MFNode();
 
 ProtoInstance117.fieldValue[0] = fieldValue118;
@@ -709,7 +709,7 @@ let ProtoInstance120 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance120.name = "school";
 let fieldValue121 = browser.currentScene.createNode("fieldValue");
 fieldValue121.name = "pos";
-fieldValue121.value = "434.799987792969 0.100000001490116 -336";
+fieldValue121.value = "434.79998779296875 0.10000000149011612 -336";
 ProtoInstance120.fieldValue = new MFNode();
 
 ProtoInstance120.fieldValue[0] = fieldValue121;
@@ -727,7 +727,7 @@ let ProtoInstance123 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance123.name = "institute";
 let fieldValue124 = browser.currentScene.createNode("fieldValue");
 fieldValue124.name = "pos";
-fieldValue124.value = "432.700012207031 0.100000001490116 -336.600006103516";
+fieldValue124.value = "432.70001220703125 0.10000000149011612 -336.6000061035156";
 ProtoInstance123.fieldValue = new MFNode();
 
 ProtoInstance123.fieldValue[0] = fieldValue124;
@@ -745,7 +745,7 @@ let ProtoInstance126 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance126.name = "school";
 let fieldValue127 = browser.currentScene.createNode("fieldValue");
 fieldValue127.name = "pos";
-fieldValue127.value = "437.600006103516 0.100000001490116 -332.600006103516";
+fieldValue127.value = "437.6000061035156 0.10000000149011612 -332.6000061035156";
 ProtoInstance126.fieldValue = new MFNode();
 
 ProtoInstance126.fieldValue[0] = fieldValue127;
@@ -763,7 +763,7 @@ let ProtoInstance129 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance129.name = "institute";
 let fieldValue130 = browser.currentScene.createNode("fieldValue");
 fieldValue130.name = "pos";
-fieldValue130.value = "434.700012207031 0.100000001490116 -336.899993896484";
+fieldValue130.value = "434.70001220703125 0.10000000149011612 -336.8999938964844";
 ProtoInstance129.fieldValue = new MFNode();
 
 ProtoInstance129.fieldValue[0] = fieldValue130;
@@ -781,7 +781,7 @@ let ProtoInstance132 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance132.name = "school";
 let fieldValue133 = browser.currentScene.createNode("fieldValue");
 fieldValue133.name = "pos";
-fieldValue133.value = "436.299987792969 0.100000001490116 -333.399993896484";
+fieldValue133.value = "436.29998779296875 0.10000000149011612 -333.3999938964844";
 ProtoInstance132.fieldValue = new MFNode();
 
 ProtoInstance132.fieldValue[0] = fieldValue133;
@@ -799,7 +799,7 @@ let ProtoInstance135 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance135.name = "school";
 let fieldValue136 = browser.currentScene.createNode("fieldValue");
 fieldValue136.name = "pos";
-fieldValue136.value = "435.200012207031 0.100000001490116 -336.799987792969";
+fieldValue136.value = "435.20001220703125 0.10000000149011612 -336.79998779296875";
 ProtoInstance135.fieldValue = new MFNode();
 
 ProtoInstance135.fieldValue[0] = fieldValue136;
@@ -817,7 +817,7 @@ let ProtoInstance138 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance138.name = "school";
 let fieldValue139 = browser.currentScene.createNode("fieldValue");
 fieldValue139.name = "pos";
-fieldValue139.value = "432.5 0.100000001490116 -332.5";
+fieldValue139.value = "432.5 0.10000000149011612 -332.5";
 ProtoInstance138.fieldValue = new MFNode();
 
 ProtoInstance138.fieldValue[0] = fieldValue139;
@@ -835,7 +835,7 @@ let ProtoInstance141 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance141.name = "institute";
 let fieldValue142 = browser.currentScene.createNode("fieldValue");
 fieldValue142.name = "pos";
-fieldValue142.value = "474.700012207031 0.100000001490116 -318.799987792969";
+fieldValue142.value = "474.70001220703125 0.10000000149011612 -318.79998779296875";
 ProtoInstance141.fieldValue = new MFNode();
 
 ProtoInstance141.fieldValue[0] = fieldValue142;
@@ -853,7 +853,7 @@ let ProtoInstance144 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance144.name = "school";
 let fieldValue145 = browser.currentScene.createNode("fieldValue");
 fieldValue145.name = "pos";
-fieldValue145.value = "436.100006103516 0.100000001490116 -334.899993896484";
+fieldValue145.value = "436.1000061035156 0.10000000149011612 -334.8999938964844";
 ProtoInstance144.fieldValue = new MFNode();
 
 ProtoInstance144.fieldValue[0] = fieldValue145;
@@ -871,7 +871,7 @@ let ProtoInstance147 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance147.name = "institute";
 let fieldValue148 = browser.currentScene.createNode("fieldValue");
 fieldValue148.name = "pos";
-fieldValue148.value = "485.600006103516 0.100000001490116 -309";
+fieldValue148.value = "485.6000061035156 0.10000000149011612 -309";
 ProtoInstance147.fieldValue = new MFNode();
 
 ProtoInstance147.fieldValue[0] = fieldValue148;
@@ -889,7 +889,7 @@ let ProtoInstance150 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance150.name = "school";
 let fieldValue151 = browser.currentScene.createNode("fieldValue");
 fieldValue151.name = "pos";
-fieldValue151.value = "440.5 0.100000001490116 -355.5";
+fieldValue151.value = "440.5 0.10000000149011612 -355.5";
 ProtoInstance150.fieldValue = new MFNode();
 
 ProtoInstance150.fieldValue[0] = fieldValue151;
@@ -907,7 +907,7 @@ let ProtoInstance153 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance153.name = "institute";
 let fieldValue154 = browser.currentScene.createNode("fieldValue");
 fieldValue154.name = "pos";
-fieldValue154.value = "434.799987792969 0.100000001490116 -371.5";
+fieldValue154.value = "434.79998779296875 0.10000000149011612 -371.5";
 ProtoInstance153.fieldValue = new MFNode();
 
 ProtoInstance153.fieldValue[0] = fieldValue154;
@@ -925,7 +925,7 @@ let ProtoInstance156 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance156.name = "school";
 let fieldValue157 = browser.currentScene.createNode("fieldValue");
 fieldValue157.name = "pos";
-fieldValue157.value = "436.299987792969 0.100000001490116 -371.700012207031";
+fieldValue157.value = "436.29998779296875 0.10000000149011612 -371.70001220703125";
 ProtoInstance156.fieldValue = new MFNode();
 
 ProtoInstance156.fieldValue[0] = fieldValue157;
@@ -943,7 +943,7 @@ let ProtoInstance159 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance159.name = "school";
 let fieldValue160 = browser.currentScene.createNode("fieldValue");
 fieldValue160.name = "pos";
-fieldValue160.value = "431.200012207031 0.100000001490116 -361.200012207031";
+fieldValue160.value = "431.20001220703125 0.10000000149011612 -361.20001220703125";
 ProtoInstance159.fieldValue = new MFNode();
 
 ProtoInstance159.fieldValue[0] = fieldValue160;
@@ -961,7 +961,7 @@ let ProtoInstance162 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance162.name = "i";
 let fieldValue163 = browser.currentScene.createNode("fieldValue");
 fieldValue163.name = "pos";
-fieldValue163.value = "455.899993896484 0.100000001490116 -341.299987792969";
+fieldValue163.value = "455.8999938964844 0.10000000149011612 -341.29998779296875";
 ProtoInstance162.fieldValue = new MFNode();
 
 ProtoInstance162.fieldValue[0] = fieldValue163;
@@ -979,7 +979,7 @@ let ProtoInstance165 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance165.name = "r";
 let fieldValue166 = browser.currentScene.createNode("fieldValue");
 fieldValue166.name = "pos";
-fieldValue166.value = "456.100006103516 0.100000001490116 -341.5";
+fieldValue166.value = "456.1000061035156 0.10000000149011612 -341.5";
 ProtoInstance165.fieldValue = new MFNode();
 
 ProtoInstance165.fieldValue[0] = fieldValue166;
@@ -997,7 +997,7 @@ let ProtoInstance168 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance168.name = "r";
 let fieldValue169 = browser.currentScene.createNode("fieldValue");
 fieldValue169.name = "pos";
-fieldValue169.value = "454 0.100000001490116 -361.299987792969";
+fieldValue169.value = "454 0.10000000149011612 -361.29998779296875";
 ProtoInstance168.fieldValue = new MFNode();
 
 ProtoInstance168.fieldValue[0] = fieldValue169;
@@ -1015,7 +1015,7 @@ let ProtoInstance171 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance171.name = "institute";
 let fieldValue172 = browser.currentScene.createNode("fieldValue");
 fieldValue172.name = "pos";
-fieldValue172.value = "457.399993896484 0.100000001490116 -359.600006103516";
+fieldValue172.value = "457.3999938964844 0.10000000149011612 -359.6000061035156";
 ProtoInstance171.fieldValue = new MFNode();
 
 ProtoInstance171.fieldValue[0] = fieldValue172;
@@ -1033,7 +1033,7 @@ let ProtoInstance174 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance174.name = "school";
 let fieldValue175 = browser.currentScene.createNode("fieldValue");
 fieldValue175.name = "pos";
-fieldValue175.value = "454.200012207031 0.100000001490116 -358.600006103516";
+fieldValue175.value = "454.20001220703125 0.10000000149011612 -358.6000061035156";
 ProtoInstance174.fieldValue = new MFNode();
 
 ProtoInstance174.fieldValue[0] = fieldValue175;
@@ -1051,7 +1051,7 @@ let ProtoInstance177 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance177.name = "institute";
 let fieldValue178 = browser.currentScene.createNode("fieldValue");
 fieldValue178.name = "pos";
-fieldValue178.value = "450.600006103516 0.100000001490116 -358.600006103516";
+fieldValue178.value = "450.6000061035156 0.10000000149011612 -358.6000061035156";
 ProtoInstance177.fieldValue = new MFNode();
 
 ProtoInstance177.fieldValue[0] = fieldValue178;
@@ -1069,7 +1069,7 @@ let ProtoInstance180 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance180.name = "r";
 let fieldValue181 = browser.currentScene.createNode("fieldValue");
 fieldValue181.name = "pos";
-fieldValue181.value = "440 0.100000001490116 -350";
+fieldValue181.value = "440 0.10000000149011612 -350";
 ProtoInstance180.fieldValue = new MFNode();
 
 ProtoInstance180.fieldValue[0] = fieldValue181;
@@ -1087,7 +1087,7 @@ let ProtoInstance183 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance183.name = "n";
 let fieldValue184 = browser.currentScene.createNode("fieldValue");
 fieldValue184.name = "pos";
-fieldValue184.value = "458.899993896484 0.100000001490116 -304.299987792969";
+fieldValue184.value = "458.8999938964844 0.10000000149011612 -304.29998779296875";
 ProtoInstance183.fieldValue = new MFNode();
 
 ProtoInstance183.fieldValue[0] = fieldValue184;
@@ -1105,7 +1105,7 @@ let ProtoInstance186 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance186.name = "institute";
 let fieldValue187 = browser.currentScene.createNode("fieldValue");
 fieldValue187.name = "pos";
-fieldValue187.value = "473.5 0.100000001490116 -287.5";
+fieldValue187.value = "473.5 0.10000000149011612 -287.5";
 ProtoInstance186.fieldValue = new MFNode();
 
 ProtoInstance186.fieldValue[0] = fieldValue187;
@@ -1123,7 +1123,7 @@ let ProtoInstance189 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance189.name = "institute";
 let fieldValue190 = browser.currentScene.createNode("fieldValue");
 fieldValue190.name = "pos";
-fieldValue190.value = "458 0.100000001490116 -304.5";
+fieldValue190.value = "458 0.10000000149011612 -304.5";
 ProtoInstance189.fieldValue = new MFNode();
 
 ProtoInstance189.fieldValue[0] = fieldValue190;
@@ -1141,7 +1141,7 @@ let ProtoInstance192 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance192.name = "r";
 let fieldValue193 = browser.currentScene.createNode("fieldValue");
 fieldValue193.name = "pos";
-fieldValue193.value = "457.100006103516 0.100000001490116 -300.799987792969";
+fieldValue193.value = "457.1000061035156 0.10000000149011612 -300.79998779296875";
 ProtoInstance192.fieldValue = new MFNode();
 
 ProtoInstance192.fieldValue[0] = fieldValue193;
@@ -1159,7 +1159,7 @@ let ProtoInstance195 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance195.name = "school";
 let fieldValue196 = browser.currentScene.createNode("fieldValue");
 fieldValue196.name = "pos";
-fieldValue196.value = "456.799987792969 0.100000001490116 -302.600006103516";
+fieldValue196.value = "456.79998779296875 0.10000000149011612 -302.6000061035156";
 ProtoInstance195.fieldValue = new MFNode();
 
 ProtoInstance195.fieldValue[0] = fieldValue196;
@@ -1177,7 +1177,7 @@ let ProtoInstance198 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance198.name = "school";
 let fieldValue199 = browser.currentScene.createNode("fieldValue");
 fieldValue199.name = "pos";
-fieldValue199.value = "453.299987792969 0.100000001490116 -318.600006103516";
+fieldValue199.value = "453.29998779296875 0.10000000149011612 -318.6000061035156";
 ProtoInstance198.fieldValue = new MFNode();
 
 ProtoInstance198.fieldValue[0] = fieldValue199;
@@ -1195,7 +1195,7 @@ let ProtoInstance201 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance201.name = "r";
 let fieldValue202 = browser.currentScene.createNode("fieldValue");
 fieldValue202.name = "pos";
-fieldValue202.value = "442.399993896484 0.100000001490116 -314.5";
+fieldValue202.value = "442.3999938964844 0.10000000149011612 -314.5";
 ProtoInstance201.fieldValue = new MFNode();
 
 ProtoInstance201.fieldValue[0] = fieldValue202;
@@ -1213,7 +1213,7 @@ let ProtoInstance204 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance204.name = "school";
 let fieldValue205 = browser.currentScene.createNode("fieldValue");
 fieldValue205.name = "pos";
-fieldValue205.value = "444.600006103516 0.100000001490116 -313.700012207031";
+fieldValue205.value = "444.6000061035156 0.10000000149011612 -313.70001220703125";
 ProtoInstance204.fieldValue = new MFNode();
 
 ProtoInstance204.fieldValue[0] = fieldValue205;
@@ -1231,7 +1231,7 @@ let ProtoInstance207 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance207.name = "school";
 let fieldValue208 = browser.currentScene.createNode("fieldValue");
 fieldValue208.name = "pos";
-fieldValue208.value = "440.600006103516 0.100000001490116 -310.399993896484";
+fieldValue208.value = "440.6000061035156 0.10000000149011612 -310.3999938964844";
 ProtoInstance207.fieldValue = new MFNode();
 
 ProtoInstance207.fieldValue[0] = fieldValue208;
@@ -1249,7 +1249,7 @@ let ProtoInstance210 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance210.name = "r";
 let fieldValue211 = browser.currentScene.createNode("fieldValue");
 fieldValue211.name = "pos";
-fieldValue211.value = "491.600006103516 0.100000001490116 -335.700012207031";
+fieldValue211.value = "491.6000061035156 0.10000000149011612 -335.70001220703125";
 ProtoInstance210.fieldValue = new MFNode();
 
 ProtoInstance210.fieldValue[0] = fieldValue211;
@@ -1267,7 +1267,7 @@ let ProtoInstance213 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance213.name = "institute";
 let fieldValue214 = browser.currentScene.createNode("fieldValue");
 fieldValue214.name = "pos";
-fieldValue214.value = "491.399993896484 0.100000001490116 -336.799987792969";
+fieldValue214.value = "491.3999938964844 0.10000000149011612 -336.79998779296875";
 ProtoInstance213.fieldValue = new MFNode();
 
 ProtoInstance213.fieldValue[0] = fieldValue214;
@@ -1285,7 +1285,7 @@ let ProtoInstance216 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance216.name = "institute";
 let fieldValue217 = browser.currentScene.createNode("fieldValue");
 fieldValue217.name = "pos";
-fieldValue217.value = "496.899993896484 0.100000001490116 -368.899993896484";
+fieldValue217.value = "496.8999938964844 0.10000000149011612 -368.8999938964844";
 ProtoInstance216.fieldValue = new MFNode();
 
 ProtoInstance216.fieldValue[0] = fieldValue217;
@@ -1303,7 +1303,7 @@ let ProtoInstance219 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance219.name = "r";
 let fieldValue220 = browser.currentScene.createNode("fieldValue");
 fieldValue220.name = "pos";
-fieldValue220.value = "467 0.100000001490116 -243.899993896484";
+fieldValue220.value = "467 0.10000000149011612 -243.89999389648438";
 ProtoInstance219.fieldValue = new MFNode();
 
 ProtoInstance219.fieldValue[0] = fieldValue220;
@@ -1321,7 +1321,7 @@ let ProtoInstance222 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance222.name = "institute";
 let fieldValue223 = browser.currentScene.createNode("fieldValue");
 fieldValue223.name = "pos";
-fieldValue223.value = "477.100006103516 0.100000001490116 -260";
+fieldValue223.value = "477.1000061035156 0.10000000149011612 -260";
 ProtoInstance222.fieldValue = new MFNode();
 
 ProtoInstance222.fieldValue[0] = fieldValue223;
@@ -1339,7 +1339,7 @@ let ProtoInstance225 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance225.name = "school";
 let fieldValue226 = browser.currentScene.createNode("fieldValue");
 fieldValue226.name = "pos";
-fieldValue226.value = "474.700012207031 0.100000001490116 -259.100006103516";
+fieldValue226.value = "474.70001220703125 0.10000000149011612 -259.1000061035156";
 ProtoInstance225.fieldValue = new MFNode();
 
 ProtoInstance225.fieldValue[0] = fieldValue226;
@@ -1357,7 +1357,7 @@ let ProtoInstance228 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance228.name = "institute";
 let fieldValue229 = browser.currentScene.createNode("fieldValue");
 fieldValue229.name = "pos";
-fieldValue229.value = "459 0.100000001490116 -236.399993896484";
+fieldValue229.value = "459 0.10000000149011612 -236.39999389648438";
 ProtoInstance228.fieldValue = new MFNode();
 
 ProtoInstance228.fieldValue[0] = fieldValue229;
@@ -1375,7 +1375,7 @@ let ProtoInstance231 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance231.name = "n";
 let fieldValue232 = browser.currentScene.createNode("fieldValue");
 fieldValue232.name = "pos";
-fieldValue232.value = "457.399993896484 0.100000001490116 -262.700012207031";
+fieldValue232.value = "457.3999938964844 0.10000000149011612 -262.70001220703125";
 ProtoInstance231.fieldValue = new MFNode();
 
 ProtoInstance231.fieldValue[0] = fieldValue232;
@@ -1393,7 +1393,7 @@ let ProtoInstance234 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance234.name = "r";
 let fieldValue235 = browser.currentScene.createNode("fieldValue");
 fieldValue235.name = "pos";
-fieldValue235.value = "458.700012207031 0.100000001490116 -262.700012207031";
+fieldValue235.value = "458.70001220703125 0.10000000149011612 -262.70001220703125";
 ProtoInstance234.fieldValue = new MFNode();
 
 ProtoInstance234.fieldValue[0] = fieldValue235;
@@ -1411,7 +1411,7 @@ let ProtoInstance237 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance237.name = "school";
 let fieldValue238 = browser.currentScene.createNode("fieldValue");
 fieldValue238.name = "pos";
-fieldValue238.value = "466.899993896484 0.100000001490116 -243.800003051758";
+fieldValue238.value = "466.8999938964844 0.10000000149011612 -243.8000030517578";
 ProtoInstance237.fieldValue = new MFNode();
 
 ProtoInstance237.fieldValue[0] = fieldValue238;
@@ -1429,7 +1429,7 @@ let ProtoInstance240 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance240.name = "institute";
 let fieldValue241 = browser.currentScene.createNode("fieldValue");
 fieldValue241.name = "pos";
-fieldValue241.value = "469.5 0.100000001490116 -249.800003051758";
+fieldValue241.value = "469.5 0.10000000149011612 -249.8000030517578";
 ProtoInstance240.fieldValue = new MFNode();
 
 ProtoInstance240.fieldValue[0] = fieldValue241;
@@ -1447,7 +1447,7 @@ let ProtoInstance243 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance243.name = "school";
 let fieldValue244 = browser.currentScene.createNode("fieldValue");
 fieldValue244.name = "pos";
-fieldValue244.value = "456.700012207031 0.100000001490116 -261.799987792969";
+fieldValue244.value = "456.70001220703125 0.10000000149011612 -261.79998779296875";
 ProtoInstance243.fieldValue = new MFNode();
 
 ProtoInstance243.fieldValue[0] = fieldValue244;
@@ -1461,7 +1461,7 @@ Transform87.children[52] = Anchor242;
 let Shape245 = browser.currentScene.createNode("Shape");
 let Appearance246 = browser.currentScene.createNode("Appearance");
 let Material247 = browser.currentScene.createNode("Material");
-Material247.transparency = 0.200000002980232;
+Material247.transparency = 0.20000000298023224;
 Material247.emissiveColor = new SFColor(new float[1,0,0]);
 Appearance246.material = Material247;
 
@@ -1470,7 +1470,7 @@ Shape245.appearance = Appearance246;
 let IndexedLineSet248 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet248.coordIndex = new MFInt32(new int[0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]);
 let Coordinate249 = browser.currentScene.createNode("Coordinate");
-Coordinate249.point = new MFVec3f(new float[430,0.0199999995529652,-335,435.799987792969,0.100000001490116,-335.299987792969,430,0.0199999995529652,-335,434.600006103516,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,432.700012207031,0.100000001490116,-336.600006103516,430,0.0199999995529652,-335,434.700012207031,0.100000001490116,-336.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,474.700012207031,0.100000001490116,-318.799987792969,429.899993896484,0.0199999995529652,-360.299987792969,485.600006103516,0.100000001490116,-309,429.899993896484,0.0199999995529652,-360.299987792969,434.799987792969,0.100000001490116,-371.5,454,0.0199999995529652,-361.299987792969,457.399993896484,0.100000001490116,-359.600006103516,454,0.0199999995529652,-361.299987792969,454.200012207031,0.100000001490116,-358.600006103516,454,0.0199999995529652,-361.299987792969,450.600006103516,0.100000001490116,-358.600006103516,458.899993896484,0.0199999995529652,-304.299987792969,473.5,0.100000001490116,-287.5,458.899993896484,0.0199999995529652,-304.299987792969,458,0.100000001490116,-304.5,491.600006103516,0.0199999995529652,-335.700012207031,491.399993896484,0.100000001490116,-336.799987792969,491.600006103516,0.0199999995529652,-335.700012207031,496.899993896484,0.100000001490116,-368.899993896484,467,0.0199999995529652,-243.899993896484,477.100006103516,0.100000001490116,-260,467,0.0199999995529652,-243.899993896484,459,0.100000001490116,-236.399993896484,458.700012207031,0.0199999995529652,-262.700012207031,469.5,0.100000001490116,-249.800003051758,458.700012207031,0.0199999995529652,-262.700012207031,456.700012207031,0.100000001490116,-261.799987792969]);
+Coordinate249.point = new MFVec3f(new float[430,0.019999999552965164,-335,435.79998779296875,0.10000000149011612,-335.29998779296875,430,0.019999999552965164,-335,434.6000061035156,0.10000000149011612,-338.6000061035156,430,0.019999999552965164,-335,432.70001220703125,0.10000000149011612,-336.6000061035156,430,0.019999999552965164,-335,434.70001220703125,0.10000000149011612,-336.8999938964844,429.8999938964844,0.019999999552965164,-360.29998779296875,474.70001220703125,0.10000000149011612,-318.79998779296875,429.8999938964844,0.019999999552965164,-360.29998779296875,485.6000061035156,0.10000000149011612,-309,429.8999938964844,0.019999999552965164,-360.29998779296875,434.79998779296875,0.10000000149011612,-371.5,454,0.019999999552965164,-361.29998779296875,457.3999938964844,0.10000000149011612,-359.6000061035156,454,0.019999999552965164,-361.29998779296875,454.20001220703125,0.10000000149011612,-358.6000061035156,454,0.019999999552965164,-361.29998779296875,450.6000061035156,0.10000000149011612,-358.6000061035156,458.8999938964844,0.019999999552965164,-304.29998779296875,473.5,0.10000000149011612,-287.5,458.8999938964844,0.019999999552965164,-304.29998779296875,458,0.10000000149011612,-304.5,491.6000061035156,0.019999999552965164,-335.70001220703125,491.3999938964844,0.10000000149011612,-336.79998779296875,491.6000061035156,0.019999999552965164,-335.70001220703125,496.8999938964844,0.10000000149011612,-368.8999938964844,467,0.019999999552965164,-243.89999389648438,477.1000061035156,0.10000000149011612,-260,467,0.019999999552965164,-243.89999389648438,459,0.10000000149011612,-236.39999389648438,458.70001220703125,0.019999999552965164,-262.70001220703125,469.5,0.10000000149011612,-249.8000030517578,458.70001220703125,0.019999999552965164,-262.70001220703125,456.70001220703125,0.10000000149011612,-261.79998779296875]);
 IndexedLineSet248.coord = Coordinate249;
 
 Shape245.geometry = IndexedLineSet248;
@@ -1480,7 +1480,7 @@ Transform87.children[53] = Shape245;
 let Shape250 = browser.currentScene.createNode("Shape");
 let Appearance251 = browser.currentScene.createNode("Appearance");
 let Material252 = browser.currentScene.createNode("Material");
-Material252.transparency = 0.200000002980232;
+Material252.transparency = 0.20000000298023224;
 Material252.emissiveColor = new SFColor(new float[0,1,0]);
 Appearance251.material = Material252;
 
@@ -1489,7 +1489,7 @@ Shape250.appearance = Appearance251;
 let IndexedLineSet253 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet253.coordIndex = new MFInt32(new int[0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1]);
 let Coordinate254 = browser.currentScene.createNode("Coordinate");
-Coordinate254.point = new MFVec3f(new float[400,0.0199999995529652,-385,400.600006103516,0.100000001490116,-392.899993896484,400,0.0199999995529652,-385,416.700012207031,0.100000001490116,-383.399993896484,430,0.0199999995529652,-335,438.299987792969,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,434.799987792969,0.100000001490116,-336,430,0.0199999995529652,-335,437.600006103516,0.100000001490116,-332.600006103516,430,0.0199999995529652,-335,436.299987792969,0.100000001490116,-333.399993896484,430,0.0199999995529652,-335,435.200012207031,0.100000001490116,-336.799987792969,430,0.0199999995529652,-335,432.5,0.100000001490116,-332.5,429.899993896484,0.0199999995529652,-360.299987792969,436.100006103516,0.100000001490116,-334.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,440.5,0.100000001490116,-355.5,429.899993896484,0.0199999995529652,-360.299987792969,436.299987792969,0.100000001490116,-371.700012207031,429.899993896484,0.0199999995529652,-360.299987792969,431.200012207031,0.100000001490116,-361.200012207031,457.100006103516,0.0199999995529652,-300.799987792969,456.799987792969,0.100000001490116,-302.600006103516,457.100006103516,0.0199999995529652,-300.799987792969,453.299987792969,0.100000001490116,-318.600006103516,442.399993896484,0.0199999995529652,-314.5,444.600006103516,0.100000001490116,-313.700012207031,442.399993896484,0.0199999995529652,-314.5,440.600006103516,0.100000001490116,-310.399993896484,467,0.0199999995529652,-243.899993896484,474.700012207031,0.100000001490116,-259.100006103516,457.399993896484,0.0199999995529652,-262.700012207031,466.899993896484,0.100000001490116,-243.800003051758]);
+Coordinate254.point = new MFVec3f(new float[400,0.019999999552965164,-385,400.6000061035156,0.10000000149011612,-392.8999938964844,400,0.019999999552965164,-385,416.70001220703125,0.10000000149011612,-383.3999938964844,430,0.019999999552965164,-335,438.29998779296875,0.10000000149011612,-338.6000061035156,430,0.019999999552965164,-335,434.79998779296875,0.10000000149011612,-336,430,0.019999999552965164,-335,437.6000061035156,0.10000000149011612,-332.6000061035156,430,0.019999999552965164,-335,436.29998779296875,0.10000000149011612,-333.3999938964844,430,0.019999999552965164,-335,435.20001220703125,0.10000000149011612,-336.79998779296875,430,0.019999999552965164,-335,432.5,0.10000000149011612,-332.5,429.8999938964844,0.019999999552965164,-360.29998779296875,436.1000061035156,0.10000000149011612,-334.8999938964844,429.8999938964844,0.019999999552965164,-360.29998779296875,440.5,0.10000000149011612,-355.5,429.8999938964844,0.019999999552965164,-360.29998779296875,436.29998779296875,0.10000000149011612,-371.70001220703125,429.8999938964844,0.019999999552965164,-360.29998779296875,431.20001220703125,0.10000000149011612,-361.20001220703125,457.1000061035156,0.019999999552965164,-300.79998779296875,456.79998779296875,0.10000000149011612,-302.6000061035156,457.1000061035156,0.019999999552965164,-300.79998779296875,453.29998779296875,0.10000000149011612,-318.6000061035156,442.3999938964844,0.019999999552965164,-314.5,444.6000061035156,0.10000000149011612,-313.70001220703125,442.3999938964844,0.019999999552965164,-314.5,440.6000061035156,0.10000000149011612,-310.3999938964844,467,0.019999999552965164,-243.89999389648438,474.70001220703125,0.10000000149011612,-259.1000061035156,457.3999938964844,0.019999999552965164,-262.70001220703125,466.8999938964844,0.10000000149011612,-243.8000030517578]);
 IndexedLineSet253.coord = Coordinate254;
 
 Shape250.geometry = IndexedLineSet253;
@@ -1499,7 +1499,7 @@ Transform87.children[54] = Shape250;
 let Shape255 = browser.currentScene.createNode("Shape");
 let Appearance256 = browser.currentScene.createNode("Appearance");
 let Material257 = browser.currentScene.createNode("Material");
-Material257.transparency = 0.200000002980232;
+Material257.transparency = 0.20000000298023224;
 Material257.emissiveColor = new SFColor(new float[1,0,1]);
 Appearance256.material = Material257;
 
@@ -1508,7 +1508,7 @@ Shape255.appearance = Appearance256;
 let IndexedLineSet258 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet258.coordIndex = new MFInt32(new int[0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1]);
 let Coordinate259 = browser.currentScene.createNode("Coordinate");
-Coordinate259.point = new MFVec3f(new float[430,0.0199999995529652,-335,429.899993896484,0.100000001490116,-360.299987792969,442.399993896484,0.0199999995529652,-314.5,429.899993896484,0.100000001490116,-319.600006103516,457.399993896484,0.0199999995529652,-262.700012207031,467,0.100000001490116,-243.899993896484,458.700012207031,0.0199999995529652,-262.700012207031,457.399993896484,0.100000001490116,-262.700012207031,458.700012207031,0.0199999995529652,-262.700012207031,467,0.100000001490116,-243.899993896484]);
+Coordinate259.point = new MFVec3f(new float[430,0.019999999552965164,-335,429.8999938964844,0.10000000149011612,-360.29998779296875,442.3999938964844,0.019999999552965164,-314.5,429.8999938964844,0.10000000149011612,-319.6000061035156,457.3999938964844,0.019999999552965164,-262.70001220703125,467,0.10000000149011612,-243.89999389648438,458.70001220703125,0.019999999552965164,-262.70001220703125,457.3999938964844,0.10000000149011612,-262.70001220703125,458.70001220703125,0.019999999552965164,-262.70001220703125,467,0.10000000149011612,-243.89999389648438]);
 IndexedLineSet258.coord = Coordinate259;
 
 Shape255.geometry = IndexedLineSet258;

@@ -67,16 +67,12 @@ load('X3Dautoclass.js');
 			<td> Titania V3.0.3, <a href="http://titania.create3000.de" target="_blank">http://titania.create3000.de</a> </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> comment </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
 			<td> World of Titania </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> outputStyle </i> </td>
 			<td> nicest </td>
-		</tr>
-		<tr style="color:burntorange">
-			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
-			<td> under development </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -136,9 +132,9 @@ SimpleShader.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("originals/simpleShader.x3dv"))
     .addMeta(new metaObject().setName("reference").setContent("ShaderTutorialInstantReality.pdf"))
     .addMeta(new metaObject().setName("generator").setContent("Titania V3.0.3, http://titania.create3000.de"))
-    .addMeta(new metaObject().setName("comment").setContent("World of Titania"))
+    .addMeta(new metaObject().setName("info").setContent("World of Titania"))
     .addMeta(new metaObject().setName("outputStyle").setContent("nicest"))
-    .addMeta(new metaObject().setName("warning").setContent("under development"))
+    .addComments("meta content='under development' name='warning'/")
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
     .addMeta(new metaObject().setName("license").setContent("../../license.html")))

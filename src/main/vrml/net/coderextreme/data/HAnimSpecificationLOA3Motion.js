@@ -86,7 +86,7 @@ browser.currentScene.children[11] = Viewpoint14;
 let HAnimHumanoid15 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid15.name = "humanoid";
 HAnimHumanoid15.DEF = "hanim_humanoid";
-HAnimHumanoid15.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"]);
+HAnimHumanoid15.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]);
 HAnimHumanoid15.version = "1.0";
 let HAnimJoint16 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint16.name = "humanoid_root";
@@ -9354,13 +9354,13 @@ Group1913.children = new MFNode();
 Group1913.children[0] = TimeSensor1914;
 
 let PositionInterpolator1915 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator1915.DEF = "Stop_humanoid_root_TranslationInterpolator";
+PositionInterpolator1915.DEF = "Stop_HumanoidRoot_TranslationInterpolator";
 PositionInterpolator1915.key = new MFFloat(new float[0,0.5,1]);
 PositionInterpolator1915.keyValue = new MFVec3f(new float[0,0,0,0,0,0,0,0,0]);
 Group1913.children[1] = PositionInterpolator1915;
 
 let OrientationInterpolator1916 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1916.DEF = "Stop_humanoid_root_RotationInterpolator";
+OrientationInterpolator1916.DEF = "Stop_HumanoidRoot_RotationInterpolator";
 OrientationInterpolator1916.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator1916.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group1913.children[2] = OrientationInterpolator1916;
@@ -9897,14 +9897,14 @@ let ROUTE2005 = browser.currentScene.createNode("ROUTE");
 ROUTE2005.fromField = "fraction_changed";
 ROUTE2005.fromNode = "StopTimer";
 ROUTE2005.toField = "set_fraction";
-ROUTE2005.toNode = "Stop_humanoid_root_TranslationInterpolator";
+ROUTE2005.toNode = "Stop_HumanoidRoot_TranslationInterpolator";
 Group1913.children[91] = ROUTE2005;
 
 let ROUTE2006 = browser.currentScene.createNode("ROUTE");
 ROUTE2006.fromField = "fraction_changed";
 ROUTE2006.fromNode = "StopTimer";
 ROUTE2006.toField = "set_fraction";
-ROUTE2006.toNode = "Stop_humanoid_root_RotationInterpolator";
+ROUTE2006.toNode = "Stop_HumanoidRoot_RotationInterpolator";
 Group1913.children[92] = ROUTE2006;
 
 let ROUTE2007 = browser.currentScene.createNode("ROUTE");
@@ -10525,14 +10525,14 @@ Group1913.children[180] = ROUTE2094;
 
 let ROUTE2095 = browser.currentScene.createNode("ROUTE");
 ROUTE2095.fromField = "value_changed";
-ROUTE2095.fromNode = "Stop_humanoid_root_TranslationInterpolator";
+ROUTE2095.fromNode = "Stop_HumanoidRoot_TranslationInterpolator";
 ROUTE2095.toField = "translation";
 ROUTE2095.toNode = "hanim_humanoid_root";
 Group1913.children[181] = ROUTE2095;
 
 let ROUTE2096 = browser.currentScene.createNode("ROUTE");
 ROUTE2096.fromField = "value_changed";
-ROUTE2096.fromNode = "Stop_humanoid_root_RotationInterpolator";
+ROUTE2096.fromNode = "Stop_HumanoidRoot_RotationInterpolator";
 ROUTE2096.toField = "rotation";
 ROUTE2096.toNode = "hanim_humanoid_root";
 Group1913.children[182] = ROUTE2096;

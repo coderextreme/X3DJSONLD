@@ -94,13 +94,38 @@
         <xsl:variable name="hasContainedText" select="(string-length(normalize-space(.)) > 0)"/>
                 
         <!-- common initial processing for each element -->
-        <xsl:if test="not((local-name() = 'a') or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'span'))">
+        <xsl:if test="not((local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or (local-name() = 'span') or
+                          (local-name() = 'sub') or (local-name() = 'sup')) and
+                      not(starts-with(local-name(), 'h'))">
             <!-- no line breaks for inline HTML elements -->
             <xsl:text>&#10;</xsl:text>
             <xsl:value-of select="$indent"/>
         </xsl:if>        
         
         <xsl:choose>
+            <xsl:when test="($elementName = 'b') or ($elementName = 'i') or ($elementName = 'em') or ($elementName = 'strong')">
+                <!-- debug diagnostic -->
+                <xsl:if test="contains(.,'&#10;')">
+                    <xsl:message>
+                        <xsl:text>*** contained newline in element </xsl:text>
+                        <xsl:value-of select="$elementName"/>
+                        <xsl:text> "</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>"</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                
+                <xsl:text> </xsl:text>
+                <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+                <xsl:value-of select="$elementName"/>
+                <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+                <xsl:apply-templates select="@*"/> <!-- process attributes for this element -->
+                <xsl:value-of select="."/>
+                <!-- common final processing for each element -->
+                <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
+                <xsl:value-of select="$elementName"/>
+                <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- end element -->
+            </xsl:when>
             <xsl:when test="contains(@class,'proposedDeletion')">
                 <xsl:if test="($verbose = 'true')">
                     <xsl:message>
@@ -131,7 +156,9 @@
                 <xsl:apply-templates select="* | text() | comment()"/>  <!-- recurse on child elements, include contained text -->
 
                 <!-- common final processing for each element -->
-                <xsl:if test="not((local-name() = 'a') or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'span'))">
+                <xsl:if test="not((local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or (local-name() = 'span') or
+                                  (local-name() = 'sub') or (local-name() = 'sup')) and
+                              not(starts-with(local-name(), 'h'))">
                     <!-- no line breaks for inline HTML elements -->
                     <xsl:text>&#10;</xsl:text>
                     <xsl:value-of select="$indent"/>
@@ -208,7 +235,7 @@
         <xsl:variable name="allowedClassName" select="(local-name() = 'class') and
             ((. = 'auto-style1')   or (. = 'cube')       or (. = 'CenterDiv')   or (. = 'HeadingPart') or (. = 'HeadingClause') or 
              (. = 'code')          or (. = 'deprecated') or (. = 'equation')    or (. = 'editorsNote') or (. = 'editorialChange') or
-             (. = 'terms')         or (. = 'TermRef')    or
+             (. = 'terms')         or (. = 'TermRef')    or (. = 'approved')    or (. = 'approvedDeletion') or
              (. = 'example')       or (. = 'IndexEntry') or (. = 'Params') or
              (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
              (. = 'RunningHeader') or (. = 'RunningHeaderLeft')  or (. = 'RunningHeaderCenter') or (. = 'RunningHeaderRight') or 
@@ -360,12 +387,21 @@
     <!-- ===================================================== -->
     
     <xsl:template match="comment()"> <!-- rule to process each comment -->
+        
+        <xsl:variable name="indent">
+            <xsl:for-each select="ancestor::*">
+                <xsl:text>  </xsl:text>
+            </xsl:for-each>
+        </xsl:variable>
     
         <xsl:if test="(string-length(.) > 0)">
             <xsl:text>&#10;</xsl:text>
             <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
             <xsl:value-of select="."/>
             <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
+            
+            <xsl:text>&#10;</xsl:text>
+            <xsl:value-of select="$indent"/>
         </xsl:if>
         
     </xsl:template>

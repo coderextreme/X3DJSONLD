@@ -349,7 +349,7 @@ function clockTrigger (timeValue)
       <SignalPdu geoSystem='"GD" "WE"'/>
       <TransmitterPdu geoSystem='"GD" "WE"'/>
       <DISEntityManager>
-        <DISEntityTypeMapping/>
+        <DISEntityTypeMapping containerField='mapping'/>
       </DISEntityManager>
     </Transform>
   </Scene>
