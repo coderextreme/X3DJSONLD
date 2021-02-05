@@ -260,12 +260,16 @@ function magic(path, type) {
 		} else {
 			url = __dirname+"/"+url;
 		}
-		console.error("Reading", url);
-		var data = fs.readFileSync(url);
-		if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
-			sendNoNext(res, data, type);
+		if (fs.existsSync(url)) {
+			console.error("Reading", url);
+			var data = fs.readFileSync(url);
+			if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
+				sendNoNext(res, data, type);
+			} else {
+				sendNoNext(res, data.toString(), type);
+			}
 		} else {
-			sendNoNext(res, data.toString(), type);
+			console.error("File does not exist", url);
 		}
 	} catch (e) {
 		console.error(e, "Couldn't read", url);
