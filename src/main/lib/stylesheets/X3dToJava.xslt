@@ -863,7 +863,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name() = 'KeySensor') or (local-name() = 'StringSensor')">
                     <xsl:text>KeyDeviceSensor.</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'DirectionalLight') or (local-name() = 'PointLight') or (local-name() = 'SpotLight')">
+                <xsl:when test="(local-name() = 'DirectionalLight') or (local-name() = 'EnvironmentLight') or (local-name() = 'PointLight') or (local-name() = 'SpotLight')">
                     <xsl:text>Lighting.</xsl:text>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'Billboard') or (local-name() = 'Collision') or (local-name() = 'LOD') or (local-name() = 'NavigationInfo') or (local-name() = 'Viewpoint')">
@@ -1834,7 +1834,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='maxPosition' and (string(.)='-1 -1' or string(.)='-1.0 -1.0')) or
                       (local-name()='minPosition' and (string(.)='0 0' or string(.)='0.0 0.0')) or
                       (local-name()='offset' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
-                      not( local-name(..)='PointLight' and
+                      not( ((local-name(..)='PointLight') or (local-name(..)='EnvironmentLight')) and
                       ((local-name()='ambientIntensity' and (string(.)='0' or string(.)='0.0'))or
                       (local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
                       (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or

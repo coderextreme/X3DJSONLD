@@ -1374,7 +1374,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='maxPosition' and (.='-1 -1' or .='-1.0 -1.0')) or
                       (local-name()='minPosition' and (.='0 0' or .='0.0 0.0')) or
                       (local-name()='offset' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
-                      not( local-name(..)='PointLight' and
+                      not( ((local-name(..)='PointLight') or (local-name(..)='EnvironmentLight')) and
                       ((local-name()='ambientIntensity' and (.='0' or .='0.0'))or
                       (local-name()='attenuation' and (.='1 0 0' or .='1.0 0.0 0.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
