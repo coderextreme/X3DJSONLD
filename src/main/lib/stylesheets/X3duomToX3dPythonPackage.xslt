@@ -1966,9 +1966,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if  IS is None:
             IS = SFNode.DEFAULT_VALUE(self)
         assertValidSFNode(IS)
-        if not isinstance(IS, object):
+        if not isinstance(IS, object) and not isinstance(IS, [ IS ] ): # TODO disambiguate IS naming
             # print(flush=True)
-            raise X3DTypeError(str(IS) + ' does not have a valid node type object')
+            raise X3DTypeError(str(IS) + ' IS.setter does not have a valid node type object, must be an IS node')
         self.__IS = IS
     @property # getter - - - - - - - - - -
     def metadata(self):
@@ -1979,9 +1979,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if  metadata is None:
             metadata = SFNode.DEFAULT_VALUE(self)
         assertValidSFNode(metadata)
-        if not isinstance(metadata, object):
+        if not isinstance(metadata, object) and not isinstance(metadata, [ MetadataBoolean, MetadataInteger, MetadataFloat, MetadataDouble, MetadataString, MetadataSet, ProtoInstance ] ):
             # print(flush=True)
-            raise X3DTypeError(str(metadata) + ' does not have a valid node type object')
+            raise X3DTypeError(str(metadata) + ' metadata.setter does not have a valid node type object, must be a Metadata* node or ProtoInstance')
         self.__metadata = metadata
     def __repl__(self):
         result = self.NAME() + '('
@@ -2516,13 +2516,53 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:with-param name="x3dType" select="@type"/>
                 </xsl:call-template>
             </xsl:variable>
-            <xsl:variable name="acceptableNodeType">
+            <xsl:variable name="acceptableNodeTypes">
                 <xsl:choose>
-                    <xsl:when test="(string-length(@acceptableNodeType) > 0) and not(contains(@acceptableNodeType,','))">
-                        <xsl:value-of select="@acceptableNodeType"/>
+                    <xsl:when test="(@acceptableNodeTypes = 'Scene') or (@acceptableNodeTypes = 'head') or (@acceptableNodeTypes = 'IS')">
+                        <xsl:text>object</xsl:text><!--  -->
+                        <!-- TODO refer to class without creating instance, not local variable for disambiguation of field names and element names -->
+                        <!-- https://stackoverflow.com/questions/2168964/how-to-create-a-class-instance-without-calling-initializer
+                        <xsl:value-of select="@acceptableNodeTypes"/>
+                        <xsl:text>.__new__(</xsl:text>
+                        <xsl:value-of select="@acceptableNodeTypes"/>
+                        <xsl:text>)</xsl:text> -->
+                    </xsl:when>
+                    <xsl:when test="contains(@acceptableNodeTypes,'|')">
+                        <xsl:text>(</xsl:text>
+                        <xsl:for-each select="tokenize(@acceptableNodeTypes,'\|')">
+                            <xsl:if test="starts-with(.,'X3D')">
+                                <xsl:text>_</xsl:text><!-- abstract node type -->
+                            </xsl:if>
+                            <xsl:value-of select="."/>
+                            <xsl:text>,</xsl:text>
+                        </xsl:for-each>
+                        <xsl:text>ProtoInstance</xsl:text>
+                        <xsl:text>)</xsl:text>
+                        <!-- construction diagnostic
+                        <xsl:if test="contains(@acceptableNodeTypes,'X3D')">
+                            <xsl:message>
+                                <xsl:text>*** </xsl:text>
+                                <xsl:value-of select="$elementName"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text> @acceptableNodeTypes='</xsl:text>
+                                <xsl:value-of select="@acceptableNodeTypes"/>
+                                <xsl:text>' list includes an X3D abstract node type, need to insert underscore...</xsl:text>
+                            </xsl:message>
+                        </xsl:if> -->
+                    </xsl:when>
+                    <xsl:when test="(string-length(@acceptableNodeTypes) > 0)">
+                        <xsl:text>(</xsl:text>
+                        <!-- single value -->
+                        <xsl:if test="starts-with(@acceptableNodeTypes,'X3D')">
+                            <xsl:text>_</xsl:text><!-- abstract node type -->
+                        </xsl:if>
+                        <xsl:value-of select="@acceptableNodeTypes"/>
+                        <xsl:text>,ProtoInstance</xsl:text>
+                        <xsl:text>)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:text>object</xsl:text><!-- TODO more including X3DNode -->
+                        <xsl:text>object</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
@@ -2674,18 +2714,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <xsl:with-param name="maxExclusive"><xsl:value-of select="@maxExclusive"/></xsl:with-param>
                 </xsl:call-template>
                 <xsl:choose>
-                    <xsl:when test="(@type = 'SFNode') and (string-length($acceptableNodeType) > 0)">
+                    <xsl:when test="(@type = 'SFNode') and (string-length($acceptableNodeTypes) > 0)">
                         <xsl:text>
-        if not isinstance(</xsl:text>
+        if not </xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>, </xsl:text>
-                        <xsl:value-of select="$acceptableNodeType"/>
+                        <xsl:text> is None and not isinstance(</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>,</xsl:text>
+                        <xsl:value-of select="$acceptableNodeTypes"/>
                         <xsl:text>):
             # print(flush=True)
             raise X3DTypeError(str(</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>) + ' does not have a valid node type </xsl:text>
-                        <xsl:value-of select="$acceptableNodeType"/>
+                        <xsl:text>) + ' does not match required node type </xsl:text>
+                        <xsl:value-of select="$acceptableNodeTypes"/>
+                        <xsl:text> and is invalid</xsl:text>
                         <xsl:text>')</xsl:text>
                     </xsl:when>
                     <xsl:when test="(@type = 'MFNode')">
@@ -3322,7 +3365,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
             <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
             <xsl:choose>
-                <xsl:when test="(local-name() = 'class') or ((local-name() = 'style') and not(ends-with(ancestor::ConcreteNode/@name, 'FontStyle'))) or (local-name() = 'global') or (local-name() = 'type')">
+                <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global') or (local-name() = 'type')">
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>_</xsl:text>
                 </xsl:when>
@@ -3492,7 +3535,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
     
         <xsl:choose>
-            <xsl:when test="($name='class') or (($name='style') and not(ends-with(ancestor::ConcreteNode/@name, 'FontStyle'))) or ($name='global')">
+            <xsl:when test="($name='class') or ($name='style') or ($name='global')">
                 <xsl:value-of select="$name"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>

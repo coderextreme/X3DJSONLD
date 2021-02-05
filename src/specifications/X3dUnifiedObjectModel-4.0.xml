@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-01-18-08:00 14:11:08.128-08:00 -->
+<!-- Generated 2021-02-04-08:00 17:43:28.947-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -20,6 +20,19 @@
                       appinfo="A field with accessType outputOnly cannot be initialized or included in a scene file, but can send output event values via a ROUTE."/>
          <enumeration value="inputOutput"
                       appinfo="A field with accessType inputOutput can be initialized, and can also send or receive events."/>
+      </SimpleType>
+      <SimpleType name="alphaModeChoices"
+                  baseType="SFString"
+                  appinfo="Permitted values for Appearance alphaMode field. Bounded, no additional values are allowed."
+                  documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/Shape.html#Appearance">
+         <enumeration value="AUTO"
+                      appinfo="Material transparency is applied to texture transparency"/>
+         <enumeration value="OPAQUE"
+                      appinfo="Ignore alpha channel texture transparency, opaque"/>
+         <enumeration value="MASK"
+                      appinfo="Alpha-testing mode for transparent when alpha value less than 0.5 and opaque when greater than or equal to 0.5"/>
+         <enumeration value="BLEND"
+                      appinfo="Blend combines partial transparency of textures and materials"/>
       </SimpleType>
       <SimpleType name="appliedParametersChoices"
                   baseType="MFString"
@@ -316,21 +329,21 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DCoordinateNode"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DCoordinateNode lists the allowed containerField enumeration values for Coordinate and CoordinateDouble nodes: default &#34;coord&#34; if parent node is a geometry node, otherwise skinCoord or skinBindingCoords if parent node is HAnimHumanoid"
+                  appinfo="containerFieldChoicesX3DCoordinateNode lists the allowed containerField enumeration values for Coordinate and CoordinateDouble nodes: default &#34;coord&#34; if parent node is a geometry node, otherwise skinCoord or skinBindingCoord if parent node is HAnimHumanoid"
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="coord" appinfo="parent node is a geometry node"/>
          <enumeration value="controlPoint" appinfo="parent node is a Nurbs node"/>
          <enumeration value="skinCoord" appinfo="parent node is HAnimHumanoid"/>
-         <enumeration value="skinBindingCoords"
+         <enumeration value="skinBindingCoord"
                       appinfo="parent node is HAnimHumanoid, added in X3D version 4"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DNormalNode"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DNormalNode lists the allowed containerField enumeration values for Normal nodes: default &#34;normal&#34; if parent node is a geometry node, otherwise skinNormal or skinBindingNormals if parent node is HAnimHumanoid"
+                  appinfo="containerFieldChoicesX3DNormalNode lists the allowed containerField enumeration values for Normal nodes: default &#34;normal&#34; if parent node is a geometry node, otherwise skinNormal or skinBindingNormal if parent node is HAnimHumanoid"
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="normal" appinfo="parent node is a geometry node"/>
          <enumeration value="skinNormal" appinfo="parent node is HAnimHumanoid"/>
-         <enumeration value="skinBindingNormals"
+         <enumeration value="skinBindingNormal"
                       appinfo="parent node is HAnimHumanoid, added in X3D version 4"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DTexture2DNode"
@@ -2870,25 +2883,20 @@
          <enumeration value="endCap"/>
          <enumeration value="endAngle"/>
          <enumeration value="extra"/>
-         <enumeration value="family"/>
          <enumeration value="forceTransitions"/>
          <enumeration value="generateMipMaps"/>
          <enumeration value="geoGridOrigin"/>
          <enumeration value="geometryType"/>
          <enumeration value="geoSystem"/>
          <enumeration value="height"/>
-         <enumeration value="horizontal"/>
          <enumeration value="index"/>
          <enumeration value="initialDestination"/>
          <enumeration value="initialValue"/>
          <enumeration value="innerRadius"/>
          <enumeration value="internal"/>
          <enumeration value="intersectionType"/>
-         <enumeration value="justify"/>
          <enumeration value="kind"/>
          <enumeration value="knot"/>
-         <enumeration value="language"/>
-         <enumeration value="leftToRight"/>
          <enumeration value="lineSegments"/>
          <enumeration value="mustEvaluate"/>
          <enumeration value="normalIndex"/>
@@ -2897,7 +2905,6 @@
          <enumeration value="order"/>
          <enumeration value="outerRadius"/>
          <enumeration value="phaseFunction"/>
-         <enumeration value="pointSize"/>
          <enumeration value="radius"/>
          <enumeration value="range"/>
          <enumeration value="repeatR"/>
@@ -2907,9 +2914,7 @@
          <enumeration value="rotateYUp"/>
          <enumeration value="rtpHeaderExpected"/>
          <enumeration value="size"/>
-         <enumeration value="solid"/>
          <enumeration value="sortOrder"/>
-         <enumeration value="spacing"/>
          <enumeration value="spatialize"/>
          <enumeration value="specific"/>
          <enumeration value="speedFactor"/>
@@ -2918,7 +2923,6 @@
          <enumeration value="subcategory"/>
          <enumeration value="texCoordIndex"/>
          <enumeration value="texCoordKey"/>
-         <enumeration value="topToBottom"/>
          <enumeration value="uClosed"/>
          <enumeration value="uDimension"/>
          <enumeration value="uKnot"/>
@@ -2970,6 +2974,7 @@
          <enumeration value="address"/>
          <enumeration value="align"/>
          <enumeration value="alpha"/>
+         <enumeration value="alphaMode"/>
          <enumeration value="ambientIntensity"/>
          <enumeration value="anchorPoint"/>
          <enumeration value="angle"/>
@@ -3084,6 +3089,7 @@
          <enumeration value="eventEntityID"/>
          <enumeration value="eventNumber"/>
          <enumeration value="eventSiteID"/>
+         <enumeration value="family"/>
          <enumeration value="fanCount"/>
          <enumeration value="farDistance"/>
          <enumeration value="fieldOfView"/>
@@ -3123,6 +3129,7 @@
          <enumeration value="hatched"/>
          <enumeration value="hatchStyle"/>
          <enumeration value="headlight"/>
+         <enumeration value="horizontal"/>
          <enumeration value="image"/>
          <enumeration value="inertia"/>
          <enumeration value="info"/>
@@ -3135,11 +3142,13 @@
          <enumeration value="jointBindingRotations"/>
          <enumeration value="jointBindingScales"/>
          <enumeration value="joints"/>
+         <enumeration value="justify"/>
          <enumeration value="key"/>
          <enumeration value="keyVelocity"/>
          <enumeration value="jump"/>
          <enumeration value="keyValue"/>
          <enumeration value="leftTexture"/>
+         <enumeration value="leftToRight"/>
          <enumeration value="leftUrl"/>
          <enumeration value="length"/>
          <enumeration value="lengthOfModulationParameters"/>
@@ -3217,6 +3226,7 @@
          <enumeration value="pitch"/>
          <enumeration value="plane"/>
          <enumeration value="point"/>
+         <enumeration value="pointSize"/>
          <enumeration value="pointSizeScaleFactor"/>
          <enumeration value="pointSizeMinValue"/>
          <enumeration value="pointSizeMaxValue"/>
@@ -3271,7 +3281,9 @@
          <enumeration value="slipFactors"/>
          <enumeration value="softnessConstantForceMix"/>
          <enumeration value="softnessErrorCorrection"/>
+         <enumeration value="solid"/>
          <enumeration value="source"/>
+         <enumeration value="spacing"/>
          <enumeration value="specularColor"/>
          <enumeration value="speed"/>
          <enumeration value="startFrame"/>
@@ -3308,6 +3320,7 @@
          <enumeration value="toggle"/>
          <enumeration value="tolerance"/>
          <enumeration value="topTexture"/>
+         <enumeration value="topToBottom"/>
          <enumeration value="topUrl"/>
          <enumeration value="torques"/>
          <enumeration value="transitionTime"/>
@@ -3969,9 +3982,9 @@
                   baseType="SFString"
                   appinfo="Permitted values for WaveShaper oversample field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/components/sound.html#WaveShaper">
-         <enumeration value="none"/>
-         <enumeration value="2x"/>
-         <enumeration value="4x"/>
+         <enumeration value="none" appinfo="No oversampling"/>
+         <enumeration value="2x" appinfo="Double sampling rate"/>
+         <enumeration value="4x" appinfo="Quadruple"/>
       </SimpleType>
       <SimpleType name="x3dVersionChoices"
                   baseType="xs:NMTOKEN"
@@ -5012,7 +5025,7 @@
                    default="true"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="texCoord"
                    type="SFNode"
@@ -6321,7 +6334,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="texCoord"
                    type="SFNode"
@@ -9130,6 +9143,31 @@
                    description="Single contained acousticProperties node that specifies additional acoustic attributes applied to associated surface geometry.">
                <componentInfo name="Shape" level="5"/>
             </field>
+            <field name="alphaCutoff"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="0.5"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"
+                   description="Threshold value used for pixel rendering either transparent or opaque, used when alphaMode=&#34;MASK&#34;."/>
+            <field name="alphaMode"
+                   type="SFString"
+                   accessType="inputOutput"
+                   default="AUTO"
+                   additionalEnumerationValuesAllowed="false"
+                   simpleType="alphaModeChoices"
+                   baseType="SFString"
+                   description="Provides options for control of alpha transparency handling for textures.">
+               <enumeration value="AUTO"
+                            appinfo="Material transparency is applied to texture transparency."/>
+               <enumeration value="OPAQUE"
+                            appinfo="Ignore alpha channel texture transparency, opaque."/>
+               <enumeration value="MASK"
+                            appinfo="Alpha-testing mode for transparent when alpha value less than 0.5 and opaque when greater than or equal to 0.5."/>
+               <enumeration value="BLEND"
+                            appinfo="Blend combines partial transparency of textures and materials."/>
+            </field>
             <field name="fillProperties"
                    type="SFNode"
                    accessType="inputOutput"
@@ -9338,7 +9376,7 @@
                    description="circle radius, of which the arc is a portion."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="false"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="startAngle"
@@ -10699,7 +10737,7 @@
                    description="size x y z in meters."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -13237,7 +13275,7 @@
                    description="Whether to draw sides (other inside faces are not drawn)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -14249,7 +14287,7 @@
                    description="Whether to draw sides (inside faces are never drawn)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="top"
@@ -14914,7 +14952,7 @@
                    description="Outer radius of circle, greater than or equal to inner radius."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="false"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -15496,7 +15534,7 @@
                    description="Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="texCoord"
@@ -15850,11 +15888,11 @@
             <field name="isNetworkReader"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='remote'; (listen to network as copy of remote entity) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='remote' (listen to network as copy of remote entity)."/>
             <field name="isNetworkWriter"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='master'; (output to network as master entity at writeInterval) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='master' (output to network as master entity at writeInterval)."/>
             <field name="isRtpHeaderHeard"
                    type="SFBool"
                    accessType="outputOnly"
@@ -15862,7 +15900,7 @@
             <field name="isStandAlone"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='local'; (ignore network but still respond to local events) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='local' (ignore network but still respond to local events)."/>
             <field name="linearAcceleration"
                    type="SFVec3f"
                    accessType="inputOutput"
@@ -16227,7 +16265,7 @@
                    description="The spine array defines a center-line sequence of 3D points that define a piecewise-linear curve forming a series of connected vertices."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="spine"
@@ -16554,7 +16592,7 @@
                    description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="family"
                    type="MFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="&#34;SERIF&#34;"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="fontFamilyValues"
@@ -16569,7 +16607,7 @@
             </field>
             <field name="horizontal"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is horizontal (true) or vertical (false)."/>
             <field name="IS"
@@ -16580,7 +16618,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="justify"
                    type="MFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="&#34;BEGIN&#34;"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="justifyChoices"
@@ -16609,11 +16647,11 @@
             </field>
             <field name="language"
                    type="SFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    description="Language codes consist of a primary code and a (possibly empty) series of subcodes."/>
             <field name="leftToRight"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is left-to-right (true) or right-to-left (false)."/>
             <field name="metadata"
@@ -16625,13 +16663,13 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="size"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="1.0"
                    minExclusive="0"
                    description="Nominal height (in local coordinate system) of text glyphs, also sets default spacing between adjacent lines of text."/>
             <field name="spacing"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="1.0"
                    minInclusive="0"
                    description="Adjustment factor for line spacing between adjacent lines of text."/>
@@ -16642,7 +16680,7 @@
                    additionalEnumerationValuesAllowed="false"
                    simpleType="fontStyleChoices"
                    baseType="xs:NMTOKEN"
-                   description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | MIDDLE).">
+                   description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | BOLDITALIC).">
                <enumeration value="PLAIN" appinfo="default plain type."/>
                <enumeration value="BOLD" appinfo="boldface type."/>
                <enumeration value="ITALIC" appinfo="italic type."/>
@@ -16650,7 +16688,7 @@
             </field>
             <field name="topToBottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is top-to-bottom (true) or bottom-to-top (false)."/>
             <field name="DEF"
@@ -17104,7 +17142,7 @@
                    description="Contains xDimension rows * zDimension columns floating-point values for elevation above ellipsoid."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="texCoord"
@@ -19143,18 +19181,16 @@
                    accessType="inputOutput"
                    acceptableNodeTypes="Group|Transform|Shape|IndexedFaceSet"
                    description="List of one or more indexed mesh definitions (such as IndexedFaceSet) that utilize skinCoord point and skinNormal normal data."/>
-            <field name="skinBindingCoords"
+            <field name="skinBindingCoord"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DCoordinateNode"
-                   description="Array of Coordinate nodes to handle non-default source pose so that both skin and skeleton can be in same binding pose."/>
-            <field name="skinBindingNormals"
+                   acceptableNodeTypes="X3DCoordinateNode"/>
+            <field name="skinBindingNormal"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DNormalNode"
-                   description="Array of Normal nodes to handle non-default source pose so that both skin and skeleton can be in same binding pose."/>
+                   acceptableNodeTypes="X3DNormalNode"/>
             <field name="skinCoord"
                    type="SFNode"
                    accessType="inputOutput"
@@ -22421,7 +22457,7 @@
                    description="List of texture-coordinate indices mapping attached texture to corresponding coordinates."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -22655,7 +22691,7 @@
                    minInclusive="0"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -22779,7 +22815,7 @@
                    minInclusive="-1"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -22903,7 +22939,7 @@
                    minInclusive="0"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -23027,7 +23063,7 @@
                    minInclusive="-1"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -23115,6 +23151,11 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DUrlObject"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
+            <field name="global"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   description="The global field controls potential external scoping effects of lights found within an Inline scene."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -23138,7 +23179,7 @@
                    type="MFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DUrlObject"
-                   description="Address of X3D world to load into current scene.">
+                   description="Address of X3D world to load Inline with current scene, retrieved either from local system or an online address.">
                <componentInfo name="Networking" level="4"/>
             </field>
             <field name="visible"
@@ -26641,7 +26682,7 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -27064,7 +27105,7 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="trajectoryCurve"
@@ -27135,7 +27176,7 @@
                    acceptableNodeTypes="X3DNurbsControlCurveNode"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="trajectoryCurve"
@@ -27298,7 +27339,7 @@
                    acceptableNodeTypes="Contour2D"/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -30618,7 +30659,7 @@
                    description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -30729,15 +30770,15 @@
                    type="SFBool"
                    accessType="outputOnly"
                    inheritedFrom="X3DSensorNode"
-                   description="Have we had a network update recently?."/>
+                   description="confirm whether there has been a recent network update."/>
             <field name="isNetworkReader"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='remote'; (listen to network as copy of remote entity) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='remote' (listen to network as copy of remote entity)."/>
             <field name="isNetworkWriter"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='master'; (output to network as master entity at writeInterval) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='master' (output to network as master entity at writeInterval)."/>
             <field name="isRtpHeaderHeard"
                    type="SFBool"
                    accessType="outputOnly"
@@ -30745,7 +30786,7 @@
             <field name="isStandAlone"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='local'; (ignore network but still respond to local events) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='local' (ignore network but still respond to local events)."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -30910,7 +30951,7 @@
                    description="2D dimensions of Rectangle2D."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="false"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -31507,7 +31548,7 @@
                    description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="family"
                    type="MFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="&#34;SERIF&#34;"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="fontFamilyValues"
@@ -31522,7 +31563,7 @@
             </field>
             <field name="horizontal"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is horizontal (true) or vertical (false)."/>
             <field name="IS"
@@ -31533,7 +31574,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="justify"
                    type="MFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="&#34;BEGIN&#34;"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="justifyChoices"
@@ -31562,11 +31603,11 @@
             </field>
             <field name="language"
                    type="SFString"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    description="Language codes consist of a primary code and a (possibly empty) series of subcodes."/>
             <field name="leftToRight"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is left-to-right (true) or right-to-left (false)."/>
             <field name="metadata"
@@ -31578,13 +31619,13 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="pointSize"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="12.0"
                    minExclusive="0"
                    description="pointSize field specifies the size of text in points."/>
             <field name="spacing"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="1.0"
                    minInclusive="0"
                    description="Adjustment factor for line spacing between adjacent lines of text."/>
@@ -31595,7 +31636,7 @@
                    additionalEnumerationValuesAllowed="false"
                    simpleType="fontStyleChoices"
                    baseType="xs:NMTOKEN"
-                   description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | MIDDLE).">
+                   description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | BOLDITALIC).">
                <enumeration value="PLAIN" appinfo="default plain type."/>
                <enumeration value="BOLD" appinfo="boldface type."/>
                <enumeration value="ITALIC" appinfo="italic type."/>
@@ -31603,7 +31644,7 @@
             </field>
             <field name="topToBottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Whether text direction is top-to-bottom (true) or bottom-to-top (false)."/>
             <field name="DEF"
@@ -32366,15 +32407,15 @@
                    type="SFBool"
                    accessType="outputOnly"
                    inheritedFrom="X3DSensorNode"
-                   description="Have we had a network update recently?."/>
+                   description="confirm whether there has been a recent network update."/>
             <field name="isNetworkReader"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='remote'; (listen to network as copy of remote entity) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='remote' (listen to network as copy of remote entity)."/>
             <field name="isNetworkWriter"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='master'; (output to network as master entity at writeInterval) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='master' (output to network as master entity at writeInterval)."/>
             <field name="isRtpHeaderHeard"
                    type="SFBool"
                    accessType="outputOnly"
@@ -32382,7 +32423,7 @@
             <field name="isStandAlone"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='local'; (ignore network but still respond to local events) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='local' (ignore network but still respond to local events)."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -33106,7 +33147,7 @@
                    description="Size in meters."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -34493,7 +34534,7 @@
                    description="origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="false"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="string"
@@ -36300,15 +36341,15 @@
                    type="SFBool"
                    accessType="outputOnly"
                    inheritedFrom="X3DSensorNode"
-                   description="Have we had a network update recently?."/>
+                   description="confirm whether there has been a recent network update."/>
             <field name="isNetworkReader"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='remote'; (listen to network as copy of remote entity) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='remote' (listen to network as copy of remote entity)."/>
             <field name="isNetworkWriter"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='master'; (output to network as master entity at writeInterval) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='master' (output to network as master entity at writeInterval)."/>
             <field name="isRtpHeaderHeard"
                    type="SFBool"
                    accessType="outputOnly"
@@ -36316,7 +36357,7 @@
             <field name="isStandAlone"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Whether networkMode='local'; (ignore network but still respond to local events) Warning: it is an error to define this transient outputOnly field in an X3D file, instead only use it a source for ROUTE events."/>
+                   description="Whether networkMode='local' (ignore network but still respond to local events)."/>
             <field name="lengthOfModulationParameters"
                    type="SFInt32"
                    accessType="inputOutput"
@@ -36577,7 +36618,7 @@
                    description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -36692,7 +36733,7 @@
                    description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -36755,7 +36796,7 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="false"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="vertices"
@@ -36863,7 +36904,7 @@
                    description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -38103,9 +38144,9 @@
                    simpleType="waveShaperOversampleChoices"
                    baseType="SFString"
                    description="The oversample field is specifies what type of oversampling (if any) should be used when applying the shaping curve.">
-               <enumeration value="none"/>
-               <enumeration value="2x"/>
-               <enumeration value="4x"/>
+               <enumeration value="none" appinfo="No oversampling."/>
+               <enumeration value="2x" appinfo="Double sampling rate."/>
+               <enumeration value="4x" appinfo="Quadruple."/>
             </field>
             <field name="pauseTime"
                    type="SFTime"

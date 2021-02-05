@@ -12,9 +12,9 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta((new autoclass.meta()).setName("source").setContent("LOA2ExampleSourceWithDiamonds.wrl")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("Humanoid")
@@ -74,7 +74,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.Transform())
                 .addChild((new autoclass.Shape())
                   .setGeometry((new autoclass.IndexedFaceSet()).setCoordIndex(java.newArray("int", [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1])).setCreaseAngle(java.newFloat(0.5))
-                    .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0.00999999977648258), java.newFloat(0), java.newFloat(-0.00999999977648258), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0.00999999977648258), java.newFloat(0.00999999977648258), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(-0.00999999977648258), java.newFloat(0), java.newFloat(-0.00999999977648258), java.newFloat(0)]))))
+                    .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0.009999999776482582), java.newFloat(0), java.newFloat(-0.009999999776482582), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0.009999999776482582), java.newFloat(0.009999999776482582), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(-0.009999999776482582), java.newFloat(0), java.newFloat(-0.009999999776482582), java.newFloat(0)]))))
                   .setAppearance((new autoclass.Appearance())
                     .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0)])))))
                 .setIS((new autoclass.IS())

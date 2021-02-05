@@ -101,15 +101,14 @@ ProtoInstance ProtoInstance54 = null;
 ProtoInstance ProtoInstance55 = null;
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addComponent(new component().setName("Networking").setLevel(2))
-        .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+        .addMeta(new meta().setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta(new meta().setName("source").setContent("t1.wrl")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","WALK"}).setSpeed(3f).setAvatarSize(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat0().getArray())))
         .addChild(new WorldInfo().setTitle("Arts Mapper"))
-        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.785398125648499f))
-        .addChild(new Viewpoint().setDescription("looking East").setPosition(new float[] {-140f,30f,0f}).setOrientation(new float[] {0f,0.400000005960464f,0f,-1.39999997615814f}).setFieldOfView(0.785398125648499f))
-        .addChild(new Viewpoint().setDescription("Overhead").setPosition(new float[] {0f,150f,0f}).setOrientation(new float[] {1f,0f,0f,-1.57000005245209f}).setFieldOfView(0.785398125648499f))
+        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.7853981256484985f))
+        .addChild(new Viewpoint().setDescription("looking East").setPosition(new float[] {-140f,30f,0f}).setOrientation(new float[] {0f,0.4000000059604645f,0f,-1.399999976158142f}).setFieldOfView(0.7853981256484985f))
+        .addChild(new Viewpoint().setDescription("Overhead").setPosition(new float[] {0f,150f,0f}).setOrientation(new float[] {1f,0f,0f,-1.5700000524520874f}).setFieldOfView(0.7853981256484985f))
         .addChild(new ProtoDeclare().setName("school")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("pos").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
@@ -117,7 +116,7 @@ ProtoInstance ProtoInstance55 = null;
             .addChild(new Transform()
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setTransparency(0.200000002980232f).setDiffuseColor(new float[] {0.5f,0f,1f})))
+                  .setMaterial(new Material().setTransparency(0.20000000298023224f).setDiffuseColor(new float[] {0.5f,0f,1f})))
                 .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray()))
                   .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())))))
               .setIS(new IS()
@@ -129,7 +128,7 @@ ProtoInstance ProtoInstance55 = null;
             .addChild(new Transform()
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setTransparency(0.200000002980232f).setDiffuseColor(new float[] {1f,1f,0f})))
+                  .setMaterial(new Material().setTransparency(0.20000000298023224f).setDiffuseColor(new float[] {1f,1f,0f})))
                 .setGeometry(new Box().setSize(new float[] {0.699999988079071f,0.699999988079071f,0.699999988079071f})))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("pos"))))))
@@ -152,10 +151,10 @@ ProtoInstance ProtoInstance55 = null;
             .addChild(new Transform()
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setTransparency(0.400000005960464f)
+                  .setMaterial(new Material().setTransparency(0.4000000059604645f)
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("col")))))
-                .setGeometry(new Sphere().setRadius(1.10000002384186f)))
+                .setGeometry(new Sphere().setRadius(1.100000023841858f)))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("posi"))))))
         .addChild(new ProtoDeclare().setName("l")
@@ -294,131 +293,131 @@ ProtoInstance ProtoInstance55 = null;
             .addChild(ProtoInstance55 = new ProtoInstance().setName("school")))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.200000002980232f).setEmissiveColor(new float[] {1f,0f,0f})))
+              .setMaterial(new Material().setTransparency(0.20000000298023224f).setEmissiveColor(new float[] {1f,0f,0f})))
             .setGeometry(new IndexedLineSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3256().getArray()))
               .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f57().getArray())))))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.200000002980232f).setEmissiveColor(new float[] {0f,1f,0f})))
+              .setMaterial(new Material().setTransparency(0.20000000298023224f).setEmissiveColor(new float[] {0f,1f,0f})))
             .setGeometry(new IndexedLineSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3258().getArray()))
               .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f59().getArray())))))
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.200000002980232f).setEmissiveColor(new float[] {1f,0f,1f})))
+              .setMaterial(new Material().setTransparency(0.20000000298023224f).setEmissiveColor(new float[] {1f,0f,1f})))
             .setGeometry(new IndexedLineSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3260().getArray()))
               .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f61().getArray())))))))      ;
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("col").setValue("0 0.600000023841858 0"));
+              .addFieldValue(new fieldValue().setName("col").setValue("0 0.6000000238418579 0"));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("col").setValue("0 0.300000011920929 1"));
+              .addFieldValue(new fieldValue().setName("col").setValue("0 0.30000001192092896 1"));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("col").setValue("1 0 0.200000002980232"));
+              .addFieldValue(new fieldValue().setName("col").setValue("1 0 0.20000000298023224"));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("col").setValue("0.600000023841858 0 0.600000023841858"));
+              .addFieldValue(new fieldValue().setName("col").setValue("0.6000000238418579 0 0.6000000238418579"));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("pos").setValue("435.299987792969 0.100000001490116 -335.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("435.29998779296875 0.10000000149011612 -335.6000061035156"));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("pos").setValue("400 0.100000001490116 -385"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("400 0.10000000149011612 -385"));
 ProtoInstance6
-              .addFieldValue(new fieldValue().setName("pos").setValue("400.600006103516 0.100000001490116 -392.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("400.6000061035156 0.10000000149011612 -392.8999938964844"));
 ProtoInstance7
-              .addFieldValue(new fieldValue().setName("pos").setValue("416.700012207031 0.100000001490116 -383.399993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("416.70001220703125 0.10000000149011612 -383.3999938964844"));
 ProtoInstance8
-              .addFieldValue(new fieldValue().setName("pos").setValue("429.899993896484 0.100000001490116 -319.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("429.8999938964844 0.10000000149011612 -319.6000061035156"));
 ProtoInstance9
-              .addFieldValue(new fieldValue().setName("pos").setValue("430 0.100000001490116 -335"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("430 0.10000000149011612 -335"));
 ProtoInstance10
-              .addFieldValue(new fieldValue().setName("pos").setValue("435.799987792969 0.100000001490116 -335.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("435.79998779296875 0.10000000149011612 -335.29998779296875"));
 ProtoInstance11
-              .addFieldValue(new fieldValue().setName("pos").setValue("438.299987792969 0.100000001490116 -338.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("438.29998779296875 0.10000000149011612 -338.6000061035156"));
 ProtoInstance12
-              .addFieldValue(new fieldValue().setName("pos").setValue("429.899993896484 0.100000001490116 -360.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("429.8999938964844 0.10000000149011612 -360.29998779296875"));
 ProtoInstance13
-              .addFieldValue(new fieldValue().setName("pos").setValue("434.600006103516 0.100000001490116 -338.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("434.6000061035156 0.10000000149011612 -338.6000061035156"));
 ProtoInstance14
-              .addFieldValue(new fieldValue().setName("pos").setValue("434.799987792969 0.100000001490116 -336"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("434.79998779296875 0.10000000149011612 -336"));
 ProtoInstance15
-              .addFieldValue(new fieldValue().setName("pos").setValue("432.700012207031 0.100000001490116 -336.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("432.70001220703125 0.10000000149011612 -336.6000061035156"));
 ProtoInstance16
-              .addFieldValue(new fieldValue().setName("pos").setValue("437.600006103516 0.100000001490116 -332.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("437.6000061035156 0.10000000149011612 -332.6000061035156"));
 ProtoInstance17
-              .addFieldValue(new fieldValue().setName("pos").setValue("434.700012207031 0.100000001490116 -336.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("434.70001220703125 0.10000000149011612 -336.8999938964844"));
 ProtoInstance18
-              .addFieldValue(new fieldValue().setName("pos").setValue("436.299987792969 0.100000001490116 -333.399993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("436.29998779296875 0.10000000149011612 -333.3999938964844"));
 ProtoInstance19
-              .addFieldValue(new fieldValue().setName("pos").setValue("435.200012207031 0.100000001490116 -336.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("435.20001220703125 0.10000000149011612 -336.79998779296875"));
 ProtoInstance20
-              .addFieldValue(new fieldValue().setName("pos").setValue("432.5 0.100000001490116 -332.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("432.5 0.10000000149011612 -332.5"));
 ProtoInstance21
-              .addFieldValue(new fieldValue().setName("pos").setValue("474.700012207031 0.100000001490116 -318.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("474.70001220703125 0.10000000149011612 -318.79998779296875"));
 ProtoInstance22
-              .addFieldValue(new fieldValue().setName("pos").setValue("436.100006103516 0.100000001490116 -334.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("436.1000061035156 0.10000000149011612 -334.8999938964844"));
 ProtoInstance23
-              .addFieldValue(new fieldValue().setName("pos").setValue("485.600006103516 0.100000001490116 -309"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("485.6000061035156 0.10000000149011612 -309"));
 ProtoInstance24
-              .addFieldValue(new fieldValue().setName("pos").setValue("440.5 0.100000001490116 -355.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("440.5 0.10000000149011612 -355.5"));
 ProtoInstance25
-              .addFieldValue(new fieldValue().setName("pos").setValue("434.799987792969 0.100000001490116 -371.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("434.79998779296875 0.10000000149011612 -371.5"));
 ProtoInstance26
-              .addFieldValue(new fieldValue().setName("pos").setValue("436.299987792969 0.100000001490116 -371.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("436.29998779296875 0.10000000149011612 -371.70001220703125"));
 ProtoInstance27
-              .addFieldValue(new fieldValue().setName("pos").setValue("431.200012207031 0.100000001490116 -361.200012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("431.20001220703125 0.10000000149011612 -361.20001220703125"));
 ProtoInstance28
-              .addFieldValue(new fieldValue().setName("pos").setValue("455.899993896484 0.100000001490116 -341.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("455.8999938964844 0.10000000149011612 -341.29998779296875"));
 ProtoInstance29
-              .addFieldValue(new fieldValue().setName("pos").setValue("456.100006103516 0.100000001490116 -341.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("456.1000061035156 0.10000000149011612 -341.5"));
 ProtoInstance30
-              .addFieldValue(new fieldValue().setName("pos").setValue("454 0.100000001490116 -361.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("454 0.10000000149011612 -361.29998779296875"));
 ProtoInstance31
-              .addFieldValue(new fieldValue().setName("pos").setValue("457.399993896484 0.100000001490116 -359.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("457.3999938964844 0.10000000149011612 -359.6000061035156"));
 ProtoInstance32
-              .addFieldValue(new fieldValue().setName("pos").setValue("454.200012207031 0.100000001490116 -358.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("454.20001220703125 0.10000000149011612 -358.6000061035156"));
 ProtoInstance33
-              .addFieldValue(new fieldValue().setName("pos").setValue("450.600006103516 0.100000001490116 -358.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("450.6000061035156 0.10000000149011612 -358.6000061035156"));
 ProtoInstance34
-              .addFieldValue(new fieldValue().setName("pos").setValue("440 0.100000001490116 -350"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("440 0.10000000149011612 -350"));
 ProtoInstance35
-              .addFieldValue(new fieldValue().setName("pos").setValue("458.899993896484 0.100000001490116 -304.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("458.8999938964844 0.10000000149011612 -304.29998779296875"));
 ProtoInstance36
-              .addFieldValue(new fieldValue().setName("pos").setValue("473.5 0.100000001490116 -287.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("473.5 0.10000000149011612 -287.5"));
 ProtoInstance37
-              .addFieldValue(new fieldValue().setName("pos").setValue("458 0.100000001490116 -304.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("458 0.10000000149011612 -304.5"));
 ProtoInstance38
-              .addFieldValue(new fieldValue().setName("pos").setValue("457.100006103516 0.100000001490116 -300.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("457.1000061035156 0.10000000149011612 -300.79998779296875"));
 ProtoInstance39
-              .addFieldValue(new fieldValue().setName("pos").setValue("456.799987792969 0.100000001490116 -302.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("456.79998779296875 0.10000000149011612 -302.6000061035156"));
 ProtoInstance40
-              .addFieldValue(new fieldValue().setName("pos").setValue("453.299987792969 0.100000001490116 -318.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("453.29998779296875 0.10000000149011612 -318.6000061035156"));
 ProtoInstance41
-              .addFieldValue(new fieldValue().setName("pos").setValue("442.399993896484 0.100000001490116 -314.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("442.3999938964844 0.10000000149011612 -314.5"));
 ProtoInstance42
-              .addFieldValue(new fieldValue().setName("pos").setValue("444.600006103516 0.100000001490116 -313.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("444.6000061035156 0.10000000149011612 -313.70001220703125"));
 ProtoInstance43
-              .addFieldValue(new fieldValue().setName("pos").setValue("440.600006103516 0.100000001490116 -310.399993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("440.6000061035156 0.10000000149011612 -310.3999938964844"));
 ProtoInstance44
-              .addFieldValue(new fieldValue().setName("pos").setValue("491.600006103516 0.100000001490116 -335.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("491.6000061035156 0.10000000149011612 -335.70001220703125"));
 ProtoInstance45
-              .addFieldValue(new fieldValue().setName("pos").setValue("491.399993896484 0.100000001490116 -336.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("491.3999938964844 0.10000000149011612 -336.79998779296875"));
 ProtoInstance46
-              .addFieldValue(new fieldValue().setName("pos").setValue("496.899993896484 0.100000001490116 -368.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("496.8999938964844 0.10000000149011612 -368.8999938964844"));
 ProtoInstance47
-              .addFieldValue(new fieldValue().setName("pos").setValue("467 0.100000001490116 -243.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("467 0.10000000149011612 -243.89999389648438"));
 ProtoInstance48
-              .addFieldValue(new fieldValue().setName("pos").setValue("477.100006103516 0.100000001490116 -260"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("477.1000061035156 0.10000000149011612 -260"));
 ProtoInstance49
-              .addFieldValue(new fieldValue().setName("pos").setValue("474.700012207031 0.100000001490116 -259.100006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("474.70001220703125 0.10000000149011612 -259.1000061035156"));
 ProtoInstance50
-              .addFieldValue(new fieldValue().setName("pos").setValue("459 0.100000001490116 -236.399993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("459 0.10000000149011612 -236.39999389648438"));
 ProtoInstance51
-              .addFieldValue(new fieldValue().setName("pos").setValue("457.399993896484 0.100000001490116 -262.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("457.3999938964844 0.10000000149011612 -262.70001220703125"));
 ProtoInstance52
-              .addFieldValue(new fieldValue().setName("pos").setValue("458.700012207031 0.100000001490116 -262.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("458.70001220703125 0.10000000149011612 -262.70001220703125"));
 ProtoInstance53
-              .addFieldValue(new fieldValue().setName("pos").setValue("466.899993896484 0.100000001490116 -243.800003051758"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("466.8999938964844 0.10000000149011612 -243.8000030517578"));
 ProtoInstance54
-              .addFieldValue(new fieldValue().setName("pos").setValue("469.5 0.100000001490116 -249.800003051758"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("469.5 0.10000000149011612 -249.8000030517578"));
 ProtoInstance55
-              .addFieldValue(new fieldValue().setName("pos").setValue("456.700012207031 0.100000001490116 -261.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("456.70001220703125 0.10000000149011612 -261.79998779296875"));
     return X3D0;
     }
 protected class MFFloat0 {
@@ -433,7 +432,7 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.349999994039536f,-0.349999994039536f,0.349999994039536f,0.349999994039536f,-0.349999994039536f,0.349999994039536f,0.349999994039536f,-0.349999994039536f,-0.349999994039536f,-0.349999994039536f,-0.349999994039536f,-0.349999994039536f,0f,0.349999994039536f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.3499999940395355f,-0.3499999940395355f,0.3499999940395355f,0.3499999940395355f,-0.3499999940395355f,0.3499999940395355f,0.3499999940395355f,-0.3499999940395355f,-0.3499999940395355f,-0.3499999940395355f,-0.3499999940395355f,-0.3499999940395355f,0f,0.3499999940395355f,0f});
   }
 }
 protected class MFString3 {
@@ -708,7 +707,7 @@ protected class MFInt3256 {
 }
 protected class MFVec3f57 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {430f,0.0199999995529652f,-335f,435.799987792969f,0.100000001490116f,-335.299987792969f,430f,0.0199999995529652f,-335f,434.600006103516f,0.100000001490116f,-338.600006103516f,430f,0.0199999995529652f,-335f,432.700012207031f,0.100000001490116f,-336.600006103516f,430f,0.0199999995529652f,-335f,434.700012207031f,0.100000001490116f,-336.899993896484f,429.899993896484f,0.0199999995529652f,-360.299987792969f,474.700012207031f,0.100000001490116f,-318.799987792969f,429.899993896484f,0.0199999995529652f,-360.299987792969f,485.600006103516f,0.100000001490116f,-309f,429.899993896484f,0.0199999995529652f,-360.299987792969f,434.799987792969f,0.100000001490116f,-371.5f,454f,0.0199999995529652f,-361.299987792969f,457.399993896484f,0.100000001490116f,-359.600006103516f,454f,0.0199999995529652f,-361.299987792969f,454.200012207031f,0.100000001490116f,-358.600006103516f,454f,0.0199999995529652f,-361.299987792969f,450.600006103516f,0.100000001490116f,-358.600006103516f,458.899993896484f,0.0199999995529652f,-304.299987792969f,473.5f,0.100000001490116f,-287.5f,458.899993896484f,0.0199999995529652f,-304.299987792969f,458f,0.100000001490116f,-304.5f,491.600006103516f,0.0199999995529652f,-335.700012207031f,491.399993896484f,0.100000001490116f,-336.799987792969f,491.600006103516f,0.0199999995529652f,-335.700012207031f,496.899993896484f,0.100000001490116f,-368.899993896484f,467f,0.0199999995529652f,-243.899993896484f,477.100006103516f,0.100000001490116f,-260f,467f,0.0199999995529652f,-243.899993896484f,459f,0.100000001490116f,-236.399993896484f,458.700012207031f,0.0199999995529652f,-262.700012207031f,469.5f,0.100000001490116f,-249.800003051758f,458.700012207031f,0.0199999995529652f,-262.700012207031f,456.700012207031f,0.100000001490116f,-261.799987792969f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {430f,0.019999999552965164f,-335f,435.79998779296875f,0.10000000149011612f,-335.29998779296875f,430f,0.019999999552965164f,-335f,434.6000061035156f,0.10000000149011612f,-338.6000061035156f,430f,0.019999999552965164f,-335f,432.70001220703125f,0.10000000149011612f,-336.6000061035156f,430f,0.019999999552965164f,-335f,434.70001220703125f,0.10000000149011612f,-336.8999938964844f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,474.70001220703125f,0.10000000149011612f,-318.79998779296875f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,485.6000061035156f,0.10000000149011612f,-309f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,434.79998779296875f,0.10000000149011612f,-371.5f,454f,0.019999999552965164f,-361.29998779296875f,457.3999938964844f,0.10000000149011612f,-359.6000061035156f,454f,0.019999999552965164f,-361.29998779296875f,454.20001220703125f,0.10000000149011612f,-358.6000061035156f,454f,0.019999999552965164f,-361.29998779296875f,450.6000061035156f,0.10000000149011612f,-358.6000061035156f,458.8999938964844f,0.019999999552965164f,-304.29998779296875f,473.5f,0.10000000149011612f,-287.5f,458.8999938964844f,0.019999999552965164f,-304.29998779296875f,458f,0.10000000149011612f,-304.5f,491.6000061035156f,0.019999999552965164f,-335.70001220703125f,491.3999938964844f,0.10000000149011612f,-336.79998779296875f,491.6000061035156f,0.019999999552965164f,-335.70001220703125f,496.8999938964844f,0.10000000149011612f,-368.8999938964844f,467f,0.019999999552965164f,-243.89999389648438f,477.1000061035156f,0.10000000149011612f,-260f,467f,0.019999999552965164f,-243.89999389648438f,459f,0.10000000149011612f,-236.39999389648438f,458.70001220703125f,0.019999999552965164f,-262.70001220703125f,469.5f,0.10000000149011612f,-249.8000030517578f,458.70001220703125f,0.019999999552965164f,-262.70001220703125f,456.70001220703125f,0.10000000149011612f,-261.79998779296875f});
   }
 }
 protected class MFInt3258 {
@@ -718,7 +717,7 @@ protected class MFInt3258 {
 }
 protected class MFVec3f59 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {400f,0.0199999995529652f,-385f,400.600006103516f,0.100000001490116f,-392.899993896484f,400f,0.0199999995529652f,-385f,416.700012207031f,0.100000001490116f,-383.399993896484f,430f,0.0199999995529652f,-335f,438.299987792969f,0.100000001490116f,-338.600006103516f,430f,0.0199999995529652f,-335f,434.799987792969f,0.100000001490116f,-336f,430f,0.0199999995529652f,-335f,437.600006103516f,0.100000001490116f,-332.600006103516f,430f,0.0199999995529652f,-335f,436.299987792969f,0.100000001490116f,-333.399993896484f,430f,0.0199999995529652f,-335f,435.200012207031f,0.100000001490116f,-336.799987792969f,430f,0.0199999995529652f,-335f,432.5f,0.100000001490116f,-332.5f,429.899993896484f,0.0199999995529652f,-360.299987792969f,436.100006103516f,0.100000001490116f,-334.899993896484f,429.899993896484f,0.0199999995529652f,-360.299987792969f,440.5f,0.100000001490116f,-355.5f,429.899993896484f,0.0199999995529652f,-360.299987792969f,436.299987792969f,0.100000001490116f,-371.700012207031f,429.899993896484f,0.0199999995529652f,-360.299987792969f,431.200012207031f,0.100000001490116f,-361.200012207031f,457.100006103516f,0.0199999995529652f,-300.799987792969f,456.799987792969f,0.100000001490116f,-302.600006103516f,457.100006103516f,0.0199999995529652f,-300.799987792969f,453.299987792969f,0.100000001490116f,-318.600006103516f,442.399993896484f,0.0199999995529652f,-314.5f,444.600006103516f,0.100000001490116f,-313.700012207031f,442.399993896484f,0.0199999995529652f,-314.5f,440.600006103516f,0.100000001490116f,-310.399993896484f,467f,0.0199999995529652f,-243.899993896484f,474.700012207031f,0.100000001490116f,-259.100006103516f,457.399993896484f,0.0199999995529652f,-262.700012207031f,466.899993896484f,0.100000001490116f,-243.800003051758f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {400f,0.019999999552965164f,-385f,400.6000061035156f,0.10000000149011612f,-392.8999938964844f,400f,0.019999999552965164f,-385f,416.70001220703125f,0.10000000149011612f,-383.3999938964844f,430f,0.019999999552965164f,-335f,438.29998779296875f,0.10000000149011612f,-338.6000061035156f,430f,0.019999999552965164f,-335f,434.79998779296875f,0.10000000149011612f,-336f,430f,0.019999999552965164f,-335f,437.6000061035156f,0.10000000149011612f,-332.6000061035156f,430f,0.019999999552965164f,-335f,436.29998779296875f,0.10000000149011612f,-333.3999938964844f,430f,0.019999999552965164f,-335f,435.20001220703125f,0.10000000149011612f,-336.79998779296875f,430f,0.019999999552965164f,-335f,432.5f,0.10000000149011612f,-332.5f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,436.1000061035156f,0.10000000149011612f,-334.8999938964844f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,440.5f,0.10000000149011612f,-355.5f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,436.29998779296875f,0.10000000149011612f,-371.70001220703125f,429.8999938964844f,0.019999999552965164f,-360.29998779296875f,431.20001220703125f,0.10000000149011612f,-361.20001220703125f,457.1000061035156f,0.019999999552965164f,-300.79998779296875f,456.79998779296875f,0.10000000149011612f,-302.6000061035156f,457.1000061035156f,0.019999999552965164f,-300.79998779296875f,453.29998779296875f,0.10000000149011612f,-318.6000061035156f,442.3999938964844f,0.019999999552965164f,-314.5f,444.6000061035156f,0.10000000149011612f,-313.70001220703125f,442.3999938964844f,0.019999999552965164f,-314.5f,440.6000061035156f,0.10000000149011612f,-310.3999938964844f,467f,0.019999999552965164f,-243.89999389648438f,474.70001220703125f,0.10000000149011612f,-259.1000061035156f,457.3999938964844f,0.019999999552965164f,-262.70001220703125f,466.8999938964844f,0.10000000149011612f,-243.8000030517578f});
   }
 }
 protected class MFInt3260 {
@@ -728,7 +727,7 @@ protected class MFInt3260 {
 }
 protected class MFVec3f61 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {430f,0.0199999995529652f,-335f,429.899993896484f,0.100000001490116f,-360.299987792969f,442.399993896484f,0.0199999995529652f,-314.5f,429.899993896484f,0.100000001490116f,-319.600006103516f,457.399993896484f,0.0199999995529652f,-262.700012207031f,467f,0.100000001490116f,-243.899993896484f,458.700012207031f,0.0199999995529652f,-262.700012207031f,457.399993896484f,0.100000001490116f,-262.700012207031f,458.700012207031f,0.0199999995529652f,-262.700012207031f,467f,0.100000001490116f,-243.899993896484f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {430f,0.019999999552965164f,-335f,429.8999938964844f,0.10000000149011612f,-360.29998779296875f,442.3999938964844f,0.019999999552965164f,-314.5f,429.8999938964844f,0.10000000149011612f,-319.6000061035156f,457.3999938964844f,0.019999999552965164f,-262.70001220703125f,467f,0.10000000149011612f,-243.89999389648438f,458.70001220703125f,0.019999999552965164f,-262.70001220703125f,457.3999938964844f,0.10000000149011612f,-262.70001220703125f,458.70001220703125f,0.019999999552965164f,-262.70001220703125f,467f,0.10000000149011612f,-243.89999389648438f});
   }
 }
 }

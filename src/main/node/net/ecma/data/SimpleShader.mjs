@@ -8,6 +8,7 @@ import { component } from './x3d.mjs';
 import { SFInt32 } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
+import { CommentsBlock } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
@@ -26,7 +27,6 @@ import { Sphere } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { MetadataSet } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { MetadataString } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { MetadataDouble } from './x3d.mjs';
@@ -100,16 +100,12 @@ var X3D0 =  new X3D({
               content : new SFString("Titania V3.0.3, http://titania.create3000.de")}),
 
             new meta({
-              name : new SFString("comment"),
+              name : new SFString("info"),
               content : new SFString("World of Titania")}),
 
             new meta({
               name : new SFString("outputStyle"),
               content : new SFString("nicest")}),
-
-            new meta({
-              name : new SFString("warning"),
-              content : new SFString("under development")}),
 
             new meta({
               name : new SFString("generator"),
@@ -121,7 +117,8 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("../../license.html")})])})),
+              content : new SFString("../../license.html")}),
+          { "#comment" : new CommentsBlock("meta content='under development' name='warning'/") }])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

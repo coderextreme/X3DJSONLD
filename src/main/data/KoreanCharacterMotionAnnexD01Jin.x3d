@@ -104,7 +104,7 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal' center='3.854 3.64 0.7402' name='l_metatarsophalangeal'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='3.854 3.64 0.7402' name='l_metatarsophalangeal_2'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                     <Transform translation='3.854 3.64 0.7402'>
                       <Shape>
@@ -168,7 +168,7 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal' center='-3.854 3.64 0.7402' name='r_metatarsophalangeal'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-3.854 3.64 0.7402' name='r_metatarsophalangeal_2'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                     <Transform translation='-3.854 3.64 0.7402'>
                       <Shape>
@@ -327,8 +327,8 @@
       <HAnimJoint USE='hanim_r_hip' containerField='joints'/>
       <HAnimJoint USE='hanim_l_knee' containerField='joints'/>
       <HAnimJoint USE='hanim_r_knee' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
       <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
       <HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>

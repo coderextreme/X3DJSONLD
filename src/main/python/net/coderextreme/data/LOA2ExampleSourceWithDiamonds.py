@@ -1,11 +1,11 @@
 import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
-X3D0.setVersion("4.0")
+X3D0.setVersion("3.0")
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.setName("generator")
-meta2.setContent("view3dscene, https://castle-engine.io/view3dscene.php")
+meta2.setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting")
 
 head1.addMeta(meta2)
 meta3 = x3d.meta()
@@ -299,7 +299,7 @@ IndexedFaceSet61 = x3d.IndexedFaceSet()
 IndexedFaceSet61.setCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1])
 IndexedFaceSet61.setCreaseAngle(0.5)
 Coordinate62 = x3d.Coordinate()
-Coordinate62.setPoint([0,0.00999999977648258,0,-0.00999999977648258,0,0,0,0,0.00999999977648258,0.00999999977648258,0,0,0,0,-0.00999999977648258,0,-0.00999999977648258,0])
+Coordinate62.setPoint([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0])
 
 IndexedFaceSet61.setCoord(Coordinate62)
 

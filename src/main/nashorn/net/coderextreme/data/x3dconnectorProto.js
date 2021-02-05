@@ -13,8 +13,10 @@ var ProtoInstance2 = null;
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-        .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
+        .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects"))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
+        .addChild(new WorldInfo().setTitle("Connector Proto"))
         .addChild(new Viewpoint().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("float[]"))))
         .addChild(new Transform().setDEF("G1")
@@ -149,9 +151,9 @@ ProtoInstance0
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC1")));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("startnode")
             .addChild(new Transform().setUSE("G1")));
@@ -165,9 +167,9 @@ ProtoInstance1
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC2")));
 ProtoInstance1
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
 ProtoInstance1
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("startnode")
             .addChild(new Transform().setUSE("G1")));
@@ -181,7 +183,7 @@ ProtoInstance2
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC3")));
 ProtoInstance2
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue().setName("set_startpoint").setValue("0 0 0"));
 ProtoInstance2
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
     X3D0.toFileX3D("../data/x3dconnectorProto.new.x3d");

@@ -69,16 +69,12 @@
             "@content":"Titania V3.0.3, http://titania.create3000.de"
           },
           {
-            "@name":"comment",
+            "@name":"info",
             "@content":"World of Titania"
           },
           {
             "@name":"outputStyle",
             "@content":"nicest"
-          },
-          {
-            "@name":"warning",
-            "@content":"under development"
           },
           {
             "@name":"generator",
@@ -94,7 +90,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 January 2021"
+            "@content":"05 February 2021"
           },
           {
             "@name":"generator",
@@ -103,6 +99,11 @@
           {
             "@name":"reference",
             "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ],
+        "-children":[
+          {
+            "#comment":"meta content='under development' name='warning'/"
           }
         ]
     },

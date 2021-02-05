@@ -50,7 +50,8 @@ public class HAnimSpecificationLOA3Motion {
         .addMeta(new meta().setName("description").setContent("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
         .addMeta(new meta().setName("created").setContent("24 April 2013"))
-        .addMeta(new meta().setName("modified").setContent("11 July 2020"))
+        .addMeta(new meta().setName("modified").setContent("4 July 2020"))
+        .addMeta(new meta().setName("TODO").setContent("Convert to X3D4 HAnim2"))
         .addMeta(new meta().setName("Image").setContent("HAnimSpecificationLOA3MotionH3DViewer.png"))
         .addMeta(new meta().setName("Image").setContent("HAnimSpecificationLOA3MotionInstantReality.png"))
         .addMeta(new meta().setName("Image").setContent("HAnimSpecificationLOA3MotionOctagaVS.png"))
@@ -71,7 +72,7 @@ public class HAnimSpecificationLOA3Motion {
         .addMeta(new meta().setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"))
         .addMeta(new meta().setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Motion.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
@@ -2384,8 +2385,8 @@ public class HAnimSpecificationLOA3Motion {
           .addSites(new HAnimSite().setUSE("hanim_r_ulnar_styloid_pt")))
         .addChild(new Group().setDEF("StopAnimation")
           .addChild(new TimeSensor().setDEF("StopTimer").setCycleInterval(5.73d).setLoop(true))
-          .addChild(new PositionInterpolator().setDEF("Stop_humanoid_root_TranslationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat440().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f441().getArray())))
-          .addChild(new OrientationInterpolator().setDEF("Stop_humanoid_root_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat442().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation443().getArray())))
+          .addChild(new PositionInterpolator().setDEF("Stop_HumanoidRoot_TranslationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat440().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f441().getArray())))
+          .addChild(new OrientationInterpolator().setDEF("Stop_HumanoidRoot_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat442().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation443().getArray())))
           .addChild(new OrientationInterpolator().setDEF("Stop_sacroiliac_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat444().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation445().getArray())))
           .addChild(new OrientationInterpolator().setDEF("Stop_l_hip_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat446().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation447().getArray())))
           .addChild(new OrientationInterpolator().setDEF("Stop_l_knee_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat448().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation449().getArray())))
@@ -2474,8 +2475,8 @@ public class HAnimSpecificationLOA3Motion {
           .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky1_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat614().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation615().getArray())))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky2_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat616().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation617().getArray())))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_pinky3_RotationInterpolator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat618().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation619().getArray())))
-          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_humanoid_root_TranslationInterpolator"))
-          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_humanoid_root_RotationInterpolator"))
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_HumanoidRoot_TranslationInterpolator"))
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_HumanoidRoot_RotationInterpolator"))
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_sacroiliac_RotationInterpolator"))
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_hip_RotationInterpolator"))
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_l_knee_RotationInterpolator"))
@@ -2564,8 +2565,8 @@ public class HAnimSpecificationLOA3Motion {
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky1_RotationInterpolator"))
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky2_RotationInterpolator"))
           .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("StopTimer").setToField("set_fraction").setToNode("Stop_r_pinky3_RotationInterpolator"))
-          .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_humanoid_root_TranslationInterpolator").setToField("translation").setToNode("hanim_humanoid_root"))
-          .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_humanoid_root_RotationInterpolator").setToField("rotation").setToNode("hanim_humanoid_root"))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_HumanoidRoot_TranslationInterpolator").setToField("translation").setToNode("hanim_humanoid_root"))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_HumanoidRoot_RotationInterpolator").setToField("rotation").setToNode("hanim_humanoid_root"))
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_sacroiliac_RotationInterpolator").setToField("rotation").setToNode("hanim_sacroiliac"))
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_hip_RotationInterpolator").setToField("rotation").setToNode("hanim_l_hip"))
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("Stop_l_knee_RotationInterpolator").setToField("rotation").setToNode("hanim_l_knee"))
@@ -3588,7 +3589,7 @@ protected class MFString1 {
 }
 protected class MFString2 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"});
   }
 }
 protected class MFInt323 {

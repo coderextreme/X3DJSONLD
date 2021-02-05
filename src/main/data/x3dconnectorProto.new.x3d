@@ -7,8 +7,10 @@
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d' name='identifier'/>
     <meta content='a generic proto to connect two objects' name='description'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
   </head>
   <Scene>
+    <WorldInfo title='Connector Proto'/>
     <Viewpoint description='Only Viewpoint' position='0 0 5'/>
     <Background skyColor='0.4 0.4 0.4'/>
     <Transform DEF='G1'>
@@ -165,8 +167,8 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC1'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
+      <fieldValue name='set_startpoint' value='0 0 0'/>
+      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector2' name='x3dconnector'>
       <fieldValue name='startnode'>
@@ -181,8 +183,8 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC2'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
+      <fieldValue name='set_startpoint' value='0 0 0'/>
+      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector3' name='x3dconnector'>
       <fieldValue name='startnode'>
@@ -197,8 +199,8 @@ ecmascript:
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC3'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
+      <fieldValue name='set_startpoint' value='0 0 0'/>
+      <fieldValue name='set_endpoint' value='0 0 0'/>
     </ProtoInstance>
     <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
     <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>

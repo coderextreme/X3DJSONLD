@@ -7,6 +7,7 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
+import { WorldInfo } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Background } from './x3d.mjs';
@@ -55,10 +56,17 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("a generic proto to connect two objects")})])})),
+              content : new SFString("a generic proto to connect two objects")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("Connector Proto")}),
+
             new Viewpoint({
               position : new SFVec3f([0,0,5]),
               description : new SFString("Only Viewpoint")}),
@@ -381,10 +389,12 @@ var X3D0 =  new X3D({
                       USE : new SFString("rotscaleC1")})])}),
 
                 new fieldValue({
-                  name : new SFString("set_startpoint")}),
+                  name : new SFString("set_startpoint"),
+                  value : new SFString("0 0 0")}),
 
                 new fieldValue({
-                  name : new SFString("set_endpoint")})])}),
+                  name : new SFString("set_endpoint"),
+                  value : new SFString("0 0 0")})])}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),
@@ -415,10 +425,12 @@ var X3D0 =  new X3D({
                       USE : new SFString("rotscaleC2")})])}),
 
                 new fieldValue({
-                  name : new SFString("set_startpoint")}),
+                  name : new SFString("set_startpoint"),
+                  value : new SFString("0 0 0")}),
 
                 new fieldValue({
-                  name : new SFString("set_endpoint")})])}),
+                  name : new SFString("set_endpoint"),
+                  value : new SFString("0 0 0")})])}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),
@@ -449,10 +461,12 @@ var X3D0 =  new X3D({
                       USE : new SFString("rotscaleC3")})])}),
 
                 new fieldValue({
-                  name : new SFString("set_startpoint")}),
+                  name : new SFString("set_startpoint"),
+                  value : new SFString("0 0 0")}),
 
                 new fieldValue({
-                  name : new SFString("set_endpoint")})])}),
+                  name : new SFString("set_endpoint"),
+                  value : new SFString("0 0 0")})])}),
 
             new ROUTE({
               fromNode : new SFString("G1"),

@@ -71,7 +71,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("11 July 2020")}),
+              content : new SFString("4 July 2020")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("Convert to X3D4 HAnim2")}),
 
             new meta({
               name : new SFString("creator"),
@@ -163,7 +167,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnimSpecificationLOA3Illustrated.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d")}),
 
             new meta({
               name : new SFString("license"),
