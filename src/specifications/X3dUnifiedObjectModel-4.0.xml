@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-02-04-08:00 23:42:56.228-08:00 -->
+<!-- Generated 2021-02-21-08:00 16:27:00.532-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -15631,6 +15631,22 @@
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
                    description="color of light, applied to colors of objects."/>
+            <field name="diffuse"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"
+                   description="When applying diffuseColor for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
+            <field name="diffuseCoefficients"
+                   type="MFFloat"
+                   accessType="inputOutput"
+                   description="diffuseCoefficients field provides a 3 x 9 array of float values that declares spherical harmonic coefficients for irradiance up to l=2, corresponding to glTF irradianceCoefficients field."/>
+            <field name="diffuseTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DEnvironmentTextureNode"
+                   description="When applying diffuseColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
             <field name="global"
                    type="SFBool"
                    accessType="inputOutput"
@@ -15664,14 +15680,6 @@
                    default="true"
                    inheritedFrom="X3DLightNode"
                    description="Enables/disables this light source."/>
-            <field name="radius"
-                   type="SFFloat"
-                   accessType="initializeOnly"
-                   default="100"
-                   minInclusive="0"
-                   description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
-               <componentInfo name="Lighting" level="3"/>
-            </field>
             <field name="rotation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -15692,6 +15700,12 @@
                    default="false"
                    inheritedFrom="X3DLightNode"
                    description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry."/>
+            <field name="specularTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DEnvironmentTextureNode"
+                   description="When applying specularColor for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -15718,6 +15732,13 @@
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="ImageTexture"/>
+               <NodeContentModel name="MovieTexture"/>
+               <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ComposedCubeMapTexture"/>
+               <NodeContentModel name="GeneratedCubeMapTexture"/>
+               <NodeContentModel name="ImageCubeMapTexture"/>
+               <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
