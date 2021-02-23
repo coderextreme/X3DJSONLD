@@ -14,7 +14,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"HAnim2SpecificationLOA3Invisible.x3d"
           },
           {
             "@name":"description",
@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"12 July 2020"
+            "@content":"20 February 2021"
           },
           {
             "@name":"creator",
@@ -38,11 +38,11 @@
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"HAnim2SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Motion.x3d"
+            "@content":"HAnim2SpecificationLOA3Animation.x3d"
           },
           {
             "@name":"reference",
@@ -110,7 +110,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d"
           },
           {
             "@name":"license",
@@ -118,7 +118,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 February 2021"
+            "@content":"23 February 2021"
           },
           {
             "@name":"generator",
@@ -232,6 +232,7 @@
             {
               "@name":"humanoid",
               "@DEF":"hanim_humanoid",
+              "@info":["humanoidVersion=2.0"],
               "@version":"2.0",
               "-children":[
                 {
@@ -258,7 +259,7 @@
                   {
                     "@name":"HAnimHumanoid.info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"authorName",
@@ -301,6 +302,7 @@
                           "@value":["none"]
                         }
                       }
+                    ]
                   }
                 },
               "-skeleton":[

@@ -7,7 +7,7 @@
     "head": {
         "component": [
           {
-            "@name":"HAnim",
+            "@name":"H-Anim",
             "@level":1
           }
         ],
@@ -38,7 +38,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
+            "@content":"21 February 2021"
           },
           {
             "@name":"reference",
@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 February 2021"
+            "@content":"23 February 2021"
           },
           {
             "@name":"generator",
