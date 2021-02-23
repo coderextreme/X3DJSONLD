@@ -168,7 +168,8 @@ var X3D0 =  new X3D({
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({}))})),
+                                    new Material({
+                                      emissiveColor : new SFColor([1,1,1])}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC12"),
@@ -181,7 +182,8 @@ var X3D0 =  new X3D({
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({}))})),
+                                    new Material({
+                                      emissiveColor : new SFColor([1,1,1])}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC3"),
@@ -194,7 +196,8 @@ var X3D0 =  new X3D({
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({}))})),
+                                    new Material({
+                                      emissiveColor : new SFColor([1,1,1])}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC45"),
@@ -232,7 +235,8 @@ var X3D0 =  new X3D({
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({}))})),
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC12toCMC1"),
@@ -245,7 +249,8 @@ var X3D0 =  new X3D({
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({}))})),
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC12toCMC2"),
@@ -274,7 +279,8 @@ var X3D0 =  new X3D({
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({}))})),
+                                            new Material({
+                                              emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC1toMCP1"),
@@ -302,7 +308,8 @@ var X3D0 =  new X3D({
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({}))})),
+                                                new Material({
+                                                  emissiveColor : new SFColor([1,1,1])}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP11toIP1"),
@@ -330,7 +337,8 @@ var X3D0 =  new X3D({
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({}))})),
+                                                    new Material({
+                                                      emissiveColor : new SFColor([1,1,1])}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("fingertip_r_carpal_interphalangeal_1"),
@@ -359,7 +367,8 @@ var X3D0 =  new X3D({
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({}))})),
+                                            new Material({
+                                              emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC2toMCP2"),
@@ -387,7 +396,8 @@ var X3D0 =  new X3D({
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({}))})),
+                                                new Material({
+                                                  emissiveColor : new SFColor([1,1,1])}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP2toPIP2"),
@@ -415,7 +425,8 @@ var X3D0 =  new X3D({
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({}))})),
+                                                    new Material({
+                                                      emissiveColor : new SFColor([1,1,1])}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP2toDIP2"),
@@ -443,7 +454,8 @@ var X3D0 =  new X3D({
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({}))})),
+                                                        new Material({
+                                                          emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_carpal_distal_interphalangeal_2"),
@@ -472,7 +484,8 @@ var X3D0 =  new X3D({
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({}))})),
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC3toCMC3"),
@@ -501,7 +514,8 @@ var X3D0 =  new X3D({
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({}))})),
+                                            new Material({
+                                              emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC3toMCP3"),
@@ -529,7 +543,8 @@ var X3D0 =  new X3D({
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({}))})),
+                                                new Material({
+                                                  emissiveColor : new SFColor([1,1,1])}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP3toPIP3"),
@@ -557,7 +572,8 @@ var X3D0 =  new X3D({
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({}))})),
+                                                    new Material({
+                                                      emissiveColor : new SFColor([1,1,1])}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP3toDIP3"),
@@ -585,7 +601,8 @@ var X3D0 =  new X3D({
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({}))})),
+                                                        new Material({
+                                                          emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_carpal_distal_interphalangeal_3"),
@@ -614,7 +631,8 @@ var X3D0 =  new X3D({
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({}))})),
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC45toCMC4"),
@@ -627,7 +645,8 @@ var X3D0 =  new X3D({
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({}))})),
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC45toCMC5"),
@@ -656,7 +675,8 @@ var X3D0 =  new X3D({
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({}))})),
+                                            new Material({
+                                              emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC4toMCP4"),
@@ -684,7 +704,8 @@ var X3D0 =  new X3D({
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({}))})),
+                                                new Material({
+                                                  emissiveColor : new SFColor([1,1,1])}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP4toPIP4"),
@@ -712,7 +733,8 @@ var X3D0 =  new X3D({
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({}))})),
+                                                    new Material({
+                                                      emissiveColor : new SFColor([1,1,1])}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP4toDIP4"),
@@ -740,7 +762,8 @@ var X3D0 =  new X3D({
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({}))})),
+                                                        new Material({
+                                                          emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_carpal_distal_interphalangeal_4"),
@@ -769,7 +792,8 @@ var X3D0 =  new X3D({
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({}))})),
+                                            new Material({
+                                              emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC5toMCP5"),
@@ -797,7 +821,8 @@ var X3D0 =  new X3D({
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({}))})),
+                                                new Material({
+                                                  emissiveColor : new SFColor([1,1,1])}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP5toPIP5"),
@@ -825,7 +850,8 @@ var X3D0 =  new X3D({
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({}))})),
+                                                    new Material({
+                                                      emissiveColor : new SFColor([1,1,1])}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP5toDIP5"),
@@ -853,7 +879,8 @@ var X3D0 =  new X3D({
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({}))})),
+                                                        new Material({
+                                                          emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_carpal_distal_interphalangeal_5"),

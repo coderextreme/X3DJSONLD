@@ -11,11 +11,11 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Right foot, using high-fidelity definitions for HAnim version 2.0. </p>
- <p> Related links: HAnimModelFootRight.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HAnimModelFootRight&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -122,7 +122,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Kwan-Hee YOO, Don Brutzman and Joe Williams
  */
 
-function HAnimModelFootRight
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -131,7 +131,7 @@ function HAnimModelFootRight
     this.initialize();
     return this;
   }
-HAnimModelFootRight.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -180,12 +180,12 @@ HAnimModelFootRight.prototype = {
                   .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.0,1.0)))))
             .addChild((new autoclass.Shape())
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material())))
+                .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
               .setGeometry((new autoclass.IndexedLineSet("TCtoTCN")).setDEF("TCtoTCN").setCoordIndex(java.newArray("int", [0,1]))
                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,-0.3,0.0]))))))
             .addChild((new autoclass.Shape())
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material())))
+                .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
               .setGeometry((new autoclass.IndexedLineSet("TCtoCC")).setDEF("TCtoCC").setCoordIndex(java.newArray("int", [0,1]))
                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,-0.2,0.3,0.0])))))))
           .addComments(" TCN ")
@@ -195,17 +195,17 @@ HAnimModelFootRight.prototype = {
                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material())))
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                 .setGeometry((new autoclass.IndexedLineSet("TCNtoCN1")).setDEF("TCNtoCN1").setCoordIndex(java.newArray("int", [0,1]))
                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,0.1,-0.45,0.0]))))))
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material())))
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                 .setGeometry((new autoclass.IndexedLineSet("TCNtoCN2")).setDEF("TCNtoCN2").setCoordIndex(java.newArray("int", [0,1]))
                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,0.0,-0.45,0.0]))))))
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material())))
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                 .setGeometry((new autoclass.IndexedLineSet("TCNtoCN3")).setDEF("TCNtoCN3").setCoordIndex(java.newArray("int", [0,1]))
                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,-0.1,-0.4,0.0])))))))
             .addComments(" CN1 ")
@@ -215,7 +215,7 @@ HAnimModelFootRight.prototype = {
                   .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                 .addChild((new autoclass.Shape())
                   .setAppearance((new autoclass.Appearance())
-                    .setMaterial((new autoclass.Material())))
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                   .setGeometry((new autoclass.IndexedLineSet("CN1toTMT1")).setDEF("CN1toTMT1").setCoordIndex(java.newArray("int", [0,1]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1,-0.45,0.0,0.1,-0.6,0.0])))))))
               .addChild((new autoclass.HAnimJoint("hanim_r_tarsometatarsal_1")).setName("r_tarsometatarsal_1").setCenter(0.1,-0.6,0.0)
@@ -224,7 +224,7 @@ HAnimModelFootRight.prototype = {
                     .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                   .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
-                      .setMaterial((new autoclass.Material())))
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                     .setGeometry((new autoclass.IndexedLineSet("TMT1toMTP1")).setDEF("TMT1toMTP1").setCoordIndex(java.newArray("int", [0,1]))
                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1,-0.6,0.0,0.1,-0.9,0.0])))))))
                 .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_1")).setName("r_metatarsophalangeal_1").setCenter(0.1,-0.9,0.0)
@@ -233,7 +233,7 @@ HAnimModelFootRight.prototype = {
                       .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
-                        .setMaterial((new autoclass.Material())))
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry((new autoclass.IndexedLineSet("MTP1toIP1")).setDEF("MTP1toIP1").setCoordIndex(java.newArray("int", [0,1]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1,-0.9,0.0,0.1,-1.05,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_interphalangeal_1")).setName("r_tarsal_interphalangeal_1").setCenter(0.1,-1.05,0.0)
@@ -242,7 +242,7 @@ HAnimModelFootRight.prototype = {
                         .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                       .addChild((new autoclass.Shape())
                         .setAppearance((new autoclass.Appearance())
-                          .setMaterial((new autoclass.Material())))
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry((new autoclass.IndexedLineSet("tiptoe_r_interphalangeal_")).setDEF("tiptoe_r_interphalangeal_").setCoordIndex(java.newArray("int", [0,1]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1,-1.05,0.0,0.1,-1.1,0.0])))))))))))
             .addComments(" CN2 ")
@@ -252,7 +252,7 @@ HAnimModelFootRight.prototype = {
                   .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                 .addChild((new autoclass.Shape())
                   .setAppearance((new autoclass.Appearance())
-                    .setMaterial((new autoclass.Material())))
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                   .setGeometry((new autoclass.IndexedLineSet("CN2toTMT2")).setDEF("CN2toTMT2").setCoordIndex(java.newArray("int", [0,1]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.45,0.0,-0.05,-0.6,0.0])))))))
               .addChild((new autoclass.HAnimJoint("hanim_r_tarsometatarsal_2")).setName("r_tarsometatarsal_2").setCenter(-0.05,-0.6,0.0)
@@ -261,7 +261,7 @@ HAnimModelFootRight.prototype = {
                     .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                   .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
-                      .setMaterial((new autoclass.Material())))
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                     .setGeometry((new autoclass.IndexedLineSet("TMT2toMTP2")).setDEF("TMT2toMTP2").setCoordIndex(java.newArray("int", [0,1]))
                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.05,-0.6,0.0,-0.05,-0.9,0.0])))))))
                 .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_2")).setName("r_metatarsophalangeal_2").setCenter(-0.05,-0.9,0.0)
@@ -270,7 +270,7 @@ HAnimModelFootRight.prototype = {
                       .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
-                        .setMaterial((new autoclass.Material())))
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry((new autoclass.IndexedLineSet("MTP2toPIP2")).setDEF("MTP2toPIP2").setCoordIndex(java.newArray("int", [0,1]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.05,-0.9,0.0,-0.05,-1.05,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2")).setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.05,-1.05,0.0)
@@ -279,7 +279,7 @@ HAnimModelFootRight.prototype = {
                         .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                       .addChild((new autoclass.Shape())
                         .setAppearance((new autoclass.Appearance())
-                          .setMaterial((new autoclass.Material())))
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry((new autoclass.IndexedLineSet("PIP2toDIP2")).setDEF("PIP2toDIP2").setCoordIndex(java.newArray("int", [0,1]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.05,-1.05,0.0,-0.05,-1.12,0.0])))))))
                     .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2")).setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.05,-1.12,0.0)
@@ -288,7 +288,7 @@ HAnimModelFootRight.prototype = {
                           .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                         .addChild((new autoclass.Shape())
                           .setAppearance((new autoclass.Appearance())
-                            .setMaterial((new autoclass.Material())))
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                           .setGeometry((new autoclass.IndexedLineSet("tiptoe_r_tarsal_distal_interphalangeal_2")).setDEF("tiptoe_r_tarsal_distal_interphalangeal_2").setCoordIndex(java.newArray("int", [0,1]))
                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.05,-1.12,0.0,-0.05,-1.16,0.0]))))))))))))
             .addComments(" CN3 ")
@@ -298,7 +298,7 @@ HAnimModelFootRight.prototype = {
                   .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                 .addChild((new autoclass.Shape())
                   .setAppearance((new autoclass.Appearance())
-                    .setMaterial((new autoclass.Material())))
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                   .setGeometry((new autoclass.IndexedLineSet("CN3toTMT3")).setDEF("CN3toTMT3").setCoordIndex(java.newArray("int", [0,1]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1,-0.4,0.0,-0.15,-0.6,0.0])))))))
               .addChild((new autoclass.HAnimJoint("hanim_r_tarsometatarsal_3")).setName("r_tarsometatarsal_3").setCenter(-0.15,-0.6,0.0)
@@ -307,7 +307,7 @@ HAnimModelFootRight.prototype = {
                     .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                   .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
-                      .setMaterial((new autoclass.Material())))
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                     .setGeometry((new autoclass.IndexedLineSet("TMT3toMTP3")).setDEF("TMT3toMTP3").setCoordIndex(java.newArray("int", [0,1]))
                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.15,-0.6,0.0,-0.15,-0.9,0.0])))))))
                 .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_3")).setName("r_metatarsophalangeal_3").setCenter(-0.15,-0.9,0.0)
@@ -316,7 +316,7 @@ HAnimModelFootRight.prototype = {
                       .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
-                        .setMaterial((new autoclass.Material())))
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry((new autoclass.IndexedLineSet("MTP3toPIP3")).setDEF("MTP3toPIP3").setCoordIndex(java.newArray("int", [0,1]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.15,-0.9,0.0,-0.15,-1.05,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3")).setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.15,-1.05,0.0)
@@ -325,7 +325,7 @@ HAnimModelFootRight.prototype = {
                         .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                       .addChild((new autoclass.Shape())
                         .setAppearance((new autoclass.Appearance())
-                          .setMaterial((new autoclass.Material())))
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry((new autoclass.IndexedLineSet("PIP3toDIP3")).setDEF("PIP3toDIP3").setCoordIndex(java.newArray("int", [0,1]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.15,-1.05,0.0,-0.15,-1.13,0.0])))))))
                     .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3")).setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.15,-1.13,0.0)
@@ -334,7 +334,7 @@ HAnimModelFootRight.prototype = {
                           .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                         .addChild((new autoclass.Shape())
                           .setAppearance((new autoclass.Appearance())
-                            .setMaterial((new autoclass.Material())))
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                           .setGeometry((new autoclass.IndexedLineSet("tiptoe_r_tarsal_distal_interphalangeal_3")).setDEF("tiptoe_r_tarsal_distal_interphalangeal_3").setCoordIndex(java.newArray("int", [0,1]))
                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.15,-1.13,0.0,-0.15,-1.16,0.0])))))))))))))
           .addComments(" CC ")
@@ -344,7 +344,7 @@ HAnimModelFootRight.prototype = {
                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material())))
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                 .setGeometry((new autoclass.IndexedLineSet("CCtoTT")).setDEF("CCtoTT").setCoordIndex(java.newArray("int", [0,1]))
                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.2,0.3,0.0,-0.21,-0.3,0.0])))))))
             .addComments(" TT ")
@@ -354,12 +354,12 @@ HAnimModelFootRight.prototype = {
                   .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                 .addChild((new autoclass.Shape())
                   .setAppearance((new autoclass.Appearance())
-                    .setMaterial((new autoclass.Material())))
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                   .setGeometry((new autoclass.IndexedLineSet("TTtoTMT4")).setDEF("TTtoTMT4").setCoordIndex(java.newArray("int", [0,1]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.21,-0.3,0.0,-0.25,-0.58,0.0]))))))
                 .addChild((new autoclass.Shape())
                   .setAppearance((new autoclass.Appearance())
-                    .setMaterial((new autoclass.Material())))
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                   .setGeometry((new autoclass.IndexedLineSet("TTtoTMT5")).setDEF("TTtoTMT5").setCoordIndex(java.newArray("int", [0,1]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.21,-0.3,0.0,-0.33,-0.52,0.0])))))))
               .addComments(" TMT4 ")
@@ -369,7 +369,7 @@ HAnimModelFootRight.prototype = {
                     .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                   .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
-                      .setMaterial((new autoclass.Material())))
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                     .setGeometry((new autoclass.IndexedLineSet("TMT4toMTP4")).setDEF("TMT4toMTP4").setCoordIndex(java.newArray("int", [0,1]))
                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.25,-0.58,0.0,-0.25,-0.87,0.0])))))))
                 .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_4")).setName("r_metatarsophalangeal_4").setCenter(-0.25,-0.87,0.0)
@@ -378,7 +378,7 @@ HAnimModelFootRight.prototype = {
                       .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
-                        .setMaterial((new autoclass.Material())))
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry((new autoclass.IndexedLineSet("MTP4toPIP4")).setDEF("MTP4toPIP4").setCoordIndex(java.newArray("int", [0,1]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.25,-0.87,0.0,-0.25,-1.0,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_4")).setName("r_tarsal_proximal_interphalangeal_4").setCenter(-0.25,-1.0,0.0)
@@ -387,7 +387,7 @@ HAnimModelFootRight.prototype = {
                         .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                       .addChild((new autoclass.Shape())
                         .setAppearance((new autoclass.Appearance())
-                          .setMaterial((new autoclass.Material())))
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry((new autoclass.IndexedLineSet("PIP4toDIP4")).setDEF("PIP4toDIP4").setCoordIndex(java.newArray("int", [0,1]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.25,-1.0,0.0,-0.25,-1.1,0.0])))))))
                     .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_4")).setName("r_tarsal_distal_interphalangeal_4").setCenter(-0.25,-1.1,0.0)
@@ -396,7 +396,7 @@ HAnimModelFootRight.prototype = {
                           .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                         .addChild((new autoclass.Shape())
                           .setAppearance((new autoclass.Appearance())
-                            .setMaterial((new autoclass.Material())))
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                           .setGeometry((new autoclass.IndexedLineSet("tiptoe_r_tarsal_distal_interphalangeal_4")).setDEF("tiptoe_r_tarsal_distal_interphalangeal_4").setCoordIndex(java.newArray("int", [0,1]))
                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.25,-1.1,0.0,-0.25,-1.15,0.0])))))))))))
               .addComments(" TMT5 ")
@@ -406,7 +406,7 @@ HAnimModelFootRight.prototype = {
                     .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                   .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
-                      .setMaterial((new autoclass.Material())))
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                     .setGeometry((new autoclass.IndexedLineSet("TMT5toMTP5")).setDEF("TMT5toMTP5").setCoordIndex(java.newArray("int", [0,1]))
                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.33,-0.52,0.0,-0.34,-0.8,0.0])))))))
                 .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_5")).setName("r_metatarsophalangeal_5").setCenter(-0.34,-0.8,0.0)
@@ -415,7 +415,7 @@ HAnimModelFootRight.prototype = {
                       .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
-                        .setMaterial((new autoclass.Material())))
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry((new autoclass.IndexedLineSet("MTP5toPIP5")).setDEF("MTP5toPIP5").setCoordIndex(java.newArray("int", [0,1]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.34,-0.8,0.0,-0.34,-0.95,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_5")).setName("r_tarsal_proximal_interphalangeal_5").setCenter(-0.34,-0.95,0.0)
@@ -424,7 +424,7 @@ HAnimModelFootRight.prototype = {
                         .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                       .addChild((new autoclass.Shape())
                         .setAppearance((new autoclass.Appearance())
-                          .setMaterial((new autoclass.Material())))
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry((new autoclass.IndexedLineSet("PIP5toDIP5")).setDEF("PIP5toDIP5").setCoordIndex(java.newArray("int", [0,1]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.34,-0.95,0.0,-0.34,-1.05,0.0])))))))
                     .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_5")).setName("r_tarsal_distal_interphalangeal_5").setCenter(-0.34,-1.05,0.0)
@@ -433,7 +433,7 @@ HAnimModelFootRight.prototype = {
                           .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
                         .addChild((new autoclass.Shape())
                           .setAppearance((new autoclass.Appearance())
-                            .setMaterial((new autoclass.Material())))
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
                           .setGeometry((new autoclass.IndexedLineSet("tiptoe_r_tarsal_distal_interphalangeal_5")).setDEF("tiptoe_r_tarsal_distal_interphalangeal_5").setCoordIndex(java.newArray("int", [0,1]))
                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.34,-1.05,0.0,-0.34,-1.08,0.0])))))))))))))))
       .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_humanoid_root"))
@@ -494,7 +494,7 @@ HAnimModelFootRight.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return HAnimModelFootRight model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -542,8 +542,8 @@ HAnimModelFootRight.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new HAnimModelFootRight();
-		console.log ("HAnimModelFootRight execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new HAnimModelFootRight().main();
+new NeedClassName().main();

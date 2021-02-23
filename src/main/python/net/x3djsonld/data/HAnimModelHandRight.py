@@ -49,7 +49,6 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     WorldInfo(title='HAnimModelHandRight.x3d'),
     HAnimHumanoid(DEF='hanim_Hand_Right',name='Hand_Right',version='2.0',
-      #  HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' 
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
         metadata=MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])),
       skeleton=[
@@ -68,17 +67,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(diffuseColor=(0,0,1))))]),
             Shape(
               appearance=Appearance(
-                material=Material(),),
+                material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC12',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(-0.1,0.1,0)]))),
             Shape(
               appearance=Appearance(
-                material=Material(),),
+                material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC3',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.0,0.07,0)]))),
             Shape(
               appearance=Appearance(
-                material=Material(),),
+                material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC45',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
           #  MC12 
@@ -94,12 +93,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(diffuseColor=(1,0,0))))]),
               Shape(
                 appearance=Appearance(
-                  material=Material(),),
+                  material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC12toCMC1',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.2,0.15,0)]))),
               Shape(
                 appearance=Appearance(
-                  material=Material(),),
+                  material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC12toCMC2',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
             #  thumb finger 
@@ -112,7 +111,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(),),
+                    material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC1toMCP1',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.2,0.15,0),(-0.3,0.3,0)])))]),
               HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',center=(-0.3,0.3,0),name='r_metacarpophalangeal_1',
@@ -124,7 +123,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(),),
+                      material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP11toIP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.3,0.3,0),(-0.35,0.4,0)])))]),
                 HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',center=(-0.35,0.4,0),name='r_carpal_interphalangeal_1',
@@ -136,7 +135,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(),),
+                        material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='fingertip_r_carpal_interphalangeal_1',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),
             #  index finger 
@@ -149,7 +148,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(),),
+                    material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC2toMCP2',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,0.2,0),(-0.15,0.5,0)])))]),
               HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',center=(-0.15,0.5,0),name='r_metacarpophalangeal_2',
@@ -161,7 +160,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(),),
+                      material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP2toPIP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.15,0.5,0),(-0.2,0.7,0)])))]),
                 HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',center=(-0.2,0.7,0),name='r_carpal_proximal_interphalangeal_2',
@@ -173,7 +172,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(),),
+                        material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.2,0.7,0),(-0.24,0.87,0)])))]),
                   HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',center=(-0.24,0.87,0),name='r_carpal_distal_interphalangeal_2',
@@ -185,7 +184,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(),),
+                          material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_2',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])])]),
           #  MC3 
@@ -198,7 +197,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='HAnimNewJointShape')]),
               Shape(
                 appearance=Appearance(
-                  material=Material(),),
+                  material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC3toCMC3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
             #  Middle fingle 
@@ -211,7 +210,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(),),
+                    material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC3toMCP3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,0.2,0),(-0.03,0.5,0)])))]),
               HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',center=(-0.03,0.5,0),name='r_metacarpophalangeal_3',
@@ -223,7 +222,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(),),
+                      material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP3toPIP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.03,0.5,0),(-0.05,0.75,0)])))]),
                 HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',center=(-0.05,0.75,0),name='r_carpal_proximal_interphalangeal_3',
@@ -235,7 +234,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(),),
+                        material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.05,0.75,0),(-0.08,0.96,0)])))]),
                   HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',center=(-0.08,0.96,0),name='r_carpal_distal_interphalangeal_3',
@@ -247,7 +246,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(),),
+                          material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_3',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])])]),
           #  MC45 
@@ -260,12 +259,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='HAnimNewJointShape')]),
               Shape(
                 appearance=Appearance(
-                  material=Material(),),
+                  material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC45toCMC4',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.1,0.2,0)]))),
               Shape(
                 appearance=Appearance(
-                  material=Material(),),
+                  material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC45toCMC5',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
             #  ring finger 
@@ -278,7 +277,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(),),
+                    material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC4toMCP4',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,0.2,0),(0.1,0.47,0)])))]),
               HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',center=(0.1,0.47,0),name='r_metacarpophalangeal_4',
@@ -290,7 +289,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(),),
+                      material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP4toPIP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.1,0.47,0),(0.1,0.7,0)])))]),
                 HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',center=(0.1,0.7,0),name='r_carpal_proximal_interphalangeal_4',
@@ -302,7 +301,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(),),
+                        material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.1,0.7,0),(0.1,0.93,0)])))]),
                   HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',center=(0.1,0.93,0),name='r_carpal_distal_interphalangeal_4',
@@ -314,7 +313,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(),),
+                          material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_4',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
             #  pinky finger 
@@ -327,7 +326,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(),),
+                    material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC5toMCP5',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.15,0.17,0),(0.2,0.4,0)])))]),
               HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',center=(0.2,0.4,0),name='r_metacarpophalangeal_5',
@@ -339,7 +338,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(),),
+                      material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP5toPIP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.2,0.4,0),(0.23,0.63,0)])))]),
                 HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',center=(0.23,0.63,0),name='r_carpal_proximal_interphalangeal_5',
@@ -351,7 +350,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(),),
+                        material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.23,0.63,0),(0.25,0.79,0)])))]),
                   HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',center=(0.25,0.79,0),name='r_carpal_distal_interphalangeal_5',
@@ -363,9 +362,10 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(),),
+                          material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_carpal_distal_interphalangeal_5',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.25,0.79,0),(0.26,0.85,0)])))])])])])])])])]),],
+      #  HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' 
       joints=[
       HAnimJoint(USE='hanim_humanoid_root'),
       HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2'),
@@ -414,7 +414,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       HAnimSegment(USE='hanim_r_metacarpal_4'),
       HAnimSegment(USE='hanim_r_metacarpal_5'),
       HAnimSegment(USE='hanim_r_trapezoid'),
-      HAnimSegment(USE='hanim_r_wrist')])])
+      HAnimSegment(USE='hanim_r_wrist')],)])
 ) # X3D model complete
 
 ###############################################

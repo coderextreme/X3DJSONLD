@@ -241,6 +241,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             HAnimJoint(name='r_pinky2',DEF='Joe_r_pinky2',center=(-0.2,0.755,-0.085),skinCoordIndex=[321,322,323,324],skinCoordWeight=[1,1,1,1],
                                                               children=[
                                                               HAnimJoint(name='r_pinky3',DEF='Joe_r_pinky3',center=(-0.2,0.735,-0.09),skinCoordIndex=[325,326,327,328,329,330,331,332,333],skinCoordWeight=[1,1,1,1,1,1,1,1,1])])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
+        sites=[
+        HAnimSite(USE='Joe_RootFront_view'),],
         skin=[
         Shape(DEF='Joe_Shape',
           appearance=Appearance(DEF='Joe_skin_Appearance',
@@ -347,9 +349,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         HAnimJoint(USE='Joe_l_thumb3'),
         HAnimJoint(USE='Joe_r_thumb3')],
         segments=[
-        HAnimSegment(USE='Joe_sacrum'),],
-        sites=[
-        HAnimSite(USE='Joe_RootFront_view')])]),
+        HAnimSegment(USE='Joe_sacrum')],)]),
     Group(
       children=[
       TimeSensor(DEF='KickTimer',cycleInterval=3.73,loop=True),
