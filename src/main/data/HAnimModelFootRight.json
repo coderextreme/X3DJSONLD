@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"5 July 2020"
+            "@content":"20 February 2021"
           },
           {
             "@name":"warning",
@@ -102,7 +102,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 February 2021"
+            "@content":"23 February 2021"
           },
           {
             "@name":"generator",
@@ -136,13 +136,14 @@
                   {
                     "@name":"HAnimHumanoid.info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"authorName",
                           "@value":["Kwan-Hee YOO, Don Brutzman and Joe Williams"]
                         }
                       }
+                    ]
                   }
                 },
               "-skeleton":[
