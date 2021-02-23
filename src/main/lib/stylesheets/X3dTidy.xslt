@@ -26,7 +26,7 @@ Recommended tools:
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2020 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2021 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -61,7 +61,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                xmlns:ds ="http://www.w3.org/2000/09/xmldsig#"
+				xmlns:fn ="http://www.w3.org/2005/xpath-functions"
 				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
     <!--        
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
@@ -620,6 +621,19 @@ POSSIBILITY OF SUCH DAMAGE.
                                                         <xsl:with-param name="value" select="$infoValue"/>
                                                     </xsl:call-template>
                                                     <xsl:value-of select="$optionalQuoteCharacter"/>
+                                                </xsl:attribute>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:choose>
+                                            <xsl:when test="$isX3D3">
+                                                <xsl:attribute name="containerField">
+                                                    <xsl:text>value</xsl:text>
+                                                </xsl:attribute>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <!-- TODO may become optional in X3D4 -->
+                                                <xsl:attribute name="containerField">
+                                                    <xsl:text>value</xsl:text>
                                                 </xsl:attribute>
                                             </xsl:otherwise>
                                         </xsl:choose>
@@ -1377,6 +1391,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:call-template>
             </xsl:message>
         </xsl:if>
+      <report test="(@USE) and (count(@*[not(local-name()='USE') and not(local-name()='containerField')][string-length(.) > 0]) > 0)" role="error">&lt;<name/> USE='<value-of select='@USE'/>'/&gt; USE nodes must not contain any other attributes besides containerField </report>
     </xsl:template>
 
     <xsl:template name="process-attributes-in-order">
@@ -2538,7 +2553,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
                       (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -3338,6 +3353,24 @@ POSSIBILITY OF SUCH DAMAGE.
                 not(contains(local-name(),'set_')) and
                 not(contains(local-name(),'_changed')) and
                 .)" >
+            
+            <!-- check if this is disallowed nonempty attribute within a USE node -->
+            <xsl:if test="(string-length(.) > 0) and (string-length(../@USE) > 0) and not(local-name() = 'USE') and not(local-name() = 'containerField')">
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="local-name(..)"/><!-- element name -->
+                    <xsl:text> USE='</xsl:text>
+                    <xsl:value-of select="../@USE"/>
+                    <xsl:text>' containerField='</xsl:text>
+                    <xsl:value-of select="../@containerField"/>
+                    <xsl:text> has disallowed attribute: </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>='</xsl:text>
+                    <xsl:value-of select="."/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>   
+            </xsl:if>
+        
             <!-- attribute of interest found, show it -->
             <xsl:text> </xsl:text>
 			
@@ -3462,6 +3495,28 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
                     <xsl:value-of select="$x3dVersion"/>
                     <xsl:text>.xsd</xsl:text>
+                </xsl:when>
+                <!-- fix containerField for Metadata* nodes within MetadataSet -->
+                <!-- TODO default may change in X3D4 -->
+                <xsl:when test="(local-name(../..) = 'MetadataSet') and starts-with(local-name(..), 'Metadata') and (local-name() = 'containerField') and 
+                                ((. = 'metadata') or (string-length(.) = 0)) and 
+                                (count(../*[@containerField = 'value']) = 0)">
+                                <!-- having no peer nodes with @containerField = 'value' indicates this node with @containerField = 'metadata' (or empty value) is probably wrong -->
+                    <xsl:text>value</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** </xsl:text>
+                        <xsl:value-of select="local-name(../..)"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>' value='</xsl:text>
+                        <xsl:value-of select="../@value"/>
+                        <xsl:text>' -- changed containerField='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:text> to containerField='value'</xsl:text>
+                    </xsl:message>
                 </xsl:when>
                 <!-- fix geoSystem values as appropriate -->
                 <xsl:when test="(starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or (local-name(..)='ReceiverPdu') or (local-name(..)='SignalPdu') or (local-name(..)='TransmitterPdu'))

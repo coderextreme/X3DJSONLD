@@ -1,8 +1,8 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
 <!--
-Copyright (c) 2004-2020 held by the author(s).  All rights reserved.
+Copyright (c) 2004-2021 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -457,7 +457,7 @@ Recommended tool:
                       ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
                       (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -1203,7 +1203,8 @@ Recommended tool:
                 $notDefaultFieldValue8 and
                 $notDefaultFieldValue9 and
                 $notDefaultFieldValue10 and
-                $notDefaultHAnim       and
+                $notDefaultHAnim1      and
+                $notDefaultHAnim2      and
                 $notDefaultNurbs       and
                 $notDefaultGeometry2D  and
                 $notDefaultVolume      and

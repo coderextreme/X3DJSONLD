@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.1"
+<xsl:stylesheet version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:date="http://exslt.org/dates-and-times"
+	xmlns:fn="http://www.w3.org/2005/xpath-functions"
 	xmlns:saxon="http://icl.com/saxon"
 	saxon:trace="true"
 	extension-element-prefixes="saxon">
@@ -11,7 +12,7 @@
 <!-- Warning: this version is no longer in use, see tooltips project for latest version. -->
 
 <!--
-Copyright (c) 2001-2014 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2021 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -77,10 +78,16 @@ Invocation:
 	</xsl:variable>
 	
 	<xsl:variable name="todaysDate">
-		<xsl:value-of select="date:day-in-month()"/>
+		<xsl:value-of select="fn:day-from-date(current-date())"/>
 		<xsl:text> </xsl:text>
-		<xsl:value-of select="date:month-name()"/>
+                <!-- adapted from http://www.xsltfunctions.com/xsl/functx_month-name-en.html -->
+                <xsl:sequence select="
+   ('January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December')
+   [fn:month-from-date(current-date())]"/>
+	   <!-- <xsl:value-of select="fn:month-from-date(current-date())"/> -->
 		<xsl:text> </xsl:text>
+		<xsl:value-of select="fn:year-from-date(current-date())"/>
 	</xsl:variable>
 	
 	<!-- ****** root:  start of file ****************************************************** -->
