@@ -63,6 +63,7 @@ HAnimSegment8.children[0] = Transform9;
 let Shape14 = browser.currentScene.createNode("Shape");
 let Appearance15 = browser.currentScene.createNode("Appearance");
 let Material16 = browser.currentScene.createNode("Material");
+Material16.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance15.material = Material16;
 
 Shape14.appearance = Appearance15;
@@ -81,6 +82,7 @@ HAnimSegment8.children[1] = Shape14;
 let Shape19 = browser.currentScene.createNode("Shape");
 let Appearance20 = browser.currentScene.createNode("Appearance");
 let Material21 = browser.currentScene.createNode("Material");
+Material21.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance20.material = Material21;
 
 Shape19.appearance = Appearance20;
@@ -99,6 +101,7 @@ HAnimSegment8.children[2] = Shape19;
 let Shape24 = browser.currentScene.createNode("Shape");
 let Appearance25 = browser.currentScene.createNode("Appearance");
 let Material26 = browser.currentScene.createNode("Material");
+Material26.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance25.material = Material26;
 
 Shape24.appearance = Appearance25;
@@ -153,6 +156,7 @@ HAnimSegment30.children[0] = Transform31;
 let Shape36 = browser.currentScene.createNode("Shape");
 let Appearance37 = browser.currentScene.createNode("Appearance");
 let Material38 = browser.currentScene.createNode("Material");
+Material38.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance37.material = Material38;
 
 Shape36.appearance = Appearance37;
@@ -171,6 +175,7 @@ HAnimSegment30.children[1] = Shape36;
 let Shape41 = browser.currentScene.createNode("Shape");
 let Appearance42 = browser.currentScene.createNode("Appearance");
 let Material43 = browser.currentScene.createNode("Material");
+Material43.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance42.material = Material43;
 
 Shape41.appearance = Appearance42;
@@ -213,6 +218,7 @@ HAnimSegment47.children[0] = Transform48;
 let Shape50 = browser.currentScene.createNode("Shape");
 let Appearance51 = browser.currentScene.createNode("Appearance");
 let Material52 = browser.currentScene.createNode("Material");
+Material52.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance51.material = Material52;
 
 Shape50.appearance = Appearance51;
@@ -254,6 +260,7 @@ HAnimSegment56.children[0] = Transform57;
 let Shape59 = browser.currentScene.createNode("Shape");
 let Appearance60 = browser.currentScene.createNode("Appearance");
 let Material61 = browser.currentScene.createNode("Material");
+Material61.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance60.material = Material61;
 
 Shape59.appearance = Appearance60;
@@ -295,6 +302,7 @@ HAnimSegment65.children[0] = Transform66;
 let Shape68 = browser.currentScene.createNode("Shape");
 let Appearance69 = browser.currentScene.createNode("Appearance");
 let Material70 = browser.currentScene.createNode("Material");
+Material70.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance69.material = Material70;
 
 Shape68.appearance = Appearance69;
@@ -343,6 +351,7 @@ HAnimSegment74.children[0] = Transform75;
 let Shape77 = browser.currentScene.createNode("Shape");
 let Appearance78 = browser.currentScene.createNode("Appearance");
 let Material79 = browser.currentScene.createNode("Material");
+Material79.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance78.material = Material79;
 
 Shape77.appearance = Appearance78;
@@ -384,6 +393,7 @@ HAnimSegment83.children[0] = Transform84;
 let Shape86 = browser.currentScene.createNode("Shape");
 let Appearance87 = browser.currentScene.createNode("Appearance");
 let Material88 = browser.currentScene.createNode("Material");
+Material88.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance87.material = Material88;
 
 Shape86.appearance = Appearance87;
@@ -425,6 +435,7 @@ HAnimSegment92.children[0] = Transform93;
 let Shape95 = browser.currentScene.createNode("Shape");
 let Appearance96 = browser.currentScene.createNode("Appearance");
 let Material97 = browser.currentScene.createNode("Material");
+Material97.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance96.material = Material97;
 
 Shape95.appearance = Appearance96;
@@ -466,6 +477,7 @@ HAnimSegment101.children[0] = Transform102;
 let Shape104 = browser.currentScene.createNode("Shape");
 let Appearance105 = browser.currentScene.createNode("Appearance");
 let Material106 = browser.currentScene.createNode("Material");
+Material106.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance105.material = Material106;
 
 Shape104.appearance = Appearance105;
@@ -518,6 +530,7 @@ HAnimSegment110.children[0] = Transform111;
 let Shape113 = browser.currentScene.createNode("Shape");
 let Appearance114 = browser.currentScene.createNode("Appearance");
 let Material115 = browser.currentScene.createNode("Material");
+Material115.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance114.material = Material115;
 
 Shape113.appearance = Appearance114;
@@ -560,6 +573,7 @@ HAnimSegment119.children[0] = Transform120;
 let Shape122 = browser.currentScene.createNode("Shape");
 let Appearance123 = browser.currentScene.createNode("Appearance");
 let Material124 = browser.currentScene.createNode("Material");
+Material124.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance123.material = Material124;
 
 Shape122.appearance = Appearance123;
@@ -601,6 +615,7 @@ HAnimSegment128.children[0] = Transform129;
 let Shape131 = browser.currentScene.createNode("Shape");
 let Appearance132 = browser.currentScene.createNode("Appearance");
 let Material133 = browser.currentScene.createNode("Material");
+Material133.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance132.material = Material133;
 
 Shape131.appearance = Appearance132;
@@ -642,6 +657,7 @@ HAnimSegment137.children[0] = Transform138;
 let Shape140 = browser.currentScene.createNode("Shape");
 let Appearance141 = browser.currentScene.createNode("Appearance");
 let Material142 = browser.currentScene.createNode("Material");
+Material142.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance141.material = Material142;
 
 Shape140.appearance = Appearance141;
@@ -683,6 +699,7 @@ HAnimSegment146.children[0] = Transform147;
 let Shape149 = browser.currentScene.createNode("Shape");
 let Appearance150 = browser.currentScene.createNode("Appearance");
 let Material151 = browser.currentScene.createNode("Material");
+Material151.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance150.material = Material151;
 
 Shape149.appearance = Appearance150;
@@ -735,6 +752,7 @@ HAnimSegment155.children[0] = Transform156;
 let Shape158 = browser.currentScene.createNode("Shape");
 let Appearance159 = browser.currentScene.createNode("Appearance");
 let Material160 = browser.currentScene.createNode("Material");
+Material160.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance159.material = Material160;
 
 Shape158.appearance = Appearance159;
@@ -753,6 +771,7 @@ HAnimSegment155.children[1] = Shape158;
 let Shape163 = browser.currentScene.createNode("Shape");
 let Appearance164 = browser.currentScene.createNode("Appearance");
 let Material165 = browser.currentScene.createNode("Material");
+Material165.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance164.material = Material165;
 
 Shape163.appearance = Appearance164;
@@ -795,6 +814,7 @@ HAnimSegment169.children[0] = Transform170;
 let Shape172 = browser.currentScene.createNode("Shape");
 let Appearance173 = browser.currentScene.createNode("Appearance");
 let Material174 = browser.currentScene.createNode("Material");
+Material174.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance173.material = Material174;
 
 Shape172.appearance = Appearance173;
@@ -836,6 +856,7 @@ HAnimSegment178.children[0] = Transform179;
 let Shape181 = browser.currentScene.createNode("Shape");
 let Appearance182 = browser.currentScene.createNode("Appearance");
 let Material183 = browser.currentScene.createNode("Material");
+Material183.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance182.material = Material183;
 
 Shape181.appearance = Appearance182;
@@ -877,6 +898,7 @@ HAnimSegment187.children[0] = Transform188;
 let Shape190 = browser.currentScene.createNode("Shape");
 let Appearance191 = browser.currentScene.createNode("Appearance");
 let Material192 = browser.currentScene.createNode("Material");
+Material192.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance191.material = Material192;
 
 Shape190.appearance = Appearance191;
@@ -918,6 +940,7 @@ HAnimSegment196.children[0] = Transform197;
 let Shape199 = browser.currentScene.createNode("Shape");
 let Appearance200 = browser.currentScene.createNode("Appearance");
 let Material201 = browser.currentScene.createNode("Material");
+Material201.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance200.material = Material201;
 
 Shape199.appearance = Appearance200;
@@ -968,6 +991,7 @@ HAnimSegment205.children[0] = Transform206;
 let Shape208 = browser.currentScene.createNode("Shape");
 let Appearance209 = browser.currentScene.createNode("Appearance");
 let Material210 = browser.currentScene.createNode("Material");
+Material210.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance209.material = Material210;
 
 Shape208.appearance = Appearance209;
@@ -1009,6 +1033,7 @@ HAnimSegment214.children[0] = Transform215;
 let Shape217 = browser.currentScene.createNode("Shape");
 let Appearance218 = browser.currentScene.createNode("Appearance");
 let Material219 = browser.currentScene.createNode("Material");
+Material219.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance218.material = Material219;
 
 Shape217.appearance = Appearance218;
@@ -1050,6 +1075,7 @@ HAnimSegment223.children[0] = Transform224;
 let Shape226 = browser.currentScene.createNode("Shape");
 let Appearance227 = browser.currentScene.createNode("Appearance");
 let Material228 = browser.currentScene.createNode("Material");
+Material228.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance227.material = Material228;
 
 Shape226.appearance = Appearance227;
@@ -1091,6 +1117,7 @@ HAnimSegment232.children[0] = Transform233;
 let Shape235 = browser.currentScene.createNode("Shape");
 let Appearance236 = browser.currentScene.createNode("Appearance");
 let Material237 = browser.currentScene.createNode("Material");
+Material237.emissiveColor = new SFColor(new float[1,1,1]);
 Appearance236.material = Material237;
 
 Shape235.appearance = Appearance236;

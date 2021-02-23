@@ -159,6 +159,7 @@ HAnimSegment29.addChildren(Transform30)
 Shape35 = x3d.Shape()
 Appearance36 = x3d.Appearance()
 Material37 = x3d.Material()
+Material37.setEmissiveColor([1,1,1])
 
 Appearance36.setMaterial(Material37)
 
@@ -177,6 +178,7 @@ HAnimSegment29.addChildren(Shape35)
 Shape40 = x3d.Shape()
 Appearance41 = x3d.Appearance()
 Material42 = x3d.Material()
+Material42.setEmissiveColor([1,1,1])
 
 Appearance41.setMaterial(Material42)
 
@@ -195,6 +197,7 @@ HAnimSegment29.addChildren(Shape40)
 Shape45 = x3d.Shape()
 Appearance46 = x3d.Appearance()
 Material47 = x3d.Material()
+Material47.setEmissiveColor([1,1,1])
 
 Appearance46.setMaterial(Material47)
 
@@ -243,6 +246,7 @@ HAnimSegment51.addChildren(Transform52)
 Shape57 = x3d.Shape()
 Appearance58 = x3d.Appearance()
 Material59 = x3d.Material()
+Material59.setEmissiveColor([1,1,1])
 
 Appearance58.setMaterial(Material59)
 
@@ -261,6 +265,7 @@ HAnimSegment51.addChildren(Shape57)
 Shape62 = x3d.Shape()
 Appearance63 = x3d.Appearance()
 Material64 = x3d.Material()
+Material64.setEmissiveColor([1,1,1])
 
 Appearance63.setMaterial(Material64)
 
@@ -297,6 +302,7 @@ HAnimSegment68.addChildren(Transform69)
 Shape71 = x3d.Shape()
 Appearance72 = x3d.Appearance()
 Material73 = x3d.Material()
+Material73.setEmissiveColor([1,1,1])
 
 Appearance72.setMaterial(Material73)
 
@@ -332,6 +338,7 @@ HAnimSegment77.addChildren(Transform78)
 Shape80 = x3d.Shape()
 Appearance81 = x3d.Appearance()
 Material82 = x3d.Material()
+Material82.setEmissiveColor([1,1,1])
 
 Appearance81.setMaterial(Material82)
 
@@ -367,6 +374,7 @@ HAnimSegment86.addChildren(Transform87)
 Shape89 = x3d.Shape()
 Appearance90 = x3d.Appearance()
 Material91 = x3d.Material()
+Material91.setEmissiveColor([1,1,1])
 
 Appearance90.setMaterial(Material91)
 
@@ -409,6 +417,7 @@ HAnimSegment95.addChildren(Transform96)
 Shape98 = x3d.Shape()
 Appearance99 = x3d.Appearance()
 Material100 = x3d.Material()
+Material100.setEmissiveColor([1,1,1])
 
 Appearance99.setMaterial(Material100)
 
@@ -444,6 +453,7 @@ HAnimSegment104.addChildren(Transform105)
 Shape107 = x3d.Shape()
 Appearance108 = x3d.Appearance()
 Material109 = x3d.Material()
+Material109.setEmissiveColor([1,1,1])
 
 Appearance108.setMaterial(Material109)
 
@@ -479,6 +489,7 @@ HAnimSegment113.addChildren(Transform114)
 Shape116 = x3d.Shape()
 Appearance117 = x3d.Appearance()
 Material118 = x3d.Material()
+Material118.setEmissiveColor([1,1,1])
 
 Appearance117.setMaterial(Material118)
 
@@ -514,6 +525,7 @@ HAnimSegment122.addChildren(Transform123)
 Shape125 = x3d.Shape()
 Appearance126 = x3d.Appearance()
 Material127 = x3d.Material()
+Material127.setEmissiveColor([1,1,1])
 
 Appearance126.setMaterial(Material127)
 
@@ -560,6 +572,7 @@ HAnimSegment131.addChildren(Transform132)
 Shape134 = x3d.Shape()
 Appearance135 = x3d.Appearance()
 Material136 = x3d.Material()
+Material136.setEmissiveColor([1,1,1])
 
 Appearance135.setMaterial(Material136)
 
@@ -596,6 +609,7 @@ HAnimSegment140.addChildren(Transform141)
 Shape143 = x3d.Shape()
 Appearance144 = x3d.Appearance()
 Material145 = x3d.Material()
+Material145.setEmissiveColor([1,1,1])
 
 Appearance144.setMaterial(Material145)
 
@@ -631,6 +645,7 @@ HAnimSegment149.addChildren(Transform150)
 Shape152 = x3d.Shape()
 Appearance153 = x3d.Appearance()
 Material154 = x3d.Material()
+Material154.setEmissiveColor([1,1,1])
 
 Appearance153.setMaterial(Material154)
 
@@ -666,6 +681,7 @@ HAnimSegment158.addChildren(Transform159)
 Shape161 = x3d.Shape()
 Appearance162 = x3d.Appearance()
 Material163 = x3d.Material()
+Material163.setEmissiveColor([1,1,1])
 
 Appearance162.setMaterial(Material163)
 
@@ -701,6 +717,7 @@ HAnimSegment167.addChildren(Transform168)
 Shape170 = x3d.Shape()
 Appearance171 = x3d.Appearance()
 Material172 = x3d.Material()
+Material172.setEmissiveColor([1,1,1])
 
 Appearance171.setMaterial(Material172)
 
@@ -747,6 +764,7 @@ HAnimSegment176.addChildren(Transform177)
 Shape179 = x3d.Shape()
 Appearance180 = x3d.Appearance()
 Material181 = x3d.Material()
+Material181.setEmissiveColor([1,1,1])
 
 Appearance180.setMaterial(Material181)
 
@@ -765,6 +783,7 @@ HAnimSegment176.addChildren(Shape179)
 Shape184 = x3d.Shape()
 Appearance185 = x3d.Appearance()
 Material186 = x3d.Material()
+Material186.setEmissiveColor([1,1,1])
 
 Appearance185.setMaterial(Material186)
 
@@ -801,6 +820,7 @@ HAnimSegment190.addChildren(Transform191)
 Shape193 = x3d.Shape()
 Appearance194 = x3d.Appearance()
 Material195 = x3d.Material()
+Material195.setEmissiveColor([1,1,1])
 
 Appearance194.setMaterial(Material195)
 
@@ -836,6 +856,7 @@ HAnimSegment199.addChildren(Transform200)
 Shape202 = x3d.Shape()
 Appearance203 = x3d.Appearance()
 Material204 = x3d.Material()
+Material204.setEmissiveColor([1,1,1])
 
 Appearance203.setMaterial(Material204)
 
@@ -871,6 +892,7 @@ HAnimSegment208.addChildren(Transform209)
 Shape211 = x3d.Shape()
 Appearance212 = x3d.Appearance()
 Material213 = x3d.Material()
+Material213.setEmissiveColor([1,1,1])
 
 Appearance212.setMaterial(Material213)
 
@@ -906,6 +928,7 @@ HAnimSegment217.addChildren(Transform218)
 Shape220 = x3d.Shape()
 Appearance221 = x3d.Appearance()
 Material222 = x3d.Material()
+Material222.setEmissiveColor([1,1,1])
 
 Appearance221.setMaterial(Material222)
 
@@ -950,6 +973,7 @@ HAnimSegment226.addChildren(Transform227)
 Shape229 = x3d.Shape()
 Appearance230 = x3d.Appearance()
 Material231 = x3d.Material()
+Material231.setEmissiveColor([1,1,1])
 
 Appearance230.setMaterial(Material231)
 
@@ -985,6 +1009,7 @@ HAnimSegment235.addChildren(Transform236)
 Shape238 = x3d.Shape()
 Appearance239 = x3d.Appearance()
 Material240 = x3d.Material()
+Material240.setEmissiveColor([1,1,1])
 
 Appearance239.setMaterial(Material240)
 
@@ -1020,6 +1045,7 @@ HAnimSegment244.addChildren(Transform245)
 Shape247 = x3d.Shape()
 Appearance248 = x3d.Appearance()
 Material249 = x3d.Material()
+Material249.setEmissiveColor([1,1,1])
 
 Appearance248.setMaterial(Material249)
 
@@ -1055,6 +1081,7 @@ HAnimSegment253.addChildren(Transform254)
 Shape256 = x3d.Shape()
 Appearance257 = x3d.Appearance()
 Material258 = x3d.Material()
+Material258.setEmissiveColor([1,1,1])
 
 Appearance257.setMaterial(Material258)
 
