@@ -12553,7 +12553,7 @@ setAttribute method invocations).
         else
         {
             errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": ";
-            if  (isUSE())
+            if  (hasUSE())
                  errorNotice += "ProtoInstance USE='" + getUSE();
             else errorNotice += "ProtoInstance name='" + getName();
             errorNotice += "' has no corresponding ProtoDeclare or ExternProtoDeclare to provide type.";
@@ -12826,7 +12826,7 @@ setAttribute method invocations).
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
-		if (isUSE())
+		if (hasUSE())
 		{
 			String errorNotice = "addComments(\"" + newComment + "\")" + "\n" +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
@@ -12850,7 +12850,7 @@ setAttribute method invocations).
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
-		if (isUSE())
+		if (hasUSE())
 		{
 			String errorNotice = "addComments(" + Arrays.toString(newComments) + ")" + "\n" +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
@@ -12874,7 +12874,7 @@ setAttribute method invocations).
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<xsl:text>
-		if (isUSE())
+		if (hasUSE())
 		{
 			String errorNotice = "addComments(CommentsBlock) " +
 					"cannot be applied to a USE node (USE='" + getUSE() + "') which only contains a reference to a DEF node";
@@ -13039,7 +13039,7 @@ setAttribute method invocations).
 	</xsl:if>
 	<xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (isUSE())
+		if (hasUSE())
 			hasChild = false; // USE nodes only include attributes for USE and non-default containerField]]></xsl:text><!-- append to member name -->
 	</xsl:if>
     <!-- handle field synonyms -->
@@ -13109,7 +13109,7 @@ setAttribute method invocations).
 			<!-- DEF, USE, name attributes first for readability and to match X3D Canonical Form -->
 			<xsl:if test="InterfaceDefinition/field[@name = 'DEF']">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-			if (!getDEF().equals(DEF_DEFAULT_VALUE) && !isUSE())
+			if (!getDEF().equals(DEF_DEFAULT_VALUE) && !hasUSE())
 			{
 				stringX3D.append(" DEF='").append(SFString.toString(getDEF())).append("'");
 			}
@@ -13132,7 +13132,7 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (!getName().equals(NAME_DEFAULT_VALUE)]]></xsl:text>
 			<xsl:if test="not($isX3dStatement = 'true') or ($name = 'ProtoInstance')">
-				<xsl:text disable-output-escaping="yes"><![CDATA[ && !isUSE()]]></xsl:text>
+				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
 			</xsl:if>
 			<xsl:text>)
 			{
@@ -13276,7 +13276,7 @@ setAttribute method invocations).
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="not($isX3dStatement = 'true')">
-				<xsl:text disable-output-escaping="yes"><![CDATA[ && !isUSE()]]></xsl:text>
+				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
 			</xsl:if>
 			<xsl:text disable-output-escaping="yes"><![CDATA[)
 			{
@@ -13339,7 +13339,7 @@ setAttribute method invocations).
 		}
 		if ((hasChild)]]></xsl:text>
 			<xsl:if test="not($isX3dStatement = 'true')">
-				<xsl:text disable-output-escaping="yes"><![CDATA[ && !isUSE()]]></xsl:text>
+				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
 			</xsl:if>
 			<xsl:text disable-output-escaping="yes"><![CDATA[) // has contained node(s), comment(s), IS/connect and/or source code
 		{
@@ -13623,7 +13623,7 @@ setAttribute method invocations).
 	</xsl:if>
 	<xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (isUSE())
+		if (hasUSE())
 		{
 			hasAttributes = false;
 			hasChild      = false; // USE nodes include no other fields
@@ -14905,7 +14905,7 @@ setAttribute method invocations).
 										<xsl:when test="(@type = 'SFString')">
 											<xsl:text>if (get</xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>().isEmpty()</xsl:text>
 											<xsl:if test="not($isX3dStatement = 'true')">
-												<xsl:text disable-output-escaping="yes"><![CDATA[ && !isUSE()]]></xsl:text>
+												<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
 											</xsl:if>
 											<xsl:text>) // required attribute
 		{
@@ -14989,11 +14989,11 @@ setAttribute method invocations).
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:if test="(@name = 'DEF')">
-											<xsl:text>if (!isUSE()) // be careful! setting DEF via setDEF() method will reset USE value
+											<xsl:text>if (!hasUSE()) // be careful! setting DEF via setDEF() method will reset USE value
 			</xsl:text>
 										</xsl:if>
 										<xsl:if test="(@name = 'USE')">
-											<xsl:text>if (isUSE()) // be careful! setting USE via setUSE() method resets all attributes to default values and wipes out all children
+											<xsl:text>if (hasUSE()) // be careful! setting USE via setUSE() method resets all attributes to default values and wipes out all children
 			</xsl:text>
 										</xsl:if>
 										<xsl:if test="(@name = 'value') and (($name = 'field') or ($name = 'fieldValue'))">
@@ -15087,13 +15087,13 @@ setAttribute method invocations).
 								<!-- ProtoInstance name checks -->
 								<xsl:if test="($name = 'ProtoInstance') and (@name = 'name')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-        if (getName().isEmpty() && !isUSE())
+        if (getName().isEmpty() && !hasUSE())
         {
 			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
 			validationResult.append(errorNotice);
 			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
-		if (!getName().isEmpty() && isUSE())
+		if (!getName().isEmpty() && hasUSE())
         {
 			String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
 			validationResult.append(errorNotice);
@@ -15104,13 +15104,13 @@ setAttribute method invocations).
 		// check for presence of corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
 		if (ConfigurationProperties.isDebugModeActive() && hasProtoDeclare())
 		{
-			if  (isUSE())
+			if  (hasUSE())
 			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ProtoDeclare").append("\n");
 			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ProtoDeclare").append("\n");
 		}
 		else if (ConfigurationProperties.isDebugModeActive() && hasExternProtoDeclare())
 		{
-			if  (isUSE())
+			if  (hasUSE())
 			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
 			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
 		}
@@ -15141,7 +15141,7 @@ setAttribute method invocations).
 									<xsl:choose>
 										<xsl:when test="(@type = 'SFNode')">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (isUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
+		if (hasUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
 		{
 			String errorNotice = "</xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
 				<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text>";
@@ -15151,7 +15151,7 @@ setAttribute method invocations).
 		</xsl:text>
 									<xsl:if test="not($hasChildrenField = 'true') and not(starts-with($name, 'X3DConcrete'))">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (isUSE() && !commentsList.isEmpty())// test USE restrictions
+		if (hasUSE() && !commentsList.isEmpty())// test USE restrictions
 		{
 			String errorNotice = "]]></xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained comments";
 			validationResult.append(errorNotice);
@@ -15162,7 +15162,7 @@ setAttribute method invocations).
 										</xsl:when>
 										<xsl:when test="(@type = 'MFNode')">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (isUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
+		if (hasUSE() && has]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>()) // test USE restrictions
 		{
 			String errorNotice = "</xsl:text><xsl:value-of select="$name"/><xsl:text> USE='" + getUSE() + "' is not allowed to have contained </xsl:text>
 				<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text>";
@@ -15564,20 +15564,29 @@ setAttribute method invocations).
                      throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
                  }
              }
-             else if (!parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME) &&
-                      !parent.getElementName().equals(ProtoBody.NAME))
+             else if (!parent.getElementName().equals(field.NAME)     && !parent.getElementName().equals(fieldValue.NAME) &&
+                      !parent.getElementName().equals(ProtoBody.NAME) && !hasUSE())
              {
                  String naming = new String();
                  if (!getName().isEmpty())
                      naming = " name='" + getName() + "'";
                  String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
-                     ": " + NAME + " DEF='" + getDEF() + "'" + naming + " illegal parent found: '" + parent.getElementName() + "'";
+                     ": " + NAME + " DEF='" + getDEF() + "'" + naming + 
+                     " illegal parent found: " + parent.getElementName() +" name='" + ((X3DConcreteNode)parent).getDEF() + "'";
+                 if      (parent instanceof org.web3d.x3d.jsail.HAnim.HAnimHumanoid)
+                          errorNotice += " name='" + ((HAnimHumanoid)parent).getName() + "'";
+                 else if (parent instanceof org.web3d.x3d.jsail.HAnim.HAnimJoint)
+                          errorNotice += " name='" + ((HAnimJoint)parent).getName() + "'";
+                 else if (parent instanceof org.web3d.x3d.jsail.HAnim.HAnimSegment)
+                          errorNotice += " name='" + ((HAnimSegment)parent).getName() + "'";
+                 else if (parent instanceof org.web3d.x3d.jsail.HAnim.HAnimSite)
+                          errorNotice += " name='" + ((HAnimSite)parent).getName() + "'";
                  validationResult.append(errorNotice).append("\n");
                  throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
              }
          }
-// TODO: if LOA less than 4, modify test to compare whether immediate parent is a legal ancestor.
-// Warning: this is not 100% test until the LOA 0..3 alias-matching algorithms are also added.
+// TODO: if LOA less than 4, need to modify this test to properly compare whether immediate parent is a legal ancestor.
+// Warning: this is not a 100% test until the LOA 0..3 alias-matching algorithms are also added.
 
 ]]></xsl:text>
 								</xsl:when>
@@ -15724,7 +15733,7 @@ setAttribute method invocations).
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" insufficient X3D profile='" + modelProfile +
 					"' for parent X3D model containing ']]></xsl:text><xsl:value-of select="$name"/>
-					<xsl:text disable-output-escaping="yes"><![CDATA[' node, add head statement <component name=']]></xsl:text><xsl:value-of select="$componentName"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[' node, ensure sufficient support by adding head statement <component name=']]></xsl:text><xsl:value-of select="$componentName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[' level=']]></xsl:text>
 					<xsl:value-of select="$componentLevel"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA['/>\n" +
@@ -17653,7 +17662,7 @@ public String getAccessType(String fieldName)
         boolean hasComponentGEOMETRY3D           = (head != null) && (head.hasComponent(component.NAME_GEOMETRY3D));
         boolean hasComponentGEOSPATIAL           = (head != null) && (head.hasComponent(component.NAME_GEOSPATIAL));
         boolean hasComponentGROUPING             = (head != null) && (head.hasComponent(component.NAME_GROUPING));
-        boolean hasComponentH_ANIM               = (head != null) && (head.hasComponent(component.NAME_H_ANIM));
+        boolean hasComponentH_ANIM               = (head != null) && (head.hasComponent(component.NAME_H_ANIM) || head.hasComponent(component.NAME_HANIM)); // v1 H-Anim and v2 HAnim
         boolean hasComponentINTERPOLATION        = (head != null) && (head.hasComponent(component.NAME_INTERPOLATION));
         boolean hasComponentKEYDEVICESENSOR      = (head != null) && (head.hasComponent(component.NAME_KEYDEVICESENSOR));
         boolean hasComponentLAYERING             = (head != null) && (head.hasComponent(component.NAME_LAYERING));
@@ -17739,8 +17748,10 @@ public String getAccessType(String fieldName)
                 hasLevelGEOSPATIAL           = head.findComponentByName(component.NAME_GEOSPATIAL).getLevel();
             if (head.hasComponent(component.NAME_GROUPING))
                 hasLevelGROUPING             = head.findComponentByName(component.NAME_GROUPING).getLevel();
-            if (head.hasComponent(component.NAME_H_ANIM))
+            if (head.hasComponent(component.NAME_H_ANIM)) // v1 H-Anim
                 hasLevelH_ANIM               = head.findComponentByName(component.NAME_H_ANIM).getLevel();
+            if (head.hasComponent(component.NAME_HANIM))  // v2 HAnim
+                hasLevelH_ANIM               = head.findComponentByName(component.NAME_HANIM).getLevel();
             if (head.hasComponent(component.NAME_INTERPOLATION))
                 hasLevelINTERPOLATION        = head.findComponentByName(component.NAME_INTERPOLATION).getLevel();
             if (head.hasComponent(component.NAME_KEYDEVICESENSOR))
@@ -18014,7 +18025,8 @@ public String getAccessType(String fieldName)
                 (minimumLevel <= hasLevelGEOSPATIAL)) ||
 			(otherComponent.equals(component.NAME_GROUPING)             && hasComponentGROUPING &&
                 (minimumLevel <= hasLevelGROUPING)) ||
-			(otherComponent.equals(component.NAME_H_ANIM)               && hasComponentH_ANIM &&
+			((otherComponent.equals(component.NAME_H_ANIM) || otherComponent.equals(component.NAME_HANIM))
+                                                                        && hasComponentH_ANIM &&
                 (minimumLevel <= hasLevelH_ANIM)) ||
 			(otherComponent.equals(component.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
                 (minimumLevel <= hasLevelINTERPOLATION)) ||
@@ -34053,6 +34065,8 @@ showing default attribute values, and other custom settings.</p>
 	 * <ul>
 	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
 	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
+	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
+	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
 	 * </ul>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return value of DEF field
@@ -34060,6 +34074,23 @@ showing default attribute values, and other custom settings.</p>
 	public String getDEF()
 	{
 		return DEF;
+	}
+	/**
+	 * Utility method to indicate whether this element has a <i>DEF</i> identifier.
+	 * <br><br>
+	 * <i>Tooltip:</i> DEF defines a unique ID name for this node, referenceable by other nodes.
+	 * <ul>
+	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
+	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
+	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
+	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
+	 * </ul>
+	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @return whether this node is a USE reference
+	 */
+	public boolean hasDEF()
+	{
+		return !DEF.isEmpty();
 	}
 
 	/**
@@ -34078,7 +34109,7 @@ showing default attribute values, and other custom settings.</p>
 		return USE;
 	}
 	/**
-	 * Utility method to indicate whether this element is a <i>USE</i> reference to another previously defined element (which means other fields must be empty).
+	 * Utility method to indicate whether this element has a <i>USE</i> reference to another previously defined element (which means other fields must be empty).
 	 * <br><br>
 	 * <i>Tooltip:</i> USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value).
 	 * <ul>
@@ -34088,7 +34119,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return whether this node is a USE reference
 	 */
-	public boolean isUSE()
+	public boolean hasUSE()
 	{
 		return !USE.isEmpty();
 	}
@@ -34139,7 +34170,7 @@ showing default attribute values, and other custom settings.</p>
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " DEF=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
 		}
-		DEF = newValue;
+		DEF = newValue.trim();
 	}
 	/** Protected internal superclass method to keep USE private, scene authors should use method setUse(newValue) instead.
 	 * @param newValue is new value for the USE field.
@@ -34158,7 +34189,7 @@ showing default attribute values, and other custom settings.</p>
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " USE=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
 		}
-		USE = newValue;
+		USE = newValue.trim();
 	}
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
