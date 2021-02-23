@@ -7,7 +7,7 @@
     "head": {
         "component": [
           {
-            "@name":"HAnim",
+            "@name":"H-Anim",
             "@level":1
           }
         ],
