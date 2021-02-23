@@ -94,8 +94,8 @@
         <xsl:variable name="hasContainedText" select="(string-length(normalize-space(.)) > 0)"/>
                 
         <!-- common initial processing for each element -->
-        <xsl:if test="not((local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or (local-name() = 'span') or
-                          (local-name() = 'sub') or (local-name() = 'sup')) and
+        <xsl:if test="not((local-name(..) = 'a')  or (local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or
+                          (local-name() = 'span') or (local-name() = 'sub') or (local-name() = 'sup')) and
                       not(starts-with(local-name(), 'h'))">
             <!-- no line breaks for inline HTML elements -->
             <xsl:text>&#10;</xsl:text>
@@ -115,18 +115,20 @@
                     </xsl:message>
                 </xsl:if>
                 
-                <xsl:text> </xsl:text>
+                <xsl:text> </xsl:text><!-- ensure prior whitespace -->
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
                 <xsl:apply-templates select="@*"/> <!-- process attributes for this element -->
-                <xsl:value-of select="."/>
+                
+                <xsl:apply-templates select="* | text() | comment()"/>  <!-- recurse on child elements, include contained text -->
+                
                 <!-- common final processing for each element -->
                 <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- end element -->
             </xsl:when>
-            <xsl:when test="contains(@class,'proposedDeletion')">
+            <xsl:when test="contains(@class,'Deletion')">
                 <xsl:if test="($verbose = 'true')">
                     <xsl:message>
                         <xsl:text>*** omitted </xsl:text>
@@ -147,7 +149,23 @@
                 </xsl:if>
                 <!-- omit copying this element -->
             </xsl:when>
-            <xsl:when test="(count(*) > 0) or comment() or $hasContainedText">
+            <xsl:when test="(($elementName = 'div') or ($elementName = 'span')) and 
+                            ((@class = 'proposed') or (@class = 'approved'))    and
+                            not(($elementName = 'div') and (*[local-name() = 'div']))"><!-- be careful of nested div elements -->
+                <!-- omit this div/span element (but keep children) in pristine copy -->
+                <xsl:apply-templates select="* | text() | comment()"/>  <!-- recurse on child elements, include contained text -->
+                <!-- debug diagnostic
+                <xsl:message>
+                    <xsl:text>*** omit </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> class='</xsl:text>
+                    <xsl:value-of select="@class"/>
+                    <xsl:text>' title='</xsl:text>
+                    <xsl:value-of select="@title"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message> -->
+            </xsl:when>
+            <xsl:when test="(count(*) > 0) or comment() or $hasContainedText or ($elementName = 'a')">
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:apply-templates select="@*"/> <!-- process attributes for this element -->
@@ -239,7 +257,7 @@
              (. = 'example')       or (. = 'IndexEntry') or (. = 'Params') or
              (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
              (. = 'RunningHeader') or (. = 'RunningHeaderLeft')  or (. = 'RunningHeaderCenter') or (. = 'RunningHeaderRight') or 
-             (. = 'Version') or
+             (. = 'Version')       or
 
              ((local-name(..) = 'p')     and ((. = 'Example')       or (. = 'Footnote')       or (. = 'AnnexType')  or (. = 'AnnexHeadingBottom') or 
                                               (. = 'SubRef')        or (. = 'CellBodyCenter') or (. = 'CellBodyRight') or 
@@ -282,7 +300,7 @@
         </xsl:variable>
 
         <xsl:choose>
-            <xsl:when test="(local-name() = 'class') and (contains(.,'proposed') or $isEquation or $isLocalStyle)">
+            <xsl:when test="(local-name() = 'class') and (contains(.,'proposed') or contains(.,'approved') or $isEquation or $isLocalStyle)">
                 <!-- omit -->
             </xsl:when>
             <xsl:otherwise>
