@@ -425,9 +425,22 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             <xsl:message>
                 <xsl:text>... containerField mismatch for </xsl:text>
                 <xsl:value-of select="local-name()"/>
+                <xsl:if test="(string-length(@DEF) > 0) or not(string-length(@USE) > 0)">
                 <xsl:text> DEF='</xsl:text>
                 <xsl:value-of select="@DEF"/>
-                <xsl:text>', found containerField='</xsl:text>
+                <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:if test="(string-length(@USE) > 0)">
+                    <xsl:text> USE='</xsl:text>
+                    <xsl:value-of select="@USE"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:if test="(string-length(@name) > 0)">
+                    <xsl:text> name='</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:text> found containerField='</xsl:text>
                 <xsl:value-of select="$containerField"/>
                 <xsl:text>' but expected containerField='</xsl:text>
                 <xsl:value-of select="$expectedContainerField"/>
@@ -437,7 +450,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 
         <xsl:choose>
             <xsl:when test="(local-name() = 'X3D')">
-                <xsl:text>newModel</xsl:text>
+                <xsl:text>newModel</xsl:text><!-- unofficial name, whatever works, reused later -->
                 <xsl:text>=</xsl:text>
             </xsl:when>
             <xsl:when test="($isFirstSibling or not($hasSiblingField)) and not(local-name() = 'X3D') and not(local-name(..) = 'head')">  
@@ -506,10 +519,21 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             <xsl:text>,</xsl:text> <!-- these attributes(if any) are followed by additional node(s) -->
         </xsl:if>
         <xsl:choose>
+            <xsl:when test="(local-name() = 'HAnimHumanoid')">
+                <xsl:apply-templates select="* | comment()">
+                    <xsl:sort select="not(@containerField = 'viewpoints') and not(@containerField = 'sites') and not(@containerField = 'skeleton') and not(@containerField = 'metadata')" order="ascending"/>
+                    <xsl:sort select="(@containerField = 'viewpoints')"/>
+                    <xsl:sort select="(@containerField = 'sites')"/>
+                    <xsl:sort select="(@containerField = 'skeleton')"/>
+                    <xsl:sort select="(@containerField = 'metadata')"/>
+                </xsl:apply-templates>
+            </xsl:when>
             <xsl:when test="$hasChild">
                 <!-- sort SFNode/MFNode fields together, keep statements and comments with children -->
                 <!-- process non-children X3D nodes for this element -->
-                <xsl:apply-templates select="* | comment()"/>
+                <xsl:apply-templates select="* | comment()">
+                    <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
+                </xsl:apply-templates>
                 
                 <!-- alternative attempt: sorting alike fields together, which can reorder scene graph and lead to other problems>
                 <xsl:apply-templates select="*[not(@containerField = 'children') and (string-length(@containerField) > 0)]">  
@@ -527,7 +551,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates select="* | comment()">  <!-- process child elements (X3D nodes, statements) and comments for this element -->
-                    <xsl:sort select="@containerField" order="ascending"/>
+                    <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
                 </xsl:apply-templates>
             </xsl:otherwise>
         </xsl:choose>
@@ -598,15 +622,38 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>,</xsl:text> <!-- GG this element is followed by additional node(s) -->
             </xsl:when>
         </xsl:choose>
+        <!-- debug diagnostic -->
+        <xsl:if test="(local-name() = 'HAnimSite') and (@containerField = 'viewpoints')">
+            <xsl:message>
+                <xsl:text>*** </xsl:text>
+                    <xsl:text>local-name(..)='</xsl:text>
+                    <xsl:value-of select="local-name(..)"/>
+                    <xsl:text>', local-name()='</xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>', @name='</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>', @USE='</xsl:text>
+                    <xsl:value-of select="@USE"/>
+                    <xsl:text>', @containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>', $isLastSibling='</xsl:text>
+                    <xsl:value-of select="$isLastSibling"/>
+                    <xsl:text>', $hasSiblingField='</xsl:text>
+                    <xsl:value-of select="$hasSiblingField"/>
+                    <xsl:text>', $isInMFNodeList='</xsl:text>
+                    <xsl:value-of select="$isInMFNodeList"/>
+                    <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <xsl:if test="not(local-name() = 'X3D') and not(local-name(..) = 'head')">
             <xsl:choose>
                 <!--<xsl:value-of select="$indent"/>
                 <xsl:when test="not($hasFollowingElement) and ($containerField = 'children')">
                     <xsl:text>]</xsl:text>
-                </xsl:when>-->
-                <xsl:when test="$isLastSibling and $isInMFNodeList"><!-- MFNode -->
+                </xsl:when>--> 
+                <xsl:when test="($isLastSibling or not($hasSiblingField)) and $isInMFNodeList"><!-- MFNode -->
                     <xsl:text>]</xsl:text>
-                    <xsl:if test="$hasFollowingElement"> <!-- HH this element is last in a children [array] -->
+                    <xsl:if test="$hasFollowingElement or (local-name(..) = 'HAnimHumanoid')"> <!-- HH this element is last in a children [array] -->
                         <xsl:text>,</xsl:text>
                     </xsl:if>
                 </xsl:when>
@@ -822,7 +869,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
                       (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -2099,6 +2146,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
+					($parentElementName='EnvironmentLight' and $attributeName='diffuseCoefficients') or
 					($parentElementName='EspduTransform' and $attributeName='articulationParameterArray') or
 					($parentElementName='FloatVertexAttribute' and $attributeName='value') or
 					($parentElementName='FogCoordinate' and $attributeName='depth') or

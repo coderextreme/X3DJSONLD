@@ -29,12 +29,12 @@
 </Appearance>
 </Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TCtoTCN" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 -0.3 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TCtoCC" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.2 0.3 0"></Coordinate>
 </IndexedLineSet>
@@ -42,17 +42,17 @@
 </HAnimSegment>
 <!--TCN--><HAnimJoint name="l_talocalcaneonavicular" DEF="hanim_l_talocalcaneonavicular" center="0 -0.3 0"><HAnimSegment name="l_navicular" DEF="hanim_l_navicular"><Transform translation="0 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TCNtoCN1" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 -0.1 -0.45 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TCNtoCN2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0 -0.45 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TCNtoCN3" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0.1 -0.4 0"></Coordinate>
 </IndexedLineSet>
@@ -60,7 +60,7 @@
 </HAnimSegment>
 <!--CN1--><HAnimJoint name="l_cuneonavicular_1" DEF="hanim_l_cuneonavicular_1" center="-0.1 -0.45 0"><HAnimSegment name="l_cuneiform_1" DEF="hanim_l_cuneiform_1"><Transform translation="-0.1 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="CN1toTMT1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.45 0 -0.1 -0.6 0"></Coordinate>
 </IndexedLineSet>
@@ -68,7 +68,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsometatarsal_1" DEF="hanim_l_tarsometatarsal_1" center="-0.1 -0.6 0"><HAnimSegment name="l_metatarsal_1" DEF="hanim_l_metatarsal_1"><Transform translation="-0.1 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TMT1toMTP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.6 0 -0.1 -0.9 0"></Coordinate>
 </IndexedLineSet>
@@ -76,7 +76,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_metatarsophalangeal_1" DEF="hanim_l_metatarsophalangeal_1" center="-0.1 -0.9 0"><HAnimSegment name="l_tarsal_proximal_phalanx_1" DEF="hanim_l_tarsal_proximal_phalanx_1"><Transform translation="-0.1 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="MTP1toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.9 0 -0.1 -1.05 0"></Coordinate>
 </IndexedLineSet>
@@ -84,7 +84,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_interphalangeal_1" DEF="hanim_l_tarsal_interphalangeal_1" center="-0.1 -1.05 0"><HAnimSegment name="l_tarsal_distal_phalanx_1" DEF="hanim_l_tarsal_distal_phalanx_1"><Transform translation="-0.1 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -1.05 0 -0.1 -1.1 0"></Coordinate>
 </IndexedLineSet>
@@ -96,7 +96,7 @@
 </HAnimJoint>
 <!--CN2--><HAnimJoint name="l_cuneonavicular_2" DEF="hanim_l_cuneonavicular_2" center="0 -0.45 0"><HAnimSegment name="l_cuneiform_2" DEF="hanim_l_cuneiform_2"><Transform translation="0 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="CN2toTMT2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.45 0 0.05 -0.6 0"></Coordinate>
 </IndexedLineSet>
@@ -104,7 +104,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.05 -0.6 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Transform translation="0.05 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TMT2toMTP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.6 0 0.05 -0.9 0"></Coordinate>
 </IndexedLineSet>
@@ -112,7 +112,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.05 -0.9 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Transform translation="0.05 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="MTP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.9 0 0.05 -1.05 0"></Coordinate>
 </IndexedLineSet>
@@ -120,7 +120,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_proximal_interphalangeal_2" DEF="hanim_l_tarsal_proximal_interphalangeal_2" center="0.05 -1.05 0"><HAnimSegment name="l_tarsal_middle_phalanx_2" DEF="hanim_l_tarsal_middle_phalanx_2"><Transform translation="0.05 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.05 0 0.05 -1.12 0"></Coordinate>
 </IndexedLineSet>
@@ -128,7 +128,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.05 -1.12 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Transform translation="0.05 -1.12 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_phalanx_2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.12 0 0.05 -1.16 0"></Coordinate>
 </IndexedLineSet>
@@ -141,7 +141,7 @@
 </HAnimJoint>
 <!--CN3--><HAnimJoint name="l_cuneonavicular_3" DEF="hanim_l_cuneonavicular_3" center="0.1 -0.4 0"><HAnimSegment name="l_cuneiform_3" DEF="hanim_l_cuneiform_3"><Transform translation="0.1 -0.4 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="CN3toTMT3" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 -0.4 0 0.15 -0.6 0"></Coordinate>
 </IndexedLineSet>
@@ -149,7 +149,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsometatarsal_3" DEF="hanim_l_tarsometatarsal_3" center="0.15 -0.6 0"><HAnimSegment name="l_metatarsal_3" DEF="hanim_l_metatarsal_3"><Transform translation="0.15 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TMT3toMTP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.6 0 0.15 -0.9 0"></Coordinate>
 </IndexedLineSet>
@@ -157,7 +157,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_metatarsophalangeal_3" DEF="hanim_l_metatarsophalangeal_3" center="0.15 -0.9 0"><HAnimSegment name="l_tarsal_proximal_phalanx_3" DEF="hanim_l_tarsal_proximal_phalanx_3"><Transform translation="0.15 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="MTP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.9 0 0.15 -1.05 0"></Coordinate>
 </IndexedLineSet>
@@ -165,7 +165,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_proximal_interphalangeal_3" DEF="hanim_l_tarsal_proximal_interphalangeal_3" center="0.15 -1.05 0"><HAnimSegment name="l_tarsal_middle_phalanx_3" DEF="hanim_l_tarsal_middle_phalanx_3"><Transform translation="0.15 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.05 0 0.15 -1.13 0"></Coordinate>
 </IndexedLineSet>
@@ -173,7 +173,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_distal_interphalangeal_3" DEF="hanim_l_tarsal_distal_interphalangeal_3" center="0.15 -1.13 0"><HAnimSegment name="l_tarsal_distal_phalanx_3" DEF="hanim_l_tarsal_distal_phalanx_3"><Transform translation="0.15 -1.13 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.13 0 0.15 -1.16 0"></Coordinate>
 </IndexedLineSet>
@@ -187,7 +187,7 @@
 </HAnimJoint>
 <!--CC--><HAnimJoint name="l_calcaneocuboid" DEF="hanim_l_calcaneocuboid" center="0.2 0.3 0"><HAnimSegment name="l_calcaneus" DEF="hanim_l_calcaneus"><Transform translation="0.2 0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="CCtoTT" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.3 0 0.21 -0.3 0"></Coordinate>
 </IndexedLineSet>
@@ -195,12 +195,12 @@
 </HAnimSegment>
 <!--TT--><HAnimJoint name="l_transversetarsal" DEF="hanim_l_transversetarsal" center="0.21 -0.3 0"><HAnimSegment name="l_cuboid" DEF="hanim_l_cuboid"><Transform translation="0.21 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TTtoTMT4" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.25 -0.58 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TTtoTMT5" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.33 -0.52 0"></Coordinate>
 </IndexedLineSet>
@@ -208,7 +208,7 @@
 </HAnimSegment>
 <!--TMT4--><HAnimJoint name="l_tarsometatarsal_4" DEF="hanim_l_tarsometatarsal_4" center="0.25 -0.58 0"><HAnimSegment name="l_metatarsal_4" DEF="hanim_l_metatarsal_4"><Transform translation="0.25 -0.58 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TMT4toMTP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.58 0 0.25 -0.87 0"></Coordinate>
 </IndexedLineSet>
@@ -216,7 +216,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_metatarsophalangeal_4" DEF="hanim_l_metatarsophalangeal_4" center="0.25 -0.87 0"><HAnimSegment name="l_tarsal_proximal_phalanx_4" DEF="hanim_l_tarsal_proximal_phalanx_4"><Transform translation="0.25 -0.87 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="MTP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.87 0 0.25 -1 0"></Coordinate>
 </IndexedLineSet>
@@ -224,7 +224,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_proximal_interphalangeal_4" DEF="hanim_l_tarsal_proximal_interphalangeal_4" center="0.25 -1 0"><HAnimSegment name="l_tarsal_middle_phalanx_4" DEF="hanim_l_tarsal_middle_phalanx_4"><Transform translation="0.25 -1 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1 0 0.25 -1.1 0"></Coordinate>
 </IndexedLineSet>
@@ -232,7 +232,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_distal_interphalangeal_4" DEF="hanim_l_tarsal_distal_interphalangeal_4" center="0.25 -1.1 0"><HAnimSegment name="l_tarsal_distal_phalanx_4" DEF="hanim_l_tarsal_distal_phalanx_4"><Transform translation="0.25 -1.1 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1.1 0 0.25 -1.15 0"></Coordinate>
 </IndexedLineSet>
@@ -244,7 +244,7 @@
 </HAnimJoint>
 <!--TMT5--><HAnimJoint name="l_tarsometatarsal_5" DEF="hanim_l_tarsometatarsal_5" center="0.33 -0.52 0"><HAnimSegment name="l_metatarsal_5" DEF="hanim_l_metatarsal_5"><Transform translation="0.33 -0.52 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="TMT5toMTP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.33 -0.52 0 0.34 -0.8 0"></Coordinate>
 </IndexedLineSet>
@@ -252,7 +252,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_metatarsophalangeal_5" DEF="hanim_l_metatarsophalangeal_5" center="0.34 -0.8 0"><HAnimSegment name="l_tarsal_proximal_phalanx_5" DEF="hanim_l_tarsal_proximal_phalanx_5"><Transform translation="0.34 -0.8 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="MTP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.8 0 0.34 -0.95 0"></Coordinate>
 </IndexedLineSet>
@@ -260,7 +260,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_proximal_interphalangeal_5" DEF="hanim_l_tarsal_proximal_interphalangeal_5" center="0.34 -0.95 0"><HAnimSegment name="l_tarsal_middle_phalanx_5" DEF="hanim_l_tarsal_middle_phalanx_5"><Transform translation="0.34 -0.95 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.95 0 0.34 -1.05 0"></Coordinate>
 </IndexedLineSet>
@@ -268,7 +268,7 @@
 </HAnimSegment>
 <HAnimJoint name="l_tarsal_distal_interphalangeal_5" DEF="hanim_l_tarsal_distal_interphalangeal_5" center="0.34 -1.05 0"><HAnimSegment name="l_tarsal_distal_phalanx_5" DEF="hanim_l_tarsal_distal_phalanx_5"><Transform translation="0.34 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
-<Shape><Appearance><Material></Material>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -1.05 0 0.34 -1.08 0"></Coordinate>
 </IndexedLineSet>

@@ -1339,7 +1339,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
                       (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -3117,6 +3117,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 				(contains($parentElementName,'LOD') and $attributeName='range') or
 				(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
+				($parentElementName='EnvironmentLight' and $attributeName='diffuseCoefficients') or
 				($parentElementName='EspduTransform' and $attributeName='articulationParameterArray') or
 				($parentElementName='FloatVertexAttribute' and $attributeName='value') or
 				($parentElementName='FogCoordinate' and $attributeName='depth') or
