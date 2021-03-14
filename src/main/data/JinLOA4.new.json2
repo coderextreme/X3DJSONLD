@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"description",
@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -152,10 +152,10 @@
                           "@value":["female"]
                         }
                       },
-                      { "MetadataString":
+                      { "MetadataFloat":
                         {
                           "@name":"height",
-                          "@value":["1.5"]
+                          "@value":[1.5]
                         }
                       },
                       { "MetadataString":
@@ -766,8 +766,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimJoint":
                                                                         {
-                                                                          "@name":"l_tarsal_interphalangeal_1",
-                                                                          "@DEF":"hanim_l_tarsal_interphalangeal_1",
+                                                                          "@name":"l_tarsal_distal_interphalangeal_1",
+                                                                          "@DEF":"hanim_l_tarsal_distal_interphalangeal_1",
                                                                           "@center":[2.761,0.539400,5.125],
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "HAnimSegment":
@@ -2698,8 +2698,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimJoint":
                                                                         {
-                                                                          "@name":"r_tarsal_interphalangeal_1",
-                                                                          "@DEF":"hanim_r_tarsal_interphalangeal_1",
+                                                                          "@name":"r_tarsal_distal_interphalangeal_1",
+                                                                          "@DEF":"hanim_r_tarsal_distal_interphalangeal_1",
                                                                           "@center":[-2.744,0.539400,5.125],
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "HAnimSegment":
@@ -10826,6 +10826,16 @@
                 },
                 { "HAnimJoint":
                   {
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
                     "@USE":"hanim_l_tarsal_distal_interphalangeal_2"
                   }
                 },
@@ -10862,16 +10872,6 @@
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_interphalangeal_1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":

@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"8 March 2021"
           },
           {
             "@name":"warning",
@@ -102,7 +102,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -127,6 +127,7 @@
             {
               "@name":"Foot_Right",
               "@DEF":"hanim_Foot_Right",
+              "@loa":4,
               "@version":"2.0",
               "-children":[
                 {

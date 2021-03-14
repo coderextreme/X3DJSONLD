@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -14,7 +14,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"HAnim2SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"description",
@@ -26,27 +26,23 @@
           },
           {
             "@name":"created",
-            "@content":"24 April 2013"
+            "@content":"18 February 2021"
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
-          },
-          {
-            "@name":"TODO",
-            "@content":"Convert to X3D4 HAnim2"
+            "@content":"13 March 2021"
           },
           {
             "@name":"creator",
-            "@content":"Matthew T. Beitler, Joe D. Williams, Don Brutzman"
+            "@content":"Don Brutzman"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"HAnim2SpecificationLOA3Invisible.x3d"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Motion.x3d"
+            "@content":"HAnim2SpecificationLOA3Animation.x3d"
           },
           {
             "@name":"reference",
@@ -114,7 +110,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"license",
