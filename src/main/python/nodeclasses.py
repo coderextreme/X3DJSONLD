@@ -1,4 +1,4 @@
-from beautifulsoup4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import re
 
 class ClassPrinter:
@@ -67,7 +67,7 @@ code += 'java.classpath.push("../jars/X3DJSAIL.4.0.full.jar");\n'
 code += 'java.classpath.push("../../jars/X3DJSAIL.4.0.full.jar");\n'
 
 
-soup = BeautifulSoup(open("../../specifications/X3DUnifiedObjectModel-4.0.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
 
 classes = {}
 
