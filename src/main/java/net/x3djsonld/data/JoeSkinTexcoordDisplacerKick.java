@@ -119,7 +119,7 @@ public class JoeSkinTexcoordDisplacerKick
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
-    .addComponent(new component().setName("HAnim").setLevel(1))
+    .addComponent(new component().setName("H-Anim").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkinTexcoordDisplacerKick.x3d"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations."))

@@ -24,11 +24,11 @@
           },
           {
             "@name":"modified",
-            "@content":"20 October 2019"
+            "@content":"4 July 2020"
           },
           {
             "@name":"description",
-            "@content":"Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
+            "@content":"Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
           },
           {
             "@name":"warning",
@@ -44,7 +44,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"
           },
           {
             "@name":"generator",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 February 2021"
+            "@content":"12 March 2021"
           },
           {
             "@name":"generator",
@@ -74,7 +74,7 @@
             {
               "@name":"Displacer",
               "@appinfo":"A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -109,11 +109,11 @@
             {
               "@name":"Humanoid",
               "@appinfo":"The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html",
               "ProtoInterface": {
                   "-children":[
                     {
-                      "#comment":"H-Anim v1.1 field definitions"
+                      "#comment":"HAnim v1.1 field definitions"
                     }
                   ],
                   "field": [
@@ -132,7 +132,7 @@
                     {
                       "@name":"humanoidVersion",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Version of the humanoid being modeled. Hint: H-anim version 2.0",
+                      "@appinfo":"Version of the humanoid being modeled. Hint: HAnim version 2.0",
                       "@type":"SFString"
                     },
                     {
@@ -185,15 +185,15 @@
                     {
                       "@name":"humanoidBody",
                       "@accessType":"inputOutput",
-                      "@appinfo":"H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton",
-                      "@documentation":"http://H-Anim.org/Specifications/H-Anim1.1/#humanoid",
+                      "@appinfo":"HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton",
+                      "@documentation":"http://HAnim.org/Specifications/HAnim1.1/#humanoid",
                       "@type":"MFNode"
                     },
                     {
                       "@name":"skeleton",
                       "@accessType":"inputOutput",
-                      "@appinfo":"H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
-                      "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+                      "@appinfo":"HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
+                      "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html",
                       "@type":"MFNode"
                     },
                     {
@@ -223,7 +223,7 @@
                     {
                       "@name":"skinCoord",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Hint: H-anim version 2.0",
+                      "@appinfo":"Hint: HAnim version 2.0",
                       "@type":"SFNode",
                       "-children":[
                         {
@@ -234,7 +234,7 @@
                     {
                       "@name":"skinNormal",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Hint: H-anim version 2.0",
+                      "@appinfo":"Hint: HAnim version 2.0",
                       "@type":"SFNode",
                       "-children":[
                         {
@@ -332,7 +332,7 @@
             {
               "@name":"Joint",
               "@appinfo":"The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Joint.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -490,7 +490,7 @@
             {
               "@name":"Segment",
               "@appinfo":"The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Segment.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -601,7 +601,7 @@
             {
               "@name":"Site",
               "@appinfo":"The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Site.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -741,7 +741,7 @@
                 },
                 {
                   "@name":"info",
-                  "@value":["humanoidVersion=Nancy V1.2b","authorName=Cindy Ballreich","authorEmail=cindy@ballreich.net","copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.","creationDate=Tue Dec 30 08:30:08 PST 1997","usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given."]
+                  "@value":["humanoidVersion=Nancy V1.2b","authorName=Cindy Ballreich","authorEmail=cindy@ballreich.net","copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.","creationDate=Tue Dec 30 08:30:08 PST 1997","usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."]
                 },
                 {
                   "@name":"humanoidBody",
@@ -749,7 +749,7 @@
                     { "ProtoInstance":
                       {
                         "@name":"Joint",
-                        "@DEF":"hanim_HumanoidRoot",
+                        "@DEF":"hanim_humanoid_root",
                         "fieldValue": [
                           {
                             "@name":"name",
@@ -1272,7 +1272,7 @@
                                                               { "ImageTexture":
                                                                 {
                                                                   "@DEF":"small_logo_Tex",
-                                                                  "@url":["small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"]
+                                                                  "@url":["small_logo.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/small_logo.gif"]
                                                                 }
                                                               }
                                                           }
@@ -1923,7 +1923,7 @@
                   "-children":[
                     { "ProtoInstance":
                       {
-                        "@USE":"hanim_HumanoidRoot"
+                        "@USE":"hanim_humanoid_root"
                       }
                     },
                     { "ProtoInstance":
@@ -2135,7 +2135,7 @@
           { "WorldInfo":
             {
               "@info":["Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."],
-              "@title":"Nancy - an H-Anim compliant avatar by 3Name3D"
+              "@title":"Nancy - an HAnim compliant avatar by 3Name3D"
             }
           },
           { "NavigationInfo":
@@ -2540,126 +2540,126 @@
                     "-children":[
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_ankleRotInterp_Stand",
+                          "@DEF":"r_ankle_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_kneeRotInterp_Stand",
+                          "@DEF":"r_knee_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_hipRotInterp_Stand",
+                          "@DEF":"r_hip_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_ankleRotInterp_Stand",
+                          "@DEF":"l_ankle_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_kneeRotInterp_Stand",
+                          "@DEF":"l_knee_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_hipRotInterp_Stand",
+                          "@DEF":"l_hip_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"lower_bodyRotInterp_Stand",
+                          "@DEF":"lower_body_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_wristRotInterp_Stand",
+                          "@DEF":"r_wrist_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_elbowRotInterp_Stand",
+                          "@DEF":"r_elbow_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_shoulderRotInterp_Stand",
+                          "@DEF":"r_shoulder_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_wristRotInterp_Stand",
+                          "@DEF":"l_wrist_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_elbowRotInterp_Stand",
+                          "@DEF":"l_elbow_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_shoulderRotInterp_Stand",
+                          "@DEF":"l_shoulder_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"headRotInterp_Stand",
+                          "@DEF":"head_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"neckRotInterp_Stand",
+                          "@DEF":"neck_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"upper_bodyRotInterp_Stand",
+                          "@DEF":"upper_body_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"whole_bodyRotInterp_Stand",
+                          "@DEF":"whole_body_RotationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "PositionInterpolator":
                         {
-                          "@DEF":"whole_bodyTranInterp_Stand",
+                          "@DEF":"whole_body_TranslationInterpolator_Stand",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,0.0,0.0,0.0,0.0]
                         }
@@ -2679,126 +2679,126 @@
                     "-children":[
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_ankleRotInterp_BasicWalk",
+                          "@DEF":"r_ankle_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_kneeRotInterp_BasicWalk",
+                          "@DEF":"r_knee_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_hipRotInterp_BasicWalk",
+                          "@DEF":"r_hip_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0],
                           "@keyValue":[-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_ankleRotInterp_BasicWalk",
+                          "@DEF":"l_ankle_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0],
                           "@keyValue":[-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_kneeRotInterp_BasicWalk",
+                          "@DEF":"l_knee_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_hipRotInterp_BasicWalk",
+                          "@DEF":"l_hip_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0],
                           "@keyValue":[-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"lower_bodyRotInterp_BasicWalk",
+                          "@DEF":"lower_body_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.5,1.0],
                           "@keyValue":[0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_wristRotInterp_BasicWalk",
+                          "@DEF":"r_wrist_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_elbowRotInterp_BasicWalk",
+                          "@DEF":"r_elbow_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_shoulderRotInterp_BasicWalk",
+                          "@DEF":"r_shoulder_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_wristRotInterp_BasicWalk",
+                          "@DEF":"l_wrist_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_elbowRotInterp_BasicWalk",
+                          "@DEF":"l_elbow_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_shoulderRotInterp_BasicWalk",
+                          "@DEF":"l_shoulder_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.9167,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"headRotInterp_BasicWalk",
+                          "@DEF":"head_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0],
                           "@keyValue":[0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"neckRotInterp_BasicWalk",
+                          "@DEF":"neck_RotationInterpolator_BasicWalk",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"upper_bodyRotInterp_BasicWalk",
+                          "@DEF":"upper_body_RotationInterpolator_BasicWalk",
                           "@key":[0.0,0.2083,0.375,0.75,0.8333,1.0],
                           "@keyValue":[0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"whole_bodyRotInterp_BasicWalk",
+                          "@DEF":"whole_body_RotationInterpolator_BasicWalk",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "PositionInterpolator":
                         {
-                          "@DEF":"whole_bodyTranInterp_BasicWalk",
+                          "@DEF":"whole_body_TranslationInterpolator_BasicWalk",
                           "@key":[0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0],
                           "@keyValue":[0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0]
                         }
@@ -2820,126 +2820,126 @@
                     "-children":[
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_ankleRotInterp_Run",
+                          "@DEF":"r_ankle_RotationInterpolator_Run",
                           "@key":[0.0,0.4909,0.7091,0.8,0.8182,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_kneeRotInterp_Run",
+                          "@DEF":"r_knee_RotationInterpolator_Run",
                           "@key":[0.0,0.03636,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_hipRotInterp_Run",
+                          "@DEF":"r_hip_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_ankleRotInterp_Run",
+                          "@DEF":"l_ankle_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.3091,0.4909,1.0],
                           "@keyValue":[1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_kneeRotInterp_Run",
+                          "@DEF":"l_knee_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_hipRotInterp_Run",
+                          "@DEF":"l_hip_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"lower_bodyRotInterp_Run",
+                          "@DEF":"lower_body_RotationInterpolator_Run",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_wristRotInterp_Run",
+                          "@DEF":"r_wrist_RotationInterpolator_Run",
                           "@key":[0.0,1.0],
                           "@keyValue":[-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_elbowRotInterp_Run",
+                          "@DEF":"r_elbow_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_shoulderRotInterp_Run",
+                          "@DEF":"r_shoulder_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_wristRotInterp_Run",
+                          "@DEF":"l_wrist_RotationInterpolator_Run",
                           "@key":[0.0,1.0],
                           "@keyValue":[-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_elbowRotInterp_Run",
+                          "@DEF":"l_elbow_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_shoulderRotInterp_Run",
+                          "@DEF":"l_shoulder_RotationInterpolator_Run",
                           "@key":[0.0,0.2182,0.4909,0.7455,1.0],
                           "@keyValue":[0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-2.052E-4,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"headRotInterp_Run",
+                          "@DEF":"head_RotationInterpolator_Run",
                           "@key":[0.0,0.4909,1.0],
                           "@keyValue":[0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"neckRotInterp_Run",
+                          "@DEF":"neck_RotationInterpolator_Run",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"upper_bodyRotInterp_Run",
+                          "@DEF":"upper_body_RotationInterpolator_Run",
                           "@key":[0.0,0.2545,0.4909,0.7636,1.0],
                           "@keyValue":[0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"whole_bodyRotInterp_Run",
+                          "@DEF":"whole_body_RotationInterpolator_Run",
                           "@key":[0.0,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "PositionInterpolator":
                         {
-                          "@DEF":"whole_bodyTranInterp_Run",
+                          "@DEF":"whole_body_TranslationInterpolator_Run",
                           "@key":[0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0],
                           "@keyValue":[0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0]
                         }
@@ -2960,126 +2960,126 @@
                     "-children":[
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_ankleRotInterp_Jump",
+                          "@DEF":"r_ankle_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,0.3001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087,-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_kneeRotInterp_Jump",
+                          "@DEF":"r_knee_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_hipRotInterp_Jump",
+                          "@DEF":"r_hip_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.647,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_ankleRotInterp_Jump",
+                          "@DEF":"l_ankle_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108,-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_kneeRotInterp_Jump",
+                          "@DEF":"l_knee_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_hipRotInterp_Jump",
+                          "@DEF":"l_hip_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"lower_bodyRotInterp_Jump",
+                          "@DEF":"lower_body_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_wristRotInterp_Jump",
+                          "@DEF":"r_wrist_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_elbowRotInterp_Jump",
+                          "@DEF":"r_elbow_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"r_shoulderRotInterp_Jump",
+                          "@DEF":"r_shoulder_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_wristRotInterp_Jump",
+                          "@DEF":"l_wrist_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-5.0618E-4,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_elbowRotInterp_Jump",
+                          "@DEF":"l_elbow_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"l_shoulderRotInterp_Jump",
+                          "@DEF":"l_shoulder_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.64,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,4.113E-4,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"headRotInterp_Jump",
+                          "@DEF":"head_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"neckRotInterp_Jump",
+                          "@DEF":"neck_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"upper_bodyRotInterp_Jump",
+                          "@DEF":"upper_body_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.76,0.88,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "OrientationInterpolator":
                         {
-                          "@DEF":"whole_bodyRotInterp_Jump",
+                          "@DEF":"whole_body_RotationInterpolator_Jump",
                           "@key":[0.0,0.28,0.32,0.48,0.64,0.76,1.0],
                           "@keyValue":[0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]
                         }
                       },
                       { "PositionInterpolator":
                         {
-                          "@DEF":"whole_bodyTranInterp_Jump",
+                          "@DEF":"whole_body_TranslationInterpolator_Jump",
                           "@key":[0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0],
                           "@keyValue":[0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-3.345E-4,-0.1049,-0.05353,-5.712E-4,-0.1892,-0.06561,-8.233E-4,-0.286,-0.06276,-9.591E-4,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-8.616E-4,-0.13,-0.06358,-5.128E-4,-0.03123,-0.05488,4.779E-4,0.053,0.02732,1.728E-4,0.4148,0.006873,0.0,0.03045,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,1.365E-4,-0.1037,-0.005059,1.279E-4,-0.07198,-0.007596,1.41E-4,-0.01626,-0.004935,0.0,0.0,0.0]
                         }
@@ -3246,7 +3246,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Stand"
+              "@toNode":"r_ankle_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3254,7 +3254,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Stand"
+              "@toNode":"r_knee_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3262,7 +3262,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Stand"
+              "@toNode":"r_hip_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3270,7 +3270,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Stand"
+              "@toNode":"l_ankle_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3278,7 +3278,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Stand"
+              "@toNode":"l_knee_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3286,7 +3286,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Stand"
+              "@toNode":"l_hip_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3294,7 +3294,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Stand"
+              "@toNode":"lower_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3302,7 +3302,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Stand"
+              "@toNode":"r_wrist_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3310,7 +3310,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Stand"
+              "@toNode":"r_elbow_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3318,7 +3318,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Stand"
+              "@toNode":"r_shoulder_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3326,7 +3326,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Stand"
+              "@toNode":"l_wrist_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3334,7 +3334,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Stand"
+              "@toNode":"l_elbow_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3342,7 +3342,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Stand"
+              "@toNode":"l_shoulder_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3350,7 +3350,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Stand"
+              "@toNode":"head_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3358,7 +3358,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Stand"
+              "@toNode":"neck_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3366,7 +3366,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Stand"
+              "@toNode":"upper_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3374,7 +3374,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Stand"
+              "@toNode":"whole_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -3382,13 +3382,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Stand"
+              "@toNode":"whole_body_TranslationInterpolator_Stand"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Stand",
+              "@fromNode":"r_ankle_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -3396,7 +3396,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Stand",
+              "@fromNode":"r_knee_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -3404,7 +3404,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Stand",
+              "@fromNode":"r_hip_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -3412,7 +3412,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Stand",
+              "@fromNode":"l_ankle_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -3420,7 +3420,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Stand",
+              "@fromNode":"l_knee_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -3428,7 +3428,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Stand",
+              "@fromNode":"l_hip_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -3436,7 +3436,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Stand",
+              "@fromNode":"lower_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -3444,7 +3444,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Stand",
+              "@fromNode":"r_wrist_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -3452,7 +3452,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Stand",
+              "@fromNode":"r_elbow_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -3460,7 +3460,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Stand",
+              "@fromNode":"r_shoulder_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -3468,7 +3468,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Stand",
+              "@fromNode":"l_wrist_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -3476,7 +3476,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Stand",
+              "@fromNode":"l_elbow_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -3484,7 +3484,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Stand",
+              "@fromNode":"l_shoulder_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -3492,7 +3492,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Stand",
+              "@fromNode":"head_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -3500,7 +3500,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Stand",
+              "@fromNode":"neck_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -3508,7 +3508,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Stand",
+              "@fromNode":"upper_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -3516,17 +3516,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Stand",
+              "@fromNode":"whole_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Stand",
+              "@fromNode":"whole_body_TranslationInterpolator_Stand",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -3534,7 +3534,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_BasicWalk"
+              "@toNode":"r_ankle_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3542,7 +3542,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_BasicWalk"
+              "@toNode":"r_knee_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3550,7 +3550,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_BasicWalk"
+              "@toNode":"r_hip_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3558,7 +3558,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_BasicWalk"
+              "@toNode":"l_ankle_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3566,7 +3566,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_BasicWalk"
+              "@toNode":"l_knee_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3574,7 +3574,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_BasicWalk"
+              "@toNode":"l_hip_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3582,7 +3582,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_BasicWalk"
+              "@toNode":"lower_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3590,7 +3590,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_BasicWalk"
+              "@toNode":"r_wrist_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3598,7 +3598,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_BasicWalk"
+              "@toNode":"r_elbow_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3606,7 +3606,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_BasicWalk"
+              "@toNode":"r_shoulder_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3614,7 +3614,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_BasicWalk"
+              "@toNode":"l_wrist_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3622,7 +3622,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_BasicWalk"
+              "@toNode":"l_elbow_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3630,7 +3630,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_BasicWalk"
+              "@toNode":"l_shoulder_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3638,7 +3638,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_BasicWalk"
+              "@toNode":"head_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3646,7 +3646,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_BasicWalk"
+              "@toNode":"neck_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3654,7 +3654,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_BasicWalk"
+              "@toNode":"upper_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3662,7 +3662,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_BasicWalk"
+              "@toNode":"whole_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -3670,13 +3670,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_BasicWalk"
+              "@toNode":"whole_body_TranslationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_BasicWalk",
+              "@fromNode":"r_ankle_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -3684,7 +3684,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_BasicWalk",
+              "@fromNode":"r_knee_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -3692,7 +3692,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_BasicWalk",
+              "@fromNode":"r_hip_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -3700,7 +3700,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_BasicWalk",
+              "@fromNode":"l_ankle_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -3708,7 +3708,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_BasicWalk",
+              "@fromNode":"l_knee_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -3716,7 +3716,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_BasicWalk",
+              "@fromNode":"l_hip_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -3724,7 +3724,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_BasicWalk",
+              "@fromNode":"lower_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -3732,7 +3732,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_BasicWalk",
+              "@fromNode":"r_wrist_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -3740,7 +3740,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_BasicWalk",
+              "@fromNode":"r_elbow_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -3748,7 +3748,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_BasicWalk",
+              "@fromNode":"r_shoulder_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -3756,7 +3756,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_BasicWalk",
+              "@fromNode":"l_wrist_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -3764,7 +3764,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_BasicWalk",
+              "@fromNode":"l_elbow_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -3772,7 +3772,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_BasicWalk",
+              "@fromNode":"l_shoulder_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -3780,7 +3780,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_BasicWalk",
+              "@fromNode":"head_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -3788,7 +3788,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_BasicWalk",
+              "@fromNode":"neck_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -3796,7 +3796,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_BasicWalk",
+              "@fromNode":"upper_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -3804,17 +3804,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_BasicWalk",
+              "@fromNode":"whole_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_BasicWalk",
+              "@fromNode":"whole_body_TranslationInterpolator_BasicWalk",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -3822,7 +3822,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Run"
+              "@toNode":"r_ankle_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3830,7 +3830,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Run"
+              "@toNode":"r_knee_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3838,7 +3838,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Run"
+              "@toNode":"r_hip_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3846,7 +3846,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Run"
+              "@toNode":"l_ankle_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3854,7 +3854,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Run"
+              "@toNode":"l_knee_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3862,7 +3862,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Run"
+              "@toNode":"l_hip_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3870,7 +3870,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Run"
+              "@toNode":"lower_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3878,7 +3878,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Run"
+              "@toNode":"r_wrist_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3886,7 +3886,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Run"
+              "@toNode":"r_elbow_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3894,7 +3894,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Run"
+              "@toNode":"r_shoulder_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3902,7 +3902,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Run"
+              "@toNode":"l_wrist_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3910,7 +3910,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Run"
+              "@toNode":"l_elbow_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3918,7 +3918,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Run"
+              "@toNode":"l_shoulder_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3926,7 +3926,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Run"
+              "@toNode":"head_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3934,7 +3934,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Run"
+              "@toNode":"neck_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3942,7 +3942,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Run"
+              "@toNode":"upper_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3950,7 +3950,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Run"
+              "@toNode":"whole_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -3958,13 +3958,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Run"
+              "@toNode":"whole_body_TranslationInterpolator_Run"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Run",
+              "@fromNode":"r_ankle_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -3972,7 +3972,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Run",
+              "@fromNode":"r_knee_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -3980,7 +3980,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Run",
+              "@fromNode":"r_hip_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -3988,7 +3988,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Run",
+              "@fromNode":"l_ankle_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -3996,7 +3996,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Run",
+              "@fromNode":"l_knee_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -4004,7 +4004,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Run",
+              "@fromNode":"l_hip_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -4012,7 +4012,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Run",
+              "@fromNode":"lower_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -4020,7 +4020,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Run",
+              "@fromNode":"r_wrist_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -4028,7 +4028,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Run",
+              "@fromNode":"r_elbow_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -4036,7 +4036,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Run",
+              "@fromNode":"r_shoulder_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -4044,7 +4044,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Run",
+              "@fromNode":"l_wrist_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -4052,7 +4052,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Run",
+              "@fromNode":"l_elbow_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -4060,7 +4060,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Run",
+              "@fromNode":"l_shoulder_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -4068,7 +4068,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Run",
+              "@fromNode":"head_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -4076,7 +4076,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Run",
+              "@fromNode":"neck_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -4084,7 +4084,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Run",
+              "@fromNode":"upper_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -4092,17 +4092,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Run",
+              "@fromNode":"whole_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Run",
+              "@fromNode":"whole_body_TranslationInterpolator_Run",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -4110,7 +4110,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Jump"
+              "@toNode":"r_ankle_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4118,7 +4118,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Jump"
+              "@toNode":"r_knee_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4126,7 +4126,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Jump"
+              "@toNode":"r_hip_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4134,7 +4134,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Jump"
+              "@toNode":"l_ankle_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4142,7 +4142,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Jump"
+              "@toNode":"l_knee_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4150,7 +4150,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Jump"
+              "@toNode":"l_hip_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4158,7 +4158,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Jump"
+              "@toNode":"lower_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4166,7 +4166,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Jump"
+              "@toNode":"r_wrist_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4174,7 +4174,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Jump"
+              "@toNode":"r_elbow_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4182,7 +4182,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Jump"
+              "@toNode":"r_shoulder_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4190,7 +4190,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Jump"
+              "@toNode":"l_wrist_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4198,7 +4198,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Jump"
+              "@toNode":"l_elbow_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4206,7 +4206,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Jump"
+              "@toNode":"l_shoulder_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4214,7 +4214,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Jump"
+              "@toNode":"head_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4222,7 +4222,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Jump"
+              "@toNode":"neck_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4230,7 +4230,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Jump"
+              "@toNode":"upper_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4238,7 +4238,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Jump"
+              "@toNode":"whole_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -4246,13 +4246,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Jump"
+              "@toNode":"whole_body_TranslationInterpolator_Jump"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Jump",
+              "@fromNode":"r_ankle_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -4260,7 +4260,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Jump",
+              "@fromNode":"r_knee_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -4268,7 +4268,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Jump",
+              "@fromNode":"r_hip_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -4276,7 +4276,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Jump",
+              "@fromNode":"l_ankle_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -4284,7 +4284,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Jump",
+              "@fromNode":"l_knee_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -4292,7 +4292,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Jump",
+              "@fromNode":"l_hip_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -4300,7 +4300,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Jump",
+              "@fromNode":"lower_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -4308,7 +4308,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Jump",
+              "@fromNode":"r_wrist_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -4316,7 +4316,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Jump",
+              "@fromNode":"r_elbow_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -4324,7 +4324,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Jump",
+              "@fromNode":"r_shoulder_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -4332,7 +4332,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Jump",
+              "@fromNode":"l_wrist_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -4340,7 +4340,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Jump",
+              "@fromNode":"l_elbow_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -4348,7 +4348,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Jump",
+              "@fromNode":"l_shoulder_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -4356,7 +4356,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Jump",
+              "@fromNode":"head_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -4364,7 +4364,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Jump",
+              "@fromNode":"neck_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -4372,7 +4372,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Jump",
+              "@fromNode":"upper_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -4380,17 +4380,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Jump",
+              "@fromNode":"whole_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Jump",
+              "@fromNode":"whole_body_TranslationInterpolator_Jump",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           }
         ]

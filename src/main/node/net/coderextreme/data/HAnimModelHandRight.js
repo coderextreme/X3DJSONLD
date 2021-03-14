@@ -19,7 +19,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("description").setContent("Right hand using high-fidelity definitions for HAnim version 2.0"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
         .addMeta((new autoclass.meta()).setName("created").setContent("26 January 2015"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("20 February 2021"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("not yet to scale"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
         .addMeta((new autoclass.meta()).setName("info").setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"))

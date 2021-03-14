@@ -1,0 +1,1397 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"AllenDutton.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes."
+          },
+          {
+            "@name":"creator",
+            "@content":"Allen Dutton"
+          },
+          {
+            "@name":"translator",
+            "@content":"Ozan APAYDIN"
+          },
+          {
+            "@name":"created",
+            "@content":"8 June 2001"
+          },
+          {
+            "@name":"translated",
+            "@content":"9 January 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"4 July 2020"
+          },
+          {
+            "@name":"warning",
+            "@content":"X3D Validator reports numerous warnings are present"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cyberware.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"AllenDuttonBlurryMotion.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.MovesInstitute.org/Theses/AllenDutton.pdf"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.HAnim.org"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"12 March 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Start scene graph."
+          },
+          { "ROUTE":
+            {
+              "@fromField":"position_changed",
+              "@fromNode":"HudProx",
+              "@toField":"set_translation",
+              "@toNode":"HudXform"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"orientation_changed",
+              "@fromNode":"HudProx",
+              "@toField":"set_rotation",
+              "@toNode":"HudXform"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Stand_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Walk_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Stand_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Run_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Stand_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Jump_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Stand_Touch",
+              "@toField":"startTime",
+              "@toNode":"Stand_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Walk_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Stand_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Walk_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Run_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Walk_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Jump_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Walk_Touch",
+              "@toField":"startTime",
+              "@toNode":"Walk_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Run_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Stand_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Run_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Walk_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Run_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Jump_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Run_Touch",
+              "@toField":"startTime",
+              "@toNode":"Run_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Jump_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Stand_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Jump_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Walk_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Jump_Touch",
+              "@toField":"stopTime",
+              "@toNode":"Run_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"touchTime",
+              "@fromNode":"Jump_Touch",
+              "@toField":"startTime",
+              "@toNode":"Jump_Time"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_ankle_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_knee_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_hip_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_ankle_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_knee_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_hip_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"lower_body_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_wrist_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_elbow_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_shoulder_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_wrist_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_elbow_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_shoulder_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"head_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"neck_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"upper_body_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_RotationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Stand_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_TranslationInterpolator_Stand"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_ankle_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_knee_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_hip_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_ankle_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_knee_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_hip_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"lower_body_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_sacroiliac"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_wrist_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_elbow_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_shoulder_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_wrist_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_elbow_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_shoulder_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"head_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_skullbase"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"neck_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vc4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"upper_body_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vl1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_RotationInterpolator_Stand",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_TranslationInterpolator_Stand",
+              "@toField":"set_translation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_ankle_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_knee_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_hip_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_ankle_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_knee_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_hip_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"lower_body_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_wrist_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_elbow_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_shoulder_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_wrist_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_elbow_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_shoulder_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"head_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"neck_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"upper_body_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_RotationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Walk_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_TranslationInterpolator_BasicWalk"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_ankle_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_knee_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_hip_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_ankle_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_knee_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_hip_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"lower_body_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_sacroiliac"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_wrist_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_elbow_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_shoulder_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_wrist_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_elbow_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_shoulder_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"head_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_skullbase"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"neck_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vc4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"upper_body_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vl1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_RotationInterpolator_BasicWalk",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_TranslationInterpolator_BasicWalk",
+              "@toField":"set_translation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_ankle_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_knee_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_hip_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_ankle_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_knee_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_hip_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"lower_body_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_wrist_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_elbow_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_shoulder_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_wrist_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_elbow_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_shoulder_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"head_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"neck_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"upper_body_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_RotationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Run_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_TranslationInterpolator_Run"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_ankle_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_knee_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_hip_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_ankle_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_knee_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_hip_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"lower_body_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_sacroiliac"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_wrist_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_elbow_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_shoulder_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_wrist_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_elbow_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_shoulder_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"head_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_skullbase"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"neck_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vc4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"upper_body_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vl1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_RotationInterpolator_Run",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_TranslationInterpolator_Run",
+              "@toField":"set_translation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_ankle_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_knee_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_hip_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_ankle_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_knee_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_hip_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"lower_body_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_wrist_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_elbow_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"r_shoulder_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_wrist_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_elbow_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"l_shoulder_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"head_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"neck_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"upper_body_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_RotationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Jump_Time",
+              "@toField":"set_fraction",
+              "@toNode":"whole_body_TranslationInterpolator_Jump"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_ankle_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_knee_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_hip_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_ankle_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_knee_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_hip_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"lower_body_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_sacroiliac"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_wrist_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_elbow_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"r_shoulder_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_wrist_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_elbow_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"l_shoulder_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"head_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_skullbase"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"neck_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vc4"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"upper_body_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_vl1"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_RotationInterpolator_Jump",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"whole_body_TranslationInterpolator_Jump",
+              "@toField":"set_translation",
+              "@toNode":"hanim_humanoid_root"
+            }
+          }
+        ]
+    }
+  }
+}

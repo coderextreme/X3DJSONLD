@@ -30,7 +30,7 @@ meta6.setContent("26 January 2015")
 head1.addMeta(meta6)
 meta7 = x3d.meta()
 meta7.setName("modified")
-meta7.setContent("5 July 2020")
+meta7.setContent("20 February 2021")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
@@ -122,7 +122,7 @@ MetadataString26 = x3d.MetadataString()
 MetadataString26.setName("authorName")
 MetadataString26.setValue(["Kwan-Hee YOO, Don Brutzman and Joe Williams"])
 
-MetadataSet25.setMetadata(MetadataString26)
+MetadataSet25.setValue(MetadataString26)
 
 HAnimHumanoid24.setMetadata(MetadataSet25)
 HAnimJoint27 = x3d.HAnimJoint()

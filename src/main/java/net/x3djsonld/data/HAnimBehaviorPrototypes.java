@@ -108,7 +108,7 @@ public class HAnimBehaviorPrototypes
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
-    .addComponent(new component().setName("HAnim").setLevel(1))
+    .addComponent(new component().setName("H-Anim").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HAnimBehaviorPrototypes.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"))

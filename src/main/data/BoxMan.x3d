@@ -2,14 +2,14 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <component level='1' name='HAnim'/>
+    <component level='1' name='H-Anim'/>
     <meta content='BoxMan.x3d' name='title'/>
     <meta content='A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare).' name='description'/>
     <meta content='James Smith - james@vapourtech.com' name='creator'/>
     <meta content='Don Brutzman and Matt Beitler' name='translator'/>
     <meta content='1 March 2001' name='created'/>
     <meta content='19 October 2001' name='translated'/>
-    <meta content='4 July 2020' name='modified'/>
+    <meta content='21 February 2021' name='modified'/>
     <meta content='http://HAnim.org' name='reference'/>
     <meta content='boxman.original.wrl' name='reference'/>
     <meta content='BoxMan.js' name='reference'/>
@@ -333,7 +333,7 @@
     <Script DEF='ENGINE' directOutput='true' url='"BoxMan.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"'>
       <field accessType='inputOnly' name='update' type='SFRotation'/>
       <field accessType='initializeOnly' name='humanoid' type='SFNode'>
-        <HAnimHumanoid USE='boxman_Humanoid' version='2.0'/>
+        <HAnimHumanoid USE='boxman_Humanoid'/>
       </field>
       <field accessType='initializeOnly' name='coordList' type='MFVec3f'/>
       <field accessType='initializeOnly' name='joint' type='SFNode'>

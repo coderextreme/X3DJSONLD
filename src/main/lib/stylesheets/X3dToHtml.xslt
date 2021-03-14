@@ -927,6 +927,8 @@ Recommended tool:
                       ((local-name()='rotateYUp' and (string(.)='false')) or
                       (local-name()='containerField' and (string(.)='geoOrigin')) or
                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:variable name="notDefaultHAnim1"
                       select="not( local-name(..)='HAnimJoint' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -962,6 +964,7 @@ Recommended tool:
                        (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
                        (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
