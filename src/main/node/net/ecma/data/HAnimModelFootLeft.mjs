@@ -58,7 +58,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("8 March 2021")}),
 
             new meta({
               name : new SFString("warning"),
@@ -124,6 +124,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("Foot_Left"),
               DEF : new SFString("hanim_Foot_Left"),
+              loa : new SFInt32(4),
               version : new SFString("2.0"),
               { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'") },
               metadata : new MFNode([

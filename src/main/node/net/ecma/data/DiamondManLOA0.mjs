@@ -65,7 +65,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("8 March 2021")}),
 
             new meta({
               name : new SFString("motto"),
@@ -152,6 +152,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("humanoid"),
               DEF : new SFString("hanim_humanoid"),
+              loa : new SFInt32(0),
               version : new SFString("2.0"),
               { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'") },
               metadata : new MFNode([

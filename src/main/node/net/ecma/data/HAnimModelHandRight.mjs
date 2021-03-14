@@ -58,7 +58,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("13 March 2021")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("fix visible geometry for thumb and index finger")}),
 
             new meta({
               name : new SFString("warning"),
@@ -124,6 +128,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("Hand_Right"),
               DEF : new SFString("hanim_Hand_Right"),
+              loa : new SFInt32(4),
               version : new SFString("2.0"),
               { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'") },
               metadata : new MFNode([
@@ -146,9 +151,8 @@ var X3D0 =  new X3D({
                       description : new SFString("connection joint of hand to leg above"),
                       children : new MFNode([
                         new HAnimSegment({
-                          name : new SFString("r_wrist"),
-                          DEF : new SFString("hanim_r_wrist"),
-                          description : new SFString("test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint"),
+                          name : new SFString("r_carpal"),
+                          DEF : new SFString("hanim_r_carpal"),
                           children : new MFNode([
                             new Transform({
                               children : new MFNode([
@@ -205,16 +209,16 @@ var X3D0 =  new X3D({
                                   coord : new SFNode(
                                     new Coordinate({
                                       point : new MFVec3f([0,0,0,0.1,0.1,0])}))}))})])}),
-                      { "#comment" : new CommentsBlock("MC12") },
+                      { "#comment" : new CommentsBlock("MC1") },
 
                         new HAnimJoint({
-                          name : new SFString("r_midcarpal_12"),
-                          DEF : new SFString("hanim_r_midcarpal_12"),
+                          name : new SFString("r_midcarpal_1"),
+                          DEF : new SFString("hanim_r_midcarpal_1"),
                           center : new SFVec3f([-0.1,0.1,0]),
                           children : new MFNode([
                             new HAnimSegment({
-                              name : new SFString("r_trapezoid"),
-                              DEF : new SFString("hanim_r_trapezoid"),
+                              name : new SFString("r_trapezium"),
+                              DEF : new SFString("hanim_r_trapezium"),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-0.1,0.1,0]),
@@ -243,21 +247,7 @@ var X3D0 =  new X3D({
                                       coordIndex : new MFInt32([0,1]),
                                       coord : new SFNode(
                                         new Coordinate({
-                                          point : new MFVec3f([-0.1,0.1,0,-0.2,0.15,0])}))}))}),
-
-                                new Shape({
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
-                                  geometry : new SFNode(
-                                    new IndexedLineSet({
-                                      DEF : new SFString("MC12toCMC2"),
-                                      coordIndex : new MFInt32([0,1]),
-                                      coord : new SFNode(
-                                        new Coordinate({
-                                          point : new MFVec3f([-0.1,0.1,0,-0.1,0.2,0])}))}))})])}),
+                                          point : new MFVec3f([-0.1,0.1,0,-0.2,0.15,0])}))}))})])}),
                           { "#comment" : new CommentsBlock("thumb finger") },
 
                             new HAnimJoint({
@@ -283,7 +273,7 @@ var X3D0 =  new X3D({
                                               emissiveColor : new SFColor([1,1,1])}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
-                                          DEF : new SFString("CMC1toMCP1"),
+                                          DEF : new SFString("CMC1toMCP1xxx"),
                                           coordIndex : new MFInt32([0,1]),
                                           coord : new SFNode(
                                             new Coordinate({
@@ -345,7 +335,37 @@ var X3D0 =  new X3D({
                                                   coordIndex : new MFInt32([0,1]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([-0.35,0.4,0,-0.36,0.45,0])}))}))})])})])})])})])}),
+                                                      point : new MFVec3f([-0.35,0.4,0,-0.36,0.45,0])}))}))})])})])})])})])})])}),
+                      { "#comment" : new CommentsBlock("MC2") },
+
+                        new HAnimJoint({
+                          name : new SFString("r_midcarpal_2"),
+                          DEF : new SFString("hanim_r_midcarpal_2"),
+                          center : new SFVec3f([-0.1,0.1,0]),
+                          children : new MFNode([
+                            new HAnimSegment({
+                              name : new SFString("r_trapezoid"),
+                              DEF : new SFString("hanim_r_trapezoid"),
+                              children : new MFNode([
+                                new Transform({
+                                  translation : new SFVec3f([-0.1,0.1,0]),
+                                  children : new MFNode([
+                                    new Shape({
+                                      USE : new SFString("HAnimNewJointShape")})])}),
+
+                                new Shape({
+                                  appearance : new SFNode(
+                                    new Appearance({
+                                      material : new SFNode(
+                                        new Material({
+                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                  geometry : new SFNode(
+                                    new IndexedLineSet({
+                                      DEF : new SFString("MC12toCMC2"),
+                                      coordIndex : new MFInt32([0,1]),
+                                      coord : new SFNode(
+                                        new Coordinate({
+                                          point : new MFVec3f([-0.1,0.1,0,-0.1,0.2,0])}))}))})])}),
                           { "#comment" : new CommentsBlock("index finger") },
 
                             new HAnimJoint({
@@ -610,7 +630,7 @@ var X3D0 =  new X3D({
                                                       coord : new SFNode(
                                                         new Coordinate({
                                                           point : new MFVec3f([-0.08,0.96,0,-0.09,1.05,0])}))}))})])})])})])})])})])})])}),
-                      { "#comment" : new CommentsBlock("MC45") },
+                      { "#comment" : new CommentsBlock("MC4_5") },
 
                         new HAnimJoint({
                           name : new SFString("r_midcarpal_4_5"),
@@ -950,7 +970,10 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_metacarpophalangeal_5")})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_r_midcarpal_12")})),
+                  USE : new SFString("hanim_r_midcarpal_1")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_midcarpal_2")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_r_midcarpal_3")})),
@@ -963,6 +986,9 @@ var X3D0 =  new X3D({
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_r_capitate")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_r_carpal_distal_phalanx_1")})),
@@ -1025,8 +1051,8 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_metacarpal_5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_r_trapezoid")})),
+                  USE : new SFString("hanim_r_trapezium")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_r_wrist")}))])})])}))});
+                  USE : new SFString("hanim_r_trapezoid")}))])})])}))});
 console.log(X3D0.toXMLNode());

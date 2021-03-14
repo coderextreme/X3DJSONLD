@@ -11,6 +11,7 @@ browser.currentScene.children[0] = WorldInfo2;
 let HAnimHumanoid3 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid3.name = "Foot_Left";
 HAnimHumanoid3.DEF = "hanim_Foot_Left";
+HAnimHumanoid3.loa = 4;
 HAnimHumanoid3.version = "2.0";
 //HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'
 let MetadataSet4 = browser.currentScene.createNode("MetadataSet");

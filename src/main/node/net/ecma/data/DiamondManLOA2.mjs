@@ -69,15 +69,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("8 March 2021")}),
 
             new meta({
               name : new SFString("Image"),
               content : new SFString("DiamondManLOA2.png")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("can X3dTidy sort top-level USE nodes by node type?")}),
 
             new meta({
               name : new SFString("Image"),
@@ -330,6 +326,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("humanoid"),
               DEF : new SFString("hanim_humanoid"),
+              loa : new SFInt32(2),
               version : new SFString("2.0"),
               { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"'") },
               metadata : new MFNode([
@@ -367,8 +364,8 @@ var X3D0 =  new X3D({
                   center : new SFVec3f([0,0.824,0.0277]),
                   children : new MFNode([
                     new HAnimSegment({
-                      name : new SFString("segmentNameNeededTODO-93"),
-                      DEF : new SFString("hanim_segmentNameNeededTODO-93"),
+                      name : new SFString("sacrum"),
+                      DEF : new SFString("hanim_sacrum"),
                       children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,0.824,0.0277]),
@@ -654,8 +651,8 @@ var X3D0 =  new X3D({
                                               USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_femoral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_l_femoral_lateral_epicn_pt"),
+                                  name : new SFString("l_femoral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_l_femoral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([0.1598,0.4967,0.0297]),
                                   children : new MFNode([
                                     new Shape({
@@ -673,8 +670,8 @@ var X3D0 =  new X3D({
                                               USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_femoral_medial_epicn_pt"),
-                                  DEF : new SFString("hanim_l_femoral_medial_epicn_pt"),
+                                  name : new SFString("l_femoral_medial_epicondyle_pt"),
+                                  DEF : new SFString("hanim_l_femoral_medial_epicondyle_pt"),
                                   translation : new SFVec3f([0.0398,0.4946,0.0303]),
                                   children : new MFNode([
                                     new Shape({
@@ -801,8 +798,8 @@ var X3D0 =  new X3D({
                                                       USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                         new HAnimSite({
-                                          name : new SFString("l_calcaneous_post_pt"),
-                                          DEF : new SFString("hanim_l_calcaneous_post_pt"),
+                                          name : new SFString("l_calcaneus_posterior_pt"),
+                                          DEF : new SFString("hanim_l_calcaneus_posterior_pt"),
                                           translation : new SFVec3f([0.0974,0.0259,-0.1171]),
                                           children : new MFNode([
                                             new Shape({
@@ -825,8 +822,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.1086,0.0001,-0.0368]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("segmentNameNeededTODO-230"),
-                                          DEF : new SFString("hanim_segmentNameNeededTODO-230"),
+                                          name : new SFString("l_metatarsal_2"),
+                                          DEF : new SFString("hanim_l_metatarsal_2"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.1086,0.0001,-0.0368]),
@@ -891,8 +888,8 @@ var X3D0 =  new X3D({
                                                               USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                                 new HAnimSite({
-                                                  name : new SFString("l_metatarsal_pha1_pt"),
-                                                  DEF : new SFString("hanim_l_metatarsal_pha1_pt"),
+                                                  name : new SFString("l_metatarsal_phalanx_1_pt"),
+                                                  DEF : new SFString("hanim_l_metatarsal_phalanx_1_pt"),
                                                   translation : new SFVec3f([0.0816,0.0232,0.0106]),
                                                   children : new MFNode([
                                                     new Shape({
@@ -955,8 +952,8 @@ var X3D0 =  new X3D({
                                                                   USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                                     new HAnimSite({
-                                                      name : new SFString("l_metatarsal_pha5_pt"),
-                                                      DEF : new SFString("hanim_l_metatarsal_pha5_pt"),
+                                                      name : new SFString("l_metatarsal_phalanx_5_pt"),
+                                                      DEF : new SFString("hanim_l_metatarsal_phalanx_5_pt"),
                                                       translation : new SFVec3f([0.1825,0.007,0.0928]),
                                                       { "#comment" : new CommentsBlock("# CAESAR Feature Point #66") },
                                                       children : new MFNode([
@@ -975,8 +972,8 @@ var X3D0 =  new X3D({
                                                                   USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                                     new HAnimSite({
-                                                      name : new SFString("l_digit2_pt"),
-                                                      DEF : new SFString("hanim_l_digit2_pt"),
+                                                      name : new SFString("l_tarsal_distal_phalanx_2_pt"),
+                                                      DEF : new SFString("hanim_l_tarsal_distal_phalanx_2_pt"),
                                                       translation : new SFVec3f([0.1195,0.0079,0.1433]),
                                                       { "#comment" : new CommentsBlock("# CAESAR Feature Point #72") },
                                                       children : new MFNode([
@@ -1040,8 +1037,8 @@ var X3D0 =  new X3D({
                                               USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_femoral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_r_femoral_lateral_epicn_pt"),
+                                  name : new SFString("r_femoral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_r_femoral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([-0.1421,0.4992,0.031]),
                                   children : new MFNode([
                                     new Shape({
@@ -1059,8 +1056,8 @@ var X3D0 =  new X3D({
                                               USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_femoral_medial_epicn_pt"),
-                                  DEF : new SFString("hanim_r_femoral_medial_epicn_pt"),
+                                  name : new SFString("r_femoral_medial_epicondyle_pt"),
+                                  DEF : new SFString("hanim_r_femoral_medial_epicondyle_pt"),
                                   translation : new SFVec3f([-0.0221,0.5014,0.0289]),
                                   children : new MFNode([
                                     new Shape({
@@ -1187,8 +1184,8 @@ var X3D0 =  new X3D({
                                                       USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                         new HAnimSite({
-                                          name : new SFString("r_calcaneous_post_pt"),
-                                          DEF : new SFString("hanim_r_calcaneous_post_pt"),
+                                          name : new SFString("r_calcaneus_posterior_pt"),
+                                          DEF : new SFString("hanim_r_calcaneus_posterior_pt"),
                                           translation : new SFVec3f([-0.0692,0.0297,-0.1221]),
                                           children : new MFNode([
                                             new Shape({
@@ -1251,8 +1248,8 @@ var X3D0 =  new X3D({
                                                           USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_metatarsal_pha5_pt"),
-                                              DEF : new SFString("hanim_r_metatarsal_pha5_pt"),
+                                              name : new SFString("r_metatarsal_phalanx_5_pt"),
+                                              DEF : new SFString("hanim_r_metatarsal_phalanx_5_pt"),
                                               translation : new SFVec3f([-0.1523,0.0166,0.0895]),
                                               children : new MFNode([
                                                 new Shape({
@@ -1270,8 +1267,8 @@ var X3D0 =  new X3D({
                                                           USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_metatarsal_pha1_pt"),
-                                              DEF : new SFString("hanim_r_metatarsal_pha1_pt"),
+                                              name : new SFString("r_metatarsal_phalanx_1_pt"),
+                                              DEF : new SFString("hanim_r_metatarsal_phalanx_1_pt"),
                                               translation : new SFVec3f([-0.0521,0.026,0.0127]),
                                               children : new MFNode([
                                                 new Shape({
@@ -1289,8 +1286,8 @@ var X3D0 =  new X3D({
                                                           USE : new SFString("HAND_FEET_COLOR")}))}))})])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_digit2_pt"),
-                                              DEF : new SFString("hanim_r_digit2_pt"),
+                                              name : new SFString("r_tarsal_distal_phalanx_2_pt"),
+                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_2_pt"),
                                               translation : new SFVec3f([-0.0883,0.0134,0.1383]),
                                               children : new MFNode([
                                                 new Shape({
@@ -1313,8 +1310,8 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0.0028,1.0568,-0.0776]),
                       children : new MFNode([
                         new HAnimSegment({
-                          name : new SFString("segmentNameNeededTODO-385"),
-                          DEF : new SFString("hanim_segmentNameNeededTODO-385"),
+                          name : new SFString("l5"),
+                          DEF : new SFString("hanim_l5"),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0.0028,1.0568,-0.0776]),
@@ -1339,8 +1336,8 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.0035,1.0925,-0.0787]),
                           children : new MFNode([
                             new HAnimSegment({
-                              name : new SFString("segmentNameNeededTODO-391"),
-                              DEF : new SFString("hanim_segmentNameNeededTODO-391"),
+                              name : new SFString("l4"),
+                              DEF : new SFString("hanim_l4"),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.0035,1.0925,-0.0787]),
@@ -1365,8 +1362,8 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.0041,1.1276,-0.0796]),
                               children : new MFNode([
                                 new HAnimSegment({
-                                  name : new SFString("segmentNameNeededTODO-397"),
-                                  DEF : new SFString("hanim_segmentNameNeededTODO-397"),
+                                  name : new SFString("l3"),
+                                  DEF : new SFString("hanim_l3"),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.0041,1.1276,-0.0796]),
@@ -1391,8 +1388,8 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.0045,1.1546,-0.08]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("segmentNameNeededTODO-403"),
-                                      DEF : new SFString("hanim_segmentNameNeededTODO-403"),
+                                      name : new SFString("l2"),
+                                      DEF : new SFString("hanim_l2"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.0045,1.1546,-0.08]),
@@ -1417,8 +1414,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.0048,1.1912,-0.0805]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("segmentNameNeededTODO-409"),
-                                          DEF : new SFString("hanim_segmentNameNeededTODO-409"),
+                                          name : new SFString("l1"),
+                                          DEF : new SFString("hanim_l1"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.0048,1.1912,-0.0805]),
@@ -1443,8 +1440,8 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0.0051,1.2278,-0.0808]),
                                           children : new MFNode([
                                             new HAnimSegment({
-                                              name : new SFString("segmentNameNeededTODO-415"),
-                                              DEF : new SFString("hanim_segmentNameNeededTODO-415"),
+                                              name : new SFString("t12"),
+                                              DEF : new SFString("hanim_t12"),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.0051,1.2278,-0.0808]),
@@ -1469,8 +1466,8 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0.0053,1.2679,-0.081]),
                                               children : new MFNode([
                                                 new HAnimSegment({
-                                                  name : new SFString("segmentNameNeededTODO-421"),
-                                                  DEF : new SFString("hanim_segmentNameNeededTODO-421"),
+                                                  name : new SFString("t11"),
+                                                  DEF : new SFString("hanim_t11"),
                                                   children : new MFNode([
                                                     new Transform({
                                                       translation : new SFVec3f([0.0053,1.2679,-0.081]),
@@ -1495,8 +1492,8 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0.0056,1.2848,-0.0822]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
-                                                      name : new SFString("segmentNameNeededTODO-427"),
-                                                      DEF : new SFString("hanim_segmentNameNeededTODO-427"),
+                                                      name : new SFString("t10"),
+                                                      DEF : new SFString("hanim_t10"),
                                                       children : new MFNode([
                                                         new Transform({
                                                           translation : new SFVec3f([0.0056,1.2848,-0.0822]),
@@ -1521,8 +1518,8 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0.0057,1.3126,-0.0838]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
-                                                          name : new SFString("segmentNameNeededTODO-433"),
-                                                          DEF : new SFString("hanim_segmentNameNeededTODO-433"),
+                                                          name : new SFString("t9"),
+                                                          DEF : new SFString("hanim_t9"),
                                                           children : new MFNode([
                                                             new Transform({
                                                               translation : new SFVec3f([0.0057,1.3126,-0.0838]),
@@ -1547,8 +1544,8 @@ var X3D0 =  new X3D({
                                                           center : new SFVec3f([0.0057,1.3382,-0.0845]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
-                                                              name : new SFString("segmentNameNeededTODO-439"),
-                                                              DEF : new SFString("hanim_segmentNameNeededTODO-439"),
+                                                              name : new SFString("t8"),
+                                                              DEF : new SFString("hanim_t8"),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   translation : new SFVec3f([0.0057,1.3382,-0.0845]),
@@ -1573,8 +1570,8 @@ var X3D0 =  new X3D({
                                                               center : new SFVec3f([0.0058,1.3625,-0.0833]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
-                                                                  name : new SFString("segmentNameNeededTODO-445"),
-                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-445"),
+                                                                  name : new SFString("t7"),
+                                                                  DEF : new SFString("hanim_t7"),
                                                                   children : new MFNode([
                                                                     new Transform({
                                                                       translation : new SFVec3f([0.0058,1.3625,-0.0833]),
@@ -1599,8 +1596,8 @@ var X3D0 =  new X3D({
                                                                   center : new SFVec3f([0.0059,1.3866,-0.08]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
-                                                                      name : new SFString("segmentNameNeededTODO-451"),
-                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-451"),
+                                                                      name : new SFString("t6"),
+                                                                      DEF : new SFString("hanim_t6"),
                                                                       children : new MFNode([
                                                                         new Transform({
                                                                           translation : new SFVec3f([0.0059,1.3866,-0.08]),
@@ -1625,8 +1622,8 @@ var X3D0 =  new X3D({
                                                                       center : new SFVec3f([0.006,1.4102,-0.0745]),
                                                                       children : new MFNode([
                                                                         new HAnimSegment({
-                                                                          name : new SFString("segmentNameNeededTODO-457"),
-                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-457"),
+                                                                          name : new SFString("t5"),
+                                                                          DEF : new SFString("hanim_t5"),
                                                                           children : new MFNode([
                                                                             new Transform({
                                                                               translation : new SFVec3f([0.006,1.4102,-0.0745]),
@@ -1651,8 +1648,8 @@ var X3D0 =  new X3D({
                                                                           center : new SFVec3f([0.0061,1.432,-0.0675]),
                                                                           children : new MFNode([
                                                                             new HAnimSegment({
-                                                                              name : new SFString("segmentNameNeededTODO-463"),
-                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-463"),
+                                                                              name : new SFString("t4"),
+                                                                              DEF : new SFString("hanim_t4"),
                                                                               children : new MFNode([
                                                                                 new Transform({
                                                                                   translation : new SFVec3f([0.0061,1.432,-0.0675]),
@@ -1677,8 +1674,8 @@ var X3D0 =  new X3D({
                                                                               center : new SFVec3f([0.0062,1.4583,-0.057]),
                                                                               children : new MFNode([
                                                                                 new HAnimSegment({
-                                                                                  name : new SFString("segmentNameNeededTODO-469"),
-                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-469"),
+                                                                                  name : new SFString("t3"),
+                                                                                  DEF : new SFString("hanim_t3"),
                                                                                   children : new MFNode([
                                                                                     new Transform({
                                                                                       translation : new SFVec3f([0.0062,1.4583,-0.057]),
@@ -1703,8 +1700,8 @@ var X3D0 =  new X3D({
                                                                                   center : new SFVec3f([0.0063,1.4761,-0.0484]),
                                                                                   children : new MFNode([
                                                                                     new HAnimSegment({
-                                                                                      name : new SFString("segmentNameNeededTODO-475"),
-                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-475"),
+                                                                                      name : new SFString("t2"),
+                                                                                      DEF : new SFString("hanim_t2"),
                                                                                       children : new MFNode([
                                                                                         new Transform({
                                                                                           translation : new SFVec3f([0.0063,1.4761,-0.0484]),
@@ -1729,8 +1726,8 @@ var X3D0 =  new X3D({
                                                                                       center : new SFVec3f([0.0065,1.4951,-0.0387]),
                                                                                       children : new MFNode([
                                                                                         new HAnimSegment({
-                                                                                          name : new SFString("segmentNameNeededTODO-481"),
-                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-481"),
+                                                                                          name : new SFString("t1"),
+                                                                                          DEF : new SFString("hanim_t1"),
                                                                                           children : new MFNode([
                                                                                             new Transform({
                                                                                               translation : new SFVec3f([0.0065,1.4951,-0.0387]),
@@ -1782,8 +1779,8 @@ var X3D0 =  new X3D({
                                                                                                   translation : new SFVec3f([0.2029,1.4376,-0.0387])}),
 
                                                                                                 new HAnimSite({
-                                                                                                  name : new SFString("l_humeral_lateral_epicn_pt"),
-                                                                                                  DEF : new SFString("hanim_l_humeral_lateral_epicn_pt"),
+                                                                                                  name : new SFString("l_humeral_lateral_epicondyle_pt"),
+                                                                                                  DEF : new SFString("hanim_l_humeral_lateral_epicondyle_pt"),
                                                                                                   translation : new SFVec3f([0.228,1.1482,-0.11]),
                                                                                                   children : new MFNode([
                                                                                                     new Shape({
@@ -1871,8 +1868,8 @@ var X3D0 =  new X3D({
                                                                                                                   USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                     new HAnimSite({
-                                                                                                      name : new SFString("l_humeral_medial_epicn_pt"),
-                                                                                                      DEF : new SFString("hanim_l_humeral_medial_epicn_pt"),
+                                                                                                      name : new SFString("l_humeral_medial_epicondyle_pt"),
+                                                                                                      DEF : new SFString("hanim_l_humeral_medial_epicondyle_pt"),
                                                                                                       translation : new SFVec3f([0.1735,1.1272,-0.1113]),
                                                                                                       children : new MFNode([
                                                                                                         new Shape({
@@ -1960,8 +1957,8 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("l_metacarpal_pha2_pt"),
-                                                                                                          DEF : new SFString("hanim_l_metacarpal_pha2_pt"),
+                                                                                                          name : new SFString("l_metacarpal_phalanx_2_pt"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpal_phalanx_2_pt"),
                                                                                                           translation : new SFVec3f([0.2009,0.8139,-0.0237]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
@@ -2017,8 +2014,8 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("l_metacarpal_pha5_pt"),
-                                                                                                          DEF : new SFString("hanim_l_metacarpal_pha5_pt"),
+                                                                                                          name : new SFString("l_metacarpal_phalanx_5_pt"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpal_phalanx_5_pt"),
                                                                                                           translation : new SFVec3f([0.1929,0.786,-0.1122]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
@@ -2036,13 +2033,13 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("SITE_COLOR")}))}))})])})])}),
 
                                                                                                     new HAnimJoint({
-                                                                                                      name : new SFString("l_thumb1"),
-                                                                                                      DEF : new SFString("hanim_l_thumb1"),
+                                                                                                      name : new SFString("l_carpometacarpal_1"),
+                                                                                                      DEF : new SFString("hanim_l_carpometacarpal_1"),
                                                                                                       center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
-                                                                                                          name : new SFString("segmentNameNeededTODO-539"),
-                                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-539"),
+                                                                                                          name : new SFString("l_metacarpal_1"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpal_1"),
                                                                                                           children : new MFNode([
                                                                                                             new Transform({
                                                                                                               translation : new SFVec3f([0.1924,0.8472,-0.0534]),
@@ -2062,13 +2059,13 @@ var X3D0 =  new X3D({
                                                                                                                           USE : new SFString("JOINT_COLOR")}))}))})])})])}),
 
                                                                                                         new HAnimJoint({
-                                                                                                          name : new SFString("l_thumb2"),
-                                                                                                          DEF : new SFString("hanim_l_thumb2"),
+                                                                                                          name : new SFString("l_metacarpophalangeal_1"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpophalangeal_1"),
                                                                                                           center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-545"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-545"),
+                                                                                                              name : new SFString("l_carpal_proximal_phalanx_1"),
+                                                                                                              DEF : new SFString("hanim_l_carpal_proximal_phalanx_1"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.1951,0.8226,0.0246]),
@@ -2088,8 +2085,8 @@ var X3D0 =  new X3D({
                                                                                                                               USE : new SFString("JOINT_COLOR")}))}))})])})])}),
 
                                                                                                             new HAnimJoint({
-                                                                                                              name : new SFString("l_thumb3"),
-                                                                                                              DEF : new SFString("hanim_l_thumb3"),
+                                                                                                              name : new SFString("l_carpal_interphalangeal_1"),
+                                                                                                              DEF : new SFString("hanim_l_carpal_interphalangeal_1"),
                                                                                                               center : new SFVec3f([0.1955,0.8159,0.0464]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
@@ -2114,8 +2111,8 @@ var X3D0 =  new X3D({
                                                                                                                                   USE : new SFString("JOINT_COLOR")}))}))})])}),
 
                                                                                                                     new HAnimSite({
-                                                                                                                      name : new SFString("l_thumb_distal_tip"),
-                                                                                                                      DEF : new SFString("hanim_l_thumb_distal_tip"),
+                                                                                                                      name : new SFString("l_carpal_distal_phalanx_1_tip"),
+                                                                                                                      DEF : new SFString("hanim_l_carpal_distal_phalanx_1_tip"),
                                                                                                                       translation : new SFVec3f([0.1982,0.8061,0.0759]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Shape({
@@ -2133,13 +2130,13 @@ var X3D0 =  new X3D({
                                                                                                                                   USE : new SFString("HAND_FEET_COLOR")}))}))})])})])})])})])})])}),
 
                                                                                                     new HAnimJoint({
-                                                                                                      name : new SFString("l_index0"),
-                                                                                                      DEF : new SFString("hanim_l_index0"),
+                                                                                                      name : new SFString("l_carpometacarpal_2"),
+                                                                                                      DEF : new SFString("hanim_l_carpometacarpal_2"),
                                                                                                       center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
-                                                                                                          name : new SFString("segmentNameNeededTODO-567"),
-                                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-567"),
+                                                                                                          name : new SFString("l_metacarpal_2"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpal_2"),
                                                                                                           children : new MFNode([
                                                                                                             new Transform({
                                                                                                               translation : new SFVec3f([0.1983,0.8024,-0.028]),
@@ -2159,13 +2156,13 @@ var X3D0 =  new X3D({
                                                                                                                           USE : new SFString("JOINT_COLOR")}))}))})])})])}),
 
                                                                                                         new HAnimJoint({
-                                                                                                          name : new SFString("l_index1"),
-                                                                                                          DEF : new SFString("hanim_l_index1"),
+                                                                                                          name : new SFString("l_metacarpophalangeal_2"),
+                                                                                                          DEF : new SFString("hanim_l_metacarpophalangeal_2"),
                                                                                                           center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-573"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-573"),
+                                                                                                              name : new SFString("l_carpal_proximal_phalanx_2"),
+                                                                                                              DEF : new SFString("hanim_l_carpal_proximal_phalanx_2"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.1983,0.7815,-0.028]),
@@ -2185,13 +2182,13 @@ var X3D0 =  new X3D({
                                                                                                                               USE : new SFString("JOINT_COLOR")}))}))})])})])}),
 
                                                                                                             new HAnimJoint({
-                                                                                                              name : new SFString("l_index2"),
-                                                                                                              DEF : new SFString("hanim_l_index2"),
+                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_2"),
+                                                                                                              DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_2"),
                                                                                                               center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
-                                                                                                                  name : new SFString("segmentNameNeededTODO-579"),
-                                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-579"),
+                                                                                                                  name : new SFString("l_carpal_middle_phalanx_2"),
+                                                                                                                  DEF : new SFString("hanim_l_carpal_middle_phalanx_2"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
                                                                                                                       translation : new SFVec3f([0.2017,0.7363,-0.0248]),
@@ -2211,8 +2208,8 @@ var X3D0 =  new X3D({
                                                                                                                                   USE : new SFString("JOINT_COLOR")}))}))})])})])}),
 
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("l_index3"),
-                                                                                                                  DEF : new SFString("hanim_l_index3"),
+                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_2"),
+                                                                                                                  DEF : new SFString("hanim_l_carpal_distal_interphalangeal_2"),
                                                                                                                   center : new SFVec3f([0.2028,0.7139,-0.0236]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
@@ -2237,8 +2234,8 @@ var X3D0 =  new X3D({
                                                                                                                                       USE : new SFString("JOINT_COLOR")}))}))})])}),
 
                                                                                                                         new HAnimSite({
-                                                                                                                          name : new SFString("l_index_distal_tip"),
-                                                                                                                          DEF : new SFString("hanim_l_index_distal_tip"),
+                                                                                                                          name : new SFString("l_carpal_distal_phalanx_2_tip"),
+                                                                                                                          DEF : new SFString("hanim_l_carpal_distal_phalanx_2_tip"),
                                                                                                                           translation : new SFVec3f([0.2089,0.6858,-0.0245]),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
@@ -2288,8 +2285,8 @@ var X3D0 =  new X3D({
                                                                                                   translation : new SFVec3f([-0.1907,1.4407,-0.0325])}),
 
                                                                                                 new HAnimSite({
-                                                                                                  name : new SFString("r_humeral_lateral_epicn_pt"),
-                                                                                                  DEF : new SFString("hanim_r_humeral_lateral_epicn_pt"),
+                                                                                                  name : new SFString("r_humeral_lateral_epicondyle_pt"),
+                                                                                                  DEF : new SFString("hanim_r_humeral_lateral_epicondyle_pt"),
                                                                                                   translation : new SFVec3f([-0.2224,1.1517,-0.1033]),
                                                                                                   children : new MFNode([
                                                                                                     new Shape({
@@ -2377,8 +2374,8 @@ var X3D0 =  new X3D({
                                                                                                                   USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                     new HAnimSite({
-                                                                                                      name : new SFString("r_humeral_medial_epicn_pt"),
-                                                                                                      DEF : new SFString("hanim_r_humeral_medial_epicn_pt"),
+                                                                                                      name : new SFString("r_humeral_medial_epicondyle_pt"),
+                                                                                                      DEF : new SFString("hanim_r_humeral_medial_epicondyle_pt"),
                                                                                                       translation : new SFVec3f([-0.168,1.1298,-0.1062]),
                                                                                                       children : new MFNode([
                                                                                                         new Shape({
@@ -2465,8 +2462,8 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("r_metacarpal_pha2_pt"),
-                                                                                                          DEF : new SFString("hanim_r_metacarpal_pha2_pt"),
+                                                                                                          name : new SFString("r_metacarpal_phalanx_2_pt"),
+                                                                                                          DEF : new SFString("hanim_r_metacarpal_phalanx_2_pt"),
                                                                                                           translation : new SFVec3f([-0.1977,0.8169,-0.0177]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
@@ -2522,8 +2519,8 @@ var X3D0 =  new X3D({
                                                                                                                       USE : new SFString("SITE_COLOR")}))}))})])}),
 
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("r_metacarpal_pha5_pt"),
-                                                                                                          DEF : new SFString("hanim_r_metacarpal_pha5_pt"),
+                                                                                                          name : new SFString("r_metacarpal_phalanx_5_pt"),
+                                                                                                          DEF : new SFString("hanim_r_metacarpal_phalanx_5_pt"),
                                                                                                           translation : new SFVec3f([-0.1929,0.789,-0.1064]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
@@ -2572,8 +2569,8 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0.0066,1.5357,-0.0143]),
                                                                                               children : new MFNode([
                                                                                                 new HAnimSegment({
-                                                                                                  name : new SFString("segmentNameNeededTODO-731"),
-                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-731"),
+                                                                                                  name : new SFString("c6"),
+                                                                                                  DEF : new SFString("hanim_c6"),
                                                                                                   children : new MFNode([
                                                                                                     new Transform({
                                                                                                       translation : new SFVec3f([0.0066,1.5357,-0.0143]),
@@ -2598,8 +2595,8 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.0066,1.552,-0.0082]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
-                                                                                                      name : new SFString("segmentNameNeededTODO-737"),
-                                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-737"),
+                                                                                                      name : new SFString("c5"),
+                                                                                                      DEF : new SFString("hanim_c5"),
                                                                                                       children : new MFNode([
                                                                                                         new Transform({
                                                                                                           translation : new SFVec3f([0.0066,1.552,-0.0082]),
@@ -2650,8 +2647,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.0066,1.58,-0.0103]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-750"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-750"),
+                                                                                                              name : new SFString("c3"),
+                                                                                                              DEF : new SFString("hanim_c3"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.0066,1.58,-0.0103]),
@@ -2676,8 +2673,8 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.0066,1.5928,-0.0103]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
-                                                                                                                  name : new SFString("segmentNameNeededTODO-756"),
-                                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-756"),
+                                                                                                                  name : new SFString("c2"),
+                                                                                                                  DEF : new SFString("hanim_c2"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
                                                                                                                       translation : new SFVec3f([0.0066,1.5928,-0.0103]),
@@ -2702,8 +2699,8 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.0066,1.6144,-0.0034]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
-                                                                                                                      name : new SFString("segmentNameNeededTODO-762"),
-                                                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-762"),
+                                                                                                                      name : new SFString("c1"),
+                                                                                                                      DEF : new SFString("hanim_c1"),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           translation : new SFVec3f([0.0066,1.6144,-0.0034]),
@@ -2749,8 +2746,8 @@ var X3D0 =  new X3D({
                                                                                                                                           USE : new SFString("MIN_COLOR")}))}))})])}),
 
                                                                                                                             new HAnimSite({
-                                                                                                                              name : new SFString("skull_tip"),
-                                                                                                                              DEF : new SFString("hanim_skull_tip"),
+                                                                                                                              name : new SFString("skull_vertex_tip"),
+                                                                                                                              DEF : new SFString("hanim_skull_vertex_tip"),
                                                                                                                               translation : new SFVec3f([0.005,1.7504,0.0055]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
@@ -3052,6 +3049,21 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_vc1")})),
               joints : new SFNode(
                 new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_2")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_interphalangeal_1")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_2")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_1")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpometacarpal_2")})),
+              joints : new SFNode(
+                new HAnimJoint({
                   USE : new SFString("hanim_l_elbow")})),
               joints : new SFNode(
                 new HAnimJoint({
@@ -3064,22 +3076,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_hip")})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_index0")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_index1")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_index2")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_index3")})),
-              joints : new SFNode(
-                new HAnimJoint({
                   USE : new SFString("hanim_l_knee")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_r_knee")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_1")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metacarpophalangeal_2")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_l_metatarsophalangeal_2")})),
@@ -3110,15 +3116,6 @@ var X3D0 =  new X3D({
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_l_tarsometatarsal_2")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_thumb1")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_thumb2")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_thumb3")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_pelvis")})),
@@ -3133,91 +3130,73 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_skull")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-93")})),
+                  USE : new SFString("hanim_sacrum")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-230")})),
+                  USE : new SFString("hanim_l5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-385")})),
+                  USE : new SFString("hanim_l4")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-391")})),
+                  USE : new SFString("hanim_l3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-397")})),
+                  USE : new SFString("hanim_l2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-403")})),
+                  USE : new SFString("hanim_l1")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-409")})),
+                  USE : new SFString("hanim_t12")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-415")})),
+                  USE : new SFString("hanim_t11")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-421")})),
+                  USE : new SFString("hanim_t10")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-427")})),
+                  USE : new SFString("hanim_t9")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-433")})),
+                  USE : new SFString("hanim_t8")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-439")})),
+                  USE : new SFString("hanim_t7")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-445")})),
+                  USE : new SFString("hanim_t6")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-451")})),
+                  USE : new SFString("hanim_t5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-457")})),
+                  USE : new SFString("hanim_t4")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-463")})),
+                  USE : new SFString("hanim_t3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-469")})),
+                  USE : new SFString("hanim_t2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-475")})),
+                  USE : new SFString("hanim_t1")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-481")})),
+                  USE : new SFString("hanim_c6")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-539")})),
+                  USE : new SFString("hanim_c5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-545")})),
+                  USE : new SFString("hanim_c3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-567")})),
+                  USE : new SFString("hanim_c2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-573")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-579")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-731")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-737")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-750")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-756")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-762")})),
+                  USE : new SFString("hanim_c1")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_calf")})),
@@ -3238,10 +3217,28 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_carpal_distal_phalanx_2")})),
               segments : new SFNode(
                 new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_2")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_1")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_proximal_phalanx_2")})),
+              segments : new SFNode(
+                new HAnimSegment({
                   USE : new SFString("hanim_l_forearm")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_r_forearm")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_1")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metacarpal_2")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_metatarsal_2")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_talus")})),
@@ -3274,7 +3271,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_crotch_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_skull_tip")})),
+                  USE : new SFString("hanim_skull_vertex_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_sellion_pt")})),
@@ -3292,10 +3289,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_asis_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_calcaneous_post_pt")})),
+                  USE : new SFString("hanim_l_calcaneus_posterior_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_calcaneous_post_pt")})),
+                  USE : new SFString("hanim_r_calcaneus_posterior_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_1_tip")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_carpal_distal_phalanx_2_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_dactylion_pt")})),
@@ -3304,22 +3307,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_dactylion_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_digit2_pt")})),
+                  USE : new SFString("hanim_l_femoral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_digit2_pt")})),
+                  USE : new SFString("hanim_r_femoral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_femoral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_l_femoral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_lateral_epicn_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_femoral_medial_epicn_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_r_femoral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_forefoot_tip")})),
@@ -3337,25 +3334,22 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_hand_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_humeral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_l_humeral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_humeral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_r_humeral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_humeral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_l_humeral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_humeral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_r_humeral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_iliocristale_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_iliocristale_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_index_distal_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_infraorbitale_pt")})),
@@ -3382,28 +3376,28 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_medial_malleolus_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metacarpal_pha2_pt")})),
+                  USE : new SFString("hanim_l_metacarpal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metacarpal_pha2_pt")})),
+                  USE : new SFString("hanim_r_metacarpal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metacarpal_pha5_pt")})),
+                  USE : new SFString("hanim_l_metacarpal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metacarpal_pha5_pt")})),
+                  USE : new SFString("hanim_r_metacarpal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metatarsal_pha1_pt")})),
+                  USE : new SFString("hanim_l_metatarsal_phalanx_1_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metatarsal_pha1_pt")})),
+                  USE : new SFString("hanim_r_metatarsal_phalanx_1_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metatarsal_pha5_pt")})),
+                  USE : new SFString("hanim_l_metatarsal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metatarsal_pha5_pt")})),
+                  USE : new SFString("hanim_r_metatarsal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_middistal_tip")})),
@@ -3442,7 +3436,10 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_sphyrion_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_thumb_distal_tip")})),
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_2_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_tragion_pt")})),

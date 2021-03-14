@@ -50,7 +50,8 @@ public class HAnimModelHandRight {
         .addMeta(new meta().setName("description").setContent("Right hand using high-fidelity definitions for HAnim version 2.0"))
         .addMeta(new meta().setName("creator").setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
         .addMeta(new meta().setName("created").setContent("26 January 2015"))
-        .addMeta(new meta().setName("modified").setContent("20 February 2021"))
+        .addMeta(new meta().setName("modified").setContent("13 March 2021"))
+        .addMeta(new meta().setName("TODO").setContent("fix visible geometry for thumb and index finger"))
         .addMeta(new meta().setName("warning").setContent("not yet to scale"))
         .addMeta(new meta().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
         .addMeta(new meta().setName("info").setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"))
@@ -67,14 +68,14 @@ public class HAnimModelHandRight {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelHandRight.x3d"))
-        .addChild(new HAnimHumanoid().setName("Hand_Right").setDEF("hanim_Hand_Right").setVersion("2.0")
+        .addChild(new HAnimHumanoid().setName("Hand_Right").setDEF("hanim_Hand_Right").setLoa(4).setVersion("2.0")
           .addComments(new CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"))
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setValue(new MetadataString().setName("authorName").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
           .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root")
             .addComments(new CommentsBlock("Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model"))
             .addChild(new HAnimJoint().setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setDescription("connection joint of hand to leg above")
-              .addChild(new HAnimSegment().setName("r_wrist").setDEF("hanim_r_wrist").setDescription("test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint")
+              .addChild(new HAnimSegment().setName("r_carpal").setDEF("hanim_r_carpal")
                 .addChild(new Transform()
                   .addChild(new Shape().setDEF("HAnimJointShape")
                     .setGeometry(new Sphere().setRadius(0.025f))
@@ -95,9 +96,9 @@ public class HAnimModelHandRight {
                     .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
                   .setGeometry(new IndexedLineSet().setDEF("RCToMC45").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt325().getArray()))
                     .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f6().getArray()))))))
-              .addComments(new CommentsBlock("MC12"))
-              .addChild(new HAnimJoint().setName("r_midcarpal_12").setDEF("hanim_r_midcarpal_12").setCenter(new float[] {-0.1f,0.1f,0f})
-                .addChild(new HAnimSegment().setName("r_trapezoid").setDEF("hanim_r_trapezoid")
+              .addComments(new CommentsBlock("MC1"))
+              .addChild(new HAnimJoint().setName("r_midcarpal_1").setDEF("hanim_r_midcarpal_1").setCenter(new float[] {-0.1f,0.1f,0f})
+                .addChild(new HAnimSegment().setName("r_trapezium").setDEF("hanim_r_trapezium")
                   .addChild(new Transform().setTranslation(new float[] {-0.1f,0.1f,0f})
                     .addChild(new Shape().setDEF("HAnimNewJointShape")
                       .setGeometry(new Sphere().setRadius(0.025f))
@@ -107,12 +108,7 @@ public class HAnimModelHandRight {
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
                     .setGeometry(new IndexedLineSet().setDEF("MC12toCMC1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt327().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray())))))
-                  .addChild(new Shape()
-                    .setAppearance(new Appearance()
-                      .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt329().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray()))))))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray()))))))
                 .addComments(new CommentsBlock("thumb finger"))
                 .addChild(new HAnimJoint().setName("r_carpometacarpal_1").setDEF("hanim_r_carpometacarpal_1").setCenter(new float[] {-0.2f,0.15f,0f})
                   .addChild(new HAnimSegment().setName("r_metacarpal_1").setDEF("hanim_r_metacarpal_1")
@@ -121,8 +117,8 @@ public class HAnimModelHandRight {
                     .addChild(new Shape()
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3211().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f12().getArray()))))))
+                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1xxx").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt329().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray()))))))
                   .addChild(new HAnimJoint().setName("r_metacarpophalangeal_1").setDEF("hanim_r_metacarpophalangeal_1").setCenter(new float[] {-0.3f,0.3f,0f})
                     .addChild(new HAnimSegment().setName("r_carpal_proximal_phalanx_1").setDEF("hanim_r_carpal_proximal_phalanx_1")
                       .addChild(new Transform().setTranslation(new float[] {-0.3f,0.3f,0f})
@@ -130,8 +126,8 @@ public class HAnimModelHandRight {
                       .addChild(new Shape()
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3213().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f14().getArray()))))))
+                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3211().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f12().getArray()))))))
                     .addChild(new HAnimJoint().setName("r_carpal_interphalangeal_1").setDEF("hanim_r_carpal_interphalangeal_1").setCenter(new float[] {-0.35f,0.4f,0f})
                       .addChild(new HAnimSegment().setName("r_carpal_distal_phalanx_1").setDEF("hanim_r_carpal_distal_phalanx_1")
                         .addChild(new Transform().setTranslation(new float[] {-0.35f,0.4f,0f})
@@ -139,8 +135,18 @@ public class HAnimModelHandRight {
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("fingertip_r_carpal_interphalangeal_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3215().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f16().getArray())))))))))
+                          .setGeometry(new IndexedLineSet().setDEF("fingertip_r_carpal_interphalangeal_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3213().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f14().getArray()))))))))))
+              .addComments(new CommentsBlock("MC2"))
+              .addChild(new HAnimJoint().setName("r_midcarpal_2").setDEF("hanim_r_midcarpal_2").setCenter(new float[] {-0.1f,0.1f,0f})
+                .addChild(new HAnimSegment().setName("r_trapezoid").setDEF("hanim_r_trapezoid")
+                  .addChild(new Transform().setTranslation(new float[] {-0.1f,0.1f,0f})
+                    .addChild(new Shape().setUSE("HAnimNewJointShape")))
+                  .addChild(new Shape()
+                    .setAppearance(new Appearance()
+                      .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
+                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3215().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f16().getArray()))))))
                 .addComments(new CommentsBlock("index finger"))
                 .addChild(new HAnimJoint().setName("r_carpometacarpal_2").setDEF("hanim_r_carpometacarpal_2").setCenter(new float[] {-0.1f,0.2f,0f})
                   .addChild(new HAnimSegment().setName("r_metacarpal_2").setDEF("hanim_r_metacarpal_2")
@@ -225,7 +231,7 @@ public class HAnimModelHandRight {
                               .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
                             .setGeometry(new IndexedLineSet().setDEF("fingertip_r_carpal_distal_interphalangeal_3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3233().getArray()))
                               .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f34().getArray())))))))))))
-              .addComments(new CommentsBlock("MC45"))
+              .addComments(new CommentsBlock("MC4_5"))
               .addChild(new HAnimJoint().setName("r_midcarpal_4_5").setDEF("hanim_r_midcarpal_4_5").setCenter(new float[] {0.1f,0.1f,0f})
                 .addChild(new HAnimSegment().setName("r_hamate").setDEF("hanim_r_hamate")
                   .addChild(new Transform().setTranslation(new float[] {0.1f,0.1f,0f})
@@ -334,11 +340,13 @@ public class HAnimModelHandRight {
           .addJoints(new HAnimJoint().setUSE("hanim_r_metacarpophalangeal_3"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_metacarpophalangeal_4"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_metacarpophalangeal_5"))
-          .addJoints(new HAnimJoint().setUSE("hanim_r_midcarpal_12"))
+          .addJoints(new HAnimJoint().setUSE("hanim_r_midcarpal_1"))
+          .addJoints(new HAnimJoint().setUSE("hanim_r_midcarpal_2"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_midcarpal_3"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_midcarpal_4_5"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_capitate"))
+          .addSegments(new HAnimSegment().setUSE("hanim_r_carpal"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_carpal_distal_phalanx_1"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_carpal_distal_phalanx_2"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_carpal_distal_phalanx_3"))
@@ -359,8 +367,8 @@ public class HAnimModelHandRight {
           .addSegments(new HAnimSegment().setUSE("hanim_r_metacarpal_3"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_metacarpal_4"))
           .addSegments(new HAnimSegment().setUSE("hanim_r_metacarpal_5"))
-          .addSegments(new HAnimSegment().setUSE("hanim_r_trapezoid"))
-          .addSegments(new HAnimSegment().setUSE("hanim_r_wrist"))))      ;
+          .addSegments(new HAnimSegment().setUSE("hanim_r_trapezium"))
+          .addSegments(new HAnimSegment().setUSE("hanim_r_trapezoid"))))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -415,7 +423,7 @@ protected class MFInt329 {
 }
 protected class MFVec3f10 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.1f,0.2f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2f,0.15f,0f,-0.3f,0.3f,0f});
   }
 }
 protected class MFInt3211 {
@@ -425,7 +433,7 @@ protected class MFInt3211 {
 }
 protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2f,0.15f,0f,-0.3f,0.3f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.3f,0.3f,0f,-0.35f,0.4f,0f});
   }
 }
 protected class MFInt3213 {
@@ -435,7 +443,7 @@ protected class MFInt3213 {
 }
 protected class MFVec3f14 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.3f,0.3f,0f,-0.35f,0.4f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.35f,0.4f,0f,-0.36f,0.45f,0f});
   }
 }
 protected class MFInt3215 {
@@ -445,7 +453,7 @@ protected class MFInt3215 {
 }
 protected class MFVec3f16 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.35f,0.4f,0f,-0.36f,0.45f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.1f,0.2f,0f});
   }
 }
 protected class MFInt3217 {

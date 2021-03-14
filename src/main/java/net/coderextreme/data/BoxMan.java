@@ -53,7 +53,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("translator").setContent("Don Brutzman and Matt Beitler"))
         .addMeta(new meta().setName("created").setContent("1 March 2001"))
         .addMeta(new meta().setName("translated").setContent("19 October 2001"))
-        .addMeta(new meta().setName("modified").setContent("21 February 2021"))
+        .addMeta(new meta().setName("modified").setContent("7 March 2021"))
         .addMeta(new meta().setName("reference").setContent("http://HAnim.org"))
         .addMeta(new meta().setName("reference").setContent("boxman.original.wrl"))
         .addMeta(new meta().setName("reference").setContent("BoxMan.js"))

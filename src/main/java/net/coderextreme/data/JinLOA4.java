@@ -51,7 +51,7 @@ public class JinLOA4 {
         .addMeta(new meta().setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta(new meta().setName("created").setContent("31 March 2011"))
         .addMeta(new meta().setName("translated").setContent("1 November 2014"))
-        .addMeta(new meta().setName("modified").setContent("20 February 2021"))
+        .addMeta(new meta().setName("modified").setContent("13 March 2021"))
         .addMeta(new meta().setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -72,7 +72,7 @@ public class JinLOA4 {
             .addValue(new MetadataString().setName("authorEmail").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))
             .addValue(new MetadataString().setName("creationDate").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())))
             .addValue(new MetadataString().setName("gender").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())))
-            .addValue(new MetadataString().setName("height").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())))
+            .addValue(new MetadataFloat().setName("height").setValue(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat4().getArray())))
             .addValue(new MetadataString().setName("humanoidVersion").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray()))))
           .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,36.709999f,-0.7076f})
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
@@ -164,7 +164,7 @@ public class JinLOA4 {
                                   .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3239().getArray())).setCreaseAngle(3.14159f).setTexCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3240().getArray()))
                                     .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f41().getArray())))
                                     .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f42().getArray())))))))
-                            .addChild(new HAnimJoint().setName("l_tarsal_interphalangeal_1").setDEF("hanim_l_tarsal_interphalangeal_1").setCenter(new float[] {2.761f,0.5394f,5.125f})
+                            .addChild(new HAnimJoint().setName("l_tarsal_distal_interphalangeal_1").setDEF("hanim_l_tarsal_distal_interphalangeal_1").setCenter(new float[] {2.761f,0.5394f,5.125f})
                               .addChild(new HAnimSegment().setName("l_tarsal_distal_phalanx_1").setDEF("hanim_l_tarsal_distal_phalanx_1")
                                 .addChild(new Transform().setTranslation(new float[] {2.761f,0.5394f,5.125f})
                                   .addChild(new Shape()
@@ -444,7 +444,7 @@ public class JinLOA4 {
                                   .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32151().getArray())).setCreaseAngle(3.14159f).setTexCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32152().getArray()))
                                     .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f153().getArray())))
                                     .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f154().getArray())))))))
-                            .addChild(new HAnimJoint().setName("r_tarsal_interphalangeal_1").setDEF("hanim_r_tarsal_interphalangeal_1").setCenter(new float[] {-2.744f,0.5394f,5.125f})
+                            .addChild(new HAnimJoint().setName("r_tarsal_distal_interphalangeal_1").setDEF("hanim_r_tarsal_distal_interphalangeal_1").setCenter(new float[] {-2.744f,0.5394f,5.125f})
                               .addChild(new HAnimSegment().setName("r_tarsal_distal_phalanx_1").setDEF("hanim_r_tarsal_distal_phalanx_1")
                                 .addChild(new Transform().setTranslation(new float[] {-2.744f,0.5394f,5.125f})
                                   .addChild(new Shape()
@@ -1650,6 +1650,8 @@ public class JinLOA4 {
           .addJoints(new HAnimJoint().setUSE("hanim_r_talocalcaneonavicular"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural"))
+          .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_1"))
+          .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_distal_interphalangeal_1"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_2"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_distal_interphalangeal_2"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_3"))
@@ -1658,8 +1660,6 @@ public class JinLOA4 {
           .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_distal_interphalangeal_4"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_5"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_distal_interphalangeal_5"))
-          .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_interphalangeal_1"))
-          .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_interphalangeal_1"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_2"))
           .addJoints(new HAnimJoint().setUSE("hanim_r_tarsal_proximal_interphalangeal_2"))
           .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_3"))
@@ -1848,9 +1848,9 @@ protected class MFString3 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"female"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"1.5"});
+protected class MFFloat4 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.5f});
   }
 }
 protected class MFString5 {
