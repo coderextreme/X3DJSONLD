@@ -1,4 +1,4 @@
-from beautifulsoup4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import re
 
 class ClassPrinter:
