@@ -1295,7 +1295,7 @@
       <Script DEF='ENGINE' directOutput='true'>
         <field accessType='inputOnly' name='update' type='SFRotation'/>
         <field accessType='initializeOnly' name='humanoid' type='SFNode'>
-          <HAnimHumanoid USE='Boxman_Humanoid' version='1.0'/>
+          <HAnimHumanoid USE='Boxman_Humanoid'/>
         </field>
         <field accessType='initializeOnly' name='coordList' type='MFVec3f'/>
         <field accessType='initializeOnly' name='joint' type='SFNode'>

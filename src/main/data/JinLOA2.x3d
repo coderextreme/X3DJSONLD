@@ -8,7 +8,7 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='12 October 2020' name='modified'/>
+    <meta content='12 March 2021' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
     <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
@@ -30,7 +30,7 @@
         <MetadataString containerField='value' name='authorEmail' value='myeongwonlee@gmail.com'/>
         <MetadataString containerField='value' name='creationDate' value='31 March 2011'/>
         <MetadataString containerField='value' name='gender' value='female'/>
-        <MetadataString containerField='value' name='height' value='1.5'/>
+        <MetadataFloat containerField='value' name='height' value='1.5'/>
         <MetadataString containerField='value' name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' center='0 35.799999 -0.707600' containerField='skeleton' name='humanoid_root'>
@@ -108,8 +108,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_tarsometatarsal' center='3.854 3.336 -1.514' name='l_tarsometatarsal'>
-                  <HAnimSegment DEF='hanim_l_metatarsal' name='l_metatarsal'>
+                <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='3.854 3.336 -1.514' name='l_tarsometatarsal_2'>
+                  <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
                     <Transform translation='3.854 3.336 -1.514'>
                       <Shape>
                         <Appearance>
@@ -123,8 +123,8 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_metatarsophalangeal' center='3.854 3.640 0.740200' name='l_metatarsophalangeal'>
-                    <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx' name='l_tarsal_proximal_phalanx'>
+                  <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='3.854 3.640 0.740200' name='l_metatarsophalangeal_2'>
+                    <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                       <Transform translation='3.854 3.640 0.740200'>
                         <Shape>
                           <Appearance>
@@ -138,8 +138,8 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_interphalangeal' center='3.854 1.956 1.682' name='l_tarsal_interphalangeal'>
-                      <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx' name='l_tarsal_distal_phalanx'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='3.854 1.956 1.682' name='l_tarsal_distal_interphalangeal_2'>
+                      <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2'>
                         <Transform translation='3.854 1.956 1.682'>
                           <Shape>
                             <Appearance>
@@ -204,8 +204,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_tarsometatarsal' center='-3.854 3.336 -1.514' name='r_tarsometatarsal'>
-                  <HAnimSegment DEF='hanim_r_metatarsal' name='r_metatarsal'>
+                <HAnimJoint DEF='hanim_r_tarsometatarsal_2' center='-3.854 3.336 -1.514' name='r_tarsometatarsal_2'>
+                  <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
                     <Transform translation='-3.854 3.336 -1.514'>
                       <Shape>
                         <Appearance>
@@ -219,8 +219,8 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_metatarsophalangeal' center='-3.854 3.640 0.740200' name='r_metatarsophalangeal'>
-                    <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx' name='r_tarsal_proximal_phalanx'>
+                  <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-3.854 3.640 0.740200' name='r_metatarsophalangeal_2'>
+                    <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                       <Transform translation='-3.854 3.640 0.740200'>
                         <Shape>
                           <Appearance>
@@ -234,8 +234,8 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_interphalangeal' center='-3.854 1.956 1.682' name='r_tarsal_interphalangeal'>
-                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx' name='r_tarsal_distal_phalanx'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' center='-3.854 1.956 1.682' name='r_tarsal_distal_interphalangeal_2'>
+                      <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2'>
                         <Transform translation='-3.854 1.956 1.682'>
                           <Shape>
                             <Appearance>
@@ -1226,8 +1226,8 @@
       <HAnimJoint USE='hanim_r_metacarpophalangeal_4' containerField='joints'/>
       <HAnimJoint USE='hanim_l_metacarpophalangeal_5' containerField='joints'/>
       <HAnimJoint USE='hanim_r_metacarpophalangeal_5' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_metatarsophalangeal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_metatarsophalangeal' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
       <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
       <HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
@@ -1236,10 +1236,10 @@
       <HAnimJoint USE='hanim_r_sternoclavicular' containerField='joints'/>
       <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
       <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_tarsal_interphalangeal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_tarsal_interphalangeal' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_2' containerField='joints'/>
       <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
       <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
       <HAnimSegment USE='hanim_l5' containerField='segments'/>
@@ -1297,16 +1297,16 @@
       <HAnimSegment USE='hanim_r_metacarpal_4' containerField='segments'/>
       <HAnimSegment USE='hanim_l_metacarpal_5' containerField='segments'/>
       <HAnimSegment USE='hanim_r_metacarpal_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metatarsal' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_metatarsal_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_metatarsal_2' containerField='segments'/>
       <HAnimSegment USE='hanim_l_scapula' containerField='segments'/>
       <HAnimSegment USE='hanim_r_scapula' containerField='segments'/>
       <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
       <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
       <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
       <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
       <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>

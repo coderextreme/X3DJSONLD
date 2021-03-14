@@ -7,7 +7,8 @@
     <meta content='Right hand using high-fidelity definitions for HAnim version 2.0' name='description'/>
     <meta content='Kwan-Hee YOO, Don Brutzman and Joe Williams' name='creator'/>
     <meta content='26 January 2015' name='created'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='13 March 2021' name='modified'/>
+    <meta content='fix visible geometry for thumb and index finger' name='TODO'/>
     <meta content='not yet to scale' name='warning'/>
     <meta content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?' name='warning'/>
     <meta content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body' name='info'/>
@@ -25,7 +26,7 @@
   </head>
   <Scene>
     <WorldInfo title='HAnimModelHandRight.x3d'/>
-    <HAnimHumanoid DEF='hanim_Hand_Right' name='Hand_Right' version='2.0'>
+    <HAnimHumanoid DEF='hanim_Hand_Right' loa='4' name='Hand_Right' version='2.0'>
       <!-- HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' -->
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString containerField='value' name='authorName' value='Kwan-Hee YOO, Don Brutzman and Joe Williams'/>
@@ -33,7 +34,7 @@
       <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' name='humanoid_root'>
         <!-- Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model -->
         <HAnimJoint DEF='hanim_r_radiocarpal' description='connection joint of hand to leg above' name='r_radiocarpal'>
-          <HAnimSegment DEF='hanim_r_wrist' description='test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint' name='r_wrist'>
+          <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
             <Transform>
               <Shape DEF='HAnimJointShape'>
                 <Sphere radius='0.025'/>
@@ -67,9 +68,9 @@
               </IndexedLineSet>
             </Shape>
           </HAnimSegment>
-          <!-- MC12 -->
-          <HAnimJoint DEF='hanim_r_midcarpal_12' center='-0.1 0.1 0' name='r_midcarpal_12'>
-            <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
+          <!-- MC1 -->
+          <HAnimJoint DEF='hanim_r_midcarpal_1' center='-0.1 0.1 0' name='r_midcarpal_1'>
+            <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
               <Transform translation='-0.1 0.1 0'>
                 <Shape DEF='HAnimNewJointShape'>
                   <Sphere radius='0.025'/>
@@ -86,14 +87,6 @@
                   <Coordinate point='-0.1 0.1 0 -0.2 0.15 0'/>
                 </IndexedLineSet>
               </Shape>
-              <Shape>
-                <Appearance>
-                  <Material emissiveColor='1 1 1'/>
-                </Appearance>
-                <IndexedLineSet DEF='MC12toCMC2' coordIndex='0 1'>
-                  <Coordinate point='-0.1 0.1 0 -0.1 0.2 0'/>
-                </IndexedLineSet>
-              </Shape>
             </HAnimSegment>
             <!-- thumb finger -->
             <HAnimJoint DEF='hanim_r_carpometacarpal_1' center='-0.2 0.15 0' name='r_carpometacarpal_1'>
@@ -105,7 +98,7 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC1toMCP1' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC1toMCP1xxx' coordIndex='0 1'>
                     <Coordinate point='-0.2 0.15 0 -0.3 0.3 0'/>
                   </IndexedLineSet>
                 </Shape>
@@ -141,6 +134,22 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
+          </HAnimJoint>
+          <!-- MC2 -->
+          <HAnimJoint DEF='hanim_r_midcarpal_2' center='-0.1 0.1 0' name='r_midcarpal_2'>
+            <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
+              <Transform translation='-0.1 0.1 0'>
+                <Shape USE='HAnimNewJointShape'/>
+              </Transform>
+              <Shape>
+                <Appearance>
+                  <Material emissiveColor='1 1 1'/>
+                </Appearance>
+                <IndexedLineSet DEF='MC12toCMC2' coordIndex='0 1'>
+                  <Coordinate point='-0.1 0.1 0 -0.1 0.2 0'/>
+                </IndexedLineSet>
+              </Shape>
+            </HAnimSegment>
             <!-- index finger -->
             <HAnimJoint DEF='hanim_r_carpometacarpal_2' center='-0.1 0.2 0' name='r_carpometacarpal_2'>
               <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
@@ -280,7 +289,7 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <!-- MC45 -->
+          <!-- MC4_5 -->
           <HAnimJoint DEF='hanim_r_midcarpal_4_5' center='0.1 0.1 0' name='r_midcarpal_4_5'>
             <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
               <Transform translation='0.1 0.1 0'>
@@ -448,11 +457,13 @@
       <HAnimJoint USE='hanim_r_metacarpophalangeal_3' containerField='joints'/>
       <HAnimJoint USE='hanim_r_metacarpophalangeal_4' containerField='joints'/>
       <HAnimJoint USE='hanim_r_metacarpophalangeal_5' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_midcarpal_12' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_midcarpal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_midcarpal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_r_midcarpal_3' containerField='joints'/>
       <HAnimJoint USE='hanim_r_midcarpal_4_5' containerField='joints'/>
       <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
       <HAnimSegment USE='hanim_r_capitate' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
       <HAnimSegment USE='hanim_r_carpal_distal_phalanx_1' containerField='segments'/>
       <HAnimSegment USE='hanim_r_carpal_distal_phalanx_2' containerField='segments'/>
       <HAnimSegment USE='hanim_r_carpal_distal_phalanx_3' containerField='segments'/>
@@ -473,8 +484,8 @@
       <HAnimSegment USE='hanim_r_metacarpal_3' containerField='segments'/>
       <HAnimSegment USE='hanim_r_metacarpal_4' containerField='segments'/>
       <HAnimSegment USE='hanim_r_metacarpal_5' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_trapezium' containerField='segments'/>
       <HAnimSegment USE='hanim_r_trapezoid' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_wrist' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>
