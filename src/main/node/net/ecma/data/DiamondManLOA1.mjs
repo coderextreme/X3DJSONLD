@@ -65,7 +65,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("13 March 2021")}),
 
             new meta({
               name : new SFString("Image"),
@@ -78,10 +78,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("warning"),
               content : new SFString("Still needs comments on CAESAR feature points inserted")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("can X3dTidy sort top-level USE nodes by node type?")}),
 
             new meta({
               name : new SFString("reference"),
@@ -120,10 +116,6 @@ var X3D0 =  new X3D({
               content : new SFString("humanoid_landmark_locations.gif")}),
 
             new meta({
-              name : new SFString("warning"),
-              content : new SFString("need to fix HAnimHumanoid metadata form")}),
-
-            new meta({
               name : new SFString("Image"),
               content : new SFString("http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif")}),
 
@@ -160,6 +152,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("humanoid"),
               DEF : new SFString("hanim_humanoid"),
+              loa : new SFInt32(1),
               version : new SFString("2.0"),
               { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"humanoidVersion=JointCenters 1.1 LOA1\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'") },
               metadata : new MFNode([
@@ -241,13 +234,13 @@ var X3D0 =  new X3D({
                                   translation : new SFVec3f([0.0993,0.4881,-0.0309])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_femoral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_l_femoral_lateral_epicn_pt"),
+                                  name : new SFString("l_femoral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_l_femoral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([0.1598,0.4967,0.0297])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_femoral_medial_epicn_pt"),
-                                  DEF : new SFString("hanim_l_femoral_medial_epicn_pt"),
+                                  name : new SFString("l_femoral_medial_epicondyle_pt"),
+                                  DEF : new SFString("hanim_l_femoral_medial_epicondyle_pt"),
                                   translation : new SFVec3f([0.0398,0.4946,0.0303])})])}),
 
                             new HAnimJoint({
@@ -296,8 +289,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([0.089,0.0575,-0.0943])}),
 
                                         new HAnimSite({
-                                          name : new SFString("l_calcaneous_post_pt"),
-                                          DEF : new SFString("hanim_l_calcaneous_post_pt"),
+                                          name : new SFString("l_calcaneus_posterior_pt"),
+                                          DEF : new SFString("hanim_l_calcaneus_posterior_pt"),
                                           translation : new SFVec3f([0.0974,0.0259,-0.1171])})])}),
 
                                     new HAnimJoint({
@@ -315,18 +308,18 @@ var X3D0 =  new X3D({
                                               translation : new SFVec3f([0.1354,0.0016,0.1476])}),
 
                                             new HAnimSite({
-                                              name : new SFString("l_metatarsal_pha5_pt"),
-                                              DEF : new SFString("hanim_l_metatarsal_pha5_pt"),
+                                              name : new SFString("l_metatarsal_phalanx_5_pt"),
+                                              DEF : new SFString("hanim_l_metatarsal_phalanx_5_pt"),
                                               translation : new SFVec3f([0.1825,0.007,0.0928])}),
 
                                             new HAnimSite({
-                                              name : new SFString("l_metatarsal_pha1_pt"),
-                                              DEF : new SFString("hanim_l_metatarsal_pha1_pt"),
+                                              name : new SFString("l_metatarsal_phalanx_1_pt"),
+                                              DEF : new SFString("hanim_l_metatarsal_phalanx_1_pt"),
                                               translation : new SFVec3f([0.0816,0.0232,0.0106])}),
 
                                             new HAnimSite({
-                                              name : new SFString("l_digit2_pt"),
-                                              DEF : new SFString("hanim_l_digit2_pt"),
+                                              name : new SFString("l_tarsal_distal_phalanx_2_pt"),
+                                              DEF : new SFString("hanim_l_tarsal_distal_phalanx_2_pt"),
                                               translation : new SFVec3f([0.1195,0.0079,0.1433])})])})])})])})])})])}),
 
                         new HAnimJoint({
@@ -350,13 +343,13 @@ var X3D0 =  new X3D({
                                   translation : new SFVec3f([-0.0825,0.4932,-0.0326])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_femoral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_r_femoral_lateral_epicn_pt"),
+                                  name : new SFString("r_femoral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_r_femoral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([-0.1421,0.4992,0.031])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_femoral_medial_epicn_pt"),
-                                  DEF : new SFString("hanim_r_femoral_medial_epicn_pt"),
+                                  name : new SFString("r_femoral_medial_epicondyle_pt"),
+                                  DEF : new SFString("hanim_r_femoral_medial_epicondyle_pt"),
                                   translation : new SFVec3f([-0.0221,0.5014,0.0289])})])}),
 
                             new HAnimJoint({
@@ -405,8 +398,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([-0.0603,0.061,-0.1002])}),
 
                                         new HAnimSite({
-                                          name : new SFString("r_calcaneous_post_pt"),
-                                          DEF : new SFString("hanim_r_calcaneous_post_pt"),
+                                          name : new SFString("r_calcaneus_posterior_pt"),
+                                          DEF : new SFString("hanim_r_calcaneus_posterior_pt"),
                                           translation : new SFVec3f([-0.0692,0.0297,-0.1221])})])}),
 
                                     new HAnimJoint({
@@ -424,18 +417,18 @@ var X3D0 =  new X3D({
                                               translation : new SFVec3f([-0.1043,-0.0227,0.145])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_metatarsal_pha5_pt"),
-                                              DEF : new SFString("hanim_r_metatarsal_pha5_pt"),
+                                              name : new SFString("r_metatarsal_phalanx_5_pt"),
+                                              DEF : new SFString("hanim_r_metatarsal_phalanx_5_pt"),
                                               translation : new SFVec3f([-0.1523,0.0166,0.0895])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_metatarsal_pha1_pt"),
-                                              DEF : new SFString("hanim_r_metatarsal_pha1_pt"),
+                                              name : new SFString("r_metatarsal_phalanx_1_pt"),
+                                              DEF : new SFString("hanim_r_metatarsal_phalanx_1_pt"),
                                               translation : new SFVec3f([-0.0521,0.026,0.0127])}),
 
                                             new HAnimSite({
-                                              name : new SFString("r_digit2_pt"),
-                                              DEF : new SFString("hanim_r_digit2_pt"),
+                                              name : new SFString("r_tarsal_distal_phalanx_2_pt"),
+                                              DEF : new SFString("hanim_r_tarsal_distal_phalanx_2_pt"),
                                               translation : new SFVec3f([-0.0883,0.0134,0.1383])})])})])})])})])})])})])}),
 
                     new HAnimJoint({
@@ -469,8 +462,8 @@ var X3D0 =  new X3D({
                                   translation : new SFVec3f([0.2029,1.4376,-0.0387])}),
 
                                 new HAnimSite({
-                                  name : new SFString("l_humeral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_l_humeral_lateral_epicn_pt"),
+                                  name : new SFString("l_humeral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_l_humeral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([0.228,1.1482,-0.11])})])}),
 
                             new HAnimJoint({
@@ -505,8 +498,8 @@ var X3D0 =  new X3D({
                                       translation : new SFVec3f([-0.1962,1.1375,-0.1123])}),
 
                                     new HAnimSite({
-                                      name : new SFString("l_humeral_medial_epicn_pt"),
-                                      DEF : new SFString("hanim_l_humeral_medial_epicn_pt"),
+                                      name : new SFString("l_humeral_medial_epicondyle_pt"),
+                                      DEF : new SFString("hanim_l_humeral_medial_epicondyle_pt"),
                                       translation : new SFVec3f([0.1735,1.1272,-0.1113])}),
 
                                     new HAnimSite({
@@ -541,8 +534,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([0.208,0.6731,-0.0491])}),
 
                                         new HAnimSite({
-                                          name : new SFString("l_metacarpal_pha2_pt"),
-                                          DEF : new SFString("hanim_l_metacarpal_pha2_pt"),
+                                          name : new SFString("l_metacarpal_phalanx_2_pt"),
+                                          DEF : new SFString("hanim_l_metacarpal_phalanx_2_pt"),
                                           translation : new SFVec3f([0.2009,0.8139,-0.0237])}),
 
                                         new HAnimSite({
@@ -556,8 +549,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([-0.2142,0.8529,-0.0648])}),
 
                                         new HAnimSite({
-                                          name : new SFString("l_metacarpal_pha5_pt"),
-                                          DEF : new SFString("hanim_l_metacarpal_pha5_pt"),
+                                          name : new SFString("l_metacarpal_phalanx_5_pt"),
+                                          DEF : new SFString("hanim_l_metacarpal_phalanx_5_pt"),
                                           translation : new SFVec3f([0.1929,0.786,-0.1122])})])})])})])})])}),
 
                         new HAnimJoint({
@@ -582,8 +575,8 @@ var X3D0 =  new X3D({
                                   translation : new SFVec3f([-0.1907,1.4407,-0.0325])}),
 
                                 new HAnimSite({
-                                  name : new SFString("r_humeral_lateral_epicn_pt"),
-                                  DEF : new SFString("hanim_r_humeral_lateral_epicn_pt"),
+                                  name : new SFString("r_humeral_lateral_epicondyle_pt"),
+                                  DEF : new SFString("hanim_r_humeral_lateral_epicondyle_pt"),
                                   translation : new SFVec3f([-0.2224,1.1517,-0.1033])})])}),
 
                             new HAnimJoint({
@@ -618,8 +611,8 @@ var X3D0 =  new X3D({
                                       translation : new SFVec3f([-0.1907,1.1405,-0.1065])}),
 
                                     new HAnimSite({
-                                      name : new SFString("r_humeral_medial_epicn_pt"),
-                                      DEF : new SFString("hanim_r_humeral_medial_epicn_pt"),
+                                      name : new SFString("r_humeral_medial_epicondyle_pt"),
+                                      DEF : new SFString("hanim_r_humeral_medial_epicondyle_pt"),
                                       translation : new SFVec3f([-0.168,1.1298,-0.1062])}),
 
                                     new HAnimSite({
@@ -653,8 +646,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([-0.1969,0.6758,-0.0427])}),
 
                                         new HAnimSite({
-                                          name : new SFString("r_metacarpal_pha2_pt"),
-                                          DEF : new SFString("hanim_r_metacarpal_pha2_pt"),
+                                          name : new SFString("r_metacarpal_phalanx_2_pt"),
+                                          DEF : new SFString("hanim_r_metacarpal_phalanx_2_pt"),
                                           translation : new SFVec3f([-0.1977,0.8169,-0.0177])}),
 
                                         new HAnimSite({
@@ -668,8 +661,8 @@ var X3D0 =  new X3D({
                                           translation : new SFVec3f([-0.2117,0.8562,-0.0584])}),
 
                                         new HAnimSite({
-                                          name : new SFString("r_metacarpal_pha5_pt"),
-                                          DEF : new SFString("hanim_r_metacarpal_pha5_pt"),
+                                          name : new SFString("r_metacarpal_phalanx_5_pt"),
+                                          DEF : new SFString("hanim_r_metacarpal_phalanx_5_pt"),
                                           translation : new SFVec3f([-0.1929,0.789,-0.1064])})])})])})])})])}),
 
                         new HAnimJoint({
@@ -702,8 +695,8 @@ var X3D0 =  new X3D({
                                       USE : new SFString("DiamondShape")})])}),
 
                                 new HAnimSite({
-                                  name : new SFString("skull_tip"),
-                                  DEF : new SFString("hanim_skull_tip"),
+                                  name : new SFString("skull_vertex_tip"),
+                                  DEF : new SFString("hanim_skull_vertex_tip"),
                                   translation : new SFVec3f([0.005,1.7504,0.0055])}),
 
                                 new HAnimSite({
@@ -893,7 +886,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_upperarm")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_skull_tip")})),
+                  USE : new SFString("hanim_skull_vertex_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_sellion_pt")})),
@@ -905,10 +898,10 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_nuchale_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_calcaneous_post_pt")})),
+                  USE : new SFString("hanim_l_calcaneus_posterior_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_calcaneous_post_pt")})),
+                  USE : new SFString("hanim_r_calcaneus_posterior_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_dactylion_pt")})),
@@ -917,22 +910,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_dactylion_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_digit2_pt")})),
+                  USE : new SFString("hanim_l_femoral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_digit2_pt")})),
+                  USE : new SFString("hanim_r_femoral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_femoral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_l_femoral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_lateral_epicn_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_l_femoral_medial_epicn_pt")})),
-              viewpoints : new SFNode(
-                new HAnimSite({
-                  USE : new SFString("hanim_r_femoral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_r_femoral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_gonion_pt")})),
@@ -947,16 +934,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_hand_tip")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_humeral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_l_humeral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_humeral_lateral_epicn_pt")})),
+                  USE : new SFString("hanim_r_humeral_lateral_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_humeral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_l_humeral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_humeral_medial_epicn_pt")})),
+                  USE : new SFString("hanim_r_humeral_medial_epicondyle_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_infraorbitale_pt")})),
@@ -983,28 +970,28 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_medial_malleolus_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metacarpal_pha2_pt")})),
+                  USE : new SFString("hanim_l_metacarpal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metacarpal_pha2_pt")})),
+                  USE : new SFString("hanim_r_metacarpal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metacarpal_pha5_pt")})),
+                  USE : new SFString("hanim_l_metacarpal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metacarpal_pha5_pt")})),
+                  USE : new SFString("hanim_r_metacarpal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metatarsal_pha1_pt")})),
+                  USE : new SFString("hanim_l_metatarsal_phalanx_1_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metatarsal_pha1_pt")})),
+                  USE : new SFString("hanim_r_metatarsal_phalanx_1_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_l_metatarsal_pha5_pt")})),
+                  USE : new SFString("hanim_l_metatarsal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_r_metatarsal_pha5_pt")})),
+                  USE : new SFString("hanim_r_metatarsal_phalanx_5_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_l_middistal_tip")})),
@@ -1035,6 +1022,12 @@ var X3D0 =  new X3D({
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_sphyrion_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_l_tarsal_distal_phalanx_2_pt")})),
+              viewpoints : new SFNode(
+                new HAnimSite({
+                  USE : new SFString("hanim_r_tarsal_distal_phalanx_2_pt")})),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_r_tragion_pt")})),

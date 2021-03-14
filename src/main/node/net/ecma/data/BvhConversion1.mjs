@@ -84,7 +84,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("10 March 2021")}),
+
+            new meta({
+              name : new SFString("warning"),
+              content : new SFString("Note this conversion of a legacy model is not HAnim compliant.")}),
 
             new meta({
               name : new SFString("Image"),

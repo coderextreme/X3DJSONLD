@@ -62,8 +62,8 @@ MetadataSet6.value[5] = MetadataString12;
 HAnimHumanoid5.metadata = MetadataSet6;
 
 let HAnimJoint13 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint13.name = "humanoid_root";
-HAnimJoint13.DEF = "hanim_humanoid_root";
+HAnimJoint13.name = "HumanoidRoot";
+HAnimJoint13.DEF = "hanim_HumanoidRoot";
 HAnimJoint13.center = new SFVec3f(new float[0,0.824,0.0277]);
 let HAnimJoint14 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint14.name = "sacroiliac";
@@ -147,7 +147,7 @@ HAnimSite22.children[3] = Viewpoint26;
 HAnimHumanoid5.viewpoints[1] = HAnimSite22;
 
 let HAnimJoint27 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint27.USE = "hanim_humanoid_root";
+HAnimJoint27.USE = "hanim_HumanoidRoot";
 HAnimHumanoid5.joints[2] = HAnimJoint27;
 
 let HAnimJoint28 = browser.currentScene.createNode("HAnimJoint");

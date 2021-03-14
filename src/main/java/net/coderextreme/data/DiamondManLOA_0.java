@@ -51,7 +51,7 @@ public class DiamondManLOA_0 {
         .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler"))
         .addMeta(new meta().setName("translator").setContent("Joel S. Pawloski"))
         .addMeta(new meta().setName("created").setContent("12 November 2001"))
-        .addMeta(new meta().setName("modified").setContent("20 February 2021"))
+        .addMeta(new meta().setName("modified").setContent("9 March 2021"))
         .addMeta(new meta().setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
         .addMeta(new meta().setName("reference").setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
@@ -82,7 +82,7 @@ public class DiamondManLOA_0 {
             .addValue(new MetadataString().setName("creationDate").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())))
             .addValue(new MetadataString().setName("humanoidVersion").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))
             .addValue(new MetadataString().setName("usageRestrictions").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray()))))
-          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f})
+          .addSkeleton(new HAnimJoint().setName("HumanoidRoot").setDEF("hanim_HumanoidRoot").setCenter(new float[] {0f,0.824f,0.0277f})
             .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f})
               .addChild(new HAnimSegment().setName("pelvis").setDEF("hanim_pelvis")
                 .addChild(new Transform().setTranslation(new float[] {0f,0.9149f,0.0016f})
@@ -96,7 +96,7 @@ public class DiamondManLOA_0 {
             .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f,0.854f,2.57665f}))
             .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
             .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f})))
-          .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+          .addJoints(new HAnimJoint().setUSE("hanim_HumanoidRoot"))
           .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
           .addSegments(new HAnimSegment().setUSE("hanim_pelvis"))))      ;
     return X3D0;
