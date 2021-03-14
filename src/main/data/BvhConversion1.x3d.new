@@ -7,7 +7,8 @@
 <meta name="translator" content="Don Brutzman"></meta>
 <meta name="created" content="1 January 2016"></meta>
 <meta name="translated" content="1 January 2018"></meta>
-<meta name="modified" content="20 February 2021"></meta>
+<meta name="modified" content="10 March 2021"></meta>
+<meta name="warning" content="Note this conversion of a legacy model is not HAnim compliant."></meta>
 <meta name="Image" content="BvhConversion1.png"></meta>
 <meta name="MovingImage" content="BvhConversion1.mp4"></meta>
 <meta name="reference" content="1.bvh"></meta>

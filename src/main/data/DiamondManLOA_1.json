@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"Image",
@@ -47,10 +47,6 @@
           {
             "@name":"warning",
             "@content":"Still needs comments on CAESAR feature points inserted"
-          },
-          {
-            "@name":"TODO",
-            "@content":"can X3dTidy sort top-level USE nodes by node type?"
           },
           {
             "@name":"reference",
@@ -87,10 +83,6 @@
           {
             "@name":"Image",
             "@content":"humanoid_landmark_locations.gif"
-          },
-          {
-            "@name":"warning",
-            "@content":"need to fix HAnimHumanoid metadata form"
           },
           {
             "@name":"Image",
@@ -198,8 +190,8 @@
               "-skeleton":[
                 { "HAnimJoint":
                   {
-                    "@name":"humanoid_root",
-                    "@DEF":"hanim_humanoid_root",
+                    "@name":"HumanoidRoot",
+                    "@DEF":"hanim_HumanoidRoot",
                     "@center":[0.0,0.8240,0.0277],
                     "-children":[
                       { "HAnimJoint":
@@ -1165,7 +1157,7 @@
               "-joints":[
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_humanoid_root"
+                    "@USE":"hanim_HumanoidRoot"
                   }
                 },
                 { "HAnimJoint":

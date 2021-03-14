@@ -6,7 +6,7 @@
 <meta name="creator" content="Matthew T. Beitler"></meta>
 <meta name="translator" content="Joel S. Pawloski"></meta>
 <meta name="created" content="12 November 2001"></meta>
-<meta name="modified" content="20 February 2021"></meta>
+<meta name="modified" content="9 March 2021"></meta>
 <meta name="motto" content="(a) &quot;Diamonds are a girl's best friend.&quot; (b) &quot;Gosh, it sure is chilly in here.&quot;"></meta>
 <meta name="reference" content="HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"></meta>
 <meta name="reference" content="https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"></meta>
@@ -35,7 +35,7 @@
 <MetadataString name="humanoidVersion" value="&quot;JointCenters 1.1 LOA0&quot;"></MetadataString>
 <MetadataString name="usageRestrictions" value="&quot;PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.&quot;"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" containerField="skeleton"><HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform translation="0 0.9149 0.0016"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
+<HAnimJoint name="HumanoidRoot" DEF="hanim_HumanoidRoot" center="0 0.824 0.0277" containerField="skeleton"><HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform translation="0 0.9149 0.0016"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
@@ -49,7 +49,7 @@
 <Viewpoint DEF="SideView" description="Side View" orientation="0 1 0 1.57079" position="2.5929 0.854 0"></Viewpoint>
 <Viewpoint DEF="TopView" description="Top View" orientation="1 0 0 -1.57079" position="0 3.4495 0"></Viewpoint>
 </HAnimSite>
-<HAnimJoint containerField="joints" USE="hanim_humanoid_root"></HAnimJoint>
+<HAnimJoint containerField="joints" USE="hanim_HumanoidRoot"></HAnimJoint>
 <HAnimJoint containerField="joints" USE="hanim_sacroiliac"></HAnimJoint>
 <HAnimSegment containerField="segments" USE="hanim_pelvis"></HAnimSegment>
 </HAnimHumanoid>

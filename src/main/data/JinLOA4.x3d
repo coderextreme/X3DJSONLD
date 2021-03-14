@@ -8,7 +8,7 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='13 March 2021' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
     <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
@@ -30,7 +30,7 @@
         <MetadataString containerField='value' name='authorEmail' value='myeongwonlee@gmail.com'/>
         <MetadataString containerField='value' name='creationDate' value='31 March 2011'/>
         <MetadataString containerField='value' name='gender' value='female'/>
-        <MetadataString containerField='value' name='height' value='1.5'/>
+        <MetadataFloat containerField='value' name='height' value='1.5'/>
         <MetadataString containerField='value' name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' center='0 36.709999 -0.707600' containerField='skeleton' name='humanoid_root'>
@@ -168,7 +168,7 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' center='2.761 0.539400 5.125' name='l_tarsal_interphalangeal_1'>
+                        <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_1' center='2.761 0.539400 5.125' name='l_tarsal_distal_interphalangeal_1'>
                           <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'>
                             <Transform translation='2.761 0.539400 5.125'>
                               <Shape>
@@ -616,7 +616,7 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' center='-2.744 0.539400 5.125' name='r_tarsal_interphalangeal_1'>
+                        <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_1' center='-2.744 0.539400 5.125' name='r_tarsal_distal_interphalangeal_1'>
                           <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'>
                             <Transform translation='-2.744 0.539400 5.125'>
                               <Shape>
@@ -2485,6 +2485,8 @@
       <HAnimJoint USE='hanim_r_talocalcaneonavicular' containerField='joints'/>
       <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
       <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_1' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_1' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3' containerField='joints'/>
@@ -2493,8 +2495,6 @@
       <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_4' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_5' containerField='joints'/>
       <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_5' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_tarsal_interphalangeal_1' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_tarsal_interphalangeal_1' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3' containerField='joints'/>

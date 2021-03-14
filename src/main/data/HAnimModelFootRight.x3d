@@ -7,7 +7,7 @@
     <meta content='Right foot, using high-fidelity definitions for HAnim version 2.0' name='description'/>
     <meta content='Kwan-Hee YOO, Don Brutzman and Joe Williams' name='creator'/>
     <meta content='26 January 2015' name='created'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='8 March 2021' name='modified'/>
     <meta content='not yet to scale' name='warning'/>
     <meta content='Update all values to match HAnim2 A.7 Level of articulation four LOA-4' name='TODO'/>
     <meta content='Add links to figures' name='TODO'/>
@@ -28,7 +28,7 @@
   </head>
   <Scene>
     <WorldInfo title='HAnimModelFootRight.x3d'/>
-    <HAnimHumanoid DEF='hanim_Foot_Right' name='Foot_Right' version='2.0'>
+    <HAnimHumanoid DEF='hanim_Foot_Right' loa='4' name='Foot_Right' version='2.0'>
       <!-- HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' -->
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString containerField='value' name='authorName' value='Kwan-Hee YOO, Don Brutzman and Joe Williams'/>
