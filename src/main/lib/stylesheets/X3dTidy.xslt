@@ -542,6 +542,29 @@ Recommended tools:
             </xsl:if>
         </xsl:if>
         
+        <xsl:variable name="elementName">
+            <xsl:choose>
+                <xsl:when test="(local-name(..) = 'MetadataSet') and ((../@name = 'HAnimHumanoid.info') or (../@name = 'GeoMetadata.summary')) and
+                                 starts-with(local-name(), 'Metadata') and not(local-name() = 'MetadataFloat') and
+                                ((@name = 'height') or (@name = 'weight') or (@name = 'extent') or (@name = 'resolution'))">
+                    <xsl:text>MetadataFloat</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** for contained element in MetadataSet name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>' change metadata element type from </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> to MetadataFloat for name='</xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>' value='</xsl:text>
+                        <xsl:value-of select="@value"/>
+                        <xsl:text>' </xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="local-name()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:choose>
             <xsl:when test="(count(* | comment() | text()[string-length(normalize-space(.)) > 0]) > 0) or 
                             (((local-name()='HAnimSegment') or (local-name()='HAnimSite')) and not(string-length(@USE) > 0) and 
@@ -556,16 +579,16 @@ Recommended tools:
                     <xsl:otherwise>
                         <!-- open tag for current element, which itself is a parent -->
                         <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-                        <xsl:value-of select="local-name()"/>
+                        <xsl:value-of select="$elementName"/>
                         <!-- handle attribute(s) if any -->
                         <xsl:call-template name="process-attributes-in-order"/>
                         <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
                 
-                        <!-- special case: split HAnimHumanoid info field -->
-                        <xsl:if test="(local-name() = 'HAnimHumanoid') and (string-length(@info) > 0) and contains(@info,'&quot;') and starts-with(@version,'2')">
+                        <!-- special case: split HAnimHumanoid info field (name=value pairs) into MetadataSet collection -->
+                        <xsl:if test="(local-name() = 'HAnimHumanoid') and (string-length(@info) > 0) and contains(@info,'&quot;') and contains(@info,'=') and starts-with(@version,'2')">
                             <xsl:message>
-                                <xsl:text>*** warning: info array values split into matching MetadataSet structure</xsl:text>
+                                <xsl:text>*** warning: HAnimHumanoid info array values split into matching MetadataSet structure</xsl:text>
                             </xsl:message>
                             <xsl:comment>
                                 <xsl:text>HAnimHumanoid original info='</xsl:text>
@@ -585,7 +608,18 @@ Recommended tools:
                                     <xsl:message>
                                         <xsl:text>*** found info token...</xsl:text>
                                     </xsl:message> -->
-                                    <xsl:element name="MetadataString">
+                                    <xsl:variable name="elementName">
+                                        <xsl:choose>
+                                            <xsl:when test="starts-with($infoNameValuePair,'height') or 
+                                                            starts-with($infoNameValuePair,'weight')">
+                                                <xsl:text>MetadataFloat</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>MetadataString</xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <xsl:element name="{$elementName}">
                                         <xsl:choose>
                                             <xsl:when test="not(contains($infoNameValuePair,'='))">
                                                 <xsl:message>
@@ -602,12 +636,12 @@ Recommended tools:
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:variable name="infoName"  select="normalize-space(translate(substring-before($infoNameValuePair,'='),'&quot;',''))"/>
-                                                <xsl:variable name="infoValue" select="normalize-space(substring-after ($infoNameValuePair,'='))"/>
+                                                <xsl:variable name="infoValue" select="normalize-space(          substring-after ($infoNameValuePair,'='))"/>
                                                 <xsl:attribute name="name"  select="$infoName"/>
                                                 <xsl:variable name="optionalQuoteCharacter">
                                                     <xsl:choose>
+                                                        <!-- ensure unambiguous, this is an MFString value -->
                                                         <xsl:when test="($infoName = 'humanoidVersion')">
-                                                            <!-- ensure unambiguous, this is a string value -->
                                                             <xsl:text>"</xsl:text>
                                                         </xsl:when>
                                                         <xsl:otherwise>
@@ -637,7 +671,99 @@ Recommended tools:
                                                 </xsl:attribute>
                                             </xsl:otherwise>
                                         </xsl:choose>
-                                    </xsl:element><!-- MetadataString -->
+                                    </xsl:element><!-- $elementName, MetadataString or MetadataFloat etc. -->
+                                </xsl:for-each>
+                            </xsl:element><!-- MetadataSet -->
+                            <xsl:text>&#10;</xsl:text>
+                        </xsl:if>
+                
+                        <!-- TODO special case: split GeoMetadata summary field ("name" "value" string pairs) into MetadataSet collection-->
+                        <xsl:if test="false() and (local-name() = 'GeoMetadata') and (string-length(@summary) > 0) and contains(@summary,'&quot;')">
+                            <xsl:message>
+                                <xsl:text>*** warning: GeoMetadata summary array values split into matching MetadataSet structure</xsl:text>
+                            </xsl:message>
+                            <xsl:comment>
+                                <xsl:text>GeoMetadata original summary='</xsl:text>
+                                <xsl:value-of select="@summary"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:comment>
+                            <xsl:element name="MetadataSet">
+                                <xsl:attribute name="name"          ><xsl:text>GeoMetadata.summary</xsl:text></xsl:attribute>
+                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text></xsl:attribute>
+                            <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
+                                
+                                <xsl:for-each select="tokenize(@summary, '&quot;\s*(,)?\s*&quot;')">
+                                    <xsl:sort select="normalize-space(.)" order="ascending"/>
+                                    
+                                    <xsl:variable name="summaryNameValuePair"  select="normalize-space(.)"/>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** found info token...</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:variable name="elementName">
+                                        <xsl:choose>
+                                            <xsl:when test="starts-with($summaryNameValuePair,'extent') or 
+                                                            starts-with($summaryNameValuePair,'resolution')">
+                                                <xsl:text>MetadataFloat</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>MetadataString</xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <xsl:element name="{$elementName}">
+                                        <xsl:choose>
+                                            <xsl:when test="not(contains($summaryNameValuePair,'='))">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: GeoMetadata summary array name=value pair '</xsl:text>
+                                                    <xsl:value-of select="$summaryNameValuePair"/>
+                                                    <xsl:text>' is missing equal sign (= character) and cannot be split</xsl:text>
+                                                </xsl:message>
+                                                <xsl:attribute name="info{position()}">
+                                                    <!-- MFString array values with single values do not need to be quoted, see Mantis 1320 -->
+                                                    <xsl:call-template name="strip-surrounding-quotes">
+                                                        <xsl:with-param name="value" select="$summaryNameValuePair"/>
+                                                    </xsl:call-template>
+                                                </xsl:attribute>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:variable name="infoName"  select="normalize-space(translate(substring-before($summaryNameValuePair,'='),'&quot;',''))"/>
+                                                <xsl:variable name="infoValue" select="normalize-space(          substring-after ($summaryNameValuePair,'='))"/>
+                                                <xsl:attribute name="name"  select="$infoName"/>
+                                                <xsl:variable name="optionalQuoteCharacter">
+                                                    <xsl:choose>
+                                                        <!-- ensure unambiguous, this is an MFString value -->
+                                                        <xsl:when test="($infoName = 'dataUrl')">
+                                                            <xsl:text>"</xsl:text>
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <!-- MFString array values with single values do not need to be quoted, see Mantis 1320 -->
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+                                                </xsl:variable>
+                                                <xsl:attribute name="value">
+                                                    <xsl:value-of select="$optionalQuoteCharacter"/>
+                                                    <xsl:call-template name="strip-surrounding-quotes">
+                                                        <xsl:with-param name="value" select="$infoValue"/>
+                                                    </xsl:call-template>
+                                                    <xsl:value-of select="$optionalQuoteCharacter"/>
+                                                </xsl:attribute>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:choose>
+                                            <xsl:when test="$isX3D3">
+                                                <xsl:attribute name="containerField">
+                                                    <xsl:text>value</xsl:text>
+                                                </xsl:attribute>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <!-- TODO may become optional in X3D4 -->
+                                                <xsl:attribute name="containerField">
+                                                    <xsl:text>value</xsl:text>
+                                                </xsl:attribute>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:element><!-- $elementName, MetadataString or MetadataFloat etc. -->
                                 </xsl:for-each>
                             </xsl:element><!-- MetadataSet -->
                             <xsl:text>&#10;</xsl:text>
@@ -1336,7 +1462,7 @@ Recommended tools:
             <xsl:otherwise>
                 <!-- singleton tag, no children, no contained script -->
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-                <xsl:value-of select="local-name()"/>
+                <xsl:value-of select="$elementName"/>
                 <!-- handle attribute(s) if any -->
                 <xsl:call-template name="process-attributes-in-order"/>
                 <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
@@ -1370,6 +1496,7 @@ Recommended tools:
                 </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
+
         <!-- post-processing -->
         <xsl:if test="(local-name()='HAnimHumanoid')">
             <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
@@ -2928,7 +3055,7 @@ Recommended tools:
                       not((local-name()='containerField' and .='appearance')	and (local-name(..)='Appearance')) and
                       not((local-name()='containerField' and .='material')	and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
                       not((local-name()='containerField' and .='color')	and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
-                      not((local-name()='containerField' and .='coord')	and (local-name(..)='Coordinate')) and
+                      not((local-name()='containerField' and .='coord')	and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and .='normal')	and (local-name(..)='Normal')) and
                       not((local-name()='containerField' and .='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
                       not((local-name()='containerField' and .='fontStyle')	and (local-name(..)='FontStyle')) and
@@ -4168,7 +4295,34 @@ Recommended tools:
                     <xsl:value-of select="substring-after (normalize-space(.),'ALL')"/>
                     <!-- TODO check for embedded whitespace without quoting, also consider regex -->
                 </xsl:when>
-                
+                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name = 'HAnimHumanoid.info') and not(. = 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid')">
+                    <xsl:message>
+                        <xsl:text disable-output-escaping="yes">*** error: &lt;MetadataSet DEF='</xsl:text>
+                        <xsl:value-of select="../@DEF"/>
+                        <xsl:text>' name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>'/&gt; has incorrect reference='</xsl:text>
+                        <xsl:value-of select="../@reference"/>
+                        <xsl:text> and so replacing with '</xsl:text>
+                    <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                    <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name  = 'GeoMetadata.summary') and not(. = 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata')">
+                    <xsl:message>
+                        <xsl:text disable-output-escaping="yes">*** error: &lt;MetadataSet DEF='</xsl:text>
+                        <xsl:value-of select="../@DEF"/>
+                        <xsl:text>' name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>'/&gt; has incorrect reference='</xsl:text>
+                        <xsl:value-of select="../@reference"/>
+                        <xsl:text> and so replacing with '</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                </xsl:when>
                 <!-- *** new fixes: other new attribute-value rules go here *** -->
                 
                 <!-- TODO add other MFString attributes, handle fixMFStringQuotes setting accordingly -->
@@ -4178,7 +4332,7 @@ Recommended tools:
                     </xsl:call-template>
                 </xsl:otherwise>
             </xsl:choose>
-            <!-- attribute value complete -->
+            <!-- attribute value overrides complete -->
             <xsl:text>'</xsl:text>
             <!-- similar output blocks found in @url, @*
             <xsl:variable name="containsQuote" select="contains(.,'&quot;')"/>
@@ -4520,6 +4674,8 @@ Recommended tools:
                             <xsl:value-of select="$currentNode/@DEF"/>
                             <xsl:text> name='</xsl:text>
                             <xsl:value-of select="$currentNode/@name"/>
+                            <xsl:text>' loa='</xsl:text>
+                            <xsl:value-of select="@loa"/>
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="(string-length($currentNode/@name) > 0)">
@@ -5501,8 +5657,7 @@ Recommended tools:
       <!-- *** finish HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
 
       <!-- *** start: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when
-          test="(local-name(..)='HAnimSegment') and (local-name()='name') and $isHAnim2 and ((.='l_hindfoot') or (.='l_cuneiform') or (.='l_midproximal') or (.='l_metatarsal') or (.='l_middistal') or (.='l_tarsal_proximal_phalanx') or (.='l_tarsal_middle_phalanx') or (.='l_forefoot') or (.='l_tarsal_distal_phalanx') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_cuneiform') or (.='r_midproximal') or (.='r_middistal') or (.='r_tarsal_proximal_phalanx') or (.='r_tarsal_middle_phalanx') or (.='r_forefoot') or (.='r_tarsal_distal_phalanx') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_carpal_proximal_phalanx') or (.='l_index_middle') or (.='l_carpal_middle_phalanx') or (.='l_index_distal') or (.='l_carpal_distal_phalanx') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_carpal_proximal_phalanx') or (.='r_index_middle') or (.='r_carpal_middle_phalanx') or (.='r_index_distal') or (.='r_carpal_distal_phalanx') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
+      <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
@@ -5527,6 +5682,7 @@ Recommended tools:
                 <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
                 <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
                 <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='l_wrist')"><xsl:text>l_carpal</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
@@ -5550,6 +5706,7 @@ Recommended tools:
                 <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
                 <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
                 <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_wrist')"><xsl:text>r_carpal</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
@@ -5687,11 +5844,78 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_tarsal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_tarsal_distal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_tarsal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_tarsal_distal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <!-- ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match -->
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_hindfoot')"><xsl:value-of select="substring-before(../@name,'l_hindfoot')"/><xsl:text>l_talus</xsl:text><xsl:value-of select="substring-after(../@name,'l_hindfoot')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_cuneiform')"><xsl:value-of select="substring-before(../@name,'l_cuneiform')"/><xsl:text>l_cuneiform_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_cuneiform')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_midproximal')"><xsl:value-of select="substring-before(../@name,'l_midproximal')"/><xsl:text>l_metatarsal_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_midproximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_metatarsal')"><xsl:value-of select="substring-before(../@name,'l_metatarsal')"/><xsl:text>l_metatarsal_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_metatarsal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_middistal')"><xsl:value-of select="substring-before(../@name,'l_middistal')"/><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_middistal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_tarsal_proximal_phalanx')"><xsl:value-of select="substring-before(../@name,'l_tarsal_proximal_phalanx')"/><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_tarsal_proximal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_tarsal_middle_phalanx')"><xsl:value-of select="substring-before(../@name,'l_tarsal_middle_phalanx')"/><xsl:text>l_tarsal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_tarsal_middle_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_forefoot')"><xsl:value-of select="substring-before(../@name,'l_forefoot')"/><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_forefoot')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_tarsal_distal_phalanx')"><xsl:value-of select="substring-before(../@name,'l_tarsal_distal_phalanx')"/><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_tarsal_distal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_calcaneum')"><xsl:value-of select="substring-before(../@name,'l_calcaneum')"/><xsl:text>l_calcaneus</xsl:text><xsl:value-of select="substring-after(../@name,'l_calcaneum')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_hindfoot')"><xsl:value-of select="substring-before(../@name,'r_hindfoot')"/><xsl:text>r_talus</xsl:text><xsl:value-of select="substring-after(../@name,'r_hindfoot')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_cuneiform')"><xsl:value-of select="substring-before(../@name,'r_cuneiform')"/><xsl:text>r_cuneiform_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_cuneiform')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_midproximal')"><xsl:value-of select="substring-before(../@name,'r_midproximal')"/><xsl:text>r_metatarsal_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_midproximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_middistal')"><xsl:value-of select="substring-before(../@name,'r_middistal')"/><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_middistal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_tarsal_proximal_phalanx')"><xsl:value-of select="substring-before(../@name,'r_tarsal_proximal_phalanx')"/><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_tarsal_proximal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_tarsal_middle_phalanx')"><xsl:value-of select="substring-before(../@name,'r_tarsal_middle_phalanx')"/><xsl:text>r_tarsal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_tarsal_middle_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_forefoot')"><xsl:value-of select="substring-before(../@name,'r_forefoot')"/><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_forefoot')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_tarsal_distal_phalanx')"><xsl:value-of select="substring-before(../@name,'r_tarsal_distal_phalanx')"/><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_tarsal_distal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_calcaneum')"><xsl:value-of select="substring-before(../@name,'r_calcaneum')"/><xsl:text>r_calcaneus</xsl:text><xsl:value-of select="substring-after(../@name,'r_calcaneum')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'head')"><xsl:value-of select="substring-before(../@name,'head')"/><xsl:text>skull</xsl:text><xsl:value-of select="substring-after(../@name,'head')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_hand')"><xsl:value-of select="substring-before(../@name,'l_hand')"/><xsl:text>l_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'l_hand')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_wrist')"><xsl:value-of select="substring-before(../@name,'l_wrist')"/><xsl:text>l_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'l_wrist')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_thumb_metacarpal')"/><xsl:text>l_metacarpal_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_proximal')"><xsl:value-of select="substring-before(../@name,'l_thumb_proximal')"/><xsl:text>l_carpal_proximal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_distal')"><xsl:value-of select="substring-before(../@name,'l_thumb_distal')"/><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_index_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_index_metacarpal')"/><xsl:text>l_metacarpal_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_index_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_index_proximal')"><xsl:value-of select="substring-before(../@name,'l_index_proximal')"/><xsl:text>l_carpal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_index_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_carpal_proximal_phalanx')"><xsl:value-of select="substring-before(../@name,'l_carpal_proximal_phalanx')"/><xsl:text>l_carpal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_carpal_proximal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_index_middle')"><xsl:value-of select="substring-before(../@name,'l_index_middle')"/><xsl:text>l_carpal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_index_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_carpal_middle_phalanx')"><xsl:value-of select="substring-before(../@name,'l_carpal_middle_phalanx')"/><xsl:text>l_carpal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_carpal_middle_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_index_distal')"><xsl:value-of select="substring-before(../@name,'l_index_distal')"/><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_index_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_carpal_distal_phalanx')"><xsl:value-of select="substring-before(../@name,'l_carpal_distal_phalanx')"/><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_carpal_distal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_middle_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_middle_metacarpal')"/><xsl:text>l_metacarpal_3</xsl:text><xsl:value-of select="substring-after(../@name,'l_middle_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_middle_proximal')"><xsl:value-of select="substring-before(../@name,'l_middle_proximal')"/><xsl:text>l_carpal_proximal_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'l_middle_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_middle_middle')"><xsl:value-of select="substring-before(../@name,'l_middle_middle')"/><xsl:text>l_carpal_middle_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'l_middle_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_middle_distal')"><xsl:value-of select="substring-before(../@name,'l_middle_distal')"/><xsl:text>l_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'l_middle_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_ring_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_ring_metacarpal')"/><xsl:text>l_metacarpal_4</xsl:text><xsl:value-of select="substring-after(../@name,'l_ring_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_ring_proximal')"><xsl:value-of select="substring-before(../@name,'l_ring_proximal')"/><xsl:text>l_carpal_proximal_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'l_ring_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_ring_middle')"><xsl:value-of select="substring-before(../@name,'l_ring_middle')"/><xsl:text>l_carpal_middle_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'l_ring_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_ring_distal')"><xsl:value-of select="substring-before(../@name,'l_ring_distal')"/><xsl:text>l_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'l_ring_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_pinky_metacarpal')"/><xsl:text>l_metacarpal_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_proximal')"><xsl:value-of select="substring-before(../@name,'l_pinky_proximal')"/><xsl:text>l_carpal_proximal_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_middle')"><xsl:value-of select="substring-before(../@name,'l_pinky_middle')"/><xsl:text>l_carpal_middle_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_distal')"><xsl:value-of select="substring-before(../@name,'l_pinky_distal')"/><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_hand')"><xsl:value-of select="substring-before(../@name,'r_hand')"/><xsl:text>r_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'r_hand')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_wrist')"><xsl:value-of select="substring-before(../@name,'r_wrist')"/><xsl:text>r_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'r_wrist')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_thumb_metacarpal')"/><xsl:text>r_metacarpal_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_proximal')"><xsl:value-of select="substring-before(../@name,'r_thumb_proximal')"/><xsl:text>r_carpal_proximal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_distal')"><xsl:value-of select="substring-before(../@name,'r_thumb_distal')"/><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_index_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_index_metacarpal')"/><xsl:text>r_metacarpal_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_index_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_index_proximal')"><xsl:value-of select="substring-before(../@name,'r_index_proximal')"/><xsl:text>r_carpal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_index_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_carpal_proximal_phalanx')"><xsl:value-of select="substring-before(../@name,'r_carpal_proximal_phalanx')"/><xsl:text>r_carpal_proximal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_carpal_proximal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_index_middle')"><xsl:value-of select="substring-before(../@name,'r_index_middle')"/><xsl:text>r_carpal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_index_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_carpal_middle_phalanx')"><xsl:value-of select="substring-before(../@name,'r_carpal_middle_phalanx')"/><xsl:text>r_carpal_middle_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_carpal_middle_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_index_distal')"><xsl:value-of select="substring-before(../@name,'r_index_distal')"/><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_index_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_carpal_distal_phalanx')"><xsl:value-of select="substring-before(../@name,'r_carpal_distal_phalanx')"/><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="substring-after(../@name,'r_carpal_distal_phalanx')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_middle_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_middle_metacarpal')"/><xsl:text>r_metacarpal_3</xsl:text><xsl:value-of select="substring-after(../@name,'r_middle_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_middle_proximal')"><xsl:value-of select="substring-before(../@name,'r_middle_proximal')"/><xsl:text>r_carpal_proximal_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'r_middle_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_middle_middle')"><xsl:value-of select="substring-before(../@name,'r_middle_middle')"/><xsl:text>r_carpal_middle_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'r_middle_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_middle_distal')"><xsl:value-of select="substring-before(../@name,'r_middle_distal')"/><xsl:text>r_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="substring-after(../@name,'r_middle_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_ring_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_ring_metacarpal')"/><xsl:text>r_metacarpal_4</xsl:text><xsl:value-of select="substring-after(../@name,'r_ring_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_ring_proximal')"><xsl:value-of select="substring-before(../@name,'r_ring_proximal')"/><xsl:text>r_carpal_proximal_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'r_ring_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_ring_middle')"><xsl:value-of select="substring-before(../@name,'r_ring_middle')"/><xsl:text>r_carpal_middle_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'r_ring_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_ring_distal')"><xsl:value-of select="substring-before(../@name,'r_ring_distal')"/><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="substring-after(../@name,'r_ring_distal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_pinky_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_pinky_metacarpal')"/><xsl:text>r_metacarpal_5</xsl:text><xsl:value-of select="substring-after(../@name,'r_pinky_metacarpal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_pinky_proximal')"><xsl:value-of select="substring-before(../@name,'r_pinky_proximal')"/><xsl:text>r_carpal_proximal_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'r_pinky_proximal')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_pinky_middle')"><xsl:value-of select="substring-before(../@name,'r_pinky_middle')"/><xsl:text>r_carpal_middle_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'r_pinky_middle')"/></xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_pinky_distal')"><xsl:value-of select="substring-before(../@name,'r_pinky_distal')"/><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'r_pinky_distal')"/></xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="."/>
                     <!-- <xsl:message>

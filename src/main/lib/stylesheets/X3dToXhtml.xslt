@@ -2657,7 +2657,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name()='containerField' and .='appearance')	and (local-name(..)='Appearance')) and
                       not((local-name()='containerField' and .='material')	and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
                       not((local-name()='containerField' and .='color')	and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
-                      not((local-name()='containerField' and .='coord')	and (local-name(..)='Coordinate')) and
+                      not((local-name()='containerField' and .='coord')	and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and .='normal')	and (local-name(..)='Normal')) and
                       not((local-name()='containerField' and .='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
                       not((local-name()='containerField' and .='fontStyle')	and (local-name(..)='FontStyle')) and
@@ -4408,6 +4408,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:value-of select="$currentNode/@DEF"/>
                             <xsl:text> name='</xsl:text>
                             <xsl:value-of select="$currentNode/@name"/>
+                            <xsl:text>' loa='</xsl:text>
+                            <xsl:value-of select="@loa"/>
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="(string-length($currentNode/@name) > 0)">
