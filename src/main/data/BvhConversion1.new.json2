@@ -38,7 +38,11 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"10 March 2021"
+          },
+          {
+            "@name":"warning",
+            "@content":"Note this conversion of a legacy model is not HAnim compliant."
           },
           {
             "@name":"Image",
@@ -102,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",

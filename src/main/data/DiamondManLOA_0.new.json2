@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"9 March 2021"
           },
           {
             "@name":"motto",
@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -203,8 +203,8 @@
               "-skeleton":[
                 { "HAnimJoint":
                   {
-                    "@name":"humanoid_root",
-                    "@DEF":"hanim_humanoid_root",
+                    "@name":"HumanoidRoot",
+                    "@DEF":"hanim_HumanoidRoot",
                     "@center":[0.0,0.8240,0.0277],
                     "-IllegalChildNodeFieldNameNotFound":[
                       { "HAnimJoint":
@@ -316,7 +316,7 @@
               "-joints":[
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_humanoid_root"
+                    "@USE":"hanim_HumanoidRoot"
                   }
                 },
                 { "HAnimJoint":
