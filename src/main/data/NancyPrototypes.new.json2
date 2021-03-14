@@ -24,11 +24,11 @@
           },
           {
             "@name":"modified",
-            "@content":"20 October 2019"
+            "@content":"4 July 2020"
           },
           {
             "@name":"description",
-            "@content":"Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
+            "@content":"Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
           },
           {
             "@name":"warning",
@@ -44,7 +44,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"
           },
           {
             "@name":"generator",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"05 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"generator",
@@ -74,7 +74,7 @@
             {
               "@name":"Displacer",
               "@appinfo":"A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -109,11 +109,11 @@
             {
               "@name":"Humanoid",
               "@appinfo":"The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html",
               "ProtoInterface": {
                   "-children":[
                     {
-                      "#comment":"H-Anim v1.1 field definitions"
+                      "#comment":"HAnim v1.1 field definitions"
                     }
                   ],
                   "field": [
@@ -132,7 +132,7 @@
                     {
                       "@name":"humanoidVersion",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Version of the humanoid being modeled. Hint: H-anim version 2.0",
+                      "@appinfo":"Version of the humanoid being modeled. Hint: HAnim version 2.0",
                       "@type":"SFString"
                     },
                     {
@@ -185,15 +185,15 @@
                     {
                       "@name":"humanoidBody",
                       "@accessType":"inputOutput",
-                      "@appinfo":"H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton",
-                      "@documentation":"http://H-Anim.org/Specifications/H-Anim1.1/#humanoid",
+                      "@appinfo":"HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton",
+                      "@documentation":"http://HAnim.org/Specifications/HAnim1.1/#humanoid",
                       "@type":"MFNode"
                     },
                     {
                       "@name":"skeleton",
                       "@accessType":"inputOutput",
-                      "@appinfo":"H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
-                      "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+                      "@appinfo":"HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
+                      "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html",
                       "@type":"MFNode"
                     },
                     {
@@ -223,7 +223,7 @@
                     {
                       "@name":"skinCoord",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Hint: H-anim version 2.0",
+                      "@appinfo":"Hint: HAnim version 2.0",
                       "@type":"SFNode",
                       "-children":[
                         {
@@ -234,7 +234,7 @@
                     {
                       "@name":"skinNormal",
                       "@accessType":"inputOutput",
-                      "@appinfo":"Hint: H-anim version 2.0",
+                      "@appinfo":"Hint: HAnim version 2.0",
                       "@type":"SFNode",
                       "-children":[
                         {
@@ -336,7 +336,7 @@
             {
               "@name":"Joint",
               "@appinfo":"The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Joint.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -494,7 +494,7 @@
             {
               "@name":"Segment",
               "@appinfo":"The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Segment.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -605,7 +605,7 @@
             {
               "@name":"Site",
               "@appinfo":"The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).",
-              "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html",
+              "@documentation":"http://HAnim.org/Specifications/HAnim2001/part1/Site.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -879,7 +879,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Stand"
+              "@toNode":"r_ankle_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -887,7 +887,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Stand"
+              "@toNode":"r_knee_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -895,7 +895,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Stand"
+              "@toNode":"r_hip_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -903,7 +903,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Stand"
+              "@toNode":"l_ankle_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -911,7 +911,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Stand"
+              "@toNode":"l_knee_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -919,7 +919,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Stand"
+              "@toNode":"l_hip_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -927,7 +927,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Stand"
+              "@toNode":"lower_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -935,7 +935,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Stand"
+              "@toNode":"r_wrist_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -943,7 +943,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Stand"
+              "@toNode":"r_elbow_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -951,7 +951,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Stand"
+              "@toNode":"r_shoulder_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -959,7 +959,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Stand"
+              "@toNode":"l_wrist_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -967,7 +967,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Stand"
+              "@toNode":"l_elbow_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -975,7 +975,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Stand"
+              "@toNode":"l_shoulder_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -983,7 +983,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Stand"
+              "@toNode":"head_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -991,7 +991,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Stand"
+              "@toNode":"neck_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -999,7 +999,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Stand"
+              "@toNode":"upper_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -1007,7 +1007,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Stand"
+              "@toNode":"whole_body_RotationInterpolator_Stand"
             }
           },
           { "ROUTE":
@@ -1015,13 +1015,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Stand_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Stand"
+              "@toNode":"whole_body_TranslationInterpolator_Stand"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Stand",
+              "@fromNode":"r_ankle_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -1029,7 +1029,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Stand",
+              "@fromNode":"r_knee_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -1037,7 +1037,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Stand",
+              "@fromNode":"r_hip_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -1045,7 +1045,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Stand",
+              "@fromNode":"l_ankle_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -1053,7 +1053,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Stand",
+              "@fromNode":"l_knee_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -1061,7 +1061,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Stand",
+              "@fromNode":"l_hip_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -1069,7 +1069,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Stand",
+              "@fromNode":"lower_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -1077,7 +1077,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Stand",
+              "@fromNode":"r_wrist_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -1085,7 +1085,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Stand",
+              "@fromNode":"r_elbow_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -1093,7 +1093,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Stand",
+              "@fromNode":"r_shoulder_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -1101,7 +1101,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Stand",
+              "@fromNode":"l_wrist_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -1109,7 +1109,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Stand",
+              "@fromNode":"l_elbow_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -1117,7 +1117,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Stand",
+              "@fromNode":"l_shoulder_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -1125,7 +1125,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Stand",
+              "@fromNode":"head_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -1133,7 +1133,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Stand",
+              "@fromNode":"neck_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -1141,7 +1141,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Stand",
+              "@fromNode":"upper_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -1149,17 +1149,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Stand",
+              "@fromNode":"whole_body_RotationInterpolator_Stand",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Stand",
+              "@fromNode":"whole_body_TranslationInterpolator_Stand",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -1167,7 +1167,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_BasicWalk"
+              "@toNode":"r_ankle_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1175,7 +1175,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_BasicWalk"
+              "@toNode":"r_knee_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1183,7 +1183,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_BasicWalk"
+              "@toNode":"r_hip_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1191,7 +1191,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_BasicWalk"
+              "@toNode":"l_ankle_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1199,7 +1199,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_BasicWalk"
+              "@toNode":"l_knee_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1207,7 +1207,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_BasicWalk"
+              "@toNode":"l_hip_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1215,7 +1215,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_BasicWalk"
+              "@toNode":"lower_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1223,7 +1223,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_BasicWalk"
+              "@toNode":"r_wrist_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1231,7 +1231,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_BasicWalk"
+              "@toNode":"r_elbow_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1239,7 +1239,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_BasicWalk"
+              "@toNode":"r_shoulder_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1247,7 +1247,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_BasicWalk"
+              "@toNode":"l_wrist_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1255,7 +1255,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_BasicWalk"
+              "@toNode":"l_elbow_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1263,7 +1263,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_BasicWalk"
+              "@toNode":"l_shoulder_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1271,7 +1271,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_BasicWalk"
+              "@toNode":"head_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1279,7 +1279,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_BasicWalk"
+              "@toNode":"neck_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1287,7 +1287,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_BasicWalk"
+              "@toNode":"upper_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1295,7 +1295,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_BasicWalk"
+              "@toNode":"whole_body_RotationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
@@ -1303,13 +1303,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Walk_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_BasicWalk"
+              "@toNode":"whole_body_TranslationInterpolator_BasicWalk"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_BasicWalk",
+              "@fromNode":"r_ankle_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -1317,7 +1317,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_BasicWalk",
+              "@fromNode":"r_knee_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -1325,7 +1325,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_BasicWalk",
+              "@fromNode":"r_hip_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -1333,7 +1333,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_BasicWalk",
+              "@fromNode":"l_ankle_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -1341,7 +1341,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_BasicWalk",
+              "@fromNode":"l_knee_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -1349,7 +1349,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_BasicWalk",
+              "@fromNode":"l_hip_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -1357,7 +1357,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_BasicWalk",
+              "@fromNode":"lower_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -1365,7 +1365,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_BasicWalk",
+              "@fromNode":"r_wrist_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -1373,7 +1373,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_BasicWalk",
+              "@fromNode":"r_elbow_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -1381,7 +1381,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_BasicWalk",
+              "@fromNode":"r_shoulder_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -1389,7 +1389,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_BasicWalk",
+              "@fromNode":"l_wrist_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -1397,7 +1397,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_BasicWalk",
+              "@fromNode":"l_elbow_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -1405,7 +1405,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_BasicWalk",
+              "@fromNode":"l_shoulder_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -1413,7 +1413,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_BasicWalk",
+              "@fromNode":"head_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -1421,7 +1421,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_BasicWalk",
+              "@fromNode":"neck_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -1429,7 +1429,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_BasicWalk",
+              "@fromNode":"upper_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -1437,17 +1437,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_BasicWalk",
+              "@fromNode":"whole_body_RotationInterpolator_BasicWalk",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_BasicWalk",
+              "@fromNode":"whole_body_TranslationInterpolator_BasicWalk",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -1455,7 +1455,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Run"
+              "@toNode":"r_ankle_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1463,7 +1463,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Run"
+              "@toNode":"r_knee_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1471,7 +1471,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Run"
+              "@toNode":"r_hip_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1479,7 +1479,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Run"
+              "@toNode":"l_ankle_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1487,7 +1487,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Run"
+              "@toNode":"l_knee_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1495,7 +1495,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Run"
+              "@toNode":"l_hip_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1503,7 +1503,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Run"
+              "@toNode":"lower_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1511,7 +1511,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Run"
+              "@toNode":"r_wrist_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1519,7 +1519,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Run"
+              "@toNode":"r_elbow_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1527,7 +1527,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Run"
+              "@toNode":"r_shoulder_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1535,7 +1535,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Run"
+              "@toNode":"l_wrist_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1543,7 +1543,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Run"
+              "@toNode":"l_elbow_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1551,7 +1551,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Run"
+              "@toNode":"l_shoulder_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1559,7 +1559,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Run"
+              "@toNode":"head_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1567,7 +1567,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Run"
+              "@toNode":"neck_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1575,7 +1575,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Run"
+              "@toNode":"upper_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1583,7 +1583,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Run"
+              "@toNode":"whole_body_RotationInterpolator_Run"
             }
           },
           { "ROUTE":
@@ -1591,13 +1591,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Run_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Run"
+              "@toNode":"whole_body_TranslationInterpolator_Run"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Run",
+              "@fromNode":"r_ankle_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -1605,7 +1605,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Run",
+              "@fromNode":"r_knee_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -1613,7 +1613,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Run",
+              "@fromNode":"r_hip_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -1621,7 +1621,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Run",
+              "@fromNode":"l_ankle_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -1629,7 +1629,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Run",
+              "@fromNode":"l_knee_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -1637,7 +1637,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Run",
+              "@fromNode":"l_hip_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -1645,7 +1645,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Run",
+              "@fromNode":"lower_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -1653,7 +1653,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Run",
+              "@fromNode":"r_wrist_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -1661,7 +1661,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Run",
+              "@fromNode":"r_elbow_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -1669,7 +1669,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Run",
+              "@fromNode":"r_shoulder_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -1677,7 +1677,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Run",
+              "@fromNode":"l_wrist_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -1685,7 +1685,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Run",
+              "@fromNode":"l_elbow_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -1693,7 +1693,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Run",
+              "@fromNode":"l_shoulder_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -1701,7 +1701,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Run",
+              "@fromNode":"head_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -1709,7 +1709,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Run",
+              "@fromNode":"neck_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -1717,7 +1717,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Run",
+              "@fromNode":"upper_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -1725,17 +1725,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Run",
+              "@fromNode":"whole_body_RotationInterpolator_Run",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Run",
+              "@fromNode":"whole_body_TranslationInterpolator_Run",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
@@ -1743,7 +1743,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_ankleRotInterp_Jump"
+              "@toNode":"r_ankle_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1751,7 +1751,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_kneeRotInterp_Jump"
+              "@toNode":"r_knee_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1759,7 +1759,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_hipRotInterp_Jump"
+              "@toNode":"r_hip_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1767,7 +1767,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_ankleRotInterp_Jump"
+              "@toNode":"l_ankle_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1775,7 +1775,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_kneeRotInterp_Jump"
+              "@toNode":"l_knee_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1783,7 +1783,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_hipRotInterp_Jump"
+              "@toNode":"l_hip_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1791,7 +1791,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"lower_bodyRotInterp_Jump"
+              "@toNode":"lower_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1799,7 +1799,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_wristRotInterp_Jump"
+              "@toNode":"r_wrist_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1807,7 +1807,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_elbowRotInterp_Jump"
+              "@toNode":"r_elbow_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1815,7 +1815,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"r_shoulderRotInterp_Jump"
+              "@toNode":"r_shoulder_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1823,7 +1823,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_wristRotInterp_Jump"
+              "@toNode":"l_wrist_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1831,7 +1831,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_elbowRotInterp_Jump"
+              "@toNode":"l_elbow_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1839,7 +1839,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"l_shoulderRotInterp_Jump"
+              "@toNode":"l_shoulder_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1847,7 +1847,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"headRotInterp_Jump"
+              "@toNode":"head_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1855,7 +1855,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"neckRotInterp_Jump"
+              "@toNode":"neck_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1863,7 +1863,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"upper_bodyRotInterp_Jump"
+              "@toNode":"upper_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1871,7 +1871,7 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyRotInterp_Jump"
+              "@toNode":"whole_body_RotationInterpolator_Jump"
             }
           },
           { "ROUTE":
@@ -1879,13 +1879,13 @@
               "@fromField":"fraction_changed",
               "@fromNode":"Jump_Time",
               "@toField":"set_fraction",
-              "@toNode":"whole_bodyTranInterp_Jump"
+              "@toNode":"whole_body_TranslationInterpolator_Jump"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_ankleRotInterp_Jump",
+              "@fromNode":"r_ankle_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_ankle"
             }
@@ -1893,7 +1893,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_kneeRotInterp_Jump",
+              "@fromNode":"r_knee_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_knee"
             }
@@ -1901,7 +1901,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_hipRotInterp_Jump",
+              "@fromNode":"r_hip_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_hip"
             }
@@ -1909,7 +1909,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_ankleRotInterp_Jump",
+              "@fromNode":"l_ankle_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_ankle"
             }
@@ -1917,7 +1917,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_kneeRotInterp_Jump",
+              "@fromNode":"l_knee_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_knee"
             }
@@ -1925,7 +1925,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_hipRotInterp_Jump",
+              "@fromNode":"l_hip_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_hip"
             }
@@ -1933,7 +1933,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"lower_bodyRotInterp_Jump",
+              "@fromNode":"lower_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_sacroiliac"
             }
@@ -1941,7 +1941,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_wristRotInterp_Jump",
+              "@fromNode":"r_wrist_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_wrist"
             }
@@ -1949,7 +1949,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_elbowRotInterp_Jump",
+              "@fromNode":"r_elbow_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_elbow"
             }
@@ -1957,7 +1957,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"r_shoulderRotInterp_Jump",
+              "@fromNode":"r_shoulder_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_r_shoulder"
             }
@@ -1965,7 +1965,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_wristRotInterp_Jump",
+              "@fromNode":"l_wrist_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_wrist"
             }
@@ -1973,7 +1973,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_elbowRotInterp_Jump",
+              "@fromNode":"l_elbow_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_elbow"
             }
@@ -1981,7 +1981,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"l_shoulderRotInterp_Jump",
+              "@fromNode":"l_shoulder_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_l_shoulder"
             }
@@ -1989,7 +1989,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"headRotInterp_Jump",
+              "@fromNode":"head_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_skullbase"
             }
@@ -1997,7 +1997,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"neckRotInterp_Jump",
+              "@fromNode":"neck_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_vc4"
             }
@@ -2005,7 +2005,7 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"upper_bodyRotInterp_Jump",
+              "@fromNode":"upper_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
               "@toNode":"hanim_vl1"
             }
@@ -2013,17 +2013,17 @@
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyRotInterp_Jump",
+              "@fromNode":"whole_body_RotationInterpolator_Jump",
               "@toField":"set_rotation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           },
           { "ROUTE":
             {
               "@fromField":"value_changed",
-              "@fromNode":"whole_bodyTranInterp_Jump",
+              "@fromNode":"whole_body_TranslationInterpolator_Jump",
               "@toField":"set_translation",
-              "@toNode":"hanim_HumanoidRoot"
+              "@toNode":"hanim_humanoid_root"
             }
           }
         ]

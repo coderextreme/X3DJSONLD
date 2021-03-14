@@ -4,7 +4,7 @@ X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("HAnim")
+component2.setName("H-Anim")
 component2.setLevel(1)
 
 head1.addComponent(component2)

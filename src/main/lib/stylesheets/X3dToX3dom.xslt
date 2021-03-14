@@ -82,6 +82,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
     <xsl:param name="traceEnabled"             >false</xsl:param>
     <xsl:param name="cobwebStyle"              >default</xsl:param><!-- simple or default -->
+        
+    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
     
     <xsl:strip-space elements="*"/>
     <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
@@ -1682,6 +1686,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='rotateYUp' and (.='false')) or
                       (local-name()='containerField' and (.='geoOrigin')) or
                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:variable name="notDefaultHAnim1"
                       select="not( local-name(..)='HAnimJoint' and
                       ((local-name()='containerField' and (.='children')) or
@@ -1717,6 +1723,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
                        (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or

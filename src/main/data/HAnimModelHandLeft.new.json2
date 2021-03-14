@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"5 July 2020"
+            "@content":"20 February 2021"
           },
           {
             "@name":"warning",
@@ -90,7 +90,7 @@
           },
           {
             "@name":"translated",
-            "@content":"05 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"generator",
@@ -126,7 +126,7 @@
                   {
                     "@name":"HAnimHumanoid.info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                    "-IllegalChildNodeFieldNameNotFound":[
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"authorName",
@@ -198,6 +198,7 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Material":
                                                 {
+                                                  "@emissiveColor":[1,1,1]
                                                 }
                                               }
                                             ]
@@ -227,6 +228,7 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Material":
                                                 {
+                                                  "@emissiveColor":[1,1,1]
                                                 }
                                               }
                                             ]
@@ -256,6 +258,7 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Material":
                                                 {
+                                                  "@emissiveColor":[1,1,1]
                                                 }
                                               }
                                             ]
@@ -345,6 +348,7 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Material":
                                                       {
+                                                        "@emissiveColor":[1,1,1]
                                                       }
                                                     }
                                                   ]
@@ -374,6 +378,7 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Material":
                                                       {
+                                                        "@emissiveColor":[1,1,1]
                                                       }
                                                     }
                                                   ]
@@ -439,6 +444,7 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Material":
                                                             {
+                                                              "@emissiveColor":[1,1,1]
                                                             }
                                                           }
                                                         ]
@@ -496,6 +502,7 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Material":
                                                                   {
+                                                                    "@emissiveColor":[1,1,1]
                                                                   }
                                                                 }
                                                               ]
@@ -553,6 +560,7 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Material":
                                                                         {
+                                                                          "@emissiveColor":[1,1,1]
                                                                         }
                                                                       }
                                                                     ]
@@ -619,6 +627,7 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Material":
                                                             {
+                                                              "@emissiveColor":[1,1,1]
                                                             }
                                                           }
                                                         ]
@@ -676,6 +685,7 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Material":
                                                                   {
+                                                                    "@emissiveColor":[1,1,1]
                                                                   }
                                                                 }
                                                               ]
@@ -733,6 +743,7 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Material":
                                                                         {
+                                                                          "@emissiveColor":[1,1,1]
                                                                         }
                                                                       }
                                                                     ]
@@ -790,6 +801,7 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Material":
                                                                               {
+                                                                                "@emissiveColor":[1,1,1]
                                                                               }
                                                                             }
                                                                           ]
@@ -862,6 +874,7 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Material":
                                                       {
+                                                        "@emissiveColor":[1,1,1]
                                                       }
                                                     }
                                                   ]
@@ -924,6 +937,7 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Material":
                                                             {
+                                                              "@emissiveColor":[1,1,1]
                                                             }
                                                           }
                                                         ]
@@ -981,6 +995,7 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Material":
                                                                   {
+                                                                    "@emissiveColor":[1,1,1]
                                                                   }
                                                                 }
                                                               ]
@@ -1038,6 +1053,7 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Material":
                                                                         {
+                                                                          "@emissiveColor":[1,1,1]
                                                                         }
                                                                       }
                                                                     ]
@@ -1095,6 +1111,7 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Material":
                                                                               {
+                                                                                "@emissiveColor":[1,1,1]
                                                                               }
                                                                             }
                                                                           ]
@@ -1167,6 +1184,7 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Material":
                                                       {
+                                                        "@emissiveColor":[1,1,1]
                                                       }
                                                     }
                                                   ]
@@ -1196,6 +1214,7 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Material":
                                                       {
+                                                        "@emissiveColor":[1,1,1]
                                                       }
                                                     }
                                                   ]
@@ -1261,6 +1280,7 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Material":
                                                             {
+                                                              "@emissiveColor":[1,1,1]
                                                             }
                                                           }
                                                         ]
@@ -1318,6 +1338,7 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Material":
                                                                   {
+                                                                    "@emissiveColor":[1,1,1]
                                                                   }
                                                                 }
                                                               ]
@@ -1375,6 +1396,7 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Material":
                                                                         {
+                                                                          "@emissiveColor":[1,1,1]
                                                                         }
                                                                       }
                                                                     ]
@@ -1432,6 +1454,7 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Material":
                                                                               {
+                                                                                "@emissiveColor":[1,1,1]
                                                                               }
                                                                             }
                                                                           ]
@@ -1501,6 +1524,7 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Material":
                                                             {
+                                                              "@emissiveColor":[1,1,1]
                                                             }
                                                           }
                                                         ]
@@ -1558,6 +1582,7 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Material":
                                                                   {
+                                                                    "@emissiveColor":[1,1,1]
                                                                   }
                                                                 }
                                                               ]
@@ -1615,6 +1640,7 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Material":
                                                                         {
+                                                                          "@emissiveColor":[1,1,1]
                                                                         }
                                                                       }
                                                                     ]
@@ -1672,6 +1698,7 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Material":
                                                                               {
+                                                                                "@emissiveColor":[1,1,1]
                                                                               }
                                                                             }
                                                                           ]

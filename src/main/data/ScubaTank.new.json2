@@ -1,0 +1,359 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interchange",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"ScubaTank.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Scuba gear used by Nancy Diving example."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"24 January 2001"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 May 2020"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"13 March 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"ScubaTank.x3d"
+            }
+          }
+        ],
+        "-children":[
+          { "Transform":
+            {
+              "@DEF":"ScubaTank",
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Transform":
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Shape":
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Appearance":
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Material":
+                                    {
+                                      "@DEF":"tank",
+                                      "@ambientIntensity":0.3,
+                                      "@diffuseColor":[0.3,0.3,0.5],
+                                      "@shininess":0.10,
+                                      "@specularColor":[0.7,0.7,0.8]
+                                    }
+                                  }
+                                ]
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Cylinder":
+                              {
+                                "@height":0.7,
+                                "@radius":0.1
+                              }
+                            }
+                          ]
+                      }
+                    ]
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Transform":
+                  {
+                    "@translation":[0,0.35,0],
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Shape":
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Appearance":
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Material":
+                                    {
+                                      "@USE":"tank"
+                                    }
+                                  }
+                                ]
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Sphere":
+                              {
+                                "@radius":0.098
+                              }
+                            }
+                          ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Transform":
+                  {
+                    "@translation":[0,-0.35,0],
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Shape":
+                        {
+                          "@DEF":"tankBottom",
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Appearance":
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Material":
+                                    {
+                                      "@DEF":"black",
+                                      "@ambientIntensity":0.3,
+                                      "@diffuseColor":[0,0,0]
+                                    }
+                                  }
+                                ]
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Cylinder":
+                              {
+                                "@height":0.06,
+                                "@radius":0.115
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Group":
+                  {
+                    "@DEF":"tankNozzle",
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Transform":
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Transform":
+                              {
+                                "@translation":[0,0.45,0],
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"pressure",
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Appearance":
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Material":
+                                                {
+                                                  "@DEF":"pressureColor",
+                                                  "@ambientIntensity":0.4,
+                                                  "@diffuseColor":[0.91,0.91,0.91],
+                                                  "@shininess":0.16,
+                                                  "@specularColor":[0.91,0.90,0.91]
+                                                }
+                                              }
+                                            ]
+                                        }
+                                      ],
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.1,
+                                            "@radius":0.015
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Transform":
+                              {
+                                "@translation":[0,0.50,0],
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Shape":
+                                    {
+                                      "@DEF":"pressureTop",
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Appearance":
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Material":
+                                                {
+                                                  "@USE":"black"
+                                                }
+                                              }
+                                            ]
+                                        }
+                                      ],
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Cylinder":
+                                          {
+                                            "@height":0.02,
+                                            "@radius":0.025
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Transform":
+                              {
+                                "@rotation":[0,0,1,1.57],
+                                "@translation":[-0.028,0.462,0],
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Transform":
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Shape":
+                                          {
+                                            "@DEF":"connectorToRegulator",
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Appearance":
+                                                  "-IllegalChildNodeFieldNameNotFound":[
+                                                    { "Material":
+                                                      {
+                                                        "@USE":"pressureColor"
+                                                      }
+                                                    }
+                                                  ]
+                                              }
+                                            ],
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.03,
+                                                  "@radius":0.01
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                  }
+                                ],
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,0.02,0],
+                                      "-IllegalChildNodeFieldNameNotFound":[
+                                        { "Shape":
+                                          {
+                                            "@DEF":"connectorToRegulatorTop",
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Appearance":
+                                                  "-IllegalChildNodeFieldNameNotFound":[
+                                                    { "Material":
+                                                      {
+                                                        "@USE":"black"
+                                                      }
+                                                    }
+                                                  ]
+                                              }
+                                            ],
+                                            "-IllegalChildNodeFieldNameNotFound":[
+                                              { "Cylinder":
+                                                {
+                                                  "@height":0.02,
+                                                  "@radius":0.02
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Transform":
+                  {
+                    "@translation":[0,0.2,0],
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Shape":
+                        {
+                          "@DEF":"tankHoldBelt",
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Appearance":
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "Material":
+                                    {
+                                      "@USE":"black"
+                                    }
+                                  }
+                                ]
+                            }
+                          ],
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Cylinder":
+                              {
+                                "@height":0.1,
+                                "@radius":0.115
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.6,0.6,0.6]
+            }
+          }
+        ]
+    }
+  }
+}

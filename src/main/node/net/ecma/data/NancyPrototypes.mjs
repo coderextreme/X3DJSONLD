@@ -75,11 +75,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("4 July 2020")}),
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.")}),
+              content : new SFString("Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.")}),
 
             new meta({
               name : new SFString("warning"),
@@ -95,7 +95,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -110,7 +110,7 @@ var X3D0 =  new X3D({
             new ProtoDeclare({
               name : new SFString("Displacer"),
               appinfo : new SFString("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment."),
-              documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html"),
+              documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -137,10 +137,10 @@ var X3D0 =  new X3D({
             new ProtoDeclare({
               name : new SFString("Humanoid"),
               appinfo : new SFString("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model."),
-              documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html"),
+              documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  { "#comment" : new CommentsBlock("H-Anim v1.1 field definitions") },
+                  { "#comment" : new CommentsBlock("HAnim v1.1 field definitions") },
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
@@ -158,7 +158,7 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFSTRING,
                       name : new SFString("humanoidVersion"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("Version of the humanoid being modeled. Hint: H-anim version 2.0")}),
+                      appinfo : new SFString("Version of the humanoid being modeled. Hint: HAnim version 2.0")}),
 
                     new field({
                       type : field.TYPE_MFSTRING,
@@ -211,15 +211,15 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFNODE,
                       name : new SFString("humanoidBody"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton"),
-                      documentation : new SFString("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid")}),
+                      appinfo : new SFString("HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton"),
+                      documentation : new SFString("http://HAnim.org/Specifications/HAnim1.1/#humanoid")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
                       name : new SFString("skeleton"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody"),
-                      documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html")}),
+                      appinfo : new SFString("HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody"),
+                      documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
@@ -249,14 +249,14 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFNODE,
                       name : new SFString("skinCoord"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("Hint: H-anim version 2.0"),
+                      appinfo : new SFString("Hint: HAnim version 2.0"),
                       { "#comment" : new CommentsBlock("NULL node") }}),
 
                     new field({
                       type : field.TYPE_SFNODE,
                       name : new SFString("skinNormal"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("Hint: H-anim version 2.0"),
+                      appinfo : new SFString("Hint: HAnim version 2.0"),
                       { "#comment" : new CommentsBlock("NULL node") }})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
@@ -324,7 +324,7 @@ var X3D0 =  new X3D({
             new ProtoDeclare({
               name : new SFString("Joint"),
               appinfo : new SFString("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid."),
-              documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html"),
+              documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Joint.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -472,7 +472,7 @@ var X3D0 =  new X3D({
             new ProtoDeclare({
               name : new SFString("Segment"),
               appinfo : new SFString("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node."),
-              documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html"),
+              documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Segment.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -569,7 +569,7 @@ var X3D0 =  new X3D({
             new ProtoDeclare({
               name : new SFString("Site"),
               appinfo : new SFString("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds)."),
-              documentation : new SFString("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html"),
+              documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Site.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -697,14 +697,14 @@ var X3D0 =  new X3D({
 
                 new fieldValue({
                   name : new SFString("info"),
-                  value : new SFString("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\"")}),
+                  value : new SFString("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"")}),
 
                 new fieldValue({
                   name : new SFString("humanoidBody"),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("Joint"),
-                      DEF : new SFString("hanim_HumanoidRoot"),
+                      DEF : new SFString("hanim_humanoid_root"),
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("name"),
@@ -1037,7 +1037,7 @@ var X3D0 =  new X3D({
                                                   texture : new SFNode(
                                                     new ImageTexture({
                                                       DEF : new SFString("small_logo_Tex"),
-                                                      url : new MFString(["small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"])}))})),
+                                                      url : new MFString(["small_logo.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/small_logo.gif"])}))})),
                                               geometry : new SFNode(
                                                 new IndexedFaceSet({
                                                   coordIndex : new MFInt32([0,1,2,-1,3,0,2,-1,4,5,6,-1,6,7,4,-1,8,7,6,-1,6,9,8,-1,9,10,8,-1,6,5,11,-1,9,6,12,-1,11,12,6,-1,12,10,9,-1,7,8,13,-1,13,4,7,-1,14,15,16,-1,15,17,13,-1,4,13,17,-1,17,15,18,-1,13,19,15,-1,19,13,8,-1,19,16,15,-1,16,19,8,-1,17,20,4,-1,5,4,20,-1,18,21,17,-1,20,17,21,-1,16,22,14,-1,22,16,23,-1,8,23,16,-1,23,8,10,-1,24,25,26,-1,26,27,24,-1,25,28,26,-1,28,29,30,-1,30,26,28,-1,31,32,33,-1,32,25,33,-1,25,24,34,-1,33,25,34,-1,24,35,34,-1,27,35,24,-1,33,36,31,-1,27,26,37,-1,37,26,30,-1,38,37,30,-1,33,34,39,-1,39,34,35,-1,39,35,40,-1,41,38,30,-1,35,27,42,-1,37,42,27,-1,40,35,42,-1,42,37,43,-1,37,38,44,-1,44,43,37,-1,36,45,46,-1,36,33,45,-1,40,42,47,-1,43,47,42,-1,47,48,40,-1,39,40,48,-1,47,43,49,-1,43,44,49,-1,50,49,44,-1,51,46,52,-1,46,45,52,-1,52,45,53,-1,33,53,45,-1,33,39,53,-1,49,54,47,-1,48,47,54,-1,55,56,52,-1,57,52,53,-1,57,55,52,-1,58,57,53,-1,59,58,53,-1,53,39,59,-1,39,48,59,-1,59,48,54,-1,58,59,60,-1,54,49,61,-1,59,54,61,-1,60,59,61,-1,49,50,62,-1,63,62,50,-1,62,61,49,-1,64,63,50,-1,63,64,65,-1,65,62,63,-1,66,60,61,-1,62,65,67,-1,68,67,65,-1,64,69,70,-1,64,70,65,-1,70,68,65,-1,69,71,72,-1,72,70,69,-1,73,74,75,-1,66,76,60,-1,67,77,62,-1,62,77,61,-1,77,66,61,-1,66,77,78,-1,77,67,79,-1,79,67,68,-1,79,78,77,-1,68,70,80,-1,70,72,80,-1,80,79,68,-1,74,73,81,-1,73,76,82,-1,82,81,73,-1,76,66,83,-1,78,83,66,-1,83,82,76,-1,78,79,84,-1,79,80,84,-1,84,85,78,-1,86,84,80,-1,81,82,87,-1,87,88,81,-1,82,83,89,-1,83,78,89,-1,89,87,82,-1,78,85,89,-1,90,91,92,-1,92,93,90,-1,90,94,91,-1,95,96,94,-1,94,90,95,-1,29,96,97,-1,96,95,97,-1,97,30,29,-1,30,97,41,-1,41,97,95,-1,98,99,100,-1,98,91,99,-1,101,92,91,-1,98,101,91,-1,101,102,92,-1,92,102,93,-1,36,103,31,-1,51,103,36,46,-1,103,100,31,-1,100,103,98,-1,104,90,93,-1,90,104,95,-1,95,105,41,-1,104,105,95,-1,106,101,98,-1,102,101,106,-1,107,93,102,-1,93,107,104,-1,108,104,107,-1,107,109,108,-1,110,105,104,-1,104,108,110,-1,109,107,111,-1,107,102,111,-1,111,102,106,-1,111,112,109,-1,106,112,111,-1,113,110,108,-1,110,113,114,-1,51,52,115,-1,116,115,117,-1,117,106,116,-1,118,109,112,-1,119,108,109,-1,108,119,113,-1,109,118,119,-1,120,113,119,-1,119,121,120,-1,52,56,122,-1,122,115,52,-1,115,122,123,-1,117,124,125,-1,106,117,125,-1,118,112,106,125,-1,119,118,125,-1,121,119,125,-1,126,124,123,-1,127,114,113,-1,114,127,128,-1,113,120,127,-1,114,128,129,-1,130,126,123,-1,122,130,123,-1,131,120,121,-1,131,127,120,-1,132,129,128,-1,128,127,132,-1,74,81,133,-1,81,134,133,-1,121,135,131,-1,136,132,127,-1,132,136,137,-1,138,71,129,-1,138,129,132,-1,137,138,132,-1,139,72,71,-1,72,139,80,-1,71,138,139,-1,140,135,121,-1,140,121,125,-1,141,127,131,-1,127,141,136,-1,131,135,141,-1,142,141,135,-1,143,136,141,-1,136,143,137,-1,141,142,143,-1,144,138,137,-1,144,139,138,-1,143,144,137,-1,145,146,134,-1,145,140,146,-1,134,81,145,-1,147,135,140,-1,135,147,142,-1,140,145,147,-1,148,80,139,-1,80,148,86,-1,139,144,148,-1,149,143,142,-1,149,144,143,-1,142,150,149,-1,151,148,144,-1,144,149,151,-1,152,145,81,-1,81,88,152,-1,153,147,145,-1,153,142,147,-1,145,152,153,-1,153,150,142,-1,154,86,148,-1,148,151,154,-1,155,28,25,-1,155,29,28,-1,155,25,32,-1,155,32,31,-1,155,31,100,-1,155,100,99,-1,155,99,91,-1,155,91,94,-1,155,94,96,-1,155,96,29,-1,156,151,149,-1,156,154,151,-1,156,149,150,-1,156,150,153,-1,156,153,152,-1,156,152,88,-1,156,88,87,-1,156,87,89,-1,156,89,85,-1,156,85,84,-1,156,84,86,-1,156,86,154,-1,76,157,60,-1,76,73,158,157,-1,159,158,73,75,160,-1,161,56,55,-1,60,162,58,-1,162,60,157,-1,161,55,163,-1,57,164,163,55,-1,160,163,164,-1,160,164,159,-1,164,57,165,-1,164,165,159,-1,57,58,166,165,-1,166,58,162,-1,165,166,159,-1,166,162,157,158,159,-1,140,125,167,-1,124,168,125,-1,168,167,125,-1,124,169,168,-1,146,140,167,170,-1,168,170,167,-1,168,169,170,-1,146,170,171,-1,169,171,170,-1,172,134,146,171,-1,134,172,130,-1,169,124,126,173,-1,173,126,130,-1,169,173,172,171,-1,173,130,172,-1,122,74,133,174,-1,133,134,174,-1,130,122,174,-1,134,130,174,-1,122,56,175,74,-1,74,175,176,-1,175,56,161,176,-1,74,176,75,-1,176,161,163,-1,176,160,75,-1,176,163,160,-1,115,116,177,51,-1,106,98,177,116,-1,51,177,103,-1,177,98,103,-1]),
@@ -1419,7 +1419,7 @@ var X3D0 =  new X3D({
                   name : new SFString("joints"),
                   children : new MFNode([
                     new ProtoInstance({
-                      USE : new SFString("hanim_HumanoidRoot")}),
+                      USE : new SFString("hanim_humanoid_root")}),
 
                     new ProtoInstance({
                       USE : new SFString("hanim_sacroiliac")}),
@@ -1548,7 +1548,7 @@ var X3D0 =  new X3D({
 
             new WorldInfo({
               info : new MFString(["Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."]),
-              title : new SFString("Nancy - an H-Anim compliant avatar by 3Name3D")}),
+              title : new SFString("Nancy - an HAnim compliant avatar by 3Name3D")}),
 
             new NavigationInfo({
               type : ["EXAMINE"],
@@ -1758,92 +1758,92 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Stand_Animation"),
                   children : new MFNode([
                     new OrientationInterpolator({
-                      DEF : new SFString("r_ankleRotInterp_Stand"),
+                      DEF : new SFString("r_ankle_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_kneeRotInterp_Stand"),
+                      DEF : new SFString("r_knee_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_hipRotInterp_Stand"),
+                      DEF : new SFString("r_hip_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_ankleRotInterp_Stand"),
+                      DEF : new SFString("l_ankle_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_kneeRotInterp_Stand"),
+                      DEF : new SFString("l_knee_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_hipRotInterp_Stand"),
+                      DEF : new SFString("l_hip_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("lower_bodyRotInterp_Stand"),
+                      DEF : new SFString("lower_body_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_wristRotInterp_Stand"),
+                      DEF : new SFString("r_wrist_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_elbowRotInterp_Stand"),
+                      DEF : new SFString("r_elbow_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_shoulderRotInterp_Stand"),
+                      DEF : new SFString("r_shoulder_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_wristRotInterp_Stand"),
+                      DEF : new SFString("l_wrist_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_elbowRotInterp_Stand"),
+                      DEF : new SFString("l_elbow_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_shoulderRotInterp_Stand"),
+                      DEF : new SFString("l_shoulder_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("headRotInterp_Stand"),
+                      DEF : new SFString("head_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("neckRotInterp_Stand"),
+                      DEF : new SFString("neck_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("upper_bodyRotInterp_Stand"),
+                      DEF : new SFString("upper_body_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("whole_bodyRotInterp_Stand"),
+                      DEF : new SFString("whole_body_RotationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new PositionInterpolator({
-                      DEF : new SFString("whole_bodyTranInterp_Stand"),
+                      DEF : new SFString("whole_body_TranslationInterpolator_Stand"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFVec3f([0,0,0,0,0,0])}),
 
@@ -1855,92 +1855,92 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Walk_Animation"),
                   children : new MFNode([
                     new OrientationInterpolator({
-                      DEF : new SFString("r_ankleRotInterp_BasicWalk"),
+                      DEF : new SFString("r_ankle_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_kneeRotInterp_BasicWalk"),
+                      DEF : new SFString("r_knee_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]),
                       keyValue : new MFRotation([1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_hipRotInterp_BasicWalk"),
+                      DEF : new SFString("r_hip_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]),
                       keyValue : new MFRotation([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_ankleRotInterp_BasicWalk"),
+                      DEF : new SFString("l_ankle_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.125,0.2083,0.375,0.6667,0.9167,1]),
                       keyValue : new MFRotation([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_kneeRotInterp_BasicWalk"),
+                      DEF : new SFString("l_knee_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1]),
                       keyValue : new MFRotation([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_hipRotInterp_BasicWalk"),
+                      DEF : new SFString("l_hip_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1]),
                       keyValue : new MFRotation([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("lower_bodyRotInterp_BasicWalk"),
+                      DEF : new SFString("lower_body_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.5,1]),
                       keyValue : new MFRotation([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_wristRotInterp_BasicWalk"),
+                      DEF : new SFString("r_wrist_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_elbowRotInterp_BasicWalk"),
+                      DEF : new SFString("r_elbow_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_shoulderRotInterp_BasicWalk"),
+                      DEF : new SFString("r_shoulder_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_wristRotInterp_BasicWalk"),
+                      DEF : new SFString("l_wrist_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_elbowRotInterp_BasicWalk"),
+                      DEF : new SFString("l_elbow_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_shoulderRotInterp_BasicWalk"),
+                      DEF : new SFString("l_shoulder_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.9167,1]),
                       keyValue : new MFRotation([1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("headRotInterp_BasicWalk"),
+                      DEF : new SFString("head_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]),
                       keyValue : new MFRotation([0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("neckRotInterp_BasicWalk"),
+                      DEF : new SFString("neck_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("upper_bodyRotInterp_BasicWalk"),
+                      DEF : new SFString("upper_body_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.2083,0.375,0.75,0.8333,1]),
                       keyValue : new MFRotation([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("whole_bodyRotInterp_BasicWalk"),
+                      DEF : new SFString("whole_body_RotationInterpolator_BasicWalk"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new PositionInterpolator({
-                      DEF : new SFString("whole_bodyTranInterp_BasicWalk"),
+                      DEF : new SFString("whole_body_TranslationInterpolator_BasicWalk"),
                       key : new MFFloat([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]),
                       keyValue : new MFVec3f([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0])}),
 
@@ -1954,92 +1954,92 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Run_Animation"),
                   children : new MFNode([
                     new OrientationInterpolator({
-                      DEF : new SFString("r_ankleRotInterp_Run"),
+                      DEF : new SFString("r_ankle_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.4909,0.7091,0.8,0.8182,1]),
                       keyValue : new MFRotation([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_kneeRotInterp_Run"),
+                      DEF : new SFString("r_knee_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.03636,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_hipRotInterp_Run"),
+                      DEF : new SFString("r_hip_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_ankleRotInterp_Run"),
+                      DEF : new SFString("l_ankle_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.3091,0.4909,1]),
                       keyValue : new MFRotation([1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_kneeRotInterp_Run"),
+                      DEF : new SFString("l_knee_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_hipRotInterp_Run"),
+                      DEF : new SFString("l_hip_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("lower_bodyRotInterp_Run"),
+                      DEF : new SFString("lower_body_RotationInterpolator_Run"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_wristRotInterp_Run"),
+                      DEF : new SFString("r_wrist_RotationInterpolator_Run"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_elbowRotInterp_Run"),
+                      DEF : new SFString("r_elbow_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_shoulderRotInterp_Run"),
+                      DEF : new SFString("r_shoulder_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_wristRotInterp_Run"),
+                      DEF : new SFString("l_wrist_RotationInterpolator_Run"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_elbowRotInterp_Run"),
+                      DEF : new SFString("l_elbow_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_shoulderRotInterp_Run"),
+                      DEF : new SFString("l_shoulder_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.4909,0.7455,1]),
                       keyValue : new MFRotation([0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("headRotInterp_Run"),
+                      DEF : new SFString("head_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.4909,1]),
                       keyValue : new MFRotation([0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("neckRotInterp_Run"),
+                      DEF : new SFString("neck_RotationInterpolator_Run"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("upper_bodyRotInterp_Run"),
+                      DEF : new SFString("upper_body_RotationInterpolator_Run"),
                       key : new MFFloat([0,0.2545,0.4909,0.7636,1]),
                       keyValue : new MFRotation([0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("whole_bodyRotInterp_Run"),
+                      DEF : new SFString("whole_body_RotationInterpolator_Run"),
                       key : new MFFloat([0,1]),
                       keyValue : new MFRotation([0,0,1,0,0,0,1,0])}),
 
                     new PositionInterpolator({
-                      DEF : new SFString("whole_bodyTranInterp_Run"),
+                      DEF : new SFString("whole_body_TranslationInterpolator_Run"),
                       key : new MFFloat([0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1]),
                       keyValue : new MFVec3f([0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0])}),
 
@@ -2052,92 +2052,92 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Jump_Animation"),
                   children : new MFNode([
                     new OrientationInterpolator({
-                      DEF : new SFString("r_ankleRotInterp_Jump"),
+                      DEF : new SFString("r_ankle_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,0.3001,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_kneeRotInterp_Jump"),
+                      DEF : new SFString("r_knee_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,2.005,1,0,0,2.005,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_hipRotInterp_Jump"),
+                      DEF : new SFString("r_hip_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,4.433,1,0,0,4.433,1,0,0,4.647,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_ankleRotInterp_Jump"),
+                      DEF : new SFString("l_ankle_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_kneeRotInterp_Jump"),
+                      DEF : new SFString("l_knee_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_hipRotInterp_Jump"),
+                      DEF : new SFString("l_hip_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("lower_bodyRotInterp_Jump"),
+                      DEF : new SFString("lower_body_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_wristRotInterp_Jump"),
+                      DEF : new SFString("r_wrist_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_elbowRotInterp_Jump"),
+                      DEF : new SFString("r_elbow_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("r_shoulderRotInterp_Jump"),
+                      DEF : new SFString("r_shoulder_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_wristRotInterp_Jump"),
+                      DEF : new SFString("l_wrist_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_elbowRotInterp_Jump"),
+                      DEF : new SFString("l_elbow_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("l_shoulderRotInterp_Jump"),
+                      DEF : new SFString("l_shoulder_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("headRotInterp_Jump"),
+                      DEF : new SFString("head_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("neckRotInterp_Jump"),
+                      DEF : new SFString("neck_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("upper_bodyRotInterp_Jump"),
+                      DEF : new SFString("upper_body_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.76,0.88,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,1.038,1,0,0,1.038,-1,0,0,0.1057,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0])}),
 
                     new OrientationInterpolator({
-                      DEF : new SFString("whole_bodyRotInterp_Jump"),
+                      DEF : new SFString("whole_body_RotationInterpolator_Jump"),
                       key : new MFFloat([0,0.28,0.32,0.48,0.64,0.76,1]),
                       keyValue : new MFRotation([0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                     new PositionInterpolator({
-                      DEF : new SFString("whole_bodyTranInterp_Jump"),
+                      DEF : new SFString("whole_body_TranslationInterpolator_Jump"),
                       key : new MFFloat([0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1]),
                       keyValue : new MFVec3f([0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0,0.03045,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0])}),
 
@@ -2258,863 +2258,863 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ankleRotInterp_Stand")}),
+              toNode : new SFString("r_ankle_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_kneeRotInterp_Stand")}),
+              toNode : new SFString("r_knee_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_hipRotInterp_Stand")}),
+              toNode : new SFString("r_hip_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ankleRotInterp_Stand")}),
+              toNode : new SFString("l_ankle_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_kneeRotInterp_Stand")}),
+              toNode : new SFString("l_knee_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_hipRotInterp_Stand")}),
+              toNode : new SFString("l_hip_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("lower_bodyRotInterp_Stand")}),
+              toNode : new SFString("lower_body_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_wristRotInterp_Stand")}),
+              toNode : new SFString("r_wrist_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_elbowRotInterp_Stand")}),
+              toNode : new SFString("r_elbow_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_shoulderRotInterp_Stand")}),
+              toNode : new SFString("r_shoulder_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_wristRotInterp_Stand")}),
+              toNode : new SFString("l_wrist_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_elbowRotInterp_Stand")}),
+              toNode : new SFString("l_elbow_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_shoulderRotInterp_Stand")}),
+              toNode : new SFString("l_shoulder_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("headRotInterp_Stand")}),
+              toNode : new SFString("head_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("neckRotInterp_Stand")}),
+              toNode : new SFString("neck_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("upper_bodyRotInterp_Stand")}),
+              toNode : new SFString("upper_body_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyRotInterp_Stand")}),
+              toNode : new SFString("whole_body_RotationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Stand_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyTranInterp_Stand")}),
+              toNode : new SFString("whole_body_TranslationInterpolator_Stand")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ankleRotInterp_Stand"),
+              fromNode : new SFString("r_ankle_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_kneeRotInterp_Stand"),
+              fromNode : new SFString("r_knee_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_hipRotInterp_Stand"),
+              fromNode : new SFString("r_hip_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ankleRotInterp_Stand"),
+              fromNode : new SFString("l_ankle_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_kneeRotInterp_Stand"),
+              fromNode : new SFString("l_knee_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_hipRotInterp_Stand"),
+              fromNode : new SFString("l_hip_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("lower_bodyRotInterp_Stand"),
+              fromNode : new SFString("lower_body_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_sacroiliac")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_wristRotInterp_Stand"),
+              fromNode : new SFString("r_wrist_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_elbowRotInterp_Stand"),
+              fromNode : new SFString("r_elbow_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_shoulderRotInterp_Stand"),
+              fromNode : new SFString("r_shoulder_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_wristRotInterp_Stand"),
+              fromNode : new SFString("l_wrist_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_elbowRotInterp_Stand"),
+              fromNode : new SFString("l_elbow_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_shoulderRotInterp_Stand"),
+              fromNode : new SFString("l_shoulder_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("headRotInterp_Stand"),
+              fromNode : new SFString("head_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_skullbase")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("neckRotInterp_Stand"),
+              fromNode : new SFString("neck_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vc4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("upper_bodyRotInterp_Stand"),
+              fromNode : new SFString("upper_body_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vl1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyRotInterp_Stand"),
+              fromNode : new SFString("whole_body_RotationInterpolator_Stand"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyTranInterp_Stand"),
+              fromNode : new SFString("whole_body_TranslationInterpolator_Stand"),
               toField : new SFString("set_translation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ankleRotInterp_BasicWalk")}),
+              toNode : new SFString("r_ankle_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_kneeRotInterp_BasicWalk")}),
+              toNode : new SFString("r_knee_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_hipRotInterp_BasicWalk")}),
+              toNode : new SFString("r_hip_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ankleRotInterp_BasicWalk")}),
+              toNode : new SFString("l_ankle_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_kneeRotInterp_BasicWalk")}),
+              toNode : new SFString("l_knee_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_hipRotInterp_BasicWalk")}),
+              toNode : new SFString("l_hip_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("lower_bodyRotInterp_BasicWalk")}),
+              toNode : new SFString("lower_body_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_wristRotInterp_BasicWalk")}),
+              toNode : new SFString("r_wrist_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_elbowRotInterp_BasicWalk")}),
+              toNode : new SFString("r_elbow_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_shoulderRotInterp_BasicWalk")}),
+              toNode : new SFString("r_shoulder_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_wristRotInterp_BasicWalk")}),
+              toNode : new SFString("l_wrist_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_elbowRotInterp_BasicWalk")}),
+              toNode : new SFString("l_elbow_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_shoulderRotInterp_BasicWalk")}),
+              toNode : new SFString("l_shoulder_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("headRotInterp_BasicWalk")}),
+              toNode : new SFString("head_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("neckRotInterp_BasicWalk")}),
+              toNode : new SFString("neck_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("upper_bodyRotInterp_BasicWalk")}),
+              toNode : new SFString("upper_body_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyRotInterp_BasicWalk")}),
+              toNode : new SFString("whole_body_RotationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Walk_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyTranInterp_BasicWalk")}),
+              toNode : new SFString("whole_body_TranslationInterpolator_BasicWalk")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ankleRotInterp_BasicWalk"),
+              fromNode : new SFString("r_ankle_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_kneeRotInterp_BasicWalk"),
+              fromNode : new SFString("r_knee_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_hipRotInterp_BasicWalk"),
+              fromNode : new SFString("r_hip_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ankleRotInterp_BasicWalk"),
+              fromNode : new SFString("l_ankle_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_kneeRotInterp_BasicWalk"),
+              fromNode : new SFString("l_knee_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_hipRotInterp_BasicWalk"),
+              fromNode : new SFString("l_hip_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("lower_bodyRotInterp_BasicWalk"),
+              fromNode : new SFString("lower_body_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_sacroiliac")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_wristRotInterp_BasicWalk"),
+              fromNode : new SFString("r_wrist_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_elbowRotInterp_BasicWalk"),
+              fromNode : new SFString("r_elbow_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_shoulderRotInterp_BasicWalk"),
+              fromNode : new SFString("r_shoulder_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_wristRotInterp_BasicWalk"),
+              fromNode : new SFString("l_wrist_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_elbowRotInterp_BasicWalk"),
+              fromNode : new SFString("l_elbow_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_shoulderRotInterp_BasicWalk"),
+              fromNode : new SFString("l_shoulder_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("headRotInterp_BasicWalk"),
+              fromNode : new SFString("head_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_skullbase")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("neckRotInterp_BasicWalk"),
+              fromNode : new SFString("neck_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vc4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("upper_bodyRotInterp_BasicWalk"),
+              fromNode : new SFString("upper_body_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vl1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyRotInterp_BasicWalk"),
+              fromNode : new SFString("whole_body_RotationInterpolator_BasicWalk"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyTranInterp_BasicWalk"),
+              fromNode : new SFString("whole_body_TranslationInterpolator_BasicWalk"),
               toField : new SFString("set_translation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ankleRotInterp_Run")}),
+              toNode : new SFString("r_ankle_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_kneeRotInterp_Run")}),
+              toNode : new SFString("r_knee_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_hipRotInterp_Run")}),
+              toNode : new SFString("r_hip_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ankleRotInterp_Run")}),
+              toNode : new SFString("l_ankle_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_kneeRotInterp_Run")}),
+              toNode : new SFString("l_knee_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_hipRotInterp_Run")}),
+              toNode : new SFString("l_hip_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("lower_bodyRotInterp_Run")}),
+              toNode : new SFString("lower_body_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_wristRotInterp_Run")}),
+              toNode : new SFString("r_wrist_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_elbowRotInterp_Run")}),
+              toNode : new SFString("r_elbow_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_shoulderRotInterp_Run")}),
+              toNode : new SFString("r_shoulder_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_wristRotInterp_Run")}),
+              toNode : new SFString("l_wrist_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_elbowRotInterp_Run")}),
+              toNode : new SFString("l_elbow_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_shoulderRotInterp_Run")}),
+              toNode : new SFString("l_shoulder_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("headRotInterp_Run")}),
+              toNode : new SFString("head_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("neckRotInterp_Run")}),
+              toNode : new SFString("neck_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("upper_bodyRotInterp_Run")}),
+              toNode : new SFString("upper_body_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyRotInterp_Run")}),
+              toNode : new SFString("whole_body_RotationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Run_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyTranInterp_Run")}),
+              toNode : new SFString("whole_body_TranslationInterpolator_Run")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ankleRotInterp_Run"),
+              fromNode : new SFString("r_ankle_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_kneeRotInterp_Run"),
+              fromNode : new SFString("r_knee_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_hipRotInterp_Run"),
+              fromNode : new SFString("r_hip_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ankleRotInterp_Run"),
+              fromNode : new SFString("l_ankle_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_kneeRotInterp_Run"),
+              fromNode : new SFString("l_knee_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_hipRotInterp_Run"),
+              fromNode : new SFString("l_hip_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("lower_bodyRotInterp_Run"),
+              fromNode : new SFString("lower_body_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_sacroiliac")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_wristRotInterp_Run"),
+              fromNode : new SFString("r_wrist_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_elbowRotInterp_Run"),
+              fromNode : new SFString("r_elbow_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_shoulderRotInterp_Run"),
+              fromNode : new SFString("r_shoulder_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_wristRotInterp_Run"),
+              fromNode : new SFString("l_wrist_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_elbowRotInterp_Run"),
+              fromNode : new SFString("l_elbow_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_shoulderRotInterp_Run"),
+              fromNode : new SFString("l_shoulder_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("headRotInterp_Run"),
+              fromNode : new SFString("head_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_skullbase")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("neckRotInterp_Run"),
+              fromNode : new SFString("neck_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vc4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("upper_bodyRotInterp_Run"),
+              fromNode : new SFString("upper_body_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vl1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyRotInterp_Run"),
+              fromNode : new SFString("whole_body_RotationInterpolator_Run"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyTranInterp_Run"),
+              fromNode : new SFString("whole_body_TranslationInterpolator_Run"),
               toField : new SFString("set_translation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ankleRotInterp_Jump")}),
+              toNode : new SFString("r_ankle_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_kneeRotInterp_Jump")}),
+              toNode : new SFString("r_knee_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_hipRotInterp_Jump")}),
+              toNode : new SFString("r_hip_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ankleRotInterp_Jump")}),
+              toNode : new SFString("l_ankle_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_kneeRotInterp_Jump")}),
+              toNode : new SFString("l_knee_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_hipRotInterp_Jump")}),
+              toNode : new SFString("l_hip_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("lower_bodyRotInterp_Jump")}),
+              toNode : new SFString("lower_body_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_wristRotInterp_Jump")}),
+              toNode : new SFString("r_wrist_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_elbowRotInterp_Jump")}),
+              toNode : new SFString("r_elbow_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_shoulderRotInterp_Jump")}),
+              toNode : new SFString("r_shoulder_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_wristRotInterp_Jump")}),
+              toNode : new SFString("l_wrist_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_elbowRotInterp_Jump")}),
+              toNode : new SFString("l_elbow_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_shoulderRotInterp_Jump")}),
+              toNode : new SFString("l_shoulder_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("headRotInterp_Jump")}),
+              toNode : new SFString("head_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("neckRotInterp_Jump")}),
+              toNode : new SFString("neck_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("upper_bodyRotInterp_Jump")}),
+              toNode : new SFString("upper_body_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyRotInterp_Jump")}),
+              toNode : new SFString("whole_body_RotationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("Jump_Time"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("whole_bodyTranInterp_Jump")}),
+              toNode : new SFString("whole_body_TranslationInterpolator_Jump")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ankleRotInterp_Jump"),
+              fromNode : new SFString("r_ankle_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_kneeRotInterp_Jump"),
+              fromNode : new SFString("r_knee_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_hipRotInterp_Jump"),
+              fromNode : new SFString("r_hip_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ankleRotInterp_Jump"),
+              fromNode : new SFString("l_ankle_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_ankle")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_kneeRotInterp_Jump"),
+              fromNode : new SFString("l_knee_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_hipRotInterp_Jump"),
+              fromNode : new SFString("l_hip_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("lower_bodyRotInterp_Jump"),
+              fromNode : new SFString("lower_body_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_sacroiliac")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_wristRotInterp_Jump"),
+              fromNode : new SFString("r_wrist_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_elbowRotInterp_Jump"),
+              fromNode : new SFString("r_elbow_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_shoulderRotInterp_Jump"),
+              fromNode : new SFString("r_shoulder_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_r_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_wristRotInterp_Jump"),
+              fromNode : new SFString("l_wrist_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_wrist")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_elbowRotInterp_Jump"),
+              fromNode : new SFString("l_elbow_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_shoulderRotInterp_Jump"),
+              fromNode : new SFString("l_shoulder_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_l_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("headRotInterp_Jump"),
+              fromNode : new SFString("head_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_skullbase")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("neckRotInterp_Jump"),
+              fromNode : new SFString("neck_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vc4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("upper_bodyRotInterp_Jump"),
+              fromNode : new SFString("upper_body_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("hanim_vl1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyRotInterp_Jump"),
+              fromNode : new SFString("whole_body_RotationInterpolator_Jump"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("hanim_HumanoidRoot")}),
+              toNode : new SFString("hanim_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("whole_bodyTranInterp_Jump"),
+              fromNode : new SFString("whole_body_TranslationInterpolator_Jump"),
               toField : new SFString("set_translation"),
-              toNode : new SFString("hanim_HumanoidRoot")})])}))});
+              toNode : new SFString("hanim_humanoid_root")})])}))});
 console.log(X3D0.toXMLNode());

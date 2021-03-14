@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='HAnim'),
+    component(level=1,name='H-Anim'),
     meta(content='BoxManAnimationPanel.x3d',name='title'),
     meta(content='A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation panel shows multiple behaviors.',name='description'),
     meta(content='Joe Williams and James Smith - james@vapourtech.com',name='creator'),

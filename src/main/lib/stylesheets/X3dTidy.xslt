@@ -1,31 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  <head>
-   <meta name="title"       content="X3dTidy.xslt" />
-   <meta name="creator"     content="Don Brutzman" />
-   <meta name="created"     content="28 Decembery 2013" />
-   <meta name="description" content="XSLT stylesheet to tidy up problems or issues in X3D source models." />
-   <meta name="reference"   content="Decorator design pattern, https://en.wikipedia.org/wiki/Decorator_pattern" />
-   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dTidy.xslt" />
-  </head>
-
-Recommended tools:
-- X3D-Edit, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
-- XML Spy http://www.xmlspy.com
--->
-
-<!-- TODO: insert default descriptions, add HAnim decorations, add comprehensive ROUTE visualization,
-           add bounding box visualizations, add other X3D-Edit visualization options
-		   correct multiple # signs in individual url addresses
-           omit trailing decimal points if followed by whitespace, e.g. 0. to 0 (see X3dToTurtle.xslt)
-           insert 0 if missing from negative fraction,      e.g -.123 to -0.123 (see X3dToTurtle.xslt)
-  -->
-
-<!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
-<!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
-
-<!--
 Copyright (c) 1995-2021 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -58,6 +32,32 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
 ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 -->
+
+<!--
+  <head>
+   <meta name="title"       content="X3dTidy.xslt" />
+   <meta name="creator"     content="Don Brutzman" />
+   <meta name="created"     content="28 Decembery 2013" />
+   <meta name="description" content="XSLT stylesheet to tidy up problems or issues in X3D source models." />
+   <meta name="reference"   content="Decorator design pattern, https://en.wikipedia.org/wiki/Decorator_pattern" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dTidy.xslt" />
+  </head>
+
+Recommended tools:
+- X3D-Edit, https://savage.nps.edu/X3D-Edit
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+- XML Spy http://www.xmlspy.com
+-->
+
+<!-- TODO: insert default descriptions, add HAnim decorations, add comprehensive ROUTE visualization,
+           add bounding box visualizations, add other X3D-Edit visualization options
+		   correct multiple # signs in individual url addresses
+           omit trailing decimal points if followed by whitespace, e.g. 0. to 0 (see X3dToTurtle.xslt)
+           insert 0 if missing from negative fraction,      e.g -.123 to -0.123 (see X3dToTurtle.xslt)
+  -->
+
+<!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
+<!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -1391,7 +1391,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:call-template>
             </xsl:message>
         </xsl:if>
-      <report test="(@USE) and (count(@*[not(local-name()='USE') and not(local-name()='containerField')][string-length(.) > 0]) > 0)" role="error">&lt;<name/> USE='<value-of select='@USE'/>'/&gt; USE nodes must not contain any other attributes besides containerField </report>
     </xsl:template>
 
     <xsl:template name="process-attributes-in-order">
@@ -1530,11 +1529,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:message>
                             <xsl:text>*** </xsl:text>
                             <xsl:value-of select="local-name()"/>
-                            <xsl:text> mismatched pair USE='</xsl:text>
+                            <xsl:text> mismatched USE-name pair USE='</xsl:text>
                             <xsl:value-of select="@USE"/>
                             <xsl:text>' for original name='</xsl:text>
                             <xsl:value-of select="$nameValue"/>
-                            <xsl:text>', resetting USE='</xsl:text>
+                            <xsl:text>', resetting to USE='</xsl:text>
                             <xsl:value-of select="$prefixHAnim"/>
                             <xsl:value-of select="$nameValue"/>
                             <xsl:text>'</xsl:text>
@@ -1544,7 +1543,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:value-of select="$nameValue"/>
                         <xsl:text>'</xsl:text>
                     </xsl:when>
-                    <xsl:when test="($isHAnim2 = true()) and not($newUSEvalue = @USE)">
+                    <xsl:when test="($isHAnim2 = true()) and not($newUSEvalue = @USE) and not(string-length($newUSEvalue) = @DEF)">
                         <!-- update name to HAnim2 -->
                         <xsl:text> USE='</xsl:text>
                         <xsl:value-of select='$newUSEvalue'/>
@@ -1554,7 +1553,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:value-of select="local-name()"/>
                             <xsl:text> USE='</xsl:text>
                             <xsl:value-of select="@USE"/>
-                            <xsl:text>' alias replaced with standardized newUSEvalue='</xsl:text>
+                            <xsl:text>' replaced with updated newUSEvalue='</xsl:text>
                             <xsl:value-of select='$newUSEvalue'/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
@@ -1624,11 +1623,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:message>
                             <xsl:text>*** </xsl:text>
                             <xsl:value-of select="local-name()"/>
-                            <xsl:text> mismatched pair DEF='</xsl:text>
+                            <xsl:text> mismatched DEF-name pair DEF='</xsl:text>
                             <xsl:value-of select="@DEF"/>
                             <xsl:text>' for name='</xsl:text>
                             <xsl:value-of select="@name"/>
-                            <xsl:text>', resetting DEF='</xsl:text>
+                            <xsl:text>', resetting to DEF='</xsl:text>
                             <xsl:value-of select="$prefixHAnim"/>
                             <xsl:value-of select="@name"/>
                             <xsl:text>'</xsl:text>
@@ -1637,8 +1636,9 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:value-of select="$prefixHAnim"/>
                         <xsl:value-of select="@name"/>
                         <xsl:text>'</xsl:text>
+                        <!-- TODO consider matching rule for ROUTE fromNode toNode -->
                     </xsl:when>
-                    <xsl:when test="($isHAnim2 = true()) and not($newDEFvalue = @DEF)">
+                    <xsl:when test="($isHAnim2 = true()) and not($newDEFvalue = @DEF) and not(string-length($newDEFvalue) = 0)">
                         <!-- update name to HAnim2 -->
                         <xsl:text> DEF='</xsl:text>
                         <xsl:value-of select='$newDEFvalue'/>
@@ -1648,7 +1648,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:value-of select="local-name()"/>
                             <xsl:text> DEF='</xsl:text>
                             <xsl:value-of select="@DEF"/>
-                            <xsl:text>' alias replaced with standardized newDEFvalue='</xsl:text>
+                            <xsl:text>' replaced with updated newDEFvalue='</xsl:text>
                             <xsl:value-of select='$newDEFvalue'/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
@@ -1661,7 +1661,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:choose>
                 <!-- remainder of HAnim node attributes -->
                 <xsl:choose>
-                    <xsl:when test="(local-name()='HAnimHumanoid')">
+                    <xsl:when test="(local-name()='HAnimHumanoid') and not (string-length(@USE) > 0)">
                         <!-- all attributes except DEF, version, info -->
                         <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='version') and (local-name()!='info')]">
                             <xsl:with-param name="prefixHAnim"  select="$prefixHAnim"/>
@@ -3053,7 +3053,7 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
                        (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
-                       (local-name()='version' and (string(.)='2.0')) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
@@ -3354,22 +3354,26 @@ POSSIBILITY OF SUCH DAMAGE.
                 not(contains(local-name(),'_changed')) and
                 .)" >
             
-            <!-- check if this is disallowed nonempty attribute within a USE node -->
-            <xsl:if test="(string-length(.) > 0) and (string-length(../@USE) > 0) and not(local-name() = 'USE') and not(local-name() = 'containerField')">
-                <xsl:message>
-                    <xsl:text>*** </xsl:text>
-                    <xsl:value-of select="local-name(..)"/><!-- element name -->
-                    <xsl:text> USE='</xsl:text>
-                    <xsl:value-of select="../@USE"/>
-                    <xsl:text>' containerField='</xsl:text>
-                    <xsl:value-of select="../@containerField"/>
-                    <xsl:text> has disallowed attribute: </xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>='</xsl:text>
-                    <xsl:value-of select="."/>
-                    <xsl:text>'</xsl:text>
-                </xsl:message>   
-            </xsl:if>
+            <xsl:choose>
+                <!-- check if this is disallowed nonempty attribute within a USE node -->
+                <xsl:when test="(string-length(.) > 0) and (string-length(../@USE) > 0) and not(local-name() = 'USE') and not(local-name() = 'containerField')">
+                    <xsl:if test="not(local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0')))">
+                        <xsl:message>
+                            <xsl:text>*** </xsl:text>
+                            <xsl:value-of select="local-name(..)"/><!-- element name -->
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="../@USE"/>
+                            <xsl:text>' containerField='</xsl:text>
+                            <xsl:value-of select="../@containerField"/>
+                            <xsl:text>' has disallowed attribute </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text>='</xsl:text>
+                            <xsl:value-of select="."/>
+                            <xsl:text>', now omitted</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
         
             <!-- attribute of interest found, show it -->
             <xsl:text> </xsl:text>
@@ -3464,7 +3468,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:value-of select="local-name()"/>
                         <xsl:text>='</xsl:text>
                         <xsl:value-of select="."/>
-                        <xsl:text>' alias replaced with standardized </xsl:text>
+                        <xsl:text>' replaced with updated </xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text>='</xsl:text>
                         <xsl:value-of select='$newDEFvalue'/>
@@ -3651,7 +3655,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:text>'</xsl:text>
                             </xsl:message>
                         </xsl:when>
-                        <xsl:otherwise>
+                        <xsl:when test="not(ends-with(.,'_tip') or ends-with(.,'_pt') or ends-with(.,'_view'))">
                             <xsl:variable name="newName">
                                 <xsl:value-of select="."/>
                                 <xsl:text>_pt</xsl:text>
@@ -3663,6 +3667,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:value-of select='$newName'/>
                                 <xsl:text>'</xsl:text>
                             </xsl:message>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="."/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -3671,13 +3678,13 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>&#10;</xsl:text>
                     <xsl:value-of select='$newNameValue'/>
                     <xsl:message>
-                        <xsl:text>*** HAnim2 name replaced: </xsl:text>
+                        <xsl:text>*** replaced HAnim2 </xsl:text>
                         <xsl:value-of select="$nodeName"/>
-                        <xsl:text> </xsl:text>
+                        <xsl:text> alias </xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text>='</xsl:text>
                         <xsl:value-of select="."/>
-                        <xsl:text>' alias with preferred name='</xsl:text>
+                        <xsl:text>' with preferred name='</xsl:text>
                         <xsl:value-of select='$newNameValue'/>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
@@ -3730,211 +3737,6 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:when>
                     </xsl:choose>
                 </xsl:when>
-
-      <!-- X3dTidy.xslt correction rules in X3dDiagnostics4.0.xml autogenerated from X3DUOM -->
-      <!-- HAnimJoint alias conversion -->
-      <xsl:when
-          test="(local-name(..)='HAnimJoint') and (local-name()='name') and ($isHAnim2 = true()) and ((.='SIJ') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_talocalcaneal') or (.='l_talocalcaneal') or (.='l_subtalar') or (.='l_midtarsal') or (.='l_metatarsal') or (.='l_talocalcaneal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_talocalcaneal') or (.='r_talocalcaneal') or (.='r_subtalar') or (.='r_midtarsal') or (.='r_metatarsal') or (.='r_talocalcaneal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='r_wrist'))">
-        <xsl:variable name="newName">
-            <!-- find preferred value for this alias -->
-            <xsl:choose>
-                <xsl:when test="(.='SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
-                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
-                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metatarsal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
-                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
-                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
-                <xsl:when test="(.='l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:text>&#10;</xsl:text>
-        <xsl:value-of select='$newName'/>
-        <xsl:message>
-            <xsl:text>*** replace </xsl:text>
-            <xsl:value-of select="local-name(..)"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>='</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>' alias with preferred name='</xsl:text>
-            <xsl:value-of select='$newName'/>
-            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
-        </xsl:message>
-      </xsl:when>
-      <!-- HAnimSegment alias conversion -->
-      <xsl:when
-          test="(local-name(..)='HAnimSegment') and (local-name()='name') and ($isHAnim2 = true()) and ((.='l_hindfoot') or (.='l_midproximal') or (.='l_middistal') or (.='l_forefoot') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_midproximal') or (.='r_middistal') or (.='r_forefoot') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_index_middle') or (.='l_index_distal') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_index_middle') or (.='r_index_distal') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
-        <xsl:variable name="newName">
-            <!-- find preferred value for this alias -->
-            <xsl:choose>
-                <xsl:when test="(.='l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
-                <xsl:when test="(.='l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
-                <xsl:when test="(.='r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
-                <xsl:when test="(.='r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
-                <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
-                <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:text>&#10;</xsl:text>
-        <xsl:value-of select='$newName'/>
-        <xsl:message>
-            <xsl:text>*** replace </xsl:text>
-            <xsl:value-of select="local-name(..)"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>='</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>' alias with preferred name='</xsl:text>
-            <xsl:value-of select='$newName'/>
-            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
-        </xsl:message>
-      </xsl:when>
-      <!-- HAnimSite alias conversion -->
-      <xsl:when
-          test="(local-name(..)='HAnimSite') and (local-name()='name') and ($isHAnim2 = true()) and ((.='vertex') or (.='l_clavicale') or (.='l_axilla_ant') or (.='l_axilla_post') or (.='r_clavicale') or (.='r_axilla_ant') or (.='r_axilla_post') or (.='middle back') or (.='lower back') or (.='waist_preferred_post') or (.='waist_preferred_ant') or (.='l_rib10_midspine') or (.='Left Bustpoint') or (.='r_rib10_midspine') or (.='Right Bustpoint') or (.='Leftt Anterior Superior Iliac Spine') or (.='Left Posterior Superior Iliac Spine') or (.='Right Anterior Superior Iliac Spine') or (.='Right Posterior Superior Iliac Spine') or (.='l_femoral_lateral_epicn') or (.='l_femoral_medial_epicn') or (.='l_kneecap') or (.='l_trochanter') or (.='r_femoral_lateral_epicn') or (.='r_femoral_medial_epicn') or (.='r_kneecap') or (.='r_trochanter') or (.='l_metatarsal_pha1') or (.='l_metatarsal_pha5') or (.='l_calcaneum') or (.='r_metatarsal_pha1') or (.='r_metatarsal_pha5') or (.='r_calcaneum') or (.='l_humeral_lateral_epicn') or (.='l_humeral_lateral_epicn') or (.='r_humeral_lateral_epicn') or (.='r_humeral_lateral_epicn') or (.='l_metacarpal_pha2') or (.='l_metacarpal_pha5') or (.='r_metacarpal_pha2') or (.='r_metacarpal_pha5') or (.='nuchal') or (.='belly button') or (.='l_canthus') or (.='r_canthus') or (.='chin') or (.='mesosternum') or (.='median plane') or (.='l_shoulder') or (.='r_shoulder') or (.='l_thumb_distal') or (.='l_index_distal') or (.='l_middle_distal') or (.='l_ring_distal') or (.='l_pinky_distal') or (.='r_thumb_distal') or (.='r_index_distal') or (.='r_middle_distal') or (.='r_ring_distal') or (.='r_pinky_distal') or (.='l_digit2') or (.='l_tarsal_interphalangeal_pha5') or (.='r_digit2') or (.='r_tarsal_interphalangeal_pha5'))">
-        <xsl:variable name="newName">
-            <!-- find preferred value for this alias -->
-            <xsl:choose>
-                <xsl:when test="(.='vertex')"><xsl:text>skull_vertex</xsl:text></xsl:when>
-                <xsl:when test="(.='l_clavicale')"><xsl:text>l_clavicle</xsl:text></xsl:when>
-                <xsl:when test="(.='l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text></xsl:when>
-                <xsl:when test="(.='l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_clavicale')"><xsl:text>r_clavicle</xsl:text></xsl:when>
-                <xsl:when test="(.='r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text></xsl:when>
-                <xsl:when test="(.='middle back')"><xsl:text>spine_1_middle_back</xsl:text></xsl:when>
-                <xsl:when test="(.='lower back')"><xsl:text>spine_2_lower_back</xsl:text></xsl:when>
-                <xsl:when test="(.='waist_preferred_post')"><xsl:text>waist_preferred_anterior</xsl:text></xsl:when>
-                <xsl:when test="(.='waist_preferred_ant')"><xsl:text>waist_preferred_posterior</xsl:text></xsl:when>
-                <xsl:when test="(.='l_rib10_midspine')"><xsl:text>l_rib10</xsl:text></xsl:when>
-                <xsl:when test="(.='Left Bustpoint')"><xsl:text>l_thelion</xsl:text></xsl:when>
-                <xsl:when test="(.='r_rib10_midspine')"><xsl:text>r_rib10</xsl:text></xsl:when>
-                <xsl:when test="(.='Right Bustpoint')"><xsl:text>r_thelion</xsl:text></xsl:when>
-                <xsl:when test="(.='Leftt Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text></xsl:when>
-                <xsl:when test="(.='Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text></xsl:when>
-                <xsl:when test="(.='Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text></xsl:when>
-                <xsl:when test="(.='Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text></xsl:when>
-                <xsl:when test="(.='l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='l_kneecap')"><xsl:text>l_suprapatella</xsl:text></xsl:when>
-                <xsl:when test="(.='l_trochanter')"><xsl:text>l_trochanterion</xsl:text></xsl:when>
-                <xsl:when test="(.='r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='r_kneecap')"><xsl:text>r_suprapatella</xsl:text></xsl:when>
-                <xsl:when test="(.='r_trochanter')"><xsl:text>r_trochanterion</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text></xsl:when>
-                <xsl:when test="(.='l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='l_humeral_lateral_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='r_humeral_lateral_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='nuchal')"><xsl:text>nuchale</xsl:text></xsl:when>
-                <xsl:when test="(.='belly button')"><xsl:text>navel</xsl:text></xsl:when>
-                <xsl:when test="(.='l_canthus')"><xsl:text>l_ectocanthus</xsl:text></xsl:when>
-                <xsl:when test="(.='r_canthus')"><xsl:text>r_ectocanthus</xsl:text></xsl:when>
-                <xsl:when test="(.='chin')"><xsl:text>menton</xsl:text></xsl:when>
-                <xsl:when test="(.='mesosternum')"><xsl:text>mesosternale</xsl:text></xsl:when>
-                <xsl:when test="(.='median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text></xsl:when>
-                <xsl:when test="(.='l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text></xsl:when>
-                <xsl:when test="(.='r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text></xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:text>&#10;</xsl:text>
-        <xsl:value-of select='$newName'/>
-        <xsl:message>
-            <xsl:text>*** replace </xsl:text>
-            <xsl:value-of select="local-name(..)"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>='</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>' alias with preferred name='</xsl:text>
-            <xsl:value-of select='$newName'/>
-            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
-        </xsl:message>
-      </xsl:when>
-
                 <!-- fix common meta-name misnomers, needs to follow HAnim2 upgrade rules to avoid false positives -->
                 <!-- insert missing underscore prior to number at end of HAnim name -->
                 <xsl:when test="((local-name(..)='HAnimJoint') or (local-name(..)='HAnimSegment')) and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and 
@@ -4396,8 +4198,11 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>'</xsl:text>
                 </xsl:otherwise>
             </xsl:choose> -->
-           </xsl:if>
-            <!-- end if filtering of default attribute values -->
+                    
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+        <!-- end if filtering of default attribute values -->
            
             <xsl:if test="(local-name() = 'containerField')">
                 <xsl:variable name=        "containerField" select="."/>
@@ -5588,157 +5393,332 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <xsl:when test="($nodeName = 'HAnimJoint')">
-                <xsl:choose>
-                    <xsl:when test="($nameValue = 'SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_metatarsal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
-                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="($nodeName = 'HAnimSegment')">
-                <xsl:choose>
-                    <xsl:when test="($nameValue = 'l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'head')"><xsl:text>skull</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
-                </xsl:choose>                
-            </xsl:when>
-            <xsl:when test="($nodeName = 'HAnimSite')">
-                <xsl:choose>
-                    <xsl:when test="($nameValue = 'vertex')"><xsl:text>skull_vertex</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_clavicale')"><xsl:text>l_clavicle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_clavicale')"><xsl:text>r_clavicle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'middle back')"><xsl:text>spine_1_middle_back</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'lower back')"><xsl:text>spine_2_lower_back</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'waist_preferred_post')"><xsl:text>waist_preferred_anterior</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'waist_preferred_ant')"><xsl:text>waist_preferred_posterior</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Left Bustpoint')"><xsl:text>l_thelion</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Right Bustpoint')"><xsl:text>r_thelion</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Leftt Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_kneecap')"><xsl:text>l_suprapatella</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_trochanter')"><xsl:text>l_trochanterion</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_kneecap')"><xsl:text>r_suprapatella</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_trochanter')"><xsl:text>r_trochanterion</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'nuchal')"><xsl:text>nuchale</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'belly button')"><xsl:text>navel</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_canthus')"><xsl:text>l_ectocanthus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_canthus')"><xsl:text>r_ectocanthus</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'chin')"><xsl:text>menton</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'mesosternum')"><xsl:text>mesosternale</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                    <xsl:when test="($nameValue = 'r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text></xsl:when>
-                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
-                </xsl:choose>                
-            </xsl:when>
+            
+      <!-- X3dTidy.xslt correction rules in X3dDiagnostics4.0.xml autogenerated from X3DUOM -->
+      
+      <!-- *** start: HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+      <xsl:when
+          test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="(.='SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                <xsl:when test="(.='SI joint')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(.='l_cuneonavicular')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsometatarsal')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metatarsophalangeal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_proximal_interphalangeal')"><xsl:text>l_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_distal_interphalangeal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(.='r_cuneonavicular')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsometatarsal')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metatarsophalangeal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_proximal_interphalangeal')"><xsl:text>r_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_distal_interphalangeal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(.='l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb1')"><xsl:text>l_carpometacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb2')"><xsl:text>l_metacarpophalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb3')"><xsl:text>l_carpal_interphalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index0')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpometacarpal')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index1')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metacarpophalangeal')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index2')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpal_proximal_interphalangeal')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index3')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpal_distal_interphalangeal')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle0')"><xsl:text>l_carpometacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle1')"><xsl:text>l_metacarpophalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle2')"><xsl:text>l_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle3')"><xsl:text>l_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring0')"><xsl:text>l_carpometacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring1')"><xsl:text>l_metacarpophalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring2')"><xsl:text>l_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring3')"><xsl:text>l_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky0')"><xsl:text>l_carpometacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky1')"><xsl:text>l_metacarpophalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky2')"><xsl:text>l_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky3')"><xsl:text>l_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb1')"><xsl:text>r_carpometacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb2')"><xsl:text>r_metacarpophalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb3')"><xsl:text>r_carpal_interphalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index0')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpometacarpal')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index1')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metacarpophalangeal')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index2')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpal_proximal_interphalangeal')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index3')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpal_distal_interphalangeal')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle0')"><xsl:text>r_carpometacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle1')"><xsl:text>r_metacarpophalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle2')"><xsl:text>r_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle3')"><xsl:text>r_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring0')"><xsl:text>r_carpometacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring1')"><xsl:text>r_metacarpophalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring2')"><xsl:text>r_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring3')"><xsl:text>r_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky0')"><xsl:text>r_carpometacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky1')"><xsl:text>r_metacarpophalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky2')"><xsl:text>r_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky3')"><xsl:text>r_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                    <!-- <xsl:message>
+                        <xsl:text>*** internal error: improper diagnostic for HAnimJoint alias conversion of name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>', retaining original value</xsl:text>
+                    </xsl:message> -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select='$newName'/>
+        <xsl:if test="not(. = $newName)">
+            <xsl:message>
+                <xsl:text>*** replaced HAnim2 </xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text> alias </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>' with preferred name='</xsl:text>
+                <xsl:value-of select='$newName'/>
+                <xsl:text>' (run X3dTidy again to fix corresponding DEF and USE references)</xsl:text>
+            </xsl:message>
+        </xsl:if>
+      </xsl:when>
+      <!-- *** finish HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+
+      <!-- *** start: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+      <xsl:when
+          test="(local-name(..)='HAnimSegment') and (local-name()='name') and $isHAnim2 and ((.='l_hindfoot') or (.='l_cuneiform') or (.='l_midproximal') or (.='l_metatarsal') or (.='l_middistal') or (.='l_tarsal_proximal_phalanx') or (.='l_tarsal_middle_phalanx') or (.='l_forefoot') or (.='l_tarsal_distal_phalanx') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_cuneiform') or (.='r_midproximal') or (.='r_middistal') or (.='r_tarsal_proximal_phalanx') or (.='r_tarsal_middle_phalanx') or (.='r_forefoot') or (.='r_tarsal_distal_phalanx') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_carpal_proximal_phalanx') or (.='l_index_middle') or (.='l_carpal_middle_phalanx') or (.='l_index_distal') or (.='l_carpal_distal_phalanx') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_carpal_proximal_phalanx') or (.='r_index_middle') or (.='r_carpal_middle_phalanx') or (.='r_index_distal') or (.='r_carpal_distal_phalanx') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="(.='l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
+                <xsl:when test="(.='l_cuneiform')"><xsl:text>l_cuneiform_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metatarsal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_proximal_phalanx')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_middle_phalanx')"><xsl:text>l_tarsal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_distal_phalanx')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(.='r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
+                <xsl:when test="(.='r_cuneiform')"><xsl:text>r_cuneiform_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_proximal_phalanx')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_middle_phalanx')"><xsl:text>r_tarsal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_distal_phalanx')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
+                <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpal_proximal_phalanx')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpal_middle_phalanx')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_carpal_distal_phalanx')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpal_proximal_phalanx')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpal_middle_phalanx')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_carpal_distal_phalanx')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                 <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                    <!-- <xsl:message>
+                        <xsl:text>*** internal error: improper diagnostic for HAnimSegment alias conversion of name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>', retaining original value</xsl:text>
+                    </xsl:message> -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select='$newName'/>
+        <xsl:if test="not(. = $newName)">
+            <xsl:message>
+                <xsl:text>*** replaced HAnim2 </xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text> alias </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>' with preferred name='</xsl:text>
+                <xsl:value-of select='$newName'/>
+                <xsl:text>' (run X3dTidy again to fix corresponding DEF and USE references)</xsl:text>
+            </xsl:message>
+        </xsl:if>
+      </xsl:when>
+      <!-- *** finish: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+
+      <!-- *** start: HAnim2 HAnimSite alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+      <xsl:when
+          test="(local-name(..)='HAnimSite') and (local-name()='name') and $isHAnim2 and (starts-with(.,'skull_tip') or starts-with(.,'vertex') or starts-with(.,'l_clavicale') or starts-with(.,'l_axilla_ant') or starts-with(.,'l_axilla_post') or starts-with(.,'r_clavicale') or starts-with(.,'r_axilla_ant') or starts-with(.,'r_axilla_post') or starts-with(.,'middle back') or starts-with(.,'lower back') or starts-with(.,'waist_preferred_ant') or starts-with(.,'waist_preferred_post') or starts-with(.,'l_rib10_midspine') or starts-with(.,'Left Bustpoint') or starts-with(.,'r_rib10_midspine') or starts-with(.,'Right Bustpoint') or starts-with(.,'Left Anterior Superior Iliac Spine') or starts-with(.,'Left Posterior Superior Iliac Spine') or starts-with(.,'Right Anterior Superior Iliac Spine') or starts-with(.,'Right Posterior Superior Iliac Spine') or starts-with(.,'l_femoral_lateral_epicn') or starts-with(.,'l_femoral_medial_epicn') or starts-with(.,'l_kneecap') or starts-with(.,'l_trochanter') or starts-with(.,'r_femoral_lateral_epicn') or starts-with(.,'r_femoral_medial_epicn') or starts-with(.,'r_kneecap') or starts-with(.,'r_trochanter') or starts-with(.,'l_metatarsal_pha1') or starts-with(.,'l_metatarsal_pha5') or starts-with(.,'l_calcaneous_post') or starts-with(.,'l_calcaneum') or starts-with(.,'r_metatarsal_pha1') or starts-with(.,'r_metatarsal_pha5') or starts-with(.,'r_calcaneous_post') or starts-with(.,'r_calcaneum') or starts-with(.,'l_humeral_lateral_epicn') or starts-with(.,'l_humeral_medial_epicn') or starts-with(.,'r_humeral_lateral_epicn') or starts-with(.,'r_humeral_medial_epicn') or starts-with(.,'l_metacarpal_pha2') or starts-with(.,'l_metacarpal_phalanx') or starts-with(.,'l_metacarpal_pha5') or starts-with(.,'r_metacarpal_pha2') or starts-with(.,'r_metacarpal_phalanx') or starts-with(.,'r_metacarpal_pha5') or starts-with(.,'nuchal') or starts-with(.,'belly button') or starts-with(.,'l_canthus') or starts-with(.,'r_canthus') or starts-with(.,'chin') or starts-with(.,'mesosternum') or starts-with(.,'median plane') or starts-with(.,'l_shoulder') or starts-with(.,'r_shoulder') or starts-with(.,'l_thumb_distal') or starts-with(.,'l_index_distal') or starts-with(.,'l_carpal_distal_phalanx') or starts-with(.,'l_carpal_distal_phalanx') or starts-with(.,'l_middle_distal') or starts-with(.,'l_ring_distal') or starts-with(.,'l_pinky_distal') or starts-with(.,'r_thumb_distal') or starts-with(.,'r_index_distal') or starts-with(.,'r_carpal_distal_phalanx') or starts-with(.,'r_middle_distal') or starts-with(.,'r_ring_distal') or starts-with(.,'r_pinky_distal') or starts-with(.,'l_digit2') or starts-with(.,'l_tarsal_distal_phalanx') or starts-with(.,'l_tarsal_interphalangeal_pha5') or starts-with(.,'r_digit2') or starts-with(.,'r_tarsal_distal_phalanx') or starts-with(.,'r_tarsal_interphalangeal_pha5'))">
+        <xsl:variable name="suffix">
+            <xsl:choose>
+                <xsl:when test="ends-with(.,'_pt')">
+                    <xsl:text>_pt</xsl:text>
+                </xsl:when>
+                <xsl:when test="ends-with(.,'_tip')">
+                    <xsl:text>_tip</xsl:text>
+                </xsl:when>
+                <xsl:when test="ends-with(.,'_view')">
+                    <xsl:text>_view</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="starts-with(.,'skull_tip')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'vertex')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_clavicale')"><xsl:text>l_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_clavicale')"><xsl:text>r_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'middle back')"><xsl:text>spine_1_middle_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'lower back')"><xsl:text>spine_2_lower_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'waist_preferred_ant') and not(contains(.,'waist_preferred_anterior'))"><xsl:text>waist_preferred_anterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'waist_preferred_post') and not(contains(.,'waist_preferred_posterior'))"><xsl:text>waist_preferred_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Left Bustpoint')"><xsl:text>l_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Right Bustpoint')"><xsl:text>r_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Left Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_kneecap')"><xsl:text>l_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_kneecap')"><xsl:text>r_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_calcaneous_post')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_calcaneous_post')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_humeral_medial_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_humeral_medial_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'nuchal') and not(contains(.,'nuchale'))"><xsl:text>nuchale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'belly button')"><xsl:text>navel</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_canthus')"><xsl:text>l_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_canthus')"><xsl:text>r_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'chin')"><xsl:text>menton</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'mesosternum')"><xsl:text>mesosternale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_tarsal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_tarsal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                    <!-- <xsl:message>
+                        <xsl:text>*** internal error: improper diagnostic for HAnimSite conversion test of name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>', retaining original value</xsl:text>
+                    </xsl:message> -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select='$newName'/>
+        <xsl:if test="not(. = $newName)">
+            <xsl:message>
+                <xsl:text>*** replaced HAnim2 </xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text> alias </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>' with preferred name='</xsl:text>
+                <xsl:value-of select='$newName'/>
+                <xsl:text>' (run X3dTidy again to fix corresponding DEF and USE references)</xsl:text>
+            </xsl:message>
+        </xsl:if>
+      </xsl:when>
+      <!-- *** finish: HAnim2 HAnimSite alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+
             <xsl:otherwise>
                 <xsl:value-of select="$nameValue"/><!-- no change or empty value -->
             </xsl:otherwise>

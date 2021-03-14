@@ -1,0 +1,718 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"BvhSeamless3dExport1.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton."
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"1 January 2017"
+          },
+          {
+            "@name":"translated",
+            "@content":"1 January 2017"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 October 2019"
+          },
+          {
+            "@name":"reference",
+            "@content":"1.bvh"
+          },
+          {
+            "@name":"Image",
+            "@content":"BvhSeamless3dExport1.png"
+          },
+          {
+            "@name":"subject",
+            "@content":"BVH X3D Seamless3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"Seamless3d 3.002, http://www.seamless3d.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"Seamless3d developed by Graham John Perrett thyme@seamless3d.com"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://sourceforge.net/p/x3d/code/24079"
+          },
+          {
+            "@name":"license",
+            "@content":"license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"13 March 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"BvhSeamless3dExport1.x3d"
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"PAnim",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"play",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"pause",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"period",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"slider",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "TimeSensor":
+                      {
+                        "@DEF":"timeSensor",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"period"
+                              },
+                              {
+                                "@nodeField":"loop",
+                                "@protoField":"loop"
+                              },
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              },
+                              {
+                                "@nodeField":"fraction_changed",
+                                "@protoField":"slider"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"play",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"pause",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"period",
+                            "@accessType":"inputOutput",
+                            "@type":"SFTime",
+                            "@value":0
+                          },
+                          {
+                            "@name":"timeSensor",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TimeSensor":
+                                {
+                                  "@USE":"timeSensor"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"block",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          }
+                        ],
+                        "-children":[
+                          {
+                            "#comment":"caught by VRML97..xslt"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"play",
+                                "@protoField":"play"
+                              },
+                              {
+                                "@nodeField":"pause",
+                                "@protoField":"pause"
+                              },
+                              {
+                                "@nodeField":"period",
+                                "@protoField":"period"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"",
+"",
+"ecmascript:",
+"function initialize(){",
+"if(play==false){",
+"timeSensor.stopTime=1;",
+"}",
+"pause=!play;",
+"}",
+"function play(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(v){",
+"timeSensor.startTime=t;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"pause=true;",
+"}",
+"else{",
+"pause=false;",
+"}",
+"block=false;",
+"}",
+"function pause(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(!v){",
+"t2=t-timeSensor.fraction_changed*period;",
+"timeSensor.stopTime=t2-1;",
+"timeSensor.startTime=t2;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"play=true;",
+"}",
+"else{",
+"play=false;",
+"}",
+"block=false;",
+"}",
+"",
+""
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"slider",
+              "@fromNode":"t02de8af0",
+              "@toField":"f03e07a38",
+              "@toNode":"s03e13e80"
+            }
+          }
+        ],
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"View animation",
+              "@position":[0,2,16]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"PAnim",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"play",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"pause",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"period",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"slider",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "TimeSensor":
+                      {
+                        "@DEF":"timeSensor",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"period"
+                              },
+                              {
+                                "@nodeField":"loop",
+                                "@protoField":"loop"
+                              },
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              },
+                              {
+                                "@nodeField":"fraction_changed",
+                                "@protoField":"slider"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"play",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"pause",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"period",
+                            "@accessType":"inputOutput",
+                            "@type":"SFTime",
+                            "@value":0
+                          },
+                          {
+                            "@name":"timeSensor",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TimeSensor":
+                                {
+                                  "@USE":"timeSensor"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"block",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          }
+                        ],
+                        "-children":[
+                          {
+                            "#comment":"caught by VRML97..xslt"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"play",
+                                "@protoField":"play"
+                              },
+                              {
+                                "@nodeField":"pause",
+                                "@protoField":"pause"
+                              },
+                              {
+                                "@nodeField":"period",
+                                "@protoField":"period"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"",
+"",
+"ecmascript:",
+"function initialize(){",
+"if(play==false){",
+"timeSensor.stopTime=1;",
+"}",
+"pause=!play;",
+"}",
+"function play(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(v){",
+"timeSensor.startTime=t;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"pause=true;",
+"}",
+"else{",
+"pause=false;",
+"}",
+"block=false;",
+"}",
+"function pause(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(!v){",
+"t2=t-timeSensor.fraction_changed*period;",
+"timeSensor.stopTime=t2-1;",
+"timeSensor.startTime=t2;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"play=true;",
+"}",
+"else{",
+"play=false;",
+"}",
+"block=false;",
+"}",
+"",
+""
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"slider",
+              "@fromNode":"t02de8af0",
+              "@toField":"f03e07a38",
+              "@toNode":"s03e13e80"
+            }
+          }
+        ],
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"PAnim",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"play",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"pause",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"period",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":1
+                    },
+                    {
+                      "@name":"slider",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":false
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "TimeSensor":
+                      {
+                        "@DEF":"timeSensor",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"cycleInterval",
+                                "@protoField":"period"
+                              },
+                              {
+                                "@nodeField":"loop",
+                                "@protoField":"loop"
+                              },
+                              {
+                                "@nodeField":"startTime",
+                                "@protoField":"startTime"
+                              },
+                              {
+                                "@nodeField":"fraction_changed",
+                                "@protoField":"slider"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"play",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"pause",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool",
+                            "@value":false
+                          },
+                          {
+                            "@name":"period",
+                            "@accessType":"inputOutput",
+                            "@type":"SFTime",
+                            "@value":0
+                          },
+                          {
+                            "@name":"timeSensor",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode",
+                            "-children":[
+                              { "TimeSensor":
+                                {
+                                  "@USE":"timeSensor"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "@name":"block",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFBool",
+                            "@value":false
+                          }
+                        ],
+                        "-children":[
+                          {
+                            "#comment":"caught by VRML97..xslt"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"play",
+                                "@protoField":"play"
+                              },
+                              {
+                                "@nodeField":"pause",
+                                "@protoField":"pause"
+                              },
+                              {
+                                "@nodeField":"period",
+                                "@protoField":"period"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"",
+"",
+"ecmascript:",
+"function initialize(){",
+"if(play==false){",
+"timeSensor.stopTime=1;",
+"}",
+"pause=!play;",
+"}",
+"function play(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(v){",
+"timeSensor.startTime=t;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"pause=true;",
+"}",
+"else{",
+"pause=false;",
+"}",
+"block=false;",
+"}",
+"function pause(v, t){",
+"if(block){",
+"return;",
+"}",
+"block=true;",
+"if(!v){",
+"t2=t-timeSensor.fraction_changed*period;",
+"timeSensor.stopTime=t2-1;",
+"timeSensor.startTime=t2;",
+"}",
+"else{",
+"timeSensor.stopTime=t;",
+"}",
+"if(v==false){",
+"play=true;",
+"}",
+"else{",
+"play=false;",
+"}",
+"block=false;",
+"}",
+"",
+""
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"slider",
+              "@fromNode":"t02de8af0",
+              "@toField":"f03e07a38",
+              "@toNode":"s03e13e80"
+            }
+          }
+        ]
+    }
+  }
+}
