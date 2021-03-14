@@ -34,15 +34,11 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"Image",
             "@content":"DiamondManLOA_2.png"
-          },
-          {
-            "@name":"TODO",
-            "@content":"can X3dTidy sort top-level USE nodes by node type?"
           },
           {
             "@name":"Image",
@@ -74,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -615,14 +611,14 @@
               "-skeleton":[
                 { "HAnimJoint":
                   {
-                    "@name":"humanoid_root",
-                    "@DEF":"hanim_humanoid_root",
+                    "@name":"HumanoidRoot",
+                    "@DEF":"hanim_HumanoidRoot",
                     "@center":[0.0,0.8240,0.0277],
                     "-IllegalChildNodeFieldNameNotFound":[
                       { "HAnimSegment":
                         {
-                          "@name":"segmentNameNeededTODO-93",
-                          "@DEF":"hanim_segmentNameNeededTODO-93",
+                          "@name":"sacrum",
+                          "@DEF":"hanim_sacrum",
                           "-IllegalChildNodeFieldNameNotFound":[
                             { "Transform":
                               {
@@ -1548,8 +1544,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
                                                       {
-                                                        "@name":"segmentNameNeededTODO-230",
-                                                        "@DEF":"hanim_segmentNameNeededTODO-230",
+                                                        "@name":"midproximal",
+                                                        "@DEF":"hanim_midproximal",
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Transform":
                                                             {
@@ -2572,8 +2568,8 @@
                           "-IllegalChildNodeFieldNameNotFound":[
                             { "HAnimSegment":
                               {
-                                "@name":"segmentNameNeededTODO-385",
-                                "@DEF":"hanim_segmentNameNeededTODO-385",
+                                "@name":"l5",
+                                "@DEF":"hanim_l5",
                                 "-IllegalChildNodeFieldNameNotFound":[
                                   { "Transform":
                                     {
@@ -2623,8 +2619,8 @@
                                 "-IllegalChildNodeFieldNameNotFound":[
                                   { "HAnimSegment":
                                     {
-                                      "@name":"segmentNameNeededTODO-391",
-                                      "@DEF":"hanim_segmentNameNeededTODO-391",
+                                      "@name":"l4",
+                                      "@DEF":"hanim_l4",
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "Transform":
                                           {
@@ -2674,8 +2670,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSegment":
                                           {
-                                            "@name":"segmentNameNeededTODO-397",
-                                            "@DEF":"hanim_segmentNameNeededTODO-397",
+                                            "@name":"l3",
+                                            "@DEF":"hanim_l3",
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Transform":
                                                 {
@@ -2725,8 +2721,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimSegment":
                                                 {
-                                                  "@name":"segmentNameNeededTODO-403",
-                                                  "@DEF":"hanim_segmentNameNeededTODO-403",
+                                                  "@name":"l2",
+                                                  "@DEF":"hanim_l2",
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Transform":
                                                       {
@@ -2776,8 +2772,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
                                                       {
-                                                        "@name":"segmentNameNeededTODO-409",
-                                                        "@DEF":"hanim_segmentNameNeededTODO-409",
+                                                        "@name":"l1",
+                                                        "@DEF":"hanim_l1",
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Transform":
                                                             {
@@ -2827,8 +2823,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSegment":
                                                             {
-                                                              "@name":"segmentNameNeededTODO-415",
-                                                              "@DEF":"hanim_segmentNameNeededTODO-415",
+                                                              "@name":"t12",
+                                                              "@DEF":"hanim_t12",
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Transform":
                                                                   {
@@ -2878,8 +2874,8 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "HAnimSegment":
                                                                   {
-                                                                    "@name":"segmentNameNeededTODO-421",
-                                                                    "@DEF":"hanim_segmentNameNeededTODO-421",
+                                                                    "@name":"t11",
+                                                                    "@DEF":"hanim_t11",
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Transform":
                                                                         {
@@ -2929,8 +2925,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimSegment":
                                                                         {
-                                                                          "@name":"segmentNameNeededTODO-427",
-                                                                          "@DEF":"hanim_segmentNameNeededTODO-427",
+                                                                          "@name":"t10",
+                                                                          "@DEF":"hanim_t10",
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Transform":
                                                                               {
@@ -2980,8 +2976,8 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "HAnimSegment":
                                                                               {
-                                                                                "@name":"segmentNameNeededTODO-433",
-                                                                                "@DEF":"hanim_segmentNameNeededTODO-433",
+                                                                                "@name":"t9",
+                                                                                "@DEF":"hanim_t9",
                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                   { "Transform":
                                                                                     {
@@ -3031,8 +3027,8 @@
                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                   { "HAnimSegment":
                                                                                     {
-                                                                                      "@name":"segmentNameNeededTODO-439",
-                                                                                      "@DEF":"hanim_segmentNameNeededTODO-439",
+                                                                                      "@name":"t8",
+                                                                                      "@DEF":"hanim_t8",
                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                         { "Transform":
                                                                                           {
@@ -3082,8 +3078,8 @@
                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                         { "HAnimSegment":
                                                                                           {
-                                                                                            "@name":"segmentNameNeededTODO-445",
-                                                                                            "@DEF":"hanim_segmentNameNeededTODO-445",
+                                                                                            "@name":"t7",
+                                                                                            "@DEF":"hanim_t7",
                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                               { "Transform":
                                                                                                 {
@@ -3133,8 +3129,8 @@
                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                               { "HAnimSegment":
                                                                                                 {
-                                                                                                  "@name":"segmentNameNeededTODO-451",
-                                                                                                  "@DEF":"hanim_segmentNameNeededTODO-451",
+                                                                                                  "@name":"t6",
+                                                                                                  "@DEF":"hanim_t6",
                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                     { "Transform":
                                                                                                       {
@@ -3184,8 +3180,8 @@
                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                     { "HAnimSegment":
                                                                                                       {
-                                                                                                        "@name":"segmentNameNeededTODO-457",
-                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-457",
+                                                                                                        "@name":"t5",
+                                                                                                        "@DEF":"hanim_t5",
                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                           { "Transform":
                                                                                                             {
@@ -3235,8 +3231,8 @@
                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                           { "HAnimSegment":
                                                                                                             {
-                                                                                                              "@name":"segmentNameNeededTODO-463",
-                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-463",
+                                                                                                              "@name":"t4",
+                                                                                                              "@DEF":"hanim_t4",
                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                 { "Transform":
                                                                                                                   {
@@ -3286,8 +3282,8 @@
                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                 { "HAnimSegment":
                                                                                                                   {
-                                                                                                                    "@name":"segmentNameNeededTODO-469",
-                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-469",
+                                                                                                                    "@name":"t3",
+                                                                                                                    "@DEF":"hanim_t3",
                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                       { "Transform":
                                                                                                                         {
@@ -3337,8 +3333,8 @@
                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                       { "HAnimSegment":
                                                                                                                         {
-                                                                                                                          "@name":"segmentNameNeededTODO-475",
-                                                                                                                          "@DEF":"hanim_segmentNameNeededTODO-475",
+                                                                                                                          "@name":"t2",
+                                                                                                                          "@DEF":"hanim_t2",
                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                             { "Transform":
                                                                                                                               {
@@ -3388,8 +3384,8 @@
                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                             { "HAnimSegment":
                                                                                                                               {
-                                                                                                                                "@name":"segmentNameNeededTODO-481",
-                                                                                                                                "@DEF":"hanim_segmentNameNeededTODO-481",
+                                                                                                                                "@name":"t1",
+                                                                                                                                "@DEF":"hanim_t1",
                                                                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                   { "Transform":
                                                                                                                                     {
@@ -4012,8 +4008,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"segmentNameNeededTODO-539",
-                                                                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-539",
+                                                                                                                                                        "@name":"l_thumb_metacarpal",
+                                                                                                                                                        "@DEF":"hanim_l_thumb_metacarpal",
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Transform":
                                                                                                                                                             {
@@ -4063,8 +4059,8 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-545",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-545",
+                                                                                                                                                              "@name":"l_thumb_proximal",
+                                                                                                                                                              "@DEF":"hanim_l_thumb_proximal",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -4213,8 +4209,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"segmentNameNeededTODO-567",
-                                                                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-567",
+                                                                                                                                                        "@name":"l_index_metacarpal",
+                                                                                                                                                        "@DEF":"hanim_l_index_metacarpal",
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Transform":
                                                                                                                                                             {
@@ -4264,8 +4260,8 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-573",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-573",
+                                                                                                                                                              "@name":"l_index_proximal",
+                                                                                                                                                              "@DEF":"hanim_l_index_proximal",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -4315,8 +4311,8 @@
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"segmentNameNeededTODO-579",
-                                                                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-579",
+                                                                                                                                                                    "@name":"l_index_middle",
+                                                                                                                                                                    "@DEF":"hanim_l_index_middle",
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "Transform":
                                                                                                                                                                         {
@@ -5109,8 +5105,8 @@
                                                                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                         { "HAnimSegment":
                                                                                                                                           {
-                                                                                                                                            "@name":"segmentNameNeededTODO-731",
-                                                                                                                                            "@DEF":"hanim_segmentNameNeededTODO-731",
+                                                                                                                                            "@name":"c6",
+                                                                                                                                            "@DEF":"hanim_c6",
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "Transform":
                                                                                                                                                 {
@@ -5160,8 +5156,8 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimSegment":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"segmentNameNeededTODO-737",
-                                                                                                                                                  "@DEF":"hanim_segmentNameNeededTODO-737",
+                                                                                                                                                  "@name":"c5",
+                                                                                                                                                  "@DEF":"hanim_c5",
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "Transform":
                                                                                                                                                       {
@@ -5262,8 +5258,8 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-750",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-750",
+                                                                                                                                                              "@name":"c3",
+                                                                                                                                                              "@DEF":"hanim_c3",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -5313,8 +5309,8 @@
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"segmentNameNeededTODO-756",
-                                                                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-756",
+                                                                                                                                                                    "@name":"c2",
+                                                                                                                                                                    "@DEF":"hanim_c2",
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "Transform":
                                                                                                                                                                         {
@@ -5364,8 +5360,8 @@
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"segmentNameNeededTODO-762",
-                                                                                                                                                                          "@DEF":"hanim_segmentNameNeededTODO-762",
+                                                                                                                                                                          "@name":"c1",
+                                                                                                                                                                          "@DEF":"hanim_c1",
                                                                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                             { "Transform":
                                                                                                                                                                               {
@@ -5984,7 +5980,7 @@
               "-joints":[
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_humanoid_root"
+                    "@USE":"hanim_HumanoidRoot"
                   }
                 },
                 { "HAnimJoint":
@@ -6256,147 +6252,122 @@
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-93"
+                    "@USE":"hanim_sacrum"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-230"
+                    "@USE":"hanim_midproximal"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-385"
+                    "@USE":"hanim_l5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-391"
+                    "@USE":"hanim_l4"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-397"
+                    "@USE":"hanim_l3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-403"
+                    "@USE":"hanim_l2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-409"
+                    "@USE":"hanim_l1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-415"
+                    "@USE":"hanim_t12"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-421"
+                    "@USE":"hanim_t11"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-427"
+                    "@USE":"hanim_t10"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-433"
+                    "@USE":"hanim_t9"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-439"
+                    "@USE":"hanim_t8"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-445"
+                    "@USE":"hanim_t7"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-451"
+                    "@USE":"hanim_t6"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-457"
+                    "@USE":"hanim_t5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-463"
+                    "@USE":"hanim_t4"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-469"
+                    "@USE":"hanim_t3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-475"
+                    "@USE":"hanim_t2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-481"
+                    "@USE":"hanim_t1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-539"
+                    "@USE":"hanim_c6"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-545"
+                    "@USE":"hanim_c5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-567"
+                    "@USE":"hanim_c3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-573"
+                    "@USE":"hanim_c2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-579"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-731"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-737"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-750"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-756"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-762"
+                    "@USE":"hanim_c1"
                   }
                 },
                 { "HAnimSegment":
@@ -6451,6 +6422,21 @@
                 },
                 { "HAnimSegment":
                   {
+                    "@USE":"hanim_l_index_metacarpal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_index_middle"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_index_proximal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
                     "@USE":"hanim_l_middistal"
                   }
                 },
@@ -6472,6 +6458,16 @@
                 { "HAnimSegment":
                   {
                     "@USE":"hanim_l_thumb_distal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thumb_metacarpal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thumb_proximal"
                   }
                 },
                 { "HAnimSegment":

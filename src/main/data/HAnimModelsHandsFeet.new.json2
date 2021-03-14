@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"5 July 2020"
+            "@content":"8 March 2021"
           },
           {
             "@name":"warning",
@@ -39,6 +39,10 @@
           {
             "@name":"warning",
             "@content":"TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
+          },
+          {
+            "@name":"TODO",
+            "@content":"how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?"
           },
           {
             "@name":"Image",
@@ -78,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",

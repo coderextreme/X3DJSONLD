@@ -66,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -1276,7 +1276,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -1284,7 +1284,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -1292,7 +1292,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -1300,7 +1300,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -1308,7 +1308,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -1316,7 +1316,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -1324,7 +1324,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -1332,7 +1332,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -1340,7 +1340,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -1348,7 +1348,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -1356,7 +1356,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -1364,7 +1364,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -1372,7 +1372,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -1380,7 +1380,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -1388,7 +1388,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -1396,7 +1396,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -1404,7 +1404,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -1412,7 +1412,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -1420,7 +1420,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -1468,7 +1468,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -1476,7 +1476,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -1484,7 +1484,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -1492,7 +1492,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -1500,7 +1500,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -1508,7 +1508,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -1516,7 +1516,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -1524,7 +1524,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -1532,7 +1532,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -1540,7 +1540,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -1548,7 +1548,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -1556,7 +1556,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -1564,7 +1564,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -1572,7 +1572,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -1580,7 +1580,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -1588,7 +1588,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -1596,7 +1596,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -1604,7 +1604,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -1612,7 +1612,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ],
@@ -2814,7 +2814,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -2822,7 +2822,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -2830,7 +2830,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -2838,7 +2838,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -2846,7 +2846,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -2854,7 +2854,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -2862,7 +2862,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -2870,7 +2870,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -2878,7 +2878,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -2886,7 +2886,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -2894,7 +2894,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -2902,7 +2902,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -2910,7 +2910,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -2918,7 +2918,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -2926,7 +2926,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -2934,7 +2934,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -2942,7 +2942,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -2950,7 +2950,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -2958,7 +2958,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -3006,7 +3006,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -3014,7 +3014,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -3022,7 +3022,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -3030,7 +3030,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -3038,7 +3038,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -3046,7 +3046,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -3054,7 +3054,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -3062,7 +3062,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -3070,7 +3070,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -3078,7 +3078,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -3086,7 +3086,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -3094,7 +3094,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -3102,7 +3102,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -3110,7 +3110,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -3118,7 +3118,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -3126,7 +3126,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -3134,7 +3134,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -3142,7 +3142,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -3150,7 +3150,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ],
@@ -4350,7 +4350,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -4358,7 +4358,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -4366,7 +4366,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -4374,7 +4374,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -4382,7 +4382,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -4390,7 +4390,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -4398,7 +4398,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -4406,7 +4406,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -4414,7 +4414,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -4422,7 +4422,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -4430,7 +4430,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -4438,7 +4438,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -4446,7 +4446,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -4454,7 +4454,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -4462,7 +4462,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -4470,7 +4470,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -4478,7 +4478,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -4486,7 +4486,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -4494,7 +4494,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -4542,7 +4542,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -4550,7 +4550,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -4558,7 +4558,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -4566,7 +4566,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -4574,7 +4574,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -4582,7 +4582,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -4590,7 +4590,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -4598,7 +4598,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -4606,7 +4606,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -4614,7 +4614,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -4622,7 +4622,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -4630,7 +4630,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -4638,7 +4638,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -4646,7 +4646,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -4654,7 +4654,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -4662,7 +4662,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -4670,7 +4670,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -4678,7 +4678,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -4686,7 +4686,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ],
@@ -5893,7 +5893,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -5901,7 +5901,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -5909,7 +5909,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -5917,7 +5917,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -5925,7 +5925,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -5933,7 +5933,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -5941,7 +5941,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -5949,7 +5949,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -5957,7 +5957,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -5965,7 +5965,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -5973,7 +5973,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -5981,7 +5981,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -5989,7 +5989,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -5997,7 +5997,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -6005,7 +6005,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -6013,7 +6013,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -6021,7 +6021,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -6029,7 +6029,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -6037,7 +6037,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -6085,7 +6085,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -6093,7 +6093,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -6101,7 +6101,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -6109,7 +6109,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -6117,7 +6117,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -6125,7 +6125,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -6133,7 +6133,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -6141,7 +6141,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -6149,7 +6149,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -6157,7 +6157,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -6165,7 +6165,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -6173,7 +6173,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -6181,7 +6181,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -6189,7 +6189,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -6197,7 +6197,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -6205,7 +6205,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -6213,7 +6213,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -6221,7 +6221,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -6229,7 +6229,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ],
@@ -7432,7 +7432,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -7440,7 +7440,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -7448,7 +7448,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -7456,7 +7456,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -7464,7 +7464,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -7472,7 +7472,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -7480,7 +7480,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -7488,7 +7488,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -7496,7 +7496,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -7504,7 +7504,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -7512,7 +7512,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -7520,7 +7520,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -7528,7 +7528,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -7536,7 +7536,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -7544,7 +7544,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -7552,7 +7552,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -7560,7 +7560,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -7568,7 +7568,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -7576,7 +7576,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -7624,7 +7624,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -7632,7 +7632,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -7640,7 +7640,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -7648,7 +7648,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -7656,7 +7656,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -7664,7 +7664,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -7672,7 +7672,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -7680,7 +7680,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -7688,7 +7688,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -7696,7 +7696,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -7704,7 +7704,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -7712,7 +7712,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -7720,7 +7720,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -7728,7 +7728,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -7736,7 +7736,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -7744,7 +7744,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -7752,7 +7752,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -7760,7 +7760,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -7768,7 +7768,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ],
@@ -8963,7 +8963,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb1"
+              "@toNode":"Joe_l_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -8971,7 +8971,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb2"
+              "@toNode":"Joe_l_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -8979,7 +8979,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_thumb3"
+              "@toNode":"Joe_l_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -8987,7 +8987,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index0"
+              "@toNode":"Joe_l_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -8995,7 +8995,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index1"
+              "@toNode":"Joe_l_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -9003,7 +9003,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -9011,7 +9011,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_index3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -9019,7 +9019,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle0"
+              "@toNode":"Joe_l_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -9027,7 +9027,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle1"
+              "@toNode":"Joe_l_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -9035,7 +9035,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -9043,7 +9043,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_middle3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -9051,7 +9051,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring0"
+              "@toNode":"Joe_l_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -9059,7 +9059,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring1"
+              "@toNode":"Joe_l_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -9067,7 +9067,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -9075,7 +9075,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_ring3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -9083,7 +9083,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky0"
+              "@toNode":"Joe_l_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -9091,7 +9091,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky1"
+              "@toNode":"Joe_l_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -9099,7 +9099,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky2"
+              "@toNode":"Joe_l_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -9107,7 +9107,7 @@
               "@fromField":"value_changed",
               "@fromNode":"l_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_l_pinky3"
+              "@toNode":"Joe_l_carpal_distal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -9155,7 +9155,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb1"
+              "@toNode":"Joe_r_carpometacarpal_1"
             }
           },
           { "ROUTE":
@@ -9163,7 +9163,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb2"
+              "@toNode":"Joe_r_metacarpophalangeal_1"
             }
           },
           { "ROUTE":
@@ -9171,7 +9171,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_thumb3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_thumb3"
+              "@toNode":"Joe_r_carpal_interphalangeal_1"
             }
           },
           { "ROUTE":
@@ -9179,7 +9179,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index0"
+              "@toNode":"Joe_r_carpometacarpal_2"
             }
           },
           { "ROUTE":
@@ -9187,7 +9187,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index1"
+              "@toNode":"Joe_r_metacarpophalangeal_2"
             }
           },
           { "ROUTE":
@@ -9195,7 +9195,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -9203,7 +9203,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_index3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_index3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_2"
             }
           },
           { "ROUTE":
@@ -9211,7 +9211,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle0"
+              "@toNode":"Joe_r_carpometacarpal_3"
             }
           },
           { "ROUTE":
@@ -9219,7 +9219,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle1"
+              "@toNode":"Joe_r_metacarpophalangeal_3"
             }
           },
           { "ROUTE":
@@ -9227,7 +9227,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -9235,7 +9235,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_middle3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_middle3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_3"
             }
           },
           { "ROUTE":
@@ -9243,7 +9243,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring0"
+              "@toNode":"Joe_r_carpometacarpal_4"
             }
           },
           { "ROUTE":
@@ -9251,7 +9251,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring1"
+              "@toNode":"Joe_r_metacarpophalangeal_4"
             }
           },
           { "ROUTE":
@@ -9259,7 +9259,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -9267,7 +9267,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_ring3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_ring3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_4"
             }
           },
           { "ROUTE":
@@ -9275,7 +9275,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky0_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky0"
+              "@toNode":"Joe_r_carpometacarpal_5"
             }
           },
           { "ROUTE":
@@ -9283,7 +9283,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky1_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky1"
+              "@toNode":"Joe_r_metacarpophalangeal_5"
             }
           },
           { "ROUTE":
@@ -9291,7 +9291,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky2_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky2"
+              "@toNode":"Joe_r_carpal_proximal_interphalangeal_5"
             }
           },
           { "ROUTE":
@@ -9299,7 +9299,7 @@
               "@fromField":"value_changed",
               "@fromNode":"r_pinky3_RotationInterpolator",
               "@toField":"set_rotation",
-              "@toNode":"Joe_r_pinky3"
+              "@toNode":"Joe_r_carpal_distal_interphalangeal_5"
             }
           }
         ]

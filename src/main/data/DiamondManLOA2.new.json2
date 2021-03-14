@@ -34,15 +34,11 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"8 March 2021"
           },
           {
             "@name":"Image",
             "@content":"DiamondManLOA2.png"
-          },
-          {
-            "@name":"TODO",
-            "@content":"can X3dTidy sort top-level USE nodes by node type?"
           },
           {
             "@name":"Image",
@@ -74,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -560,6 +556,7 @@
             {
               "@name":"humanoid",
               "@DEF":"hanim_humanoid",
+              "@loa":2,
               "@version":"2.0",
               "-children":[
                 {
@@ -621,8 +618,8 @@
                     "-IllegalChildNodeFieldNameNotFound":[
                       { "HAnimSegment":
                         {
-                          "@name":"segmentNameNeededTODO-93",
-                          "@DEF":"hanim_segmentNameNeededTODO-93",
+                          "@name":"sacrum",
+                          "@DEF":"hanim_sacrum",
                           "-IllegalChildNodeFieldNameNotFound":[
                             { "Transform":
                               {
@@ -1203,8 +1200,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_femoral_lateral_epicn_pt",
-                                            "@DEF":"hanim_l_femoral_lateral_epicn_pt",
+                                            "@name":"l_femoral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_l_femoral_lateral_epicondyle_pt",
                                             "@translation":[0.1598,0.4967,0.0297],
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Shape":
@@ -1242,8 +1239,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_femoral_medial_epicn_pt",
-                                            "@DEF":"hanim_l_femoral_medial_epicn_pt",
+                                            "@name":"l_femoral_medial_epicondyle_pt",
+                                            "@DEF":"hanim_l_femoral_medial_epicondyle_pt",
                                             "@translation":[0.0398,0.4946,0.0303],
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Shape":
@@ -1500,8 +1497,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"l_calcaneous_post_pt",
-                                                        "@DEF":"hanim_l_calcaneous_post_pt",
+                                                        "@name":"l_calcaneus_posterior_pt",
+                                                        "@DEF":"hanim_l_calcaneus_posterior_pt",
                                                         "@translation":[0.0974,0.0259,-0.1171],
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Shape":
@@ -1548,8 +1545,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
                                                       {
-                                                        "@name":"segmentNameNeededTODO-230",
-                                                        "@DEF":"hanim_segmentNameNeededTODO-230",
+                                                        "@name":"l_metatarsal_2",
+                                                        "@DEF":"hanim_l_metatarsal_2",
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Transform":
                                                             {
@@ -1680,8 +1677,8 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "HAnimSite":
                                                                   {
-                                                                    "@name":"l_metatarsal_pha1_pt",
-                                                                    "@DEF":"hanim_l_metatarsal_pha1_pt",
+                                                                    "@name":"l_metatarsal_phalanx_1_pt",
+                                                                    "@DEF":"hanim_l_metatarsal_phalanx_1_pt",
                                                                     "@translation":[0.0816,0.0232,0.0106],
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Shape":
@@ -1809,8 +1806,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"l_metatarsal_pha5_pt",
-                                                                          "@DEF":"hanim_l_metatarsal_pha5_pt",
+                                                                          "@name":"l_metatarsal_phalanx_5_pt",
+                                                                          "@DEF":"hanim_l_metatarsal_phalanx_5_pt",
                                                                           "@translation":[0.1825,0.0070,0.0928],
                                                                           "-children":[
                                                                             {
@@ -1853,8 +1850,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimSite":
                                                                         {
-                                                                          "@name":"l_digit2_pt",
-                                                                          "@DEF":"hanim_l_digit2_pt",
+                                                                          "@name":"l_tarsal_distal_phalanx_2_pt",
+                                                                          "@DEF":"hanim_l_tarsal_distal_phalanx_2_pt",
                                                                           "@translation":[0.1195,0.0079,0.1433],
                                                                           "-children":[
                                                                             {
@@ -2005,8 +2002,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_femoral_lateral_epicn_pt",
-                                            "@DEF":"hanim_r_femoral_lateral_epicn_pt",
+                                            "@name":"r_femoral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_r_femoral_lateral_epicondyle_pt",
                                             "@translation":[-0.1421,0.4992,0.0310],
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Shape":
@@ -2044,8 +2041,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_femoral_medial_epicn_pt",
-                                            "@DEF":"hanim_r_femoral_medial_epicn_pt",
+                                            "@name":"r_femoral_medial_epicondyle_pt",
+                                            "@DEF":"hanim_r_femoral_medial_epicondyle_pt",
                                             "@translation":[-0.0221,0.5014,0.0289],
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Shape":
@@ -2302,8 +2299,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"r_calcaneous_post_pt",
-                                                        "@DEF":"hanim_r_calcaneous_post_pt",
+                                                        "@name":"r_calcaneus_posterior_pt",
+                                                        "@DEF":"hanim_r_calcaneus_posterior_pt",
                                                         "@translation":[-0.0692,0.0297,-0.1221],
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Shape":
@@ -2431,8 +2428,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_metatarsal_pha5_pt",
-                                                              "@DEF":"hanim_r_metatarsal_pha5_pt",
+                                                              "@name":"r_metatarsal_phalanx_5_pt",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_5_pt",
                                                               "@translation":[-0.1523,0.0166,0.0895],
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Shape":
@@ -2470,8 +2467,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_metatarsal_pha1_pt",
-                                                              "@DEF":"hanim_r_metatarsal_pha1_pt",
+                                                              "@name":"r_metatarsal_phalanx_1_pt",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_1_pt",
                                                               "@translation":[-0.0521,0.0260,0.0127],
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Shape":
@@ -2509,8 +2506,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_digit2_pt",
-                                                              "@DEF":"hanim_r_digit2_pt",
+                                                              "@name":"r_tarsal_distal_phalanx_2_pt",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_2_pt",
                                                               "@translation":[-0.0883,0.0134,0.1383],
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Shape":
@@ -2572,8 +2569,8 @@
                           "-IllegalChildNodeFieldNameNotFound":[
                             { "HAnimSegment":
                               {
-                                "@name":"segmentNameNeededTODO-385",
-                                "@DEF":"hanim_segmentNameNeededTODO-385",
+                                "@name":"l5",
+                                "@DEF":"hanim_l5",
                                 "-IllegalChildNodeFieldNameNotFound":[
                                   { "Transform":
                                     {
@@ -2623,8 +2620,8 @@
                                 "-IllegalChildNodeFieldNameNotFound":[
                                   { "HAnimSegment":
                                     {
-                                      "@name":"segmentNameNeededTODO-391",
-                                      "@DEF":"hanim_segmentNameNeededTODO-391",
+                                      "@name":"l4",
+                                      "@DEF":"hanim_l4",
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "Transform":
                                           {
@@ -2674,8 +2671,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSegment":
                                           {
-                                            "@name":"segmentNameNeededTODO-397",
-                                            "@DEF":"hanim_segmentNameNeededTODO-397",
+                                            "@name":"l3",
+                                            "@DEF":"hanim_l3",
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "Transform":
                                                 {
@@ -2725,8 +2722,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimSegment":
                                                 {
-                                                  "@name":"segmentNameNeededTODO-403",
-                                                  "@DEF":"hanim_segmentNameNeededTODO-403",
+                                                  "@name":"l2",
+                                                  "@DEF":"hanim_l2",
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "Transform":
                                                       {
@@ -2776,8 +2773,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
                                                       {
-                                                        "@name":"segmentNameNeededTODO-409",
-                                                        "@DEF":"hanim_segmentNameNeededTODO-409",
+                                                        "@name":"l1",
+                                                        "@DEF":"hanim_l1",
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "Transform":
                                                             {
@@ -2827,8 +2824,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSegment":
                                                             {
-                                                              "@name":"segmentNameNeededTODO-415",
-                                                              "@DEF":"hanim_segmentNameNeededTODO-415",
+                                                              "@name":"t12",
+                                                              "@DEF":"hanim_t12",
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "Transform":
                                                                   {
@@ -2878,8 +2875,8 @@
                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                 { "HAnimSegment":
                                                                   {
-                                                                    "@name":"segmentNameNeededTODO-421",
-                                                                    "@DEF":"hanim_segmentNameNeededTODO-421",
+                                                                    "@name":"t11",
+                                                                    "@DEF":"hanim_t11",
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "Transform":
                                                                         {
@@ -2929,8 +2926,8 @@
                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                       { "HAnimSegment":
                                                                         {
-                                                                          "@name":"segmentNameNeededTODO-427",
-                                                                          "@DEF":"hanim_segmentNameNeededTODO-427",
+                                                                          "@name":"t10",
+                                                                          "@DEF":"hanim_t10",
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "Transform":
                                                                               {
@@ -2980,8 +2977,8 @@
                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                             { "HAnimSegment":
                                                                               {
-                                                                                "@name":"segmentNameNeededTODO-433",
-                                                                                "@DEF":"hanim_segmentNameNeededTODO-433",
+                                                                                "@name":"t9",
+                                                                                "@DEF":"hanim_t9",
                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                   { "Transform":
                                                                                     {
@@ -3031,8 +3028,8 @@
                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                   { "HAnimSegment":
                                                                                     {
-                                                                                      "@name":"segmentNameNeededTODO-439",
-                                                                                      "@DEF":"hanim_segmentNameNeededTODO-439",
+                                                                                      "@name":"t8",
+                                                                                      "@DEF":"hanim_t8",
                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                         { "Transform":
                                                                                           {
@@ -3082,8 +3079,8 @@
                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                         { "HAnimSegment":
                                                                                           {
-                                                                                            "@name":"segmentNameNeededTODO-445",
-                                                                                            "@DEF":"hanim_segmentNameNeededTODO-445",
+                                                                                            "@name":"t7",
+                                                                                            "@DEF":"hanim_t7",
                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                               { "Transform":
                                                                                                 {
@@ -3133,8 +3130,8 @@
                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                               { "HAnimSegment":
                                                                                                 {
-                                                                                                  "@name":"segmentNameNeededTODO-451",
-                                                                                                  "@DEF":"hanim_segmentNameNeededTODO-451",
+                                                                                                  "@name":"t6",
+                                                                                                  "@DEF":"hanim_t6",
                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                     { "Transform":
                                                                                                       {
@@ -3184,8 +3181,8 @@
                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                     { "HAnimSegment":
                                                                                                       {
-                                                                                                        "@name":"segmentNameNeededTODO-457",
-                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-457",
+                                                                                                        "@name":"t5",
+                                                                                                        "@DEF":"hanim_t5",
                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                           { "Transform":
                                                                                                             {
@@ -3235,8 +3232,8 @@
                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                           { "HAnimSegment":
                                                                                                             {
-                                                                                                              "@name":"segmentNameNeededTODO-463",
-                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-463",
+                                                                                                              "@name":"t4",
+                                                                                                              "@DEF":"hanim_t4",
                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                 { "Transform":
                                                                                                                   {
@@ -3286,8 +3283,8 @@
                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                 { "HAnimSegment":
                                                                                                                   {
-                                                                                                                    "@name":"segmentNameNeededTODO-469",
-                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-469",
+                                                                                                                    "@name":"t3",
+                                                                                                                    "@DEF":"hanim_t3",
                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                       { "Transform":
                                                                                                                         {
@@ -3337,8 +3334,8 @@
                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                       { "HAnimSegment":
                                                                                                                         {
-                                                                                                                          "@name":"segmentNameNeededTODO-475",
-                                                                                                                          "@DEF":"hanim_segmentNameNeededTODO-475",
+                                                                                                                          "@name":"t2",
+                                                                                                                          "@DEF":"hanim_t2",
                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                             { "Transform":
                                                                                                                               {
@@ -3388,8 +3385,8 @@
                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                             { "HAnimSegment":
                                                                                                                               {
-                                                                                                                                "@name":"segmentNameNeededTODO-481",
-                                                                                                                                "@DEF":"hanim_segmentNameNeededTODO-481",
+                                                                                                                                "@name":"t1",
+                                                                                                                                "@DEF":"hanim_t1",
                                                                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                   { "Transform":
                                                                                                                                     {
@@ -3491,8 +3488,8 @@
                                                                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                         { "HAnimSite":
                                                                                                                                           {
-                                                                                                                                            "@name":"l_humeral_lateral_epicn_pt",
-                                                                                                                                            "@DEF":"hanim_l_humeral_lateral_epicn_pt",
+                                                                                                                                            "@name":"l_humeral_lateral_epicondyle_pt",
+                                                                                                                                            "@DEF":"hanim_l_humeral_lateral_epicondyle_pt",
                                                                                                                                             "@translation":[0.2280,1.1482,-0.1100],
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "Shape":
@@ -3669,8 +3666,8 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimSite":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"l_humeral_medial_epicn_pt",
-                                                                                                                                                  "@DEF":"hanim_l_humeral_medial_epicn_pt",
+                                                                                                                                                  "@name":"l_humeral_medial_epicondyle_pt",
+                                                                                                                                                  "@DEF":"hanim_l_humeral_medial_epicondyle_pt",
                                                                                                                                                   "@translation":[0.1735,1.1272,-0.1113],
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "Shape":
@@ -3847,8 +3844,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"l_metacarpal_pha2_pt",
-                                                                                                                                                        "@DEF":"hanim_l_metacarpal_pha2_pt",
+                                                                                                                                                        "@name":"l_metacarpal_phalanx_2_pt",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpal_phalanx_2_pt",
                                                                                                                                                         "@translation":[0.2009,0.8139,-0.0237],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Shape":
@@ -3964,8 +3961,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"l_metacarpal_pha5_pt",
-                                                                                                                                                        "@DEF":"hanim_l_metacarpal_pha5_pt",
+                                                                                                                                                        "@name":"l_metacarpal_phalanx_5_pt",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpal_phalanx_5_pt",
                                                                                                                                                         "@translation":[0.1929,0.7860,-0.1122],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Shape":
@@ -4006,14 +4003,14 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimJoint":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"l_thumb1",
-                                                                                                                                                  "@DEF":"hanim_l_thumb1",
+                                                                                                                                                  "@name":"l_carpometacarpal_1",
+                                                                                                                                                  "@DEF":"hanim_l_carpometacarpal_1",
                                                                                                                                                   "@center":[0.1924,0.8472,-0.0534],
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"segmentNameNeededTODO-539",
-                                                                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-539",
+                                                                                                                                                        "@name":"l_metacarpal_1",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpal_1",
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Transform":
                                                                                                                                                             {
@@ -4057,14 +4054,14 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimJoint":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"l_thumb2",
-                                                                                                                                                        "@DEF":"hanim_l_thumb2",
+                                                                                                                                                        "@name":"l_metacarpophalangeal_1",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpophalangeal_1",
                                                                                                                                                         "@center":[0.1951,0.8226,0.0246],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-545",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-545",
+                                                                                                                                                              "@name":"l_carpal_proximal_phalanx_1",
+                                                                                                                                                              "@DEF":"hanim_l_carpal_proximal_phalanx_1",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -4108,8 +4105,8 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimJoint":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"l_thumb3",
-                                                                                                                                                              "@DEF":"hanim_l_thumb3",
+                                                                                                                                                              "@name":"l_carpal_interphalangeal_1",
+                                                                                                                                                              "@DEF":"hanim_l_carpal_interphalangeal_1",
                                                                                                                                                               "@center":[0.1955,0.8159,0.0464],
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimSegment":
@@ -4156,8 +4153,8 @@
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "HAnimSite":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"l_thumb_distal_tip",
-                                                                                                                                                                          "@DEF":"hanim_l_thumb_distal_tip",
+                                                                                                                                                                          "@name":"l_carpal_distal_phalanx_1_tip",
+                                                                                                                                                                          "@DEF":"hanim_l_carpal_distal_phalanx_1_tip",
                                                                                                                                                                           "@translation":[0.1982,0.8061,0.0759],
                                                                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                             { "Shape":
@@ -4207,14 +4204,14 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimJoint":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"l_index0",
-                                                                                                                                                  "@DEF":"hanim_l_index0",
+                                                                                                                                                  "@name":"l_carpometacarpal_2",
+                                                                                                                                                  "@DEF":"hanim_l_carpometacarpal_2",
                                                                                                                                                   "@center":[0.1983,0.8024,-0.0280],
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"segmentNameNeededTODO-567",
-                                                                                                                                                        "@DEF":"hanim_segmentNameNeededTODO-567",
+                                                                                                                                                        "@name":"l_metacarpal_2",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpal_2",
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Transform":
                                                                                                                                                             {
@@ -4258,14 +4255,14 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimJoint":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"l_index1",
-                                                                                                                                                        "@DEF":"hanim_l_index1",
+                                                                                                                                                        "@name":"l_metacarpophalangeal_2",
+                                                                                                                                                        "@DEF":"hanim_l_metacarpophalangeal_2",
                                                                                                                                                         "@center":[0.1983,0.7815,-0.0280],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-573",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-573",
+                                                                                                                                                              "@name":"l_carpal_proximal_phalanx_2",
+                                                                                                                                                              "@DEF":"hanim_l_carpal_proximal_phalanx_2",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -4309,14 +4306,14 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimJoint":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"l_index2",
-                                                                                                                                                              "@DEF":"hanim_l_index2",
+                                                                                                                                                              "@name":"l_carpal_proximal_interphalangeal_2",
+                                                                                                                                                              "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
                                                                                                                                                               "@center":[0.2017,0.7363,-0.0248],
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"segmentNameNeededTODO-579",
-                                                                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-579",
+                                                                                                                                                                    "@name":"l_carpal_middle_phalanx_2",
+                                                                                                                                                                    "@DEF":"hanim_l_carpal_middle_phalanx_2",
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "Transform":
                                                                                                                                                                         {
@@ -4360,8 +4357,8 @@
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimJoint":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"l_index3",
-                                                                                                                                                                    "@DEF":"hanim_l_index3",
+                                                                                                                                                                    "@name":"l_carpal_distal_interphalangeal_2",
+                                                                                                                                                                    "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
                                                                                                                                                                     "@center":[0.2028,0.7139,-0.0236],
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "HAnimSegment":
@@ -4408,8 +4405,8 @@
                                                                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                             { "HAnimSite":
                                                                                                                                                                               {
-                                                                                                                                                                                "@name":"l_index_distal_tip",
-                                                                                                                                                                                "@DEF":"hanim_l_index_distal_tip",
+                                                                                                                                                                                "@name":"l_carpal_distal_phalanx_2_tip",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_distal_phalanx_2_tip",
                                                                                                                                                                                 "@translation":[0.2089,0.6858,-0.0245],
                                                                                                                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                                   { "Shape":
@@ -4529,8 +4526,8 @@
                                                                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                         { "HAnimSite":
                                                                                                                                           {
-                                                                                                                                            "@name":"r_humeral_lateral_epicn_pt",
-                                                                                                                                            "@DEF":"hanim_r_humeral_lateral_epicn_pt",
+                                                                                                                                            "@name":"r_humeral_lateral_epicondyle_pt",
+                                                                                                                                            "@DEF":"hanim_r_humeral_lateral_epicondyle_pt",
                                                                                                                                             "@translation":[-0.2224,1.1517,-0.1033],
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "Shape":
@@ -4707,8 +4704,8 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimSite":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"r_humeral_medial_epicn_pt",
-                                                                                                                                                  "@DEF":"hanim_r_humeral_medial_epicn_pt",
+                                                                                                                                                  "@name":"r_humeral_medial_epicondyle_pt",
+                                                                                                                                                  "@DEF":"hanim_r_humeral_medial_epicondyle_pt",
                                                                                                                                                   "@translation":[-0.1680,1.1298,-0.1062],
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "Shape":
@@ -4884,8 +4881,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"r_metacarpal_pha2_pt",
-                                                                                                                                                        "@DEF":"hanim_r_metacarpal_pha2_pt",
+                                                                                                                                                        "@name":"r_metacarpal_phalanx_2_pt",
+                                                                                                                                                        "@DEF":"hanim_r_metacarpal_phalanx_2_pt",
                                                                                                                                                         "@translation":[-0.1977,0.8169,-0.0177],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Shape":
@@ -5001,8 +4998,8 @@
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "HAnimSite":
                                                                                                                                                       {
-                                                                                                                                                        "@name":"r_metacarpal_pha5_pt",
-                                                                                                                                                        "@DEF":"hanim_r_metacarpal_pha5_pt",
+                                                                                                                                                        "@name":"r_metacarpal_phalanx_5_pt",
+                                                                                                                                                        "@DEF":"hanim_r_metacarpal_phalanx_5_pt",
                                                                                                                                                         "@translation":[-0.1929,0.7890,-0.1064],
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "Shape":
@@ -5109,8 +5106,8 @@
                                                                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                         { "HAnimSegment":
                                                                                                                                           {
-                                                                                                                                            "@name":"segmentNameNeededTODO-731",
-                                                                                                                                            "@DEF":"hanim_segmentNameNeededTODO-731",
+                                                                                                                                            "@name":"c6",
+                                                                                                                                            "@DEF":"hanim_c6",
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "Transform":
                                                                                                                                                 {
@@ -5160,8 +5157,8 @@
                                                                                                                                             "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                               { "HAnimSegment":
                                                                                                                                                 {
-                                                                                                                                                  "@name":"segmentNameNeededTODO-737",
-                                                                                                                                                  "@DEF":"hanim_segmentNameNeededTODO-737",
+                                                                                                                                                  "@name":"c5",
+                                                                                                                                                  "@DEF":"hanim_c5",
                                                                                                                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                     { "Transform":
                                                                                                                                                       {
@@ -5262,8 +5259,8 @@
                                                                                                                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
-                                                                                                                                                              "@name":"segmentNameNeededTODO-750",
-                                                                                                                                                              "@DEF":"hanim_segmentNameNeededTODO-750",
+                                                                                                                                                              "@name":"c3",
+                                                                                                                                                              "@DEF":"hanim_c3",
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "Transform":
                                                                                                                                                                   {
@@ -5313,8 +5310,8 @@
                                                                                                                                                               "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
-                                                                                                                                                                    "@name":"segmentNameNeededTODO-756",
-                                                                                                                                                                    "@DEF":"hanim_segmentNameNeededTODO-756",
+                                                                                                                                                                    "@name":"c2",
+                                                                                                                                                                    "@DEF":"hanim_c2",
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "Transform":
                                                                                                                                                                         {
@@ -5364,8 +5361,8 @@
                                                                                                                                                                     "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
-                                                                                                                                                                          "@name":"segmentNameNeededTODO-762",
-                                                                                                                                                                          "@DEF":"hanim_segmentNameNeededTODO-762",
+                                                                                                                                                                          "@name":"c1",
+                                                                                                                                                                          "@DEF":"hanim_c1",
                                                                                                                                                                           "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                             { "Transform":
                                                                                                                                                                               {
@@ -5457,8 +5454,8 @@
                                                                                                                                                                                 "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                                   { "HAnimSite":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"skull_tip",
-                                                                                                                                                                                      "@DEF":"hanim_skull_tip",
+                                                                                                                                                                                      "@name":"skull_vertex_tip",
+                                                                                                                                                                                      "@DEF":"hanim_skull_vertex_tip",
                                                                                                                                                                                       "@translation":[0.0050,1.7504,0.0055],
                                                                                                                                                                                       "-IllegalChildNodeFieldNameNotFound":[
                                                                                                                                                                                         { "Shape":
@@ -6119,6 +6116,31 @@
                 },
                 { "HAnimJoint":
                   {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpometacarpal_2"
+                  }
+                },
+                { "HAnimJoint":
+                  {
                     "@USE":"hanim_l_elbow"
                   }
                 },
@@ -6139,32 +6161,22 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_index0"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_index1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_index2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_index3"
-                  }
-                },
-                { "HAnimJoint":
-                  {
                     "@USE":"hanim_l_knee"
                   }
                 },
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metacarpophalangeal_2"
                   }
                 },
                 { "HAnimJoint":
@@ -6216,21 +6228,6 @@
                   {
                     "@USE":"hanim_l_tarsometatarsal_2"
                   }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_thumb1"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_thumb2"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_thumb3"
-                  }
                 }
               ],
               "-segments":[
@@ -6256,147 +6253,117 @@
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-93"
+                    "@USE":"hanim_sacrum"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-230"
+                    "@USE":"hanim_l5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-385"
+                    "@USE":"hanim_l4"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-391"
+                    "@USE":"hanim_l3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-397"
+                    "@USE":"hanim_l2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-403"
+                    "@USE":"hanim_l1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-409"
+                    "@USE":"hanim_t12"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-415"
+                    "@USE":"hanim_t11"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-421"
+                    "@USE":"hanim_t10"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-427"
+                    "@USE":"hanim_t9"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-433"
+                    "@USE":"hanim_t8"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-439"
+                    "@USE":"hanim_t7"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-445"
+                    "@USE":"hanim_t6"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-451"
+                    "@USE":"hanim_t5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-457"
+                    "@USE":"hanim_t4"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-463"
+                    "@USE":"hanim_t3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-469"
+                    "@USE":"hanim_t2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-475"
+                    "@USE":"hanim_t1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-481"
+                    "@USE":"hanim_c6"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-539"
+                    "@USE":"hanim_c5"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-545"
+                    "@USE":"hanim_c3"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-567"
+                    "@USE":"hanim_c2"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_segmentNameNeededTODO-573"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-579"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-731"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-737"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-750"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-756"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_segmentNameNeededTODO-762"
+                    "@USE":"hanim_c1"
                   }
                 },
                 { "HAnimSegment":
@@ -6431,12 +6398,42 @@
                 },
                 { "HAnimSegment":
                   {
+                    "@USE":"hanim_l_carpal_middle_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_phalanx_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
                     "@USE":"hanim_l_forearm"
                   }
                 },
                 { "HAnimSegment":
                   {
                     "@USE":"hanim_r_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metacarpal_2"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_metatarsal_2"
                   }
                 },
                 { "HAnimSegment":
@@ -6493,7 +6490,7 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_skull_tip"
+                    "@USE":"hanim_skull_vertex_tip"
                   }
                 },
                 { "HAnimSite":
@@ -6523,12 +6520,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_calcaneous_post_pt"
+                    "@USE":"hanim_l_calcaneus_posterior_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_calcaneous_post_pt"
+                    "@USE":"hanim_r_calcaneus_posterior_pt"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_1_tip"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_carpal_distal_phalanx_2_tip"
                   }
                 },
                 { "HAnimSite":
@@ -6543,32 +6550,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_digit2_pt"
+                    "@USE":"hanim_l_femoral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_digit2_pt"
+                    "@USE":"hanim_r_femoral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_femoral_lateral_epicn_pt"
+                    "@USE":"hanim_l_femoral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_femoral_lateral_epicn_pt"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_femoral_medial_epicn_pt"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_femoral_medial_epicn_pt"
+                    "@USE":"hanim_r_femoral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
@@ -6598,22 +6595,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_lateral_epicn_pt"
+                    "@USE":"hanim_l_humeral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_lateral_epicn_pt"
+                    "@USE":"hanim_r_humeral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_medial_epicn_pt"
+                    "@USE":"hanim_l_humeral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_medial_epicn_pt"
+                    "@USE":"hanim_r_humeral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
@@ -6624,11 +6621,6 @@
                 { "HAnimSite":
                   {
                     "@USE":"hanim_l_iliocristale_pt"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_index_distal_tip"
                   }
                 },
                 { "HAnimSite":
@@ -6673,42 +6665,42 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_pha2_pt"
+                    "@USE":"hanim_l_metacarpal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_pha2_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_pha5_pt"
+                    "@USE":"hanim_l_metacarpal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_pha5_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metatarsal_pha1_pt"
+                    "@USE":"hanim_l_metatarsal_phalanx_1_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metatarsal_pha1_pt"
+                    "@USE":"hanim_r_metatarsal_phalanx_1_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metatarsal_pha5_pt"
+                    "@USE":"hanim_l_metatarsal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metatarsal_pha5_pt"
+                    "@USE":"hanim_r_metatarsal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
@@ -6773,7 +6765,12 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_thumb_distal_tip"
+                    "@USE":"hanim_l_tarsal_distal_phalanx_2_pt"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
