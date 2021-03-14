@@ -11,17 +11,17 @@ import org.web3d.x3d.jsail.RigidBodyPhysics.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template. </p>
- <p> Related links: HAnimSpecificationLOA3Invisible.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: HAnim2SpecificationLOA3Invisible.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HAnimSpecificationLOA3Invisible&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HAnim2SpecificationLOA3Invisible&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d">HAnim2SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -37,7 +37,7 @@ import org.web3d.x3d.jsail.RigidBodyPhysics.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 12 July 2020 </td>
+			<td> 20 February 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -45,11 +45,11 @@ import org.web3d.x3d.jsail.RigidBodyPhysics.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Illustrated.x3d">HAnim2SpecificationLOA3Illustrated.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d">HAnimSpecificationLOA3Motion.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Animation.x3d">HAnim2SpecificationLOA3Animation.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -117,7 +117,7 @@ import org.web3d.x3d.jsail.RigidBodyPhysics.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -139,10 +139,10 @@ import org.web3d.x3d.jsail.RigidBodyPhysics.*;
 	* @author Matthew T. Beitler, Joe D. Williams, Don Brutzman
  */
 
-public class HAnimSpecificationLOA3Invisible
+public class HAnim2SpecificationLOA3Invisible
 {
 	/** Default constructor to create this object. */
-	public HAnimSpecificationLOA3Invisible ()
+	public HAnim2SpecificationLOA3Invisible ()
 	{
 	  initialize();
 	}
@@ -153,14 +153,14 @@ public class HAnimSpecificationLOA3Invisible
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HAnimSpecificationLOA3Invisible.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HAnim2SpecificationLOA3Invisible.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("24 April 2013"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("12 July 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Matthew T. Beitler, Joe D. Williams, Don Brutzman"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnimSpecificationLOA3Illustrated.x3d"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnimSpecificationLOA3Motion.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim2SpecificationLOA3Illustrated.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim2SpecificationLOA3Animation.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnimSpecificationExampleChangeLog.txt"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
@@ -177,7 +177,7 @@ public class HAnimSpecificationLOA3Invisible
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.3,0.3,0.3})))
@@ -195,7 +195,7 @@ public class HAnimSpecificationLOA3Invisible
     .addChild(new Viewpoint().setDescription("Humanoid LOA 3 Left Side Close").setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.2).setPosition(-1.0,0.8,0.5))
     .addChild(new Viewpoint().setDescription("Humanoid LOA 3 Left Side").setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.5708).setPosition(-2.6,0.8,0.0))
     .addChild(new Viewpoint().setDescription("Humanoid LOA 3 Top").setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(1.0,0.0,0.0,-1.5708).setPosition(0.0,3.5,0.0))
-    .addChild(new HAnimHumanoid("hanim_humanoid").setName("humanoid").setVersion("2.0")
+    .addChild(new HAnimHumanoid("hanim_humanoid").setName("humanoid").setInfo(new String[] {"humanoidVersion=2.0"}).setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=2.0\" \"height=1.7504\"' ")
       .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
         .setMetadata(new MetadataString().setName("authorName").setValue(new String[] {"Matthew T. Beitler Joe D. Williams Don Brutzman"}))
@@ -821,7 +821,7 @@ public class HAnimSpecificationLOA3Invisible
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return HAnimSpecificationLOA3Invisible model
+	 * @return HAnim2SpecificationLOA3Invisible model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -839,7 +839,7 @@ public class HAnimSpecificationLOA3Invisible
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new HAnimSpecificationLOA3Invisible().getX3dModel();
+        X3D thisExampleX3dModel = new HAnim2SpecificationLOA3Invisible().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -870,13 +870,13 @@ public class HAnimSpecificationLOA3Invisible
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"HAnimSpecificationLOA3Invisible\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"HAnim2SpecificationLOA3Invisible\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"HAnimSpecificationLOA3Invisible\" self-validation test results: ");
+			System.out.print("Java program \"HAnim2SpecificationLOA3Invisible\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();

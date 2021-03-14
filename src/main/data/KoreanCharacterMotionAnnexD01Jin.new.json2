@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"12 July 2020"
+            "@content":"20 February 2021"
           },
           {
             "@name":"description",
@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"05 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"generator",
@@ -131,7 +131,7 @@
                   {
                     "@name":"HAnimHumanoid.info",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                    "-IllegalChildNodeFieldNameNotFound":[
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"humanoidVersion",
@@ -476,8 +476,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"l_metatarsophalangeal_2",
-                                                  "@DEF":"hanim_l_metatarsophalangeal_2",
+                                                  "@name":"l_metatarsophalangeal",
+                                                  "@DEF":"hanim_l_metatarsophalangeal",
                                                   "@center":[3.854,3.64,0.7402],
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
@@ -752,8 +752,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimJoint":
                                                 {
-                                                  "@name":"r_metatarsophalangeal_2",
-                                                  "@DEF":"hanim_r_metatarsophalangeal_2",
+                                                  "@name":"r_metatarsophalangeal",
+                                                  "@DEF":"hanim_r_metatarsophalangeal",
                                                   "@center":[-3.854,3.64,0.7402],
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSegment":
@@ -1438,12 +1438,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_metatarsophalangeal_2"
+                    "@USE":"hanim_l_metatarsophalangeal"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
+                    "@USE":"hanim_r_metatarsophalangeal"
                   }
                 },
                 { "HAnimJoint":

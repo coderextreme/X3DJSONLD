@@ -25,14 +25,14 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='HAnim'),
+    component(level=1,name='H-Anim'),
     meta(content='BoxMan.x3d',name='title'),
     meta(content='A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare).',name='description'),
     meta(content='James Smith - james@vapourtech.com',name='creator'),
     meta(content='Don Brutzman and Matt Beitler',name='translator'),
     meta(content='1 March 2001',name='created'),
     meta(content='19 October 2001',name='translated'),
-    meta(content='4 July 2020',name='modified'),
+    meta(content='21 February 2021',name='modified'),
     meta(content='http://HAnim.org',name='reference'),
     meta(content='boxman.original.wrl',name='reference'),
     meta(content='BoxMan.js',name='reference'),
@@ -344,7 +344,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='update',type='SFRotation'),
       field(accessType='initializeOnly',name='humanoid',type='SFNode',
         children=[
-        HAnimHumanoid(USE='boxman_Humanoid',version='2.0')]),
+        HAnimHumanoid(USE='boxman_Humanoid',version='1.0')]),
       field(accessType='initializeOnly',name='coordList',type='MFVec3f'),
       field(accessType='initializeOnly',name='joint',type='SFNode',
         #  initialization node (if any) goes here 

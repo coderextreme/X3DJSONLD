@@ -196,6 +196,7 @@ Recommended tool:
                     <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
 						<xsl:attribute name="documentation" select="xs:annotation/xs:documentation/@source"/>
 					</xsl:if>
+                    <!-- xsl:comment>*** enumeration loop 1</xsl:comment-->
 					<xsl:for-each select="*/xs:enumeration">
 						<xsl:variable name="enumerationName" select="@value"/>
                         <xsl:variable name="priorIndex" select="preceding-sibling::*[1]//xs:attribute[@name='index']/@fixed"/>
@@ -207,6 +208,7 @@ Recommended tool:
                                 <xsl:variable  name="attributeValue"       select="@fixed"/>
                                 <xsl:variable  name="attributeType"        select="@type"/>
                                 <xsl:variable  name="attributeAlias"       select="@alias"/>
+                                <xsl:variable  name="attributeDefault"     select="@default"/>
                                 <xsl:variable  name="attributeIndex"       select="../xs:attribute[@name='index']/@fixed"/>
                                 <xsl:variable  name="attributeParent"      select="../xs:attribute[@name='parent']/@fixed"/>
                                 <!-- debug
@@ -228,9 +230,42 @@ Recommended tool:
                                     <xsl:value-of select="$priorIndex"/>
                                     <xsl:text> </xsl:text>
                                 </xsl:message> -->
-                                <xsl:if test="(string-length(normalize-space($attributeValue)) > 0)">
-                                    <xsl:attribute name="{$attributeName}" select="$attributeValue"/>
-                                </xsl:if>
+                                <xsl:choose>
+                                    <xsl:when test="($attributeName = 'alias') and (string-length(normalize-space($attributeValue)) > 0) and
+                                                    (count(../xs:attribute[@name='alias']) > 1)">
+                                        <!-- handle attributes with multiple values -->
+                                        <xsl:if test="(count(preceding-sibling::xs:attribute[@name='alias']) = 0)">
+                                            <!-- debug diagnostic
+                                            <xsl:message>
+                                                <xsl:text>*** found </xsl:text>
+                                                <xsl:value-of select="$attributeName"/>
+                                                <xsl:text> </xsl:text>
+                                                <xsl:value-of select="@fixed"/>
+                                                <xsl:text> with siblings </xsl:text>
+                                                <xsl:for-each select="../xs:attribute[@name='alias']">
+                                                    <xsl:sort select="(contains(@fixed,' '))"/>
+                                                    <xsl:value-of select="@fixed"/>
+                                                    <xsl:if test="not(position() = last())">
+                                                        <xsl:text>,</xsl:text>
+                                                    </xsl:if>
+                                                </xsl:for-each>
+                                            </xsl:message> -->
+                                            <xsl:attribute name="{$attributeName}">
+                                                <xsl:for-each select="../xs:attribute[@name='alias']">
+                                                    <xsl:sort select="(contains(@fixed,' '))"/>
+                                                    <xsl:value-of select="@fixed"/>
+                                                    <xsl:if test="not(position() = last())">
+                                                        <xsl:text>,</xsl:text>
+                                                    </xsl:if>
+                                                </xsl:for-each>
+                                            </xsl:attribute>
+                                        </xsl:if>
+                                    </xsl:when>
+                                    <xsl:when test="(string-length(normalize-space($attributeValue)) > 0)">
+                                        <!-- handle attributes with single value -->
+                                        <xsl:attribute name="{$attributeName}" select="$attributeValue"/>
+                                    </xsl:when>
+                                </xsl:choose>
                                 <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                                 <xsl:if test="string-length($appinfo) > 0">
                                     <xsl:attribute name="appinfo">
@@ -240,7 +275,7 @@ Recommended tool:
                                         </xsl:if>
                                     </xsl:attribute>
                                 </xsl:if>
-				<!-- left/right checks -->
+                                <!-- left/right checks -->
                                 <xsl:if test="(starts-with($enumerationName,'l_') and starts-with($attributeValue,'r_')) or
                                               (starts-with($enumerationName,'r_') and starts-with($attributeValue,'l_')) or
                                               (starts-with($enumerationName,'l_') and starts-with($attributeAlias,'r_')) or
@@ -249,7 +284,7 @@ Recommended tool:
                                         <xsl:text>*** error in </xsl:text>
                                         <xsl:value-of select="$simpleTypeName"/>
                                         <xsl:text> enumeration </xsl:text>
-					<xsl:value-of select="$enumerationName"/>
+                                        <xsl:value-of select="$enumerationName"/>
                                         <xsl:text>, attributeName </xsl:text>
                                         <xsl:value-of select="$attributeName"/>
                                         <xsl:if test="(string-length($attributeValue) > 0)">
@@ -260,13 +295,75 @@ Recommended tool:
                                                 <xsl:text>, attributeAlias </xsl:text>
                                                 <xsl:value-of select="$attributeAlias"/>
                                         </xsl:if>
-                                        <xsl:text>, </xsl:text>
                                         <xsl:if test="(string-length(normalize-space($attributeIndex)) > 0)">
+                                            <xsl:text>, </xsl:text>
                                             <xsl:text>index#</xsl:text>
                                             <xsl:value-of select="normalize-space($attributeIndex)"/>
                                             <xsl:text> </xsl:text>
                                         </xsl:if>
                                         <xsl:text>: left/right (l_/r_) prefix mismatch</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
+                                <!-- debug diagnostic for duplicates
+                                <xsl:if test="((@name = 'alias') or (@value = 'alias')) and starts-with(@fixed,'r_carpometacarpal')">
+                                    <xsl:message>
+                                        <xsl:text>!!! duplicate diagnostic: local-name()=</xsl:text>
+                                        <xsl:value-of select="local-name(../../..)"/>
+                                        <xsl:text> name='</xsl:text>
+                                        <xsl:value-of select="../../../@name"/>
+                                        <xsl:text> value='</xsl:text>
+                                        <xsl:value-of select="../../../@value"/>
+                                        <xsl:text>'/xs:annotation/xs:appinfo/</xsl:text>
+                                        <xsl:value-of select="local-name()"/>
+                                        <xsl:text> name='</xsl:text>
+                                        <xsl:value-of select="@name"/>
+                                        <xsl:text> value='</xsl:text>
+                                        <xsl:value-of select="@value"/>
+                                        <xsl:text>', fixed='</xsl:text>
+                                        <xsl:value-of select="@fixed"/>
+                                        <xsl:text>' </xsl:text>
+                                    </xsl:message>
+                                </xsl:if> -->
+                                <xsl:if test="(@name = 'alias') and //xs:enumeration[@value = $attributeValue]">
+                                    <!-- feature point names must have suffix _tip _view or _pt, and so duplication with those aliases might be allowed, but then DEF names collide -->
+                                    <xsl:message>
+                                        <xsl:text>*** warning </xsl:text>
+                                        <xsl:value-of select="$simpleTypeName"/>
+                                        <xsl:text> xs:enumeration value='</xsl:text>
+                                        <xsl:value-of select="../../../@value"/>
+                                        <xsl:text>' name='alias' fixed='</xsl:text>
+                                        <xsl:value-of select="@fixed"/>
+                                        <xsl:text>' has duplicate xs:enumeration value='</xsl:text>
+                                        <xsl:value-of select="$attributeValue"/>
+                                        <xsl:text>' defined in xs:simpleType name='</xsl:text>
+                                        <xsl:value-of select="//xs:enumeration[@value = $attributeValue]/../../@name"/>
+                                        <xsl:text>'</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
+                                <xsl:if test="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]">
+                                    <!-- feature point names must have suffix _tip _view or _pt, and so duplication with those aliases might be allowed, but then DEF names collide -->
+                                    <xsl:message>
+                                        <xsl:choose>
+                                            <xsl:when test="($simpleTypeName = 'hanimFeaturePointNameValues') or 
+                                                            (preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/../../../../../@name = 'hanimFeaturePointNameValues')">
+                                                <xsl:text>*** info  </xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>*** error </xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                        <xsl:value-of select="$simpleTypeName"/>
+                                        <xsl:text> xs:enumeration value='</xsl:text>
+                                        <xsl:value-of select="$enumerationName"/>
+                                        <xsl:text>' has duplicate alias='</xsl:text>
+                                        <xsl:value-of select="$attributeValue"/>
+                                        <xsl:text>' separately defined in xs:simpleType name='</xsl:text>
+                                        <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/../../../../../@name"/>
+                                        <xsl:text>' xs:attribute name='</xsl:text>
+                                        <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/@name"/>
+                                        <xsl:text>' fixed='</xsl:text>
+                                        <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/@fixed"/>
+                                        <xsl:text>'</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- sequential index check; note segments 98 99 100 (prior to l_carpal_distal_phalanx_1) are unused -->
@@ -280,8 +377,8 @@ Recommended tool:
                                         <xsl:value-of select="$simpleTypeName"/>
                                         <xsl:text> enumeration </xsl:text>
 										<xsl:value-of select="$enumerationName"/>
-                                        <xsl:text>, </xsl:text>
                                         <xsl:if test="(string-length(normalize-space($attributeIndex)) > 0)">
+                                            <xsl:text>, </xsl:text>
                                             <xsl:text>index#</xsl:text>
                                             <xsl:value-of select="normalize-space($attributeIndex)"/>
                                             <xsl:text> </xsl:text>
@@ -317,7 +414,7 @@ Recommended tool:
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- LOA consistency check for segments and joints -->
-				<xsl:variable name="matchingJointLoaValue"   select="//xs:simpleType[@name=  'jointNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
+                                <xsl:variable name="matchingJointLoaValue"   select="//xs:simpleType[@name=  'jointNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
                                 <xsl:variable name="matchingSegmentLoaValue" select="//xs:simpleType[@name='segmentNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
                                 <xsl:if test="starts-with($schemaFullVersionNumber,'4') and
 								              not(($attributeParent= 'humanoid_root')        and ($attributeName='loa') and    ($attributeValue = '1')) and
@@ -1099,6 +1196,7 @@ Recommended tool:
 												</xsl:otherwise>
 											</xsl:choose>
 										</xsl:attribute>
+                                        <!-- xsl:comment>*** enumeration loop 2</xsl:comment-->
                                         <xsl:for-each select="xs:complexType//xs:attribute[@name='containerField']/xs:simpleType/xs:restriction/xs:enumeration">
                                             <xsl:sort select="xs:complexType//xs:attribute[@name='containerField']/@default"/>
                                             <xsl:element name="enumeration">
@@ -1539,12 +1637,13 @@ Recommended tool:
             <xsl:otherwise>inputOutput</xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="synonym">
+    <!-- synonyms are used for field name changes X3D3 to X3D4, and are different than enumeration name alias values -->
+	<xsl:variable name="synonym">
         <xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name='synonym']/@fixed"/>
     </xsl:variable>
 	<!-- doField debug diagnostic ((($containerName='MetadataSet') or ($containerName='MetadataString')) and (@name='name')) 
     -->
-	<xsl:if test="(string-length($synonym) > 0) or (($containerName = 'ParticleSystem') and (($fieldName = 'color') or ($fieldName = 'texCoord')))">
+    <xsl:if test="(string-length($synonym) > 0) or (($containerName = 'ParticleSystem') and (($fieldName = 'color') or ($fieldName = 'texCoord')))">
 		<xsl:message>
 			<xsl:text>*** found </xsl:text>
 			<xsl:value-of select="$containerName"/>
@@ -1589,9 +1688,12 @@ Recommended tool:
                     <xsl:value-of select="$fieldName"/>
                     <xsl:text> $originInheritedFrom=</xsl:text>
                     <xsl:value-of select="$originInheritedFrom"/>
-                    <xsl:text>: avoid duplicate field, defined by schema annotation and also by </xsl:text>
+                    <xsl:text> has duplicate field, defined by schema annotation and also by </xsl:text>
                     <xsl:value-of select="//xs:element[@name = $containerName]//xs:extension/@base"/>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text>    (overrides original annotation to instead require Shape component level 3)</xsl:text>
                 </xsl:message>
+                <!-- and so avoid adding that duplication here... -->
             </xsl:when>
             <xsl:otherwise>
                 <!-- debug diagnostic
@@ -1955,6 +2057,7 @@ Recommended tool:
                     <xsl:if test="($fieldAccessType='inputOutput') or ($fieldAccessType='initializeOnly') or ($isStatement='no')">
                         <!-- TODO: Improve this code -->
                         <xsl:if test="xs:simpleType/xs:restriction[@base='SFString']">
+                            <!-- xsl:comment>*** enumeration loop 3</xsl:comment-->
                             <xsl:for-each select="xs:simpleType/xs:restriction/xs:enumeration">
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>
@@ -1979,13 +2082,49 @@ Recommended tool:
                             </xsl:for-each>
                         </xsl:if>
                         <xsl:if test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
+                            <!-- xsl:comment>*** enumeration loop 4</xsl:comment-->
                             <xsl:for-each select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>
                                     <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
-                                        <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
-                                            <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
-                                        </xsl:if>
+                                        <xsl:variable  name="attributeName"        select="@name"/>
+                                        <xsl:variable  name="attributeValue"       select="@fixed"/>
+                                        <xsl:choose>
+                                            <xsl:when test="($attributeName = 'alias') and (string-length(normalize-space($attributeValue)) > 0) and
+                                                            (count(../xs:attribute[@name='alias']) > 1)">
+                                                <!-- handle attributes with multiple values -->
+                                                <xsl:if test="(count(preceding-sibling::xs:attribute[@name='alias']) = 0)">
+                                                    <!-- debug diagnostic
+                                                    <xsl:message>
+                                                        <xsl:text>*** found </xsl:text>
+                                                        <xsl:value-of select="$attributeName"/>
+                                                        <xsl:text> </xsl:text>
+                                                        <xsl:value-of select="@fixed"/>
+                                                        <xsl:text> with siblings </xsl:text>
+                                                        <xsl:for-each select="../xs:attribute[@name='alias']">
+                                                            <xsl:sort select="(contains(@fixed,' '))"/>
+                                                            <xsl:value-of select="@fixed"/>
+                                                            <xsl:if test="not(position() = last())">
+                                                                <xsl:text>,</xsl:text>
+                                                            </xsl:if>
+                                                        </xsl:for-each>
+                                                    </xsl:message> -->
+                                                    <xsl:attribute name="{$attributeName}">
+                                                        <xsl:for-each select="../xs:attribute[@name='alias']">
+                                                            <xsl:sort select="(contains(@fixed,' '))"/>
+                                                            <xsl:value-of select="@fixed"/>
+                                                            <xsl:if test="not(position() = last())">
+                                                                <xsl:text>,</xsl:text>
+                                                            </xsl:if>
+                                                        </xsl:for-each>
+                                                    </xsl:attribute>
+                                                </xsl:if>
+                                            </xsl:when>
+                                            <xsl:when test="(string-length(normalize-space($attributeValue)) > 0)">
+                                                <!-- handle attributes with single value -->
+                                                <xsl:attribute name="{$attributeName}" select="$attributeValue"/>
+                                            </xsl:when>
+                                        </xsl:choose>
                                     </xsl:for-each>
                                     <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                                     <xsl:if test="string-length($appinfo) > 0">
@@ -2029,6 +2168,7 @@ Recommended tool:
                         </xsl:if>
                         <xsl:if test="xs:annotation/xs:appinfo/xs:list">
                             <xsl:variable name="enumerationValuesType" select="xs:annotation/xs:appinfo/xs:list/@itemType"/>
+                            <!-- xsl:comment>*** enumeration loop 5</xsl:comment-->
                             <xsl:for-each select="//xs:schema/xs:simpleType[@name=$enumerationValuesType]/xs:restriction/xs:enumeration">
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>

@@ -19,7 +19,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("description").setContent("Right foot, using high-fidelity definitions for HAnim version 2.0"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
         .addMeta((new autoclass.meta()).setName("created").setContent("26 January 2015"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("20 February 2021"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("not yet to scale"))
         .addMeta((new autoclass.meta()).setName("TODO").setContent("Update all values to match HAnim2 A.7 Level of articulation four LOA-4"))
         .addMeta((new autoclass.meta()).setName("TODO").setContent("Add links to figures"))

@@ -1,0 +1,536 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"NancyStandShootRifleM24.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Canonical HAnim 1.1 specification example, using native X3D tags instead of ProtoDeclaration/ExternProtoDeclaration and ProtoInstance."
+          },
+          {
+            "@name":"creator",
+            "@content":"Etsuko Lippi"
+          },
+          {
+            "@name":"created",
+            "@content":"4 January 2002"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 May 2020"
+          },
+          {
+            "@name":"warning",
+            "@content":"ProtoBody missing content"
+          },
+          {
+            "@name":"warning",
+            "@content":"Numerous QA warnings need to be corrected"
+          },
+          {
+            "@name":"warning",
+            "@content":"LOA1_ShootAnimation ought to be moved out as a separate prototype."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/NancyStandShootRifleM24.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"13 March 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"RifleM24",
+              "@appinfo":"Rifle M24",
+              "@url":["../../Savage/Weapons/SmallArms/RifleM24Prototype.x3d#RifleM24","https://savage.nps.edu/Savage/Weapons/SmallArms/RifleM24Prototype.x3d#RifleM24","../../Savage/Weapons/SmallArms/RifleM24Prototype.wrl#RifleM24","https://savage.nps.edu/Savage/Weapons/SmallArms/RifleM24Prototype.wrl#RifleM24"],
+              "field": [
+                {
+                  "@name":"trigger",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"input true to fire",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"fire",
+                  "@accessType":"outputOnly",
+                  "@appinfo":"output true when fired",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"animationStartTime",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"trigger animation",
+                  "@type":"SFTime"
+                }
+              ]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"LOA1_ShootAnimation",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"cycleInterval",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0.009999999776482582
+                    },
+                    {
+                      "@name":"enabled",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"loop",
+                      "@accessType":"inputOutput",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"startTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":0
+                    },
+                    {
+                      "@name":"stopTime",
+                      "@accessType":"inputOutput",
+                      "@type":"SFTime",
+                      "@value":-1
+                    },
+                    {
+                      "@name":"fraction_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFFloat"
+                    },
+                    {
+                      "@name":"isActive",
+                      "@accessType":"outputOnly",
+                      "@type":"SFBool"
+                    },
+                    {
+                      "@name":"HumanoidRoot_translation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"HumanoidRoot_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"lower_body_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_hip_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_knee_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_ankle_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_midtarsal_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_hip_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_knee_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_ankle_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_midtarsal_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"vl5_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"skullbase_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_shoulder_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_elbow_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"l_wrist_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_shoulder_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_elbow_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    },
+                    {
+                      "@name":"r_wrist_rotation_changed",
+                      "@accessType":"outputOnly",
+                      "@type":"SFRotation"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "@DEF":"ErrorLostContentCheckVersionControl"
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"Start scene graph."
+          },
+          { "ROUTE":
+            {
+              "@fromField":"enterTime",
+              "@fromNode":"TriggerProximitySensor",
+              "@toField":"startTime",
+              "@toNode":"TIMER"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"HUMANOIDROOT_POSITION_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"HUMANOIDROOT_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"SACROILIAC_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_HIP_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_KNEE_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_ANKLE_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_MIDTARSAL_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_HIP_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_KNEE_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_ANKLE_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_MIDTARSAL_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"VL5_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"SKULLBASE_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_SHOULDER_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_ELBOW_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"L_WRIST_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_SHOULDER_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_ELBOW_ANIMATOR"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"R_WRIST_ANIMATOR"
+            }
+          },
+          {
+            "#comment":"Animation"
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_ANKLE_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_KNEE_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_HIP_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_ANKLE_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_ankle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_KNEE_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_knee"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_HIP_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_hip"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"VL5_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_sacroiliac"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_WRIST_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"r_hand_adjust"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_ELBOW_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"R_SHOULDER_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_r_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_WRIST_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_wrist"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_ELBOW_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_elbow"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"L_SHOULDER_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_l_shoulder"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"SKULLBASE_ANIMATOR",
+              "@toField":"set_rotation",
+              "@toNode":"hanim_skullbase"
+            }
+          }
+        ]
+    }
+  }
+}

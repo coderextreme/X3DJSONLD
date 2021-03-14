@@ -26,14 +26,14 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='HAnimSpecificationLOA3Invisible.x3d',name='title'),
+    meta(content='HAnim2SpecificationLOA3Invisible.x3d',name='title'),
     meta(content='HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template.',name='description'),
     meta(content='https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds',name='reference'),
     meta(content='24 April 2013',name='created'),
-    meta(content='12 July 2020',name='modified'),
+    meta(content='20 February 2021',name='modified'),
     meta(content='Matthew T. Beitler, Joe D. Williams, Don Brutzman',name='creator'),
-    meta(content='HAnimSpecificationLOA3Illustrated.x3d',name='reference'),
-    meta(content='HAnimSpecificationLOA3Motion.x3d',name='reference'),
+    meta(content='HAnim2SpecificationLOA3Illustrated.x3d',name='reference'),
+    meta(content='HAnim2SpecificationLOA3Animation.x3d',name='reference'),
     meta(content='HAnimSpecificationExampleChangeLog.txt',name='reference'),
     meta(content='images/BonesAllSkeletonFrontViewLOA1.png',name='Image'),
     meta(content='images/BonesAllSkeletonFrontViewLOA2.png',name='Image'),
@@ -50,7 +50,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d',name='reference'),
     meta(content='HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames',name='reference'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
-    meta(content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d',name='identifier'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
@@ -70,15 +70,16 @@ newModel=X3D(profile='Immersive',version='4.0',
     Viewpoint(centerOfRotation=(0,0.9149,0.0016),description='Humanoid LOA 3 Left Side Close',orientation=(0,1,0,-1.2),position=(-1,0.8,0.5)),
     Viewpoint(centerOfRotation=(0,0.9149,0.0016),description='Humanoid LOA 3 Left Side',orientation=(0,1,0,-1.5708),position=(-2.6,0.8,0)),
     Viewpoint(centerOfRotation=(0,0.9149,0.0016),description='Humanoid LOA 3 Top',orientation=(1,0,0,-1.5708),position=(0,3.5,0)),
-    HAnimHumanoid(DEF='hanim_humanoid',name='humanoid',version='2.0',
+    HAnimHumanoid(DEF='hanim_humanoid',info=["humanoidVersion=2.0"],name='humanoid',version='2.0',
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
-        metadata=MetadataString(name='authorName',value=['Matthew T. Beitler Joe D. Williams Don Brutzman']),
+        value=[
+        MetadataString(name='authorName',value=['Matthew T. Beitler Joe D. Williams Don Brutzman']),
         MetadataString(name='authorEmail',value=['HAnim@web3D.org']),
         MetadataString(name='copyright',value=['none']),
         MetadataString(name='creationDate',value=['12 May 1999']),
         MetadataString(name='height',value=['1.7504']),
         MetadataString(name='humanoidVersion',value=['2.0']),
-        MetadataString(name='usageRestrictions',value=['none'])),
+        MetadataString(name='usageRestrictions',value=['none'])]),
       skeleton=[
       HAnimJoint(DEF='hanim_humanoid_root',center=(0,0.824,0.0277),name='humanoid_root',
         children=[
@@ -852,4 +853,4 @@ print('check  newModel.XML() serialization...')
 newModelXML = newModel.XML() # test export method XML() for exceptions
 # print(newModelXML) # debug
 
-print ("python x3d.py load successful for HAnimSpecificationLOA3Invisible.py")
+print ("python x3d.py load successful for HAnim2SpecificationLOA3Invisible.py")

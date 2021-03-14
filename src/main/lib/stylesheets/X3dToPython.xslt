@@ -20,6 +20,10 @@
     <!-- "pythonic" configuration: whether or not to insertPackagePrefix, i.e. x3d.X3D, x3d.head, x3d.Scene, x3d.Group etc. -->
     <!-- terse seems better for most programming tasks, certainly clearer for debugging too -->
     <xsl:param name="insertPackagePrefix"><xsl:text>false</xsl:text></xsl:param>
+        
+    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
     
     <xsl:output method="text"/> <!-- output methods:  xml html text -->
 	<!--  extension-element-prefixes="xs" -->
@@ -622,7 +626,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>,</xsl:text> <!-- GG this element is followed by additional node(s) -->
             </xsl:when>
         </xsl:choose>
-        <!-- debug diagnostic -->
+        <!-- debug diagnostic
         <xsl:if test="(local-name() = 'HAnimSite') and (@containerField = 'viewpoints')">
             <xsl:message>
                 <xsl:text>*** </xsl:text>
@@ -644,7 +648,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:value-of select="$isInMFNodeList"/>
                     <xsl:text>'</xsl:text>
             </xsl:message>
-        </xsl:if>
+        </xsl:if> -->
         <xsl:if test="not(local-name() = 'X3D') and not(local-name(..) = 'head')">
             <xsl:choose>
                 <!--<xsl:value-of select="$indent"/>
@@ -1337,6 +1341,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='rotateYUp' and (string(.)='false')) or
                       (local-name()='containerField' and (string(.)='geoOrigin')) or
                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:variable name="notDefaultHAnim1"
                       select="not( local-name(..)='HAnimJoint' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -1372,6 +1378,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                        (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
                        (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or

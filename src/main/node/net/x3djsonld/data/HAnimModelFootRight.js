@@ -36,7 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 July 2020 </td>
+			<td> 20 February 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -145,7 +145,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("Right foot, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
     .addMeta((new autoclass.meta()).setName("created").setContent("26 January 2015"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("20 February 2021"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("not yet to scale"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Update all values to match HAnim2 A.7 Level of articulation four LOA-4"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Add links to figures"))
@@ -168,7 +168,7 @@ NeedClassName.prototype = {
     .addChild((new autoclass.HAnimHumanoid("hanim_Foot_Right")).setName("Foot_Right").setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"' ")
       .addChild((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference(this.MetadataSet_HAnimHumanoid.info_4_26_reference)
-        .setMetadata((new autoclass.MetadataString()).setName("authorName").setValue(new autoclass.MFString("\"Kwan-Hee YOO, Don Brutzman and Joe Williams\""))))
+        .addValue((new autoclass.MetadataString()).setName("authorName").setValue(new autoclass.MFString("\"Kwan-Hee YOO, Don Brutzman and Joe Williams\""))))
       .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root")
         .addComments(" Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model ")
         .addChild((new autoclass.HAnimJoint("hanim_r_talocrural")).setName("r_talocrural").setDescription("connection joint of foot to leg above")

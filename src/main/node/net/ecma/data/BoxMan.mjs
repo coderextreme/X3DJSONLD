@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("HAnim"),
+              name : new SFString("H-Anim"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
@@ -78,7 +78,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2020")}),
+              content : new SFString("21 February 2021")}),
 
             new meta({
               name : new SFString("reference"),

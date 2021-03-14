@@ -33,6 +33,10 @@
 	<xsl:param name="axisTickInterval">0.2</xsl:param>
 	
 	<xsl:variable name="delimiter" select="' '"/><!-- c14n delimiter is space character -->
+        
+    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
 	
 	<xsl:strip-space elements="*"/>
 	<xsl:output encoding="UTF-8" media-type="image/svg+xml" indent="yes" omit-xml-declaration="yes" method="xml"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="HAnim" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="H-Anim" level="1"></component>
 <meta name="title" content="BoxMan.x3d"></meta>
 <meta name="description" content="A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."></meta>
 <meta name="creator" content="James Smith - james@vapourtech.com"></meta>
 <meta name="translator" content="Don Brutzman and Matt Beitler"></meta>
 <meta name="created" content="1 March 2001"></meta>
 <meta name="translated" content="19 October 2001"></meta>
-<meta name="modified" content="4 July 2020"></meta>
+<meta name="modified" content="21 February 2021"></meta>
 <meta name="reference" content="http://HAnim.org"></meta>
 <meta name="reference" content="boxman.original.wrl"></meta>
 <meta name="reference" content="BoxMan.js"></meta>

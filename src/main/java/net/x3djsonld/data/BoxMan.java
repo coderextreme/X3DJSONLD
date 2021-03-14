@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 July 2020 </td>
+			<td> 21 February 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -176,14 +176,14 @@ public class BoxMan
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
-    .addComponent(new component().setName("HAnim").setLevel(1))
+    .addComponent(new component().setName("H-Anim").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("BoxMan.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare)."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("James Smith - james@vapourtech.com"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman and Matt Beitler"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("1 March 2001"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("19 October 2001"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 July 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("21 February 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("boxman.original.wrl"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("BoxMan.js"))
@@ -427,7 +427,7 @@ public class BoxMan
     .addChild(new Script("ENGINE").setDirectOutput(true).setUrl(new String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"})
       .addField(new field().setName("update").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("humanoid").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-        .addChild(new HAnimHumanoid().setUSE("boxman_Humanoid").setVersion("2.0")))
+        .addChild(new HAnimHumanoid().setUSE("boxman_Humanoid").setVersion("1.0")))
       .addField(new field().setName("coordList").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
       .addField(new field().setName("joint").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addComments(" initialization node (if any) goes here "))

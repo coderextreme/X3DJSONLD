@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 July 2020 </td>
+			<td> 20 February 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -130,7 +130,7 @@ public class HAnimModelFootLeft
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Left foot, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("26 January 2015"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("5 July 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("not yet to scale"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"))

@@ -30,7 +30,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Left foot, using high-fidelity definitions for HAnim version 2.0',name='description'),
     meta(content='Kwan-Hee YOO, Don Brutzman and Joe Williams',name='creator'),
     meta(content='26 January 2015',name='created'),
-    meta(content='5 July 2020',name='modified'),
+    meta(content='20 February 2021',name='modified'),
     meta(content='not yet to scale',name='warning'),
     meta(content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?',name='warning'),
     meta(content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body',name='info'),
@@ -50,7 +50,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     WorldInfo(title='HAnimModelFootLeft.x3d'),
     HAnimHumanoid(DEF='hanim_Foot_Left',name='Foot_Left',version='2.0',
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
-        metadata=MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])),
+        value=[
+        MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])]),
       skeleton=[
       HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',
         #  Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model 

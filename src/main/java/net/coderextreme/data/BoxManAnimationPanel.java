@@ -45,7 +45,7 @@ public class BoxManAnimationPanel {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addComponent(new component().setName("HAnim").setLevel(1))
+        .addComponent(new component().setName("H-Anim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("BoxManAnimationPanel.x3d"))
         .addMeta(new meta().setName("description").setContent("A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation panel shows multiple behaviors."))
         .addMeta(new meta().setName("creator").setContent("Joe Williams and James Smith - james@vapourtech.com"))
