@@ -8,11 +8,10 @@
     <meta content='Matthew T. Beitler' name='creator'/>
     <meta content='Joel S. Pawloski' name='translator'/>
     <meta content='12 November 2001' name='created'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='13 March 2021' name='modified'/>
     <meta content='images/BonesAllSkeletonFrontViewLOA1.png' name='Image'/>
     <meta content='(a) "Diamonds are a girl&apos;s best friend." (b) "Gosh, it sure is chilly in here."' name='motto'/>
     <meta content='Still needs comments on CAESAR feature points inserted' name='warning'/>
-    <meta content='can X3dTidy sort top-level USE nodes by node type?' name='TODO'/>
     <meta content='HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Two' name='reference'/>
     <meta content='http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa' name='reference'/>
     <meta content='http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA1.wrl' name='reference'/>
@@ -22,7 +21,6 @@
     <meta content='http://www.cis.upenn.edu/~badler/anthro/89-71.ps' name='reference'/>
     <meta content='http://www.cis.upenn.edu/~beitler' name='reference'/>
     <meta content='humanoid_landmark_locations.gif' name='Image'/>
-    <meta content='need to fix HAnimHumanoid metadata form' name='warning'/>
     <meta content='http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif' name='Image'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA_1.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
@@ -42,7 +40,7 @@
         <MetadataString containerField='value' name='humanoidVersion' value='JointCenters 1.1 LOA1'/>
         <MetadataString containerField='value' name='usageRestrictions' value='PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.'/>
       </MetadataSet>
-      <HAnimJoint DEF='hanim_humanoid_root' center='0.0 0.8240 0.0277' containerField='skeleton' name='humanoid_root'>
+      <HAnimJoint DEF='hanim_HumanoidRoot' center='0.0 0.8240 0.0277' containerField='skeleton' name='HumanoidRoot'>
         <HAnimJoint DEF='hanim_sacroiliac' center='0.0 0.9149 0.0016' name='sacroiliac'>
           <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
             <Transform translation='0.0 0.9149 0.0016'>
@@ -229,7 +227,7 @@
         <Viewpoint DEF='SideView' description='Side View' orientation='0 1 0 1.57079' position='2.5929 0.854 0'/>
         <Viewpoint DEF='TopView' description='Top View' orientation='1 0 0 -1.57079' position='0 3.4495 0'/>
       </HAnimSite>
-      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
+      <HAnimJoint USE='hanim_HumanoidRoot' containerField='joints'/>
       <HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
       <HAnimJoint USE='hanim_vl1' containerField='joints'/>
       <HAnimJoint USE='hanim_vc4' containerField='joints'/>

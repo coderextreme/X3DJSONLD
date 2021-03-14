@@ -9,7 +9,8 @@
     <meta content='Don Brutzman' name='translator'/>
     <meta content='1 January 2016' name='created'/>
     <meta content='1 January 2018' name='translated'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='10 March 2021' name='modified'/>
+    <meta content='Note this conversion of a legacy model is not HAnim compliant.' name='warning'/>
     <meta content='BvhConversion1.png' name='Image'/>
     <meta content='BvhConversion1.mp4' name='MovingImage'/>
     <meta content='1.bvh' name='reference'/>
