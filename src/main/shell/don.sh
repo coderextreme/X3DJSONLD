@@ -7,7 +7,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-python ../python/classes.py
+python3 ../python/classes.py
 
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
@@ -38,7 +38,7 @@ find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g 
 popd
 echo running python
 pushd ../python
-find ./net/x3djsonld/data -name '*.py' | xargs -L 1 -P $PROCESSORS python
+find ./net/x3djsonld/data -name '*.py' | xargs -L 1 -P $PROCESSORS python3
 popd
 echo running node
 pushd ../node
