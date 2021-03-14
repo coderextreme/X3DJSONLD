@@ -10,7 +10,7 @@ export NASHORN_CLASSPATH=".:/home/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar:${NA
 export PYTHONPATH=/usr/bin:/c/Python27:/c/Python27/Scripts
 export PATH="${PYTHONPATH}:${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:/home/coderextreme/Downloads/graalvm-ce-java11-20.3.0/bin/:${PATH}"
 
-export PYTHON=python
+export PYTHON=python3
 export PIP=pip3
 export NODE=node
 export NODEDIR=/home/$USERNAME/X3DJSONLD/src/main/node
