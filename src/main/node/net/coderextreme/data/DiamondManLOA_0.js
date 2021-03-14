@@ -20,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("creator").setContent("Matthew T. Beitler"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("Joel S. Pawloski"))
         .addMeta((new autoclass.meta()).setName("created").setContent("12 November 2001"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("20 February 2021"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("9 March 2021"))
         .addMeta((new autoclass.meta()).setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
         .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
@@ -51,7 +51,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addValue((new autoclass.MetadataString()).setName("creationDate").setValue(java.newArray("java.lang.String", ["05/12/99"])))
             .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(java.newArray("java.lang.String", ["JointCenters 1.1 LOA0"])))
             .addValue((new autoclass.MetadataString()).setName("usageRestrictions").setValue(java.newArray("java.lang.String", ["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."]))))
-          .setSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)]))
+          .setSkeleton((new autoclass.HAnimJoint()).setName("HumanoidRoot").setDEF("hanim_HumanoidRoot").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.824), java.newFloat(0.0277)]))
             .addChild((new autoclass.HAnimJoint()).setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.9149), java.newFloat(0.0016)]))
               .addChild((new autoclass.HAnimSegment()).setName("pelvis").setDEF("hanim_pelvis")
                 .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(0.9149), java.newFloat(0.0016)]))
@@ -65,7 +65,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild((new autoclass.Viewpoint()).setDEF("FrontView").setDescription("Front View").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0.854), java.newFloat(2.57665)])))
             .addChild((new autoclass.Viewpoint()).setDEF("SideView").setDescription("Side View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.57079)])).setPosition(java.newArray("float", [java.newFloat(2.5929), java.newFloat(0.854), java.newFloat(0)])))
             .addChild((new autoclass.Viewpoint()).setDEF("TopView").setDescription("Top View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57079)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(3.4495), java.newFloat(0)]))))
-          .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_humanoid_root"))
+          .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_HumanoidRoot"))
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_pelvis"))))      ;
     X3D0.toFileX3D("../data/DiamondManLOA_0.new.x3d");

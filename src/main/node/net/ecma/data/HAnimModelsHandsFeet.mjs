@@ -45,7 +45,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("5 July 2020")}),
+              content : new SFString("8 March 2021")}),
 
             new meta({
               name : new SFString("warning"),
@@ -54,6 +54,10 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("warning"),
               content : new SFString("TODO will X3D HAnim component add a new level to support LOA-4 functionality?")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?")}),
 
             new meta({
               name : new SFString("Image"),

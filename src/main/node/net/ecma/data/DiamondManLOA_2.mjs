@@ -69,15 +69,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("13 March 2021")}),
 
             new meta({
               name : new SFString("Image"),
               content : new SFString("DiamondManLOA_2.png")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("can X3dTidy sort top-level USE nodes by node type?")}),
 
             new meta({
               name : new SFString("Image"),
@@ -362,13 +358,13 @@ var X3D0 =  new X3D({
                       value : new MFString(["Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."])}))}),
               joints : new SFNode(
                 new HAnimJoint({
-                  name : new SFString("humanoid_root"),
-                  DEF : new SFString("hanim_humanoid_root"),
+                  name : new SFString("HumanoidRoot"),
+                  DEF : new SFString("hanim_HumanoidRoot"),
                   center : new SFVec3f([0,0.824,0.0277]),
                   children : new MFNode([
                     new HAnimSegment({
-                      name : new SFString("segmentNameNeededTODO-93"),
-                      DEF : new SFString("hanim_segmentNameNeededTODO-93"),
+                      name : new SFString("sacrum"),
+                      DEF : new SFString("hanim_sacrum"),
                       children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,0.824,0.0277]),
@@ -825,8 +821,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.1086,0.0001,-0.0368]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("segmentNameNeededTODO-230"),
-                                          DEF : new SFString("hanim_segmentNameNeededTODO-230"),
+                                          name : new SFString("midproximal"),
+                                          DEF : new SFString("hanim_midproximal"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.1086,0.0001,-0.0368]),
@@ -1313,8 +1309,8 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0.0028,1.0568,-0.0776]),
                       children : new MFNode([
                         new HAnimSegment({
-                          name : new SFString("segmentNameNeededTODO-385"),
-                          DEF : new SFString("hanim_segmentNameNeededTODO-385"),
+                          name : new SFString("l5"),
+                          DEF : new SFString("hanim_l5"),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0.0028,1.0568,-0.0776]),
@@ -1339,8 +1335,8 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.0035,1.0925,-0.0787]),
                           children : new MFNode([
                             new HAnimSegment({
-                              name : new SFString("segmentNameNeededTODO-391"),
-                              DEF : new SFString("hanim_segmentNameNeededTODO-391"),
+                              name : new SFString("l4"),
+                              DEF : new SFString("hanim_l4"),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.0035,1.0925,-0.0787]),
@@ -1365,8 +1361,8 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.0041,1.1276,-0.0796]),
                               children : new MFNode([
                                 new HAnimSegment({
-                                  name : new SFString("segmentNameNeededTODO-397"),
-                                  DEF : new SFString("hanim_segmentNameNeededTODO-397"),
+                                  name : new SFString("l3"),
+                                  DEF : new SFString("hanim_l3"),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.0041,1.1276,-0.0796]),
@@ -1391,8 +1387,8 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.0045,1.1546,-0.08]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("segmentNameNeededTODO-403"),
-                                      DEF : new SFString("hanim_segmentNameNeededTODO-403"),
+                                      name : new SFString("l2"),
+                                      DEF : new SFString("hanim_l2"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.0045,1.1546,-0.08]),
@@ -1417,8 +1413,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.0048,1.1912,-0.0805]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("segmentNameNeededTODO-409"),
-                                          DEF : new SFString("hanim_segmentNameNeededTODO-409"),
+                                          name : new SFString("l1"),
+                                          DEF : new SFString("hanim_l1"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.0048,1.1912,-0.0805]),
@@ -1443,8 +1439,8 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0.0051,1.2278,-0.0808]),
                                           children : new MFNode([
                                             new HAnimSegment({
-                                              name : new SFString("segmentNameNeededTODO-415"),
-                                              DEF : new SFString("hanim_segmentNameNeededTODO-415"),
+                                              name : new SFString("t12"),
+                                              DEF : new SFString("hanim_t12"),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.0051,1.2278,-0.0808]),
@@ -1469,8 +1465,8 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0.0053,1.2679,-0.081]),
                                               children : new MFNode([
                                                 new HAnimSegment({
-                                                  name : new SFString("segmentNameNeededTODO-421"),
-                                                  DEF : new SFString("hanim_segmentNameNeededTODO-421"),
+                                                  name : new SFString("t11"),
+                                                  DEF : new SFString("hanim_t11"),
                                                   children : new MFNode([
                                                     new Transform({
                                                       translation : new SFVec3f([0.0053,1.2679,-0.081]),
@@ -1495,8 +1491,8 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0.0056,1.2848,-0.0822]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
-                                                      name : new SFString("segmentNameNeededTODO-427"),
-                                                      DEF : new SFString("hanim_segmentNameNeededTODO-427"),
+                                                      name : new SFString("t10"),
+                                                      DEF : new SFString("hanim_t10"),
                                                       children : new MFNode([
                                                         new Transform({
                                                           translation : new SFVec3f([0.0056,1.2848,-0.0822]),
@@ -1521,8 +1517,8 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0.0057,1.3126,-0.0838]),
                                                       children : new MFNode([
                                                         new HAnimSegment({
-                                                          name : new SFString("segmentNameNeededTODO-433"),
-                                                          DEF : new SFString("hanim_segmentNameNeededTODO-433"),
+                                                          name : new SFString("t9"),
+                                                          DEF : new SFString("hanim_t9"),
                                                           children : new MFNode([
                                                             new Transform({
                                                               translation : new SFVec3f([0.0057,1.3126,-0.0838]),
@@ -1547,8 +1543,8 @@ var X3D0 =  new X3D({
                                                           center : new SFVec3f([0.0057,1.3382,-0.0845]),
                                                           children : new MFNode([
                                                             new HAnimSegment({
-                                                              name : new SFString("segmentNameNeededTODO-439"),
-                                                              DEF : new SFString("hanim_segmentNameNeededTODO-439"),
+                                                              name : new SFString("t8"),
+                                                              DEF : new SFString("hanim_t8"),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   translation : new SFVec3f([0.0057,1.3382,-0.0845]),
@@ -1573,8 +1569,8 @@ var X3D0 =  new X3D({
                                                               center : new SFVec3f([0.0058,1.3625,-0.0833]),
                                                               children : new MFNode([
                                                                 new HAnimSegment({
-                                                                  name : new SFString("segmentNameNeededTODO-445"),
-                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-445"),
+                                                                  name : new SFString("t7"),
+                                                                  DEF : new SFString("hanim_t7"),
                                                                   children : new MFNode([
                                                                     new Transform({
                                                                       translation : new SFVec3f([0.0058,1.3625,-0.0833]),
@@ -1599,8 +1595,8 @@ var X3D0 =  new X3D({
                                                                   center : new SFVec3f([0.0059,1.3866,-0.08]),
                                                                   children : new MFNode([
                                                                     new HAnimSegment({
-                                                                      name : new SFString("segmentNameNeededTODO-451"),
-                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-451"),
+                                                                      name : new SFString("t6"),
+                                                                      DEF : new SFString("hanim_t6"),
                                                                       children : new MFNode([
                                                                         new Transform({
                                                                           translation : new SFVec3f([0.0059,1.3866,-0.08]),
@@ -1625,8 +1621,8 @@ var X3D0 =  new X3D({
                                                                       center : new SFVec3f([0.006,1.4102,-0.0745]),
                                                                       children : new MFNode([
                                                                         new HAnimSegment({
-                                                                          name : new SFString("segmentNameNeededTODO-457"),
-                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-457"),
+                                                                          name : new SFString("t5"),
+                                                                          DEF : new SFString("hanim_t5"),
                                                                           children : new MFNode([
                                                                             new Transform({
                                                                               translation : new SFVec3f([0.006,1.4102,-0.0745]),
@@ -1651,8 +1647,8 @@ var X3D0 =  new X3D({
                                                                           center : new SFVec3f([0.0061,1.432,-0.0675]),
                                                                           children : new MFNode([
                                                                             new HAnimSegment({
-                                                                              name : new SFString("segmentNameNeededTODO-463"),
-                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-463"),
+                                                                              name : new SFString("t4"),
+                                                                              DEF : new SFString("hanim_t4"),
                                                                               children : new MFNode([
                                                                                 new Transform({
                                                                                   translation : new SFVec3f([0.0061,1.432,-0.0675]),
@@ -1677,8 +1673,8 @@ var X3D0 =  new X3D({
                                                                               center : new SFVec3f([0.0062,1.4583,-0.057]),
                                                                               children : new MFNode([
                                                                                 new HAnimSegment({
-                                                                                  name : new SFString("segmentNameNeededTODO-469"),
-                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-469"),
+                                                                                  name : new SFString("t3"),
+                                                                                  DEF : new SFString("hanim_t3"),
                                                                                   children : new MFNode([
                                                                                     new Transform({
                                                                                       translation : new SFVec3f([0.0062,1.4583,-0.057]),
@@ -1703,8 +1699,8 @@ var X3D0 =  new X3D({
                                                                                   center : new SFVec3f([0.0063,1.4761,-0.0484]),
                                                                                   children : new MFNode([
                                                                                     new HAnimSegment({
-                                                                                      name : new SFString("segmentNameNeededTODO-475"),
-                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-475"),
+                                                                                      name : new SFString("t2"),
+                                                                                      DEF : new SFString("hanim_t2"),
                                                                                       children : new MFNode([
                                                                                         new Transform({
                                                                                           translation : new SFVec3f([0.0063,1.4761,-0.0484]),
@@ -1729,8 +1725,8 @@ var X3D0 =  new X3D({
                                                                                       center : new SFVec3f([0.0065,1.4951,-0.0387]),
                                                                                       children : new MFNode([
                                                                                         new HAnimSegment({
-                                                                                          name : new SFString("segmentNameNeededTODO-481"),
-                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-481"),
+                                                                                          name : new SFString("t1"),
+                                                                                          DEF : new SFString("hanim_t1"),
                                                                                           children : new MFNode([
                                                                                             new Transform({
                                                                                               translation : new SFVec3f([0.0065,1.4951,-0.0387]),
@@ -2041,8 +2037,8 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
-                                                                                                          name : new SFString("segmentNameNeededTODO-539"),
-                                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-539"),
+                                                                                                          name : new SFString("l_thumb_metacarpal"),
+                                                                                                          DEF : new SFString("hanim_l_thumb_metacarpal"),
                                                                                                           children : new MFNode([
                                                                                                             new Transform({
                                                                                                               translation : new SFVec3f([0.1924,0.8472,-0.0534]),
@@ -2067,8 +2063,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-545"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-545"),
+                                                                                                              name : new SFString("l_thumb_proximal"),
+                                                                                                              DEF : new SFString("hanim_l_thumb_proximal"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.1951,0.8226,0.0246]),
@@ -2138,8 +2134,8 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
-                                                                                                          name : new SFString("segmentNameNeededTODO-567"),
-                                                                                                          DEF : new SFString("hanim_segmentNameNeededTODO-567"),
+                                                                                                          name : new SFString("l_index_metacarpal"),
+                                                                                                          DEF : new SFString("hanim_l_index_metacarpal"),
                                                                                                           children : new MFNode([
                                                                                                             new Transform({
                                                                                                               translation : new SFVec3f([0.1983,0.8024,-0.028]),
@@ -2164,8 +2160,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-573"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-573"),
+                                                                                                              name : new SFString("l_index_proximal"),
+                                                                                                              DEF : new SFString("hanim_l_index_proximal"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.1983,0.7815,-0.028]),
@@ -2190,8 +2186,8 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
-                                                                                                                  name : new SFString("segmentNameNeededTODO-579"),
-                                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-579"),
+                                                                                                                  name : new SFString("l_index_middle"),
+                                                                                                                  DEF : new SFString("hanim_l_index_middle"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
                                                                                                                       translation : new SFVec3f([0.2017,0.7363,-0.0248]),
@@ -2572,8 +2568,8 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0.0066,1.5357,-0.0143]),
                                                                                               children : new MFNode([
                                                                                                 new HAnimSegment({
-                                                                                                  name : new SFString("segmentNameNeededTODO-731"),
-                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-731"),
+                                                                                                  name : new SFString("c6"),
+                                                                                                  DEF : new SFString("hanim_c6"),
                                                                                                   children : new MFNode([
                                                                                                     new Transform({
                                                                                                       translation : new SFVec3f([0.0066,1.5357,-0.0143]),
@@ -2598,8 +2594,8 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.0066,1.552,-0.0082]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
-                                                                                                      name : new SFString("segmentNameNeededTODO-737"),
-                                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-737"),
+                                                                                                      name : new SFString("c5"),
+                                                                                                      DEF : new SFString("hanim_c5"),
                                                                                                       children : new MFNode([
                                                                                                         new Transform({
                                                                                                           translation : new SFVec3f([0.0066,1.552,-0.0082]),
@@ -2650,8 +2646,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.0066,1.58,-0.0103]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("segmentNameNeededTODO-750"),
-                                                                                                              DEF : new SFString("hanim_segmentNameNeededTODO-750"),
+                                                                                                              name : new SFString("c3"),
+                                                                                                              DEF : new SFString("hanim_c3"),
                                                                                                               children : new MFNode([
                                                                                                                 new Transform({
                                                                                                                   translation : new SFVec3f([0.0066,1.58,-0.0103]),
@@ -2676,8 +2672,8 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.0066,1.5928,-0.0103]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
-                                                                                                                  name : new SFString("segmentNameNeededTODO-756"),
-                                                                                                                  DEF : new SFString("hanim_segmentNameNeededTODO-756"),
+                                                                                                                  name : new SFString("c2"),
+                                                                                                                  DEF : new SFString("hanim_c2"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
                                                                                                                       translation : new SFVec3f([0.0066,1.5928,-0.0103]),
@@ -2702,8 +2698,8 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.0066,1.6144,-0.0034]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
-                                                                                                                      name : new SFString("segmentNameNeededTODO-762"),
-                                                                                                                      DEF : new SFString("hanim_segmentNameNeededTODO-762"),
+                                                                                                                      name : new SFString("c1"),
+                                                                                                                      DEF : new SFString("hanim_c1"),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           translation : new SFVec3f([0.0066,1.6144,-0.0034]),
@@ -2971,7 +2967,7 @@ var X3D0 =  new X3D({
                       position : new SFVec3f([1.62,1.05,2.06])})])})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_humanoid_root")})),
+                  USE : new SFString("hanim_HumanoidRoot")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_sacroiliac")})),
@@ -3133,91 +3129,76 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_skull")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-93")})),
+                  USE : new SFString("hanim_sacrum")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-230")})),
+                  USE : new SFString("hanim_midproximal")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-385")})),
+                  USE : new SFString("hanim_l5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-391")})),
+                  USE : new SFString("hanim_l4")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-397")})),
+                  USE : new SFString("hanim_l3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-403")})),
+                  USE : new SFString("hanim_l2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-409")})),
+                  USE : new SFString("hanim_l1")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-415")})),
+                  USE : new SFString("hanim_t12")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-421")})),
+                  USE : new SFString("hanim_t11")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-427")})),
+                  USE : new SFString("hanim_t10")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-433")})),
+                  USE : new SFString("hanim_t9")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-439")})),
+                  USE : new SFString("hanim_t8")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-445")})),
+                  USE : new SFString("hanim_t7")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-451")})),
+                  USE : new SFString("hanim_t6")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-457")})),
+                  USE : new SFString("hanim_t5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-463")})),
+                  USE : new SFString("hanim_t4")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-469")})),
+                  USE : new SFString("hanim_t3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-475")})),
+                  USE : new SFString("hanim_t2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-481")})),
+                  USE : new SFString("hanim_t1")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-539")})),
+                  USE : new SFString("hanim_c6")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-545")})),
+                  USE : new SFString("hanim_c5")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-567")})),
+                  USE : new SFString("hanim_c3")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-573")})),
+                  USE : new SFString("hanim_c2")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-579")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-731")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-737")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-750")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-756")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_segmentNameNeededTODO-762")})),
+                  USE : new SFString("hanim_c1")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_calf")})),
@@ -3250,6 +3231,15 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_index_distal")})),
               segments : new SFNode(
                 new HAnimSegment({
+                  USE : new SFString("hanim_l_index_metacarpal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_index_middle")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_index_proximal")})),
+              segments : new SFNode(
+                new HAnimSegment({
                   USE : new SFString("hanim_l_middistal")})),
               segments : new SFNode(
                 new HAnimSegment({
@@ -3263,6 +3253,12 @@ var X3D0 =  new X3D({
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_thumb_distal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_thumb_metacarpal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_thumb_proximal")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_upperarm")})),

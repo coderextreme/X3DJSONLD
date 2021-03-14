@@ -500,20 +500,20 @@ HAnimJoint75.center = new SFVec3f(new float[0.2,0.87,-0.04]);
 HAnimJoint75.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
 HAnimJoint75.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimJoint76 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint76.name = "l_thumb1";
-HAnimJoint76.DEF = "Joe_l_thumb1";
+HAnimJoint76.name = "l_carpometacarpal_1";
+HAnimJoint76.DEF = "Joe_l_carpometacarpal_1";
 HAnimJoint76.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
 HAnimJoint76.skinCoordIndex = new MFInt32(new int[127,128]);
 HAnimJoint76.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint77 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint77.name = "l_thumb2";
-HAnimJoint77.DEF = "Joe_l_thumb2";
+HAnimJoint77.name = "l_metacarpophalangeal_1";
+HAnimJoint77.DEF = "Joe_l_metacarpophalangeal_1";
 HAnimJoint77.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
 HAnimJoint77.skinCoordIndex = new MFInt32(new int[138,139,140,141,142,143]);
 HAnimJoint77.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
 let HAnimJoint78 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint78.name = "l_thumb3";
-HAnimJoint78.DEF = "Joe_l_thumb3";
+HAnimJoint78.name = "l_carpal_interphalangeal_1";
+HAnimJoint78.DEF = "Joe_l_carpal_interphalangeal_1";
 HAnimJoint78.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
 HAnimJoint78.skinCoordIndex = new MFInt32(new int[144,145,146,147,148,149,150,151,152]);
 HAnimJoint78.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -530,26 +530,26 @@ HAnimJoint75.children = new MFNode();
 HAnimJoint75.children[0] = HAnimJoint76;
 
 let HAnimJoint79 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint79.name = "l_index0";
-HAnimJoint79.DEF = "Joe_l_index0";
+HAnimJoint79.name = "l_carpometacarpal_2";
+HAnimJoint79.DEF = "Joe_l_carpometacarpal_2";
 HAnimJoint79.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
 HAnimJoint79.skinCoordIndex = new MFInt32(new int[129,130]);
 HAnimJoint79.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint80 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint80.name = "l_index1";
-HAnimJoint80.DEF = "Joe_l_index1";
+HAnimJoint80.name = "l_metacarpophalangeal_2";
+HAnimJoint80.DEF = "Joe_l_metacarpophalangeal_2";
 HAnimJoint80.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
 HAnimJoint80.skinCoordIndex = new MFInt32(new int[138,139,140,153,154,155,163]);
 HAnimJoint80.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
 let HAnimJoint81 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint81.name = "l_index2";
-HAnimJoint81.DEF = "Joe_l_index2";
+HAnimJoint81.name = "l_carpal_proximal_interphalangeal_2";
+HAnimJoint81.DEF = "Joe_l_carpal_proximal_interphalangeal_2";
 HAnimJoint81.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
 HAnimJoint81.skinCoordIndex = new MFInt32(new int[166,167,168,169]);
 HAnimJoint81.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint82 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint82.name = "l_index3";
-HAnimJoint82.DEF = "Joe_l_index3";
+HAnimJoint82.name = "l_carpal_distal_interphalangeal_2";
+HAnimJoint82.DEF = "Joe_l_carpal_distal_interphalangeal_2";
 HAnimJoint82.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
 HAnimJoint82.skinCoordIndex = new MFInt32(new int[170,171,172,173,174,175,176,177,178]);
 HAnimJoint82.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -568,26 +568,26 @@ HAnimJoint79.children[0] = HAnimJoint80;
 HAnimJoint75.children[1] = HAnimJoint79;
 
 let HAnimJoint83 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint83.name = "l_middle0";
-HAnimJoint83.DEF = "Joe_l_middle0";
+HAnimJoint83.name = "l_carpometacarpal_3";
+HAnimJoint83.DEF = "Joe_l_carpometacarpal_3";
 HAnimJoint83.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
 HAnimJoint83.skinCoordIndex = new MFInt32(new int[131,132]);
 HAnimJoint83.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint84 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint84.name = "l_middle1";
-HAnimJoint84.DEF = "Joe_l_middle1";
+HAnimJoint84.name = "l_metacarpophalangeal_3";
+HAnimJoint84.DEF = "Joe_l_metacarpophalangeal_3";
 HAnimJoint84.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
 HAnimJoint84.skinCoordIndex = new MFInt32(new int[156,157,163,164]);
 HAnimJoint84.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 let HAnimJoint85 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint85.name = "l_middle2";
-HAnimJoint85.DEF = "Joe_l_middle2";
+HAnimJoint85.name = "l_carpal_proximal_interphalangeal_3";
+HAnimJoint85.DEF = "Joe_l_carpal_proximal_interphalangeal_3";
 HAnimJoint85.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
 HAnimJoint85.skinCoordIndex = new MFInt32(new int[179,180,181,182]);
 HAnimJoint85.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint86 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint86.name = "l_middle3";
-HAnimJoint86.DEF = "Joe_l_middle3";
+HAnimJoint86.name = "l_carpal_distal_interphalangeal_3";
+HAnimJoint86.DEF = "Joe_l_carpal_distal_interphalangeal_3";
 HAnimJoint86.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
 HAnimJoint86.skinCoordIndex = new MFInt32(new int[183,184,185,186,187,188,189,190,191]);
 HAnimJoint86.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -606,26 +606,26 @@ HAnimJoint83.children[0] = HAnimJoint84;
 HAnimJoint75.children[2] = HAnimJoint83;
 
 let HAnimJoint87 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint87.name = "l_ring0";
-HAnimJoint87.DEF = "Joe_l_ring0";
+HAnimJoint87.name = "l_carpometacarpal_4";
+HAnimJoint87.DEF = "Joe_l_carpometacarpal_4";
 HAnimJoint87.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
 HAnimJoint87.skinCoordIndex = new MFInt32(new int[133,134]);
 HAnimJoint87.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint88 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint88.name = "l_ring1";
-HAnimJoint88.DEF = "Joe_l_ring1";
+HAnimJoint88.name = "l_metacarpophalangeal_4";
+HAnimJoint88.DEF = "Joe_l_metacarpophalangeal_4";
 HAnimJoint88.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
 HAnimJoint88.skinCoordIndex = new MFInt32(new int[158,159,164,165]);
 HAnimJoint88.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 let HAnimJoint89 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint89.name = "l_ring2";
-HAnimJoint89.DEF = "Joe_l_ring2";
+HAnimJoint89.name = "l_carpal_proximal_interphalangeal_4";
+HAnimJoint89.DEF = "Joe_l_carpal_proximal_interphalangeal_4";
 HAnimJoint89.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
 HAnimJoint89.skinCoordIndex = new MFInt32(new int[192,193,194,195]);
 HAnimJoint89.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint90 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint90.name = "l_ring3";
-HAnimJoint90.DEF = "Joe_l_ring3";
+HAnimJoint90.name = "l_carpal_distal_interphalangeal_4";
+HAnimJoint90.DEF = "Joe_l_carpal_distal_interphalangeal_4";
 HAnimJoint90.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
 HAnimJoint90.skinCoordIndex = new MFInt32(new int[196,197,198,199,200,201,202,203,204]);
 HAnimJoint90.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -644,26 +644,26 @@ HAnimJoint87.children[0] = HAnimJoint88;
 HAnimJoint75.children[3] = HAnimJoint87;
 
 let HAnimJoint91 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint91.name = "l_pinky0";
-HAnimJoint91.DEF = "Joe_l_pinky0";
+HAnimJoint91.name = "l_carpometacarpal_5";
+HAnimJoint91.DEF = "Joe_l_carpometacarpal_5";
 HAnimJoint91.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
 HAnimJoint91.skinCoordIndex = new MFInt32(new int[135,136,137,165]);
 HAnimJoint91.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
 let HAnimJoint92 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint92.name = "l_pinky1";
-HAnimJoint92.DEF = "Joe_l_pinky1";
+HAnimJoint92.name = "l_metacarpophalangeal_5";
+HAnimJoint92.DEF = "Joe_l_metacarpophalangeal_5";
 HAnimJoint92.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
 HAnimJoint92.skinCoordIndex = new MFInt32(new int[160,161,162]);
 HAnimJoint92.skinCoordWeight = new MFFloat(new float[1,1,1]);
 let HAnimJoint93 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint93.name = "l_pinky2";
-HAnimJoint93.DEF = "Joe_l_pinky2";
+HAnimJoint93.name = "l_carpal_proximal_interphalangeal_5";
+HAnimJoint93.DEF = "Joe_l_carpal_proximal_interphalangeal_5";
 HAnimJoint93.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
 HAnimJoint93.skinCoordIndex = new MFInt32(new int[205,206,207,208]);
 HAnimJoint93.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint94 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint94.name = "l_pinky3";
-HAnimJoint94.DEF = "Joe_l_pinky3";
+HAnimJoint94.name = "l_carpal_distal_interphalangeal_5";
+HAnimJoint94.DEF = "Joe_l_carpal_distal_interphalangeal_5";
 HAnimJoint94.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
 HAnimJoint94.skinCoordIndex = new MFInt32(new int[209,210,211,212,213,214,215,216,217]);
 HAnimJoint94.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -730,20 +730,20 @@ HAnimJoint99.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
 HAnimJoint99.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
 HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimJoint100 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint100.name = "r_thumb1";
-HAnimJoint100.DEF = "Joe_r_thumb1";
+HAnimJoint100.name = "r_carpometacarpal_1";
+HAnimJoint100.DEF = "Joe_r_carpometacarpal_1";
 HAnimJoint100.center = new SFVec3f(new float[-0.2,0.85,0]);
 HAnimJoint100.skinCoordIndex = new MFInt32(new int[243,244]);
 HAnimJoint100.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint101 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint101.name = "r_thumb2";
-HAnimJoint101.DEF = "Joe_r_thumb2";
+HAnimJoint101.name = "r_metacarpophalangeal_1";
+HAnimJoint101.DEF = "Joe_r_metacarpophalangeal_1";
 HAnimJoint101.center = new SFVec3f(new float[-0.2,0.82,0.03]);
 HAnimJoint101.skinCoordIndex = new MFInt32(new int[254,255,256,257,258,259]);
 HAnimJoint101.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
 let HAnimJoint102 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint102.name = "r_thumb3";
-HAnimJoint102.DEF = "Joe_r_thumb3";
+HAnimJoint102.name = "r_carpal_interphalangeal_1";
+HAnimJoint102.DEF = "Joe_r_carpal_interphalangeal_1";
 HAnimJoint102.center = new SFVec3f(new float[-0.2,0.8,0.05]);
 HAnimJoint102.skinCoordIndex = new MFInt32(new int[260,261,262,263,264,265,266,267,268]);
 HAnimJoint102.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -760,26 +760,26 @@ HAnimJoint99.children = new MFNode();
 HAnimJoint99.children[0] = HAnimJoint100;
 
 let HAnimJoint103 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint103.name = "r_index0";
-HAnimJoint103.DEF = "Joe_r_index0";
+HAnimJoint103.name = "r_carpometacarpal_2";
+HAnimJoint103.DEF = "Joe_r_carpometacarpal_2";
 HAnimJoint103.center = new SFVec3f(new float[-0.2,0.84,-0.015]);
 HAnimJoint103.skinCoordIndex = new MFInt32(new int[245,246]);
 HAnimJoint103.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint104 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint104.name = "r_index1";
-HAnimJoint104.DEF = "Joe_r_index1";
+HAnimJoint104.name = "r_metacarpophalangeal_2";
+HAnimJoint104.DEF = "Joe_r_metacarpophalangeal_2";
 HAnimJoint104.center = new SFVec3f(new float[-0.2,0.793,-0.015]);
 HAnimJoint104.skinCoordIndex = new MFInt32(new int[254,255,256,269,270,271,279]);
 HAnimJoint104.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
 let HAnimJoint105 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint105.name = "r_index2";
-HAnimJoint105.DEF = "Joe_r_index2";
+HAnimJoint105.name = "r_carpal_proximal_interphalangeal_2";
+HAnimJoint105.DEF = "Joe_r_carpal_proximal_interphalangeal_2";
 HAnimJoint105.center = new SFVec3f(new float[-0.2,0.745,-0.015]);
 HAnimJoint105.skinCoordIndex = new MFInt32(new int[282,283,284,285]);
 HAnimJoint105.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint106 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint106.name = "r_index3";
-HAnimJoint106.DEF = "Joe_r_index3";
+HAnimJoint106.name = "r_carpal_distal_interphalangeal_2";
+HAnimJoint106.DEF = "Joe_r_carpal_distal_interphalangeal_2";
 HAnimJoint106.center = new SFVec3f(new float[-0.2,0.72,-0.015]);
 HAnimJoint106.skinCoordIndex = new MFInt32(new int[286,287,288,289,290,291,292,293,294]);
 HAnimJoint106.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -798,26 +798,26 @@ HAnimJoint103.children[0] = HAnimJoint104;
 HAnimJoint99.children[1] = HAnimJoint103;
 
 let HAnimJoint107 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint107.name = "r_middle0";
-HAnimJoint107.DEF = "Joe_r_middle0";
+HAnimJoint107.name = "r_carpometacarpal_3";
+HAnimJoint107.DEF = "Joe_r_carpometacarpal_3";
 HAnimJoint107.center = new SFVec3f(new float[-0.2,0.835,-0.04]);
 HAnimJoint107.skinCoordIndex = new MFInt32(new int[247,248]);
 HAnimJoint107.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint108 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint108.name = "r_middle1";
-HAnimJoint108.DEF = "Joe_r_middle1";
+HAnimJoint108.name = "r_metacarpophalangeal_3";
+HAnimJoint108.DEF = "Joe_r_metacarpophalangeal_3";
 HAnimJoint108.center = new SFVec3f(new float[-0.2,0.788,-0.04]);
 HAnimJoint108.skinCoordIndex = new MFInt32(new int[272,273,279,280]);
 HAnimJoint108.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 let HAnimJoint109 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint109.name = "r_middle2";
-HAnimJoint109.DEF = "Joe_r_middle2";
+HAnimJoint109.name = "r_carpal_proximal_interphalangeal_3";
+HAnimJoint109.DEF = "Joe_r_carpal_proximal_interphalangeal_3";
 HAnimJoint109.center = new SFVec3f(new float[-0.2,0.74,-0.04]);
 HAnimJoint109.skinCoordIndex = new MFInt32(new int[295,296,297,298]);
 HAnimJoint109.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint110 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint110.name = "r_middle3";
-HAnimJoint110.DEF = "Joe_r_middle3";
+HAnimJoint110.name = "r_carpal_distal_interphalangeal_3";
+HAnimJoint110.DEF = "Joe_r_carpal_distal_interphalangeal_3";
 HAnimJoint110.center = new SFVec3f(new float[-0.2,0.7142,-0.04]);
 HAnimJoint110.skinCoordIndex = new MFInt32(new int[299,300,301,302,303,304,305,306,307]);
 HAnimJoint110.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -836,26 +836,26 @@ HAnimJoint107.children[0] = HAnimJoint108;
 HAnimJoint99.children[2] = HAnimJoint107;
 
 let HAnimJoint111 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint111.name = "r_ring0";
-HAnimJoint111.DEF = "Joe_r_ring0";
+HAnimJoint111.name = "r_carpometacarpal_4";
+HAnimJoint111.DEF = "Joe_r_carpometacarpal_4";
 HAnimJoint111.center = new SFVec3f(new float[-0.2,0.835,-0.065]);
 HAnimJoint111.skinCoordIndex = new MFInt32(new int[249,250]);
 HAnimJoint111.skinCoordWeight = new MFFloat(new float[1,1]);
 let HAnimJoint112 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint112.name = "r_ring1";
-HAnimJoint112.DEF = "Joe_r_ring1";
+HAnimJoint112.name = "r_metacarpophalangeal_4";
+HAnimJoint112.DEF = "Joe_r_metacarpophalangeal_4";
 HAnimJoint112.center = new SFVec3f(new float[-0.2,0.793,-0.065]);
 HAnimJoint112.skinCoordIndex = new MFInt32(new int[274,275,280,281]);
 HAnimJoint112.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 let HAnimJoint113 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint113.name = "r_ring2";
-HAnimJoint113.DEF = "Joe_r_ring2";
+HAnimJoint113.name = "r_carpal_proximal_interphalangeal_4";
+HAnimJoint113.DEF = "Joe_r_carpal_proximal_interphalangeal_4";
 HAnimJoint113.center = new SFVec3f(new float[-0.2,0.74,-0.065]);
 HAnimJoint113.skinCoordIndex = new MFInt32(new int[308,309,310,311]);
 HAnimJoint113.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint114 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint114.name = "r_ring3";
-HAnimJoint114.DEF = "Joe_r_ring3";
+HAnimJoint114.name = "r_carpal_distal_interphalangeal_4";
+HAnimJoint114.DEF = "Joe_r_carpal_distal_interphalangeal_4";
 HAnimJoint114.center = new SFVec3f(new float[-0.2,0.7177,-0.065]);
 HAnimJoint114.skinCoordIndex = new MFInt32(new int[312,313,314,315,316,317,318,319,320]);
 HAnimJoint114.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -874,26 +874,26 @@ HAnimJoint111.children[0] = HAnimJoint112;
 HAnimJoint99.children[3] = HAnimJoint111;
 
 let HAnimJoint115 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint115.name = "r_pinky0";
-HAnimJoint115.DEF = "Joe_r_pinky0";
+HAnimJoint115.name = "r_carpometacarpal_5";
+HAnimJoint115.DEF = "Joe_r_carpometacarpal_5";
 HAnimJoint115.center = new SFVec3f(new float[-0.2,0.84,-0.085]);
 HAnimJoint115.skinCoordIndex = new MFInt32(new int[251,252,253,281]);
 HAnimJoint115.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
 let HAnimJoint116 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint116.name = "r_pinky1";
-HAnimJoint116.DEF = "Joe_r_pinky1";
+HAnimJoint116.name = "r_metacarpophalangeal_5";
+HAnimJoint116.DEF = "Joe_r_metacarpophalangeal_5";
 HAnimJoint116.center = new SFVec3f(new float[-0.2,0.79,-0.085]);
 HAnimJoint116.skinCoordIndex = new MFInt32(new int[276,277,278]);
 HAnimJoint116.skinCoordWeight = new MFFloat(new float[1,1,1]);
 let HAnimJoint117 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint117.name = "r_pinky2";
-HAnimJoint117.DEF = "Joe_r_pinky2";
+HAnimJoint117.name = "r_carpal_proximal_interphalangeal_5";
+HAnimJoint117.DEF = "Joe_r_carpal_proximal_interphalangeal_5";
 HAnimJoint117.center = new SFVec3f(new float[-0.2,0.755,-0.085]);
 HAnimJoint117.skinCoordIndex = new MFInt32(new int[321,322,323,324]);
 HAnimJoint117.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint118 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint118.name = "r_pinky3";
-HAnimJoint118.DEF = "Joe_r_pinky3";
+HAnimJoint118.name = "r_carpal_distal_interphalangeal_5";
+HAnimJoint118.DEF = "Joe_r_carpal_distal_interphalangeal_5";
 HAnimJoint118.center = new SFVec3f(new float[-0.2,0.735,-0.09]);
 HAnimJoint118.skinCoordIndex = new MFInt32(new int[325,326,327,328,329,330,331,332,333]);
 HAnimJoint118.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -1166,259 +1166,259 @@ HAnimJoint157.USE = "Joe_r_acromioclavicular";
 HAnimHumanoid13.joints[31] = HAnimJoint157;
 
 let HAnimJoint158 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint158.USE = "Joe_l_elbow";
+HAnimJoint158.USE = "Joe_l_carpal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[32] = HAnimJoint158;
 
 let HAnimJoint159 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint159.USE = "Joe_r_elbow";
+HAnimJoint159.USE = "Joe_r_carpal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[33] = HAnimJoint159;
 
 let HAnimJoint160 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint160.USE = "Joe_l_eyeball_joint";
+HAnimJoint160.USE = "Joe_l_carpal_distal_interphalangeal_3";
 HAnimHumanoid13.joints[34] = HAnimJoint160;
 
 let HAnimJoint161 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint161.USE = "Joe_r_eyeball_joint";
+HAnimJoint161.USE = "Joe_r_carpal_distal_interphalangeal_3";
 HAnimHumanoid13.joints[35] = HAnimJoint161;
 
 let HAnimJoint162 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint162.USE = "Joe_l_eyebrow_joint";
+HAnimJoint162.USE = "Joe_l_carpal_distal_interphalangeal_4";
 HAnimHumanoid13.joints[36] = HAnimJoint162;
 
 let HAnimJoint163 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint163.USE = "Joe_r_eyebrow_joint";
+HAnimJoint163.USE = "Joe_r_carpal_distal_interphalangeal_4";
 HAnimHumanoid13.joints[37] = HAnimJoint163;
 
 let HAnimJoint164 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint164.USE = "Joe_l_eyelid_joint";
+HAnimJoint164.USE = "Joe_l_carpal_distal_interphalangeal_5";
 HAnimHumanoid13.joints[38] = HAnimJoint164;
 
 let HAnimJoint165 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint165.USE = "Joe_r_eyelid_joint";
+HAnimJoint165.USE = "Joe_r_carpal_distal_interphalangeal_5";
 HAnimHumanoid13.joints[39] = HAnimJoint165;
 
 let HAnimJoint166 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint166.USE = "Joe_l_hip";
+HAnimJoint166.USE = "Joe_l_carpal_interphalangeal_1";
 HAnimHumanoid13.joints[40] = HAnimJoint166;
 
 let HAnimJoint167 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint167.USE = "Joe_r_hip";
+HAnimJoint167.USE = "Joe_r_carpal_interphalangeal_1";
 HAnimHumanoid13.joints[41] = HAnimJoint167;
 
 let HAnimJoint168 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint168.USE = "Joe_l_index0";
+HAnimJoint168.USE = "Joe_l_carpal_proximal_interphalangeal_2";
 HAnimHumanoid13.joints[42] = HAnimJoint168;
 
 let HAnimJoint169 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint169.USE = "Joe_r_index0";
+HAnimJoint169.USE = "Joe_r_carpal_proximal_interphalangeal_2";
 HAnimHumanoid13.joints[43] = HAnimJoint169;
 
 let HAnimJoint170 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint170.USE = "Joe_l_index1";
+HAnimJoint170.USE = "Joe_l_carpal_proximal_interphalangeal_3";
 HAnimHumanoid13.joints[44] = HAnimJoint170;
 
 let HAnimJoint171 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint171.USE = "Joe_r_index1";
+HAnimJoint171.USE = "Joe_r_carpal_proximal_interphalangeal_3";
 HAnimHumanoid13.joints[45] = HAnimJoint171;
 
 let HAnimJoint172 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint172.USE = "Joe_l_index2";
+HAnimJoint172.USE = "Joe_l_carpal_proximal_interphalangeal_4";
 HAnimHumanoid13.joints[46] = HAnimJoint172;
 
 let HAnimJoint173 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint173.USE = "Joe_r_index2";
+HAnimJoint173.USE = "Joe_r_carpal_proximal_interphalangeal_4";
 HAnimHumanoid13.joints[47] = HAnimJoint173;
 
 let HAnimJoint174 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint174.USE = "Joe_l_index3";
+HAnimJoint174.USE = "Joe_l_carpal_proximal_interphalangeal_5";
 HAnimHumanoid13.joints[48] = HAnimJoint174;
 
 let HAnimJoint175 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint175.USE = "Joe_r_index3";
+HAnimJoint175.USE = "Joe_r_carpal_proximal_interphalangeal_5";
 HAnimHumanoid13.joints[49] = HAnimJoint175;
 
 let HAnimJoint176 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint176.USE = "Joe_l_knee";
+HAnimJoint176.USE = "Joe_l_carpometacarpal_1";
 HAnimHumanoid13.joints[50] = HAnimJoint176;
 
 let HAnimJoint177 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint177.USE = "Joe_r_knee";
+HAnimJoint177.USE = "Joe_r_carpometacarpal_1";
 HAnimHumanoid13.joints[51] = HAnimJoint177;
 
 let HAnimJoint178 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint178.USE = "Joe_l_metatarsophalangeal_2";
+HAnimJoint178.USE = "Joe_l_carpometacarpal_2";
 HAnimHumanoid13.joints[52] = HAnimJoint178;
 
 let HAnimJoint179 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint179.USE = "Joe_r_metatarsophalangeal_2";
+HAnimJoint179.USE = "Joe_r_carpometacarpal_2";
 HAnimHumanoid13.joints[53] = HAnimJoint179;
 
 let HAnimJoint180 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint180.USE = "Joe_l_middle0";
+HAnimJoint180.USE = "Joe_l_carpometacarpal_3";
 HAnimHumanoid13.joints[54] = HAnimJoint180;
 
 let HAnimJoint181 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint181.USE = "Joe_r_middle0";
+HAnimJoint181.USE = "Joe_r_carpometacarpal_3";
 HAnimHumanoid13.joints[55] = HAnimJoint181;
 
 let HAnimJoint182 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint182.USE = "Joe_l_middle1";
+HAnimJoint182.USE = "Joe_l_carpometacarpal_4";
 HAnimHumanoid13.joints[56] = HAnimJoint182;
 
 let HAnimJoint183 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint183.USE = "Joe_r_middle1";
+HAnimJoint183.USE = "Joe_r_carpometacarpal_4";
 HAnimHumanoid13.joints[57] = HAnimJoint183;
 
 let HAnimJoint184 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint184.USE = "Joe_l_middle2";
+HAnimJoint184.USE = "Joe_l_carpometacarpal_5";
 HAnimHumanoid13.joints[58] = HAnimJoint184;
 
 let HAnimJoint185 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint185.USE = "Joe_r_middle2";
+HAnimJoint185.USE = "Joe_r_carpometacarpal_5";
 HAnimHumanoid13.joints[59] = HAnimJoint185;
 
 let HAnimJoint186 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint186.USE = "Joe_l_middle3";
+HAnimJoint186.USE = "Joe_l_elbow";
 HAnimHumanoid13.joints[60] = HAnimJoint186;
 
 let HAnimJoint187 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint187.USE = "Joe_r_middle3";
+HAnimJoint187.USE = "Joe_r_elbow";
 HAnimHumanoid13.joints[61] = HAnimJoint187;
 
 let HAnimJoint188 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint188.USE = "Joe_l_pinky0";
+HAnimJoint188.USE = "Joe_l_eyeball_joint";
 HAnimHumanoid13.joints[62] = HAnimJoint188;
 
 let HAnimJoint189 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint189.USE = "Joe_r_pinky0";
+HAnimJoint189.USE = "Joe_r_eyeball_joint";
 HAnimHumanoid13.joints[63] = HAnimJoint189;
 
 let HAnimJoint190 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint190.USE = "Joe_l_pinky1";
+HAnimJoint190.USE = "Joe_l_eyebrow_joint";
 HAnimHumanoid13.joints[64] = HAnimJoint190;
 
 let HAnimJoint191 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint191.USE = "Joe_r_pinky1";
+HAnimJoint191.USE = "Joe_r_eyebrow_joint";
 HAnimHumanoid13.joints[65] = HAnimJoint191;
 
 let HAnimJoint192 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint192.USE = "Joe_l_pinky2";
+HAnimJoint192.USE = "Joe_l_eyelid_joint";
 HAnimHumanoid13.joints[66] = HAnimJoint192;
 
 let HAnimJoint193 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint193.USE = "Joe_r_pinky2";
+HAnimJoint193.USE = "Joe_r_eyelid_joint";
 HAnimHumanoid13.joints[67] = HAnimJoint193;
 
 let HAnimJoint194 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint194.USE = "Joe_l_pinky3";
+HAnimJoint194.USE = "Joe_l_hip";
 HAnimHumanoid13.joints[68] = HAnimJoint194;
 
 let HAnimJoint195 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint195.USE = "Joe_r_pinky3";
+HAnimJoint195.USE = "Joe_r_hip";
 HAnimHumanoid13.joints[69] = HAnimJoint195;
 
 let HAnimJoint196 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint196.USE = "Joe_l_radiocarpal";
+HAnimJoint196.USE = "Joe_l_knee";
 HAnimHumanoid13.joints[70] = HAnimJoint196;
 
 let HAnimJoint197 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint197.USE = "Joe_r_radiocarpal";
+HAnimJoint197.USE = "Joe_r_knee";
 HAnimHumanoid13.joints[71] = HAnimJoint197;
 
 let HAnimJoint198 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint198.USE = "Joe_l_ring0";
+HAnimJoint198.USE = "Joe_l_metacarpophalangeal_1";
 HAnimHumanoid13.joints[72] = HAnimJoint198;
 
 let HAnimJoint199 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint199.USE = "Joe_r_ring0";
+HAnimJoint199.USE = "Joe_r_metacarpophalangeal_1";
 HAnimHumanoid13.joints[73] = HAnimJoint199;
 
 let HAnimJoint200 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint200.USE = "Joe_l_ring1";
+HAnimJoint200.USE = "Joe_l_metacarpophalangeal_2";
 HAnimHumanoid13.joints[74] = HAnimJoint200;
 
 let HAnimJoint201 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint201.USE = "Joe_r_ring1";
+HAnimJoint201.USE = "Joe_r_metacarpophalangeal_2";
 HAnimHumanoid13.joints[75] = HAnimJoint201;
 
 let HAnimJoint202 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint202.USE = "Joe_l_ring2";
+HAnimJoint202.USE = "Joe_l_metacarpophalangeal_3";
 HAnimHumanoid13.joints[76] = HAnimJoint202;
 
 let HAnimJoint203 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint203.USE = "Joe_r_ring2";
+HAnimJoint203.USE = "Joe_r_metacarpophalangeal_3";
 HAnimHumanoid13.joints[77] = HAnimJoint203;
 
 let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint204.USE = "Joe_l_ring3";
+HAnimJoint204.USE = "Joe_l_metacarpophalangeal_4";
 HAnimHumanoid13.joints[78] = HAnimJoint204;
 
 let HAnimJoint205 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint205.USE = "Joe_r_ring3";
+HAnimJoint205.USE = "Joe_r_metacarpophalangeal_4";
 HAnimHumanoid13.joints[79] = HAnimJoint205;
 
 let HAnimJoint206 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint206.USE = "Joe_l_shoulder";
+HAnimJoint206.USE = "Joe_l_metacarpophalangeal_5";
 HAnimHumanoid13.joints[80] = HAnimJoint206;
 
 let HAnimJoint207 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint207.USE = "Joe_r_shoulder";
+HAnimJoint207.USE = "Joe_r_metacarpophalangeal_5";
 HAnimHumanoid13.joints[81] = HAnimJoint207;
 
 let HAnimJoint208 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint208.USE = "Joe_l_sternoclavicular";
+HAnimJoint208.USE = "Joe_l_metatarsophalangeal_2";
 HAnimHumanoid13.joints[82] = HAnimJoint208;
 
 let HAnimJoint209 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint209.USE = "Joe_r_sternoclavicular";
+HAnimJoint209.USE = "Joe_r_metatarsophalangeal_2";
 HAnimHumanoid13.joints[83] = HAnimJoint209;
 
 let HAnimJoint210 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint210.USE = "Joe_l_talocrural";
+HAnimJoint210.USE = "Joe_l_radiocarpal";
 HAnimHumanoid13.joints[84] = HAnimJoint210;
 
 let HAnimJoint211 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint211.USE = "Joe_r_talocrural";
+HAnimJoint211.USE = "Joe_r_radiocarpal";
 HAnimHumanoid13.joints[85] = HAnimJoint211;
 
 let HAnimJoint212 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint212.USE = "Joe_l_tarsal_distal_interphalangeal_2";
+HAnimJoint212.USE = "Joe_l_shoulder";
 HAnimHumanoid13.joints[86] = HAnimJoint212;
 
 let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint213.USE = "Joe_r_tarsal_distal_interphalangeal_2";
+HAnimJoint213.USE = "Joe_r_shoulder";
 HAnimHumanoid13.joints[87] = HAnimJoint213;
 
 let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint214.USE = "Joe_l_tarsometatarsal_2";
+HAnimJoint214.USE = "Joe_l_sternoclavicular";
 HAnimHumanoid13.joints[88] = HAnimJoint214;
 
 let HAnimJoint215 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint215.USE = "Joe_r_tarsometatarsal_2";
+HAnimJoint215.USE = "Joe_r_sternoclavicular";
 HAnimHumanoid13.joints[89] = HAnimJoint215;
 
 let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint216.USE = "Joe_l_thumb1";
+HAnimJoint216.USE = "Joe_l_talocrural";
 HAnimHumanoid13.joints[90] = HAnimJoint216;
 
 let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint217.USE = "Joe_r_thumb1";
+HAnimJoint217.USE = "Joe_r_talocrural";
 HAnimHumanoid13.joints[91] = HAnimJoint217;
 
 let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint218.USE = "Joe_l_thumb2";
+HAnimJoint218.USE = "Joe_l_tarsal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[92] = HAnimJoint218;
 
 let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint219.USE = "Joe_r_thumb2";
+HAnimJoint219.USE = "Joe_r_tarsal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[93] = HAnimJoint219;
 
 let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint220.USE = "Joe_l_thumb3";
+HAnimJoint220.USE = "Joe_l_tarsometatarsal_2";
 HAnimHumanoid13.joints[94] = HAnimJoint220;
 
 let HAnimJoint221 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint221.USE = "Joe_r_thumb3";
+HAnimJoint221.USE = "Joe_r_tarsometatarsal_2";
 HAnimHumanoid13.joints[95] = HAnimJoint221;
 
 let HAnimSegment222 = browser.currentScene.createNode("HAnimSegment");
@@ -3052,133 +3052,133 @@ let ROUTE468 = browser.currentScene.createNode("ROUTE");
 ROUTE468.fromField = "value_changed";
 ROUTE468.fromNode = "l_thumb1_RotationInterpolator";
 ROUTE468.toField = "set_rotation";
-ROUTE468.toNode = "Joe_l_thumb1";
+ROUTE468.toNode = "Joe_l_carpometacarpal_1";
 browser.currentScene.children[159] = ROUTE468;
 
 let ROUTE469 = browser.currentScene.createNode("ROUTE");
 ROUTE469.fromField = "value_changed";
 ROUTE469.fromNode = "l_thumb2_RotationInterpolator";
 ROUTE469.toField = "set_rotation";
-ROUTE469.toNode = "Joe_l_thumb2";
+ROUTE469.toNode = "Joe_l_metacarpophalangeal_1";
 browser.currentScene.children[160] = ROUTE469;
 
 let ROUTE470 = browser.currentScene.createNode("ROUTE");
 ROUTE470.fromField = "value_changed";
 ROUTE470.fromNode = "l_thumb3_RotationInterpolator";
 ROUTE470.toField = "set_rotation";
-ROUTE470.toNode = "Joe_l_thumb3";
+ROUTE470.toNode = "Joe_l_carpal_interphalangeal_1";
 browser.currentScene.children[161] = ROUTE470;
 
 let ROUTE471 = browser.currentScene.createNode("ROUTE");
 ROUTE471.fromField = "value_changed";
 ROUTE471.fromNode = "l_index0_RotationInterpolator";
 ROUTE471.toField = "set_rotation";
-ROUTE471.toNode = "Joe_l_index0";
+ROUTE471.toNode = "Joe_l_carpometacarpal_2";
 browser.currentScene.children[162] = ROUTE471;
 
 let ROUTE472 = browser.currentScene.createNode("ROUTE");
 ROUTE472.fromField = "value_changed";
 ROUTE472.fromNode = "l_index1_RotationInterpolator";
 ROUTE472.toField = "set_rotation";
-ROUTE472.toNode = "Joe_l_index1";
+ROUTE472.toNode = "Joe_l_metacarpophalangeal_2";
 browser.currentScene.children[163] = ROUTE472;
 
 let ROUTE473 = browser.currentScene.createNode("ROUTE");
 ROUTE473.fromField = "value_changed";
 ROUTE473.fromNode = "l_index2_RotationInterpolator";
 ROUTE473.toField = "set_rotation";
-ROUTE473.toNode = "Joe_l_index2";
+ROUTE473.toNode = "Joe_l_carpal_proximal_interphalangeal_2";
 browser.currentScene.children[164] = ROUTE473;
 
 let ROUTE474 = browser.currentScene.createNode("ROUTE");
 ROUTE474.fromField = "value_changed";
 ROUTE474.fromNode = "l_index3_RotationInterpolator";
 ROUTE474.toField = "set_rotation";
-ROUTE474.toNode = "Joe_l_index3";
+ROUTE474.toNode = "Joe_l_carpal_distal_interphalangeal_2";
 browser.currentScene.children[165] = ROUTE474;
 
 let ROUTE475 = browser.currentScene.createNode("ROUTE");
 ROUTE475.fromField = "value_changed";
 ROUTE475.fromNode = "l_middle0_RotationInterpolator";
 ROUTE475.toField = "set_rotation";
-ROUTE475.toNode = "Joe_l_middle0";
+ROUTE475.toNode = "Joe_l_carpometacarpal_3";
 browser.currentScene.children[166] = ROUTE475;
 
 let ROUTE476 = browser.currentScene.createNode("ROUTE");
 ROUTE476.fromField = "value_changed";
 ROUTE476.fromNode = "l_middle1_RotationInterpolator";
 ROUTE476.toField = "set_rotation";
-ROUTE476.toNode = "Joe_l_middle1";
+ROUTE476.toNode = "Joe_l_metacarpophalangeal_3";
 browser.currentScene.children[167] = ROUTE476;
 
 let ROUTE477 = browser.currentScene.createNode("ROUTE");
 ROUTE477.fromField = "value_changed";
 ROUTE477.fromNode = "l_middle2_RotationInterpolator";
 ROUTE477.toField = "set_rotation";
-ROUTE477.toNode = "Joe_l_middle2";
+ROUTE477.toNode = "Joe_l_carpal_proximal_interphalangeal_3";
 browser.currentScene.children[168] = ROUTE477;
 
 let ROUTE478 = browser.currentScene.createNode("ROUTE");
 ROUTE478.fromField = "value_changed";
 ROUTE478.fromNode = "l_middle3_RotationInterpolator";
 ROUTE478.toField = "set_rotation";
-ROUTE478.toNode = "Joe_l_middle3";
+ROUTE478.toNode = "Joe_l_carpal_distal_interphalangeal_3";
 browser.currentScene.children[169] = ROUTE478;
 
 let ROUTE479 = browser.currentScene.createNode("ROUTE");
 ROUTE479.fromField = "value_changed";
 ROUTE479.fromNode = "l_ring0_RotationInterpolator";
 ROUTE479.toField = "set_rotation";
-ROUTE479.toNode = "Joe_l_ring0";
+ROUTE479.toNode = "Joe_l_carpometacarpal_4";
 browser.currentScene.children[170] = ROUTE479;
 
 let ROUTE480 = browser.currentScene.createNode("ROUTE");
 ROUTE480.fromField = "value_changed";
 ROUTE480.fromNode = "l_ring1_RotationInterpolator";
 ROUTE480.toField = "set_rotation";
-ROUTE480.toNode = "Joe_l_ring1";
+ROUTE480.toNode = "Joe_l_metacarpophalangeal_4";
 browser.currentScene.children[171] = ROUTE480;
 
 let ROUTE481 = browser.currentScene.createNode("ROUTE");
 ROUTE481.fromField = "value_changed";
 ROUTE481.fromNode = "l_ring2_RotationInterpolator";
 ROUTE481.toField = "set_rotation";
-ROUTE481.toNode = "Joe_l_ring2";
+ROUTE481.toNode = "Joe_l_carpal_proximal_interphalangeal_4";
 browser.currentScene.children[172] = ROUTE481;
 
 let ROUTE482 = browser.currentScene.createNode("ROUTE");
 ROUTE482.fromField = "value_changed";
 ROUTE482.fromNode = "l_ring3_RotationInterpolator";
 ROUTE482.toField = "set_rotation";
-ROUTE482.toNode = "Joe_l_ring3";
+ROUTE482.toNode = "Joe_l_carpal_distal_interphalangeal_4";
 browser.currentScene.children[173] = ROUTE482;
 
 let ROUTE483 = browser.currentScene.createNode("ROUTE");
 ROUTE483.fromField = "value_changed";
 ROUTE483.fromNode = "l_pinky0_RotationInterpolator";
 ROUTE483.toField = "set_rotation";
-ROUTE483.toNode = "Joe_l_pinky0";
+ROUTE483.toNode = "Joe_l_carpometacarpal_5";
 browser.currentScene.children[174] = ROUTE483;
 
 let ROUTE484 = browser.currentScene.createNode("ROUTE");
 ROUTE484.fromField = "value_changed";
 ROUTE484.fromNode = "l_pinky1_RotationInterpolator";
 ROUTE484.toField = "set_rotation";
-ROUTE484.toNode = "Joe_l_pinky1";
+ROUTE484.toNode = "Joe_l_metacarpophalangeal_5";
 browser.currentScene.children[175] = ROUTE484;
 
 let ROUTE485 = browser.currentScene.createNode("ROUTE");
 ROUTE485.fromField = "value_changed";
 ROUTE485.fromNode = "l_pinky2_RotationInterpolator";
 ROUTE485.toField = "set_rotation";
-ROUTE485.toNode = "Joe_l_pinky2";
+ROUTE485.toNode = "Joe_l_carpal_proximal_interphalangeal_5";
 browser.currentScene.children[176] = ROUTE485;
 
 let ROUTE486 = browser.currentScene.createNode("ROUTE");
 ROUTE486.fromField = "value_changed";
 ROUTE486.fromNode = "l_pinky3_RotationInterpolator";
 ROUTE486.toField = "set_rotation";
-ROUTE486.toNode = "Joe_l_pinky3";
+ROUTE486.toNode = "Joe_l_carpal_distal_interphalangeal_5";
 browser.currentScene.children[177] = ROUTE486;
 
 let ROUTE487 = browser.currentScene.createNode("ROUTE");
@@ -3220,133 +3220,133 @@ let ROUTE492 = browser.currentScene.createNode("ROUTE");
 ROUTE492.fromField = "value_changed";
 ROUTE492.fromNode = "r_thumb1_RotationInterpolator";
 ROUTE492.toField = "set_rotation";
-ROUTE492.toNode = "Joe_r_thumb1";
+ROUTE492.toNode = "Joe_r_carpometacarpal_1";
 browser.currentScene.children[183] = ROUTE492;
 
 let ROUTE493 = browser.currentScene.createNode("ROUTE");
 ROUTE493.fromField = "value_changed";
 ROUTE493.fromNode = "r_thumb2_RotationInterpolator";
 ROUTE493.toField = "set_rotation";
-ROUTE493.toNode = "Joe_r_thumb2";
+ROUTE493.toNode = "Joe_r_metacarpophalangeal_1";
 browser.currentScene.children[184] = ROUTE493;
 
 let ROUTE494 = browser.currentScene.createNode("ROUTE");
 ROUTE494.fromField = "value_changed";
 ROUTE494.fromNode = "r_thumb3_RotationInterpolator";
 ROUTE494.toField = "set_rotation";
-ROUTE494.toNode = "Joe_r_thumb3";
+ROUTE494.toNode = "Joe_r_carpal_interphalangeal_1";
 browser.currentScene.children[185] = ROUTE494;
 
 let ROUTE495 = browser.currentScene.createNode("ROUTE");
 ROUTE495.fromField = "value_changed";
 ROUTE495.fromNode = "r_index0_RotationInterpolator";
 ROUTE495.toField = "set_rotation";
-ROUTE495.toNode = "Joe_r_index0";
+ROUTE495.toNode = "Joe_r_carpometacarpal_2";
 browser.currentScene.children[186] = ROUTE495;
 
 let ROUTE496 = browser.currentScene.createNode("ROUTE");
 ROUTE496.fromField = "value_changed";
 ROUTE496.fromNode = "r_index1_RotationInterpolator";
 ROUTE496.toField = "set_rotation";
-ROUTE496.toNode = "Joe_r_index1";
+ROUTE496.toNode = "Joe_r_metacarpophalangeal_2";
 browser.currentScene.children[187] = ROUTE496;
 
 let ROUTE497 = browser.currentScene.createNode("ROUTE");
 ROUTE497.fromField = "value_changed";
 ROUTE497.fromNode = "r_index2_RotationInterpolator";
 ROUTE497.toField = "set_rotation";
-ROUTE497.toNode = "Joe_r_index2";
+ROUTE497.toNode = "Joe_r_carpal_proximal_interphalangeal_2";
 browser.currentScene.children[188] = ROUTE497;
 
 let ROUTE498 = browser.currentScene.createNode("ROUTE");
 ROUTE498.fromField = "value_changed";
 ROUTE498.fromNode = "r_index3_RotationInterpolator";
 ROUTE498.toField = "set_rotation";
-ROUTE498.toNode = "Joe_r_index3";
+ROUTE498.toNode = "Joe_r_carpal_distal_interphalangeal_2";
 browser.currentScene.children[189] = ROUTE498;
 
 let ROUTE499 = browser.currentScene.createNode("ROUTE");
 ROUTE499.fromField = "value_changed";
 ROUTE499.fromNode = "r_middle0_RotationInterpolator";
 ROUTE499.toField = "set_rotation";
-ROUTE499.toNode = "Joe_r_middle0";
+ROUTE499.toNode = "Joe_r_carpometacarpal_3";
 browser.currentScene.children[190] = ROUTE499;
 
 let ROUTE500 = browser.currentScene.createNode("ROUTE");
 ROUTE500.fromField = "value_changed";
 ROUTE500.fromNode = "r_middle1_RotationInterpolator";
 ROUTE500.toField = "set_rotation";
-ROUTE500.toNode = "Joe_r_middle1";
+ROUTE500.toNode = "Joe_r_metacarpophalangeal_3";
 browser.currentScene.children[191] = ROUTE500;
 
 let ROUTE501 = browser.currentScene.createNode("ROUTE");
 ROUTE501.fromField = "value_changed";
 ROUTE501.fromNode = "r_middle2_RotationInterpolator";
 ROUTE501.toField = "set_rotation";
-ROUTE501.toNode = "Joe_r_middle2";
+ROUTE501.toNode = "Joe_r_carpal_proximal_interphalangeal_3";
 browser.currentScene.children[192] = ROUTE501;
 
 let ROUTE502 = browser.currentScene.createNode("ROUTE");
 ROUTE502.fromField = "value_changed";
 ROUTE502.fromNode = "r_middle3_RotationInterpolator";
 ROUTE502.toField = "set_rotation";
-ROUTE502.toNode = "Joe_r_middle3";
+ROUTE502.toNode = "Joe_r_carpal_distal_interphalangeal_3";
 browser.currentScene.children[193] = ROUTE502;
 
 let ROUTE503 = browser.currentScene.createNode("ROUTE");
 ROUTE503.fromField = "value_changed";
 ROUTE503.fromNode = "r_ring0_RotationInterpolator";
 ROUTE503.toField = "set_rotation";
-ROUTE503.toNode = "Joe_r_ring0";
+ROUTE503.toNode = "Joe_r_carpometacarpal_4";
 browser.currentScene.children[194] = ROUTE503;
 
 let ROUTE504 = browser.currentScene.createNode("ROUTE");
 ROUTE504.fromField = "value_changed";
 ROUTE504.fromNode = "r_ring1_RotationInterpolator";
 ROUTE504.toField = "set_rotation";
-ROUTE504.toNode = "Joe_r_ring1";
+ROUTE504.toNode = "Joe_r_metacarpophalangeal_4";
 browser.currentScene.children[195] = ROUTE504;
 
 let ROUTE505 = browser.currentScene.createNode("ROUTE");
 ROUTE505.fromField = "value_changed";
 ROUTE505.fromNode = "r_ring2_RotationInterpolator";
 ROUTE505.toField = "set_rotation";
-ROUTE505.toNode = "Joe_r_ring2";
+ROUTE505.toNode = "Joe_r_carpal_proximal_interphalangeal_4";
 browser.currentScene.children[196] = ROUTE505;
 
 let ROUTE506 = browser.currentScene.createNode("ROUTE");
 ROUTE506.fromField = "value_changed";
 ROUTE506.fromNode = "r_ring3_RotationInterpolator";
 ROUTE506.toField = "set_rotation";
-ROUTE506.toNode = "Joe_r_ring3";
+ROUTE506.toNode = "Joe_r_carpal_distal_interphalangeal_4";
 browser.currentScene.children[197] = ROUTE506;
 
 let ROUTE507 = browser.currentScene.createNode("ROUTE");
 ROUTE507.fromField = "value_changed";
 ROUTE507.fromNode = "r_pinky0_RotationInterpolator";
 ROUTE507.toField = "set_rotation";
-ROUTE507.toNode = "Joe_r_pinky0";
+ROUTE507.toNode = "Joe_r_carpometacarpal_5";
 browser.currentScene.children[198] = ROUTE507;
 
 let ROUTE508 = browser.currentScene.createNode("ROUTE");
 ROUTE508.fromField = "value_changed";
 ROUTE508.fromNode = "r_pinky1_RotationInterpolator";
 ROUTE508.toField = "set_rotation";
-ROUTE508.toNode = "Joe_r_pinky1";
+ROUTE508.toNode = "Joe_r_metacarpophalangeal_5";
 browser.currentScene.children[199] = ROUTE508;
 
 let ROUTE509 = browser.currentScene.createNode("ROUTE");
 ROUTE509.fromField = "value_changed";
 ROUTE509.fromNode = "r_pinky2_RotationInterpolator";
 ROUTE509.toField = "set_rotation";
-ROUTE509.toNode = "Joe_r_pinky2";
+ROUTE509.toNode = "Joe_r_carpal_proximal_interphalangeal_5";
 browser.currentScene.children[200] = ROUTE509;
 
 let ROUTE510 = browser.currentScene.createNode("ROUTE");
 ROUTE510.fromField = "value_changed";
 ROUTE510.fromNode = "r_pinky3_RotationInterpolator";
 ROUTE510.toField = "set_rotation";
-ROUTE510.toNode = "Joe_r_pinky3";
+ROUTE510.toNode = "Joe_r_carpal_distal_interphalangeal_5";
 browser.currentScene.children[201] = ROUTE510;
 
 let Group511 = browser.currentScene.createNode("Group");

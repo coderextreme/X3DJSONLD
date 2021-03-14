@@ -22,6 +22,7 @@ browser.currentScene.children[2] = Viewpoint4;
 let HAnimHumanoid5 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid5.name = "humanoid";
 HAnimHumanoid5.DEF = "hanim_humanoid";
+HAnimHumanoid5.loa = 0;
 HAnimHumanoid5.version = "2.0";
 //HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
 let MetadataSet6 = browser.currentScene.createNode("MetadataSet");

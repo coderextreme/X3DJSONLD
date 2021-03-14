@@ -544,134 +544,134 @@ var X3D0 =  new X3D({
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_thumb1"),
-                                                                                                                      DEF : new SFString("Joe_l_thumb1"),
+                                                                                                                      name : new SFString("l_carpometacarpal_1"),
+                                                                                                                      DEF : new SFString("Joe_l_carpometacarpal_1"),
                                                                                                                       center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                                       skinCoordIndex : new MFInt32([127,128]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_thumb2"),
-                                                                                                                          DEF : new SFString("Joe_l_thumb2"),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_1"),
+                                                                                                                          DEF : new SFString("Joe_l_metacarpophalangeal_1"),
                                                                                                                           center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,141,142,143]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_thumb3"),
-                                                                                                                              DEF : new SFString("Joe_l_thumb3"),
+                                                                                                                              name : new SFString("l_carpal_interphalangeal_1"),
+                                                                                                                              DEF : new SFString("Joe_l_carpal_interphalangeal_1"),
                                                                                                                               center : new SFVec3f([0.1955,0.8159,0.0464]),
                                                                                                                               skinCoordIndex : new MFInt32([144,145,146,147,148,149,150,151,152]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_index0"),
-                                                                                                                      DEF : new SFString("Joe_l_index0"),
+                                                                                                                      name : new SFString("l_carpometacarpal_2"),
+                                                                                                                      DEF : new SFString("Joe_l_carpometacarpal_2"),
                                                                                                                       center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                                       skinCoordIndex : new MFInt32([129,130]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_index1"),
-                                                                                                                          DEF : new SFString("Joe_l_index1"),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_2"),
+                                                                                                                          DEF : new SFString("Joe_l_metacarpophalangeal_2"),
                                                                                                                           center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,153,154,155,163]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_index2"),
-                                                                                                                              DEF : new SFString("Joe_l_index2"),
+                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_2"),
+                                                                                                                              DEF : new SFString("Joe_l_carpal_proximal_interphalangeal_2"),
                                                                                                                               center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                                               skinCoordIndex : new MFInt32([166,167,168,169]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_index3"),
-                                                                                                                                  DEF : new SFString("Joe_l_index3"),
+                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_2"),
+                                                                                                                                  DEF : new SFString("Joe_l_carpal_distal_interphalangeal_2"),
                                                                                                                                   center : new SFVec3f([0.2028,0.7139,-0.0236]),
                                                                                                                                   skinCoordIndex : new MFInt32([170,171,172,173,174,175,176,177,178]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_middle0"),
-                                                                                                                      DEF : new SFString("Joe_l_middle0"),
+                                                                                                                      name : new SFString("l_carpometacarpal_3"),
+                                                                                                                      DEF : new SFString("Joe_l_carpometacarpal_3"),
                                                                                                                       center : new SFVec3f([0.1987,0.8029,-0.053]),
                                                                                                                       skinCoordIndex : new MFInt32([131,132]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_middle1"),
-                                                                                                                          DEF : new SFString("Joe_l_middle1"),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_3"),
+                                                                                                                          DEF : new SFString("Joe_l_metacarpophalangeal_3"),
                                                                                                                           center : new SFVec3f([0.1987,0.7818,-0.053]),
                                                                                                                           skinCoordIndex : new MFInt32([156,157,163,164]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_middle2"),
-                                                                                                                              DEF : new SFString("Joe_l_middle2"),
+                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_3"),
+                                                                                                                              DEF : new SFString("Joe_l_carpal_proximal_interphalangeal_3"),
                                                                                                                               center : new SFVec3f([0.2013,0.7273,-0.0503]),
                                                                                                                               skinCoordIndex : new MFInt32([179,180,181,182]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_middle3"),
-                                                                                                                                  DEF : new SFString("Joe_l_middle3"),
+                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_3"),
+                                                                                                                                  DEF : new SFString("Joe_l_carpal_distal_interphalangeal_3"),
                                                                                                                                   center : new SFVec3f([0.2026,0.7011,-0.0494]),
                                                                                                                                   skinCoordIndex : new MFInt32([183,184,185,186,187,188,189,190,191]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_ring0"),
-                                                                                                                      DEF : new SFString("Joe_l_ring0"),
+                                                                                                                      name : new SFString("l_carpometacarpal_4"),
+                                                                                                                      DEF : new SFString("Joe_l_carpometacarpal_4"),
                                                                                                                       center : new SFVec3f([0.1956,0.8019,-0.0794]),
                                                                                                                       skinCoordIndex : new MFInt32([133,134]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_ring1"),
-                                                                                                                          DEF : new SFString("Joe_l_ring1"),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_4"),
+                                                                                                                          DEF : new SFString("Joe_l_metacarpophalangeal_4"),
                                                                                                                           center : new SFVec3f([0.1956,0.7815,-0.0794]),
                                                                                                                           skinCoordIndex : new MFInt32([158,159,164,165]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_ring2"),
-                                                                                                                              DEF : new SFString("Joe_l_ring2"),
+                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_4"),
+                                                                                                                              DEF : new SFString("Joe_l_carpal_proximal_interphalangeal_4"),
                                                                                                                               center : new SFVec3f([0.1973,0.7287,-0.0777]),
                                                                                                                               skinCoordIndex : new MFInt32([192,193,194,195]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_ring3"),
-                                                                                                                                  DEF : new SFString("Joe_l_ring3"),
+                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_4"),
+                                                                                                                                  DEF : new SFString("Joe_l_carpal_distal_interphalangeal_4"),
                                                                                                                                   center : new SFVec3f([0.1983,0.7045,-0.0767]),
                                                                                                                                   skinCoordIndex : new MFInt32([196,197,198,199,200,201,202,203,204]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_pinky0"),
-                                                                                                                      DEF : new SFString("Joe_l_pinky0"),
+                                                                                                                      name : new SFString("l_carpometacarpal_5"),
+                                                                                                                      DEF : new SFString("Joe_l_carpometacarpal_5"),
                                                                                                                       center : new SFVec3f([0.1925,0.8066,-0.1036]),
                                                                                                                       skinCoordIndex : new MFInt32([135,136,137,165]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_pinky1"),
-                                                                                                                          DEF : new SFString("Joe_l_pinky1"),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_5"),
+                                                                                                                          DEF : new SFString("Joe_l_metacarpophalangeal_5"),
                                                                                                                           center : new SFVec3f([0.1925,0.7866,-0.1036]),
                                                                                                                           skinCoordIndex : new MFInt32([160,161,162]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_pinky2"),
-                                                                                                                              DEF : new SFString("Joe_l_pinky2"),
+                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_5"),
+                                                                                                                              DEF : new SFString("Joe_l_carpal_proximal_interphalangeal_5"),
                                                                                                                               center : new SFVec3f([0.1938,0.7452,-0.1024]),
                                                                                                                               skinCoordIndex : new MFInt32([205,206,207,208]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_pinky3"),
-                                                                                                                                  DEF : new SFString("Joe_l_pinky3"),
+                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_5"),
+                                                                                                                                  DEF : new SFString("Joe_l_carpal_distal_interphalangeal_5"),
                                                                                                                                   center : new SFVec3f([0.1948,0.7277,-0.1017]),
                                                                                                                                   skinCoordIndex : new MFInt32([209,210,211,212,213,214,215,216,217]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])})])})])}),
@@ -712,134 +712,134 @@ var X3D0 =  new X3D({
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_thumb1"),
-                                                                                                                      DEF : new SFString("Joe_r_thumb1"),
+                                                                                                                      name : new SFString("r_carpometacarpal_1"),
+                                                                                                                      DEF : new SFString("Joe_r_carpometacarpal_1"),
                                                                                                                       center : new SFVec3f([-0.2,0.85,0]),
                                                                                                                       skinCoordIndex : new MFInt32([243,244]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_thumb2"),
-                                                                                                                          DEF : new SFString("Joe_r_thumb2"),
+                                                                                                                          name : new SFString("r_metacarpophalangeal_1"),
+                                                                                                                          DEF : new SFString("Joe_r_metacarpophalangeal_1"),
                                                                                                                           center : new SFVec3f([-0.2,0.82,0.03]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,257,258,259]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_thumb3"),
-                                                                                                                              DEF : new SFString("Joe_r_thumb3"),
+                                                                                                                              name : new SFString("r_carpal_interphalangeal_1"),
+                                                                                                                              DEF : new SFString("Joe_r_carpal_interphalangeal_1"),
                                                                                                                               center : new SFVec3f([-0.2,0.8,0.05]),
                                                                                                                               skinCoordIndex : new MFInt32([260,261,262,263,264,265,266,267,268]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_index0"),
-                                                                                                                      DEF : new SFString("Joe_r_index0"),
+                                                                                                                      name : new SFString("r_carpometacarpal_2"),
+                                                                                                                      DEF : new SFString("Joe_r_carpometacarpal_2"),
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.015]),
                                                                                                                       skinCoordIndex : new MFInt32([245,246]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_index1"),
-                                                                                                                          DEF : new SFString("Joe_r_index1"),
+                                                                                                                          name : new SFString("r_metacarpophalangeal_2"),
+                                                                                                                          DEF : new SFString("Joe_r_metacarpophalangeal_2"),
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.015]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_index2"),
-                                                                                                                              DEF : new SFString("Joe_r_index2"),
+                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_2"),
+                                                                                                                              DEF : new SFString("Joe_r_carpal_proximal_interphalangeal_2"),
                                                                                                                               center : new SFVec3f([-0.2,0.745,-0.015]),
                                                                                                                               skinCoordIndex : new MFInt32([282,283,284,285]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_index3"),
-                                                                                                                                  DEF : new SFString("Joe_r_index3"),
+                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_2"),
+                                                                                                                                  DEF : new SFString("Joe_r_carpal_distal_interphalangeal_2"),
                                                                                                                                   center : new SFVec3f([-0.2,0.72,-0.015]),
                                                                                                                                   skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_middle0"),
-                                                                                                                      DEF : new SFString("Joe_r_middle0"),
+                                                                                                                      name : new SFString("r_carpometacarpal_3"),
+                                                                                                                      DEF : new SFString("Joe_r_carpometacarpal_3"),
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.04]),
                                                                                                                       skinCoordIndex : new MFInt32([247,248]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_middle1"),
-                                                                                                                          DEF : new SFString("Joe_r_middle1"),
+                                                                                                                          name : new SFString("r_metacarpophalangeal_3"),
+                                                                                                                          DEF : new SFString("Joe_r_metacarpophalangeal_3"),
                                                                                                                           center : new SFVec3f([-0.2,0.788,-0.04]),
                                                                                                                           skinCoordIndex : new MFInt32([272,273,279,280]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_middle2"),
-                                                                                                                              DEF : new SFString("Joe_r_middle2"),
+                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_3"),
+                                                                                                                              DEF : new SFString("Joe_r_carpal_proximal_interphalangeal_3"),
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.04]),
                                                                                                                               skinCoordIndex : new MFInt32([295,296,297,298]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_middle3"),
-                                                                                                                                  DEF : new SFString("Joe_r_middle3"),
+                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_3"),
+                                                                                                                                  DEF : new SFString("Joe_r_carpal_distal_interphalangeal_3"),
                                                                                                                                   center : new SFVec3f([-0.2,0.7142,-0.04]),
                                                                                                                                   skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_ring0"),
-                                                                                                                      DEF : new SFString("Joe_r_ring0"),
+                                                                                                                      name : new SFString("r_carpometacarpal_4"),
+                                                                                                                      DEF : new SFString("Joe_r_carpometacarpal_4"),
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.065]),
                                                                                                                       skinCoordIndex : new MFInt32([249,250]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_ring1"),
-                                                                                                                          DEF : new SFString("Joe_r_ring1"),
+                                                                                                                          name : new SFString("r_metacarpophalangeal_4"),
+                                                                                                                          DEF : new SFString("Joe_r_metacarpophalangeal_4"),
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.065]),
                                                                                                                           skinCoordIndex : new MFInt32([274,275,280,281]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_ring2"),
-                                                                                                                              DEF : new SFString("Joe_r_ring2"),
+                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_4"),
+                                                                                                                              DEF : new SFString("Joe_r_carpal_proximal_interphalangeal_4"),
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.065]),
                                                                                                                               skinCoordIndex : new MFInt32([308,309,310,311]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_ring3"),
-                                                                                                                                  DEF : new SFString("Joe_r_ring3"),
+                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_4"),
+                                                                                                                                  DEF : new SFString("Joe_r_carpal_distal_interphalangeal_4"),
                                                                                                                                   center : new SFVec3f([-0.2,0.7177,-0.065]),
                                                                                                                                   skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_pinky0"),
-                                                                                                                      DEF : new SFString("Joe_r_pinky0"),
+                                                                                                                      name : new SFString("r_carpometacarpal_5"),
+                                                                                                                      DEF : new SFString("Joe_r_carpometacarpal_5"),
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.085]),
                                                                                                                       skinCoordIndex : new MFInt32([251,252,253,281]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_pinky1"),
-                                                                                                                          DEF : new SFString("Joe_r_pinky1"),
+                                                                                                                          name : new SFString("r_metacarpophalangeal_5"),
+                                                                                                                          DEF : new SFString("Joe_r_metacarpophalangeal_5"),
                                                                                                                           center : new SFVec3f([-0.2,0.79,-0.085]),
                                                                                                                           skinCoordIndex : new MFInt32([276,277,278]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_pinky2"),
-                                                                                                                              DEF : new SFString("Joe_r_pinky2"),
+                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_5"),
+                                                                                                                              DEF : new SFString("Joe_r_carpal_proximal_interphalangeal_5"),
                                                                                                                               center : new SFVec3f([-0.2,0.755,-0.085]),
                                                                                                                               skinCoordIndex : new MFInt32([321,322,323,324]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_pinky3"),
-                                                                                                                                  DEF : new SFString("Joe_r_pinky3"),
+                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_5"),
+                                                                                                                                  DEF : new SFString("Joe_r_carpal_distal_interphalangeal_5"),
                                                                                                                                   center : new SFVec3f([-0.2,0.735,-0.09]),
                                                                                                                                   skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})),
@@ -968,6 +968,90 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_acromioclavicular")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_distal_interphalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_distal_interphalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_distal_interphalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_distal_interphalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_distal_interphalangeal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_distal_interphalangeal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_interphalangeal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_interphalangeal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_proximal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_proximal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_proximal_interphalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_proximal_interphalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_proximal_interphalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_proximal_interphalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpal_proximal_interphalangeal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpal_proximal_interphalangeal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpometacarpal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpometacarpal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpometacarpal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpometacarpal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpometacarpal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpometacarpal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpometacarpal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpometacarpal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_carpometacarpal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_carpometacarpal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_l_elbow")})),
                   joints : new SFNode(
                     new HAnimJoint({
@@ -998,34 +1082,40 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_hip")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_index0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_index0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_index1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_index1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_index2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_index2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_index3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_index3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
                       USE : new SFString("Joe_l_knee")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_knee")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metacarpophalangeal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metacarpophalangeal_1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metacarpophalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metacarpophalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metacarpophalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metacarpophalangeal_3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metacarpophalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metacarpophalangeal_4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metacarpophalangeal_5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metacarpophalangeal_5")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_metatarsophalangeal_2")})),
@@ -1034,82 +1124,10 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_metatarsophalangeal_2")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_middle0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_middle0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_middle1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_middle2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_middle3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_pinky0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_pinky1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_pinky2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_pinky3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
                       USE : new SFString("Joe_l_radiocarpal")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_radiocarpal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring3")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_shoulder")})),
@@ -1140,24 +1158,6 @@ var X3D0 =  new X3D({
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_tarsometatarsal_2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb3")})),
                   segments : new SFNode(
                     new HAnimSegment({
                       USE : new SFString("Joe_sacrum")})),
@@ -2536,115 +2536,115 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_thumb1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_thumb1")}),
+              toNode : new SFString("Joe_l_carpometacarpal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_thumb2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_thumb2")}),
+              toNode : new SFString("Joe_l_metacarpophalangeal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_thumb3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_thumb3")}),
+              toNode : new SFString("Joe_l_carpal_interphalangeal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_index0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_index0")}),
+              toNode : new SFString("Joe_l_carpometacarpal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_index1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_index1")}),
+              toNode : new SFString("Joe_l_metacarpophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_index2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_index2")}),
+              toNode : new SFString("Joe_l_carpal_proximal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_index3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_index3")}),
+              toNode : new SFString("Joe_l_carpal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_middle0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_middle0")}),
+              toNode : new SFString("Joe_l_carpometacarpal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_middle1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_middle1")}),
+              toNode : new SFString("Joe_l_metacarpophalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_middle2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_middle2")}),
+              toNode : new SFString("Joe_l_carpal_proximal_interphalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_middle3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_middle3")}),
+              toNode : new SFString("Joe_l_carpal_distal_interphalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_ring0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ring0")}),
+              toNode : new SFString("Joe_l_carpometacarpal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_ring1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ring1")}),
+              toNode : new SFString("Joe_l_metacarpophalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_ring2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ring2")}),
+              toNode : new SFString("Joe_l_carpal_proximal_interphalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_ring3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ring3")}),
+              toNode : new SFString("Joe_l_carpal_distal_interphalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_pinky0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_pinky0")}),
+              toNode : new SFString("Joe_l_carpometacarpal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_pinky1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_pinky1")}),
+              toNode : new SFString("Joe_l_metacarpophalangeal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_pinky2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_pinky2")}),
+              toNode : new SFString("Joe_l_carpal_proximal_interphalangeal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_pinky3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_pinky3")}),
+              toNode : new SFString("Joe_l_carpal_distal_interphalangeal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2680,115 +2680,115 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_thumb1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_thumb1")}),
+              toNode : new SFString("Joe_r_carpometacarpal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_thumb2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_thumb2")}),
+              toNode : new SFString("Joe_r_metacarpophalangeal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_thumb3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_thumb3")}),
+              toNode : new SFString("Joe_r_carpal_interphalangeal_1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_index0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_index0")}),
+              toNode : new SFString("Joe_r_carpometacarpal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_index1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_index1")}),
+              toNode : new SFString("Joe_r_metacarpophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_index2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_index2")}),
+              toNode : new SFString("Joe_r_carpal_proximal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_index3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_index3")}),
+              toNode : new SFString("Joe_r_carpal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_middle0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_middle0")}),
+              toNode : new SFString("Joe_r_carpometacarpal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_middle1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_middle1")}),
+              toNode : new SFString("Joe_r_metacarpophalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_middle2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_middle2")}),
+              toNode : new SFString("Joe_r_carpal_proximal_interphalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_middle3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_middle3")}),
+              toNode : new SFString("Joe_r_carpal_distal_interphalangeal_3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_ring0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ring0")}),
+              toNode : new SFString("Joe_r_carpometacarpal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_ring1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ring1")}),
+              toNode : new SFString("Joe_r_metacarpophalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_ring2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ring2")}),
+              toNode : new SFString("Joe_r_carpal_proximal_interphalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_ring3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ring3")}),
+              toNode : new SFString("Joe_r_carpal_distal_interphalangeal_4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_pinky0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_pinky0")}),
+              toNode : new SFString("Joe_r_carpometacarpal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_pinky1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_pinky1")}),
+              toNode : new SFString("Joe_r_metacarpophalangeal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_pinky2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_pinky2")}),
+              toNode : new SFString("Joe_r_carpal_proximal_interphalangeal_5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_pinky3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_pinky3")}),
+              toNode : new SFString("Joe_r_carpal_distal_interphalangeal_5")}),
 
             new Group({
               DEF : new SFString("DisplacersAnimationGroup"),

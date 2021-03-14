@@ -65,7 +65,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 February 2021")}),
+              content : new SFString("13 March 2021")}),
 
             new meta({
               name : new SFString("Image"),
@@ -78,10 +78,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("warning"),
               content : new SFString("Still needs comments on CAESAR feature points inserted")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("can X3dTidy sort top-level USE nodes by node type?")}),
 
             new meta({
               name : new SFString("reference"),
@@ -118,10 +114,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("Image"),
               content : new SFString("humanoid_landmark_locations.gif")}),
-
-            new meta({
-              name : new SFString("warning"),
-              content : new SFString("need to fix HAnimHumanoid metadata form")}),
 
             new meta({
               name : new SFString("Image"),
@@ -188,8 +180,8 @@ var X3D0 =  new X3D({
                       value : new MFString(["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])}))}),
               joints : new SFNode(
                 new HAnimJoint({
-                  name : new SFString("humanoid_root"),
-                  DEF : new SFString("hanim_humanoid_root"),
+                  name : new SFString("HumanoidRoot"),
+                  DEF : new SFString("hanim_HumanoidRoot"),
                   center : new SFVec3f([0,0.824,0.0277]),
                   children : new MFNode([
                     new HAnimJoint({
@@ -779,7 +771,7 @@ var X3D0 =  new X3D({
                       position : new SFVec3f([0,3.4495,0])})])})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_humanoid_root")})),
+                  USE : new SFString("hanim_HumanoidRoot")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_sacroiliac")})),

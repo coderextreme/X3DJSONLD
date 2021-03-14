@@ -46,6 +46,9 @@ pushd src/main/node
 cp X3Dautoclass.js net/x3djsonld/data
 popd
 
+# install needed packages
+npm install xml2js
+
 # maven build
 mvn clean install && bash FixNeedClassName.sh && mvn install
 
