@@ -440,8 +440,10 @@ Invocation:
     </xsl:choose>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>        </xsl:text>
-        
-    <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimFeaturePointNameValues']/enumeration">
+    
+    <!-- also testing aliases contained in hanimSegmentNameValues -->
+    <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[(@name='hanimFeaturePointNameValues') or (@name='hanimSegmentNameValues')]/enumeration">
+        <xsl:sort select="(../@name='hanimSegmentNameValues')"/>
         <xsl:sort select="number(@index)"/>
 
         <!-- debug
@@ -459,7 +461,14 @@ Invocation:
             <xsl:text>        </xsl:text>
         </xsl:if>
         
-        <xsl:text>starts-with(@name,'</xsl:text>
+        <xsl:choose>
+            <xsl:when test="(../@name='hanimSegmentNameValues')">
+                <xsl:text>contains(@name,'</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>starts-with(@name,'</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:value-of select="@value"/>
         <xsl:text>')</xsl:text>
         <xsl:if test="not(position() = last())">
@@ -517,6 +526,26 @@ Invocation:
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
+    <xsl:text>      </xsl:text><xsl:comment> ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    
+    <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">
+        <xsl:sort select="number(@index)"/>
+						
+        <xsl:variable name="value" select="@value"/>
+        <xsl:for-each select="tokenize(@alias, ',')">
+            <xsl:variable name="alias" select="."/>
+            <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
+            <xsl:text>report test="$isHAnim2 and contains(@name,'</xsl:text>
+            <xsl:value-of select="$alias"/>
+            <xsl:text>')</xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; contains an HAnimSegment alias for ']]></xsl:text>
+            <xsl:value-of select="$value"/>
+            <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:for-each>
+    </xsl:for-each>
+    
     <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSite alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
@@ -770,13 +799,22 @@ Invocation:
     <xsl:element name="xsl:when" exclude-result-prefixes="xsl">
         <xsl:attribute name="test">
             <xsl:text>(local-name(..)='HAnimSite') and (local-name()='name') and $isHAnim2 and (</xsl:text>
-            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimFeaturePointNameValues']/enumeration[string-length(@alias) > 0]">
+            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[(@name='hanimFeaturePointNameValues') or (@name='hanimSegmentNameValues')]/enumeration[string-length(@alias) > 0]">
+                <xsl:sort select="(../@name='hanimSegmentNameValues')"/>
                 <xsl:sort select="number(@index)"/>
-						
+                
+                <xsl:variable name="enumerationType" select="../@name"/>
                 <xsl:for-each select="tokenize(@alias, ',')">
                     <xsl:variable name="alias" select="."/>
 
-                    <xsl:text>starts-with(.,'</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="($enumerationType='hanimSegmentNameValues')">
+                            <xsl:text>contains(@name,'</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>starts-with(@name,'</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:value-of select="$alias"/>
                     <xsl:text>')</xsl:text>
                     <xsl:if test="not(position() = last())">
@@ -852,6 +890,30 @@ Invocation:
                     <xsl:text disable-output-escaping="yes"><![CDATA["><xsl:text>]]></xsl:text>
                     <xsl:value-of select="$value"/>
                     <xsl:text disable-output-escaping="yes"><![CDATA[</xsl:text><xsl:value-of select="$suffix"/></xsl:when>]]></xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                </xsl:for-each>
+            </xsl:for-each>
+
+            <xsl:text>                </xsl:text><xsl:comment> ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match </xsl:comment>
+            <xsl:text>&#10;</xsl:text>
+                
+            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">
+                <xsl:sort select="number(@index)"/>
+                <!-- <xsl:message><xsl:text>!!! in loop </xsl:text></xsl:message> -->
+                <xsl:variable name="value" select="@value"/>
+                <xsl:for-each select="tokenize(@alias, ',')">
+                    <xsl:variable name="alias" select="."/>
+
+                    <xsl:text disable-output-escaping="yes"><![CDATA[                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,']]></xsl:text>
+                    <xsl:value-of select="$alias"/>
+                    <xsl:text>')</xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA["><xsl:value-of select="substring-before(../@name,']]></xsl:text>
+                    <xsl:value-of select="$alias"/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[')"/><xsl:text>]]></xsl:text>
+                    <xsl:value-of select="$value"/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[</xsl:text><xsl:value-of select="substring-after(../@name,']]></xsl:text>
+                    <xsl:value-of select="$alias"/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[')"/></xsl:when>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:for-each>
             </xsl:for-each>

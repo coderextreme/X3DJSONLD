@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-03-07-08:00 22:01:47.464-08:00 -->
+<!-- Generated 2021-03-13-08:00 17:14:49.442-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -1251,7 +1251,7 @@
                       documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
          <enumeration value="l_tarsal_distal_phalanx_5"
                       index="115"
-                      alias="l_tarsal_interphalangeal_pha5"
+                      alias="l_tarsal_distal_pha5"
                       loa="4"
                       parent="l_tarsal_distal_phalanx_5"
                       documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
@@ -1278,7 +1278,7 @@
                       documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
          <enumeration value="r_tarsal_distal_phalanx_5"
                       index="120"
-                      alias="r_tarsal_interphalangeal_pha5"
+                      alias="r_tarsal_distal_pha5"
                       loa="4"
                       parent="r_tarsal_distal_phalanx_5"
                       documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
@@ -2581,7 +2581,7 @@
                       documentation="https://en.wikipedia.org/wiki/Forearm"/>
          <enumeration value="l_carpal"
                       index="95"
-                      alias="l_hand"
+                      alias="l_hand,l_wrist"
                       loa="1"
                       parent="l_radiocarpal"
                       documentation="https://en.wikipedia.org/wiki/Carpal_bones"/>
@@ -2741,7 +2741,7 @@
                       documentation="https://en.wikipedia.org/wiki/Forearm"/>
          <enumeration value="r_carpal"
                       index="123"
-                      alias="r_hand"
+                      alias="r_hand,r_wrist"
                       loa="1"
                       parent="r_radiocarpal"
                       documentation="https://en.wikipedia.org/wiki/Carpal_bones"/>
@@ -19155,7 +19155,7 @@
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
                <enumeration value="l_tarsal_distal_phalanx_5"
                             index="115"
-                            alias="l_tarsal_interphalangeal_pha5"
+                            alias="l_tarsal_distal_pha5"
                             loa="4"
                             parent="l_tarsal_distal_phalanx_5"
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
@@ -19182,7 +19182,7 @@
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
                <enumeration value="r_tarsal_distal_phalanx_5"
                             index="120"
-                            alias="r_tarsal_interphalangeal_pha5"
+                            alias="r_tarsal_distal_pha5"
                             loa="4"
                             parent="r_tarsal_distal_phalanx_5"
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
@@ -21105,7 +21105,7 @@
                             documentation="https://en.wikipedia.org/wiki/Forearm"/>
                <enumeration value="l_carpal"
                             index="95"
-                            alias="l_hand"
+                            alias="l_hand,l_wrist"
                             loa="1"
                             parent="l_radiocarpal"
                             documentation="https://en.wikipedia.org/wiki/Carpal_bones"/>
@@ -21265,7 +21265,7 @@
                             documentation="https://en.wikipedia.org/wiki/Forearm"/>
                <enumeration value="r_carpal"
                             index="123"
-                            alias="r_hand"
+                            alias="r_hand,r_wrist"
                             loa="1"
                             parent="r_radiocarpal"
                             documentation="https://en.wikipedia.org/wiki/Carpal_bones"/>
@@ -22151,7 +22151,7 @@
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
                <enumeration value="l_tarsal_distal_phalanx_5"
                             index="115"
-                            alias="l_tarsal_interphalangeal_pha5"
+                            alias="l_tarsal_distal_pha5"
                             loa="4"
                             parent="l_tarsal_distal_phalanx_5"
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
@@ -22178,7 +22178,7 @@
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
                <enumeration value="r_tarsal_distal_phalanx_5"
                             index="120"
-                            alias="r_tarsal_interphalangeal_pha5"
+                            alias="r_tarsal_distal_pha5"
                             loa="4"
                             parent="r_tarsal_distal_phalanx_5"
                             documentation="https://en.wikipedia.org/wiki/Phalanx_bone"/>
