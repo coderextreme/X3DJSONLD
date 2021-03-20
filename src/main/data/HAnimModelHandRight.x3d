@@ -7,9 +7,10 @@
     <meta content='Right hand using high-fidelity definitions for HAnim version 2.0' name='description'/>
     <meta content='Kwan-Hee YOO, Don Brutzman and Joe Williams' name='creator'/>
     <meta content='26 January 2015' name='created'/>
-    <meta content='13 March 2021' name='modified'/>
-    <meta content='fix visible geometry for thumb and index finger' name='TODO'/>
-    <meta content='not yet to scale' name='warning'/>
+    <meta content='14 March 2021' name='modified'/>
+    <meta content='fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2' name='TODO'/>
+    <meta content='HAnimModelHandRightSegmentVisualizationError.png' name='Image'/>
+    <meta content='not yet to scale, also relatively flat' name='error'/>
     <meta content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?' name='warning'/>
     <meta content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body' name='info'/>
     <meta content='https://www.web3d.org/working-groups/humanoid-animation-HAnim' name='reference'/>
@@ -69,9 +70,9 @@
             </Shape>
           </HAnimSegment>
           <!-- MC1 -->
-          <HAnimJoint DEF='hanim_r_midcarpal_1' center='-0.1 0.1 0' name='r_midcarpal_1'>
+          <HAnimJoint DEF='hanim_r_midcarpal_1' center='-0.14 0.09 0' name='r_midcarpal_1'>
             <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
-              <Transform translation='-0.1 0.1 0'>
+              <Transform translation='-0.14 0.09 0'>
                 <Shape DEF='HAnimNewJointShape'>
                   <Sphere radius='0.025'/>
                   <Appearance DEF='HAnimJointAppearanceRed'>
@@ -136,9 +137,9 @@
             </HAnimJoint>
           </HAnimJoint>
           <!-- MC2 -->
-          <HAnimJoint DEF='hanim_r_midcarpal_2' center='-0.1 0.1 0' name='r_midcarpal_2'>
+          <HAnimJoint DEF='hanim_r_midcarpal_2' center='-0.07 0.07 0' name='r_midcarpal_2'>
             <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
-              <Transform translation='-0.1 0.1 0'>
+              <Transform translation='-0.07 0.07 0'>
                 <Shape USE='HAnimNewJointShape'/>
               </Transform>
               <Shape>
