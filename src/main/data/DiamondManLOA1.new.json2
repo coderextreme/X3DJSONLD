@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 February 2021"
+            "@content":"13 March 2021"
           },
           {
             "@name":"Image",
@@ -47,10 +47,6 @@
           {
             "@name":"warning",
             "@content":"Still needs comments on CAESAR feature points inserted"
-          },
-          {
-            "@name":"TODO",
-            "@content":"can X3dTidy sort top-level USE nodes by node type?"
           },
           {
             "@name":"reference",
@@ -89,10 +85,6 @@
             "@content":"humanoid_landmark_locations.gif"
           },
           {
-            "@name":"warning",
-            "@content":"need to fix HAnimHumanoid metadata form"
-          },
-          {
             "@name":"Image",
             "@content":"http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif"
           },
@@ -114,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2021"
+            "@content":"14 March 2021"
           },
           {
             "@name":"generator",
@@ -156,6 +148,7 @@
             {
               "@name":"humanoid",
               "@DEF":"hanim_humanoid",
+              "@loa":1,
               "@version":"2.0",
               "-children":[
                 {
@@ -300,8 +293,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_femoral_lateral_epicn_pt",
-                                            "@DEF":"hanim_l_femoral_lateral_epicn_pt",
+                                            "@name":"l_femoral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_l_femoral_lateral_epicondyle_pt",
                                             "@translation":[0.1598,0.4967,0.0297]
                                           }
                                         }
@@ -309,8 +302,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_femoral_medial_epicn_pt",
-                                            "@DEF":"hanim_l_femoral_medial_epicn_pt",
+                                            "@name":"l_femoral_medial_epicondyle_pt",
+                                            "@DEF":"hanim_l_femoral_medial_epicondyle_pt",
                                             "@translation":[0.0398,0.4946,0.0303]
                                           }
                                         }
@@ -401,8 +394,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"l_calcaneous_post_pt",
-                                                        "@DEF":"hanim_l_calcaneous_post_pt",
+                                                        "@name":"l_calcaneus_posterior_pt",
+                                                        "@DEF":"hanim_l_calcaneus_posterior_pt",
                                                         "@translation":[0.0974,0.0259,-0.1171]
                                                       }
                                                     }
@@ -433,8 +426,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"l_metatarsal_pha5_pt",
-                                                              "@DEF":"hanim_l_metatarsal_pha5_pt",
+                                                              "@name":"l_metatarsal_phalanx_5_pt",
+                                                              "@DEF":"hanim_l_metatarsal_phalanx_5_pt",
                                                               "@translation":[0.1825,0.0070,0.0928]
                                                             }
                                                           }
@@ -442,8 +435,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"l_metatarsal_pha1_pt",
-                                                              "@DEF":"hanim_l_metatarsal_pha1_pt",
+                                                              "@name":"l_metatarsal_phalanx_1_pt",
+                                                              "@DEF":"hanim_l_metatarsal_phalanx_1_pt",
                                                               "@translation":[0.0816,0.0232,0.0106]
                                                             }
                                                           }
@@ -451,8 +444,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"l_digit2_pt",
-                                                              "@DEF":"hanim_l_digit2_pt",
+                                                              "@name":"l_tarsal_distal_phalanx_2_pt",
+                                                              "@DEF":"hanim_l_tarsal_distal_phalanx_2_pt",
                                                               "@translation":[0.1195,0.0079,0.1433]
                                                             }
                                                           }
@@ -509,8 +502,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_femoral_lateral_epicn_pt",
-                                            "@DEF":"hanim_r_femoral_lateral_epicn_pt",
+                                            "@name":"r_femoral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_r_femoral_lateral_epicondyle_pt",
                                             "@translation":[-0.1421,0.4992,0.0310]
                                           }
                                         }
@@ -518,8 +511,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_femoral_medial_epicn_pt",
-                                            "@DEF":"hanim_r_femoral_medial_epicn_pt",
+                                            "@name":"r_femoral_medial_epicondyle_pt",
+                                            "@DEF":"hanim_r_femoral_medial_epicondyle_pt",
                                             "@translation":[-0.0221,0.5014,0.0289]
                                           }
                                         }
@@ -610,8 +603,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"r_calcaneous_post_pt",
-                                                        "@DEF":"hanim_r_calcaneous_post_pt",
+                                                        "@name":"r_calcaneus_posterior_pt",
+                                                        "@DEF":"hanim_r_calcaneus_posterior_pt",
                                                         "@translation":[-0.0692,0.0297,-0.1221]
                                                       }
                                                     }
@@ -642,8 +635,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_metatarsal_pha5_pt",
-                                                              "@DEF":"hanim_r_metatarsal_pha5_pt",
+                                                              "@name":"r_metatarsal_phalanx_5_pt",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_5_pt",
                                                               "@translation":[-0.1523,0.0166,0.0895]
                                                             }
                                                           }
@@ -651,8 +644,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_metatarsal_pha1_pt",
-                                                              "@DEF":"hanim_r_metatarsal_pha1_pt",
+                                                              "@name":"r_metatarsal_phalanx_1_pt",
+                                                              "@DEF":"hanim_r_metatarsal_phalanx_1_pt",
                                                               "@translation":[-0.0521,0.0260,0.0127]
                                                             }
                                                           }
@@ -660,8 +653,8 @@
                                                         "-IllegalChildNodeFieldNameNotFound":[
                                                           { "HAnimSite":
                                                             {
-                                                              "@name":"r_digit2_pt",
-                                                              "@DEF":"hanim_r_digit2_pt",
+                                                              "@name":"r_tarsal_distal_phalanx_2_pt",
+                                                              "@DEF":"hanim_r_tarsal_distal_phalanx_2_pt",
                                                               "@translation":[-0.0883,0.0134,0.1383]
                                                             }
                                                           }
@@ -736,8 +729,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"l_humeral_lateral_epicn_pt",
-                                            "@DEF":"hanim_l_humeral_lateral_epicn_pt",
+                                            "@name":"l_humeral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_l_humeral_lateral_epicondyle_pt",
                                             "@translation":[0.2280,1.1482,-0.1100]
                                           }
                                         }
@@ -801,8 +794,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"l_humeral_medial_epicn_pt",
-                                                  "@DEF":"hanim_l_humeral_medial_epicn_pt",
+                                                  "@name":"l_humeral_medial_epicondyle_pt",
+                                                  "@DEF":"hanim_l_humeral_medial_epicondyle_pt",
                                                   "@translation":[0.1735,1.1272,-0.1113]
                                                 }
                                               }
@@ -866,8 +859,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"l_metacarpal_pha2_pt",
-                                                        "@DEF":"hanim_l_metacarpal_pha2_pt",
+                                                        "@name":"l_metacarpal_phalanx_2_pt",
+                                                        "@DEF":"hanim_l_metacarpal_phalanx_2_pt",
                                                         "@translation":[0.2009,0.8139,-0.0237]
                                                       }
                                                     }
@@ -893,8 +886,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"l_metacarpal_pha5_pt",
-                                                        "@DEF":"hanim_l_metacarpal_pha5_pt",
+                                                        "@name":"l_metacarpal_phalanx_5_pt",
+                                                        "@DEF":"hanim_l_metacarpal_phalanx_5_pt",
                                                         "@translation":[0.1929,0.7860,-0.1122]
                                                       }
                                                     }
@@ -949,8 +942,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"r_humeral_lateral_epicn_pt",
-                                            "@DEF":"hanim_r_humeral_lateral_epicn_pt",
+                                            "@name":"r_humeral_lateral_epicondyle_pt",
+                                            "@DEF":"hanim_r_humeral_lateral_epicondyle_pt",
                                             "@translation":[-0.2224,1.1517,-0.1033]
                                           }
                                         }
@@ -1014,8 +1007,8 @@
                                             "-IllegalChildNodeFieldNameNotFound":[
                                               { "HAnimSite":
                                                 {
-                                                  "@name":"r_humeral_medial_epicn_pt",
-                                                  "@DEF":"hanim_r_humeral_medial_epicn_pt",
+                                                  "@name":"r_humeral_medial_epicondyle_pt",
+                                                  "@DEF":"hanim_r_humeral_medial_epicondyle_pt",
                                                   "@translation":[-0.1680,1.1298,-0.1062]
                                                 }
                                               }
@@ -1078,8 +1071,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"r_metacarpal_pha2_pt",
-                                                        "@DEF":"hanim_r_metacarpal_pha2_pt",
+                                                        "@name":"r_metacarpal_phalanx_2_pt",
+                                                        "@DEF":"hanim_r_metacarpal_phalanx_2_pt",
                                                         "@translation":[-0.1977,0.8169,-0.0177]
                                                       }
                                                     }
@@ -1105,8 +1098,8 @@
                                                   "-IllegalChildNodeFieldNameNotFound":[
                                                     { "HAnimSite":
                                                       {
-                                                        "@name":"r_metacarpal_pha5_pt",
-                                                        "@DEF":"hanim_r_metacarpal_pha5_pt",
+                                                        "@name":"r_metacarpal_phalanx_5_pt",
+                                                        "@DEF":"hanim_r_metacarpal_phalanx_5_pt",
                                                         "@translation":[-0.1929,0.7890,-0.1064]
                                                       }
                                                     }
@@ -1177,8 +1170,8 @@
                                       "-IllegalChildNodeFieldNameNotFound":[
                                         { "HAnimSite":
                                           {
-                                            "@name":"skull_tip",
-                                            "@DEF":"hanim_skull_tip",
+                                            "@name":"skull_vertex_tip",
+                                            "@DEF":"hanim_skull_vertex_tip",
                                             "@translation":[0.0050,1.7504,0.0055]
                                           }
                                         }
@@ -1520,7 +1513,7 @@
               "-sites":[
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_skull_tip"
+                    "@USE":"hanim_skull_vertex_tip"
                   }
                 },
                 { "HAnimSite":
@@ -1540,12 +1533,12 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_calcaneous_post_pt"
+                    "@USE":"hanim_l_calcaneus_posterior_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_calcaneous_post_pt"
+                    "@USE":"hanim_r_calcaneus_posterior_pt"
                   }
                 },
                 { "HAnimSite":
@@ -1560,32 +1553,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_digit2_pt"
+                    "@USE":"hanim_l_femoral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_digit2_pt"
+                    "@USE":"hanim_r_femoral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_femoral_lateral_epicn_pt"
+                    "@USE":"hanim_l_femoral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_femoral_lateral_epicn_pt"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_l_femoral_medial_epicn_pt"
-                  }
-                },
-                { "HAnimSite":
-                  {
-                    "@USE":"hanim_r_femoral_medial_epicn_pt"
+                    "@USE":"hanim_r_femoral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
@@ -1610,22 +1593,22 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_lateral_epicn_pt"
+                    "@USE":"hanim_l_humeral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_lateral_epicn_pt"
+                    "@USE":"hanim_r_humeral_lateral_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_humeral_medial_epicn_pt"
+                    "@USE":"hanim_l_humeral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_humeral_medial_epicn_pt"
+                    "@USE":"hanim_r_humeral_medial_epicondyle_pt"
                   }
                 },
                 { "HAnimSite":
@@ -1670,42 +1653,42 @@
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_pha2_pt"
+                    "@USE":"hanim_l_metacarpal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_pha2_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metacarpal_pha5_pt"
+                    "@USE":"hanim_l_metacarpal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metacarpal_pha5_pt"
+                    "@USE":"hanim_r_metacarpal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metatarsal_pha1_pt"
+                    "@USE":"hanim_l_metatarsal_phalanx_1_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metatarsal_pha1_pt"
+                    "@USE":"hanim_r_metatarsal_phalanx_1_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_l_metatarsal_pha5_pt"
+                    "@USE":"hanim_l_metatarsal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
                   {
-                    "@USE":"hanim_r_metatarsal_pha5_pt"
+                    "@USE":"hanim_r_metatarsal_phalanx_5_pt"
                   }
                 },
                 { "HAnimSite":
@@ -1756,6 +1739,16 @@
                 { "HAnimSite":
                   {
                     "@USE":"hanim_r_sphyrion_pt"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_l_tarsal_distal_phalanx_2_pt"
+                  }
+                },
+                { "HAnimSite":
+                  {
+                    "@USE":"hanim_r_tarsal_distal_phalanx_2_pt"
                   }
                 },
                 { "HAnimSite":
