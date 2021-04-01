@@ -1599,7 +1599,7 @@ for cn in cns:
 sts = soup.iter("Statement")
 for st in sts:
     if st.get("name") in ["ExternProtoDeclare", "ProtoDeclare", "IMPORT", "EXPORT", "ROUTE" ]:
-        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNOde" : 1 }, False)
+        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 }, False)
         classes["X3DChildNode"].children[st.get("name")] = st.get("name")
     else:
         classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1 }, False)
