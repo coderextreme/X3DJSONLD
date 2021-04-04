@@ -58,15 +58,19 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("13 March 2021")}),
+              content : new SFString("14 March 2021")}),
 
             new meta({
               name : new SFString("TODO"),
-              content : new SFString("fix visible geometry for thumb and index finger")}),
+              content : new SFString("fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2")}),
 
             new meta({
-              name : new SFString("warning"),
-              content : new SFString("not yet to scale")}),
+              name : new SFString("Image"),
+              content : new SFString("HAnimModelHandRightSegmentVisualizationError.png")}),
+
+            new meta({
+              name : new SFString("error"),
+              content : new SFString("not yet to scale, also relatively flat")}),
 
             new meta({
               name : new SFString("warning"),
@@ -214,14 +218,14 @@ var X3D0 =  new X3D({
                         new HAnimJoint({
                           name : new SFString("l_midcarpal_1"),
                           DEF : new SFString("hanim_l_midcarpal_1"),
-                          center : new SFVec3f([0.1,0.1,0]),
+                          center : new SFVec3f([0.14,0.09,0]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l_trapezium"),
                               DEF : new SFString("hanim_l_trapezium"),
                               children : new MFNode([
                                 new Transform({
-                                  translation : new SFVec3f([0.1,0.1,0]),
+                                  translation : new SFVec3f([0.14,0.09,0]),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("HAnimNewJointShape"),
@@ -355,14 +359,14 @@ var X3D0 =  new X3D({
                         new HAnimJoint({
                           name : new SFString("l_midcarpal_2"),
                           DEF : new SFString("hanim_l_midcarpal_2"),
-                          center : new SFVec3f([0.1,0.1,0]),
+                          center : new SFVec3f([0.07,0.07,0]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l_trapezoid"),
                               DEF : new SFString("hanim_l_trapezoid"),
                               children : new MFNode([
                                 new Transform({
-                                  translation : new SFVec3f([0.1,0.1,0]),
+                                  translation : new SFVec3f([0.07,0.07,0]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("HAnimNewJointShape")})])}),

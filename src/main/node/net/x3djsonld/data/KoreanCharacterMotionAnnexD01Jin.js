@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -622,4 +622,4 @@ NeedClassName.prototype = {
 	.append(new autoclass.MFVec2f(java.newArray("float", [0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857])));
 
 	/** Large attribute array: HAnimMotion channels field, scene-graph level=3, element #241, 75 total values */
-	this.HAnimMotion_3_241_channels = new autoclass.SFString("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotat
+	this.HAnimMotion_3_241_channels = new autoclass.SFString("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation 

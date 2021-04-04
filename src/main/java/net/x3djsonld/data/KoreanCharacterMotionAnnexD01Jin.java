@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -121,7 +121,7 @@ public class KoreanCharacterMotionAnnexD01Jin
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("31 March 2011"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 November 2014"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("8 March 2021"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -190,7 +190,7 @@ public class KoreanCharacterMotionAnnexD01Jin
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(3.14159).setCoordIndex(getIndexedFaceSet_12_63_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_63_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_63_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186})))))))
-                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal").setName("l_metatarsophalangeal").setCenter(3.854,3.64,0.7402)
+                .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(3.854,3.64,0.7402)
                   .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_proximal_phalanx_2")
                     .addChild(new Transform().setTranslation(3.854,3.64,0.7402)
                       .addChild(new Shape()
@@ -230,7 +230,7 @@ public class KoreanCharacterMotionAnnexD01Jin
                       .setGeometry(new IndexedFaceSet().setCreaseAngle(3.14159).setCoordIndex(getIndexedFaceSet_12_103_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_103_texCoordIndex())
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_103_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186})))))))
-                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal").setName("r_metatarsophalangeal").setCenter(-3.854,3.64,0.7402)
+                .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-3.854,3.64,0.7402)
                   .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_proximal_phalanx_2")
                     .addChild(new Transform().setTranslation(-3.854,3.64,0.7402)
                       .addChild(new Shape()
@@ -330,8 +330,8 @@ public class KoreanCharacterMotionAnnexD01Jin
       .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
       .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal"))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
       .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))

@@ -35,7 +35,7 @@ import org.web3d.x3d.jsail.Networking.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 July 2020 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -44,6 +44,10 @@ import org.web3d.x3d.jsail.Networking.*;
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
 			<td> TODO will X3D HAnim component add a new level to support LOA-4 functionality? </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
+			<td> how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs? </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
@@ -115,9 +119,10 @@ public class HAnimModelsHandsFeet
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("YOO Kwan Hee and Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("8 February 2015"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("5 July 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("8 March 2021"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("not yet to scale"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
+    .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HAnimModelsHandsFeet.png"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim"))

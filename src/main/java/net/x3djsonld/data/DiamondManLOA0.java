@@ -43,7 +43,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> motto </i> </td>
@@ -148,7 +148,7 @@ public class DiamondManLOA0
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Matthew T. Beitler"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Joel S. Pawloski"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("12 November 2001"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("8 March 2021"))
     .addMeta(new meta().setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
@@ -170,7 +170,7 @@ public class DiamondManLOA0
     .addChild(new WorldInfo().setInfo(new String[] {"HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"}).setTitle("HANIM 2.0 Default Joint Centers, LOA0"))
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("Diamond Man, LOA 0").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
-    .addChild(new HAnimHumanoid("hanim_humanoid").setName("humanoid").setVersion("2.0")
+    .addChild(new HAnimHumanoid("hanim_humanoid").setName("humanoid").setLoa(0).setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"' ")
       .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
         .setMetadata(new MetadataString().setName("authorEmail").setValue(new String[] {"beitler@graphics.cis.upenn.edu beitler@acm.org"}))
