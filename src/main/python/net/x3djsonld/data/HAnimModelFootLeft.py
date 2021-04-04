@@ -30,7 +30,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Left foot, using high-fidelity definitions for HAnim version 2.0',name='description'),
     meta(content='Kwan-Hee YOO, Don Brutzman and Joe Williams',name='creator'),
     meta(content='26 January 2015',name='created'),
-    meta(content='20 February 2021',name='modified'),
+    meta(content='8 March 2021',name='modified'),
     meta(content='not yet to scale',name='warning'),
     meta(content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?',name='warning'),
     meta(content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body',name='info'),
@@ -48,7 +48,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='HAnimModelFootLeft.x3d'),
-    HAnimHumanoid(DEF='hanim_Foot_Left',name='Foot_Left',version='2.0',
+    HAnimHumanoid(DEF='hanim_Foot_Left',loa=4,name='Foot_Left',version='2.0',
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
         value=[
         MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])]),

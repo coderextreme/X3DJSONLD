@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> motto </i> </td>
@@ -156,7 +156,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Matthew T. Beitler"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Joel S. Pawloski"))
     .addMeta((new autoclass.meta()).setName("created").setContent("12 November 2001"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 February 2021"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("8 March 2021"))
     .addMeta((new autoclass.meta()).setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
@@ -178,7 +178,7 @@ NeedClassName.prototype = {
     .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_3_26_info).setTitle("HANIM 2.0 Default Joint Centers, LOA0"))
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("Diamond Man, LOA 0").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
-    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setVersion("2.0")
+    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setLoa(0).setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"' ")
       .addChild((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference(this.MetadataSet_HAnimHumanoid.info_4_29_reference)
         .addValue((new autoclass.MetadataString()).setName("authorEmail").setValue(new autoclass.MFString("\"beitler@graphics.cis.upenn.edu beitler@acm.org\"")))

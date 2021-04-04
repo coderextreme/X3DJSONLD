@@ -38,11 +38,19 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 14 March 2021 </td>
 		</tr>
-		<tr style="color:burntorange">
-			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
-			<td> not yet to scale </td>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
+			<td> fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRightSegmentVisualizationError.png">HAnimModelHandRightSegmentVisualizationError.png</a> </td>
+		</tr>
+		<tr style="color:red">
+			<td style="text-align:right; vertical-align: text-top;"> <i> error </i> </td>
+			<td> not yet to scale, also relatively flat </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -130,8 +138,10 @@ public class HAnimModelHandLeft
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Left hand, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Kwan-Hee YOO, Don Brutzman and Joe Williams"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("26 January 2015"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
-    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("not yet to scale"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 March 2021"))
+    .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HAnimModelHandRightSegmentVisualizationError.png"))
+    .addMeta(new meta().setName(meta.NAME_ERROR      ).setContent("not yet to scale, also relatively flat"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim"))
@@ -147,14 +157,14 @@ public class HAnimModelHandLeft
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("HAnimModelHandLeft.x3d"))
-    .addChild(new HAnimHumanoid("hanim_Hand_Left").setName("Hand_Left").setVersion("2.0")
+    .addChild(new HAnimHumanoid("hanim_Hand_Left").setName("Hand_Left").setLoa(4).setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"' ")
       .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
         .setMetadata(new MetadataString().setName("authorName").setValue(new String[] {"Kwan-Hee YOO, Don Brutzman and Joe Williams"})))
       .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root")
         .addComments(" Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model ")
         .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_radiocarpal").setDescription("connection joint of hand to leg above")
-          .addChild(new HAnimSegment("hanim_l_wrist").setName("l_wrist").setDescription("test diagnostic to compare name with expected HAnimSegment name for parent HAnimJoint")
+          .addChild(new HAnimSegment("hanim_l_carpal").setName("l_carpal")
             .addChild(new Transform()
               .addChild(new Shape("HAnimJointShape")
                 .setGeometry(new Sphere().setRadius(0.025))
@@ -175,10 +185,10 @@ public class HAnimModelHandLeft
                 .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
               .setGeometry(new IndexedLineSet("RCToMC45").setDEF("RCToMC45").setCoordIndex(new int[] {0,1})
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,0.0,-0.1,0.1,0.0}))))))
-          .addComments(" MC2 ")
-          .addChild(new HAnimJoint("hanim_l_midcarpal_2").setName("l_midcarpal_2").setCenter(0.1,0.1,0.0)
-            .addChild(new HAnimSegment("hanim_l_trapezoid").setName("l_trapezoid")
-              .addChild(new Transform().setTranslation(0.1,0.1,0.0)
+          .addComments(" MC1 ")
+          .addChild(new HAnimJoint("hanim_l_midcarpal_1").setName("l_midcarpal_1").setCenter(0.14,0.09,0.0)
+            .addChild(new HAnimSegment("hanim_l_trapezium").setName("l_trapezium")
+              .addChild(new Transform().setTranslation(0.14,0.09,0.0)
                 .addChild(new Shape("HAnimNewJointShape")
                   .setGeometry(new Sphere().setRadius(0.025))
                   .setAppearance(new Appearance("HAnimJointAppearanceRed")
@@ -191,7 +201,7 @@ public class HAnimModelHandLeft
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
-                .setGeometry(new IndexedLineSet("MC12toCMC2").setDEF("MC12toCMC2").setCoordIndex(new int[] {0,1})
+                .setGeometry(new IndexedLineSet("MC1toCMC1").setDEF("MC1toCMC1").setCoordIndex(new int[] {0,1})
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1,0.1,0.0,0.1,0.2,0.0}))))))
             .addComments(" thumb finger ")
             .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.2,0.15,0.0)
@@ -220,7 +230,17 @@ public class HAnimModelHandLeft
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
                       .setGeometry(new IndexedLineSet("fingertip_l_carpal_interphalangeal_1").setDEF("fingertip_l_carpal_interphalangeal_1").setCoordIndex(new int[] {0,1})
-                        .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.35,0.4,0.0,0.36,0.45,0.0})))))))))
+                        .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.35,0.4,0.0,0.36,0.45,0.0}))))))))))
+          .addComments(" MC2 ")
+          .addChild(new HAnimJoint("hanim_l_midcarpal_2").setName("l_midcarpal_2").setCenter(0.07,0.07,0.0)
+            .addChild(new HAnimSegment("hanim_l_trapezoid").setName("l_trapezoid")
+              .addChild(new Transform().setTranslation(0.07,0.07,0.0)
+                .addChild(new Shape().setUSE("HAnimNewJointShape")))
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
+                .setGeometry(new IndexedLineSet("MC2toCMC2").setDEF("MC2toCMC2").setCoordIndex(new int[] {0,1})
+                  .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1,0.1,0.0,-0.1,0.2,0.0}))))))
             .addComments(" index finger ")
             .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1,0.2,0.0)
               .addChild(new HAnimSegment("hanim_l_metacarpal_2").setName("l_metacarpal_2")
@@ -414,11 +434,13 @@ public class HAnimModelHandLeft
       .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_3"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_4"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_1"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_2"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_3"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_4_5"))
       .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_capitate"))
+      .addSegments(new HAnimSegment().setUSE("hanim_l_carpal"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_1"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_2"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_3"))
@@ -439,8 +461,8 @@ public class HAnimModelHandLeft
       .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_3"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_4"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_metacarpal_5"))
-      .addSegments(new HAnimSegment().setUSE("hanim_l_trapezoid"))
-      .addSegments(new HAnimSegment().setUSE("hanim_l_wrist"))));
+      .addSegments(new HAnimSegment().setUSE("hanim_l_trapezium"))
+      .addSegments(new HAnimSegment().setUSE("hanim_l_trapezoid"))));
     }
 	// end of initialize() method
 
