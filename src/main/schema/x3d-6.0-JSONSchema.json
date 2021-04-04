@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "JSON Schema X3D V4.0",
-	"description": "Experimental JSON Schema for X3D V4.0 ",
+	"title": "JSON Schema X3D V3.3",
+	"description": "Experimental JSON Schema for X3D V3.3 ",
 	"type": "object",
 	"properties": {
 		"X3D": {
@@ -4872,13 +4872,6 @@
 				"@version": {
 					"type": "string"
 				},
-				"@loa": {
-					"pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
-					"maximum": 4,
-					"minimum": -1,
-					"default": -1,
-					"type": "integer"
-				},
 				"-joints": {
 					"$ref": "#/definitions/-hanimJoints"
 				},
@@ -5012,10 +5005,6 @@
 					"items": {
 						"type": "number"
 					}
-				},
-				"@description": {
-					"pattern": "^(\\s|\\S)*$",
-					"type": "string"
 				},
 				"-children": {
 					"$ref": "#/definitions/-jointChildren"
@@ -6677,6 +6666,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataDouble": {
@@ -6711,6 +6703,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataFloat": {
@@ -6745,6 +6740,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataInteger": {
@@ -6779,6 +6777,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataSet": {
@@ -6837,6 +6838,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataString": {
@@ -6871,6 +6875,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MotorJoint": {
@@ -8888,9 +8895,6 @@
 				},
 				"-metadata": {
 					"$ref": "#/definitions/-metadata"
-				},
-				"-normal": {
-					"$ref": "#/definitions/-normal"
 				},
 				"-children": {
 					"$ref": "#/definitions/-commentRoute"
@@ -13863,16 +13867,6 @@
 					"type": "boolean",
 					"default": false
 				},
-				"@farDistance": {
-					"pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-					"default": -1,
-					"type": "number"
-				},
-				"@nearDistance": {
-					"pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-					"default": -1,
-					"type": "number"
-				},
 				"-metadata": {
 					"$ref": "#/definitions/-metadata"
 				},
@@ -14397,7 +14391,7 @@
 						"3.3",
 						"4.0"
 					],
-					"default": "4.0"
+					"default": "3.3"
 				},
 				"@xsd:noNamespaceSchemaLocation": {
 					"type": "string",
