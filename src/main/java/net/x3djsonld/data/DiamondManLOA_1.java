@@ -43,7 +43,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 February 2021 </td>
+			<td> 13 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
@@ -56,10 +56,6 @@ import org.web3d.x3d.jsail.Shape.*;
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
 			<td> Still needs comments on CAESAR feature points inserted </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
-			<td> can X3dTidy sort top-level USE nodes by node type? </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -96,10 +92,6 @@ import org.web3d.x3d.jsail.Shape.*;
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
 			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/humanoid_landmark_locations.gif">humanoid_landmark_locations.gif</a> </td>
-		</tr>
-		<tr style="color:burntorange">
-			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
-			<td> need to fix HAnimHumanoid metadata form </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
@@ -156,11 +148,10 @@ public class DiamondManLOA_1
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Matthew T. Beitler"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Joel S. Pawloski"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("12 November 2001"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 February 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("13 March 2021"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
     .addMeta(new meta().setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Still needs comments on CAESAR feature points inserted"))
-    .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("can X3dTidy sort top-level USE nodes by node type?"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Two"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA1.wrl"))
@@ -170,7 +161,6 @@ public class DiamondManLOA_1
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cis.upenn.edu/~beitler"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("humanoid_landmark_locations.gif"))
-    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("need to fix HAnimHumanoid metadata form"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA_1.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
@@ -188,7 +178,7 @@ public class DiamondManLOA_1
         .setMetadata(new MetadataString().setName("copyright").setValue(new String[] {"Copyright 1999 Matthew T. Beitler"}))
         .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new String[] {"JointCenters 1.1 LOA1"}))
         .setMetadata(new MetadataString().setName("usageRestrictions").setValue(new String[] {"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."})))
-      .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.8240,0.0277)
+      .addSkeleton(new HAnimJoint("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,0.8240,0.0277)
         .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.9149,0.0016)
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Transform().setTranslation(0.0,0.9149,0.0016)
@@ -321,7 +311,7 @@ public class DiamondManLOA_1
         .addChild(new Viewpoint("FrontView").setDescription("Front View").setPosition(0.0,0.854,2.57665))
         .addChild(new Viewpoint("SideView").setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57079).setPosition(2.5929,0.854,0.0))
         .addChild(new Viewpoint("TopView").setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57079).setPosition(0.0,3.4495,0.0)))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_HumanoidRoot"))
       .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
       .addJoints(new HAnimJoint().setUSE("hanim_vl1"))
       .addJoints(new HAnimJoint().setUSE("hanim_vc4"))

@@ -5,9 +5,10 @@
 <meta name="description" content="Left hand, using high-fidelity definitions for HAnim version 2.0"></meta>
 <meta name="creator" content="Kwan-Hee YOO, Don Brutzman and Joe Williams"></meta>
 <meta name="created" content="26 January 2015"></meta>
-<meta name="modified" content="13 March 2021"></meta>
-<meta name="TODO" content="fix visible geometry for thumb and index finger"></meta>
-<meta name="warning" content="not yet to scale"></meta>
+<meta name="modified" content="14 March 2021"></meta>
+<meta name="TODO" content="fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"></meta>
+<meta name="Image" content="HAnimModelHandRightSegmentVisualizationError.png"></meta>
+<meta name="error" content="not yet to scale, also relatively flat"></meta>
 <meta name="warning" content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?"></meta>
 <meta name="info" content="TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"></meta>
 <meta name="reference" content="https://www.web3d.org/working-groups/humanoid-animation-HAnim"></meta>
@@ -46,7 +47,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--MC1--><HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.1 0.1 0"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Transform translation="0.1 0.1 0"><Shape DEF="HAnimNewJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<!--MC1--><HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.14 0.09 0"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Transform translation="0.14 0.09 0"><Shape DEF="HAnimNewJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearanceRed"><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -90,7 +91,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--MC2--><HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.1 0.1 0"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Transform translation="0.1 0.1 0"><Shape USE="HAnimNewJointShape"></Shape>
+<!--MC2--><HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.07 0.07 0"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Transform translation="0.07 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>

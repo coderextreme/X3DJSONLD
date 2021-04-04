@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 21 February 2021 </td>
+			<td> 7 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -183,7 +183,7 @@ public class BoxMan
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman and Matt Beitler"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("1 March 2001"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("19 October 2001"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("21 February 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("7 March 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("boxman.original.wrl"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("BoxMan.js"))
