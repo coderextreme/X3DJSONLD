@@ -55,12 +55,12 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:template match="/"> <!-- process root of input document -->
         
 	 <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <https://www.web3d.org/specifications/X3dOntology4.0#> .
-@prefix dc:     <http://purl.org/dc/terms/> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 ]]></xsl:text>
 
 <!-- Additional namespaces, as yet unused:
@@ -82,9 +82,9 @@ POSSIBILITY OF SUCH DAMAGE.
 # X3D Ontology
 
 <https://www.web3d.org/specifications/X3dOntology4.0> a owl:Ontology ;
-  dc:title       "X3D Ontology"@en ;
-  dc:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of X3D models." ;
-  dc:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" .
+  dcterms:title       "X3D Ontology"@en ;
+  dcterms:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of X3D models." ;
+  dcterms:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" .
   # TODO include further provenance information
             
 # Maintained at
@@ -132,40 +132,40 @@ POSSIBILITY OF SUCH DAMAGE.
 
 :hasChild a owl:ObjectProperty ;
   rdfs:subPropertyOf :hasDescendant ;
-  dc:description "X3D element (node or statement) has a child element" .
+  dcterms:description "X3D element (node or statement) has a child element" .
 
 :hasParent a owl:ObjectProperty ;
   owl:inverseOf :hasChild;
   rdfs:subPropertyOf :hasAncestor ;
-  dc:description "X3D element (node or statement) has a parent element" .
+  dcterms:description "X3D element (node or statement) has a parent element" .
 
 :hasDescendant a owl:ObjectProperty ;
   owl:inverseOf :hasAncestor;
-  dc:description "X3D element (node or statement) has descendant element" .
+  dcterms:description "X3D element (node or statement) has descendant element" .
             
 :hasAncestor a owl:ObjectProperty , owl:TransitiveProperty ;
-  dc:description "X3D element (node or statement) has ancestor element" .
+  dcterms:description "X3D element (node or statement) has ancestor element" .
 
 :accessTypeProperty a owl:DatatypeProperty ;
-  dc:description "accessTypeProperty values denote accessType for a given field within a given node." .
+  dcterms:description "accessTypeProperty values denote accessType for a given field within a given node." .
 :accessTypeInputOutput a owl:DatatypeProperty ;
   rdfs:subPropertyOf :accessTypeProperty ;
-  dc:description "accessTypeInputOutput values denote accessType=inputOutput for a given field within a given node." ;
+  dcterms:description "accessTypeInputOutput values denote accessType=inputOutput for a given field within a given node." ;
   rdfs:domain xsd:NMTOKEN ;
   rdfs:range  xsd:NMTOKEN .
  :accessTypeInitializeOnly a owl:DatatypeProperty ;
   rdfs:subPropertyOf :accessTypeProperty ;
-  dc:description "accessTypeInitializeOnly values denote accessType=initializeOnly for a given field within a given node." ;
+  dcterms:description "accessTypeInitializeOnly values denote accessType=initializeOnly for a given field within a given node." ;
   rdfs:domain xsd:NMTOKEN ;
   rdfs:range  xsd:NMTOKEN .
 :accessTypeInputOnly a owl:DatatypeProperty ;
   rdfs:subPropertyOf :accessTypeProperty ;
-  dc:description "accessTypeInputOnly values denote accessType=inputOnly for a given field within a given node." ;
+  dcterms:description "accessTypeInputOnly values denote accessType=inputOnly for a given field within a given node." ;
   rdfs:domain xsd:NMTOKEN ;
   rdfs:range  xsd:NMTOKEN .
 :accessTypeOutputOnly a owl:DatatypeProperty ;
   rdfs:subPropertyOf :accessTypeProperty ;
-  dc:description "accessTypeOutputOnly values denote accessType=outputOnly for a given field within a given node." ;
+  dcterms:description "accessTypeOutputOnly values denote accessType=outputOnly for a given field within a given node." ;
   rdfs:domain xsd:NMTOKEN ;
   rdfs:range  xsd:NMTOKEN .
 ]]></xsl:text>
@@ -177,8 +177,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 :X3DField a rdfs:Datatype ;
   rdfs:label "X3DField is the abstract field type from which all single-valued field types are derived." ;
-  dc:reference   "https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FieldTypesTable" ;
-  dc:reference   "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#X3DField" .
+  dcterms:reference   "https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FieldTypesTable" ;
+  dcterms:reference   "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#X3DField" .
 
 ]]></xsl:text>
         <!-- TODO mappings for X3D types to xsd types; further decorate XML Schema and X3DUOM to account for them -->
@@ -257,7 +257,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text> </xsl:text>
-                    <xsl:text> dc:description </xsl:text>
+                    <xsl:text> dcterms:description </xsl:text>
                     <xsl:text>"</xsl:text>
                     <xsl:choose>
                         <xsl:when test="(string-length(InterfaceDefinition/@appinfo) le 400) or not(contains(InterfaceDefinition/@appinfo, '.'))">
@@ -334,7 +334,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:if test="(string-length(@appinfo) > 0)">
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text> </xsl:text>
-                <xsl:text> dc:description </xsl:text>
+                <xsl:text> dcterms:description </xsl:text>
                 <xsl:text>"</xsl:text>
                 <xsl:choose>
                     <xsl:when test="(string-length(@appinfo) le 400) or not(contains(@appinfo, '.'))">
@@ -345,7 +345,14 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:text>"</xsl:text>
-            </xsl:if>            
+            </xsl:if>
+            <xsl:if test="(string-length(@documentation) > 0)">
+                <xsl:text>;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>  dcterms:reference "</xsl:text>
+                <xsl:value-of select="translate(@documentation,'&quot;','')"/>
+                <xsl:text>"</xsl:text>
+            </xsl:if>
             <xsl:choose>
                 <xsl:when test="(count(enumeration) > 0)">
                     <xsl:text> ;</xsl:text>
@@ -381,13 +388,63 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text> ) ]</xsl:text>
                     <xsl:text> .</xsl:text>
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:for-each select="enumeration[string-length(@appinfo) > 0]">
-                        <xsl:text># </xsl:text>
-                        <xsl:value-of select="@value"/>
-                        <xsl:text> "</xsl:text>
-                        <xsl:value-of select="@appinfo"/>
-                        <xsl:text>"</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <!-- produce RDF literals for enumeration string constants -->
+                    <!-- https://www.w3.org/TR/turtle/#turtle-literals -->
+                    <xsl:variable name="enumerationPrefix">
+                        <xsl:choose>
+                            <xsl:when test="ends-with($simpleTypeName,'Choices')">
+                                <xsl:value-of select="substring-before($simpleTypeName,'Choices')"/>
+                            </xsl:when>
+                            <xsl:when test="ends-with($simpleTypeName,'Values')">
+                                <xsl:value-of select="substring-before($simpleTypeName,'Values')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$simpleTypeName"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:for-each select="enumeration[string-length(@value) > 0]">
+                        <xsl:text>:</xsl:text>
+                        <xsl:value-of select="$enumerationPrefix"/>
+                        <!-- use __ as discriminator for enumeration literal values, -->
+                        <!-- since dot . not allowed as a naming character, it is a reserved character (usable with escape sequences) -->
+                        <!-- RDF 1.1 Turtle, Terse RDF Triple Language, 6.4 Escape Sequences https://www.w3.org/TR/turtle/#sec-escapes -->
+                        <xsl:text>__</xsl:text>
+                        <!-- change space to underscore, omit illegal characters from name -->
+                        <xsl:value-of select="translate(@value,' &quot;-','_')"/>
+                        <xsl:if test="(string-length(translate(@value,' &quot;','')) = 0)">
+                            <!-- special case following multiTextureFunction.ALPHAREPLICATE -->
+                            <xsl:text>EMPTY</xsl:text>
+                        </xsl:if>
+                        <xsl:text> rdfs:label '</xsl:text>
+                        <!-- apostrophe delimiter here since value might be MFString values -->
+                        <xsl:choose>
+                            <xsl:when test="((string-length(@value) - string-length(translate(@value,'&quot;',''))) le 2)">
+                                <xsl:value-of select="translate(@value,'&quot;','')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- contains multiple quoted values in MFString, retain them all -->
+                                <xsl:value-of select="@value"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:text>'^^xsd:string </xsl:text>
+                        <xsl:if test="(string-length(@appinfo) > 0)">
+                            <xsl:text>;</xsl:text>
                             <xsl:text>&#10;</xsl:text>
+                            <xsl:text>  dcterms:description "</xsl:text>
+                            <xsl:value-of select="translate(@appinfo,'&quot;','')"/>
+                            <xsl:text>"</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@documentation) > 0)">
+                            <xsl:text>;</xsl:text>
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:text>  dcterms:reference "</xsl:text>
+                            <xsl:value-of select="translate(@documentation,'&quot;','')"/>
+                            <xsl:text>"</xsl:text>
+                        </xsl:if>
+                        <xsl:text> .</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
                     </xsl:for-each>
                 </xsl:when>
                 <xsl:otherwise>

@@ -3114,7 +3114,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (.='0')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
-                      ((local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      ((local-name()='containerField' and (.='children')) or
+                       (local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 

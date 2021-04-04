@@ -221,6 +221,7 @@ Design summary:
 			<xs:attribute name="loa" type="xs:string" default=""/>
 			<xs:attribute name="parent" type="xs:string" default=""/>
 			<xs:attribute name="description" type="xs:string" default=""/>
+			<xs:attribute name="default" type="xs:string" default=""/><!-- default value -->
 			<!-- xs:appinfo/xs:documentation/@source -->
 			<!-- feature point attributes, typically empty and so xs:string here -->
 		</xs:complexType>

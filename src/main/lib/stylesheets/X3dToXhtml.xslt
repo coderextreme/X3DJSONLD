@@ -1515,6 +1515,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:when test="(@name = 'warning')">
                                 <xsl:text>meta 'warning' provides warning information about a known problem that impedes proper operation</xsl:text>
                             </xsl:when>
+                            <xsl:when test="(@name = 'error')">
+                                <xsl:text>meta 'error' describes a known flaw in the model</xsl:text>
+                            </xsl:when>
                             <xsl:otherwise>
                                 <xsl:text>author-defined metadata</xsl:text>
                             </xsl:otherwise>
@@ -2727,9 +2730,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (.='0')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
-                      ((local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      ((local-name()='containerField' and (.='children')) or
+                       (local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
                       ((local-name()='range' and (.='10' or .='10.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
@@ -3215,7 +3219,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
-                <xsl:when test="local-name(..)='meta' and ../@name='warning'">
+                <xsl:when test="local-name(..)='meta' and ((../@name='warning') or (../@name='TODO'))">
                     <b class="warning">
                         <xsl:call-template name="URL-ize-MFString-elements">
                             <xsl:with-param name="list" select="normalize-space(.)"/>
