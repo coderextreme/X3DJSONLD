@@ -929,37 +929,6 @@
         }
       ]
     },
-    "@rotation": {
-      "description": "Validates all four components",
-      "type": "array",
-      "minItems": 4,
-      "maxItems": 4,
-      "items": [
-        {
-          "type": "number",
-          "minimum": -1,
-          "maximum": 1,
-          "default": 0
-        },
-        {
-          "type": "number",
-          "minimum": -1,
-          "maximum": 1,
-          "default": 0
-        },
-        {
-          "type": "number",
-          "minimum": -1,
-          "maximum": 1,
-          "default": 1
-        },
-        {
-          "type": "number",
-          "default": 0
-        }
-      ],
-      "additionalItems": false
-    },
     "Anchor": {
       "type": "object",
       "oneOf": [
@@ -2365,7 +2334,29 @@
               "type": "string"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -4533,7 +4524,29 @@
               "type": "number"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@rtpHeaderExpected": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -6772,7 +6785,29 @@
               "type": "string"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -7083,7 +7118,29 @@
               "type": "string"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -7561,7 +7618,29 @@
               "type": "string"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -15424,7 +15503,29 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -15947,7 +16048,29 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@rotation": {
-              "$ref": "#/definitions/@rotation"
+              "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "additionalItems": false
             },
             "@scale": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
