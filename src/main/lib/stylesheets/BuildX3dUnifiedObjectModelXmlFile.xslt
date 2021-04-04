@@ -353,17 +353,23 @@ Recommended tool:
                                             </xsl:otherwise>
                                         </xsl:choose>
                                         <xsl:value-of select="$simpleTypeName"/>
-                                        <xsl:text> xs:enumeration value='</xsl:text>
+                                        <xsl:text> </xsl:text>
                                         <xsl:value-of select="$enumerationName"/>
-                                        <xsl:text>' has duplicate alias='</xsl:text>
+                                        <xsl:text> alias </xsl:text>
                                         <xsl:value-of select="$attributeValue"/>
-                                        <xsl:text>' separately defined in xs:simpleType name='</xsl:text>
+                                        
+                                        <xsl:text> is duplicated in xs:simpleType name='</xsl:text>
                                         <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/../../../../../@name"/>
-                                        <xsl:text>' xs:attribute name='</xsl:text>
+                                        <xsl:text>' enumeration value='</xsl:text>
+                                        <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/../../../@value"/>
+                                        <xsl:text>'</xsl:text>
+                                        <!--
+                                        <xsl:text> xs:attribute name='</xsl:text>
                                         <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/@name"/>
                                         <xsl:text>' fixed='</xsl:text>
                                         <xsl:value-of select="preceding::*[local-name() = 'attribute'][(@name = 'alias') and (@fixed = $attributeValue)]/@fixed"/>
                                         <xsl:text>'</xsl:text>
+                                                -->
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- sequential index check; note segments 98 99 100 (prior to l_carpal_distal_phalanx_1) are unused -->
@@ -2140,9 +2146,6 @@ Recommended tool:
                                     </xsl:if>
                                 </xsl:element>
                             </xsl:for-each>
-                        </xsl:if>
-                        <xsl:if test="contains(xs:annotation/xs:appinfo/text(), 'enumeration values')">
-                            <xsl:attribute name="enumerationValues" select="normalize-space(substring-after(xs:annotation/xs:appinfo/text(), substring-before(xs:annotation/xs:appinfo/text(), '&#34;')))"/>
                         </xsl:if>
                         <xsl:if test="xs:annotation/xs:appinfo/xs:enumeration/@value">
                             <xsl:element name="enumeration">
