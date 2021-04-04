@@ -513,6 +513,11 @@ Recommended tools:
                 <xsl:choose>
                     <xsl:when test="($prependWorldInfoIfMissing = 'true') and preceding::meta[@name = 'title']">
                         <xsl:value-of select="preceding::meta[@name = 'title']/@content"/>
+                        <!-- debug diagnostic
+                        <xsl:message>
+                            <xsl:text>*** Found meta title=</xsl:text>
+                            <xsl:value-of select="preceding::meta[@name = 'title']/@content"/>
+                        </xsl:message> -->
                     </xsl:when>
                     <xsl:when test="not($prependWorldInfoIfMissing = 'true')">
                         <!-- use provided value -->
@@ -542,11 +547,279 @@ Recommended tools:
             </xsl:if>
         </xsl:if>
         
+        <xsl:variable name="correctedCapitalizationElementName">
+            <xsl:choose>
+                <!-- *** start: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+                <xsl:when test="(lower-case(local-name()) = 'acousticproperties') and not(local-name() = 'AcousticProperties')"><xsl:text>AcousticProperties</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'analyser') and not(local-name() = 'Analyser')"><xsl:text>Analyser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'anchor') and not(local-name() = 'Anchor')"><xsl:text>Anchor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'appearance') and not(local-name() = 'Appearance')"><xsl:text>Appearance</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'arc2d') and not(local-name() = 'Arc2D')"><xsl:text>Arc2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'arcclose2d') and not(local-name() = 'ArcClose2D')"><xsl:text>ArcClose2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'audioclip') and not(local-name() = 'AudioClip')"><xsl:text>AudioClip</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'audiodestination') and not(local-name() = 'AudioDestination')"><xsl:text>AudioDestination</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'background') and not(local-name() = 'Background')"><xsl:text>Background</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'balljoint') and not(local-name() = 'BallJoint')"><xsl:text>BallJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'billboard') and not(local-name() = 'Billboard')"><xsl:text>Billboard</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'biquadfilter') and not(local-name() = 'BiquadFilter')"><xsl:text>BiquadFilter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'blendedvolumestyle') and not(local-name() = 'BlendedVolumeStyle')"><xsl:text>BlendedVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'booleanfilter') and not(local-name() = 'BooleanFilter')"><xsl:text>BooleanFilter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'booleansequencer') and not(local-name() = 'BooleanSequencer')"><xsl:text>BooleanSequencer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'booleantoggle') and not(local-name() = 'BooleanToggle')"><xsl:text>BooleanToggle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'booleantrigger') and not(local-name() = 'BooleanTrigger')"><xsl:text>BooleanTrigger</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'boundaryenhancementvolumestyle') and not(local-name() = 'BoundaryEnhancementVolumeStyle')"><xsl:text>BoundaryEnhancementVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'boundedphysicsmodel') and not(local-name() = 'BoundedPhysicsModel')"><xsl:text>BoundedPhysicsModel</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'box') and not(local-name() = 'Box')"><xsl:text>Box</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'bufferaudiosource') and not(local-name() = 'BufferAudioSource')"><xsl:text>BufferAudioSource</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cadassembly') and not(local-name() = 'CADAssembly')"><xsl:text>CADAssembly</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cadface') and not(local-name() = 'CADFace')"><xsl:text>CADFace</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cadlayer') and not(local-name() = 'CADLayer')"><xsl:text>CADLayer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cadpart') and not(local-name() = 'CADPart')"><xsl:text>CADPart</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cartoonvolumestyle') and not(local-name() = 'CartoonVolumeStyle')"><xsl:text>CartoonVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'channelmerger') and not(local-name() = 'ChannelMerger')"><xsl:text>ChannelMerger</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'channelselector') and not(local-name() = 'ChannelSelector')"><xsl:text>ChannelSelector</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'channelsplitter') and not(local-name() = 'ChannelSplitter')"><xsl:text>ChannelSplitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'circle2d') and not(local-name() = 'Circle2D')"><xsl:text>Circle2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'clipplane') and not(local-name() = 'ClipPlane')"><xsl:text>ClipPlane</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collidableoffset') and not(local-name() = 'CollidableOffset')"><xsl:text>CollidableOffset</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collidableshape') and not(local-name() = 'CollidableShape')"><xsl:text>CollidableShape</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collision') and not(local-name() = 'Collision')"><xsl:text>Collision</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collisioncollection') and not(local-name() = 'CollisionCollection')"><xsl:text>CollisionCollection</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collisionsensor') and not(local-name() = 'CollisionSensor')"><xsl:text>CollisionSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'collisionspace') and not(local-name() = 'CollisionSpace')"><xsl:text>CollisionSpace</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'color') and not(local-name() = 'Color')"><xsl:text>Color</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'colorchaser') and not(local-name() = 'ColorChaser')"><xsl:text>ColorChaser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'colordamper') and not(local-name() = 'ColorDamper')"><xsl:text>ColorDamper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'colorinterpolator') and not(local-name() = 'ColorInterpolator')"><xsl:text>ColorInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'colorrgba') and not(local-name() = 'ColorRGBA')"><xsl:text>ColorRGBA</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'composedcubemaptexture') and not(local-name() = 'ComposedCubeMapTexture')"><xsl:text>ComposedCubeMapTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'composedshader') and not(local-name() = 'ComposedShader')"><xsl:text>ComposedShader</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'composedtexture3d') and not(local-name() = 'ComposedTexture3D')"><xsl:text>ComposedTexture3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'composedvolumestyle') and not(local-name() = 'ComposedVolumeStyle')"><xsl:text>ComposedVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cone') and not(local-name() = 'Cone')"><xsl:text>Cone</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coneemitter') and not(local-name() = 'ConeEmitter')"><xsl:text>ConeEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'contact') and not(local-name() = 'Contact')"><xsl:text>Contact</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'contour2d') and not(local-name() = 'Contour2D')"><xsl:text>Contour2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'contourpolyline2d') and not(local-name() = 'ContourPolyline2D')"><xsl:text>ContourPolyline2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'convolver') and not(local-name() = 'Convolver')"><xsl:text>Convolver</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinate') and not(local-name() = 'Coordinate')"><xsl:text>Coordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinatechaser') and not(local-name() = 'CoordinateChaser')"><xsl:text>CoordinateChaser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinatedamper') and not(local-name() = 'CoordinateDamper')"><xsl:text>CoordinateDamper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinatedouble') and not(local-name() = 'CoordinateDouble')"><xsl:text>CoordinateDouble</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinateinterpolator') and not(local-name() = 'CoordinateInterpolator')"><xsl:text>CoordinateInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'coordinateinterpolator2d') and not(local-name() = 'CoordinateInterpolator2D')"><xsl:text>CoordinateInterpolator2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cylinder') and not(local-name() = 'Cylinder')"><xsl:text>Cylinder</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'cylindersensor') and not(local-name() = 'CylinderSensor')"><xsl:text>CylinderSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'disentitymanager') and not(local-name() = 'DISEntityManager')"><xsl:text>DISEntityManager</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'disentitytypemapping') and not(local-name() = 'DISEntityTypeMapping')"><xsl:text>DISEntityTypeMapping</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'delay') and not(local-name() = 'Delay')"><xsl:text>Delay</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'directionallight') and not(local-name() = 'DirectionalLight')"><xsl:text>DirectionalLight</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'disk2d') and not(local-name() = 'Disk2D')"><xsl:text>Disk2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'doubleaxishingejoint') and not(local-name() = 'DoubleAxisHingeJoint')"><xsl:text>DoubleAxisHingeJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'dynamicscompressor') and not(local-name() = 'DynamicsCompressor')"><xsl:text>DynamicsCompressor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'easeineaseout') and not(local-name() = 'EaseInEaseOut')"><xsl:text>EaseInEaseOut</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'edgeenhancementvolumestyle') and not(local-name() = 'EdgeEnhancementVolumeStyle')"><xsl:text>EdgeEnhancementVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'elevationgrid') and not(local-name() = 'ElevationGrid')"><xsl:text>ElevationGrid</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'environmentlight') and not(local-name() = 'EnvironmentLight')"><xsl:text>EnvironmentLight</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'espdutransform') and not(local-name() = 'EspduTransform')"><xsl:text>EspduTransform</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'explosionemitter') and not(local-name() = 'ExplosionEmitter')"><xsl:text>ExplosionEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'extrusion') and not(local-name() = 'Extrusion')"><xsl:text>Extrusion</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'fillproperties') and not(local-name() = 'FillProperties')"><xsl:text>FillProperties</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'floatvertexattribute') and not(local-name() = 'FloatVertexAttribute')"><xsl:text>FloatVertexAttribute</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'fog') and not(local-name() = 'Fog')"><xsl:text>Fog</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'fogcoordinate') and not(local-name() = 'FogCoordinate')"><xsl:text>FogCoordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'fontstyle') and not(local-name() = 'FontStyle')"><xsl:text>FontStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'forcephysicsmodel') and not(local-name() = 'ForcePhysicsModel')"><xsl:text>ForcePhysicsModel</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'gain') and not(local-name() = 'Gain')"><xsl:text>Gain</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'generatedcubemaptexture') and not(local-name() = 'GeneratedCubeMapTexture')"><xsl:text>GeneratedCubeMapTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geocoordinate') and not(local-name() = 'GeoCoordinate')"><xsl:text>GeoCoordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geoelevationgrid') and not(local-name() = 'GeoElevationGrid')"><xsl:text>GeoElevationGrid</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geolod') and not(local-name() = 'GeoLOD')"><xsl:text>GeoLOD</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geolocation') and not(local-name() = 'GeoLocation')"><xsl:text>GeoLocation</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geometadata') and not(local-name() = 'GeoMetadata')"><xsl:text>GeoMetadata</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geoorigin') and not(local-name() = 'GeoOrigin')"><xsl:text>GeoOrigin</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geopositioninterpolator') and not(local-name() = 'GeoPositionInterpolator')"><xsl:text>GeoPositionInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geoproximitysensor') and not(local-name() = 'GeoProximitySensor')"><xsl:text>GeoProximitySensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geotouchsensor') and not(local-name() = 'GeoTouchSensor')"><xsl:text>GeoTouchSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geotransform') and not(local-name() = 'GeoTransform')"><xsl:text>GeoTransform</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'geoviewpoint') and not(local-name() = 'GeoViewpoint')"><xsl:text>GeoViewpoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'group') and not(local-name() = 'Group')"><xsl:text>Group</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimdisplacer') and not(local-name() = 'HAnimDisplacer')"><xsl:text>HAnimDisplacer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimhumanoid') and not(local-name() = 'HAnimHumanoid')"><xsl:text>HAnimHumanoid</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimjoint') and not(local-name() = 'HAnimJoint')"><xsl:text>HAnimJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimmotion') and not(local-name() = 'HAnimMotion')"><xsl:text>HAnimMotion</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimsegment') and not(local-name() = 'HAnimSegment')"><xsl:text>HAnimSegment</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'hanimsite') and not(local-name() = 'HAnimSite')"><xsl:text>HAnimSite</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'imagecubemaptexture') and not(local-name() = 'ImageCubeMapTexture')"><xsl:text>ImageCubeMapTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'imagetexture') and not(local-name() = 'ImageTexture')"><xsl:text>ImageTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'imagetexture3d') and not(local-name() = 'ImageTexture3D')"><xsl:text>ImageTexture3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedfaceset') and not(local-name() = 'IndexedFaceSet')"><xsl:text>IndexedFaceSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedlineset') and not(local-name() = 'IndexedLineSet')"><xsl:text>IndexedLineSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedquadset') and not(local-name() = 'IndexedQuadSet')"><xsl:text>IndexedQuadSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedtrianglefanset') and not(local-name() = 'IndexedTriangleFanSet')"><xsl:text>IndexedTriangleFanSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedtriangleset') and not(local-name() = 'IndexedTriangleSet')"><xsl:text>IndexedTriangleSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'indexedtrianglestripset') and not(local-name() = 'IndexedTriangleStripSet')"><xsl:text>IndexedTriangleStripSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'inline') and not(local-name() = 'Inline')"><xsl:text>Inline</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'integersequencer') and not(local-name() = 'IntegerSequencer')"><xsl:text>IntegerSequencer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'integertrigger') and not(local-name() = 'IntegerTrigger')"><xsl:text>IntegerTrigger</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'isosurfacevolumedata') and not(local-name() = 'IsoSurfaceVolumeData')"><xsl:text>IsoSurfaceVolumeData</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'keysensor') and not(local-name() = 'KeySensor')"><xsl:text>KeySensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'lod') and not(local-name() = 'LOD')"><xsl:text>LOD</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'layer') and not(local-name() = 'Layer')"><xsl:text>Layer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'layerset') and not(local-name() = 'LayerSet')"><xsl:text>LayerSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'layout') and not(local-name() = 'Layout')"><xsl:text>Layout</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'layoutgroup') and not(local-name() = 'LayoutGroup')"><xsl:text>LayoutGroup</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'layoutlayer') and not(local-name() = 'LayoutLayer')"><xsl:text>LayoutLayer</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'linepicksensor') and not(local-name() = 'LinePickSensor')"><xsl:text>LinePickSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'lineproperties') and not(local-name() = 'LineProperties')"><xsl:text>LineProperties</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'lineset') and not(local-name() = 'LineSet')"><xsl:text>LineSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'listenerpointsource') and not(local-name() = 'ListenerPointSource')"><xsl:text>ListenerPointSource</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'loadsensor') and not(local-name() = 'LoadSensor')"><xsl:text>LoadSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'localfog') and not(local-name() = 'LocalFog')"><xsl:text>LocalFog</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'material') and not(local-name() = 'Material')"><xsl:text>Material</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'matrix3vertexattribute') and not(local-name() = 'Matrix3VertexAttribute')"><xsl:text>Matrix3VertexAttribute</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'matrix4vertexattribute') and not(local-name() = 'Matrix4VertexAttribute')"><xsl:text>Matrix4VertexAttribute</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadataboolean') and not(local-name() = 'MetadataBoolean')"><xsl:text>MetadataBoolean</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadatadouble') and not(local-name() = 'MetadataDouble')"><xsl:text>MetadataDouble</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadatafloat') and not(local-name() = 'MetadataFloat')"><xsl:text>MetadataFloat</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadatainteger') and not(local-name() = 'MetadataInteger')"><xsl:text>MetadataInteger</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadataset') and not(local-name() = 'MetadataSet')"><xsl:text>MetadataSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'metadatastring') and not(local-name() = 'MetadataString')"><xsl:text>MetadataString</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'microphonesource') and not(local-name() = 'MicrophoneSource')"><xsl:text>MicrophoneSource</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'motorjoint') and not(local-name() = 'MotorJoint')"><xsl:text>MotorJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'movietexture') and not(local-name() = 'MovieTexture')"><xsl:text>MovieTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'multitexture') and not(local-name() = 'MultiTexture')"><xsl:text>MultiTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'multitexturecoordinate') and not(local-name() = 'MultiTextureCoordinate')"><xsl:text>MultiTextureCoordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'multitexturetransform') and not(local-name() = 'MultiTextureTransform')"><xsl:text>MultiTextureTransform</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'navigationinfo') and not(local-name() = 'NavigationInfo')"><xsl:text>NavigationInfo</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'normal') and not(local-name() = 'Normal')"><xsl:text>Normal</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'normalinterpolator') and not(local-name() = 'NormalInterpolator')"><xsl:text>NormalInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbscurve') and not(local-name() = 'NurbsCurve')"><xsl:text>NurbsCurve</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbscurve2d') and not(local-name() = 'NurbsCurve2D')"><xsl:text>NurbsCurve2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbsorientationinterpolator') and not(local-name() = 'NurbsOrientationInterpolator')"><xsl:text>NurbsOrientationInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbspatchsurface') and not(local-name() = 'NurbsPatchSurface')"><xsl:text>NurbsPatchSurface</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbspositioninterpolator') and not(local-name() = 'NurbsPositionInterpolator')"><xsl:text>NurbsPositionInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbsset') and not(local-name() = 'NurbsSet')"><xsl:text>NurbsSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbssurfaceinterpolator') and not(local-name() = 'NurbsSurfaceInterpolator')"><xsl:text>NurbsSurfaceInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbssweptsurface') and not(local-name() = 'NurbsSweptSurface')"><xsl:text>NurbsSweptSurface</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbsswungsurface') and not(local-name() = 'NurbsSwungSurface')"><xsl:text>NurbsSwungSurface</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbstexturecoordinate') and not(local-name() = 'NurbsTextureCoordinate')"><xsl:text>NurbsTextureCoordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'nurbstrimmedsurface') and not(local-name() = 'NurbsTrimmedSurface')"><xsl:text>NurbsTrimmedSurface</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'opacitymapvolumestyle') and not(local-name() = 'OpacityMapVolumeStyle')"><xsl:text>OpacityMapVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'orientationchaser') and not(local-name() = 'OrientationChaser')"><xsl:text>OrientationChaser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'orientationdamper') and not(local-name() = 'OrientationDamper')"><xsl:text>OrientationDamper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'orientationinterpolator') and not(local-name() = 'OrientationInterpolator')"><xsl:text>OrientationInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'orthoviewpoint') and not(local-name() = 'OrthoViewpoint')"><xsl:text>OrthoViewpoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'oscillatorsource') and not(local-name() = 'OscillatorSource')"><xsl:text>OscillatorSource</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'packagedshader') and not(local-name() = 'PackagedShader')"><xsl:text>PackagedShader</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'particlesystem') and not(local-name() = 'ParticleSystem')"><xsl:text>ParticleSystem</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'periodicwave') and not(local-name() = 'PeriodicWave')"><xsl:text>PeriodicWave</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'physicalmaterial') and not(local-name() = 'PhysicalMaterial')"><xsl:text>PhysicalMaterial</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pickablegroup') and not(local-name() = 'PickableGroup')"><xsl:text>PickableGroup</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pixeltexture') and not(local-name() = 'PixelTexture')"><xsl:text>PixelTexture</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pixeltexture3d') and not(local-name() = 'PixelTexture3D')"><xsl:text>PixelTexture3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'planesensor') and not(local-name() = 'PlaneSensor')"><xsl:text>PlaneSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pointemitter') and not(local-name() = 'PointEmitter')"><xsl:text>PointEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pointlight') and not(local-name() = 'PointLight')"><xsl:text>PointLight</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pointpicksensor') and not(local-name() = 'PointPickSensor')"><xsl:text>PointPickSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pointproperties') and not(local-name() = 'PointProperties')"><xsl:text>PointProperties</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'pointset') and not(local-name() = 'PointSet')"><xsl:text>PointSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'polyline2d') and not(local-name() = 'Polyline2D')"><xsl:text>Polyline2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'polylineemitter') and not(local-name() = 'PolylineEmitter')"><xsl:text>PolylineEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'polypoint2d') and not(local-name() = 'Polypoint2D')"><xsl:text>Polypoint2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positionchaser') and not(local-name() = 'PositionChaser')"><xsl:text>PositionChaser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positionchaser2d') and not(local-name() = 'PositionChaser2D')"><xsl:text>PositionChaser2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positiondamper') and not(local-name() = 'PositionDamper')"><xsl:text>PositionDamper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positiondamper2d') and not(local-name() = 'PositionDamper2D')"><xsl:text>PositionDamper2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positioninterpolator') and not(local-name() = 'PositionInterpolator')"><xsl:text>PositionInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'positioninterpolator2d') and not(local-name() = 'PositionInterpolator2D')"><xsl:text>PositionInterpolator2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'primitivepicksensor') and not(local-name() = 'PrimitivePickSensor')"><xsl:text>PrimitivePickSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'programshader') and not(local-name() = 'ProgramShader')"><xsl:text>ProgramShader</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'projectionvolumestyle') and not(local-name() = 'ProjectionVolumeStyle')"><xsl:text>ProjectionVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'protoinstance') and not(local-name() = 'ProtoInstance')"><xsl:text>ProtoInstance</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'proximitysensor') and not(local-name() = 'ProximitySensor')"><xsl:text>ProximitySensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'quadset') and not(local-name() = 'QuadSet')"><xsl:text>QuadSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'receiverpdu') and not(local-name() = 'ReceiverPdu')"><xsl:text>ReceiverPdu</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'rectangle2d') and not(local-name() = 'Rectangle2D')"><xsl:text>Rectangle2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'rigidbody') and not(local-name() = 'RigidBody')"><xsl:text>RigidBody</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'rigidbodycollection') and not(local-name() = 'RigidBodyCollection')"><xsl:text>RigidBodyCollection</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'scalarchaser') and not(local-name() = 'ScalarChaser')"><xsl:text>ScalarChaser</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'scalardamper') and not(local-name() = 'ScalarDamper')"><xsl:text>ScalarDamper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'scalarinterpolator') and not(local-name() = 'ScalarInterpolator')"><xsl:text>ScalarInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'screenfontstyle') and not(local-name() = 'ScreenFontStyle')"><xsl:text>ScreenFontStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'screengroup') and not(local-name() = 'ScreenGroup')"><xsl:text>ScreenGroup</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'script') and not(local-name() = 'Script')"><xsl:text>Script</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'segmentedvolumedata') and not(local-name() = 'SegmentedVolumeData')"><xsl:text>SegmentedVolumeData</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'shadedvolumestyle') and not(local-name() = 'ShadedVolumeStyle')"><xsl:text>ShadedVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'shaderpart') and not(local-name() = 'ShaderPart')"><xsl:text>ShaderPart</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'shaderprogram') and not(local-name() = 'ShaderProgram')"><xsl:text>ShaderProgram</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'shape') and not(local-name() = 'Shape')"><xsl:text>Shape</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'signalpdu') and not(local-name() = 'SignalPdu')"><xsl:text>SignalPdu</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'silhouetteenhancementvolumestyle') and not(local-name() = 'SilhouetteEnhancementVolumeStyle')"><xsl:text>SilhouetteEnhancementVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'singleaxishingejoint') and not(local-name() = 'SingleAxisHingeJoint')"><xsl:text>SingleAxisHingeJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'sliderjoint') and not(local-name() = 'SliderJoint')"><xsl:text>SliderJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'sound') and not(local-name() = 'Sound')"><xsl:text>Sound</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'spatialsound') and not(local-name() = 'SpatialSound')"><xsl:text>SpatialSound</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'sphere') and not(local-name() = 'Sphere')"><xsl:text>Sphere</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'spheresensor') and not(local-name() = 'SphereSensor')"><xsl:text>SphereSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'splinepositioninterpolator') and not(local-name() = 'SplinePositionInterpolator')"><xsl:text>SplinePositionInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'splinepositioninterpolator2d') and not(local-name() = 'SplinePositionInterpolator2D')"><xsl:text>SplinePositionInterpolator2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'splinescalarinterpolator') and not(local-name() = 'SplineScalarInterpolator')"><xsl:text>SplineScalarInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'spotlight') and not(local-name() = 'SpotLight')"><xsl:text>SpotLight</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'squadorientationinterpolator') and not(local-name() = 'SquadOrientationInterpolator')"><xsl:text>SquadOrientationInterpolator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'staticgroup') and not(local-name() = 'StaticGroup')"><xsl:text>StaticGroup</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'streamaudiodestination') and not(local-name() = 'StreamAudioDestination')"><xsl:text>StreamAudioDestination</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'streamaudiosource') and not(local-name() = 'StreamAudioSource')"><xsl:text>StreamAudioSource</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'stringsensor') and not(local-name() = 'StringSensor')"><xsl:text>StringSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'surfaceemitter') and not(local-name() = 'SurfaceEmitter')"><xsl:text>SurfaceEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'switch') and not(local-name() = 'Switch')"><xsl:text>Switch</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texcoordchaser2d') and not(local-name() = 'TexCoordChaser2D')"><xsl:text>TexCoordChaser2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texcoorddamper2d') and not(local-name() = 'TexCoordDamper2D')"><xsl:text>TexCoordDamper2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'text') and not(local-name() = 'Text')"><xsl:text>Text</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturebackground') and not(local-name() = 'TextureBackground')"><xsl:text>TextureBackground</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturecoordinate') and not(local-name() = 'TextureCoordinate')"><xsl:text>TextureCoordinate</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturecoordinate3d') and not(local-name() = 'TextureCoordinate3D')"><xsl:text>TextureCoordinate3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturecoordinate4d') and not(local-name() = 'TextureCoordinate4D')"><xsl:text>TextureCoordinate4D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturecoordinategenerator') and not(local-name() = 'TextureCoordinateGenerator')"><xsl:text>TextureCoordinateGenerator</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'textureprojector') and not(local-name() = 'TextureProjector')"><xsl:text>TextureProjector</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'textureprojectorparallel') and not(local-name() = 'TextureProjectorParallel')"><xsl:text>TextureProjectorParallel</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'textureproperties') and not(local-name() = 'TextureProperties')"><xsl:text>TextureProperties</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturetransform') and not(local-name() = 'TextureTransform')"><xsl:text>TextureTransform</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturetransform3d') and not(local-name() = 'TextureTransform3D')"><xsl:text>TextureTransform3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'texturetransformmatrix3d') and not(local-name() = 'TextureTransformMatrix3D')"><xsl:text>TextureTransformMatrix3D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'timesensor') and not(local-name() = 'TimeSensor')"><xsl:text>TimeSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'timetrigger') and not(local-name() = 'TimeTrigger')"><xsl:text>TimeTrigger</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'tonemappedvolumestyle') and not(local-name() = 'ToneMappedVolumeStyle')"><xsl:text>ToneMappedVolumeStyle</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'touchsensor') and not(local-name() = 'TouchSensor')"><xsl:text>TouchSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'transform') and not(local-name() = 'Transform')"><xsl:text>Transform</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'transformsensor') and not(local-name() = 'TransformSensor')"><xsl:text>TransformSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'transmitterpdu') and not(local-name() = 'TransmitterPdu')"><xsl:text>TransmitterPdu</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'trianglefanset') and not(local-name() = 'TriangleFanSet')"><xsl:text>TriangleFanSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'triangleset') and not(local-name() = 'TriangleSet')"><xsl:text>TriangleSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'triangleset2d') and not(local-name() = 'TriangleSet2D')"><xsl:text>TriangleSet2D</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'trianglestripset') and not(local-name() = 'TriangleStripSet')"><xsl:text>TriangleStripSet</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'twosidedmaterial') and not(local-name() = 'TwoSidedMaterial')"><xsl:text>TwoSidedMaterial</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'universaljoint') and not(local-name() = 'UniversalJoint')"><xsl:text>UniversalJoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'unlitmaterial') and not(local-name() = 'UnlitMaterial')"><xsl:text>UnlitMaterial</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'viewpoint') and not(local-name() = 'Viewpoint')"><xsl:text>Viewpoint</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'viewpointgroup') and not(local-name() = 'ViewpointGroup')"><xsl:text>ViewpointGroup</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'viewport') and not(local-name() = 'Viewport')"><xsl:text>Viewport</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'visibilitysensor') and not(local-name() = 'VisibilitySensor')"><xsl:text>VisibilitySensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'volumedata') and not(local-name() = 'VolumeData')"><xsl:text>VolumeData</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'volumeemitter') and not(local-name() = 'VolumeEmitter')"><xsl:text>VolumeEmitter</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'volumepicksensor') and not(local-name() = 'VolumePickSensor')"><xsl:text>VolumePickSensor</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'waveshaper') and not(local-name() = 'WaveShaper')"><xsl:text>WaveShaper</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'windphysicsmodel') and not(local-name() = 'WindPhysicsModel')"><xsl:text>WindPhysicsModel</xsl:text></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'worldinfo') and not(local-name() = 'WorldInfo')"><xsl:text>WorldInfo</xsl:text></xsl:when>
+                <!-- *** finish: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
+            </xsl:choose>
+        </xsl:variable>
+        
         <xsl:variable name="elementName">
             <xsl:choose>
                 <xsl:when test="(local-name(..) = 'MetadataSet') and ((../@name = 'HAnimHumanoid.info') or (../@name = 'GeoMetadata.summary')) and
                                  starts-with(local-name(), 'Metadata') and not(local-name() = 'MetadataFloat') and
-                                ((@name = 'height') or (@name = 'weight') or (@name = 'extent') or (@name = 'resolution'))">
+                                ((@name = 'height') or (@name = 'weight') or (@name = 'resolution'))">
                     <xsl:text>MetadataFloat</xsl:text>
                     <xsl:message>
                         <xsl:text>*** for contained element in MetadataSet name='</xsl:text>
@@ -558,6 +831,31 @@ Recommended tools:
                         <xsl:text>' value='</xsl:text>
                         <xsl:value-of select="@value"/>
                         <xsl:text>' </xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(string-length($correctedCapitalizationElementName) > 0)">
+                    <xsl:value-of select="$correctedCapitalizationElementName"/>
+                    <xsl:message>
+                        <xsl:text>*** &lt;</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:if test="(string-length(@DEF) > 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@USE) > 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@name) > 0)">
+                            <xsl:text> name='</xsl:text>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:text>/&gt;</xsl:text>
+                        <xsl:text> element capitalization-case mismatch, correct CamelCase naming is </xsl:text>
+                        <xsl:value-of select="$correctedCapitalizationElementName"/>
                     </xsl:message>
                 </xsl:when>
                 <xsl:otherwise>
@@ -702,8 +1000,7 @@ Recommended tools:
                                     </xsl:message> -->
                                     <xsl:variable name="elementName">
                                         <xsl:choose>
-                                            <xsl:when test="starts-with($summaryNameValuePair,'extent') or 
-                                                            starts-with($summaryNameValuePair,'resolution')">
+                                            <xsl:when test="starts-with($summaryNameValuePair,'resolution')">
                                                 <xsl:text>MetadataFloat</xsl:text>
                                             </xsl:when>
                                             <xsl:otherwise>
@@ -3125,9 +3422,10 @@ Recommended tools:
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (.='0')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
-                      ((local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      ((local-name()='containerField' and (.='children')) or
+                       (local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
                       ((local-name()='range' and (.='10' or .='10.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
@@ -3567,6 +3865,22 @@ Recommended tools:
             
             <!-- fix attribute name if incorrect -->
             <xsl:choose>
+                <xsl:when test="(local-name(..) = 'meta') and ((local-name() = 'key') or local-name() = 'value'))">
+                    <xsl:text>content</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fix </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>' by changing attribute </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to content='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
                 <xsl:when test="(local-name() = 'mustOutput')">
                     <xsl:text>forceOutput</xsl:text>
                     <xsl:message>
@@ -5551,10 +5865,9 @@ Recommended tools:
             </xsl:when>
             
       <!-- X3dTidy.xslt correction rules in X3dDiagnostics4.0.xml autogenerated from X3DUOM -->
-      
+
       <!-- *** start: HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when
-          test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
+      <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
@@ -5657,7 +5970,7 @@ Recommended tools:
       <!-- *** finish HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
 
       <!-- *** start: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
+      <xsl:when test="(local-name(..)='HAnimSegment') and (local-name()='name') and $isHAnim2 and ((.='l_hindfoot') or (.='l_cuneiform') or (.='l_midproximal') or (.='l_metatarsal') or (.='l_middistal') or (.='l_tarsal_proximal_phalanx') or (.='l_tarsal_middle_phalanx') or (.='l_forefoot') or (.='l_tarsal_distal_phalanx') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_cuneiform') or (.='r_midproximal') or (.='r_middistal') or (.='r_tarsal_proximal_phalanx') or (.='r_tarsal_middle_phalanx') or (.='r_forefoot') or (.='r_tarsal_distal_phalanx') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_wrist') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_carpal_proximal_phalanx') or (.='l_index_middle') or (.='l_carpal_middle_phalanx') or (.='l_index_distal') or (.='l_carpal_distal_phalanx') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_wrist') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_carpal_proximal_phalanx') or (.='r_index_middle') or (.='r_carpal_middle_phalanx') or (.='r_index_distal') or (.='r_carpal_distal_phalanx') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
@@ -5682,7 +5995,6 @@ Recommended tools:
                 <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
                 <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
                 <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='l_wrist')"><xsl:text>l_carpal</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
                 <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
@@ -5706,7 +6018,6 @@ Recommended tools:
                 <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
                 <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
                 <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_wrist')"><xsl:text>r_carpal</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
                 <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
@@ -5757,8 +6068,7 @@ Recommended tools:
       <!-- *** finish: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
 
       <!-- *** start: HAnim2 HAnimSite alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when
-          test="(local-name(..)='HAnimSite') and (local-name()='name') and $isHAnim2 and (starts-with(.,'skull_tip') or starts-with(.,'vertex') or starts-with(.,'l_clavicale') or starts-with(.,'l_axilla_ant') or starts-with(.,'l_axilla_post') or starts-with(.,'r_clavicale') or starts-with(.,'r_axilla_ant') or starts-with(.,'r_axilla_post') or starts-with(.,'middle back') or starts-with(.,'lower back') or starts-with(.,'waist_preferred_ant') or starts-with(.,'waist_preferred_post') or starts-with(.,'l_rib10_midspine') or starts-with(.,'Left Bustpoint') or starts-with(.,'r_rib10_midspine') or starts-with(.,'Right Bustpoint') or starts-with(.,'Left Anterior Superior Iliac Spine') or starts-with(.,'Left Posterior Superior Iliac Spine') or starts-with(.,'Right Anterior Superior Iliac Spine') or starts-with(.,'Right Posterior Superior Iliac Spine') or starts-with(.,'l_femoral_lateral_epicn') or starts-with(.,'l_femoral_medial_epicn') or starts-with(.,'l_kneecap') or starts-with(.,'l_trochanter') or starts-with(.,'r_femoral_lateral_epicn') or starts-with(.,'r_femoral_medial_epicn') or starts-with(.,'r_kneecap') or starts-with(.,'r_trochanter') or starts-with(.,'l_metatarsal_pha1') or starts-with(.,'l_metatarsal_pha5') or starts-with(.,'l_calcaneous_post') or starts-with(.,'l_calcaneum') or starts-with(.,'r_metatarsal_pha1') or starts-with(.,'r_metatarsal_pha5') or starts-with(.,'r_calcaneous_post') or starts-with(.,'r_calcaneum') or starts-with(.,'l_humeral_lateral_epicn') or starts-with(.,'l_humeral_medial_epicn') or starts-with(.,'r_humeral_lateral_epicn') or starts-with(.,'r_humeral_medial_epicn') or starts-with(.,'l_metacarpal_pha2') or starts-with(.,'l_metacarpal_phalanx') or starts-with(.,'l_metacarpal_pha5') or starts-with(.,'r_metacarpal_pha2') or starts-with(.,'r_metacarpal_phalanx') or starts-with(.,'r_metacarpal_pha5') or starts-with(.,'nuchal') or starts-with(.,'belly button') or starts-with(.,'l_canthus') or starts-with(.,'r_canthus') or starts-with(.,'chin') or starts-with(.,'mesosternum') or starts-with(.,'median plane') or starts-with(.,'l_shoulder') or starts-with(.,'r_shoulder') or starts-with(.,'l_thumb_distal') or starts-with(.,'l_index_distal') or starts-with(.,'l_carpal_distal_phalanx') or starts-with(.,'l_carpal_distal_phalanx') or starts-with(.,'l_middle_distal') or starts-with(.,'l_ring_distal') or starts-with(.,'l_pinky_distal') or starts-with(.,'r_thumb_distal') or starts-with(.,'r_index_distal') or starts-with(.,'r_carpal_distal_phalanx') or starts-with(.,'r_middle_distal') or starts-with(.,'r_ring_distal') or starts-with(.,'r_pinky_distal') or starts-with(.,'l_digit2') or starts-with(.,'l_tarsal_distal_phalanx') or starts-with(.,'l_tarsal_interphalangeal_pha5') or starts-with(.,'r_digit2') or starts-with(.,'r_tarsal_distal_phalanx') or starts-with(.,'r_tarsal_interphalangeal_pha5'))">
+      <xsl:when test="(local-name(..)='HAnimSite') and (local-name()='name') and $isHAnim2 and (starts-with(@name,'skull_tip') or starts-with(@name,'vertex') or starts-with(@name,'l_clavicale') or starts-with(@name,'l_axilla_ant') or starts-with(@name,'l_axilla_post') or starts-with(@name,'r_clavicale') or starts-with(@name,'r_axilla_ant') or starts-with(@name,'r_axilla_post') or starts-with(@name,'middle back') or starts-with(@name,'lower back') or starts-with(@name,'waist_preferred_ant') or starts-with(@name,'waist_preferred_post') or starts-with(@name,'l_rib10_midspine') or starts-with(@name,'Left Bustpoint') or starts-with(@name,'r_rib10_midspine') or starts-with(@name,'Right Bustpoint') or starts-with(@name,'Left Anterior Superior Iliac Spine') or starts-with(@name,'Left Posterior Superior Iliac Spine') or starts-with(@name,'Right Anterior Superior Iliac Spine') or starts-with(@name,'Right Posterior Superior Iliac Spine') or starts-with(@name,'l_femoral_lateral_epicn') or starts-with(@name,'l_femoral_lateral_epicondyles') or starts-with(@name,'l_femoral_medial_epicn') or starts-with(@name,'l_femoral_medial_epicondyles') or starts-with(@name,'l_kneecap') or starts-with(@name,'l_trochanter') or starts-with(@name,'r_femoral_lateral_epicn') or starts-with(@name,'r_femoral_lateral_epicondyles') or starts-with(@name,'r_femoral_medial_epicn') or starts-with(@name,'r_femoral_medial_epicondyles') or starts-with(@name,'r_kneecap') or starts-with(@name,'r_trochanter') or starts-with(@name,'l_metatarsal_pha1') or starts-with(@name,'l_metatarsal_pha5') or starts-with(@name,'l_calcaneous_post') or starts-with(@name,'r_metatarsal_pha1') or starts-with(@name,'r_metatarsal_pha5') or starts-with(@name,'r_calcaneous_post') or starts-with(@name,'l_humeral_lateral_epicn') or starts-with(@name,'l_humeral_lateral_epicondyles') or starts-with(@name,'l_humeral_medial_epicn') or starts-with(@name,'l_humeral_medial_epicondyles') or starts-with(@name,'r_humeral_lateral_epicn') or starts-with(@name,'r_humeral_lateral_epicondyles') or starts-with(@name,'r_humeral_medial_epicn') or starts-with(@name,'r_humeral_medial_epicondyles') or starts-with(@name,'l_metacarpal_pha2') or starts-with(@name,'l_metacarpal_phalanx') or starts-with(@name,'l_metacarpal_pha5') or starts-with(@name,'r_metacarpal_pha2') or starts-with(@name,'r_metacarpal_phalanx') or starts-with(@name,'r_metacarpal_pha5') or starts-with(@name,'nuchal') or starts-with(@name,'belly button') or starts-with(@name,'l_canthus') or starts-with(@name,'r_canthus') or starts-with(@name,'chin') or starts-with(@name,'mesosternum') or starts-with(@name,'median plane') or starts-with(@name,'l_thumb_distal') or starts-with(@name,'l_index_distal') or starts-with(@name,'l_middle_distal') or starts-with(@name,'l_ring_distal') or starts-with(@name,'l_pinky_distal') or starts-with(@name,'r_thumb_distal') or starts-with(@name,'r_index_distal') or starts-with(@name,'r_middle_distal') or starts-with(@name,'r_ring_distal') or starts-with(@name,'r_pinky_distal') or starts-with(@name,'l_digit2') or starts-with(@name,'l_tarsal_distal_pha5') or starts-with(@name,'r_digit2') or starts-with(@name,'r_tarsal_distal_pha5') or contains(@name,'l_hindfoot') or contains(@name,'l_cuneiform') or contains(@name,'l_midproximal') or contains(@name,'l_metatarsal') or contains(@name,'l_middistal') or contains(@name,'l_tarsal_proximal_phalanx') or contains(@name,'l_tarsal_middle_phalanx') or contains(@name,'l_forefoot') or contains(@name,'l_tarsal_distal_phalanx') or contains(@name,'l_calcaneum') or contains(@name,'r_hindfoot') or contains(@name,'r_cuneiform') or contains(@name,'r_midproximal') or contains(@name,'r_middistal') or contains(@name,'r_tarsal_proximal_phalanx') or contains(@name,'r_tarsal_middle_phalanx') or contains(@name,'r_forefoot') or contains(@name,'r_tarsal_distal_phalanx') or contains(@name,'r_calcaneum') or contains(@name,'head') or contains(@name,'l_hand') or contains(@name,'l_wrist') or contains(@name,'l_thumb_metacarpal') or contains(@name,'l_thumb_proximal') or contains(@name,'l_thumb_distal') or contains(@name,'l_index_metacarpal') or contains(@name,'l_index_proximal') or contains(@name,'l_carpal_proximal_phalanx') or contains(@name,'l_index_middle') or contains(@name,'l_carpal_middle_phalanx') or contains(@name,'l_index_distal') or contains(@name,'l_carpal_distal_phalanx') or contains(@name,'l_middle_metacarpal') or contains(@name,'l_middle_proximal') or contains(@name,'l_middle_middle') or contains(@name,'l_middle_distal') or contains(@name,'l_ring_metacarpal') or contains(@name,'l_ring_proximal') or contains(@name,'l_ring_middle') or contains(@name,'l_ring_distal') or contains(@name,'l_pinky_metacarpal') or contains(@name,'l_pinky_proximal') or contains(@name,'l_pinky_middle') or contains(@name,'l_pinky_distal') or contains(@name,'r_hand') or contains(@name,'r_wrist') or contains(@name,'r_thumb_metacarpal') or contains(@name,'r_thumb_proximal') or contains(@name,'r_thumb_distal') or contains(@name,'r_index_metacarpal') or contains(@name,'r_index_proximal') or contains(@name,'r_carpal_proximal_phalanx') or contains(@name,'r_index_middle') or contains(@name,'r_carpal_middle_phalanx') or contains(@name,'r_index_distal') or contains(@name,'r_carpal_distal_phalanx') or contains(@name,'r_middle_metacarpal') or contains(@name,'r_middle_proximal') or contains(@name,'r_middle_middle') or contains(@name,'r_middle_distal') or contains(@name,'r_ring_metacarpal') or contains(@name,'r_ring_proximal') or contains(@name,'r_ring_middle') or contains(@name,'r_ring_distal') or contains(@name,'r_pinky_metacarpal') or contains(@name,'r_pinky_proximal') or contains(@name,'r_pinky_middle') or contains(@name,'r_pinky_distal'))">
         <xsl:variable name="suffix">
             <xsl:choose>
                 <xsl:when test="ends-with(.,'_pt')">
@@ -5796,25 +6106,31 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_femoral_lateral_epicondyles')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_femoral_medial_epicondyles')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_kneecap')"><xsl:text>l_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_femoral_lateral_epicondyles')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_femoral_medial_epicondyles')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_kneecap')"><xsl:text>r_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_calcaneous_post')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_calcaneous_post')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_humeral_lateral_epicondyles')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_humeral_medial_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_humeral_medial_epicondyles')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_humeral_lateral_epicondyles')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_humeral_medial_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_humeral_medial_epicondyles')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
@@ -5828,18 +6144,13 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'chin')"><xsl:text>menton</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'mesosternum')"><xsl:text>mesosternale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_carpal_distal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
@@ -5869,7 +6180,6 @@ Recommended tools:
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_calcaneum')"><xsl:value-of select="substring-before(../@name,'r_calcaneum')"/><xsl:text>r_calcaneus</xsl:text><xsl:value-of select="substring-after(../@name,'r_calcaneum')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'head')"><xsl:value-of select="substring-before(../@name,'head')"/><xsl:text>skull</xsl:text><xsl:value-of select="substring-after(../@name,'head')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_hand')"><xsl:value-of select="substring-before(../@name,'l_hand')"/><xsl:text>l_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'l_hand')"/></xsl:when>
-                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_wrist')"><xsl:value-of select="substring-before(../@name,'l_wrist')"/><xsl:text>l_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'l_wrist')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_metacarpal')"><xsl:value-of select="substring-before(../@name,'l_thumb_metacarpal')"/><xsl:text>l_metacarpal_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_metacarpal')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_proximal')"><xsl:value-of select="substring-before(../@name,'l_thumb_proximal')"/><xsl:text>l_carpal_proximal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_proximal')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_thumb_distal')"><xsl:value-of select="substring-before(../@name,'l_thumb_distal')"/><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'l_thumb_distal')"/></xsl:when>
@@ -5893,7 +6203,6 @@ Recommended tools:
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_middle')"><xsl:value-of select="substring-before(../@name,'l_pinky_middle')"/><xsl:text>l_carpal_middle_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_middle')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_pinky_distal')"><xsl:value-of select="substring-before(../@name,'l_pinky_distal')"/><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="substring-after(../@name,'l_pinky_distal')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_hand')"><xsl:value-of select="substring-before(../@name,'r_hand')"/><xsl:text>r_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'r_hand')"/></xsl:when>
-                <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_wrist')"><xsl:value-of select="substring-before(../@name,'r_wrist')"/><xsl:text>r_carpal</xsl:text><xsl:value-of select="substring-after(../@name,'r_wrist')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_metacarpal')"><xsl:value-of select="substring-before(../@name,'r_thumb_metacarpal')"/><xsl:text>r_metacarpal_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_metacarpal')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_proximal')"><xsl:value-of select="substring-before(../@name,'r_thumb_proximal')"/><xsl:text>r_carpal_proximal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_proximal')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'r_thumb_distal')"><xsl:value-of select="substring-before(../@name,'r_thumb_distal')"/><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="substring-after(../@name,'r_thumb_distal')"/></xsl:when>

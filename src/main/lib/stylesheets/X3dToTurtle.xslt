@@ -1193,7 +1193,7 @@
                                     <xsl:choose>
                                         <xsl:when test="$containsQuote">
                                             <xsl:message>
-                                                <xsl:text>*** Warning: mixed quotes and apostrophes in a single attribute value </xsl:text>
+                                                <xsl:text>*** Warning: mixed quotes and apostrophes in a single attribute value: </xsl:text>
                                                 <xsl:value-of select="."/>
                                             </xsl:message>
                                             <xsl:call-template name="escape-apostrophe-characters"> <!-- tail recursion -->

@@ -804,6 +804,7 @@ Recommended tool:
                       local-name(..)='Billboard' or
                       local-name(..)='Collision' or
                       local-name(..)='Fog' or
+                      local-name(..)='GeoMetadata' or
                       local-name(..)='Group' or
                       local-name(..)='Inline' or
                       local-name(..)='LOD' or
@@ -908,7 +909,7 @@ Recommended tool:
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                      (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
                       ((local-name()='range' and (string(.)='10' or string(.)='10.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
