@@ -636,8 +636,8 @@ class ClassPrinter:
 
 code = '''{
         "$schema": "http://json-schema.org/draft-07/schema#",
-        "title": "JSON Schema X3D V4.0",
-        "description": "Experimental JSON Schema for X3D V4.0 ",
+        "title": "JSON Schema X3D V'''+sys.argv[1]+'''",
+        "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''",
         "type": "object",
         "properties": {
                 "X3D": {
