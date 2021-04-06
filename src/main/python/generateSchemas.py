@@ -1,5 +1,7 @@
 import os
 
+# generates X3D JSON schema from 5 different versions of X3DUOM.
+
 versions = ['3.0', '3.1', '3.2', '3.3', '4.0']
 for version in versions:
     print(f"{version}")
