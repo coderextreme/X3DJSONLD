@@ -2,6 +2,8 @@ import xml.etree.ElementTree
 import sys
 import re
 
+# childrenStatements and geoSystem are currently hardcoded.  We want to generated these from X3DUOM
+
 PY3 = sys.version_info[0] == 3
 
 
