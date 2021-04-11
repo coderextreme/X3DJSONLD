@@ -26,6 +26,7 @@ cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 pip3 install beautifulsoup4
 pip3 install lxml
 pip3 install jnius
+pip3 install fastjsonschema
 
 # generate schemas
 pushd src/main/shell
