@@ -2,7 +2,7 @@ import xml.etree.ElementTree
 import sys
 import re
 
-# childrenStatements and geoSystem are currently hardcoded.  We want to generated these from X3DUOM
+# childStatements and geoSystem are currently hardcoded.  We want to generated these from X3DUOM
 
 PY3 = sys.version_info[0] == 3
 
@@ -101,6 +101,8 @@ class ClassPrinter:
             str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
         except:
             pass
+        # if not field.get("type").startswith("MF") and not field.get("type") == "SFVec3f":
+            # str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
         str += '\t\t\t\t\t\t"type":"'
         if field.get("type") == "MFBool":
             str += 'boolean"\n'
@@ -197,6 +199,7 @@ class ClassPrinter:
                 except:
                     pass
             if field.get('additionalEnumerationValuesAllowed') == "false" or field.get('additionalEnumeratrionValuesAllowed') is None:
+                str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
                 str += '\t\t\t\t\t\t"type":"'
                 if field.get("type") == "SFBool":
                     str += 'boolean"\n'
@@ -229,6 +232,7 @@ class ClassPrinter:
             elif field.get("type") == "SFString":
                 pass
             else:
+                str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
                 str += '\t\t\t\t\t\t"type":"'
                 str += 'array",\n'
                 if field.get("name").endswith("url") or field.get("name").endswith("Url"):
@@ -551,7 +555,7 @@ class ClassPrinter:
         elif not foundChildren:
             str += '''\
                                 "-children": {
-                                        "$ref": "#/definitions/-childrenStatements"
+                                        "$ref": "#/definitions/-childStatements"
                                 },
 '''
         if self.node is not None:
@@ -589,6 +593,7 @@ class ClassPrinter:
                                 # container fields
                                 cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
                                 if field.get("type") == "MFNode":
+                                    cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
                                     cf += '\t\t\t\t\t\t"type": "array",\n'
                                     cf += '\t\t\t\t\t\t"minItems": 1,\n'
                                     cf += '\t\t\t\t\t\t"items": {\n'
@@ -651,7 +656,7 @@ code = '''{
         ],
         "additionalProperties": false,
         "definitions": {
-                "-childrenStatements": {
+                "-childStatements": {
                         "description": "Comments and ROUTEs",
                         "type": "array",
                         "minItems": 1,
@@ -905,7 +910,8 @@ code = '''{
 					"additionalItems": {
 						"type": "string",
 						"enum": [
-							"S"
+							"S",
+							"N"
 						]
 					}
 				},
@@ -1026,7 +1032,8 @@ code = '''{
 						{
 							"type": "string",
 							"enum": [
-								"S"
+								"S",
+								"N"
 							]
 						}
 					],
@@ -1161,7 +1168,8 @@ code = '''{
 					"additionalItems": {
 						"type": "string",
 						"enum": [
-							"S"
+							"S",
+							"N"
 						]
 					}
 				},
@@ -1261,7 +1269,8 @@ code = '''{
 						{
 							"type": "string",
 							"enum": [
-								"S"
+								"S",
+								"N"
 							]
 						}
 					],
@@ -1383,7 +1392,8 @@ code = '''{
 						{
 							"type": "string",
 							"enum": [
-								"S"
+								"S",
+								"N"
 							]
 						},
 						{
@@ -1511,7 +1521,8 @@ code = '''{
 						{
 							"type": "string",
 							"enum": [
-								"S"
+								"S",
+								"N"
 							]
 						},
 						{
