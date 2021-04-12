@@ -36,7 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 July 2020 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -45,6 +45,10 @@ var autoclass = require('./X3Dautoclass');
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
 			<td> TODO will X3D HAnim component add a new level to support LOA-4 functionality? </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
+			<td> how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs? </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
@@ -118,9 +122,10 @@ HAnimModelsHandsFeet.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("8 February 2015"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("8 March 2021"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("not yet to scale"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
+    .addMeta((new autoclass.meta()).setName("TODO").setContent("how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimModelsHandsFeet.png"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-HAnim"))

@@ -10,17 +10,17 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/NancyPrototypes.java">NancyPrototypes.java</a> source, <a href="../../../HumanoidAnimation/NancyPrototypesIndex.html" target="_top">NancyPrototypes catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces. </p>
+ <p> Related links: NancyPrototypes.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NancyPrototypes&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/NancyPrototypes.x3d">NancyPrototypes.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d">NancyPrototypes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -36,11 +36,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 4 July 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces. </td>
+			<td> Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces. </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../HumanoidAnimation/NancyNativeTags.x3d">NancyNativeTags.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyNativeTags.x3d">NancyNativeTags.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
@@ -56,7 +56,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -64,7 +64,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -112,7 +112,7 @@ NancyPrototypes.prototype = {
 	this.ProtoDeclare_Site_3_114_appinfo = new autoclass.SFString("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).");
 
 	/** Large attribute array: fieldValue value field, scene-graph level=4, element #142, 38 total values */
-	this.fieldValue_info_4_142_value = new autoclass.SFString("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\"");
+	this.fieldValue_info_4_142_value = new autoclass.SFString("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"");
 
 	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=12, element #150, 712 total numbers */
 	this.IndexedFaceSet_12_150_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,40,-1,1,2,40,-1,2,3,40,-1,3,4,40,-1,4,5,40,-1,5,4,9,-1,4,3,8,-1,3,2,8,-1,2,1,6,-1,0,7,1,-1,7,6,1,-1,6,8,2,-1,9,4,10,-1,4,8,10,-1,8,6,12,-1,7,0,47,-1,50,5,9,-1,7,47,55,-1,55,13,7,-1,50,9,56,-1,9,10,14,-1,10,11,15,-1,11,12,16,-1,12,13,19,-1,13,55,17,-1,60,17,55,-1,17,19,13,-1,19,16,12,-1,16,15,11,-1,15,18,10,-1,14,56,9,-1,56,14,64,-1,17,60,20,-1,20,19,17,-1,21,64,14,-1,14,22,21,-1,15,16,24,-1,16,19,24,-1,19,20,26,-1,24,23,15,-1,64,21,69,-1,21,22,29,-1,19,26,25,-1,20,63,27,-1,27,26,20,-1,25,24,19,-1,30,29,22,-1,29,28,21,-1,28,69,21,-1,27,34,26,-1,69,28,79,-1,29,30,32,-1,30,23,33,-1,23,24,37,-1,25,26,34,-1,83,27,77,-1,37,33,23,-1,33,32,30,-1,31,79,28,-1,79,31,84,-1,32,33,36,-1,24,25,37,-1,34,27,83,-1,83,38,34,-1,34,37,25,-1,37,36,33,-1,36,35,32,-1,84,31,89,-1,31,35,89,-1,35,36,39,-1,36,37,39,-1,38,83,89,-1,89,39,38,-1,39,89,35,-1,40,41,0,-1,40,42,41,-1,40,43,42,-1,40,44,43,-1,40,45,44,-1,49,44,45,-1,48,43,44,-1,48,42,43,-1,46,41,42,-1,41,47,0,-1,41,46,47,-1,42,48,46,-1,51,44,49,-1,51,48,44,-1,48,52,53,-1,49,45,50,-1,56,49,50,-1,57,51,49,-1,58,53,52,-1,59,54,53,-1,62,55,54,-1,55,62,60,-1,54,59,62,-1,53,58,59,-1,51,61,58,-1,49,56,57,-1,64,57,56,-1,67,59,58,-1,68,62,59,-1,60,63,20,-1,60,62,63,-1,59,67,68,-1,58,61,67,-1,57,64,65,-1,65,66,57,-1,71,63,62,-1,69,65,64,-1,74,66,65,-1,78,68,67,-1,70,71,62,-1,63,72,27,-1,63,71,72,-1,68,78,76,-1,67,75,78,-1,66,74,75,-1,65,73,74,-1,65,69,73,-1,77,27,72,-1,71,82,72,-1,79,73,69,-1,81,75,74,-1,82,71,70,-1,77,72,83,-1,73,79,80,-1,84,80,79,-1,86,75,81,-1,83,72,82,-1,82,88,83,-1,70,87,82,-1,81,85,86,-1,89,80,84,-1,89,85,80,-1,90,86,85,-1,90,87,86,-1,89,83,88,-1,88,90,89,-1,85,89,90,-1,50,45,5,-1,45,40,5,-1,10,8,11,-1,8,12,11,-1,18,22,10,-1,22,14,10,-1,57,66,51,-1,66,61,51,-1,51,58,48,-1,58,52,48,-1,48,53,46,-1,53,54,46,-1,76,70,68,-1,70,62,68,-1,29,32,28,-1,28,32,31,-1,32,35,31,-1,85,81,80,-1,81,73,80,-1,81,74,73,-1,39,37,38,-1,37,34,38,-1,82,87,88,-1,87,90,88,-1,87,78,86,-1,78,75,86,-1,61,66,67,-1,66,75,67,-1,22,18,15,-1,23,30,15,-1,30,22,15,-1,13,12,7,-1,12,6,7,-1,46,54,47,-1,54,55,47,-1,87,76,78,-1,87,70,76,-1]));
@@ -413,137 +413,137 @@ NancyPrototypes.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.743,0.0507,0.0,0.728,0.0788,0.0,0.734,0.0228,0.0,0.728,0.0788,0.0,0.681,0.0301,0.0,0.734,0.0228,0.0,0.673,0.0532,0.0,0.728,0.0788,0.0,0.673,0.0532,0.0,0.696,0.105,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.65,0.0611,0.0,0.649,0.105,0.0,0.626,0.0506,0.0,0.615,0.0803,0.0,0.617,0.0224,0.0,0.615,0.0803,0.0,0.563,-0.101,0.0,0.617,0.0224,0.0,0.563,-0.101,0.0,0.615,0.0803,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_ankleRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #476, 44 total numbers made up of 11 4-tuple values */
-	this.r_ankleRotInterp_BasicWalk_5_476_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='r_ankle_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #476, 44 total numbers made up of 11 4-tuple values */
+	this.r_ankle_RotationInterpolator_BasicWalk_5_476_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_kneeRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #477, 40 total numbers made up of 10 4-tuple values */
-	this.r_kneeRotInterp_BasicWalk_5_477_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]));
+	/** Large attribute array: OrientationInterpolator DEF='r_knee_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #477, 40 total numbers made up of 10 4-tuple values */
+	this.r_knee_RotationInterpolator_BasicWalk_5_477_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_hipRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #478, 40 total numbers made up of 10 4-tuple values */
-	this.r_hipRotInterp_BasicWalk_5_478_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]));
+	/** Large attribute array: OrientationInterpolator DEF='r_hip_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #478, 40 total numbers made up of 10 4-tuple values */
+	this.r_hip_RotationInterpolator_BasicWalk_5_478_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_ankleRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #479, 28 total numbers made up of 7 4-tuple values */
-	this.l_ankleRotInterp_BasicWalk_5_479_keyValue = new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714]));
+	/** Large attribute array: OrientationInterpolator DEF='l_ankle_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #479, 28 total numbers made up of 7 4-tuple values */
+	this.l_ankle_RotationInterpolator_BasicWalk_5_479_keyValue = new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_kneeRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #480, 32 total numbers made up of 8 4-tuple values */
-	this.l_kneeRotInterp_BasicWalk_5_480_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]));
+	/** Large attribute array: OrientationInterpolator DEF='l_knee_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #480, 32 total numbers made up of 8 4-tuple values */
+	this.l_knee_RotationInterpolator_BasicWalk_5_480_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_hipRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #481, 32 total numbers made up of 8 4-tuple values */
-	this.l_hipRotInterp_BasicWalk_5_481_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]));
+	/** Large attribute array: OrientationInterpolator DEF='l_hip_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #481, 32 total numbers made up of 8 4-tuple values */
+	this.l_hip_RotationInterpolator_BasicWalk_5_481_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_wristRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #483, 16 total numbers made up of 4 4-tuple values */
-	this.r_wristRotInterp_BasicWalk_5_483_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]));
+	/** Large attribute array: OrientationInterpolator DEF='r_wrist_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #483, 16 total numbers made up of 4 4-tuple values */
+	this.r_wrist_RotationInterpolator_BasicWalk_5_483_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_wristRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #486, 16 total numbers made up of 4 4-tuple values */
-	this.l_wristRotInterp_BasicWalk_5_486_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]));
+	/** Large attribute array: OrientationInterpolator DEF='l_wrist_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #486, 16 total numbers made up of 4 4-tuple values */
+	this.l_wrist_RotationInterpolator_BasicWalk_5_486_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]));
 
-	/** Large attribute array: OrientationInterpolator DEF='headRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #489, 40 total numbers made up of 10 4-tuple values */
-	this.headRotInterp_BasicWalk_5_489_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]));
+	/** Large attribute array: OrientationInterpolator DEF='head_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #489, 40 total numbers made up of 10 4-tuple values */
+	this.head_RotationInterpolator_BasicWalk_5_489_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]));
 
-	/** Large attribute array: OrientationInterpolator DEF='upper_bodyRotInterp_BasicWalk' keyValue field, scene-graph level=5, element #491, 24 total numbers made up of 6 4-tuple values */
-	this.upper_bodyRotInterp_BasicWalk_5_491_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]));
+	/** Large attribute array: OrientationInterpolator DEF='upper_body_RotationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #491, 24 total numbers made up of 6 4-tuple values */
+	this.upper_body_RotationInterpolator_BasicWalk_5_491_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]));
 
-	/** Large attribute array: PositionInterpolator DEF='whole_bodyTranInterp_BasicWalk' key field, scene-graph level=5, element #493, 19 total numbers */
-	this.whole_bodyTranInterp_BasicWalk_5_493_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0]));
+	/** Large attribute array: PositionInterpolator DEF='whole_body_TranslationInterpolator_BasicWalk' key field, scene-graph level=5, element #493, 19 total numbers */
+	this.whole_body_TranslationInterpolator_BasicWalk_5_493_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0]));
 
-	/** Large attribute array: PositionInterpolator DEF='whole_bodyTranInterp_BasicWalk' keyValue field, scene-graph level=5, element #493, 57 total numbers made up of 19 3-tuple values */
-	this.whole_bodyTranInterp_BasicWalk_5_493_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='whole_body_TranslationInterpolator_BasicWalk' keyValue field, scene-graph level=5, element #493, 57 total numbers made up of 19 3-tuple values */
+	this.whole_body_TranslationInterpolator_BasicWalk_5_493_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_ankleRotInterp_Run' keyValue field, scene-graph level=5, element #496, 24 total numbers made up of 6 4-tuple values */
-	this.r_ankleRotInterp_Run_5_496_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323]));
+	/** Large attribute array: OrientationInterpolator DEF='r_ankle_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #496, 24 total numbers made up of 6 4-tuple values */
+	this.r_ankle_RotationInterpolator_Run_5_496_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_kneeRotInterp_Run' keyValue field, scene-graph level=5, element #497, 24 total numbers made up of 6 4-tuple values */
-	this.r_kneeRotInterp_Run_5_497_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004]));
+	/** Large attribute array: OrientationInterpolator DEF='r_knee_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #497, 24 total numbers made up of 6 4-tuple values */
+	this.r_knee_RotationInterpolator_Run_5_497_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_hipRotInterp_Run' keyValue field, scene-graph level=5, element #498, 20 total numbers made up of 5 4-tuple values */
-	this.r_hipRotInterp_Run_5_498_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]));
+	/** Large attribute array: OrientationInterpolator DEF='r_hip_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #498, 20 total numbers made up of 5 4-tuple values */
+	this.r_hip_RotationInterpolator_Run_5_498_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_hipRotInterp_Run' keyValue field, scene-graph level=5, element #501, 20 total numbers made up of 5 4-tuple values */
-	this.l_hipRotInterp_Run_5_501_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]));
+	/** Large attribute array: OrientationInterpolator DEF='l_hip_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #501, 20 total numbers made up of 5 4-tuple values */
+	this.l_hip_RotationInterpolator_Run_5_501_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_elbowRotInterp_Run' keyValue field, scene-graph level=5, element #504, 20 total numbers made up of 5 4-tuple values */
-	this.r_elbowRotInterp_Run_5_504_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]));
+	/** Large attribute array: OrientationInterpolator DEF='r_elbow_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #504, 20 total numbers made up of 5 4-tuple values */
+	this.r_elbow_RotationInterpolator_Run_5_504_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_shoulderRotInterp_Run' keyValue field, scene-graph level=5, element #505, 20 total numbers made up of 5 4-tuple values */
-	this.r_shoulderRotInterp_Run_5_505_keyValue = new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979]));
+	/** Large attribute array: OrientationInterpolator DEF='r_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #505, 20 total numbers made up of 5 4-tuple values */
+	this.r_shoulder_RotationInterpolator_Run_5_505_keyValue = new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_elbowRotInterp_Run' keyValue field, scene-graph level=5, element #507, 20 total numbers made up of 5 4-tuple values */
-	this.l_elbowRotInterp_Run_5_507_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]));
+	/** Large attribute array: OrientationInterpolator DEF='l_elbow_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #507, 20 total numbers made up of 5 4-tuple values */
+	this.l_elbow_RotationInterpolator_Run_5_507_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_shoulderRotInterp_Run' keyValue field, scene-graph level=5, element #508, 20 total numbers made up of 5 4-tuple values */
-	this.l_shoulderRotInterp_Run_5_508_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-2.052E-4,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]));
+	/** Large attribute array: OrientationInterpolator DEF='l_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #508, 20 total numbers made up of 5 4-tuple values */
+	this.l_shoulder_RotationInterpolator_Run_5_508_keyValue = new autoclass.MFRotation(java.newArray("float", [0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-2.052E-4,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]));
 
-	/** Large attribute array: OrientationInterpolator DEF='upper_bodyRotInterp_Run' keyValue field, scene-graph level=5, element #511, 20 total numbers made up of 5 4-tuple values */
-	this.upper_bodyRotInterp_Run_5_511_keyValue = new autoclass.MFRotation(java.newArray("float", [0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]));
+	/** Large attribute array: OrientationInterpolator DEF='upper_body_RotationInterpolator_Run' keyValue field, scene-graph level=5, element #511, 20 total numbers made up of 5 4-tuple values */
+	this.upper_body_RotationInterpolator_Run_5_511_keyValue = new autoclass.MFRotation(java.newArray("float", [0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]));
 
-	/** Large attribute array: PositionInterpolator DEF='whole_bodyTranInterp_Run' keyValue field, scene-graph level=5, element #513, 24 total numbers made up of 8 3-tuple values */
-	this.whole_bodyTranInterp_Run_5_513_keyValue = new autoclass.MFVec3f(java.newArray("float", [0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0]));
+	/** Large attribute array: PositionInterpolator DEF='whole_body_TranslationInterpolator_Run' keyValue field, scene-graph level=5, element #513, 24 total numbers made up of 8 3-tuple values */
+	this.whole_body_TranslationInterpolator_Run_5_513_keyValue = new autoclass.MFVec3f(java.newArray("float", [0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_ankleRotInterp_Jump' keyValue field, scene-graph level=5, element #516, 56 total numbers made up of 14 4-tuple values */
-	this.r_ankleRotInterp_Jump_5_516_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='r_ankle_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #516, 56 total numbers made up of 14 4-tuple values */
+	this.r_ankle_RotationInterpolator_Jump_5_516_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,0.3001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087])))
 	.append(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_kneeRotInterp_Jump' keyValue field, scene-graph level=5, element #517, 32 total numbers made up of 8 4-tuple values */
-	this.r_kneeRotInterp_Jump_5_517_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='r_knee_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #517, 32 total numbers made up of 8 4-tuple values */
+	this.r_knee_RotationInterpolator_Jump_5_517_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_hipRotInterp_Jump' keyValue field, scene-graph level=5, element #518, 44 total numbers made up of 11 4-tuple values */
-	this.r_hipRotInterp_Jump_5_518_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='r_hip_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #518, 44 total numbers made up of 11 4-tuple values */
+	this.r_hip_RotationInterpolator_Jump_5_518_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.647,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_ankleRotInterp_Jump' keyValue field, scene-graph level=5, element #519, 56 total numbers made up of 14 4-tuple values */
-	this.l_ankleRotInterp_Jump_5_519_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='l_ankle_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #519, 56 total numbers made up of 14 4-tuple values */
+	this.l_ankle_RotationInterpolator_Jump_5_519_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108])))
 	.append(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_kneeRotInterp_Jump' keyValue field, scene-graph level=5, element #520, 32 total numbers made up of 8 4-tuple values */
-	this.l_kneeRotInterp_Jump_5_520_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='l_knee_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #520, 32 total numbers made up of 8 4-tuple values */
+	this.l_knee_RotationInterpolator_Jump_5_520_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_hipRotInterp_Jump' keyValue field, scene-graph level=5, element #521, 44 total numbers made up of 11 4-tuple values */
-	this.l_hipRotInterp_Jump_5_521_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='l_hip_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #521, 44 total numbers made up of 11 4-tuple values */
+	this.l_hip_RotationInterpolator_Jump_5_521_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='lower_bodyRotInterp_Jump' keyValue field, scene-graph level=5, element #522, 24 total numbers made up of 6 4-tuple values */
-	this.lower_bodyRotInterp_Jump_5_522_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='lower_body_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #522, 24 total numbers made up of 6 4-tuple values */
+	this.lower_body_RotationInterpolator_Jump_5_522_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_wristRotInterp_Jump' keyValue field, scene-graph level=5, element #523, 24 total numbers made up of 6 4-tuple values */
-	this.r_wristRotInterp_Jump_5_523_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='r_wrist_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #523, 24 total numbers made up of 6 4-tuple values */
+	this.r_wrist_RotationInterpolator_Jump_5_523_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_elbowRotInterp_Jump' keyValue field, scene-graph level=5, element #524, 24 total numbers made up of 6 4-tuple values */
-	this.r_elbowRotInterp_Jump_5_524_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='r_elbow_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #524, 24 total numbers made up of 6 4-tuple values */
+	this.r_elbow_RotationInterpolator_Jump_5_524_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='r_shoulderRotInterp_Jump' keyValue field, scene-graph level=5, element #525, 28 total numbers made up of 7 4-tuple values */
-	this.r_shoulderRotInterp_Jump_5_525_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='r_shoulder_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #525, 28 total numbers made up of 7 4-tuple values */
+	this.r_shoulder_RotationInterpolator_Jump_5_525_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_wristRotInterp_Jump' keyValue field, scene-graph level=5, element #526, 28 total numbers made up of 7 4-tuple values */
-	this.l_wristRotInterp_Jump_5_526_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-5.0618E-4,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='l_wrist_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #526, 28 total numbers made up of 7 4-tuple values */
+	this.l_wrist_RotationInterpolator_Jump_5_526_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-5.0618E-4,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_elbowRotInterp_Jump' keyValue field, scene-graph level=5, element #527, 24 total numbers made up of 6 4-tuple values */
-	this.l_elbowRotInterp_Jump_5_527_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='l_elbow_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #527, 24 total numbers made up of 6 4-tuple values */
+	this.l_elbow_RotationInterpolator_Jump_5_527_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='l_shoulderRotInterp_Jump' keyValue field, scene-graph level=5, element #528, 28 total numbers made up of 7 4-tuple values */
-	this.l_shoulderRotInterp_Jump_5_528_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,4.113E-4,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='l_shoulder_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #528, 28 total numbers made up of 7 4-tuple values */
+	this.l_shoulder_RotationInterpolator_Jump_5_528_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,4.113E-4,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='headRotInterp_Jump' keyValue field, scene-graph level=5, element #529, 24 total numbers made up of 6 4-tuple values */
-	this.headRotInterp_Jump_5_529_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='head_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #529, 24 total numbers made up of 6 4-tuple values */
+	this.head_RotationInterpolator_Jump_5_529_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='neckRotInterp_Jump' keyValue field, scene-graph level=5, element #530, 24 total numbers made up of 6 4-tuple values */
-	this.neckRotInterp_Jump_5_530_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='neck_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #530, 24 total numbers made up of 6 4-tuple values */
+	this.neck_RotationInterpolator_Jump_5_530_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='upper_bodyRotInterp_Jump' keyValue field, scene-graph level=5, element #531, 28 total numbers made up of 7 4-tuple values */
-	this.upper_bodyRotInterp_Jump_5_531_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='upper_body_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #531, 28 total numbers made up of 7 4-tuple values */
+	this.upper_body_RotationInterpolator_Jump_5_531_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='whole_bodyRotInterp_Jump' keyValue field, scene-graph level=5, element #532, 28 total numbers made up of 7 4-tuple values */
-	this.whole_bodyRotInterp_Jump_5_532_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='whole_body_RotationInterpolator_Jump' keyValue field, scene-graph level=5, element #532, 28 total numbers made up of 7 4-tuple values */
+	this.whole_body_RotationInterpolator_Jump_5_532_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: PositionInterpolator DEF='whole_bodyTranInterp_Jump' keyValue field, scene-graph level=5, element #533, 63 total numbers made up of 21 3-tuple values */
-	this.whole_bodyTranInterp_Jump_5_533_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='whole_body_TranslationInterpolator_Jump' keyValue field, scene-graph level=5, element #533, 63 total numbers made up of 21 3-tuple values */
+	this.whole_body_TranslationInterpolator_Jump_5_533_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-3.345E-4,-0.1049,-0.05353,-5.712E-4,-0.1892,-0.06561,-8.233E-4,-0.286,-0.06276,-9.591E-4,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-8.616E-4,-0.13,-0.06358,-5.128E-4,-0.03123,-0.05488,4.779E-4,0.053,0.02732,1.728E-4,0.4148,0.006873,0.0,0.03045,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,1.365E-4,-0.1037,-0.005059,1.279E-4,-0.07198,-0.007596,1.41E-4,-0.01626,-0.004935])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0])));
@@ -553,28 +553,28 @@ NancyPrototypes.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Cindy Ballreich"))
     .addMeta((new autoclass.meta()).setName("translators").setContent("Tom Miller and Don Brutzman, NPS"))
     .addMeta((new autoclass.meta()).setName("created").setContent("9 July 2000"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("4 July 2020"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
     .addMeta((new autoclass.meta()).setName("warning").setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("NancyNativeTags.x3d"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.ProtoDeclare()).setName("Displacer").setAppinfo(this.ProtoDeclare_Displacer_3_14_appinfo).setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("Displacer").setAppinfo(this.ProtoDeclare_Displacer_3_14_appinfo).setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("name").setType("SFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("coordIndex").setType("MFInt32"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("displacements").setType("MFVec3f")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"null body node\"")))))
-    .addChild((new autoclass.ProtoDeclare()).setName("Humanoid").setAppinfo(this.ProtoDeclare_Humanoid_3_21_appinfo).setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("Humanoid").setAppinfo(this.ProtoDeclare_Humanoid_3_21_appinfo).setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addComments(" H-Anim v1.1 field definitions ")
+        .addComments(" HAnim v1.1 field definitions ")
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("name").setType("SFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("version").setType("SFString").setValue("1.1").setAppinfo("legal values: 1.1 or 2.0"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("humanoidVersion").setType("SFString").setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("humanoidVersion").setType("SFString").setAppinfo("Version of the humanoid being modeled. Hint: HAnim version 2.0"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("info").setType("MFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("rotation").setType("SFRotation").setValue("0 0 1 0"))
@@ -583,15 +583,15 @@ NancyPrototypes.prototype = {
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("scaleOrientation").setType("SFRotation").setValue("0 0 1 0"))
         .addField((new autoclass.field()).setAccessType("initializeOnly").setName("bboxCenter").setType("SFVec3f").setValue("0 0 0"))
         .addField((new autoclass.field()).setAccessType("initializeOnly").setName("bboxSize").setType("SFVec3f").setValue("-1 -1 -1"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("humanoidBody").setType("MFNode").setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skeleton").setType("MFNode").setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("humanoidBody").setType("MFNode").setAppinfo("HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://HAnim.org/Specifications/HAnim1.1/#humanoid"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skeleton").setType("MFNode").setAppinfo("HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("joints").setType("MFNode").setAppinfo("Container field for Joint nodes"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("segments").setType("MFNode").setAppinfo("Container field for Segment nodes"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("sites").setType("MFNode").setAppinfo("Container field for Site nodes"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("viewpoints").setType("MFNode").setAppinfo("Container field for Viewpoint nodes"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skinCoord").setType("SFNode").setAppinfo("Hint: H-anim version 2.0")
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skinCoord").setType("SFNode").setAppinfo("Hint: HAnim version 2.0")
           .addComments(" NULL node "))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skinNormal").setType("SFNode").setAppinfo("Hint: H-anim version 2.0")
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("skinNormal").setType("SFNode").setAppinfo("Hint: HAnim version 2.0")
           .addComments(" NULL node ")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform("HumanoidTransform"))
@@ -612,7 +612,7 @@ NancyPrototypes.prototype = {
           .addChild((new autoclass.Group("HumanoidGroup3"))
             .setIS((new autoclass.IS())
               .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("viewpoints")))))))
-    .addChild((new autoclass.ProtoDeclare()).setName("Joint").setAppinfo(this.ProtoDeclare_Joint_3_61_appinfo).setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("Joint").setAppinfo(this.ProtoDeclare_Joint_3_61_appinfo).setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Joint.html")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("name").setType("SFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("ulimit").setType("MFFloat"))
@@ -644,7 +644,7 @@ NancyPrototypes.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))
             .addConnect((new autoclass.connect()).setNodeField("addChildren").setProtoField("addChildren"))
             .addConnect((new autoclass.connect()).setNodeField("removeChildren").setProtoField("removeChildren"))))))
-    .addChild((new autoclass.ProtoDeclare()).setName("Segment").setAppinfo(this.ProtoDeclare_Segment_3_93_appinfo).setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("Segment").setAppinfo(this.ProtoDeclare_Segment_3_93_appinfo).setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Segment.html")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("name").setType("SFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("mass").setType("SFFloat").setValue("0"))
@@ -666,7 +666,7 @@ NancyPrototypes.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))
             .addConnect((new autoclass.connect()).setNodeField("addChildren").setProtoField("addChildren"))
             .addConnect((new autoclass.connect()).setNodeField("removeChildren").setProtoField("removeChildren"))))))
-    .addChild((new autoclass.ProtoDeclare()).setName("Site").setAppinfo(this.ProtoDeclare_Site_3_114_appinfo).setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("Site").setAppinfo(this.ProtoDeclare_Site_3_114_appinfo).setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Site.html")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("name").setType("SFString"))
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
@@ -698,7 +698,7 @@ NancyPrototypes.prototype = {
       .addFieldValue((new autoclass.fieldValue()).setName("version").setValue("1.1"))
       .addFieldValue((new autoclass.fieldValue()).setName("info").setValue(this.fieldValue_info_4_142_value))
       .addFieldValue((new autoclass.fieldValue()).setName("humanoidBody")
-        .addChild((new autoclass.ProtoInstance("hanim_HumanoidRoot", "Joint")).setDEF("hanim_HumanoidRoot").setName("Joint")
+        .addChild((new autoclass.ProtoInstance("hanim_humanoid_root", "Joint")).setDEF("hanim_humanoid_root").setName("Joint")
           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("humanoid_root"))
           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.00405 0.855 -0.000113"))
           .addFieldValue((new autoclass.fieldValue()).setName("children")
@@ -796,7 +796,7 @@ NancyPrototypes.prototype = {
                     .addChild((new autoclass.Shape())
                       .setAppearance((new autoclass.Appearance())
                         .setMaterial((new autoclass.Material("Shirt_Color")).setAmbientIntensity(0.25).setDiffuseColor(0.6,0.0745,0.1137))
-                        .setTexture((new autoclass.ImageTexture("small_logo_Tex")).setUrl(new autoclass.MFString("\"small_logo.gif\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif\""))))
+                        .setTexture((new autoclass.ImageTexture("small_logo_Tex")).setUrl(new autoclass.MFString("\"small_logo.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/small_logo.gif\""))))
                       .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.59).setCoordIndex(this.IndexedFaceSet_12_235_coordIndex)
                         .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_13_235_point))
                         .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_13_236_point))))))
@@ -905,7 +905,7 @@ NancyPrototypes.prototype = {
                                 .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.749,0.601,0.462,0.1735,0.2602,0.749,0.6364,0.133,0.1526,0.4545,0.2759,0.1902]))))))))))))))))
         .addChild((new autoclass.Group())))
       .addFieldValue((new autoclass.fieldValue()).setName("joints")
-        .addChild((new autoclass.ProtoInstance()).setUSE("hanim_HumanoidRoot"))
+        .addChild((new autoclass.ProtoInstance()).setUSE("hanim_humanoid_root"))
         .addChild((new autoclass.ProtoInstance()).setUSE("hanim_sacroiliac"))
         .addChild((new autoclass.ProtoInstance()).setUSE("hanim_l_hip"))
         .addChild((new autoclass.ProtoInstance()).setUSE("hanim_l_knee"))
@@ -944,7 +944,7 @@ NancyPrototypes.prototype = {
         .addChild((new autoclass.Viewpoint("FrontView")).setDescription("Front View").setPosition(0.0,0.854,2.57665))
         .addChild((new autoclass.Viewpoint("SideView")).setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57079).setPosition(2.5929,0.854,0.0))
         .addChild((new autoclass.Viewpoint("TopView")).setDescription("Top View").setPosition(0.0,3.4495,0.0).setOrientation(1.0,0.0,0.0,-1.57079))))
-    .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc.\"")).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
+    .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc.\"")).setTitle("Nancy - an HAnim compliant avatar by 3Name3D"))
     .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\"")).setAvatarSize(java.newArray("float", [0.15,1.53,0.75])).setSpeed(0.5))
     .addChild((new autoclass.Group("Interface"))
       .addChild((new autoclass.Transform())
@@ -1011,84 +1011,84 @@ NancyPrototypes.prototype = {
             .setMaterial((new autoclass.Material()))))))
     .addChild((new autoclass.Group("Animations"))
       .addChild((new autoclass.Group("Stand_Animation"))
-        .addChild((new autoclass.OrientationInterpolator("r_ankleRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_kneeRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_hipRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_ankleRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_kneeRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_hipRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("lower_bodyRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_wristRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_elbowRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_shoulderRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_wristRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_elbowRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_shoulderRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("headRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("neckRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("upper_bodyRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("whole_bodyRotInterp_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.PositionInterpolator("whole_bodyTranInterp_Stand")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_ankle_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_knee_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_hip_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_ankle_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_knee_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_hip_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("lower_body_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_wrist_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_elbow_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_shoulder_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_wrist_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_elbow_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_shoulder_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("head_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("neck_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("upper_body_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("whole_body_RotationInterpolator_Stand")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.PositionInterpolator("whole_body_TranslationInterpolator_Stand")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
         .addChild((new autoclass.TimeSensor("Stand_Time")).setCycleInterval(0.009999999776482582)))
       .addChild((new autoclass.Group("Walk_Animation"))
-        .addChild((new autoclass.OrientationInterpolator("r_ankleRotInterp_BasicWalk")).setKeyValue(this.r_ankleRotInterp_BasicWalk_5_476_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_kneeRotInterp_BasicWalk")).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.r_kneeRotInterp_BasicWalk_5_477_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("r_hipRotInterp_BasicWalk")).setKeyValue(this.r_hipRotInterp_BasicWalk_5_478_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_ankleRotInterp_BasicWalk")).setKeyValue(this.l_ankleRotInterp_BasicWalk_5_479_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_kneeRotInterp_BasicWalk")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.l_kneeRotInterp_BasicWalk_5_480_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("l_hipRotInterp_BasicWalk")).setKeyValue(this.l_hipRotInterp_BasicWalk_5_481_keyValue).setKey(java.newArray("float", [0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("lower_bodyRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_wristRotInterp_BasicWalk")).setKeyValue(this.r_wristRotInterp_BasicWalk_5_483_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_elbowRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_shoulderRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_wristRotInterp_BasicWalk")).setKeyValue(this.l_wristRotInterp_BasicWalk_5_486_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_elbowRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_shoulderRotInterp_BasicWalk")).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189]))))
-        .addChild((new autoclass.OrientationInterpolator("headRotInterp_BasicWalk")).setKeyValue(this.headRotInterp_BasicWalk_5_489_keyValue).setKey(java.newArray("float", [0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("neckRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("upper_bodyRotInterp_BasicWalk")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.75,0.8333,1.0])).setKeyValue(this.upper_bodyRotInterp_BasicWalk_5_491_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("whole_bodyRotInterp_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.PositionInterpolator("whole_bodyTranInterp_BasicWalk")).setKeyValue(this.whole_bodyTranInterp_BasicWalk_5_493_keyValue).setKey(this.whole_bodyTranInterp_BasicWalk_5_493_key))
+        .addChild((new autoclass.OrientationInterpolator("r_ankle_RotationInterpolator_BasicWalk")).setKeyValue(this.r_ankle_RotationInterpolator_BasicWalk_5_476_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_knee_RotationInterpolator_BasicWalk")).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.r_knee_RotationInterpolator_BasicWalk_5_477_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("r_hip_RotationInterpolator_BasicWalk")).setKeyValue(this.r_hip_RotationInterpolator_BasicWalk_5_478_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_ankle_RotationInterpolator_BasicWalk")).setKeyValue(this.l_ankle_RotationInterpolator_BasicWalk_5_479_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_knee_RotationInterpolator_BasicWalk")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.l_knee_RotationInterpolator_BasicWalk_5_480_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("l_hip_RotationInterpolator_BasicWalk")).setKeyValue(this.l_hip_RotationInterpolator_BasicWalk_5_481_keyValue).setKey(java.newArray("float", [0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("lower_body_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_wrist_RotationInterpolator_BasicWalk")).setKeyValue(this.r_wrist_RotationInterpolator_BasicWalk_5_483_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_elbow_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_shoulder_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_wrist_RotationInterpolator_BasicWalk")).setKeyValue(this.l_wrist_RotationInterpolator_BasicWalk_5_486_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_elbow_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_shoulder_RotationInterpolator_BasicWalk")).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189]))))
+        .addChild((new autoclass.OrientationInterpolator("head_RotationInterpolator_BasicWalk")).setKeyValue(this.head_RotationInterpolator_BasicWalk_5_489_keyValue).setKey(java.newArray("float", [0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("neck_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("upper_body_RotationInterpolator_BasicWalk")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.75,0.8333,1.0])).setKeyValue(this.upper_body_RotationInterpolator_BasicWalk_5_491_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("whole_body_RotationInterpolator_BasicWalk")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.PositionInterpolator("whole_body_TranslationInterpolator_BasicWalk")).setKeyValue(this.whole_body_TranslationInterpolator_BasicWalk_5_493_keyValue).setKey(this.whole_body_TranslationInterpolator_BasicWalk_5_493_key))
         .addChild((new autoclass.TimeSensor("Walk_Time")).setStartTime(-1.0).setCycleInterval(2.0).setLoop(true)))
       .addChild((new autoclass.Group("Run_Animation"))
-        .addChild((new autoclass.OrientationInterpolator("r_ankleRotInterp_Run")).setKey(java.newArray("float", [0.0,0.4909,0.7091,0.8,0.8182,1.0])).setKeyValue(this.r_ankleRotInterp_Run_5_496_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("r_kneeRotInterp_Run")).setKey(java.newArray("float", [0.0,0.03636,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_kneeRotInterp_Run_5_497_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("r_hipRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_hipRotInterp_Run_5_498_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("l_ankleRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.3091,0.4909,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543]))))
-        .addChild((new autoclass.OrientationInterpolator("l_kneeRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108]))))
-        .addChild((new autoclass.OrientationInterpolator("l_hipRotInterp_Run")).setKeyValue(this.l_hipRotInterp_Run_5_501_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("lower_bodyRotInterp_Run")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]))))
-        .addChild((new autoclass.OrientationInterpolator("r_wristRotInterp_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_elbowRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_elbowRotInterp_Run_5_504_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("r_shoulderRotInterp_Run")).setKeyValue(this.r_shoulderRotInterp_Run_5_505_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_wristRotInterp_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_elbowRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.l_elbowRotInterp_Run_5_507_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("l_shoulderRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.l_shoulderRotInterp_Run_5_508_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("headRotInterp_Run")).setKey(java.newArray("float", [0.0,0.4909,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]))))
-        .addChild((new autoclass.OrientationInterpolator("neckRotInterp_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("upper_bodyRotInterp_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7636,1.0])).setKeyValue(this.upper_bodyRotInterp_Run_5_511_keyValue))
-        .addChild((new autoclass.OrientationInterpolator("whole_bodyRotInterp_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-        .addChild((new autoclass.PositionInterpolator("whole_bodyTranInterp_Run")).setKeyValue(this.whole_bodyTranInterp_Run_5_513_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_ankle_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.4909,0.7091,0.8,0.8182,1.0])).setKeyValue(this.r_ankle_RotationInterpolator_Run_5_496_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("r_knee_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.03636,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_knee_RotationInterpolator_Run_5_497_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("r_hip_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_hip_RotationInterpolator_Run_5_498_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("l_ankle_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.3091,0.4909,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543]))))
+        .addChild((new autoclass.OrientationInterpolator("l_knee_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108]))))
+        .addChild((new autoclass.OrientationInterpolator("l_hip_RotationInterpolator_Run")).setKeyValue(this.l_hip_RotationInterpolator_Run_5_501_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("lower_body_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]))))
+        .addChild((new autoclass.OrientationInterpolator("r_wrist_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_elbow_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.r_elbow_RotationInterpolator_Run_5_504_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("r_shoulder_RotationInterpolator_Run")).setKeyValue(this.r_shoulder_RotationInterpolator_Run_5_505_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_wrist_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_elbow_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.l_elbow_RotationInterpolator_Run_5_507_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("l_shoulder_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.l_shoulder_RotationInterpolator_Run_5_508_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("head_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.4909,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]))))
+        .addChild((new autoclass.OrientationInterpolator("neck_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("upper_body_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7636,1.0])).setKeyValue(this.upper_body_RotationInterpolator_Run_5_511_keyValue))
+        .addChild((new autoclass.OrientationInterpolator("whole_body_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.PositionInterpolator("whole_body_TranslationInterpolator_Run")).setKeyValue(this.whole_body_TranslationInterpolator_Run_5_513_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0])))
         .addChild((new autoclass.TimeSensor("Run_Time")).setStartTime(-1.0).setLoop(true)))
       .addChild((new autoclass.Group("Jump_Animation"))
-        .addChild((new autoclass.OrientationInterpolator("r_ankleRotInterp_Jump")).setKeyValue(this.r_ankleRotInterp_Jump_5_516_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_kneeRotInterp_Jump")).setKeyValue(this.r_kneeRotInterp_Jump_5_517_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_hipRotInterp_Jump")).setKeyValue(this.r_hipRotInterp_Jump_5_518_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_ankleRotInterp_Jump")).setKeyValue(this.l_ankleRotInterp_Jump_5_519_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_kneeRotInterp_Jump")).setKeyValue(this.l_kneeRotInterp_Jump_5_520_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_hipRotInterp_Jump")).setKeyValue(this.l_hipRotInterp_Jump_5_521_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("lower_bodyRotInterp_Jump")).setKeyValue(this.lower_bodyRotInterp_Jump_5_522_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_wristRotInterp_Jump")).setKeyValue(this.r_wristRotInterp_Jump_5_523_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_elbowRotInterp_Jump")).setKeyValue(this.r_elbowRotInterp_Jump_5_524_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("r_shoulderRotInterp_Jump")).setKeyValue(this.r_shoulderRotInterp_Jump_5_525_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_wristRotInterp_Jump")).setKeyValue(this.l_wristRotInterp_Jump_5_526_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_elbowRotInterp_Jump")).setKeyValue(this.l_elbowRotInterp_Jump_5_527_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("l_shoulderRotInterp_Jump")).setKeyValue(this.l_shoulderRotInterp_Jump_5_528_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("headRotInterp_Jump")).setKeyValue(this.headRotInterp_Jump_5_529_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("neckRotInterp_Jump")).setKeyValue(this.neckRotInterp_Jump_5_530_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("upper_bodyRotInterp_Jump")).setKeyValue(this.upper_bodyRotInterp_Jump_5_531_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,0.88,1.0])))
-        .addChild((new autoclass.OrientationInterpolator("whole_bodyRotInterp_Jump")).setKeyValue(this.whole_bodyRotInterp_Jump_5_532_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,1.0])))
-        .addChild((new autoclass.PositionInterpolator("whole_bodyTranInterp_Jump")).setKeyValue(this.whole_bodyTranInterp_Jump_5_533_keyValue).setKey(java.newArray("float", [0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_ankle_RotationInterpolator_Jump")).setKeyValue(this.r_ankle_RotationInterpolator_Jump_5_516_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_knee_RotationInterpolator_Jump")).setKeyValue(this.r_knee_RotationInterpolator_Jump_5_517_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_hip_RotationInterpolator_Jump")).setKeyValue(this.r_hip_RotationInterpolator_Jump_5_518_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_ankle_RotationInterpolator_Jump")).setKeyValue(this.l_ankle_RotationInterpolator_Jump_5_519_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_knee_RotationInterpolator_Jump")).setKeyValue(this.l_knee_RotationInterpolator_Jump_5_520_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_hip_RotationInterpolator_Jump")).setKeyValue(this.l_hip_RotationInterpolator_Jump_5_521_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("lower_body_RotationInterpolator_Jump")).setKeyValue(this.lower_body_RotationInterpolator_Jump_5_522_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_wrist_RotationInterpolator_Jump")).setKeyValue(this.r_wrist_RotationInterpolator_Jump_5_523_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_elbow_RotationInterpolator_Jump")).setKeyValue(this.r_elbow_RotationInterpolator_Jump_5_524_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("r_shoulder_RotationInterpolator_Jump")).setKeyValue(this.r_shoulder_RotationInterpolator_Jump_5_525_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_wrist_RotationInterpolator_Jump")).setKeyValue(this.l_wrist_RotationInterpolator_Jump_5_526_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_elbow_RotationInterpolator_Jump")).setKeyValue(this.l_elbow_RotationInterpolator_Jump_5_527_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("l_shoulder_RotationInterpolator_Jump")).setKeyValue(this.l_shoulder_RotationInterpolator_Jump_5_528_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("head_RotationInterpolator_Jump")).setKeyValue(this.head_RotationInterpolator_Jump_5_529_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("neck_RotationInterpolator_Jump")).setKeyValue(this.neck_RotationInterpolator_Jump_5_530_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("upper_body_RotationInterpolator_Jump")).setKeyValue(this.upper_body_RotationInterpolator_Jump_5_531_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,0.88,1.0])))
+        .addChild((new autoclass.OrientationInterpolator("whole_body_RotationInterpolator_Jump")).setKeyValue(this.whole_body_RotationInterpolator_Jump_5_532_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,1.0])))
+        .addChild((new autoclass.PositionInterpolator("whole_body_TranslationInterpolator_Jump")).setKeyValue(this.whole_body_TranslationInterpolator_Jump_5_533_keyValue).setKey(java.newArray("float", [0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0])))
         .addChild((new autoclass.TimeSensor("Jump_Time")).setStartTime(-1.0).setCycleInterval(2.0))))
     .addChild((new autoclass.ROUTE()).setFromNode("HudProx").setFromField("position_changed").setToNode("HudXform").setToField("set_translation"))
     .addChild((new autoclass.ROUTE()).setFromNode("HudProx").setFromField("orientation_changed").setToNode("HudXform").setToField("set_rotation"))
@@ -1108,150 +1108,150 @@ NancyPrototypes.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("Jump_Touch").setFromField("touchTime").setToNode("Walk_Time").setToField("stopTime"))
     .addChild((new autoclass.ROUTE()).setFromNode("Jump_Touch").setFromField("touchTime").setToNode("Run_Time").setToField("stopTime"))
     .addChild((new autoclass.ROUTE()).setFromNode("Jump_Touch").setFromField("touchTime").setToNode("Jump_Time").setToField("startTime"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_ankleRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_kneeRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_hipRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_ankleRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_kneeRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_hipRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("lower_bodyRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_wristRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_elbowRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_shoulderRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_wristRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_elbowRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_shoulderRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("headRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("neckRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("upper_bodyRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("whole_bodyRotInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("whole_bodyTranInterp_Stand").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_ankleRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_kneeRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_hipRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_ankleRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_kneeRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_hipRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("lower_bodyRotInterp_Stand").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_wristRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_elbowRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulderRotInterp_Stand").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_wristRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_elbowRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulderRotInterp_Stand").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("headRotInterp_Stand").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("neckRotInterp_Stand").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("upper_bodyRotInterp_Stand").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyRotInterp_Stand").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyTranInterp_Stand").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_translation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_ankleRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_kneeRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_hipRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_ankleRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_kneeRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_hipRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("lower_bodyRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_wristRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_elbowRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_shoulderRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_wristRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_elbowRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_shoulderRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("headRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("neckRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("upper_bodyRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("whole_bodyRotInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("whole_bodyTranInterp_BasicWalk").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_ankleRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_kneeRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_hipRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_ankleRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_kneeRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_hipRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("lower_bodyRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_wristRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_elbowRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulderRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_wristRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_elbowRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulderRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("headRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("neckRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("upper_bodyRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyRotInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyTranInterp_BasicWalk").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_translation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_ankleRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_kneeRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_hipRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_ankleRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_kneeRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_hipRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("lower_bodyRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_wristRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_elbowRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_shoulderRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_wristRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_elbowRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_shoulderRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("headRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("neckRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("upper_bodyRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("whole_bodyRotInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("whole_bodyTranInterp_Run").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_ankleRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_kneeRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_hipRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_ankleRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_kneeRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_hipRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("lower_bodyRotInterp_Run").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_wristRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_elbowRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulderRotInterp_Run").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_wristRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_elbowRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulderRotInterp_Run").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("headRotInterp_Run").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("neckRotInterp_Run").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("upper_bodyRotInterp_Run").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyRotInterp_Run").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyTranInterp_Run").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_translation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_ankleRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_kneeRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_hipRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_ankleRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_kneeRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_hipRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("lower_bodyRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_wristRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_elbowRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_shoulderRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_wristRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_elbowRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_shoulderRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("headRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("neckRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("upper_bodyRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("whole_bodyRotInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("whole_bodyTranInterp_Jump").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_ankleRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_kneeRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_hipRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_ankleRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_kneeRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_hipRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("lower_bodyRotInterp_Jump").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_wristRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_elbowRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulderRotInterp_Jump").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_wristRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_elbowRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulderRotInterp_Jump").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("headRotInterp_Jump").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("neckRotInterp_Jump").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("upper_bodyRotInterp_Jump").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyRotInterp_Jump").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("whole_bodyTranInterp_Jump").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("set_translation")));
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_ankle_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_knee_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_hip_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_ankle_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_knee_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_hip_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("lower_body_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_wrist_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_elbow_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("r_shoulder_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_wrist_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_elbow_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("l_shoulder_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("head_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("neck_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("upper_body_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("whole_body_RotationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Stand_Time").setFromField("fraction_changed").setToNode("whole_body_TranslationInterpolator_Stand").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_knee_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_hip_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_knee_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_hip_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("lower_body_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_elbow_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulder_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_elbow_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulder_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("head_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("neck_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("upper_body_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_RotationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_TranslationInterpolator_Stand").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_translation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_ankle_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_knee_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_hip_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_ankle_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_knee_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_hip_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("lower_body_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_wrist_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_elbow_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("r_shoulder_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_wrist_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_elbow_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("l_shoulder_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("head_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("neck_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("upper_body_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("whole_body_RotationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Walk_Time").setFromField("fraction_changed").setToNode("whole_body_TranslationInterpolator_BasicWalk").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_knee_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_hip_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_knee_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_hip_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("lower_body_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_elbow_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulder_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_elbow_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulder_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("head_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("neck_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("upper_body_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_RotationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_TranslationInterpolator_BasicWalk").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_translation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_ankle_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_knee_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_hip_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_ankle_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_knee_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_hip_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("lower_body_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_wrist_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_elbow_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("r_shoulder_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_wrist_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_elbow_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("l_shoulder_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("head_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("neck_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("upper_body_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("whole_body_RotationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Run_Time").setFromField("fraction_changed").setToNode("whole_body_TranslationInterpolator_Run").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_knee_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_hip_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_knee_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_hip_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("lower_body_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_elbow_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulder_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_elbow_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulder_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("head_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("neck_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("upper_body_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_RotationInterpolator_Run").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_TranslationInterpolator_Run").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_translation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_ankle_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_knee_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_hip_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_ankle_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_knee_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_hip_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("lower_body_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_wrist_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_elbow_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("r_shoulder_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_wrist_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_elbow_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("l_shoulder_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("head_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("neck_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("upper_body_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("whole_body_RotationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Jump_Time").setFromField("fraction_changed").setToNode("whole_body_TranslationInterpolator_Jump").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_knee_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_hip_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_ankle").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_knee_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_knee").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_hip_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_hip").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("lower_body_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_elbow_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_shoulder_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_elbow_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_shoulder_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("head_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_skullbase").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("neck_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_vc4").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("upper_body_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_vl1").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_RotationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("whole_body_TranslationInterpolator_Jump").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("set_translation")));
   },
   // end of initialize() method
 

@@ -319,7 +319,7 @@ BoxManAnimationPanel.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.000141,-0.01626,-0.004935,0.0,0.0,0.0])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("BoxManAnimationPanel.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation panel shows multiple behaviors."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Joe Williams and James Smith - james@vapourtech.com"))

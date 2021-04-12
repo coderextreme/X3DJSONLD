@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 12 July 2020 </td>
+			<td> 8 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -1673,7 +1673,7 @@ KoreanCharacterMotionAnnexC01Jin.prototype = {
     .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("1 November 2014"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("12 July 2020"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("8 March 2021"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -1691,7 +1691,7 @@ KoreanCharacterMotionAnnexC01Jin.prototype = {
     .addChild((new autoclass.HAnimHumanoid("hanim_AnnexC01Jin")).setName("AnnexC01Jin").setScale(0.0225,0.0225,0.0225).setVersion("2.0")
       .addComments(" HAnimHumanoid original info='\"humanoidVersion=2.0\"' ")
       .addChild((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference(this.MetadataSet_HAnimHumanoid.info_4_22_reference)
-        .setMetadata((new autoclass.MetadataString()).setName("humanoidVersion").setValue(new autoclass.MFString("\"2.0\""))))
+        .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(new autoclass.MFString("\"2.0\""))))
       .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setCenter(0.0,30.53,-0.7076)
         .addChild((new autoclass.HAnimSegment("hanim_sacrum")).setName("sacrum")
           .addChild((new autoclass.Transform()).setTranslation(0.0,30.53,-0.7076)
