@@ -59,25 +59,25 @@ flower.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("flower.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a flower")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject())
-    .addChild(new DirectionalLightObject().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
-    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([1.000,1.000,1.000], Java.type("float[]")))))
-    .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
-    .addChild(new TransformObject().setTranslation(0.0,-1.0,1.0).setRotation(0.0,1.0,0.0,3.1415926).setScale(1.5,1.5,1.5)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(0.1).setShininess(0.145).setSpecularColor(0.8,0.8,0.8).setDiffuseColor(0.9,0.3,0.3)))
-        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]")))
-          .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0], Java.type("float[]"))))))))
-    .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("flower.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("generator").setContent("manual"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
+    .addMeta(new meta().setName("description").setContent("a flower")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo())
+    .addChild(new DirectionalLight().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
+    .addChild(new Background().setSkyColor(new MFColor(Java.to([1.000,1.000,1.000], Java.type("float[]")))))
+    .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
+    .addChild(new Transform().setTranslation(0.0,-1.0,1.0).setRotation(0.0,1.0,0.0,3.1415926).setScale(1.5,1.5,1.5)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setTransparency(0.1).setShininess(0.145).setSpecularColor(0.8,0.8,0.8).setDiffuseColor(0.9,0.3,0.3)))
+        .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(Java.to([0,1,2,-1], Java.type("int[]")))
+          .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(Java.to([0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0], Java.type("float[]"))))))))
+    .addChild(new Script("OrbitScript").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "var e = 5;" + "\n" + 
@@ -152,9 +152,9 @@ flower.prototype = {
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
+      .addField(new field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+      .addField(new field().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
+      .addField(new field().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
       .addComments(Java.to(["",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",
@@ -163,10 +163,10 @@ flower.prototype = {
 "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"], Java.type("java.lang.String[]"))))
-    .addChild(new TimeSensorObject("Clock").setCycleInterval(16).setLoop(true))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-    .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
+    .addChild(new TimeSensor("Clock").setCycleInterval(16).setLoop(true))
+    .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
+    .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+    .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
   },
   // end of initialize() method
 
@@ -200,11 +200,11 @@ flower.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

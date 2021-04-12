@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d">HAnim2SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -28,7 +28,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 12 July 2020 </td>
+			<td> 13 March 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -36,11 +36,11 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Illustrated.x3d">HAnim2SpecificationLOA3Illustrated.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Motion.x3d">HAnimSpecificationLOA3Motion.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Animation.x3d">HAnim2SpecificationLOA3Animation.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -108,7 +108,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -145,27 +145,28 @@ HAnim2SpecificationLOA3Invisible.prototype = {
   {
 
 	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #31, 93 total values */
-	this.WorldInfo_4_31_info = new MFStringObject(new MFStringObject("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
+	this.WorldInfo_4_31_info = new MFString(new MFString("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
 
 	/** Large attribute array: MetadataSet reference field, scene-graph level=4, element #42, 1 total value */
-	this.MetadataSet_HAnimHumanoid.info_4_42_reference = new SFStringObject("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("HAnim").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("HAnimSpecificationLOA3Invisible.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."))
-    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
-    .addMeta(new metaObject().setName("created").setContent("24 April 2013"))
-    .addMeta(new metaObject().setName("modified").setContent("12 July 2020"))
-    .addMeta(new metaObject().setName("creator").setContent("Matthew T. Beitler, Joe D. Williams, Don Brutzman"))
-    .addMeta(new metaObject().setName("reference").setContent("HAnimSpecificationLOA3Illustrated.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("HAnimSpecificationLOA3Motion.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("HAnimSpecificationExampleChangeLog.txt"))
-    .addMeta(new metaObject().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
-    .addMeta(new metaObject().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
-    .addMeta(new metaObject().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA3.png"))
-    .addMeta(new metaObject().setName("TODO").setContent("move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations"))
-    .addMeta(new metaObject().setName("TODO").setContent("insert MetadataInteger nodes indicating LOA for each Joint and Segment"))
-    .addMeta(new metaObject().setName("reference").setContent("Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"))
-    .addMeta(new metaObject().setName("reference").setContent("tabl
+	this.MetadataSet_HAnimHumanoid.info_4_42_reference = new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("4.0")
+  .setHead(new head()
+    .addComponent(new component().setName("HAnim").setLevel(1))
+    .addMeta(new meta().setName("title").setContent("HAnim2SpecificationLOA3Invisible.x3d"))
+    .addMeta(new meta().setName("description").setContent("HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."))
+    .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
+    .addMeta(new meta().setName("created").setContent("24 April 2013"))
+    .addMeta(new meta().setName("modified").setContent("13 March 2021"))
+    .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler, Joe D. Williams, Don Brutzman"))
+    .addMeta(new meta().setName("reference").setContent("HAnim2SpecificationLOA3Illustrated.x3d"))
+    .addMeta(new meta().setName("reference").setContent("HAnim2SpecificationLOA3Animation.x3d"))
+    .addMeta(new meta().setName("reference").setContent("HAnimSpecificationExampleChangeLog.txt"))
+    .addMeta(new meta().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
+    .addMeta(new meta().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
+    .addMeta(new meta().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA3.png"))
+    .addMeta(new meta().setName("TODO").setContent("move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations"))
+    .addMeta(new meta().setName("TODO").setContent("insert MetadataInteger nodes indicating LOA for each Joint and Segment"))
+    .addMeta(new meta().setName("reference").setContent("Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."))
+    .addMeta(new meta().setName("reference").setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"))
+    .addMeta(new meta().setName("reference").setContent("tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf"))
+    .addMeta(new meta().setName("translator").setContent
