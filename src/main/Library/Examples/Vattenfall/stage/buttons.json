@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"CheckBox",
-              "@url":["CheckBox_proto.json"],
+              "@url":["CheckBox_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",
@@ -83,7 +83,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Button",
-              "@url":["Button_proto.json"],
+              "@url":["Button_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",
@@ -156,7 +156,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RadioButton",
-              "@url":["RadioButton_proto.json"],
+              "@url":["RadioButton_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",
@@ -184,7 +184,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.json"],
+              "@url":["Delay_proto.x3d"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -222,7 +222,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Random",
-              "@url":["Random_proto.json"],
+              "@url":["Random_proto.x3d"],
               "field": [
                 {
                   "@name":"minValue",
@@ -265,7 +265,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"RandomDelay",
-              "@url":["RandomDelay_proto.json"],
+              "@url":["RandomDelay_proto.x3d"],
               "field": [
                 {
                   "@name":"minInterval",
@@ -308,7 +308,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Scene",
-              "@url":["Scene_proto.json"],
+              "@url":["Scene_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",
@@ -351,7 +351,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.json"],
+              "@url":["Bool_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -374,7 +374,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.json"],
+              "@url":["Int_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -504,7 +504,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_2",
-                                                    "@url":["camButton.json"],
+                                                    "@url":["camButton.x3d"],
                                                     "@bboxSize":[0.0500588,0.020502,0],
                                                     "@bboxCenter":[0.119113,0.113344,-0.299736]
                                                   }
@@ -550,14 +550,14 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["aminLabel.json"],
+                          "@url":["aminLabel.x3d"],
                           "@bboxSize":[0.0310576,0.0203932,0],
                           "@bboxCenter":[0.0201922,0.114095,-0.299906]
                         }
                       },
                       { "Inline":
                         {
-                          "@url":["viewLabel.json"],
+                          "@url":["viewLabel.x3d"],
                           "@bboxSize":[0.0255517,0.0203932,0],
                           "@bboxCenter":[0.0936732,0.114095,-0.299906]
                         }
@@ -597,7 +597,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_5",
-                                                              "@url":["a1.json"],
+                                                              "@url":["a1.x3d"],
                                                               "@bboxSize":[0.0150586,0.0203932,0],
                                                               "@bboxCenter":[0.0200617,0.113587,-0.299906]
                                                             }
@@ -610,7 +610,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_6",
-                                                    "@url":["a1on.json"],
+                                                    "@url":["a1on.x3d"],
                                                     "@bboxSize":[0.0150586,0.0203932,0],
                                                     "@bboxCenter":[0.0200617,0.113587,-0.299906]
                                                   }
@@ -639,7 +639,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_8",
-                                                              "@url":["a2.json"],
+                                                              "@url":["a2.x3d"],
                                                               "@bboxSize":[0.0150589,0.0203932,0],
                                                               "@bboxCenter":[0.0351205,0.113587,-0.299906]
                                                             }
@@ -652,7 +652,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_9",
-                                                    "@url":["a2on.json"],
+                                                    "@url":["a2on.x3d"],
                                                     "@bboxSize":[0.0150589,0.0203932,0],
                                                     "@bboxCenter":[0.0351205,0.113587,-0.299906]
                                                   }
@@ -681,7 +681,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_11",
-                                                              "@url":["a3.json"],
+                                                              "@url":["a3.x3d"],
                                                               "@bboxSize":[0.0150589,0.0203932,0],
                                                               "@bboxCenter":[0.0501794,0.113587,-0.299906]
                                                             }
@@ -694,7 +694,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_12",
-                                                    "@url":["a3on.json"],
+                                                    "@url":["a3on.x3d"],
                                                     "@bboxSize":[0.0150589,0.0203932,0],
                                                     "@bboxCenter":[0.0501794,0.113587,-0.299906]
                                                   }
@@ -723,7 +723,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_14",
-                                                              "@url":["c1.json"],
+                                                              "@url":["c1.x3d"],
                                                               "@bboxSize":[2,0.6,2],
                                                               "@bboxCenter":[0,-0.2,0]
                                                             }
@@ -736,7 +736,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_15",
-                                                    "@url":["c1on.json"],
+                                                    "@url":["c1on.x3d"],
                                                     "@bboxSize":[2,0.6,2],
                                                     "@bboxCenter":[0,-0.2,0]
                                                   }
@@ -765,7 +765,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_17",
-                                                              "@url":["c2.json"],
+                                                              "@url":["c2.x3d"],
                                                               "@bboxSize":[2,0.6,2],
                                                               "@bboxCenter":[0,-0.2,0]
                                                             }
@@ -778,7 +778,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_18",
-                                                    "@url":["c2on.json"],
+                                                    "@url":["c2on.x3d"],
                                                     "@bboxSize":[2,0.6,2],
                                                     "@bboxCenter":[0,-0.2,0]
                                                   }
@@ -807,7 +807,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_20",
-                                                              "@url":["c3.json"],
+                                                              "@url":["c3.x3d"],
                                                               "@bboxSize":[2,0.6,2],
                                                               "@bboxCenter":[0,-0.2,0]
                                                             }
@@ -820,7 +820,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_21",
-                                                    "@url":["c3on.json"],
+                                                    "@url":["c3on.x3d"],
                                                     "@bboxSize":[2,0.6,2],
                                                     "@bboxCenter":[0,-0.2,0]
                                                   }
@@ -849,7 +849,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_23",
-                                                              "@url":["c4.json"],
+                                                              "@url":["c4.x3d"],
                                                               "@bboxSize":[2,0.6,2],
                                                               "@bboxCenter":[0,-0.2,0]
                                                             }
@@ -862,7 +862,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_24",
-                                                    "@url":["c4on.json"],
+                                                    "@url":["c4on.x3d"],
                                                     "@bboxSize":[2,0.6,2],
                                                     "@bboxCenter":[0,-0.2,0]
                                                   }
@@ -1053,7 +1053,7 @@
                                           { "Inline":
                                             {
                                               "@DEF":"_29",
-                                              "@url":["movButton.json"],
+                                              "@url":["movButton.x3d"],
                                               "@bboxSize":[0.0497668,0.020502,0],
                                               "@bboxCenter":[0.192424,0.113851,-0.299736]
                                             }
@@ -1095,7 +1095,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["m.json"],
+                          "@url":["m.x3d"],
                           "@bboxSize":[0.0495934,0.0223366,0],
                           "@bboxCenter":[0.192385,0.311653,-0.299671]
                         }
@@ -1135,7 +1135,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_33",
-                                                              "@url":["m1.json"],
+                                                              "@url":["m1.x3d"],
                                                               "@bboxSize":[0.0495934,0.0298137,0],
                                                               "@bboxCenter":[0.192385,0.285578,-0.299671]
                                                             }
@@ -1148,7 +1148,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_34",
-                                                    "@url":["m1on.json"],
+                                                    "@url":["m1on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0298137,0],
                                                     "@bboxCenter":[0.192385,0.285578,-0.299671]
                                                   }
@@ -1177,7 +1177,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_37",
-                                                              "@url":["m2.json"],
+                                                              "@url":["m2.x3d"],
                                                               "@bboxSize":[0.0495934,0.0291023,0],
                                                               "@bboxCenter":[0.192385,0.25612,-0.299671]
                                                             }
@@ -1190,7 +1190,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_38",
-                                                    "@url":["m2on.json"],
+                                                    "@url":["m2on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0291023,0],
                                                     "@bboxCenter":[0.192385,0.25612,-0.299671]
                                                   }
@@ -1219,7 +1219,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_41",
-                                                              "@url":["m3.json"],
+                                                              "@url":["m3.x3d"],
                                                               "@bboxSize":[0.0495934,0.0291023,0],
                                                               "@bboxCenter":[0.192385,0.227018,-0.299671]
                                                             }
@@ -1232,7 +1232,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_42",
-                                                    "@url":["m3on.json"],
+                                                    "@url":["m3on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0291023,0],
                                                     "@bboxCenter":[0.192385,0.227018,-0.299671]
                                                   }
@@ -1261,7 +1261,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_45",
-                                                              "@url":["m4.json"],
+                                                              "@url":["m4.x3d"],
                                                               "@bboxSize":[0.0495934,0.0296559,0],
                                                               "@bboxCenter":[0.192385,0.197639,-0.299671]
                                                             }
@@ -1274,7 +1274,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_46",
-                                                    "@url":["m4on.json"],
+                                                    "@url":["m4on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0296559,0],
                                                     "@bboxCenter":[0.192385,0.197639,-0.299671]
                                                   }
@@ -1303,7 +1303,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_49",
-                                                              "@url":["m5.json"],
+                                                              "@url":["m5.x3d"],
                                                               "@bboxSize":[0.0495934,0.0291813,0],
                                                               "@bboxCenter":[0.192385,0.16822,-0.299671]
                                                             }
@@ -1316,7 +1316,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_50",
-                                                    "@url":["m5on.json"],
+                                                    "@url":["m5on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0291813,0],
                                                     "@bboxCenter":[0.192385,0.16822,-0.299671]
                                                   }
@@ -1345,7 +1345,7 @@
                                                           { "Inline":
                                                             {
                                                               "@DEF":"_53",
-                                                              "@url":["m6.json"],
+                                                              "@url":["m6.x3d"],
                                                               "@bboxSize":[0.0495934,0.0291811,0],
                                                               "@bboxCenter":[0.192385,0.139039,-0.299671]
                                                             }
@@ -1358,7 +1358,7 @@
                                                 { "Inline":
                                                   {
                                                     "@DEF":"_54",
-                                                    "@url":["m6on.json"],
+                                                    "@url":["m6on.x3d"],
                                                     "@bboxSize":[0.0495934,0.0291811,0],
                                                     "@bboxCenter":[0.192385,0.139039,-0.299671]
                                                   }

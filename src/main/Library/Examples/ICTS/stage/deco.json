@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.json"],
+              "@url":["Switcher_proto.x3d"],
               "field": [
                 {
                   "@name":"minValue",
@@ -112,7 +112,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["statue.json"],
+                                            "@url":["statue.x3d"],
                                             "@bboxSize":[2.53738,8.17662,1.36748],
                                             "@bboxCenter":[-0.000528336,1.06796,0.197238]
                                           }
@@ -192,7 +192,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["katze.json"],
+                                            "@url":["katze.x3d"],
                                             "@bboxSize":[8.13439,3.42439,1.81039],
                                             "@bboxCenter":[0.239496,1.51194,5.96046e-08]
                                           }
@@ -237,7 +237,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["katze.json"],
+                                            "@url":["katze.x3d"],
                                             "@bboxSize":[8.13439,3.42439,1.81039],
                                             "@bboxCenter":[0.239496,1.51194,5.96046e-08]
                                           }

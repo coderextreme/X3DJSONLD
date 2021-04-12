@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.json"],
+              "@url":["BoolSwitch_proto.x3d"],
               "field": [
                 {
                   "@name":"isActive",
@@ -63,7 +63,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"isOver",
-              "@url":["isOver_proto.json"],
+              "@url":["isOver_proto.x3d"],
               "field": [
                 {
                   "@name":"set_isOver",
@@ -86,7 +86,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"True",
-              "@url":["True_proto.json"],
+              "@url":["True_proto.x3d"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -104,7 +104,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.json"],
+              "@url":["Switcher_proto.x3d"],
               "field": [
                 {
                   "@name":"minValue",
@@ -142,7 +142,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.json"],
+              "@url":["Gate_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -175,7 +175,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":["Not_proto.json"],
+              "@url":["Not_proto.x3d"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -220,7 +220,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["else.json"],
+                                "@url":["else.x3d"],
                                 "@bboxSize":[0.0412831,0.0412831,0],
                                 "@bboxCenter":[-0.240425,-0.171864,-0.297753]
                               }
@@ -260,7 +260,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["zoom-button.gif.json"],
+                                                  "@url":["zoom-button.gif.x3d"],
                                                   "@bboxSize":[0.0111772,0.0107642,0],
                                                   "@bboxCenter":[0.18564,-0.0653136,-0.29764]
                                                 }
@@ -301,7 +301,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["zoom.json"],
+                                                                                "@url":["zoom.x3d"],
                                                                                 "@bboxSize":[0.000743108,0.000743108,0],
                                                                                 "@bboxCenter":[0,0,0.00636301]
                                                                               }
@@ -421,7 +421,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["mbenz.json"],
+                                                  "@url":["mbenz.x3d"],
                                                   "@bboxSize":[0.360011,0.120031,0.00349],
                                                   "@bboxCenter":[3.7998e-07,-4.65661e-07,-0.298245]
                                                 }
@@ -532,7 +532,7 @@
                                                           },
                                                           { "Inline":
                                                             {
-                                                              "@url":["border.json"],
+                                                              "@url":["border.x3d"],
                                                               "@bboxSize":[0.37516,0.141366,5.85616e-05],
                                                               "@bboxCenter":[0.00364155,-6.55651e-07,-0.299961]
                                                             }
@@ -565,7 +565,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["close-button.json"],
+                                                                          "@url":["close-button.x3d"],
                                                                           "@bboxSize":[0.0111772,0.0107642,0],
                                                                           "@bboxCenter":[0.18564,0.0653424,-0.29764]
                                                                         }
@@ -592,7 +592,7 @@
                                                                                 "-children":[
                                                                                   { "Inline":
                                                                                     {
-                                                                                      "@url":["close.json"],
+                                                                                      "@url":["close.x3d"],
                                                                                       "@bboxSize":[0.0162762,0.0162762,0],
                                                                                       "@bboxCenter":[0.183659,0.0636474,-0.296069]
                                                                                     }
@@ -670,7 +670,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["move.json"],
+                                                              "@url":["move.x3d"],
                                                               "@bboxSize":[0.0313628,0.0313628,0],
                                                               "@bboxCenter":[0,0,0.005]
                                                             }

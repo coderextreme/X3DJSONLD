@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -20,23 +20,31 @@
           },
           {
             "@name":"generator",
-            "@content":"Titania V1.2.2, http://titania.create3000.de"
+            "@content":"Titania V4.3.3, http://titania.create3000.de"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://rawgit.com/create3000/Library/master/Tests/Components/Interpolation/OrientationInterpolator.x3d"
           },
           {
             "@name":"modified",
-            "@content":"Mon, 04 Jan 2016 08:10:10 GMT"
+            "@content":"Sat, 27 Oct 2018 09:53:37 GMT"
+          },
+          {
+            "@name":"titania-output-style",
+            "@content":"Nicest"
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -134,6 +142,168 @@
                             }
                           ]
                         }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Page",
+                          "@DEF":"Page",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                                "@name":"activeView",
+                                "@DEF":"activeView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[1]
+                              }
+                            },
+                            { "MetadataInteger":
+                              {
+                                "@name":"multiView",
+                                "@DEF":"multiView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Selection",
+                          "@DEF":"Selection",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataBoolean":
+                              {
+                                "@name":"selectGeometry",
+                                "@DEF":"selectGeometry",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[false]
+                              }
+                            },
+                            { "MetadataSet":
+                              {
+                                "@name":"nodes",
+                                "@DEF":"nodes",
+                                "@reference":"http://titania.create3000.de",
+                                "-value":[
+                                  { "Script":
+                                    {
+                                      "@DEF":"FollowerScript",
+                                      "field": [
+                                        {
+                                          "@name":"set_time",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFTime"
+                                        },
+                                        {
+                                          "@name":"set_active",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFBool"
+                                        },
+                                        {
+                                          "@name":"set_rotation",
+                                          "@accessType":"inputOnly",
+                                          "@type":"SFRotation"
+                                        },
+                                        {
+                                          "@name":"color_changed",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFColor"
+                                        },
+                                        {
+                                          "@name":"point_changed",
+                                          "@accessType":"outputOnly",
+                                          "@type":"SFVec3f"
+                                        },
+                                        {
+                                          "@name":"touchSensor",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "TouchSensor":
+                                              {
+                                                "@DEF":"Touch"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"timeSensor",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "TimeSensor":
+                                              {
+                                                "@DEF":"_1",
+                                                "@cycleInterval":2,
+                                                "@startTime":1540633981.11618,
+                                                "@stopTime":1540633981.11618
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "@name":"interpolator",
+                                          "@accessType":"initializeOnly",
+                                          "@type":"SFNode",
+                                          "-children":[
+                                            { "OrientationInterpolator":
+                                              {
+                                                "@DEF":"_2",
+                                                "@key":[0,1],
+                                                "@keyValue":[0.835275572584412,-0.549831535876019,0,0.558846203626118,-0.894060667491528,0.44794589276452,0,0.919814454880826]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "#sourceText":[
+"",
+"vrmlscript:",
+"",
+"function initialize ()",
+"{",
+"\ttimeSensor .stopTime  = 0;",
+"\ttimeSensor .startTime = 0;",
+"",
+"\tinterpolator .keyValue [0] = new SFRotation ();",
+"\tinterpolator .keyValue [1] = new SFRotation ();",
+"}",
+"",
+"function set_time (value, time)",
+"{",
+"\ttimeSensor .stopTime  = time;",
+"\ttimeSensor .startTime = time;",
+"",
+"\tinterpolator .keyValue [0] = interpolator .value_changed;",
+"\tinterpolator .keyValue [1] = new SFRotation (new SFVec3f (0, 0, 1), touchSensor .hitPoint_changed);",
+"}",
+"",
+"function set_active (value)",
+"{",
+"\tif (value)",
+"\t\tcolor_changed = new SFColor (0.8, 0, 0);",
+"\t",
+"\telse",
+"\t\tcolor_changed = new SFColor (0.8, 0.8, 0.8);",
+"}",
+"",
+"function set_rotation (value)",
+"{",
+"\tpoint_changed = value .multVec (new SFVec3f (0, 0, 1));",
+"}",
+"",
+""
+]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -185,7 +355,7 @@
                       },
                       {
                         "@name":"point",
-                        "@value":[0,0,1]
+                        "@value":[0.356336,0.711216,0.605968]
                       },
                       {
                         "@name":"dimension",
@@ -222,7 +392,7 @@
                 },
                 { "TouchSensor":
                   {
-                    "@DEF":"Touch"
+                    "@USE":"Touch"
                   }
                 }
               ]
@@ -231,10 +401,11 @@
           { "Transform":
             {
               "@DEF":"Cone",
+              "@rotation":[-0.894060667491529,0.44794589276452,0,0.919814454880826],
               "-children":[
                 { "Transform":
                   {
-                    "@DEF":"Cone_1",
+                    "@DEF":"Cone_3",
                     "@translation":[0,0,0.192283],
                     "@rotation":[1,0,0,1.5708],
                     "@scale":[0.770473,0.770473,0.770473],
@@ -298,111 +469,7 @@
           },
           { "Script":
             {
-              "@DEF":"FollowerScript",
-              "field": [
-                {
-                  "@name":"set_time",
-                  "@accessType":"inputOnly",
-                  "@type":"SFTime"
-                },
-                {
-                  "@name":"set_active",
-                  "@accessType":"inputOnly",
-                  "@type":"SFBool"
-                },
-                {
-                  "@name":"set_rotation",
-                  "@accessType":"inputOnly",
-                  "@type":"SFRotation"
-                },
-                {
-                  "@name":"color_changed",
-                  "@accessType":"outputOnly",
-                  "@type":"SFColor"
-                },
-                {
-                  "@name":"point_changed",
-                  "@accessType":"outputOnly",
-                  "@type":"SFVec3f"
-                },
-                {
-                  "@name":"touchSensor",
-                  "@accessType":"initializeOnly",
-                  "@type":"SFNode",
-                  "-children":[
-                    { "TouchSensor":
-                      {
-                        "@USE":"Touch"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"timeSensor",
-                  "@accessType":"initializeOnly",
-                  "@type":"SFNode",
-                  "-children":[
-                    { "TimeSensor":
-                      {
-                        "@DEF":"_1",
-                        "@cycleInterval":2
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"interpolator",
-                  "@accessType":"initializeOnly",
-                  "@type":"SFNode",
-                  "-children":[
-                    { "OrientationInterpolator":
-                      {
-                        "@DEF":"_2",
-                        "@key":[0,1],
-                        "@keyValue":[0,0,1,0,0,0,1,0]
-                      }
-                    }
-                  ]
-                }
-              ],
-              "#sourceText":[
-"",
-"vrmlscript:",
-"",
-"function initialize ()",
-"{",
-"\ttimeSensor .stopTime  = 0;",
-"\ttimeSensor .startTime = 0;",
-"",
-"\tinterpolator .keyValue [0] = new SFRotation ();",
-"\tinterpolator .keyValue [1] = new SFRotation ();",
-"}",
-"",
-"function set_time (value, time)",
-"{",
-"\ttimeSensor .stopTime  = time;",
-"\ttimeSensor .startTime = time;",
-"",
-"\tinterpolator .keyValue [0] = interpolator .value_changed;",
-"\tinterpolator .keyValue [1] = new SFRotation (new SFVec3f (0.1, 0.1, 0.9), touchSensor .hitPoint_changed);",
-"}",
-"",
-"function set_active (value)",
-"{",
-"\tif (value)",
-"\t\tcolor_changed = new SFColor (0.8, 0, 0);",
-"\t",
-"\telse",
-"\t\tcolor_changed = new SFColor (0.8, 0.8, 0.8);",
-"}",
-"",
-"function set_rotation (value)",
-"{",
-"\tpoint_changed = value .multVec (new SFVec3f (0, 0, 1));",
-"}",
-"",
-""
-]
+              "@USE":"FollowerScript"
             }
           },
           { "ROUTE":

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -1802,7 +1802,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["infowall.json"],
+                                                  "@url":["infowall.x3d"],
                                                   "@bboxSize":[8.65831,7.07873,16.0367],
                                                   "@bboxCenter":[0.623284,0.119948,0.0731559]
                                                 }
@@ -2525,7 +2525,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["tresen.json"],
+                                                        "@url":["tresen.x3d"],
                                                         "@bboxSize":[5.66685,1.61279,3.55296],
                                                         "@bboxCenter":[-0.00234461,0.00441408,0.236422]
                                                       }
@@ -2562,7 +2562,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["prospekt.json"],
+                                                        "@url":["prospekt.x3d"],
                                                         "@bboxSize":[3.5,3.5,3.5]
                                                       }
                                                     }
@@ -2581,7 +2581,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["infowall2.json"],
+                                            "@url":["infowall2.x3d"],
                                             "@bboxSize":[0.0264416,3.49957,12.3725],
                                             "@bboxCenter":[14.8485,2.95436,-2.06621]
                                           }
@@ -2714,7 +2714,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["car.json"],
+                                                  "@url":["car.x3d"],
                                                   "@bboxSize":[8,8,8]
                                                 }
                                               }

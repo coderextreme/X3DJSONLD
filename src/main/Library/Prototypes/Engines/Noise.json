@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -20,7 +20,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Titania V4.0.3, http://titania.create3000.de"
+            "@content":"Titania V4.3.1, http://titania.create3000.de"
           },
           {
             "@name":"identifier",
@@ -28,19 +28,19 @@
           },
           {
             "@name":"modified",
-            "@content":"Sun, 17 Dec 2017 12:22:17 GMT"
+            "@content":"Wed, 11 Jul 2018 12:52:20 GMT"
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -57,13 +57,13 @@
                       "@type":"SFBool"
                     },
                     {
-                      "@name":"frequency",
+                      "@name":"amplitude",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
                       "@value":1
                     },
                     {
-                      "@name":"amplitude",
+                      "@name":"frequency",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
                       "@value":1
@@ -71,8 +71,7 @@
                     {
                       "@name":"phase",
                       "@accessType":"inputOutput",
-                      "@type":"SFFloat",
-                      "@value":1
+                      "@type":"SFFloat"
                     },
                     {
                       "@name":"value_changed",
@@ -365,7 +364,7 @@
 "",
 "function clamp (x, a, b)",
 "{",
-"\treturn x <= a ? a : (x >= b ? b : x);",
+"\treturn Math .min (Math .max (x, a), b);",
 "}",
 "",
 ""
@@ -382,6 +381,63 @@
                     }
                   ]
               }
+            }
+          },
+          { "WorldInfo":
+            {
+              "@title":"Noise",
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"Titania",
+                    "@DEF":"Titania",
+                    "@reference":"http://titania.create3000.de",
+                    "-value":[
+                      { "MetadataSet":
+                        {
+                          "@name":"Selection",
+                          "@DEF":"Selection",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataBoolean":
+                              {
+                                "@name":"selectGeometry",
+                                "@DEF":"selectGeometry",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[false]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Page",
+                          "@DEF":"Page",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                                "@name":"activeView",
+                                "@DEF":"activeView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[1]
+                              }
+                            },
+                            { "MetadataInteger":
+                              {
+                                "@name":"multiView",
+                                "@DEF":"multiView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
             }
           }
         ]

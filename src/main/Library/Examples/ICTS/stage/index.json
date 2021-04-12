@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.json"],
+              "@url":["BoolSwitch_proto.x3d"],
               "field": [
                 {
                   "@name":"isActive",
@@ -67,7 +67,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.json"],
+              "@url":["Int_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -90,7 +90,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"JavaScript",
-              "@url":["JavaScript_proto.json"],
+              "@url":["JavaScript_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -108,7 +108,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":["Not_proto.json"],
+              "@url":["Not_proto.x3d"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -126,7 +126,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Float",
-              "@url":["Float_proto.json"],
+              "@url":["Float_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -149,7 +149,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.json"],
+              "@url":["Bool_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -172,7 +172,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.json"],
+              "@url":["Switcher_proto.x3d"],
               "field": [
                 {
                   "@name":"minValue",
@@ -210,7 +210,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"False",
-              "@url":["False_proto.json"],
+              "@url":["False_proto.x3d"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -228,7 +228,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Or",
-              "@url":["Or_proto.json"],
+              "@url":["Or_proto.x3d"],
               "field": [
                 {
                   "@name":"value1",
@@ -251,7 +251,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Translation",
-              "@url":["Translation_proto.json"],
+              "@url":["Translation_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -274,7 +274,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.json"],
+              "@url":["Delay_proto.x3d"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -312,7 +312,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"True",
-              "@url":["True_proto.json"],
+              "@url":["True_proto.x3d"],
               "field": [
                 {
                   "@name":"set_SFBool",
@@ -330,7 +330,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"ToggleAnim",
-              "@url":["ToggleAnim_proto.json"],
+              "@url":["ToggleAnim_proto.x3d"],
               "field": [
                 {
                   "@name":"direction",
@@ -378,7 +378,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"AnimGate",
-              "@url":["AnimGate_proto.json"],
+              "@url":["AnimGate_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -421,7 +421,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LoadVrmlFromURL",
-              "@url":["LoadVrmlFromURL_proto.json"],
+              "@url":["LoadVrmlFromURL_proto.x3d"],
               "field": [
                 {
                   "@name":"url",
@@ -459,7 +459,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.json"],
+              "@url":["Gate_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -799,7 +799,7 @@
                                                                                 "-children":[
                                                                                   { "Inline":
                                                                                     {
-                                                                                      "@url":["bogen.json"],
+                                                                                      "@url":["bogen.x3d"],
                                                                                       "@bboxSize":[5,1,0.1]
                                                                                     }
                                                                                   }
@@ -1215,7 +1215,7 @@
                                                                             { "Anchor":
                                                                               {
                                                                                 "@url":["mailto:info@ictspace.com"],
-                                                                                "@parameter":[,""],
+                                                                                "@parameter":[""],
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -1588,7 +1588,7 @@
                                                                                         { "Anchor":
                                                                                           {
                                                                                             "@url":["mailto:else@ictspace.com"],
-                                                                                            "@parameter":[,""],
+                                                                                            "@parameter":[""],
                                                                                             "-children":[
                                                                                               { "Transform":
                                                                                                 {
@@ -1727,7 +1727,7 @@
                                                                                         { "Anchor":
                                                                                           {
                                                                                             "@url":["mailto:press@ictspace.com"],
-                                                                                            "@parameter":[,""],
+                                                                                            "@parameter":[""],
                                                                                             "-children":[
                                                                                               { "Transform":
                                                                                                 {
@@ -3451,7 +3451,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["intro.json"],
+                                                        "@url":["intro.x3d"],
                                                         "@bboxSize":[4.4777,4.4777,14.359],
                                                         "@bboxCenter":[-0.627419,0.746411,-0.0483251]
                                                       }
@@ -3650,7 +3650,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["ictspace-else.json"],
+                                                        "@url":["ictspace-else.x3d"],
                                                         "@bboxSize":[1.7587,1.7,1.53335],
                                                         "@bboxCenter":[0.0115501,0.85,0]
                                                       }
@@ -4593,7 +4593,7 @@
                                                                                             "-children":[
                                                                                               { "Inline":
                                                                                                 {
-                                                                                                  "@url":["screensplat.json"],
+                                                                                                  "@url":["screensplat.x3d"],
                                                                                                   "@bboxSize":[1.03669,0.828292,0.05],
                                                                                                   "@bboxCenter":[-0.018345,-0.0512635,-0.05]
                                                                                                 }
@@ -5036,7 +5036,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["pack.json"],
+                                                        "@url":["pack.x3d"],
                                                         "@bboxSize":[0.914086,1.00165,0.731951],
                                                         "@bboxCenter":[9.83477e-07,0.500824,1.19209e-07]
                                                       }
@@ -5336,7 +5336,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["ictspace-else.json"],
+                                                        "@url":["ictspace-else.x3d"],
                                                         "@bboxSize":[1.7587,1.7,1.53335],
                                                         "@bboxCenter":[0.0115501,0.85,0]
                                                       }

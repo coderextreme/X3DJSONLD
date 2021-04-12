@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -238,7 +238,7 @@
                             { "Anchor":
                               {
                                 "@description":"Information",
-                                "@url":["../building.json"],
+                                "@url":["../building.x3d"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":
@@ -351,7 +351,7 @@
                             { "Anchor":
                               {
                                 "@description":"Floor plan",
-                                "@url":["../info.json"],
+                                "@url":["../info.x3d"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":
@@ -537,7 +537,7 @@
                             { "Anchor":
                               {
                                 "@description":"Mieter im BIC",
-                                "@url":["../buero.json"],
+                                "@url":["../buero.x3d"],
                                 "@parameter":["target=content"],
                                 "-children":[
                                   { "Transform":

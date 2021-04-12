@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Sun, 01 May 2016 05:50:28 GMT"></meta>
+<meta name="creator" content="holger"></meta>
+<meta name="generator" content="Titania V1.4.2, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/VolumeEmitter-U.x3d"></meta>
+<meta name="modified" content="Sun, 01 May 2016 05:50:41 GMT"></meta>
+</head>
+<Scene><WorldInfo title="U-Volume"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de" containerField="value"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="2.42579538175142 4.90503216646444 5.83576697716995" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="-0.783095003703687 0.530489108480527 0.324566666430577 0.798730604169587"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="0 0 0"></MetadataDouble>
+</MetadataSet>
+<MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<Viewpoint description="Viewpoint" position="0 0 8"></Viewpoint>
+<ParticleSystem geometryType="POINT" maxParticles="20000" particleLifetime="60" lifetimeVariation="0.01" particleSize="0.1 0.1" colorKey="0 0.1 0.4 1"><VolumeEmitter containerField="emitter" direction="0 0 0" mass="0.01" surfaceArea="0.01"><Coordinate containerField="coord" point="-2 1 1 -2 -1 1 2 -1 1 2 1 1 1 1 1 1 0 1 -1 0 1 -1 1 1 -2 1 -1 -2 -1 -1 2 -1 -1 2 1 -1 1 1 -1 1 0 -1 -1 0 -1 -1 1 -1"></Coordinate>
+</VolumeEmitter>
+<ColorRGBA containerField="colorRamp" color="1 0.38 0 1 1 0.58 0.06 1 1 0.37 0 1 1 0.05 0 1"></ColorRGBA>
+<Appearance><LineProperties linewidthScaleFactor="1"></LineProperties>
+</Appearance>
+</ParticleSystem>
+<Transform DEF="IndexedLineSet"><Shape><IndexedLineSet containerField="geometry" colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 2 3 -1 4 5 -1"><Color color="1 0 0 0 1 0 0 0 1"></Color>
+<Coordinate containerField="coord" point="-1 0 0 1 0 0 0 -1 0 0 1 0 0 0 -1 0 0 1"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</Transform>
+</Scene>
+</X3D>

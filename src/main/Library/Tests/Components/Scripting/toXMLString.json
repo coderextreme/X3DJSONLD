@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -54,15 +54,15 @@
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -71,7 +71,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BooleanSwitch",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.jsonhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.json"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d, ","http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d, ","https://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3dhttp://rawgit.com/create3000/Library/1.0.4/Prototypes/Grouping/BooleanSwitch.x3d"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -802,7 +802,7 @@
           { "Inline":
             {
               "@DEF":"_8",
-              "@url":["../Core/EXPORT.json"]
+              "@url":["../Core/EXPORT.x3d"]
             }
           },
           { "ProtoInstance":
