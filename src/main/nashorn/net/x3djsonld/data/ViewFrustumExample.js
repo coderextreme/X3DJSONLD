@@ -99,55 +99,55 @@ ViewFrustumExample.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("ViewFrustumExample.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("translated").setContent("16 August 2008"))
-    .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
-    .addMeta(new metaObject().setName("reference").setContent("ViewFrustumPrototype.x3d"))
-    .addMeta(new metaObject().setName("drawing").setContent("ViewFrustumComputation.png"))
-    .addMeta(new metaObject().setName("Image").setContent("ViewFrustumOverheadView.png"))
-    .addMeta(new metaObject().setName("Image").setContent("ViewFrustumObliqueView.png"))
-    .addMeta(new metaObject().setName("Image").setContent("ViewpointCalculator.png"))
-    .addMeta(new metaObject().setName("Image").setContent("ViewpointCalculatorComposed.png"))
-    .addMeta(new metaObject().setName("subject").setContent("view culling frustum"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new WorldInfoObject().setTitle("ViewFrustumExample.x3d"))
-    .addChild(new ViewpointObject().setDescription("ViewFrustum from above, looking down").setPosition(0.0,40.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
-    .addChild(new ViewpointObject().setDescription("ViewFrustum from point of view"))
-    .addChild(new ViewpointObject().setDescription("ViewFrustum behind point of view").setPosition(0.0,0.0,15.0))
-    .addChild(new ViewpointObject().setDescription("ViewFrustum oblique side view").setPosition(-5.0,5.0,20.0).setOrientation(0.8005,0.5926,0.0898,-0.3743))
-    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"FLY\" \"ANY\"")))
-    .addChild(new ExternProtoDeclareObject().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFStringObject("\"ViewFrustumPrototype.x3d#ViewFrustum\""))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("ViewpointNode").setType("SFNode").setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("NavigationInfoNode").setType("SFNode").setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("visible").setType("SFBool").setAppinfo("whether or not frustum geometry is rendered"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("lineColor").setType("SFColor").setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("frustumColor").setType("SFColor").setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("transparency").setType("SFFloat").setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("aspectRatio").setType("SFFloat").setAppinfo("assumed ratio height/width, default value 0.75"))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("trace").setType("SFBool").setAppinfo("debug support, default false")))
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("ViewFrustumExample.x3d"))
+    .addMeta(new meta().setName("description").setContent("Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."))
+    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new meta().setName("translated").setContent("16 August 2008"))
+    .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+    .addMeta(new meta().setName("reference").setContent("ViewFrustumPrototype.x3d"))
+    .addMeta(new meta().setName("drawing").setContent("ViewFrustumComputation.png"))
+    .addMeta(new meta().setName("Image").setContent("ViewFrustumOverheadView.png"))
+    .addMeta(new meta().setName("Image").setContent("ViewFrustumObliqueView.png"))
+    .addMeta(new meta().setName("Image").setContent("ViewpointCalculator.png"))
+    .addMeta(new meta().setName("Image").setContent("ViewpointCalculatorComposed.png"))
+    .addMeta(new meta().setName("subject").setContent("view culling frustum"))
+    .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
+    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName("license").setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("ViewFrustumExample.x3d"))
+    .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setPosition(0.0,40.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
+    .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
+    .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(0.0,0.0,15.0))
+    .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setPosition(-5.0,5.0,20.0).setOrientation(0.8005,0.5926,0.0898,-0.3743))
+    .addChild(new NavigationInfo().setType(new MFString("\"EXAMINE\" \"FLY\" \"ANY\"")))
+    .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString("\"ViewFrustumPrototype.x3d#ViewFrustum\""))
+      .addField(new field().setAccessType("initializeOnly").setName("ViewpointNode").setType("SFNode").setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
+      .addField(new field().setAccessType("initializeOnly").setName("NavigationInfoNode").setType("SFNode").setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
+      .addField(new field().setAccessType("inputOutput").setName("visible").setType("SFBool").setAppinfo("whether or not frustum geometry is rendered"))
+      .addField(new field().setAccessType("inputOutput").setName("lineColor").setType("SFColor").setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"))
+      .addField(new field().setAccessType("inputOutput").setName("frustumColor").setType("SFColor").setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"))
+      .addField(new field().setAccessType("inputOutput").setName("transparency").setType("SFFloat").setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
+      .addField(new field().setAccessType("inputOutput").setName("aspectRatio").setType("SFFloat").setAppinfo("assumed ratio height/width, default value 0.75"))
+      .addField(new field().setAccessType("initializeOnly").setName("trace").setType("SFBool").setAppinfo("debug support, default false")))
     .addComments(" Example use ")
-    .addChild(new ProtoInstanceObject().setName("ViewFrustum")
-      .addFieldValue(new fieldValueObject().setName("ViewpointNode")
+    .addChild(new ProtoInstance().setName("ViewFrustum")
+      .addFieldValue(new fieldValue().setName("ViewpointNode")
         .addComments(" prefer empty description to prevent entry in player's ViewpointList ")
-        .addChild(new ViewpointObject().setDescription("ViewFrustum ViewpointNode")))
-      .addFieldValue(new fieldValueObject().setName("NavigationInfoNode")
-        .addChild(new NavigationInfoObject().setVisibilityLimit(15)))
-      .addFieldValue(new fieldValueObject().setName("visible").setValue("true"))
-      .addFieldValue(new fieldValueObject().setName("lineColor").setValue("0.9 0.9 0.9"))
-      .addFieldValue(new fieldValueObject().setName("frustumColor").setValue("0.8 0.8 0.8"))
-      .addFieldValue(new fieldValueObject().setName("transparency").setValue("0.75"))
-      .addFieldValue(new fieldValueObject().setName("trace").setValue("true")))
+        .addChild(new Viewpoint().setDescription("ViewFrustum ViewpointNode")))
+      .addFieldValue(new fieldValue().setName("NavigationInfoNode")
+        .addChild(new NavigationInfo().setVisibilityLimit(15)))
+      .addFieldValue(new fieldValue().setName("visible").setValue("true"))
+      .addFieldValue(new fieldValue().setName("lineColor").setValue("0.9 0.9 0.9"))
+      .addFieldValue(new fieldValue().setName("frustumColor").setValue("0.8 0.8 0.8"))
+      .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"))
+      .addFieldValue(new fieldValue().setName("trace").setValue("true")))
     .addComments(" Visualization assists ")
-    .addChild(new InlineObject("GridXZ").setUrl(new MFStringObject("\"GridXZ_20x20Fixed.x3d\"")))
-    .addChild(new TransformObject().setScale(5.0,5.0,5.0)
-      .addChild(new InlineObject("CoordinateAxes").setUrl(new MFStringObject("\"CoordinateAxes.x3d\"")))));
+    .addChild(new Inline("GridXZ").setUrl(new MFString("\"GridXZ_20x20Fixed.x3d\"")))
+    .addChild(new Transform().setScale(5.0,5.0,5.0)
+      .addChild(new Inline("CoordinateAxes").setUrl(new MFString("\"CoordinateAxes.x3d\"")))));
   },
   // end of initialize() method
 
@@ -181,11 +181,11 @@ ViewFrustumExample.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

@@ -99,29 +99,29 @@ HelloWorldMinimal.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
   .addComments(" All head/meta tags are optional, WorldInfo is also optional ")
   .addComments(" Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1 ")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("HelloWorldMinimal.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Hello World minimal example scene."))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("19 January 2020"))
-    .addMeta(new metaObject().setName("modified").setContent("24 January 2020"))
-    .addMeta(new metaObject().setName("reference").setContent("https://helloworldcollection.de"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wiktionary.org/wiki/Hello_World"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)"))
-    .addMeta(new metaObject().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
-    .addMeta(new metaObject().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new WorldInfoObject().setTitle("HelloWorldMinimal.x3d"))
-    .addChild(new ShapeObject()
-      .setGeometry(new TextObject().setString(new MFStringObject("\"hello, world\"")))));
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("HelloWorldMinimal.x3d"))
+    .addMeta(new meta().setName("description").setContent("Hello World minimal example scene."))
+    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new meta().setName("created").setContent("19 January 2020"))
+    .addMeta(new meta().setName("modified").setContent("24 January 2020"))
+    .addMeta(new meta().setName("reference").setContent("https://helloworldcollection.de"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wiktionary.org/wiki/Hello_World"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)"))
+    .addMeta(new meta().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta(new meta().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"))
+    .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"))
+    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName("license").setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("HelloWorldMinimal.x3d"))
+    .addChild(new Shape()
+      .setGeometry(new Text().setString(new MFString("\"hello, world\"")))));
   },
   // end of initialize() method
 
@@ -155,11 +155,11 @@ HelloWorldMinimal.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

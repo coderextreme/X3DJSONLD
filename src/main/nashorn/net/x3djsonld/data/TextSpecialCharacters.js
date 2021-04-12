@@ -85,24 +85,24 @@ TextSpecialCharacters.prototype = {
   {
 
 	/** Large attribute array: Text DEF='DefaultText' string field, scene-graph level=4, element #15, 44 total values */
-	this.DefaultText_4_15_string = new MFStringObject(new MFStringObject("\"Character entity substitutions:\"         \"empty string \\\"\\\" skips a line:\"         \"\"         \"apostrophe  '  is &apos;\"          \"ampersand & is &amp;\"         \"quote mark  \\\"  is &quot;\"         \"backslash \\\\ is X3D escape character\"         \"double backslash \\\\\\\\ is X3D backslash \\\\ character\"         \"Pi Π is &#928; XML character entity\""));
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("TextSpecialCharacters.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("12 July 2008"))
-    .addMeta(new metaObject().setName("modified").setContent("2 April 2017"))
-    .addMeta(new metaObject().setName("reference").setContent("Character entity references in HTML 4"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.w3.org/TR/REC-html40/sgml/entities.html"))
-    .addMeta(new metaObject().setName("rights").setContent("Copyright (c) Don Brutzman and Leonard Daly, 2008"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))))
-    .addChild(new ViewpointObject().setDescription("Default View").setPosition(0.0,0.0,15.0))
-    .addChild(new ShapeObject()
+	this.DefaultText_4_15_string = new MFString(new MFString("\"Character entity substitutions:\"         \"empty string \\\"\\\" skips a line:\"         \"\"         \"apostrophe  '  is &apos;\"          \"ampersand & is &amp;\"         \"quote mark  \\\"  is &quot;\"         \"backslash \\\\ is X3D escape character\"         \"double backslash \\\\\\\\ is X3D backslash \\\\ character\"         \"Pi Π is &#928; XML character entity\""));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("TextSpecialCharacters.x3d"))
+    .addMeta(new meta().setName("description").setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"))
+    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new meta().setName("created").setContent("12 July 2008"))
+    .addMeta(new meta().setName("modified").setContent("2 April 2017"))
+    .addMeta(new meta().setName("reference").setContent("Character entity references in HTML 4"))
+    .addMeta(new meta().setName("reference").setContent("http://www.w3.org/TR/REC-html40/sgml/entities.html"))
+    .addMeta(new meta().setName("rights").setContent("Copyright (c) Don Brutzman and Leonard Daly, 2008"))
+    .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"))
+    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName("license").setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Background().setSkyColor(new MFColor(Java.to([1.0,1.0,1.0], Java.type("float[]")))))
+    .addChild(new Viewpoint().setDescription("Default View").setPosition(0.0,0.0,15.0))
+    .addChild(new Shape()
       .addComments(" Empty string \"\" means to skip a line ")
       .addComments(" The ampersand escape characters are based on XML rules ")
       .addComments(" apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute ")
@@ -111,10 +111,10 @@ TextSpecialCharacters.prototype = {
       .addComments(" quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" ")
       .addComments(" backslash \\ is used as escape character for \" (and itself) in X3D ")
       .addComments(" character entities are listed in HTML specification and are good for any XML ")
-      .setGeometry(new TextObject("DefaultText").setString(this.DefaultText_4_15_string)
-        .setFontStyle(new FontStyleObject("CenteredFontStyle").setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
-      .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject("DefaultMaterial").setDiffuseColor(0.2,0.2,0.2)))));
+      .setGeometry(new Text("DefaultText").setString(this.DefaultText_4_15_string)
+        .setFontStyle(new FontStyle("CenteredFontStyle").setJustify(new MFString("\"MIDDLE\" \"MIDDLE\""))))
+      .setAppearance(new Appearance()
+        .setMaterial(new Material("DefaultMaterial").setDiffuseColor(0.2,0.2,0.2)))));
   },
   // end of initialize() method
 
@@ -148,11 +148,11 @@ TextSpecialCharacters.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

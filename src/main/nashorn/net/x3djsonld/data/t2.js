@@ -46,43 +46,43 @@ t2.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("Networking").setLevel(2))
-    .addMeta(new metaObject().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
-    .addMeta(new metaObject().setName("source").setContent("t1.wrl")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"FLY\" \"WALK\"")).setAvatarSize(Java.to([200.0,200.0,120.0], Java.type("float[]"))).setSpeed(3))
-    .addChild(new WorldInfoObject().setTitle("Arts Mapper"))
-    .addChild(new ViewpointObject().setDescription("looking North").setPosition(0.0,60.0,110.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071))
-    .addChild(new ViewpointObject().setDescription("looking East").setPosition(-140.0,30.0,0.0).setOrientation(0.0,0.400000005960464,0.0,-1.39999997615814).setFieldOfView(0.785398125648499))
-    .addChild(new ViewpointObject().setDescription("Overhead").setPosition(0.0,150.0,0.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-1.57000005245209))
-    .addChild(new ProtoDeclareObject().setName("org")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("posi").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("col").setType("SFColor").setValue("0 0 0")))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setTransparency(0.400000005960464)
-                .setIS(new ISObject()
-                  .addConnect(new connectObject().setNodeField("emissiveColor").setProtoField("col")))))
-            .setGeometry(new SphereObject().setRadius(1.10000002384186)))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("posi"))))))
-    .addChild(new ProtoDeclareObject().setName("r")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("pos").setType("SFVec3f").setValue("0 0 0")))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new ProtoInstanceObject().setName("org")
-          .addFieldValue(new fieldValueObject().setName("col").setValue("0 0.300000011920929 1"))
-          .addFieldValue(new fieldValueObject().setName("posi"))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("posi").setProtoField("pos"))))))
-    .addChild(new AnchorObject().setDescription("High Peak Community Arts").setUrl(new MFStringObject("\"javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');\""))
-      .addChild(new ProtoInstanceObject().setName("r")
-        .addFieldValue(new fieldValueObject().setName("pos").setValue("400 0.100000001490116 -385")))));
+  this.x3dModel = new X3D().setProfile("Interchange").setVersion("3.0")
+  .setHead(new head()
+    .addComponent(new component().setName("Networking").setLevel(2))
+    .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+    .addMeta(new meta().setName("source").setContent("t1.wrl")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo().setType(new MFString("\"EXAMINE\" \"FLY\" \"WALK\"")).setAvatarSize(Java.to([200.0,200.0,120.0], Java.type("float[]"))).setSpeed(3))
+    .addChild(new WorldInfo().setTitle("Arts Mapper"))
+    .addChild(new Viewpoint().setDescription("looking North").setPosition(0.0,60.0,110.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071))
+    .addChild(new Viewpoint().setDescription("looking East").setPosition(-140.0,30.0,0.0).setOrientation(0.0,0.400000005960464,0.0,-1.39999997615814).setFieldOfView(0.785398125648499))
+    .addChild(new Viewpoint().setDescription("Overhead").setPosition(0.0,150.0,0.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-1.57000005245209))
+    .addChild(new ProtoDeclare().setName("org")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setAccessType("initializeOnly").setName("posi").setType("SFVec3f").setValue("0 0 0"))
+        .addField(new field().setAccessType("initializeOnly").setName("col").setType("SFColor").setValue("0 0 0")))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setTransparency(0.400000005960464)
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("emissiveColor").setProtoField("col")))))
+            .setGeometry(new Sphere().setRadius(1.10000002384186)))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("posi"))))))
+    .addChild(new ProtoDeclare().setName("r")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setAccessType("initializeOnly").setName("pos").setType("SFVec3f").setValue("0 0 0")))
+      .setProtoBody(new ProtoBody()
+        .addChild(new ProtoInstance().setName("org")
+          .addFieldValue(new fieldValue().setName("col").setValue("0 0.300000011920929 1"))
+          .addFieldValue(new fieldValue().setName("posi"))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
+    .addChild(new Anchor().setDescription("High Peak Community Arts").setUrl(new MFString("\"javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');\""))
+      .addChild(new ProtoInstance().setName("r")
+        .addFieldValue(new fieldValue().setName("pos").setValue("400 0.100000001490116 -385")))));
   },
   // end of initialize() method
 
@@ -116,11 +116,11 @@ t2.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

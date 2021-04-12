@@ -63,35 +63,35 @@ text.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-    .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("test \\n text"))
-    .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-  .setScene(new SceneObject()
-    .addChild(new TransformObject()
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node\\\"\\\"\\\"\""))
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node2\" \"\\\\\" \"\\\\\\\\\" \"Node2\""))
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new MFStringObject("\"Node3 \\\\\\\\ \\\\ \" \"Node3\\\"\\\"\\\"\""))
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ScriptObject().setSourceCode("\n" + 
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("creator").setContent("John W Carlson"))
+    .addMeta(new meta().setName("created").setContent("December 13 2015"))
+    .addMeta(new meta().setName("title").setContent("text.x3d"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+    .addMeta(new meta().setName("description").setContent("test \\n text"))
+    .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+  .setScene(new Scene()
+    .addChild(new Transform()
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new MFString("\"Node\\\"\\\"\\\"\""))
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new MFString("\"Node2\" \"\\\\\" \"\\\\\\\\\" \"Node2\""))
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new MFString("\"Node3 \\\\\\\\ \\\\ \" \"Node3\\\"\\\"\\\"\""))
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Script().setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
 "			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
+        .addField(new field().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
   },
   // end of initialize() method
 
@@ -125,11 +125,11 @@ text.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

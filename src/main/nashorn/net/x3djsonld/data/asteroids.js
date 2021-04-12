@@ -59,24 +59,24 @@ asteroids.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("asteroids.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("asteroids")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("anyShape")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode")
-          .addChild(new ShapeObject()
-            .setGeometry(new SphereObject()))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
-    .addChild(new ProtoInstanceObject().setName("anyShape")));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("asteroids.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("generator").setContent("manual"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
+    .addMeta(new meta().setName("description").setContent("asteroids")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare().setName("anyShape")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setAccessType("inputOutput").setName("myShape").setType("MFNode")
+          .addChild(new Shape()
+            .setGeometry(new Sphere()))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
+    .addChild(new ProtoInstance().setName("anyShape")));
   },
   // end of initialize() method
 
@@ -110,11 +110,11 @@ asteroids.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
