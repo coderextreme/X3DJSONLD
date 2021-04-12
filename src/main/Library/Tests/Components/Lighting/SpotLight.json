@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "unit": [
           {
@@ -39,15 +39,15 @@
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -442,7 +442,6 @@
                                       "@beamWidth":0.875398,
                                       "@cutOffAngle":1.0308,
                                       "@shadowColor":[0.1,0,0],
-                                      "@shadowIntensity":1,
                                       "@shadowDiffusion":0.02
                                     }
                                   },
@@ -538,7 +537,6 @@
                                       "@beamWidth":0.415398,
                                       "@cutOffAngle":0.790796,
                                       "@shadowColor":[0,0.1,0],
-                                      "@shadowIntensity":1,
                                       "@shadowDiffusion":0.03
                                     }
                                   },
@@ -706,7 +704,6 @@
                                 "@attenuation":[1,1.04083e-17,0.07],
                                 "@location":[0,2,0],
                                 "@radius":99.89,
-                                "@shadowIntensity":1,
                                 "@shadowDiffusion":0.01,
                                 "@shadowMapSize":2048
                               }
@@ -726,7 +723,6 @@
                                 "@beamWidth":1.1508,
                                 "@cutOffAngle":1.2708,
                                 "@shadowColor":[0,0,0.1],
-                                "@shadowIntensity":1,
                                 "@shadowDiffusion":0.03
                               }
                             },

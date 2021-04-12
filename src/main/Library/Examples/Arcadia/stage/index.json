@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -6587,7 +6587,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["mount.json"],
+                                            "@url":["mount.x3d"],
                                             "@bboxSize":[68.9251,65.6877,67.5461],
                                             "@bboxCenter":[0.876749,32.3308,1.45545]
                                           }
@@ -6892,7 +6892,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.json"],
+                                      "@url":["saule.x3d"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -6943,7 +6943,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.json"],
+                                      "@url":["saule.x3d"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -6994,7 +6994,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["saule.json"],
+                                      "@url":["saule.x3d"],
                                       "@bboxSize":[23.54,88.8706,23.5402],
                                       "@bboxCenter":[0,4.43541,0]
                                     }
@@ -8237,7 +8237,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["temple.json"],
+                                      "@url":["temple.x3d"],
                                       "@bboxSize":[51.7798,22.3794,51.7798],
                                       "@bboxCenter":[4.76837e-06,11.1897,-4.76837e-06]
                                     }

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -20,23 +20,27 @@
           },
           {
             "@name":"generator",
-            "@content":"Titania V1.1.0, http://titania.create3000.de"
+            "@content":"Titania V4.3.6, http://titania.create3000.de"
+          },
+          {
+            "@name":"identifier",
+            "@content":"file:///home/holger/Projekte/Library/Prototypes/Geometry2D/RoundedRectangle2D.x3d"
           },
           {
             "@name":"modified",
-            "@content":"Sun, 20 Sep 2015 06:48:36 GMT"
+            "@content":"Fri, 21 Dec 2018 14:50:04 GMT"
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -62,8 +66,7 @@
                     {
                       "@name":"solid",
                       "@accessType":"initializeOnly",
-                      "@type":"SFBool",
-                      "@value":true
+                      "@type":"SFBool"
                     }
                   ]
               },
@@ -72,14 +75,12 @@
                     { "IndexedFaceSet":
                       {
                         "@DEF":"Geometry",
-                        "IS": {
-                            "connect": [
-                              {
-                                "@nodeField":"solid",
-                                "@protoField":"solid"
-                              }
-                            ]
-                        },
+                        "@normalPerVertex":false,
+                        "-texCoord":
+                          { "TextureCoordinate":
+                            {
+                            }
+                          },
                         "-coord":
                           { "Coordinate":
                             {
@@ -109,6 +110,11 @@
                             "@value":10
                           },
                           {
+                            "@name":"solid",
+                            "@accessType":"inputOutput",
+                            "@type":"SFBool"
+                          },
+                          {
                             "@name":"geometry",
                             "@accessType":"initializeOnly",
                             "@type":"SFNode",
@@ -130,6 +136,10 @@
                               {
                                 "@nodeField":"size",
                                 "@protoField":"size"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
                               }
                             ]
                         },
@@ -146,15 +156,23 @@
 "{",
 "\tvar radius = Math .min (Math .min (cornerRadius, size .x / 2), size .y / 2);",
 "",
-"\tvar point         = new SFVec3f (radius, 0, 0);",
-"\tvar startRotation = new SFRotation (0, 0, 1, 0);",
-"\tvar endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);",
-"\tvar corner        = new MFVec3f ();",
-"\tvar coordIndex    = new MFInt32 ();",
-"\tvar points        = new MFVec3f ();",
+"\tvar",
+"\t\tpoint         = new SFVec3f (radius, 0, 0),",
+"\t\tstartRotation = new SFRotation (0, 0, 1, 0),",
+"\t\tendRotation   = new SFRotation (0, 0, 1, Math .PI / 2),",
+"\t\tmaxSize       = Math .max (size .x, size .y),",
+"\t\tcorner        = new MFVec3f (),",
+"\t\tcoordIndex    = new MFInt32 (),",
+"\t\tcoord         = geometry .coord .point,",
+"\t\ttexCoord      = geometry .texCoord .point;",
 "",
-"\tfor (var i = 0; i < cornerDimension * 4; ++ i)",
+"\tcoord    .length = 0;",
+"\ttexCoord .length = 0;",
+"",
+"\tfor (var i = 0, length = cornerDimension * 4; i < length; ++ i)",
 "\t\tcoordIndex [coordIndex .length] = i;",
+"\t\t",
+"\tcoordIndex [coordIndex .length] = -1;",
 "",
 "\tfor (var i = 0; i < cornerDimension; ++i)",
 "\t\tcorner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);",
@@ -162,28 +180,47 @@
 "\tvar translation = new SFVec3f (size .x / 2 - radius, size .y / 2 - radius, 0);",
 "",
 "\tfor (var i = 0; i < cornerDimension; ++ i)",
-"\t\tpoints [points .length] = corner [i] .add (translation);",
+"\t\tcoord [coord .length] = corner [i] .add (translation);",
 "",
-"\tvar translation = new SFVec3f (-size .x / 2 + radius, size .y / 2 - radius, 0);",
-"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);",
-"",
-"\tfor (var i = 0; i < cornerDimension; ++ i)",
-"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
-"",
-"\tvar translation = new SFVec3f (-size .x / 2 + radius, -size .y / 2 + radius, 0);",
-"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI);",
+"\tvar",
+"\t\ttranslation = new SFVec3f (-size .x / 2 + radius, size .y / 2 - radius, 0),",
+"\t\trotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);",
 "",
 "\tfor (var i = 0; i < cornerDimension; ++ i)",
-"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
+"\t\tcoord [coord .length] = rotation .multVec (corner [i]) .add (translation);",
 "",
-"\tvar translation = new SFVec3f (size .x / 2 - radius, -size .y / 2 + radius, 0);",
-"\tvar rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);",
+"\tvar",
+"\t\ttranslation = new SFVec3f (-size .x / 2 + radius, -size .y / 2 + radius, 0),",
+"\t\trotation    = new SFRotation (0, 0, 1, Math .PI);",
 "",
 "\tfor (var i = 0; i < cornerDimension; ++ i)",
-"\t\tpoints [points .length] = rotation .multVec (corner [i]) .add (translation);",
+"\t\tcoord [coord .length] = rotation .multVec (corner [i]) .add (translation);",
 "",
-"\tgeometry .coord .point = points;\t",
-"\tgeometry .coordIndex   = coordIndex;",
+"\tvar",
+"\t\ttranslation = new SFVec3f (size .x / 2 - radius, -size .y / 2 + radius, 0),",
+"\t\trotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);",
+"",
+"\tfor (var i = 0; i < cornerDimension; ++ i)",
+"\t\tcoord [coord .length] = rotation .multVec (corner [i]) .add (translation);",
+"",
+"\tvar maxSize1_2 = new SFVec3f (maxSize / 2, maxSize / 2, 0);",
+"",
+"\tfor (var i = 0, length = coord .length; i < length; ++ i)",
+"\t{",
+"\t\tvar tex = coord [i] .add (maxSize1_2) .divide (maxSize);",
+"",
+"\t\ttexCoord [i] = new SFVec2f (tex .x, tex .y);",
+"\t}",
+"",
+"\tif (! solid)",
+"\t{",
+"\t\tfor (var i = 0, length = cornerDimension * 4; i < length; ++ i)",
+"\t\t\tcoordIndex [coordIndex .length] = length - 1 - i;",
+"",
+"\t\tcoordIndex [coordIndex .length] = -1;",
+"\t}",
+"",
+"\tgeometry .set_coordIndex = coordIndex;",
 "}",
 "",
 ""
@@ -192,6 +229,87 @@
                     }
                   ]
               }
+            }
+          },
+          { "WorldInfo":
+            {
+              "@title":"RoundedRectangle2D",
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"Titania",
+                    "@DEF":"Titania",
+                    "@reference":"http://titania.create3000.de",
+                    "-value":[
+                      { "MetadataSet":
+                        {
+                          "@name":"Page",
+                          "@DEF":"Page",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                                "@name":"activeView",
+                                "@DEF":"activeView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[1]
+                              }
+                            },
+                            { "MetadataInteger":
+                              {
+                                "@name":"multiView",
+                                "@DEF":"multiView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[1]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Selection",
+                          "@DEF":"Selection",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataBoolean":
+                              {
+                                "@name":"selectGeometry",
+                                "@DEF":"selectGeometry",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[false]
+                              }
+                            },
+                            { "MetadataSet":
+                              {
+                                "@name":"nodes",
+                                "@DEF":"nodes",
+                                "@reference":"http://titania.create3000.de"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Grid",
+                          "@DEF":"Grid",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataBoolean":
+                              {
+                                "@name":"enabled",
+                                "@DEF":"enabled",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[true]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
             }
           }
         ]

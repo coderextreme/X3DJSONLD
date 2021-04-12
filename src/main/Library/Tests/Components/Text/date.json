@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -20,15 +20,19 @@
           },
           {
             "@name":"generator",
-            "@content":"Titania V0.7.8, http://titania.create3000.de"
+            "@content":"Titania V4.3.2, http://titania.create3000.de"
           },
           {
             "@name":"icon",
             "@content":"about:icon"
           },
           {
+            "@name":"identifier",
+            "@content":"file:///home/holger/Projekte/Library/Tests/Components/Text/date.x3d"
+          },
+          {
             "@name":"modified",
-            "@content":"Wed, 26 Aug 2015 18:33:59 GMT"
+            "@content":"Tue, 09 Oct 2018 14:39:06 GMT"
           },
           {
             "@name":"title",
@@ -36,20 +40,77 @@
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"date",
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"Titania",
+                    "@DEF":"Titania",
+                    "@reference":"http://titania.create3000.de",
+                    "-value":[
+                      { "MetadataSet":
+                        {
+                          "@name":"Selection",
+                          "@DEF":"Selection",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataBoolean":
+                              {
+                                "@name":"selectGeometry",
+                                "@DEF":"selectGeometry",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[false]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Page",
+                          "@DEF":"Page",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                                "@name":"activeView",
+                                "@DEF":"activeView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[1]
+                              }
+                            },
+                            { "MetadataInteger":
+                              {
+                                "@name":"multiView",
+                                "@DEF":"multiView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          },
           { "Viewpoint":
             {
               "@position":[0,0,8.74054],
@@ -76,11 +137,11 @@
                       { "Text":
                         {
                           "@DEF":"Time",
-                          "@string":["Date"],
+                          "@string":[", ","Tue, 09 Oct 2018 14:35:59 GMT, ","Titania 4.3.2qrPHBGgi"],
                           "-fontStyle":
                             { "FontStyle":
                               {
-                                "@family":[", ","Ubuntu Mono, ","CHOPS___.TTFSANS"],
+                                "@family":[", ","CHOPS___.TTFSANS"],
                                 "@style":"BOLDITALIC",
                                 "@size":0.5,
                                 "@justify":[", ","MIDDLEBEGIN"]

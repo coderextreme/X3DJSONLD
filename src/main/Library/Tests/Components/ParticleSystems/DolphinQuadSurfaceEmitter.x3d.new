@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Sat, 30 Apr 2016 02:18:39 GMT"></meta>
+<meta name="creator" content="holger"></meta>
+<meta name="generator" content="Titania V1.4.2, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/DolphinLineSurfaceEmitter.x3d"></meta>
+<meta name="modified" content="Sat, 30 Apr 2016 05:12:47 GMT"></meta>
+</head>
+<Scene><ExternProtoDeclare name="Dolphin" url="&quot;, &quot; &quot;Dolphin.x3d#Dolphinfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Dolphin.x3d#Dolphin&quot;"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="solid" accessType="initializeOnly" type="SFBool"></field>
+</ExternProtoDeclare>
+<WorldInfo><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="AngleGrid" DEF="AngleGrid" reference="http://titania.create3000.de" containerField="value"><MetadataBoolean name="enabled" DEF="enabled" reference="http://titania.create3000.de" value="false" containerField="value"></MetadataBoolean>
+</MetadataSet>
+<MetadataSet name="Grid" DEF="Grid" reference="http://titania.create3000.de"><MetadataBoolean name="enabled" DEF="enabled_1" reference="http://titania.create3000.de" value="true" containerField="value"></MetadataBoolean>
+</MetadataSet>
+<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="179.724151611328 -295.825958251953 258.351654052734" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="0.851609192029355 0.229794819966725 0.47112219727749 0.997756545817208"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="17.631872177124 -9.29712867736816 -18.6251792907715"></MetadataDouble>
+</MetadataSet>
+<MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
+<MetadataSet name="children" DEF="children" reference="http://titania.create3000.de"><Transform DEF="Box" containerField="value"><Shape><Appearance><Material DEF="_1" transparency="0.884393"></Material>
+</Appearance>
+<ProtoInstance containerField="geometry" name="Dolphin" DEF="_2"></ProtoInstance>
+</Shape>
+</Transform>
+</MetadataSet>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="White" skyColor="1 1 1"></Background>
+<Viewpoint description="Home" position="179.724 -295.826 258.352" orientation="0.851609192029354 0.229794819966725 0.47112219727749 0.997756545817209" centerOfRotation="17.6319 -9.29713 -18.6252"></Viewpoint>
+<TimeSensor DEF="_3" cycleInterval="10" loop="true"></TimeSensor>
+<Transform USE="Box"></Transform>
+<ParticleSystem maxParticles="2000" particleSize="6 6"><SurfaceEmitter containerField="emitter" speed="2" mass="0.01" surfaceArea="0.01"><ProtoInstance containerField="surface" name="Dolphin" USE="_2"></ProtoInstance>
+</SurfaceEmitter>
+<Appearance><Material DEF="Rococo17" ambientIntensity="0.187004" diffuseColor="0.640987 0.460097 0.748016" specularColor="0.251984 0.251984 0.251984" shininess="0.612121"></Material>
+</Appearance>
+</ParticleSystem>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<ROUTE fromNode="_3" fromField="fraction_changed" toNode="_2" toField="set_fraction"></ROUTE>
+</Scene>
+</X3D>

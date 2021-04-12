@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.json"],
+              "@url":["Console_proto.x3d"],
               "field": [
                 {
                   "@name":"string",
@@ -58,7 +58,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"BoolSwitch",
-              "@url":["BoolSwitch_proto.json"],
+              "@url":["BoolSwitch_proto.x3d"],
               "field": [
                 {
                   "@name":"isActive",
@@ -76,7 +76,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":["Bool_proto.json"],
+              "@url":["Bool_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -99,7 +99,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"DigitalClock",
-              "@url":["DigitalClock_proto.json"],
+              "@url":["DigitalClock_proto.x3d"],
               "field": [
                 {
                   "@name":"time",
@@ -122,7 +122,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SubTime",
-              "@url":["SubTime_proto.json"],
+              "@url":["SubTime_proto.x3d"],
               "field": [
                 {
                   "@name":"time",
@@ -145,7 +145,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Time",
-              "@url":["Time_proto.json"],
+              "@url":["Time_proto.x3d"],
               "field": [
                 {
                   "@name":"time",
@@ -168,7 +168,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Switcher",
-              "@url":["Switcher_proto.json"],
+              "@url":["Switcher_proto.x3d"],
               "field": [
                 {
                   "@name":"minValue",
@@ -206,7 +206,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Digit",
-              "@url":["Digit_proto.json"],
+              "@url":["Digit_proto.x3d"],
               "field": [
                 {
                   "@name":"whichChoice",
@@ -224,7 +224,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Gate",
-              "@url":["Gate_proto.json"],
+              "@url":["Gate_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -257,7 +257,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Delay",
-              "@url":["Delay_proto.json"],
+              "@url":["Delay_proto.x3d"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -311,7 +311,7 @@
                           "fieldValue": [
                             {
                               "@name":"string",
-                              "@value":[,""*******************************************************************************",", ",", Copyright (c) 2000 Internet Commerce & Technology Services Inc.",", All Rights Reserved",", ",", THIS IS UNPUBLISHED SOURCE CODE OF Internet Commerce & Technology Services Inc.",", ",", The copyright notice above does not evidence any actual of intended",", publication of such source code, and is an unpublished work by",", Internet Commerce & Technology Services Inc.",", This material contains CONFIDENTIAL INFORMATION that is the property",", of Internet Commerce & Technology Services Inc.",", Any use, duplication or disclosure not specifically authorized by",", Internet Commerce & Technology Services Inc. is strictly prohibited.",", ",", *******************************************************************************",", ",", ]
+                              "@value":[""*******************************************************************************",", ",", Copyright (c) 2000 Internet Commerce & Technology Services Inc.",", All Rights Reserved",", ",", THIS IS UNPUBLISHED SOURCE CODE OF Internet Commerce & Technology Services Inc.",", ",", The copyright notice above does not evidence any actual of intended",", publication of such source code, and is an unpublished work by",", Internet Commerce & Technology Services Inc.",", This material contains CONFIDENTIAL INFORMATION that is the property",", of Internet Commerce & Technology Services Inc.",", Any use, duplication or disclosure not specifically authorized by",", Internet Commerce & Technology Services Inc. is strictly prohibited.",", ",", *******************************************************************************",", ",", ]
                             }
                           ]
                         }
@@ -478,7 +478,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["benzoffice.json"],
+                                "@url":["benzoffice.x3d"],
                                 "@bboxSize":[38.8425,13.6749,22.9095],
                                 "@bboxCenter":[4.36904,0.0062058,-0.675996]
                               }
@@ -541,7 +541,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["mbenz-scout1.json"],
+                          "@url":["mbenz-scout1.x3d"],
                           "@bboxSize":[25,25,25],
                           "@bboxCenter":[0,1,0]
                         }
@@ -5198,7 +5198,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Eingang"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5256,7 +5256,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Galerie"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5314,7 +5314,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#GPS-Info"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5372,7 +5372,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Prospekte"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5430,7 +5430,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#A-Klasse"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5488,7 +5488,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Stage"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5546,7 +5546,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Wandposter"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -5604,7 +5604,7 @@
                                                           { "Anchor":
                                                             {
                                                               "@url":["#Kamerafahrt"],
-                                                              "@parameter":[,""],
+                                                              "@parameter":[""],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {

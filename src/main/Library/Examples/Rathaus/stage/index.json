@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -537,7 +537,7 @@
                                       "-children":[
                                         { "Inline":
                                           {
-                                            "@url":["dachaufbau.json"],
+                                            "@url":["dachaufbau.x3d"],
                                             "@bboxSize":[3.194,3.771,2.726],
                                             "@bboxCenter":[0.87,6.2115,-5.923]
                                           }
@@ -623,7 +623,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["dachfenster_small.json"],
+                                                  "@url":["dachfenster_small.x3d"],
                                                   "@bboxSize":[3.794,4.164,0.942],
                                                   "@bboxCenter":[1.221,6.483,0.946]
                                                 }
@@ -660,7 +660,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["dachfenster.json"],
+                                                        "@url":["dachfenster.x3d"],
                                                         "@bboxSize":[3.808,4.164,1.414],
                                                         "@bboxCenter":[1.214,6.483,-8.26]
                                                       }
@@ -725,7 +725,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["dachfenster_big.json"],
+                                                        "@url":["dachfenster_big.x3d"],
                                                         "@bboxSize":[3.801,4.164,1.884],
                                                         "@bboxCenter":[1.2175,6.483,14.492]
                                                       }
@@ -756,7 +756,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["windows.json"],
+                                "@url":["windows.x3d"],
                                 "@bboxSize":[0.0700001,1.076,34.006],
                                 "@bboxCenter":[-1.109,2.737,7.845]
                               }
@@ -772,7 +772,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["side.json"],
+                          "@url":["side.x3d"],
                           "@bboxSize":[9.093,10.8052,0.581],
                           "@bboxCenter":[3.2845,5.44741,-9.7105]
                         }
@@ -786,7 +786,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["tower.json"],
+                          "@url":["tower.x3d"],
                           "@bboxSize":[3.782,17.2999,3.521],
                           "@bboxCenter":[-0.863,8.67204,3.0775]
                         }
@@ -948,7 +948,7 @@
                 },
                 { "Inline":
                   {
-                    "@url":["bogengang.json"],
+                    "@url":["bogengang.x3d"],
                     "@bboxSize":[0.409529,1.7596,35.24],
                     "@bboxCenter":[-1.08176,0.901999,7.925]
                   }
@@ -1375,7 +1375,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["side.json"],
+                          "@url":["side.x3d"],
                           "@bboxSize":[9.093,10.8052,0.581],
                           "@bboxCenter":[3.2845,5.44741,-9.7105]
                         }

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -893,7 +893,7 @@
                                                               "-children":[
                                                                 { "Inline":
                                                                   {
-                                                                    "@url":["ei.json"],
+                                                                    "@url":["ei.x3d"],
                                                                     "@bboxSize":[12.4482,13.601,7.48383],
                                                                     "@bboxCenter":[7.8503,6.81211,8.18435]
                                                                   }
@@ -4413,7 +4413,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["3-innen.json"],
+                                                                          "@url":["3-innen.x3d"],
                                                                           "@bboxSize":[31.293,15.249,24.5372],
                                                                           "@bboxCenter":[6.94291,7.61762,-6.19605]
                                                                         }

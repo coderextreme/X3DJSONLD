@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Console",
-              "@url":["Console_proto.json"],
+              "@url":["Console_proto.x3d"],
               "field": [
                 {
                   "@name":"string",
@@ -62,7 +62,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Float",
-              "@url":["Float_proto.json"],
+              "@url":["Float_proto.x3d"],
               "field": [
                 {
                   "@name":"startTime",
@@ -97,7 +97,7 @@
                     "fieldValue": [
                       {
                         "@name":"string",
-                        "@value":[,""*******************************************************************************",", ",", Copyright (c) 2000 Internet Commerce & Technology Services Inc.",", All Rights Reserved",", ",", THIS IS UNPUBLISHED SOURCE CODE OF Internet Commerce & Technology Services Inc.",", ",", The copyright notice above does not evidence any actual of intended",", publication of such source code, and is an unpublished work by",", Internet Commerce & Technology Services Inc.",", This material contains CONFIDENTIAL INFORMATION that is the property",", of Internet Commerce & Technology Services Inc.",", Any use, duplication or disclosure not specifically authorized by",", Internet Commerce & Technology Services Inc. is strictly prohibited.",", ",", *******************************************************************************",", ",", ]
+                        "@value":[""*******************************************************************************",", ",", Copyright (c) 2000 Internet Commerce & Technology Services Inc.",", All Rights Reserved",", ",", THIS IS UNPUBLISHED SOURCE CODE OF Internet Commerce & Technology Services Inc.",", ",", The copyright notice above does not evidence any actual of intended",", publication of such source code, and is an unpublished work by",", Internet Commerce & Technology Services Inc.",", This material contains CONFIDENTIAL INFORMATION that is the property",", of Internet Commerce & Technology Services Inc.",", Any use, duplication or disclosure not specifically authorized by",", Internet Commerce & Technology Services Inc. is strictly prohibited.",", ",", *******************************************************************************",", ",", ]
                       }
                     ]
                   }
@@ -843,7 +843,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["mcdonalds-scout1.json"],
+                                "@url":["mcdonalds-scout1.x3d"],
                                 "@bboxSize":[7,3.9,7],
                                 "@bboxCenter":[0,0.05,2.38419e-07]
                               }
@@ -1356,7 +1356,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["hamburger-c.json"],
+                                "@url":["hamburger-c.x3d"],
                                 "@bboxSize":[6.6625,6.66251,6.6625],
                                 "@bboxCenter":[0,-1.19209e-07,-0.459672]
                               }
