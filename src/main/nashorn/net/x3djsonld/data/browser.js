@@ -59,20 +59,20 @@ browser.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("browser.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
-  .setScene(new SceneObject()
-    .addChild(new ScriptObject("Browser").setSourceCode("\n" + 
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("browser.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("generator").setContent("manual"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
+    .addMeta(new meta().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
+  .setScene(new Scene()
+    .addChild(new Script("Browser").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "                function initialize() {" + "\n" + 
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');" + "\n" + 
 "                }" + "\n"))
-    .addChild(new ScriptObject("Clouds").setSourceCode("\n" + 
+    .addChild(new Script("Clouds").setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -117,11 +117,11 @@ browser.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

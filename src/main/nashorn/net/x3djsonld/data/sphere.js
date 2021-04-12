@@ -59,19 +59,19 @@ sphere.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("sphere.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a sphere")))
-  .setScene(new SceneObject()
-    .addChild(new GroupObject()
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0,1.0,1.0)))
-        .setGeometry(new SphereObject()))));
+  this.x3dModel = new X3D().setProfile("Interchange").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("sphere.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("generator").setContent("manual"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
+    .addMeta(new meta().setName("description").setContent("a sphere")))
+  .setScene(new Scene()
+    .addChild(new Group()
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0)))
+        .setGeometry(new Sphere()))));
   },
   // end of initialize() method
 
@@ -105,11 +105,11 @@ sphere.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

@@ -53,18 +53,18 @@ app.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("creator").setContent("Carlson, I"))
-    .addMeta(new metaObject().setName("creator").setContent("Carlson, II"))
-    .addMeta(new metaObject().setName("creator").setContent("Carlson, III")))
-  .setScene(new SceneObject()
-    .addChild(new GroupObject()
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(1.0,0.0,0.0)))
-        .setGeometry(new BoxObject())))
-    .addChild(new TransformObject().setTranslation(1.0,2.0,3.0).setScale(4.0,5.0,6.0).setRotation(7.0,8.0,9.0,3.14)));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("4.0")
+  .setHead(new head()
+    .addMeta(new meta().setName("creator").setContent("Carlson, I"))
+    .addMeta(new meta().setName("creator").setContent("Carlson, II"))
+    .addMeta(new meta().setName("creator").setContent("Carlson, III")))
+  .setScene(new Scene()
+    .addChild(new Group()
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))
+        .setGeometry(new Box())))
+    .addChild(new Transform().setTranslation(1.0,2.0,3.0).setScale(4.0,5.0,6.0).setRotation(7.0,8.0,9.0,3.14)));
   },
   // end of initialize() method
 
@@ -98,11 +98,11 @@ app.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
