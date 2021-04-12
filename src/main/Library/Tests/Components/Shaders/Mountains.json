@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -36,15 +36,15 @@
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -53,7 +53,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"SFNode",
-              "@url":[", ","https://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json, ","http://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json, ","https://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.jsonhttp://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.json"],
+              "@url":[", ","https://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv, ","http://cdn.rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv, ","https://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dvhttp://rawgit.com/create3000/Library/master/Prototypes/1/1.0/Fields/SFNode.x3dv"],
               "field": [
                 {
                   "@name":"set_triggerTime",

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -49,7 +49,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Unless",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Unless/Unless_proto.jsonUnless_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Unless/Unless_proto.x3dUnless_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -67,7 +67,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Counter",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Counter/Counter_proto.jsonCounter_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Counter/Counter_proto.x3dCounter_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -120,7 +120,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Or",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Or/Or_proto.jsonOr_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Or/Or_proto.x3dOr_proto.x3d"],
               "field": [
                 {
                   "@name":"value_changed",
@@ -138,7 +138,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Bool/Bool_proto.jsonBool_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Bool/Bool_proto.x3dBool_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -161,7 +161,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Bool2Int",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Bool2Int/Bool2Int_proto.jsonBool2Int_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Bool2Int/Bool2Int_proto.x3dBool2Int_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -179,7 +179,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Door",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Door/Door_proto.jsonDoor_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Door/Door_proto.x3dDoor_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -222,7 +222,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Not",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Not/Not_proto.jsonNot_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Not/Not_proto.x3dNot_proto.x3d"],
               "field": [
                 {
                   "@name":"set_value",
@@ -240,7 +240,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Scene",
-              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Scene/Scene_proto.jsonScene_proto.json"],
+              "@url":[", ","http://vr.create3000.tv/vrml/protos1.1/Scene/Scene_proto.x3dScene_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",

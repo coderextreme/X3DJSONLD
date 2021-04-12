@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"CountDown",
-              "@url":["CountDown_proto.json"],
+              "@url":["CountDown_proto.x3d"],
               "field": [
                 {
                   "@name":"offset",
@@ -78,7 +78,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Time2MFString",
-              "@url":["Time2MFString_proto.json"],
+              "@url":["Time2MFString_proto.x3d"],
               "field": [
                 {
                   "@name":"set_time",
@@ -430,7 +430,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_3",
-                                                  "@url":["ham-tottier.json"],
+                                                  "@url":["ham-tottier.x3d"],
                                                   "@bboxSize":[0.180247,0.0155499,0.175728],
                                                   "@bboxCenter":[0,-3.22983e-06,0]
                                                 }
@@ -438,7 +438,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_4",
-                                                  "@url":["ham-gurke.json"],
+                                                  "@url":["ham-gurke.x3d"],
                                                   "@bboxSize":[0.147983,0.00474552,0.102927],
                                                   "@bboxCenter":[0.000954397,-5.3551e-08,-0.000806626]
                                                 }
@@ -446,7 +446,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_5",
-                                                  "@url":["ham-tomate.json"],
+                                                  "@url":["ham-tomate.x3d"],
                                                   "@bboxSize":[0.092927,0.00474568,0.15098],
                                                   "@bboxCenter":[-7.82497e-05,-1.37486e-07,0.000793424]
                                                 }
@@ -454,7 +454,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_6",
-                                                  "@url":["ham-cheese.json"],
+                                                  "@url":["ham-cheese.x3d"],
                                                   "@bboxSize":[0.182589,0.0268456,0.182589],
                                                   "@bboxCenter":[0,3.80073e-06,0]
                                                 }
@@ -462,7 +462,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_7",
-                                                  "@url":["ham-zwiebel.json"],
+                                                  "@url":["ham-zwiebel.x3d"],
                                                   "@bboxSize":[0.0887386,0.00477273,0.0997977],
                                                   "@bboxCenter":[-3.72529e-09,1.77231e-06,-9.07108e-07]
                                                 }
@@ -470,7 +470,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_8",
-                                                  "@url":["ham-ketchup.json"],
+                                                  "@url":["ham-ketchup.x3d"],
                                                   "@bboxSize":[0.0757356,0.0134014,0.0757356],
                                                   "@bboxCenter":[0,3.71039e-06,0]
                                                 }
@@ -478,7 +478,7 @@
                                               { "Inline":
                                                 {
                                                   "@DEF":"_9",
-                                                  "@url":["ham-deckel.json"],
+                                                  "@url":["ham-deckel.x3d"],
                                                   "@bboxSize":[0.205598,0.0672368,0.200442],
                                                   "@bboxCenter":[0,0.0336184,0]
                                                 }

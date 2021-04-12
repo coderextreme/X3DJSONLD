@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -2558,7 +2558,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["fire.json"],
+                                                              "@url":["fire.x3d"],
                                                               "@bboxSize":[1.41421,1.41421,1.41421]
                                                             }
                                                           }
@@ -2629,7 +2629,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["fire.json"],
+                                                              "@url":["fire.x3d"],
                                                               "@bboxSize":[1.41421,1.41421,1.41421]
                                                             }
                                                           }
@@ -3779,7 +3779,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["beamer.json"],
+                                                        "@url":["beamer.x3d"],
                                                         "@bboxSize":[2.00027,4.14494,2.00027],
                                                         "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                       }
@@ -4427,7 +4427,7 @@
                                                               "-children":[
                                                                 { "Inline":
                                                                   {
-                                                                    "@url":["fire.json"],
+                                                                    "@url":["fire.x3d"],
                                                                     "@bboxSize":[1.41421,1.41421,1.41421]
                                                                   }
                                                                 }
@@ -4487,7 +4487,7 @@
                                                               "-children":[
                                                                 { "Inline":
                                                                   {
-                                                                    "@url":["fire.json"],
+                                                                    "@url":["fire.x3d"],
                                                                     "@bboxSize":[1.41421,1.41421,1.41421]
                                                                   }
                                                                 }
@@ -4678,7 +4678,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["beamer.json"],
+                                                              "@url":["beamer.x3d"],
                                                               "@bboxSize":[2.00027,4.14494,2.00027],
                                                               "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                             }
@@ -4813,7 +4813,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["beamer.json"],
+                                                        "@url":["beamer.x3d"],
                                                         "@bboxSize":[2.00027,4.14494,2.00027],
                                                         "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                       }
@@ -5180,7 +5180,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["beamer.json"],
+                                                              "@url":["beamer.x3d"],
                                                               "@bboxSize":[2.00027,4.14494,2.00027],
                                                               "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                             }
@@ -5425,7 +5425,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["fire.json"],
+                                                                          "@url":["fire.x3d"],
                                                                           "@bboxSize":[1.41421,1.41421,1.41421]
                                                                         }
                                                                       }
@@ -5485,7 +5485,7 @@
                                                                     "-children":[
                                                                       { "Inline":
                                                                         {
-                                                                          "@url":["fire.json"],
+                                                                          "@url":["fire.x3d"],
                                                                           "@bboxSize":[1.41421,1.41421,1.41421]
                                                                         }
                                                                       }
@@ -5908,7 +5908,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["beamer.json"],
+                                                        "@url":["beamer.x3d"],
                                                         "@bboxSize":[2.00027,4.14494,2.00027],
                                                         "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                       }
@@ -6253,7 +6253,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["beamer.json"],
+                                                              "@url":["beamer.x3d"],
                                                               "@bboxSize":[2.00027,4.14494,2.00027],
                                                               "@bboxCenter":[1.49608e-05,2.07246,-1.49608e-05]
                                                             }
@@ -10239,7 +10239,7 @@
                                                                           "-children":[
                                                                             { "Inline":
                                                                               {
-                                                                                "@url":["palme.json"],
+                                                                                "@url":["palme.x3d"],
                                                                                 "@bboxSize":[8.44546,12.5789,8.44545],
                                                                                 "@bboxCenter":[-0.0137699,6.28945,-0.335755]
                                                                               }
@@ -10476,7 +10476,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["karren.json"],
+                                                        "@url":["karren.x3d"],
                                                         "@bboxSize":[4.967,2.007,2.465],
                                                         "@bboxCenter":[1.12765,0.803139,-0.627581]
                                                       }
@@ -10495,7 +10495,7 @@
                                                         "-children":[
                                                           { "Inline":
                                                             {
-                                                              "@url":["kaktus.json"],
+                                                              "@url":["kaktus.x3d"],
                                                               "@bboxSize":[2.7389,2.73891,2.7389],
                                                               "@bboxCenter":[0,1.36945,3.57628e-07]
                                                             }
@@ -10565,7 +10565,7 @@
                                                   "-children":[
                                                     { "Inline":
                                                       {
-                                                        "@url":["steine.json"],
+                                                        "@url":["steine.x3d"],
                                                         "@bboxSize":[15.7323,6.21186,13.7624],
                                                         "@bboxCenter":[-4.57764e-05,3.10593,4.76837e-07]
                                                       }

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -45,7 +45,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Scene",
-              "@url":["Scene_proto.json"],
+              "@url":["Scene_proto.x3d"],
               "field": [
                 {
                   "@name":"enabled",
@@ -88,7 +88,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"Int",
-              "@url":["Int_proto.json"],
+              "@url":["Int_proto.x3d"],
               "field": [
                 {
                   "@name":"value",
@@ -120,42 +120,42 @@
               "-children":[
                 { "Inline":
                   {
-                    "@url":["film1.json"],
+                    "@url":["film1.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film2.json"],
+                    "@url":["film2.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film3.json"],
+                    "@url":["film3.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film4.json"],
+                    "@url":["film4.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film5.json"],
+                    "@url":["film5.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }
                 },
                 { "Inline":
                   {
-                    "@url":["film6.json"],
+                    "@url":["film6.x3d"],
                     "@bboxSize":[35.944,19.1172,0.299421],
                     "@bboxCenter":[7.5798,9.99219,0.153977]
                   }

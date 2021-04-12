@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "unit": [
           {
@@ -27,27 +27,27 @@
           },
           {
             "@name":"generator",
-            "@content":"Titania V2.0.1, http://titania.create3000.de"
+            "@content":"Titania V4.3.5, http://titania.create3000.de"
           },
           {
             "@name":"identifier",
-            "@content":"file:///home/holger/Projekte/Cobweb/excite/tests/Components/PointingDeviceSensor/ClonedSensors.x3d"
+            "@content":"file:///home/holger/Projekte/Library/Tests/Components/PointingDeviceSensor/ClonedSensors.x3d"
           },
           {
             "@name":"modified",
-            "@content":"Thu, 06 Oct 2016 16:56:51 GMT"
+            "@content":"Fri, 14 Dec 2018 01:52:16 GMT"
           },
           {
             "@name":"translated",
-            "@content":"24 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -160,7 +160,7 @@
                           { "Transform":
                             {
                               "@DEF":"Plane",
-                              "@rotation":[-3.09087122910219e-08,0.70710528118436,0.707108281185553,3.14159],
+                              "@rotation":[-3.09087122910219e-08,0.70710528118436,0.707108281185553,179.999847960504],
                               "@scale":[10,10,1],
                               "-children":[
                                 { "Shape":
@@ -278,7 +278,7 @@
                               "-geometry":
                                 { "IndexedLineSet":
                                   {
-                                    "@DEF":"MinorGrid_1",
+                                    "@DEF":"MinorGrid_2",
                                     "@coordIndex":[0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1],
                                     "-coord":
                                       { "Coordinate":
@@ -313,7 +313,7 @@
                               "-geometry":
                                 { "PointSet":
                                   {
-                                    "@DEF":"MajorPoints_1",
+                                    "@DEF":"MajorPoints_3",
                                     "-coord":
                                       { "Coordinate":
                                         {
@@ -347,7 +347,7 @@
                               "-geometry":
                                 { "PointSet":
                                   {
-                                    "@DEF":"MinorPoints_1",
+                                    "@DEF":"MinorPoints_4",
                                     "-coord":
                                       { "Coordinate":
                                         {
@@ -413,7 +413,7 @@
                             "-children":[
                               { "IndexedLineSet":
                                 {
-                                  "@USE":"MinorGrid_1"
+                                  "@USE":"MinorGrid_2"
                                 }
                               }
                             ]
@@ -425,7 +425,7 @@
                             "-children":[
                               { "PointSet":
                                 {
-                                  "@USE":"MajorPoints_1"
+                                  "@USE":"MajorPoints_3"
                                 }
                               }
                             ]
@@ -437,7 +437,7 @@
                             "-children":[
                               { "PointSet":
                                 {
-                                  "@USE":"MinorPoints_1"
+                                  "@USE":"MinorPoints_4"
                                 }
                               }
                             ]
@@ -614,9 +614,9 @@
                             { "MetadataBoolean":
                               {
                                 "@name":"enabled",
-                                "@DEF":"enabled_1",
+                                "@DEF":"enabled_5",
                                 "@reference":"http://titania.create3000.de",
-                                "@value":[false]
+                                "@value":[true]
                               }
                             },
                             { "MetadataFloat":
@@ -686,26 +686,44 @@
                           "@DEF":"Selection",
                           "@reference":"http://titania.create3000.de",
                           "-value":[
-                            { "MetadataSet":
+                            { "MetadataBoolean":
                               {
-                                "@name":"previous",
-                                "@DEF":"previous",
-                                "@reference":"http://titania.create3000.de"
+                                "@name":"selectGeometry",
+                                "@DEF":"selectGeometry",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[false]
                               }
                             },
                             { "MetadataSet":
                               {
-                                "@name":"children",
-                                "@DEF":"children",
+                                "@name":"nodes",
+                                "@DEF":"nodes",
+                                "@reference":"http://titania.create3000.de"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "MetadataSet":
+                        {
+                          "@name":"Page",
+                          "@DEF":"Page",
+                          "@reference":"http://titania.create3000.de",
+                          "-value":[
+                            { "MetadataInteger":
+                              {
+                                "@name":"activeView",
+                                "@DEF":"activeView",
                                 "@reference":"http://titania.create3000.de",
-                                "-value":[
-                                  { "Viewpoint":
-                                    {
-                                      "@DEF":"_1",
-                                      "@description":"Home"
-                                    }
-                                  }
-                                ]
+                                "@value":[1]
+                              }
+                            },
+                            { "MetadataInteger":
+                              {
+                                "@name":"multiView",
+                                "@DEF":"multiView",
+                                "@reference":"http://titania.create3000.de",
+                                "@value":[0]
                               }
                             }
                           ]
@@ -718,7 +736,7 @@
           },
           { "Viewpoint":
             {
-              "@USE":"_1"
+              "@description":"Home"
             }
           },
           { "ProtoInstance":
@@ -727,7 +745,7 @@
               "fieldValue": [
                 {
                   "@name":"rotation",
-                  "@value":[1,0,0,1.5707963267949]
+                  "@value":[1,0,0,90.0000000000002]
                 },
                 {
                   "@name":"transparency",
@@ -739,7 +757,7 @@
           { "Transform":
             {
               "@DEF":"Clone1",
-              "@translation":[-2,0,0],
+              "@translation":[-4,-2,0],
               "-children":[
                 { "Transform":
                   {
@@ -748,6 +766,7 @@
                       { "Transform":
                         {
                           "@DEF":"Cone",
+                          "@translation":[0,2,0],
                           "@scale":[0.374845,0.374845,0.374845],
                           "-children":[
                             { "Shape":
@@ -758,6 +777,11 @@
                                       "-material":
                                         { "Material":
                                           {
+                                            "@DEF":"Rococo30",
+                                            "@ambientIntensity":0.226102,
+                                            "@diffuseColor":[0.551217,0.904409,0.269294],
+                                            "@specularColor":[0.0955906,0.0955906,0.0955906],
+                                            "@shininess":0.078125
                                           }
                                         }
                                     }
@@ -774,7 +798,8 @@
                       },
                       { "PlaneSensor":
                         {
-                          "@DEF":"_2",
+                          "@DEF":"_6",
+                          "@offset":[0,2,0],
                           "@maxPosition":[0,2]
                         }
                       }
@@ -787,9 +812,8 @@
           { "Transform":
             {
               "@DEF":"Clone2",
-              "@translation":[2,0,0],
-              "@rotation":[-3.57398802300153e-17,1.10915152794688e-16,1,3.14159265358979],
-              "@scaleOrientation":[-0.357406744336593,0.862856209461017,-0.357406744336593,4.51948301921753],
+              "@rotation":[-3.57398802300153e-17,1.10915152794688e-16,1,180],
+              "@scaleOrientation":[-0.357406744336593,0.862856209461017,-0.357406744336593,258.947302582207],
               "-children":[
                 { "Transform":
                   {
@@ -802,9 +826,9 @@
           { "Transform":
             {
               "@DEF":"Clone3",
-              "@translation":[0,-3,6.66134e-16],
-              "@rotation":[1.72022019207585e-06,1.72022019207586e-06,-0.999999999997041,1.57079632679786],
-              "@scaleOrientation":[0.543313393239255,-0.839529958577022,-7.33383290662978e-05,2.27202398211324e-06],
+              "@translation":[-2,-3,6.66134e-16],
+              "@rotation":[1.72022019207585e-06,1.72022019207586e-06,-0.999999999997041,90.0000000001698],
+              "@scaleOrientation":[0.999999999997869,7.89894308018685e-07,1.9074129865875e-06,224.999999999914],
               "-children":[
                 { "Transform":
                   {
@@ -814,11 +838,110 @@
               ]
             }
           },
+          { "Transform":
+            {
+              "@translation":[4,3,0],
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"Clone1_7",
+                    "@translation":[-4,-2,0],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@DEF":"SimpleSlider_8",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@DEF":"Cone_9",
+                                "@translation":[0,2,0],
+                                "@scale":[0.374845,0.374845,0.374845],
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@DEF":"Rococo12",
+                                                  "@ambientIntensity":0.226102,
+                                                  "@diffuseColor":[0.904409,0.146366,0.208768],
+                                                  "@specularColor":[0.0955906,0.0955906,0.0955906],
+                                                  "@shininess":0.078125
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cone":
+                                          {
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "PlaneSensor":
+                                    {
+                                      "@DEF":"_10",
+                                      "@offset":[0,2,0],
+                                      "@maxPosition":[0,2]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Clone2_11",
+                    "@rotation":[-3.57398802300153e-17,1.10915152794688e-16,1,180],
+                    "@scaleOrientation":[-0.357406744336593,0.862856209461017,-0.357406744336593,258.947302582207],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"SimpleSlider_8"
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@DEF":"Clone3_12",
+                    "@translation":[-2,-3,6.66134e-16],
+                    "@rotation":[1.72022019207585e-06,1.72022019207586e-06,-0.999999999997041,90.0000000001698],
+                    "@scaleOrientation":[0.999999999997869,7.89894308018685e-07,1.9074129865875e-06,224.999999999914],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@USE":"SimpleSlider_8"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
           { "ROUTE":
             {
-              "@fromNode":"_2",
+              "@fromNode":"_6",
               "@fromField":"translation_changed",
               "@toNode":"Cone",
+              "@toField":"set_translation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"_10",
+              "@fromField":"translation_changed",
+              "@toNode":"Cone_9",
               "@toField":"set_translation"
             }
           }

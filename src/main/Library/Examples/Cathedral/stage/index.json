@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,15 +32,15 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2018"
+            "@content":"12 April 2021"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -170,7 +170,7 @@
                             },
                             { "Inline":
                               {
-                                "@url":["cube.json"],
+                                "@url":["cube.x3d"],
                                 "@bboxSize":[1,1,1]
                               }
                             }
@@ -312,7 +312,7 @@
                                               { "Anchor":
                                                 {
                                                   "@url":["#VP1"],
-                                                  "@parameter":[,""],
+                                                  "@parameter":[""],
                                                   "-children":[
                                                     { "Transform":
                                                       {
@@ -366,7 +366,7 @@
                                         { "Anchor":
                                           {
                                             "@url":["#VP2"],
-                                            "@parameter":[,""],
+                                            "@parameter":[""],
                                             "-children":[
                                               { "Transform":
                                                 {
@@ -426,7 +426,7 @@
                                         { "Anchor":
                                           {
                                             "@url":["#VP3"],
-                                            "@parameter":[,""],
+                                            "@parameter":[""],
                                             "-children":[
                                               { "Transform":
                                                 {
@@ -483,7 +483,7 @@
                                         { "Anchor":
                                           {
                                             "@url":["#VP4"],
-                                            "@parameter":[,""],
+                                            "@parameter":[""],
                                             "-children":[
                                               { "Transform":
                                                 {
@@ -540,7 +540,7 @@
                                         { "Anchor":
                                           {
                                             "@url":["#VP5"],
-                                            "@parameter":[,""],
+                                            "@parameter":[""],
                                             "-children":[
                                               { "Transform":
                                                 {
@@ -718,7 +718,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -734,7 +734,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -759,7 +759,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -774,7 +774,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -791,7 +791,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -813,7 +813,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -827,7 +827,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -841,7 +841,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -864,7 +864,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -881,7 +881,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -898,7 +898,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["bogen.json"],
+                                      "@url":["bogen.x3d"],
                                       "@bboxSize":[0.537501,7.17277,2.67322],
                                       "@bboxCenter":[8.53837e-06,1.19209e-07,9.95398e-06]
                                     }
@@ -1041,7 +1041,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["torch.json"],
+                                      "@url":["torch.x3d"],
                                       "@bboxSize":[1.41421,1.41421,1.41421]
                                     }
                                   }
@@ -1223,7 +1223,7 @@
                                 "-children":[
                                   { "Inline":
                                     {
-                                      "@url":["torch.json"],
+                                      "@url":["torch.x3d"],
                                       "@bboxSize":[1.41421,1.41421,1.41421]
                                     }
                                   }
@@ -1406,7 +1406,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["geist.json"],
+                                                  "@url":["geist.x3d"],
                                                   "@bboxSize":[2.01905,2.38552,2.01309],
                                                   "@bboxCenter":[0,1.0666,0]
                                                 }
@@ -1461,7 +1461,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["geist.json"],
+                                                  "@url":["geist.x3d"],
                                                   "@bboxSize":[2.01905,2.38552,2.01309],
                                                   "@bboxCenter":[0,1.0666,0]
                                                 }
@@ -1516,7 +1516,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["geist.json"],
+                                                  "@url":["geist.x3d"],
                                                   "@bboxSize":[2.01905,2.38552,2.01309],
                                                   "@bboxCenter":[0,1.0666,0]
                                                 }
@@ -1571,7 +1571,7 @@
                                             "-children":[
                                               { "Inline":
                                                 {
-                                                  "@url":["geist.json"],
+                                                  "@url":["geist.x3d"],
                                                   "@bboxSize":[2.01905,2.38552,2.01309],
                                                   "@bboxCenter":[0,1.0666,0]
                                                 }
