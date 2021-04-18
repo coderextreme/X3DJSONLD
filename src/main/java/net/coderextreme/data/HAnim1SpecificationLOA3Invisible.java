@@ -46,14 +46,15 @@ public class HAnim1SpecificationLOA3Invisible {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addComponent(new component().setName("H-Anim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("HAnim1SpecificationLOA3Invisible.x3d"))
+        .addMeta(new meta().setName("title").setContent("HAnimSpecificationLOA3Invisible.x3d"))
         .addMeta(new meta().setName("description").setContent("HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
         .addMeta(new meta().setName("created").setContent("24 April 2013"))
-        .addMeta(new meta().setName("modified").setContent("19 February 2021"))
+        .addMeta(new meta().setName("modified").setContent("4 July 2020"))
+        .addMeta(new meta().setName("TODO").setContent("Convert to X3D4 HAnim2"))
         .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler, Joe D. Williams, Don Brutzman"))
-        .addMeta(new meta().setName("reference").setContent("HAnim1SpecificationLOA3Illustrated.x3d"))
-        .addMeta(new meta().setName("reference").setContent("HAnim1SpecificationLOA3Animation.x3d"))
+        .addMeta(new meta().setName("reference").setContent("HAnimSpecificationLOA3Illustrated.x3d"))
+        .addMeta(new meta().setName("reference").setContent("HAnimSpecificationLOA3Animation.x3d"))
         .addMeta(new meta().setName("reference").setContent("HAnimSpecificationExampleChangeLog.txt"))
         .addMeta(new meta().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
         .addMeta(new meta().setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
@@ -70,7 +71,7 @@ public class HAnim1SpecificationLOA3Invisible {
         .addMeta(new meta().setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
         .addMeta(new meta().setName("reference").setContent("HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
@@ -708,7 +709,7 @@ protected class MFString1 {
 }
 protected class MFString2 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"});
   }
 }
 }

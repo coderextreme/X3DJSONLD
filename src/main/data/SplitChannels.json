@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 April 2021"
+            "@content":"18 April 2021"
           },
           {
             "@name":"generator",
@@ -187,6 +187,7 @@
                                       "@diffuseColor":[0.345,0.345,0.882]
                                     }
                                   },
+                                "-backMaterial":[
                                   { "Material":
                                     {
                                       "@ambientIntensity":0.0933,
@@ -195,6 +196,7 @@
                                       "@specularColor":[0.46,0.46,0.46]
                                     }
                                   }
+                                ]
                               }
                             },
                           "-geometry":
@@ -204,8 +206,7 @@
                                 "-fontStyle":
                                   { "FontStyle":
                                     {
-                                      "@family":["'Times'"],
-                                      "@justify":["BEGIN"],
+                                      "@family":["Times"],
                                       "@style":"BOLD"
                                     }
                                   }
@@ -313,6 +314,7 @@
                                       "@diffuseColor":[0.345,0.345,0.882]
                                     }
                                   },
+                                "-backMaterial":[
                                   { "Material":
                                     {
                                       "@ambientIntensity":0.0933,
@@ -321,6 +323,7 @@
                                       "@specularColor":[0.46,0.46,0.46]
                                     }
                                   }
+                                ]
                               }
                             },
                           "-geometry":
@@ -330,8 +333,7 @@
                                 "-fontStyle":
                                   { "FontStyle":
                                     {
-                                      "@family":["'Times'"],
-                                      "@justify":["BEGIN"],
+                                      "@family":["Times"],
                                       "@style":"BOLD"
                                     }
                                   }
