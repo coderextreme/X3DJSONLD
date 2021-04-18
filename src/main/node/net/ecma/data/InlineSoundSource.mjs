@@ -91,24 +91,24 @@ var X3D0 =  new X3D({
               DEF : new SFString("NAV")}),
 
             new Background({
-              backUrl : new MFString(new MFString(["images/generic/BK1.png"])),
-              bottomUrl : new MFString(new MFString(["images/generic/DN1.png"])),
-              frontUrl : new MFString(new MFString(["images/generic/FR1.png"])),
-              leftUrl : new MFString(new MFString(["images/generic/LF1.png"])),
-              rightUrl : new MFString(new MFString(["images/generic/RT1.png"])),
-              topUrl : new MFString(new MFString(["images/generic/UP1.png"]))}),
+              backUrl : new MFString(["images/generic/BK1.png"]),
+              bottomUrl : new MFString(["images/generic/DN1.png"]),
+              frontUrl : new MFString(["images/generic/FR1.png"]),
+              leftUrl : new MFString(["images/generic/LF1.png"]),
+              rightUrl : new MFString(["images/generic/RT1.png"]),
+              topUrl : new MFString(["images/generic/UP1.png"])}),
 
             new Viewpoint({
               DEF : new SFString("Camera001"),
               description : new SFString("Camera001"),
               farDistance : new SFFloat(0),
               nearDistance : new SFFloat(1),
-              orientation : new SFRotation(new SFRotation([1,0,0,-0.523599])),
-              position : new SFVec3f(new SFVec3f([0,2000,3500]))}),
+              orientation : new SFRotation([1,0,0,-0.523599]),
+              position : new SFVec3f([0,2000,3500])}),
 
             new Transform({
               DEF : new SFString("Floor"),
-              translation : new SFVec3f(new SFVec3f([1.241,0,0.358])),
+              translation : new SFVec3f([1.241,0,0.358]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -116,23 +116,23 @@ var X3D0 =  new X3D({
                       DEF : new SFString("WireColor"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.122,0.114,0.125]))}))})),
+                          diffuseColor : new SFColor([0.122,0.114,0.125])}))})),
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       DEF : new SFString("Box001-GEOMETRY"),
-                      coordIndex : new MFInt32(new MFInt32([0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1])),
+                      coordIndex : new MFInt32([0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]),
                       solid : new SFBool(false),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f(new MFVec3f([-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000]))})),
+                          point : new MFVec3f([-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000])})),
                       normal : new SFNode(
                         new Normal({
-                          vector : new MFVec3f(new MFVec3f([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0]))}))}))})])}),
+                          vector : new MFVec3f([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0])}))}))})])}),
 
             new Transform({
               DEF : new SFString("InlineScene"),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("inline"),
-                  url : new MFString(new MFString(["x3d/example1.x3d"]))})])})])}))});
+                  url : new MFString(["x3d/example1.x3d"])})])})])}))});
 console.log(X3D0.toXMLNode());

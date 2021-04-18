@@ -170,14 +170,14 @@ var X3D0 =  new X3D({
               title : new SFString("ObliqueStrategies.x3d")}),
 
             new NavigationInfo({
-              type : new MFString(["NONE"])}),
+              type : ["NONE"]}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.419608,0.427451,1]))}),
+              skyColor : new MFColor([0.419608,0.427451,1])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([0,1,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([0,1,0]),
               children : new MFNode([
                 new TouchSensor({
                   DEF : new SFString("RandomTextClickedSensor"),
@@ -186,44 +186,44 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"])),
+                      string : new MFString(["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           DEF : new SFString("MessageFont"),
-                          family : new MFString(new MFString(["SANS"])),
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          family : new MFString(["SANS"]),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           style : new SFString("BOLD")}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))}),
+                          diffuseColor : new SFColor([1,1,1])}))}))}),
 
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([10,3,1])),
+                  scale : new SFVec3f([10,3,1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("HeadlineClickSurface"),
                       geometry : new SFNode(
                         new IndexedFaceSet({
-                          coordIndex : new MFInt32(new MFInt32([0,1,2,3,-1])),
+                          coordIndex : new MFInt32([0,1,2,3,-1]),
                           solid : new SFBool(false),
                           coord : new SFNode(
                             new Coordinate({
-                              point : new MFVec3f(new MFVec3f([1,1,0,1,-1,0,-1,-1,0,-1,1,0]))}))})),
+                              point : new MFVec3f([1,1,0,1,-1,0,-1,-1,0,-1,1,0])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
                               ambientIntensity : new SFFloat(0.245763),
-                              diffuseColor : new SFColor(new SFColor([0.34773,0.090909,0.005289])),
+                              diffuseColor : new SFColor([0.34773,0.090909,0.005289]),
                               shininess : new SFFloat(0.07),
-                              specularColor : new SFColor(new SFColor([0.336735,0.051091,0.051091])),
+                              specularColor : new SFColor([0.336735,0.051091,0.051091]),
                               transparency : new SFFloat(0.8)}))}))})])})])}),
 
             new Script({
               DEF : new SFString("TextScript"),
-              url : new MFString(new MFString(["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"])),
+              url : new MFString(["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]),
               /*initialize() method includes unit test to printAllStrategies() to console*/
               /*TODO insert field definitions here (index string_changed previous next random) and then animate!*/
               field : new MFNode([
@@ -276,8 +276,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("CardTransform"),
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([0,-1.5,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([0,-1.5,0]),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
@@ -285,14 +285,14 @@ var X3D0 =  new X3D({
                       DEF : new SFString("CardText"),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          family : new MFString(new MFString(["SANS"])),
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          family : new MFString(["SANS"]),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           style : new SFString("BOLD")}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))}),
+                          diffuseColor : new SFColor([1,1,1])}))}))}),
 
                 new ROUTE({
                   fromField : new SFString("string_changed"),
@@ -314,7 +314,7 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("TextToSpeechAudioClip"),
                       description : new SFString("sends strategy text google translate"),
-                      url : new MFString(new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]))}))}),
+                      url : new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"])}))}),
 
                 new ROUTE({
                   fromField : new SFString("textToSpeechUrl"),
@@ -329,8 +329,8 @@ var X3D0 =  new X3D({
                   toNode : new SFString("TextToSpeechAudioClip")})])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([-3.2,2.5,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([-3.2,2.5,0]),
               children : new MFNode([
                 new TouchSensor({
                   DEF : new SFString("PreviousTextClickedSensor"),
@@ -345,7 +345,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["previous"])),
+                      string : new MFString(["previous"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           USE : new SFString("MessageFont")}))})),
@@ -354,21 +354,21 @@ var X3D0 =  new X3D({
                       DEF : new SFString("InterfaceAppearance"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([1,0,0.6]))}))}))}),
+                          diffuseColor : new SFColor([1,0,0.6])}))}))}),
 
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([2,0.6,1])),
+                  scale : new SFVec3f([2,0.6,1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("TransparentClickSurface"),
                       /*support Selectable Text with a scalable IFS*/
                       geometry : new SFNode(
                         new IndexedFaceSet({
-                          coordIndex : new MFInt32(new MFInt32([0,1,2,3,-1])),
+                          coordIndex : new MFInt32([0,1,2,3,-1]),
                           solid : new SFBool(false),
                           coord : new SFNode(
                             new Coordinate({
-                              point : new MFVec3f(new MFVec3f([1,1,0,1,-1,0,-1,-1,0,-1,1,0]))}))})),
+                              point : new MFVec3f([1,1,0,1,-1,0,-1,-1,0,-1,1,0])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -376,8 +376,8 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(1)}))}))})])})])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([3.5,2.5,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([3.5,2.5,0]),
               children : new MFNode([
                 new TouchSensor({
                   DEF : new SFString("NextTextClickedSensor"),
@@ -392,7 +392,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["next"])),
+                      string : new MFString(["next"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           USE : new SFString("MessageFont")}))})),
@@ -401,14 +401,14 @@ var X3D0 =  new X3D({
                       USE : new SFString("InterfaceAppearance")}))}),
 
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([1.2,0.6,1])),
+                  scale : new SFVec3f([1.2,0.6,1]),
                   children : new MFNode([
                     new Shape({
                       USE : new SFString("TransparentClickSurface")})])})])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([-3.3,-0.5,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([-3.3,-0.5,0]),
               children : new MFNode([
                 new TouchSensor({
                   USE : new SFString("RandomTextClickedSensor")}),
@@ -422,7 +422,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["random"])),
+                      string : new MFString(["random"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           USE : new SFString("MessageFont")}))})),
@@ -431,20 +431,20 @@ var X3D0 =  new X3D({
                       USE : new SFString("InterfaceAppearance")}))}),
 
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([1.8,0.6,1])),
+                  scale : new SFVec3f([1.8,0.6,1]),
                   children : new MFNode([
                     new Shape({
                       USE : new SFString("TransparentClickSurface")})])})])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.4,0.4,0.4])),
-              translation : new SFVec3f(new SFVec3f([3.3,-0.5,0])),
+              scale : new SFVec3f([0.4,0.4,0.4]),
+              translation : new SFVec3f([3.3,-0.5,0]),
               children : new MFNode([
                 new Anchor({
                   DEF : new SFString("TextToSpeechAnchor"),
                   description : new SFString("text to speech in browser"),
-                  parameter : new MFString(new MFString(["target=_blank"])),
-                  url : new MFString(new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"])),
+                  parameter : new MFString(["target=_blank"]),
+                  url : new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]),
                   children : new MFNode([
                     new ROUTE({
                       fromField : new SFString("textToSpeechUrl"),
@@ -455,7 +455,7 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["speech"])),
+                          string : new MFString(["speech"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("MessageFont")}))})),
@@ -464,7 +464,7 @@ var X3D0 =  new X3D({
                           USE : new SFString("InterfaceAppearance")}))}),
 
                     new Transform({
-                      scale : new SFVec3f(new SFVec3f([1.8,0.6,1])),
+                      scale : new SFVec3f([1.8,0.6,1]),
                       children : new MFNode([
                         new Shape({
                           USE : new SFString("TransparentClickSurface")})])})])})])})])}))});

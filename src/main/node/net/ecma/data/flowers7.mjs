@@ -88,15 +88,15 @@ var X3D0 =  new X3D({
 
             new Background({
               DEF : new SFString("background"),
-              backUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])),
-              bottomUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])),
-              frontUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])),
-              leftUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])),
-              rightUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])),
-              topUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]))}),
+              backUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])}),
 
             new Viewpoint({
-              position : new SFVec3f(new SFVec3f([0,0,40])),
+              position : new SFVec3f([0,0,40]),
               description : new SFString("Transparent rose")}),
 
             new Transform({
@@ -106,35 +106,35 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
-                          specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))})),
+                          diffuseColor : new SFColor([0.7,0.7,0.7]),
+                          specularColor : new SFColor([0.5,0.5,0.5])})),
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           DEF : new SFString("texture"),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("backShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("bottomShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("frontShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("leftShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("rightShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("topShader"),
-                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]))}))})),
+                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x3dom"),
@@ -209,11 +209,11 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]))})),
+                              url : new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])})]),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])})),
+                              url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x_ite"),
@@ -289,11 +289,11 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]))})),
+                              url : new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])})]),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])}))})),
+                              url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))}))})),
                   geometry : new SFNode(
                     new Sphere({}))})])}),
 

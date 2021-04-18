@@ -66,11 +66,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Viewpoint({
-              position : new SFVec3f(new SFVec3f([0,0,5])),
+              position : new SFVec3f([0,0,5]),
               description : new SFString("Only Viewpoint")}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.4,0.4,0.4]))}),
+              skyColor : new MFColor([0.4,0.4,0.4])}),
 
             new ProtoDeclare({
               name : new SFString("point"),
@@ -102,12 +102,12 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))}),
+                                  diffuseColor : new SFColor([1,0,0])}))}))}),
 
                         new PositionInterpolator({
                           DEF : new SFString("PI1"),
-                          key : new MFFloat(new MFFloat([0,1])),
-                          keyValue : new MFVec3f(new MFVec3f([0,0,0,0,5,0]))}),
+                          key : new MFFloat([0,1]),
+                          keyValue : new MFVec3f([0,0,0,0,5,0])}),
 
                         new Script({
                           DEF : new SFString("MB1"),
@@ -212,7 +212,7 @@ ecmascript:eval (0
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
+                                          diffuseColor : new SFColor([0.2,0.7,0.7]),
                                           transparency : new SFFloat(0.5)}))})),
                                   geometry : new SFNode(
                                     new Cylinder({
@@ -273,8 +273,8 @@ ecmascript:eval (0
 
                                 new connect({
                                   nodeField : new SFString("set_endpoint"),
-                                  protoField : new SFString("set_endpoint")})])})),
-                          ]),
+                                  protoField : new SFString("set_endpoint")})])})]),
+                          
 ecmascript:eval (0
         , function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {

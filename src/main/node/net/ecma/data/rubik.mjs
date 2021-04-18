@@ -54,11 +54,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new MFString(["EXAMINE"])}),
+              type : ["EXAMINE"]}),
 
             new Viewpoint({
               description : new SFString("Rubiks Cube"),
-              position : new SFVec3f(new SFVec3f([0,0,12]))}),
+              position : new SFVec3f([0,0,12])}),
 
             new ProtoDeclare({
               name : new SFString("sphereproto"),
@@ -88,7 +88,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])}))}),
+                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("three"),

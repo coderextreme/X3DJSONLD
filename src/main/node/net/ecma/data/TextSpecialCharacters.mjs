@@ -72,11 +72,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor(new MFColor([1,1,1]))}),
+              skyColor : new MFColor([1,1,1])}),
 
             new Viewpoint({
               description : new SFString("Default View"),
-              position : new SFVec3f(new SFVec3f([0,0,15]))}),
+              position : new SFVec3f([0,0,15])}),
 
             new Shape({
               /*Empty string \"\" means to skip a line*/
@@ -90,15 +90,15 @@ var X3D0 =  new X3D({
               geometry : new SFNode(
                 new Text({
                   DEF : new SFString("DefaultText"),
-                  string : new MFString(new MFString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"])),
+                  string : new MFString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"]),
                   fontStyle : new SFNode(
                     new FontStyle({
                       DEF : new SFString("CenteredFontStyle"),
-                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                      justify : new MFString(["MIDDLE","MIDDLE"])}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
                       DEF : new SFString("DefaultMaterial"),
-                      diffuseColor : new SFColor(new SFColor([0.2,0.2,0.2]))}))}))})])}))});
+                      diffuseColor : new SFColor([0.2,0.2,0.2])}))}))})])}))});
 console.log(X3D0.toXMLNode());

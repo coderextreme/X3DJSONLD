@@ -76,63 +76,63 @@ var X3D0 =  new X3D({
             new Viewpoint({
               description : new SFString("Main"),
               jump : new SFBool(false),
-              orientation : new SFRotation(new SFRotation([0,1,0,1.57])),
-              position : new SFVec3f(new SFVec3f([50000,1000,42000]))}),
+              orientation : new SFRotation([0,1,0,1.57]),
+              position : new SFVec3f([50000,1000,42000])}),
 
             new Viewpoint({
               description : new SFString("Light House Tower"),
               jump : new SFBool(false),
-              orientation : new SFRotation(new SFRotation([0,1,0,1.3])),
-              position : new SFVec3f(new SFVec3f([45000,1290,44000]))}),
+              orientation : new SFRotation([0,1,0,1.3]),
+              position : new SFVec3f([45000,1290,44000])}),
 
             new Viewpoint({
               description : new SFString("centerWest"),
               jump : new SFBool(false),
-              orientation : new SFRotation(new SFRotation([0,1,0,2.5])),
-              position : new SFVec3f(new SFVec3f([48000,1000,20000]))}),
+              orientation : new SFRotation([0,1,0,2.5]),
+              position : new SFVec3f([48000,1000,20000])}),
 
             new Background({
-              groundColor : new MFColor(new MFColor([0,0,1])),
-              skyColor : new MFColor(new MFColor([0,0,1]))}),
+              groundColor : new MFColor([0,0,1]),
+              skyColor : new MFColor([0,0,1])}),
 
             new DirectionalLight({
               ambientIntensity : new SFFloat(1),
-              direction : new SFVec3f(new SFVec3f([-1,0,0])),
+              direction : new SFVec3f([-1,0,0]),
               global : new SFBool(true)}),
 
             new Group({
               DEF : new SFString("Terrain"),
               children : new MFNode([
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([50,50,50])),
-                  translation : new SFVec3f(new SFVec3f([25000,0,25000])),
+                  scale : new SFVec3f([50,50,50]),
+                  translation : new SFVec3f([25000,0,25000]),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(new MFString(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]))})])}),
+                      url : new MFString(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"])})])}),
 
                 new Transform({
-                  rotation : new SFRotation(new SFRotation([1,0,0,1.57])),
-                  translation : new SFVec3f(new SFVec3f([25000,0,25000])),
+                  rotation : new SFRotation([1,0,0,1.57]),
+                  translation : new SFVec3f([25000,0,25000]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Rectangle2D({
-                          size : new SFVec2f(new SFVec2f([77000,55000]))})),
+                          size : new SFVec2f([77000,55000])})),
                       appearance : new SFNode(
                         new Appearance({
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"]))}))}))})])})])}),
+                              url : new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])}))}))})])})])}),
 
             new Group({
               DEF : new SFString("Placemarks"),
               children : new MFNode([
                 new Transform({
-                  scale : new SFVec3f(new SFVec3f([50,50,50])),
-                  translation : new SFVec3f(new SFVec3f([45000,30,44000])),
+                  scale : new SFVec3f([50,50,50]),
+                  translation : new SFVec3f([45000,30,44000]),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(new MFString(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]))})])})])}),
+                      url : new MFString(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])})])})])}),
 
             new Group({
               DEF : new SFString("Clouds"),
@@ -555,7 +555,7 @@ cirrus();
 
                 new DirectionalLight({
                   ambientIntensity : new SFFloat(1),
-                  color : new SFColor(new SFColor([1,0,0])),
-                  direction : new SFVec3f(new SFVec3f([-1,-1,0])),
+                  color : new SFColor([1,0,0]),
+                  direction : new SFVec3f([-1,-1,0]),
                   global : new SFBool(true)})])})])}))});
 console.log(X3D0.toXMLNode());

@@ -146,7 +146,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new ProximitySensor({
                       DEF : new SFString("WhereSensor"),
-                      size : new SFVec3f(new SFVec3f([1000000000,1000000000,1000000000])),
+                      size : new SFVec3f([1000000000,1000000000,1000000000]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -225,8 +225,8 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("outputViewpointString"),
-                              protoField : new SFString("outputViewpointString")})])})),
-                      ]),
+                              protoField : new SFString("outputViewpointString")})])})]),
+                      
 ecmascript:eval (0
 
 , function roundoff (value, digits) // for local use only
@@ -294,33 +294,33 @@ ecmascript:eval (0
 
             new Viewpoint({
               description : new SFString("ViewPositionOrientation prototype"),
-              position : new SFVec3f(new SFVec3f([0,0,14]))}),
+              position : new SFVec3f([0,0,14])}),
 
             new Anchor({
               description : new SFString("ViewPositionOrientation Example"),
-              parameter : new MFString(new MFString(["target=_blank"])),
-              url : new MFString(new MFString(["ViewPositionOrientationExample.x3d","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.x3d","ViewPositionOrientationExample.wrl","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.wrl"])),
+              parameter : new MFString(["target=_blank"]),
+              url : new MFString(["ViewPositionOrientationExample.x3d","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.x3d","ViewPositionOrientationExample.wrl","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationExample.wrl"]),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["ViewPositionOrientationPrototype","is a prototype definition file","","Click this text to see","ViewPositionOrientationExample"])),
+                      string : new MFString(["ViewPositionOrientationPrototype","is a prototype definition file","","Click this text to see","ViewPositionOrientationExample"]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           size : new SFFloat(1.2)}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.6,0.8,0.4]))}))}))}),
+                          diffuseColor : new SFColor([0.6,0.8,0.4])}))}))}),
               /*Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip*/
 
                 new Shape({
                   /*Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.*/
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f(new SFVec3f([16,7,0.001]))})),
+                      size : new SFVec3f([16,7,0.001])})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

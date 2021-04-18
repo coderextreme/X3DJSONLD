@@ -117,7 +117,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new ExternProtoDeclare({
               name : new SFString("ViewPositionOrientation"),
-              url : new MFString(new MFString(["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"])),
+              url : new MFString(["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFBOOL,
@@ -175,7 +175,7 @@ var X3D0 =  new X3D({
                   /*Override default diffuseColor value 0.8 0.8 0.8*/
                   children : new MFNode([
                     new Material({
-                      diffuseColor : new SFColor(new SFColor([0,0,0])),
+                      diffuseColor : new SFColor([0,0,0]),
                       /*Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.*/
                       IS : new SFNode(
                         new IS({
@@ -196,13 +196,13 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("DefaultNodeValue"),
-                          bboxSize : new SFVec3f(new SFVec3f([2,2,2])),
+                          bboxSize : new SFVec3f([2,2,2]),
                           /*Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"*/})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Group({
                           IS : new SFNode(
@@ -230,12 +230,12 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.6,0.4,0.2]))}))}))})])}),
+                          diffuseColor : new SFColor([0.6,0.4,0.2])}))}))})])}),
 
             new Transform({
               DEF : new SFString("TransformExampleUSE"),
-              rotation : new SFRotation(new SFRotation([0,1,0,0.78])),
-              translation : new SFVec3f(new SFVec3f([0,2.5,0])),
+              rotation : new SFRotation([0,1,0,0.78]),
+              translation : new SFVec3f([0,2.5,0]),
               children : new MFNode([
                 new Group({
                   USE : new SFString("ExampleChildElement")})])}),
@@ -255,7 +255,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("ExampleChildElement")}))}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([0,-2.5,0])),
+              translation : new SFVec3f([0,-2.5,0]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -269,10 +269,10 @@ var X3D0 =  new X3D({
                               value : new SFString("0.2 0.6 0.6")})])}))})),
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"])),
+                      string : new MFString(["X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           size : new SFFloat(0.6)}))}))})])}),
 
             new ProtoInstance({
@@ -289,8 +289,8 @@ var X3D0 =  new X3D({
 
             new OrientationInterpolator({
               DEF : new SFString("Spinner"),
-              key : new MFFloat(new MFFloat([0,0.5,1])),
-              keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,3.14159,0,1,0,6.28318]))}),
+              key : new MFFloat([0,0.5,1]),
+              keyValue : new MFRotation([0,1,0,0,0,1,0,3.14159,0,1,0,6.28318])}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
@@ -306,7 +306,7 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("someInline"),
-              url : new MFString(new MFString(["someUrl.x3d","https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]))}),
+              url : new MFString(["someUrl.x3d","https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])}),
 
             new IMPORT({
               aS : new SFString("someInlineRoot"),
@@ -315,8 +315,8 @@ var X3D0 =  new X3D({
 
             new PositionInterpolator({
               DEF : new SFString("StayInPlace"),
-              key : new MFFloat(new MFFloat([0,1])),
-              keyValue : new MFVec3f(new MFVec3f([0,0,0,0,0,0]))}),
+              key : new MFFloat([0,1]),
+              keyValue : new MFVec3f([0,0,0,0,0,0])}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),

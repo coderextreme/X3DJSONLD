@@ -170,7 +170,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           DEF : new SFString("PositionTransform"),
-                          rotation : new SFRotation(new SFRotation([0,1,0,3.14159])),
+                          rotation : new SFRotation([0,1,0,3.14159]),
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("OrientationTransform"),
@@ -179,11 +179,11 @@ var X3D0 =  new X3D({
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("FrustumLines"),
-                                      coordIndex : new MFInt32(new MFInt32([0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1])),
+                                      coordIndex : new MFInt32([0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]),
                                       coord : new SFNode(
                                         new Coordinate({
                                           DEF : new SFString("FrustumCoordinate"),
-                                          point : new MFVec3f(new MFVec3f([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]))}))})),
+                                          point : new MFVec3f([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])}))})),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -226,7 +226,7 @@ var X3D0 =  new X3D({
                     new Script({
                       DEF : new SFString("GeometryComputationScript"),
                       directOutput : new SFBool(true),
-                      url : new MFString(new MFString(["ViewFrustumPrototypeScript.js"])),
+                      url : new MFString(["ViewFrustumPrototypeScript.js"]),
                       field : new MFNode([
                         new field({
                           type : field.TYPE_SFBOOL,
@@ -329,7 +329,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("trace"),
-                              protoField : new SFString("trace")})])}))])}),
+                              protoField : new SFString("trace")})])})])}),
 
                     new ROUTE({
                       fromField : new SFString("visibilitySwitchSelection"),
@@ -370,19 +370,19 @@ var X3D0 =  new X3D({
 
             new Anchor({
               description : new SFString("ViewFrustum Example"),
-              url : new MFString(new MFString(["ViewFrustumExample.x3d"])),
+              url : new MFString(["ViewFrustumExample.x3d"]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.8,0.4,0]))}))})),
+                          diffuseColor : new SFColor([0.8,0.4,0])}))})),
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"])),
+                      string : new MFString(["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           size : new SFFloat(0.8)}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

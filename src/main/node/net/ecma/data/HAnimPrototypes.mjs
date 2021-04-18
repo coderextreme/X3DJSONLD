@@ -692,22 +692,22 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new WorldInfo({
-                      info : new MFString(new MFString(["null body node"]))})])}))}),
+                      info : new MFString(["null body node"])})])}))}),
 
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(new MFString(["Humanoid Animation","(HAnim) prototype","implementations"])),
+                  string : new MFString(["Humanoid Animation","(HAnim) prototype","implementations"]),
                   fontStyle : new SFNode(
                     new FontStyle({
-                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                      justify : new MFString(["MIDDLE","MIDDLE"])}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
                       ambientIntensity : new SFFloat(0.25),
-                      diffuseColor : new SFColor(new SFColor([0.795918,0.505869,0.093315])),
+                      diffuseColor : new SFColor([0.795918,0.505869,0.093315]),
                       shininess : new SFFloat(0.39),
-                      specularColor : new SFColor(new SFColor([0.923469,0.428866,0.006369])),
+                      specularColor : new SFColor([0.923469,0.428866,0.006369]),
                       /*Universal Media Library: Autumn 9*/}))}))})])}))});
 console.log(X3D0.toXMLNode());

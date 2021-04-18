@@ -87,25 +87,25 @@ var X3D0 =  new X3D({
               title : new SFString("SplitChannels.x3d")}),
 
             new NavigationInfo({
-              type : new MFString(["NONE"]),
+              type : ["NONE"],
               DEF : new SFString("NAV")}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.2,0.2,0.21]))}),
+              skyColor : new MFColor([0.2,0.2,0.21])}),
 
             new Viewpoint({
-              orientation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-              position : new SFVec3f(new SFVec3f([0,500,600])),
+              orientation : new SFRotation([1,0,0,-0.5]),
+              position : new SFVec3f([0,500,600]),
               retainUserOffsets : new SFBool(true)}),
 
             new Transform({
               DEF : new SFString("PowerR"),
-              translation : new SFVec3f(new SFVec3f([100,400,400])),
+              translation : new SFVec3f([100,400,400]),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("pR"),
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  translation : new SFVec3f(new SFVec3f([0,40,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  translation : new SFVec3f([0,40,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -113,16 +113,16 @@ var X3D0 =  new X3D({
                           DEF : new SFString("audio_emit1"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0])),
-                              emissiveColor : new SFColor(new SFColor([0.8,0.8,0.8])),
-                              specularColor : new SFColor(new SFColor([0.01,0.01,0.01]))}))})),
+                              diffuseColor : new SFColor([0,1,0]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8]),
+                              specularColor : new SFColor([0.01,0.01,0.01])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([10,80,0.01]))}))})])}),
+                          size : new SFVec3f([10,80,0.01])}))})])}),
 
                 new Transform({
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  translation : new SFVec3f(new SFVec3f([-2.7,37,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  translation : new SFVec3f([-2.7,37,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -130,50 +130,50 @@ var X3D0 =  new X3D({
                           DEF : new SFString("audio_emit2"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0])),
-                              emissiveColor : new SFColor(new SFColor([0.8,0.8,0.8])),
-                              specularColor : new SFColor(new SFColor([0.01,0.01,0.01]))})),
+                              diffuseColor : new SFColor([0,1,0]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8]),
+                              specularColor : new SFColor([0.01,0.01,0.01])})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/line.png"]))}))})),
+                              url : new MFString(["images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([25,83,0.01]))}))})])}),
+                          size : new SFVec3f([25,83,0.01])}))})])}),
 
                 new Transform({
                   DEF : new SFString("volumeRight"),
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  scale : new SFVec3f(new SFVec3f([10,10,10])),
-                  translation : new SFVec3f(new SFVec3f([0,-10,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  scale : new SFVec3f([10,10,10]),
+                  translation : new SFVec3f([0,-10,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0.345,0.345,0.882]))})),
+                              diffuseColor : new SFColor([0.345,0.345,0.882])})),
                           material : new SFNode(
                             new Material({
                               ambientIntensity : new SFFloat(0.0933),
-                              diffuseColor : new SFColor(new SFColor([1,1,1])),
+                              diffuseColor : new SFColor([1,1,1]),
                               shininess : new SFFloat(0.51),
-                              specularColor : new SFColor(new SFColor([0.46,0.46,0.46]))}))})),
+                              specularColor : new SFColor([0.46,0.46,0.46])}))})),
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["Right Channel Volume"])),
+                          string : new MFString(["Right Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              family : new MFString(new MFString(["Times"])),
+                              family : new MFString(["Times"]),
                               style : new SFString("BOLD")}))}))})])})])}),
 
             new Transform({
               DEF : new SFString("PowerL"),
-              translation : new SFVec3f(new SFVec3f([-100,400,400])),
+              translation : new SFVec3f([-100,400,400]),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("pL"),
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  translation : new SFVec3f(new SFVec3f([0,40,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  translation : new SFVec3f([0,40,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -181,16 +181,16 @@ var X3D0 =  new X3D({
                           DEF : new SFString("audio_emit3"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0])),
-                              emissiveColor : new SFColor(new SFColor([0.8,0.8,0.8])),
-                              specularColor : new SFColor(new SFColor([0.01,0.01,0.01]))}))})),
+                              diffuseColor : new SFColor([0,1,0]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8]),
+                              specularColor : new SFColor([0.01,0.01,0.01])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([10,80,0.01]))}))})])}),
+                          size : new SFVec3f([10,80,0.01])}))})])}),
 
                 new Transform({
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  translation : new SFVec3f(new SFVec3f([13.2,37,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  translation : new SFVec3f([13.2,37,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -198,46 +198,46 @@ var X3D0 =  new X3D({
                           DEF : new SFString("audio_emit4"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0])),
-                              emissiveColor : new SFColor(new SFColor([0.8,0.8,0.8])),
-                              specularColor : new SFColor(new SFColor([0.01,0.01,0.01]))})),
+                              diffuseColor : new SFColor([0,1,0]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8]),
+                              specularColor : new SFColor([0.01,0.01,0.01])})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/line.png"]))}))})),
+                              url : new MFString(["images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([25,83,0.01]))}))})])}),
+                          size : new SFVec3f([25,83,0.01])}))})])}),
 
                 new Transform({
                   DEF : new SFString("volumeLeft"),
-                  rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-                  scale : new SFVec3f(new SFVec3f([10,10,10])),
-                  translation : new SFVec3f(new SFVec3f([0,-10,0])),
+                  rotation : new SFRotation([1,0,0,-0.5]),
+                  scale : new SFVec3f([10,10,10]),
+                  translation : new SFVec3f([0,-10,0]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0.345,0.345,0.882]))})),
+                              diffuseColor : new SFColor([0.345,0.345,0.882])})),
                           material : new SFNode(
                             new Material({
                               ambientIntensity : new SFFloat(0.0933),
-                              diffuseColor : new SFColor(new SFColor([1,1,1])),
+                              diffuseColor : new SFColor([1,1,1]),
                               shininess : new SFFloat(0.51),
-                              specularColor : new SFColor(new SFColor([0.46,0.46,0.46]))}))})),
+                              specularColor : new SFColor([0.46,0.46,0.46])}))})),
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["Left Channel Volume"])),
+                          string : new MFString(["Left Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              family : new MFString(new MFString(["Times"])),
+                              family : new MFString(["Times"]),
                               style : new SFString("BOLD")}))}))})])})])}),
 
             new Transform({
               DEF : new SFString("Audio3"),
-              rotation : new SFRotation(new SFRotation([1,0,0,-0.5])),
-              translation : new SFVec3f(new SFVec3f([0,100,0])),
+              rotation : new SFRotation([1,0,0,-0.5]),
+              translation : new SFVec3f([0,100,0]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -245,15 +245,15 @@ var X3D0 =  new X3D({
                       DEF : new SFString("audio_emit5"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.3,1,0.3])),
-                          emissiveColor : new SFColor(new SFColor([0.8,0.8,0.8])),
-                          specularColor : new SFColor(new SFColor([0.01,0.01,0.01]))})),
+                          diffuseColor : new SFColor([0.3,1,0.3]),
+                          emissiveColor : new SFColor([0.8,0.8,0.8]),
+                          specularColor : new SFColor([0.01,0.01,0.01])})),
                       texture : new SFNode(
                         new ImageTexture({
-                          url : new MFString(new MFString(["images/loudspeaker.png"]))}))})),
+                          url : new MFString(["images/loudspeaker.png"])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f(new SFVec3f([100,100,0.001]))}))})])}),
+                      size : new SFVec3f([100,100,0.001])}))})])}),
 
             new Transform({
               children : new MFNode([
@@ -263,10 +263,10 @@ var X3D0 =  new X3D({
                       DEF : new SFString("floor"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.1,0.1,0.1])),
+                          diffuseColor : new SFColor([0.1,0.1,0.1]),
                           shininess : new SFFloat(0.8),
-                          specularColor : new SFColor(new SFColor([0.5,0.6,0.7]))}))})),
+                          specularColor : new SFColor([0.5,0.6,0.7])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f(new SFVec3f([1500,10,500]))}))})])})])}))});
+                      size : new SFVec3f([1500,10,500])}))})])})])}))});
 console.log(X3D0.toXMLNode());

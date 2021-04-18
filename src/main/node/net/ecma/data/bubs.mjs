@@ -65,20 +65,20 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new MFString(["EXAMINE"])}),
+              type : ["EXAMINE"]}),
 
             new Viewpoint({
-              position : new SFVec3f(new SFVec3f([0,0,4])),
-              orientation : new SFRotation(new SFRotation([1,0,0,0])),
+              position : new SFVec3f([0,0,4]),
+              orientation : new SFRotation([1,0,0,0]),
               description : new SFString("Bubbles in action")}),
 
             new Background({
-              backUrl : new MFString(new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])),
-              bottomUrl : new MFString(new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])),
-              frontUrl : new MFString(new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])),
-              leftUrl : new MFString(new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])),
-              rightUrl : new MFString(new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])),
-              topUrl : new MFString(new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]))}),
+              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]),
+              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]),
+              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
+              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
+              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
 
             new ProtoDeclare({
               name : new SFString("Bubble"),
@@ -96,7 +96,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,0,0])),
+                                  diffuseColor : new SFColor([1,0,0]),
                                   transparency : new SFFloat(0.2)}))}))}),
 
                         new Script({

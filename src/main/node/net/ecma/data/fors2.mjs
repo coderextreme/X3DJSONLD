@@ -104,12 +104,12 @@ var X3D0 =  new X3D({
                               /*comment after Material*/
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))})])}),
+                                  diffuseColor : new SFColor([1,0,0])}))}))})])}),
 
                     new PositionInterpolator({
                       DEF : new SFString("NodePosition"),
-                      key : new MFFloat(new MFFloat([0,1])),
-                      keyValue : new MFVec3f(new MFVec3f([0,0,0,0,5,0]))}),
+                      key : new MFFloat([0,1]),
+                      keyValue : new MFVec3f([0,0,0,0,5,0])}),
 
                     new Script({
                       DEF : new SFString("MoveBall"),
@@ -195,13 +195,13 @@ ecmascript:eval (0
                         new Extrusion({
                           DEF : new SFString("extrusion"),
                           creaseAngle : new SFFloat(0.785),
-                          crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])),
-                          spine : new MFVec3f(new MFVec3f([0,-50,0,0,0,0,0,50,0]))})),
+                          crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
+                          spine : new MFVec3f([0,-50,0,0,0,0,0,50,0])})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))}),
+                              diffuseColor : new SFColor([0,1,0])}))}))}),
 
                     new Script({
                       DEF : new SFString("MoveCylinder"),
@@ -230,8 +230,8 @@ ecmascript:eval (0
 
                             new connect({
                               nodeField : new SFString("set_endB"),
-                              protoField : new SFString("positionB")})])})),
-                      ]),
+                              protoField : new SFString("positionB")})])})]),
+                      
 ecmascript:eval (0
 
                 , function set_endA(value) {
@@ -262,7 +262,7 @@ ecmascript:eval (0
                       toField : new SFString("set_spine")})])}))}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([0.1,0.1,0.1])),
+              scale : new SFVec3f([0.1,0.1,0.1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("node"),

@@ -91,12 +91,12 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Two mathematical orbitals"),
-              position : new SFVec3f(new SFVec3f([0,0,50]))}),
+              position : new SFVec3f([0,0,50])}),
 
             new Group({
               children : new MFNode([
                 new DirectionalLight({
-                  direction : new SFVec3f(new SFVec3f([1,1,1]))}),
+                  direction : new SFVec3f([1,1,1])}),
 
                 new ProtoDeclare({
                   name : new SFString("orbit"),
@@ -138,8 +138,8 @@ var X3D0 =  new X3D({
 
                             new OrientationInterpolator({
                               DEF : new SFString("OrbitPath"),
-                              key : new MFFloat(new MFFloat([0,0.5,1])),
-                              keyValue : new MFRotation(new MFRotation([1,0,0,0,1,0,0,3.14,1,0,0,6.28]))}),
+                              key : new MFFloat([0,0.5,1]),
+                              keyValue : new MFRotation([1,0,0,0,1,0,0,3.14,1,0,0,6.28])}),
 
                             new Transform({
                               DEF : new SFString("OrbitTransform"),
@@ -174,12 +174,12 @@ var X3D0 =  new X3D({
                                     new IndexedFaceSet({
                                       ccw : new SFBool(false),
                                       convex : new SFBool(false),
-                                      coordIndex : new MFInt32(new MFInt32([0,1,2,-1])),
+                                      coordIndex : new MFInt32([0,1,2,-1]),
                                       DEF : new SFString("Orbit"),
                                       coord : new SFNode(
                                         new Coordinate({
                                           DEF : new SFString("OrbitCoordinates"),
-                                          point : new MFVec3f(new MFVec3f([0,0,1,0,1,0,1,0,0]))}))}))})])}),
+                                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))})])}),
 
                             new Script({
                               DEF : new SFString("OrbitScript"),

@@ -61,8 +61,8 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
-                          specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))}))})),
+                          diffuseColor : new SFColor([0.7,0.7,0.7]),
+                          specularColor : new SFColor([0.5,0.5,0.5])}))})),
                   geometry : new SFNode(
                     new Sphere({}))})])}),
 
