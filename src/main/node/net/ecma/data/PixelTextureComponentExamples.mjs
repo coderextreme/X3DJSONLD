@@ -22,7 +22,6 @@ import { FontStyle } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { SFImage } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -85,14 +84,14 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor([0.1,0.1,0.4])}),
+              skyColor : new MFColor(new MFColor([0.1,0.1,0.4]))}),
 
             new Viewpoint({
               description : new SFString("Table 5.18 SFImage component examples"),
-              position : new SFVec3f([0,0,14])}),
+              position : new SFVec3f(new SFVec3f([0,0,14]))}),
 
             new Transform({
-              translation : new SFVec3f([-6,0,0]),
+              translation : new SFVec3f(new SFVec3f([-6,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -104,25 +103,25 @@ var X3D0 =  new X3D({
                     new Box({}))}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["0"]),
+                          string : new MFString(new MFString(["0"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               DEF : new SFString("CenterJustify"),
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("TextMaterial"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([1,1,1])}))}))})])})])}),
+                              diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])}),
 
             new Transform({
-              translation : new SFVec3f([-3,0,0]),
+              translation : new SFVec3f(new SFVec3f([-3,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -130,17 +129,17 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new PixelTexture({
                           DEF : new SFString("OneComponent"),
-                          image : new SFImage([1,2,1,255,0])}))})),
+                          image : new SFImage(new SFImage([1,2,1,255,0]))}))})),
                   geometry : new SFNode(
                     new Box({}))}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["1"]),
+                          string : new MFString(new MFString(["1"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -156,17 +155,17 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new PixelTexture({
                           DEF : new SFString("TwoComponents"),
-                          image : new SFImage([2,1,2,52479,8823])}))})),
+                          image : new SFImage(new SFImage([2,1,2,52479,8823]))}))})),
                   geometry : new SFNode(
                     new Box({}))}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["2"]),
+                          string : new MFString(new MFString(["2"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -175,26 +174,26 @@ var X3D0 =  new X3D({
                           USE : new SFString("TextMaterial")}))})])})])}),
 
             new Transform({
-              translation : new SFVec3f([3,0,0]),
+              translation : new SFVec3f(new SFVec3f([3,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      { "#comment" : new CommentsBlock("note 0x000000 = 0") },
+                      /*note 0x000000 = 0*/
                       texture : new SFNode(
                         new PixelTexture({
                           DEF : new SFString("ThreeComponents"),
-                          image : new SFImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960])}))})),
+                          image : new SFImage(new SFImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960]))}))})),
                   geometry : new SFNode(
                     new Box({}))}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["3"]),
+                          string : new MFString(new MFString(["3"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -203,44 +202,44 @@ var X3D0 =  new X3D({
                           USE : new SFString("TextMaterial")}))})])})])}),
 
             new Transform({
-              translation : new SFVec3f([6,0,0]),
+              translation : new SFVec3f(new SFVec3f([6,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      { "#comment" : new CommentsBlock("Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127") },
+                      /*Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127*/
                       texture : new SFNode(
                         new PixelTexture({
                           DEF : new SFString("FourComponents"),
-                          image : new SFImage([3,2,4,4278190335,16711935,65535,4278190207,16711807,65407])}))})),
+                          image : new SFImage(new SFImage([3,2,4,4278190335,16711935,65535,4278190207,16711807,65407]))}))})),
                   geometry : new SFNode(
                     new Box({}))}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["4"]),
+                          string : new MFString(new MFString(["4"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
                       appearance : new SFNode(
                         new Appearance({
                           USE : new SFString("TextMaterial")}))})])})])}),
-          { "#comment" : new CommentsBlock("Background from PixelTextureBW.x3d") },
+          /*Background from PixelTextureBW.x3d*/
 
             new Transform({
-              translation : new SFVec3f([0,6,-2]),
+              translation : new SFVec3f(new SFVec3f([0,6,-2])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204])}))})),
+                          image : new SFImage(new SFImage([8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204]))}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([16,16,0.1])}))})])})])}))});
+                      size : new SFVec3f(new SFVec3f([16,16,0.1]))}))})])})])}))});
 console.log(X3D0.toXMLNode());

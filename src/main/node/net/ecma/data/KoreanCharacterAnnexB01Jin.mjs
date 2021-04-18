@@ -104,9 +104,9 @@ var X3D0 =  new X3D({
               speed : new SFFloat(1.5)}),
 
             new Viewpoint({
-              centerOfRotation : new SFVec3f([0,1,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([0,1,0])),
               description : new SFString("AnnexB01Jin"),
-              position : new SFVec3f([0,1,3])}),
+              position : new SFVec3f(new SFVec3f([0,1,3]))}),
 
             new Group({
               DEF : new SFString("KeyframeAnimation"),
@@ -118,98 +118,98 @@ var X3D0 =  new X3D({
 
                 new PositionInterpolator({
                   DEF : new SFString("Keyframe_HumanoidRoot"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFVec3f([0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFVec3f(new MFVec3f([0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_HumanoidRoot"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_sacroiliac"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_shoulder"),
-                  key : new MFFloat([0,0.5,1]),
-                  keyValue : new MFRotation([0,0,0,0,-1,0,0,3,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,0.5,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,-1,0,0,3,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_elbow"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_radiocarpal"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_shoulder"),
-                  key : new MFFloat([0,0.5,1]),
-                  keyValue : new MFRotation([0,0,0,0,-1,0,0,3,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,0.5,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,-1,0,0,3,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_elbow"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_radiocarpal"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_vl5"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_skullbase"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_hip"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_knee"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_talocrural"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_l_metatarsophalangeal"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_hip"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_knee"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_talocrural"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new OrientationInterpolator({
                   DEF : new SFString("Keyframe_r_metatarsophalangeal"),
-                  key : new MFFloat([0,1]),
-                  keyValue : new MFRotation([0,0,0,0,0,0,0,0])}),
+                  key : new MFFloat(new MFFloat([0,1])),
+                  keyValue : new MFRotation(new MFRotation([0,0,0,0,0,0,0,0]))}),
 
                 new ROUTE({
                   fromField : new SFString("fraction_changed"),

@@ -12,7 +12,6 @@ import { MFColor } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
@@ -73,33 +72,33 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor([1,1,1])}),
+              skyColor : new MFColor(new MFColor([1,1,1]))}),
 
             new Viewpoint({
               description : new SFString("Default View"),
-              position : new SFVec3f([0,0,15])}),
+              position : new SFVec3f(new SFVec3f([0,0,15]))}),
 
             new Shape({
-              { "#comment" : new CommentsBlock("Empty string \"\" means to skip a line") },
-              { "#comment" : new CommentsBlock("The ampersand escape characters are based on XML rules") },
-              { "#comment" : new CommentsBlock("apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute") },
-              { "#comment" : new CommentsBlock("ampersand & is &amp; and needs to be escaped") },
-              { "#comment" : new CommentsBlock("quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute") },
-              { "#comment" : new CommentsBlock("quotation \" can be used within an X3D string if escaped with backslash \\ as \\\"\"") },
-              { "#comment" : new CommentsBlock("backslash \\ is used as escape character for \" (and itself) in X3D") },
-              { "#comment" : new CommentsBlock("character entities are listed in HTML specification and are good for any XML") },
+              /*Empty string \"\" means to skip a line*/
+              /*The ampersand escape characters are based on XML rules*/
+              /*apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute*/
+              /*ampersand & is &amp; and needs to be escaped*/
+              /*quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute*/
+              /*quotation \" can be used within an X3D string if escaped with backslash \\ as \\\"\"*/
+              /*backslash \\ is used as escape character for \" (and itself) in X3D*/
+              /*character entities are listed in HTML specification and are good for any XML*/
               geometry : new SFNode(
                 new Text({
                   DEF : new SFString("DefaultText"),
-                  string : new MFString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"]),
+                  string : new MFString(new MFString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"])),
                   fontStyle : new SFNode(
                     new FontStyle({
                       DEF : new SFString("CenteredFontStyle"),
-                      justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
                       DEF : new SFString("DefaultMaterial"),
-                      diffuseColor : new SFColor([0.2,0.2,0.2])}))}))})])}))});
+                      diffuseColor : new SFColor(new SFColor([0.2,0.2,0.2]))}))}))})])}))});
 console.log(X3D0.toXMLNode());

@@ -15,7 +15,6 @@ import { NavigationInfo } from './x3d.mjs';
 import { ExternProtoDeclare } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { field } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
@@ -95,28 +94,28 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("ViewFrustum from above, looking down"),
-              orientation : new SFRotation([1,0,0,-1.57]),
-              position : new SFVec3f([0,40,0])}),
+              orientation : new SFRotation(new SFRotation([1,0,0,-1.57])),
+              position : new SFVec3f(new SFVec3f([0,40,0]))}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum from point of view")}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum behind point of view"),
-              position : new SFVec3f([0,0,15])}),
+              position : new SFVec3f(new SFVec3f([0,0,15]))}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum oblique side view"),
-              orientation : new SFRotation([0.8005,0.5926,0.0898,-0.3743]),
-              position : new SFVec3f([-5,5,20])}),
+              orientation : new SFRotation(new SFRotation([0.8005,0.5926,0.0898,-0.3743])),
+              position : new SFVec3f(new SFVec3f([-5,5,20]))}),
 
             new NavigationInfo({
-              type : ["EXAMINE","FLY","ANY"]}),
+              type : new (["EXAMINE","FLY","ANY"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ViewFrustum"),
               appinfo : new SFString("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"),
-              url : new MFString(["ViewFrustumPrototype.x3d#ViewFrustum"]),
+              url : new MFString(new MFString(["ViewFrustumPrototype.x3d#ViewFrustum"])),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFNODE,
@@ -165,14 +164,14 @@ var X3D0 =  new X3D({
                   name : new SFString("trace"),
                   accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                   appinfo : new SFString("debug support, default false")})])}),
-          { "#comment" : new CommentsBlock("Example use") },
+          /*Example use*/
 
             new ProtoInstance({
               name : new SFString("ViewFrustum"),
               fieldValue : new MFNode([
                 new fieldValue({
                   name : new SFString("ViewpointNode"),
-                  { "#comment" : new CommentsBlock("prefer empty description to prevent entry in player's ViewpointList") },
+                  /*prefer empty description to prevent entry in player's ViewpointList*/
                   children : new MFNode([
                     new Viewpoint({
                       description : new SFString("ViewFrustum ViewpointNode")})])}),
@@ -202,16 +201,16 @@ var X3D0 =  new X3D({
                 new fieldValue({
                   name : new SFString("trace"),
                   value : new SFString("true")})])}),
-          { "#comment" : new CommentsBlock("Visualization assists") },
+          /*Visualization assists*/
 
             new Inline({
               DEF : new SFString("GridXZ"),
-              url : new MFString(["GridXZ_20x20Fixed.x3d"])}),
+              url : new MFString(new MFString(["GridXZ_20x20Fixed.x3d"]))}),
 
             new Transform({
-              scale : new SFVec3f([5,5,5]),
+              scale : new SFVec3f(new SFVec3f([5,5,5])),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(["CoordinateAxes.x3d"])})])})])}))});
+                  url : new MFString(new MFString(["CoordinateAxes.x3d"]))})])})])}))});
 console.log(X3D0.toXMLNode());

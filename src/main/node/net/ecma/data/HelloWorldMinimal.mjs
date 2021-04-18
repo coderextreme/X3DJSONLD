@@ -2,7 +2,6 @@
 import fs from 'fs';
 import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
@@ -16,8 +15,8 @@ var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
       version : new SFString("3.3"),
-      { "#comment" : new CommentsBlock("All head/meta tags are optional, WorldInfo is also optional") },
-      { "#comment" : new CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1") },
+      /*All head/meta tags are optional, WorldInfo is also optional*/
+      /*Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1*/
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -89,5 +88,5 @@ var X3D0 =  new X3D({
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(["hello, world"])}))})])}))});
+                  string : new MFString(new MFString(["hello, world"]))}))})])}))});
 console.log(X3D0.toXMLNode());

@@ -77,16 +77,16 @@ var X3D0 =  new X3D({
                             new Material({
                               DEF : new SFString("tank"),
                               ambientIntensity : new SFFloat(0.3),
-                              diffuseColor : new SFColor([0.3,0.3,0.5]),
+                              diffuseColor : new SFColor(new SFColor([0.3,0.3,0.5])),
                               shininess : new SFFloat(0.1),
-                              specularColor : new SFColor([0.7,0.7,0.8])}))})),
+                              specularColor : new SFColor(new SFColor([0.7,0.7,0.8]))}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           height : new SFFloat(0.7),
                           radius : new SFFloat(0.1)}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f([0,0.35,0]),
+                  translation : new SFVec3f(new SFVec3f([0,0.35,0])),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -99,7 +99,7 @@ var X3D0 =  new X3D({
                           radius : new SFFloat(0.098)}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-0.35,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-0.35,0])),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("tankBottom"),
@@ -109,7 +109,7 @@ var X3D0 =  new X3D({
                             new Material({
                               DEF : new SFString("black"),
                               ambientIntensity : new SFFloat(0.3),
-                              diffuseColor : new SFColor([0,0,0])}))})),
+                              diffuseColor : new SFColor(new SFColor([0,0,0]))}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           height : new SFFloat(0.06),
@@ -121,7 +121,7 @@ var X3D0 =  new X3D({
                     new Transform({
                       children : new MFNode([
                         new Transform({
-                          translation : new SFVec3f([0,0.45,0]),
+                          translation : new SFVec3f(new SFVec3f([0,0.45,0])),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("pressure"),
@@ -131,16 +131,16 @@ var X3D0 =  new X3D({
                                     new Material({
                                       DEF : new SFString("pressureColor"),
                                       ambientIntensity : new SFFloat(0.4),
-                                      diffuseColor : new SFColor([0.91,0.91,0.91]),
+                                      diffuseColor : new SFColor(new SFColor([0.91,0.91,0.91])),
                                       shininess : new SFFloat(0.16),
-                                      specularColor : new SFColor([0.91,0.9,0.91])}))})),
+                                      specularColor : new SFColor(new SFColor([0.91,0.9,0.91]))}))})),
                               geometry : new SFNode(
                                 new Cylinder({
                                   height : new SFFloat(0.1),
                                   radius : new SFFloat(0.015)}))})])}),
 
                         new Transform({
-                          translation : new SFVec3f([0,0.5,0]),
+                          translation : new SFVec3f(new SFVec3f([0,0.5,0])),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("pressureTop"),
@@ -155,8 +155,8 @@ var X3D0 =  new X3D({
                                   radius : new SFFloat(0.025)}))})])}),
 
                         new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          translation : new SFVec3f([-0.028,0.462,0]),
+                          rotation : new SFRotation(new SFRotation([0,0,1,1.57])),
+                          translation : new SFVec3f(new SFVec3f([-0.028,0.462,0])),
                           children : new MFNode([
                             new Transform({
                               children : new MFNode([
@@ -173,7 +173,7 @@ var X3D0 =  new X3D({
                                       radius : new SFFloat(0.01)}))})])}),
 
                             new Transform({
-                              translation : new SFVec3f([0,0.02,0]),
+                              translation : new SFVec3f(new SFVec3f([0,0.02,0])),
                               children : new MFNode([
                                 new Shape({
                                   DEF : new SFString("connectorToRegulatorTop"),
@@ -188,7 +188,7 @@ var X3D0 =  new X3D({
                                       radius : new SFFloat(0.02)}))})])})])})])})])}),
 
                 new Transform({
-                  translation : new SFVec3f([0,0.2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,0.2,0])),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("tankHoldBelt"),
@@ -203,5 +203,5 @@ var X3D0 =  new X3D({
                           radius : new SFFloat(0.115)}))})])})])}),
 
             new Background({
-              skyColor : new MFColor([0.6,0.6,0.6])})])}))});
+              skyColor : new MFColor(new MFColor([0.6,0.6,0.6]))})])}))});
 console.log(X3D0.toXMLNode());

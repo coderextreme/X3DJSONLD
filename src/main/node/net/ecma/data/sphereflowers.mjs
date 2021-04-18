@@ -55,18 +55,18 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
+              backUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])),
+              bottomUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])),
+              frontUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])),
+              leftUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])),
+              rightUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])),
+              topUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))}),
 
             new Group({
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
-                  url : new MFString(["../data/flowerproto.json#FlowerProto"]),
+                  url : new MFString(new MFString(["../data/flowerproto.json#FlowerProto"])),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,
@@ -127,7 +127,7 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("AudioClip"),
                       description : new SFString("Chandubabamusic #1"),
-                      url : new MFString(["../resources/chandubabamusic1.wav"])}))}),
+                      url : new MFString(new MFString(["../resources/chandubabamusic1.wav"]))}))}),
 
                 new ROUTE({
                   fromField : new SFString("cycleTime"),

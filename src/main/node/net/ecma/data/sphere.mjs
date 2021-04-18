@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,1,1])}))})),
+                          diffuseColor : new SFColor(new SFColor([1,1,1]))}))})),
                   geometry : new SFNode(
                     new Sphere({}))})])})])}))});
 console.log(X3D0.toXMLNode());

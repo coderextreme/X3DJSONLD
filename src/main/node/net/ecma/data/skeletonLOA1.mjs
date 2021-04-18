@@ -58,7 +58,7 @@ var X3D0 =  new X3D({
               speed : new SFFloat(1.5)}),
 
             new Viewpoint({
-              centerOfRotation : new SFVec3f([0,1,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([0,1,0])),
               description : new SFString("JohnBoy"),
-              position : new SFVec3f([0,1,3])})])}))});
+              position : new SFVec3f(new SFVec3f([0,1,3]))})])}))});
 console.log(X3D0.toXMLNode());

@@ -33,7 +33,6 @@ import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 var X3D0 =  new X3D({
@@ -66,11 +65,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Viewpoint({
-              position : new SFVec3f([0,0,5]),
+              position : new SFVec3f(new SFVec3f([0,0,5])),
               description : new SFString("a moving graph")}),
 
             new Background({
-              skyColor : new MFColor([0.4,0.4,0.4])}),
+              skyColor : new MFColor(new MFColor([0.4,0.4,0.4]))}),
 
             new Transform({
               DEF : new SFString("trans1"),
@@ -83,7 +82,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7]))}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           radius : new SFFloat(0.1)}))})])})])}),
@@ -99,7 +98,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7]))}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           radius : new SFFloat(0.1)}))})])})])}),
@@ -115,7 +114,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7]))}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           radius : new SFFloat(0.1)}))})])})])}),
@@ -150,12 +149,12 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))}),
+                                  diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))}),
 
                         new PositionInterpolator({
                           DEF : new SFString("PI1"),
-                          key : new MFFloat([0,1]),
-                          keyValue : new MFVec3f([0,0,0,0,5,0])}),
+                          key : new MFFloat(new MFFloat([0,1])),
+                          keyValue : new MFVec3f(new MFVec3f([0,0,0,0,5,0]))}),
 
                         new Script({
                           DEF : new SFString("MB1"),
@@ -181,13 +180,14 @@ var X3D0 =  new X3D({
                               type : field.TYPE_MFVEC3F,
                               name : new SFString("keyValue"),
                               accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                          .setSourceCode("ecmascript:\n"+
-"		function set_location(value) {\n"+
-"                    old = translation;\n"+
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"		    // Browser.println(translation);\n"+
-"		}")])}),
+                          {ecmascript:
+		},
+ {ecmascript: function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}}])}),
 
                         new TimeSensor({
                           DEF : new SFString("CL1"),
@@ -217,7 +217,7 @@ var X3D0 =  new X3D({
                           fromField : new SFString("value_changed"),
                           toNode : new SFString("node"),
                           toField : new SFString("set_translation")})])})])}))}),
-          { "#comment" : new CommentsBlock("from doug sanden") },
+          /*from doug sanden*/
 
             new ProtoDeclare({
               name : new SFString("x3dconnector"),
@@ -314,49 +314,54 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endpoint"),
                               protoField : new SFString("set_endpoint")})])})),
-                      .setSourceCode("ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"		var trafo = recompute(startpoint, endpoint);\n"+
-"		if (typeof trafo !== 'undefined') {\n"+
-"			transnode.translation = trafo.translation;\n"+
-"			rotscalenode.rotation = trafo.rotation;\n"+
-"			rotscalenode.scale = trafo.scale;\n"+
-"		} else {\n"+
-"			Browser.print(\"recompute returned undefined\");\n"+
-"		}\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val || startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
-"        }")])})])}))}),
+                      {ecmascript:
+        },
+ {ecmascript: function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	},
+ {ecmascript: function recompute_and_route(startpoint, endpoint) {
+		var trafo = recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			transnode.translation = trafo.translation;
+			rotscalenode.rotation = trafo.rotation;
+			rotscalenode.scale = trafo.scale;
+		} else {
+			Browser.print("recompute returned undefined");
+		}
+	}
+        },
+ {ecmascript: function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        },
+ {ecmascript: function set_startpoint(val,t){
+            recompute_and_route(val || startnode.translation,endnode.translation);
+        }
+        },
+ {ecmascript: function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val || endnode.translation);
+        }}])})])}))}),
 
             new ProtoInstance({
               name : new SFString("point"),

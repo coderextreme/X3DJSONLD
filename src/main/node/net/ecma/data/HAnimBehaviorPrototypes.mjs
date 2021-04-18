@@ -12,7 +12,6 @@ import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
@@ -111,12 +110,12 @@ var X3D0 =  new X3D({
               documentation : new SFString("https://www.web3d.org/files/specifications/19774/V1.0/"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  { "#comment" : new CommentsBlock("supported Level of Articulation (LOA)") },
-                  { "#comment" : new CommentsBlock("shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations") },
-                  { "#comment" : new CommentsBlock("TODO: add other X3D 3.0 TimeSensor fields (pause etc.)") },
-                  { "#comment" : new CommentsBlock("Not supported: animated translation of individual joints") },
-                  { "#comment" : new CommentsBlock("pass in key/keyValue array pairs for single PositionInterpolator") },
-                  { "#comment" : new CommentsBlock("pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint") },
+                  /*supported Level of Articulation (LOA)*/
+                  /*shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations*/
+                  /*TODO: add other X3D 3.0 TimeSensor fields (pause etc.)*/
+                  /*Not supported: animated translation of individual joints*/
+                  /*pass in key/keyValue array pairs for single PositionInterpolator*/
+                  /*pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint*/
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFINT32,
@@ -214,13 +213,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("HumanoidRoot_translation_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFVEC3F,
                       name : new SFString("HumanoidRoot_translation_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
@@ -231,13 +230,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("HumanoidRoot_rotation_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("HumanoidRoot_rotation_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -248,13 +247,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -265,13 +264,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -282,13 +281,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -299,13 +298,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -316,13 +315,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -333,13 +332,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c6_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c6_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -350,13 +349,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("c7_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("c7_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -367,13 +366,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("jaw_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("jaw_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -384,13 +383,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -401,13 +400,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -418,13 +417,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -435,13 +434,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -452,13 +451,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -469,13 +468,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_acromioclavicular_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_acromioclavicular_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -486,13 +485,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ankle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ankle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -503,13 +502,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_calf_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_calf_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -520,13 +519,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_clavicle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_clavicle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -537,13 +536,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_elbow_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_elbow_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -554,13 +553,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyeball_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyeball_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -571,13 +570,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyeball_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyeball_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -588,13 +587,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyebrow_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyebrow_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -605,13 +604,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyebrow_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyebrow_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -622,13 +621,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyelid_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyelid_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -639,13 +638,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_eyelid_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_eyelid_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -656,13 +655,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_forearm_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_forearm_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -673,13 +672,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_forefoot_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_forefoot_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -690,13 +689,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_hand_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_hand_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -707,13 +706,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_hindfoot_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_hindfoot_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -724,13 +723,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_hip_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_hip_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -741,13 +740,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -758,13 +757,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -775,13 +774,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -792,13 +791,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -809,13 +808,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -826,13 +825,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -843,13 +842,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -860,13 +859,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_index_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_index_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -877,13 +876,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_knee_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_knee_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -894,13 +893,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_metatarsal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_metatarsal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -911,13 +910,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middistal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middistal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -928,13 +927,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -945,13 +944,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -962,13 +961,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -979,13 +978,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -996,13 +995,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1013,13 +1012,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1030,13 +1029,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1047,13 +1046,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_middle_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_middle_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1064,13 +1063,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_midproximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_midproximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1081,13 +1080,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_midtarsal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_midtarsal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1098,13 +1097,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1115,13 +1114,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1132,13 +1131,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1149,13 +1148,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1166,13 +1165,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1183,13 +1182,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1200,13 +1199,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1217,13 +1216,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_pinky_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_pinky_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1234,13 +1233,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1251,13 +1250,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1268,13 +1267,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1285,13 +1284,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1302,13 +1301,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1319,13 +1318,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1336,13 +1335,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1353,13 +1352,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_ring_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_ring_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1370,13 +1369,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_scapula_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_scapula_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1387,13 +1386,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_shoulder_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_shoulder_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1404,13 +1403,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_sternoclavicular_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_sternoclavicular_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1421,13 +1420,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_subtalar_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_subtalar_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1438,13 +1437,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thigh_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thigh_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1455,13 +1454,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1472,13 +1471,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1489,13 +1488,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1506,13 +1505,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1523,13 +1522,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1540,13 +1539,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_thumb_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_thumb_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1557,13 +1556,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_upperarm_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_upperarm_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1574,13 +1573,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("l_wrist_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("l_wrist_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1591,13 +1590,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("pelvis_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("pelvis_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1608,13 +1607,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_acromioclavicular_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_acromioclavicular_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1625,13 +1624,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ankle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ankle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1642,13 +1641,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_calf_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_calf_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1659,13 +1658,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_clavicle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_clavicle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1676,13 +1675,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_elbow_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_elbow_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1693,13 +1692,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyeball_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyeball_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1710,13 +1709,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyeball_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyeball_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1727,13 +1726,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyebrow_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyebrow_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1744,13 +1743,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyebrow_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyebrow_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1761,13 +1760,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyelid_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyelid_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1778,13 +1777,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_eyelid_joint_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_eyelid_joint_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1795,13 +1794,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_forearm_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_forearm_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1812,13 +1811,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_forefoot_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_forefoot_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1829,13 +1828,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_hand_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_hand_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1846,13 +1845,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_hindfoot_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_hindfoot_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1863,13 +1862,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_hip_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_hip_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1880,13 +1879,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1897,13 +1896,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1914,13 +1913,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1931,13 +1930,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1948,13 +1947,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1965,13 +1964,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1982,13 +1981,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -1999,13 +1998,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_index_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_index_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2016,13 +2015,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_knee_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_knee_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2033,13 +2032,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_metatarsal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_metatarsal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2050,13 +2049,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middistal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middistal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2067,13 +2066,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2084,13 +2083,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2101,13 +2100,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2118,13 +2117,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2135,13 +2134,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2152,13 +2151,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2169,13 +2168,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2186,13 +2185,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_middle_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_middle_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2203,13 +2202,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_midproximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_midproximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2220,13 +2219,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_midtarsal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_midtarsal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2237,13 +2236,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2254,13 +2253,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2271,13 +2270,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2288,13 +2287,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2305,13 +2304,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2322,13 +2321,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2339,13 +2338,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2356,13 +2355,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_pinky_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_pinky_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2373,13 +2372,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring0_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring0_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2390,13 +2389,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2407,13 +2406,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2424,13 +2423,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2441,13 +2440,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2458,13 +2457,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2475,13 +2474,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring_middle_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring_middle_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2492,13 +2491,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_ring_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_ring_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2509,13 +2508,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_scapula_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_scapula_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2526,13 +2525,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_shoulder_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_shoulder_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2543,13 +2542,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_sternoclavicular_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_sternoclavicular_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2560,13 +2559,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_subtalar_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_subtalar_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2577,13 +2576,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thigh_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thigh_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2594,13 +2593,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2611,13 +2610,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2628,13 +2627,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2645,13 +2644,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb_distal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb_distal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2662,13 +2661,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb_metacarpal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb_metacarpal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2679,13 +2678,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_thumb_proximal_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_thumb_proximal_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2696,13 +2695,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_upperarm_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_upperarm_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2713,13 +2712,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("r_wrist_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("r_wrist_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2730,13 +2729,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("sacroiliac_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("sacroiliac_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2747,13 +2746,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("sacrum_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("sacrum_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2764,13 +2763,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("skull_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("skull_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2781,13 +2780,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("skullbase_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("skullbase_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2798,13 +2797,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t10_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t10_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2815,13 +2814,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t11_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t11_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2832,13 +2831,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t12_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t12_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2849,13 +2848,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2866,13 +2865,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2883,13 +2882,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2900,13 +2899,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2917,13 +2916,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2934,13 +2933,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t6_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t6_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2951,13 +2950,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t7_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t7_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2968,13 +2967,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t8_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t8_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -2985,13 +2984,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("t9_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("t9_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3002,13 +3001,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("temporomandibular_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("temporomandibular_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3019,13 +3018,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3036,13 +3035,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3053,13 +3052,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3070,13 +3069,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3087,13 +3086,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3104,13 +3103,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc6_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc6_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3121,13 +3120,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vc7_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vc7_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3138,13 +3137,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vl1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vl1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3155,13 +3154,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vl2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vl2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3172,13 +3171,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vl3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vl3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3189,13 +3188,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vl4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vl4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3206,13 +3205,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vl5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vl5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3223,13 +3222,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt10_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt10_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3240,13 +3239,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt11_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt11_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3257,13 +3256,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt12_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt12_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3274,13 +3273,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt1_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt1_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3291,13 +3290,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt2_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt2_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3308,13 +3307,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt3_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt3_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3325,13 +3324,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt4_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt4_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3342,13 +3341,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt5_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt5_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3359,13 +3358,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt6_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt6_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3376,13 +3375,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt7_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt7_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3393,13 +3392,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt8_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt8_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3410,13 +3409,13 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFFLOAT,
                       name : new SFString("vt9_key"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_MFROTATION,
                       name : new SFString("vt9_keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("no default value") }}),
+                      /*no default value*/}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
@@ -3424,7 +3423,7 @@ var X3D0 =  new X3D({
                       accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
-                  { "#comment" : new CommentsBlock("design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators") },
+                  /*design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators*/
                   children : new MFNode([
                     new TimeSensor({
                       DEF : new SFString("BehaviorClock"),
@@ -3482,7 +3481,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("fraction_changed"),
                               protoField : new SFString("fraction_changed")})])}))}),
-                  { "#comment" : new CommentsBlock("note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless") },
+                  /*note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless*/
 
                     new Switch({
                       DEF : new SFString("SupportedLoaHolder1"),
@@ -7846,12 +7845,12 @@ var X3D0 =  new X3D({
               appinfo : new SFString("The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time."),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  { "#comment" : new CommentsBlock("TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs") },
-                  { "#comment" : new CommentsBlock("accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints") },
-                  { "#comment" : new CommentsBlock("shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs") },
-                  { "#comment" : new CommentsBlock("TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName") },
-                  { "#comment" : new CommentsBlock("TODO: consider addBody, removeBody, addBehavior, removeBehavior") },
-                  { "#comment" : new CommentsBlock("TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName") },
+                  /*TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs*/
+                  /*accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints*/
+                  /*shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs*/
+                  /*TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName*/
+                  /*TODO: consider addBody, removeBody, addBehavior, removeBehavior*/
+                  /*TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName*/
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFINT32,
@@ -7865,7 +7864,7 @@ var X3D0 =  new X3D({
                       name : new SFString("HumanoidArray"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       appinfo : new SFString("[HAnimHumanoid] nodes only"),
-                      { "#comment" : new CommentsBlock("default NULL") }}),
+                      /*default NULL*/}),
 
                     new field({
                       type : field.TYPE_SFINT32,
@@ -7891,14 +7890,14 @@ var X3D0 =  new X3D({
                       name : new SFString("hAnimBehaviorNodes"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       appinfo : new SFString("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time."),
-                      { "#comment" : new CommentsBlock("default NULL") }}),
+                      /*default NULL*/}),
 
                     new field({
                       type : field.TYPE_MFBOOL,
                       name : new SFString("enabledBehaviorsArray"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       appinfo : new SFString("indicate which HAnimBehavior nodes are activated, empty indicates all enabled true"),
-                      { "#comment" : new CommentsBlock("no default values") }}),
+                      /*no default values*/}),
 
                     new field({
                       type : field.TYPE_SFINT32,
@@ -7939,7 +7938,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("children"),
                               protoField : new SFString("HumanoidArray")})])}))}),
-                  { "#comment" : new CommentsBlock("note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless") },
+                  /*note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless*/
 
                     new Group({
                       DEF : new SFString("BehaviorArrayHolder"),
@@ -7976,7 +7975,7 @@ var X3D0 =  new X3D({
                     new Script({
                       DEF : new SFString("BehaviorSelectionScript"),
                       directOutput : new SFBool(true),
-                      url : new MFString(["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"]),
+                      url : new MFString(new MFString(["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"])),
                       field : new MFNode([
                         new field({
                           type : field.TYPE_MFNODE,
@@ -8007,7 +8006,7 @@ var X3D0 =  new X3D({
                           name : new SFString("hAnimBehaviorNodes"),
                           accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                           appinfo : new SFString("[HAnimBehavior] nodes only"),
-                          { "#comment" : new CommentsBlock("TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed") }}),
+                          /*TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed*/}),
 
                         new field({
                           type : field.TYPE_MFBOOL,
@@ -8080,13 +8079,13 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("disableBehavior"),
                               protoField : new SFString("disableBehavior")})])}))])})])}))}),
-          { "#comment" : new CommentsBlock("TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.") },
+          /*TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.*/
 
             new ProtoInstance({
               name : new SFString("HAnimBehavior"),
               DEF : new SFString("BehaviorTest1"),
-              { "#comment" : new CommentsBlock("only one PositionInterpolator key/keyValue definition for entire humanoid - optional") },
-              { "#comment" : new CommentsBlock("must have paired overrides of each key/keyValue array being defined") },
+              /*only one PositionInterpolator key/keyValue definition for entire humanoid - optional*/
+              /*must have paired overrides of each key/keyValue array being defined*/
               fieldValue : new MFNode([
                 new fieldValue({
                   name : new SFString("HumanoidRoot_translation_key"),

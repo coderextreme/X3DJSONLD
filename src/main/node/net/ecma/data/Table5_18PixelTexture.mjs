@@ -78,37 +78,37 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor([0,0,1])}),
+              skyColor : new MFColor(new MFColor([0,0,1]))}),
 
             new Transform({
               DEF : new SFString("Checkerboard"),
-              translation : new SFVec3f([0,0,-10]),
+              translation : new SFVec3f(new SFVec3f([0,0,-10])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       textureTransform : new SFNode(
                         new TextureTransform({
-                          scale : new SFVec2f([500,500])})),
+                          scale : new SFVec2f(new SFVec2f([500,500]))})),
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([2,2,3,15119869,16767927,16767927,15119869])}))})),
+                          image : new SFImage(new SFImage([2,2,3,15119869,16767927,16767927,15119869]))}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([1000,1000,0.01])}))})])}),
+                      size : new SFVec3f(new SFVec3f([1000,1000,0.01]))}))})])}),
 
             new Viewpoint({
               description : new SFString("View All"),
-              position : new SFVec3f([0,0,20])}),
+              position : new SFVec3f(new SFVec3f([0,0,20]))}),
 
             new Viewpoint({
               description : new SFString("Empty Image"),
-              position : new SFVec3f([0,5,5])}),
+              position : new SFVec3f(new SFVec3f([0,5,5]))}),
 
             new Transform({
               DEF : new SFString("EmptyImage"),
-              rotation : new SFRotation([1,1,0,1]),
-              translation : new SFVec3f([0,5,0]),
+              rotation : new SFRotation(new SFRotation([1,1,0,1])),
+              translation : new SFVec3f(new SFVec3f([0,5,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -121,76 +121,76 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Black and white PixelTexture"),
-              position : new SFVec3f([-5,0,5])}),
+              position : new SFVec3f(new SFVec3f([-5,0,5]))}),
 
             new Transform({
               DEF : new SFString("BW"),
-              rotation : new SFRotation([1,1,0,1]),
-              translation : new SFVec3f([-5,0,0]),
+              rotation : new SFRotation(new SFRotation([1,1,0,1])),
+              translation : new SFVec3f(new SFVec3f([-5,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([1,2,1,255,0])}))})),
+                          image : new SFImage(new SFImage([1,2,1,255,0]))}))})),
                   geometry : new SFNode(
                     new Box({
                       USE : new SFString("StandardBox")}))})])}),
 
             new Viewpoint({
               description : new SFString("Black and white with Alpha PixelTexture"),
-              position : new SFVec3f([5,0,5])}),
+              position : new SFVec3f(new SFVec3f([5,0,5]))}),
 
             new Transform({
               DEF : new SFString("AlphaBW"),
-              rotation : new SFRotation([1,1,0,1]),
-              translation : new SFVec3f([5,0,0]),
+              rotation : new SFRotation(new SFRotation([1,1,0,1])),
+              translation : new SFVec3f(new SFVec3f([5,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([2,1,2,52479,8823])}))})),
+                          image : new SFImage(new SFImage([2,1,2,52479,8823]))}))})),
                   geometry : new SFNode(
                     new Box({
                       USE : new SFString("StandardBox")}))})])}),
 
             new Viewpoint({
               description : new SFString("RGB PixelTexture"),
-              position : new SFVec3f([-5,-5,5])}),
+              position : new SFVec3f(new SFVec3f([-5,-5,5]))}),
 
             new Transform({
               DEF : new SFString("RGB"),
-              rotation : new SFRotation([1,1,0,1]),
-              translation : new SFVec3f([-5,-5,0]),
+              rotation : new SFRotation(new SFRotation([1,1,0,1])),
+              translation : new SFVec3f(new SFVec3f([-5,-5,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960])}))})),
+                          image : new SFImage(new SFImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960]))}))})),
                   geometry : new SFNode(
                     new Box({
                       USE : new SFString("StandardBox")}))})])}),
 
             new Viewpoint({
               description : new SFString("RGB with Alpha PixelTexture"),
-              position : new SFVec3f([5,-5,5])}),
+              position : new SFVec3f(new SFVec3f([5,-5,5]))}),
 
             new Transform({
               DEF : new SFString("AlphaRGB"),
-              rotation : new SFRotation([1,1,0,1]),
-              translation : new SFVec3f([5,-5,0]),
+              rotation : new SFRotation(new SFRotation([1,1,0,1])),
+              translation : new SFVec3f(new SFVec3f([5,-5,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({
-                          image : new SFImage([3,2,4,4278190335,16711935,65535,4278190207,16711807,65407])}))})),
+                          image : new SFImage(new SFImage([3,2,4,4278190335,16711935,65535,4278190207,16711807,65407]))}))})),
                   geometry : new SFNode(
                     new Box({
                       USE : new SFString("StandardBox")}))})])})])}))});
