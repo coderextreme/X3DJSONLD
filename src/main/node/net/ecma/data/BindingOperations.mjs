@@ -9,7 +9,6 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -101,57 +100,57 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Viewpoint({
               DEF : new SFString("View1"),
-              centerOfRotation : new SFVec3f([-6,0,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([-6,0,0])),
               description : new SFString("Viewpoint 1"),
-              position : new SFVec3f([-6,0,5])}),
+              position : new SFVec3f(new SFVec3f([-6,0,5]))}),
 
             new Viewpoint({
               DEF : new SFString("View2"),
-              centerOfRotation : new SFVec3f([-2,0,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([-2,0,0])),
               description : new SFString("Viewpoint 2"),
-              position : new SFVec3f([-2,0,5])}),
+              position : new SFVec3f(new SFVec3f([-2,0,5]))}),
 
             new Viewpoint({
               DEF : new SFString("View3"),
-              centerOfRotation : new SFVec3f([2,0,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([2,0,0])),
               description : new SFString("Viewpoint 3"),
-              position : new SFVec3f([2,0,5])}),
+              position : new SFVec3f(new SFVec3f([2,0,5]))}),
 
             new Viewpoint({
               DEF : new SFString("View4"),
-              centerOfRotation : new SFVec3f([6,0,0]),
+              centerOfRotation : new SFVec3f(new SFVec3f([6,0,0])),
               description : new SFString("Viewpoint 4"),
-              position : new SFVec3f([6,0,5])}),
-          { "#comment" : new CommentsBlock("Script initialization ought to first bind view5 below.") },
+              position : new SFVec3f(new SFVec3f([6,0,5]))}),
+          /*Script initialization ought to first bind view5 below.*/
 
             new Group({
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("Text1"),
-                  translation : new SFVec3f([-6,0,0]),
+                  translation : new SFVec3f(new SFVec3f([-6,0,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["View","# 1"]),
+                          string : new MFString(new MFString(["View","# 1"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               DEF : new SFString("CenterJustify"),
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([1,0,0])}))}))})])}),
+                              diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text2"),
-                  translation : new SFVec3f([-2,0,0]),
+                  translation : new SFVec3f(new SFVec3f([-2,0,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["View","# 2"]),
+                          string : new MFString(new MFString(["View","# 2"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -159,16 +158,16 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0,1,0])}))}))})])}),
+                              diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text3"),
-                  translation : new SFVec3f([2,0,0]),
+                  translation : new SFVec3f(new SFVec3f([2,0,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["View","# 3"]),
+                          string : new MFString(new MFString(["View","# 3"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -176,16 +175,16 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0,0,1])}))}))})])}),
+                              diffuseColor : new SFColor(new SFColor([0,0,1]))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text4"),
-                  translation : new SFVec3f([6,0,0]),
+                  translation : new SFVec3f(new SFVec3f([6,0,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["View","# 4"]),
+                          string : new MFString(new MFString(["View","# 4"])),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -193,35 +192,35 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({}))}))})])})])}),
-          { "#comment" : new CommentsBlock("The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.") },
-          { "#comment" : new CommentsBlock("It does not need to be studied in this chapter.") },
+          /*The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.*/
+          /*It does not need to be studied in this chapter.*/
 
             new Transform({
-              translation : new SFVec3f([0,-3,8]),
-              { "#comment" : new CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.") },
+              translation : new SFVec3f(new SFVec3f([0,-3,8])),
+              /*notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.*/
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ClickToAnimateView"),
                   description : new SFString("Select animation sequence"),
-                  position : new SFVec3f([0,0,7])}),
+                  position : new SFVec3f(new SFVec3f([0,0,7]))}),
 
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["Click here to animate"]),
+                      string : new MFString(new MFString(["Click here to animate"])),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","BEGIN"])}))})),
+                          justify : new MFString(new MFString(["MIDDLE","BEGIN"]))}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.8,0.4,0])}))}))}),
+                          diffuseColor : new SFColor(new SFColor([0.8,0.4,0]))}))}))}),
 
                 new Shape({
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([7,1,0.02])})),
+                      size : new SFVec3f(new SFVec3f([7,1,0.02]))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -244,8 +243,8 @@ var X3D0 =  new X3D({
 
                 new IntegerSequencer({
                   DEF : new SFString("TimingSequencer"),
-                  key : new MFFloat([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1]),
-                  keyValue : new MFInt32([0,1,2,3,4,5,6,7,8,10])}),
+                  key : new MFFloat(new MFFloat([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1])),
+                  keyValue : new MFInt32(new MFInt32([0,1,2,3,4,5,6,7,8,10]))}),
 
                 new ROUTE({
                   fromField : new SFString("fraction_changed"),
@@ -311,102 +310,109 @@ var X3D0 =  new X3D({
                       name : new SFString("priorInputvalue"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("-1")}),
-                  .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"    bindView5 = true;\n"+
-"    Browser.print ('Timing script initialized and ready for activation');\n"+
-"}\n"+
-"function set_timeEvent (inputValue)\n"+
-"{\n"+
-"    if (inputValue == priorInputvalue)\n"+
-"    {\n"+
-"        return; // ignore repeated inputs\n"+
-"    }\n"+
-"    // new value provided\n"+
-"    priorInputvalue = inputValue;\n"+
-"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
-"\n"+
-"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
-"    if (inputValue == 0)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t0');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 1)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t1');\n"+
-"        bindView2 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 2)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t2');\n"+
-"        bindView3 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 3)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t3');\n"+
-"        bindView3 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 4)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t4');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 5)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t5');\n"+
-"        bindView2 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 6)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t6');\n"+
-"        bindView1 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 7)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t7');\n"+
-"        bindView4 = true;\n"+
-"\n"+
-"    }\n"+
-"    else if (inputValue == 8)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t8');\n"+
-"        Browser.print (', no action, all done');\n"+
-"        Browser.print ('\\n\\n');\n"+
-"    }\n"+
-"}\n"+
-"\n"+
-"function view1Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view1Bound ' + (inputValue));\n"+
-"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
-"}\n"+
-"function view2Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view2Bound ' + (inputValue));\n"+
-"}\n"+
-"function view3Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view3Bound ' + (inputValue));\n"+
-"}\n"+
-"function view4Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view4Bound ' + (inputValue));\n"+
-"}\n"+
-"function view5Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}")])}),
-              { "#comment" : new CommentsBlock("drive Script with TimeSensor clock") },
+                  {ecmascript:
+
+},
+ {ecmascript: function initialize ()
+{
+    bindView5 = true;
+    Browser.print ('Timing script initialized and ready for activation');
+}
+},
+ {ecmascript: function set_timeEvent (inputValue)
+{
+    if (inputValue == priorInputvalue)
+    {
+        return; // ignore repeated inputs
+    }
+    // new value provided
+    priorInputvalue = inputValue;
+    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);
+
+    // mimics user execution of Figure 4.1 steps t_0 through t_8
+    if (inputValue == 0)
+    {
+        Browser.print ('\\n===========\\n time t0');
+        bindView1 = true;
+    }
+    else if (inputValue == 1)
+    {
+        Browser.print ('\\n===========\\n time t1');
+        bindView2 = true;
+    }
+    else if (inputValue == 2)
+    {
+        Browser.print ('\\n===========\\n time t2');
+        bindView3 = true;
+    }
+    else if (inputValue == 3)
+    {
+        Browser.print ('\\n===========\\n time t3');
+        bindView3 = false;
+    }
+    else if (inputValue == 4)
+    {
+        Browser.print ('\\n===========\\n time t4');
+        bindView1 = true;
+    }
+    else if (inputValue == 5)
+    {
+        Browser.print ('\\n===========\\n time t5');
+        bindView2 = false;
+    }
+    else if (inputValue == 6)
+    {
+        Browser.print ('\\n===========\\n time t6');
+        bindView1 = false;
+    }
+    else if (inputValue == 7)
+    {
+        Browser.print ('\\n===========\\n time t7');
+        bindView4 = true;
+
+    }
+    else if (inputValue == 8)
+    {
+        Browser.print ('\\n===========\\n time t8');
+        Browser.print (', no action, all done');
+        Browser.print ('\\n\\n');
+    }
+}
+
+},
+ {ecmascript: function view1Bound (inputValue)
+{
+    Browser.print (', view1Bound ' + (inputValue));
+    if (priorInputvalue == -1) Browser.print ('\\n');
+}
+},
+ {ecmascript: function view2Bound (inputValue)
+{
+    Browser.print (', view2Bound ' + (inputValue));
+}
+},
+ {ecmascript: function view3Bound (inputValue)
+{
+    Browser.print (', view3Bound ' + (inputValue));
+}
+},
+ {ecmascript: function view4Bound (inputValue)
+{
+    Browser.print (', view4Bound ' + (inputValue));
+}
+},
+ {ecmascript: function view5Bound (inputValue)
+{
+    Browser.print (', view5Bound ' + (inputValue));
+}}])}),
+              /*drive Script with TimeSensor clock*/
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
                   fromNode : new SFString("TimingSequencer"),
                   toField : new SFString("set_timeEvent"),
                   toNode : new SFString("BindingSequencerEngine")}),
-              { "#comment" : new CommentsBlock("Script will bind and unbind Viewpoint nodes") },
+              /*Script will bind and unbind Viewpoint nodes*/
 
                 new ROUTE({
                   fromField : new SFString("bindView1"),
@@ -437,7 +443,7 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("BindingSequencerEngine"),
                   toField : new SFString("set_bind"),
                   toNode : new SFString("ClickToAnimateView")}),
-              { "#comment" : new CommentsBlock("Viewpoint nodes report bind and unbind events") },
+              /*Viewpoint nodes report bind and unbind events*/
 
                 new ROUTE({
                   fromField : new SFString("isBound"),

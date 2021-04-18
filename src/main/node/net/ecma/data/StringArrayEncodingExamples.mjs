@@ -13,7 +13,6 @@ import { MFColor } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -92,21 +91,21 @@ var X3D0 =  new X3D({
               description : new SFString("Hello MFString syntax")}),
 
             new Background({
-              skyColor : new MFColor([0.6,1,0.8])}),
+              skyColor : new MFColor(new MFColor([0.6,1,0.8]))}),
 
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(["One, Two, Three","","He said, \"Immel did it!\""]),
-                  { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'") },
-                  { "#comment" : new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})") },
+                  string : new MFString(new MFString(["One, Two, Three","","He said, \"Immel did it!\""])),
+                  /*alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'*/
+                  /*alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})*/
                   fontStyle : new SFNode(
                     new FontStyle({
-                      justify : new MFString(["MIDDLE","MIDDLE"]),
+                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                       style : new SFString("BOLD")}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
-                      diffuseColor : new SFColor([0.6,0.4,0.2])}))}))})])}))});
+                      diffuseColor : new SFColor(new SFColor([0.6,0.4,0.2]))}))}))})])}))});
 console.log(X3D0.toXMLNode());

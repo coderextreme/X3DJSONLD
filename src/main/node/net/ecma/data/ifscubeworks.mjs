@@ -64,17 +64,17 @@ var X3D0 =  new X3D({
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       DEF : new SFString("IndexedFaceSet"),
-                      coordIndex : new MFInt32([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]),
-                      normalIndex : new MFInt32([0,0,1,2,3,4,5]),
+                      coordIndex : new MFInt32(new MFInt32([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1])),
+                      normalIndex : new MFInt32(new MFInt32([0,0,1,2,3,4,5])),
                       normalPerVertex : new SFBool(false),
-                      colorIndex : new MFInt32([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]),
+                      colorIndex : new MFInt32(new MFInt32([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1])),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f([0,0,1,0,1,1,1,1,1,1,0,1])})),
+                          point : new MFVec3f(new MFVec3f([0,0,1,0,1,1,1,1,1,1,0,1]))})),
                       normal : new SFNode(
                         new Normal({
-                          vector : new MFVec3f([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1])})),
+                          vector : new MFVec3f(new MFVec3f([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]))})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor([0,1,0])}))}))})])})])}))});
+                          color : new MFColor(new MFColor([0,1,0]))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

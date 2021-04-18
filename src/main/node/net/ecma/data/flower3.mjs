@@ -24,7 +24,6 @@ import { SFBool } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
 import { Script } from './x3d.mjs';
 import { field } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
@@ -60,27 +59,27 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new DirectionalLight({
-              direction : new SFVec3f([0,-0.8,-0.2]),
+              direction : new SFVec3f(new SFVec3f([0,-0.8,-0.2])),
               intensity : new SFFloat(0.5)}),
 
             new Background({
-              skyColor : new MFColor([1,1,1])}),
+              skyColor : new MFColor(new MFColor([1,1,1]))}),
 
             new Viewpoint({
               description : new SFString("One mathematical orbital"),
-              position : new SFVec3f([0,0,50])}),
+              position : new SFVec3f(new SFVec3f([0,0,50]))}),
 
             new Transform({
               DEF : new SFString("OrbitTransform"),
-              translation : new SFVec3f([8,0,0]),
+              translation : new SFVec3f(new SFVec3f([8,0,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0,0.5,1]),
-                          specularColor : new SFColor([0,0.5,1])}))})),
+                          diffuseColor : new SFColor(new SFColor([0,0.5,1])),
+                          specularColor : new SFColor(new SFColor([0,0.5,1]))}))})),
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       convex : new SFBool(false),
@@ -106,81 +105,84 @@ var X3D0 =  new X3D({
                   type : field.TYPE_MFINT32,
                   name : new SFString("coordIndexes"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              { "#comment" : new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>") },
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"var resolution = 100;\n"+
-"var t = 0;\n"+
-"var p = 0;\n"+
-"\n"+
-"function initialize() {\n"+
-"     generateCoordinates(resolution);\n"+
-"     var localci = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci.push(i*resolution+j);\n"+
-"	     localci.push(i*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j);\n"+
-"	     localci.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
-"}\n"+
-"\n"+
-"function generateCoordinates(resolution) {\n"+
-"     var theta = 0.0;\n"+
-"     var phi = 0.0;\n"+
-"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = [];\n"+
-"     for (var  i = 0; i < resolution; i++) {\n"+
-"     	for (var  j = 0; j < resolution; j++) {\n"+
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	t += 0.5;\n"+
-"	p += 0.5;\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	generateCoordinates(resolution);\n"+
-"}")])}),
+              /*<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>*/
+              {ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
+var t = 0;
+var p = 0;
+
+},
+ {ecmascript: function initialize() {
+     generateCoordinates(resolution);
+     var localci = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(localci);
+}
+
+},
+ {ecmascript: function generateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var localc = [];
+     for (var  i = 0; i < resolution; i++) {
+     	for (var  j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(localc);
+}
+
+},
+ {ecmascript: function set_fraction(fraction, eventTime) {
+	t += 0.5;
+	p += 0.5;
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	generateCoordinates(resolution);
+}}])}),
 
             new TimeSensor({
               DEF : new SFString("Clock"),

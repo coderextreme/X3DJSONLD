@@ -10,7 +10,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
@@ -90,15 +89,15 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({}),
-          { "#comment" : new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery") },
+          /*Images courtesy of Paul Debevec's Light Probe Image Gallery*/
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
+              backUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])),
+              bottomUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])),
+              frontUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])),
+              leftUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])),
+              rightUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])),
+              topUrl : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))}),
 
             new ProtoDeclare({
               name : new SFString("flower"),
@@ -113,29 +112,29 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([0.7,0.7,0.7]),
-                                  specularColor : new SFColor([0.5,0.5,0.5])})),
+                                  diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
+                                  specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))})),
                               texture : new SFNode(
                                 new ComposedCubeMapTexture({
                                   DEF : new SFString("texture"),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]))})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]))})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]))})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]))})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]))})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
+                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))}))})),
                               shaders : new SFNode(
                                 new ComposedShader({
                                   DEF : new SFString("x3dom"),
@@ -206,15 +205,15 @@ var X3D0 =  new X3D({
                                       name : new SFString("pdelta"),
                                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                                       value : new SFString("0")}),
-                                  { "#comment" : new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>") },
+                                  /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "VERTEX",
-                                      url : new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])})),
+                                      url : new MFString(new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]))})),
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "FRAGMENT",
-                                      url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))])})),
+                                      url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])})),
                               shaders : new SFNode(
                                 new ComposedShader({
                                   DEF : new SFString("x_ite"),
@@ -290,11 +289,11 @@ var X3D0 =  new X3D({
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "VERTEX",
-                                      url : new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])})),
+                                      url : new MFString(new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]))})),
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "FRAGMENT",
-                                      url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))])}))})),
+                                      url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])}))})),
                           geometry : new SFNode(
                             new Sphere({}))})])}),
 
@@ -353,73 +352,76 @@ var X3D0 =  new X3D({
                           name : new SFString("pdelta"),
                           accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                           value : new SFString("0.5")}),
-                      .setSourceCode("ecmascript:\n"+
-"\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta = tdelta + 0.5;\n"+
-"				pdelta = pdelta + 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}")])}),
+                      {ecmascript:
+
+			},
+ {ecmascript: function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			},
+ {ecmascript: function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			},
+ {ecmascript: function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta = tdelta + 0.5;
+				pdelta = pdelta + 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}}])}),
 
                     new TimeSensor({
                       DEF : new SFString("TourTime"),

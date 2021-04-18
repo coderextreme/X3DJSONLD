@@ -10,7 +10,6 @@ import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { ProximitySensor } from './x3d.mjs';
@@ -89,14 +88,14 @@ var X3D0 =  new X3D({
                       name : new SFString("children"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       appinfo : new SFString("Displayed subscene positioned as a HUD."),
-                      { "#comment" : new CommentsBlock("default is null array of nodes") }}),
+                      /*default is null array of nodes*/}),
 
                     new field({
                       type : field.TYPE_MFNODE,
                       name : new SFString("dragChildren"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       appinfo : new SFString("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position."),
-                      { "#comment" : new CommentsBlock("default is null array of nodes") }}),
+                      /*default is null array of nodes*/}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
@@ -118,7 +117,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new ProximitySensor({
                           DEF : new SFString("WhereSensor"),
-                          size : new SFVec3f([1000000000,1000000000,1000000000]),
+                          size : new SFVec3f(new SFVec3f([1000000000,1000000000,1000000000])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -142,7 +141,7 @@ var X3D0 =  new X3D({
                                           protoField : new SFString("locationOffset")})])})),
                                   children : new MFNode([
                                     new Transform({
-                                      translation : new SFVec3f([0,0,-10]),
+                                      translation : new SFVec3f(new SFVec3f([0,0,-10])),
                                       children : new MFNode([
                                         new Group({
                                           IS : new SFNode(
@@ -227,41 +226,45 @@ var X3D0 =  new X3D({
                                                     new connect({
                                                       nodeField : new SFString("traceEnabled"),
                                                       protoField : new SFString("traceEnabled")})])})),
-                                              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function tracePrint (text)\n"+
-"{\n"+
-"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
-"}\n"+
-"function setIsVisible (value, timeStamp)\n"+
-"{\n"+
-"	isVisible = value;\n"+
-"	tracePrint('isVisible=' + value);\n"+
-"}\n"+
-"function setPlaneSensorIsActive (value, timeStamp)\n"+
-"{\n"+
-"	tracePrint('PlaneSensor isActive=' + value);\n"+
-"\n"+
-"	if (value == false)\n"+
-"	{\n"+
-"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
-"		if (isVisible)\n"+
-"		{\n"+
-"			translationChanged = planeSensorTranslation;\n"+
-"		}\n"+
-"		else\n"+
-"		{\n"+
-"			// fell off screen, reset to center\n"+
-"			translationChanged = new SFVec3f(0, 0, 0);\n"+
-"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
-"		}\n"+
-"	}\n"+
-"}\n"+
-"function setPlaneSensorTranslation (value, timeStamp)\n"+
-"{\n"+
-"	planeSensorTranslation = value;\n"+
-"	tracePrint('planeSensorTranslation=' + value);\n"+
-"}")])}),
+                                              {ecmascript:
+
+},
+ {ecmascript: function tracePrint (text)
+{
+	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
+}
+},
+ {ecmascript: function setIsVisible (value, timeStamp)
+{
+	isVisible = value;
+	tracePrint('isVisible=' + value);
+}
+},
+ {ecmascript: function setPlaneSensorIsActive (value, timeStamp)
+{
+	tracePrint('PlaneSensor isActive=' + value);
+
+	if (value == false)
+	{
+		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
+		if (isVisible)
+		{
+			translationChanged = planeSensorTranslation;
+		}
+		else
+		{
+			// fell off screen, reset to center
+			translationChanged = new SFVec3f(0, 0, 0);
+			translationOffsetChanged  = new SFVec3f(0, 0, 0);
+		}
+	}
+}
+},
+ {ecmascript: function setPlaneSensorTranslation (value, timeStamp)
+{
+	planeSensorTranslation = value;
+	tracePrint('planeSensorTranslation=' + value);
+}}])}),
 
                                             new ROUTE({
                                               fromField : new SFString("isActive"),
@@ -310,29 +313,29 @@ var X3D0 =  new X3D({
                           fromNode : new SFString("WhereSensor"),
                           toField : new SFString("set_rotation"),
                           toNode : new SFString("FixedLocation")})])})])}))}),
-          { "#comment" : new CommentsBlock("====================") },
+          /*====================*/
 
             new Background({
-              groundColor : new MFColor([0.1,0.1,0.3]),
-              skyColor : new MFColor([0.5,0.5,0.1])}),
+              groundColor : new MFColor(new MFColor([0.1,0.1,0.3])),
+              skyColor : new MFColor(new MFColor([0.5,0.5,0.1]))}),
 
             new Anchor({
               description : new SFString("HeadsUpDisplayExample"),
-              parameter : new MFString(["target=_blank"]),
-              url : new MFString(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]),
+              parameter : new MFString(new MFString(["target=_blank"])),
+              url : new MFString(new MFString(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0,1,1]),
-                          emissiveColor : new SFColor([0,1,1])}))})),
+                          diffuseColor : new SFColor(new SFColor([0,1,1])),
+                          emissiveColor : new SFColor(new SFColor([0,1,1]))}))})),
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]),
+                      string : new MFString(new MFString(["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"])),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"]),
+                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                           size : new SFFloat(0.8)}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

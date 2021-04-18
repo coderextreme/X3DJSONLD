@@ -10,7 +10,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
@@ -85,19 +84,19 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({}),
-          { "#comment" : new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery") },
+          /*Images courtesy of Paul Debevec's Light Probe Image Gallery*/
 
             new Background({
               DEF : new SFString("background"),
-              backUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])}),
+              backUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])),
+              bottomUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])),
+              frontUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])),
+              leftUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])),
+              rightUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])),
+              topUrl : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]))}),
 
             new Viewpoint({
-              position : new SFVec3f([0,0,40]),
+              position : new SFVec3f(new SFVec3f([0,0,40])),
               description : new SFString("Transparent rose")}),
 
             new Transform({
@@ -107,35 +106,35 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.7,0.7,0.7]),
-                          specularColor : new SFColor([0.5,0.5,0.5])})),
+                          diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
+                          specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))})),
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           DEF : new SFString("texture"),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("backShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("bottomShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("frontShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("leftShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("rightShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("topShader"),
-                              url : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])}))})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]))}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x3dom"),
@@ -206,15 +205,15 @@ var X3D0 =  new X3D({
                               name : new SFString("pdelta"),
                               accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                               value : new SFString("0")}),
-                          { "#comment" : new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>") },
+                          /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])})),
+                              url : new MFString(new MFString(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]))})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))])})),
+                              url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x_ite"),
@@ -290,11 +289,11 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])})),
+                              url : new MFString(new MFString(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]))})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))])}))})),
+                              url : new MFString(new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))}))])}))})),
                   geometry : new SFNode(
                     new Sphere({}))})])}),
 
@@ -378,23 +377,24 @@ var X3D0 =  new X3D({
                   name : new SFString("old"),
                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                   value : new SFString("-1")}),
-              .setSourceCode("ecmascript:\n"+
-"        function set_fraction( f, tm ) {\n"+
-"            var side = Math.floor(f*frontUrls.length);\n"+
-"            if (side > frontUrls.length-1) {\n"+
-"                side = 0;\n"+
-"            }\n"+
-"            if (side != old) {\n"+
-"                    old = side;\n"+
-"                    front[0] = frontUrls[side];\n"+
-"                    back[0] = backUrls[side];\n"+
-"                    left[0] = leftUrls[side];\n"+
-"                    right[0] = rightUrls[side];\n"+
-"                    top[0] = topUrls[side];\n"+
-"                    bottom[0] = bottomUrls[side];\n"+
-"            }\n"+
-"        }")])}),
-          { "#comment" : new CommentsBlock("<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>") },
+              {ecmascript:
+        },
+ {ecmascript: function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }}])}),
+          /*<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>*/
 
             new Script({
               DEF : new SFString("Animate"),
@@ -440,45 +440,46 @@ var X3D0 =  new X3D({
                   name : new SFString("pdelta"),
                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                   value : new SFString("0")}),
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function set_fraction() {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	tdelta = tdelta + 0.5;\n"+
-"	pdelta = pdelta + 0.5;\n"+
-"	if (a < 1) {\n"+
-"		a = 10;\n"+
-"	}\n"+
-"	if (b < 1) {\n"+
-"		b = 10;\n"+
-"	}\n"+
-"	if (c < 1) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (c > 20) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (d < 1) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"	if (d > 20) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"}")])}),
+              {ecmascript:
+
+},
+ {ecmascript: function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}}])}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),

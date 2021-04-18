@@ -68,11 +68,11 @@ var X3D0 =  new X3D({
               title : new SFString("Connector Proto")}),
 
             new Viewpoint({
-              position : new SFVec3f([0,0,5]),
+              position : new SFVec3f(new SFVec3f([0,0,5])),
               description : new SFString("Only Viewpoint")}),
 
             new Background({
-              skyColor : new MFColor([0.4,0.4,0.4])}),
+              skyColor : new MFColor(new MFColor([0.4,0.4,0.4]))}),
 
             new Transform({
               DEF : new SFString("G1"),
@@ -82,7 +82,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.7,0.2,0.2])}))})),
+                          diffuseColor : new SFColor(new SFColor([0.7,0.2,0.2]))}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
@@ -99,21 +99,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G2"),
-              translation : new SFVec3f([1,-1,0.01]),
+              translation : new SFVec3f(new SFVec3f([1,-1,0.01])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
+                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f([1,-1,0.01]),
+                  offset : new SFVec3f(new SFVec3f([1,-1,0.01])),
                   DEF : new SFString("PS2")}),
 
                 new ROUTE({
@@ -124,21 +124,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G3"),
-              translation : new SFVec3f([1,1,0.01]),
+              translation : new SFVec3f(new SFVec3f([1,1,0.01])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
+                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f([1,1,0.01]),
+                  offset : new SFVec3f(new SFVec3f([1,1,0.01])),
                   DEF : new SFString("PS3")}),
 
                 new ROUTE({
@@ -149,21 +149,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G4"),
-              translation : new SFVec3f([-1,1,0.01]),
+              translation : new SFVec3f(new SFVec3f([-1,1,0.01])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
+                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f([-1,1,0.01]),
+                  offset : new SFVec3f(new SFVec3f([-1,1,0.01])),
                   DEF : new SFString("PS4")}),
 
                 new ROUTE({
@@ -183,7 +183,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7]),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -200,7 +200,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7]),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -217,7 +217,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.2,0.7,0.7]),
+                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -318,47 +318,52 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endpoint"),
                               protoField : new SFString("set_endpoint")})])})),
-                      .setSourceCode("ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      if (trafo) {\n"+
-"		      transnode.translation = trafo.translation;\n"+
-"		      rotscalenode.rotation = trafo.rotation;\n"+
-"		      rotscalenode.scale = trafo.scale;\n"+
-"	      }\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val);\n"+
-"        }")])})])}))}),
+                      {ecmascript:
+        },
+ {ecmascript: function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	},
+ {ecmascript: function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        },
+ {ecmascript: function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        },
+ {ecmascript: function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        },
+ {ecmascript: function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }}])})])}))}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),

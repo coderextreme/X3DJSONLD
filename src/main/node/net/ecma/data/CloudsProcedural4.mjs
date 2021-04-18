@@ -7,7 +7,6 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
@@ -72,68 +71,68 @@ var X3D0 =  new X3D({
               content : new SFString("fix links")})])})),
       Scene : new SFNode(
         new Scene({
-          { "#comment" : new CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node.") },
+          /*A png image file for the cloud texture must be designated in the ecmascript node.*/
           children : new MFNode([
             new Viewpoint({
               description : new SFString("Main"),
               jump : new SFBool(false),
-              orientation : new SFRotation([0,1,0,1.57]),
-              position : new SFVec3f([50000,1000,42000])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,1.57])),
+              position : new SFVec3f(new SFVec3f([50000,1000,42000]))}),
 
             new Viewpoint({
               description : new SFString("Light House Tower"),
               jump : new SFBool(false),
-              orientation : new SFRotation([0,1,0,1.3]),
-              position : new SFVec3f([45000,1290,44000])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,1.3])),
+              position : new SFVec3f(new SFVec3f([45000,1290,44000]))}),
 
             new Viewpoint({
               description : new SFString("centerWest"),
               jump : new SFBool(false),
-              orientation : new SFRotation([0,1,0,2.5]),
-              position : new SFVec3f([48000,1000,20000])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,2.5])),
+              position : new SFVec3f(new SFVec3f([48000,1000,20000]))}),
 
             new Background({
-              groundColor : new MFColor([0,0,1]),
-              skyColor : new MFColor([0,0,1])}),
+              groundColor : new MFColor(new MFColor([0,0,1])),
+              skyColor : new MFColor(new MFColor([0,0,1]))}),
 
             new DirectionalLight({
               ambientIntensity : new SFFloat(1),
-              direction : new SFVec3f([-1,0,0]),
+              direction : new SFVec3f(new SFVec3f([-1,0,0])),
               global : new SFBool(true)}),
 
             new Group({
               DEF : new SFString("Terrain"),
               children : new MFNode([
                 new Transform({
-                  scale : new SFVec3f([50,50,50]),
-                  translation : new SFVec3f([25000,0,25000]),
+                  scale : new SFVec3f(new SFVec3f([50,50,50])),
+                  translation : new SFVec3f(new SFVec3f([25000,0,25000])),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"])})])}),
+                      url : new MFString(new MFString(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]))})])}),
 
                 new Transform({
-                  rotation : new SFRotation([1,0,0,1.57]),
-                  translation : new SFVec3f([25000,0,25000]),
+                  rotation : new SFRotation(new SFRotation([1,0,0,1.57])),
+                  translation : new SFVec3f(new SFVec3f([25000,0,25000])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Rectangle2D({
-                          size : new SFVec2f([77000,55000])})),
+                          size : new SFVec2f(new SFVec2f([77000,55000]))})),
                       appearance : new SFNode(
                         new Appearance({
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])}))}))})])})])}),
+                              url : new MFString(new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"]))}))}))})])})])}),
 
             new Group({
               DEF : new SFString("Placemarks"),
               children : new MFNode([
                 new Transform({
-                  scale : new SFVec3f([50,50,50]),
-                  translation : new SFVec3f([45000,30,44000]),
+                  scale : new SFVec3f(new SFVec3f([50,50,50])),
+                  translation : new SFVec3f(new SFVec3f([45000,30,44000])),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])})])})])}),
+                      url : new MFString(new MFString(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]))})])})])}),
 
             new Group({
               DEF : new SFString("Clouds"),
@@ -171,391 +170,401 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFNODE,
                       name : new SFString("Fog"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"\n"+
-"\n"+
-"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"	X = 50000*Math.random();          //  X horizontal range\n"+
-"	Y = 1000 + 300*Math.random();	 //  Y vertical base + range\n"+
-"	Z = 50000*Math.random();         // z horizontal range\n"+
-"\n"+
-"	randomt = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomt;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"\n"+
-"\n"+
-"function cumulusscale() // these values scale a cloud within a designated size\n"+
-"{\n"+
-"\n"+
-"	var maxscale = 1;\n"+
-"\n"+
-"	scale = Math.round(9+maxscale*Math.random());\n"+
-"	X = 1.5*scale;\n"+
-"	Y = scale;\n"+
-"	Z = scale;\n"+
-"\n"+
-"	randomscale = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomscale;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"\n"+
-"function cirrustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"	X = 50000*Math.random();          //  X horizontal range\n"+
-"	Y = 8000 + 1000*Math.random();	 //  Y vertical base + range\n"+
-"	Z = 50000*Math.random();         // z horizontal range\n"+
-"\n"+
-"	randomt = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomt;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"\n"+
-"\n"+
-"function cirrusscale() // these values scale a cloud within a designated size\n"+
-"{\n"+
-"\n"+
-"	var maxscale = 1;\n"+
-"\n"+
-"	scale = Math.round(9+maxscale*Math.random());\n"+
-"	X = 1.5*scale;\n"+
-"	Y = 2*Math.random();\n"+
-"	Z = 1.5*scale;\n"+
-"\n"+
-"	randomscale = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomscale;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"\n"+
-"function cumulussectiontranslation() // These random values place another portion of cumulus type cloud\n"+
-"{\n"+
-"\n"+
-"	randomtheta = 6.28319*Math.random();\n"+
-"	randomphi = .7854*Math.random();\n"+
-"	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius\n"+
-"\n"+
-"	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);\n"+
-"	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);\n"+
-"	Y = randomradius*Math.cos(randomphi);\n"+
-"	\n"+
-"\n"+
-"	randomt = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomt;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"function cirrussectiontranslation() // These random values place another portion of cirrus type cloud\n"+
-"{\n"+
-"\n"+
-"	randomtheta = 6.28319*Math.random();\n"+
-"	randomphi = .7854*Math.random();\n"+
-"	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius\n"+
-"\n"+
-"	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);\n"+
-"	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);\n"+
-"	Y = randomradius*Math.cos(randomphi);\n"+
-"	\n"+
-"\n"+
-"	randomt = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"	return randomt;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"\n"+
-"function rotation() // This random value is for the billboard rotation not used in this script\n"+
-"{\n"+
-"\n"+
-"\n"+
-"	radians = 6.28*Math.random();\n"+
-"\n"+
-"	randomr = new String('0 0 1 ' + radians );\n"+
-"	\n"+
-"	\n"+
-"	return randomr;\n"+
-"	\n"+
-"}\n"+
-"\n"+
-"function cumulus()\n"+
-"{\n"+
-"\n"+
-"var maxi = 20;  // number of clouds\n"+
-"\n"+
-"var maxj = 5; // denotes how many portions affecting the size of the cloud\n"+
-"\n"+
-"var maxk = 8;  // number of billboards indicating cloud density\n"+
-"\n"+
-"var sectionradius = 100;  //radius of individual cloud sections\n"+
-"\n"+
-"\n"+
-"\n"+
-"\n"+
-"\n"+
-"for (var i=0; i < maxi; i++) \n"+
-"{\n"+
-"\n"+
-"\n"+
-"\n"+
-"CloudStringA = '	Transform {		\\n' +\n"+
-"'    scale '+ cumulusscale() + '               	\\n' +\n"+
-"'    translation '+ cumulustranslation() + '    \\n' +    // cloud placement\n"+
-"'    children [	                                \\n';\n"+
-"\n"+
-"\n"+
-"CloudStringB = new Array();\n"+
-"CloudStringF = new Array();\n"+
-"\n"+
-"   	for (var j=0; j < maxj; j++)\n"+
-"   	{\n"+
-"\n"+
-"	radius = 0;\n"+
-"\n"+
-"	CloudStringB[j]= '  Transform {		    	       \\n' +\n"+
-"	'    translation '+ cumulussectiontranslation() + '    \\n' +     // section placement\n"+
-"	'    children [	                                       \\n';\n"+
-"\n"+
-"	\n"+
-"	CloudStringC = new Array();\n"+
-"	image = new String();\n"+
-"\n"+
-"      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud \n"+
-"      		{\n"+
-"\n"+
-"\n"+
-"		randomtheta = 6.28319*Math.random();\n"+
-"		randomphi = 1.57079*Math.random();\n"+
-"		radius = radius+(sectionradius/maxk); // radius incremental steps based on billow radius and max billboards\n"+
-"\n"+
-"		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);\n"+
-"		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);\n"+
-"		Y = radius*Math.cos(randomphi);\n"+
-"\n"+
-"\n"+
-"		if (Y <= 30) //cloud shading and lighting control\n"+
-"  	{	\n"+
-"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
-"  	}\n"+
-"\n"+
-"  		else\n"+
-"  	{	\n"+
-"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
-"  	}\n"+
-"\n"+
-"	\n"+
-"		\n"+
-"		Billboardtranslation = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"		CloudStringC[k] = '	Transform {		                \\n' +\n"+
-"		'            translation '+ Billboardtranslation   + '          \\n' +     // random billboard placement within radius designated above\n"+
-"		'	  children [	                                        \\n' +\n"+
-"		'	      Billboard {	                                \\n' +\n"+
-"		'	        axisOfRotation 0 0 0	                        \\n' +     // 0 0 0 designates rotation on all axis\n"+
-"		'	        children [	                                \\n' +\n"+
-"		'	            Transform {	                		\\n' +\n"+
-"		'	              rotation  0 0 0 0 		        \\n' +     // a rotation of the individual billboards can be defined\n"+
-"		'	              children [	                        \\n' +\n"+
-"		'	                  Shape {	                        \\n' +\n"+
-"		'	                    appearance Appearance {	        \\n' +\n"+
-"		'				material Material {		\\n' +\n"+
-"		'				                }  		\\n' +\n"+
-"		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [ ' + image + ' ]           \\n' + \n"+
-"		'	                      }	                                \\n' +\n"+
-"		'	                    }	                                \\n' +\n"+
-"		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+
-"		'	                      coordIndex [ 0, 1, 2, 3 ]	        \\n' +\n"+
-"		'			      solid FALSE		        \\n' +\n"+
-"		'	                      coord Coordinate {	        \\n' +\n"+
-"		'	                        point [ 50 50 0,	        \\n' +     // define size of the geometry. Here 100 meter 2D square.\n"+
-"		'	                                50 -50 0,	        \\n' +\n"+
-"		'	                               -50 -50 0,	        \\n' +\n"+
-"		'	                               -50 50 0 ]	        \\n' +\n"+
-"		'	                      }	                                \\n' +\n"+
-"		'	                    }	                                \\n' +\n"+
-"		'	                  }	                                \\n' +\n"+
-"		'	              ]	                                        \\n' +\n"+
-"		'	            }	                                        \\n' +\n"+
-"		'	       ]	                                        \\n' +\n"+
-"		'	   }	                                                \\n' +\n"+
-"		'      ]	                                                \\n' +\n"+
-"		'     }	                                                        \\n';      \n"+
-"		\n"+
-"\n"+
-"		}\n"+
-"\n"+
-"	CloudStringD = CloudStringC.join(' ');\n"+
-"\n"+
-"	\n"+
-"	CloudStringE = '   ]	                 \\n' +\n"+
-"	'	}	                         \\n';\n"+
-"\n"+
-"	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;\n"+
-"\n"+
-"\n"+
-"	}\n"+
-"\n"+
-"CloudStringG = CloudStringF.join(' ');\n"+
-"\n"+
-"CloudStringH = '      ]	                                        \\n' +\n"+
-"'     }	                                                        \\n' +\n"+
-"'#########################################################      \\n';\n"+
-"\n"+
-"CloudString = CloudStringA + CloudStringG + CloudStringH;\n"+
-"\n"+
-"\n"+
-"\n"+
-"newNode = Browser.createVrmlFromString(CloudString);\n"+
-"Cumulus.children[i] = newNode[0];\n"+
-"\n"+
-"\n"+
-"   }\n"+
-"\n"+
-"}\n"+
-"\n"+
-"function cirrus()\n"+
-"\n"+
-"{\n"+
-"\n"+
-"var maxi = 2;  // number of clouds\n"+
-"\n"+
-"var maxj = 5; // denotes how many portions affecting the size of the cloud\n"+
-"\n"+
-"var maxk = 8;  // number of billboards indicating cloud density\n"+
-"\n"+
-"var sectionradius = 1000;  //radius of individual cloud sections\n"+
-"\n"+
-"\n"+
-"\n"+
-"\n"+
-"\n"+
-"for (var i=0; i < maxi; i++) \n"+
-"{\n"+
-"\n"+
-"\n"+
-"\n"+
-"CloudStringA = '	Transform {		 \\n' +\n"+
-"'    scale '+ cirrusscale() + '               	 \\n' +\n"+
-"'    translation '+ cirrustranslation() + '      \\n' +    // cloud placement\n"+
-"'    children [	                                 \\n';\n"+
-"\n"+
-"\n"+
-"CloudStringB = new Array();\n"+
-"CloudStringF = new Array();\n"+
-"\n"+
-"   	for (var j=0; j < maxj; j++)\n"+
-"   	{\n"+
-"\n"+
-"	radius = 0;\n"+
-"\n"+
-"	CloudStringB[j]= '  Transform {		    	      \\n' +\n"+
-"	'    translation '+ cirrussectiontranslation() + '    \\n' +     // section placement\n"+
-"	'    children [	                                      \\n';\n"+
-"\n"+
-"	\n"+
-"	CloudStringC = new Array();\n"+
-"\n"+
-"      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud \n"+
-"      		{\n"+
-"\n"+
-"\n"+
-"		randomtheta = 6.28319*Math.random();\n"+
-"		randomphi = 1.57079*Math.random();\n"+
-"		radius = radius+(sectionradius/maxk); // radius incremental steps based on section radius and max billboards\n"+
-"\n"+
-"		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);\n"+
-"		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);\n"+
-"		Y = radius*Math.cos(randomphi);\n"+
-"		\n"+
-"		Billboardtranslation = new String(X+' '+Y+' '+Z);\n"+
-"\n"+
-"		CloudStringC[k] = '	Transform {		                \\n' +\n"+
-"		'            translation '+ Billboardtranslation   + '          \\n' +     // random billboard placement within radius designated above\n"+
-"		'	  children [	                                        \\n' +\n"+
-"		'	      Billboard {	                                \\n' +\n"+
-"		'	        axisOfRotation 0 0 0	                        \\n' +     // 0 0 0 designates rotation on all axis\n"+
-"		'	        children [	                                \\n' +\n"+
-"		'	            Transform {	                		\\n' +\n"+
-"		'	              rotation '  + rotation() + '	        \\n' +\n"+
-"		'	              children [	                        \\n' +\n"+
-"		'	                  Shape {	                        \\n' +\n"+
-"		'	                    appearance Appearance {	        \\n' +\n"+
-"		'			    material Material {			\\n' +\n"+
-"		'			    }					\\n' +\n"+
-" 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
-"		'	                      }	                                \\n' +\n"+
-"		'	                    }	                                \\n' +\n"+
-"		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+
-"		'	                      coordIndex [ 0, 1, 2, 3 ]	        \\n' +\n"+
-"		'			      solid FALSE		        \\n' +\n"+
-"		'	                      coord Coordinate {	        \\n' +\n"+
-"		'	                        point [ 500 500 0,	        \\n' +     // define size of the geometry. Here 100 meter 2D square.\n"+
-"		'	                                500 -500 0,	        \\n' +\n"+
-"		'	                               -500 -500 0,	        \\n' +\n"+
-"		'	                               -500 500 0 ]	        \\n' +\n"+
-"		'	                      }	                                \\n' +\n"+
-"		'	                    }	                                \\n' +\n"+
-"		'	                  }	                                \\n' +\n"+
-"		'	              ]	                                        \\n' +\n"+
-"		'	            }	                                        \\n' +\n"+
-"		'	       ]	                                        \\n' +\n"+
-"		'	   }	                                                \\n' +\n"+
-"		'      ]	                                                \\n' +\n"+
-"		'     }	                                                        \\n';      \n"+
-"		\n"+
-"\n"+
-"		}\n"+
-"\n"+
-"	CloudStringD = CloudStringC.join(' ');\n"+
-"\n"+
-"	CloudStringE = '   ]	                 \\n' +\n"+
-"	'	}	                         \\n';\n"+
-"\n"+
-"	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;\n"+
-"\n"+
-"\n"+
-"	}\n"+
-"\n"+
-"CloudStringG = CloudStringF.join(' ');\n"+
-"\n"+
-"CloudStringH = '      ]	                                        \\n' +\n"+
-"'     }	                                                        \\n' +\n"+
-"'#########################################################      \\n';\n"+
-"\n"+
-"CloudString = CloudStringA + CloudStringG + CloudStringH;\n"+
-"\n"+
-"\n"+
-"\n"+
-"newNode = Browser.createVrmlFromString(CloudString);\n"+
-"Cirrus.children[i] = newNode[0];\n"+
-"\n"+
-"  }\n"+
-"\n"+
-"}\n"+
-"\n"+
-"\n"+
-"function initialize()\n"+
-"\n"+
-"{\n"+
-"\n"+
-"cumulus();\n"+
-"\n"+
-"cirrus();\n"+
-"}")])}),
+                  {ecmascript:
+
+
+},
+ {ecmascript: function cumulustranslation() // These values designate the boundary location of the cloud
+{
+	X = 50000*Math.random();          //  X horizontal range
+	Y = 1000 + 300*Math.random();	 //  Y vertical base + range
+	Z = 50000*Math.random();         // z horizontal range
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+
+},
+ {ecmascript: function cumulusscale() // these values scale a cloud within a designated size
+{
+
+	var maxscale = 1;
+
+	scale = Math.round(9+maxscale*Math.random());
+	X = 1.5*scale;
+	Y = scale;
+	Z = scale;
+
+	randomscale = new String(X+' '+Y+' '+Z);
+
+	return randomscale;
+	
+}
+
+
+},
+ {ecmascript: function cirrustranslation() // These values designate the boundary location of the cloud
+{
+	X = 50000*Math.random();          //  X horizontal range
+	Y = 8000 + 1000*Math.random();	 //  Y vertical base + range
+	Z = 50000*Math.random();         // z horizontal range
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+
+},
+ {ecmascript: function cirrusscale() // these values scale a cloud within a designated size
+{
+
+	var maxscale = 1;
+
+	scale = Math.round(9+maxscale*Math.random());
+	X = 1.5*scale;
+	Y = 2*Math.random();
+	Z = 1.5*scale;
+
+	randomscale = new String(X+' '+Y+' '+Z);
+
+	return randomscale;
+	
+}
+
+
+},
+ {ecmascript: function cumulussectiontranslation() // These random values place another portion of cumulus type cloud
+{
+
+	randomtheta = 6.28319*Math.random();
+	randomphi = .7854*Math.random();
+	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius
+
+	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);
+	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);
+	Y = randomradius*Math.cos(randomphi);
+	
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+},
+ {ecmascript: function cirrussectiontranslation() // These random values place another portion of cirrus type cloud
+{
+
+	randomtheta = 6.28319*Math.random();
+	randomphi = .7854*Math.random();
+	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius
+
+	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);
+	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);
+	Y = randomradius*Math.cos(randomphi);
+	
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+},
+ {ecmascript: function rotation() // This random value is for the billboard rotation not used in this script
+{
+
+
+	radians = 6.28*Math.random();
+
+	randomr = new String('0 0 1 ' + radians );
+	
+	
+	return randomr;
+	
+}
+
+},
+ {ecmascript: function cumulus()
+{
+
+var maxi = 20;  // number of clouds
+
+var maxj = 5; // denotes how many portions affecting the size of the cloud
+
+var maxk = 8;  // number of billboards indicating cloud density
+
+var sectionradius = 100;  //radius of individual cloud sections
+
+
+
+
+
+for (var i=0; i < maxi; i++) 
+{
+
+
+
+CloudStringA = '	Transform {		\\n' +
+'    scale '+ cumulusscale() + '               	\\n' +
+'    translation '+ cumulustranslation() + '    \\n' +    // cloud placement
+'    children [	                                \\n';
+
+
+CloudStringB = new Array();
+CloudStringF = new Array();
+
+   	for (var j=0; j < maxj; j++)
+   	{
+
+	radius = 0;
+
+	CloudStringB[j]= '  Transform {		    	       \\n' +
+	'    translation '+ cumulussectiontranslation() + '    \\n' +     // section placement
+	'    children [	                                       \\n';
+
+	
+	CloudStringC = new Array();
+	image = new String();
+
+      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud 
+      		{
+
+
+		randomtheta = 6.28319*Math.random();
+		randomphi = 1.57079*Math.random();
+		radius = radius+(sectionradius/maxk); // radius incremental steps based on billow radius and max billboards
+
+		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);
+		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);
+		Y = radius*Math.cos(randomphi);
+
+
+		if (Y <= 30) //cloud shading and lighting control
+  	{	
+	image = ' "CloudTexture1_5.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \\n';
+  	}
+
+  		else
+  	{	
+	image = ' "CloudTexture1_4.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \\n';
+  	}
+
+	
+		
+		Billboardtranslation = new String(X+' '+Y+' '+Z);
+
+		CloudStringC[k] = '	Transform {		                \\n' +
+		'            translation '+ Billboardtranslation   + '          \\n' +     // random billboard placement within radius designated above
+		'	  children [	                                        \\n' +
+		'	      Billboard {	                                \\n' +
+		'	        axisOfRotation 0 0 0	                        \\n' +     // 0 0 0 designates rotation on all axis
+		'	        children [	                                \\n' +
+		'	            Transform {	                		\\n' +
+		'	              rotation  0 0 0 0 		        \\n' +     // a rotation of the individual billboards can be defined
+		'	              children [	                        \\n' +
+		'	                  Shape {	                        \\n' +
+		'	                    appearance Appearance {	        \\n' +
+		'				material Material {		\\n' +
+		'				                }  		\\n' +
+		'	                      texture ImageTexture {	        \\n' +
+		'	                        url [ ' + image + ' ]           \\n' + 
+		'	                      }	                                \\n' +
+		'	                    }	                                \\n' +
+		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture
+		'	                      coordIndex [ 0, 1, 2, 3 ]	        \\n' +
+		'			      solid FALSE		        \\n' +
+		'	                      coord Coordinate {	        \\n' +
+		'	                        point [ 50 50 0,	        \\n' +     // define size of the geometry. Here 100 meter 2D square.
+		'	                                50 -50 0,	        \\n' +
+		'	                               -50 -50 0,	        \\n' +
+		'	                               -50 50 0 ]	        \\n' +
+		'	                      }	                                \\n' +
+		'	                    }	                                \\n' +
+		'	                  }	                                \\n' +
+		'	              ]	                                        \\n' +
+		'	            }	                                        \\n' +
+		'	       ]	                                        \\n' +
+		'	   }	                                                \\n' +
+		'      ]	                                                \\n' +
+		'     }	                                                        \\n';      
+		
+
+		}
+
+	CloudStringD = CloudStringC.join(' ');
+
+	
+	CloudStringE = '   ]	                 \\n' +
+	'	}	                         \\n';
+
+	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;
+
+
+	}
+
+CloudStringG = CloudStringF.join(' ');
+
+CloudStringH = '      ]	                                        \\n' +
+'     }	                                                        \\n' +
+'#########################################################      \\n';
+
+CloudString = CloudStringA + CloudStringG + CloudStringH;
+
+
+
+newNode = Browser.createVrmlFromString(CloudString);
+Cumulus.children[i] = newNode[0];
+
+
+   }
+
+}
+
+},
+ {ecmascript: function cirrus()
+
+{
+
+var maxi = 2;  // number of clouds
+
+var maxj = 5; // denotes how many portions affecting the size of the cloud
+
+var maxk = 8;  // number of billboards indicating cloud density
+
+var sectionradius = 1000;  //radius of individual cloud sections
+
+
+
+
+
+for (var i=0; i < maxi; i++) 
+{
+
+
+
+CloudStringA = '	Transform {		 \\n' +
+'    scale '+ cirrusscale() + '               	 \\n' +
+'    translation '+ cirrustranslation() + '      \\n' +    // cloud placement
+'    children [	                                 \\n';
+
+
+CloudStringB = new Array();
+CloudStringF = new Array();
+
+   	for (var j=0; j < maxj; j++)
+   	{
+
+	radius = 0;
+
+	CloudStringB[j]= '  Transform {		    	      \\n' +
+	'    translation '+ cirrussectiontranslation() + '    \\n' +     // section placement
+	'    children [	                                      \\n';
+
+	
+	CloudStringC = new Array();
+
+      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud 
+      		{
+
+
+		randomtheta = 6.28319*Math.random();
+		randomphi = 1.57079*Math.random();
+		radius = radius+(sectionradius/maxk); // radius incremental steps based on section radius and max billboards
+
+		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);
+		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);
+		Y = radius*Math.cos(randomphi);
+		
+		Billboardtranslation = new String(X+' '+Y+' '+Z);
+
+		CloudStringC[k] = '	Transform {		                \\n' +
+		'            translation '+ Billboardtranslation   + '          \\n' +     // random billboard placement within radius designated above
+		'	  children [	                                        \\n' +
+		'	      Billboard {	                                \\n' +
+		'	        axisOfRotation 0 0 0	                        \\n' +     // 0 0 0 designates rotation on all axis
+		'	        children [	                                \\n' +
+		'	            Transform {	                		\\n' +
+		'	              rotation '  + rotation() + '	        \\n' +
+		'	              children [	                        \\n' +
+		'	                  Shape {	                        \\n' +
+		'	                    appearance Appearance {	        \\n' +
+		'			    material Material {			\\n' +
+		'			    }					\\n' +
+ 		'	                      texture ImageTexture {	        \\n' +
+		'	                        url ["cloudtexture3.png" "https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png" ] \\n' +
+		'	                      }	                                \\n' +
+		'	                    }	                                \\n' +
+		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture
+		'	                      coordIndex [ 0, 1, 2, 3 ]	        \\n' +
+		'			      solid FALSE		        \\n' +
+		'	                      coord Coordinate {	        \\n' +
+		'	                        point [ 500 500 0,	        \\n' +     // define size of the geometry. Here 100 meter 2D square.
+		'	                                500 -500 0,	        \\n' +
+		'	                               -500 -500 0,	        \\n' +
+		'	                               -500 500 0 ]	        \\n' +
+		'	                      }	                                \\n' +
+		'	                    }	                                \\n' +
+		'	                  }	                                \\n' +
+		'	              ]	                                        \\n' +
+		'	            }	                                        \\n' +
+		'	       ]	                                        \\n' +
+		'	   }	                                                \\n' +
+		'      ]	                                                \\n' +
+		'     }	                                                        \\n';      
+		
+
+		}
+
+	CloudStringD = CloudStringC.join(' ');
+
+	CloudStringE = '   ]	                 \\n' +
+	'	}	                         \\n';
+
+	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;
+
+
+	}
+
+CloudStringG = CloudStringF.join(' ');
+
+CloudStringH = '      ]	                                        \\n' +
+'     }	                                                        \\n' +
+'#########################################################      \\n';
+
+CloudString = CloudStringA + CloudStringG + CloudStringH;
+
+
+
+newNode = Browser.createVrmlFromString(CloudString);
+Cirrus.children[i] = newNode[0];
+
+  }
+
+}
+
+
+},
+ {ecmascript: function initialize()
+
+{
+
+cumulus();
+
+cirrus();
+}}])}),
 
                 new DirectionalLight({
                   ambientIntensity : new SFFloat(1),
-                  color : new SFColor([1,0,0]),
-                  direction : new SFVec3f([-1,-1,0]),
+                  color : new SFColor(new SFColor([1,0,0])),
+                  direction : new SFVec3f(new SFVec3f([-1,-1,0])),
                   global : new SFBool(true)})])})])}))});
 console.log(X3D0.toXMLNode());

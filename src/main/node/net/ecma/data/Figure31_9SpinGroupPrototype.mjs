@@ -11,7 +11,6 @@ import { WorldInfo } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { IS } from './x3d.mjs';
@@ -93,7 +92,7 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFNODE,
                       name : new SFString("children"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      { "#comment" : new CommentsBlock("NULL node initialization") }}),
+                      /*NULL node initialization*/}),
 
                     new field({
                       type : field.TYPE_SFTIME,
@@ -129,7 +128,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("children"),
                               protoField : new SFString("children")})])}))}),
-                  { "#comment" : new CommentsBlock("following nodes will not be rendered, only the first node of a ProtoBody is drawn") },
+                  /*following nodes will not be rendered, only the first node of a ProtoBody is drawn*/
 
                     new TimeSensor({
                       DEF : new SFString("SpinGroupClock"),
@@ -154,8 +153,8 @@ var X3D0 =  new X3D({
 
                     new OrientationInterpolator({
                       DEF : new SFString("Spinner"),
-                      key : new MFFloat([0,0.5,1]),
-                      keyValue : new MFRotation([0,1,0,0,0,1,0,3.14,0,1,0,6.28])}),
+                      key : new MFFloat(new MFFloat([0,0.5,1])),
+                      keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,3.14,0,1,0,6.28]))}),
 
                     new ROUTE({
                       fromField : new SFString("fraction_changed"),
@@ -168,13 +167,13 @@ var X3D0 =  new X3D({
                       fromNode : new SFString("Spinner"),
                       toField : new SFString("set_rotation"),
                       toNode : new SFString("SpinGroupTransform")})])}))}),
-          { "#comment" : new CommentsBlock("Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare).") },
+          /*Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare).*/
 
             new Viewpoint({
               description : new SFString("Click on blue crossbar to activate second SpinGroup"),
-              orientation : new SFRotation([1,0,0,-0.52]),
-              position : new SFVec3f([0,18,30])}),
-          { "#comment" : new CommentsBlock("Create an instance, meaning actual nodes that render") },
+              orientation : new SFRotation(new SFRotation([1,0,0,-0.52])),
+              position : new SFVec3f(new SFVec3f([0,18,30]))}),
+          /*Create an instance, meaning actual nodes that render*/
 
             new ProtoInstance({
               name : new SFString("SpinGroup"),
@@ -193,18 +192,18 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([25,2,2])})),
+                          size : new SFVec3f(new SFVec3f([25,2,2]))})),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("Green"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0,1,0.3])}))}))}),
+                              diffuseColor : new SFColor(new SFColor([0,1,0.3]))}))}))}),
 
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([2,25,2])})),
+                          size : new SFVec3f(new SFVec3f([2,25,2]))})),
                       appearance : new SFNode(
                         new Appearance({
                           USE : new SFString("Green")}))}),
@@ -235,13 +234,13 @@ var X3D0 =  new X3D({
                             new Shape({
                               geometry : new SFNode(
                                 new Box({
-                                  size : new SFVec3f([2,2.05,25])})),
+                                  size : new SFVec3f(new SFVec3f([2,2.05,25]))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([0,0.3,1])}))}))})])}),
-                      { "#comment" : new CommentsBlock("stopTime > startTime ensures that initial state is stopped") }])})])})])}),
+                                      diffuseColor : new SFColor(new SFColor([0,0.3,1]))}))}))})])}),
+                      /*stopTime > startTime ensures that initial state is stopped*/])})])})])}),
 
             new ROUTE({
               fromField : new SFString("touchTime"),

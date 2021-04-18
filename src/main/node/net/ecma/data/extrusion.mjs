@@ -60,14 +60,14 @@ var X3D0 =  new X3D({
                   geometry : new SFNode(
                     new Extrusion({
                       DEF : new SFString("extrusion"),
-                      spine : new MFVec3f([-50,-50,0,50,50,0]),
+                      spine : new MFVec3f(new MFVec3f([-50,-50,0,50,50,0])),
                       creaseAngle : new SFFloat(0.785),
-                      crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])})),
+                      crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0,1,0])}))}))}),
+                          diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))}),
 
                 new TimeSensor({
                   DEF : new SFString("TourTime"),
@@ -86,14 +86,15 @@ var X3D0 =  new X3D({
                       name : new SFString("spine"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("-50 -50 0 50 50 0")}),
-                  .setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_cycle(value) {\n"+
-"                        Browser.print(value);\n"+
-"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
-"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
-"                }")])}),
+                  {ecmascript:
+
+                },
+ {ecmascript: function set_cycle(value) {
+                        Browser.print(value);
+                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
+                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
+		        spine = new MFVec3f([endA, endB]);
+                }}])}),
 
                 new ROUTE({
                   fromNode : new SFString("TourTime"),

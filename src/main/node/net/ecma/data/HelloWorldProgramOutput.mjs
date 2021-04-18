@@ -2,7 +2,6 @@
 import fs from 'fs';
 import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
 import { component } from './x3d.mjs';
@@ -94,13 +93,13 @@ var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
       version : new SFString("4.0"),
-      { "#comment" : new CommentsBlock("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true") },
+      /*x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true*/
       head : new SFNode(
         new head({
-          { "#comment" : new CommentsBlock("comment #1") },
-          { "#comment" : new CommentsBlock("comment #2") },
-          { "#comment" : new CommentsBlock("comment #3") },
-          { "#comment" : new CommentsBlock("comment #4") },
+          /*comment #1*/
+          /*comment #2*/
+          /*comment #3*/
+          /*comment #4*/
           component : new SFNode(
             new component({
               name : new SFString("Navigation"),
@@ -237,11 +236,11 @@ var X3D0 =  new X3D({
                 new Viewpoint({
                   DEF : new SFString("TopDownView"),
                   description : new SFString("top-down view from above"),
-                  orientation : new SFRotation([1,0,0,-1.570796]),
-                  position : new SFVec3f([0,100,0])})])}),
+                  orientation : new SFRotation(new SFRotation([1,0,0,-1.570796])),
+                  position : new SFVec3f(new SFVec3f([0,100,0]))})])}),
 
             new NavigationInfo({
-              type : ["EXAMINE","FLY","ANY"]}),
+              type : new (["EXAMINE","FLY","ANY"])}),
 
             new WorldInfo({
               DEF : new SFString("WorldInfoDEF"),
@@ -256,19 +255,19 @@ var X3D0 =  new X3D({
             new MetadataString({
               name : new SFString("test"),
               DEF : new SFString("scene.addChildMetadata"),
-              value : new MFString(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])}),
+              value : new MFString(new MFString(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]))}),
           layerSet : new SFNode(
             new LayerSet({
               DEF : new SFString("scene.addChildLayerSetTest")})),
 
             new Transform({
               DEF : new SFString("LogoGeometryTransform"),
-              translation : new SFVec3f([0,1.5,0]),
+              translation : new SFVec3f(new SFVec3f([0,1.5,0])),
               children : new MFNode([
                 new Anchor({
                   DEF : new SFString("siteAnchor"),
                   description : new SFString("select for X3D Java SAI Library (X3DJSAIL) description"),
-                  url : new MFString(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]),
+                  url : new MFString(new MFString(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"])),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("BoxShape"),
@@ -277,12 +276,12 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("GreenMaterial"),
-                              diffuseColor : new SFColor([0,1,1]),
-                              emissiveColor : new SFColor([0.8,0,0]),
+                              diffuseColor : new SFColor(new SFColor([0,1,1])),
+                              emissiveColor : new SFColor(new SFColor([0.8,0,0])),
                               transparency : new SFFloat(0.1)})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])}))})),
+                              url : new MFString(new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]))}))})),
                       geometry : new SFNode(
                         new Box({
                           DEF : new SFString("test-NMTOKEN_regex.0123456789"),
@@ -294,19 +293,19 @@ var X3D0 =  new X3D({
                 new Appearance({
                   material : new SFNode(
                     new Material({
-                      emissiveColor : new SFColor([0.6,0.19607843,0.8])}))})),
+                      emissiveColor : new SFColor(new SFColor([0.6,0.19607843,0.8]))}))})),
               geometry : new SFNode(
                 new IndexedLineSet({
-                  coordIndex : new MFInt32([0,1,2,3,4,0]),
-                  { "#comment" : new CommentsBlock("Coordinate 3-tuple point count: 6") },
+                  coordIndex : new MFInt32(new MFInt32([0,1,2,3,4,0])),
+                  /*Coordinate 3-tuple point count: 6*/
                   coord : new SFNode(
                     new Coordinate({
-                      point : new MFVec3f([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0])}))}))}),
+                      point : new MFVec3f(new MFVec3f([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]))}))}))}),
 
             new PositionInterpolator({
               DEF : new SFString("BoxPathAnimator"),
-              key : new MFFloat([0,0.125,0.375,0.625,0.875,1]),
-              keyValue : new MFVec3f([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0])}),
+              key : new MFFloat(new MFFloat([0,0.125,0.375,0.625,0.875,1])),
+              keyValue : new MFVec3f(new MFVec3f([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]))}),
 
             new TimeSensor({
               DEF : new SFString("OrbitClock"),
@@ -327,7 +326,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("TextTransform"),
-              translation : new SFVec3f([0,-1.5,0]),
+              translation : new SFVec3f(new SFVec3f([0,-1.5,0])),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -337,45 +336,45 @@ var X3D0 =  new X3D({
                           USE : new SFString("GreenMaterial")}))})),
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["X3D Java","SAI Library","X3DJSAIL"]),
-                      { "#comment" : new CommentsBlock("Comment example A, plain quotation marks: He said, \"Immel did it!\"") },
-                      { "#comment" : new CommentsBlock("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;") },
+                      string : new MFString(new MFString(["X3D Java","SAI Library","X3DJSAIL"])),
+                      /*Comment example A, plain quotation marks: He said, \"Immel did it!\"*/
+                      /*Comment example B, XML character entities: He said, &quot;Immel did it!&quot;*/
                       metadata : new MFNode([
                         new MetadataSet({
                           name : new SFString("EscapedQuotationMarksMetadataSet"),
                           value : new SFNode(
                             new MetadataString({
                               name : new SFString("quotesTestC"),
-                              value : new MFString(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""])})),
+                              value : new MFString(new MFString(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]))})),
                           value : new SFNode(
                             new MetadataString({
                               name : new SFString("extraChildTest"),
-                              value : new MFString(["checks MetadataSet addValue() method"])}))}),
+                              value : new MFString(new MFString(["checks MetadataSet addValue() method"]))}))}),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"])}))])}))}),
+                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))])}))}),
 
                 new Collision({
-                  { "#comment" : new CommentsBlock("test containerField='proxy'") },
+                  /*test containerField='proxy'*/
                   proxy : new SFNode(
                     new Shape({
                       DEF : new SFString("ProxyShape"),
-                      { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'") },
-                      { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'") },
-                      { "#comment" : new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})") },
-                      { "#comment" : new CommentsBlock("reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html") },
+                      /*alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'*/
+                      /*alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'*/
+                      /*alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})*/
+                      /*reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html*/
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["One, Two, Text","","He said, \"Immel did it!\" \"\""])}))}))}),
-              { "#comment" : new CommentsBlock("It's a beautiful world") },
-              { "#comment" : new CommentsBlock("... for you!") },
-              { "#comment" : new CommentsBlock("https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)") }])}),
-          { "#comment" : new CommentsBlock("repeatedly spin 180 degrees as a readable special effect") },
+                          string : new MFString(new MFString(["One, Two, Text","","He said, \"Immel did it!\" \"\""]))}))}))}),
+              /*It's a beautiful world*/
+              /*... for you!*/
+              /*https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)*/])}),
+          /*repeatedly spin 180 degrees as a readable special effect*/
 
             new OrientationInterpolator({
               DEF : new SFString("SpinInterpolator"),
-              key : new MFFloat([0,0.5,1]),
-              keyValue : new MFRotation([0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964])}),
+              key : new MFFloat(new MFFloat([0,0.5,1])),
+              keyValue : new MFRotation(new MFRotation([0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]))}),
 
             new TimeSensor({
               DEF : new SFString("SpinClock"),
@@ -412,19 +411,20 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFCOLOR,
                       name : new SFString("colorsOutput"),
                       accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"\n"+
-"function colorInput (eventValue) // Example source code\n"+
-"{\n"+
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
-"}")])}),
+                  {ecmascript:
+
+},
+ {ecmascript: function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');
+}}])}),
 
                 new ColorInterpolator({
                   DEF : new SFString("ColorAnimator"),
-                  key : new MFFloat([0,0.5,1]),
-                  keyValue : new MFColor([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1]),
-                  { "#comment" : new CommentsBlock("AZURE to INDIGO and back again") }}),
+                  key : new MFFloat(new MFFloat([0,0.5,1])),
+                  keyValue : new MFColor(new MFColor([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1])),
+                  /*AZURE to INDIGO and back again*/}),
 
                 new TimeSensor({
                   DEF : new SFString("ColorClock"),
@@ -469,15 +469,15 @@ var X3D0 =  new X3D({
                       value : new SFString("true")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
-                  { "#comment" : new CommentsBlock("Initial node of ProtoBody determines prototype node type") },
+                  /*Initial node of ProtoBody determines prototype node type*/
                   children : new MFNode([
                     new Material({
                       ambientIntensity : new SFFloat(0.25),
-                      diffuseColor : new SFColor([0.282435,0.085159,0.134462]),
+                      diffuseColor : new SFColor(new SFColor([0.282435,0.085159,0.134462])),
                       shininess : new SFFloat(0.127273),
-                      specularColor : new SFColor([0.276305,0.11431,0.139857])}),
-                  { "#comment" : new CommentsBlock("[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\"") },
-                  { "#comment" : new CommentsBlock("presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types") },
+                      specularColor : new SFColor(new SFColor([0.276305,0.11431,0.139857]))}),
+                  /*[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\"*/
+                  /*presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types*/
 
                     new TouchSensor({
                       description : new SFString("within ProtoBody"),
@@ -495,26 +495,26 @@ var X3D0 =  new X3D({
             new ExternProtoDeclare({
               name : new SFString("ArtDeco02Material"),
               appinfo : new SFString("this is a different Material node"),
-              url : new MFString(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]),
-              { "#comment" : new CommentsBlock("[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"") },
+              url : new MFString(new MFString(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"])),
+              /*[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"*/
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFSTRING,
                   name : new SFString("description"),
                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                   appinfo : new SFString("tooltip for descriptionField")})])}),
-          { "#comment" : new CommentsBlock("Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place") },
+          /*Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place*/
 
             new Shape({
               DEF : new SFString("TestShape1"),
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance1"),
-                  { "#comment" : new CommentsBlock("ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java") },
+                  /*ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java*/
                   shaders : new SFNode(
                     new ProtoInstance({
                       name : new SFString("ArtDeco01Material"),
-                      { "#comment" : new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"") },
+                      /*[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"*/
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("description"),
@@ -528,12 +528,12 @@ var X3D0 =  new X3D({
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance2"),
-                  { "#comment" : new CommentsBlock("ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java") },
+                  /*ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java*/
                   shaders : new SFNode(
                     new ProtoInstance({
                       name : new SFString("ArtDeco02Material"),
                       DEF : new SFString("ArtDeco02MaterialDEF"),
-                      { "#comment" : new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"") },
+                      /*[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"*/
                       fieldValue : new MFNode([
                         new fieldValue({
                           name : new SFString("description"),
@@ -548,7 +548,7 @@ var X3D0 =  new X3D({
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance3"),
-                  { "#comment" : new CommentsBlock("ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.") },
+                  /*ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.*/
                   shaders : new SFNode(
                     new ProtoInstance({
                       USE : new SFString("ArtDeco02MaterialDEF")}))})),
@@ -559,7 +559,7 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("inlineScene"),
-              url : new MFString(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])}),
+              url : new MFString(new MFString(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]))}),
 
             new IMPORT({
               aS : new SFString("WorldInfoDEF2"),
@@ -649,7 +649,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("ambientIntensity"),
                               protoField : new SFString("ambientIntensity")})])}))}),
-                  { "#comment" : new CommentsBlock("Only first node (the node type) is renderable, others are along for the ride") },
+                  /*Only first node (the node type) is renderable, others are along for the ride*/
 
                     new Script({
                       DEF : new SFString("MaterialModulatorScript"),
@@ -683,30 +683,33 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("diffuseColor"),
                               protoField : new SFString("diffuseColor")})])})),
-                      .setSourceCode("ecmascript:\n"+
-"function initialize ()\n"+
-"{\n"+
-"    newColor = diffuseColor; // start with correct color\n"+
-"}\n"+
-"function set_enabled (newValue)\n"+
-"{\n"+
-"	enabled = newValue;\n"+
-"}\n"+
-"function clockTrigger (timeValue)\n"+
-"{\n"+
-"    if (!enabled) return;\n"+
-"    red   = newColor.r;\n"+
-"    green = newColor.g;\n"+
-"    blue  = newColor.b;\n"+
-"\n"+
-"    // note different modulation rates for each color component, % is modulus operator\n"+
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
-"	if (enabled)\n"+
-"	{\n"+
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
-"	}\n"+
-"}")])})])}))}),
-          { "#comment" : new CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()") },
+                      {ecmascript:
+},
+ {ecmascript: function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+},
+ {ecmascript: function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+},
+ {ecmascript: function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');
+	}
+}}])})])}))}),
+          /*Test success: declarative statement createDeclarativeShapeTests()*/
 
             new Group({
               DEF : new SFString("DeclarativeGroupExample"),
@@ -716,11 +719,11 @@ var X3D0 =  new X3D({
                     new MetadataString({
                       name : new SFString("findThisNameValue"),
                       DEF : new SFString("FindableMetadataStringTest"),
-                      value : new MFString(["test case"])}),
+                      value : new MFString(new MFString(["test case"]))}),
                   appearance : new SFNode(
                     new Appearance({
                       DEF : new SFString("DeclarativeAppearanceExample"),
-                      { "#comment" : new CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance") },
+                      /*DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance*/
                       shaders : new SFNode(
                         new ProtoInstance({
                           name : new SFString("MaterialModulator"),
@@ -730,54 +733,54 @@ var X3D0 =  new X3D({
                       bottom : new SFBool(false),
                       bottomRadius : new SFFloat(0.05),
                       height : new SFFloat(0.1)}))])}),
-              { "#comment" : new CommentsBlock("Test success: declarativeGroup.addChild() singleton pipeline method") }])}),
-          { "#comment" : new CommentsBlock("Test success: declarative statement addChild()") },
-          { "#comment" : new CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>") },
-          { "#comment" : new CommentsBlock("Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>") },
-          { "#comment" : new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found") },
-          { "#comment" : new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found") },
-          { "#comment" : new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found") },
+              /*Test success: declarativeGroup.addChild() singleton pipeline method*/])}),
+          /*Test success: declarative statement addChild()*/
+          /*Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>*/
+          /*Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>*/
+          /*Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found*/
+          /*Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found*/
+          /*Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found*/
 
             new Group({
               DEF : new SFString("TestFieldObjectsGroup"),
-              { "#comment" : new CommentsBlock("testFieldObjects() results") },
-              { "#comment" : new CommentsBlock("SFBool default=true, true=true, false=false, negate()=true") },
-              { "#comment" : new CommentsBlock("MFBool default=, initial=true false true, negate()=false true false") },
-              { "#comment" : new CommentsBlock("SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0") },
-              { "#comment" : new CommentsBlock("MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7") },
-              { "#comment" : new CommentsBlock("... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=") },
-              { "#comment" : new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true") },
-              { "#comment" : new CommentsBlock("regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value") }}),
+              /*testFieldObjects() results*/
+              /*SFBool default=true, true=true, false=false, negate()=true*/
+              /*MFBool default=, initial=true false true, negate()=false true false*/
+              /*SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0*/
+              /*MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7*/
+              /*... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=*/
+              /*SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true*/
+              /*regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value*/}),
 
             new Sound({
-              location : new SFVec3f([0,1.6,0]),
-              { "#comment" : new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height") },
+              location : new SFVec3f(new SFVec3f([0,1.6,0])),
+              /*set sound-ellipsoid location height at 1.6m to match typical avatar height*/
               source : new SFNode(
                 new AudioClip({
                   description : new SFString("chimes"),
-                  url : new MFString(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
-                  { "#comment" : new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d") }}))}),
+                  url : new MFString(new MFString(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])),
+                  /*Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d*/}))}),
 
             new Sound({
-              location : new SFVec3f([0,1.6,0]),
-              { "#comment" : new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height") },
+              location : new SFVec3f(new SFVec3f([0,1.6,0])),
+              /*set sound-ellipsoid location height at 1.6m to match typical avatar height*/
               source : new SFNode(
                 new MovieTexture({
                   description : new SFString("mpgsys.mpg from ConformanceNist suite"),
-                  url : new MFString(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
-                  { "#comment" : new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d") },
-                  { "#comment" : new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\"") }}))}),
-          { "#comment" : new CommentsBlock("Test success: Anchor.isNode()=true, siteAnchor.isNode()=true") },
-          { "#comment" : new CommentsBlock("Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false") },
-          { "#comment" : new CommentsBlock("Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false") },
-          { "#comment" : new CommentsBlock("Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true") },
-          { "#comment" : new CommentsBlock("Test success: CommentsBlock.isNode()=false, testComments.isNode()=false") },
-          { "#comment" : new CommentsBlock("Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true") },
+                  url : new MFString(new MFString(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])),
+                  /*Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d*/
+                  /*Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\"*/}))}),
+          /*Test success: Anchor.isNode()=true, siteAnchor.isNode()=true*/
+          /*Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false*/
+          /*Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false*/
+          /*Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true*/
+          /*Test success: CommentsBlock.isNode()=false, testComments.isNode()=false*/
+          /*Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true*/
 
             new Shape({
               DEF : new SFString("ExtrusionShape"),
-              { "#comment" : new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'") },
-              { "#comment" : new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'") },
+              /*ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'*/
+              /*ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'*/
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TransparentAppearance"),
@@ -789,7 +792,7 @@ var X3D0 =  new X3D({
                   DEF : new SFString("ExampleExtrusion")}))}),
 
             new Group({
-              { "#comment" : new CommentsBlock("Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes") },
+              /*Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes*/
               children : new MFNode([
                 new ProtoDeclare({
                   name : new SFString("NewWorldInfo"),
@@ -815,7 +818,7 @@ var X3D0 =  new X3D({
 
                 new Group({
                   DEF : new SFString("Node2"),
-                  { "#comment" : new CommentsBlock("intentionally empty") }}),
+                  /*intentionally empty*/}),
 
                 new ProtoInstance({
                   name : new SFString("NewWorldInfo"),
@@ -823,8 +826,8 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("Node4"),
-                  { "#comment" : new CommentsBlock("intentionally empty") }}),
-              { "#comment" : new CommentsBlock("Test satisfactorily creates MFNode children array as an ordered list with mixed content") }])}),
+                  /*intentionally empty*/}),
+              /*Test satisfactorily creates MFNode children array as an ordered list with mixed content*/])}),
 
             new ProtoDeclare({
               name : new SFString("ShaderProto"),
@@ -836,8 +839,8 @@ var X3D0 =  new X3D({
             new Shape({
               appearance : new SFNode(
                 new Appearance({
-                  { "#comment" : new CommentsBlock("Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes") },
-                  { "#comment" : new CommentsBlock("Test satisfactorily creates MFNode shaders array as an ordered list with mixed content") },
+                  /*Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes*/
+                  /*Test satisfactorily creates MFNode shaders array as an ordered list with mixed content*/
                   shaders : new SFNode(
                     new ProgramShader({
                       DEF : new SFString("TestShader1"),
@@ -895,8 +898,8 @@ var X3D0 =  new X3D({
                 new DISEntityTypeMapping({})])}),
 
             new LoadSensor({
-              { "#comment" : new CommentsBlock("Contained nodes typically must be USE references for nodes previously DEFined in the scene") },
-              { "#comment" : new CommentsBlock("The following nodes are test cases for all X3DUrlObject nodes") },
+              /*Contained nodes typically must be USE references for nodes previously DEFined in the scene*/
+              /*The following nodes are test cases for all X3DUrlObject nodes*/
               children : new MFNode([
                 new Anchor({
                   USE : new SFString("siteAnchor")}),

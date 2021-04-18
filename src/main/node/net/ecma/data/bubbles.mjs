@@ -97,23 +97,23 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : ["EXAMINE"]}),
+              type : new (["EXAMINE"])}),
 
             new Viewpoint({
               DEF : new SFString("Tour"),
               description : new SFString("Tour Views")}),
 
             new Viewpoint({
-              position : new SFVec3f([0,0,4]),
+              position : new SFVec3f(new SFVec3f([0,0,4])),
               description : new SFString("sphere in road")}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}),
+              backUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])),
+              bottomUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])),
+              frontUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])),
+              leftUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])),
+              rightUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])),
+              topUrl : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]))}),
 
             new Transform({
               DEF : new SFString("Rose01"),
@@ -126,28 +126,28 @@ var X3D0 =  new X3D({
                       DEF : new SFString("_01_-_Default"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.7,0.7,0.7]),
-                          specularColor : new SFColor([0.5,0.5,0.5])})),
+                          diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
+                          specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))})),
                       texture : new SFNode(
                         new ComposedCubeMapTexture({
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]))})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}))})),
+                              url : new MFString(new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]))}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x_ite"),
@@ -185,11 +185,11 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])})),
+                              url : new MFString(new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]))})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))])})),
+                              url : new MFString(new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]))}))])})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x3dom"),
@@ -227,11 +227,11 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "VERTEX",
-                              url : new MFString(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])})),
+                              url : new MFString(new MFString(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]))})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))])}))}))})])}),
+                              url : new MFString(new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]))}))])}))}))})])}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),
@@ -240,13 +240,13 @@ var X3D0 =  new X3D({
 
             new PositionInterpolator({
               DEF : new SFString("TourPosition"),
-              key : new MFFloat([0,1]),
-              keyValue : new MFVec3f([0,0,10,0,0,-10])}),
+              key : new MFFloat(new MFFloat([0,1])),
+              keyValue : new MFVec3f(new MFVec3f([0,0,10,0,0,-10]))}),
 
             new OrientationInterpolator({
               DEF : new SFString("TourOrientation"),
-              key : new MFFloat([0,1]),
-              keyValue : new MFRotation([0,1,0,0,0,1,0,3.1416])}),
+              key : new MFFloat(new MFFloat([0,1])),
+              keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,3.1416]))}),
 
             new Script({
               DEF : new SFString("RandomTourTime"),
@@ -288,28 +288,30 @@ var X3D0 =  new X3D({
                   type : field.TYPE_MFROTATION,
                   name : new SFString("orientation_changed"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              .setSourceCode("ecmascript:\n"+
-"               function set_cycle(value) {\n"+
-"	       	   try {\n"+
-"                        var ov = lastKey;\n"+
-"                        do {\n"+
-"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
-"                        } while (lastKey === ov);\n"+
-"                        var vc = lastKey;\n"+
-"\n"+
-"                        position_changed = new MFVec3f();\n"+
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
-"\n"+
-"                        orientation_changed = new MFRotation();\n"+
-"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
-"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
-"		   } catch (e) {\n"+
-"		   	if (typeof console.log === 'function') {\n"+
-"				console.log(e);\n"+
-"			}\n"+
-"		   }\n"+
-"               }")])}),
+              {ecmascript:
+               },
+ {ecmascript: function set_cycle(value) {
+	       	   try {
+                        var ov = lastKey;
+                        do {
+                            lastKey = Math.round(Math.random()*(positions.length-1));
+                        } while (lastKey === ov);
+                        var vc = lastKey;
+
+                        position_changed = new MFVec3f();
+                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);
+                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
+
+                        orientation_changed = new MFRotation();
+                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
+                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
+		   } catch (e) {
+		   	if (typeof console.log === '},
+ {ecmascript: function') {
+				console.log(e);
+			}
+		   }
+               }}])}),
 
             new ROUTE({
               fromNode : new SFString("TourTime"),

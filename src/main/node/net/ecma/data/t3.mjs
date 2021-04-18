@@ -82,24 +82,24 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : ["EXAMINE","FLY","WALK"],
+              type : new (["EXAMINE","FLY","WALK"]),
               speed : new SFFloat(3),
-              avatarSize : new MFFloat([200,200,120])}),
+              avatarSize : new MFFloat(new MFFloat([200,200,120]))}),
 
             new WorldInfo({
               title : new SFString("Arts Mapper")}),
 
             new Viewpoint({
               description : new SFString("looking North"),
-              position : new SFVec3f([0,60,110]),
-              orientation : new SFRotation([1,0,0,-0.699999988079071]),
+              position : new SFVec3f(new SFVec3f([0,60,110])),
+              orientation : new SFRotation(new SFRotation([1,0,0,-0.699999988079071])),
               fieldOfView : new SFFloat(0.785398125648499)}),
 
             new Transform({
-              translation : new SFVec3f([-468,0,315]),
+              translation : new SFVec3f(new SFVec3f([-468,0,315])),
               children : new MFNode([
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("High Peak Community Arts"),
                   children : new MFNode([
                     new Transform({
@@ -109,14 +109,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("People Express"),
                   children : new MFNode([
                     new Transform({
@@ -126,14 +126,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0.600000023841858,0,0.600000023841858])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0.600000023841858,0,0.600000023841858]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("QArts/Studios"),
                   children : new MFNode([
                     new Transform({
@@ -143,14 +143,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0.600000023841858,0,0.600000023841858])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0.600000023841858,0,0.600000023841858]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("First Movement"),
                   children : new MFNode([
                     new Transform({
@@ -160,14 +160,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([1,0,0.200000002980232])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([1,0,0.200000002980232]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("City Arts"),
                   children : new MFNode([
                     new Transform({
@@ -177,14 +177,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0.600000023841858,0,0.600000023841858])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0.600000023841858,0,0.600000023841858]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Indigo Dance Group (Salamanda Tandem)"),
                   children : new MFNode([
                     new Transform({
@@ -194,14 +194,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Watering Seeds"),
                   children : new MFNode([
                     new Transform({
@@ -211,14 +211,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Fased In The Arts"),
                   children : new MFNode([
                     new Transform({
@@ -228,14 +228,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("27a Access Artspace"),
                   children : new MFNode([
                     new Transform({
@@ -245,14 +245,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([1,0,0.200000002980232])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([1,0,0.200000002980232]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Bamboozle Theatre Company"),
                   children : new MFNode([
                     new Transform({
@@ -262,14 +262,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Mantle Community Arts"),
                   children : new MFNode([
                     new Transform({
@@ -279,14 +279,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Artlink East"),
                   children : new MFNode([
                     new Transform({
@@ -296,14 +296,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("Creations"),
                   children : new MFNode([
                     new Transform({
@@ -313,14 +313,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("New Perspectives"),
                   children : new MFNode([
                     new Transform({
@@ -330,14 +330,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([1,0,0.200000002980232])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([1,0,0.200000002980232]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])}),
 
                 new Anchor({
-                  url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+                  url : new MFString(new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
                   description : new SFString("UKan2"),
                   children : new MFNode([
                     new Transform({
@@ -347,8 +347,8 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1]),
-                                  emissiveColor : new SFColor([0,0.300000011920929,1])}))})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  emissiveColor : new SFColor(new SFColor([0,0.300000011920929,1]))}))})),
                           geometry : new SFNode(
                             new Sphere({
                               radius : new SFFloat(5.10000002384186)}))})])})])})])})])}))});

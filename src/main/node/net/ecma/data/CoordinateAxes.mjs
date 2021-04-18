@@ -9,7 +9,6 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { Collision } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
@@ -88,13 +87,13 @@ var X3D0 =  new X3D({
 
             new Collision({
               DEF : new SFString("DoNotCollideWithVisualizationWidget"),
-              { "#comment" : new CommentsBlock("Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.") },
-              { "#comment" : new CommentsBlock("This NavigationInfo allows examine mode and will be overridden by any parent scene.") },
-              { "#comment" : new CommentsBlock("Each arrow goes from +1m to -1m to allow linear scaling to fit a scene") },
-              { "#comment" : new CommentsBlock("Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user") },
+              /*Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.*/
+              /*This NavigationInfo allows examine mode and will be overridden by any parent scene.*/
+              /*Each arrow goes from +1m to -1m to allow linear scaling to fit a scene*/
+              /*Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user*/
               proxy : new SFNode(
                 new Group({
-                  { "#comment" : new CommentsBlock("Vertical Y arrow and label") },
+                  /*Vertical Y arrow and label*/
                   children : new MFNode([
                     new Group({
                       DEF : new SFString("ArrowGreen"),
@@ -110,11 +109,11 @@ var X3D0 =  new X3D({
                               DEF : new SFString("Green"),
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([0.1,0.6,0.1]),
-                                  emissiveColor : new SFColor([0.05,0.2,0.05])}))}))}),
+                                  diffuseColor : new SFColor(new SFColor([0.1,0.6,0.1])),
+                                  emissiveColor : new SFColor(new SFColor([0.05,0.2,0.05]))}))}))}),
 
                         new Transform({
-                          translation : new SFVec3f([0,1,0]),
+                          translation : new SFVec3f(new SFVec3f([0,1,0])),
                           children : new MFNode([
                             new Shape({
                               geometry : new SFNode(
@@ -127,7 +126,7 @@ var X3D0 =  new X3D({
                                   USE : new SFString("Green")}))})])})])}),
 
                     new Transform({
-                      translation : new SFVec3f([0,1.08,0]),
+                      translation : new SFVec3f(new SFVec3f([0,1.08,0])),
                       children : new MFNode([
                         new Billboard({
                           children : new MFNode([
@@ -137,21 +136,21 @@ var X3D0 =  new X3D({
                                   DEF : new SFString("LABEL_APPEARANCE"),
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([1,1,0.3]),
-                                      emissiveColor : new SFColor([0.33,0.33,0.1])}))})),
+                                      diffuseColor : new SFColor(new SFColor([1,1,0.3])),
+                                      emissiveColor : new SFColor(new SFColor([0.33,0.33,0.1]))}))})),
                               geometry : new SFNode(
                                 new Text({
-                                  string : new MFString(["Y"]),
+                                  string : new MFString(new MFString(["Y"])),
                                   fontStyle : new SFNode(
                                     new FontStyle({
                                       DEF : new SFString("LABEL_FONT"),
-                                      family : new MFString(["SANS"]),
-                                      justify : new MFString(["MIDDLE","MIDDLE"]),
+                                      family : new MFString(new MFString(["SANS"])),
+                                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                                       size : new SFFloat(0.2)}))}))})])})])})])})),
               proxy : new SFNode(
                 new Transform({
-                  rotation : new SFRotation([0,0,1,-1.57079]),
-                  { "#comment" : new CommentsBlock("Horizontal X arrow and label") },
+                  rotation : new SFRotation(new SFRotation([0,0,1,-1.57079])),
+                  /*Horizontal X arrow and label*/
                   children : new MFNode([
                     new Group({
                       children : new MFNode([
@@ -167,11 +166,11 @@ var X3D0 =  new X3D({
                                   DEF : new SFString("Red"),
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([0.7,0.1,0.1]),
-                                      emissiveColor : new SFColor([0.33,0,0])}))}))}),
+                                      diffuseColor : new SFColor(new SFColor([0.7,0.1,0.1])),
+                                      emissiveColor : new SFColor(new SFColor([0.33,0,0]))}))}))}),
 
                             new Transform({
-                              translation : new SFVec3f([0,1,0]),
+                              translation : new SFVec3f(new SFVec3f([0,1,0])),
                               children : new MFNode([
                                 new Shape({
                                   geometry : new SFNode(
@@ -182,9 +181,9 @@ var X3D0 =  new X3D({
                                       USE : new SFString("Red")}))})])})])}),
 
                         new Transform({
-                          rotation : new SFRotation([0,0,1,1.57079]),
-                          translation : new SFVec3f([0.072,1.1,0]),
-                          { "#comment" : new CommentsBlock("note label rotated back to original coordinate frame") },
+                          rotation : new SFRotation(new SFRotation([0,0,1,1.57079])),
+                          translation : new SFVec3f(new SFVec3f([0.072,1.1,0])),
+                          /*note label rotated back to original coordinate frame*/
                           children : new MFNode([
                             new Billboard({
                               children : new MFNode([
@@ -194,14 +193,14 @@ var X3D0 =  new X3D({
                                       USE : new SFString("LABEL_APPEARANCE")})),
                                   geometry : new SFNode(
                                     new Text({
-                                      string : new MFString(["X"]),
+                                      string : new MFString(new MFString(["X"])),
                                       fontStyle : new SFNode(
                                         new FontStyle({
                                           USE : new SFString("LABEL_FONT")}))}))})])})])})])})])})),
               proxy : new SFNode(
                 new Transform({
-                  rotation : new SFRotation([1,0,0,1.57079]),
-                  { "#comment" : new CommentsBlock("Perpendicular Z arrow and label, note right-hand rule") },
+                  rotation : new SFRotation(new SFRotation([1,0,0,1.57079])),
+                  /*Perpendicular Z arrow and label, note right-hand rule*/
                   children : new MFNode([
                     new Group({
                       children : new MFNode([
@@ -217,11 +216,11 @@ var X3D0 =  new X3D({
                                   DEF : new SFString("Blue"),
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([0.3,0.3,1]),
-                                      emissiveColor : new SFColor([0.1,0.1,0.33])}))}))}),
+                                      diffuseColor : new SFColor(new SFColor([0.3,0.3,1])),
+                                      emissiveColor : new SFColor(new SFColor([0.1,0.1,0.33]))}))}))}),
 
                             new Transform({
-                              translation : new SFVec3f([0,1,0]),
+                              translation : new SFVec3f(new SFVec3f([0,1,0])),
                               children : new MFNode([
                                 new Shape({
                                   geometry : new SFNode(
@@ -232,9 +231,9 @@ var X3D0 =  new X3D({
                                       USE : new SFString("Blue")}))})])})])}),
 
                         new Transform({
-                          rotation : new SFRotation([1,0,0,-1.57079]),
-                          translation : new SFVec3f([0,1.1,0.072]),
-                          { "#comment" : new CommentsBlock("note label rotated back to original coordinate frame") },
+                          rotation : new SFRotation(new SFRotation([1,0,0,-1.57079])),
+                          translation : new SFVec3f(new SFVec3f([0,1.1,0.072])),
+                          /*note label rotated back to original coordinate frame*/
                           children : new MFNode([
                             new Billboard({
                               children : new MFNode([
@@ -244,7 +243,7 @@ var X3D0 =  new X3D({
                                       USE : new SFString("LABEL_APPEARANCE")})),
                                   geometry : new SFNode(
                                     new Text({
-                                      string : new MFString(["Z"]),
+                                      string : new MFString(new MFString(["Z"])),
                                       fontStyle : new SFNode(
                                         new FontStyle({
                                           USE : new SFString("LABEL_FONT")}))}))})])})])})])})])}))})])}))});

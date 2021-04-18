@@ -7,7 +7,6 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
@@ -79,74 +78,74 @@ var X3D0 =  new X3D({
               content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
-          { "#comment" : new CommentsBlock("Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)") },
-          { "#comment" : new CommentsBlock("WorldInfo begin") },
+          /*Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)*/
+          /*WorldInfo begin*/
           children : new MFNode([
             new WorldInfo({
               title : new SFString("Hello world!")}),
-          { "#comment" : new CommentsBlock("WorldInfo complete, Group begin") },
+          /*WorldInfo complete, Group begin*/
 
             new Group({
-              { "#comment" : new CommentsBlock("Viewpoint begin") },
+              /*Viewpoint begin*/
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
-                  centerOfRotation : new SFVec3f([0,-1,0]),
+                  centerOfRotation : new SFVec3f(new SFVec3f([0,-1,0])),
                   description : new SFString("Hello world!"),
-                  position : new SFVec3f([0,-1,7])}),
-              { "#comment" : new CommentsBlock("Viewpoint complete, Transform begin") },
+                  position : new SFVec3f(new SFVec3f([0,-1,7]))}),
+              /*Viewpoint complete, Transform begin*/
 
                 new Transform({
-                  rotation : new SFRotation([0,1,0,3]),
-                  { "#comment" : new CommentsBlock("Shape begin") },
+                  rotation : new SFRotation(new SFRotation([0,1,0,3])),
+                  /*Shape begin*/
                   children : new MFNode([
                     new Shape({
-                      { "#comment" : new CommentsBlock("Sphere begin") },
-                      { "#comment" : new CommentsBlock("Sphere complete, Appearance begin") },
-                      { "#comment" : new CommentsBlock("Appearance complete") },
+                      /*Sphere begin*/
+                      /*Sphere complete, Appearance begin*/
+                      /*Appearance complete*/
                       geometry : new SFNode(
                         new Sphere({})),
                       appearance : new SFNode(
                         new Appearance({
-                          { "#comment" : new CommentsBlock("Material begin") },
-                          { "#comment" : new CommentsBlock("Material complete, ImageTexture begin") },
-                          { "#comment" : new CommentsBlock("ImageTexture complete") },
+                          /*Material begin*/
+                          /*Material complete, ImageTexture begin*/
+                          /*ImageTexture complete*/
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("MaterialLightBlue"),
-                              diffuseColor : new SFColor([0.1,0.5,1])})),
+                              diffuseColor : new SFColor(new SFColor([0.1,0.5,1]))})),
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))}),
-                  { "#comment" : new CommentsBlock("Shape complete") }])}),
-              { "#comment" : new CommentsBlock("Transform complete, Transform begin") },
+                              url : new MFString(new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]))}))}))}),
+                  /*Shape complete*/])}),
+              /*Transform complete, Transform begin*/
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
-                  { "#comment" : new CommentsBlock("Shape begin") },
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
+                  /*Shape begin*/
                   children : new MFNode([
                     new Shape({
-                      { "#comment" : new CommentsBlock("Text begin") },
-                      { "#comment" : new CommentsBlock("Text complete, Appearance begin") },
-                      { "#comment" : new CommentsBlock("Appearance complete") },
+                      /*Text begin*/
+                      /*Text complete, Appearance begin*/
+                      /*Appearance complete*/
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),
-                          string : new MFString(["Hello","world!"]),
-                          { "#comment" : new CommentsBlock("FontStyle begin") },
-                          { "#comment" : new CommentsBlock("FontStyle complete") },
+                          string : new MFString(new MFString(["Hello","world!"])),
+                          /*FontStyle begin*/
+                          /*FontStyle complete*/
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
                       appearance : new SFNode(
                         new Appearance({
-                          { "#comment" : new CommentsBlock("Material begin") },
-                          { "#comment" : new CommentsBlock("Material complete") },
+                          /*Material begin*/
+                          /*Material complete*/
                           material : new SFNode(
                             new Material({
                               USE : new SFString("MaterialLightBlue")}))}))}),
-                  { "#comment" : new CommentsBlock("Shape complete") }])}),
-              { "#comment" : new CommentsBlock("Transform complete") }])}),
-          { "#comment" : new CommentsBlock("Group complete") }])}))});
+                  /*Shape complete*/])}),
+              /*Transform complete*/])}),
+          /*Group complete*/])}))});
 console.log(X3D0.toXMLNode());

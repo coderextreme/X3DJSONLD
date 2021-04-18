@@ -53,29 +53,29 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : ["EXAMINE","FLY","WALK"],
+              type : new (["EXAMINE","FLY","WALK"]),
               speed : new SFFloat(3),
-              avatarSize : new MFFloat([200,200,120])}),
+              avatarSize : new MFFloat(new MFFloat([200,200,120]))}),
 
             new WorldInfo({
               title : new SFString("Arts Mapper")}),
 
             new Viewpoint({
               description : new SFString("looking North"),
-              position : new SFVec3f([0,60,110]),
-              orientation : new SFRotation([1,0,0,-0.699999988079071]),
+              position : new SFVec3f(new SFVec3f([0,60,110])),
+              orientation : new SFRotation(new SFRotation([1,0,0,-0.699999988079071])),
               fieldOfView : new SFFloat(0.785398125648499)}),
 
             new Viewpoint({
               description : new SFString("looking East"),
-              position : new SFVec3f([-140,30,0]),
-              orientation : new SFRotation([0,0.400000005960464,0,-1.39999997615814]),
+              position : new SFVec3f(new SFVec3f([-140,30,0])),
+              orientation : new SFRotation(new SFRotation([0,0.400000005960464,0,-1.39999997615814])),
               fieldOfView : new SFFloat(0.785398125648499)}),
 
             new Viewpoint({
               description : new SFString("Overhead"),
-              position : new SFVec3f([0,150,0]),
-              orientation : new SFRotation([1,0,0,-1.57000005245209]),
+              position : new SFVec3f(new SFVec3f([0,150,0])),
+              orientation : new SFRotation(new SFRotation([1,0,0,-1.57000005245209])),
               fieldOfView : new SFFloat(0.785398125648499)}),
 
             new ProtoDeclare({
@@ -151,7 +151,7 @@ var X3D0 =  new X3D({
                               protoField : new SFString("pos")})])}))])})])}))}),
 
             new Anchor({
-              url : new MFString(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
+              url : new MFString(new MFString(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
               description : new SFString("High Peak Community Arts"),
               children : new MFNode([
                 new ProtoInstance({

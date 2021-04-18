@@ -21,7 +21,6 @@ import { MFFloat } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
 import { OrientationInterpolator } from './x3d.mjs';
 import { MFRotation } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { Anchor } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
@@ -283,8 +282,8 @@ var X3D0 =  new X3D({
 
                         new PositionInterpolator({
                           DEF : new SFString("HUMANOIDROOT_POSITION_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFVec3f([0,0,0,0,-0.049999,0,0,-0.195,0,0,-0.439997,0]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFVec3f(new MFVec3f([0,0,0,0,-0.049999,0,0,-0.195,0,0,-0.439997,0])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -294,20 +293,20 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("HUMANOIDROOT_ANIMATOR"),
-                          key : new MFFloat([0,1]),
-                          keyValue : new MFRotation([0,1,0,0,0,1,0,0]),
+                          key : new MFFloat(new MFFloat([0,1])),
+                          keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,0])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("HumanoidRoot_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no SACROILIAC_ANIMATOR") },
+                      /*no SACROILIAC_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_HIP_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.619393,-1,0,0,1.069302,-1,0,0,1.937315]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.619393,-1,0,0,1.069302,-1,0,0,1.937315])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -317,8 +316,8 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_KNEE_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,1,0,0,0.615228,1,0,0,0.984524,1,0,0,2.076941]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,1,0,0,0.615228,1,0,0,0.984524,1,0,0,2.076941])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -328,20 +327,20 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_ANKLE_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.017453,-1,0,0,0.069812,1,0,0,0.261799]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.017453,-1,0,0,0.069812,1,0,0,0.261799])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("l_ankle_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no L_MIDTARSAL_ANIMATOR") },
+                      /*no L_MIDTARSAL_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_HIP_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,1]),
-                          keyValue : new MFRotation([1,0,0,0,1,0,0,0.523598,-1,0,0,0.157079]),
+                          key : new MFFloat(new MFFloat([0,0.3125,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,1,0,0,0.523598,-1,0,0,0.157079])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -351,8 +350,8 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_KNEE_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,1,0,0,0.349065,1,0,0,1.023397,0.999934,0.008043,0.008185,1.727938]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,1,0,0,0.349065,1,0,0,1.023397,0.999934,0.008043,0.008185,1.727938])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -362,32 +361,32 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_ANKLE_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-0.991692,-0.072372,0.106338,0.205053,-0.981083,-0.103267,0.163741,0.272231,-1,0,0,0.349065]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-0.991692,-0.072372,0.106338,0.205053,-0.981083,-0.103267,0.163741,0.272231,-1,0,0,0.349065])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("r_ankle_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no R_MIDTARSAL_ANIMATOR") },
+                      /*no R_MIDTARSAL_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("VL5_ANIMATOR"),
-                          key : new MFFloat([0,1]),
-                          keyValue : new MFRotation([1,0,0,0,1,0,0,0.174533]),
+                          key : new MFFloat(new MFFloat([0,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,1,0,0,0.174533])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("vl5_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no SKULLBASE_ANIMATOR") },
+                      /*no SKULLBASE_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_SHOULDER_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.279252,-1,0,0,0.506145,-1,0,0,0.191986]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.279252,-1,0,0,0.506145,-1,0,0,0.191986])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -397,20 +396,20 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_ELBOW_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.052359,-1,0,0,0.296706,-1,0,0,1.431169]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.052359,-1,0,0,0.296706,-1,0,0,1.431169])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("l_elbow_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no L_WRIST_ANIMATOR") },
+                      /*no L_WRIST_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_SHOULDER_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.104719,-1,0,0,0.157079,1,0,0,0.314159]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.104719,-1,0,0,0.157079,1,0,0,0.314159])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -420,15 +419,15 @@ var X3D0 =  new X3D({
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_ELBOW_ANIMATOR"),
-                          key : new MFFloat([0,0.3125,0.625,1]),
-                          keyValue : new MFRotation([1,0,0,0,-1,0,0,0.837757,-1,0,0,1.239183,-1,0,0,1.500983]),
+                          key : new MFFloat(new MFFloat([0,0.3125,0.625,1])),
+                          keyValue : new MFRotation(new MFRotation([1,0,0,0,-1,0,0,0.837757,-1,0,0,1.239183,-1,0,0,1.500983])),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("r_elbow_rotation_changed")})])}))}),
-                      { "#comment" : new CommentsBlock("no R_WRIST_ANIMATOR") }])}),
+                      /*no R_WRIST_ANIMATOR*/])}),
 
                     new ROUTE({
                       fromField : new SFString("fraction_changed"),
@@ -510,20 +509,20 @@ var X3D0 =  new X3D({
 
             new Anchor({
               description : new SFString("InterchangableActorsViaDynamicRouting"),
-              parameter : new MFString(["target=_blank"]),
-              url : new MFString(["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"]),
+              parameter : new MFString(new MFString(["target=_blank"])),
+              url : new MFString(new MFString(["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"])),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["LOA1_KneelAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."]),
+                      string : new MFString(new MFString(["LOA1_KneelAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."])),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"]),
+                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                           size : new SFFloat(0.8)}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,1,0.2])}))}))})])})])}))});
+                          diffuseColor : new SFColor(new SFColor([1,1,0.2]))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

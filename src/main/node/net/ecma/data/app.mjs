@@ -44,12 +44,12 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0])}))})),
+                          diffuseColor : new SFColor(new SFColor([1,0,0]))}))})),
                   geometry : new SFNode(
                     new Box({}))})])}),
 
             new Transform({
-              rotation : new SFRotation([7,8,9,3.14]),
-              scale : new SFVec3f([4,5,6]),
-              translation : new SFVec3f([1,2,3])})])}))});
+              rotation : new SFRotation(new SFRotation([7,8,9,3.14])),
+              scale : new SFVec3f(new SFVec3f([4,5,6])),
+              translation : new SFVec3f(new SFVec3f([1,2,3]))})])}))});
 console.log(X3D0.toXMLNode());

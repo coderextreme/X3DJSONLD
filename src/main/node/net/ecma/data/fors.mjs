@@ -100,29 +100,29 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))}),
+                                  diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))}),
 
                         new Transform({
-                          translation : new SFVec3f([1,0,0]),
+                          translation : new SFVec3f(new SFVec3f([1,0,0])),
                           children : new MFNode([
                             new Shape({
                               geometry : new SFNode(
                                 new Text({
-                                  string : new MFString(["Node"]),
+                                  string : new MFString(new MFString(["Node"])),
                                   fontStyle : new SFNode(
                                     new FontStyle({
-                                      justify : new MFString(["MIDDLE","MIDDLE"]),
+                                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                                       size : new SFFloat(5)}))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([0,0,1])}))}))})])})])}),
+                                      diffuseColor : new SFColor(new SFColor([0,0,1]))}))}))})])})])}),
 
                     new PositionInterpolator({
                       DEF : new SFString("NodePosition"),
-                      key : new MFFloat([0,1]),
-                      keyValue : new MFVec3f([0,0,0,0,5,0])}),
+                      key : new MFFloat(new MFFloat([0,1])),
+                      keyValue : new MFVec3f(new MFVec3f([0,0,0,0,5,0]))}),
 
                     new Script({
                       DEF : new SFString("MoveBall"),
@@ -148,13 +148,14 @@ var X3D0 =  new X3D({
                           type : field.TYPE_MFVEC3F,
                           name : new SFString("keyValue"),
                           accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                      .setSourceCode("ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}")])}),
+                      {ecmascript:
+					},
+ {ecmascript: function set_cycle(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f([old, translation]);
+						// Browser.println(translation);
+					}}])}),
 
                     new TimeSensor({
                       DEF : new SFString("nodeClock"),
@@ -207,13 +208,13 @@ var X3D0 =  new X3D({
                         new Extrusion({
                           DEF : new SFString("extrusion"),
                           creaseAngle : new SFFloat(0.785),
-                          crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                          spine : new MFVec3f([0,-50,0,0,50,0])})),
+                          crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])),
+                          spine : new MFVec3f(new MFVec3f([0,-50,0,0,50,0]))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0,1,0])}))}))}),
+                              diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))}),
 
                     new Script({
                       DEF : new SFString("MoveCylinder"),
@@ -243,27 +244,30 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endB"),
                               protoField : new SFString("set_positionB")})])})),
-                      .setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
-"                }")])}),
+                      {ecmascript:
+
+                },
+ {ecmascript: function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([value, spine[1]]);
+		    }
+                }
+
+                },
+ {ecmascript: function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([spine[0], value]);
+		    }
+                }
+
+                },
+ {ecmascript: function set_spine(value) {
+                    spine = value;
+                }}])}),
 
                     new ROUTE({
                       fromNode : new SFString("MoveCylinder"),
@@ -273,12 +277,12 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("HoldsContent"),
-              scale : new SFVec3f([0.1,0.1,0.1]),
+              scale : new SFVec3f(new SFVec3f([0.1,0.1,0.1])),
               children : new MFNode([
                 new PlaneSensor({
                   DEF : new SFString("clickGenerator"),
-                  minPosition : new SFVec2f([-50,-50]),
-                  maxPosition : new SFVec2f([50,50]),
+                  minPosition : new SFVec2f(new SFVec2f([-50,-50])),
+                  maxPosition : new SFVec2f(new SFVec2f([50,50])),
                   description : new SFString("click on background to add nodes, click on nodes to add links")}),
 
                 new ProtoInstance({
