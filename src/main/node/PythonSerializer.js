@@ -125,7 +125,7 @@ PythonSerializer.prototype = {
 					}
 				}
 			} catch (e) {
-				console.error(e);
+				// console.error(e);
 			}
 		}
 		if (node.nodeName === "IS") {
@@ -292,7 +292,7 @@ PythonSerializer.prototype = {
 					str += '.set'+method+"("+strval+")\n";
 				}
 			} catch (e) {
-				console.error(e);
+				// console.error(e);
 			}
 			attrType = "";
 		}
