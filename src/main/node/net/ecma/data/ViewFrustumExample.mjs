@@ -94,28 +94,28 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("ViewFrustum from above, looking down"),
-              orientation : new SFRotation(new SFRotation([1,0,0,-1.57])),
-              position : new SFVec3f(new SFVec3f([0,40,0]))}),
+              orientation : new SFRotation([1,0,0,-1.57]),
+              position : new SFVec3f([0,40,0])}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum from point of view")}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum behind point of view"),
-              position : new SFVec3f(new SFVec3f([0,0,15]))}),
+              position : new SFVec3f([0,0,15])}),
 
             new Viewpoint({
               description : new SFString("ViewFrustum oblique side view"),
-              orientation : new SFRotation(new SFRotation([0.8005,0.5926,0.0898,-0.3743])),
-              position : new SFVec3f(new SFVec3f([-5,5,20]))}),
+              orientation : new SFRotation([0.8005,0.5926,0.0898,-0.3743]),
+              position : new SFVec3f([-5,5,20])}),
 
             new NavigationInfo({
-              type : new MFString(["EXAMINE","FLY","ANY"])}),
+              type : ["EXAMINE","FLY","ANY"]}),
 
             new ExternProtoDeclare({
               name : new SFString("ViewFrustum"),
               appinfo : new SFString("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"),
-              url : new MFString(new MFString(["ViewFrustumPrototype.x3d#ViewFrustum"])),
+              url : new MFString(["ViewFrustumPrototype.x3d#ViewFrustum"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFNODE,
@@ -205,12 +205,12 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("GridXZ"),
-              url : new MFString(new MFString(["GridXZ_20x20Fixed.x3d"]))}),
+              url : new MFString(["GridXZ_20x20Fixed.x3d"])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([5,5,5])),
+              scale : new SFVec3f([5,5,5]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(new MFString(["CoordinateAxes.x3d"]))})])})])}))});
+                  url : new MFString(["CoordinateAxes.x3d"])})])})])}))});
 console.log(X3D0.toXMLNode());

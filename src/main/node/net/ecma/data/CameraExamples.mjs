@@ -140,7 +140,7 @@ var X3D0 =  new X3D({
             new ExternProtoDeclare({
               name : new SFString("Camera"),
               appinfo : new SFString("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images"),
-              url : new MFString(new MFString(["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"])),
+              url : new MFString(["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFSTRING,
@@ -285,7 +285,7 @@ var X3D0 =  new X3D({
             new ExternProtoDeclare({
               name : new SFString("CameraShot"),
               appinfo : new SFString("CameraShot collects a specific set of CameraMovement animations that make up an individual shot"),
-              url : new MFString(new MFString(["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"])),
+              url : new MFString(["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFSTRING,
@@ -364,7 +364,7 @@ var X3D0 =  new X3D({
             new ExternProtoDeclare({
               name : new SFString("CameraMovement"),
               appinfo : new SFString("CameraMovement defines a single camera movement animation"),
-              url : new MFString(new MFString(["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"])),
+              url : new MFString(["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFSTRING,
@@ -442,7 +442,7 @@ var X3D0 =  new X3D({
             new ExternProtoDeclare({
               name : new SFString("OfflineRender"),
               appinfo : new SFString("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)"),
-              url : new MFString(new MFString(["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"])),
+              url : new MFString(["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFSTRING,
@@ -513,21 +513,21 @@ var X3D0 =  new X3D({
           /*=============== Lights, camera, action! ==============*/
 
             new DirectionalLight({
-              direction : new SFVec3f(new SFVec3f([0,-1,0])),
+              direction : new SFVec3f([0,-1,0]),
               global : new SFBool(true),
               intensity : new SFFloat(0.8)}),
 
             new NavigationInfo({
-              type : new MFString(["EXAMINE","FLY","ANY"])}),
+              type : ["EXAMINE","FLY","ANY"]}),
 
             new Viewpoint({
               description : new SFString("Camera test scene entry view"),
-              position : new SFVec3f(new SFVec3f([0,2,12]))}),
+              position : new SFVec3f([0,2,12])}),
 
             new Viewpoint({
               description : new SFString("Camera test scene from above"),
-              orientation : new SFRotation(new SFRotation([1,0,0,-1.57079])),
-              position : new SFVec3f(new SFVec3f([0,150,0]))}),
+              orientation : new SFRotation([1,0,0,-1.57079]),
+              position : new SFVec3f([0,150,0])}),
           /*Keep prototype instances in same file while developing, then move later*/
           /*We will create examples matching those in the paper*/
           /*=============== Camera.SimpleShotsTest ==============*/
@@ -1062,7 +1062,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("Trigger.SimpleShots"),
-                  translation : new SFVec3f(new SFVec3f([-4,4,0])),
+                  translation : new SFVec3f([-4,4,0]),
                   children : new MFNode([
                     new BooleanFilter({
                       DEF : new SFString("TextTouchActive.SimpleShotsFilter")}),
@@ -1092,19 +1092,19 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["Click to animate","SimpleShotsTest"])),
+                          string : new MFString(["Click to animate","SimpleShotsTest"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("ArtDeco5"),
                               ambientIntensity : new SFFloat(0.24),
-                              diffuseColor : new SFColor(new SFColor([0.945455,0.318988,0.321717])),
+                              diffuseColor : new SFColor([0.945455,0.318988,0.321717]),
                               shininess : new SFFloat(0.01),
-                              specularColor : new SFColor(new SFColor([0.072727,0.021705,0.010732])),
+                              specularColor : new SFColor([0.072727,0.021705,0.010732]),
                               /*Universal Media Library: ArtDeco 5*/}))}))}),
                   /*Simplify intersection test for user selecting text*/
 
@@ -1117,14 +1117,14 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(1)}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([6,2,0.0001]))}))})])})])}),
+                          size : new SFVec3f([6,2,0.0001])}))})])})])}),
 
             new Group({
               DEF : new SFString("SimpleShotsTargets"),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("TargetBoxZoom"),
-                  translation : new SFVec3f(new SFVec3f([-50,1,-20])),
+                  translation : new SFVec3f([-50,1,-20]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -1135,18 +1135,18 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"]))}))}))}),
+                              url : new MFString(["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"])}))}))}),
 
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
                             new Text({
-                              string : new MFString(new MFString(["Zoom in, out"])),
+                              string : new MFString(["Zoom in, out"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                                  justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -1154,7 +1154,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("TargetBoxDolly"),
-                  translation : new SFVec3f(new SFVec3f([-40,1,-20])),
+                  translation : new SFVec3f([-40,1,-20]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -1165,18 +1165,18 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"]))}))}))}),
+                              url : new MFString(["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"])}))}))}),
 
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
                             new Text({
-                              string : new MFString(new MFString(["Dolly left, right"])),
+                              string : new MFString(["Dolly left, right"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                                  justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -1184,7 +1184,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("TargetBoxPan"),
-                  translation : new SFVec3f(new SFVec3f([-30,1,-20])),
+                  translation : new SFVec3f([-30,1,-20]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -1195,18 +1195,18 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"]))}))}))}),
+                              url : new MFString(["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"])}))}))}),
 
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
                             new Text({
-                              string : new MFString(new MFString(["Pan left, right"])),
+                              string : new MFString(["Pan left, right"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                                  justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -1214,7 +1214,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("TargetBoxBoom"),
-                  translation : new SFVec3f(new SFVec3f([-20,1,-20])),
+                  translation : new SFVec3f([-20,1,-20]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -1225,18 +1225,18 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"]))}))}))}),
+                              url : new MFString(["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"])}))}))}),
 
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
                             new Text({
-                              string : new MFString(new MFString(["Boom up, down"])),
+                              string : new MFString(["Boom up, down"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                                  justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -1244,7 +1244,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("TargetBoxTilt"),
-                  translation : new SFVec3f(new SFVec3f([-10,1,-20])),
+                  translation : new SFVec3f([-10,1,-20]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -1255,18 +1255,18 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(new MFString(["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"]))}))}))}),
+                              url : new MFString(["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"])}))}))}),
 
                     new Transform({
-                      translation : new SFVec3f(new SFVec3f([0,2,0])),
+                      translation : new SFVec3f([0,2,0]),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
                             new Text({
-                              string : new MFString(new MFString(["Tilt left, right"])),
+                              string : new MFString(["Tilt left, right"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                                  justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -1421,7 +1421,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("Trigger.AimPointTest"),
-                  translation : new SFVec3f(new SFVec3f([4,4,0])),
+                  translation : new SFVec3f([4,4,0]),
                   children : new MFNode([
                     new BooleanFilter({
                       DEF : new SFString("TextTouchActive.AimPointFilter")}),
@@ -1451,10 +1451,10 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["Click to animate","AimPointTest"])),
+                          string : new MFString(["Click to animate","AimPointTest"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -1471,7 +1471,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("CameraShapeTransform"),
-              translation : new SFVec3f(new SFVec3f([0,0.5,0])),
+              translation : new SFVec3f([0,0.5,0]),
               /*move CameraShape using active Camera*/
               children : new MFNode([
                 new ROUTE({
@@ -1500,34 +1500,34 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("CameraOffsetTransform"),
-                  translation : new SFVec3f(new SFVec3f([0,0,0.25])),
+                  translation : new SFVec3f([0,0,0.25]),
                   children : new MFNode([
                     new TouchSensor({
                       DEF : new SFString("CameraShapeTouched")}),
 
                     new Inline({
                       DEF : new SFString("CameraShape"),
-                      url : new MFString(new MFString(["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"]))}),
+                      url : new MFString(["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"])}),
 
                     new Shape({
                       DEF : new SFString("SightLine"),
                       geometry : new SFNode(
                         new IndexedLineSet({
-                          coordIndex : new MFInt32(new MFInt32([0,1])),
+                          coordIndex : new MFInt32([0,1]),
                           coord : new SFNode(
                             new Coordinate({
-                              point : new MFVec3f(new MFVec3f([0,0,0,0,0,-100]))}))})),
+                              point : new MFVec3f([0,0,0,0,0,-100])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              emissiveColor : new SFColor(new SFColor([0.8,0.8,0.4]))}))}))})])}),
+                              emissiveColor : new SFColor([0.8,0.8,0.4])}))}))})])}),
               /*Display frustum to show camera view within the scene, toggled by user selecting CameraShape*/
 
                 new ExternProtoDeclare({
                   name : new SFString("ViewFrustum"),
                   appinfo : new SFString("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"),
-                  url : new MFString(new MFString(["../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"])),
+                  url : new MFString(["../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"]),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFNODE,
@@ -1587,14 +1587,14 @@ var X3D0 =  new X3D({
                         new Viewpoint({
                           DEF : new SFString("FrustumViewpoint"),
                           description : new SFString("viewpoint for ViewFrustum"),
-                          position : new SFVec3f(new SFVec3f([0,0,0]))})])}),
+                          position : new SFVec3f([0,0,0])})])}),
 
                     new fieldValue({
                       name : new SFString("NavigationInfoNode"),
                       children : new MFNode([
                         new NavigationInfo({
                           DEF : new SFString("TestNavigationInfo"),
-                          transitionType : new MFString(new MFString(["ANIMATE"])),
+                          transitionType : new MFString(["ANIMATE"]),
                           visibilityLimit : new SFFloat(100)})])}),
 
                     new fieldValue({
@@ -1630,11 +1630,11 @@ var X3D0 =  new X3D({
           /*=============== add checkerboard, axes and other things to look at while animating ==============*/
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.282353,0.380392,0.470588]))}),
+              skyColor : new MFColor([0.282353,0.380392,0.470588])}),
 
             new Transform({
-              rotation : new SFRotation(new SFRotation([1,0,0,-1.57079])),
-              scale : new SFVec3f(new SFVec3f([10,10,10])),
+              rotation : new SFRotation([1,0,0,-1.57079]),
+              scale : new SFVec3f([10,10,10]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -1642,37 +1642,37 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           ambientIntensity : new SFFloat(0.01),
-                          diffuseColor : new SFColor(new SFColor([1,1,1])),
+                          diffuseColor : new SFColor([1,1,1]),
                           shininess : new SFFloat(0.05)}))})),
                   geometry : new SFNode(
                     new IndexedFaceSet({
-                      colorIndex : new MFInt32(new MFInt32([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0])),
+                      colorIndex : new MFInt32([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]),
                       colorPerVertex : new SFBool(false),
-                      coordIndex : new MFInt32(new MFInt32([0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1])),
+                      coordIndex : new MFInt32([0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1]),
                       normalPerVertex : new SFBool(false),
                       solid : new SFBool(false),
                       coord : new SFNode(
                         new Coordinate({
-                          point : new MFVec3f(new MFVec3f([-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0]))})),
+                          point : new MFVec3f([-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0])})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor(new MFColor([0.435294,0.741176,0,0,0.560784,0.580392]))}))}))})])}),
+                          color : new MFColor([0.435294,0.741176,0,0,0.560784,0.580392])}))}))})])}),
 
             new Transform({
-              scale : new SFVec3f(new SFVec3f([3,3,3])),
-              translation : new SFVec3f(new SFVec3f([0,0.25,0])),
+              scale : new SFVec3f([3,3,3]),
+              translation : new SFVec3f([0,0.25,0]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(new MFString(["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]))})])}),
+                  url : new MFString(["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("MovingBoxTransform"),
               children : new MFNode([
                 new PositionInterpolator({
                   DEF : new SFString("BoxPath"),
-                  key : new MFFloat(new MFFloat([0,0.25,0.5,0.75,1])),
-                  keyValue : new MFVec3f(new MFVec3f([-5,1,5,45,1,5,45,1,-45,-5,1,-45,-5,1,5]))}),
+                  key : new MFFloat([0,0.25,0.5,0.75,1]),
+                  keyValue : new MFVec3f([-5,1,5,45,1,5,45,1,-45,-5,1,-45,-5,1,5])}),
 
                 new TimeSensor({
                   DEF : new SFString("BoxTimer"),
@@ -1718,13 +1718,13 @@ var X3D0 =  new X3D({
                         new Material({})),
                       texture : new SFNode(
                         new ImageTexture({
-                          url : new MFString(new MFString(["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"]))}))}))})])}),
+                          url : new MFString(["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"])}))}))})])}),
           /*================ CrossHair visualization for center of screen ================*/
 
             new ExternProtoDeclare({
               name : new SFString("CrossHair"),
               appinfo : new SFString("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point"),
-              url : new MFString(new MFString(["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"])),
+              url : new MFString(["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFBOOL,
@@ -1793,23 +1793,23 @@ var X3D0 =  new X3D({
 
             new Anchor({
               description : new SFString("launch CameraExample scene"),
-              parameter : new MFString(new MFString(["target=_blank"])),
-              url : new MFString(new MFString(["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"])),
+              parameter : new MFString(["target=_blank"]),
+              url : new MFString(["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"]),
               children : new MFNode([
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([0,-3,0])),
+                  translation : new SFVec3f([0,-3,0]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"])),
+                          string : new MFString(["CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                              justify : new MFString(["MIDDLE","MIDDLE"]),
                               size : new SFFloat(0.5)}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([1,1,0.2]))}))}))})])})])})])}))});
+                              diffuseColor : new SFColor([1,1,0.2])}))}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

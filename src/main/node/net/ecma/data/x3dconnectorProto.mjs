@@ -68,11 +68,11 @@ var X3D0 =  new X3D({
               title : new SFString("Connector Proto")}),
 
             new Viewpoint({
-              position : new SFVec3f(new SFVec3f([0,0,5])),
+              position : new SFVec3f([0,0,5]),
               description : new SFString("Only Viewpoint")}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.4,0.4,0.4]))}),
+              skyColor : new MFColor([0.4,0.4,0.4])}),
 
             new Transform({
               DEF : new SFString("G1"),
@@ -82,7 +82,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.7,0.2,0.2]))}))})),
+                          diffuseColor : new SFColor([0.7,0.2,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
@@ -99,21 +99,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G2"),
-              translation : new SFVec3f(new SFVec3f([1,-1,0.01])),
+              translation : new SFVec3f([1,-1,0.01]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
+                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f(new SFVec3f([1,-1,0.01])),
+                  offset : new SFVec3f([1,-1,0.01]),
                   DEF : new SFString("PS2")}),
 
                 new ROUTE({
@@ -124,21 +124,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G3"),
-              translation : new SFVec3f(new SFVec3f([1,1,0.01])),
+              translation : new SFVec3f([1,1,0.01]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
+                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f(new SFVec3f([1,1,0.01])),
+                  offset : new SFVec3f([1,1,0.01]),
                   DEF : new SFString("PS3")}),
 
                 new ROUTE({
@@ -149,21 +149,21 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G4"),
-              translation : new SFVec3f(new SFVec3f([-1,1,0.01])),
+              translation : new SFVec3f([-1,1,0.01]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.2,0.7,0.2]))}))})),
+                          diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.1)}))}),
 
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
-                  offset : new SFVec3f(new SFVec3f([-1,1,0.01])),
+                  offset : new SFVec3f([-1,1,0.01]),
                   DEF : new SFString("PS4")}),
 
                 new ROUTE({
@@ -183,7 +183,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
+                              diffuseColor : new SFColor([0.2,0.7,0.7]),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -200,7 +200,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
+                              diffuseColor : new SFColor([0.2,0.7,0.7]),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -217,7 +217,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0.2,0.7,0.7])),
+                              diffuseColor : new SFColor([0.2,0.7,0.7]),
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
@@ -317,8 +317,8 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("set_endpoint"),
-                              protoField : new SFString("set_endpoint")})])})),
-                      ]),
+                              protoField : new SFString("set_endpoint")})])})]),
+                      
 ecmascript:eval (0
         , function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {

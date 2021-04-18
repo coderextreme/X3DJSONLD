@@ -102,12 +102,12 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new MFString(["EXAMINE","WALK","FLY","ANY"])}),
+              type : ["EXAMINE","WALK","FLY","ANY"]}),
 
             new Group({
               children : new MFNode([
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([6.14221,0.0694613,-0.000999451])),
+                  translation : new SFVec3f([6.14221,0.0694613,-0.000999451]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -117,12 +117,12 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new PixelTexture({
                               DEF : new SFString("RgbOpacityCheckerboard"),
-                              image : new SFImage(new SFImage([2,2,4,4278190335,4294901760,4294901760,4278190335]))}))})),
+                              image : new SFImage([2,2,4,4278190335,4294901760,4294901760,4278190335])}))})),
                       geometry : new SFNode(
                         new Box({}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([-4.85443,0.0694381,-0.00149918])),
+                  translation : new SFVec3f([-4.85443,0.0694381,-0.00149918]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -136,7 +136,7 @@ var X3D0 =  new X3D({
                         new Sphere({}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([-1.47341,0.036672,-0.00175095])),
+                  translation : new SFVec3f([-1.47341,0.036672,-0.00175095]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(
@@ -150,7 +150,7 @@ var X3D0 =  new X3D({
                         new Cone({}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([2.31094,0.0694206,-0.00187683])),
+                  translation : new SFVec3f([2.31094,0.0694206,-0.00187683]),
                   children : new MFNode([
                     new Shape({
                       appearance : new SFNode(

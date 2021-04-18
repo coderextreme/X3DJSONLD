@@ -7975,7 +7975,7 @@ var X3D0 =  new X3D({
                     new Script({
                       DEF : new SFString("BehaviorSelectionScript"),
                       directOutput : new SFBool(true),
-                      url : new MFString(new MFString(["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"])),
+                      url : new MFString(["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"]),
                       field : new MFNode([
                         new field({
                           type : field.TYPE_MFNODE,
@@ -8078,7 +8078,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("disableBehavior"),
-                              protoField : new SFString("disableBehavior")})])}))])})])}))}),
+                              protoField : new SFString("disableBehavior")})])})])})])}))}),
           /*TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.*/
 
             new ProtoInstance({

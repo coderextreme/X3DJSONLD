@@ -111,29 +111,29 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
-                                  specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))})),
+                                  diffuseColor : new SFColor([0.7,0.7,0.7]),
+                                  specularColor : new SFColor([0.5,0.5,0.5])})),
                               texture : new SFNode(
                                 new ComposedCubeMapTexture({
                                   DEF : new SFString("texture"),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])})),
                                   topTexture : new SFNode(
                                     new ImageTexture({
-                                      url : new MFString(new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))}))})),
+                                      url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
                               shaders : new SFNode(
                                 new ComposedShader({
                                   DEF : new SFString("shader"),
@@ -213,7 +213,7 @@ var X3D0 =  new X3D({
                                           connect : new MFNode([
                                             new connect({
                                               nodeField : new SFString("url"),
-                                              protoField : new SFString("vertex")})])}))})),
+                                              protoField : new SFString("vertex")})])}))})]),
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "FRAGMENT",
@@ -222,7 +222,7 @@ var X3D0 =  new X3D({
                                           connect : new MFNode([
                                             new connect({
                                               nodeField : new SFString("url"),
-                                              protoField : new SFString("fragment")})])}))}))])}))})),
+                                              protoField : new SFString("fragment")})])}))}))}))})),
                           geometry : new SFNode(
                             new Sphere({}))}),
 

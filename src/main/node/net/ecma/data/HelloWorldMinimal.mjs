@@ -88,5 +88,5 @@ var X3D0 =  new X3D({
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(new MFString(["hello, world"]))}))})])}))});
+                  string : new MFString(["hello, world"])}))})])}))});
 console.log(X3D0.toXMLNode());

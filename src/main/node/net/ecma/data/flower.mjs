@@ -62,20 +62,20 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new DirectionalLight({
-              direction : new SFVec3f(new SFVec3f([0,-0.8,-0.2])),
+              direction : new SFVec3f([0,-0.8,-0.2]),
               intensity : new SFFloat(0.5)}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([1,1,1]))}),
+              skyColor : new MFColor([1,1,1])}),
 
             new Viewpoint({
               description : new SFString("One mathematical orbital"),
-              position : new SFVec3f(new SFVec3f([0,0,50]))}),
+              position : new SFVec3f([0,0,50])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([0,-1,1])),
-              rotation : new SFRotation(new SFRotation([0,1,0,3.1415926])),
-              scale : new SFVec3f(new SFVec3f([1.5,1.5,1.5])),
+              translation : new SFVec3f([0,-1,1]),
+              rotation : new SFRotation([0,1,0,3.1415926]),
+              scale : new SFVec3f([1.5,1.5,1.5]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -83,19 +83,19 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           transparency : new SFFloat(0.1),
-                          diffuseColor : new SFColor(new SFColor([0.9,0.3,0.3])),
-                          specularColor : new SFColor(new SFColor([0.8,0.8,0.8])),
+                          diffuseColor : new SFColor([0.9,0.3,0.3]),
+                          specularColor : new SFColor([0.8,0.8,0.8]),
                           shininess : new SFFloat(0.145)}))})),
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       ccw : new SFBool(false),
                       convex : new SFBool(false),
-                      coordIndex : new MFInt32(new MFInt32([0,1,2,-1])),
+                      coordIndex : new MFInt32([0,1,2,-1]),
                       DEF : new SFString("Orbit"),
                       coord : new SFNode(
                         new Coordinate({
                           DEF : new SFString("OrbitCoordinates"),
-                          point : new MFVec3f(new MFVec3f([0,0,1,0,1,0,1,0,0]))}))}))})])}),
+                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))})])}),
 
             new Script({
               DEF : new SFString("OrbitScript"),

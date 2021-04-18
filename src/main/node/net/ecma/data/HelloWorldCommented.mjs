@@ -90,13 +90,13 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
-                  centerOfRotation : new SFVec3f(new SFVec3f([0,-1,0])),
+                  centerOfRotation : new SFVec3f([0,-1,0]),
                   description : new SFString("Hello world!"),
-                  position : new SFVec3f(new SFVec3f([0,-1,7]))}),
+                  position : new SFVec3f([0,-1,7])}),
               /*Viewpoint complete, Transform begin*/
 
                 new Transform({
-                  rotation : new SFRotation(new SFRotation([0,1,0,3])),
+                  rotation : new SFRotation([0,1,0,3]),
                   /*Shape begin*/
                   children : new MFNode([
                     new Shape({
@@ -113,16 +113,16 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("MaterialLightBlue"),
-                              diffuseColor : new SFColor(new SFColor([0.1,0.5,1]))})),
+                              diffuseColor : new SFColor([0.1,0.5,1])})),
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]))}))}))}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))}),
                   /*Shape complete*/])}),
               /*Transform complete, Transform begin*/
 
                 new Transform({
-                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
+                  translation : new SFVec3f([0,-2,0]),
                   /*Shape begin*/
                   children : new MFNode([
                     new Shape({
@@ -132,12 +132,12 @@ var X3D0 =  new X3D({
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),
-                          string : new MFString(new MFString(["Hello","world!"])),
+                          string : new MFString(["Hello","world!"]),
                           /*FontStyle begin*/
                           /*FontStyle complete*/
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           /*Material begin*/

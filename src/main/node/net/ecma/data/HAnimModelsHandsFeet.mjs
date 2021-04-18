@@ -104,48 +104,48 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Hands and feet 1.7m"),
-              position : new SFVec3f(new SFVec3f([0,0,1.7]))}),
+              position : new SFVec3f([0,0,1.7])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([-1,1,0])),
+              translation : new SFVec3f([-1,1,0]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"]))}),
+                  url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"])}),
               /*Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model*/
 
                 new Transform({
                   DEF : new SFString("GridXY_20x20Fixed_AdjustScale"),
-                  scale : new SFVec3f(new SFVec3f([0.1,0.1,0.1])),
+                  scale : new SFVec3f([0.1,0.1,0.1]),
                   children : new MFNode([
                     new Inline({
                       DEF : new SFString("GridXY_20x20Fixed"),
-                      url : new MFString(new MFString(["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"]))})])})])}),
+                      url : new MFString(["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])})])})])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([1,1,0])),
+              translation : new SFVec3f([1,1,0]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"]))}),
+                  url : new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([-1,-1,0])),
+              translation : new SFVec3f([-1,-1,0]),
               /*rotation='0 0 1 3.141593'*/
               children : new MFNode([
                 new Inline({
-                  url : new MFString(new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"]))}),
+                  url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([1,-1,0])),
+              translation : new SFVec3f([1,-1,0]),
               /*rotation='0 0 1 3.141593'*/
               children : new MFNode([
                 new Inline({
-                  url : new MFString(new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"]))}),
+                  url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])})])}))});

@@ -66,17 +66,17 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new GeoViewpoint({
               DEF : new SFString("Tour"),
-              position : new SFVec3d(new SFVec3d([0,0,4])),
-              orientation : new SFRotation(new SFRotation([1,0,0,0])),
+              position : new SFVec3d([0,0,4]),
+              orientation : new SFRotation([1,0,0,0]),
               description : new SFString("Tour Views")}),
 
             new Background({
-              backUrl : new MFString(new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])),
-              bottomUrl : new MFString(new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])),
-              frontUrl : new MFString(new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])),
-              leftUrl : new MFString(new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])),
-              rightUrl : new MFString(new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])),
-              topUrl : new MFString(new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]))}),
+              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]),
+              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]),
+              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
+              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
+              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
 
             new Transform({
               children : new MFNode([
@@ -87,8 +87,8 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.7,0.7,0.7])),
-                          specularColor : new SFColor(new SFColor([0.5,0.5,0.5]))}))}))})])}),
+                          diffuseColor : new SFColor([0.7,0.7,0.7]),
+                          specularColor : new SFColor([0.5,0.5,0.5])}))}))})])}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),
@@ -97,8 +97,8 @@ var X3D0 =  new X3D({
 
             new GeoPositionInterpolator({
               DEF : new SFString("TourPosition"),
-              key : new MFFloat(new MFFloat([0,1])),
-              keyValue : new MFVec3d(new MFVec3d([0.0015708,0,4,0,0.0015708,4]))}),
+              key : new MFFloat([0,1]),
+              keyValue : new MFVec3d([0.0015708,0,4,0,0.0015708,4])}),
 
             new Script({
               DEF : new SFString("RandomTourTime"),

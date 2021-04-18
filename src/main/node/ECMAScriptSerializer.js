@@ -35,7 +35,7 @@ ECMAScriptSerializer.prototype = {
 
 		// we figure out body first and print it out later
 		var body = "var "+element.nodeName+0+" =  new "+element.nodeName+"({\n";
-		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
+		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3);
 		for (var key in this.precode) {
 			str += "import { "+key+" } from './x3d.mjs';\n"
 			
@@ -93,7 +93,7 @@ ECMAScriptSerializer.prototype = {
 		var prepre = "\n"+("  ".repeat(n));
 		return prepre+method+" : ";
 	},
-	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
+	subSerializeToString : function(element, mapToMethod, fieldTypes, n) {
 		var childs = [];
 		var fieldAttrType = "";
 		var attrType = "";
@@ -107,7 +107,7 @@ ECMAScriptSerializer.prototype = {
 						fieldAttrType = attrs[a].nodeValue;
 						var method = attr;
 						if (element.nodeName === 'NavigationInfo' ) {
-							strval = this.printSubArray(attrType, "java.lang.String",
+							strval = this.printSubArray("MFString", "MFString",
 								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 								map(function(x) {
 									var y = x.
@@ -178,9 +178,6 @@ ECMAScriptSerializer.prototype = {
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
-								/*
-								replace(/\\/g, '\\\\').
-								*/
 								replace(/\n/g, '\\n').
 								replace(/\\?"/g, "\\\"")
 								+'"';
@@ -198,7 +195,7 @@ ECMAScriptSerializer.prototype = {
 					} else if (attrType === "MFTime") {
 						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFString") {
-						strval = this.printSubArray(attrType, "java.lang.String",
+						strval = this.printSubArray(attrType, "MFString",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 							map(function(x) {
 								var y = x.
@@ -293,25 +290,14 @@ ECMAScriptSerializer.prototype = {
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-				if (node.nodeName === "ProtoInstance") {
-					// stack.unshift(this.preno);
-					// this.preno++;
-					// this.precode[stack[0]] = "var "+node.nodeName+stack[0]+" = null;\n";
-				}
-				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
-					/*
-					if (typeof this.postcode[stack[0]] === 'undefined') {
-						this.postcode[stack[0]] = "";
-					}
-					this.postcode[stack[0]] += element.nodeName+stack[0];
-					*/
-				}
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
 				var ppc = ch.trim();
 				if (ppc.indexOf("children") >= 0
 				   || ppc.indexOf("connect") >= 0
 				   || ppc.indexOf("field") >= 0
 				   || ppc.indexOf("fieldValue") >= 0
+				   || ppc.indexOf("segments") >= 0
+				   || ppc.indexOf("joints") >= 0
 				   || ppc.indexOf("meta") >= 0) {
 					if (!alreadyFound[ppc]) {
 						alreadyFound[ppc] = true;
@@ -325,61 +311,60 @@ ECMAScriptSerializer.prototype = {
 					ch += "new SFNode(";
 					this.precode["SFNode"] = true;
 				}
-				if (node.nodeName === "ProtoInstance") {
-					// ch += node.nodeName+stack[0] + " = ";
-				}
 
 				ch += "\n"+("  ".repeat(n+1));
 				ch += "new "+node.nodeName+"({";
 				this.precode[node.nodeName] = true;
-				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+2, stack);
+				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+2);
 				ch += "})";
 				if (ppc.indexOf("children") >= 0
 				   || ppc.indexOf("connect") >= 0
 				   || ppc.indexOf("field") >= 0
 				   || ppc.indexOf("fieldValue") >= 0
+				   || ppc.indexOf("segments") >= 0
+				   || ppc.indexOf("joints") >= 0
 				   || ppc.indexOf("meta") >= 0) {
 				} else {
+					if (closeMFNode) {
+						ch += "]";
+						closeMFNode = false;
+					}
 					ch += ")";
 				}
-				/*
-				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
-					// ch goes to end of body
-					this.postcode[stack[0]] += ch+";\n";
-				} else {
-					// ch is attached to body
-				*/
-					childs.push(ch);
-				/*
-				}
-				if (node.nodeName === "ProtoInstance") {
-					stack.shift();
-				}
-				*/
+				childs.push(ch);
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				childs.push("\n"+("  ".repeat(n))+'{ "#comment" : new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'") }');
-				this.precode["CommentsBlock"] = true;
+				childs.push("\n"+("  ".repeat(n))+'/*'+y.split("\n").join('\\n\"+\n\"')+'*/');
+				// this.precode["CommentsBlock"] = true;
 				if (y !== node.nodeValue) {
 					// console.error("ECMAScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				childs.push("\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
-					return x.
-					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"');
-						/*
-						replace(/\\n/g, "\\\\n")
-						*/
-					;
-					}).join('\\n\"+\n\"')+'")');
+				let source = "";
+				if (closeMFNode) {
+					source += "]),";
+					closeMFNode = false;
+				}
+				source += node.nodeValue;
+				source = "\n"+("  ".repeat(n))+source.replace(/function/g, ", function").replace(/ecmascript:/, "\necmascript:eval (0")+")";
+				childs.push(source);
 			}
 		}
 		ch =  childs.join(",");
 		if (closeMFNode) {
 			ch += "])";
+		}
+		let exc = ch.indexOf(",])");
+		while (exc > 0) {
+			ch = ch.substring(0, exc)+"])"+ch.substring(exc+3);
+			exc = ch.indexOf(",])");
+		}
+		let cmt = ch.indexOf("*/,");
+		while (cmt > 0) {
+			ch = ch.substring(0, cmt)+"*/"+ch.substring(cmt+3);
+			cmt = ch.indexOf("*/,");
 		}
 		return ch;
 
