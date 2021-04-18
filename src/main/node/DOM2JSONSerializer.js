@@ -40,7 +40,7 @@ DOM2JSONSerializer.prototype = {
 		try {
 			var st = JSON.stringify(obj, null, 2);
 		} catch (e) {
-			console.error(st, obj, clazz, e);
+			// console.error(st, obj, clazz, e);
 
 		}
 		return st;
@@ -128,7 +128,7 @@ DOM2JSONSerializer.prototype = {
 								attrType = fieldTypes[element.nodeName][attr];
 							}
 						} catch (e) {
-							console.log(e);
+							// console.log(e);
 							console.error("Missing", attr, "in fieldTypes.js element", element.nodeName); // , " = ", fieldTypes[element.nodeName], "setting to SFString");
 						}
 

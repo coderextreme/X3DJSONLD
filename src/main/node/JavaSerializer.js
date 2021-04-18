@@ -370,7 +370,7 @@ JavaSerializer.prototype = {
 								       // replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									console.log("Java Replacing "+x+" with "+y);
+									// console.log("Java Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
