@@ -1359,6 +1359,9 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='applied' and .='true') or
                       (local-name()='linetype' and (.='1')) or
                       (local-name()='linewidthScaleFactor' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='PointProperties' and
+                      ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
                       ((local-name()='enabled' and .='true') or
                       (local-name()='plane' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')))) and

@@ -194,11 +194,18 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
+        <xsl:variable name="newFullyQualifiedClassName">
+            <xsl:if test="(string-length($newPackageName) > 0)">
+                <xsl:value-of select="$newPackageName"/>
+                <xsl:text>.</xsl:text>
+            </xsl:if>
+			<xsl:value-of select="$newClassName"/>
+        </xsl:variable>
         <!-- https://stackoverflow.com/questions/3854345/xpath-test-if-node-value-is-number -->
         <xsl:if test="(string(number(substring($newClassName,1,1))) != 'NaN')">
             <xsl:message>
-                    <xsl:text>*** className='</xsl:text>
-                    <xsl:value-of select="$className"/>
+                <xsl:text>*** className='</xsl:text>
+                <xsl:value-of select="$className"/>
                 <xsl:text>' starts with numeric character '</xsl:text>
                 <xsl:value-of select="substring($newClassName,1,2)"/>
                 <xsl:text>', prepending underscore _ character, TODO note that actual filename will need to match for proper compilation</xsl:text>
@@ -349,14 +356,14 @@ POSSIBILITY OF SUCH DAMAGE.
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newClassName"/>
+			System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newClassName"/>
+			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
@@ -885,7 +892,8 @@ POSSIBILITY OF SUCH DAMAGE.
                                 (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedLineSet') or (local-name() = 'LineSet') or (local-name() = 'PointSet')">
                     <xsl:text>Rendering.</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'Appearance') or ends-with(local-name(), 'Material') or (local-name() = 'TwoSidedMaterial') or (local-name() = 'LineProperties')">
+                <xsl:when test="(local-name() = 'Appearance') or ends-with(local-name(), 'Material') or (local-name() = 'TwoSidedMaterial') or 
+                                (local-name() = 'FillProperties') or (local-name() = 'LineProperties') or (local-name() = 'PointProperties')">
                     <xsl:text>Shape.</xsl:text>
                 </xsl:when>
                 <!-- TODO other audio-graph nodes -->
@@ -1255,6 +1263,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'lineProperties')">
 					<xsl:text>.setLineProperties(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'pointProperties')">
+					<xsl:text>.setPointProperties(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -1944,6 +1957,9 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='applied' and string(.)='true') or
                       (local-name()='linetype' and (string(.)='1')) or
                       (local-name()='linewidthScaleFactor' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='PointProperties' and
+                      ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='plane' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0')))) and
@@ -3639,7 +3655,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.Shaders.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[name()='Appearance'] or //*[name()='FillProperties'] or //*[name()='LineProperties'] or //*[ends-with(name(),'Material')] or
+		<xsl:if test="//*[name()='Appearance'] or //*[name()='FillProperties'] or //*[name()='FillProperties'] or //*[name()='LineProperties'] or //*[name()='PointProperties'] or //*[ends-with(name(),'Material')] or
 					  //*[name()='Shape'] or //*[name()='TwoSidedMaterial']">
 			<xsl:text>import org.web3d.x3d.jsail.Shape.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -4027,6 +4043,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='knee')             or
 					($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+                    starts-with($attributeName,'pointSize') or
 					($attributeName='priority')         or
 					($attributeName='qualityFactor')    or
                     ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
@@ -4239,7 +4256,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					(contains($parentElementName,'LOD') and $attributeName='center') or
 					($parentElementName='MotorJoint' and ($attributeName='motor1Axis' or $attributeName='motor2Axis' or $attributeName='motor3Axis')) or
 					($parentElementName='PlaneSensor' and $attributeName='offset') or
-					($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='PlaneSensor' and $attributeName='offset') or
+					($parentElementName='PointProperties' and ($attributeName='attenuation')) or
 					($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
 					($parentElementName='PointLight' and ($attributeName='attenuation' or $attributeName='location')) or
@@ -4291,7 +4309,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFRotation')    or
 					($attributeName='rotation')         or
-					($attributeName='orientation')      or
+					(not($parentElementName='Extrusion') and ($attributeName='orientation'))      or
 					($attributeName='scaleOrientation') or
 					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
 					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
