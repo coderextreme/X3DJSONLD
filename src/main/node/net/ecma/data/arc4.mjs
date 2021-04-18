@@ -108,14 +108,14 @@ var X3D0 =  new X3D({
                       name : new SFString("keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("0 0 0 0 5 0")}),
-                  {ecmascript:
-		},
- {ecmascript: function set_location(value) {
+                  ]),
+ecmascript:eval (0
+		, function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
-		}}])}),
+		})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLpoint_G1_CL1"),
@@ -189,14 +189,14 @@ var X3D0 =  new X3D({
                       name : new SFString("keyValue"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("0 0 0 0 5 0")}),
-                  {ecmascript:
-		},
- {ecmascript: function set_location(value) {
+                  ]),
+ecmascript:eval (0
+		, function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
-		}}])}),
+		})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLpoint_G2_CL1"),
@@ -284,9 +284,9 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFVEC3F,
                       name : new SFString("set_endpoint"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  {ecmascript:
-        },
- {ecmascript: function recompute(startpoint,endpoint){
+                  ]),
+ecmascript:eval (0
+        , function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		    if (typeof Quaternion !== 'undefined') {
 			    return {
@@ -331,25 +331,21 @@ var X3D0 =  new X3D({
 		    };
 	    }
 	}
-	},
- {ecmascript: function recompute_and_route(startpoint, endpoint) {
+	, function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
 	      position.translation = trafo.translation;
 	      rotscale.rotation = trafo.rotation;
 	      rotscale.scale = trafo.scale;
 	}
-        },
- {ecmascript: function initialize(){
+        , function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
         }
-        },
- {ecmascript: function set_startpoint(val,t){
+        , function set_startpoint(val,t){
             recompute_and_route(val,endnode.translation);
         }
-        },
- {ecmascript: function set_endpoint(val,t){
+        , function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
-        }}])})])}),
+        })})])}),
 
             new ROUTE({
               fromNode : new SFString("DECLpoint_G1_node"),

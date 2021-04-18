@@ -86,15 +86,15 @@ var X3D0 =  new X3D({
                       name : new SFString("spine"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("-50 -50 0 50 50 0")}),
-                  {ecmascript:
+                  ]),
+ecmascript:eval (0
 
-                },
- {ecmascript: function set_cycle(value) {
+                , function set_cycle(value) {
                         Browser.print(value);
                         var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
                         var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
 		        spine = new MFVec3f([endA, endB]);
-                }}])}),
+                })}),
 
                 new ROUTE({
                   fromNode : new SFString("TourTime"),

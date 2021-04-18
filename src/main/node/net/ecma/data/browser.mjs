@@ -39,23 +39,23 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Script({
               DEF : new SFString("Browser"),
-              {ecmascript:
-                },
- {ecmascript: function initialize() {
-		    Browser.print('DUDES\\n'+'"DUDETTES');
-                }}}),
+              
+ecmascript:eval (0
+                , function initialize() {
+		    Browser.print('DUDES\n'+'"DUDETTES');
+                })}),
 
             new Script({
               DEF : new SFString("Clouds"),
-              {ecmascript:
+              
+ecmascript:eval (0
 
 
-},
- {ecmascript: function cumulustranslation() // These values designate the boundary location of the cloud
+, function cumulustranslation() // These values designate the boundary location of the cloud
 {
 var xxx = ' '+' '+
-'	Transform		\\n'+
-'    ' + '               	\\n';
+'	Transform		\n'+
+'    ' + '               	\n';
 
-}}})])}))});
+})})])}))});
 console.log(X3D0.toXMLNode());

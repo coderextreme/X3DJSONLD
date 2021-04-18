@@ -95,7 +95,7 @@ var X3D0 =  new X3D({
               title : new SFString("ball.x3d")}),
 
             new NavigationInfo({
-              type : new (["ANY","EXAMINE","FLY","LOOKAT"])}),
+              type : new MFString(["ANY","EXAMINE","FLY","LOOKAT"])}),
 
             new Viewpoint({
               description : new SFString("Tour Views")}),

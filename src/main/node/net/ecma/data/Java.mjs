@@ -361,14 +361,14 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFCOLOR,
                       name : new SFString("colorsOutput"),
                       accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                  {ecmascript:
+                  ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function colorInput (eventValue) // Example source code
+, function colorInput (eventValue) // Example source code
 {
    colorsOutput = new MFColor(eventValue); // assigning value sends output event
-// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');
-}}])}),
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+})}),
 
                 new ColorInterpolator({
                   DEF : new SFString("ColorAnimator"),
@@ -633,19 +633,17 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("diffuseColor"),
                               protoField : new SFString("diffuseColor")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize ()
+                      ]),
+ecmascript:eval (0
+, function initialize ()
 {
     newColor = diffuseColor; // start with correct color
 }
-},
- {ecmascript: function set_enabled (newValue)
+, function set_enabled (newValue)
 {
 	enabled = newValue;
 }
-},
- {ecmascript: function clockTrigger (timeValue)
+, function clockTrigger (timeValue)
 {
     if (!enabled) return;
     red   = newColor.r;
@@ -656,9 +654,9 @@ var X3D0 =  new X3D({
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
 	if (enabled)
 	{
-		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
 	}
-}}])})])}))}),
+})})])}))}),
           /*Test success: declarative statement createDeclarativeShapeTests()*/
 
             new Group({

@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE"])}),
+              type : new MFString(["EXAMINE"])}),
 
             new Viewpoint({
               position : new SFVec3f(new SFVec3f([0,0,4])),
@@ -116,16 +116,15 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  {ecmascript:
-},
- {ecmascript: function initialize() {
+                  ]),
+ecmascript:eval (0
+, function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-},
- {ecmascript: function set_fraction(value) {
+, function set_fraction(value) {
     translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
     scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
     // if you get to far away or too big, explode
@@ -156,7 +155,7 @@ var X3D0 =  new X3D({
 	translation.z = 0;
 	initialize();
     }
-}}])}),
+})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleA_bubbleClock"),
@@ -226,16 +225,15 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  {ecmascript:
-},
- {ecmascript: function initialize() {
+                  ]),
+ecmascript:eval (0
+, function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-},
- {ecmascript: function set_fraction(value) {
+, function set_fraction(value) {
     translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
     scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
     // if you get to far away or too big, explode
@@ -266,7 +264,7 @@ var X3D0 =  new X3D({
 	translation.z = 0;
 	initialize();
     }
-}}])}),
+})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleB_bubbleClock"),
@@ -336,16 +334,15 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  {ecmascript:
-},
- {ecmascript: function initialize() {
+                  ]),
+ecmascript:eval (0
+, function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-},
- {ecmascript: function set_fraction(value) {
+, function set_fraction(value) {
     translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
     scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
     // if you get to far away or too big, explode
@@ -376,7 +373,7 @@ var X3D0 =  new X3D({
 	translation.z = 0;
 	initialize();
     }
-}}])}),
+})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleC_bubbleClock"),
@@ -446,16 +443,15 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  {ecmascript:
-},
- {ecmascript: function initialize() {
+                  ]),
+ecmascript:eval (0
+, function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-},
- {ecmascript: function set_fraction(value) {
+, function set_fraction(value) {
     translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
     scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
     // if you get to far away or too big, explode
@@ -486,7 +482,7 @@ var X3D0 =  new X3D({
 	translation.z = 0;
 	initialize();
     }
-}}])}),
+})}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleD_bubbleClock"),

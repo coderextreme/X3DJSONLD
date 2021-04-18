@@ -442,7 +442,7 @@ var X3D0 =  new X3D({
               skyColor : new MFColor(new MFColor([0,0.4,1]))}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"]),
+              type : new MFString(["EXAMINE"]),
               avatarSize : new MFFloat(new MFFloat([0.15,1.53,0.75])),
               speed : new SFFloat(0.5)}),
 
@@ -888,20 +888,19 @@ var X3D0 =  new X3D({
                                                           name : new SFString("traceEnabled"),
                                                           accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                                                           value : new SFString("true")}),
-                                                      {ecmascript:
+                                                      ]),
+ecmascript:eval (0
 
 var finWarpL;
 var finWarpR;
 
-},
- {ecmascript: function initialize ()
+, function initialize ()
 {
 	finWarpL = 0;
 	finWarpR = 0;
 }
 
-},
- {ecmascript: function finL(value, timeStamp)
+, function finL(value, timeStamp)
 {
 	if (value == 0)
 	{
@@ -914,8 +913,7 @@ var finWarpR;
 	//print ('finWarpL' + finWarpL);
 }			 
 
-},
- {ecmascript: function finR(value, timeStamp)
+, function finR(value, timeStamp)
 {
 	if (value == 0)
 	{
@@ -927,8 +925,7 @@ var finWarpR;
 	}
 	//print ('finWarpR' + finWarpR);
 }
-},
- {ecmascript: function finMove(fraction, timeStamp)
+, function finMove(fraction, timeStamp)
  {  	
 	if (finWarpL == 1)
 	{
@@ -984,19 +981,17 @@ var finWarpR;
 			
 }
 
-},
- {ecmascript: function set_fraction (value, timeStamp)
+, function set_fraction (value, timeStamp)
 {
 	finMove(value);
 	//tracePrint('time fraction =' + value);
 	
 }
 
-},
- {ecmascript: function tracePrint (outputString)
+, function tracePrint (outputString)
 {
 	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
-}}])}),
+})}),
 
                                                     new ROUTE({
                                                       fromField : new SFString("isActive"),
@@ -2405,7 +2400,8 @@ var finWarpR;
                   type : field.TYPE_SFBOOL,
                   name : new SFString("fin_warpR"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              {ecmascript:
+              ]),
+ecmascript:eval (0
 
 
 var positionX;
@@ -2413,8 +2409,7 @@ var positionY;
 var positionZ;
 var rotation;
 
-},
- {ecmascript: function initialize()
+, function initialize()
 {
     	positionX = 0.0;
 	positionY = 0.0;
@@ -2422,8 +2417,7 @@ var rotation;
 	rotation = 0.0;
 }
 
-},
- {ecmascript: function set_rotationL( value, timeStamp)
+, function set_rotationL( value, timeStamp)
 {
 	rotationFinL = new SFRotation(positionX, positionY, positionZ, rotation);
 	rotationFinL = value;
@@ -2439,8 +2433,7 @@ var rotation;
 	
 }
 
-},
- {ecmascript: function set_rotationR( value, timeStamp)
+, function set_rotationR( value, timeStamp)
 {
 	rotationFinR = new SFRotation(positionX, positionY, positionZ, rotation);
 	rotationFinR = value;
@@ -2454,7 +2447,7 @@ var rotation;
 		fin_warpR = 1;
 	}
 	
-}}])}),
+})}),
 
             new Group({
               DEF : new SFString("Animations"),

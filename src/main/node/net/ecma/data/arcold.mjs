@@ -180,14 +180,14 @@ var X3D0 =  new X3D({
                               type : field.TYPE_MFVEC3F,
                               name : new SFString("keyValue"),
                               accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                          {ecmascript:
-		},
- {ecmascript: function set_location(value) {
+                          ]),
+ecmascript:eval (0
+		, function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(translation);
-		}}])}),
+		})}),
 
                         new TimeSensor({
                           DEF : new SFString("CL1"),
@@ -314,9 +314,9 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endpoint"),
                               protoField : new SFString("set_endpoint")})])})),
-                      {ecmascript:
-        },
- {ecmascript: function recompute(startpoint,endpoint){
+                      ]),
+ecmascript:eval (0
+        , function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
@@ -339,8 +339,7 @@ var X3D0 =  new X3D({
 		    };
 	    }
 	}
-	},
- {ecmascript: function recompute_and_route(startpoint, endpoint) {
+	, function recompute_and_route(startpoint, endpoint) {
 		var trafo = recompute(startpoint, endpoint);
 		if (typeof trafo !== 'undefined') {
 			transnode.translation = trafo.translation;
@@ -350,18 +349,15 @@ var X3D0 =  new X3D({
 			Browser.print("recompute returned undefined");
 		}
 	}
-        },
- {ecmascript: function initialize(){
+        , function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
         }
-        },
- {ecmascript: function set_startpoint(val,t){
+        , function set_startpoint(val,t){
             recompute_and_route(val || startnode.translation,endnode.translation);
         }
-        },
- {ecmascript: function set_endpoint(val,t){
+        , function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val || endnode.translation);
-        }}])})])}))}),
+        })})])}))}),
 
             new ProtoInstance({
               name : new SFString("point"),

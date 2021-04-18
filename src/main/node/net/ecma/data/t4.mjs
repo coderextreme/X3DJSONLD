@@ -78,7 +78,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE","FLY","WALK"]),
+              type : new MFString(["EXAMINE","FLY","WALK"]),
               speed : new SFFloat(3),
               avatarSize : new MFFloat(new MFFloat([200,200,120]))}),
 
