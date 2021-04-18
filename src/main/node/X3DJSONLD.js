@@ -490,7 +490,7 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 					let firstNode = object[key][0];
 					for (var skv in firstNode) {
 						firstNode[skv]['@containerField'] = key.substr(1);
-						console.log(firstNode[skv]);
+						// console.log(firstNode[skv]);
 						this.ConvertObject(xmlDoc, key, object, element, path, firstNode[skv]['@containerField']);
 					}
 				} else if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {

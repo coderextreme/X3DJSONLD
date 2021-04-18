@@ -317,16 +317,16 @@ VRMLScriptSerializer.prototype = {
 				if (method.startsWith(".set")) {
 					if (method.startsWith(".setadd")) {
 						method = method.substring(4);
-						console.log(method);
+						// console.log(method);
 						method = method.charAt(0).toLowerCase() + method.slice(1);
-						console.log(method);
+						// console.log(method);
 						if (ai === 0) {
 							if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
 								let attrType = fieldTypes[element.nodeName][node.nodeName];
 								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
 							} else {
 								let attrType = fieldTypes[element.nodeName][(method.substr(3,1).toLowerCase())+method.substr(4)];
-								console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
+								// console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
 								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
 							}
 							if (element.nodeName !== "X3D") {
