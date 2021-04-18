@@ -91,31 +91,31 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Rear View"),
-              orientation : new SFRotation([0,1,0,3.14]),
-              position : new SFVec3f([0,0,-10])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,3.14])),
+              position : new SFVec3f(new SFVec3f([0,0,-10]))}),
 
             new Viewpoint({
               description : new SFString("Top View"),
-              orientation : new SFRotation([1,0,0,-1.57]),
-              position : new SFVec3f([0,10,0])}),
+              orientation : new SFRotation(new SFRotation([1,0,0,-1.57])),
+              position : new SFVec3f(new SFVec3f([0,10,0]))}),
 
             new Viewpoint({
               description : new SFString("Bottom View"),
-              orientation : new SFRotation([1,0,0,1.57]),
-              position : new SFVec3f([0,-10,0])}),
+              orientation : new SFRotation(new SFRotation([1,0,0,1.57])),
+              position : new SFVec3f(new SFVec3f([0,-10,0]))}),
 
             new Viewpoint({
               description : new SFString("Right View"),
-              orientation : new SFRotation([0,1,0,1.57]),
-              position : new SFVec3f([10,0,0])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,1.57])),
+              position : new SFVec3f(new SFVec3f([10,0,0]))}),
 
             new Viewpoint({
               description : new SFString("Left View"),
-              orientation : new SFRotation([0,1,0,-1.57]),
-              position : new SFVec3f([-10,0,0])}),
+              orientation : new SFRotation(new SFRotation([0,1,0,-1.57])),
+              position : new SFVec3f(new SFVec3f([-10,0,0]))}),
 
             new NavigationInfo({
-              type : ["EXAMINE","WALK","FLY","ANY"]}),
+              type : new (["EXAMINE","WALK","FLY","ANY"])}),
 
             new Shape({
               appearance : new SFNode(
@@ -124,13 +124,13 @@ var X3D0 =  new X3D({
                     new Material({})),
                   texture : new SFNode(
                     new PixelTexture({
-                      image : new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015]),
+                      image : new SFImage(new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015])),
                       repeatS : new SFBool(false),
                       repeatT : new SFBool(false)}))})),
               geometry : new SFNode(
                 new IndexedFaceSet({
-                  coordIndex : new MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]),
+                  coordIndex : new MFInt32(new MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])),
                   coord : new SFNode(
                     new Coordinate({
-                      point : new MFVec3f([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1])}))}))})])}))});
+                      point : new MFVec3f(new MFVec3f([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]))}))}))})])}))});
 console.log(X3D0.toXMLNode());

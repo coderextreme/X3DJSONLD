@@ -67,31 +67,31 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Transform({
-              translation : new SFVec3f([0,2,0]),
+              translation : new SFVec3f(new SFVec3f([0,2,0])),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["Compare special character escaping"]),
+                      string : new MFString(new MFString(["Compare special character escaping"])),
                       fontStyle : new SFNode(
                         new FontStyle({
                           DEF : new SFString("testFontStyle"),
-                          justify : new MFString(["MIDDLE","MIDDLE"]),
+                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                           size : new SFFloat(0.8)}))})),
                   appearance : new SFNode(
                     new Appearance({
                       DEF : new SFString("LightBlueAppearance"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.1,0.7,0.7])}))}))})])}),
+                          diffuseColor : new SFColor(new SFColor([0.1,0.7,0.7]))}))}))})])}),
 
             new Transform({
-              translation : new SFVec3f([-3,0,0]),
+              translation : new SFVec3f(new SFVec3f([-3,0,0])),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["I don't think so","","he said \"Hi\""]),
+                      string : new MFString(new MFString(["I don't think so","","he said \"Hi\""])),
                       fontStyle : new SFNode(
                         new FontStyle({
                           USE : new SFString("testFontStyle")}))})),
@@ -100,12 +100,12 @@ var X3D0 =  new X3D({
                       USE : new SFString("LightBlueAppearance")}))})])}),
 
             new Transform({
-              translation : new SFVec3f([3,0,0]),
+              translation : new SFVec3f(new SFVec3f([3,0,0])),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["I don't think so","","he said \"Hi\""]),
+                      string : new MFString(new MFString(["I don't think so","","he said \"Hi\""])),
                       fontStyle : new SFNode(
                         new FontStyle({
                           USE : new SFString("testFontStyle")}))})),

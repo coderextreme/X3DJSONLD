@@ -54,7 +54,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["Node\"\"\""]),
+                      string : new MFString(new MFString(["Node\"\"\""])),
                       fontStyle : new SFNode(
                         new FontStyle({}))})),
                   appearance : new SFNode(
@@ -65,7 +65,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["Node2","\\\\","\\\\\\\\","Node2"]),
+                      string : new MFString(new MFString(["Node2","\\\\","\\\\\\\\","Node2"])),
                       fontStyle : new SFNode(
                         new FontStyle({}))})),
                   appearance : new SFNode(
@@ -76,7 +76,7 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]),
+                      string : new MFString(new MFString(["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""])),
                       fontStyle : new SFNode(
                         new FontStyle({}))})),
                   appearance : new SFNode(
@@ -91,6 +91,6 @@ var X3D0 =  new X3D({
                       name : new SFString("frontUrls"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("\"rnl_front.png\" \"uffizi_front.png\"")}),
-                  .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';")])})])})])}))});
+                  {ecmascript:
+			    var me = '"1" ""2" "\\n3"';}])})])})])}))});
 console.log(X3D0.toXMLNode());

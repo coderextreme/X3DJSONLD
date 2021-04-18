@@ -8,7 +8,6 @@ import { component } from './x3d.mjs';
 import { SFInt32 } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
@@ -118,7 +117,7 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("license"),
               content : new SFString("../../license.html")}),
-          { "#comment" : new CommentsBlock("meta content='under development' name='warning'/") }])})),
+          /*meta content='under development' name='warning'/*/])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -143,7 +142,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([0.5,0.5,0.9])})),
+                                  diffuseColor : new SFColor(new SFColor([0.5,0.5,0.9]))})),
                               shaders : new SFNode(
                                 new ComposedShader({
                                   language : new SFString("GLSL"),
@@ -202,7 +201,7 @@ var X3D0 =  new X3D({
                           name : new SFString("nodes"),
                           DEF : new SFString("nodes"),
                           reference : new SFString("http://titania.create3000.de"),
-                          { "#comment" : new CommentsBlock("NULL") }}))})),
+                          /*NULL*/}))})),
                   value : new SFNode(
                     new MetadataSet({
                       name : new SFString("NavigationInfo"),
@@ -213,7 +212,7 @@ var X3D0 =  new X3D({
                           name : new SFString("type"),
                           DEF : new SFString("type"),
                           reference : new SFString("http://titania.create3000.de"),
-                          value : new MFString(["EXAMINE"])}))})),
+                          value : new MFString(new MFString(["EXAMINE"]))}))})),
                   value : new SFNode(
                     new MetadataSet({
                       name : new SFString("Viewpoint"),
@@ -224,19 +223,19 @@ var X3D0 =  new X3D({
                           name : new SFString("position"),
                           DEF : new SFString("position"),
                           reference : new SFString("http://titania.create3000.de"),
-                          value : new MFDouble([6.24067728185014,0.00250837343276661,2.92117542307615])})),
+                          value : new MFDouble(new MFDouble([6.24067728185014,0.00250837343276661,2.92117542307615]))})),
                       value : new SFNode(
                         new MetadataDouble({
                           name : new SFString("orientation"),
                           DEF : new SFString("orientation"),
                           reference : new SFString("http://titania.create3000.de"),
-                          value : new MFDouble([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])})),
+                          value : new MFDouble(new MFDouble([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]))})),
                       value : new SFNode(
                         new MetadataDouble({
                           name : new SFString("centerOfRotation"),
                           DEF : new SFString("centerOfRotation"),
                           reference : new SFString("http://titania.create3000.de"),
-                          value : new MFDouble([-0.808320198626341,-0.358072370409949,0.22817191560906])}))}))})])}),
+                          value : new MFDouble(new MFDouble([-0.808320198626341,-0.358072370409949,0.22817191560906]))}))}))})])}),
 
             new ProtoInstance({
               name : new SFString("myPrototype")})])}))});

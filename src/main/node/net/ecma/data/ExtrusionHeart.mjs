@@ -63,23 +63,23 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Viewpoint({
               description : new SFString("Extrusion Heart"),
-              orientation : new SFRotation([1,0,0,1.57]),
-              position : new SFVec3f([0,-4,0])}),
+              orientation : new SFRotation(new SFRotation([1,0,0,1.57])),
+              position : new SFVec3f(new SFVec3f([0,-4,0]))}),
 
             new Transform({
-              translation : new SFVec3f([0,-0.5,0]),
+              translation : new SFVec3f(new SFVec3f([0,-0.5,0])),
               children : new MFNode([
                 new Shape({
                   geometry : new SFNode(
                     new Extrusion({
                       creaseAngle : new SFFloat(3.14159),
-                      crossSection : new MFVec2f([0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]),
-                      scale : new MFVec2f([0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01]),
+                      crossSection : new MFVec2f(new MFVec2f([0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8])),
+                      scale : new MFVec2f(new MFVec2f([0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01])),
                       solid : new SFBool(false),
-                      spine : new MFVec3f([0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0])})),
+                      spine : new MFVec3f(new MFVec3f([0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.8,0.3,0.3])}))}))})])})])}))});
+                          diffuseColor : new SFColor(new SFColor([0.8,0.3,0.3]))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

@@ -55,11 +55,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : ["EXAMINE"]}),
+              type : new (["EXAMINE"])}),
 
             new Viewpoint({
               description : new SFString("Rubiks Cube on Fire"),
-              position : new SFVec3f([0,0,12])}),
+              position : new SFVec3f(new SFVec3f([0,0,12]))}),
 
             new ProtoDeclare({
               name : new SFString("anyShape"),
@@ -84,7 +84,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -123,7 +123,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -197,7 +197,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -271,7 +271,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])})),
+                                  diffuseColor : new SFColor(new SFColor([1,1,1]))}))}))})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -335,10 +335,10 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([1,1,1])})),
+                          size : new SFVec3f(new SFVec3f([1,1,1]))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0,1,0])}))}))})])})])})])}))});
+                              diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

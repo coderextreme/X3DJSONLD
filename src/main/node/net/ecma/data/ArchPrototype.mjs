@@ -9,7 +9,6 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -85,10 +84,10 @@ var X3D0 =  new X3D({
               appinfo : new SFString("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  { "#comment" : new CommentsBlock("COLOR OF ARCH") },
-                  { "#comment" : new CommentsBlock("INPUT PARAMETERS") },
-                  { "#comment" : new CommentsBlock("General parameters: measures in meters") },
-                  { "#comment" : new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply") },
+                  /*COLOR OF ARCH*/
+                  /*INPUT PARAMETERS*/
+                  /*General parameters: measures in meters*/
+                  /*Parameters to create to create shapes related to arch: put true to apply*/
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFCOLOR,
@@ -189,15 +188,15 @@ var X3D0 =  new X3D({
                       value : new SFString("false")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
-                  { "#comment" : new CommentsBlock("First node determines node type of this prototype") },
-                  { "#comment" : new CommentsBlock("IndexedFaceset creates arch") },
+                  /*First node determines node type of this prototype*/
+                  /*IndexedFaceset creates arch*/
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("ArchTransform"),
                       children : new MFNode([
                         new Shape({
                           DEF : new SFString("Arch"),
-                          { "#comment" : new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly") },
+                          /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/
                           geometry : new SFNode(
                             new IndexedFaceSet({
                               DEF : new SFString("ArchIndex"),
@@ -221,16 +220,16 @@ var X3D0 =  new X3D({
                                         new connect({
                                           nodeField : new SFString("diffuseColor"),
                                           protoField : new SFString("diffuseColor")})])}))}))}))})])}),
-                  { "#comment" : new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph") },
-                  { "#comment" : new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs") },
+                  /*Subsequent nodes do not render, but still must be a valid X3D subgraph*/
+                  /*This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs*/
 
                     new Script({
                       DEF : new SFString("ArchPrototypeScript"),
-                      url : new MFString(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]),
-                      { "#comment" : new CommentsBlock("INPUT PARAMETERS") },
-                      { "#comment" : new CommentsBlock("General parameters") },
-                      { "#comment" : new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply") },
-                      { "#comment" : new CommentsBlock("OUTPUT PARAMETERS") },
+                      url : new MFString(new MFString(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"])),
+                      /*INPUT PARAMETERS*/
+                      /*General parameters*/
+                      /*Parameters to create to create shapes related to arch: put true to apply*/
+                      /*OUTPUT PARAMETERS*/
                       field : new MFNode([
                         new field({
                           type : field.TYPE_SFFLOAT,
@@ -425,9 +424,9 @@ var X3D0 =  new X3D({
                 new fieldValue({
                   name : new SFString("pierHeight"),
                   value : new SFString("2")})])}),
-          { "#comment" : new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)") },
+          /*Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)*/
 
             new Inline({
               DEF : new SFString("CoordinateAxes"),
-              url : new MFString(["../data/CoordinateAxes.x3d"])})])}))});
+              url : new MFString(new MFString(["../data/CoordinateAxes.x3d"]))})])}))});
 console.log(X3D0.toXMLNode());

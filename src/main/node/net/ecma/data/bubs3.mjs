@@ -56,20 +56,20 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : ["EXAMINE"]}),
+              type : new (["EXAMINE"])}),
 
             new Viewpoint({
-              position : new SFVec3f([0,0,4]),
-              orientation : new SFRotation([1,0,0,0]),
+              position : new SFVec3f(new SFVec3f([0,0,4])),
+              orientation : new SFRotation(new SFRotation([1,0,0,0])),
               description : new SFString("Bubbles in action")}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]),
-              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]),
-              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
-              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
-              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
-              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
+              backUrl : new MFString(new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])),
+              bottomUrl : new MFString(new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])),
+              frontUrl : new MFString(new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])),
+              leftUrl : new MFString(new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])),
+              rightUrl : new MFString(new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])),
+              topUrl : new MFString(new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]))}),
 
             new Transform({
               DEF : new SFString("DECLBubble_bubbleA"),
@@ -82,7 +82,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0]),
+                          diffuseColor : new SFColor(new SFColor([1,0,0])),
                           transparency : new SFFloat(0.2)}))}))}),
 
                 new Script({
@@ -116,45 +116,47 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}")])}),
+                  {ecmascript:
+},
+ {ecmascript: function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+},
+ {ecmascript: function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}}])}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleA_bubbleClock"),
@@ -190,7 +192,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0]),
+                          diffuseColor : new SFColor(new SFColor([1,0,0])),
                           transparency : new SFFloat(0.2)}))}))}),
 
                 new Script({
@@ -224,45 +226,47 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}")])}),
+                  {ecmascript:
+},
+ {ecmascript: function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+},
+ {ecmascript: function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}}])}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleB_bubbleClock"),
@@ -298,7 +302,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0]),
+                          diffuseColor : new SFColor(new SFColor([1,0,0])),
                           transparency : new SFFloat(0.2)}))}))}),
 
                 new Script({
@@ -332,45 +336,47 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}")])}),
+                  {ecmascript:
+},
+ {ecmascript: function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+},
+ {ecmascript: function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}}])}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleC_bubbleClock"),
@@ -406,7 +412,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0]),
+                          diffuseColor : new SFColor(new SFColor([1,0,0])),
                           transparency : new SFFloat(0.2)}))}))}),
 
                 new Script({
@@ -440,45 +446,47 @@ var X3D0 =  new X3D({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                  .setSourceCode("ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}")])}),
+                  {ecmascript:
+},
+ {ecmascript: function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+},
+ {ecmascript: function set_fraction(value) {
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) > 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) > 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) > 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) > 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) > 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) > 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
+    }
+}}])}),
 
                 new TimeSensor({
                   DEF : new SFString("DECLBubble_bubbleD_bubbleClock"),

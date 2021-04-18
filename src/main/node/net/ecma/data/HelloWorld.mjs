@@ -4,7 +4,6 @@ import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
@@ -29,7 +28,7 @@ var X3D0 =  new X3D({
       version : new SFString("3.3"),
       head : new SFNode(
         new head({
-          { "#comment" : new CommentsBlock("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON") },
+          /*Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -124,22 +123,22 @@ var X3D0 =  new X3D({
               content : new SFString("HelloWorld.json")})])})),
       Scene : new SFNode(
         new Scene({
-          { "#comment" : new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)") },
+          /*Example scene to illustrate X3D nodes and fields (XML elements and attributes)*/
           children : new MFNode([
             new WorldInfo({
-              info : new MFString(["Example scene to illustrate a simple X3D model"]),
+              info : new MFString(new MFString(["Example scene to illustrate a simple X3D model"])),
               title : new SFString("Hello World!")}),
 
             new Group({
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
-                  centerOfRotation : new SFVec3f([0,-1,0]),
+                  centerOfRotation : new SFVec3f(new SFVec3f([0,-1,0])),
                   description : new SFString("Hello world!"),
-                  position : new SFVec3f([0,-1,7])}),
+                  position : new SFVec3f(new SFVec3f([0,-1,7]))}),
 
                 new Transform({
-                  rotation : new SFRotation([0,1,0,3]),
+                  rotation : new SFRotation(new SFRotation([0,1,0,3])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
@@ -149,23 +148,23 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("MaterialLightBlue"),
-                              diffuseColor : new SFColor([0.1,0.5,1])})),
+                              diffuseColor : new SFColor(new SFColor([0.1,0.5,1]))})),
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})])}),
+                              url : new MFString(new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]))}))}))})])}),
 
                 new Transform({
-                  translation : new SFVec3f([0,-2,0]),
+                  translation : new SFVec3f(new SFVec3f([0,-2,0])),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),
-                          string : new MFString(["Hello","world!"]),
+                          string : new MFString(new MFString(["Hello","world!"])),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(

@@ -4,7 +4,6 @@ import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
@@ -31,7 +30,7 @@ var X3D0 =  new X3D({
       version : new SFString("3.3"),
       head : new SFNode(
         new head({
-          { "#comment" : new CommentsBlock("Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d") },
+          /*Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -118,7 +117,7 @@ var X3D0 =  new X3D({
               content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
-          { "#comment" : new CommentsBlock("**********Human Model Protypes*********") },
+          /***********Human Model Protypes**********/
           children : new MFNode([
             new ProtoDeclare({
               name : new SFString("Humanoid1_1"),
@@ -126,7 +125,7 @@ var X3D0 =  new X3D({
               documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  { "#comment" : new CommentsBlock("HAnim v1.1 field definitions") },
+                  /*HAnim v1.1 field definitions*/
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
@@ -236,14 +235,14 @@ var X3D0 =  new X3D({
                       name : new SFString("skinCoord"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       appinfo : new SFString("Hint: HAnim version 2.0"),
-                      { "#comment" : new CommentsBlock("NULL") }}),
+                      /*NULL*/}),
 
                     new field({
                       type : field.TYPE_SFNODE,
                       name : new SFString("skinNormal"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       appinfo : new SFString("Hint: HAnim version 2.0"),
-                      { "#comment" : new CommentsBlock("NULL") }})])})),
+                      /*NULL*/})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -517,7 +516,7 @@ var X3D0 =  new X3D({
                       name : new SFString("coord"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       appinfo : new SFString("contains Coordinate nodes"),
-                      { "#comment" : new CommentsBlock("NULL") }}),
+                      /*NULL*/}),
 
                     new field({
                       type : field.TYPE_MFNODE,
@@ -693,22 +692,22 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new WorldInfo({
-                      info : new MFString(["null body node"])})])}))}),
+                      info : new MFString(new MFString(["null body node"]))})])}))}),
 
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(["Humanoid Animation","(HAnim) prototype","implementations"]),
+                  string : new MFString(new MFString(["Humanoid Animation","(HAnim) prototype","implementations"])),
                   fontStyle : new SFNode(
                     new FontStyle({
-                      justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
                       ambientIntensity : new SFFloat(0.25),
-                      diffuseColor : new SFColor([0.795918,0.505869,0.093315]),
+                      diffuseColor : new SFColor(new SFColor([0.795918,0.505869,0.093315])),
                       shininess : new SFFloat(0.39),
-                      specularColor : new SFColor([0.923469,0.428866,0.006369]),
-                      { "#comment" : new CommentsBlock("Universal Media Library: Autumn 9") }}))}))})])}))});
+                      specularColor : new SFColor(new SFColor([0.923469,0.428866,0.006369])),
+                      /*Universal Media Library: Autumn 9*/}))}))})])}))});
 console.log(X3D0.toXMLNode());

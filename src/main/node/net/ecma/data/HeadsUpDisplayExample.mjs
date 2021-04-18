@@ -7,7 +7,6 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
-import { CommentsBlock } from './x3d.mjs';
 import { ExternProtoDeclare } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { field } from './x3d.mjs';
@@ -85,12 +84,12 @@ var X3D0 =  new X3D({
               content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
-          { "#comment" : new CommentsBlock("Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n") },
+          /*Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n*/
           children : new MFNode([
             new ExternProtoDeclare({
               name : new SFString("HeadsUpDisplay"),
               appinfo : new SFString("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location"),
-              url : new MFString(["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"]),
+              url : new MFString(new MFString(["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"])),
               field : new MFNode([
                 new field({
                   type : field.TYPE_SFVEC3F,
@@ -118,19 +117,19 @@ var X3D0 =  new X3D({
 
             new Background({
               DEF : new SFString("SandyShallowBottom"),
-              groundAngle : new MFFloat([0.05,1.52,1.56,1.5707]),
-              groundColor : new MFColor([0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4]),
-              skyAngle : new MFFloat([0.04,0.05,0.1,1.309,1.57]),
-              skyColor : new MFColor([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9])}),
+              groundAngle : new MFFloat(new MFFloat([0.05,1.52,1.56,1.5707])),
+              groundColor : new MFColor(new MFColor([0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4])),
+              skyAngle : new MFFloat(new MFFloat([0.04,0.05,0.1,1.309,1.57])),
+              skyColor : new MFColor(new MFColor([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]))}),
 
             new Viewpoint({
               description : new SFString("Heads-up display (HUD)")}),
-          { "#comment" : new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence") },
+          /*ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence*/
 
             new ProtoInstance({
               name : new SFString("HeadsUpDisplay"),
               DEF : new SFString("HeadsUpDisplayInstance"),
-              { "#comment" : new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view") },
+              /*example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view*/
               fieldValue : new MFNode([
                 new fieldValue({
                   name : new SFString("screenOffset"),
@@ -142,17 +141,17 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["HUD text stays fixed","while user navigates"]),
+                          string : new MFString(new MFString(["HUD text stays fixed","while user navigates"])),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(["MIDDLE","MIDDLE"]),
+                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
                               size : new SFFloat(0.3)}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([0.894118,0.819608,1])}))}))})])})])}),
+                              diffuseColor : new SFColor(new SFColor([0.894118,0.819608,1]))}))}))})])})])}),
 
             new Inline({
-              url : new MFString(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"])})])}))});
+              url : new MFString(new MFString(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"]))})])}))});
 console.log(X3D0.toXMLNode());
