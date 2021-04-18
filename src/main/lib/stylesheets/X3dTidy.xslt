@@ -3118,6 +3118,9 @@ Recommended tools:
                       ((local-name()='applied' and .='true') or
                       (local-name()='linetype' and (.='1')) or
                       (local-name()='linewidthScaleFactor' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='PointProperties' and
+                      ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
                       ((local-name()='enabled' and .='true') or
                       (local-name()='plane' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')))) and
@@ -3865,7 +3868,7 @@ Recommended tools:
             
             <!-- fix attribute name if incorrect -->
             <xsl:choose>
-                <xsl:when test="(local-name(..) = 'meta') and ((local-name() = 'key') or local-name() = 'value'))">
+                <xsl:when test="(local-name(..) = 'meta') and ((local-name() = 'key') or (local-name() = 'value'))">
                     <xsl:text>content</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fix </xsl:text>
@@ -3887,6 +3890,14 @@ Recommended tools:
                         <xsl:text>*** fix </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
                         <xsl:text>: change attribute name mustOutput to forceOutput</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'pointSizeAttenuation')">
+                    <xsl:text>attenuation</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fix </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text>: change attribute name pointSizeAttenuation to attenuation</xsl:text>
                     </xsl:message>
                 </xsl:when>
                 <xsl:otherwise>

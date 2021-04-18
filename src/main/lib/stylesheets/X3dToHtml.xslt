@@ -1,6 +1,10 @@
 <?xml version='1.0'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+        
+    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
 <!--
 Copyright (c) 2004-2021 held by the author(s).  All rights reserved.
 
@@ -598,6 +602,9 @@ Recommended tool:
                       ((local-name()='applied' and string(.)='true') or
                       (local-name()='linetype' and (string(.)='1')) or
                       (local-name()='linewidthScaleFactor' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='PointProperties' and
+                      ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='plane' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0')))) and
