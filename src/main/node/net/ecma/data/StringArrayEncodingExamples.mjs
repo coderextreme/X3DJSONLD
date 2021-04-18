@@ -91,21 +91,21 @@ var X3D0 =  new X3D({
               description : new SFString("Hello MFString syntax")}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.6,1,0.8]))}),
+              skyColor : new MFColor([0.6,1,0.8])}),
 
             new Shape({
               geometry : new SFNode(
                 new Text({
-                  string : new MFString(new MFString(["One, Two, Three","","He said, \"Immel did it!\""])),
+                  string : new MFString(["One, Two, Three","","He said, \"Immel did it!\""]),
                   /*alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'*/
                   /*alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})*/
                   fontStyle : new SFNode(
                     new FontStyle({
-                      justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                      justify : new MFString(["MIDDLE","MIDDLE"]),
                       style : new SFString("BOLD")}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
-                      diffuseColor : new SFColor(new SFColor([0.6,0.4,0.2]))}))}))})])}))});
+                      diffuseColor : new SFColor([0.6,0.4,0.2])}))}))})])}))});
 console.log(X3D0.toXMLNode());

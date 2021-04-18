@@ -153,8 +153,8 @@ var X3D0 =  new X3D({
 
                     new OrientationInterpolator({
                       DEF : new SFString("Spinner"),
-                      key : new MFFloat(new MFFloat([0,0.5,1])),
-                      keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,3.14,0,1,0,6.28]))}),
+                      key : new MFFloat([0,0.5,1]),
+                      keyValue : new MFRotation([0,1,0,0,0,1,0,3.14,0,1,0,6.28])}),
 
                     new ROUTE({
                       fromField : new SFString("fraction_changed"),
@@ -171,8 +171,8 @@ var X3D0 =  new X3D({
 
             new Viewpoint({
               description : new SFString("Click on blue crossbar to activate second SpinGroup"),
-              orientation : new SFRotation(new SFRotation([1,0,0,-0.52])),
-              position : new SFVec3f(new SFVec3f([0,18,30]))}),
+              orientation : new SFRotation([1,0,0,-0.52]),
+              position : new SFVec3f([0,18,30])}),
           /*Create an instance, meaning actual nodes that render*/
 
             new ProtoInstance({
@@ -192,18 +192,18 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([25,2,2]))})),
+                          size : new SFVec3f([25,2,2])})),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("Green"),
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0.3]))}))}))}),
+                              diffuseColor : new SFColor([0,1,0.3])}))}))}),
 
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([2,25,2]))})),
+                          size : new SFVec3f([2,25,2])})),
                       appearance : new SFNode(
                         new Appearance({
                           USE : new SFString("Green")}))}),
@@ -234,12 +234,12 @@ var X3D0 =  new X3D({
                             new Shape({
                               geometry : new SFNode(
                                 new Box({
-                                  size : new SFVec3f(new SFVec3f([2,2.05,25]))})),
+                                  size : new SFVec3f([2,2.05,25])})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor(new SFColor([0,0.3,1]))}))}))})])}),
+                                      diffuseColor : new SFColor([0,0.3,1])}))}))})])}),
                       /*stopTime > startTime ensures that initial state is stopped*/])})])})])}),
 
             new ROUTE({

@@ -59,27 +59,27 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new DirectionalLight({
-              direction : new SFVec3f(new SFVec3f([0,-0.8,-0.2])),
+              direction : new SFVec3f([0,-0.8,-0.2]),
               intensity : new SFFloat(0.5)}),
 
             new Background({
-              skyColor : new MFColor(new MFColor([1,1,1]))}),
+              skyColor : new MFColor([1,1,1])}),
 
             new Viewpoint({
               description : new SFString("One mathematical orbital"),
-              position : new SFVec3f(new SFVec3f([0,0,50]))}),
+              position : new SFVec3f([0,0,50])}),
 
             new Transform({
               DEF : new SFString("OrbitTransform"),
-              translation : new SFVec3f(new SFVec3f([8,0,0])),
+              translation : new SFVec3f([8,0,0]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0,0.5,1])),
-                          specularColor : new SFColor(new SFColor([0,0.5,1]))}))})),
+                          diffuseColor : new SFColor([0,0.5,1]),
+                          specularColor : new SFColor([0,0.5,1])}))})),
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       convex : new SFBool(false),

@@ -78,17 +78,17 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new MFString(["EXAMINE","FLY","WALK"]),
+              type : ["EXAMINE","FLY","WALK"],
               speed : new SFFloat(3),
-              avatarSize : new MFFloat(new MFFloat([200,200,120]))}),
+              avatarSize : new MFFloat([200,200,120])}),
 
             new WorldInfo({
               title : new SFString("Arts Mapper")}),
 
             new Viewpoint({
               description : new SFString("looking North"),
-              position : new SFVec3f(new SFVec3f([0,60,110])),
-              orientation : new SFRotation(new SFRotation([1,0,0,-0.699999988079071])),
+              position : new SFVec3f([0,60,110]),
+              orientation : new SFRotation([1,0,0,-0.699999988079071]),
               fieldOfView : new SFFloat(0.785398125648499)}),
 
             new ProtoDeclare({
@@ -123,7 +123,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,1,1])),
+                                  diffuseColor : new SFColor([1,1,1]),
                                   IS : new SFNode(
                                     new IS({
                                       connect : new MFNode([
@@ -158,7 +158,7 @@ var X3D0 =  new X3D({
                           connect : new MFNode([
                             new connect({
                               nodeField : new SFString("posi"),
-                              protoField : new SFString("pos")})])}))])})])}))}),
+                              protoField : new SFString("pos")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("n"),
@@ -184,7 +184,7 @@ var X3D0 =  new X3D({
                           connect : new MFNode([
                             new connect({
                               nodeField : new SFString("posi"),
-                              protoField : new SFString("pos")})])}))])})])}))}),
+                              protoField : new SFString("pos")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("i"),
@@ -210,13 +210,13 @@ var X3D0 =  new X3D({
                           connect : new MFNode([
                             new connect({
                               nodeField : new SFString("posi"),
-                              protoField : new SFString("pos")})])}))])})])}))}),
+                              protoField : new SFString("pos")})])})])})])}))}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([-468,0,315])),
+              translation : new SFVec3f([-468,0,315]),
               children : new MFNode([
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("High Peak Community Arts"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -227,7 +227,7 @@ var X3D0 =  new X3D({
                           value : new SFString("400 0.100000001490116 -385")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("People Express"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -238,7 +238,7 @@ var X3D0 =  new X3D({
                           value : new SFString("429.899993896484 0.100000001490116 -319.600006103516")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("QArts/Studios"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -249,7 +249,7 @@ var X3D0 =  new X3D({
                           value : new SFString("430 0.100000001490116 -335")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("First Movement"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -260,7 +260,7 @@ var X3D0 =  new X3D({
                           value : new SFString("429.899993896484 0.100000001490116 -360.299987792969")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("City Arts"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -271,7 +271,7 @@ var X3D0 =  new X3D({
                           value : new SFString("455.899993896484 0.100000001490116 -341.299987792969")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Indigo Dance Group (Salamanda Tandem)"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -282,7 +282,7 @@ var X3D0 =  new X3D({
                           value : new SFString("456.100006103516 0.100000001490116 -341.5")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Watering Seeds"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -293,7 +293,7 @@ var X3D0 =  new X3D({
                           value : new SFString("454 0.100000001490116 -361.299987792969")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Fased In The Arts"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -304,7 +304,7 @@ var X3D0 =  new X3D({
                           value : new SFString("440 0.100000001490116 -350")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("27a Access Artspace"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -315,7 +315,7 @@ var X3D0 =  new X3D({
                           value : new SFString("458.899993896484 0.100000001490116 -304.299987792969")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Bamboozle Theatre Company"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -326,7 +326,7 @@ var X3D0 =  new X3D({
                           value : new SFString("457.100006103516 0.100000001490116 -300.799987792969")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Mantle Community Arts"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -337,7 +337,7 @@ var X3D0 =  new X3D({
                           value : new SFString("442.399993896484 0.100000001490116 -314.5")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Artlink East"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -348,7 +348,7 @@ var X3D0 =  new X3D({
                           value : new SFString("491.600006103516 0.100000001490116 -335.700012207031")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Creations"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -359,7 +359,7 @@ var X3D0 =  new X3D({
                           value : new SFString("467 0.100000001490116 -243.899993896484")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("New Perspectives"),
                   children : new MFNode([
                     new ProtoInstance({
@@ -370,7 +370,7 @@ var X3D0 =  new X3D({
                           value : new SFString("457.399993896484 0.100000001490116 -262.700012207031")})])})])}),
 
                 new Anchor({
-                  url : new MFString(new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])),
+                  url : new MFString([", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("UKan2"),
                   children : new MFNode([
                     new ProtoInstance({

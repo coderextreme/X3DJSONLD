@@ -117,7 +117,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new ProximitySensor({
                           DEF : new SFString("WhereSensor"),
-                          size : new SFVec3f(new SFVec3f([1000000000,1000000000,1000000000])),
+                          size : new SFVec3f([1000000000,1000000000,1000000000]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -141,7 +141,7 @@ var X3D0 =  new X3D({
                                           protoField : new SFString("locationOffset")})])})),
                                   children : new MFNode([
                                     new Transform({
-                                      translation : new SFVec3f(new SFVec3f([0,0,-10])),
+                                      translation : new SFVec3f([0,0,-10]),
                                       children : new MFNode([
                                         new Group({
                                           IS : new SFNode(
@@ -225,8 +225,8 @@ var X3D0 =  new X3D({
                                                   connect : new MFNode([
                                                     new connect({
                                                       nodeField : new SFString("traceEnabled"),
-                                                      protoField : new SFString("traceEnabled")})])})),
-                                              ]),
+                                                      protoField : new SFString("traceEnabled")})])})]),
+                                              
 ecmascript:eval (0
 
 , function tracePrint (text)
@@ -313,26 +313,26 @@ ecmascript:eval (0
           /*====================*/
 
             new Background({
-              groundColor : new MFColor(new MFColor([0.1,0.1,0.3])),
-              skyColor : new MFColor(new MFColor([0.5,0.5,0.1]))}),
+              groundColor : new MFColor([0.1,0.1,0.3]),
+              skyColor : new MFColor([0.5,0.5,0.1])}),
 
             new Anchor({
               description : new SFString("HeadsUpDisplayExample"),
-              parameter : new MFString(new MFString(["target=_blank"])),
-              url : new MFString(new MFString(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"])),
+              parameter : new MFString(["target=_blank"]),
+              url : new MFString(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0,1,1])),
-                          emissiveColor : new SFColor(new SFColor([0,1,1]))}))})),
+                          diffuseColor : new SFColor([0,1,1]),
+                          emissiveColor : new SFColor([0,1,1])}))})),
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"])),
+                      string : new MFString(["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(new MFString(["MIDDLE","MIDDLE"])),
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
                           size : new SFFloat(0.8)}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

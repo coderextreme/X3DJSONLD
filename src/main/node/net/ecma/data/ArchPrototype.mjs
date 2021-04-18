@@ -225,7 +225,7 @@ var X3D0 =  new X3D({
 
                     new Script({
                       DEF : new SFString("ArchPrototypeScript"),
-                      url : new MFString(new MFString(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"])),
+                      url : new MFString(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]),
                       /*INPUT PARAMETERS*/
                       /*General parameters*/
                       /*Parameters to create to create shapes related to arch: put true to apply*/
@@ -369,7 +369,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("lintel"),
-                              protoField : new SFString("lintel")})])}))])}),
+                              protoField : new SFString("lintel")})])})])}),
 
                     new ROUTE({
                       fromField : new SFString("computedScale"),
@@ -428,5 +428,5 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("CoordinateAxes"),
-              url : new MFString(new MFString(["../data/CoordinateAxes.x3d"]))})])}))});
+              url : new MFString(["../data/CoordinateAxes.x3d"])})])}))});
 console.log(X3D0.toXMLNode());

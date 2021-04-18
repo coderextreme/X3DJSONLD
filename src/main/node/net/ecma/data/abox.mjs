@@ -110,5 +110,5 @@ var X3D0 =  new X3D({
                     new Shape({
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f(new SFVec3f([140,140,140]))}))})])})])})])}))});
+                          size : new SFVec3f([140,140,140])}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

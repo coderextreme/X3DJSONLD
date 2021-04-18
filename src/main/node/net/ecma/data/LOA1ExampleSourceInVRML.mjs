@@ -167,7 +167,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("translation"),
-                              protoField : new SFString("translation")})])}))])})])}))}),
+                              protoField : new SFString("translation")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Joint"),
@@ -9402,9 +9402,9 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new WorldInfo({
                   title : new SFString("HANIM 200x Default Joint Centers, LOA&#8209;1"),
-                  info : new MFString(new MFString([" HANIM 200x Default Joint Centers, Level-Of-Articulation 1 -------------------------------------------------------- HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://H-Anim.org/Specifications/H-Anim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modelling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "]))})])}),
+                  info : new MFString([" HANIM 200x Default Joint Centers, Level-Of-Articulation 1 -------------------------------------------------------- HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://H-Anim.org/Specifications/H-Anim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modelling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "])})])}),
 
             new NavigationInfo({
-              avatarSize : new MFFloat(new MFFloat([0.25,1.600000023841858,0.75])),
+              avatarSize : new MFFloat([0.25,1.600000023841858,0.75]),
               speed : new SFFloat(1.5)})])}))});
 console.log(X3D0.toXMLNode());

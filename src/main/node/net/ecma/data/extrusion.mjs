@@ -60,14 +60,14 @@ var X3D0 =  new X3D({
                   geometry : new SFNode(
                     new Extrusion({
                       DEF : new SFString("extrusion"),
-                      spine : new MFVec3f(new MFVec3f([-50,-50,0,50,50,0])),
+                      spine : new MFVec3f([-50,-50,0,50,50,0]),
                       creaseAngle : new SFFloat(0.785),
-                      crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))})),
+                      crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))}),
+                          diffuseColor : new SFColor([0,1,0])}))}))}),
 
                 new TimeSensor({
                   DEF : new SFString("TourTime"),

@@ -169,7 +169,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("translation"),
-                              protoField : new SFString("translation")})])}))])})])}))}),
+                              protoField : new SFString("translation")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Joint"),
@@ -275,22 +275,22 @@ var X3D0 =  new X3D({
                             new Shape({
                               geometry : new SFNode(
                                 new IndexedFaceSet({
-                                  coordIndex : new MFInt32(new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1])),
+                                  coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]),
                                   creaseAngle : new SFFloat(0.5),
                                   coord : new SFNode(
                                     new Coordinate({
-                                      point : new MFVec3f(new MFVec3f([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0]))}))})),
+                                      point : new MFVec3f([0,0.009999999776482582,0,-0.009999999776482582,0,0,0,0,0.009999999776482582,0.009999999776482582,0,0,0,0,-0.009999999776482582,0,-0.009999999776482582,0])}))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor(new SFColor([1,1,0]))}))}))}),
+                                      diffuseColor : new SFColor([1,1,0])}))}))}),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("translation"),
-                                  protoField : new SFString("center")})])}))])})])})])}))}),
+                                  protoField : new SFString("center")})])})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Segment"),

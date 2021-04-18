@@ -299,7 +299,7 @@ var X3D0 =  new X3D({
                   /*NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation*/
 
                     new NavigationInfo({
-                      type : new MFString(["EXAMINE","FLY","ANY"]),
+                      type : ["EXAMINE","FLY","ANY"],
                       DEF : new SFString("CameraNavInfo"),
                       IS : new SFNode(
                         new IS({
@@ -339,8 +339,8 @@ var X3D0 =  new X3D({
 
                     new PositionInterpolator({
                       DEF : new SFString("CameraPositionInterpolator"),
-                      key : new MFFloat(new MFFloat([0,1])),
-                      keyValue : new MFVec3f(new MFVec3f([0,0,0,0,0,0])),
+                      key : new MFFloat([0,1]),
+                      keyValue : new MFVec3f([0,0,0,0,0,0]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -350,8 +350,8 @@ var X3D0 =  new X3D({
 
                     new OrientationInterpolator({
                       DEF : new SFString("CameraOrientationInterpolator"),
-                      key : new MFFloat(new MFFloat([0,1])),
-                      keyValue : new MFRotation(new MFRotation([0,1,0,0,0,1,0,0])),
+                      key : new MFFloat([0,1]),
+                      keyValue : new MFRotation([0,1,0,0,0,1,0,0]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -662,8 +662,8 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("traceEnabled"),
-                              protoField : new SFString("traceEnabled")})])})),
-                      ]),
+                              protoField : new SFString("traceEnabled")})])})]),
+                      
 ecmascript:eval (0
 , function initialize () // CameraScript
 {
@@ -1269,8 +1269,8 @@ ecmascript:eval (0
 
                             new connect({
                               nodeField : new SFString("traceEnabled"),
-                              protoField : new SFString("traceEnabled")})])})),
-                      ]),
+                              protoField : new SFString("traceEnabled")})])})]),
+                      
 ecmascript:eval (0
 , function initialize () // CameraShotScript
 {
@@ -1585,8 +1585,8 @@ ecmascript:eval (0
 
                             new connect({
                               nodeField : new SFString("traceEnabled"),
-                              protoField : new SFString("traceEnabled")})])})),
-                      ]),
+                              protoField : new SFString("traceEnabled")})])})]),
+                      
 ecmascript:eval (0
 , function initialize () // CameraMovementScript
 {
@@ -1878,8 +1878,8 @@ ecmascript:eval (0
 
                             new connect({
                               nodeField : new SFString("traceEnabled"),
-                              protoField : new SFString("traceEnabled")})])})),
-                      ]),
+                              protoField : new SFString("traceEnabled")})])})]),
+                      
 ecmascript:eval (0
 , function initialize () // OfflineRenderScript
 {
@@ -1938,24 +1938,24 @@ ecmascript:eval (0
           /*=============== Launch Prototype Example ==============*/
 
             new Background({
-              skyColor : new MFColor(new MFColor([0.282353,0.380392,0.470588]))}),
+              skyColor : new MFColor([0.282353,0.380392,0.470588])}),
 
             new Anchor({
               description : new SFString("launch CameraExample scene"),
-              url : new MFString(new MFString(["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"])),
+              url : new MFString(["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]),
               children : new MFNode([
                 new Transform({
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"])),
+                          string : new MFString(["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([1,1,0.2]))}))}))})])})])})])}))});
+                              diffuseColor : new SFColor([1,1,0.2])}))}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

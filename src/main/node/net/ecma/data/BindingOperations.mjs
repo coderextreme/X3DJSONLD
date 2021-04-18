@@ -100,57 +100,57 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Viewpoint({
               DEF : new SFString("View1"),
-              centerOfRotation : new SFVec3f(new SFVec3f([-6,0,0])),
+              centerOfRotation : new SFVec3f([-6,0,0]),
               description : new SFString("Viewpoint 1"),
-              position : new SFVec3f(new SFVec3f([-6,0,5]))}),
+              position : new SFVec3f([-6,0,5])}),
 
             new Viewpoint({
               DEF : new SFString("View2"),
-              centerOfRotation : new SFVec3f(new SFVec3f([-2,0,0])),
+              centerOfRotation : new SFVec3f([-2,0,0]),
               description : new SFString("Viewpoint 2"),
-              position : new SFVec3f(new SFVec3f([-2,0,5]))}),
+              position : new SFVec3f([-2,0,5])}),
 
             new Viewpoint({
               DEF : new SFString("View3"),
-              centerOfRotation : new SFVec3f(new SFVec3f([2,0,0])),
+              centerOfRotation : new SFVec3f([2,0,0]),
               description : new SFString("Viewpoint 3"),
-              position : new SFVec3f(new SFVec3f([2,0,5]))}),
+              position : new SFVec3f([2,0,5])}),
 
             new Viewpoint({
               DEF : new SFString("View4"),
-              centerOfRotation : new SFVec3f(new SFVec3f([6,0,0])),
+              centerOfRotation : new SFVec3f([6,0,0]),
               description : new SFString("Viewpoint 4"),
-              position : new SFVec3f(new SFVec3f([6,0,5]))}),
+              position : new SFVec3f([6,0,5])}),
           /*Script initialization ought to first bind view5 below.*/
 
             new Group({
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("Text1"),
-                  translation : new SFVec3f(new SFVec3f([-6,0,0])),
+                  translation : new SFVec3f([-6,0,0]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["View","# 1"])),
+                          string : new MFString(["View","# 1"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               DEF : new SFString("CenterJustify"),
-                              justify : new MFString(new MFString(["MIDDLE","MIDDLE"]))}))})),
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([1,0,0]))}))}))})])}),
+                              diffuseColor : new SFColor([1,0,0])}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text2"),
-                  translation : new SFVec3f(new SFVec3f([-2,0,0])),
+                  translation : new SFVec3f([-2,0,0]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["View","# 2"])),
+                          string : new MFString(["View","# 2"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -158,16 +158,16 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,1,0]))}))}))})])}),
+                              diffuseColor : new SFColor([0,1,0])}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text3"),
-                  translation : new SFVec3f(new SFVec3f([2,0,0])),
+                  translation : new SFVec3f([2,0,0]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["View","# 3"])),
+                          string : new MFString(["View","# 3"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -175,16 +175,16 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor(new SFColor([0,0,1]))}))}))})])}),
+                              diffuseColor : new SFColor([0,0,1])}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("Text4"),
-                  translation : new SFVec3f(new SFVec3f([6,0,0])),
+                  translation : new SFVec3f([6,0,0]),
                   children : new MFNode([
                     new Shape({
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(new MFString(["View","# 4"])),
+                          string : new MFString(["View","# 4"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               USE : new SFString("CenterJustify")}))})),
@@ -196,31 +196,31 @@ var X3D0 =  new X3D({
           /*It does not need to be studied in this chapter.*/
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([0,-3,8])),
+              translation : new SFVec3f([0,-3,8]),
               /*notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.*/
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ClickToAnimateView"),
                   description : new SFString("Select animation sequence"),
-                  position : new SFVec3f(new SFVec3f([0,0,7]))}),
+                  position : new SFVec3f([0,0,7])}),
 
                 new Shape({
                   geometry : new SFNode(
                     new Text({
-                      string : new MFString(new MFString(["Click here to animate"])),
+                      string : new MFString(["Click here to animate"]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(new MFString(["MIDDLE","BEGIN"]))}))})),
+                          justify : new MFString(["MIDDLE","BEGIN"])}))})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor(new SFColor([0.8,0.4,0]))}))}))}),
+                          diffuseColor : new SFColor([0.8,0.4,0])}))}))}),
 
                 new Shape({
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f(new SFVec3f([7,1,0.02]))})),
+                      size : new SFVec3f([7,1,0.02])})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -243,8 +243,8 @@ var X3D0 =  new X3D({
 
                 new IntegerSequencer({
                   DEF : new SFString("TimingSequencer"),
-                  key : new MFFloat(new MFFloat([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1])),
-                  keyValue : new MFInt32(new MFInt32([0,1,2,3,4,5,6,7,8,10]))}),
+                  key : new MFFloat([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1]),
+                  keyValue : new MFInt32([0,1,2,3,4,5,6,7,8,10])}),
 
                 new ROUTE({
                   fromField : new SFString("fraction_changed"),

@@ -73,7 +73,7 @@ var X3D0 =  new X3D({
                       /*left*/
                       children : new MFNode([
                         new Transform({
-                          scale : new SFVec3f(new SFVec3f([0.5,0.5,0.5])),
+                          scale : new SFVec3f([0.5,0.5,0.5]),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("ShapeLeftDown"),
@@ -81,16 +81,16 @@ var X3D0 =  new X3D({
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor(new SFColor([0.7,1,0]))}))})),
+                                      diffuseColor : new SFColor([0.7,1,0])}))})),
                               geometry : new SFNode(
                                 new Extrusion({
-                                  spine : new MFVec3f(new MFVec3f([-2.5,0,0,-1.5,0,0])),
+                                  spine : new MFVec3f([-2.5,0,0,-1.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
                       /*right*/
 
                         new Transform({
-                          scale : new SFVec3f(new SFVec3f([0.5,0.5,0.5])),
+                          scale : new SFVec3f([0.5,0.5,0.5]),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("ShapeUpRight"),
@@ -98,34 +98,34 @@ var X3D0 =  new X3D({
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor(new SFColor([0,0.7,1]))}))})),
+                                      diffuseColor : new SFColor([0,0.7,1])}))})),
                               geometry : new SFNode(
                                 new Extrusion({
-                                  spine : new MFVec3f(new MFVec3f([1.5,0,0,2.5,0,0])),
+                                  spine : new MFVec3f([1.5,0,0,2.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f(new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]))}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
                       /*up*/
 
                         new Transform({
-                          scale : new SFVec3f(new SFVec3f([0.5,0.5,0.5])),
+                          scale : new SFVec3f([0.5,0.5,0.5]),
                           children : new MFNode([
                             new Shape({
                               USE : new SFString("ShapeUpRight")})])}),
                       /*down*/
 
                         new Transform({
-                          scale : new SFVec3f(new SFVec3f([0.5,0.5,0.5])),
+                          scale : new SFVec3f([0.5,0.5,0.5]),
                           children : new MFNode([
                             new Shape({
                               USE : new SFString("ShapeLeftDown")})])})])})])}))}),
 
             new Viewpoint({
               description : new SFString("Process pipes"),
-              orientation : new SFRotation(new SFRotation([1,0,0,-0.4])),
-              position : new SFVec3f(new SFVec3f([0,5,12]))}),
+              orientation : new SFRotation([1,0,0,-0.4]),
+              position : new SFVec3f([0,5,12])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([0,-2.5,0])),
+              translation : new SFVec3f([0,-2.5,0]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])}),
@@ -136,7 +136,7 @@ var X3D0 =  new X3D({
                   name : new SFString("Process")})])}),
 
             new Transform({
-              translation : new SFVec3f(new SFVec3f([0,2.5,0])),
+              translation : new SFVec3f([0,2.5,0]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])})])}))});

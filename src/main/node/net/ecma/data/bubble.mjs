@@ -57,11 +57,11 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new MFString(["EXAMINE"])}),
+              type : ["EXAMINE"]}),
 
             new Viewpoint({
-              position : new SFVec3f(new SFVec3f([0,0,4])),
-              orientation : new SFRotation(new SFRotation([1,0,0,0])),
+              position : new SFVec3f([0,0,4]),
+              orientation : new SFRotation([1,0,0,0]),
               description : new SFString("Bubble in action")}),
 
             new ProtoDeclare({
@@ -80,7 +80,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor(new SFColor([1,0,0])),
+                                  diffuseColor : new SFColor([1,0,0]),
                                   transparency : new SFFloat(0.2)}))}))}),
 
                         new Script({

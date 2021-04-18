@@ -132,16 +132,16 @@ var X3D0 =  new X3D({
                                                                 new StreamAudioSource({})])})])})])})])})])})])}))})])})])})])})])})])})])}),
 
             new Sound({
-              location : new SFVec3f(new SFVec3f([0,1.6,0])),
+              location : new SFVec3f([0,1.6,0]),
               source : new SFNode(
                 new AudioClip({
                   description : new SFString("testing"),
-                  url : new MFString(new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]))}))}),
+                  url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])}))}),
 
             new Sound({
-              location : new SFVec3f(new SFVec3f([0,1.6,0])),
+              location : new SFVec3f([0,1.6,0]),
               source : new SFNode(
                 new MovieTexture({
                   description : new SFString("testing"),
-                  url : new MFString(new MFString(["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]))}))})])}))});
+                  url : new MFString(["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])}))})])}))});
 console.log(X3D0.toXMLNode());
