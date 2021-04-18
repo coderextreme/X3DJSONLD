@@ -97,7 +97,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE"])}),
+              type : new MFString(["EXAMINE"])}),
 
             new Viewpoint({
               DEF : new SFString("Tour"),
@@ -288,9 +288,9 @@ var X3D0 =  new X3D({
                   type : field.TYPE_MFROTATION,
                   name : new SFString("orientation_changed"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              {ecmascript:
-               },
- {ecmascript: function set_cycle(value) {
+              ]),
+ecmascript:eval (0
+               , function set_cycle(value) {
 	       	   try {
                         var ov = lastKey;
                         do {
@@ -306,12 +306,11 @@ var X3D0 =  new X3D({
                         orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
                         orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
 		   } catch (e) {
-		   	if (typeof console.log === '},
- {ecmascript: function') {
+		   	if (typeof console.log === ', function') {
 				console.log(e);
 			}
 		   }
-               }}])}),
+               })}),
 
             new ROUTE({
               fromNode : new SFString("TourTime"),

@@ -84,7 +84,7 @@ var X3D0 =  new X3D({
               title : new SFString("Filters.x3d")}),
 
             new NavigationInfo({
-              type : new (["NONE"]),
+              type : new MFString(["NONE"]),
               DEF : new SFString("NAV")}),
 
             new Background({

@@ -110,7 +110,7 @@ var X3D0 =  new X3D({
               position : new SFVec3f(new SFVec3f([-5,5,20]))}),
 
             new NavigationInfo({
-              type : new (["EXAMINE","FLY","ANY"])}),
+              type : new MFString(["EXAMINE","FLY","ANY"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ViewFrustum"),

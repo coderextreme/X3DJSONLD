@@ -1426,7 +1426,7 @@ var X3D0 =  new X3D({
               position : new SFVec3f(new SFVec3f([0,3.4495,0]))}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"]),
+              type : new MFString(["EXAMINE"]),
               avatarSize : new MFFloat(new MFFloat([0.15,1.53,0.75])),
               speed : new SFFloat(0.5)}),
           /***********Avatar Proto Instances************/
@@ -3715,16 +3715,15 @@ var X3D0 =  new X3D({
                       name : new SFString("scale"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("1 1 1")}),
-                  {ecmascript:
+                  ]),
+ecmascript:eval (0
       // Initialises the script
-      },
- {ecmascript: function initialize() {
+      , function initialize() {
          // Copy coord list into local storage
          coordList = humanoid.skinCoord.point;
       }
       // Transforms the vertices related to a joint
-      },
- {ecmascript: function Transform() {
+      , function Transform() {
          // Make sure that this is a joint
          var iNumJoints = humanoid.joints.length;
          var bIsJoint = false;
@@ -3776,8 +3775,7 @@ var X3D0 =  new X3D({
          }
       }
       // Update event handler
-      },
- {ecmascript: function update(value,time) {
+      , function update(value,time) {
          // Zero output data.
          var iNumVertices = humanoid.skinCoord.point.length;
          var v;
@@ -3795,10 +3793,9 @@ var X3D0 =  new X3D({
          // This could do with being more robust, rather than a'should be ok'.
 //       joint = humanoid.humanoidBody[0];
          joint = humanoid.skeleton[0];
-         // Call transform },
- {ecmascript: function
+         // Call transform , function
          Transform();
-      }}])})])}),
+      })})])}),
           /***********Behavior Proto Instances************/
 
             new ProtoInstance({
@@ -4403,15 +4400,15 @@ var X3D0 =  new X3D({
 
                     new ProtoInstance({
                       USE : new SFString("KNEEL")})])}),
-              {ecmascript:
+              ]),
+ecmascript:eval (0
 
 //Global Variables
 var currentAnimatorIndex;
 var avatarJoints;
 var animatorFields;
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
 
    //Avatar Joint Names
    avatarJoints = new Array();
@@ -4470,8 +4467,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function createRoutes() {
+, function createRoutes() {
    //Add Routes for Allen which is current avatar
    if(AvatarChoice == 0) {
 
@@ -4512,8 +4508,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function removeRoutes() {
+, function removeRoutes() {
    //Remove Routes for Allen which is current avatar
    if(AvatarChoice == 0) {
 
@@ -4560,8 +4555,7 @@ var animatorFields;
 
 
 
-},
- {ecmascript: function switchAvatarToAllen (bool, timeStamp) {//Invoked when Allen text is clicked.
+, function switchAvatarToAllen (bool, timeStamp) {//Invoked when Allen text is clicked.
    //A control structure to avoid excessive work. If current avatar is Allen, don't do anything.
    if(AvatarChoice != 0) {
       removeRoutes();
@@ -4572,8 +4566,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function switchAvatarToNancy (bool, timeStamp) {//Invoked when Nancy text is clicked.
+, function switchAvatarToNancy (bool, timeStamp) {//Invoked when Nancy text is clicked.
 
    //A control structure to avoid excessive work. If current avatar is Nancy, don't do anything.
    if(AvatarChoice != 1) {
@@ -4585,8 +4578,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function switchAvatarToBoxman (bool, timeStamp) {//Invoked when Boxman text is clicked.
+, function switchAvatarToBoxman (bool, timeStamp) {//Invoked when Boxman text is clicked.
 
    //A control structure to avoid excessive work. If current avatar is Boxman, don't do anything.
    if(AvatarChoice != 2) {
@@ -4598,8 +4590,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function changeBehaviorToWalk(bool, timeStamp) {
+, function changeBehaviorToWalk(bool, timeStamp) {
 
    if(currentAnimatorIndex != 0) {
      removeRoutes();
@@ -4608,8 +4599,7 @@ var animatorFields;
    }
 }
 
-},
- {ecmascript: function changeBehaviorToRun(bool, timeStamp) {
+, function changeBehaviorToRun(bool, timeStamp) {
 
    if(currentAnimatorIndex != 1) {
       removeRoutes();
@@ -4620,8 +4610,7 @@ var animatorFields;
 
 
 
-},
- {ecmascript: function changeBehaviorToJump(bool, timeStamp) {
+, function changeBehaviorToJump(bool, timeStamp) {
 
    if(currentAnimatorIndex != 2) {
       removeRoutes();
@@ -4632,8 +4621,7 @@ var animatorFields;
 }
 
 
-},
- {ecmascript: function changeBehaviorToStand(bool, timeStamp) {
+, function changeBehaviorToStand(bool, timeStamp) {
 
    if(currentAnimatorIndex != 3) {
       removeRoutes();
@@ -4643,8 +4631,7 @@ var animatorFields;
 
 }
 
-},
- {ecmascript: function changeBehaviorToKneel(bool, timeStamp) {
+, function changeBehaviorToKneel(bool, timeStamp) {
 
    if(currentAnimatorIndex != 4) {
       removeRoutes();
@@ -4652,7 +4639,7 @@ var animatorFields;
       createRoutes();
    }
 
-}}])}),
+})}),
           /************Script routes**************/
 
             new ROUTE({

@@ -318,9 +318,9 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endpoint"),
                               protoField : new SFString("set_endpoint")})])})),
-                      {ecmascript:
-        },
- {ecmascript: function recompute(startpoint,endpoint){
+                      ]),
+ecmascript:eval (0
+        , function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
@@ -343,8 +343,7 @@ var X3D0 =  new X3D({
 		    };
 	    }
 	}
-	},
- {ecmascript: function recompute_and_route(startpoint, endpoint) {
+	, function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
@@ -352,18 +351,15 @@ var X3D0 =  new X3D({
 		      rotscalenode.scale = trafo.scale;
 	      }
 	}
-        },
- {ecmascript: function initialize(){
+        , function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
         }
-        },
- {ecmascript: function set_startpoint(val,t){
+        , function set_startpoint(val,t){
             recompute_and_route(val,endnode.translation);
         }
-        },
- {ecmascript: function set_endpoint(val,t){
+        , function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
-        }}])})])}))}),
+        })})])}))}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),

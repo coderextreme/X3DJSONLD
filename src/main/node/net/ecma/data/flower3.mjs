@@ -106,7 +106,8 @@ var X3D0 =  new X3D({
                   name : new SFString("coordIndexes"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
               /*<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>*/
-              {ecmascript:
+              ]),
+ecmascript:eval (0
 
 var e = 5;
 var f = 5;
@@ -116,8 +117,7 @@ var resolution = 100;
 var t = 0;
 var p = 0;
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
      generateCoordinates(resolution);
      var localci = [];
      for ( i = 0; i < resolution-1; i++) {
@@ -132,8 +132,7 @@ var p = 0;
     coordIndexes = new MFInt32(localci);
 }
 
-},
- {ecmascript: function generateCoordinates(resolution) {
+, function generateCoordinates(resolution) {
      var theta = 0.0;
      var phi = 0.0;
      var delta = (2 * 3.141592653) / (resolution-1);
@@ -153,8 +152,7 @@ var p = 0;
      coordinates = new MFVec3f(localc);
 }
 
-},
- {ecmascript: function set_fraction(fraction, eventTime) {
+, function set_fraction(fraction, eventTime) {
 	t += 0.5;
 	p += 0.5;
 	var choice = Math.floor(Math.random() * 4);
@@ -182,7 +180,7 @@ var p = 0;
 		h = 4;
 	}
 	generateCoordinates(resolution);
-}}])}),
+})}),
 
             new TimeSensor({
               DEF : new SFString("Clock"),

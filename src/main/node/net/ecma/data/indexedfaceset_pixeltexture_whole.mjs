@@ -148,7 +148,7 @@ var X3D0 =  new X3D({
               position : new SFVec3f(new SFVec3f([-10,0,0]))}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"])}),
+              type : new MFString(["EXAMINE"])}),
 
             new Shape({
               appearance : new SFNode(

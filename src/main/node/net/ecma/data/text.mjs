@@ -91,6 +91,7 @@ var X3D0 =  new X3D({
                       name : new SFString("frontUrls"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("\"rnl_front.png\" \"uffizi_front.png\"")}),
-                  {ecmascript:
-			    var me = '"1" ""2" "\\n3"';}])})])})])}))});
+                  ]),
+ecmascript:eval (0
+			    var me = '"1" ""2" "\n3"';)})])})])}))});
 console.log(X3D0.toXMLNode());

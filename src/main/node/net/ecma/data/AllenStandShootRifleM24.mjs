@@ -774,15 +774,15 @@ var X3D0 =  new X3D({
                                                                           type : field.TYPE_SFBOOL,
                                                                           name : new SFString("enabled"),
                                                                           accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                                                                      {ecmascript:
+                                                                      ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function enabled (value, timeStamp)
+, function enabled (value, timeStamp)
 {
         //print ('enabled value =' + value);
         if (value == true)
            fire = value;
-}}])}),
+})}),
 
                                                                     new TouchSensor({
                                                                       DEF : new SFString("FireTouchSensor"),
@@ -993,7 +993,7 @@ var X3D0 =  new X3D({
                   info : new MFString(new MFString(["null"]))})])}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"]),
+              type : new MFString(["EXAMINE"]),
               avatarSize : new MFFloat(new MFFloat([0.15,1.53,0.75])),
               speed : new SFFloat(0.5)}),
 

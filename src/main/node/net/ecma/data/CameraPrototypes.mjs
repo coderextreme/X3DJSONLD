@@ -299,7 +299,7 @@ var X3D0 =  new X3D({
                   /*NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation*/
 
                     new NavigationInfo({
-                      type : new (["EXAMINE","FLY","ANY"]),
+                      type : new MFString(["EXAMINE","FLY","ANY"]),
                       DEF : new SFString("CameraNavInfo"),
                       IS : new SFNode(
                         new IS({
@@ -663,22 +663,20 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("traceEnabled"),
                               protoField : new SFString("traceEnabled")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize () // CameraScript
+                      ]),
+ecmascript:eval (0
+, function initialize () // CameraScript
 {
 //  tracePrint ('initialize start...');
 
     NavInfoNode.avatarSize[0]   = nearClipPlane;
 
     // remaining setups deferred to invocation of checkShots() method
-    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to },
- {ecmascript: function initialization
+    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to , function initialization
     alwaysPrint ('initialize complete');
 }
 
-},
- {ecmascript: function checkShots (eventValue)
+, function checkShots (eventValue)
 {
     tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');
 
@@ -750,8 +748,7 @@ var X3D0 =  new X3D({
             else
             {
                 // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)
-                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation },
- {ecmascript: functions
+                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation , functions
 
                 // test if difference vector is zero, if so maintain previous rotation
                 var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();
@@ -771,7 +768,7 @@ var X3D0 =  new X3D({
                 tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());
                 tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());
                 tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());
-                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\\n');
+                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\n');
             }
             k++; // update index to match latest key, keyValuePosition, keyValueOrientation
 
@@ -816,17 +813,15 @@ var X3D0 =  new X3D({
 
     if (!animated) // output results
     {
-        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
-        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+        tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
     }
     tracePrint ('checkShots() complete');
 }
 
-},
- {ecmascript: function stripBrackets (fieldArray)
+, function stripBrackets (fieldArray)
 {
-    // some browsers add brackets to array output strings, this },
- {ecmascript: function strips them
+    // some browsers add brackets to array output strings, this , function strips them
     outputString = '';
     for (i = 0; i < fieldArray.length; i++)
     {
@@ -836,8 +831,7 @@ var X3D0 =  new X3D({
     return outputString;
 }
 
-},
- {ecmascript: function set_fraction (eventValue, timestamp) // input event received for inputOnly field
+, function set_fraction (eventValue, timestamp) // input event received for inputOnly field
 {
    // traceEnabled = false;  // for testing purposes
 
@@ -855,8 +849,8 @@ var X3D0 =  new X3D({
       if (animated) // output results
       {
         // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
-        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
       }
    }
    else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval
@@ -867,8 +861,8 @@ var X3D0 =  new X3D({
       if (animated) // output results
       {
         // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');
-        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -892,8 +886,7 @@ var X3D0 =  new X3D({
    }
 }
 
-},
- {ecmascript: function set_bind (eventValue) // input event received for inputOnly field
+, function set_bind (eventValue) // input event received for inputOnly field
 {
    // need to ensure CameraShot nodes are properly initialized
    if (initialized == false)
@@ -911,126 +904,106 @@ var X3D0 =  new X3D({
    }
 }
 
-},
- {ecmascript: function set_description (eventValue) // input event received for inputOutput field
+, function set_description (eventValue) // input event received for inputOutput field
 {
     description = eventValue;
 }
 
-},
- {ecmascript: function set_position (eventValue) // input event received for inputOutput field
+, function set_position (eventValue) // input event received for inputOutput field
 {
     position = eventValue;
 }
 
-},
- {ecmascript: function set_orientation (eventValue) // input event received for inputOutput field
+, function set_orientation (eventValue) // input event received for inputOutput field
 {
     orientation = eventValue;
 }
 
-},
- {ecmascript: function set_fieldOfView (eventValue) // input event received for inputOutput field
+, function set_fieldOfView (eventValue) // input event received for inputOutput field
 {
     fieldOfView = eventValue;
 }
 
-},
- {ecmascript: function set_nearClipPlane (eventValue) // input event received for inputOutput field
+, function set_nearClipPlane (eventValue) // input event received for inputOutput field
 {
     nearClipPlane = eventValue;
 }
 
-},
- {ecmascript: function set_farClipPlane (eventValue) // input event received for inputOutput field
+, function set_farClipPlane (eventValue) // input event received for inputOutput field
 {
     farClipPlane = eventValue;
 }
 
-},
- {ecmascript: function set_shots (eventValue) // input event received for inputOutput field
+, function set_shots (eventValue) // input event received for inputOutput field
 {
     shots = eventValue;
 }
 
-},
- {ecmascript: function set_filterColor (eventValue) // input event received for inputOutput field
+, function set_filterColor (eventValue) // input event received for inputOutput field
 {
     filterColor = eventValue;
 }
 
-},
- {ecmascript: function set_filterTransparency (eventValue) // input event received for inputOutput field
+, function set_filterTransparency (eventValue) // input event received for inputOutput field
 {
     filterTransparency = eventValue;
 }
 
-},
- {ecmascript: function set_upVector (eventValue) // input event received for inputOutput field
+, function set_upVector (eventValue) // input event received for inputOutput field
 {
     upVector = eventValue;
 }
 
-},
- {ecmascript: function set_fStop (eventValue) // input event received for inputOutput field
+, function set_fStop (eventValue) // input event received for inputOutput field
 {
     fStop = eventValue;
 }
 
-},
- {ecmascript: function set_focusDistance (eventValue) // input event received for inputOutput field
+, function set_focusDistance (eventValue) // input event received for inputOutput field
 {
     focusDistance = eventValue;
 }
 
-},
- {ecmascript: function set_offlineRender (eventValue) // input event received for inputOutput field
+, function set_offlineRender (eventValue) // input event received for inputOutput field
 {
     offlineRender = eventValue;
 }
 
-},
- {ecmascript: function set_key (eventValue) // input event received for inputOutput field
+, function set_key (eventValue) // input event received for inputOutput field
 {
     key = eventValue;
 }
 
-},
- {ecmascript: function set_keyValuePosition (eventValue) // input event received for inputOutput field
+, function set_keyValuePosition (eventValue) // input event received for inputOutput field
 {
     keyValuePosition = eventValue;
 }
 
-},
- {ecmascript: function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+, function set_keyValueOrientation (eventValue) // input event received for inputOutput field
 {
     keyValueOrientation = eventValue;
 }
 
-},
- {ecmascript: function set_animated (eventValue) // input event received for inputOutput field
+, function set_animated (eventValue) // input event received for inputOutput field
 {
     animated = eventValue;
 }
 
-},
- {ecmascript: function tracePrint (outputValue)
+, function tracePrint (outputValue)
 {
 	if (traceEnabled) alwaysPrint (outputValue);
 }
-},
- {ecmascript: function alwaysPrint (outputValue)
+, function alwaysPrint (outputValue)
 {
     // try to ensure outputValue is converted to string despite Browser.println idiosyncracies
-    var outputString = outputValue.toString(); // utility },
- {ecmascript: function according to spec
+    var outputString = outputValue.toString(); // utility , function according to spec
     if (outputString == null) outputString = outputValue; // direct cast
 
     if  (description.length > 0)
-         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');
+         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');
     else
-         Browser.print ('[Camera] ' + outputString + '\\n');
-}}])}),
+         Browser.print ('[Camera] ' + outputString + '\n');
+})}),
 
                     new ROUTE({
                       fromField : new SFString("position"),
@@ -1297,9 +1270,9 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("traceEnabled"),
                               protoField : new SFString("traceEnabled")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize () // CameraShotScript
+                      ]),
+ecmascript:eval (0
+, function initialize () // CameraShotScript
 {
 //  tracePrint ('initialize start...');
 
@@ -1314,98 +1287,83 @@ var X3D0 =  new X3D({
 //  tracePrint ('... initialize() complete');
 }
 
-},
- {ecmascript: function set_description (eventValue) // input event received for inputOutput field
+, function set_description (eventValue) // input event received for inputOutput field
 {
     description = eventValue;
 }
 
-},
- {ecmascript: function set_enabled (eventValue) // input event received for inputOutput field
+, function set_enabled (eventValue) // input event received for inputOutput field
 {
     enabled = eventValue;
 }
 
-},
- {ecmascript: function set_moves (eventValue) // input event received for inputOutput field
+, function set_moves (eventValue) // input event received for inputOutput field
 {
     moves = eventValue;
 }
 
-},
- {ecmascript: function set_initialPosition (eventValue) // input event received for inputOutput field
+, function set_initialPosition (eventValue) // input event received for inputOutput field
 {
     initialPosition = eventValue;
 }
 
-},
- {ecmascript: function set_initialOrientation (eventValue) // input event received for inputOutput field
+, function set_initialOrientation (eventValue) // input event received for inputOutput field
 {
     initialOrientation = eventValue;
 }
 
-},
- {ecmascript: function set_initialAimPoint (eventValue) // input event received for inputOutput field
+, function set_initialAimPoint (eventValue) // input event received for inputOutput field
 {
     initialAimPoint = eventValue;
 }
 
-},
- {ecmascript: function set_initialFieldOfView (eventValue) // input event received for inputOutput field
+, function set_initialFieldOfView (eventValue) // input event received for inputOutput field
 {
     initialFieldOfView = eventValue;
 }
 
-},
- {ecmascript: function set_initialFStop (eventValue) // input event received for inputOutput field
+, function set_initialFStop (eventValue) // input event received for inputOutput field
 {
     initialFStop = eventValue;
 }
 
-},
- {ecmascript: function set_initialFocusDistance (eventValue) // input event received for inputOutput field
+, function set_initialFocusDistance (eventValue) // input event received for inputOutput field
 {
     initialFocusDistance = eventValue;
 }
 
-},
- {ecmascript: function set_key (eventValue) // input event received for inputOutput field
+, function set_key (eventValue) // input event received for inputOutput field
 {
     key = eventValue;
 }
 
-},
- {ecmascript: function set_keyValuePosition (eventValue) // input event received for inputOutput field
+, function set_keyValuePosition (eventValue) // input event received for inputOutput field
 {
     keyValuePosition = eventValue;
 }
 
-},
- {ecmascript: function set_keyValueOrientation (eventValue) // input event received for inputOutput field
+, function set_keyValueOrientation (eventValue) // input event received for inputOutput field
 {
     keyValueOrientation = eventValue;
 }
 
 // TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
 
-},
- {ecmascript: function tracePrint (outputValue)
+, function tracePrint (outputValue)
 {
 	if (traceEnabled) alwaysPrint (outputValue);
 }
-},
- {ecmascript: function alwaysPrint (outputValue)
+, function alwaysPrint (outputValue)
 {
 	// try to ensure outputValue is converted to string despite browser idiosyncracies
-    var outputString = outputValue.toString(); // utility },
- {ecmascript: function according to spec
+    var outputString = outputValue.toString(); // utility , function according to spec
     if (outputString == null) outputString = outputValue; // direct cast
 
     if  (description.length > 0)
-         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');
+         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');
     else
-         Browser.print ('[CameraShot] ' + outputString + '\\n');
-}}])}),
+         Browser.print ('[CameraShot] ' + outputString + '\n');
+})}),
                   /*Add any ROUTEs here, going from Script to other nodes within ProtoBody*/])}))}),
           /*=============== CameraMovement ==============*/
 
@@ -1628,9 +1586,9 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("traceEnabled"),
                               protoField : new SFString("traceEnabled")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize () // CameraMovementScript
+                      ]),
+ecmascript:eval (0
+, function initialize () // CameraMovementScript
 {
 //  tracePrint ('initialize start...');
     alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +
@@ -1648,8 +1606,7 @@ var X3D0 =  new X3D({
     tracePrint ('... initialize complete');
 }
 
-},
- {ecmascript: function set_goalAimPoint (eventValue) // input event received for inputOutput field
+, function set_goalAimPoint (eventValue) // input event received for inputOutput field
 {
     goalAimPoint_changed = eventValue;
     tracePrint ('goalAimPoint=' + goalAimPoint.toString());
@@ -1657,81 +1614,69 @@ var X3D0 =  new X3D({
     // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator
 }
 
-},
- {ecmascript: function set_description (eventValue) // input event received for inputOutput field
+, function set_description (eventValue) // input event received for inputOutput field
 {
     description = eventValue;
 }
 
-},
- {ecmascript: function set_enabled (eventValue) // input event received for inputOutput field
+, function set_enabled (eventValue) // input event received for inputOutput field
 {
     enabled = eventValue;
 }
 
-},
- {ecmascript: function set_duration (eventValue) // input event received for inputOutput field
+, function set_duration (eventValue) // input event received for inputOutput field
 {
     duration = eventValue;
 }
 
-},
- {ecmascript: function set_goalPosition (eventValue) // input event received for inputOutput field
+, function set_goalPosition (eventValue) // input event received for inputOutput field
 {
     goalPosition = eventValue;
 }
 
-},
- {ecmascript: function set_goalOrientation (eventValue) // input event received for inputOutput field
+, function set_goalOrientation (eventValue) // input event received for inputOutput field
 {
     goalOrientation = eventValue;
 }
 
-},
- {ecmascript: function set_tracking (eventValue) // input event received for inputOutput field
+, function set_tracking (eventValue) // input event received for inputOutput field
 {
     tracking = eventValue;
 }
 
-},
- {ecmascript: function set_goalFieldOfView (eventValue) // input event received for inputOutput field
+, function set_goalFieldOfView (eventValue) // input event received for inputOutput field
 {
     goalFieldOfView = eventValue;
 }
 
-},
- {ecmascript: function set_goalFStop (eventValue) // input event received for inputOutput field
+, function set_goalFStop (eventValue) // input event received for inputOutput field
 {
     goalFStop = eventValue;
 }
 
-},
- {ecmascript: function set_goalFocusDistance (eventValue) // input event received for inputOutput field
+, function set_goalFocusDistance (eventValue) // input event received for inputOutput field
 {
     goalFocusDistance = eventValue;
 }
 
 // TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive
 
-},
- {ecmascript: function tracePrint (outputValue)
+, function tracePrint (outputValue)
 {
 	if (traceEnabled) alwaysPrint (outputValue);
 }
 
-},
- {ecmascript: function alwaysPrint (outputValue)
+, function alwaysPrint (outputValue)
 {
 	// try to ensure outputValue is converted to string despite browser idiosyncracies
-    var outputString = outputValue.toString(); // utility },
- {ecmascript: function according to spec
+    var outputString = outputValue.toString(); // utility , function according to spec
     if (outputString == null) outputString = outputValue; // direct cast
 
     if  (description.length > 0)
-         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');
+         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');
     else
-         Browser.print ('[CameraMovement] ' + outputString + '\\n');
-}}])}),
+         Browser.print ('[CameraMovement] ' + outputString + '\n');
+})}),
                   /*Add any ROUTEs here, going from Script to other nodes within ProtoBody*/])}))}),
           /*=============== OfflineRender ==============*/
 
@@ -1934,70 +1879,61 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("traceEnabled"),
                               protoField : new SFString("traceEnabled")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize () // OfflineRenderScript
+                      ]),
+ecmascript:eval (0
+, function initialize () // OfflineRenderScript
 {
 //  tracePrint ('initialize start...');
 
     tracePrint ('... initialize complete');
 }
 
-},
- {ecmascript: function set_description (eventValue) // input event received for inputOutput field
+, function set_description (eventValue) // input event received for inputOutput field
 {
     description = eventValue;
 }
 
-},
- {ecmascript: function set_enabled (eventValue) // input event received for inputOutput field
+, function set_enabled (eventValue) // input event received for inputOutput field
 {
     enabled = eventValue;
 }
 
-},
- {ecmascript: function set_frameRate (eventValue) // input event received for inputOutput field
+, function set_frameRate (eventValue) // input event received for inputOutput field
 {
     frameRate = eventValue;
 }
 
-},
- {ecmascript: function set_frameSize (eventValue) // input event received for inputOutput field
+, function set_frameSize (eventValue) // input event received for inputOutput field
 {
     frameSize = eventValue;
 }
 
-},
- {ecmascript: function set_pixelAspectRatio (eventValue) // input event received for inputOutput field
+, function set_pixelAspectRatio (eventValue) // input event received for inputOutput field
 {
     pixelAspectRatio = eventValue;
 }
 
-},
- {ecmascript: function set_startTime (eventValue) // input event received for inputOnly field
+, function set_startTime (eventValue) // input event received for inputOnly field
 {
    // do something with input eventValue;
 }
 
-},
- {ecmascript: function tracePrint (outputValue)
+, function tracePrint (outputValue)
 {
 	if (traceEnabled) alwaysPrint (outputValue);
 }
 
-},
- {ecmascript: function alwaysPrint (outputValue)
+, function alwaysPrint (outputValue)
 {
 	// try to ensure outputValue is converted to string despite browser idiosyncracies
-    var outputString = outputValue.toString(); // utility },
- {ecmascript: function according to spec
+    var outputString = outputValue.toString(); // utility , function according to spec
     if (outputString == null) outputString = outputValue; // direct cast
 
     if  (description.length > 0)
-         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');
+         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');
     else
-         Browser.print ('[OfflineRender] ' + outputString + '\\n');
-}}])}),
+         Browser.print ('[OfflineRender] ' + outputString + '\n');
+})}),
                   /*Add any ROUTEs here, going from Script to other nodes within ProtoBody*/])}))}),
           /*=============== Launch Prototype Example ==============*/
 

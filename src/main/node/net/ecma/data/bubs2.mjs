@@ -67,7 +67,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE"])}),
+              type : new MFString(["EXAMINE"])}),
 
             new Viewpoint({
               position : new SFVec3f(new SFVec3f([0,0,4])),
@@ -132,16 +132,15 @@ var X3D0 =  new X3D({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("set_fraction"),
                               accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                          {ecmascript:
-},
- {ecmascript: function initialize() {
+                          ]),
+ecmascript:eval (0
+, function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-},
- {ecmascript: function set_fraction(value) {
+, function set_fraction(value) {
     if (typeof translation === 'undefined') {
 		translation = new SFVec3f(0, 0, 0);
     }
@@ -184,7 +183,7 @@ var X3D0 =  new X3D({
 	translation.z = 0;
 	initialize();
     }
-}}])}),
+})}),
 
                         new TimeSensor({
                           DEF : new SFString("bubbleClock"),

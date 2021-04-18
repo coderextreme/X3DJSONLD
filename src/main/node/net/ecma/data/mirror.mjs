@@ -322,9 +322,9 @@ var X3D0 =  new X3D({
                       name : new SFString("old"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("-1")}),
-                  {ecmascript:
-        },
- {ecmascript: function set_fraction( f, tm ) {
+                  ]),
+ecmascript:eval (0
+        , function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
 	    if (side > frontUrls.length-1) {
 	    	side = 0;
@@ -339,7 +339,7 @@ var X3D0 =  new X3D({
 		    top_changed[0] = topUrls[side];
 		    bottom_changed[0] = bottomUrls[side];
             }
-        }}])}),
+        })}),
 
                 new TimeSensor({
                   DEF : new SFString("Clock"),

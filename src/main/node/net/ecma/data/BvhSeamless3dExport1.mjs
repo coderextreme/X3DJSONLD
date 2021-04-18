@@ -237,16 +237,15 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("period"),
                               protoField : new SFString("period")})])})),
-                      {ecmascript:
-},
- {ecmascript: function initialize(){
+                      ]),
+ecmascript:eval (0
+, function initialize(){
 if(play==false){
 timeSensor.stopTime=1;
 }
 pause=!play;
 }
-},
- {ecmascript: function play(v, t){
+, function play(v, t){
 if(block){
 return;
 }
@@ -265,8 +264,7 @@ pause=false;
 }
 block=false;
 }
-},
- {ecmascript: function pause(v, t){
+, function pause(v, t){
 if(block){
 return;
 }
@@ -286,7 +284,7 @@ else{
 play=false;
 }
 block=false;
-}}])})])}))}),
+})})])}))}),
 
             new HAnimHumanoid({
               version : new SFString("1.0"),
@@ -1009,9 +1007,9 @@ block=false;
                   children : new MFNode([
                     new HAnimJoint({
                       USE : new SFString("_Head")})])}),
-              {ecmascript:
-},
- {ecmascript: function f03e07a38(v){
+              ]),
+ecmascript:eval (0
+, function f03e07a38(v){
 pi_Hips.set_fraction = v;
 Hips.translation = pi_Hips.value_changed;
 oi_Hips.set_fraction = v;
@@ -1056,7 +1054,7 @@ oi_Neck.set_fraction = v;
 Neck.rotation = oi_Neck.value_changed;
 oi_Head.set_fraction = v;
 Head.rotation = oi_Head.value_changed;
-}}])}),
+})}),
 
             new ROUTE({
               fromField : new SFString("slider"),

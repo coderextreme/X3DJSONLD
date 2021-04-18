@@ -125,10 +125,10 @@ var X3D0 =  new X3D({
                   name : new SFString("position"),
                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                   value : new SFString("0.0015708 0 4 0 0.0015708 4")}),
-              {ecmascript:
+              ]),
+ecmascript:eval (0
 
-               },
- {ecmascript: function set_cycle(value) {
+               , function set_cycle(value) {
                         var cartesianMult = -150;  // -150 if cartesian, 1 if geo
                         var ov = val;
 			// Browser.print('old '+ov);
@@ -142,7 +142,7 @@ var X3D0 =  new X3D({
                         position = new MFVec3d();
                         position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
                         position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-               }}])}),
+               })}),
 
             new ROUTE({
               fromNode : new SFString("TourTime"),

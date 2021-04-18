@@ -1116,9 +1116,9 @@ var X3D0 =  new X3D({
                   type : field.TYPE_SFBOOL,
                   name : new SFString("finWarpRight"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              {ecmascript:
-},
- {ecmascript: function set_rotationLeft(rotationValue, timeStamp)
+              ]),
+ecmascript:eval (0
+, function set_rotationLeft(rotationValue, timeStamp)
 {
 	if (rotationValue[0] <= 0)
 	{
@@ -1131,8 +1131,7 @@ var X3D0 =  new X3D({
 //	print ('Left  rotationValue[0] ' + rotationValue[0] + ', finWarpLeft=' + finWarpLeft);
 }
 
-},
- {ecmascript: function set_rotationRight(rotationValue, timeStamp)
+, function set_rotationRight(rotationValue, timeStamp)
 {
 	if (rotationValue[0] <= 0)
 	{
@@ -1143,7 +1142,7 @@ var X3D0 =  new X3D({
 		finWarpRight = true;
 	}
 //	print ('Right rotationValue[0] ' + rotationValue[0] + ', finWarpRight=' + finWarpRight);
-}}])}),
+})}),
           /*Fins animation*/
 
             new ProximitySensor({
@@ -1202,9 +1201,9 @@ var X3D0 =  new X3D({
                       name : new SFString("traceEnabled"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("false")}),
-                  {ecmascript:
-},
- {ecmascript: function finL(value, timeStamp)
+                  ]),
+ecmascript:eval (0
+, function finL(value, timeStamp)
 {
 	if (value == 0)
 	{
@@ -1217,8 +1216,7 @@ var X3D0 =  new X3D({
 	//print ('finWarpL' + finWarpL);
 }
 
-},
- {ecmascript: function finR(value, timeStamp)
+, function finR(value, timeStamp)
 {
 	if (value == 0)
 	{
@@ -1230,8 +1228,7 @@ var X3D0 =  new X3D({
 	}
 	//print ('finWarpR' + finWarpR);
 }
-},
- {ecmascript: function finMove(fraction, timeStamp)
+, function finMove(fraction, timeStamp)
  {
 	if (finWarpL == 1)
 	{
@@ -1286,18 +1283,16 @@ var X3D0 =  new X3D({
 	//tracePrint ('keyValueRight=' + keyValueRight);
 }
 
-},
- {ecmascript: function set_fraction (value, timeStamp)
+, function set_fraction (value, timeStamp)
 {
 	finMove(value);
 	//tracePrint('time fraction =' + value);
 }
 
-},
- {ecmascript: function tracePrint (outputString)
+, function tracePrint (outputString)
 {
 	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
-}}])}),
+})}),
 
                 new ROUTE({
                   fromField : new SFString("finWarpLeft"),

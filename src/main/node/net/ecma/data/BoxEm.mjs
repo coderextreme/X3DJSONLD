@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE"])}),
+              type : new MFString(["EXAMINE"])}),
 
             new Viewpoint({
               description : new SFString("Cubes on Fire"),

@@ -135,14 +135,14 @@ var X3D0 =  new X3D({
                           type : field.TYPE_MFVEC3F,
                           name : new SFString("keyValue"),
                           accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                      {ecmascript:
-					},
- {ecmascript: function set_cycle(value) {
+                      ]),
+ecmascript:eval (0
+					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
-					}}])}),
+					})}),
 
                     new TimeSensor({
                       DEF : new SFString("nodeClock"),
@@ -231,10 +231,10 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("set_endB"),
                               protoField : new SFString("positionB")})])})),
-                      {ecmascript:
+                      ]),
+ecmascript:eval (0
 
-                },
- {ecmascript: function set_endA(value) {
+                , function set_endA(value) {
 		    if (typeof spine === "undefined") {
 		        spine = new MFVec3f([value, value]);
 		    } else {
@@ -242,8 +242,7 @@ var X3D0 =  new X3D({
 		    }
                 }
 
-                },
- {ecmascript: function set_endB(value) {
+                , function set_endB(value) {
 		    if (typeof spine === "undefined") {
 		        spine = new MFVec3f([value, value]);
 		    } else {
@@ -251,11 +250,10 @@ var X3D0 =  new X3D({
 		    }
                 }
 
-                },
- {ecmascript: function set_spine(value) {
-		    Browser.print('\\n'+'"');
+                , function set_spine(value) {
+		    Browser.print('\n'+'"');
                     spine = value;
-                }}])}),
+                })}),
 
                     new ROUTE({
                       fromNode : new SFString("MoveCylinder"),
