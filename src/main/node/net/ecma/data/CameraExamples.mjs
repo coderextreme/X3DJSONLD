@@ -518,7 +518,7 @@ var X3D0 =  new X3D({
               intensity : new SFFloat(0.8)}),
 
             new NavigationInfo({
-              type : new (["EXAMINE","FLY","ANY"])}),
+              type : new MFString(["EXAMINE","FLY","ANY"])}),
 
             new Viewpoint({
               description : new SFString("Camera test scene entry view"),

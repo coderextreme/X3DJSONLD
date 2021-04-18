@@ -226,21 +226,19 @@ var X3D0 =  new X3D({
                                                     new connect({
                                                       nodeField : new SFString("traceEnabled"),
                                                       protoField : new SFString("traceEnabled")})])})),
-                                              {ecmascript:
+                                              ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function tracePrint (text)
+, function tracePrint (text)
 {
 	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
 }
-},
- {ecmascript: function setIsVisible (value, timeStamp)
+, function setIsVisible (value, timeStamp)
 {
 	isVisible = value;
 	tracePrint('isVisible=' + value);
 }
-},
- {ecmascript: function setPlaneSensorIsActive (value, timeStamp)
+, function setPlaneSensorIsActive (value, timeStamp)
 {
 	tracePrint('PlaneSensor isActive=' + value);
 
@@ -259,12 +257,11 @@ var X3D0 =  new X3D({
 		}
 	}
 }
-},
- {ecmascript: function setPlaneSensorTranslation (value, timeStamp)
+, function setPlaneSensorTranslation (value, timeStamp)
 {
 	planeSensorTranslation = value;
 	tracePrint('planeSensorTranslation=' + value);
-}}])}),
+})}),
 
                                             new ROUTE({
                                               fromField : new SFString("isActive"),

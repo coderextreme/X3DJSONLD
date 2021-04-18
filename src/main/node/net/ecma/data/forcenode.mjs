@@ -151,14 +151,14 @@ var X3D0 =  new X3D({
                               type : field.TYPE_MFVEC3F,
                               name : new SFString("keyValue"),
                               accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                          {ecmascript:
-					},
- {ecmascript: function set_cycle(value) {
+                          ]),
+ecmascript:eval (0
+					, function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
-					}}])}),
+					})}),
 
                         new TimeSensor({
                           DEF : new SFString("nodeClock"),
@@ -249,10 +249,10 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("set_endB"),
                                   protoField : new SFString("set_positionB")})])})),
-                          {ecmascript:
+                          ]),
+ecmascript:eval (0
 
-                },
- {ecmascript: function set_endA(value) {
+                , function set_endA(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f([value, value]);
 		    } else {
@@ -260,8 +260,7 @@ var X3D0 =  new X3D({
 		    }
                 }
 
-                },
- {ecmascript: function set_endB(value) {
+                , function set_endB(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f([value, value]);
 		    } else {
@@ -269,10 +268,9 @@ var X3D0 =  new X3D({
 		    }
                 }
 
-                },
- {ecmascript: function set_spine(value) {
+                , function set_spine(value) {
                     spine = value;
-                }}])}),
+                })}),
 
                         new ROUTE({
                           fromNode : new SFString("MoveCylinder"),
@@ -378,9 +376,9 @@ var X3D0 =  new X3D({
                   accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                   value : new SFString("false")}),
               /*<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>*/
-              {ecmascript:
-	},
- {ecmascript: function add_node(value) {
+              ]),
+ecmascript:eval (0
+	, function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;
 		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
@@ -396,7 +394,7 @@ var X3D0 =  new X3D({
 				}
 			});
 
-        }}])}),
+        })}),
 
             new ROUTE({
               fromNode : new SFString("clickGenerator"),

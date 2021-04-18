@@ -228,7 +228,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("resolution"),
                                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                                   value : new SFString("50")}),
-                              {ecmascript:
+                              ]),
+ecmascript:eval (0
 
 			var e = 5;
 			var f = 5;
@@ -236,8 +237,7 @@ var X3D0 =  new X3D({
 			var h = 5;
 			var resolution = 100;
 
-			},
- {ecmascript: function initialize() {
+			, function initialize() {
 			     generateCoordinates();
 			     var localci = [];
 			     for (var i = 0; i < resolution-1; i++) {
@@ -252,8 +252,7 @@ var X3D0 =  new X3D({
 			    coordIndexes = new MFInt32(localci);
 			}
 
-			},
- {ecmascript: function generateCoordinates() {
+			, function generateCoordinates() {
 			     var theta = 0.0;
 			     var phi = 0.0;
 			     var delta = (2 * 3.141592653) / (resolution-1);
@@ -274,8 +273,7 @@ var X3D0 =  new X3D({
 			     coordinates = new MFVec3f(localc);
 			}
 
-			},
- {ecmascript: function set_fraction(fraction, eventTime) {
+			, function set_fraction(fraction, eventTime) {
 				var choice = Math.floor(Math.random() * 4);
 				switch (choice) {
 				case 0:
@@ -304,7 +302,7 @@ var X3D0 =  new X3D({
 					h = 4;
 				}
 				generateCoordinates();
-			}}])}),
+			})}),
 
                             new ROUTE({
                               fromNode : new SFString("OrbitScript"),

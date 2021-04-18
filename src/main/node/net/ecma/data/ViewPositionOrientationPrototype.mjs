@@ -226,10 +226,10 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("outputViewpointString"),
                               protoField : new SFString("outputViewpointString")})])})),
-                      {ecmascript:
+                      ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function roundoff (value, digits) // for local use only
+, function roundoff (value, digits) // for local use only
 {
 	var resolution = 1;
 	for (i = 1; i <= digits; i++ )
@@ -238,8 +238,7 @@ var X3D0 =  new X3D({
 	}
 	return Math.round (value*resolution) / resolution; // round to resolution
 }
-},
- {ecmascript: function outputViewpoint ()
+, function outputViewpoint ()
 {
   var holdString = 
         '<Viewpoint position="' +
@@ -254,36 +253,31 @@ var X3D0 =  new X3D({
    tracePrint (holdString);
    outputViewpointString = new MFString (holdString);
 }
-},
- {ecmascript: function set_position (value)
+, function set_position (value)
 {
 	position = value; // save persistent value
 	position_changed = position; // output event
 	outputViewpoint ();
 }
-},
- {ecmascript: function set_orientation (value)
+, function set_orientation (value)
 {
 	orientation = value; // save persistent value
 	orientation_changed = orientation; // output event
 	outputViewpoint ();
 }
-},
- {ecmascript: function set_traceEnabled (value)
+, function set_traceEnabled (value)
 {
 	traceEnabled = value;
 	alwaysPrint ('traceEnabled=' + traceEnabled);
 }
-},
- {ecmascript: function alwaysPrint (text)
+, function alwaysPrint (text)
 {
-	Browser.print ('[ViewPositionOrientation] ' + text + '\\n');
+	Browser.print ('[ViewPositionOrientation] ' + text + '\n');
 }
-},
- {ecmascript: function tracePrint (text)
+, function tracePrint (text)
 {
 	if (traceEnabled) alwaysPrint (text);
-}}])}),
+})}),
 
                     new ROUTE({
                       fromField : new SFString("position_changed"),

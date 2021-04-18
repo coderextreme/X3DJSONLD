@@ -190,15 +190,15 @@ var X3D0 =  new X3D({
                   type : field.TYPE_MFINT32,
                   name : new SFString("coordIndexes"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-              {ecmascript:
+              ]),
+ecmascript:eval (0
 
 var e = 5;
 var f = 5;
 var g = 5;
 var h = 5;
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
      var resolution = 100;
      updateCoordinates(resolution);
      var cis = [];
@@ -214,8 +214,7 @@ var h = 5;
     coordIndexes = new MFInt32(cis);
 }
 
-},
- {ecmascript: function updateCoordinates(resolution) {
+, function updateCoordinates(resolution) {
      var theta = 0.0;
      var phi = 0.0;
      var delta = (2 * 3.141592653) / (resolution-1);
@@ -235,8 +234,7 @@ var h = 5;
      coordinates = new MFVec3f(crds);
 }
 
-},
- {ecmascript: function set_fraction(fraction, eventTime) {
+, function set_fraction(fraction, eventTime) {
 	var choice = Math.floor(Math.random() * 4);
 	switch (choice) {
 	case 0:
@@ -263,7 +261,7 @@ var h = 5;
 	}
 	var resolution = 100;
 	updateCoordinates(resolution);
-}}])}),
+})}),
 
             new TimeSensor({
               DEF : new SFString("Clock"),

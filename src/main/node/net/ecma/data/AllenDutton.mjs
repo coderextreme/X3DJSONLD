@@ -776,7 +776,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_upperarm")}))}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"]),
+              type : new MFString(["EXAMINE"]),
               avatarSize : new MFFloat(new MFFloat([0.15,1.53,0.75])),
               speed : new SFFloat(0.5)}),
 

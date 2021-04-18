@@ -247,17 +247,16 @@ var X3D0 =  new X3D({
                           type : field.TYPE_SFTIME,
                           name : new SFString("set_fraction"),
                           accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-                      {ecmascript:
-			},
- {ecmascript: function initialize() {
+                      ]),
+ecmascript:eval (0
+			, function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
 			    	Math.random() - 0.5,
 				Math.random() - 0.5,
 				Math.random() - 0.5);
 			}
-			},
- {ecmascript: function set_fraction() {
+			, function set_fraction() {
 			    translation = new SFVec3f(
 			    	translation.x + velocity.x,
 				translation.y + velocity.y,
@@ -273,7 +272,7 @@ var X3D0 =  new X3D({
 				velocity.y += Math.random() * 0.2 - 0.1;
 				velocity.z += Math.random() * 0.2 - 0.1;
 			    }
-			}}])}),
+			})}),
 
                     new TimeSensor({
                       DEF : new SFString("TourTime"),

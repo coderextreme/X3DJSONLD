@@ -102,7 +102,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new NavigationInfo({
-              type : new (["EXAMINE","WALK","FLY","ANY"])}),
+              type : new MFString(["EXAMINE","WALK","FLY","ANY"])}),
 
             new Group({
               children : new MFNode([

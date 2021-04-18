@@ -170,7 +170,7 @@ var X3D0 =  new X3D({
               title : new SFString("ObliqueStrategies.x3d")}),
 
             new NavigationInfo({
-              type : new (["NONE"])}),
+              type : new MFString(["NONE"])}),
 
             new Background({
               skyColor : new MFColor(new MFColor([0.419608,0.427451,1]))}),

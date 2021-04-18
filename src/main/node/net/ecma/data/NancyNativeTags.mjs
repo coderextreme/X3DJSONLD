@@ -666,7 +666,7 @@ var X3D0 =  new X3D({
               title : new SFString("Nancy - an HAnim compliant avatar by 3Name3D")}),
 
             new NavigationInfo({
-              type : new (["EXAMINE"]),
+              type : new MFString(["EXAMINE"]),
               avatarSize : new MFFloat(new MFFloat([0.15,1.53,0.75])),
               speed : new SFFloat(0.5)}),
 

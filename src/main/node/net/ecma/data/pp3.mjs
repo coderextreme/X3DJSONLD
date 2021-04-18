@@ -242,17 +242,16 @@ var X3D0 =  new X3D({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("rightlines"),
                           accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                      {ecmascript:
+                      ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
 	rightlines = new MFString("");
 }
 
-},
- {ecmascript: function set_rightstring(rightstr) {
+, function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
-}}])}),
+})}),
 
                     new Script({
                       DEF : new SFString("UpSingleToMultiString"),
@@ -266,17 +265,16 @@ var X3D0 =  new X3D({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("uplines"),
                           accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                      {ecmascript:
+                      ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
 	uplines = new MFString("");
 }
 
-},
- {ecmascript: function set_upstring(upstr) {
+, function set_upstring(upstr) {
 	uplines = new MFString(upstr);
-}}])}),
+})}),
 
                     new Script({
                       DEF : new SFString("CenterSingleToMultiString"),
@@ -290,17 +288,16 @@ var X3D0 =  new X3D({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("centerlines"),
                           accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-                      {ecmascript:
+                      ]),
+ecmascript:eval (0
 
-},
- {ecmascript: function initialize() {
+, function initialize() {
 	centerlines = new MFString("");
 }
 
-},
- {ecmascript: function set_centerstring(centerstr) {
+, function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
-}}])}),
+})}),
 
                     new ROUTE({
                       fromField : new SFString("enteredText"),
