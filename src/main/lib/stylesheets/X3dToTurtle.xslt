@@ -521,6 +521,9 @@
                                   ((local-name()='applied' and string(.)='true') or
                                   (local-name()='linetype' and (string(.)='1')) or
                                   (local-name()='linewidthScaleFactor' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='PointProperties' and
+                      ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                                   not( local-name(..)='ClipPlane' and
                                   ((local-name()='enabled' and string(.)='true') or
                                   (local-name()='plane' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0')))) and
