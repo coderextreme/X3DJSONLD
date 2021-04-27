@@ -227,13 +227,13 @@ public class rubikFurnace
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"rubikFurnace\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"net.x3djsonld.data.rubikFurnace\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"rubikFurnace\" self-validation test results: ");
+			System.out.print("Java program \"net.x3djsonld.data.rubikFurnace\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();
