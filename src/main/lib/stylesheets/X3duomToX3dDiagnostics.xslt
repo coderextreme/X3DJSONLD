@@ -182,6 +182,32 @@ Invocation:
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
+    <!-- FieldName capitalization checks -->
+    
+    <xsl:text>      </xsl:text><xsl:comment> *** start: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+        
+    <xsl:for-each select="//SimpleType[(@name='initializeOnlyAccessTypes') or (@name='inputOutputAccessTypes')]/enumeration">
+        <!--<xsl:sort select="@value"/>-->
+        
+        <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
+        <xsl:text>report test="@*[(lower-case(local-name()) = '</xsl:text>
+        <xsl:value-of select="lower-case(@value)"/>
+        <xsl:text>') and not(local-name() = '</xsl:text>
+        <xsl:value-of select="@value"/>
+        <xsl:text>')]"</xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[ role="error">&NodeDEFname; <value-of select="local-name()"/>]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[ fieldName capitalization-case mismatch, correct CamelCase naming is ]]></xsl:text>
+        <xsl:value-of select="@value"/>
+        <xsl:text disable-output-escaping="yes"><![CDATA[ </report>]]></xsl:text>
+        <xsl:text>&#10;</xsl:text>
+    </xsl:for-each>
+
+    <xsl:text>      </xsl:text><xsl:comment> *** finish: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
+    
+    <!-- ==================================================================================================== -->
     <!-- HAnimJoint name test -->
     
     <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimJoint name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
@@ -638,9 +664,9 @@ Invocation:
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
-    <!-- NodeName capitalization checks -->
+    <!-- X3dTidy NodeName capitalization corrections -->
     
-    <xsl:text>                </xsl:text><xsl:comment> *** start: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>                </xsl:text><xsl:comment> *** start: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:for-each select="//ConcreteNode">
@@ -658,7 +684,37 @@ Invocation:
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>                </xsl:text><xsl:comment> *** finish: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>                </xsl:text><xsl:comment> *** finish: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
+    
+    <!-- ==================================================================================================== -->
+    <!-- X3dTidy fieldName capitalization corrections -->
+    
+    <xsl:text>                </xsl:text><xsl:comment> *** start: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    
+    <xsl:for-each select="//SimpleType[(@name='initializeOnlyAccessTypes') or (@name='inputOutputAccessTypes')]/enumeration">
+        <!--<xsl:sort select="@value"/>-->
+        
+        <xsl:text disable-output-escaping="yes"><![CDATA[                <]]></xsl:text>
+        <xsl:text>xsl:when test="(lower-case(local-name()) = '</xsl:text>
+        <xsl:value-of select="lower-case(@value)"/>
+        <xsl:text>') and not(local-name() = '</xsl:text>
+        <xsl:value-of select="@value"/>
+        <xsl:text>')"</xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[><xsl:text>]]></xsl:text>
+        <xsl:value-of select="@value"/>
+        <xsl:text disable-output-escaping="yes"><![CDATA[</xsl:text>]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[<xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text>]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[<xsl:value-of select="local-name(.)"/><xsl:text> to ]]></xsl:text>
+        <xsl:value-of select="@value"/>
+        <xsl:text disable-output-escaping="yes"><![CDATA[</xsl:text></xsl:message>]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[</xsl:when>]]></xsl:text>
+        <xsl:text>&#10;</xsl:text>
+    </xsl:for-each>
+
+    <xsl:text>                </xsl:text><xsl:comment> *** finish: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
