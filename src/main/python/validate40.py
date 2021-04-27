@@ -2,5 +2,8 @@ import sys
 import json
 import schemaparser40
 
-schemaparser40.validate(json.loads(sys.stdin.read()))
+try:
+	schemaparser40.validate(json.loads(sys.stdin.read()))
+except:
+	print("Invalid")
 
