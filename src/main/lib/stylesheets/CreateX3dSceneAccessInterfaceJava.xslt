@@ -3554,6 +3554,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	{
 		super.initialize();
 </xsl:text>
+
+									<xsl:if test="(local-name() = 'ConcreteNode') and InterfaceDefinition/field[@name = 'name']">
+										<xsl:text>
+        super.includesNameField();</xsl:text>
+                                    </xsl:if>
 									<xsl:if test="not($isX3dStatement = 'true')">
 										<!-- as needed, containerField updates by checking parent node and SFNode field -->
 										<!-- Reference list found at X3D Scene Authoring Hints: containerField -->
@@ -15716,7 +15721,8 @@ setAttribute method invocations).
 -->
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 			// check whether model has a satisfactory profile for this node
-			boolean hasSatisfactorySupport = findAncestorX3D().supportsX3dComponent (COMPONENT, LEVEL);
+			boolean hasSatisfactorySupport = findAncestorX3D().supportsX3dProfile   (modelProfile) ||
+                                             findAncestorX3D().supportsX3dComponent (COMPONENT, LEVEL);
                         
 			if (!hasSatisfactorySupport)]]></xsl:text>     
 <!--   
@@ -15732,7 +15738,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 					" insufficient X3D profile='" + modelProfile +
-					"' for parent X3D model containing ']]></xsl:text><xsl:value-of select="$name"/>
+					"' for current X3D model containing ']]></xsl:text><xsl:value-of select="$name"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[' node, ensure sufficient support by adding head statement <component name=']]></xsl:text><xsl:value-of select="$componentName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[' level=']]></xsl:text>
 					<xsl:value-of select="$componentLevel"/>
@@ -28706,6 +28712,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 import java.applet.Applet;
 import java.io.InputStream;
 import java.io.IOException;
+// import java.lang.reflect;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.AccessController;
@@ -28820,6 +28827,18 @@ being generated. Otherwise, it shall use the set implementation.
     /** Class not a BrowserFactoryImpl error message */
     private static final String CLASS_NOT_A_BROWSER_FACTORY_IMPL_ERR_MSG =
         "The nominated browser factory is not an instance of ";
+
+    /** NoSuchMethodException error message 
+     * @see <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/NoSuchMethodException.html">java.lang.NoSuchMethodException</a>
+	 */
+    private static final String CLASS_NO_SUCH_METHOD_ERR_MSG =
+        "The nominated browser factory is not an instance of ";
+
+    /** InvocationTargetException error message 
+     * @see <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/reflect/InvocationTargetException.html">java.lang.reflect.InvocationTargetException</a>
+	 */
+    private static final String CLASS_INVOCATION_TARGET_ERR_MSG =
+        "The class has an exception thrown by an invoked method or constructor ";
 
     /** BrowserFactoryImpl interface class name */
     private static final String BROWSER_FACTORY_IMPL_INTERFACE_CLASSNAME =
@@ -29073,22 +29092,24 @@ being generated. Otherwise, it shall use the set implementation.
      * Assumes that the factory reference is currently null as it automatically
      * writes over the top of it.
      */
-    private static void loadFactoryImpl( ) {
-
+    private static void loadFactoryImpl( )
+    {
+        String factory_class_name = new String();
         try {
             // load the factory class
-            String factory_class_name =
-            vrml_properties.getProperty( FACTORY_CLASS, DEFAULT_FACTORY_CLASS );
+            factory_class_name = vrml_properties.getProperty( FACTORY_CLASS, DEFAULT_FACTORY_CLASS );
 
             Class<?> factory_class = Class.forName( factory_class_name );
-            factory = (BrowserFactoryImpl)factory_class.newInstance( );
+        //  factory = (BrowserFactoryImpl)factory_class.newInstance( ); // deprecated
+        //  https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Class.html#newInstance()
+            factory = (BrowserFactoryImpl)factory_class.getDeclaredConstructor().newInstance( );
 
         } catch( ClassNotFoundException cnfe ) {
-            System.out.println( FACTORY_CLASS_NOT_FOUND_ERR_MSG );
+            System.out.println( FACTORY_CLASS_NOT_FOUND_ERR_MSG + factory_class_name );
             //cnfe.printStackTrace(System.err);
 
         } catch( InstantiationException ie ) {
-            System.out.println( UNABLE_TO_INSTANTIATE_FACTORY_ERR_MSG );
+            System.out.println( UNABLE_TO_INSTANTIATE_FACTORY_ERR_MSG + factory_class_name );
             //ie.printStackTrace(System.err);
 
         } catch( IllegalAccessException iae ) {
@@ -29099,6 +29120,14 @@ being generated. Otherwise, it shall use the set implementation.
             System.out.println( CLASS_NOT_A_BROWSER_FACTORY_IMPL_ERR_MSG +
                 BROWSER_FACTORY_IMPL_INTERFACE_CLASSNAME );
             //cce.printStackTrace(System.err);
+
+        } catch( NoSuchMethodException nsme ) {
+            System.out.println( CLASS_NO_SUCH_METHOD_ERR_MSG + factory_class_name );
+            //nsme.printStackTrace(System.err);
+
+        } catch( java.lang.reflect.InvocationTargetException ite ) {
+            System.out.println( CLASS_INVOCATION_TARGET_ERR_MSG + factory_class_name );
+            //ite.printStackTrace(System.err);
         }
     }
 ]]></xsl:text></xsl:with-param>
@@ -34058,6 +34087,33 @@ showing default attribute values, and other custom settings.</p>
 		cssClass = CLASS_DEFAULT_VALUE;
 		cssStyle = STYLE_DEFAULT_VALUE;
 	}
+    
+    private boolean hasNameField = false;
+    /**
+     * Protected method for X3DJSAIL class initialize() methods to indicate whether the current concrete node has a getName() method
+     */
+    protected void includesNameField()
+    {
+        hasNameField = true;
+    }
+    /**
+     * Whether or not this class has a getName() method
+     * @return whether this X3D node includes a name field
+     */
+    public boolean hasNameField()
+    {
+        return hasNameField;
+    }
+    /**
+     * Utility method to permit querying name value
+     * @return name value if available for this class
+     */
+    public String getName()
+    {
+        if  (hasNameField())
+             return this.getName();
+        else return "";
+    }
 	/**
 	 * Provide String value from inputOutput SFString field named <i>DEF</i>.
 	 * <br><br>
