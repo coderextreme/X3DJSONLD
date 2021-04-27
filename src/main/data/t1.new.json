@@ -5,16 +5,10 @@
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-        "component": [
-          {
-            "@name":"Networking",
-            "@level":2
-          }
-        ],
         "meta": [
           {
             "@name":"generator",
-            "@content":"view3dscene, https://castle-engine.io/view3dscene.php"
+            "@content":"tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"
           },
           {
             "@name":"source",
@@ -22,7 +16,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 January 2021"
+            "@content":"27 April 2021"
           },
           {
             "@name":"generator",
