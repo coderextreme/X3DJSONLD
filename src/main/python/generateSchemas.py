@@ -65,7 +65,7 @@ for version in versions:
     # validate an X3D JSON schema version against draft07.py
     os.system(f'python3 validate07.py < ../schema/x3d-{version}-JSONSchema.json')
     # create a python script for validating this version
-    os.system(f'echo "import sys\nimport json\nimport schemaparser{schemacodeversion}\n\nschemaparser{schemacodeversion}.validate(json.loads(sys.stdin.read()))\n" > validate{schemacodeversion}.py')
+    os.system(f'echo "import sys\nimport json\nimport schemaparser{schemacodeversion}\n\ntry:\n\tschemaparser{schemacodeversion}.validate(json.loads(sys.stdin.read()))\nexcept:\n\tprint(\'Invalid\')" > validate{schemacodeversion}.py')
 
 # now try to validate some JSON examples
 print(f"3.3, HelloWorld.json")
