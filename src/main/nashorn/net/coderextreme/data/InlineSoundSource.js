@@ -11,17 +11,17 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
-        .addMeta(new meta().setName("modified").setContent("28 October 2020"))
+        .addMeta(new meta().setName("modified").setContent("20 April 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
         .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
-        .addMeta(new meta().setName("reference").setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+        .addMeta(new meta().setName("reference").setContent("https://medialab.hmu.gr/minipages/x3domAudio"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
         .addChild(new NavigationInfo().setDEF("NAV"))
-        .addChild(new Background().setBackUrl(Java.to(["images/generic/BK1.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["images/generic/DN1.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["images/generic/FR1.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["images/generic/LF1.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["images/generic/RT1.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["images/generic/UP1.png"], Java.type("java.lang.String[]"))))
+        .addChild(new Background().setBackUrl(Java.to(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0).setNearDistance(1).setOrientation(Java.to([1,0,0,-0.523599], Java.type("float[]"))).setPosition(Java.to([0,2000,3500], Java.type("float[]"))))
         .addChild(new Transform().setDEF("Floor").setTranslation(Java.to([1.241,0,0.358], Java.type("float[]")))
           .addChild(new Shape()
@@ -31,5 +31,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setCoord(new Coordinate().setPoint(Java.to([-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000], Java.type("float[]"))))
               .setNormal(new Normal().setVector(Java.to([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0], Java.type("float[]")))))))
         .addChild(new Transform().setDEF("InlineScene")
-          .addChild(new Inline().setDEF("inline").setUrl(Java.to(["x3d/example1.x3d"], Java.type("java.lang.String[]"))))))      ;
+          .addChild(new Inline().setDEF("inline").setUrl(Java.to(["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"], Java.type("java.lang.String[]"))))))      ;
     X3D0.toFileX3D("../data/InlineSoundSource.new.x3d");

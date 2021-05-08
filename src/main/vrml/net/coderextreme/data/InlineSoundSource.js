@@ -13,12 +13,12 @@ NavigationInfo3.DEF = "NAV";
 browser.currentScene.children[1] = NavigationInfo3;
 
 let Background4 = browser.currentScene.createNode("Background");
-Background4.backUrl = new MFString(new java.lang.String["images/generic/BK1.png"]);
-Background4.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png"]);
-Background4.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png"]);
-Background4.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png"]);
-Background4.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png"]);
-Background4.topUrl = new MFString(new java.lang.String["images/generic/UP1.png"]);
+Background4.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
+Background4.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
+Background4.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
+Background4.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
+Background4.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
+Background4.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
 browser.currentScene.children[2] = Background4;
 
 let Viewpoint5 = browser.currentScene.createNode("Viewpoint");
@@ -66,7 +66,7 @@ let Transform13 = browser.currentScene.createNode("Transform");
 Transform13.DEF = "InlineScene";
 let Inline14 = browser.currentScene.createNode("Inline");
 Inline14.DEF = "inline";
-Inline14.url = new MFString(new java.lang.String["x3d/example1.x3d"]);
+Inline14.url = new MFString(new java.lang.String["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"]);
 Transform13.children = new MFNode();
 
 Transform13.children[0] = Inline14;

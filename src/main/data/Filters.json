@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"28 October 2020"
+            "@content":"20 April 2021"
           },
           {
             "@name":"reference",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2021"
+            "@content":"07 May 2021"
           },
           {
             "@name":"generator",
@@ -70,15 +70,8 @@
     },
     "Scene": {
         "-children":[
-          { "WorldInfo":
-            {
-              "@title":"Filters.x3d"
-            }
-          },
           { "NavigationInfo":
             {
-              "@DEF":"NAV",
-              "@type":["NONE"]
             }
           },
           { "Background":
@@ -88,6 +81,7 @@
           },
           { "Viewpoint":
             {
+              "@bind":true,
               "@orientation":[1,0,0,-0.5],
               "@position":[0.0,500.0,600.0],
               "@retainUserOffsets":true
@@ -103,12 +97,12 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit1",
+                          "@DEF":"audio_emit",
                           "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.1,0.1,0.1],
-                                "@emissiveColor":[0.8,0.8,0.8],
+                                "@emmisiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
                               }
                             }
@@ -135,12 +129,12 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit2",
+                          "@DEF":"audio_emit",
                           "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.1,0.1,0.1],
-                                "@emissiveColor":[0.8,0.8,0.8],
+                                "@emmisiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
                               }
                             }
@@ -167,12 +161,12 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit3",
+                          "@DEF":"audio_emit",
                           "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.1,0.1,0.1],
-                                "@emissiveColor":[0.8,0.8,0.8],
+                                "@emmisiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
                               }
                             }
@@ -250,6 +244,137 @@
                           "@radius":500
                         }
                       }
+                  }
+                }
+              ]
+            }
+          },
+          { "AudioDestination":
+            {
+              "-children":[
+                { "DynamicsCompressor":
+                  {
+                    "-children":[
+                      { "Gain":
+                        {
+                          "-children":[
+                            { "SpatialSound":
+                              {
+                                "@USE":"Audio1",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@detune":50.0,
+                                                  "@frequency":600,
+                                                  "@qualityFactor":30.0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@loop":true,
+                                                        "@pauseTime":-1,
+                                                        "@resumeTime":-1,
+                                                        "@stopTime":-1,
+                                                        "@url":["sound/techno_beat.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "SpatialSound":
+                              {
+                                "@USE":"Audio2",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@detune":15.0,
+                                                  "@frequency":600,
+                                                  "@qualityFactor":15.0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@loop":true,
+                                                        "@pauseTime":-1,
+                                                        "@resumeTime":-1,
+                                                        "@stopTime":-1,
+                                                        "@url":["sound/beat.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "SpatialSound":
+                              {
+                                "@USE":"Audio3",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@frequency":1000,
+                                                  "@qualityFactor":0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@loop":true,
+                                                        "@pauseTime":-1,
+                                                        "@resumeTime":-1,
+                                                        "@stopTime":-1,
+                                                        "@url":["sound/wobble_loop.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
                   }
                 }
               ]

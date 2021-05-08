@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"28 October 2020"
+            "@content":"20 April 2021"
           },
           {
             "@name":"reference",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.medialab.teicrete.gr/minipages/x3domAudio"
+            "@content":"https://medialab.hmu.gr/minipages/x3domAudio"
           },
           {
             "@name":"identifier",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2021"
+            "@content":"07 May 2021"
           },
           {
             "@name":"generator",
@@ -82,12 +82,12 @@
           },
           { "Background":
             {
-              "@backUrl":["images/generic/BK1.png"],
-              "@bottomUrl":["images/generic/DN1.png"],
-              "@frontUrl":["images/generic/FR1.png"],
-              "@leftUrl":["images/generic/LF1.png"],
-              "@rightUrl":["images/generic/RT1.png"],
-              "@topUrl":["images/generic/UP1.png"]
+              "@backUrl":["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"],
+              "@bottomUrl":["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"],
+              "@frontUrl":["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"],
+              "@leftUrl":["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"],
+              "@rightUrl":["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"],
+              "@topUrl":["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]
             }
           },
           { "Viewpoint":
@@ -151,7 +151,7 @@
                 { "Inline":
                   {
                     "@DEF":"inline",
-                    "@url":["x3d/example1.x3d"]
+                    "@url":["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"]
                   }
                 }
               ]

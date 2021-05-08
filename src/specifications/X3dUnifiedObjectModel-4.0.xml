@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-03-23-07:00 17:03:29.708-07:00 -->
+<!-- Generated 2021-05-07-07:00 13:46:49.788-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3454,7 +3454,6 @@
          <enumeration value="pointSizeScaleFactor"/>
          <enumeration value="pointSizeMinValue"/>
          <enumeration value="pointSizeMaxValue"/>
-         <enumeration value="pointSizeAttenuation"/>
          <enumeration value="port"/>
          <enumeration value="position"/>
          <enumeration value="power"/>
@@ -20693,7 +20692,7 @@
             <field name="stiffness"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="1 1 1"
+                   default="0 0 0"
                    minInclusive="0"
                    maxInclusive="1"
                    description="A scale factor of (1 - stiffness) is applied around the corresponding axis (X, Y, or Z for entries 0, 1 and 2 of the stiffness field)."/>
@@ -29947,7 +29946,8 @@
             <field name="attenuation"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="1 0 0"/>
+                   default="1 0 0"
+                   description="attenuation array values [a, b, c] are set to default values if undefined."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -39365,7 +39365,7 @@
          </InterfaceDefinition>
       </Statement>
       <Statement name="IMPORT">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#IMPORTSemantics"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/concepts.html#ImportExportsemantics"
                               appinfo="Functional summary: IMPORT provides ROUTE access to a node that has a corresponding EXPORT statement within an Inline scene. These connections allow event values to be exchanged via ROUTE statements between a parent model and a child Inline model.">
             <componentInfo name="Networking" level="3"/>
             <field name="AS"
