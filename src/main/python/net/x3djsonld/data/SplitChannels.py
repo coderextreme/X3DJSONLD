@@ -30,7 +30,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='28 October 2020',name='modified'),
+    meta(content='20 April 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
     meta(content='http://www.medialab.teicrete.gr/minipages/x3domAudio',name='reference'),
@@ -39,23 +39,22 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    WorldInfo(title='SplitChannels.x3d'),
-    NavigationInfo(DEF='NAV',type=["NONE"]),
+    NavigationInfo(id=NAV,type=['NONE']),
     Background(skyColor=[(0.200,0.200,0.210)]),
-    Viewpoint(orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
+    Viewpoint(bind=true,orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='PowerR',translation=(100,400,400),
       children=[
-      Transform(DEF='pR',rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id=pR,rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit1',
-            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
+          appearance=Appearance(DEF='audio_emit',
+            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
           geometry=Box(size=(10,80,0.01)))]),
       Transform(rotation=(1,0,0,-0.5),translation=(-2.7,37,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit2',
-            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+          appearance=Appearance(DEF='audio_emit',
+            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
             texture=ImageTexture(url=["images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeRight',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
@@ -63,22 +62,23 @@ newModel=X3D(profile='Full',version='4.0',
         Shape(
           appearance=Appearance(
             material=Material(diffuseColor=(0.345,0.345,0.882)),
-            Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
-          geometry=Text(string=["Right Channel Volume"],
-            fontStyle=FontStyle(family=["Times"],style_='BOLD')))])]),
+            Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
+          geometry=Text(ccw=True,lit=true,string=['Right Channel Volume'],usegeocache=true,
+            children=[
+            fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])]),
     Transform(DEF='PowerL',translation=(-100,400,400),
       children=[
-      Transform(DEF='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id=pL,rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit3',
-            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
+          appearance=Appearance(DEF='audio_emit',
+            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
           geometry=Box(size=(10,80,0.01)))]),
       Transform(rotation=(1,0,0,-0.5),translation=(13.2,37,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit4',
-            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+          appearance=Appearance(DEF='audio_emit',
+            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
             texture=ImageTexture(url=["images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeLeft',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
@@ -86,29 +86,38 @@ newModel=X3D(profile='Full',version='4.0',
         Shape(
           appearance=Appearance(
             material=Material(diffuseColor=(0.345,0.345,0.882)),
-            Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
-          geometry=Text(string=["Left Channel Volume"],
-            fontStyle=FontStyle(family=["Times"],style_='BOLD')))])]),
-    Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
-      children=[
-      Shape(
-        appearance=Appearance(DEF='audio_emit5',
-          material=Material(diffuseColor=(0.3,1,0.3),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
-          texture=ImageTexture(url=["images/loudspeaker.png"])),
-        geometry=Box(size=(100,100,0.001)))]),
-    AudioSound(
-      children=[
-      Transform(USE='Audio3'),
-      SpatialSound(coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,position=0,0,0),
-      BufferAudioSource(loop=True,url=["sound/violin.mp3","sound/violin.ogg"])]
-      #  <BiquadFilter frequency='100' detune='10.0' qualityFactor='10' gain='0' type='lowpass' /> 
-      ),
+            Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
+          geometry=Text(ccw=True,lit=true,string=['Left Channel Volume'],usegeocache=true,
+            children=[
+            fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])]),
     Transform(
       children=[
       Shape(
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
-        geometry=Box(size=(1500,10,500)))])])
+        geometry=Box(size=(1500,10,500)))]),
+    ListenerPoint(id=ListenerPoint,trackCurrentView=true),
+    AudioDestination(id=AudioDestination,
+      children=[
+      Gain(id=Gain3,
+        children=[
+        ChannelMerger(id=ChannelMerger,
+          children=[
+          ChannelSelector(id=ChannelSelector0,
+            children=[
+            Gain(USE='ChannelSplitter',id=Gain0)]),
+          ChannelSelector(channelSelection=1,id=ChannelSelector1,
+            children=[
+            Gain(USE='ChannelSplitter',id=Gain1)])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id=ChannelSplitter,
+      source=AudioClip(USE='Audio3',id=AudioClip,loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
+    Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
+      children=[
+      Shape(
+        appearance=Appearance(DEF='audio_emit',
+          material=Material(diffuseColor=(0.3,1,0.3),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+          texture=ImageTexture(url=["images/loudspeaker.png"])),
+        geometry=Box(size=(100,100,0.001)))])])
 ) # X3D model complete
 
 ###############################################

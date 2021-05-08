@@ -7,11 +7,11 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
-import { WorldInfo } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
+import { undefined } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -23,6 +23,15 @@ import { SFColor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
+import { AudioDestination } from './x3d.mjs';
+import { DynamicsCompressor } from './x3d.mjs';
+import { Gain } from './x3d.mjs';
+import { SpatialSound } from './x3d.mjs';
+import { Analyser } from './x3d.mjs';
+import { BiquadFilter } from './x3d.mjs';
+import { AudioClip } from './x3d.mjs';
+import { SFTime } from './x3d.mjs';
+import { MFString } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
@@ -52,7 +61,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("28 October 2020")}),
+              content : new SFString("20 April 2021")}),
 
             new meta({
               name : new SFString("reference"),
@@ -80,17 +89,13 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
-            new WorldInfo({
-              title : new SFString("Filters.x3d")}),
-
-            new NavigationInfo({
-              type : ["NONE"],
-              DEF : new SFString("NAV")}),
+            new NavigationInfo({}),
 
             new Background({
               skyColor : new MFColor([0.2,0.2,0.2])}),
 
             new Viewpoint({
+              bind : new undefined("true"),
               orientation : new SFRotation([1,0,0,-0.5]),
               position : new SFVec3f([0,500,600]),
               retainUserOffsets : new SFBool(true)}),
@@ -102,11 +107,11 @@ var X3D0 =  new X3D({
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      DEF : new SFString("audio_emit1"),
+                      DEF : new SFString("audio_emit"),
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emissiveColor : new SFColor([0.8,0.8,0.8]),
+                          emmisiveColor : new undefined("0.8 0.8 0.8"),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
@@ -119,11 +124,11 @@ var X3D0 =  new X3D({
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      DEF : new SFString("audio_emit2"),
+                      DEF : new SFString("audio_emit"),
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emissiveColor : new SFColor([0.8,0.8,0.8]),
+                          emmisiveColor : new undefined("0.8 0.8 0.8"),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
@@ -136,11 +141,11 @@ var X3D0 =  new X3D({
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      DEF : new SFString("audio_emit3"),
+                      DEF : new SFString("audio_emit"),
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emissiveColor : new SFColor([0.8,0.8,0.8]),
+                          emmisiveColor : new undefined("0.8 0.8 0.8"),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
@@ -183,5 +188,70 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.6,0.7])}))})),
                   geometry : new SFNode(
                     new Cylinder({
-                      radius : new SFFloat(500)}))})])})])}))});
+                      radius : new SFFloat(500)}))})])}),
+
+            new AudioDestination({
+              children : new MFNode([
+                new DynamicsCompressor({
+                  children : new MFNode([
+                    new Gain({
+                      children : new MFNode([
+                        new SpatialSound({
+                          USE : new SFString("Audio1"),
+                          children : new MFNode([
+                            new Gain({
+                              children : new MFNode([
+                                new Analyser({
+                                  children : new MFNode([
+                                    new BiquadFilter({
+                                      type : field.TYPE_ALLPASS,
+                                      detune : new SFFloat(50),
+                                      frequency : new SFFloat(600),
+                                      qualityFactor : new SFFloat(30),
+                                      children : new MFNode([
+                                        new AudioClip({
+                                          loop : new SFBool(true),
+                                          pauseTime : new SFTime(-1),
+                                          resumeTime : new SFTime(-1),
+                                          stopTime : new SFTime(-1),
+                                          url : new MFString(["sound/techno_beat.mp3"])})])})])})])})])}),
+
+                        new SpatialSound({
+                          USE : new SFString("Audio2"),
+                          children : new MFNode([
+                            new Gain({
+                              children : new MFNode([
+                                new Analyser({
+                                  children : new MFNode([
+                                    new BiquadFilter({
+                                      type : field.TYPE_ALLPASS,
+                                      detune : new SFFloat(15),
+                                      frequency : new SFFloat(600),
+                                      qualityFactor : new SFFloat(15),
+                                      children : new MFNode([
+                                        new AudioClip({
+                                          loop : new SFBool(true),
+                                          pauseTime : new SFTime(-1),
+                                          resumeTime : new SFTime(-1),
+                                          stopTime : new SFTime(-1),
+                                          url : new MFString(["sound/beat.mp3"])})])})])})])})])}),
+
+                        new SpatialSound({
+                          USE : new SFString("Audio3"),
+                          children : new MFNode([
+                            new Gain({
+                              children : new MFNode([
+                                new Analyser({
+                                  children : new MFNode([
+                                    new BiquadFilter({
+                                      type : field.TYPE_ALLPASS,
+                                      frequency : new SFFloat(1000),
+                                      qualityFactor : new SFFloat(0),
+                                      children : new MFNode([
+                                        new AudioClip({
+                                          loop : new SFBool(true),
+                                          pauseTime : new SFTime(-1),
+                                          resumeTime : new SFTime(-1),
+                                          stopTime : new SFTime(-1),
+                                          url : new MFString(["sound/wobble_loop.mp3"])})])})])})])})])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

@@ -5,12 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "ajv": "^6.12.6",
-    "ajv-i18n": "*",
+    "ajv-i18n": "^3.6.0",
     "axios": ">=0.21.1",
     "express": "*",
     "glob": "*",
     "java": "^0.12.1",
-    "jsonlint": "^1.6.3",
+    "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "lodash": ">=4.17.19",
     "mutation-observer": "*",
     "node-mkdirp": "*",
@@ -19,9 +19,6 @@
     "xmldom": "*",
     "xmlhttprequest": "*",
     "xslt3": "*"
-  },
-  "devDependencies": {
-    "jsdoc": "*"
   },
   "scripts": {
     "start": "node app.js",

@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"28 October 2020"
+            "@content":"20 April 2021"
           },
           {
             "@name":"reference",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2021"
+            "@content":"07 May 2021"
           },
           {
             "@name":"generator",
@@ -70,14 +70,8 @@
     },
     "Scene": {
         "-children":[
-          { "WorldInfo":
-            {
-              "@title":"SplitChannels.x3d"
-            }
-          },
           { "NavigationInfo":
             {
-              "@DEF":"NAV",
               "@type":["NONE"]
             }
           },
@@ -88,6 +82,7 @@
           },
           { "Viewpoint":
             {
+              "@bind":true,
               "@orientation":[1,0,0,-0.5],
               "@position":[0.0,500.0,600.0],
               "@retainUserOffsets":true
@@ -100,7 +95,6 @@
               "-children":[
                 { "Transform":
                   {
-                    "@DEF":"pR",
                     "@rotation":[1,0,0,-0.5],
                     "@translation":[0,40,0],
                     "-children":[
@@ -109,12 +103,12 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"audio_emit1",
+                                "@DEF":"audio_emit",
                                 "-material":
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emissiveColor":[0.8,0.8,0.8],
+                                      "@emmisiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   }
@@ -141,12 +135,12 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"audio_emit2",
+                                "@DEF":"audio_emit",
                                 "-material":
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emissiveColor":[0.8,0.8,0.8],
+                                      "@emmisiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   },
@@ -187,29 +181,38 @@
                                       "@diffuseColor":[0.345,0.345,0.882]
                                     }
                                   },
-                                "-backMaterial":[
                                   { "Material":
                                     {
-                                      "@ambientIntensity":0.0933,
-                                      "@diffuseColor":[1,1,1],
+                                      "@ambientintensity":0.0933,
+                                      "@diffusecolor":[1,1,1],
+                                      "@emissivecolor":[0,0,0],
                                       "@shininess":0.51,
-                                      "@specularColor":[0.46,0.46,0.46]
+                                      "@specularcolor":[0.46,0.46,0.46]
                                     }
                                   }
-                                ]
                               }
                             },
                           "-geometry":
                             { "Text":
                               {
+                                "@ccw":true,
+                                "@lit":true,
                                 "@string":["Right Channel Volume"],
-                                "-fontStyle":
-                                  { "FontStyle":
+                                "@usegeocache":true,
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "fontstyle":
                                     {
-                                      "@family":["Times"],
-                                      "@style":"BOLD"
+                                      "@family":"'Times'",
+                                      "@horizontal":true,
+                                      "@justify":"BEGIN",
+                                      "@lefttoright":true,
+                                      "@size":1,
+                                      "@spacing":1,
+                                      "@style":"BOLD",
+                                      "@toptobottom":true
                                     }
                                   }
+                                ]
                               }
                             }
                         }
@@ -227,7 +230,6 @@
               "-children":[
                 { "Transform":
                   {
-                    "@DEF":"pL",
                     "@rotation":[1,0,0,-0.5],
                     "@translation":[0,40,0],
                     "-children":[
@@ -236,12 +238,12 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"audio_emit3",
+                                "@DEF":"audio_emit",
                                 "-material":
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emissiveColor":[0.8,0.8,0.8],
+                                      "@emmisiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   }
@@ -268,12 +270,12 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"audio_emit4",
+                                "@DEF":"audio_emit",
                                 "-material":
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emissiveColor":[0.8,0.8,0.8],
+                                      "@emmisiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   },
@@ -314,73 +316,43 @@
                                       "@diffuseColor":[0.345,0.345,0.882]
                                     }
                                   },
-                                "-backMaterial":[
                                   { "Material":
                                     {
-                                      "@ambientIntensity":0.0933,
-                                      "@diffuseColor":[1,1,1],
+                                      "@ambientintensity":0.0933,
+                                      "@diffusecolor":[1,1,1],
+                                      "@emissivecolor":[0,0,0],
                                       "@shininess":0.51,
-                                      "@specularColor":[0.46,0.46,0.46]
+                                      "@specularcolor":[0.46,0.46,0.46]
                                     }
                                   }
-                                ]
                               }
                             },
                           "-geometry":
                             { "Text":
                               {
+                                "@ccw":true,
+                                "@lit":true,
                                 "@string":["Left Channel Volume"],
-                                "-fontStyle":
-                                  { "FontStyle":
+                                "@usegeocache":true,
+                                "-IllegalChildNodeFieldNameNotFound":[
+                                  { "fontstyle":
                                     {
-                                      "@family":["Times"],
-                                      "@style":"BOLD"
+                                      "@family":"'Times'",
+                                      "@horizontal":true,
+                                      "@justify":"BEGIN",
+                                      "@lefttoright":true,
+                                      "@size":1,
+                                      "@spacing":1,
+                                      "@style":"BOLD",
+                                      "@toptobottom":true
                                     }
                                   }
+                                ]
                               }
                             }
                         }
                       }
                     ]
-                  }
-                }
-              ]
-            }
-          },
-          { "Transform":
-            {
-              "@DEF":"Audio3",
-              "@rotation":[1,0,0,-0.5],
-              "@translation":[0,100,0],
-              "-children":[
-                { "Shape":
-                  {
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "@DEF":"audio_emit5",
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.3,1,0.3],
-                                "@emissiveColor":[0.8,0.8,0.8],
-                                "@specularColor":[0.01,0.01,0.01]
-                              }
-                            },
-                          "-texture":
-                            { "ImageTexture":
-                              {
-                                "@url":["images/loudspeaker.png"]
-                              }
-                            }
-                        }
-                      },
-                    "-geometry":
-                      { "Box":
-                        {
-                          "@size":[100,100,0.001]
-                        }
-                      }
                   }
                 }
               ]
@@ -409,6 +381,99 @@
                       { "Box":
                         {
                           "@size":[1500,10,500]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "AudioDestination":
+            {
+              "-children":[
+                { "Gain":
+                  {
+                    "-children":[
+                      { "ChannelMerger":
+                        {
+                          "-children":[
+                            { "ChannelSelector":
+                              {
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "@USE":"ChannelSplitter"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "ChannelSelector":
+                              {
+                                "@channelSelection":1,
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "@USE":"ChannelSplitter"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "ChannelSplitter":
+            {
+              "@DEF":"ChannelSplitter",
+              "@channelCountMode":"explicit",
+              "-source":[
+                { "AudioClip":
+                  {
+                    "@USE":"Audio3"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Audio3",
+              "@rotation":[1,0,0,-0.5],
+              "@translation":[0,100,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"audio_emit",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.3,1,0.3],
+                                "@emmisiveColor":[0.8,0.8,0.8],
+                                "@specularColor":[0.01,0.01,0.01]
+                              }
+                            },
+                          "-texture":
+                            { "ImageTexture":
+                              {
+                                "@url":["images/loudspeaker.png"]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Box":
+                        {
+                          "@size":[100,100,0.001]
                         }
                       }
                   }

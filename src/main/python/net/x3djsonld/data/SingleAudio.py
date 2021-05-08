@@ -30,10 +30,10 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='28 October 2020',name='modified'),
+    meta(content='18 April 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
-    meta(content='http://www.medialab.teicrete.gr/minipages/x3domAudio',name='reference'),
+    meta(content='https://medialab.hmu.gr/minipages/x3domAudio',name='reference'),
     meta(content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SingleAudio.x3d',name='identifier'),
     meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
@@ -41,7 +41,7 @@ newModel=X3D(profile='Full',version='4.0',
     children=[
     WorldInfo(title='SingleAudio.x3d'),
     NavigationInfo(DEF='NAV'),
-    Background(backUrl=["images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png"],frontUrl=["images/generic/FR1.png"],leftUrl=["images/generic/LF1.png"],rightUrl=["images/generic/RT1.png"],topUrl=["images/generic/UP1.png"]),
+    Background(backUrl=["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"],frontUrl=["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"],leftUrl=["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"],rightUrl=["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"],topUrl=["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]),
     Viewpoint(DEF='Camera001',description='Camera001',farDistance=0,nearDistance=1.000000,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000)),
     Transform(DEF='Floor',translation=(1.241,0.000,0.358),
       children=[
@@ -65,10 +65,9 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           Shape(
             appearance=Appearance(
-              material=Material(diffuseColor=(0.345,0.345,0.882)),
-              Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
-            geometry=Text(string=["Sound Source"],
-              fontStyle=FontStyle(family=["Times"],style_='BOLD')))])])]),
+              material=Material(ambientIntensity=0.0933,diffuseColor=(0.345,0.345,0.882),shininess=0.51,specularColor=(0.46,0.46,0.46))),
+            geometry=Text(string=['Sound Source'],
+              fontStyle=FontStyle(family=["Times"],justify=['BEGIN'],style_='BOLD')))])])]),
     AudioSound(
       children=[
       Transform(USE='Audio1'),

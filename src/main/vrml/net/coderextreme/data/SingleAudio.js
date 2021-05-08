@@ -13,12 +13,12 @@ NavigationInfo3.DEF = "NAV";
 browser.currentScene.children[1] = NavigationInfo3;
 
 let Background4 = browser.currentScene.createNode("Background");
-Background4.backUrl = new MFString(new java.lang.String["images/generic/BK1.png"]);
-Background4.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png"]);
-Background4.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png"]);
-Background4.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png"]);
-Background4.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png"]);
-Background4.topUrl = new MFString(new java.lang.String["images/generic/UP1.png"]);
+Background4.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
+Background4.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
+Background4.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
+Background4.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
+Background4.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
+Background4.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
 browser.currentScene.children[2] = Background4;
 
 let Viewpoint5 = browser.currentScene.createNode("Viewpoint");
@@ -100,26 +100,23 @@ Transform21.translation = new SFVec3f(new float[0,100,0]);
 let Shape22 = browser.currentScene.createNode("Shape");
 let Appearance23 = browser.currentScene.createNode("Appearance");
 let Material24 = browser.currentScene.createNode("Material");
+Material24.ambientIntensity = 0.0933;
 Material24.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
+Material24.shininess = 0.51;
+Material24.specularColor = new SFColor(new float[0.46,0.46,0.46]);
 Appearance23.material = Material24;
-
-let Material25 = browser.currentScene.createNode("Material");
-Material25.ambientIntensity = 0.0933;
-Material25.diffuseColor = new SFColor(new float[1,1,1]);
-Material25.shininess = 0.51;
-Material25.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Appearance23.material = Material25;
 
 Shape22.appearance = Appearance23;
 
-let Text26 = browser.currentScene.createNode("Text");
-Text26.string = new MFString(new java.lang.String["Sound Source"]);
-let FontStyle27 = browser.currentScene.createNode("FontStyle");
-FontStyle27.family = new MFString(new java.lang.String["Times"]);
-FontStyle27.style = "BOLD";
-Text26.fontStyle = FontStyle27;
+let Text25 = browser.currentScene.createNode("Text");
+Text25.string = new MFString(new java.lang.String["Sound Source"]);
+let FontStyle26 = browser.currentScene.createNode("FontStyle");
+FontStyle26.family = new MFString(new java.lang.String["Times"]);
+FontStyle26.justify = new MFString(new java.lang.String["BEGIN"]);
+FontStyle26.style = "BOLD";
+Text25.fontStyle = FontStyle26;
 
-Shape22.geometry = Text26;
+Shape22.geometry = Text25;
 
 Transform21.children = new MFNode();
 
