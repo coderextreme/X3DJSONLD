@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("28 October 2020")}),
+              content : new SFString("20 April 2021")}),
 
             new meta({
               name : new SFString("reference"),
@@ -68,7 +68,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.medialab.teicrete.gr/minipages/x3domAudio")}),
+              content : new SFString("https://medialab.hmu.gr/minipages/x3domAudio")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -91,12 +91,12 @@ var X3D0 =  new X3D({
               DEF : new SFString("NAV")}),
 
             new Background({
-              backUrl : new MFString(["images/generic/BK1.png"]),
-              bottomUrl : new MFString(["images/generic/DN1.png"]),
-              frontUrl : new MFString(["images/generic/FR1.png"]),
-              leftUrl : new MFString(["images/generic/LF1.png"]),
-              rightUrl : new MFString(["images/generic/RT1.png"]),
-              topUrl : new MFString(["images/generic/UP1.png"])}),
+              backUrl : new MFString(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]),
+              bottomUrl : new MFString(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]),
+              frontUrl : new MFString(["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]),
+              leftUrl : new MFString(["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]),
+              rightUrl : new MFString(["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]),
+              topUrl : new MFString(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"])}),
 
             new Viewpoint({
               DEF : new SFString("Camera001"),
@@ -134,5 +134,5 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("inline"),
-                  url : new MFString(["x3d/example1.x3d"])})])})])}))});
+                  url : new MFString(["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"])})])})])}))});
 console.log(X3D0.toXMLNode());

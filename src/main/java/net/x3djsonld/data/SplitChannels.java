@@ -7,6 +7,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Texturing.*;
 
@@ -43,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 28 October 2020 </td>
+			<td> 20 April 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -103,7 +104,7 @@ public class SplitChannels
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("28 October 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 April 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
@@ -111,64 +112,152 @@ public class SplitChannels
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-    .addChild(new NavigationInfo("NAV").setType("\"NONE\""))
+    .addChild(new NavigationInfo().setId("NAV"
+// [*** X3dToJava.xslt error: encountered incorrect type, NavigationInfo id: $isNumeric=false, $attributeType=, value='NAV']
+).setType("NONE"))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.200,0.200,0.210})))
-    .addChild(new Viewpoint().setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
+    .addChild(new Viewpoint().setBind("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint bind: $isNumeric=false, $attributeType=, value='true']
+).setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
     .addChild(new Transform("PowerR").setTranslation(100.0,400.0,400.0)
-      .addChild(new Transform("pR").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
+      .addChild(new Transform().setId("pR"
+// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='pR']
+).setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
         .addChild(new Shape()
-          .setAppearance(new Appearance("audio_emit1")
-            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
+          .setAppearance(new Appearance("audio_emit")
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
           .setGeometry(new Box().setSize(10.0,80.0,0.01))))
       .addChild(new Transform().setRotation(1.0,0.0,0.0,-0.5).setTranslation(-2.7,37.0,0.0)
         .addChild(new Shape()
-          .setAppearance(new Appearance("audio_emit2")
-            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
+          .setAppearance(new Appearance("audio_emit")
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
             .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png"})))
           .setGeometry(new Box().setSize(25.0,83.0,0.01))))
       .addChild(new Transform("volumeRight").setRotation(1.0,0.0,0.0,-0.5).setScale(10.0,10.0,10.0).setTranslation(0.0,-10.0,0.0)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
-            .setBackMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
-          .setGeometry(new Text().setString(new String[] {"Right Channel Volume"})
-            .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setStyle("BOLD"))))))
+            .setMaterial(new Material().setAmbientintensity("0.0933"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
+).setDiffusecolor("1 1 1"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
+).setEmissivecolor("0 0 0"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
+).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
+)))
+          .setGeometry(new Text().setCcw(true).setLit("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
+).setString(new String[] {"Right Channel Volume"}).setUsegeocache("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
+)
+            .setFontstyle(new fontstyle().setFamily("'Times'"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
+).setHorizontal("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
+).setJustify("BEGIN"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
+).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
+).setSize("1"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
+).setSpacing("1"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+).setStyle("BOLD"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle style: $isNumeric=false, $attributeType=, value='BOLD']
+).setToptobottom("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+))))))
     .addChild(new Transform("PowerL").setTranslation(-100.0,400.0,400.0)
-      .addChild(new Transform("pL").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
+      .addChild(new Transform().setId("pL"
+// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='pL']
+).setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
         .addChild(new Shape()
-          .setAppearance(new Appearance("audio_emit3")
-            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
+          .setAppearance(new Appearance("audio_emit")
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
           .setGeometry(new Box().setSize(10.0,80.0,0.01))))
       .addChild(new Transform().setRotation(1.0,0.0,0.0,-0.5).setTranslation(13.2,37.0,0.0)
         .addChild(new Shape()
-          .setAppearance(new Appearance("audio_emit4")
-            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
+          .setAppearance(new Appearance("audio_emit")
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
             .setTexture(new ImageTexture().setUrl(new String[] {"images/line.png"})))
           .setGeometry(new Box().setSize(25.0,83.0,0.01))))
       .addChild(new Transform("volumeLeft").setRotation(1.0,0.0,0.0,-0.5).setScale(10.0,10.0,10.0).setTranslation(0.0,-10.0,0.0)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
-            .setBackMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
-          .setGeometry(new Text().setString(new String[] {"Left Channel Volume"})
-            .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setStyle("BOLD"))))))
-    .addChild(new Transform("Audio3").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
-      .addChild(new Shape()
-        .setAppearance(new Appearance("audio_emit5")
-          .setMaterial(new Material().setDiffuseColor(0.3,1.0,0.3).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
-          .setTexture(new ImageTexture().setUrl(new String[] {"images/loudspeaker.png"})))
-        .setGeometry(new Box().setSize(100.0,100.0,0.001))))
-    .addChild(new AudioSound()
-      .addChild(new Transform().setUSE("Audio3"))
-      .addChild(new SpatialSound().setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setPosition(0.0,0.0,0.0))
-      .addChild(new BufferAudioSource().setLoop(true).setUrl(new String[] {"sound/violin.mp3","sound/violin.ogg"}))
-      .addComments(" <BiquadFilter frequency='100' detune='10.0' qualityFactor='10' gain='0' type='lowpass' /> "))
+            .setMaterial(new Material().setAmbientintensity("0.0933"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
+).setDiffusecolor("1 1 1"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
+).setEmissivecolor("0 0 0"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
+).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
+// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
+)))
+          .setGeometry(new Text().setCcw(true).setLit("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
+).setString(new String[] {"Left Channel Volume"}).setUsegeocache("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
+)
+            .setFontstyle(new fontstyle().setFamily("'Times'"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
+).setHorizontal("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
+).setJustify("BEGIN"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
+).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
+).setSize("1"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
+).setSpacing("1"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+).setStyle("BOLD"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle style: $isNumeric=false, $attributeType=, value='BOLD']
+).setToptobottom("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+))))))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance("floor")
           .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setShininess(0.8).setSpecularColor(0.5,0.6,0.7)))
-        .setGeometry(new Box().setSize(1500.0,10.0,500.0)))));
+        .setGeometry(new Box().setSize(1500.0,10.0,500.0))))
+    .addChild(new ListenerPoint().setId("ListenerPoint"
+// [*** X3dToJava.xslt error: encountered incorrect type, ListenerPoint id: $isNumeric=false, $attributeType=, value='ListenerPoint']
+).setTrackCurrentView(true))
+    .addChild(new AudioDestination().setId("AudioDestination"
+// [*** X3dToJava.xslt error: encountered incorrect type, AudioDestination id: $isNumeric=false, $attributeType=, value='AudioDestination']
+)
+      .addChild(new Gain().setId("Gain3"
+// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain3']
+)
+        .addChild(new ChannelMerger().setId("ChannelMerger"
+// [*** X3dToJava.xslt error: encountered incorrect type, ChannelMerger id: $isNumeric=false, $attributeType=, value='ChannelMerger']
+)
+          .addChild(new ChannelSelector().setId("ChannelSelector0"
+// [*** X3dToJava.xslt error: encountered incorrect type, ChannelSelector id: $isNumeric=false, $attributeType=, value='ChannelSelector0']
+)
+            .addChild(new Gain().setUSE("ChannelSplitter").setId("Gain0"
+// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain0']
+)))
+          .addChild(new ChannelSelector().setChannelSelection(1).setId("ChannelSelector1"
+// [*** X3dToJava.xslt error: encountered incorrect type, ChannelSelector id: $isNumeric=false, $attributeType=, value='ChannelSelector1']
+)
+            .addChild(new Gain().setUSE("ChannelSplitter").setId("Gain1"
+// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain1']
+))))))
+    .addChild(new ChannelSplitter("ChannelSplitter").setChannelCountMode("explicit").setId("ChannelSplitter"
+// [*** X3dToJava.xslt error: encountered incorrect type, ChannelSplitter id: $isNumeric=false, $attributeType=, value='ChannelSplitter']
+)
+      .setSource(new AudioClip().setUSE("Audio3").setId("AudioClip"
+// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip']
+).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3"})))
+    .addChild(new Transform("Audio3").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
+      .addChild(new Shape()
+        .setAppearance(new Appearance("audio_emit")
+          .setMaterial(new Material().setDiffuseColor(0.3,1.0,0.3).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01))
+          .setTexture(new ImageTexture().setUrl(new String[] {"images/loudspeaker.png"})))
+        .setGeometry(new Box().setSize(100.0,100.0,0.001)))));
     }
 	// end of initialize() method
 

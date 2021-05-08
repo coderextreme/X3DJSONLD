@@ -43,7 +43,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 28 October 2020 </td>
+			<td> 20 April 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -55,7 +55,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -103,17 +103,17 @@ public class InlineSoundSource
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("28 October 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 April 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://medialab.hmu.gr/minipages/x3domAudio"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
     .addChild(new NavigationInfo("NAV"))
-    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}))
     .addChild(new Viewpoint("Camera001").setDescription("Camera001").setFarDistance(0).setNearDistance(1.000000).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000))
     .addChild(new Transform("Floor").setTranslation(1.241,0.000,0.358)
       .addChild(new Shape()
@@ -123,7 +123,7 @@ public class InlineSoundSource
           .setCoord(new Coordinate().setPoint(getCoordinate_6_20_point()))
           .setNormal(new Normal().setVector(new MFVec3f(new double[] {0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000}))))))
     .addChild(new Transform("InlineScene")
-      .addChild(new Inline("inline").setUrl(new String[] {"x3d/example1.x3d"}))));
+      .addChild(new Inline("inline").setUrl(new String[] {"x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"}))));
     }
 	// end of initialize() method
 

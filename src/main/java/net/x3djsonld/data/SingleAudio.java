@@ -43,7 +43,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 28 October 2020 </td>
+			<td> 18 April 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -55,7 +55,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -103,17 +103,17 @@ public class SingleAudio
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("28 October 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("18 April 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://medialab.hmu.gr/minipages/x3domAudio"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SingleAudio.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("SingleAudio.x3d"))
     .addChild(new NavigationInfo("NAV"))
-    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}))
     .addChild(new Viewpoint("Camera001").setDescription("Camera001").setFarDistance(0).setNearDistance(1.000000).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000))
     .addChild(new Transform("Floor").setTranslation(1.241,0.000,0.358)
       .addChild(new Shape()
@@ -133,10 +133,9 @@ public class SingleAudio
         .addChild(new Transform("violin").setRotation(1.0,0.0,0.0,-0.5).setScale(100.0,100.0,100.0).setTranslation(0.0,100.0,0.0)
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
-              .setBackMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
+              .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(0.345,0.345,0.882).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
             .setGeometry(new Text().setString(new String[] {"Sound Source"})
-              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setStyle("BOLD")))))))
+              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setJustify(FontStyle.JUSTIFY_BEGIN).setStyle("BOLD")))))))
     .addChild(new AudioSound()
       .addChild(new Transform().setUSE("Audio1"))
       .addChild(new SpatialSound().setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true))
