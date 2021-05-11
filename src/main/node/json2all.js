@@ -44,12 +44,14 @@ convertJSON([
 	extension : ".js",
 	codeOutput : "../"
 	},
+/*
 	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../"
 	},
+*/
 	{ 
 	serializer : './PythonSerializer.js',
 	folder : "../python/net/coderextreme/",
