@@ -11,7 +11,7 @@
     "glob": "*",
     "java": "^0.12.1",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
-    "lodash": ">=4.17.19",
+    "lodash": ">=4.17.21",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
