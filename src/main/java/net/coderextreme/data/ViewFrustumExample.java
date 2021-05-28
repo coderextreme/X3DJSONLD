@@ -68,7 +68,7 @@ ProtoInstance ProtoInstance0 = null;
         .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(new float[] {0f,0f,15f}))
         .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(new float[] {0.8005f,0.5926f,0.0898f,-0.3743f}).setPosition(new float[] {-5f,5f,20f}))
         .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
-        .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))
+        .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
           .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
           .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered"))
@@ -77,15 +77,15 @@ ProtoInstance ProtoInstance0 = null;
           .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
           .addField(new field().setType("SFFloat").setName("aspectRatio").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("assumed ratio height/width, default value 0.75"))
           .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false")))
-        .addComments(new CommentsBlock("Example use"))
+        .addComments("Example use")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
-        .addComments(new CommentsBlock("Visualization assists"))
-        .addChild(new Inline().setDEF("GridXZ").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))
+        .addComments("Visualization assists")
+        .addChild(new Inline().setDEF("GridXZ").setUrl(new MFString1().getArray()))
         .addChild(new Transform().setScale(new float[] {5f,5f,5f})
-          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())))))      ;
+          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString2().getArray()))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")
-            .addComments(new CommentsBlock("prefer empty description to prevent entry in player's ViewpointList"))
+            .addComments("prefer empty description to prevent entry in player's ViewpointList")
             .addChild(new Viewpoint().setDescription("ViewFrustum ViewpointNode")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("NavigationInfoNode")

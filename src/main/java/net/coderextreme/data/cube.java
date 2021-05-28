@@ -55,10 +55,10 @@ public class cube {
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray()).append(new MFInt321().getArray()).append(new MFInt322().getArray())).setNormalIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt323().getArray()).append(new MFInt324().getArray())).setNormalPerVertex(false).setColorIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt325().getArray()).append(new MFInt326().getArray()).append(new MFInt327().getArray()))
-              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray()).append(new MFVec3f9().getArray())))
-              .setNormal(new Normal().setVector(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray()).append(new MFVec3f11().getArray()).append(new MFVec3f12().getArray())))
-              .setColor(new Color().setColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor13().getArray())))))))      ;
+            .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray().append(new MFInt321().getArray()).append(new MFInt322().getArray())).setNormalIndex(new MFInt323().getArray().append(new MFInt324().getArray())).setNormalPerVertex(false).setColorIndex(new MFInt325().getArray().append(new MFInt326().getArray()).append(new MFInt327().getArray()))
+              .setCoord(new Coordinate().setPoint(new MFVec3f8().getArray().append(new MFVec3f9().getArray())))
+              .setNormal(new Normal().setVector(new MFVec3f10().getArray().append(new MFVec3f11().getArray()).append(new MFVec3f12().getArray())))
+              .setColor(new Color().setColor(new MFColor13().getArray()))))))      ;
     return X3D0;
     }
 protected class MFInt320 {

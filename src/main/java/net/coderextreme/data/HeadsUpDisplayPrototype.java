@@ -58,9 +58,9 @@ public class HeadsUpDisplayPrototype {
         .addChild(new ProtoDeclare().setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("children").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Displayed subscene positioned as a HUD.")
-              .addComments(new CommentsBlock("default is null array of nodes")))
+              .addComments("default is null array of nodes"))
             .addField(new field().setType("MFNode").setName("dragChildren").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.")
-              .addComments(new CommentsBlock("default is null array of nodes")))
+              .addComments("default is null array of nodes"))
             .addField(new field().setType("SFVec3f").setName("locationOffset").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Modified screen location and distance (for size).").setValue("-2 -2 0"))
             .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Enable/disable console output for troubleshooting.").setValue("false")))
           .setProtoBody(new ProtoBody()
@@ -139,14 +139,14 @@ public class HeadsUpDisplayPrototype {
                   .addChild(new ROUTE().setFromField("translationOffsetChanged").setFromNode("VisibilityControlScript").setToField("set_offset").setToNode("PlaneMovementSensor"))))
               .addChild(new ROUTE().setFromField("position_changed").setFromNode("WhereSensor").setToField("set_translation").setToNode("FixedLocation"))
               .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("WhereSensor").setToField("set_rotation").setToNode("FixedLocation")))))
-        .addComments(new CommentsBlock("===================="))
-        .addChild(new Background().setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor1().getArray())))
-        .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray()))
+        .addComments("====================")
+        .addChild(new Background().setGroundColor(new MFColor0().getArray()).setSkyColor(new MFColor1().getArray()))
+        .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new MFString2().getArray()).setUrl(new MFString3().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0f,1f,1f})))
-            .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray()))
-              .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())).setSize(0.8f))))))      ;
+            .setGeometry(new Text().setString(new MFString4().getArray())
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))))      ;
     return X3D0;
     }
 protected class MFColor0 {

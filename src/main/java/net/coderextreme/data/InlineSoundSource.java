@@ -60,17 +60,17 @@ public class InlineSoundSource {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
         .addChild(new NavigationInfo().setDEF("NAV"))
-        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))
+        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0f).setNearDistance(1f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
         .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f,0f,0.358f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
-            .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt326().getArray())).setSolid(false)
-              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f7().getArray())))
-              .setNormal(new Normal().setVector(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray()))))))
+            .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new MFInt326().getArray()).setSolid(false)
+              .setCoord(new Coordinate().setPoint(new MFVec3f7().getArray()))
+              .setNormal(new Normal().setVector(new MFVec3f8().getArray())))))
         .addChild(new Transform().setDEF("InlineScene")
-          .addChild(new Inline().setDEF("inline").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray())))))      ;
+          .addChild(new Inline().setDEF("inline").setUrl(new MFString9().getArray()))))      ;
     return X3D0;
     }
 protected class MFString0 {

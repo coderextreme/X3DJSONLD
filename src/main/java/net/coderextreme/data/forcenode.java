@@ -73,11 +73,11 @@ ProtoInstance ProtoInstance6 = null;
                     .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
                 .addChild(new Transform().setTranslation(new float[] {1f,0f,1f})
                   .addChild(new Shape()
-                    .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))
-                      .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setSize(5f)))
+                    .setGeometry(new Text().setString(new MFString0().getArray())
+                      .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f)))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}))))))
-              .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat2().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))
+              .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
               .addChild(new Script().setDEF("MoveBall")
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
                 .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -102,7 +102,7 @@ ProtoInstance ProtoInstance6 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addChild(new Shape()
-                .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f4().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f5().getArray())))
+                .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
               .addChild(new Script().setDEF("MoveCylinder")
@@ -147,7 +147,7 @@ ProtoInstance ProtoInstance6 = null;
           .addField(new field().setType("SFInt32").setName("counter").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new field().setType("SFNode").setName("node_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("add_node").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addComments(new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
+          .addComments("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+

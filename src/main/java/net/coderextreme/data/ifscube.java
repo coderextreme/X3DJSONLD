@@ -53,10 +53,10 @@ public class ifscube {
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f).setDEF("IndexedFaceSet").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray())).setNormalIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray())).setNormalPerVertex(false).setColorIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt322().getArray()))
-              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))
-              .setNormal(new Normal().setVector(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f4().getArray())))
-              .setColor(new Color().setColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor5().getArray())))))))      ;
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
+              .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
+              .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
+              .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
     return X3D0;
     }
 protected class MFInt320 {

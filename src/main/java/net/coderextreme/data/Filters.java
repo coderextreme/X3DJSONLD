@@ -59,7 +59,7 @@ public class Filters {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setBind("true").setOrientation(new float[] {1f,0f,0f,-0.5f}).setPosition(new float[] {0f,500f,600f}).setRetainUserOffsets(true))
         .addChild(new Transform().setDEF("Audio1").setTranslation(new float[] {-200f,50f,0f})
           .addChild(new Shape()
@@ -94,17 +94,17 @@ public class Filters {
                 .addChild(new Gain()
                   .addChild(new Analyser()
                     .addChild(new BiquadFilter().setType("allpass").setDetune(50f).setFrequency(600f).setQualityFactor(30f)
-                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))))))
+                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString1().getArray()))))))
               .addChild(new SpatialSound().setUSE("Audio2")
                 .addChild(new Gain()
                   .addChild(new Analyser()
                     .addChild(new BiquadFilter().setType("allpass").setDetune(15f).setFrequency(600f).setQualityFactor(15f)
-                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())))))))
+                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString2().getArray()))))))
               .addChild(new SpatialSound().setUSE("Audio3")
                 .addChild(new Gain()
                   .addChild(new Analyser()
                     .addChild(new BiquadFilter().setType("allpass").setFrequency(1000f).setQualityFactor(0f)
-                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())))))))))))      ;
+                      .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString3().getArray()))))))))))      ;
     return X3D0;
     }
 protected class MFColor0 {

@@ -242,8 +242,8 @@ ProtoInstance ProtoInstance173 = null;
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addComments(new CommentsBlock("************Behavior Prototypes***************"))
-        .addChild(new ExternProtoDeclare().setName("LOA1_StandAnimation").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))
+        .addComments("************Behavior Prototypes***************")
+        .addChild(new ExternProtoDeclare().setName("LOA1_StandAnimation").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -270,7 +270,7 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new ExternProtoDeclare().setName("LOA1_WalkAnimation").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
+        .addChild(new ExternProtoDeclare().setName("LOA1_WalkAnimation").setUrl(new MFString1().getArray())
           .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -297,7 +297,7 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new ExternProtoDeclare().setName("LOA1_RunAnimation").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))
+        .addChild(new ExternProtoDeclare().setName("LOA1_RunAnimation").setUrl(new MFString2().getArray())
           .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -324,7 +324,7 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new ExternProtoDeclare().setName("LOA1_JumpAnimation").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray()))
+        .addChild(new ExternProtoDeclare().setName("LOA1_JumpAnimation").setUrl(new MFString3().getArray())
           .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -351,7 +351,7 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new ExternProtoDeclare().setName("LOA1_KneelAnimation").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray()))
+        .addChild(new ExternProtoDeclare().setName("LOA1_KneelAnimation").setUrl(new MFString4().getArray())
           .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -378,10 +378,10 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFRotation").setName("r_shoulder_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addComments(new CommentsBlock("**********Human Model Protypes*********"))
+        .addComments("**********Human Model Protypes*********")
         .addChild(new ProtoDeclare().setName("Humanoid1_1").setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")
           .setProtoInterface(new ProtoInterface()
-            .addComments(new CommentsBlock("HAnim v1.1 field definitions"))
+            .addComments("HAnim v1.1 field definitions")
             .addField(new field().setType("SFString").setName("name").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType("SFString").setName("version").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setValue("1.1"))
             .addField(new field().setType("SFString").setName("humanoidVersion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: HAnim version 2.0"))
@@ -400,9 +400,9 @@ ProtoInstance ProtoInstance173 = null;
             .addField(new field().setType("MFNode").setName("sites").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes"))
             .addField(new field().setType("MFNode").setName("viewpoints").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes"))
             .addField(new field().setType("SFNode").setName("skinCoord").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: HAnim version 2.0")
-              .addComments(new CommentsBlock("NULL node")))
+              .addComments("NULL node"))
             .addField(new field().setType("SFNode").setName("skinNormal").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: HAnim version 2.0")
-              .addComments(new CommentsBlock("NULL node"))))
+              .addComments("NULL node")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("HumanoidTransform")
               .setIS(new IS()
@@ -466,7 +466,7 @@ ProtoInstance ProtoInstance173 = null;
             .addField(new field().setType("MFNode").setName("addChildren").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("MFNode").setName("removeChildren").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("SFNode").setName("coord").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes")
-              .addComments(new CommentsBlock("NULL node")))
+              .addComments("NULL node"))
             .addField(new field().setType("MFNode").setName("displacers").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes")))
           .setProtoBody(new ProtoBody()
             .addChild(new Group().setDEF("SegmentGroup")
@@ -508,112 +508,112 @@ ProtoInstance ProtoInstance173 = null;
             .addField(new field().setType("MFInt32").setName("coordIndex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType("MFVec3f").setName("displacements").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .setProtoBody(new ProtoBody()
-            .addChild(new WorldInfo().setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))))
-        .addComments(new CommentsBlock("***********ViewPoints*************"))
+            .addChild(new WorldInfo().setInfo(new MFString5().getArray()))))
+        .addComments("***********ViewPoints*************")
         .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f,0.993f,0.0347f,0.671f}).setPosition(new float[] {1.62f,1.05f,2.06f}))
         .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f,0.854f,2.57665f}))
         .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
         .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f}))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat6().getArray())).setSpeed(0.5f))
-        .addComments(new CommentsBlock("**********Avatar Proto Instances***********"))
+        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloat6().getArray()).setSpeed(0.5f))
+        .addComments("**********Avatar Proto Instances***********")
         .addChild(new Switch().setDEF("AvatarSwitch").setWhichChoice(0)
-          .addComments(new CommentsBlock("Humanoid1 used for v1.1 humanoid, which is what Allen and Nancy are. Boxman is HAnim 2001. Can't have identically named prototypes for Humanoid in each version since prototype signatures are different."))
+          .addComments("Humanoid1 used for v1.1 humanoid, which is what Allen and Nancy are. Boxman is HAnim 2001. Can't have identically named prototypes for Humanoid in each version since prototype signatures are different.")
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid1_1").setDEF("Allen"))
           .addChild(ProtoInstance67 = new ProtoInstance().setName("Humanoid1_1").setDEF("Nancy"))
           .addChild(new HAnimHumanoid().setName("Humanoid").setDEF("Boxman_Humanoid").setVersion("1.0")
-            .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("Boxman_humanoid_root").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32242().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat243().getArray()))
+            .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("Boxman_humanoid_root").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new MFInt32242().getArray()).setSkinCoordWeight(new MFFloat243().getArray())
               .addChild(new HAnimSegment().setName("sacrum").setDEF("Boxman_sacrum")
-                .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString244().getArray()))))
-              .addChild(new HAnimJoint().setName("l_hip").setDEF("Boxman_l_hip").setCenter(new float[] {0.0956f,0.9364f,0f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32245().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat246().getArray()))
+                .addChild(new Inline().setUrl(new MFString244().getArray())))
+              .addChild(new HAnimJoint().setName("l_hip").setDEF("Boxman_l_hip").setCenter(new float[] {0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32245().getArray()).setSkinCoordWeight(new MFFloat246().getArray())
                 .addChild(new HAnimSegment().setName("l_thigh").setDEF("Boxman_l_thigh")
-                  .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString247().getArray()))))
-                .addChild(new HAnimJoint().setName("l_knee").setDEF("Boxman_l_knee").setCenter(new float[] {0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32248().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat249().getArray()))
+                  .addChild(new Inline().setUrl(new MFString247().getArray())))
+                .addChild(new HAnimJoint().setName("l_knee").setDEF("Boxman_l_knee").setCenter(new float[] {0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32248().getArray()).setSkinCoordWeight(new MFFloat249().getArray())
                   .addChild(new HAnimSegment().setName("l_calf").setDEF("Boxman_l_calf")
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString250().getArray()))))
-                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("Boxman_l_ankle").setCenter(new float[] {0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32251().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat252().getArray()))
+                    .addChild(new Inline().setUrl(new MFString250().getArray())))
+                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("Boxman_l_ankle").setCenter(new float[] {0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32251().getArray()).setSkinCoordWeight(new MFFloat252().getArray())
                     .addChild(new HAnimSegment().setName("l_hindfoot").setDEF("Boxman_l_hindfoot")
-                      .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString253().getArray()))))
-                    .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("Boxman_l_midtarsal").setCenter(new float[] {0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32254().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat255().getArray()))
+                      .addChild(new Inline().setUrl(new MFString253().getArray())))
+                    .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("Boxman_l_midtarsal").setCenter(new float[] {0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32254().getArray()).setSkinCoordWeight(new MFFloat255().getArray())
                       .addChild(new HAnimSegment().setName("l_middistal").setDEF("Boxman_l_middistal")
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString256().getArray())))
+                        .addChild(new Inline().setUrl(new MFString256().getArray()))
                         .addChild(new HAnimSite().setName("l_middistal_tip").setDEF("Boxman_l_middistal_tip").setTranslation(new float[] {0.095f,0.0005f,0.1924f}))
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString257().getArray()))))))))
-              .addChild(new HAnimJoint().setName("r_hip").setDEF("Boxman_r_hip").setCenter(new float[] {-0.0956f,0.9364f,0f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32258().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat259().getArray()))
+                        .addChild(new Inline().setUrl(new MFString257().getArray())))))))
+              .addChild(new HAnimJoint().setName("r_hip").setDEF("Boxman_r_hip").setCenter(new float[] {-0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32258().getArray()).setSkinCoordWeight(new MFFloat259().getArray())
                 .addChild(new HAnimSegment().setName("r_thigh").setDEF("Boxman_r_thigh")
-                  .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString260().getArray()))))
-                .addChild(new HAnimJoint().setName("r_knee").setDEF("Boxman_r_knee").setCenter(new float[] {-0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32261().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat262().getArray()))
+                  .addChild(new Inline().setUrl(new MFString260().getArray())))
+                .addChild(new HAnimJoint().setName("r_knee").setDEF("Boxman_r_knee").setCenter(new float[] {-0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32261().getArray()).setSkinCoordWeight(new MFFloat262().getArray())
                   .addChild(new HAnimSegment().setName("r_calf").setDEF("Boxman_r_calf")
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString263().getArray()))))
-                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("Boxman_r_ankle").setCenter(new float[] {-0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32264().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat265().getArray()))
+                    .addChild(new Inline().setUrl(new MFString263().getArray())))
+                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("Boxman_r_ankle").setCenter(new float[] {-0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32264().getArray()).setSkinCoordWeight(new MFFloat265().getArray())
                     .addChild(new HAnimSegment().setName("r_hindfoot").setDEF("Boxman_r_hindfoot")
-                      .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString266().getArray()))))
-                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("Boxman_r_midtarsal").setCenter(new float[] {-0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32267().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat268().getArray()))
+                      .addChild(new Inline().setUrl(new MFString266().getArray())))
+                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("Boxman_r_midtarsal").setCenter(new float[] {-0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32267().getArray()).setSkinCoordWeight(new MFFloat268().getArray())
                       .addChild(new HAnimSegment().setName("r_middistal").setDEF("Boxman_r_middistal")
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString269().getArray())))
+                        .addChild(new Inline().setUrl(new MFString269().getArray()))
                         .addChild(new HAnimSite().setName("r_middistal_tip").setDEF("Boxman_r_middistal_tip").setTranslation(new float[] {-0.095f,0.0005f,0.1924f}))
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString270().getArray()))))))))
-              .addChild(new HAnimJoint().setName("vl5").setDEF("Boxman_vl5").setCenter(new float[] {0f,1.0817f,-0.0728f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32271().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat272().getArray()))
+                        .addChild(new Inline().setUrl(new MFString270().getArray())))))))
+              .addChild(new HAnimJoint().setName("vl5").setDEF("Boxman_vl5").setCenter(new float[] {0f,1.0817f,-0.0728f}).setSkinCoordIndex(new MFInt32271().getArray()).setSkinCoordWeight(new MFFloat272().getArray())
                 .addChild(new HAnimSegment().setName("l5").setDEF("Boxman_l5")
-                  .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString273().getArray()))))
-                .addChild(new HAnimJoint().setName("skullbase").setDEF("Boxman_skullbase").setCenter(new float[] {0f,1.644f,0.036f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32274().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat275().getArray()))
+                  .addChild(new Inline().setUrl(new MFString273().getArray())))
+                .addChild(new HAnimJoint().setName("skullbase").setDEF("Boxman_skullbase").setCenter(new float[] {0f,1.644f,0.036f}).setSkinCoordIndex(new MFInt32274().getArray()).setSkinCoordWeight(new MFFloat275().getArray())
                   .addChild(new HAnimSegment().setName("skull").setDEF("Boxman_skull")
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString276().getArray())))
+                    .addChild(new Inline().setUrl(new MFString276().getArray()))
                     .addChild(new HAnimSite().setName("skull_tip").setDEF("Boxman_skull_tip").setTranslation(new float[] {-0.0029f,1.7771f,0.0274f}))
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString277().getArray())))))
-                .addChild(new HAnimJoint().setName("l_shoulder").setDEF("Boxman_l_shoulder").setCenter(new float[] {0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32278().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat279().getArray()))
+                    .addChild(new Inline().setUrl(new MFString277().getArray()))))
+                .addChild(new HAnimJoint().setName("l_shoulder").setDEF("Boxman_l_shoulder").setCenter(new float[] {0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32278().getArray()).setSkinCoordWeight(new MFFloat279().getArray())
                   .addChild(new HAnimSegment().setName("l_upperarm").setDEF("Boxman_l_upperarm")
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString280().getArray()))))
-                  .addChild(new HAnimJoint().setName("l_elbow").setDEF("Boxman_l_elbow").setCenter(new float[] {0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32281().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat282().getArray()))
+                    .addChild(new Inline().setUrl(new MFString280().getArray())))
+                  .addChild(new HAnimJoint().setName("l_elbow").setDEF("Boxman_l_elbow").setCenter(new float[] {0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32281().getArray()).setSkinCoordWeight(new MFFloat282().getArray())
                     .addChild(new HAnimSegment().setName("l_forearm").setDEF("Boxman_l_forearm")
-                      .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString283().getArray()))))
-                    .addChild(new HAnimJoint().setName("l_wrist").setDEF("Boxman_l_wrist").setCenter(new float[] {0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32284().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat285().getArray()))
+                      .addChild(new Inline().setUrl(new MFString283().getArray())))
+                    .addChild(new HAnimJoint().setName("l_wrist").setDEF("Boxman_l_wrist").setCenter(new float[] {0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32284().getArray()).setSkinCoordWeight(new MFFloat285().getArray())
                       .addChild(new HAnimSegment().setName("l_hand").setDEF("Boxman_l_hand")
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString286().getArray())))
+                        .addChild(new Inline().setUrl(new MFString286().getArray()))
                         .addChild(new HAnimSite().setName("l_hand_tip").setDEF("Boxman_l_hand_tip").setTranslation(new float[] {0.1912f,0.6976f,-0.071f}))
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString287().getArray())))))))
-                .addChild(new HAnimJoint().setName("r_shoulder").setDEF("Boxman_r_shoulder").setCenter(new float[] {-0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32288().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat289().getArray()))
+                        .addChild(new Inline().setUrl(new MFString287().getArray()))))))
+                .addChild(new HAnimJoint().setName("r_shoulder").setDEF("Boxman_r_shoulder").setCenter(new float[] {-0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32288().getArray()).setSkinCoordWeight(new MFFloat289().getArray())
                   .addChild(new HAnimSegment().setName("r_upperarm").setDEF("Boxman_r_upperarm")
-                    .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString290().getArray()))))
-                  .addChild(new HAnimJoint().setName("r_elbow").setDEF("Boxman_r_elbow").setCenter(new float[] {-0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32291().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat292().getArray()))
+                    .addChild(new Inline().setUrl(new MFString290().getArray())))
+                  .addChild(new HAnimJoint().setName("r_elbow").setDEF("Boxman_r_elbow").setCenter(new float[] {-0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32291().getArray()).setSkinCoordWeight(new MFFloat292().getArray())
                     .addChild(new HAnimSegment().setName("r_forearm").setDEF("Boxman_r_forearm")
-                      .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString293().getArray()))))
-                    .addChild(new HAnimJoint().setName("r_wrist").setDEF("Boxman_r_wrist").setCenter(new float[] {-0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32294().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat295().getArray()))
+                      .addChild(new Inline().setUrl(new MFString293().getArray())))
+                    .addChild(new HAnimJoint().setName("r_wrist").setDEF("Boxman_r_wrist").setCenter(new float[] {-0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32294().getArray()).setSkinCoordWeight(new MFFloat295().getArray())
                       .addChild(new HAnimSegment().setName("r_hand").setDEF("Boxman_r_hand")
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString296().getArray())))
+                        .addChild(new Inline().setUrl(new MFString296().getArray()))
                         .addChild(new HAnimSite().setName("r_hand_tip").setDEF("Boxman_r_hand_tip").setTranslation(new float[] {-0.1912f,0.6976f,-0.071f}))
-                        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString297().getArray())))))))))
-            .addComments(new CommentsBlock("# sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)"))
-            .setSkinCoord(new Coordinate().setDEF("SKINCOORD").setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f298().getArray())))
+                        .addChild(new Inline().setUrl(new MFString297().getArray()))))))))
+            .addComments("# sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)")
+            .setSkinCoord(new Coordinate().setDEF("SKINCOORD").setPoint(new MFVec3f298().getArray()))
             .addSkin(new Group()
               .addChild(new Shape().setDEF("TrouserSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}).setTransparency(0.5f)))
-                .addComments(new CommentsBlock("# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)"))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32299().getArray()).append(new MFInt32300().getArray()))
+                .addComments("# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)")
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32299().getArray().append(new MFInt32300().getArray()))
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("ShoeSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(0.5f)))
-                .addComments(new CommentsBlock("# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)"))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32301().getArray()))
+                .addComments("# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)")
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32301().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("ShirtSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setTransparency(0.5f)))
-                .addComments(new CommentsBlock("# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)"))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32302().getArray()))
+                .addComments("# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)")
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32302().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("HeadHandsFleshToneSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0.75f,0.75f}).setTransparency(0.5f)))
-                .addComments(new CommentsBlock("# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)"))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32303().getArray()))
+                .addComments("# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)")
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32303().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("SkinLines")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f})))
-                .addComments(new CommentsBlock("Combined set of prior IFS coordIndex values"))
-                .setGeometry(new IndexedLineSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32304().getArray()).append(new MFInt32305().getArray()).append(new MFInt32306().getArray()))
+                .addComments("Combined set of prior IFS coordIndex values")
+                .setGeometry(new IndexedLineSet().setCoordIndex(new MFInt32304().getArray().append(new MFInt32305().getArray()).append(new MFInt32306().getArray()))
                   .setCoord(new Coordinate().setUSE("SKINCOORD")))))
             .addJoints(new HAnimJoint().setUSE("Boxman_humanoid_root"))
             .addJoints(new HAnimJoint().setUSE("Boxman_skullbase"))
@@ -660,7 +660,7 @@ ProtoInstance ProtoInstance173 = null;
               .addChild(new HAnimHumanoid().setUSE("Boxman_Humanoid")))
             .addField(new field().setType("MFVec3f").setName("coordList").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
             .addField(new field().setType("SFNode").setName("joint").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-              .addComments(new CommentsBlock("NULL node")))
+              .addComments("NULL node"))
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
             .addField(new field().setType("SFRotation").setName("rotation").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("1 0 0 0"))
             .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("1 1 1"))
@@ -744,7 +744,7 @@ ProtoInstance ProtoInstance173 = null;
 "         // Call transform function\n"+
 "         Transform();\n"+
 "      }")))
-        .addComments(new CommentsBlock("**********Behavior Proto Instances***********"))
+        .addComments("**********Behavior Proto Instances***********")
         .addChild(ProtoInstance134 = new ProtoInstance().setName("LOA1_WalkAnimation").setDEF("WALK"))
         .addChild(ProtoInstance135 = new ProtoInstance().setName("LOA1_RunAnimation").setDEF("RUN"))
         .addChild(ProtoInstance136 = new ProtoInstance().setName("LOA1_JumpAnimation").setDEF("JUMP"))
@@ -759,60 +759,60 @@ ProtoInstance ProtoInstance173 = null;
                 .addChild(new Transform().setDEF("Stand_Text")
                   .addChild(new TouchSensor().setDEF("Stand_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Stand")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32307().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f308().getArray()))))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32307().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f308().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
                   .addChild(new Transform().setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
                     .addChild(new Shape().setDEF("Stand_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32309().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f310().getArray()))))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32309().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f310().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1f))))))
                 .addChild(new Transform().setDEF("Walk_Text")
                   .addChild(new TouchSensor().setDEF("Walk_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("WALK_Shape")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32311().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f312().getArray()))))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32311().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f312().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {81.3f,81.3f,81.31f}).setTranslation(new float[] {-0.0414f,1.941f,4.015f})
                     .addChild(new Shape().setDEF("Walk_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32313().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f314().getArray()))))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32313().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f314().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Run_Text")
                   .addChild(new TouchSensor().setDEF("Run_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Run")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32315().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f316().getArray()))))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32315().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f316().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {82.47f,82.47f,82.48f}).setTranslation(new float[] {-0.01579f,1.968f,4.074f})
                     .addChild(new Shape().setDEF("Run_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32317().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f318().getArray()))))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32317().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f318().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Jump_Text")
                   .addChild(new TouchSensor().setDEF("Jump_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Jump")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32319().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f320().getArray()))))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32319().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f320().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {83.79f,83.79f,83.79f}).setTranslation(new float[] {-0.008979f,1.99f,4.14f})
                     .addChild(new Shape().setDEF("Jump_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32321().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f322().getArray()))))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32321().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f322().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Kneel_Text").setTranslation(new float[] {1.3f,-0.12f,0f})
                   .addChild(new TouchSensor().setDEF("Kneel_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Kneel")
-                    .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString323().getArray()))
-                      .setFontStyle(new FontStyle().setFamily(new org.web3d.x3d.jsail.fields.MFString(new MFString324().getArray())).setSize(0.45f).setStyle("BOLD")))
+                    .setGeometry(new Text().setString(new MFString323().getArray())
+                      .setFontStyle(new FontStyle().setFamily(new MFString324().getArray()).setSize(0.45f).setStyle("BOLD")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setTranslation(new float[] {0.5f,0.15f,-0.001f})
@@ -824,7 +824,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Allen_Text").setTranslation(new float[] {2f,4f,0f})
                     .addChild(new TouchSensor().setDEF("Allen_Touch").setDescription("click for Allen body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString325().getArray()))
+                      .setGeometry(new Text().setString(new MFString325().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -836,7 +836,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Nancy_Text").setTranslation(new float[] {2f,3.5f,0f})
                     .addChild(new TouchSensor().setDEF("Nancy_Touch").setDescription("click for Nancy body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString326().getArray()))
+                      .setGeometry(new Text().setString(new MFString326().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -845,7 +845,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Boxman_Text").setTranslation(new float[] {2f,3f,0f})
                     .addChild(new TouchSensor().setDEF("Boxman_Touch").setDescription("click for BoxMan body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString327().getArray()))
+                      .setGeometry(new Text().setString(new MFString327().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -862,10 +862,10 @@ ProtoInstance ProtoInstance173 = null;
         .addChild(new ROUTE().setFromField("position_changed").setFromNode("HudProx").setToField("set_translation").setToNode("HudXform"))
         .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("HudProx").setToField("set_rotation").setToNode("HudXform"))
         .addChild(new Script().setDEF("ActorAnimator").setDirectOutput(true)
-          .addComments(new CommentsBlock("***********Interfaces*****************"))
-          .addComments(new CommentsBlock("Joint Nodes"))
-          .addComments(new CommentsBlock("**************Avatar choice***************"))
-          .addComments(new CommentsBlock("*************Behavior fields************"))
+          .addComments("***********Interfaces*****************")
+          .addComments("Joint Nodes")
+          .addComments("**************Avatar choice***************")
+          .addComments("*************Behavior fields************")
           .addField(new field().setType("SFBool").setName("changeBehaviorToWalk").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("SFBool").setName("changeBehaviorToRun").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("SFBool").setName("changeBehaviorToJump").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -875,7 +875,7 @@ ProtoInstance ProtoInstance173 = null;
           .addField(new field().setType("SFBool").setName("switchAvatarToNancy").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("SFBool").setName("switchAvatarToBoxman").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("MFNode").setName("NancyJointNodes").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-            .addComments(new CommentsBlock("TODO ensure name attribute not needed as part of USE node"))
+            .addComments("TODO ensure name attribute not needed as part of USE node")
             .addChild(ProtoInstance139 = new ProtoInstance().setUSE("Nancy_hanim_humanoid_root"))
             .addChild(ProtoInstance140 = new ProtoInstance().setUSE("Nancy_hanim_sacroiliac"))
             .addChild(ProtoInstance141 = new ProtoInstance().setUSE("Nancy_hanim_l_hip"))
@@ -1171,16 +1171,16 @@ ProtoInstance ProtoInstance173 = null;
 "   }\n"+
 "\n"+
 "}"))
-        .addComments(new CommentsBlock("***********Script routes*************"))
+        .addComments("***********Script routes*************")
         .addChild(new ROUTE().setFromField("AvatarChoice").setFromNode("ActorAnimator").setToField("whichChoice").setToNode("AvatarSwitch"))
-        .addComments(new CommentsBlock("*************Behavior Touch Sensor Routes**************"))
+        .addComments("*************Behavior Touch Sensor Routes**************")
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Walk_Touch").setToField("changeBehaviorToWalk").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Run_Touch").setToField("changeBehaviorToRun").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Jump_Touch").setToField("changeBehaviorToJump").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Stand_Touch").setToField("changeBehaviorToStand").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Kneel_Touch").setToField("changeBehaviorToKneel").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Kneel_Touch").setToField("set_startTime").setToNode("KNEEL"))
-        .addComments(new CommentsBlock("*************Avatar Name Touch Sensor Routes**************"))
+        .addComments("*************Avatar Name Touch Sensor Routes**************")
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Allen_Touch").setToField("switchAvatarToAllen").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Nancy_Touch").setToField("switchAvatarToNancy").setToNode("ActorAnimator"))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("Boxman_Touch").setToField("switchAvatarToBoxman").setToNode("ActorAnimator"))
@@ -1251,9 +1251,9 @@ ProtoInstance3
                             .addChild(new Shape()
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setDEF("Pants_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.054f,0.233f,0.39f}))
-                                .setTexture(new ImageTexture().setDEF("camo").setRepeatS(false).setRepeatT(false).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))))
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt328().getArray()).append(new MFInt329().getArray()).append(new MFInt3210().getArray()).append(new MFInt3211().getArray()).append(new MFInt3212().getArray())).setCreaseAngle(1.14f)
-                                .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f13().getArray()).append(new MFVec3f14().getArray()).append(new MFVec3f15().getArray()).append(new MFVec3f16().getArray()).append(new MFVec3f17().getArray()).append(new MFVec3f18().getArray()).append(new MFVec3f19().getArray()).append(new MFVec3f20().getArray()).append(new MFVec3f21().getArray()).append(new MFVec3f22().getArray()).append(new MFVec3f23().getArray())))))));
+                                .setTexture(new ImageTexture().setDEF("camo").setRepeatS(false).setRepeatT(false).setUrl(new MFString7().getArray())))
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt328().getArray().append(new MFInt329().getArray()).append(new MFInt3210().getArray()).append(new MFInt3211().getArray()).append(new MFInt3212().getArray())).setCreaseAngle(1.14f)
+                                .setCoord(new Coordinate().setPoint(new MFVec3f13().getArray().append(new MFVec3f14().getArray()).append(new MFVec3f15().getArray()).append(new MFVec3f16().getArray()).append(new MFVec3f17().getArray()).append(new MFVec3f18().getArray()).append(new MFVec3f19().getArray()).append(new MFVec3f20().getArray()).append(new MFVec3f21().getArray()).append(new MFVec3f22().getArray()).append(new MFVec3f23().getArray())))))));
 ProtoInstance4
                         .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
 ProtoInstance4
@@ -1271,8 +1271,8 @@ ProtoInstance5
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Pants_Color"))
                                     .setTexture(new ImageTexture().setUSE("camo")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3224().getArray()).append(new MFInt3225().getArray()).append(new MFInt3226().getArray())).setCreaseAngle(1.32f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f27().getArray()).append(new MFVec3f28().getArray()).append(new MFVec3f29().getArray()).append(new MFVec3f30().getArray()).append(new MFVec3f31().getArray()).append(new MFVec3f32().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3224().getArray().append(new MFInt3225().getArray()).append(new MFInt3226().getArray())).setCreaseAngle(1.32f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f27().getArray().append(new MFVec3f28().getArray()).append(new MFVec3f29().getArray()).append(new MFVec3f30().getArray()).append(new MFVec3f31().getArray()).append(new MFVec3f32().getArray())))))));
 ProtoInstance6
                             .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
 ProtoInstance6
@@ -1290,8 +1290,8 @@ ProtoInstance7
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Pants_Color"))
                                         .setTexture(new ImageTexture().setUSE("camo")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3233().getArray()).append(new MFInt3234().getArray()).append(new MFInt3235().getArray())).setCreaseAngle(1.57f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f36().getArray()).append(new MFVec3f37().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3233().getArray().append(new MFInt3234().getArray()).append(new MFInt3235().getArray())).setCreaseAngle(1.57f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f36().getArray().append(new MFVec3f37().getArray())))))));
 ProtoInstance8
                                 .addFieldValue(new fieldValue().setName("name").setValue("l_ankle"));
 ProtoInstance8
@@ -1307,8 +1307,8 @@ ProtoInstance9
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setDEF("Shoe_Color").setAmbientIntensity(0.25f)))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3238().getArray()).append(new MFInt3239().getArray()).append(new MFInt3240().getArray()).append(new MFInt3241().getArray())).setCreaseAngle(1.57f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f42().getArray()).append(new MFVec3f43().getArray()).append(new MFVec3f44().getArray()).append(new MFVec3f45().getArray()).append(new MFVec3f46().getArray()).append(new MFVec3f47().getArray()).append(new MFVec3f48().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3238().getArray().append(new MFInt3239().getArray()).append(new MFInt3240().getArray()).append(new MFInt3241().getArray())).setCreaseAngle(1.57f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f42().getArray().append(new MFVec3f43().getArray()).append(new MFVec3f44().getArray()).append(new MFVec3f45().getArray()).append(new MFVec3f46().getArray()).append(new MFVec3f47().getArray()).append(new MFVec3f48().getArray())))))));
 ProtoInstance10
                         .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
 ProtoInstance10
@@ -1326,8 +1326,8 @@ ProtoInstance11
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Pants_Color"))
                                     .setTexture(new ImageTexture().setUSE("camo")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3249().getArray()).append(new MFInt3250().getArray()).append(new MFInt3251().getArray()).append(new MFInt3252().getArray()).append(new MFInt3253().getArray())).setCreaseAngle(1.61f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f54().getArray()).append(new MFVec3f55().getArray()).append(new MFVec3f56().getArray()).append(new MFVec3f57().getArray()).append(new MFVec3f58().getArray()).append(new MFVec3f59().getArray()).append(new MFVec3f60().getArray()).append(new MFVec3f61().getArray()).append(new MFVec3f62().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3249().getArray().append(new MFInt3250().getArray()).append(new MFInt3251().getArray()).append(new MFInt3252().getArray()).append(new MFInt3253().getArray())).setCreaseAngle(1.61f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f54().getArray().append(new MFVec3f55().getArray()).append(new MFVec3f56().getArray()).append(new MFVec3f57().getArray()).append(new MFVec3f58().getArray()).append(new MFVec3f59().getArray()).append(new MFVec3f60().getArray()).append(new MFVec3f61().getArray()).append(new MFVec3f62().getArray())))))));
 ProtoInstance12
                             .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
 ProtoInstance12
@@ -1345,8 +1345,8 @@ ProtoInstance13
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Pants_Color"))
                                         .setTexture(new ImageTexture().setUSE("camo")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3263().getArray()).append(new MFInt3264().getArray()).append(new MFInt3265().getArray())).setCreaseAngle(1.57f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f66().getArray()).append(new MFVec3f67().getArray()).append(new MFVec3f68().getArray()).append(new MFVec3f69().getArray()).append(new MFVec3f70().getArray()).append(new MFVec3f71().getArray()).append(new MFVec3f72().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3263().getArray().append(new MFInt3264().getArray()).append(new MFInt3265().getArray())).setCreaseAngle(1.57f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f66().getArray().append(new MFVec3f67().getArray()).append(new MFVec3f68().getArray()).append(new MFVec3f69().getArray()).append(new MFVec3f70().getArray()).append(new MFVec3f71().getArray()).append(new MFVec3f72().getArray())))))));
 ProtoInstance14
                                 .addFieldValue(new fieldValue().setName("name").setValue("r_ankle"));
 ProtoInstance14
@@ -1362,8 +1362,8 @@ ProtoInstance15
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("Shoe_Color")))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3273().getArray()).append(new MFInt3274().getArray()).append(new MFInt3275().getArray())).setCreaseAngle(1.57f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f76().getArray()).append(new MFVec3f77().getArray()).append(new MFVec3f78().getArray()).append(new MFVec3f79().getArray()).append(new MFVec3f80().getArray()).append(new MFVec3f81().getArray()).append(new MFVec3f82().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3273().getArray().append(new MFInt3274().getArray()).append(new MFInt3275().getArray())).setCreaseAngle(1.57f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f76().getArray().append(new MFVec3f77().getArray()).append(new MFVec3f78().getArray()).append(new MFVec3f79().getArray()).append(new MFVec3f80().getArray()).append(new MFVec3f81().getArray()).append(new MFVec3f82().getArray())))))));
 ProtoInstance16
                     .addFieldValue(new fieldValue().setName("name").setValue("vl1"));
 ProtoInstance16
@@ -1383,8 +1383,8 @@ ProtoInstance17
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setDEF("Shirt_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
                                 .setTexture(new ImageTexture().setUSE("camo")))
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3283().getArray()).append(new MFInt3284().getArray()).append(new MFInt3285().getArray()).append(new MFInt3286().getArray()).append(new MFInt3287().getArray()).append(new MFInt3288().getArray()).append(new MFInt3289().getArray()).append(new MFInt3290().getArray()).append(new MFInt3291().getArray()).append(new MFInt3292().getArray()).append(new MFInt3293().getArray()).append(new MFInt3294().getArray()).append(new MFInt3295().getArray())).setCreaseAngle(1.59f)
-                                .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f96().getArray()).append(new MFVec3f97().getArray()).append(new MFVec3f98().getArray()).append(new MFVec3f99().getArray()).append(new MFVec3f100().getArray()).append(new MFVec3f101().getArray()).append(new MFVec3f102().getArray()).append(new MFVec3f103().getArray()).append(new MFVec3f104().getArray()).append(new MFVec3f105().getArray()).append(new MFVec3f106().getArray()).append(new MFVec3f107().getArray()).append(new MFVec3f108().getArray()).append(new MFVec3f109().getArray()).append(new MFVec3f110().getArray()).append(new MFVec3f111().getArray()).append(new MFVec3f112().getArray()).append(new MFVec3f113().getArray())))))));
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3283().getArray().append(new MFInt3284().getArray()).append(new MFInt3285().getArray()).append(new MFInt3286().getArray()).append(new MFInt3287().getArray()).append(new MFInt3288().getArray()).append(new MFInt3289().getArray()).append(new MFInt3290().getArray()).append(new MFInt3291().getArray()).append(new MFInt3292().getArray()).append(new MFInt3293().getArray()).append(new MFInt3294().getArray()).append(new MFInt3295().getArray())).setCreaseAngle(1.59f)
+                                .setCoord(new Coordinate().setPoint(new MFVec3f96().getArray().append(new MFVec3f97().getArray()).append(new MFVec3f98().getArray()).append(new MFVec3f99().getArray()).append(new MFVec3f100().getArray()).append(new MFVec3f101().getArray()).append(new MFVec3f102().getArray()).append(new MFVec3f103().getArray()).append(new MFVec3f104().getArray()).append(new MFVec3f105().getArray()).append(new MFVec3f106().getArray()).append(new MFVec3f107().getArray()).append(new MFVec3f108().getArray()).append(new MFVec3f109().getArray()).append(new MFVec3f110().getArray()).append(new MFVec3f111().getArray()).append(new MFVec3f112().getArray()).append(new MFVec3f113().getArray())))))));
 ProtoInstance18
                         .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
 ProtoInstance18
@@ -1402,8 +1402,8 @@ ProtoInstance19
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f}))
                                     .setTexture(new ImageTexture().setUSE("camo")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32114().getArray()).append(new MFInt32115().getArray()).append(new MFInt32116().getArray())).setCreaseAngle(1.65f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f117().getArray()).append(new MFVec3f118().getArray()).append(new MFVec3f119().getArray()).append(new MFVec3f120().getArray()).append(new MFVec3f121().getArray()).append(new MFVec3f122().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32114().getArray().append(new MFInt32115().getArray()).append(new MFInt32116().getArray())).setCreaseAngle(1.65f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f117().getArray().append(new MFVec3f118().getArray()).append(new MFVec3f119().getArray()).append(new MFVec3f120().getArray()).append(new MFVec3f121().getArray()).append(new MFVec3f122().getArray())))))));
 ProtoInstance20
                             .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
 ProtoInstance20
@@ -1421,8 +1421,8 @@ ProtoInstance21
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Skin_Color"))
                                         .setTexture(new ImageTexture().setUSE("camo")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32123().getArray()).append(new MFInt32124().getArray()).append(new MFInt32125().getArray())).setCreaseAngle(1.75f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f126().getArray()).append(new MFVec3f127().getArray()).append(new MFVec3f128().getArray()).append(new MFVec3f129().getArray()).append(new MFVec3f130().getArray()).append(new MFVec3f131().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32123().getArray().append(new MFInt32124().getArray()).append(new MFInt32125().getArray())).setCreaseAngle(1.75f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f126().getArray().append(new MFVec3f127().getArray()).append(new MFVec3f128().getArray()).append(new MFVec3f129().getArray()).append(new MFVec3f130().getArray()).append(new MFVec3f131().getArray())))))));
 ProtoInstance22
                                 .addFieldValue(new fieldValue().setName("name").setValue("l_wrist"));
 ProtoInstance22
@@ -1438,8 +1438,8 @@ ProtoInstance23
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("Skin_Color")))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32132().getArray()).append(new MFInt32133().getArray())).setCreaseAngle(1.48f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f134().getArray()).append(new MFVec3f135().getArray()).append(new MFVec3f136().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32132().getArray().append(new MFInt32133().getArray())).setCreaseAngle(1.48f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f134().getArray().append(new MFVec3f135().getArray()).append(new MFVec3f136().getArray())))))));
 ProtoInstance24
                         .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
 ProtoInstance24
@@ -1457,8 +1457,8 @@ ProtoInstance25
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Skin_Color"))
                                     .setTexture(new ImageTexture().setUSE("camo")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32137().getArray()).append(new MFInt32138().getArray()).append(new MFInt32139().getArray())).setCreaseAngle(1.53f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f140().getArray()).append(new MFVec3f141().getArray()).append(new MFVec3f142().getArray()).append(new MFVec3f143().getArray()).append(new MFVec3f144().getArray()).append(new MFVec3f145().getArray()).append(new MFVec3f146().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32137().getArray().append(new MFInt32138().getArray()).append(new MFInt32139().getArray())).setCreaseAngle(1.53f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f140().getArray().append(new MFVec3f141().getArray()).append(new MFVec3f142().getArray()).append(new MFVec3f143().getArray()).append(new MFVec3f144().getArray()).append(new MFVec3f145().getArray()).append(new MFVec3f146().getArray())))))));
 ProtoInstance26
                             .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
 ProtoInstance26
@@ -1476,8 +1476,8 @@ ProtoInstance27
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Skin_Color"))
                                         .setTexture(new ImageTexture().setUSE("camo")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32147().getArray()).append(new MFInt32148().getArray()).append(new MFInt32149().getArray())).setCreaseAngle(1.73f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f150().getArray()).append(new MFVec3f151().getArray()).append(new MFVec3f152().getArray()).append(new MFVec3f153().getArray()).append(new MFVec3f154().getArray()).append(new MFVec3f155().getArray()).append(new MFVec3f156().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32147().getArray().append(new MFInt32148().getArray()).append(new MFInt32149().getArray())).setCreaseAngle(1.73f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f150().getArray().append(new MFVec3f151().getArray()).append(new MFVec3f152().getArray()).append(new MFVec3f153().getArray()).append(new MFVec3f154().getArray()).append(new MFVec3f155().getArray()).append(new MFVec3f156().getArray())))))));
 ProtoInstance28
                                 .addFieldValue(new fieldValue().setName("name").setValue("r_wrist"));
 ProtoInstance28
@@ -1493,8 +1493,8 @@ ProtoInstance29
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("Skin_Color")))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32157().getArray()).append(new MFInt32158().getArray())).setCreaseAngle(1.57f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f159().getArray()).append(new MFVec3f160().getArray()).append(new MFVec3f161().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32157().getArray().append(new MFInt32158().getArray())).setCreaseAngle(1.57f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f159().getArray().append(new MFVec3f160().getArray()).append(new MFVec3f161().getArray())))))));
 ProtoInstance30
                         .addFieldValue(new fieldValue().setName("name").setValue("vc4"));
 ProtoInstance30
@@ -1512,8 +1512,8 @@ ProtoInstance31
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Skin_Color"))
                                     .setTexture(new ImageTexture().setUSE("camo")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32162().getArray())).setCreaseAngle(1.91f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f163().getArray()).append(new MFVec3f164().getArray()).append(new MFVec3f165().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32162().getArray()).setCreaseAngle(1.91f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f163().getArray().append(new MFVec3f164().getArray()).append(new MFVec3f165().getArray())))))));
 ProtoInstance32
                             .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
 ProtoInstance32
@@ -1531,10 +1531,10 @@ ProtoInstance33
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Skin_Color"))
-                                        .setTexture(new ImageTexture().setDEF("CLONE").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString166().getArray()))))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32167().getArray()).append(new MFInt32168().getArray()).append(new MFInt32169().getArray()).append(new MFInt32170().getArray()).append(new MFInt32171().getArray()).append(new MFInt32172().getArray()).append(new MFInt32173().getArray()).append(new MFInt32174().getArray()).append(new MFInt32175().getArray()).append(new MFInt32176().getArray()).append(new MFInt32177().getArray()).append(new MFInt32178().getArray()).append(new MFInt32179().getArray()).append(new MFInt32180().getArray()).append(new MFInt32181().getArray()).append(new MFInt32182().getArray()).append(new MFInt32183().getArray()).append(new MFInt32184().getArray()).append(new MFInt32185().getArray()).append(new MFInt32186().getArray()).append(new MFInt32187().getArray())).setCreaseAngle(1.57f).setSolid(false)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f188().getArray()).append(new MFVec3f189().getArray()).append(new MFVec3f190().getArray()).append(new MFVec3f191().getArray()).append(new MFVec3f192().getArray()).append(new MFVec3f193().getArray()).append(new MFVec3f194().getArray()).append(new MFVec3f195().getArray()).append(new MFVec3f196().getArray())))
-                                        .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f197().getArray()).append(new MFVec2f198().getArray()).append(new MFVec2f199().getArray()).append(new MFVec2f200().getArray()).append(new MFVec2f201().getArray()).append(new MFVec2f202().getArray())))))));
+                                        .setTexture(new ImageTexture().setDEF("CLONE").setUrl(new MFString166().getArray())))
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32167().getArray().append(new MFInt32168().getArray()).append(new MFInt32169().getArray()).append(new MFInt32170().getArray()).append(new MFInt32171().getArray()).append(new MFInt32172().getArray()).append(new MFInt32173().getArray()).append(new MFInt32174().getArray()).append(new MFInt32175().getArray()).append(new MFInt32176().getArray()).append(new MFInt32177().getArray()).append(new MFInt32178().getArray()).append(new MFInt32179().getArray()).append(new MFInt32180().getArray()).append(new MFInt32181().getArray()).append(new MFInt32182().getArray()).append(new MFInt32183().getArray()).append(new MFInt32184().getArray()).append(new MFInt32185().getArray()).append(new MFInt32186().getArray()).append(new MFInt32187().getArray())).setCreaseAngle(1.57f).setSolid(false)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f188().getArray().append(new MFVec3f189().getArray()).append(new MFVec3f190().getArray()).append(new MFVec3f191().getArray()).append(new MFVec3f192().getArray()).append(new MFVec3f193().getArray()).append(new MFVec3f194().getArray()).append(new MFVec3f195().getArray()).append(new MFVec3f196().getArray())))
+                                        .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f197().getArray().append(new MFVec2f198().getArray()).append(new MFVec2f199().getArray()).append(new MFVec2f200().getArray()).append(new MFVec2f201().getArray()).append(new MFVec2f202().getArray())))))));
 ProtoInstance67
             .addFieldValue(new fieldValue().setName("name").setValue("nancy"));
 ProtoInstance67
@@ -1606,8 +1606,8 @@ ProtoInstance70
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("Pants_Color")))
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32203().getArray())).setCreaseAngle(1.14f)
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f204().getArray()))))));
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32203().getArray()).setCreaseAngle(1.14f)
+                              .setCoord(new Coordinate().setPoint(new MFVec3f204().getArray())))));
 ProtoInstance71
                         .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
 ProtoInstance71
@@ -1623,8 +1623,8 @@ ProtoInstance72
                               .addChild(new Shape()
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Pants_Color")))
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32205().getArray())).setCreaseAngle(1.32f)
-                                  .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f206().getArray()))))));
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32205().getArray()).setCreaseAngle(1.32f)
+                                  .setCoord(new Coordinate().setPoint(new MFVec3f206().getArray())))));
 ProtoInstance73
                             .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
 ProtoInstance73
@@ -1640,8 +1640,8 @@ ProtoInstance74
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Pants_Color")))
-                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32207().getArray())).setCreaseAngle(1.57f)
-                                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f208().getArray()))))));
+                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32207().getArray()).setCreaseAngle(1.57f)
+                                      .setCoord(new Coordinate().setPoint(new MFVec3f208().getArray())))));
 ProtoInstance75
                                 .addFieldValue(new fieldValue().setName("name").setValue("l_ankle"));
 ProtoInstance75
@@ -1656,8 +1656,8 @@ ProtoInstance76
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Shoe_Color")))
-                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32209().getArray())).setCreaseAngle(1.57f)
-                                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f210().getArray()))))));
+                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32209().getArray()).setCreaseAngle(1.57f)
+                                          .setCoord(new Coordinate().setPoint(new MFVec3f210().getArray())))));
 ProtoInstance77
                         .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
 ProtoInstance77
@@ -1673,8 +1673,8 @@ ProtoInstance78
                               .addChild(new Shape()
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Pants_Color")))
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32211().getArray())).setCreaseAngle(1.61f)
-                                  .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f212().getArray()))))));
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32211().getArray()).setCreaseAngle(1.61f)
+                                  .setCoord(new Coordinate().setPoint(new MFVec3f212().getArray())))));
 ProtoInstance79
                             .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
 ProtoInstance79
@@ -1690,8 +1690,8 @@ ProtoInstance80
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Pants_Color")))
-                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32213().getArray())).setCreaseAngle(1.57f)
-                                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f214().getArray()))))));
+                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32213().getArray()).setCreaseAngle(1.57f)
+                                      .setCoord(new Coordinate().setPoint(new MFVec3f214().getArray())))));
 ProtoInstance81
                                 .addFieldValue(new fieldValue().setName("name").setValue("r_ankle"));
 ProtoInstance81
@@ -1706,8 +1706,8 @@ ProtoInstance82
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Shoe_Color")))
-                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32215().getArray())).setCreaseAngle(1.57f)
-                                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f216().getArray()))))));
+                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32215().getArray()).setCreaseAngle(1.57f)
+                                          .setCoord(new Coordinate().setPoint(new MFVec3f216().getArray())))));
 ProtoInstance83
                     .addFieldValue(new fieldValue().setName("name").setValue("vl1"));
 ProtoInstance83
@@ -1725,10 +1725,10 @@ ProtoInstance84
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("Shirt_Color"))
-                              .setTexture(new ImageTexture().setDEF("small_logo_Tex").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString217().getArray()))))
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32218().getArray()).append(new MFInt32219().getArray())).setCreaseAngle(1.59f)
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f220().getArray())))
-                              .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f221().getArray()))))));
+                              .setTexture(new ImageTexture().setDEF("small_logo_Tex").setUrl(new MFString217().getArray())))
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32218().getArray().append(new MFInt32219().getArray())).setCreaseAngle(1.59f)
+                              .setCoord(new Coordinate().setPoint(new MFVec3f220().getArray()))
+                              .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f221().getArray())))));
 ProtoInstance85
                         .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
 ProtoInstance85
@@ -1745,8 +1745,8 @@ ProtoInstance86
                                 .addChild(new Shape()
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Skin_Color")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32222().getArray())).setCreaseAngle(1.65f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f223().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32222().getArray()).setCreaseAngle(1.65f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f223().getArray()))))));
 ProtoInstance87
                             .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
 ProtoInstance87
@@ -1763,8 +1763,8 @@ ProtoInstance88
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Skin_Color")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32224().getArray())).setCreaseAngle(1.75f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f225().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32224().getArray()).setCreaseAngle(1.75f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f225().getArray()))))));
 ProtoInstance89
                                 .addFieldValue(new fieldValue().setName("name").setValue("l_wrist"));
 ProtoInstance89
@@ -1780,8 +1780,8 @@ ProtoInstance90
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("Skin_Color")))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32226().getArray())).setCreaseAngle(1.48f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f227().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32226().getArray()).setCreaseAngle(1.48f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f227().getArray()))))));
 ProtoInstance91
                         .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
 ProtoInstance91
@@ -1798,8 +1798,8 @@ ProtoInstance92
                                 .addChild(new Shape()
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Skin_Color")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32228().getArray())).setCreaseAngle(1.53f)
-                                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f229().getArray())))))));
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32228().getArray()).setCreaseAngle(1.53f)
+                                    .setCoord(new Coordinate().setPoint(new MFVec3f229().getArray()))))));
 ProtoInstance93
                             .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
 ProtoInstance93
@@ -1816,8 +1816,8 @@ ProtoInstance94
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Skin_Color")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32230().getArray())).setCreaseAngle(1.73f)
-                                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f231().getArray())))))));
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32230().getArray()).setCreaseAngle(1.73f)
+                                        .setCoord(new Coordinate().setPoint(new MFVec3f231().getArray()))))));
 ProtoInstance95
                                 .addFieldValue(new fieldValue().setName("name").setValue("r_wrist"));
 ProtoInstance95
@@ -1833,8 +1833,8 @@ ProtoInstance96
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("Skin_Color")))
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32232().getArray())).setCreaseAngle(1.57f)
-                                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f233().getArray())))))));
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32232().getArray()).setCreaseAngle(1.57f)
+                                            .setCoord(new Coordinate().setPoint(new MFVec3f233().getArray()))))));
 ProtoInstance97
                         .addFieldValue(new fieldValue().setName("name").setValue("vc4"));
 ProtoInstance97
@@ -1850,8 +1850,8 @@ ProtoInstance98
                               .addChild(new Shape()
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Skin_Color")))
-                                .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32234().getArray())).setCreaseAngle(1.91f)
-                                  .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f235().getArray()))))));
+                                .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new MFInt32234().getArray()).setCreaseAngle(1.91f)
+                                  .setCoord(new Coordinate().setPoint(new MFVec3f235().getArray())))));
 ProtoInstance99
                             .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
 ProtoInstance99
@@ -1866,9 +1866,9 @@ ProtoInstance100
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color")))
-                                    .setGeometry(new IndexedFaceSet().setDEF("headIFS").setColorIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32236().getArray()).append(new MFInt32237().getArray())).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt32238().getArray()).append(new MFInt32239().getArray())).setCreaseAngle(0.7854f)
-                                      .setCoord(new Coordinate().setDEF("Face").setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f240().getArray())))
-                                      .setColor(new Color().setColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor241().getArray()))))));
+                                    .setGeometry(new IndexedFaceSet().setDEF("headIFS").setColorIndex(new MFInt32236().getArray().append(new MFInt32237().getArray())).setCoordIndex(new MFInt32238().getArray().append(new MFInt32239().getArray())).setCreaseAngle(0.7854f)
+                                      .setCoord(new Coordinate().setDEF("Face").setPoint(new MFVec3f240().getArray()))
+                                      .setColor(new Color().setColor(new MFColor241().getArray())))));
     return X3D0;
     }
 protected class MFString0 {

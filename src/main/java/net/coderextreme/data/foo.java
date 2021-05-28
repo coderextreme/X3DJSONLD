@@ -460,8 +460,8 @@ ProtoInstance ProtoInstance313 = null;
                 .addConnect(new connect().setNodeField("removeChildren").setProtoField("removeChildren"))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid").setDEF("humanoid"))
         .addChild(new Group().setDEF("JointCenters_WorldInfo")
-          .addChild(new WorldInfo().setTitle("HANIM 200x Default Joint Centers, LOA&#8209;0").setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
-        .addChild(new NavigationInfo().setAvatarSize(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat1().getArray())).setSpeed(1.5f)))      ;
+          .addChild(new WorldInfo().setTitle("HANIM 200x Default Joint Centers, LOA&#8209;0").setInfo(new MFString0().getArray())))
+        .addChild(new NavigationInfo().setAvatarSize(new MFFloat1().getArray()).setSpeed(1.5f)))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("humanoidBody")
             .addChild(ProtoInstance1 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root")));
