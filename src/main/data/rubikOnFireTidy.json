@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"rubikFurnace.x3d"
+            "@content":"rubikOnFire.x3d"
           },
           {
             "@name":"creator",
@@ -20,11 +20,15 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"
           },
           {
             "@name":"description",
-            "@content":"a green rubik cube"
+            "@content":"a white rubik cube"
+          },
+          {
+            "@name":"license",
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
           },
           {
             "@name":"translated",
@@ -42,6 +46,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"rubikOnFire.x3d"
+            }
+          },
           { "NavigationInfo":
             {
               "@type":["EXAMINE"]
@@ -62,31 +71,15 @@
                       "@name":"xtranslation",
                       "@accessType":"inputOutput",
                       "@type":"SFVec3f",
-                      "@value":[0,0,0]
+                      "@value":[0.0,0.0,0.0]
                     },
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -102,13 +95,34 @@
                               {
                                 "@nodeField":"translation",
                                 "@protoField":"xtranslation"
-                              },
-                              {
-                                "@nodeField":"children",
-                                "@protoField":"myShape"
                               }
                             ]
-                        }
+                        },
+                        "-children":[
+                          { "Shape":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"geometry",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,1]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -124,31 +138,15 @@
                       "@name":"ytranslation",
                       "@accessType":"inputOutput",
                       "@type":"SFVec3f",
-                      "@value":[0,0,0]
+                      "@value":[0.0,0.0,0.0]
                     },
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -171,25 +169,12 @@
                           { "ProtoInstance":
                             {
                               "@name":"anyShape",
-                              "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField":"myShape",
-                                      "@protoField":"myShape"
-                                    }
-                                  ]
-                              },
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
                                   "@value":[0,0,0]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"anyShape",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -197,18 +182,18 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
                                   "@value":[2,0,0]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"anyShape",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -216,13 +201,26 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
                                   "@value":[-2,0,0]
                                 }
-                              ]
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
                             }
                           }
                         ]
@@ -241,31 +239,15 @@
                       "@name":"ztranslation",
                       "@accessType":"inputOutput",
                       "@type":"SFVec3f",
-                      "@value":[0,0,0]
+                      "@value":[0.0,0.0,0.0]
                     },
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -288,25 +270,12 @@
                           { "ProtoInstance":
                             {
                               "@name":"three",
-                              "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField":"myShape",
-                                      "@protoField":"myShape"
-                                    }
-                                  ]
-                              },
                               "fieldValue": [
                                 {
                                   "@name":"ytranslation",
                                   "@value":[0,0,0]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"three",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -314,18 +283,18 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"three",
                               "fieldValue": [
                                 {
                                   "@name":"ytranslation",
                                   "@value":[0,2,0]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"three",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -333,13 +302,26 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"three",
                               "fieldValue": [
                                 {
                                   "@name":"ytranslation",
                                   "@value":[0,-2,0]
                                 }
-                              ]
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
                             }
                           }
                         ]
@@ -358,31 +340,15 @@
                       "@name":"ttranslation",
                       "@accessType":"inputOutput",
                       "@type":"SFVec3f",
-                      "@value":[0,0,0]
+                      "@value":[0.0,0.0,0.0]
                     },
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -405,25 +371,12 @@
                           { "ProtoInstance":
                             {
                               "@name":"nine",
-                              "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField":"myShape",
-                                      "@protoField":"myShape"
-                                    }
-                                  ]
-                              },
                               "fieldValue": [
                                 {
                                   "@name":"ztranslation",
                                   "@value":[0,0,0]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"nine",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -431,18 +384,18 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"nine",
                               "fieldValue": [
                                 {
                                   "@name":"ztranslation",
                                   "@value":[0,0,2]
                                 }
-                              ]
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"nine",
+                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -450,13 +403,26 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              },
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"nine",
                               "fieldValue": [
                                 {
                                   "@name":"ztranslation",
                                   "@value":[0,0,-2]
                                 }
-                              ]
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
                             }
                           }
                         ]
@@ -477,25 +443,9 @@
                 {
                   "@name":"myShape",
                   "-children":[
-                    { "Shape":
+                    { "Box":
                       {
-                        "-appearance":
-                          { "Appearance":
-                            {
-                              "-material":
-                                { "Material":
-                                  {
-                                    "@diffuseColor":[0,1,0]
-                                  }
-                                }
-                            }
-                          },
-                        "-geometry":
-                          { "Box":
-                            {
-                              "@size":[1,1,1]
-                            }
-                          }
+                        "@size":[1,1,1]
                       }
                     }
                   ]

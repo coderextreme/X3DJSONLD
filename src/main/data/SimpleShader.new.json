@@ -5,6 +5,11 @@
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.2.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "-children":[
+          {
+            "#comment":"meta content='under development' name='warning'/"
+          }
+        ],
         "component": [
           {
             "@name":"Shaders",
@@ -69,16 +74,12 @@
             "@content":"Titania V3.0.3, http://titania.create3000.de"
           },
           {
-            "@name":"comment",
+            "@name":"info",
             "@content":"World of Titania"
           },
           {
             "@name":"outputStyle",
             "@content":"nicest"
-          },
-          {
-            "@name":"warning",
-            "@content":"under development"
           },
           {
             "@name":"generator",
@@ -94,7 +95,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 January 2021"
+            "@content":"27 May 2021"
           },
           {
             "@name":"generator",
