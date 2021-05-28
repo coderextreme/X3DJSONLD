@@ -65,7 +65,7 @@ public class ArtDecoPrototypes {
           .setProtoBody(new ProtoBody()
             .addChild(new Material().setAmbientIntensity(0.254777f).setDiffuseColor(new float[] {0.685208f,0.134679f,0.332385f}).setShininess(0.071429f).setSpecularColor(new float[] {0.122449f,0.050035f,0.050035f}))))
         .addChild(new ProtoDeclare().setName("ArtDeco02").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
-          .addComments(new CommentsBlock("computed conversion ambientIntensity=1.745282, normalized to 1.0"))
+          .addComments("computed conversion ambientIntensity=1.745282, normalized to 1.0")
           .setProtoBody(new ProtoBody()
             .addChild(new Material().setAmbientIntensity(1f).setDiffuseColor(new float[] {0.536861f,0.0529f,0.245479f}).setShininess(0.832432f).setSpecularColor(new float[] {0.805292f,0.765198f,0.747416f}))))
         .addChild(new ProtoDeclare().setName("ArtDeco03").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
@@ -138,7 +138,7 @@ public class ArtDecoPrototypes {
           .setProtoBody(new ProtoBody()
             .addChild(new Material().setAmbientIntensity(0.25641f).setDiffuseColor(new float[] {0.795918f,0.505869f,0.093315f}).setShininess(0.397959f).setSpecularColor(new float[] {0.923469f,0.428866f,0.006369f}))))
         .addChild(new ProtoDeclare().setName("ArtDeco26").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
-          .addComments(new CommentsBlock("computed conversion ambientIntensity=2.226234, normalized to 1.0"))
+          .addComments("computed conversion ambientIntensity=2.226234, normalized to 1.0")
           .setProtoBody(new ProtoBody()
             .addChild(new Material().setAmbientIntensity(1f).setDiffuseColor(new float[] {0.331633f,0.296582f,0.279057f}).setShininess(0.096939f).setSpecularColor(new float[] {0.311224f,0.25183f,0.133042f}))))
         .addChild(new ProtoDeclare().setName("ArtDeco27").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
@@ -165,12 +165,12 @@ public class ArtDecoPrototypes {
         .addChild(new ProtoDeclare().setName("ArtDeco34").setAppinfo("UniversalMediaMaterials prototype").setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
           .setProtoBody(new ProtoBody()
             .addChild(new Material().setAmbientIntensity(0.25f).setShininess(0f).setSpecularColor(new float[] {0.2f,0.2f,0.2f}))))
-        .addChild(new Anchor().setDescription("ArtDecoPrototypeExample").setParameter(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
+        .addChild(new Anchor().setDescription("ArtDecoPrototypeExample").setParameter(new MFString0().getArray()).setUrl(new MFString1().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.8f,0.4f,0f})))
-            .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))
-              .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setSize(0.8f))))))      ;
+            .setGeometry(new Text().setString(new MFString2().getArray())
+              .setFontStyle(new FontStyle().setJustify(new MFString3().getArray()).setSize(0.8f))))))      ;
     return X3D0;
     }
 protected class MFString0 {

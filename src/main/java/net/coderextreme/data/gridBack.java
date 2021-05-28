@@ -60,9 +60,9 @@ public class gridBack {
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
-          .setGeometry(new IndexedFaceSet().setColorIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray())).setColorPerVertex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray())).setNormalPerVertex(false)
-            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())))
-            .setColor(new Color().setColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor3().getArray()))))))      ;
+          .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt320().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321().getArray()).setNormalPerVertex(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))
+            .setColor(new Color().setColor(new MFColor3().getArray())))))      ;
     return X3D0;
     }
 protected class MFInt320 {

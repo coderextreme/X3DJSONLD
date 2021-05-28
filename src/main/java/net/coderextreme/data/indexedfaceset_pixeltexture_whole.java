@@ -78,10 +78,10 @@ public class indexedfaceset_pixeltexture_whole {
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF})))
-          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray())).setCreaseAngle(0.5f).setTexCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray()))
-            .setColor(new Color().setColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor2().getArray())))
-            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))
-            .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f4().getArray()))))))      ;
+          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f).setTexCoordIndex(new MFInt321().getArray())
+            .setColor(new Color().setColor(new MFColor2().getArray()))
+            .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
+            .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f4().getArray())))))      ;
     return X3D0;
     }
 protected class MFInt320 {

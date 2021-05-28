@@ -59,9 +59,9 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))
+        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
-          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray()))
+          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString6().getArray())
             .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .addChild(new ProtoDeclare().setName("flower")
@@ -76,7 +76,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
           .addChild(new Sound().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
-            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))))
+            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray())))
           .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));

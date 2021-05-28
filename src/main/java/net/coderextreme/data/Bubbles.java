@@ -58,16 +58,16 @@ public class Bubbles {
         .addChild(new Transform().setDEF("Bubbles")
           .addChild(new Group().setDEF("Bubble")
             .addChild(new TimeSensor().setDEF("BubbleClock").setCycleInterval(6d).setLoop(true))
-            .addChild(new PositionInterpolator().setDEF("BubblePath1").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat0().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath2").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat2().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath3").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat4().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f5().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath4").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat6().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f7().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath5").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat8().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f9().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath6").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat10().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f11().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath7").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat12().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f13().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath8").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat14().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f15().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath9").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat16().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f17().getArray())))
-            .addChild(new PositionInterpolator().setDEF("BubblePath10").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat18().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f19().getArray())))
+            .addChild(new PositionInterpolator().setDEF("BubblePath1").setKey(new MFFloat0().getArray()).setKeyValue(new MFVec3f1().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath2").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath3").setKey(new MFFloat4().getArray()).setKeyValue(new MFVec3f5().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath4").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3f7().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath5").setKey(new MFFloat8().getArray()).setKeyValue(new MFVec3f9().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath6").setKey(new MFFloat10().getArray()).setKeyValue(new MFVec3f11().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath7").setKey(new MFFloat12().getArray()).setKeyValue(new MFVec3f13().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath8").setKey(new MFFloat14().getArray()).setKeyValue(new MFVec3f15().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath9").setKey(new MFFloat16().getArray()).setKeyValue(new MFVec3f17().getArray()))
+            .addChild(new PositionInterpolator().setDEF("BubblePath10").setKey(new MFFloat18().getArray()).setKeyValue(new MFVec3f19().getArray()))
             .addChild(new Transform()
               .addChild(new Transform().setDEF("bubble1")
                 .addChild(new Shape()
@@ -139,7 +139,7 @@ public class Bubbles {
               .addChild(new ROUTE().setFromField("value_changed").setFromNode("BubblePath8").setToField("set_translation").setToNode("bubble8"))
               .addChild(new ROUTE().setFromField("value_changed").setFromNode("BubblePath9").setToField("set_translation").setToNode("bubble9"))
               .addChild(new ROUTE().setFromField("value_changed").setFromNode("BubblePath10").setToField("set_translation").setToNode("bubble10")))))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor20().getArray()))))      ;
+        .addChild(new Background().setSkyColor(new MFColor20().getArray())))      ;
     return X3D0;
     }
 protected class MFFloat0 {

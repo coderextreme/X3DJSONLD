@@ -74,16 +74,16 @@ public class AllAudioGraphNodesTest {
                             .addChild(new Gain()
                               .addChild(new StreamAudioDestination()
                                 .addChild(new WaveShaper()
-                                  .addComments(new CommentsBlock("The following X3DSoundSourceNode nodes have no audio-graph children"))
+                                  .addComments("The following X3DSoundSourceNode nodes have no audio-graph children")
                                   .addChild(new BufferAudioSource())
                                   .addChild(new ListenerPointSource())
                                   .addChild(new MicrophoneSource())
                                   .addChild(new OscillatorSource())
                                   .addChild(new StreamAudioSource()))))))))))))))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
-          .setSource(new AudioClip().setDescription("testing").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
+          .setSource(new AudioClip().setDescription("testing").setUrl(new MFString0().getArray())))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
-          .setSource(new MovieTexture().setDescription("testing").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))))      ;
+          .setSource(new MovieTexture().setDescription("testing").setUrl(new MFString1().getArray()))))      ;
     return X3D0;
     }
 protected class MFString0 {
