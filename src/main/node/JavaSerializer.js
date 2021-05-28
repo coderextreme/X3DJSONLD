@@ -137,7 +137,7 @@ JavaSerializer.prototype = {
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
 		if (attrType.startsWith("MF")) {
-			var str = "new org.web3d.x3d.jsail.fields."+attrType+"(";
+			var str = "";// "new org.web3d.x3d.jsail.fields."+attrType+"(";
 			for (var i = 0; i < values.length; i += 840) {
 				var max = values.length;
 				if (i + 840 < max) {
@@ -150,7 +150,7 @@ JavaSerializer.prototype = {
 				this.code[co] += "  }\n";
 				this.code[co] += "}\n";
 				if (i == 0) {
-					str += "new "+attrType+co+"().getArray())";
+					str += "new "+attrType+co+"().getArray()";
 				} else {
 					str += ".append(new "+attrType+co+"().getArray())";
 				}
@@ -213,6 +213,7 @@ JavaSerializer.prototype = {
 								|| attrs[a].nodeValue == "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							} else if (method === "addValue") {
 							} else {
 								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							}
@@ -242,6 +243,10 @@ JavaSerializer.prototype = {
 		}
 		if (addpre+method === "setSkin") {
 			method = "Skin"
+			addpre = "add";
+		}
+		if (addpre+method === "setValue") {
+			method = "Value"
 			addpre = "add";
 		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
@@ -493,7 +498,7 @@ JavaSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y.split("\n").join('\\n\"+\n\"')+"\"))";
+				str += "\n"+("  ".repeat(n))+".addComments(\""+y.split("\n").join('\\n\"+\n\"')+"\")";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
