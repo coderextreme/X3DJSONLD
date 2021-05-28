@@ -57,7 +57,7 @@ public class ExtrusionHeart {
         .addChild(new Viewpoint().setDescription("Extrusion Heart").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-4f,0f}))
         .addChild(new Transform().setTranslation(new float[] {0f,-0.5f,0f})
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setCreaseAngle(3.14159f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f0().getArray())).setScale(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f1().getArray())).setSolid(false).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())))
+            .setGeometry(new Extrusion().setCreaseAngle(3.14159f).setCrossSection(new MFVec2f0().getArray()).setScale(new MFVec2f1().getArray()).setSolid(false).setSpine(new MFVec3f2().getArray()))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.8f,0.3f,0.3f}))))))      ;
     return X3D0;

@@ -62,7 +62,7 @@ ProtoInstance ProtoInstance1 = null;
         .addChild(new ProtoDeclare().setName("SpinGroup")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("children").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addComments(new CommentsBlock("NULL node initialization")))
+              .addComments("NULL node initialization"))
             .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
             .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("false"))
             .addField(new field().setType("SFTime").setName("startTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
@@ -71,19 +71,19 @@ ProtoInstance ProtoInstance1 = null;
             .addChild(new Transform().setDEF("SpinGroupTransform")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("children"))))
-            .addComments(new CommentsBlock("following nodes will not be rendered, only the first node of a ProtoBody is drawn"))
+            .addComments("following nodes will not be rendered, only the first node of a ProtoBody is drawn")
             .addChild(new TimeSensor().setDEF("SpinGroupClock")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("cycleInterval").setProtoField("cycleInterval"))
                 .addConnect(new connect().setNodeField("loop").setProtoField("loop"))
                 .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
                 .addConnect(new connect().setNodeField("stopTime").setProtoField("stopTime"))))
-            .addChild(new OrientationInterpolator().setDEF("Spinner").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat0().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation1().getArray())))
+            .addChild(new OrientationInterpolator().setDEF("Spinner").setKey(new MFFloat0().getArray()).setKeyValue(new MFRotation1().getArray()))
             .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("SpinGroupClock").setToField("set_fraction").setToNode("Spinner"))
             .addChild(new ROUTE().setFromField("value_changed").setFromNode("Spinner").setToField("set_rotation").setToNode("SpinGroupTransform"))))
-        .addComments(new CommentsBlock("Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare)."))
+        .addComments("Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare).")
         .addChild(new Viewpoint().setDescription("Click on blue crossbar to activate second SpinGroup").setOrientation(new float[] {1f,0f,0f,-0.52f}).setPosition(new float[] {0f,18f,30f}))
-        .addComments(new CommentsBlock("Create an instance, meaning actual nodes that render"))
+        .addComments("Create an instance, meaning actual nodes that render")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("SpinGroup"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("ActivateSecondSpinGroup").setToField("startTime").setToNode("SecondSpinGroup")))      ;
 ProtoInstance0
@@ -100,7 +100,7 @@ ProtoInstance0
               .setGeometry(new Box().setSize(new float[] {2f,25f,2f}))
               .setAppearance(new Appearance().setUSE("Green")))
             .addChild(ProtoInstance1 = new ProtoInstance().setName("SpinGroup").setDEF("SecondSpinGroup")
-              .addComments(new CommentsBlock("stopTime > startTime ensures that initial state is stopped"))));
+              .addComments("stopTime > startTime ensures that initial state is stopped")));
 ProtoInstance1
               .addFieldValue(new fieldValue().setName("cycleInterval").setValue("4"));
 ProtoInstance1

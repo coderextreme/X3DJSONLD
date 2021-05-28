@@ -58,7 +58,7 @@ public class Table5_18PixelTexture {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("Checkerboard").setTranslation(new float[] {0f,0f,-10f})
           .addChild(new Shape()
             .setAppearance(new Appearance()

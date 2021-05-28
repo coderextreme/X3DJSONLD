@@ -57,7 +57,7 @@ ProtoInstance ProtoInstance2 = null;
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("Connector Proto"))
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()

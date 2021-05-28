@@ -71,8 +71,8 @@ public class indexedfaceset_pixeltexture_entire {
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
-          .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray()))
-            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray()))))))      ;
+          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray())
+            .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray())))))      ;
     return X3D0;
     }
 protected class MFInt320 {

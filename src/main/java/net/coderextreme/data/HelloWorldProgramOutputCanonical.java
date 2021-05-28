@@ -36,11 +36,11 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class Json {
+public class HelloWorldProgramOutputCanonical {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new Json().initialize().toFileJSON("../data/Json.new.json");
+    new HelloWorldProgramOutputCanonical().initialize().toFileJSON("../data/HelloWorldProgramOutputCanonical.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -48,8 +48,10 @@ ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
+ProtoInstance ProtoInstance5 = null;
+ProtoInstance ProtoInstance6 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .addComments("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true")
+      .addComments("x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true")
       .setHead(new head()
         .addComments("comment #1")
         .addComments("comment #2")
@@ -57,24 +59,18 @@ ProtoInstance ProtoInstance4 = null;
         .addComments("comment #4")
         .addComponent(new component().setName("Navigation").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
-        .addComponent(new component().setName("CADGeometry").setLevel(2))
-        .addComponent(new component().setName("DIS").setLevel(2))
-        .addComponent(new component().setName("H-Anim").setLevel(1))
-        .addComponent(new component().setName("Grouping").setLevel(1))
         .addComponent(new component().setName("Layering").setLevel(1))
         .addUnit(new unit().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1d))
         .addUnit(new unit().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1d))
-        .addUnit(new unit().setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482d))
         .addMeta(new meta().setName("title").setContent("HelloWorldProgramOutput.x3d"))
-        .addMeta(new meta().setName("info").setContent("continued development and testing in progress"))
         .addMeta(new meta().setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new meta().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new meta().setName("created").setContent("6 September 2016"))
-        .addMeta(new meta().setName("modified").setContent("25 May 2020"))
+        .addMeta(new meta().setName("modified").setContent("27 December 2018"))
         .addMeta(new meta().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new meta().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
-        .addMeta(new meta().setName("generator").setContent("Netbeans http://www.netbeans.org"))
+        .addMeta(new meta().setName("generator").setContent("Netbeans https://www.netbeans.org"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new meta().setName("reference").setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"))
@@ -84,10 +80,7 @@ ProtoInstance ProtoInstance4 = null;
         .addMeta(new meta().setName("reference").setContent("HelloWorldProgramOutput.html"))
         .addMeta(new meta().setName("reference").setContent("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
-        .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addMeta(new meta().setName("translated").setContent("25 May 2020"))
-        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
-        .addMeta(new meta().setName("reference").setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new ViewpointGroup().setDescription("Available viewpoints")
           .addChild(new Viewpoint().setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
@@ -197,7 +190,7 @@ ProtoInstance ProtoInstance4 = null;
         .addChild(new Inline().setDEF("inlineSceneDef").setUrl(new MFString17().getArray()))
         .addChild(new IMPORT().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
         .addChild(new EXPORT().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
-        .addChild(new ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+        .addChild(new ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("true"))
             .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -299,8 +292,10 @@ ProtoInstance ProtoInstance4 = null;
               .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)))
             .setProtoBody(new ProtoBody()
               .addChild(new WorldInfo())))
+          .addChild(ProtoInstance4 = new ProtoInstance().setName("NewWorldInfo").setDEF("Proto1"))
           .addChild(new Group().setDEF("Node2")
             .addComments("intentionally empty"))
+          .addChild(ProtoInstance5 = new ProtoInstance().setName("NewWorldInfo").setDEF("Proto3"))
           .addChild(new Transform().setDEF("Node4")
             .addComments("intentionally empty"))
           .addComments("Test satisfactorily creates MFNode children array as an ordered list with mixed content"))
@@ -313,24 +308,15 @@ ProtoInstance ProtoInstance4 = null;
             .addComments("Test satisfactorily creates MFNode shaders array as an ordered list with mixed content")
             .addShaders(new ProgramShader().setDEF("TestShader1")
               .addPrograms(new ShaderProgram().setType("VERTEX").setDEF("TestShader2")))
-            .addShaders(ProtoInstance4 = new ProtoInstance().setName("ShaderProto").setDEF("TestShader3"))
+            .addShaders(ProtoInstance6 = new ProtoInstance().setName("ShaderProto").setDEF("TestShader3"))
             .addShaders(new ComposedShader().setDEF("TestShader4")
-              .addParts(new ShaderPart().setType("VERTEX").setDEF("TestShader5")))))
-        .addChild(new Transform().setDEF("SpecialtyNodes")
-          .addChild(new CADLayer()
-            .addChild(new CADAssembly()
-              .addChild(new CADPart()
-                .addChild(new CADFace()))))
-          .addChild(new EspduTransform())
-          .addChild(new ReceiverPdu())
-          .addChild(new SignalPdu())
-          .addChild(new TransmitterPdu())
-          .addChild(new DISEntityManager()
-            .addChild(new DISEntityTypeMapping()))))      ;
+              .addParts(new ShaderPart().setType("VERTEX").setDEF("TestShader5"))))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValue().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
               .addFieldValue(new fieldValue().setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
+ProtoInstance4
+            .addFieldValue(new fieldValue().setName("description").setValue("testing 1 2 3"));
     return X3D0;
     }
 protected class MFString0 {
@@ -415,7 +401,7 @@ protected class MFColor15 {
 }
 protected class MFString16 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
   }
 }
 protected class MFString17 {

@@ -60,25 +60,25 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addComments(new CommentsBlock("Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n"))
-        .addChild(new ExternProtoDeclare().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))
+        .addComments("Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n")
+        .addChild(new ExternProtoDeclare().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFVec3f").setName("screenOffset").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("offset position for HUD relative to current view location, default 0 0 -5"))
           .addField(new field().setType("MFNode").setName("children").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
           .addField(new field().setType("SFVec3f").setName("position_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD position update (in world coordinates) relative to original location"))
           .addField(new field().setType("SFRotation").setName("orientation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD orientation update relative to original location")))
-        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat1().getArray())).setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor2().getArray())).setSkyAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat3().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor4().getArray())))
+        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(new MFFloat1().getArray()).setGroundColor(new MFColor2().getArray()).setSkyAngle(new MFFloat3().getArray()).setSkyColor(new MFColor4().getArray()))
         .addChild(new Viewpoint().setDescription("Heads-up display (HUD)"))
-        .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
+        .addComments("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
-          .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
-        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))))      ;
+          .addComments("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view"))
+        .addChild(new Inline().setUrl(new MFString7().getArray())))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("children")
             .addChild(new Shape()
-              .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray()))
-                .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray())).setSize(0.3f)))
+              .setGeometry(new Text().setString(new MFString5().getArray())
+                .setFontStyle(new FontStyle().setJustify(new MFString6().getArray()).setSize(0.3f)))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.894118f,0.819608f,1f})))));
     return X3D0;

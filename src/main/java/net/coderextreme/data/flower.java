@@ -53,19 +53,19 @@ public class flower {
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
         .addChild(new Transform().setTranslation(new float[] {0f,-1f,1f}).setRotation(new float[] {0f,1f,0f,3.1415926f}).setScale(new float[] {1.5f,1.5f,1.5f})
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setTransparency(0.1f).setDiffuseColor(new float[] {0.9f,0.3f,0.3f}).setSpecularColor(new float[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
-            .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray())).setDEF("Orbit")
-              .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray()))))))
+            .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
+              .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
           .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
+          .addComments("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>")
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+

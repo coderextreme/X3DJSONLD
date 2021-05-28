@@ -62,12 +62,12 @@ public class StringArrayEncodingExamples {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDEF("EntryView").setDescription("Hello MFString syntax"))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Shape()
-          .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
-            .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
-            .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
-            .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setStyle("BOLD")))
+          .setGeometry(new Text().setString(new MFString1().getArray())
+            .addComments("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'")
+            .addComments("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})")
+            .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setStyle("BOLD")))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.4f,0.2f})))))      ;
     return X3D0;

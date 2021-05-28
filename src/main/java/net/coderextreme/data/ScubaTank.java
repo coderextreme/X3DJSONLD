@@ -99,7 +99,7 @@ public class ScubaTank {
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("black")))
               .setGeometry(new Cylinder().setHeight(0.1f).setRadius(0.115f)))))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray()))))      ;
+        .addChild(new Background().setSkyColor(new MFColor0().getArray())))      ;
     return X3D0;
     }
 protected class MFColor0 {

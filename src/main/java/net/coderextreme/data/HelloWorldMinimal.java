@@ -44,8 +44,8 @@ public class HelloWorldMinimal {
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .addComments(new CommentsBlock("All head/meta tags are optional, WorldInfo is also optional"))
-      .addComments(new CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1"))
+      .addComments("All head/meta tags are optional, WorldInfo is also optional")
+      .addComments("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("HelloWorldMinimal.x3d"))
         .addMeta(new meta().setName("description").setContent("Hello World minimal example scene."))
@@ -65,7 +65,7 @@ public class HelloWorldMinimal {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HelloWorldMinimal.x3d"))
         .addChild(new Shape()
-          .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())))))      ;
+          .setGeometry(new Text().setString(new MFString0().getArray()))))      ;
     return X3D0;
     }
 protected class MFString0 {

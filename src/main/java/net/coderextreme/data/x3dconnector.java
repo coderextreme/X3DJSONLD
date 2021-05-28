@@ -53,7 +53,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()

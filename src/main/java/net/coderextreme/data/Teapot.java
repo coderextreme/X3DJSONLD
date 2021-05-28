@@ -62,16 +62,16 @@ public class Teapot {
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDEF("Black_mat").setDiffuseColor(new float[] {0f,0f,0f})))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray()).append(new MFInt321().getArray())).setCreaseAngle(0.524f)
-                  .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray()))))))
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray().append(new MFInt321().getArray())).setCreaseAngle(0.524f)
+                  .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))))
             .addChild(new Transform().setDEF("MooringBuoy")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDEF("default_mat").setAmbientIntensity(1f).setDiffuseColor(new float[] {0.50196f,0.50196f,0.50196f}).setShininess(1f))
-                  .setTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray()))))
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt324().getArray()).append(new MFInt325().getArray()).append(new MFInt326().getArray())).setCreaseAngle(1.047f).setTexCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt327().getArray()).append(new MFInt328().getArray()).append(new MFInt329().getArray()))
-                  .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray()).append(new MFVec3f11().getArray())))
-                  .setTexCoord(new TextureCoordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f12().getArray())))))))))      ;
+                  .setTexture(new ImageTexture().setUrl(new MFString3().getArray())))
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt324().getArray().append(new MFInt325().getArray()).append(new MFInt326().getArray())).setCreaseAngle(1.047f).setTexCoordIndex(new MFInt327().getArray().append(new MFInt328().getArray()).append(new MFInt329().getArray()))
+                  .setCoord(new Coordinate().setPoint(new MFVec3f10().getArray().append(new MFVec3f11().getArray())))
+                  .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f12().getArray()))))))))      ;
     return X3D0;
     }
 protected class MFInt320 {

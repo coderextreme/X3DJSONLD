@@ -57,9 +57,9 @@ public class ArchHalf {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Shape().setDEF("Arch")
-          .addComments(new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"))
-          .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray())).setSolid(false)
-            .setCoord(new Coordinate().setDEF("ArchChord").setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray()))))
+          .addComments("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly")
+          .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setCoordIndex(new MFInt320().getArray()).setSolid(false)
+            .setCoord(new Coordinate().setDEF("ArchChord").setPoint(new MFVec3f1().getArray())))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDEF("MaterialNode").setDiffuseColor(new float[] {1f,0.75f,0.25f})))))      ;
     return X3D0;
