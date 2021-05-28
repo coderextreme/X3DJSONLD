@@ -29,8 +29,11 @@ pip3 install jnius
 pip3 install fastjsonschema
 
 # generate schemas
-pushd src/main/shell
-bash generateSchema.sh
+# pushd src/main/shell
+# bash generateSchema.sh
+# popd
+pushd src/main/python
+python3 generateSchemas.py
 popd
 
 # generate helpful JavaScript classes
