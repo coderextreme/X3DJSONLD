@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
-    "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@profile":"Full",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "-children":[
       {
@@ -98,7 +98,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 June 2020"
+            "@content":"20 December 2020"
           },
           {
             "@name":"generator",
@@ -154,7 +154,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 November 2020"
+            "@content":"27 May 2021"
           },
           {
             "@name":"generator",
@@ -229,6 +229,7 @@
               "-children":[
                 { "Anchor":
                   {
+                    "@DEF":"siteAnchor",
                     "@description":"select for X3D Java SAI Library (X3DJSAIL) description",
                     "@url":["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
                     "-children":[
@@ -753,7 +754,7 @@
           },
           { "Inline":
             {
-              "@DEF":"inlineSceneDef",
+              "@DEF":"inlineScene",
               "@url":["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]
             }
           },
@@ -761,7 +762,7 @@
             {
               "@AS":"WorldInfoDEF2",
               "@importedDEF":"WorldInfoDEF",
-              "@inlineDEF":"inlineSceneDef"
+              "@inlineDEF":"inlineScene"
             }
           },
           { "EXPORT":
@@ -1071,7 +1072,7 @@
                         "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                       },
                       {
-                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"children\""
                       }
                     ]
                   }
@@ -1307,12 +1308,112 @@
                 },
                 { "DISEntityManager":
                   {
-                    "-mapping":[
+                    "-children":[
                       { "DISEntityTypeMapping":
                         {
                         }
                       }
                     ]
+                  }
+                }
+              ]
+            }
+          },
+          { "EspduTransform":
+            {
+              "-children":[
+                { "WorldInfo":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "ReceiverPdu":
+            {
+            }
+          },
+          { "SignalPdu":
+            {
+            }
+          },
+          { "TransmitterPdu":
+            {
+            }
+          },
+          { "DISEntityManager":
+            {
+              "-children":[
+                { "DISEntityTypeMapping":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "LoadSensor":
+            {
+              "-children":[
+                {
+                  "#comment":"Contained nodes typically must be USE references for nodes previously DEFined in the scene"
+                },
+                {
+                  "#comment":"The following nodes are test cases for all X3DUrlObject nodes"
+                },
+                { "Anchor":
+                  {
+                    "@USE":"siteAnchor"
+                  }
+                },
+                { "Inline":
+                  {
+                    "@USE":"inlineScene"
+                  }
+                },
+                { "DISEntityTypeMapping":
+                  {
+                  }
+                },
+                { "GeoMetadata":
+                  {
+                  }
+                },
+                { "AudioClip":
+                  {
+                  }
+                },
+                { "ImageCubeMapTexture":
+                  {
+                  }
+                },
+                { "ImageTexture3D":
+                  {
+                  }
+                },
+                { "ImageTexture":
+                  {
+                  }
+                },
+                { "MovieTexture":
+                  {
+                  }
+                },
+                { "Script":
+                  {
+                  }
+                },
+                { "PackagedShader":
+                  {
+                  }
+                },
+                { "ShaderPart":
+                  {
+                    "@type":"VERTEX"
+                  }
+                },
+                { "ShaderProgram":
+                  {
+                    "@type":"VERTEX"
                   }
                 }
               ]

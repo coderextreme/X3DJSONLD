@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"rubikFurnace.x3d"
+            "@content":"rubikOnFire.x3d"
           },
           {
             "@name":"creator",
@@ -20,11 +20,15 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"
           },
           {
             "@name":"description",
-            "@content":"a green rubik cube"
+            "@content":"a white rubik cube"
+          },
+          {
+            "@name":"license",
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
           },
           {
             "@name":"translated",
@@ -42,6 +46,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"rubikOnFire.x3d"
+            }
+          },
           { "NavigationInfo":
             {
               "@type":["EXAMINE"]
@@ -67,26 +76,10 @@
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -102,13 +95,34 @@
                               {
                                 "@nodeField":"translation",
                                 "@protoField":"xtranslation"
-                              },
-                              {
-                                "@nodeField":"children",
-                                "@protoField":"myShape"
                               }
                             ]
-                        }
+                        },
+                        "-children":[
+                          { "Shape":
+                            {
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"geometry",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,1,1]
+                                        }
+                                      }
+                                  }
+                                }
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -129,26 +143,10 @@
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -246,26 +244,10 @@
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -363,26 +345,10 @@
                     {
                       "@name":"myShape",
                       "@accessType":"inputOutput",
-                      "@type":"MFNode",
+                      "@type":"SFNode",
                       "-children":[
-                        { "Shape":
+                        { "Sphere":
                           {
-                            "-appearance":
-                              { "Appearance":
-                                {
-                                  "-material":
-                                    { "Material":
-                                      {
-                                        "@diffuseColor":[1,1,1]
-                                      }
-                                    }
-                                }
-                              },
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
                           }
                         }
                       ]
@@ -477,25 +443,9 @@
                 {
                   "@name":"myShape",
                   "-children":[
-                    { "Shape":
+                    { "Box":
                       {
-                        "-appearance":
-                          { "Appearance":
-                            {
-                              "-material":
-                                { "Material":
-                                  {
-                                    "@diffuseColor":[0,1,0]
-                                  }
-                                }
-                            }
-                          },
-                        "-geometry":
-                          { "Box":
-                            {
-                              "@size":[1,1,1]
-                            }
-                          }
+                        "@size":[1,1,1]
                       }
                     }
                   ]
