@@ -357,7 +357,7 @@
                                   ((local-name()='enabled' and string(.)='true') or
                                   (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                                   not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                                  not( (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial')) and
+                                  not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                                   ((local-name()='ambientIntensity' and string(.)='0.2') or
                                   (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                                   (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -1324,7 +1324,112 @@
 				</xsl:apply-templates>
 			</xsl:otherwise>
 		</xsl:choose>
+
+        <!-- special handling of XMP metadata and other contained RDF, also provide output in native ontology -->
+        <xsl:if test="(local-name() = 'MetadataSet') and (@name = 'rdf:RDF')">
+            <xsl:variable name="rdfMessage">
+                <xsl:text>Found MetadataSet rdf:RDF and so adding native RDF triples</xsl:text>
+            </xsl:variable>
+            <xsl:message>
+                <xsl:value-of select="$rdfMessage"/>
+            </xsl:message>
+			<xsl:text>&#10;</xsl:text>
+            <xsl:text># </xsl:text>
+            <xsl:value-of select="$rdfMessage"/>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text># TODO: reconcile namespaces for Dublin Core and other ontologies</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+            <xsl:text># TODO: finish triples</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+            <xsl:text># </xsl:text>
+            <xsl:text>rdf:RDF [</xsl:text>
+            <xsl:call-template name="produce-native-turtle"/>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:if>
     </xsl:template>
+    
+    <!-- ===================================================== -->
+
+    <xsl:template name="produce-native-turtle">
+        <!-- recursive XSLT template -->
+
+        <xsl:for-each select="*">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:call-template name="indent"/>
+            <xsl:value-of select="@name"/>
+            <!-- TODO tersely handle arrays -->
+            <xsl:text> [</xsl:text>
+            <xsl:choose>
+                <xsl:when test="(name(.) = 'MetadataString')">
+                    <xsl:text> </xsl:text>
+                    <xsl:if test="not(contains(@value,'&quot;')) or (string-length(@value) = 0)">
+                        <xsl:text>"</xsl:text>
+                    </xsl:if>
+                    <xsl:value-of select="@value"/>
+                    <xsl:if test="not(contains(@value,'&quot;'))">
+                        <xsl:text>"</xsl:text>
+                    </xsl:if>
+                    <xsl:text> ]</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'MetadataBoolean')">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="normalize-space(@value)"/>
+                    <xsl:text> ]</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'MetadataFloat') or (local-name() = 'MetadataDouble')">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="normalize-space(@value)"/>
+                    <xsl:text> ]</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'MetadataSet')">
+                    <!-- handled below -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>
+                        <xsl:text>*** unexpected node within &lt;MetadataSet name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>: &lt;</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> name='</xsl:text>
+                        <xsl:value-of select="@name"/>
+                    <xsl:text>'&gt; </xsl:text>
+                    </xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="(local-name() = 'MetadataSet')">
+                <!-- time to recurse on any child Metadata nodes within this MetadataSet -->
+                <xsl:if test="(count(*[starts-with(local-name(),'Metadata')]) > 0)">
+                    <!-- xslt named template, tail recursion -->
+                    <xsl:call-template name="produce-native-turtle"/>
+                </xsl:if>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="(last() > position())">
+                    <xsl:text> ;</xsl:text><!-- array incomplete -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- array complete -->
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <!-- TODO @reference -->
+        </xsl:for-each>
+
+        <xsl:text>&#10;</xsl:text>
+        <xsl:call-template name="indent"/>
+        <xsl:text>]</xsl:text>
+    </xsl:template>
+
+	<xsl:template name="indent">
+        <xsl:text># </xsl:text>
+        <!-- note /X3D/Scene above everything -->
+        <xsl:for-each select="ancestor::*">
+            <xsl:text>  </xsl:text>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- ===================================================== -->
 
     <!-- unique name, each underscore-separated numeral is child index among peers, starting below Scene element -->
     <xsl:template name="compute-node-name">

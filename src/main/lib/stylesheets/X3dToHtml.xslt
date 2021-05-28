@@ -438,7 +438,7 @@ Recommended tool:
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not( (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -842,7 +842,7 @@ Recommended tool:
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
                       not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')         and (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and

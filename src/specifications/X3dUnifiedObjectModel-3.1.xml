@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2021-03-06-08:00 20:49:03.057-08:00 -->
+<!-- Generated 2021-05-07-07:00 14:00:17.562-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -411,20 +411,34 @@
                   baseType="xs:NMTOKEN"
                   appinfo="The keyword values for the summary field"
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#t-keywordsandvalues">
-         <enumeration value="title"/>
-         <enumeration value="description"/>
-         <enumeration value="coordinateSystem"/>
-         <enumeration value="horizontalDatum"/>
-         <enumeration value="verticalDatum"/>
-         <enumeration value="ellipsoid"/>
-         <enumeration value="extent"/>
-         <enumeration value="resolution"/>
-         <enumeration value="originator"/>
-         <enumeration value="copyright"/>
-         <enumeration value="date"/>
-         <enumeration value="metadataFormat"/>
-         <enumeration value="dataUrl"/>
-         <enumeration value="dataFormat"/>
+         <enumeration value="title"
+                      appinfo="A name to succinctly identify the dataset to user. For example, &#34;San Francisco, California&#34;."/>
+         <enumeration value="description"
+                      appinfo="A brief textual description or summary of the content of the dataset. For example, &#34;LANDSAT 7 satellite imagery taken over northern Scotland&#34;."/>
+         <enumeration value="coordinateSystem"
+                      appinfo="The spatial reference frame used to represent the data (e.g., GD, UTM, or LCC). The list of valid codes that can be used in this field are defined in ISO/IEC 18026. In the case of UTM, the zone number should also be specified in the format &#34;UTM Zx&#34;, where the zone number is in the range [1,60]. For example, &#34;UTM Z11&#34;."/>
+         <enumeration value="horizontalDatum"
+                      appinfo="The name of the geodetic datum. The list of valid codes that can be used in this field are defined in ISO/IEC 18026. For example, &#34;W84&#34;."/>
+         <enumeration value="verticalDatum"
+                      appinfo="The name of the vertical datum (geoid). The list of valid codes that can be used in this field are defined in ISO/IEC 18026. For example, &#34;W84&#34;."/>
+         <enumeration value="ellipsoid"
+                      appinfo="The name of the geodetic ellipsoid. The list of valid codes that can be used in this field are defined in ISO/IEC 18026. For example, &#34;WE&#34;."/>
+         <enumeration value="extent"
+                      appinfo="The bounding coordinates for the dataset given in spatial reference frame specified by the coordinateSystem keyword. These are provided in the order eastmost, southmost, westmost, northmost. An example for GD is: &#34;-180.0 -90.0 180.0 90.0&#34;."/>
+         <enumeration value="resolution"
+                      appinfo="SFFloat resolution, or ground sample distance, given in units of length base units. For example, &#34;30&#34;."/>
+         <enumeration value="originator"
+                      appinfo="A string defining the originator of the data, for example the author, agency, organization, publisher, etc. For example, &#34;John Doe, Any Corporation, Some Town, Some Country&#34;"/>
+         <enumeration value="copyright"
+                      appinfo="Any appropriate copyright declaration that pertains to the data. For example, &#34;(c) Copyright 2000, Any Corporation. All rights reserved. Freely distributable.&#34;"/>
+         <enumeration value="date"
+                      appinfo="A single date/time, or a date/time range, defining the valid time period to which the data pertains. Dates are specified in the format &#34;YYYY MM DD [HH:MM]&#34;. Years in the current time period should be specified using four digits (EXAMPLE &#34;1999&#34; or &#34;2001&#34;). Years can have other than four digits and can be negative. A date range is specified by supplying two values separated by a &#34;-&#34; (hyphen) character. An optional time can be supplied should this level of accuracy be required. Times are to be specified in 24-hour format with respect to GMT. For example, &#34;1999 01 01 00:00 - 1999 12 31 23:59&#34;."/>
+         <enumeration value="metadataFormat"
+                      appinfo="A string that specifies the format of the external metadata description specified by the url field of the GeoMetadata node. For example, &#34;FGDC&#34;, &#34;ISO TC211&#34;, &#34;CEN TC287&#34;, or &#34;OGC&#34;."/>
+         <enumeration value="dataUrl"
+                      appinfo="A hypertext link to the source data used to create the X3D node(s) to which this metadata pertains. Multiple dataUrl keyword/value pairs can be specified in order to provide alternative locations for the same source data. For example, &#34;https://www.foo.bar/data/sf1&#34;."/>
+         <enumeration value="dataFormat"
+                      appinfo="A free-text string that describes the format of the source data used to create the X3D node(s) to which this metadata pertains. This refers to the source data specified by the dataUrl keyword (if present). For example, &#34;USGS 5.5-min DEM&#34;."/>
       </SimpleType>
       <SimpleType name="geoSystemEarthEllipsoidValues"
                   baseType="MFString"
@@ -626,18 +640,26 @@
       </SimpleType>
       <SimpleType name="hanimHumanoidInfoKeyValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="Keyword names for keyword=value metadata pairs describing a given HAnimHumanoid."
+                  appinfo="Keyword names for keyword=value metadata pairs describing a given HAnimHumanoid. Additional keyword=value pairs may be included as needed for specific applications."
                   documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid">
-         <enumeration value="authorName"/>
-         <enumeration value="authorEmail"/>
-         <enumeration value="copyright"/>
-         <enumeration value="creationDate"/>
-         <enumeration value="usageRestrictions"/>
-         <enumeration value="humanoidVersion"/>
-         <enumeration value="age"/>
-         <enumeration value="gender"/>
-         <enumeration value="height"/>
-         <enumeration value="weight"/>
+         <enumeration value="authorName" appinfo="Name of Humanoid author."/>
+         <enumeration value="authorEmail" appinfo="Email address of Humanoid author."/>
+         <enumeration value="copyright"
+                      appinfo="Copyright information for this Humanoid model (if any)."/>
+         <enumeration value="creationDate"
+                      appinfo="Creation data for this for this Humanoid model."/>
+         <enumeration value="usageRestrictions"
+                      appinfo="Usage restrictions for this Humanoid model (if any)."/>
+         <enumeration value="humanoidVersion"
+                      appinfo="The humanoidVersion term refers to the version of the humanoid being used, in order to track revisions to the data. It is not the same as the version field of the Humanoid object, which refers to the version of the HAnim specification that was used when building the humanoid."/>
+         <enumeration value="age"
+                      appinfo="Description of Humanoid age (not necessarily numeric)."/>
+         <enumeration value="gender"
+                      appinfo="The gender term typically has a value of female, male or neuter."/>
+         <enumeration value="height"
+                      appinfo="SFFloat Humanoid height in base units (typically meters)."/>
+         <enumeration value="weight"
+                      appinfo="SFFloat Humanoid weight in base units (typically kilograms)."/>
       </SimpleType>
       <SimpleType name="hanimJointNameValues"
                   baseType="xs:NMTOKEN"
@@ -9732,7 +9754,7 @@
             <field name="stiffness"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="1 1 1"
+                   default="0 0 0"
                    minInclusive="0"
                    maxInclusive="1"
                    description="A scale factor of (1 - stiffness) is applied around the corresponding axis (X, Y, or Z for entries 0, 1 and 2 of the stiffness field)."/>

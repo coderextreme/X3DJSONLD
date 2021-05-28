@@ -5719,7 +5719,7 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='enabled' and .='true') or
                       (local-name()='timeOut' and (.='0' or .='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='forceTransitions' and .='false'))) and
-                      not( (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and .='0.2') or
                       (local-name()='diffuseColor' and .='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or

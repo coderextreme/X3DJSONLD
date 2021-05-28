@@ -6738,7 +6738,7 @@
               "minItems": 3,
               "maxItems": 3,
               "items": {
-                "default": 1,
+                "default": 0,
                 "maximum": 1,
                 "minimum": 0,
                 "type": "number"
