@@ -102,6 +102,7 @@ JavaScriptSerializer.prototype = {
 								|| attrs[a].nodeValue == "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							} else if (method === "addValue") {
 							} else {
 								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							}
@@ -125,6 +126,10 @@ JavaScriptSerializer.prototype = {
 			method = "Joints"
 			addpre = "add";
 		}
+		if (addpre+method === "setValue") {
+			method = "Value"
+			addpre = "add";
+		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";
@@ -132,6 +137,10 @@ JavaScriptSerializer.prototype = {
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
 			addpre = "add";
+		}
+		if (method === "setShaders") {
+			method = "addShaders"
+			addpre = "";
 		}
 		return prepre+addpre+method;
 	},
