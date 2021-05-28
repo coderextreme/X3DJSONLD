@@ -32,10 +32,10 @@ do
 	java -cp "${CLASSPATH}" $i -validate ../data/`basename $i`.x3d
 done
 popd
-echo running jjs
-pushd ../nashorn
-find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
-popd
+# echo running jjs
+# pushd ../nashorn
+# find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+# popd
 echo running python
 pushd ../python
 find ./net/x3djsonld/data -name '*.py' | xargs -L 1 -P $PROCESSORS python3

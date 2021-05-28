@@ -1888,7 +1888,7 @@ Recommended tool:
                     <xsl:if test="($originInheritedFrom != $containerName) and not($containerName = 'X3DNode') "><!-- avoid DEF, USE, class -->
                         <xsl:choose>
                             <xsl:when test="($originInheritedFrom = 'X3DNodeMixedContent') or ($fieldName = 'DEF') or ($fieldName = 'USE') or
-                                            ($fieldName = 'class') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
+                                            ($fieldName = 'class') or ($fieldName = 'id') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
                                 <xsl:attribute name="inheritedFrom">
                                     <xsl:text>X3DNode</xsl:text>
                                 </xsl:attribute>
@@ -2009,7 +2009,7 @@ Recommended tool:
                             <!-- description from tooltip -->
                             <xsl:variable name="tooltipText"><!-- /attribute[@name = $fieldName] -->
                                 <xsl:choose>
-                                    <xsl:when test="($fieldName = 'DEF') or ($fieldName = 'USE') or ($fieldName = 'class') or (($fieldName = 'style') and not(ends-with($containerName,'FontStyle')))">
+                                    <xsl:when test="($fieldName = 'DEF') or ($fieldName = 'USE') or ($fieldName = 'class') or ($fieldName = 'id') or (($fieldName = 'style') and not(ends-with($containerName,'FontStyle')))">
                                         <xsl:value-of select="$x3d.tooltips.document//element[@name = 'Anchor']/attribute[@name = $fieldName]/@tooltip" disable-output-escaping="yes"/>
                                     </xsl:when>
                                     <xsl:otherwise>

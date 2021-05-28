@@ -1031,6 +1031,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -1217,6 +1222,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -1357,6 +1367,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -1464,6 +1479,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -1546,6 +1566,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -1648,6 +1673,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -1821,6 +1851,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -1916,7 +1951,7 @@
             },
             "@id": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString outputOnly",
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@isActive": {
@@ -2138,6 +2173,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -2258,6 +2298,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -2373,6 +2418,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -2567,6 +2617,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -2692,6 +2747,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -2771,6 +2831,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -2874,6 +2939,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -2948,6 +3018,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -3017,6 +3092,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -3113,6 +3193,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -3181,6 +3266,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -3261,6 +3351,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -3516,6 +3611,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -3614,6 +3714,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -3723,6 +3828,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -3821,6 +3931,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -4012,6 +4127,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -4143,6 +4263,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -4245,6 +4370,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -4362,6 +4492,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -4471,6 +4606,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -4537,6 +4677,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -4642,6 +4787,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -4789,6 +4939,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -4932,6 +5087,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -5044,6 +5204,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -5240,6 +5405,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -5319,6 +5489,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -5435,6 +5610,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -5505,6 +5685,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -5652,6 +5837,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -5817,6 +6007,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -5918,6 +6113,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -5988,6 +6188,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6074,6 +6279,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6179,6 +6389,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -6271,6 +6486,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -6339,6 +6559,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6434,6 +6659,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6574,6 +6804,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6800,6 +7035,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -6859,6 +7099,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -6931,6 +7176,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7104,6 +7354,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -7172,6 +7427,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7294,6 +7554,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7434,6 +7699,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -7502,6 +7772,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7600,6 +7875,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -7690,6 +7970,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7791,6 +8076,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7957,6 +8247,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -8128,6 +8423,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -8270,6 +8570,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -8353,6 +8658,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -8511,6 +8821,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -8590,6 +8905,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -8842,6 +9162,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -9038,6 +9363,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -9124,6 +9454,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -9240,6 +9575,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -9394,6 +9734,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -9557,6 +9902,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -10244,6 +10594,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -10342,6 +10697,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -10605,6 +10965,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -10701,6 +11066,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -10781,6 +11151,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -10895,6 +11270,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -10964,6 +11344,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -11218,6 +11603,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -11371,6 +11761,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -11460,6 +11855,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -11534,6 +11934,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -11710,6 +12115,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -11820,6 +12230,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12005,6 +12420,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -12114,6 +12534,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -12193,6 +12618,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12304,6 +12734,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12473,6 +12908,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -12604,6 +13044,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12794,6 +13239,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12994,6 +13444,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -13087,6 +13542,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -13311,6 +13771,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -13617,6 +14082,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -14053,6 +14523,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -14222,6 +14697,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -14518,6 +14998,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -14843,6 +15328,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -14940,6 +15430,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15053,6 +15548,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15172,6 +15672,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15366,6 +15871,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -15482,6 +15992,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15609,6 +16124,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -15728,6 +16248,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15855,6 +16380,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -15974,6 +16504,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -16116,6 +16651,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16215,6 +16755,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16290,6 +16835,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -16434,6 +16984,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16543,6 +17098,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16642,6 +17202,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16721,6 +17286,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -16893,6 +17463,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -16996,6 +17571,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -17094,6 +17674,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -17276,6 +17861,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -17354,6 +17944,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -17441,6 +18036,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -17621,6 +18221,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -17713,6 +18318,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -17814,6 +18424,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -17942,6 +18557,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -18149,6 +18769,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -18225,6 +18850,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -18297,6 +18927,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -18382,6 +19017,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -18459,6 +19099,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -18544,6 +19189,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -18625,6 +19275,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -18697,6 +19352,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -18778,6 +19438,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -18903,6 +19568,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -19145,6 +19815,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -19335,6 +20010,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -19507,6 +20187,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -19573,6 +20258,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -19635,6 +20325,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -19832,6 +20527,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -19902,6 +20602,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -19996,6 +20701,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -20098,6 +20808,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -20210,6 +20925,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -20310,6 +21030,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -20466,6 +21191,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -20566,6 +21296,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -20673,6 +21408,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -20825,6 +21565,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -20906,6 +21651,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -20983,6 +21733,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -21108,6 +21863,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -21267,6 +22027,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -21335,6 +22100,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -21492,6 +22262,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -21667,6 +22442,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -21758,6 +22538,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -21963,6 +22748,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -22097,6 +22887,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -22226,6 +23021,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -22442,6 +23242,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -22541,6 +23346,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -22717,6 +23527,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -22841,6 +23656,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -22929,6 +23749,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -23027,6 +23852,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -23200,6 +24030,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -23320,6 +24155,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -23488,6 +24328,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -23648,6 +24493,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -23754,6 +24604,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -23832,6 +24687,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -23900,6 +24760,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -24047,6 +24912,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -24115,6 +24985,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -24246,6 +25121,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -24369,6 +25249,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -24514,6 +25399,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -24655,6 +25545,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -24750,6 +25645,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -24841,6 +25741,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -24996,6 +25901,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -25094,6 +26004,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -25182,6 +26097,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -25259,6 +26179,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -25401,6 +26326,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -25502,6 +26432,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -25774,6 +26709,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -25852,6 +26792,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -26164,6 +27109,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -26340,6 +27290,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -26438,6 +27393,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -26558,6 +27518,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -26643,6 +27608,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -26903,6 +27873,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -27019,6 +27994,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -27150,6 +28130,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -27250,6 +28235,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -27372,6 +28362,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -27501,6 +28496,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -27606,6 +28606,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -27880,6 +28885,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -27971,6 +28981,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -28140,6 +29155,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -28287,6 +29307,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -28447,6 +29472,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -28652,6 +29682,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -28724,6 +29759,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -28864,6 +29904,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -28976,6 +30021,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -29096,6 +30146,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -29201,6 +30256,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -29407,6 +30467,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -29508,6 +30573,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -29601,6 +30671,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -29700,7 +30775,7 @@
             },
             "@id": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString outputOnly",
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@isActive": {
@@ -29888,6 +30963,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -29974,6 +31054,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30091,6 +31176,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -30191,6 +31281,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30311,6 +31406,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30449,6 +31549,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -30570,6 +31675,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30721,6 +31831,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -30794,6 +31909,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30875,6 +31995,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -30948,6 +32073,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -31043,6 +32173,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -31258,6 +32393,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -31465,6 +32605,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -31654,6 +32799,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -31752,6 +32902,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -31874,6 +33029,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -32009,6 +33169,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -32157,6 +33322,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -32226,6 +33396,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -32374,6 +33549,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -32489,6 +33669,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -32675,6 +33860,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -32802,6 +33992,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -33181,6 +34376,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -33295,6 +34495,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -33400,6 +34605,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -33474,6 +34684,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -33588,6 +34803,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -33799,6 +35019,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -33988,6 +35213,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -34093,6 +35323,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -34280,6 +35515,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -34378,6 +35618,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -34515,6 +35760,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -34619,6 +35869,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -34735,6 +35990,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -34888,6 +36148,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -35035,6 +36300,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -35203,6 +36473,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -35316,6 +36591,11 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@style": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
@@ -35388,6 +36668,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
