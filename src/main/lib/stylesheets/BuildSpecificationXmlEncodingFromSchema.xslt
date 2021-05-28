@@ -197,7 +197,8 @@ Invocation:
 		 </xsl:message>
 	</xsl:if>
 	<xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not($elementName='SFNode') and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))
-					and not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name')">
+					and not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name') and 
+                    not(ends-with(@name,'Mapping')) and not(@name='synonym') and not(@name='id') and not(@name='mapping') and (string-length(@fixed) = 0)">
 		<xsl:message>
 		  <xsl:text>*** [Warning] </xsl:text>
 		  <xsl:value-of select="$elementName"/>
@@ -854,7 +855,8 @@ Invocation:
 		    | //xs:schema/xs:complexType[@name=$parentNodeType]/xs:attribute
 		    | //xs:schema/xs:complexType[@name=$nodeType]/xs:attribute
 		    | xs:complexType/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | xs:complexType/xs:attribute">
+		    | xs:complexType/xs:attribute
+            | //xs:schema/xs:attributeGroup[@name='globalAttributes'         ]/xs:attribute">
       </xsl:variable>
       <xsl:variable name="elementNodeList">
         <!-- choose only picks nearest one, rather than select which picks all -->
@@ -2036,7 +2038,8 @@ Invocation:
 	    | //xs:schema/xs:complexType[@name=$parentNodeType]/xs:attribute
 	    | //xs:schema/xs:complexType[@name=$nodeType]/xs:attribute
 	    | xs:complexType/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-	    | xs:complexType/xs:attribute">
+	    | xs:complexType/xs:attribute
+        | //xs:schema/xs:attributeGroup[@name='globalAttributes'         ]/xs:attribute">
       </xsl:variable>
       <xsl:variable name="elementNodeList">
         <!-- choose only picks nearest one, rather than select which picks all -->
@@ -2503,7 +2506,8 @@ Invocation:
 		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:attribute
 		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:attribute
 		    | xs:complexType/xs:complexContent/*[                                                  (local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | xs:complexType/xs:attribute">
+		    | xs:complexType/xs:attribute
+            | //xs:schema/xs:attributeGroup[@name='globalAttributes'         ]/xs:attribute">
       </xsl:variable>
       <xsl:variable name="elementNodeList">
         <!-- choose only picks nearest one, rather than select which picks all -->
@@ -2552,12 +2556,14 @@ Invocation:
       
 		  <!-- Loop over attributes -->
 		  <xsl:for-each select="$attributeNodeList">
-                    <xsl:sort select="@name[. ='class']"/>
-                    <xsl:sort select="@name[. ='containerField']"/>
-                    <xsl:sort select="@name[.!='containerField' and .!='class']"/>
-                      
+                <xsl:sort select="@name[. ='class']"/>
+                <xsl:sort select="@name[. ='containerField']"/>
+                <xsl:sort select="@name[.!='containerField' and .!='class']"/>
+
+                <!-- avoid duplicates -->
+                <xsl:variable name="currentAttributeName" select="@name"/>
+                <xsl:if test="not(preceding-sibling::*[@name = $currentAttributeName])">
                     <xsl:text> </xsl:text>
-                    
                     <xsl:if test="not(starts-with(@name,'additionalInterface'))">
                       <xsl:value-of select="@name"/>
                       <xsl:text>='</xsl:text>
@@ -2584,6 +2590,7 @@ Invocation:
                       </xsl:choose>
                       <xsl:text>'</xsl:text>
                     </xsl:if>
+                </xsl:if>
 		  </xsl:for-each>
 
         <xsl:text disable-output-escaping="yes">/&gt;</xsl:text><!-- end element -->

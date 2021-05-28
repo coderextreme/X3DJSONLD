@@ -56,7 +56,7 @@ Recommended tools:
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+                xmlns:saxon="http://icl.com/saxon" saxon:trace="yes">
     <!--        xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
     <!-- <xsl:import href="X3dExtrusionToSvgViaXslt1.1.xslt"/> -->
     <!-- default parameter values can be overridden when invoking this stylesheet -->
@@ -1376,7 +1376,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                          (local-name()='DigestMethod') or (local-name()='DigestValue') or (local-name()='SignatureValue') or (local-name()='KeyInfo') or
                                          (local-name()='X509Data') or (local-name()='X509Certificate') or (local-name()='KeyValue') or (local-name()='RSAKeyValue') or
                                          (local-name()='Modulus') or (local-name()='Exponent')"/>
-        <xsl:variable name="containsTextData" select="normalize-space(.) and (not (normalize-space(.)='' or normalize-space(.)=' '))"/>
+        <xsl:variable name="containedText" select="normalize-space(text())"/>
+        <xsl:variable name="containsTextData" select="(string-length($containedText) > 0) and not($containedText='' or $containedText=' ')"/>
         <!-- debug:
         <xsl:message>
             <xsl:value-of select="local-name()"/>
@@ -2260,7 +2261,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='enabled' and .='true') or
                       (local-name()='timeOut' and (.='0' or .='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='forceTransitions' and .='false'))) and
-                      not( (ends-with(local-name(..),'Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and .='0.2') or
                       (local-name()='diffuseColor' and .='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -2279,10 +2280,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='separateBackColor' and .='false') or
                       (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='backTransparency' and (.='0' or .='0.0')))) and
-                      not(ends-with(local-name(..),'Material')	and
-                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      not((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')	and
+                      ((contains(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
-                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (contains(local-name(),'Mapping') and (string-length(.) = 0)) or
                       (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
