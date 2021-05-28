@@ -1,0 +1,100 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"Geospatial",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"geobubbles.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"generator",
+            "@content":"manual"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/geobubbles.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"geo bubbles"
+          },
+          {
+            "@name":"translated",
+            "@content":"27 May 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
+          },
+          {
+            "#comment":"PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"Tour",
+              "@position":[0,0,4],
+              "@orientation":[1,0,0,0],
+              "@description":"Tour Views"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"cycleTime",
+              "@toNode":"RandomTourTime",
+              "@toField":"set_cycle"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"RandomTourTime",
+              "@fromField":"position",
+              "@toNode":"TourPosition",
+              "@toField":"keyValue"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"fraction_changed",
+              "@toNode":"TourPosition",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourPosition",
+              "@fromField":"geovalue_changed",
+              "@toNode":"Tour",
+              "@toField":"set_position"
+            }
+          }
+        ]
+    }
+  }
+}
