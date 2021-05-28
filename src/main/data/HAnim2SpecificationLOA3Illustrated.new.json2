@@ -1,0 +1,188 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"HAnim",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HAnim2SpecificationLOA3Illustrated.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"
+          },
+          {
+            "@name":"created",
+            "@content":"18 February 2021"
+          },
+          {
+            "@name":"modified",
+            "@content":"13 March 2021"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"HAnim2SpecificationLOA3Invisible.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"HAnim2SpecificationLOA3Animation.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"HAnimSpecificationExampleChangeLog.txt"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/BonesAllSkeletonFrontViewLOA1.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/BonesAllSkeletonFrontViewLOA2.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"images/BonesAllSkeletonFrontViewLOA3.png"
+          },
+          {
+            "@name":"TODO",
+            "@content":"move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations"
+          },
+          {
+            "@name":"TODO",
+            "@content":"insert MetadataInteger nodes indicating LOA for each Joint and Segment"
+          },
+          {
+            "@name":"reference",
+            "@content":"Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.cis.upenn.edu/~badler/anthro/89-71.ps"
+          },
+          {
+            "@name":"reference",
+            "@content":"tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman and Joe Williams"
+          },
+          {
+            "@name":"generator",
+            "@content":"BS Contact Geo 8.001, http://www.bitmanagement.de/en/products/interactive-3d-clients/bs-contact-geo"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/LOA3ExampleSourceWithDiamondsOriginal.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Illustrated.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"27 May 2021"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.3,0.3,0.3]
+            }
+          },
+          {
+            "#comment":"TODO move viewpoints to be internal to HAnimHumanoid"
+          },
+          {
+            "#comment":"Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human."
+          }
+        ],
+        "-children":[
+          { "NavigationInfo":
+          },
+          {
+            "#comment":"TODO move viewpoints to be internal to HAnimHumanoid"
+          },
+          {
+            "#comment":"Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human."
+          }
+        ],
+        "-children":[
+          { "Group":
+            {
+              "@DEF":"Original_WorldInfo",
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "WorldInfo":
+                  {
+                    "@info":[" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "],
+                    "@title":"HANIM 200x Default Joint Centers, LOA3"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"TODO move viewpoints to be internal to HAnimHumanoid"
+          },
+          {
+            "#comment":"Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human."
+          }
+        ],
+        "-children":[
+          {
+            "#comment":"TODO move viewpoints to be internal to HAnimHumanoid"
+          },
+          {
+            "#comment":"Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human."
+          }
+        ]
+    }
+  }
+}

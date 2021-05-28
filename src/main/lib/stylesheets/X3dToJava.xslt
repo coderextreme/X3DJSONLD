@@ -1246,6 +1246,11 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
+				<xsl:when test="(local-name(..) = 'MetadataSet') and ($containerField = 'value')">
+					<xsl:text>.addValue(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
 				<xsl:when test="(($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
 					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1344,11 +1349,6 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="((local-name(..) = 'HAnimJoint') or (local-name(..) = 'HAnimSegment')) and ($containerField = 'displacers')">
 					<xsl:text>.addDisplacers(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
-				<xsl:when test="(local-name(..) = 'MetadataSet') and ($containerField = 'value')">
-					<xsl:text>.addValue(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
