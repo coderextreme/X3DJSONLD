@@ -1,3 +1,5 @@
+let Matrix = require("./matrix");
+
 function convertJsonToStl(json) {
 	var LDNodeList = [];
 	var LDNode = initializeLDNode(json, "X3D");
@@ -12,6 +14,8 @@ function convertJsonToStl(json) {
 		return null;
 	}
 }
+
+module.exports = convertJsonToStl;
 
 
 function initializeLDNode(json, obj) {
