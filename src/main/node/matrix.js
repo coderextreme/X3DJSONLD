@@ -114,3 +114,5 @@ class Matrix extends Array {
 			parseFloat(this.row(3)) - parseFloat(that.row(3)));
 	}
 }
+
+module.exports = Matrix;
