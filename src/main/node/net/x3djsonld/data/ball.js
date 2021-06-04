@@ -67,7 +67,7 @@ ball.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
     .addComments("component name='EnvironmentalEffects' level='1'></component")
@@ -86,7 +86,7 @@ ball.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("a prismatic sphere")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("ball.x3d"))
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\"")))
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"ANY\" \"EXAMINE\" \"FLY\"")))
     .addChild((new autoclass.Viewpoint()).setDescription("Tour Views"))
     .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild((new autoclass.Transform())
