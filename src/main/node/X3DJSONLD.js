@@ -634,7 +634,7 @@ serializeDOM : function(json, element, appendDocType) {
 	}
 	if (typeof element === 'string') {
 		xml += element;
-	} else {
+	} else if (typeof element !== 'undefined') {
 		xml += domserializer.serializeToString(element);
 	}
 
