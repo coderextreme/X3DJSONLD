@@ -1,6 +1,6 @@
-import { Matrix } from "../node/matrix";
+import { Matrix } from "../node/matrix.mjs";
 
-function convertJsonToStl(json) {
+export function convertJsonToStl(json) {
 	var LDNodeList = [];
 	var LDNode = initializeLDNode(json, "X3D");
 	LDNodeList.push(LDNode);
@@ -14,11 +14,6 @@ function convertJsonToStl(json) {
 		return null;
 	}
 }
-
-if (typeof module !== 'undefined') {
-	module.exports = convertJsonToStl;
-}
-
 
 function initializeLDNode(json, obj) {
 	var LDNode = {};
@@ -272,7 +267,7 @@ function triangle_normal(a, b, c) {
 	}
 	var ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 	var bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
-	baxbc = vector_product(ba, bc);
+	var baxbc = vector_product(ba, bc);
 	return normalize(baxbc);
 }
 

@@ -1,6 +1,6 @@
 'use strict'
 
-class Matrix extends Array {
+export class Matrix extends Array {
 	constructor(x, y, z, w) {
 		super(x, y, z, w);
 	}
@@ -113,8 +113,4 @@ class Matrix extends Array {
 			parseFloat(this.row(2)) - parseFloat(that.row(2)),
 			parseFloat(this.row(3)) - parseFloat(that.row(3)));
 	}
-}
-
-if (typeof module !== 'undefined') {
-	module.exports = Matrix;
 }
