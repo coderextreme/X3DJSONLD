@@ -1246,11 +1246,6 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'MetadataSet') and ($containerField = 'value')">
-					<xsl:text>.addValue(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
 				<xsl:when test="(($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
 					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1349,6 +1344,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="((local-name(..) = 'HAnimJoint') or (local-name(..) = 'HAnimSegment')) and ($containerField = 'displacers')">
 					<xsl:text>.addDisplacers(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'MetadataSet') and ($containerField = 'value')">
+					<xsl:text>.addValue(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -2809,12 +2809,19 @@ POSSIBILITY OF SUCH DAMAGE.
                     -->
                 
                     <xsl:text>.set</xsl:text>
-                    <xsl:if test="(local-name() = 'class')">
-                        <xsl:text>Css</xsl:text><!-- method prefix -->
-                    </xsl:if>
-                    <!-- upper camel case -->
-                    <xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-                    <xsl:value-of select="substring(name(),2)"/>
+                    <xsl:choose>
+                        <xsl:when test="(local-name() = 'id')">
+                        <xsl:text>HtmlID</xsl:text><!-- method special case -->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:if test="(local-name() = 'class')">
+                                <xsl:text>Css</xsl:text><!-- method prefix -->
+                            </xsl:if>
+                            <!-- upper camel case -->
+                            <xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+                            <xsl:value-of select="substring(name(),2)"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:text>(</xsl:text>
                     <xsl:if test="(local-name() = 'value') and starts-with(local-name(..), 'field') and not($tupleSize = '1')">
                         <!-- use type object to create typed object holding value -->
@@ -3809,6 +3816,8 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($attributeName='documentation')      or
                           ($attributeName='name')               or
                           ($attributeName='class')              or
+                          ($attributeName='id')                 or
+                          ($attributeName='style')              or
                           ($attributeName='description')        or
                           ($attributeName='distanceModel')      or
                           ($attributeName='address')            or
@@ -3830,8 +3839,7 @@ POSSIBILITY OF SUCH DAMAGE.
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
                           ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
-					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
-						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+					      ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
                           (ends-with($parentElementName,'Material')	       and ends-with($attributeName,'Mapping')) or
                           ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
 						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
@@ -3852,8 +3860,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
-		  <xsl:when test="($attributeName='class')       or
-                          ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+		  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
 					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 			  <xsl:text>xs:string</xsl:text> 

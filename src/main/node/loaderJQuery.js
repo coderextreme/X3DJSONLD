@@ -55,7 +55,7 @@ var lang = getFirstBrowserLanguage();
 
 var localize;
 function loadLocalize(lang) {
-	loadScript("../node/ajv-i18n/localize/"+lang+"/index.js", function() {
+	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
 		localize = module.exports;
 	});
 }

@@ -7,7 +7,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-python3 ../python/classes.py
+# python3 ../python/classes.py
 
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---

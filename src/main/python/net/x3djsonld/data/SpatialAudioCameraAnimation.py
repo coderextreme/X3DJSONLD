@@ -39,7 +39,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    NavigationInfo(id=NAV),
+    NavigationInfo(id='NAV'),
     Background(backUrl=["images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png"],frontUrl=["images/generic/FR1.png"],leftUrl=["images/generic/LF1.png"],rightUrl=["images/generic/RT1.png"],topUrl=["images/generic/UP1.png"]),
     Viewpoint(DEF='Camera001',description='Camera001',jump=TRUE,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000),zFar=0,zNear=1.000000),
     TimeSensor(DEF='TIMER',cycleInterval=33.333332,loop=TRUE),
@@ -92,17 +92,17 @@ newModel=X3D(profile='Full',version='4.0',
             geometry=Text(ccw=True,lit=true,string=['Saxophone'],usegeocache=true,
               children=[
               fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])])]),
-    ListenerPoint(id=ListenerPoint,trackCurrentView=true),
-    AudioDestination(id=AudioDestination,
+    ListenerPoint(id='ListenerPoint',trackCurrentView=true),
+    AudioDestination(id='AudioDestination',
       children=[
-      SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id=SpatialSound1,maxDistance=3500,
+      SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound1',maxDistance=3500,
         children=[
-        Gain(id=Gain1,
-          source=AudioClip(id=AudioClip1,loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3']))]),
-      SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id=SpatialSound2,maxDistance=3500,
+        Gain(id='Gain1',
+          source=AudioClip(id='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3']))]),
+      SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound2',maxDistance=3500,
         children=[
-        Gain(id=Gain2,
-          source=AudioClip(id=AudioClip2,loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/saxophone.mp3']))])])])
+        Gain(id='Gain2',
+          source=AudioClip(id='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/saxophone.mp3']))])])])
 ) # X3D model complete
 
 ###############################################

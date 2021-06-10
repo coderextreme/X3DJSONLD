@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"04 June 2021"
+            "@content":"10 June 2021"
           },
           {
             "@name":"generator",
@@ -108,7 +108,7 @@
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emmisiveColor":[0.8,0.8,0.8],
+                                      "@emissiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   }
@@ -140,7 +140,7 @@
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emmisiveColor":[0.8,0.8,0.8],
+                                      "@emissiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   },
@@ -243,7 +243,7 @@
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emmisiveColor":[0.8,0.8,0.8],
+                                      "@emissiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   }
@@ -275,7 +275,7 @@
                                   { "Material":
                                     {
                                       "@diffuseColor":[0,1,0],
-                                      "@emmisiveColor":[0.8,0.8,0.8],
+                                      "@emissiveColor":[0.8,0.8,0.8],
                                       "@specularColor":[0.01,0.01,0.01]
                                     }
                                   },
@@ -458,7 +458,7 @@
                             { "Material":
                               {
                                 "@diffuseColor":[0.3,1,0.3],
-                                "@emmisiveColor":[0.8,0.8,0.8],
+                                "@emissiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
                               }
                             },

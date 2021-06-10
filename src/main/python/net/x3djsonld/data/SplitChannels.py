@@ -39,22 +39,22 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    NavigationInfo(id=NAV,type=['NONE']),
+    NavigationInfo(id='NAV',type=['NONE']),
     Background(skyColor=[(0.200,0.200,0.210)]),
     Viewpoint(bind=true,orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='PowerR',translation=(100,400,400),
       children=[
-      Transform(id=pR,rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id='pR',rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
-            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
+            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
           geometry=Box(size=(10,80,0.01)))]),
       Transform(rotation=(1,0,0,-0.5),translation=(-2.7,37,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
-            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
             texture=ImageTexture(url=["images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeRight',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
@@ -68,17 +68,17 @@ newModel=X3D(profile='Full',version='4.0',
             fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])]),
     Transform(DEF='PowerL',translation=(-100,400,400),
       children=[
-      Transform(id=pL,rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
-            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
+            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
           geometry=Box(size=(10,80,0.01)))]),
       Transform(rotation=(1,0,0,-0.5),translation=(13.2,37,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
-            material=Material(diffuseColor=(0,1,0),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+            material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
             texture=ImageTexture(url=["images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeLeft',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
@@ -96,26 +96,26 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
-    ListenerPoint(id=ListenerPoint,trackCurrentView=true),
-    AudioDestination(id=AudioDestination,
+    ListenerPoint(id='ListenerPoint',trackCurrentView=true),
+    AudioDestination(id='AudioDestination',
       children=[
-      Gain(id=Gain3,
+      Gain(id='Gain3',
         children=[
-        ChannelMerger(id=ChannelMerger,
+        ChannelMerger(id='ChannelMerger',
           children=[
-          ChannelSelector(id=ChannelSelector0,
+          ChannelSelector(id='ChannelSelector0',
             children=[
-            Gain(USE='ChannelSplitter',id=Gain0)]),
-          ChannelSelector(channelSelection=1,id=ChannelSelector1,
+            Gain(USE='ChannelSplitter',id='Gain0')]),
+          ChannelSelector(channelSelection=1,id='ChannelSelector1',
             children=[
-            Gain(USE='ChannelSplitter',id=Gain1)])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id=ChannelSplitter,
-      source=AudioClip(USE='Audio3',id=AudioClip,loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
+            Gain(USE='ChannelSplitter',id='Gain1')])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id='ChannelSplitter',
+      source=AudioClip(USE='Audio3',id='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
       children=[
       Shape(
         appearance=Appearance(DEF='audio_emit',
-          material=Material(diffuseColor=(0.3,1,0.3),emmisiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
+          material=Material(diffuseColor=(0.3,1,0.3),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
           texture=ImageTexture(url=["images/loudspeaker.png"])),
         geometry=Box(size=(100,100,0.001)))])])
 ) # X3D model complete

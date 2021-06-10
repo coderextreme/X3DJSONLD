@@ -51,7 +51,8 @@ Recommended tools:
 
 <!-- TODO: insert default descriptions, add HAnim decorations, add comprehensive ROUTE visualization,
            add bounding box visualizations, add other X3D-Edit visualization options
-		   correct multiple # signs in individual url addresses
+		   correct multiple # signs in individual url addresses,
+           profile component and level checks,
            omit trailing decimal points if followed by whitespace, e.g. 0. to 0 (see X3dToTurtle.xslt)
            insert 0 if missing from negative fraction,      e.g -.123 to -0.123 (see X3dToTurtle.xslt)
   -->

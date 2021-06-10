@@ -16,17 +16,17 @@
 <Scene><NavigationInfo></NavigationInfo>
 <Background skyColor="0.2 0.2 0.2"></Background>
 <Viewpoint bind="true" orientation="1 0 0 -0.5" position="0 500 600" retainUserOffsets="true"></Viewpoint>
-<Transform DEF="Audio1" translation="-200 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emmisiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform DEF="Audio1" translation="-200 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>
 </Shape>
 </Transform>
-<Transform DEF="Audio2" translation="0 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emmisiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform DEF="Audio2" translation="0 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>
 </Shape>
 </Transform>
-<Transform DEF="Audio3" translation="200 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emmisiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform DEF="Audio3" translation="200 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>
 </Shape>
