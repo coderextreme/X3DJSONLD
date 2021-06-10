@@ -1525,6 +1525,8 @@
                             ($attributeName='DEF')                or ($attributeName='USE') or
                             ($attributeName='name')               or
                             ($attributeName='class')              or
+                            ($attributeName='id')                 or
+                            ($attributeName='style')              or
                             ($attributeName='description')        or
                             ($attributeName='address')            or
                             ($attributeName='language')           or
@@ -1542,7 +1544,6 @@
                             ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
                             ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
                             ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
-                            (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
                             ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
                             ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
                             (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
@@ -1570,9 +1571,8 @@
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): SFString according to Object Model for X3D (OM4X3D), not xs:string (including X3D version attribute) -->
-		  <xsl:when test="($attributeName='class')       or
-                                        ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
-					($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
+		  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 			  <xsl:text>SFString</xsl:text> 
 		  </xsl:when>

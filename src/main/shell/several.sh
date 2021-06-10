@@ -7,7 +7,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-python3 ../python/classes.py
+# python3 ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 

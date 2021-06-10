@@ -23,7 +23,7 @@
       <Transform id='pR' rotation='1 0 0 -0.5' translation='0 40 0'>
         <Shape>
           <Appearance DEF='audio_emit'>
-            <Material diffuseColor='0 1 0' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+            <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
           </Appearance>
           <Box size='10 80 0.01'/>
         </Shape>
@@ -31,7 +31,7 @@
       <Transform rotation='1 0 0 -0.5' translation='-2.7 37 0'>
         <Shape>
           <Appearance DEF='audio_emit'>
-            <Material diffuseColor='0 1 0' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+            <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
             <ImageTexture url='"images/line.png"'/>
           </Appearance>
           <Box size='25 83 0.01'/>
@@ -53,7 +53,7 @@
       <Transform id='pL' rotation='1 0 0 -0.5' translation='0 40 0'>
         <Shape>
           <Appearance DEF='audio_emit'>
-            <Material diffuseColor='0 1 0' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+            <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
           </Appearance>
           <Box size='10 80 0.01'/>
         </Shape>
@@ -61,7 +61,7 @@
       <Transform rotation='1 0 0 -0.5' translation='13.2 37 0'>
         <Shape>
           <Appearance DEF='audio_emit'>
-            <Material diffuseColor='0 1 0' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+            <Material diffuseColor='0 1 0' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
             <ImageTexture url='"images/line.png"'/>
           </Appearance>
           <Box size='25 83 0.01'/>
@@ -106,7 +106,7 @@
     <Transform DEF='Audio3' rotation='1 0 0 -0.5' translation='0 100 0'>
       <Shape>
         <Appearance DEF='audio_emit'>
-          <Material diffuseColor='0.3 1 0.3' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material diffuseColor='0.3 1 0.3' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
           <ImageTexture url='"images/loudspeaker.png"'/>
         </Appearance>
         <Box size='100 100 0.001'/>

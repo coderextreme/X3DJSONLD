@@ -273,11 +273,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -691,7 +691,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>(</xsl:text>
+		<xsl:text>Object(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -2730,6 +2730,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  (starts-with($parentElementName,'field') and ($attributeName='value'))      or
 		  ($attributeName='name')               or
 		  ($attributeName='class')              or
+          ($attributeName='id')                 or
+          ($attributeName='style')              or
 		  ($attributeName='description')        or
 		  ($attributeName='address')            or
 		  ($attributeName='language')           or
@@ -2746,7 +2748,6 @@ POSSIBILITY OF SUCH DAMAGE.
                       (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
 				      ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
 					  ($parentElementName='HAnimMotion'                and $attributeName='channels') or
-				      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 					  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
 					  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
 					  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
@@ -2773,8 +2774,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:text>SFDouble</xsl:text>
 	  </xsl:when>
 	  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
-	  <xsl:when test="($attributeName='class')       or
-		  ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+	  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
 				      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 		  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 		  <xsl:text>xs:string</xsl:text> 
@@ -3358,7 +3358,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="quotedValue">
 				<xsl:choose>
 					<xsl:when test="not(contains(.,'&quot;'))">
-						<!-- MFString is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
 						<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 						<xsl:message>
 							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
@@ -3384,7 +3384,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:text>new MFString(</xsl:text>
+			<xsl:text>new MFStringObject(</xsl:text>
 			<xsl:text>"</xsl:text>
 			<xsl:call-template name="escape-quote-characters">
 				<xsl:with-param name="inputString">
@@ -3461,7 +3461,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 			<xsl:text>new </xsl:text>
 			<xsl:value-of select="$attributeType"/>
-			<xsl:text>(</xsl:text>
+			<xsl:text>Object(</xsl:text>
 			<xsl:choose>
 				<xsl:when test="($tupleCount > $tupleSplitSize)">
 					<xsl:message>
@@ -3489,7 +3489,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>.append(</xsl:text>
 								<xsl:text>new </xsl:text>
 								<xsl:value-of select="$attributeType"/>
-								<xsl:text>(</xsl:text>
+								<xsl:text>Object(</xsl:text>
 								<xsl:text>Java.to([</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputString">
@@ -3534,7 +3534,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>(</xsl:text>
+				<xsl:text>Object(</xsl:text>
 				<xsl:text>Java.to([</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
@@ -3680,7 +3680,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not($includesFieldTypeObject)">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>(</xsl:text>
+					<xsl:text>Object(</xsl:text>
 				</xsl:if>
 				<xsl:call-template name="output-attribute-value">
 					<xsl:with-param name="inputString"   select="."/>

@@ -69,7 +69,7 @@ public class geo
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
     .addComponent(new component().setName("Shaders").setLevel(1))
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
@@ -83,7 +83,7 @@ public class geo
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/geo.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a sphere")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\""))
+    .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
     .addChild(new Viewpoint("Tour").setDescription("Tour Views"))
     .addComments("Viewpoint position='0 0 4' description='sphere in road'/")
     .addChild(new Background().setBackUrl(new String[] {"resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"}).setBottomUrl(new String[] {"resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}).setFrontUrl(new String[] {"resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}).setLeftUrl(new String[] {"resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"}).setRightUrl(new String[] {"resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"}).setTopUrl(new String[] {"resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"}))

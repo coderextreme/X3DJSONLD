@@ -110,9 +110,7 @@ public class Filters
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setId("NAV"
-// [*** X3dToJava.xslt error: encountered incorrect type, NavigationInfo id: $isNumeric=false, $attributeType=, value='NAV']
-))
+    .addChild(new NavigationInfo().setHtmlID("NAV"))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.200,0.200,0.200})))
     .addChild(new Viewpoint().setBind("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint bind: $isNumeric=false, $attributeType=, value='true']
@@ -120,98 +118,48 @@ public class Filters
     .addChild(new Transform("Audio1").setTranslation(-200.0,50.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit")
-          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
+          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry(new Sphere().setRadius(30))))
     .addChild(new Transform("Audio2").setTranslation(0.0,50.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit")
-          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
+          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry(new Sphere().setRadius(30))))
     .addChild(new Transform("Audio3").setTranslation(200.0,50.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit")
-          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmmisiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
+          .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry(new Sphere().setRadius(30))))
-    .addChild(new Transform("AnimData").setId("AnimDataPoint"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataPoint']
-).setTranslation(0.0,50.0,0.0))
-    .addChild(new Transform("AnimDataBoxH").setId("AnimDataBoxH"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataBoxH']
-).setTranslation(0.0,100.0,0.0))
-    .addChild(new Transform("AnimDataBoxM").setId("AnimDataBoxM"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataBoxM']
-).setTranslation(15.0,100.0,0.0))
-    .addChild(new Transform("AnimDataBoxL").setId("AnimDataBoxL"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataBoxL']
-).setTranslation(30.0,100.0,0.0))
-    .addChild(new Transform("AnimDataBoxMM").setId("AnimDataBoxMMirror"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataBoxMMirror']
-).setTranslation(-15.0,100.0,0.0))
-    .addChild(new Transform("AnimDataBoxLM").setId("AnimDataBoxLMirror"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform id: $isNumeric=false, $attributeType=, value='AnimDataBoxLMirror']
-).setTranslation(-30.0,100.0,0.0))
+    .addChild(new Transform("AnimData").setHtmlID("AnimDataPoint").setTranslation(0.0,50.0,0.0))
+    .addChild(new Transform("AnimDataBoxH").setHtmlID("AnimDataBoxH").setTranslation(0.0,100.0,0.0))
+    .addChild(new Transform("AnimDataBoxM").setHtmlID("AnimDataBoxM").setTranslation(15.0,100.0,0.0))
+    .addChild(new Transform("AnimDataBoxL").setHtmlID("AnimDataBoxL").setTranslation(30.0,100.0,0.0))
+    .addChild(new Transform("AnimDataBoxMM").setHtmlID("AnimDataBoxMMirror").setTranslation(-15.0,100.0,0.0))
+    .addChild(new Transform("AnimDataBoxLM").setHtmlID("AnimDataBoxLMirror").setTranslation(-30.0,100.0,0.0))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance("floor")
           .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setShininess(0.8).setSpecularColor(0.5,0.6,0.7)))
         .setGeometry(new Cylinder().setRadius(500))))
-    .addChild(new ListenerPoint().setId("ListenerPoint"
-// [*** X3dToJava.xslt error: encountered incorrect type, ListenerPoint id: $isNumeric=false, $attributeType=, value='ListenerPoint']
-).setTrackCurrentView(true))
-    .addChild(new AudioDestination().setId("AudioDestination"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioDestination id: $isNumeric=false, $attributeType=, value='AudioDestination']
-)
-      .addChild(new DynamicsCompressor().setId("DynamicsCompressor"
-// [*** X3dToJava.xslt error: encountered incorrect type, DynamicsCompressor id: $isNumeric=false, $attributeType=, value='DynamicsCompressor']
-)
-        .addChild(new Gain().setId("Gain4"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain4']
-)
-          .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setId("SpatialSound1"
-// [*** X3dToJava.xslt error: encountered incorrect type, SpatialSound id: $isNumeric=false, $attributeType=, value='SpatialSound1']
-)
-            .addChild(new Gain().setId("Gain1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain1']
-)
-              .addChild(new Analyser().setId("Analyser1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Analyser id: $isNumeric=false, $attributeType=, value='Analyser1']
-)
-                .addChild(new BiquadFilter().setDetune(50.0).setFrequency(600).setId("BiquadFilter1"
-// [*** X3dToJava.xslt error: encountered incorrect type, BiquadFilter id: $isNumeric=false, $attributeType=, value='BiquadFilter1']
-).setQualityFactor(30.0).setType("allpass")
-                  .setSource(new AudioClip().setId("AudioClip1"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip1']
-).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/techno_beat.mp3"}))))))
-          .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setId("SpatialSound2"
-// [*** X3dToJava.xslt error: encountered incorrect type, SpatialSound id: $isNumeric=false, $attributeType=, value='SpatialSound2']
-)
-            .addChild(new Gain().setId("Gain2"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain2']
-)
-              .addChild(new Analyser().setId("Analyser2"
-// [*** X3dToJava.xslt error: encountered incorrect type, Analyser id: $isNumeric=false, $attributeType=, value='Analyser2']
-)
-                .addChild(new BiquadFilter().setDetune(15.0).setFrequency(600).setId("BiquadFilter2"
-// [*** X3dToJava.xslt error: encountered incorrect type, BiquadFilter id: $isNumeric=false, $attributeType=, value='BiquadFilter2']
-).setQualityFactor(15.0).setType("allpass")
-                  .setSource(new AudioClip().setId("AudioClip2"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip2']
-).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/beat.mp3"}))))))
-          .addChild(new SpatialSound().setUSE("Audio3").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setId("SpatialSound3"
-// [*** X3dToJava.xslt error: encountered incorrect type, SpatialSound id: $isNumeric=false, $attributeType=, value='SpatialSound3']
-)
-            .addChild(new Gain().setId("Gain3"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain3']
-)
-              .addChild(new Analyser().setId("Analyser3"
-// [*** X3dToJava.xslt error: encountered incorrect type, Analyser id: $isNumeric=false, $attributeType=, value='Analyser3']
-)
-                .addChild(new BiquadFilter().setFrequency(1000).setId("BiquadFilter3"
-// [*** X3dToJava.xslt error: encountered incorrect type, BiquadFilter id: $isNumeric=false, $attributeType=, value='BiquadFilter3']
-).setQualityFactor(0).setType("allpass")
-                  .setSource(new AudioClip().setId("AudioClip3"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip3']
-).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/wobble_loop.mp3"}))))))))));
+    .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView(true))
+    .addChild(new AudioDestination().setHtmlID("AudioDestination")
+      .addChild(new DynamicsCompressor().setHtmlID("DynamicsCompressor")
+        .addChild(new Gain().setHtmlID("Gain4")
+          .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setHtmlID("SpatialSound1")
+            .addChild(new Gain().setHtmlID("Gain1")
+              .addChild(new Analyser().setHtmlID("Analyser1")
+                .addChild(new BiquadFilter().setDetune(50.0).setFrequency(600).setHtmlID("BiquadFilter1").setQualityFactor(30.0).setType("allpass")
+                  .setSource(new AudioClip().setHtmlID("AudioClip1").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/techno_beat.mp3"}))))))
+          .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setHtmlID("SpatialSound2")
+            .addChild(new Gain().setHtmlID("Gain2")
+              .addChild(new Analyser().setHtmlID("Analyser2")
+                .addChild(new BiquadFilter().setDetune(15.0).setFrequency(600).setHtmlID("BiquadFilter2").setQualityFactor(15.0).setType("allpass")
+                  .setSource(new AudioClip().setHtmlID("AudioClip2").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/beat.mp3"}))))))
+          .addChild(new SpatialSound().setUSE("Audio3").setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true).setHtmlID("SpatialSound3")
+            .addChild(new Gain().setHtmlID("Gain3")
+              .addChild(new Analyser().setHtmlID("Analyser3")
+                .addChild(new BiquadFilter().setFrequency(1000).setHtmlID("BiquadFilter3").setQualityFactor(0).setType("allpass")
+                  .setSource(new AudioClip().setHtmlID("AudioClip3").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/wobble_loop.mp3"}))))))))));
     }
 	// end of initialize() method
 

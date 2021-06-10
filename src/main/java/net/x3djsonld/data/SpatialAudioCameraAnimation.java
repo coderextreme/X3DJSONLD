@@ -112,9 +112,7 @@ public class SpatialAudioCameraAnimation
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setId("NAV"
-// [*** X3dToJava.xslt error: encountered incorrect type, NavigationInfo id: $isNumeric=false, $attributeType=, value='NAV']
-))
+    .addChild(new NavigationInfo().setHtmlID("NAV"))
     .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png"}))
     .addChild(new Viewpoint("Camera001").setDescription("Camera001").setJump(TRUE).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000).setZFar("0"
 // [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint zFar: $isNumeric=true, $attributeType=, value='0']
@@ -171,9 +169,7 @@ public class SpatialAudioCameraAnimation
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
-).setStyle("BOLD"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle style: $isNumeric=false, $attributeType=, value='BOLD']
-).setToptobottom("true"
+).setStyle("BOLD").setToptobottom("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
     .addChild(new Transform("Audio2").setTranslation(933.475586,0.000000,924.423218)
@@ -212,35 +208,17 @@ public class SpatialAudioCameraAnimation
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
-).setStyle("BOLD"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle style: $isNumeric=false, $attributeType=, value='BOLD']
-).setToptobottom("true"
+).setStyle("BOLD").setToptobottom("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
-    .addChild(new ListenerPoint().setId("ListenerPoint"
-// [*** X3dToJava.xslt error: encountered incorrect type, ListenerPoint id: $isNumeric=false, $attributeType=, value='ListenerPoint']
-).setTrackCurrentView(true))
-    .addChild(new AudioDestination().setId("AudioDestination"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioDestination id: $isNumeric=false, $attributeType=, value='AudioDestination']
-)
-      .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setId("SpatialSound1"
-// [*** X3dToJava.xslt error: encountered incorrect type, SpatialSound id: $isNumeric=false, $attributeType=, value='SpatialSound1']
-).setMaxDistance(3500)
-        .addChild(new Gain().setId("Gain1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain1']
-)
-          .setSource(new AudioClip().setId("AudioClip1"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip1']
-).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3"}))))
-      .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setId("SpatialSound2"
-// [*** X3dToJava.xslt error: encountered incorrect type, SpatialSound id: $isNumeric=false, $attributeType=, value='SpatialSound2']
-).setMaxDistance(3500)
-        .addChild(new Gain().setId("Gain2"
-// [*** X3dToJava.xslt error: encountered incorrect type, Gain id: $isNumeric=false, $attributeType=, value='Gain2']
-)
-          .setSource(new AudioClip().setId("AudioClip2"
-// [*** X3dToJava.xslt error: encountered incorrect type, AudioClip id: $isNumeric=false, $attributeType=, value='AudioClip2']
-).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/saxophone.mp3"}))))));
+    .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView(true))
+    .addChild(new AudioDestination().setHtmlID("AudioDestination")
+      .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound1").setMaxDistance(3500)
+        .addChild(new Gain().setHtmlID("Gain1")
+          .setSource(new AudioClip().setHtmlID("AudioClip1").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3"}))))
+      .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound2").setMaxDistance(3500)
+        .addChild(new Gain().setHtmlID("Gain2")
+          .setSource(new AudioClip().setHtmlID("AudioClip2").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/saxophone.mp3"}))))));
     }
 	// end of initialize() method
 

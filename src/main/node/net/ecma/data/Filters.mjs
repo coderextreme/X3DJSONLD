@@ -111,7 +111,7 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emmisiveColor : new undefined("0.8 0.8 0.8"),
+                          emissiveColor : new SFColor([0.8,0.8,0.8]),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
@@ -128,7 +128,7 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emmisiveColor : new undefined("0.8 0.8 0.8"),
+                          emissiveColor : new SFColor([0.8,0.8,0.8]),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
@@ -145,7 +145,7 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          emmisiveColor : new undefined("0.8 0.8 0.8"),
+                          emissiveColor : new SFColor([0.8,0.8,0.8]),
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
