@@ -1949,11 +1949,6 @@
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
-            "@id": {
-              "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
               "$comment": "SFBool outputOnly",
@@ -1980,6 +1975,11 @@
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -3330,7 +3330,7 @@
             },
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -11828,7 +11828,7 @@
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
               "exclusiveMinimum": 0,
               "default": 128,
-              "$comment": "SFInt32 initializeOnly",
+              "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
             "-textureProperties": {
@@ -12888,7 +12888,7 @@
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "minimum": 0,
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -17426,7 +17426,7 @@
             },
             "@size": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
-              "$comment": "MFFloat initializeOnly",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
               "items": {
                 "default": 1,
@@ -19532,7 +19532,7 @@
             },
             "@mediaDeviceID": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString inputOutput",
+              "$comment": "SFString outputOnly",
               "type": "string"
             },
             "-metadata": {
@@ -26306,7 +26306,7 @@
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "minimum": 0,
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -26770,7 +26770,7 @@
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){1}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "exclusiveMinimum": 0,
-              "$comment": "SFVec2f initializeOnly",
+              "$comment": "SFVec2f inputOutput",
               "type": "array",
               "minItems": 2,
               "maxItems": 2,
@@ -30773,11 +30773,6 @@
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
-            "@id": {
-              "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
               "$comment": "SFBool outputOnly",
@@ -30791,12 +30786,22 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "@streamIdentifier": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -30847,11 +30852,6 @@
           "properties": {
             "IS": {
               "$ref": "#/definitions/IS"
-            },
-            "@channelCount": {
-              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
             },
             "@channelCountMode": {
               "pattern": "^(\\s|\\S)*$",
@@ -30910,22 +30910,6 @@
               "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
-            "@length": {
-              "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
-              "minimum": 0,
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
-            },
-            "@mediaStream": {
-              "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "maximum": 1,
-                "minimum": -1,
-                "type": "number"
-              }
-            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -30952,6 +30936,11 @@
               "default": 0,
               "$comment": "SFTime inputOutput",
               "type": "number"
+            },
+            "@streamIdentifier": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -33973,7 +33962,7 @@
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "minimum": 0,
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -35603,7 +35592,7 @@
             },
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -35853,7 +35842,7 @@
             "@size": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "minimum": 0,
-              "$comment": "SFVec3f initializeOnly",
+              "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,

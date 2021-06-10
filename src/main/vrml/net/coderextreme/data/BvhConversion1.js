@@ -265,6 +265,7 @@ HAnimJoint45.name = "HumanoidRoot";
 HAnimJoint45.DEF = "Bvh1_HumanoidRoot";
 HAnimJoint45.scale = new SFVec3f(new float[0.0254,0.0254,0.0254]);
 HAnimJoint45.translation = new SFVec3f(new float[0,0.806,0.194]);
+HAnimJoint45.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
 let HAnimSegment46 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment46.name = "sacrum";
@@ -432,6 +433,7 @@ let HAnimJoint83 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint83.name = "l_hip";
 HAnimJoint83.DEF = "Bvh1_l_hip";
 HAnimJoint83.center = new SFVec3f(new float[7.62,0,0]);
+HAnimJoint83.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment84 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment84.name = "l_thigh";
@@ -478,6 +480,7 @@ let HAnimJoint92 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint92.name = "l_knee";
 HAnimJoint92.DEF = "Bvh1_l_knee";
 HAnimJoint92.center = new SFVec3f(new float[7.62,-44.449999,0]);
+HAnimJoint92.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment93 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment93.name = "l_calf";
@@ -524,6 +527,7 @@ let HAnimJoint101 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint101.name = "l_ankle";
 HAnimJoint101.DEF = "Bvh1_l_ankle";
 HAnimJoint101.center = new SFVec3f(new float[7.62,-83.819998,0]);
+HAnimJoint101.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment102 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment102.name = "l_hindfoot";
@@ -570,6 +574,7 @@ let HAnimJoint110 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint110.name = "l_midtarsal";
 HAnimJoint110.DEF = "Bvh1_l_midtarsal";
 HAnimJoint110.center = new SFVec3f(new float[7.62,-92.709998,-3.81]);
+HAnimJoint110.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment111 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment111.name = "l_middistal";
@@ -641,6 +646,7 @@ let HAnimJoint122 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint122.name = "r_hip";
 HAnimJoint122.DEF = "Bvh1_r_hip";
 HAnimJoint122.center = new SFVec3f(new float[-7.62,0,0]);
+HAnimJoint122.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment123 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment123.name = "r_thigh";
@@ -687,6 +693,7 @@ let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint131.name = "r_knee";
 HAnimJoint131.DEF = "Bvh1_r_knee";
 HAnimJoint131.center = new SFVec3f(new float[-7.62,-44.449999,0]);
+HAnimJoint131.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment132 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment132.name = "r_calf";
@@ -733,6 +740,7 @@ let HAnimJoint140 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint140.name = "r_ankle";
 HAnimJoint140.DEF = "Bvh1_r_ankle";
 HAnimJoint140.center = new SFVec3f(new float[-7.62,-83.819998,0]);
+HAnimJoint140.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment141 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment141.name = "r_hindfoot";
@@ -779,6 +787,7 @@ let HAnimJoint149 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint149.name = "r_midtarsal";
 HAnimJoint149.DEF = "Bvh1_r_midtarsal";
 HAnimJoint149.center = new SFVec3f(new float[-7.62,-92.709998,-3.81]);
+HAnimJoint149.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment150 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment150.name = "r_middistal";
@@ -850,6 +859,7 @@ let HAnimJoint161 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint161.name = "vl5";
 HAnimJoint161.DEF = "Bvh1_vl5";
 HAnimJoint161.center = new SFVec3f(new float[0,7.62,-2.54]);
+HAnimJoint161.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment162 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment162.name = "l5";
@@ -896,6 +906,7 @@ let HAnimJoint170 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint170.name = "Chest2";
 HAnimJoint170.DEF = "Bvh1_Chest2";
 HAnimJoint170.center = new SFVec3f(new float[0,15.24,-2.54]);
+HAnimJoint170.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment171 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment171.name = "vl5_to_Chest2";
@@ -974,6 +985,7 @@ let HAnimJoint187 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint187.name = "LeftCollar";
 HAnimJoint187.DEF = "Bvh1_LeftCollar";
 HAnimJoint187.center = new SFVec3f(new float[7.62,48.260000000000005,0]);
+HAnimJoint187.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment188 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment188.name = "Chest2_to_LeftCollar";
@@ -1020,6 +1032,7 @@ let HAnimJoint196 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint196.name = "l_shoulder";
 HAnimJoint196.DEF = "Bvh1_l_shoulder";
 HAnimJoint196.center = new SFVec3f(new float[20.32,48.260000000000005,0]);
+HAnimJoint196.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment197 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment197.name = "l_upperarm";
@@ -1066,6 +1079,7 @@ let HAnimJoint205 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint205.name = "l_elbow";
 HAnimJoint205.DEF = "Bvh1_l_elbow";
 HAnimJoint205.center = new SFVec3f(new float[20.32,17.780000000000005,0]);
+HAnimJoint205.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment206 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment206.name = "l_forearm";
@@ -1112,6 +1126,7 @@ let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint214.name = "l_wrist";
 HAnimJoint214.DEF = "Bvh1_l_wrist";
 HAnimJoint214.center = new SFVec3f(new float[20.32,-6.349999999999994,0]);
+HAnimJoint214.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment215 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment215.name = "l_hand";
@@ -1183,6 +1198,7 @@ let HAnimJoint226 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint226.name = "RightCollar";
 HAnimJoint226.DEF = "Bvh1_RightCollar";
 HAnimJoint226.center = new SFVec3f(new float[-7.62,48.260000000000005,0]);
+HAnimJoint226.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment227 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment227.name = "Chest2_to_RightCollar";
@@ -1229,6 +1245,7 @@ let HAnimJoint235 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint235.name = "r_shoulder";
 HAnimJoint235.DEF = "Bvh1_r_shoulder";
 HAnimJoint235.center = new SFVec3f(new float[-20.32,48.260000000000005,0]);
+HAnimJoint235.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment236 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment236.name = "r_upperarm";
@@ -1275,6 +1292,7 @@ let HAnimJoint244 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint244.name = "r_elbow";
 HAnimJoint244.DEF = "Bvh1_r_elbow";
 HAnimJoint244.center = new SFVec3f(new float[-20.32,17.780000000000005,0]);
+HAnimJoint244.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment245 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment245.name = "r_forearm";
@@ -1321,6 +1339,7 @@ let HAnimJoint253 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint253.name = "r_wrist";
 HAnimJoint253.DEF = "Bvh1_r_wrist";
 HAnimJoint253.center = new SFVec3f(new float[-20.32,-6.349999999999994,0]);
+HAnimJoint253.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment254 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment254.name = "r_hand";
@@ -1392,6 +1411,7 @@ let HAnimJoint265 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint265.name = "Neck";
 HAnimJoint265.DEF = "Bvh1_Neck";
 HAnimJoint265.center = new SFVec3f(new float[0,53.339999,0]);
+HAnimJoint265.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment266 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment266.name = "Chest2_to_Neck";
@@ -1438,6 +1458,7 @@ let HAnimJoint274 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint274.name = "skullbase";
 HAnimJoint274.DEF = "Bvh1_skullbase";
 HAnimJoint274.center = new SFVec3f(new float[0,69.849999,0]);
+HAnimJoint274.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 let HAnimSegment275 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment275.name = "skull";

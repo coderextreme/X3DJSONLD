@@ -39,7 +39,7 @@ popd
 # generate helpful JavaScript classes
 pushd src/main/python
 python3 autoclass.py
-python3 classes.py
+# python3 classes.py
 python3 nodeclasses.py
 python3 fieldTypesGenerator.py
 python3 mapToMethodGenerator.py

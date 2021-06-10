@@ -94,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"04 June 2021"
+            "@content":"10 June 2021"
           },
           {
             "@name":"generator",
@@ -442,6 +442,7 @@
                     "@DEF":"Bvh1_HumanoidRoot",
                     "@scale":[0.0254,0.0254,0.0254],
                     "@translation":[0.000,0.806,0.194],
+                    "@stiffness":[0,0,0],
                     "-children":[
                       {
                         "#comment":"BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation"
@@ -462,6 +463,7 @@
                           "@name":"l_hip",
                           "@DEF":"Bvh1_l_hip",
                           "@center":[7.62,0.0,0.0],
+                          "@stiffness":[0,0,0],
                           "-children":[
                             {
                               "#comment":"BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -492,6 +494,7 @@
                                 "@name":"l_knee",
                                 "@DEF":"Bvh1_l_knee",
                                 "@center":[7.62,-44.449999,0.0],
+                                "@stiffness":[0,0,0],
                                 "-children":[
                                   {
                                     "#comment":"BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -522,6 +525,7 @@
                                       "@name":"l_ankle",
                                       "@DEF":"Bvh1_l_ankle",
                                       "@center":[7.62,-83.819998,0.0],
+                                      "@stiffness":[0,0,0],
                                       "-children":[
                                         {
                                           "#comment":"BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -552,6 +556,7 @@
                                             "@name":"l_midtarsal",
                                             "@DEF":"Bvh1_l_midtarsal",
                                             "@center":[7.62,-92.709998,-3.81],
+                                            "@stiffness":[0,0,0],
                                             "-children":[
                                               {
                                                 "#comment":"BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -603,6 +608,7 @@
                           "@name":"r_hip",
                           "@DEF":"Bvh1_r_hip",
                           "@center":[-7.62,0.0,0.0],
+                          "@stiffness":[0,0,0],
                           "-children":[
                             {
                               "#comment":"BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -633,6 +639,7 @@
                                 "@name":"r_knee",
                                 "@DEF":"Bvh1_r_knee",
                                 "@center":[-7.62,-44.449999,0.0],
+                                "@stiffness":[0,0,0],
                                 "-children":[
                                   {
                                     "#comment":"BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -663,6 +670,7 @@
                                       "@name":"r_ankle",
                                       "@DEF":"Bvh1_r_ankle",
                                       "@center":[-7.62,-83.819998,0.0],
+                                      "@stiffness":[0,0,0],
                                       "-children":[
                                         {
                                           "#comment":"BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -693,6 +701,7 @@
                                             "@name":"r_midtarsal",
                                             "@DEF":"Bvh1_r_midtarsal",
                                             "@center":[-7.62,-92.709998,-3.81],
+                                            "@stiffness":[0,0,0],
                                             "-children":[
                                               {
                                                 "#comment":"BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -744,6 +753,7 @@
                           "@name":"vl5",
                           "@DEF":"Bvh1_vl5",
                           "@center":[0.0,7.62,-2.54],
+                          "@stiffness":[0,0,0],
                           "-children":[
                             {
                               "#comment":"BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -774,6 +784,7 @@
                                 "@name":"Chest2",
                                 "@DEF":"Bvh1_Chest2",
                                 "@center":[0.0,15.24,-2.54],
+                                "@stiffness":[0,0,0],
                                 "-children":[
                                   {
                                     "#comment":"BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -804,6 +815,7 @@
                                       "@name":"LeftCollar",
                                       "@DEF":"Bvh1_LeftCollar",
                                       "@center":[7.62,48.260000000000005,0.0],
+                                      "@stiffness":[0,0,0],
                                       "-children":[
                                         {
                                           "#comment":"BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -834,6 +846,7 @@
                                             "@name":"l_shoulder",
                                             "@DEF":"Bvh1_l_shoulder",
                                             "@center":[20.32,48.260000000000005,0.0],
+                                            "@stiffness":[0,0,0],
                                             "-children":[
                                               {
                                                 "#comment":"BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -864,6 +877,7 @@
                                                   "@name":"l_elbow",
                                                   "@DEF":"Bvh1_l_elbow",
                                                   "@center":[20.32,17.780000000000005,0.0],
+                                                  "@stiffness":[0,0,0],
                                                   "-children":[
                                                     {
                                                       "#comment":"BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -894,6 +908,7 @@
                                                         "@name":"l_wrist",
                                                         "@DEF":"Bvh1_l_wrist",
                                                         "@center":[20.32,-6.349999999999994,0.0],
+                                                        "@stiffness":[0,0,0],
                                                         "-children":[
                                                           {
                                                             "#comment":"BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -945,6 +960,7 @@
                                       "@name":"RightCollar",
                                       "@DEF":"Bvh1_RightCollar",
                                       "@center":[-7.62,48.260000000000005,0.0],
+                                      "@stiffness":[0,0,0],
                                       "-children":[
                                         {
                                           "#comment":"BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -975,6 +991,7 @@
                                             "@name":"r_shoulder",
                                             "@DEF":"Bvh1_r_shoulder",
                                             "@center":[-20.32,48.260000000000005,0.0],
+                                            "@stiffness":[0,0,0],
                                             "-children":[
                                               {
                                                 "#comment":"BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -1005,6 +1022,7 @@
                                                   "@name":"r_elbow",
                                                   "@DEF":"Bvh1_r_elbow",
                                                   "@center":[-20.32,17.780000000000005,0.0],
+                                                  "@stiffness":[0,0,0],
                                                   "-children":[
                                                     {
                                                       "#comment":"BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -1035,6 +1053,7 @@
                                                         "@name":"r_wrist",
                                                         "@DEF":"Bvh1_r_wrist",
                                                         "@center":[-20.32,-6.349999999999994,0.0],
+                                                        "@stiffness":[0,0,0],
                                                         "-children":[
                                                           {
                                                             "#comment":"BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -1086,6 +1105,7 @@
                                       "@name":"Neck",
                                       "@DEF":"Bvh1_Neck",
                                       "@center":[0.0,53.339999,0.0],
+                                      "@stiffness":[0,0,0],
                                       "-children":[
                                         {
                                           "#comment":"BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation"
@@ -1116,6 +1136,7 @@
                                             "@name":"skullbase",
                                             "@DEF":"Bvh1_skullbase",
                                             "@center":[0.0,69.849999,0.0],
+                                            "@stiffness":[0,0,0],
                                             "-children":[
                                               {
                                                 "#comment":"BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation"

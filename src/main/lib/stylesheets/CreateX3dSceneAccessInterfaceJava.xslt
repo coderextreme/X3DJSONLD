@@ -1963,7 +1963,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						<xsl:when test="not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface)">
 							<!-- Source code: member object declarations -->
 							<xsl:for-each select="InterfaceDefinition/field[((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')) and
-												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]">
+												  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'id') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]">
 
 								<xsl:if test="position()=1">
 									<xsl:text>&#10;</xsl:text>
@@ -2002,12 +2002,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<!-- unmodified -->
 											<xsl:value-of select="@name"/>
 										</xsl:when>
+										<xsl:when test="(@name = 'id')">
+											<xsl:text>HtmlID</xsl:text>
+										</xsl:when>
 										<xsl:when test="(@name = 'class')">
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>cssClass</xsl:text>
 										</xsl:when>
 										<xsl:when test="((@name = 'style') and not(ends-with($name, 'FontStyle')))">
-											<!-- similarly named for consistency -->
+											<!-- similarly named for clarity, consistency -->
 											<xsl:text>cssStyle</xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
@@ -3102,7 +3105,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                             <xsl:for-each select="InterfaceDefinition/field[((@type='SFString') or (@type='MFString') or (string-length(normalize-space(@default)) > 0)) and 
                                                   starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                   not(@type='MFNode') and
-                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]
+                                                  not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'id') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]
                                                   [(@accessType='initializeOnly') or (@accessType='inputOutput')]">
     <!-- not(@type='SFNode') and -->
                                 <xsl:variable name="fieldName" select="translate(@name,'-','_')"/>
@@ -3452,7 +3455,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							</xsl:if>
 							<xsl:if test="not($isX3dStatement = 'true')">
 								<!-- Source code: _TOFIELD, FROM_FIELD definitions -->
-								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($name, 'FontStyle'))))]">
+								<xsl:for-each select="InterfaceDefinition/field[not((@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($name, 'FontStyle'))))]">
 									<xsl:if test="position()=1">
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	// String constants for field names usable in ROUTE statements</xsl:text>
@@ -3613,7 +3616,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<!-- initialize each field with default values -->
 									<xsl:for-each select="InterfaceDefinition/field[
 													not(starts-with(@name,'set_')) and not(ends-with(@name,'_changed')) and
-													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) and
+													not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'id') and not(@name = 'class') and not((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) and
 												 ((@accessType='inputOutput') or (@accessType='initializeOnly') or (string-length(@accessType)=0))]">
 										<xsl:variable name="isX3dStatement">
 											<xsl:call-template name="isX3dStatement">
@@ -3640,12 +3643,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>		</xsl:text>
 										<xsl:choose>
+                                            <xsl:when test="(@name = 'id')">
+                                                <xsl:text>HtmlID</xsl:text>
+                                            </xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>cssClass</xsl:text>
 											</xsl:when>
 											<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
-											<!-- similarly named for consistency -->
+											<!-- similarly named for clarity, consistency -->
 												<xsl:text>cssStyle</xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
@@ -6842,12 +6848,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- unmodified -->
 										<xsl:value-of select="@name"/>
 									</xsl:when>
+                                    <xsl:when test="(@name = 'id')">
+                                        <xsl:text>HtmlID</xsl:text>
+                                    </xsl:when>
 									<xsl:when test="(@name = 'class')">
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>CssClass</xsl:text>
 									</xsl:when>
 									<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
-										<!-- similarly named for consistency -->
+										<!-- similarly named for clarity, consistency -->
 										<xsl:text>CssStyle</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
@@ -6886,12 +6895,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<!-- unmodified -->
 										<xsl:value-of select="@name"/>
 									</xsl:when>
+                                    <xsl:when test="(@name = 'id')">
+                                        <!-- similarly named for clarity, consistency -->
+										<xsl:text>HtmlID</xsl:text>
+                                    </xsl:when>
 									<xsl:when test="(@name = 'class')">
 										<!-- getClass() is reserved by Java Object() class -->
 										<xsl:text>cssClass</xsl:text>
 									</xsl:when>
 									<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
-										<!-- similarly named for consistency -->
+										<!-- similarly named for clarity, consistency -->
 										<xsl:text>cssClass</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
@@ -6916,7 +6929,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<xsl:if test="((@accessType='outputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and ((@name = 'address') or (not(starts-with(@name,'add')) 
 										  and not(starts-with(@name,'remove'))
-										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))))">
+										  and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))))">
 								<!-- javadoc from BuildSpecificationLanguageBindingJava.xslt-->
 								<xsl:text>	/**</xsl:text>
 								<xsl:text>&#10;</xsl:text>
@@ -7367,7 +7380,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- http://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
 												<!-- http://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
 											</xsl:when>
-											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))">
+											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))">
                                                 <xsl:text>		// override abstract method in X3DConcreteNode</xsl:text>
                                                 <xsl:text>&#10;</xsl:text>
                                                 <xsl:text>		return super.get</xsl:text>
@@ -7509,7 +7522,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<!-- javadoc: set/add method accessor(s) -->    
 							<xsl:if test="((@accessType='inputOnly') or (@accessType='initializeOnly') or (@accessType='inputOutput') or (string-length(@accessType) = 0))
 										  and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))
-                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))">
+                                          and not(($isInterface = 'true') and ((@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))))">
 								
 								<xsl:variable name="newValueInstanceAcceptableNodeTypesTest">
 									<xsl:if test="contains(@acceptableNodeTypes, '|')">
@@ -8182,7 +8195,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<!-- might avoid final in case someone is subclassing someday, but logic is tricky and so conservative here -->
-								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
+								<xsl:if test="((@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))) or (@name = 'name') or (@name = 'content')) and not($isInterface = 'true')">
 									<xsl:text>final </xsl:text>
 								</xsl:if>
 								<xsl:value-of select="$thisClassName"/>
@@ -8201,12 +8214,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<!-- unmodified -->
 												<xsl:value-of select="@name"/>
 											</xsl:when>
+                                            <xsl:when test="(@name = 'id')">
+                                                <!-- similarly named for clarity, consistency -->
+                                                <xsl:text>HtmlID</xsl:text>
+                                            </xsl:when>
 											<xsl:when test="(@name = 'class')">
 												<!-- getClass() is reserved by Java Object() class -->
 												<xsl:text>CssClass</xsl:text>
 											</xsl:when>
 											<xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
-                                                <!-- similarly named for consistency -->
+                                                <!-- similarly named for clarity, consistency -->
 												<xsl:text>CssStyle</xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
@@ -8513,6 +8530,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>		setConcreteDEF(""); // ensure that no previous DEF value remains</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>		setConcreteUSE(</xsl:text>
+												<xsl:value-of select="$newValue"/>
+												<xsl:text>); // private superclass method</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@name = 'id')">
+												<xsl:text>		setConcreteHtmlID(</xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
@@ -10520,6 +10542,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											   and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
     // special CssStyle methods for FontStyle, ScreenFontStyle
+                                        
 ////	/**
 ////	 * Provide String value from inputOutput SFString field named <i>style</i>.
 ////	 * @return value of style field
@@ -10532,9 +10555,36 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////	}
 
 	/**
+	 * Accessor method to assign String value to inputOutput SFString field named <i>id</i>.
+	 * @param newValue is new value for the id field.
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(String newValue)
+	{
+		// set-newValue-validity-checks #0
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #5
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		setConcreteHtmlID(newValue); // private superclass method
+		return this;
+	}
+
+	/**
+	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
+	 * @param newValue is new value for the style field.
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(SFString newValue)
+	{
+			// set-newValue-validity-checks #1 gets handled by set-primitive method
+			setHtmlID(newValue.getPrimitiveValue());
+			return this;
+	}
+
+	/**
 	 * Accessor method to assign String value to inputOutput SFString field named <i>style</i>.
 	 * @param newValue is new value for the style field.
-	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setCssStyle(String newValue)
 	{
@@ -10549,7 +10599,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
 	 * @param newValue is new value for the style field.
-	 * @return {@link Text} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setCssStyle(SFString newValue)
 	{
@@ -13192,12 +13242,16 @@ setAttribute method invocations).
 							<!-- unmodified -->
 							<xsl:value-of select="@name"/>
 						</xsl:when>
+                        <xsl:when test="(@name = 'id')">
+                            <!-- similarly named for clarity, consistency -->
+							<xsl:text>HtmlID</xsl:text>
+                        </xsl:when>
 						<xsl:when test="(@name = 'class')">
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
-							<!-- similarly named for consistency -->
+							<!-- similarly named for clarity, consistency -->
 							<xsl:text>CssStyle</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>
@@ -13929,12 +13983,16 @@ setAttribute method invocations).
 							<!-- unmodified -->
 							<xsl:value-of select="@name"/>
 						</xsl:when>
+                        <xsl:when test="(@name = 'id')">
+                            <!-- similarly named for clarity, consistency -->
+							<xsl:text>HtmlID</xsl:text>
+                        </xsl:when>
 						<xsl:when test="(@name = 'class')">
 							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
-							<!-- similarly named for consistency -->
+							<!-- similarly named for clarity, consistency -->
 							<xsl:text>CssStyle</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>
@@ -14032,7 +14090,7 @@ setAttribute method invocations).
 					stringClassicVRML]]></xsl:text>
 				<xsl:text><![CDATA[.append("]]></xsl:text>
 				<!-- unsupported attributes, style and class -->
-				<xsl:if test="(@name = 'class')">
+				<xsl:if test="(@name = 'id') or (@name = 'class')">
 					<xsl:text> # </xsl:text>
 				</xsl:if>
 				<xsl:if test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
@@ -14862,12 +14920,16 @@ setAttribute method invocations).
 											<!-- unmodified -->
 											<xsl:value-of select="@name"/>
 										</xsl:when>
+										<xsl:when test="(@name = 'id')">
+											<!-- similarly named for clarity, consistency -->
+											<xsl:text>HtmlID</xsl:text>
+										</xsl:when>
 										<xsl:when test="(@name = 'class')">
 											<!-- getClass() is reserved by Java Object() class -->
 											<xsl:text>CssClass</xsl:text>
 										</xsl:when>
                                         <xsl:when test="(@name = 'style') and not(ends-with($thisClassName, 'FontStyle'))">
-                                            <!-- similarly named for consistency -->
+                                            <!-- similarly named for clarity, consistency -->
                                             <xsl:text>CssStyle</xsl:text>
                                         </xsl:when>
 										<xsl:otherwise>
@@ -34052,6 +34114,10 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
 
+	/** the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	private String htmlID = ID_DEFAULT_VALUE;
+
 	/** The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
 	private String cssClass = CLASS_DEFAULT_VALUE;
@@ -34068,10 +34134,13 @@ showing default attribute values, and other custom settings.</p>
 	/** SFString field named <i>USE</i> has default value equal to an empty string. */
 	public static final String USE_DEFAULT_VALUE = "";
 
-	/** SFString field named <i>class</i> has default value equal to an empty string. */
+	/** SFString field named <i>id</i> for html has default value equal to an empty string. */
+	public static final String ID_DEFAULT_VALUE = "";
+
+	/** SFString field named <i>class</i> for CSS has default value equal to an empty string. */
 	public static final String CLASS_DEFAULT_VALUE = "";
 
-	/** SFString field named <i>style</i> has default value equal to an empty string. */
+	/** SFString field named <i>style</i> for CSS has default value equal to an empty string. */
 	public static final String STYLE_DEFAULT_VALUE = "";
 
 	/** containerFieldOverride describes non-default field relationship of a node to its parent.
@@ -34082,8 +34151,9 @@ showing default attribute values, and other custom settings.</p>
 	public void initialize()
 	{
 		setParent(null);
-		     DEF = DEF_DEFAULT_VALUE;
-		     USE = USE_DEFAULT_VALUE;
+		     DEF =   DEF_DEFAULT_VALUE;
+		     USE =   USE_DEFAULT_VALUE;
+          htmlID =    ID_DEFAULT_VALUE;
 		cssClass = CLASS_DEFAULT_VALUE;
 		cssStyle = STYLE_DEFAULT_VALUE;
 	}
@@ -34180,10 +34250,24 @@ showing default attribute values, and other custom settings.</p>
 		return !USE.isEmpty();
 	}
 	/**
+	 * Provide String value from inputOutput SFString field named <i>id</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @return value of class field
+	 */
+	public String getHtmlID()
+	{
+		return htmlID;
+	}
+	/**
 	 * Provide String value from inputOutput SFString field named <i>class</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34197,7 +34281,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Provide String value from inputOutput SFString field named <i>style</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34249,7 +34333,7 @@ showing default attribute values, and other custom settings.</p>
 	}
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34262,9 +34346,26 @@ showing default attribute values, and other custom settings.</p>
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		cssClass = newValue;
 	}
+	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlID(newValue) instead.
+	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+     * <br />
+     * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L, HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
+	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the id field.
+	 */
+	protected void setConcreteHtmlID(String newValue)
+	{
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #4
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		htmlID = newValue;
+	}
 	/** Protected internal superclass method to keep cssStyles private, scene authors should use method setCssStyle(newValue) instead.
 	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34293,7 +34394,7 @@ showing default attribute values, and other custom settings.</p>
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -34302,8 +34403,20 @@ showing default attribute values, and other custom settings.</p>
 	abstract public X3DConcreteNode setCssClass(String cssClass);
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
+	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+     * <br />
+     * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L, HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
+	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param htmlID is new value for the id field.
+	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
+	abstract public X3DConcreteNode setHtmlID(String htmlID);
+    
+	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * <i>Tooltip:</i> The style attribute provides an inline block of CSS source for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD3/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
 	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
@@ -35902,10 +36015,12 @@ import org.web3d.x3d.sai.X3DException;
                         System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                     }
 					elementSetMethodName  = "set";
-					if (attributeName.equals("class"))
-						elementSetMethodName += "Css";
-					elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
-											attributeName.substring(1); // setCamelCase
+					if  (attributeName.equals("class"))
+					  	 elementSetMethodName += "Css";
+					if  (attributeName.equals("id"))
+						 elementSetMethodName += "HtmlID";
+					else elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
+						   					     attributeName.substring(1); // setCamelCase
 
 					// check for proper handling of SFString/MFString escape characters, particularly backslashed quotes
 					String unescapedAttributeValue = attributeValue.replace("\\\\\"", "\\\""); // TODO regex needed for other cases of special character inputss?
@@ -36351,7 +36466,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 2.90"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 2.92"; // escape \
 	
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.

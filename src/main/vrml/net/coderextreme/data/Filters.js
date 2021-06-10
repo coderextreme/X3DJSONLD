@@ -26,7 +26,7 @@ let Appearance7 = browser.currentScene.createNode("Appearance");
 Appearance7.DEF = "audio_emit";
 let Material8 = browser.currentScene.createNode("Material");
 Material8.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material8.emmisiveColor = "0.8 0.8 0.8";
+Material8.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
 Material8.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance7.material = Material8;
 
@@ -50,7 +50,7 @@ let Appearance12 = browser.currentScene.createNode("Appearance");
 Appearance12.DEF = "audio_emit";
 let Material13 = browser.currentScene.createNode("Material");
 Material13.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material13.emmisiveColor = "0.8 0.8 0.8";
+Material13.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
 Material13.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance12.material = Material13;
 
@@ -74,7 +74,7 @@ let Appearance17 = browser.currentScene.createNode("Appearance");
 Appearance17.DEF = "audio_emit";
 let Material18 = browser.currentScene.createNode("Material");
 Material18.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material18.emmisiveColor = "0.8 0.8 0.8";
+Material18.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
 Material18.specularColor = new SFColor(new float[0.01,0.01,0.01]);
 Appearance17.material = Material18;
 

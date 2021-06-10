@@ -22,7 +22,7 @@
     <Transform DEF='Audio1' translation='-200 50 0'>
       <Shape>
         <Appearance DEF='audio_emit'>
-          <Material diffuseColor='0.1 0.1 0.1' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30'/>
       </Shape>
@@ -30,7 +30,7 @@
     <Transform DEF='Audio2' translation='0 50 0'>
       <Shape>
         <Appearance DEF='audio_emit'>
-          <Material diffuseColor='0.1 0.1 0.1' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30'/>
       </Shape>
@@ -38,7 +38,7 @@
     <Transform DEF='Audio3' translation='200 50 0'>
       <Shape>
         <Appearance DEF='audio_emit'>
-          <Material diffuseColor='0.1 0.1 0.1' emmisiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30'/>
       </Shape>

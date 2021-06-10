@@ -2850,6 +2850,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  (starts-with($parentElementName,'field') and ($attributeName='value'))      or
 		  ($attributeName='name')               or
 		  ($attributeName='class')              or
+          ($attributeName='id')                 or
+          ($attributeName='style')              or
 		  ($attributeName='description')        or
 		  ($attributeName='address')            or
 		  ($attributeName='language')           or
@@ -2866,8 +2868,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
                           ($parentElementName='HAnimMotion'                and $attributeName='channels') or
-				      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
-					  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+				      ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
 					  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
 					  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
 					  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
@@ -2893,8 +2894,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:text>SFDouble</xsl:text>
 	  </xsl:when>
 	  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
-	  <xsl:when test="($attributeName='class')       or
-		  ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+	  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
 				      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 		  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 		  <xsl:text>xs:string</xsl:text> 
