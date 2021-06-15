@@ -35,13 +35,15 @@
     	var url = "../data/ArchHalf.json";
 	var selector = "#x_itedom";
 
-	function importInto_X_ITE(json) {
-		loadX3DJS_X_ITE(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
-			load_X_ITE_DOM(jsDOM, selector);
+	function load() {
+		$.getJSON(url, function (json) {
+			loadX3DJS_X_ITE(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(jsDOM) {
+				load_X_ITE_DOM(jsDOM, selector);
+			});
 		});
 	}
 	$(document).ready(function() {
-		$.getJSON(url, importInto_X_ITE);
+		load();
 	});
     </script>
 </html>
