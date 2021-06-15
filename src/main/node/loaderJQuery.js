@@ -55,6 +55,7 @@ var lang = getFirstBrowserLanguage();
 
 var localize;
 function loadLocalize(lang) {
+	lang = lang.replace(/-.*/, "");
 	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
 		localize = module.exports;
 	});
