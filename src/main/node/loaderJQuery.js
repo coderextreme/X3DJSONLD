@@ -56,6 +56,7 @@ var lang = getFirstBrowserLanguage();
 var localize;
 function loadLocalize(lang) {
 	lang = lang.replace(/-.*/, "");
+	return;
 	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
 		localize = module.exports;
 	});
@@ -178,9 +179,10 @@ function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchem
 			if (typeof X3D.getBrowser !== 'undefined') {
 				var browser = X3D.getBrowser(selector);
 				if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
-					var child = browser.importJS(jsobj);
-					var xml = X3DJSONLD.serializeDOM(jsobj, child.dom, true);
-					callback(child.dom, xml);
+					browser.importJS(jsobj, function(child) {
+						var xml = X3DJSONLD.serializeDOM(jsobj, child.dom, true);
+						callback(child.dom, xml);
+					});
 				}
 			}
 		}, function() {
