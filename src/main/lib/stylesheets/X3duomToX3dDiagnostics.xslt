@@ -123,6 +123,12 @@ Invocation:
 <xsl:variable name="nameHAnim2DefaultValuesJointsFeaturePoints">
               <xsl:text>HAnim2DefaultValuesJointsFeaturePoints.txt</xsl:text>
 </xsl:variable>
+        
+<xsl:variable name="nameAllX3dElementNames">
+              <xsl:text>AllX3dElementNames.txt</xsl:text>
+              <xsl:value-of select="$X3duomVersionNumber"/>
+              <xsl:text>.txt</xsl:text>
+</xsl:variable>
 
 <!-- ****************** root:  start of file ****************** -->
 <xsl:template match="/">
@@ -1212,6 +1218,26 @@ Invocation:
 	  <xsl:text>*** Produced new </xsl:text>
 	  <xsl:value-of select="$nameHAnim2DefaultValuesJointsFeaturePoints"/>
 	 </xsl:message>
+     
+<xsl:result-document href="{$nameAllX3dElementNames}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+
+    <xsl:for-each select="//ConcreteNode">
+        
+    <!--<xsl:text>"</xsl:text>-->
+        <xsl:value-of select="@name"/>
+    <!--<xsl:text>",</xsl:text>-->
+        <xsl:text>&#10;</xsl:text>
+    </xsl:for-each>
+    
+</xsl:result-document>
+
+	<!-- debug -->
+	<xsl:message>
+	  <xsl:text>*** Produced new </xsl:text>
+	  <xsl:value-of select="$nameAllX3dElementNames"/>
+	 </xsl:message>
+     
+     
 
 </xsl:template>
 
