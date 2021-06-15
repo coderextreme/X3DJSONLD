@@ -40,8 +40,8 @@
 			load_X_ITE_DOM(jsDOM, selector);
 		});
 	}
-    	document.onload = function () {
+	$(document).ready(function() {
 		$.getJSON(url, importInto_X_ITE);
-	}
+	});
     </script>
 </html>
