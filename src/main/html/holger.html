@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
+    <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style type="text/css">
+X3DCanvas {
+  width: 768px;
+  height: 432px;
+}
+    </style>
+</head>
+    <script type="text/javascript">
+function load ()
+{
+  console .log ("load");
+
+  $.getJSON ("../data/ArchHalf.json", function (json)
+  {
+    X3D (function ()
+    {
+      var Browser = X3D .getBrowser ();
+
+      Browser .importJS (json, function (scene)
+      {
+        Browser .replaceWorld (scene);
+      });
+    });
+  });
+}
+	$(document).ready(function() {
+		load();
+	});
+    </script>
+  <body>
+    <X3DCanvas></X3DCanvas>
+  </body>
+</html>
