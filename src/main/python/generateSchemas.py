@@ -26,9 +26,9 @@ import os
 #
 #One should run the script in the X3DJSONLD/src/main/python folder.
 #
-#Usage to validate a X3D 4.0 JSON file (python script found online next to generateSchemas.py):
+#Usage to validate an X3D JSON file (python script found online next to generateSchemas.py):
 #
-#python3 validate40.py < 4.0_file_name.json
+#python3 validate.py < X3D_JSON_file_name.json
 #
 #So you can drop the JSON schema entirely with python, if you wish, AFAICT right now.  This possibly would be advantageous to an x3d.py JSON "typeless" loader.
 #
@@ -69,13 +69,13 @@ for version in versions:
 
 # now try to validate some JSON examples
 print(f"3.3, HelloWorld.json")
-os.system(f'python3 validate33.py < /c/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.json')
+os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.json')
 
 print(f"4.0, AllAudioGraphNodesTest.json")
-os.system(f'python3 validate40.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.json')
+os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.json')
 
 print(f"3.3, CADPartChildTransformationAlternativeB.json")
-os.system(f'python3 validate33.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeB.json')
+os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeB.json')
 
 print(f"3.3, CADPartChildTransformationAlternativeC.json")
-os.system(f'python3 validate33.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeC.json')
+os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeC.json')
