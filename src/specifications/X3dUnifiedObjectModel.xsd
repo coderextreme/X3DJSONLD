@@ -88,6 +88,15 @@ Design summary:
 			<xs:enumeration value="4.0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="vrml97SupportValues">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="true"/>
+			<xs:enumeration value="false"/>
+			<xs:enumeration value="hasPrototypeSimple"/>
+			<xs:enumeration value="hasPrototypeEcmaScript"/>
+			<xs:enumeration value="hasPrototypeJava"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:element name="AbstractNodeType">
 		<xs:annotation>
 			<xs:documentation>This element contains the definition for a single X3D abstract node type</xs:documentation>
@@ -164,6 +173,7 @@ Design summary:
 			</xs:sequence>
 			<xs:attribute name="name" type="xs:token" default=""/>
 			<xs:attribute name="initialX3dVersion" type="versionValues" use="optional"/>
+			<xs:attribute name="vrml97Support" type="vrml97SupportValues" use="optional" default="false"/>
 			<!-- TODO required, not yet implemented in XML Schema -->
 		</xs:complexType>
 	</xs:element>
