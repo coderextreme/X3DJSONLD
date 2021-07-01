@@ -12,9 +12,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-attribute vec3 position;
+in vec4 position;
 attribute vec3 normal;
-attribute vec2 texcoord;
+attribute vec3 texcoord;
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
@@ -46,8 +46,8 @@ void main()
 	jwc_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = x3d_ProjectionMatrix * vec4(position, 1.0);
-    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = x3d_ProjectionMatrix * position;
+    vec3 incident = normalize((jwc_ModelViewMatrix * position).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
