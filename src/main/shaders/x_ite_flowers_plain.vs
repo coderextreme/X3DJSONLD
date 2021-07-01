@@ -1,10 +1,11 @@
+#version 300 es
 #ifdef GL_ES
   precision highp float;
 #endif
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
-attribute vec4 x3d_Vertex;
+in vec4 x3d_Vertex;
 
 vec4 ftransform() {
 	return vec4 (x3d_ProjectionMatrix*x3d_ModelViewMatrix*x3d_Vertex);
@@ -20,7 +21,7 @@ vec4 ftransform() {
 
 attribute vec3 position;
 attribute vec3 normal;
-attribute vec2 texcoord;
+attribute vec3 texcoord;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
