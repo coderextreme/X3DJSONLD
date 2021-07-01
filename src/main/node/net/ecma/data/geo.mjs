@@ -86,12 +86,12 @@ var X3D0 =  new X3D({
           /*Viewpoint position='0 0 4' description='sphere in road'/*/
 
             new Background({
-              backUrl : new MFString(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]),
-              bottomUrl : new MFString(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]),
-              frontUrl : new MFString(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]),
-              leftUrl : new MFString(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]),
-              rightUrl : new MFString(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]),
-              topUrl : new MFString(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}),
+              backUrl : new MFString(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]),
+              bottomUrl : new MFString(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]),
+              frontUrl : new MFString(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]),
+              leftUrl : new MFString(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]),
+              rightUrl : new MFString(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]),
+              topUrl : new MFString(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}),
 
             new Transform({
               children : new MFNode([
@@ -109,22 +109,22 @@ var X3D0 =  new X3D({
                           DEF : new SFString("texture"),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])})),
+                              url : new MFString(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])})),
+                              url : new MFString(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])})),
+                              url : new MFString(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])})),
+                              url : new MFString(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])})),
+                              url : new MFString(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}))})),
+                              url : new MFString(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           language : new SFString("GLSL"),
