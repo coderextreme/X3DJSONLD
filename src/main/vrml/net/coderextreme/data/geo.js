@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo2.type = new MFString(new java.lang.String["ANY","EXAMINE","FLY","LOOKAT"]);
 browser.currentScene.children = new MFNode();
