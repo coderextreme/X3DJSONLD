@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
 WorldInfo2.title = "ball.x3d";
 browser.currentScene.children = new MFNode();

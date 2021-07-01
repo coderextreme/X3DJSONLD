@@ -141,12 +141,13 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="--version"/>
         </exec>
         <!-- https://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
-        <!--<echo>saxon -? help</echo>
+        <echo>saxon -? help</echo>
+<!--
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." failonerror="true">
         <arg value="-?" description="help information"/>
         </java>
+-->
         <echo></echo>
-	-->
         <!-- Ant environment variables https://ant.apache.org/manual/Tasks/property.html -->
         <echo>  ANT_HOME=${env.ANT_HOME}</echo>
         <echo> JAVA_HOME=${env.JAVA_HOME}</echo>
@@ -1227,6 +1228,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildAllX3dElementsAttributes.txt" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
+        <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t" description="timing information"/>
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
@@ -1984,7 +1986,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-t" description="timing information"/>
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HAnimSpecificationLOA3Invisible.xslt.html" description="output-doc"/>
-            <arg value="-s:${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d" description="source-doc"/>
+            <arg value="-s:${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d" description="source-doc"/>
             <arg value="-xsl:X3dToXhtml.xslt" description="style-doc"/>
         </java>
         <echo message="expected output: test/HAnimSpecificationLOA3Invisible.xslt.html"/>
@@ -1993,7 +1995,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-t" description="timing information"/>
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/BoxMan.xslt.html" description="output-doc"/>
-            <arg value="-s:${examples.dir}/Basic/HumanoidAnimation/BoxMan.x3d" description="source-doc"/>
+            <arg value="-s:${examples.dir}/HumanoidAnimation/BoxMan.x3d" description="source-doc"/>
             <arg value="-xsl:X3dToXhtml.xslt" description="style-doc"/>
         </java>
         <echo message="expected output: test/BoxMan.xslt.html"/>
@@ -2708,8 +2710,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="test.X3dToX3dom.xslt" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using default Ant xslt task" >
         <xslt style="X3dToX3dom.xslt" in="${examples.dir}/HelloWorld.x3d"                               out="test/HelloWorld.xhtml"/>
         <!-- HAnim -->
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"  out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/X3dForWebAuthors/Chapter15Metadata/MetadataExamples.x3d"        out="test/MetadataExamples.xhtml"/>
+        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"  out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
+        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/X3dForWebAuthors/Chapter15Metadata/MetadataExamples.x3d"  out="test/MetadataExamples.xhtml"/>
         
         <!-- CAD
        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadTeapot.x3d"                      out="test/CadTeapot.xhtml"/>
@@ -2867,6 +2869,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="queries/**/*"/>
                 <include name="nbproject/project.xml"/>
                 <exclude name="**/archive/*"/>
+                <exclude name="**/*.pdf"/>
+                <exclude name="**/*.pptx"/>
+                <exclude name="**/*.mp4"/>
             </fileset>
         </scp>
         <!-- zip is large so do it after refreshed assets -->
@@ -2883,6 +2888,20 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
         </scp>
         <echo  message="scp.upload.semantics.web3d ssh-sftp task complete"/>
+    </target>
+
+    <target name="scp.upload.semantics.web3d.large" depends="scp.askUsernamePassword.web3d"
+            description="scp sftp upload of X3D Ontology semantics project, large files">
+        <echo message="scp sftp upload of large files to X3D Ontology master copies to ${sftpDirectory.web3d.specifications}"/>
+        <echo message="scp sftp upload of large files to X3D Ontology semantics project to ${sftpDirectory.web3d.semantics}"/>
+        <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.semantics}" password="${password.web3d}" verbose="true">
+            <fileset dir="../../semantics">
+                <include name="**/*.pdf"/>
+                <include name="**/*.pptx"/>
+                <include name="**/*.mp4"/>
+            </fileset>
+        </scp>
+        <echo  message="scp.upload.semantics.web3d.large ssh-sftp task complete"/>
     </target>
 
     <target name="scp.upload.python.web3d" depends="scp.askUsernamePassword.web3d"
@@ -3053,9 +3072,9 @@ POSSIBILITY OF SUCH DAMAGE.
              dest="test/HelloWorld.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/development/SpinGroupInternalSubsetDeclaration.x3d"
              dest="test/SpinGroupInternalSubsetDeclaration.x3d"/>
-        <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"
+        <get src="${x3d.sourceforge.site}/x3d/content/examples/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"
              dest="test/HAnimSpecificationLOA3Invisible.x3d"/>
-        <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"
+        <get src="${x3d.sourceforge.site}/x3d/content/examples/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"
              dest="test/HAnimSpecificationLOA3Illustrated.x3d"/>
         <get src="${x3d.sourceforge.site}/x3d/content/examples/Basic/Security/HelloWorldSigned.x3d"
              dest="test/HelloWorldSigned.x3d"/>
@@ -3070,8 +3089,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="get-test-scenes-local" description="developmental support">
         <copy file="${examples.dir}/HelloWorld.x3d"                                                                 todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/Basic/development/SpinGroupInternalSubsetDeclaration.x3d"                       todir="test/" verbose="true" force="true"/>
-        <copy file="${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"                    todir="test/" verbose="true" force="true"/>
-        <copy file="${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"                  todir="test/" verbose="true" force="true"/>
+        <copy file="${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"                          todir="test/" verbose="true" force="true"/>
+        <copy file="${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"                        todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/Basic/Security/HelloWorldSigned.x3d"                                            todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/Vrml2.0Sourcebook/Siggraph98Course/Background2.x3d"                             todir="test/" verbose="true" force="true"/>
         <copy file="${examples.dir}/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"         todir="test/" verbose="true" force="true"/>
