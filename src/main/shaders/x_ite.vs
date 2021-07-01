@@ -1,3 +1,4 @@
+#version 300 es
 #ifdef GL_ES
   precision highp float;
 #endif
@@ -14,8 +15,8 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 */
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
-attribute vec3 x3d_Normal;
-attribute vec4 x3d_Vertex;
+in vec3 x3d_Normal;
+in vec4 x3d_Vertex;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
