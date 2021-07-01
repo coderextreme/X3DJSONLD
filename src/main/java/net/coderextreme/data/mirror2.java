@@ -43,7 +43,7 @@ public class mirror2 {
     new mirror2().initialize().toFileJSON("../data/mirror2.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))

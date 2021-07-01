@@ -46,7 +46,7 @@ public class bub {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
