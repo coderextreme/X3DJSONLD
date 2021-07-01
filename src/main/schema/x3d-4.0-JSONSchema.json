@@ -6250,7 +6250,13 @@
             "-backTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
+            "-back": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
             "-bottomTexture": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
+            "-bottom": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@description": {
@@ -6261,7 +6267,13 @@
             "-frontTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
+            "-front": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
             "-leftTexture": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
+            "-left": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "-metadata": {
@@ -6270,7 +6282,13 @@
             "-rightTexture": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
+            "-right": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
             "-topTexture": {
+              "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
+            },
+            "-top": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
             "@DEF": {
@@ -8635,6 +8653,9 @@
               "type": "integer"
             },
             "-children": {
+              "$ref": "#/definitions/-DISEntityTypeMappingMFNode"
+            },
+            "-mapping": {
               "$ref": "#/definitions/-DISEntityTypeMappingMFNode"
             },
             "-metadata": {
@@ -18276,6 +18297,9 @@
             "-children": {
               "$ref": "#/definitions/-X3DUrlObjectMFNode"
             },
+            "-watchList": {
+              "$ref": "#/definitions/-X3DUrlObjectMFNode"
+            },
             "@enabled": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
@@ -23120,6 +23144,9 @@
             "-color": {
               "$ref": "#/definitions/-X3DColorNodeMFNode"
             },
+            "-colorRamp": {
+              "$ref": "#/definitions/-X3DColorNodeMFNode"
+            },
             "@colorKey": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
               "$comment": "MFFloat initializeOnly",
@@ -23215,6 +23242,9 @@
               "$ref": "#/definitions/-X3DParticlePhysicsModelNodeMFNode"
             },
             "-texCoord": {
+              "$ref": "#/definitions/-TextureCoordinate-TextureCoordinateGeneratorSFNode"
+            },
+            "-texCoordRamp": {
               "$ref": "#/definitions/-TextureCoordinate-TextureCoordinateGeneratorSFNode"
             },
             "@texCoordKey": {

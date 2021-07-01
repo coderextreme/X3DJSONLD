@@ -79,3 +79,5 @@ os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples
 
 print(f"3.3, CADPartChildTransformationAlternativeC.json")
 os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeC.json')
+print(f"3.3, ball.json")
+os.system(f'python3 validate.py < ../data/ball.json')
