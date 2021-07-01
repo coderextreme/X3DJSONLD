@@ -18,7 +18,7 @@
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
     <Viewpoint DEF='Tour' description='Tour Views'/>
     <!-- Viewpoint position='0 0 4' description='sphere in road'/ -->
-    <Background backUrl='"resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
+    <Background backUrl='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
     <Transform>
       <Shape>
         <Appearance>
@@ -46,12 +46,12 @@
             <ShaderPart USE='common'/>
           </ComposedShader>
           <ComposedCubeMapTexture DEF='texture'>
-            <ImageTexture containerField='backTexture' url='"resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>
-            <ImageTexture containerField='bottomTexture' url='"resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"'/>
-            <ImageTexture containerField='frontTexture' url='"resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"'/>
-            <ImageTexture containerField='leftTexture' url='"resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"'/>
-            <ImageTexture containerField='rightTexture' url='"resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"'/>
-            <ImageTexture containerField='topTexture' url='"resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
+            <ImageTexture containerField='backTexture' url='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>
+            <ImageTexture containerField='bottomTexture' url='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"'/>
+            <ImageTexture containerField='frontTexture' url='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"'/>
+            <ImageTexture containerField='leftTexture' url='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"'/>
+            <ImageTexture containerField='rightTexture' url='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"'/>
+            <ImageTexture containerField='topTexture' url='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
           </ComposedCubeMapTexture>
         </Appearance>
         <Sphere/>

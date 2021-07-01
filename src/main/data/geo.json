@@ -84,12 +84,12 @@
           },
           { "Background":
             {
-              "@backUrl":["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"],
-              "@bottomUrl":["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"],
-              "@frontUrl":["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"],
-              "@leftUrl":["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"],
-              "@rightUrl":["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"],
-              "@topUrl":["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
+              "@backUrl":["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"],
+              "@bottomUrl":["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"],
+              "@frontUrl":["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"],
+              "@leftUrl":["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"],
+              "@rightUrl":["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"],
+              "@topUrl":["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
             }
           },
           { "Transform":
@@ -119,37 +119,37 @@
                                 "-backTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
+                                      "@url":["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
                                     }
                                   },
                                 "-bottomTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
+                                      "@url":["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
                                     }
                                   },
                                 "-frontTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
+                                      "@url":["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
                                     }
                                   },
                                 "-leftTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
+                                      "@url":["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
                                     }
                                   },
                                 "-rightTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
+                                      "@url":["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
                                     }
                                   },
                                 "-topTexture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
+                                      "@url":["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
                                     }
                                   }
                               }
