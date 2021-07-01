@@ -91,7 +91,7 @@ ecmascript:
                }
 ]]>
     </Script>
-    <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
+    <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
     <ROUTE fromField='orientation_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourOrientation'/>
     <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
     <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourOrientation'/>

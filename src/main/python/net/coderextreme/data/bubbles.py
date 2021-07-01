@@ -332,7 +332,7 @@ Script51.setSourceCode('''ecmascript:\n"+
 Scene15.addChildren(Script51)
 ROUTE59 = x3d.ROUTE()
 ROUTE59.setFromNode("TourTime")
-ROUTE59.setFromField("cycleTime_changed")
+ROUTE59.setFromField("cycleTime")
 ROUTE59.setToNode("RandomTourTime")
 ROUTE59.setToField("set_cycle")
 

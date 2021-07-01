@@ -314,7 +314,7 @@ ecmascript:eval (0
 
             new ROUTE({
               fromNode : new SFString("TourTime"),
-              fromField : new SFString("cycleTime_changed"),
+              fromField : new SFString("cycleTime"),
               toNode : new SFString("RandomTourTime"),
               toField : new SFString("set_cycle")}),
 

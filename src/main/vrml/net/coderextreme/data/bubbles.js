@@ -275,7 +275,7 @@ browser.currentScene.children[8] = Script37;
 
 let ROUTE45 = browser.currentScene.createNode("ROUTE");
 ROUTE45.fromNode = "TourTime";
-ROUTE45.fromField = "cycleTime_changed";
+ROUTE45.fromField = "cycleTime";
 ROUTE45.toNode = "RandomTourTime";
 ROUTE45.toField = "set_cycle";
 browser.currentScene.children[9] = ROUTE45;
