@@ -15,6 +15,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 in vec4 position;
 attribute vec3 normal;
 attribute vec3 texcoord;
+in vec4 x3d_Vertex;
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;

@@ -5,6 +5,7 @@
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
+in vec4 x3d_Vertex;
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
