@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="FlowerProto" ><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>

@@ -43,7 +43,7 @@ public class flowers7 {
     new flowers7().initialize().toFileJSON("../data/flowers7.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
