@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 28 October 2020 </td>
+			<td> 18 April 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -52,7 +52,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -701,4 +701,4 @@ SingleAudio.prototype = {
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("SingleAudio.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("The first demo contains a concise X3D scene. The scenario here is the implementation of a single sound source, which is represented by a 3D object. The spatiality of the sound is expressed by a process, in which when the user approaching nearby to the sound source the volume is increased and accordingly when removed there from is reduced. In addition to this and depending on the side of the sound source that the user observes, the sound is emitted from the corresponding speaker. Apart from the 3D scene, we have also added an analyser slider. The analyser gives the possibility to receive real-time generated data, without any change from the input to output sound information. Through this process we achieved the audio visualization of the sound source."))
-    .addMeta((new autoc
+    .addMeta((new autoclass.meta()).setNa
