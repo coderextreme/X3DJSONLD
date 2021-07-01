@@ -375,7 +375,7 @@
           },
           { "ROUTE":
             {
-              "@fromField":"cycleTime_changed",
+              "@fromField":"cycleTime",
               "@fromNode":"TourTime",
               "@toField":"set_cycle",
               "@toNode":"RandomTourTime"

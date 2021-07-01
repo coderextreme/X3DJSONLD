@@ -93,7 +93,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			}\n"+
 "		   }\n"+
 "               }"))
-        .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
+        .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
         .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
         .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
         .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
