@@ -88,7 +88,7 @@
 			}
 		   }
                }]]></Script>
-        <ROUTE fromNode='TourTime' fromField='cycleTime_changed' toNode='RandomTourTime' toField='set_cycle'/>
+        <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_cycle'/>
         <ROUTE fromNode='RandomTourTime' fromField='orientation_changed' toNode='TourOrientation' toField='set_keyValue'/>
         <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='set_keyValue'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'/>
