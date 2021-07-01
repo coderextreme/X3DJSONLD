@@ -24,7 +24,7 @@
     
     <xsl:param name="verbose"><xsl:text>false</xsl:text></xsl:param>
     
-    <xsl:output method="html"/> <!-- output methods:  xml html text -->
+    <xsl:output method="xml"/> <!-- output methods:  xml html text -->
     
     <!-- ======================================================= -->
     
@@ -38,7 +38,7 @@
         </xsl:message>
         
         <!-- process elements and comments -->
-        <xsl:apply-templates select="* | comment()"/>
+        <xsl:apply-templates select="* | text() | comment()"/>
         
     </xsl:template>
 
@@ -91,16 +91,18 @@
             </xsl:for-each>
         </xsl:variable>
         
-        <xsl:variable name="hasContainedText" select="(string-length(normalize-space(.)) > 0)"/>
+        <xsl:variable name="hasContainedText" select="(string-length(normalize-space(translate(.,' ',''))) > 0)"/>
                 
-        <!-- common initial processing for each element -->
+        <!-- common initial processing for each element
         <xsl:if test="not((local-name(..) = 'a')  or (local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or
-                          (local-name() = 'span') or (local-name() = 'sub') or (local-name() = 'sup')) and
+                          (local-name() = 'span') or (local-name() = 'sub') or (local-name() = 'sup') or (local-name() = 'title')) and
                       not(starts-with(local-name(), 'h'))">
-            <!-- no line breaks for inline HTML elements -->
-            <xsl:text>&#10;</xsl:text>
-            <xsl:value-of select="$indent"/>
-        </xsl:if>        
+            <xsl:if test="not(contains(text()[1],'&#10;'))">
+                < ! - - no line breaks for inline HTML elements
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+       < ! - -<xsl:value-of select="$indent"/> - - >
+        </xsl:if>         -->
         
         <xsl:choose>
             <xsl:when test="($elementName = 'b') or ($elementName = 'i') or ($elementName = 'em') or ($elementName = 'strong')">
@@ -149,7 +151,7 @@
                 </xsl:if>
                 <!-- omit copying this element -->
             </xsl:when>
-            <xsl:when test="(($elementName = 'div') or ($elementName = 'span')) and 
+            <xsl:when test="(($elementName = 'div') or ($elementName = 'span')) and
                             ((@class = 'proposed') or (@class = 'approved'))    and
                             not(($elementName = 'div') and (*[local-name() = 'div']))"><!-- be careful of nested div elements -->
                 <!-- omit this div/span element (but keep children) in pristine copy -->
@@ -165,7 +167,7 @@
                     <xsl:text>'</xsl:text>
                 </xsl:message> -->
             </xsl:when>
-            <xsl:when test="(count(*) > 0) or comment() or $hasContainedText or ($elementName = 'a')">
+            <xsl:when test="($elementName = 'pre') or (count(*) > 0) or comment() or $hasContainedText or ($elementName = 'a')">
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:apply-templates select="@*"/> <!-- process attributes for this element -->
@@ -173,20 +175,20 @@
 
                 <xsl:apply-templates select="* | text() | comment()"/>  <!-- recurse on child elements, include contained text -->
 
-                <!-- common final processing for each element -->
+                <!-- common final processing for each element
                 <xsl:if test="not((local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or (local-name() = 'span') or
-                                  (local-name() = 'sub') or (local-name() = 'sup')) and
+                                  (local-name() = 'sub') or (local-name() = 'sup') or (local-name() = 'title')) and
                               not(starts-with(local-name(), 'h'))">
-                    <!-- no line breaks for inline HTML elements -->
+                    < ! - - no line breaks for inline HTML elements
                     <xsl:text>&#10;</xsl:text>
                     <xsl:value-of select="$indent"/>
-                </xsl:if>
+                </xsl:if> -->
                 <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- end element -->
             </xsl:when>
             <xsl:otherwise>
-                <!-- singleton
+                <!-- debug diagnostic: singleton
                 <xsl:message>
                     <xsl:text>singleton </xsl:text>
                     <xsl:value-of select="local-name()"/>
@@ -428,8 +430,19 @@
     
     <xsl:template match="text()"> <!-- rule to process text blocks -->
     
-        <xsl:if test="(string-length(normalize-space(.)) > 0)">
+        <xsl:if test="(string-length(.) > 0)">
             <xsl:choose>
+                <!-- preserve line breaks -->
+                <xsl:when test="(local-name(..) = 'pre') or (local-name(..) = 'code') or contains(., '&#10;')">
+                    <xsl:value-of select="."/>
+                    <!-- debug diagnostic: white space not preserved if output mode is html
+                    <xsl:message>
+                        <xsl:text>***pre***&#10;</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>**/pre***&#10;</xsl:text>
+                    </xsl:message>
+                    -->
+                </xsl:when>
                 <xsl:when test="(local-name(..) = 'span') and (../@class = 'times') and (. = '&#960;')">
                     <xsl:if test="($verbose = 'true')">
                         <xsl:message>

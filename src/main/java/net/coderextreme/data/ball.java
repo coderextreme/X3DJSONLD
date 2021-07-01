@@ -43,7 +43,7 @@ public class ball {
     new ball().initialize().toFileJSON("../data/ball.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))

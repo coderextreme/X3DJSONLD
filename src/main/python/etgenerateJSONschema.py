@@ -116,22 +116,22 @@ class ClassPrinter:
             str += 'number"\n'
         return str
 
-    def printField(self, field):
-        if field.get("name") == "geoSystem":
+    def printField(self, field, namesyn):
+        if field.get(namesyn) == "geoSystem":
             str = '''\
             "@geoSystem": {
 		"$ref": "#/definitions/@geoSystem"
             },
 '''
             return str
-        str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
+        str = '\t\t\t\t\t"@' + field.get(namesyn) + '" : {\n'
         try:
             if regex[field.get("type")] is not None:
                 str += '\t\t\t\t\t\t"pattern" : "^' + regex[field.get("type")].replace("\\", "\\\\") + '$",\n'
         except KeyError:
             pass
 
-        if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
+        if field.get(namesyn) != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
                 try:
                     str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
@@ -235,11 +235,11 @@ class ClassPrinter:
                 str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
                 str += '\t\t\t\t\t\t"type":"'
                 str += 'array",\n'
-                if field.get("name").endswith("url") or field.get("name").endswith("Url"):
+                if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
                     str += '\t\t\t\t\t\t"minItems" : 1,\n'
-                elif field.get("name") == "ROUTE":
+                elif field.get(namesyn) == "ROUTE":
                     str += '\t\t\t\t\t\t"minItems" : 1,\n'
-                elif field.get("name") == "Scene":
+                elif field.get(namesyn) == "Scene":
                     str += '\t\t\t\t\t\t"minItems" : 1,\n'
                 elif field.get("type") == "SFVec2f":
                     str += '\t\t\t\t\t\t"minItems" : 2,\n'
@@ -336,7 +336,7 @@ class ClassPrinter:
                     pass
                 if allTheSame:  # or an exception was thrown
                     str += '{\n'
-                    if field.get("name").endswith("url") or field.get("name").endswith("Url"):
+                    if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
                         str += '\t\t\t\t\t\t"format":"uri-reference",\n'
                     if enums != []:
                         if field.get('additionalEnumerationValuesAllowed') == "true":
@@ -368,7 +368,7 @@ class ClassPrinter:
                             else:
                                 str += ',\n'
                             str += '\t\t\t\t\t\t{\n'
-                            if field.get("name").endswith("url") or field.get("name").endswith("Url"):
+                            if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
                                 str += '\t\t\t\t\t\t\t\t"format":"uri-reference",\n'
                             if enums != []:
                                 str += '\t\t\t\t\t\t\t"enum": [\n'
@@ -586,10 +586,20 @@ class ClassPrinter:
                                     str += '\t\t\t\t\t"' + field.get("name") + '" : {\n'
                                     str += '\t\t\t\t\t\t"$ref":"#/definitions/'+ field.get("name") +'"\n'
                                     str += '\t\t\t\t\t},\n'
+
+                                    if field.get("synonym") != None:
+                                        str += '\t\t\t\t\t"' + field.get("synonym") + '" : {\n'
+                                        str += '\t\t\t\t\t\t"$ref":"#/definitions/'+ field.get("synonym") +'"\n'
+                                        str += '\t\t\t\t\t},\n'
                             except:
                                 str += '\t\t\t\t\t"-' + field.get("name") + '" : {\n'
                                 str += '\t\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
                                 str += '\t\t\t\t\t},\n'
+
+                                if field.get("synonym") != None:
+                                    str += '\t\t\t\t\t"-' + field.get("synonym") + '" : {\n'
+                                    str += '\t\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
+                                    str += '\t\t\t\t\t},\n'
                                 # container fields
                                 cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
                                 if field.get("type") == "MFNode":
@@ -621,7 +631,9 @@ class ClassPrinter:
                                 cf += '\t\t\t\t\t},\n'
                                 containerFields[field.get("acceptableNodeTypes").replace("|", "-") + field.get("type")] = cf
                         elif field.get("name") != "USE":
-                            str += self.printField(field)
+                            str += self.printField(field, "name")
+                            if field.get("synonym") != None:
+                                str += self.printField(field, "synonym")
             if str[-2] == ',':
                 str = str[:-2] + '\n' # strip off comma
 
