@@ -69,7 +69,7 @@ public class ball
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addComments("component name='EnvironmentalEffects' level='1'></component")

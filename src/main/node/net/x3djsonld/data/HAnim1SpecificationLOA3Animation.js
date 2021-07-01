@@ -10,7 +10,7 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships. </p>
+ * <p> HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships. </p>
  <p> Related links: HAnim1SpecificationLOA3Animation.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d">HAnim1SpecificationLOA3Animation.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d">HAnimSpecificationLOA3Animation.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships. </td>
+			<td> HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships. </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -36,31 +36,35 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 19 February 2021 </td>
+			<td> 4 July 2020 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
+			<td> Convert to X3D4 HAnim2 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3MotionH3DViewer.png">HAnim1SpecificationLOA3MotionH3DViewer.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionH3DViewer.png">HAnimSpecificationLOA3MotionH3DViewer.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3MotionInstantReality.png">HAnim1SpecificationLOA3MotionInstantReality.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionInstantReality.png">HAnimSpecificationLOA3MotionInstantReality.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3MotionOctagaVS.png">HAnim1SpecificationLOA3MotionOctagaVS.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionOctagaVS.png">HAnimSpecificationLOA3MotionOctagaVS.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3MotionView3dscene.png">HAnim1SpecificationLOA3MotionView3dscene.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3MotionView3dscene.png">HAnimSpecificationLOA3MotionView3dscene.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d">HAnim1SpecificationLOA3Illustrated.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d">HAnim1SpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -68,15 +72,15 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -88,7 +92,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -108,11 +112,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -120,11 +124,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -156,110 +160,110 @@ HAnim1SpecificationLOA3Animation.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #32, 93 total values */
-	this.WorldInfo_4_32_info = new autoclass.MFString(new autoclass.MFString("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
+	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #33, 93 total values */
+	this.WorldInfo_4_33_info = new autoclass.MFString(new autoclass.MFString("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
 
-	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #43, 16 total values */
-	this.hanim_humanoid_3_43_info = new autoclass.MFString(new autoclass.MFString("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=1.0\" \"height=1.7504\""));
+	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #44, 16 total values */
+	this.hanim_humanoid_3_44_info = new autoclass.MFString(new autoclass.MFString("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=2.0\" \"height=1.7504\""));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2587, 44 total numbers made up of 11 4-tuple values */
-	this.Walk_r_ankle_RotationInterpolator_4_2587_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2588, 44 total numbers made up of 11 4-tuple values */
+	this.Walk_r_ankle_RotationInterpolator_4_2588_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2588, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_r_knee_RotationInterpolator_4_2588_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2589, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_r_knee_RotationInterpolator_4_2589_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2589, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_r_hip_RotationInterpolator_4_2589_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2590, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_r_hip_RotationInterpolator_4_2590_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2591, 32 total numbers made up of 8 4-tuple values */
-	this.Walk_l_knee_RotationInterpolator_4_2591_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_knee_RotationInterpolator' keyValue field, scene-graph level=4, element #2592, 32 total numbers made up of 8 4-tuple values */
+	this.Walk_l_knee_RotationInterpolator_4_2592_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2592, 32 total numbers made up of 8 4-tuple values */
-	this.Walk_l_hip_RotationInterpolator_4_2592_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2593, 32 total numbers made up of 8 4-tuple values */
+	this.Walk_l_hip_RotationInterpolator_4_2593_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2594, 16 total numbers made up of 4 4-tuple values */
-	this.Walk_r_wrist_RotationInterpolator_4_2594_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2595, 16 total numbers made up of 4 4-tuple values */
+	this.Walk_r_wrist_RotationInterpolator_4_2595_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2597, 16 total numbers made up of 4 4-tuple values */
-	this.Walk_l_wrist_RotationInterpolator_4_2597_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2598, 16 total numbers made up of 4 4-tuple values */
+	this.Walk_l_wrist_RotationInterpolator_4_2598_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_head_RotationInterpolator' keyValue field, scene-graph level=4, element #2600, 40 total numbers made up of 10 4-tuple values */
-	this.Walk_head_RotationInterpolator_4_2600_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_head_RotationInterpolator' keyValue field, scene-graph level=4, element #2601, 40 total numbers made up of 10 4-tuple values */
+	this.Walk_head_RotationInterpolator_4_2601_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Walk_upper_body_RotationInterpolator' keyValue field, scene-graph level=4, element #2602, 24 total numbers made up of 6 4-tuple values */
-	this.Walk_upper_body_RotationInterpolator_4_2602_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]));
+	/** Large attribute array: OrientationInterpolator DEF='Walk_upper_body_RotationInterpolator' keyValue field, scene-graph level=4, element #2603, 24 total numbers made up of 6 4-tuple values */
+	this.Walk_upper_body_RotationInterpolator_4_2603_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]));
 
-	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2604, 19 total numbers */
-	this.Walk_whole_body_TranslationInterpolator_4_2604_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0]));
+	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2605, 19 total numbers */
+	this.Walk_whole_body_TranslationInterpolator_4_2605_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0]));
 
-	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2604, 57 total numbers made up of 19 3-tuple values */
-	this.Walk_whole_body_TranslationInterpolator_4_2604_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='Walk_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2605, 57 total numbers made up of 19 3-tuple values */
+	this.Walk_whole_body_TranslationInterpolator_4_2605_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_l_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2674, 20 total numbers made up of 5 4-tuple values */
-	this.Run_l_hip_RotationInterpolator_Run_4_2674_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42]));
+	/** Large attribute array: OrientationInterpolator DEF='Run_l_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2675, 20 total numbers made up of 5 4-tuple values */
+	this.Run_l_hip_RotationInterpolator_Run_4_2675_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_r_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2677, 20 total numbers made up of 5 4-tuple values */
-	this.Run_r_hip_RotationInterpolator_Run_4_2677_keyValue = new autoclass.MFRotation(java.newArray("float", [0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9]));
+	/** Large attribute array: OrientationInterpolator DEF='Run_r_hip_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2678, 20 total numbers made up of 5 4-tuple values */
+	this.Run_r_hip_RotationInterpolator_Run_4_2678_keyValue = new autoclass.MFRotation(java.newArray("float", [0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_l_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2680, 20 total numbers made up of 5 4-tuple values */
-	this.Run_l_shoulder_RotationInterpolator_Run_4_2680_keyValue = new autoclass.MFRotation(java.newArray("float", [0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5]));
+	/** Large attribute array: OrientationInterpolator DEF='Run_l_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2681, 20 total numbers made up of 5 4-tuple values */
+	this.Run_l_shoulder_RotationInterpolator_Run_4_2681_keyValue = new autoclass.MFRotation(java.newArray("float", [0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_r_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2683, 20 total numbers made up of 5 4-tuple values */
-	this.Run_r_shoulder_RotationInterpolator_Run_4_2683_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85]));
+	/** Large attribute array: OrientationInterpolator DEF='Run_r_shoulder_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2684, 20 total numbers made up of 5 4-tuple values */
+	this.Run_r_shoulder_RotationInterpolator_Run_4_2684_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Run_upper_body_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2689, 20 total numbers made up of 5 4-tuple values */
-	this.Run_upper_body_RotationInterpolator_Run_4_2689_keyValue = new autoclass.MFRotation(java.newArray("float", [0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5]));
+	/** Large attribute array: OrientationInterpolator DEF='Run_upper_body_RotationInterpolator_Run' keyValue field, scene-graph level=4, element #2690, 20 total numbers made up of 5 4-tuple values */
+	this.Run_upper_body_RotationInterpolator_Run_4_2690_keyValue = new autoclass.MFRotation(java.newArray("float", [0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2761, 56 total numbers made up of 14 4-tuple values */
-	this.Jump_r_ankle_RotationInterpolator_4_2761_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2762, 56 total numbers made up of 14 4-tuple values */
+	this.Jump_r_ankle_RotationInterpolator_4_2762_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,1.3,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087])))
 	.append(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2763, 44 total numbers made up of 11 4-tuple values */
-	this.Jump_r_hip_RotationInterpolator_4_2763_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2764, 44 total numbers made up of 11 4-tuple values */
+	this.Jump_r_hip_RotationInterpolator_4_2764_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,1.63,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,1.55,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2764, 56 total numbers made up of 14 4-tuple values */
-	this.Jump_l_ankle_RotationInterpolator_4_2764_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_ankle_RotationInterpolator' keyValue field, scene-graph level=4, element #2765, 56 total numbers made up of 14 4-tuple values */
+	this.Jump_l_ankle_RotationInterpolator_4_2765_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108])))
 	.append(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2766, 44 total numbers made up of 11 4-tuple values */
-	this.Jump_l_hip_RotationInterpolator_4_2766_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_hip_RotationInterpolator' keyValue field, scene-graph level=4, element #2767, 44 total numbers made up of 11 4-tuple values */
+	this.Jump_l_hip_RotationInterpolator_4_2767_keyValue = new autoclass.MFRotation() /* splitting up long array to improve readability */
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433])))
 	.append(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0])));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2768, 24 total numbers made up of 6 4-tuple values */
-	this.Jump_r_wrist_RotationInterpolator_4_2768_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2769, 24 total numbers made up of 6 4-tuple values */
+	this.Jump_r_wrist_RotationInterpolator_4_2769_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_r_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2770, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_r_shoulder_RotationInterpolator_4_2770_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_r_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2771, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_r_shoulder_RotationInterpolator_4_2771_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2771, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_l_wrist_RotationInterpolator_4_2771_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_wrist_RotationInterpolator' keyValue field, scene-graph level=4, element #2772, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_l_wrist_RotationInterpolator_4_2772_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: OrientationInterpolator DEF='Jump_l_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2773, 28 total numbers made up of 7 4-tuple values */
-	this.Jump_l_shoulder_RotationInterpolator_4_2773_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]));
+	/** Large attribute array: OrientationInterpolator DEF='Jump_l_shoulder_RotationInterpolator' keyValue field, scene-graph level=4, element #2774, 28 total numbers made up of 7 4-tuple values */
+	this.Jump_l_shoulder_RotationInterpolator_4_2774_keyValue = new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]));
 
-	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2778, 22 total numbers */
-	this.Jump_whole_body_TranslationInterpolator_4_2778_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1.0]));
+	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' key field, scene-graph level=4, element #2779, 22 total numbers */
+	this.Jump_whole_body_TranslationInterpolator_4_2779_key = new autoclass.MFFloat(java.newArray("float", [0.0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1.0]));
 
-	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2778, 66 total numbers made up of 22 3-tuple values */
-	this.Jump_whole_body_TranslationInterpolator_4_2778_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: PositionInterpolator DEF='Jump_whole_body_TranslationInterpolator' keyValue field, scene-graph level=4, element #2779, 66 total numbers made up of 22 3-tuple values */
+	this.Jump_whole_body_TranslationInterpolator_4_2779_keyValue = new autoclass.MFVec3f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0.0,0.35,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.000141,-0.01626,-0.004935,0.0,0.0,0.0])));
 
-	/** Large attribute array: IndexedLineSet DEF='Orbit1' coordIndex field, scene-graph level=7, element #2938, 62 total numbers */
-	this.Orbit1_7_2938_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]));
+	/** Large attribute array: IndexedLineSet DEF='Orbit1' coordIndex field, scene-graph level=7, element #2939, 62 total numbers */
+	this.Orbit1_7_2939_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=8, element #2938, 183 total numbers made up of 61 3-tuple values */
-	this.Coordinate_8_2938_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: Coordinate point field, scene-graph level=8, element #2939, 183 total numbers made up of 61 3-tuple values */
+	this.Coordinate_8_2939_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,0.995,0.0,-0.105,0.979,0.0,-0.208,0.951,0.0,-0.309,0.914,0.0,-0.407,0.866,0.0,-0.5,0.809,0.0,-0.588,0.743,0.0,-0.669,0.669,0.0,-0.743,0.588,0.0,-0.809])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.5,0.0,-0.866,0.407,0.0,-0.914,0.309,0.0,-0.951,0.208,0.0,-0.978,0.105,0.0,-0.995,0.0,0.0,-1.0,-0.105,0.0,-0.994522,-0.208,0.0,-0.978,-0.309,0.0,-0.951,-0.407,0.0,-0.914])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.5,0.0,-0.866,-0.588,0.0,-0.809,-0.669,0.0,-0.743,-0.743,0.0,-0.669,-0.809,0.0,-0.588,-0.866,0.0,-0.5,-0.914,0.0,-0.407,-0.951,0.0,-0.309,-0.978,0.0,-0.208,-0.995,0.0,-0.105])))
@@ -270,17 +274,18 @@ HAnim1SpecificationLOA3Animation.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("HAnim1SpecificationLOA3Animation.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."))
+    .addMeta((new autoclass.meta()).setName("title").setContent("HAnimSpecificationLOA3Animation.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
     .addMeta((new autoclass.meta()).setName("created").setContent("24 April 2013"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("19 February 2021"))
-    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnim1SpecificationLOA3MotionH3DViewer.png"))
-    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnim1SpecificationLOA3MotionInstantReality.png"))
-    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnim1SpecificationLOA3MotionOctagaVS.png"))
-    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnim1SpecificationLOA3MotionView3dscene.png"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim1SpecificationLOA3Illustrated.x3d"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim1SpecificationLOA3Invisible.x3d"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("4 July 2020"))
+    .addMeta((new autoclass.meta()).setName("TODO").setContent("Convert to X3D4 HAnim2"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimSpecificationLOA3MotionH3DViewer.png"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimSpecificationLOA3MotionInstantReality.png"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimSpecificationLOA3MotionOctagaVS.png"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("HAnimSpecificationLOA3MotionView3dscene.png"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationLOA3Illustrated.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationLOA3Invisible.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationExampleChangeLog.txt"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
@@ -295,13 +300,13 @@ HAnim1SpecificationLOA3Animation.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.3,0.3,0.3]))))
     .addChild((new autoclass.NavigationInfo()))
     .addChild((new autoclass.Group("Original_WorldInfo"))
-      .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_4_32_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
+      .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_4_33_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
     .addComments(" TODO move viewpoints to be internal to HAnimHumanoid ")
     .addComments(" Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human. ")
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Front").setPosition(0.0,0.4,4.0).setCenterOfRotation(0.0,0.9149,0.0016))
@@ -313,8 +318,8 @@ HAnim1SpecificationLOA3Animation.prototype = {
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Left Side Close").setPosition(-1.0,0.8,0.5).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.2))
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Left Side").setPosition(-2.6,0.8,0.0).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.5708))
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Top").setCenterOfRotation(0.0,0.9149,0.0016).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
-    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setInfo(this.hanim_humanoid_3_43_info).setVersion("1.0")
-      .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setCenter(0.0,0.824,0.0277)
+    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setInfo(this.hanim_humanoid_3_44_info).setVersion("1.0")
+      .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,0.824,0.0277)
         .addChild((new autoclass.HAnimSegment("hanim_sacrum")).setName("sacrum")
           .addComments(" <HAnimJoint name='humanoid_root'/> visualization sphere within <HAnimSegment name='sacrum'/> ")
           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint HumanoidRoot, HAnimSegment sacrum"))
@@ -333,7 +338,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.824,0.0277,0.0028,1.0568,-0.0776]))))
               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,0.9149,0.0016)
+        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,0.9149,0.0016)
           .addChild((new autoclass.HAnimSegment("hanim_pelvis")).setName("pelvis")
             .addComments(" <HAnimJoint name='sacroiliac'/> visualization sphere within <HAnimSegment name='pelvis'/> ")
             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint sacroiliac, HAnimSegment pelvis"))
@@ -434,7 +439,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
               .addComments(" HAnimSite visualization shape ")
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite crotch"))
               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-          .addChild((new autoclass.HAnimJoint("hanim_l_hip")).setName("l_hip").setCenter(0.0961,0.9124,-0.0001)
+          .addChild((new autoclass.HAnimJoint("hanim_l_hip")).setName("l_hip").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0961,0.9124,-0.0001)
             .addChild((new autoclass.HAnimSegment("hanim_l_thigh")).setName("l_thigh")
               .addComments(" <HAnimJoint name='l_hip'/> visualization sphere within <HAnimSegment name='l_thigh'/> ")
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_hip, HAnimSegment l_thigh"))
@@ -472,7 +477,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                 .addComments(" HAnimSite visualization shape ")
                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_femoral_medial_epicn"))
                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-            .addChild((new autoclass.HAnimJoint("hanim_l_knee")).setName("l_knee").setCenter(0.104,0.4867,0.0308)
+            .addChild((new autoclass.HAnimJoint("hanim_l_knee")).setName("l_knee").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.104,0.4867,0.0308)
               .addChild((new autoclass.HAnimSegment("hanim_l_calf")).setName("l_calf")
                 .addComments(" <HAnimJoint name='l_knee'/> visualization sphere within <HAnimSegment name='l_calf'/> ")
                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_knee, HAnimSegment l_calf"))
@@ -483,7 +488,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.104,0.4867,0.0308,0.1101,0.0656,-0.0736]))))
                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-              .addChild((new autoclass.HAnimJoint("hanim_l_ankle")).setName("l_ankle").setCenter(0.1101,0.0656,-0.0736)
+              .addChild((new autoclass.HAnimJoint("hanim_l_ankle")).setName("l_ankle").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1101,0.0656,-0.0736)
                 .addChild((new autoclass.HAnimSegment("hanim_l_hindfoot")).setName("l_hindfoot")
                   .addComments(" <HAnimJoint name='l_ankle'/> visualization sphere within <HAnimSegment name='l_hindfoot'/> ")
                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_ankle, HAnimSegment l_hindfoot"))
@@ -530,7 +535,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                     .addComments(" HAnimSite visualization shape ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_calcaneous_post"))
                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                .addChild((new autoclass.HAnimJoint("hanim_l_subtalar")).setName("l_subtalar").setCenter(0.1086,0.0001,-0.0368)
+                .addChild((new autoclass.HAnimJoint("hanim_l_subtalar")).setName("l_subtalar").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1086,0.0001,-0.0368)
                   .addChild((new autoclass.HAnimSegment("hanim_l_midproximal")).setName("l_midproximal")
                     .addComments(" <HAnimJoint name='l_subtalar'/> visualization sphere within <HAnimSegment name='l_midproximal'/> ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_subtalar, HAnimSegment l_midproximal"))
@@ -541,7 +546,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                       .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1086,0.0001,-0.0368,0.1086,0.0001,0.0368]))))
                         .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild((new autoclass.HAnimJoint("hanim_l_midtarsal")).setName("l_midtarsal").setCenter(0.1086,0.0001,0.0368)
+                  .addChild((new autoclass.HAnimJoint("hanim_l_midtarsal")).setName("l_midtarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1086,0.0001,0.0368)
                     .addChild((new autoclass.HAnimSegment("hanim_l_middistal")).setName("l_middistal")
                       .addComments(" <HAnimJoint name='l_midtarsal'/> visualization sphere within <HAnimSegment name='l_middistal'/> ")
                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_midtarsal, HAnimSegment l_middistal"))
@@ -561,7 +566,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                         .addComments(" HAnimSite visualization shape ")
                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_metatarsal_pha1"))
                         .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                    .addChild((new autoclass.HAnimJoint("hanim_l_metatarsal")).setName("l_metatarsal").setCenter(0.1086,0.0,0.0762)
+                    .addChild((new autoclass.HAnimJoint("hanim_l_metatarsal")).setName("l_metatarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1086,0.0,0.0762)
                       .addChild((new autoclass.HAnimSegment("hanim_l_forefoot")).setName("l_forefoot")
                         .addComments(" <HAnimJoint name='l_metatarsal'/> visualization sphere within <HAnimSegment name='l_forefoot'/> ")
                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_metatarsal, HAnimSegment l_forefoot"))
@@ -594,7 +599,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                           .addComments(" HAnimSite visualization shape ")
                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_digit2"))
                           .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))))
-          .addChild((new autoclass.HAnimJoint("hanim_r_hip")).setName("r_hip").setCenter(-0.0961,0.9124,-0.0001)
+          .addChild((new autoclass.HAnimJoint("hanim_r_hip")).setName("r_hip").setCenter(-0.0961,0.9124,-0.0001).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
             .addChild((new autoclass.HAnimSegment("hanim_r_thigh")).setName("r_thigh")
               .addComments(" <HAnimJoint name='r_hip'/> visualization sphere within <HAnimSegment name='r_thigh'/> ")
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_hip, HAnimSegment r_thigh"))
@@ -632,7 +637,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                 .addComments(" HAnimSite visualization shape ")
                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_femoral_medial_epicn"))
                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-            .addChild((new autoclass.HAnimJoint("hanim_r_knee")).setName("r_knee").setCenter(-0.104,0.4867,0.0308)
+            .addChild((new autoclass.HAnimJoint("hanim_r_knee")).setName("r_knee").setCenter(-0.104,0.4867,0.0308).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
               .addChild((new autoclass.HAnimSegment("hanim_r_calf")).setName("r_calf")
                 .addComments(" <HAnimJoint name='r_knee'/> visualization sphere within <HAnimSegment name='r_calf'/> ")
                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_knee, HAnimSegment r_calf"))
@@ -643,7 +648,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.104,0.4867,0.0308,-0.1101,0.0656,-0.0736]))))
                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-              .addChild((new autoclass.HAnimJoint("hanim_r_ankle")).setName("r_ankle").setCenter(-0.1101,0.0656,-0.0736)
+              .addChild((new autoclass.HAnimJoint("hanim_r_ankle")).setName("r_ankle").setCenter(-0.1101,0.0656,-0.0736).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                 .addChild((new autoclass.HAnimSegment("hanim_r_hindfoot")).setName("r_hindfoot")
                   .addComments(" <HAnimJoint name='r_ankle'/> visualization sphere within <HAnimSegment name='r_hindfoot'/> ")
                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_ankle, HAnimSegment r_hindfoot"))
@@ -690,7 +695,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                     .addComments(" HAnimSite visualization shape ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_calcaneous_post"))
                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                .addChild((new autoclass.HAnimJoint("hanim_r_subtalar")).setName("r_subtalar").setCenter(-0.1086,0.0001,-0.0368)
+                .addChild((new autoclass.HAnimJoint("hanim_r_subtalar")).setName("r_subtalar").setCenter(-0.1086,0.0001,-0.0368).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                   .addChild((new autoclass.HAnimSegment("hanim_r_midproximal")).setName("r_midproximal")
                     .addComments(" <HAnimJoint name='r_subtalar'/> visualization sphere within <HAnimSegment name='r_midproximal'/> ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_subtalar, HAnimSegment r_midproximal"))
@@ -701,7 +706,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                       .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1086,0.0001,-0.0368,-0.1086,0.0001,0.0368]))))
                         .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild((new autoclass.HAnimJoint("hanim_r_midtarsal")).setName("r_midtarsal").setCenter(-0.1086,0.0001,0.0368)
+                  .addChild((new autoclass.HAnimJoint("hanim_r_midtarsal")).setName("r_midtarsal").setCenter(-0.1086,0.0001,0.0368).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                     .addChild((new autoclass.HAnimSegment("hanim_r_middistal")).setName("r_middistal")
                       .addComments(" <HAnimJoint name='r_midtarsal'/> visualization sphere within <HAnimSegment name='r_middistal'/> ")
                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_midtarsal, HAnimSegment r_middistal"))
@@ -721,7 +726,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                         .addComments(" HAnimSite visualization shape ")
                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_metatarsal_pha1"))
                         .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                    .addChild((new autoclass.HAnimJoint("hanim_r_metatarsal")).setName("r_metatarsal").setCenter(-0.1086,0.0,0.0762)
+                    .addChild((new autoclass.HAnimJoint("hanim_r_metatarsal")).setName("r_metatarsal").setCenter(-0.1086,0.0,0.0762).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                       .addChild((new autoclass.HAnimSegment("hanim_r_forefoot")).setName("r_forefoot")
                         .addComments(" <HAnimJoint name='r_metatarsal'/> visualization sphere within <HAnimSegment name='r_forefoot'/> ")
                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_metatarsal, HAnimSegment r_forefoot"))
@@ -754,7 +759,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                           .addComments(" HAnimSite visualization shape ")
                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_digit2"))
                           .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape")))))))))))
-        .addChild((new autoclass.HAnimJoint("hanim_vl5")).setName("vl5").setCenter(0.0028,1.0568,-0.0776)
+        .addChild((new autoclass.HAnimJoint("hanim_vl5")).setName("vl5").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0028,1.0568,-0.0776)
           .addChild((new autoclass.HAnimSegment("hanim_l5")).setName("l5")
             .addComments(" <HAnimJoint name='vl5'/> visualization sphere within <HAnimSegment name='l5'/> ")
             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vl5, HAnimSegment l5"))
@@ -783,7 +788,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
               .addComments(" HAnimSite visualization shape ")
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite navel"))
               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-          .addChild((new autoclass.HAnimJoint("hanim_vl4")).setName("vl4").setCenter(0.0035,1.0925,-0.0787)
+          .addChild((new autoclass.HAnimJoint("hanim_vl4")).setName("vl4").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0035,1.0925,-0.0787)
             .addChild((new autoclass.HAnimSegment("hanim_l4")).setName("l4")
               .addComments(" <HAnimJoint name='vl4'/> visualization sphere within <HAnimSegment name='l4'/> ")
               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vl4, HAnimSegment l4"))
@@ -794,7 +799,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                 .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796]))))
                   .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-            .addChild((new autoclass.HAnimJoint("hanim_vl3")).setName("vl3").setCenter(0.0041,1.1276,-0.0796)
+            .addChild((new autoclass.HAnimJoint("hanim_vl3")).setName("vl3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0041,1.1276,-0.0796)
               .addChild((new autoclass.HAnimSegment("hanim_l3")).setName("l3")
                 .addComments(" <HAnimJoint name='vl3'/> visualization sphere within <HAnimSegment name='l3'/> ")
                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vl3, HAnimSegment l3"))
@@ -805,7 +810,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08]))))
                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-              .addChild((new autoclass.HAnimJoint("hanim_vl2")).setName("vl2").setCenter(0.0045,1.1546,-0.08)
+              .addChild((new autoclass.HAnimJoint("hanim_vl2")).setName("vl2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0045,1.1546,-0.08)
                 .addChild((new autoclass.HAnimSegment("hanim_l2")).setName("l2")
                   .addComments(" <HAnimJoint name='vl2'/> visualization sphere within <HAnimSegment name='l2'/> ")
                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vl2, HAnimSegment l2"))
@@ -843,7 +848,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                     .addComments(" HAnimSite visualization shape ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite rib10_midspine"))
                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                .addChild((new autoclass.HAnimJoint("hanim_vl1")).setName("vl1").setCenter(0.0048,1.1912,-0.0805)
+                .addChild((new autoclass.HAnimJoint("hanim_vl1")).setName("vl1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0048,1.1912,-0.0805)
                   .addChild((new autoclass.HAnimSegment("hanim_l1")).setName("l1")
                     .addComments(" <HAnimJoint name='vl1'/> visualization sphere within <HAnimSegment name='l1'/> ")
                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vl1, HAnimSegment l1"))
@@ -854,7 +859,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                       .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808]))))
                         .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild((new autoclass.HAnimJoint("hanim_vt12")).setName("vt12").setCenter(0.0051,1.2278,-0.0808)
+                  .addChild((new autoclass.HAnimJoint("hanim_vt12")).setName("vt12").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0051,1.2278,-0.0808)
                     .addChild((new autoclass.HAnimSegment("hanim_t12")).setName("t12")
                       .addComments(" <HAnimJoint name='vt12'/> visualization sphere within <HAnimSegment name='t12'/> ")
                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt12, HAnimSegment t12"))
@@ -865,7 +870,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                         .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081]))))
                           .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild((new autoclass.HAnimJoint("hanim_vt11")).setName("vt11").setCenter(0.0053,1.2679,-0.081)
+                    .addChild((new autoclass.HAnimJoint("hanim_vt11")).setName("vt11").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0053,1.2679,-0.081)
                       .addChild((new autoclass.HAnimSegment("hanim_t11")).setName("t11")
                         .addComments(" <HAnimJoint name='vt11'/> visualization sphere within <HAnimSegment name='t11'/> ")
                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt11, HAnimSegment t11"))
@@ -876,7 +881,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822]))))
                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild((new autoclass.HAnimJoint("hanim_vt10")).setName("vt10").setCenter(0.0056,1.2848,-0.0822)
+                      .addChild((new autoclass.HAnimJoint("hanim_vt10")).setName("vt10").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0056,1.2848,-0.0822)
                         .addChild((new autoclass.HAnimSegment("hanim_t10")).setName("t10")
                           .addComments(" <HAnimJoint name='vt10'/> visualization sphere within <HAnimSegment name='t10'/> ")
                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt10, HAnimSegment t10"))
@@ -896,7 +901,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                             .addComments(" HAnimSite visualization shape ")
                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite substernale"))
                             .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                        .addChild((new autoclass.HAnimJoint("hanim_vt9")).setName("vt9").setCenter(0.0057,1.3126,-0.0838)
+                        .addChild((new autoclass.HAnimJoint("hanim_vt9")).setName("vt9").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0057,1.3126,-0.0838)
                           .addChild((new autoclass.HAnimSegment("hanim_t9")).setName("t9")
                             .addComments(" <HAnimJoint name='vt9'/> visualization sphere within <HAnimSegment name='t9'/> ")
                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt9, HAnimSegment t9"))
@@ -925,7 +930,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                               .addComments(" HAnimSite visualization shape ")
                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_thelion"))
                               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                          .addChild((new autoclass.HAnimJoint("hanim_vt8")).setName("vt8").setCenter(0.0057,1.3382,-0.0845)
+                          .addChild((new autoclass.HAnimJoint("hanim_vt8")).setName("vt8").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0057,1.3382,-0.0845)
                             .addChild((new autoclass.HAnimSegment("hanim_t8")).setName("t8")
                               .addComments(" <HAnimJoint name='vt8'/> visualization sphere within <HAnimSegment name='t8'/> ")
                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt8, HAnimSegment t8"))
@@ -936,7 +941,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                 .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                   .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833]))))
                                   .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                            .addChild((new autoclass.HAnimJoint("hanim_vt7")).setName("vt7").setCenter(0.0058,1.3625,-0.0833)
+                            .addChild((new autoclass.HAnimJoint("hanim_vt7")).setName("vt7").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0058,1.3625,-0.0833)
                               .addChild((new autoclass.HAnimSegment("hanim_t7")).setName("t7")
                                 .addComments(" <HAnimJoint name='vt7'/> visualization sphere within <HAnimSegment name='t7'/> ")
                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt7, HAnimSegment t7"))
@@ -947,7 +952,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08]))))
                                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                              .addChild((new autoclass.HAnimJoint("hanim_vt6")).setName("vt6").setCenter(0.0059,1.3866,-0.08)
+                              .addChild((new autoclass.HAnimJoint("hanim_vt6")).setName("vt6").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0059,1.3866,-0.08)
                                 .addChild((new autoclass.HAnimSegment("hanim_t6")).setName("t6")
                                   .addComments(" <HAnimJoint name='vt6'/> visualization sphere within <HAnimSegment name='t6'/> ")
                                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt6, HAnimSegment t6"))
@@ -958,7 +963,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                     .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0059,1.3866,-0.08,0.006,1.4102,-0.0745]))))
                                       .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild((new autoclass.HAnimJoint("hanim_vt5")).setName("vt5").setCenter(0.006,1.4102,-0.0745)
+                                .addChild((new autoclass.HAnimJoint("hanim_vt5")).setName("vt5").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.006,1.4102,-0.0745)
                                   .addChild((new autoclass.HAnimSegment("hanim_t5")).setName("t5")
                                     .addComments(" <HAnimJoint name='vt5'/> visualization sphere within <HAnimSegment name='t5'/> ")
                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt5, HAnimSegment t5"))
@@ -969,7 +974,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                       .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.006,1.4102,-0.0745,0.0061,1.432,-0.0675]))))
                                         .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild((new autoclass.HAnimJoint("hanim_vt4")).setName("vt4").setCenter(0.0061,1.432,-0.0675)
+                                  .addChild((new autoclass.HAnimJoint("hanim_vt4")).setName("vt4").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0061,1.432,-0.0675)
                                     .addChild((new autoclass.HAnimSegment("hanim_t4")).setName("t4")
                                       .addComments(" <HAnimJoint name='vt4'/> visualization sphere within <HAnimSegment name='t4'/> ")
                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt4, HAnimSegment t4"))
@@ -980,7 +985,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                         .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0061,1.432,-0.0675,0.0062,1.4583,-0.057]))))
                                           .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                    .addChild((new autoclass.HAnimJoint("hanim_vt3")).setName("vt3").setCenter(0.0062,1.4583,-0.057)
+                                    .addChild((new autoclass.HAnimJoint("hanim_vt3")).setName("vt3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0062,1.4583,-0.057)
                                       .addChild((new autoclass.HAnimSegment("hanim_t3")).setName("t3")
                                         .addComments(" <HAnimJoint name='vt3'/> visualization sphere within <HAnimSegment name='t3'/> ")
                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt3, HAnimSegment t3"))
@@ -991,7 +996,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484]))))
                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                      .addChild((new autoclass.HAnimJoint("hanim_vt2")).setName("vt2").setCenter(0.0063,1.4761,-0.0484)
+                                      .addChild((new autoclass.HAnimJoint("hanim_vt2")).setName("vt2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0063,1.4761,-0.0484)
                                         .addChild((new autoclass.HAnimSegment("hanim_t2")).setName("t2")
                                           .addComments(" <HAnimJoint name='vt2'/> visualization sphere within <HAnimSegment name='t2'/> ")
                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt2, HAnimSegment t2"))
@@ -1002,7 +1007,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387]))))
                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                        .addChild((new autoclass.HAnimJoint("hanim_vt1")).setName("vt1").setCenter(0.0065,1.4951,-0.0387)
+                                        .addChild((new autoclass.HAnimJoint("hanim_vt1")).setName("vt1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0065,1.4951,-0.0387)
                                           .addChild((new autoclass.HAnimSegment("hanim_t1")).setName("t1")
                                             .addComments(" <HAnimJoint name='vt1'/> visualization sphere within <HAnimSegment name='t1'/> ")
                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vt1, HAnimSegment t1"))
@@ -1041,7 +1046,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                               .addComments(" HAnimSite visualization shape ")
                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite cervicale"))
                                               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                          .addChild((new autoclass.HAnimJoint("hanim_vc7")).setName("vc7").setCenter(0.0066,1.5132,-0.0301)
+                                          .addChild((new autoclass.HAnimJoint("hanim_vc7")).setName("vc7").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.5132,-0.0301)
                                             .addChild((new autoclass.HAnimSegment("hanim_c7")).setName("c7")
                                               .addComments(" <HAnimJoint name='vc7'/> visualization sphere within <HAnimSegment name='c7'/> ")
                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc7, HAnimSegment c7"))
@@ -1070,7 +1075,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                 .addComments(" HAnimSite visualization shape ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_neck_base"))
                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                            .addChild((new autoclass.HAnimJoint("hanim_vc6")).setName("vc6").setCenter(0.0066,1.5357,-0.0143)
+                                            .addChild((new autoclass.HAnimJoint("hanim_vc6")).setName("vc6").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.5357,-0.0143)
                                               .addChild((new autoclass.HAnimSegment("hanim_c6")).setName("c6")
                                                 .addComments(" <HAnimJoint name='vc6'/> visualization sphere within <HAnimSegment name='c6'/> ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc6, HAnimSegment c6"))
@@ -1081,7 +1086,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082]))))
                                                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                              .addChild((new autoclass.HAnimJoint("hanim_vc5")).setName("vc5").setCenter(0.0066,1.552,-0.0082)
+                                              .addChild((new autoclass.HAnimJoint("hanim_vc5")).setName("vc5").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.552,-0.0082)
                                                 .addChild((new autoclass.HAnimSegment("hanim_c5")).setName("c5")
                                                   .addComments(" <HAnimJoint name='vc5'/> visualization sphere within <HAnimSegment name='c5'/> ")
                                                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc5, HAnimSegment c5"))
@@ -1092,7 +1097,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                     .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                       .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084]))))
                                                       .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                .addChild((new autoclass.HAnimJoint("hanim_vc4")).setName("vc4").setCenter(0.0066,1.5662,-0.0084)
+                                                .addChild((new autoclass.HAnimJoint("hanim_vc4")).setName("vc4").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.5662,-0.0084)
                                                   .addChild((new autoclass.HAnimSegment("hanim_c4")).setName("c4")
                                                     .addComments(" <HAnimJoint name='vc4'/> visualization sphere within <HAnimSegment name='c4'/> ")
                                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc4, HAnimSegment c4"))
@@ -1103,7 +1108,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                       .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103]))))
                                                         .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                  .addChild((new autoclass.HAnimJoint("hanim_vc3")).setName("vc3").setCenter(0.0066,1.58,-0.0103)
+                                                  .addChild((new autoclass.HAnimJoint("hanim_vc3")).setName("vc3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.58,-0.0103)
                                                     .addChild((new autoclass.HAnimSegment("hanim_c3")).setName("c3")
                                                       .addComments(" <HAnimJoint name='vc3'/> visualization sphere within <HAnimSegment name='c3'/> ")
                                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc3, HAnimSegment c3"))
@@ -1114,7 +1119,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                         .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                           .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103]))))
                                                           .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_vc2")).setName("vc2").setCenter(0.0066,1.5928,-0.0103)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_vc2")).setName("vc2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.5928,-0.0103)
                                                       .addChild((new autoclass.HAnimSegment("hanim_c2")).setName("c2")
                                                         .addComments(" <HAnimJoint name='vc2'/> visualization sphere within <HAnimSegment name='c2'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc2, HAnimSegment c2"))
@@ -1125,7 +1130,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_vc1")).setName("vc1").setCenter(0.0066,1.6144,-0.0034)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_vc1")).setName("vc1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0066,1.6144,-0.0034)
                                                         .addChild((new autoclass.HAnimSegment("hanim_c1")).setName("c1")
                                                           .addComments(" <HAnimJoint name='vc1'/> visualization sphere within <HAnimSegment name='c1'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint vc1, HAnimSegment c1"))
@@ -1136,7 +1141,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_skullbase")).setName("skullbase").setCenter(0.0044,1.6209,0.0236)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_skullbase")).setName("skullbase").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0044,1.6209,0.0236)
                                                           .addChild((new autoclass.HAnimSegment("hanim_skull")).setName("skull")
                                                             .addComments(" <HAnimJoint name='skullbase'/> visualization sphere within <HAnimSegment name='skull'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint skullbase, HAnimSegment skull"))
@@ -1268,7 +1273,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .addComments(" HAnimSite visualization shape ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite nuchale"))
                                                               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyeball_joint")).setName("l_eyeball_joint").setCenter(0.0336,1.6332,0.0502)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyeball_joint")).setName("l_eyeball_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0336,1.6332,0.0502)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_eyeball")).setName("l_eyeball")
                                                               .addComments(" <HAnimJoint name='l_eyeball_joint'/> visualization sphere within <HAnimSegment name='l_eyeball'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball"))
@@ -1290,19 +1295,19 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.010,0.0,-0.010,0.0,0.0,0.0,0.0,0.010,0.010,0.0,0.0,0.0,0.0,-0.010,0.0,-0.010,0.0])))))
                                                                       .setAppearance((new autoclass.Appearance())
                                                                         .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.0,1.0).setTransparency(0.6)))))))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyelid_joint")).setName("l_eyelid_joint").setCenter(0.0336,1.6332,0.0502)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyelid_joint")).setName("l_eyelid_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0336,1.6332,0.0502)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_eyelid")).setName("l_eyelid")
                                                               .addComments(" <HAnimJoint name='l_eyelid_joint'/> visualization sphere within <HAnimSegment name='l_eyelid'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid"))
                                                               .addChild((new autoclass.Transform()).setTranslation(0.0336,1.6332,0.0502)
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyebrow_joint")).setName("l_eyebrow_joint").setCenter(0.0336,1.635,0.0506)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_eyebrow_joint")).setName("l_eyebrow_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0336,1.635,0.0506)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_eyebrow")).setName("l_eyebrow")
                                                               .addComments(" <HAnimJoint name='l_eyebrow_joint'/> visualization sphere within <HAnimSegment name='l_eyebrow'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow"))
                                                               .addChild((new autoclass.Transform()).setTranslation(0.0336,1.635,0.0506)
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyeball_joint")).setName("r_eyeball_joint").setCenter(-0.0336,1.6332,0.0502)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyeball_joint")).setName("r_eyeball_joint").setCenter(-0.0336,1.6332,0.0502).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_eyeball")).setName("r_eyeball")
                                                               .addComments(" <HAnimJoint name='r_eyeball_joint'/> visualization sphere within <HAnimSegment name='r_eyeball'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball"))
@@ -1320,20 +1325,20 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                   .addChild((new autoclass.LOD()).setRange(java.newArray("float", [0.04])).setForceTransitions(true)
                                                                     .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"hide diamond when close\"")))
                                                                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteViewpointShape")))))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyelid_joint")).setName("r_eyelid_joint").setCenter(-0.0336,1.6332,0.0502)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyelid_joint")).setName("r_eyelid_joint").setCenter(-0.0336,1.6332,0.0502).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_eyelid")).setName("r_eyelid")
                                                               .addComments(" <HAnimJoint name='r_eyelid_joint'/> visualization sphere within <HAnimSegment name='r_eyelid'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid"))
                                                               .addChild((new autoclass.Transform()).setTranslation(-0.0336,1.6332,0.0502)
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyebrow_joint")).setName("r_eyebrow_joint").setCenter(-0.0336,1.635,0.0506)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_eyebrow_joint")).setName("r_eyebrow_joint").setCenter(-0.0336,1.635,0.0506).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_eyebrow")).setName("r_eyebrow")
                                                               .addComments(" <HAnimJoint name='r_eyebrow_joint'/> visualization sphere within <HAnimSegment name='r_eyebrow'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow"))
                                                               .addChild((new autoclass.Transform()).setTranslation(-0.0336,1.635,0.0506)
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))))
                                                           .addComments(" Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint ")
-                                                          .addChild((new autoclass.HAnimJoint("hanim_temporomandibular")).setName("temporomandibular").setCenter(0.0,1.63,0.015)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_temporomandibular")).setName("temporomandibular").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,1.63,0.015)
                                                             .addChild((new autoclass.HAnimSegment("hanim_jaw")).setName("jaw")
                                                               .addComments(" <HAnimJoint name='temporomandibular'/> visualization sphere within <HAnimSegment name='jaw'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint temporomandibular, HAnimSegment jaw"))
@@ -1357,7 +1362,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite temporomandibular_r_site"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape")))))))))))))
-                                          .addChild((new autoclass.HAnimJoint("hanim_l_sternoclavicular")).setName("l_sternoclavicular").setCenter(0.082,1.4488,-0.0353)
+                                          .addChild((new autoclass.HAnimJoint("hanim_l_sternoclavicular")).setName("l_sternoclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.082,1.4488,-0.0353)
                                             .addChild((new autoclass.HAnimSegment("hanim_l_clavicle")).setName("l_clavicle")
                                               .addComments(" <HAnimJoint name='l_sternoclavicular'/> visualization sphere within <HAnimSegment name='l_clavicle'/> ")
                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle"))
@@ -1404,7 +1409,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                 .addComments(" HAnimSite visualization shape ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_axilla_post"))
                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                            .addChild((new autoclass.HAnimJoint("hanim_l_acromioclavicular")).setName("l_acromioclavicular").setCenter(0.0962,1.4269,-0.0424)
+                                            .addChild((new autoclass.HAnimJoint("hanim_l_acromioclavicular")).setName("l_acromioclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0962,1.4269,-0.0424)
                                               .addChild((new autoclass.HAnimSegment("hanim_l_scapula")).setName("l_scapula")
                                                 .addComments(" <HAnimJoint name='l_acromioclavicular'/> visualization sphere within <HAnimSegment name='l_scapula'/> ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_acromioclavicular, HAnimSegment l_scapula"))
@@ -1415,7 +1420,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387]))))
                                                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                              .addChild((new autoclass.HAnimJoint("hanim_l_shoulder")).setName("l_shoulder").setCenter(0.2029,1.4376,-0.0387)
+                                              .addChild((new autoclass.HAnimJoint("hanim_l_shoulder")).setName("l_shoulder").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2029,1.4376,-0.0387)
                                                 .addChild((new autoclass.HAnimSegment("hanim_l_upperarm")).setName("l_upperarm")
                                                   .addComments(" <HAnimJoint name='l_shoulder'/> visualization sphere within <HAnimSegment name='l_upperarm'/> ")
                                                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_shoulder, HAnimSegment l_upperarm"))
@@ -1435,7 +1440,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                     .addComments(" HAnimSite visualization shape ")
                                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_humeral_lateral_epicn"))
                                                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                                .addChild((new autoclass.HAnimJoint("hanim_l_elbow")).setName("l_elbow").setCenter(0.2014,1.1357,-0.0682)
+                                                .addChild((new autoclass.HAnimJoint("hanim_l_elbow")).setName("l_elbow").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2014,1.1357,-0.0682)
                                                   .addChild((new autoclass.HAnimSegment("hanim_l_forearm")).setName("l_forearm")
                                                     .addComments(" <HAnimJoint name='l_elbow'/> visualization sphere within <HAnimSegment name='l_forearm'/> ")
                                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_elbow, HAnimSegment l_forearm"))
@@ -1482,7 +1487,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                       .addComments(" HAnimSite visualization shape ")
                                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_radiale"))
                                                       .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                                  .addChild((new autoclass.HAnimJoint("hanim_l_wrist")).setName("l_wrist").setCenter(0.1984,0.8663,-0.0583)
+                                                  .addChild((new autoclass.HAnimJoint("hanim_l_wrist")).setName("l_wrist").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1984,0.8663,-0.0583)
                                                     .addChild((new autoclass.HAnimSegment("hanim_l_hand")).setName("l_hand")
                                                       .addComments(" <HAnimJoint name='l_wrist'/> visualization sphere within <HAnimSegment name='l_hand'/> ")
                                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_wrist, HAnimSegment l_hand"))
@@ -1552,7 +1557,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .addChild((new autoclass.LOD()).setRange(java.newArray("float", [0.04])).setForceTransitions(true)
                                                             .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"hide diamond when close\"")))
                                                             .addChild((new autoclass.Shape()).setUSE("HAnimSiteViewpointShape"))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_l_thumb1")).setName("l_thumb1").setCenter(0.1924,0.8472,-0.0534)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_l_thumb1")).setName("l_thumb1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1924,0.8472,-0.0534)
                                                       .addChild((new autoclass.HAnimSegment("hanim_l_thumb_metacarpal")).setName("l_thumb_metacarpal")
                                                         .addComments(" <HAnimJoint name='l_thumb1'/> visualization sphere within <HAnimSegment name='l_thumb_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_thumb1, HAnimSegment l_thumb_metacarpal"))
@@ -1563,7 +1568,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_l_thumb2")).setName("l_thumb2").setCenter(0.1951,0.8226,0.0246)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_l_thumb2")).setName("l_thumb2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1951,0.8226,0.0246)
                                                         .addChild((new autoclass.HAnimSegment("hanim_l_thumb_proximal")).setName("l_thumb_proximal")
                                                           .addComments(" <HAnimJoint name='l_thumb2'/> visualization sphere within <HAnimSegment name='l_thumb_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_thumb2, HAnimSegment l_thumb_proximal"))
@@ -1574,7 +1579,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1951,0.8226,0.0246,0.1955,0.8159,0.0464]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_l_thumb3")).setName("l_thumb3").setCenter(0.1955,0.8159,0.0464)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_l_thumb3")).setName("l_thumb3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1955,0.8159,0.0464)
                                                           .addChild((new autoclass.HAnimSegment("hanim_l_thumb_distal")).setName("l_thumb_distal")
                                                             .addComments(" <HAnimJoint name='l_thumb3'/> visualization sphere within <HAnimSegment name='l_thumb_distal'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_thumb3, HAnimSegment l_thumb_distal"))
@@ -1589,7 +1594,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .addComments(" HAnimSite visualization shape ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_thumb_distal_tip"))
                                                               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape")))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_l_index0")).setName("l_index0").setCenter(0.1983,0.8024,-0.028)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_l_index0")).setName("l_index0").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1983,0.8024,-0.028)
                                                       .addChild((new autoclass.HAnimSegment("hanim_l_index_metacarpal")).setName("l_index_metacarpal")
                                                         .addComments(" <HAnimJoint name='l_index0'/> visualization sphere within <HAnimSegment name='l_index_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_index0, HAnimSegment l_index_metacarpal"))
@@ -1600,7 +1605,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1983,0.8024,-0.028,0.1983,0.7815,-0.028]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_l_index1")).setName("l_index1").setCenter(0.1983,0.7815,-0.028)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_l_index1")).setName("l_index1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1983,0.7815,-0.028)
                                                         .addChild((new autoclass.HAnimSegment("hanim_l_index_proximal")).setName("l_index_proximal")
                                                           .addComments(" <HAnimJoint name='l_index1'/> visualization sphere within <HAnimSegment name='l_index_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_index1, HAnimSegment l_index_proximal"))
@@ -1611,7 +1616,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_l_index2")).setName("l_index2").setCenter(0.2017,0.7363,-0.0248)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_l_index2")).setName("l_index2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2017,0.7363,-0.0248)
                                                           .addChild((new autoclass.HAnimSegment("hanim_l_index_middle")).setName("l_index_middle")
                                                             .addComments(" <HAnimJoint name='l_index2'/> visualization sphere within <HAnimSegment name='l_index_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_index2, HAnimSegment l_index_middle"))
@@ -1622,7 +1627,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_index3")).setName("l_index3").setCenter(0.2028,0.7139,-0.0236)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_index3")).setName("l_index3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2028,0.7139,-0.0236)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_index_distal")).setName("l_index_distal")
                                                               .addComments(" <HAnimJoint name='l_index3'/> visualization sphere within <HAnimSegment name='l_index_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_index3, HAnimSegment l_index_distal"))
@@ -1646,7 +1651,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_dactylion"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_l_middle0")).setName("l_middle0").setCenter(0.1987,0.8029,-0.053)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_l_middle0")).setName("l_middle0").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1987,0.8029,-0.053)
                                                       .addChild((new autoclass.HAnimSegment("hanim_l_middle_metacarpal")).setName("l_middle_metacarpal")
                                                         .addComments(" <HAnimJoint name='l_middle0'/> visualization sphere within <HAnimSegment name='l_middle_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_middle0, HAnimSegment l_middle_metacarpal"))
@@ -1657,7 +1662,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1987,0.8029,-0.053,0.1987,0.7818,-0.053]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_l_middle1")).setName("l_middle1").setCenter(0.1987,0.7818,-0.053)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_l_middle1")).setName("l_middle1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1987,0.7818,-0.053)
                                                         .addChild((new autoclass.HAnimSegment("hanim_l_middle_proximal")).setName("l_middle_proximal")
                                                           .addComments(" <HAnimJoint name='l_middle1'/> visualization sphere within <HAnimSegment name='l_middle_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_middle1, HAnimSegment l_middle_proximal"))
@@ -1668,7 +1673,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_l_middle2")).setName("l_middle2").setCenter(0.2013,0.7273,-0.0503)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_l_middle2")).setName("l_middle2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2013,0.7273,-0.0503)
                                                           .addChild((new autoclass.HAnimSegment("hanim_l_middle_middle")).setName("l_middle_middle")
                                                             .addComments(" <HAnimJoint name='l_middle2'/> visualization sphere within <HAnimSegment name='l_middle_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_middle2, HAnimSegment l_middle_middle"))
@@ -1679,7 +1684,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_middle3")).setName("l_middle3").setCenter(0.2026,0.7011,-0.0494)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_middle3")).setName("l_middle3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.2026,0.7011,-0.0494)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_middle_distal")).setName("l_middle_distal")
                                                               .addComments(" <HAnimJoint name='l_middle3'/> visualization sphere within <HAnimSegment name='l_middle_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_middle3, HAnimSegment l_middle_distal"))
@@ -1694,7 +1699,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_middle_distal_tip"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_l_ring0")).setName("l_ring0").setCenter(0.1956,0.8019,-0.0794)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_l_ring0")).setName("l_ring0").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1956,0.8019,-0.0794)
                                                       .addChild((new autoclass.HAnimSegment("hanim_l_ring_metacarpal")).setName("l_ring_metacarpal")
                                                         .addComments(" <HAnimJoint name='l_ring0'/> visualization sphere within <HAnimSegment name='l_ring_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_ring0, HAnimSegment l_ring_metacarpal"))
@@ -1705,7 +1710,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_l_ring1")).setName("l_ring1").setCenter(0.1956,0.7815,-0.0794)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_l_ring1")).setName("l_ring1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1956,0.7815,-0.0794)
                                                         .addChild((new autoclass.HAnimSegment("hanim_l_ring_proximal")).setName("l_ring_proximal")
                                                           .addComments(" <HAnimJoint name='l_ring1'/> visualization sphere within <HAnimSegment name='l_ring_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_ring1, HAnimSegment l_ring_proximal"))
@@ -1716,7 +1721,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_l_ring2")).setName("l_ring2").setCenter(0.1973,0.7287,-0.0777)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_l_ring2")).setName("l_ring2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1973,0.7287,-0.0777)
                                                           .addChild((new autoclass.HAnimSegment("hanim_l_ring_middle")).setName("l_ring_middle")
                                                             .addComments(" <HAnimJoint name='l_ring2'/> visualization sphere within <HAnimSegment name='l_ring_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_ring2, HAnimSegment l_ring_middle"))
@@ -1727,7 +1732,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_ring3")).setName("l_ring3").setCenter(0.1983,0.7045,-0.0767)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_ring3")).setName("l_ring3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1983,0.7045,-0.0767)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_ring_distal")).setName("l_ring_distal")
                                                               .addComments(" <HAnimJoint name='l_ring3'/> visualization sphere within <HAnimSegment name='l_ring_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_ring3, HAnimSegment l_ring_distal"))
@@ -1742,7 +1747,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_ring_distal_tip"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_l_pinky0")).setName("l_pinky0").setCenter(0.1925,0.8066,-0.1036)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_l_pinky0")).setName("l_pinky0").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1925,0.8066,-0.1036)
                                                       .addChild((new autoclass.HAnimSegment("hanim_l_pinky_metacarpal")).setName("l_pinky_metacarpal")
                                                         .addComments(" <HAnimJoint name='l_pinky0'/> visualization sphere within <HAnimSegment name='l_pinky_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_pinky0, HAnimSegment l_pinky_metacarpal"))
@@ -1753,7 +1758,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_l_pinky1")).setName("l_pinky1").setCenter(0.1925,0.7866,-0.1036)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_l_pinky1")).setName("l_pinky1").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1925,0.7866,-0.1036)
                                                         .addChild((new autoclass.HAnimSegment("hanim_l_pinky_proximal")).setName("l_pinky_proximal")
                                                           .addComments(" <HAnimJoint name='l_pinky1'/> visualization sphere within <HAnimSegment name='l_pinky_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_pinky1, HAnimSegment l_pinky_proximal"))
@@ -1764,7 +1769,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_l_pinky2")).setName("l_pinky2").setCenter(0.1938,0.7452,-0.1024)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_l_pinky2")).setName("l_pinky2").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1938,0.7452,-0.1024)
                                                           .addChild((new autoclass.HAnimSegment("hanim_l_pinky_middle")).setName("l_pinky_middle")
                                                             .addComments(" <HAnimJoint name='l_pinky2'/> visualization sphere within <HAnimSegment name='l_pinky_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_pinky2, HAnimSegment l_pinky_middle"))
@@ -1775,7 +1780,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_l_pinky3")).setName("l_pinky3").setCenter(0.1948,0.7277,-0.1017)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_l_pinky3")).setName("l_pinky3").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.1948,0.7277,-0.1017)
                                                             .addChild((new autoclass.HAnimSegment("hanim_l_pinky_distal")).setName("l_pinky_distal")
                                                               .addComments(" <HAnimJoint name='l_pinky3'/> visualization sphere within <HAnimSegment name='l_pinky_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint l_pinky3, HAnimSegment l_pinky_distal"))
@@ -1790,7 +1795,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite l_pinky_distal_tip"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape")))))))))))))
-                                          .addChild((new autoclass.HAnimJoint("hanim_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-0.082,1.4488,-0.0353)
+                                          .addChild((new autoclass.HAnimJoint("hanim_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-0.082,1.4488,-0.0353).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                             .addChild((new autoclass.HAnimSegment("hanim_r_clavicle")).setName("r_clavicle")
                                               .addComments(" <HAnimJoint name='r_sternoclavicular'/> visualization sphere within <HAnimSegment name='r_clavicle'/> ")
                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle"))
@@ -1837,7 +1842,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                 .addComments(" HAnimSite visualization shape ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_axilla_post"))
                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                            .addChild((new autoclass.HAnimJoint("hanim_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-0.0962,1.4269,-0.0424)
+                                            .addChild((new autoclass.HAnimJoint("hanim_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-0.0962,1.4269,-0.0424).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                               .addChild((new autoclass.HAnimSegment("hanim_r_scapula")).setName("r_scapula")
                                                 .addComments(" <HAnimJoint name='r_acromioclavicular'/> visualization sphere within <HAnimSegment name='r_scapula'/> ")
                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_acromioclavicular, HAnimSegment r_scapula"))
@@ -1848,7 +1853,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                   .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                     .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.0962,1.4269,-0.0424,-0.2029,1.4376,-0.0387]))))
                                                     .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                              .addChild((new autoclass.HAnimJoint("hanim_r_shoulder")).setName("r_shoulder").setCenter(-0.2029,1.4376,-0.0387)
+                                              .addChild((new autoclass.HAnimJoint("hanim_r_shoulder")).setName("r_shoulder").setCenter(-0.2029,1.4376,-0.0387).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                 .addChild((new autoclass.HAnimSegment("hanim_r_upperarm")).setName("r_upperarm")
                                                   .addComments(" <HAnimJoint name='r_shoulder'/> visualization sphere within <HAnimSegment name='r_upperarm'/> ")
                                                   .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_shoulder, HAnimSegment r_upperarm"))
@@ -1868,7 +1873,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                     .addComments(" HAnimSite visualization shape ")
                                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_humeral_lateral_epicn"))
                                                     .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                                .addChild((new autoclass.HAnimJoint("hanim_r_elbow")).setName("r_elbow").setCenter(-0.2014,1.1357,-0.0682)
+                                                .addChild((new autoclass.HAnimJoint("hanim_r_elbow")).setName("r_elbow").setCenter(-0.2014,1.1357,-0.0682).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                   .addChild((new autoclass.HAnimSegment("hanim_r_forearm")).setName("r_forearm")
                                                     .addComments(" <HAnimJoint name='r_elbow'/> visualization sphere within <HAnimSegment name='r_forearm'/> ")
                                                     .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_elbow, HAnimSegment r_forearm"))
@@ -1915,7 +1920,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                       .addComments(" HAnimSite visualization shape ")
                                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_radiale"))
                                                       .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))
-                                                  .addChild((new autoclass.HAnimJoint("hanim_r_wrist")).setName("r_wrist").setCenter(-0.1984,0.8663,-0.0583)
+                                                  .addChild((new autoclass.HAnimJoint("hanim_r_wrist")).setName("r_wrist").setCenter(-0.1984,0.8663,-0.0583).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                     .addChild((new autoclass.HAnimSegment("hanim_r_hand")).setName("r_hand")
                                                       .addComments(" <HAnimJoint name='r_wrist'/> visualization sphere within <HAnimSegment name='r_hand'/> ")
                                                       .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_wrist, HAnimSegment r_hand"))
@@ -1985,7 +1990,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .addChild((new autoclass.LOD()).setRange(java.newArray("float", [0.04])).setForceTransitions(true)
                                                             .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"hide diamond when close\"")))
                                                             .addChild((new autoclass.Shape()).setUSE("HAnimSiteViewpointShape"))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_r_thumb1")).setName("r_thumb1").setCenter(-0.1924,0.8472,-0.0534)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_r_thumb1")).setName("r_thumb1").setCenter(-0.1924,0.8472,-0.0534).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                       .addChild((new autoclass.HAnimSegment("hanim_r_thumb_metacarpal")).setName("r_thumb_metacarpal")
                                                         .addComments(" <HAnimJoint name='r_thumb1'/> visualization sphere within <HAnimSegment name='r_thumb_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_thumb1, HAnimSegment r_thumb_metacarpal"))
@@ -1996,7 +2001,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1924,0.8472,-0.0534,-0.1951,0.8226,0.0246]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_r_thumb2")).setName("r_thumb2").setCenter(-0.1951,0.8226,0.0246)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_r_thumb2")).setName("r_thumb2").setCenter(-0.1951,0.8226,0.0246).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                         .addChild((new autoclass.HAnimSegment("hanim_r_thumb_proximal")).setName("r_thumb_proximal")
                                                           .addComments(" <HAnimJoint name='r_thumb2'/> visualization sphere within <HAnimSegment name='r_thumb_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_thumb2, HAnimSegment r_thumb_proximal"))
@@ -2007,7 +2012,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1951,0.8226,0.0246,-0.1955,0.8159,0.0464]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_r_thumb3")).setName("r_thumb3").setCenter(-0.1955,0.8159,0.0464)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_r_thumb3")).setName("r_thumb3").setCenter(-0.1955,0.8159,0.0464).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                           .addChild((new autoclass.HAnimSegment("hanim_r_thumb_distal")).setName("r_thumb_distal")
                                                             .addComments(" <HAnimJoint name='r_thumb3'/> visualization sphere within <HAnimSegment name='r_thumb_distal'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_thumb3, HAnimSegment r_thumb_distal"))
@@ -2022,7 +2027,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .addComments(" HAnimSite visualization shape ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_thumb_distal_tip"))
                                                               .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape")))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_r_index0")).setName("r_index0").setCenter(-0.1983,0.8024,-0.028)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_r_index0")).setName("r_index0").setCenter(-0.1983,0.8024,-0.028).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                       .addChild((new autoclass.HAnimSegment("hanim_r_index_metacarpal")).setName("r_index_metacarpal")
                                                         .addComments(" <HAnimJoint name='r_index0'/> visualization sphere within <HAnimSegment name='r_index_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_index0, HAnimSegment r_index_metacarpal"))
@@ -2033,7 +2038,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1983,0.8024,-0.028,-0.1983,0.7815,-0.028]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_r_index1")).setName("r_index1").setCenter(-0.1983,0.7815,-0.028)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_r_index1")).setName("r_index1").setCenter(-0.1983,0.7815,-0.028).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                         .addChild((new autoclass.HAnimSegment("hanim_r_index_proximal")).setName("r_index_proximal")
                                                           .addComments(" <HAnimJoint name='r_index1'/> visualization sphere within <HAnimSegment name='r_index_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_index1, HAnimSegment r_index_proximal"))
@@ -2044,7 +2049,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1983,0.7815,-0.028,-0.2017,0.7363,-0.0248]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_r_index2")).setName("r_index2").setCenter(-0.2017,0.7363,-0.0248)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_r_index2")).setName("r_index2").setCenter(-0.2017,0.7363,-0.0248).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                           .addChild((new autoclass.HAnimSegment("hanim_r_index_middle")).setName("r_index_middle")
                                                             .addComments(" <HAnimJoint name='r_index2'/> visualization sphere within <HAnimSegment name='r_index_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_index2, HAnimSegment r_index_middle"))
@@ -2055,7 +2060,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.2017,0.7363,-0.0248,-0.2028,0.7139,-0.0236]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_index3")).setName("r_index3").setCenter(-0.2028,0.7139,-0.0236)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_index3")).setName("r_index3").setCenter(-0.2028,0.7139,-0.0236).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_index_distal")).setName("r_index_distal")
                                                               .addComments(" <HAnimJoint name='r_index3'/> visualization sphere within <HAnimSegment name='r_index_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_index3, HAnimSegment r_index_distal"))
@@ -2079,7 +2084,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_dactylion"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_r_middle0")).setName("r_middle0").setCenter(-0.1987,0.8029,-0.053)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_r_middle0")).setName("r_middle0").setCenter(-0.1987,0.8029,-0.053).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                       .addChild((new autoclass.HAnimSegment("hanim_r_middle_metacarpal")).setName("r_middle_metacarpal")
                                                         .addComments(" <HAnimJoint name='r_middle0'/> visualization sphere within <HAnimSegment name='r_middle_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_middle0, HAnimSegment r_middle_metacarpal"))
@@ -2090,7 +2095,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1987,0.8029,-0.053,-0.1987,0.7818,-0.053]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_r_middle1")).setName("r_middle1").setCenter(-0.1987,0.7818,-0.053)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_r_middle1")).setName("r_middle1").setCenter(-0.1987,0.7818,-0.053).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                         .addChild((new autoclass.HAnimSegment("hanim_r_middle_proximal")).setName("r_middle_proximal")
                                                           .addComments(" <HAnimJoint name='r_middle1'/> visualization sphere within <HAnimSegment name='r_middle_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_middle1, HAnimSegment r_middle_proximal"))
@@ -2101,7 +2106,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1987,0.7818,-0.053,-0.2013,0.7273,-0.0503]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_r_middle2")).setName("r_middle2").setCenter(-0.2013,0.7273,-0.0503)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_r_middle2")).setName("r_middle2").setCenter(-0.2013,0.7273,-0.0503).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                           .addChild((new autoclass.HAnimSegment("hanim_r_middle_middle")).setName("r_middle_middle")
                                                             .addComments(" <HAnimJoint name='r_middle2'/> visualization sphere within <HAnimSegment name='r_middle_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_middle2, HAnimSegment r_middle_middle"))
@@ -2112,7 +2117,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.2013,0.7273,-0.0503,-0.2026,0.7011,-0.0494]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_middle3")).setName("r_middle3").setCenter(-0.2026,0.7011,-0.0494)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_middle3")).setName("r_middle3").setCenter(-0.2026,0.7011,-0.0494).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_middle_distal")).setName("r_middle_distal")
                                                               .addComments(" <HAnimJoint name='r_middle3'/> visualization sphere within <HAnimSegment name='r_middle_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_middle3, HAnimSegment r_middle_distal"))
@@ -2127,7 +2132,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_middle_distal_tip"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_r_ring0")).setName("r_ring0").setCenter(-0.1956,0.8019,-0.0794)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_r_ring0")).setName("r_ring0").setCenter(-0.1956,0.8019,-0.0794).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                       .addChild((new autoclass.HAnimSegment("hanim_r_ring_metacarpal")).setName("r_ring_metacarpal")
                                                         .addComments(" <HAnimJoint name='r_ring0'/> visualization sphere within <HAnimSegment name='r_ring_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_ring0, HAnimSegment r_ring_metacarpal"))
@@ -2138,7 +2143,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1956,0.8019,-0.0794,-0.1956,0.7815,-0.0794]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_r_ring1")).setName("r_ring1").setCenter(-0.1956,0.7815,-0.0794)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_r_ring1")).setName("r_ring1").setCenter(-0.1956,0.7815,-0.0794).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                         .addChild((new autoclass.HAnimSegment("hanim_r_ring_proximal")).setName("r_ring_proximal")
                                                           .addComments(" <HAnimJoint name='r_ring1'/> visualization sphere within <HAnimSegment name='r_ring_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_ring1, HAnimSegment r_ring_proximal"))
@@ -2149,7 +2154,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1956,0.7815,-0.0794,-0.1973,0.7287,-0.0777]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_r_ring2")).setName("r_ring2").setCenter(-0.1973,0.7287,-0.0777)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_r_ring2")).setName("r_ring2").setCenter(-0.1973,0.7287,-0.0777).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                           .addChild((new autoclass.HAnimSegment("hanim_r_ring_middle")).setName("r_ring_middle")
                                                             .addComments(" <HAnimJoint name='r_ring2'/> visualization sphere within <HAnimSegment name='r_ring_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_ring2, HAnimSegment r_ring_middle"))
@@ -2160,7 +2165,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1973,0.7287,-0.0777,-0.1983,0.7045,-0.0767]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_ring3")).setName("r_ring3").setCenter(-0.1983,0.7045,-0.0767)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_ring3")).setName("r_ring3").setCenter(-0.1983,0.7045,-0.0767).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_ring_distal")).setName("r_ring_distal")
                                                               .addComments(" <HAnimJoint name='r_ring3'/> visualization sphere within <HAnimSegment name='r_ring_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_ring3, HAnimSegment r_ring_distal"))
@@ -2175,7 +2180,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                                 .addComments(" HAnimSite visualization shape ")
                                                                 .addChild((new autoclass.TouchSensor()).setDescription("HAnimSite r_ring_distal_tip"))
                                                                 .addChild((new autoclass.Shape()).setUSE("HAnimSiteShape"))))))))
-                                                    .addChild((new autoclass.HAnimJoint("hanim_r_pinky0")).setName("r_pinky0").setCenter(-0.1925,0.8066,-0.1036)
+                                                    .addChild((new autoclass.HAnimJoint("hanim_r_pinky0")).setName("r_pinky0").setCenter(-0.1925,0.8066,-0.1036).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                       .addChild((new autoclass.HAnimSegment("hanim_r_pinky_metacarpal")).setName("r_pinky_metacarpal")
                                                         .addComments(" <HAnimJoint name='r_pinky0'/> visualization sphere within <HAnimSegment name='r_pinky_metacarpal'/> ")
                                                         .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_pinky0, HAnimSegment r_pinky_metacarpal"))
@@ -2186,7 +2191,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                           .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                             .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1925,0.8066,-0.1036,-0.1925,0.7866,-0.1036]))))
                                                             .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild((new autoclass.HAnimJoint("hanim_r_pinky1")).setName("r_pinky1").setCenter(-0.1925,0.7866,-0.1036)
+                                                      .addChild((new autoclass.HAnimJoint("hanim_r_pinky1")).setName("r_pinky1").setCenter(-0.1925,0.7866,-0.1036).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                         .addChild((new autoclass.HAnimSegment("hanim_r_pinky_proximal")).setName("r_pinky_proximal")
                                                           .addComments(" <HAnimJoint name='r_pinky1'/> visualization sphere within <HAnimSegment name='r_pinky_proximal'/> ")
                                                           .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_pinky1, HAnimSegment r_pinky_proximal"))
@@ -2197,7 +2202,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1925,0.7866,-0.1036,-0.1938,0.7452,-0.1024]))))
                                                               .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild((new autoclass.HAnimJoint("hanim_r_pinky2")).setName("r_pinky2").setCenter(-0.1938,0.7452,-0.1024)
+                                                        .addChild((new autoclass.HAnimJoint("hanim_r_pinky2")).setName("r_pinky2").setCenter(-0.1938,0.7452,-0.1024).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                           .addChild((new autoclass.HAnimSegment("hanim_r_pinky_middle")).setName("r_pinky_middle")
                                                             .addComments(" <HAnimJoint name='r_pinky2'/> visualization sphere within <HAnimSegment name='r_pinky_middle'/> ")
                                                             .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_pinky2, HAnimSegment r_pinky_middle"))
@@ -2208,7 +2213,7 @@ HAnim1SpecificationLOA3Animation.prototype = {
                                                               .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
                                                                 .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1938,0.7452,-0.1024,-0.1948,0.7277,-0.1017]))))
                                                                 .setColor((new autoclass.ColorRGBA()).setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild((new autoclass.HAnimJoint("hanim_r_pinky3")).setName("r_pinky3").setCenter(-0.1948,0.7277,-0.1017)
+                                                          .addChild((new autoclass.HAnimJoint("hanim_r_pinky3")).setName("r_pinky3").setCenter(-0.1948,0.7277,-0.1017).setStiffness(java.newArray("float", [0.0,0.0,0.0]))
                                                             .addChild((new autoclass.HAnimSegment("hanim_r_pinky_distal")).setName("r_pinky_distal")
                                                               .addComments(" <HAnimJoint name='r_pinky3'/> visualization sphere within <HAnimSegment name='r_pinky_distal'/> ")
                                                               .addChild((new autoclass.TouchSensor()).setDescription("HAnimJoint r_pinky3, HAnimSegment r_pinky_distal"))
@@ -2323,100 +2328,100 @@ HAnim1SpecificationLOA3Animation.prototype = {
           .addChild((new autoclass.LOD()).setRange(java.newArray("float", [0.04])).setForceTransitions(true)
             .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"hide diamond when close\"")))
             .addChild((new autoclass.Shape()).setUSE("HAnimSiteViewpointShape")))))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_humanoid_root"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl5"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl4"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt12"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt11"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt10"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt9"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt8"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt7"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt6"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt5"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt4"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc7"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc6"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc5"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc4"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_skullbase"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_temporomandibular"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_acromioclavicular"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_acromioclavicular"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ankle"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ankle"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_elbow"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_elbow"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyeball_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyeball_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyebrow_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyebrow_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyelid_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyelid_joint"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_hip"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_hip"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_knee"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_knee"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_metatarsal"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_metatarsal"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_midtarsal"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_midtarsal"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring0"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_shoulder"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_shoulder"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_sternoclavicular"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_sternoclavicular"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_subtalar"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_subtalar"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb1"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb2"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb3"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_wrist"))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_wrist"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_humanoid_root").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl5").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl4").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vl1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt12").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt11").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt10").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt9").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt8").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt7").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt6").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt5").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt4").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vt1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc7").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc6").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc5").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc4").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_vc1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_skullbase").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_temporomandibular").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_acromioclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_acromioclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ankle").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ankle").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_elbow").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_elbow").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyeball_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyeball_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyebrow_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyebrow_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_eyelid_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_eyelid_joint").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_hip").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_hip").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_index3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_index3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_knee").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_knee").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_metatarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_metatarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_middle3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_middle3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_midtarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_midtarsal").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_pinky3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_pinky3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring0").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_ring3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_ring3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_shoulder").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_shoulder").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_sternoclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_sternoclavicular").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_subtalar").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_subtalar").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb1").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb2").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_thumb3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_thumb3").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_l_wrist").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_wrist").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
       .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_pelvis"))
       .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_skull"))
       .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_jaw"))
@@ -2608,8 +2613,8 @@ HAnim1SpecificationLOA3Animation.prototype = {
       .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_ulnar_styloid_pt")))
     .addChild((new autoclass.Group("StopAnimation"))
       .addChild((new autoclass.TimeSensor("StopTimer")).setCycleInterval(5.73).setLoop(true))
-      .addChild((new autoclass.PositionInterpolator("Stop_humanoid_root_TranslationInterpolator")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Stop_humanoid_root_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
+      .addChild((new autoclass.PositionInterpolator("Stop_HumanoidRoot_TranslationInterpolator")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Stop_HumanoidRoot_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Stop_sacroiliac_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Stop_l_hip_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Stop_l_knee_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
@@ -2698,8 +2703,8 @@ HAnim1SpecificationLOA3Animation.prototype = {
       .addChild((new autoclass.OrientationInterpolator("Stop_r_pinky1_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Stop_r_pinky2_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Stop_r_pinky3_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
-      .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_TranslationInterpolator").setToField("set_fraction"))
-      .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_humanoid_root_RotationInterpolator").setToField("set_fraction"))
+      .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRoot_TranslationInterpolator").setToField("set_fraction"))
+      .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_HumanoidRoot_RotationInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_sacroiliac_RotationInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_hip_RotationInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_l_knee_RotationInterpolator").setToField("set_fraction"))
@@ -2788,8 +2793,8 @@ HAnim1SpecificationLOA3Animation.prototype = {
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky1_RotationInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky2_RotationInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("StopTimer").setFromField("fraction_changed").setToNode("Stop_r_pinky3_RotationInterpolator").setToField("set_fraction"))
-      .addChild((new autoclass.ROUTE()).setFromNode("Stop_humanoid_root_TranslationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("translation"))
-      .addChild((new autoclass.ROUTE()).setFromNode("Stop_humanoid_root_RotationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("rotation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("Stop_HumanoidRoot_TranslationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("Stop_HumanoidRoot_RotationInterpolator").setFromField("value_changed").setToNode("hanim_humanoid_root").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Stop_sacroiliac_RotationInterpolator").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Stop_l_hip_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_hip").setToField("rotation"))
       .addChild((new autoclass.ROUTE()).setFromNode("Stop_l_knee_RotationInterpolator").setFromField("value_changed").setToNode("hanim_l_knee").setToField("rotation"))
@@ -3253,24 +3258,24 @@ HAnim1SpecificationLOA3Animation.prototype = {
     .addChild((new autoclass.Group("WalkAnimation"))
       .addChild((new autoclass.TimeSensor("WalkTimer")).setCycleInterval(1.73).setLoop(true))
       .addChild((new autoclass.OrientationInterpolator("Walk_r_metatarsal_PitchInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.7,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_r_ankle_RotationInterpolator")).setKeyValue(this.Walk_r_ankle_RotationInterpolator_4_2587_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_r_knee_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.Walk_r_knee_RotationInterpolator_4_2588_keyValue))
-      .addChild((new autoclass.OrientationInterpolator("Walk_r_hip_RotationInterpolator")).setKeyValue(this.Walk_r_hip_RotationInterpolator_4_2589_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_r_ankle_RotationInterpolator")).setKeyValue(this.Walk_r_ankle_RotationInterpolator_4_2588_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_r_knee_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.Walk_r_knee_RotationInterpolator_4_2589_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Walk_r_hip_RotationInterpolator")).setKeyValue(this.Walk_r_hip_RotationInterpolator_4_2590_keyValue).setKey(java.newArray("float", [0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_l_ankle_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714]))).setKey(java.newArray("float", [0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_l_knee_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.Walk_l_knee_RotationInterpolator_4_2591_keyValue))
-      .addChild((new autoclass.OrientationInterpolator("Walk_l_hip_RotationInterpolator")).setKeyValue(this.Walk_l_hip_RotationInterpolator_4_2592_keyValue).setKey(java.newArray("float", [0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_l_knee_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0])).setKeyValue(this.Walk_l_knee_RotationInterpolator_4_2592_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Walk_l_hip_RotationInterpolator")).setKeyValue(this.Walk_l_hip_RotationInterpolator_4_2593_keyValue).setKey(java.newArray("float", [0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_lower_body_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056]))).setKey(java.newArray("float", [0.0,0.5,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_r_wrist_RotationInterpolator")).setKeyValue(this.Walk_r_wrist_RotationInterpolator_4_2594_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_r_wrist_RotationInterpolator")).setKeyValue(this.Walk_r_wrist_RotationInterpolator_4_2595_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_r_elbow_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_r_shoulder_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_l_wrist_RotationInterpolator")).setKeyValue(this.Walk_l_wrist_RotationInterpolator_4_2597_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_l_wrist_RotationInterpolator")).setKeyValue(this.Walk_l_wrist_RotationInterpolator_4_2598_keyValue).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_l_elbow_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878]))).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_l_shoulder_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.375,0.9167,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189]))))
-      .addChild((new autoclass.OrientationInterpolator("Walk_head_RotationInterpolator")).setKeyValue(this.Walk_head_RotationInterpolator_4_2600_keyValue).setKey(java.newArray("float", [0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Walk_head_RotationInterpolator")).setKeyValue(this.Walk_head_RotationInterpolator_4_2601_keyValue).setKey(java.newArray("float", [0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_neck_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Walk_upper_body_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.75,0.8333,1.0])).setKeyValue(this.Walk_upper_body_RotationInterpolator_4_2602_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Walk_upper_body_RotationInterpolator")).setKey(java.newArray("float", [0.0,0.2083,0.375,0.75,0.8333,1.0])).setKeyValue(this.Walk_upper_body_RotationInterpolator_4_2603_keyValue))
       .addChild((new autoclass.OrientationInterpolator("Walk_whole_body_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-      .addChild((new autoclass.PositionInterpolator("Walk_whole_body_TranslationInterpolator")).setKeyValue(this.Walk_whole_body_TranslationInterpolator_4_2604_keyValue).setKey(this.Walk_whole_body_TranslationInterpolator_4_2604_key))
+      .addChild((new autoclass.PositionInterpolator("Walk_whole_body_TranslationInterpolator")).setKeyValue(this.Walk_whole_body_TranslationInterpolator_4_2605_keyValue).setKey(this.Walk_whole_body_TranslationInterpolator_4_2605_key))
       .addChild((new autoclass.OrientationInterpolator("Walk_l_sternoclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_l_acromioclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Walk_r_sternoclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
@@ -3340,22 +3345,22 @@ HAnim1SpecificationLOA3Animation.prototype = {
     .addChild((new autoclass.Group("RunAnimation"))
       .addChild((new autoclass.TimeSensor("RunTimer")).setCycleInterval(0.9).setLoop(true))
       .addChild((new autoclass.OrientationInterpolator("Run_r_metatarsal_PitchInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.7,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Run_l_hip_RotationInterpolator_Run")).setKeyValue(this.Run_l_hip_RotationInterpolator_Run_4_2674_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Run_l_hip_RotationInterpolator_Run")).setKeyValue(this.Run_l_hip_RotationInterpolator_Run_4_2675_keyValue).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_l_knee_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,1.01,1.0,0.0,0.0,0.426,1.0,0.0,0.0,0.705,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.01]))))
       .addChild((new autoclass.OrientationInterpolator("Run_l_ankle_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.22,0.3,0.4,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.0374,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03574]))))
-      .addChild((new autoclass.OrientationInterpolator("Run_r_hip_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])).setKeyValue(this.Run_r_hip_RotationInterpolator_Run_4_2677_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Run_r_hip_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])).setKeyValue(this.Run_r_hip_RotationInterpolator_Run_4_2678_keyValue))
       .addChild((new autoclass.OrientationInterpolator("Run_r_knee_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.705,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.01,1.0,0.0,0.0,0.426,1.0,0.0,0.0,0.705]))))
       .addChild((new autoclass.OrientationInterpolator("Run_r_ankle_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.4,0.71,0.8,0.82,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.32,-1.0,0.0,0.0,0.374,-1.0,0.0,0.0,0.3478,1.0,0.0,0.0,0.2323]))))
-      .addChild((new autoclass.OrientationInterpolator("Run_l_shoulder_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.Run_l_shoulder_RotationInterpolator_Run_4_2680_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Run_l_shoulder_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])).setKeyValue(this.Run_l_shoulder_RotationInterpolator_Run_4_2681_keyValue))
       .addChild((new autoclass.OrientationInterpolator("Run_l_elbow_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,1.85,-0.99,-0.19,0.18,1.35,-1.0,0.0,0.0,0.975,-0.99,-0.09,-0.02,1.55,-1.0,0.0,0.0,1.85]))).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_l_wrist_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.25,-1.0,0.08,0.14,0.25,1.0,0.08,0.14,0.0,0.0,1.0,0.0,-0.25,1.0,0.08,-0.14,-0.25,1.0,0.08,0.14]))).setKey(java.newArray("float", [0.0,0.25,0.5,0.75,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Run_r_shoulder_RotationInterpolator_Run")).setKeyValue(this.Run_r_shoulder_RotationInterpolator_Run_4_2683_keyValue).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Run_r_shoulder_RotationInterpolator_Run")).setKeyValue(this.Run_r_shoulder_RotationInterpolator_Run_4_2684_keyValue).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_r_elbow_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-1.0,0.0,0.0,0.975,-0.99,0.09,0.02,1.55,-1.0,0.0,0.0,1.85,-0.99,0.19,-0.18,1.35,-1.0,0.0,0.0,0.975]))).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_r_wrist_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]))).setKey(java.newArray("float", [0.0,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_lower_body_RotationInterpolator_Run")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,-1.0,0.0,0.125,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.125,0.0,0.0,1.0,0.0,0.0,-1.0,0.0,0.125]))).setKey(java.newArray("float", [0.0,0.2182,0.4909,0.7455,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_head_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.08,1.0,0.0,0.0,0.12,1.0,0.0,0.0,0.3,1.0,0.0,0.0,0.3,1.0,0.0,0.0,0.08]))))
       .addChild((new autoclass.OrientationInterpolator("Run_neck_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7091,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.7,0.0,0.0,0.4,-0.7,-0.7,0.0,0.4,0.0,0.0,0.0,0.4,-0.7,0.7,0.0,0.4,0.7,0.0,0.0,0.4]))))
-      .addChild((new autoclass.OrientationInterpolator("Run_upper_body_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7636,1.0])).setKeyValue(this.Run_upper_body_RotationInterpolator_Run_4_2689_keyValue))
+      .addChild((new autoclass.OrientationInterpolator("Run_upper_body_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.2545,0.4909,0.7636,1.0])).setKeyValue(this.Run_upper_body_RotationInterpolator_Run_4_2690_keyValue))
       .addChild((new autoclass.OrientationInterpolator("Run_whole_body_RotationInterpolator_Run")).setKey(java.newArray("float", [0.0,0.25,0.5,0.75,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.06,1.0,0.0,0.0,0.167,1.0,0.0,0.0,0.06,1.0,0.0,0.0,0.168,1.0,0.0,0.0,0.06]))))
       .addChild((new autoclass.PositionInterpolator("Run_whole_body_TranslationInterpolator_Run")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.01,0.0,0.0,-0.037,0.0,0.0,-0.049,0.0,0.0,-0.037,0.0,0.0,-0.01,0.0,0.0,-0.037,0.0,0.0,-0.049,0.0,0.0,-0.037,0.0,0.0,-0.01,0.0]))).setKey(java.newArray("float", [0.0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Run_l_sternoclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
@@ -3427,24 +3432,24 @@ HAnim1SpecificationLOA3Animation.prototype = {
     .addChild((new autoclass.Group("JumpAnimation"))
       .addChild((new autoclass.TimeSensor("JumpTimer")).setCycleInterval(3.73).setLoop(true))
       .addChild((new autoclass.OrientationInterpolator("Jump_r_metatarsal_PitchInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.7,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_r_ankle_RotationInterpolator")).setKeyValue(this.Jump_r_ankle_RotationInterpolator_4_2761_keyValue).setKey(java.newArray("float", [0.0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_r_ankle_RotationInterpolator")).setKeyValue(this.Jump_r_ankle_RotationInterpolator_4_2762_keyValue).setKey(java.newArray("float", [0.0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_r_knee_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.5,1.0,0.0,0.0,1.7,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.25,0.3,0.64,0.76,0.88,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_r_hip_RotationInterpolator")).setKeyValue(this.Jump_r_hip_RotationInterpolator_4_2763_keyValue).setKey(java.newArray("float", [0.0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_l_ankle_RotationInterpolator")).setKeyValue(this.Jump_l_ankle_RotationInterpolator_4_2764_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_r_hip_RotationInterpolator")).setKeyValue(this.Jump_r_hip_RotationInterpolator_4_2764_keyValue).setKey(java.newArray("float", [0.0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_l_ankle_RotationInterpolator")).setKeyValue(this.Jump_l_ankle_RotationInterpolator_4_2765_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_l_knee_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_l_hip_RotationInterpolator")).setKeyValue(this.Jump_l_hip_RotationInterpolator_4_2766_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_l_hip_RotationInterpolator")).setKeyValue(this.Jump_l_hip_RotationInterpolator_4_2767_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_lower_body_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_r_wrist_RotationInterpolator")).setKeyValue(this.Jump_r_wrist_RotationInterpolator_4_2768_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_r_wrist_RotationInterpolator")).setKeyValue(this.Jump_r_wrist_RotationInterpolator_4_2769_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_r_elbow_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_r_shoulder_RotationInterpolator")).setKeyValue(this.Jump_r_shoulder_RotationInterpolator_4_2770_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_l_wrist_RotationInterpolator")).setKeyValue(this.Jump_l_wrist_RotationInterpolator_4_2771_keyValue).setKey(java.newArray("float", [0.0,0.48,0.52,0.64,0.76,0.88,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_r_shoulder_RotationInterpolator")).setKeyValue(this.Jump_r_shoulder_RotationInterpolator_4_2771_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_l_wrist_RotationInterpolator")).setKeyValue(this.Jump_l_wrist_RotationInterpolator_4_2772_keyValue).setKey(java.newArray("float", [0.0,0.48,0.52,0.64,0.76,0.88,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_l_elbow_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,1.13,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,1.7,-1.0,0.0,0.0,0.4,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.58,0.72,1.0])))
-      .addChild((new autoclass.OrientationInterpolator("Jump_l_shoulder_RotationInterpolator")).setKeyValue(this.Jump_l_shoulder_RotationInterpolator_4_2773_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
+      .addChild((new autoclass.OrientationInterpolator("Jump_l_shoulder_RotationInterpolator")).setKeyValue(this.Jump_l_shoulder_RotationInterpolator_4_2774_keyValue).setKey(java.newArray("float", [0.0,0.28,0.32,0.64,0.76,0.88,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_head_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_neck_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.76,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_upper_body_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.05,1.0,0.0,0.0,1.051,-1.0,0.0,0.0,0.257,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.22,0.28,0.34,0.71,0.88,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_whole_body_RotationInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.28,0.32,0.48,0.64,0.76,1.0])))
-      .addChild((new autoclass.PositionInterpolator("Jump_whole_body_TranslationInterpolator")).setKeyValue(this.Jump_whole_body_TranslationInterpolator_4_2778_keyValue).setKey(this.Jump_whole_body_TranslationInterpolator_4_2778_key))
+      .addChild((new autoclass.PositionInterpolator("Jump_whole_body_TranslationInterpolator")).setKeyValue(this.Jump_whole_body_TranslationInterpolator_4_2779_keyValue).setKey(this.Jump_whole_body_TranslationInterpolator_4_2779_key))
       .addChild((new autoclass.OrientationInterpolator("Jump_l_sternoclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.22,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_l_acromioclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.05,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
       .addChild((new autoclass.OrientationInterpolator("Jump_r_sternoclavicular_RollInterpolator")).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0,0.0,0.0,1.0,-0.2,0.0,0.0,1.0,-0.22,0.0,0.0,1.0,-0.2,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]))).setKey(java.newArray("float", [0.0,0.2,0.4,0.6,0.8,1.0])))
@@ -3609,8 +3614,8 @@ HAnim1SpecificationLOA3Animation.prototype = {
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setEmissiveColor(0.424956,0.483976,1.0).setDiffuseColor(0.9,0.0,0.7)))
-            .setGeometry((new autoclass.IndexedLineSet("Orbit1")).setDEF("Orbit1").setCoordIndex(this.Orbit1_7_2938_coordIndex)
-              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_2938_point)))))
+            .setGeometry((new autoclass.IndexedLineSet("Orbit1")).setDEF("Orbit1").setCoordIndex(this.Orbit1_7_2939_coordIndex)
+              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_2939_point)))))
         .addChild((new autoclass.Transform("Circle1")).setScale(0.5,1.0,0.5)
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
