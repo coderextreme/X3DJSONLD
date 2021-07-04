@@ -6,6 +6,7 @@
 in vec3 position;
 in vec3 normal;
 in vec2 texcoord;
+in vec4 x3d_Vertex;
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
