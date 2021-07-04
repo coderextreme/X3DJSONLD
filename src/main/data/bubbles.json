@@ -8,10 +8,6 @@
         "component": [
           {
             "@name":"EnvironmentalEffects",
-            "@level":1
-          },
-          {
-            "@name":"EnvironmentalEffects",
             "@level":3
           },
           {
@@ -62,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 July 2021"
+            "@content":"04 July 2021"
           },
           {
             "@name":"generator",
@@ -95,12 +91,12 @@
           },
           { "Background":
             {
-              "@backUrl":["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"],
-              "@bottomUrl":["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"],
-              "@frontUrl":["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"],
-              "@leftUrl":["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"],
-              "@rightUrl":["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"],
-              "@topUrl":["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]
+              "@backUrl":["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"],
+              "@bottomUrl":["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"],
+              "@frontUrl":["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"],
+              "@leftUrl":["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"],
+              "@rightUrl":["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"],
+              "@topUrl":["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"]
             }
           },
           { "Transform":
@@ -128,40 +124,40 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-backTexture":
+                                "-back":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"]
                                     }
                                   },
-                                "-bottomTexture":
+                                "-bottom":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]
                                     }
                                   },
-                                "-frontTexture":
+                                "-front":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"]
                                     }
                                   },
-                                "-leftTexture":
+                                "-left":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"]
                                     }
                                   },
-                                "-rightTexture":
+                                "-right":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"]
                                     }
                                   },
-                                "-topTexture":
+                                "-top":
                                   { "ImageTexture":
                                     {
-                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]
+                                      "@url":["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"]
                                     }
                                   }
                               }
@@ -212,64 +208,17 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],
+                                      "@url":["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
                                 ]
                               }
-                            },
-                            { "ComposedShader":
-                              {
-                                "@DEF":"x3dom",
-                                "@language":"GLSL",
-                                "field": [
-                                  {
-                                    "@name":"cube",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFInt32",
-                                    "@value":0
-                                  },
-                                  {
-                                    "@name":"chromaticDispertion",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.98,1,1.033]
-                                  },
-                                  {
-                                    "@name":"bias",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFFloat",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"scale",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFFloat",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"power",
-                                    "@accessType":"inputOutput",
-                                    "@type":"SFFloat",
-                                    "@value":2
-                                  }
-                                ],
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"],
-                                      "@type":"VERTEX"
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],
-                                      "@type":"FRAGMENT"
-                                    }
-                                  }
-                                ]
-                              }
+                            }
+                          ],
+                          "-children":[
+                            {
+                              "#comment":"<ComposedShader DEF=\"x3dom\" containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                             }
                           ]
                         }
@@ -359,8 +308,8 @@
 "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
 "",
 "                        orientation_changed = new MFRotation();",
-"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
-"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+"                        orientation_changed[0] = orientations[ov];",
+"                        orientation_changed[1] = orientations[vc];",
 "\t\t   } catch (e) {",
 "\t\t   \tif (typeof console.log === 'function') {",
 "\t\t\t\tconsole.log(e);",
