@@ -220,11 +220,11 @@ var X3D0 =  new X3D({
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "VERTEX",
-                                      url : new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"])})]),
+                                      url : new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])})]),
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "FRAGMENT",
-                                      url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))}))})),
+                                      url : new MFString(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"])}))}))})),
                           geometry : new SFNode(
                             new Sphere({}))})])}),
 

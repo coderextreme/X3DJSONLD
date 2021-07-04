@@ -71,21 +71,13 @@ public class mirror {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture()
-                .setBackTexture(new ImageTexture().setDEF("backShader").setUrl(new MFString6().getArray()))
-                .setBottomTexture(new ImageTexture().setDEF("bottomShader").setUrl(new MFString7().getArray()))
-                .setFrontTexture(new ImageTexture().setDEF("frontShader").setUrl(new MFString8().getArray()))
-                .setLeftTexture(new ImageTexture().setDEF("leftShader").setUrl(new MFString9().getArray()))
-                .setRightTexture(new ImageTexture().setDEF("rightShader").setUrl(new MFString10().getArray()))
-                .setTopTexture(new ImageTexture().setDEF("topShader").setUrl(new MFString11().getArray())))
-              .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
-                .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
-                .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString13().getArray())))
+                .setBack(new ImageTexture().setDEF("backShader").setUrl(new MFString6().getArray()))
+                .setBottom(new ImageTexture().setDEF("bottomShader").setUrl(new MFString7().getArray()))
+                .setFront(new ImageTexture().setDEF("frontShader").setUrl(new MFString8().getArray()))
+                .setLeft(new ImageTexture().setDEF("leftShader").setUrl(new MFString9().getArray()))
+                .setRight(new ImageTexture().setDEF("rightShader").setUrl(new MFString10().getArray()))
+                .setTop(new ImageTexture().setDEF("topShader").setUrl(new MFString11().getArray())))
+              .addComments("<ComposedShader DEF=\"x3dom\" language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>")
               .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
                 .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
@@ -93,8 +85,8 @@ public class mirror {
                 .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray()))))
+                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString13().getArray()))))
             .setGeometry(new Sphere().setRadius(30f)))
           .addChild(new Script().setDEF("UrlSelector").setDirectOutput(true)
             .addField(new field().setType("MFString").setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""))
@@ -206,22 +198,12 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"});
   }
 }
 protected class MFString13 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"});
-  }
-}
-protected class MFString14 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"});
-  }
-}
-protected class MFString15 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"});
   }
 }
 }

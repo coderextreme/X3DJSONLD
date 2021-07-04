@@ -96,27 +96,27 @@ ComposedCubeMapTexture23.setDEF("texture")
 ImageTexture24 = x3d.ImageTexture()
 ImageTexture24.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture23.setBackTexture(ImageTexture24)
+ComposedCubeMapTexture23.setBack(ImageTexture24)
 ImageTexture25 = x3d.ImageTexture()
 ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture23.setBottomTexture(ImageTexture25)
+ComposedCubeMapTexture23.setBottom(ImageTexture25)
 ImageTexture26 = x3d.ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture23.setFrontTexture(ImageTexture26)
+ComposedCubeMapTexture23.setFront(ImageTexture26)
 ImageTexture27 = x3d.ImageTexture()
 ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture23.setLeftTexture(ImageTexture27)
+ComposedCubeMapTexture23.setLeft(ImageTexture27)
 ImageTexture28 = x3d.ImageTexture()
 ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture23.setRightTexture(ImageTexture28)
+ComposedCubeMapTexture23.setRight(ImageTexture28)
 ImageTexture29 = x3d.ImageTexture()
 ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture23.setTopTexture(ImageTexture29)
+ComposedCubeMapTexture23.setTop(ImageTexture29)
 
 Appearance21.setTexture(ComposedCubeMapTexture23)
 ComposedShader30 = x3d.ComposedShader()
@@ -301,7 +301,7 @@ ShaderPart57.setType("VERTEX")
 
 ComposedShader44.addParts(ShaderPart57)
 ShaderPart58 = x3d.ShaderPart()
-ShaderPart58.setUrl(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])
+ShaderPart58.setUrl(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
 ShaderPart58.setType("FRAGMENT")
 
 ComposedShader44.addParts(ShaderPart58)

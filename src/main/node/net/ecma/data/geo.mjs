@@ -210,5 +210,6 @@ var X3D0 =  new X3D({
                               url : new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])})]),
                           parts : new SFNode(
                             new ShaderPart({
-                              USE : new SFString("common")}))}))}))})])})])}))});
+                              type : "FRAGMENT",
+                              url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());
