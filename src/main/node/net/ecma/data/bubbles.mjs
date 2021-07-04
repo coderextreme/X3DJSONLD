@@ -44,10 +44,6 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("EnvironmentalEffects"),
-              level : new SFInt32(1)})),
-          component : new SFNode(
-            new component({
-              name : new SFString("EnvironmentalEffects"),
               level : new SFInt32(3)})),
           component : new SFNode(
             new component({
@@ -108,12 +104,12 @@ var X3D0 =  new X3D({
               description : new SFString("sphere in road")}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}),
+              backUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"])}),
 
             new Transform({
               DEF : new SFString("Rose01"),
@@ -132,22 +128,22 @@ var X3D0 =  new X3D({
                         new ComposedCubeMapTexture({
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}))})),
+                              url : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"])}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           DEF : new SFString("x_ite"),
@@ -189,49 +185,8 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))})),
-                      shaders : new SFNode(
-                        new ComposedShader({
-                          DEF : new SFString("x3dom"),
-                          language : new SFString("GLSL"),
-                          field : new MFNode([
-                            new field({
-                              type : field.TYPE_SFINT32,
-                              name : new SFString("cube"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0")}),
-
-                            new field({
-                              type : field.TYPE_SFVEC3F,
-                              name : new SFString("chromaticDispertion"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0.98 1 1.033")}),
-
-                            new field({
-                              type : field.TYPE_SFFLOAT,
-                              name : new SFString("bias"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0.5")}),
-
-                            new field({
-                              type : field.TYPE_SFFLOAT,
-                              name : new SFString("scale"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0.5")}),
-
-                            new field({
-                              type : field.TYPE_SFFLOAT,
-                              name : new SFString("power"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("2")}),
-                          parts : new SFNode(
-                            new ShaderPart({
-                              type : "VERTEX",
-                              url : new MFString(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])})]),
-                          parts : new SFNode(
-                            new ShaderPart({
-                              type : "FRAGMENT",
-                              url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))}))}))})])}),
+                              url : new MFString(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"])}))})),
+                      /*<ComposedShader DEF=\"x3dom\" containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>*/}))})])}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),
@@ -303,8 +258,8 @@ ecmascript:eval (0
                         position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
 
                         orientation_changed = new MFRotation();
-                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
-                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
+                        orientation_changed[0] = orientations[ov];
+                        orientation_changed[1] = orientations[vc];
 		   } catch (e) {
 		   	if (typeof console.log === ', function') {
 				console.log(e);
