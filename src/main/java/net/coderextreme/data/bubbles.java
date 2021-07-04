@@ -82,10 +82,17 @@ public class bubbles {
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString13().getArray())))
-              .addComments("<ComposedShader DEF=\"x3dom\" containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))))
+              .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
+                .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
+                .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray()))))))
         .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
-        .addChild(new PositionInterpolator().setDEF("TourPosition").setKey(new MFFloat14().getArray()).setKeyValue(new MFVec3f15().getArray()))
-        .addChild(new OrientationInterpolator().setDEF("TourOrientation").setKey(new MFFloat16().getArray()).setKeyValue(new MFRotation17().getArray()))
+        .addChild(new PositionInterpolator().setDEF("TourPosition").setKey(new MFFloat16().getArray()).setKeyValue(new MFVec3f17().getArray()))
+        .addChild(new OrientationInterpolator().setDEF("TourOrientation").setKey(new MFFloat18().getArray()).setKeyValue(new MFRotation19().getArray()))
         .addChild(new Script().setDEF("RandomTourTime")
           .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("SFFloat").setName("lastKey").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
@@ -195,14 +202,14 @@ protected class MFString13 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"});
   }
 }
-protected class MFFloat14 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+protected class MFString14 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"});
   }
 }
-protected class MFVec3f15 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,10f,0f,0f,-10f});
+protected class MFString15 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"});
   }
 }
 protected class MFFloat16 {
@@ -210,7 +217,17 @@ protected class MFFloat16 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
-protected class MFRotation17 {
+protected class MFVec3f17 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,10f,0f,0f,-10f});
+  }
+}
+protected class MFFloat18 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+  }
+}
+protected class MFRotation19 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,3.1416f});
   }
