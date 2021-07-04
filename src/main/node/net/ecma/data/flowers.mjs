@@ -293,7 +293,7 @@ var X3D0 =  new X3D({
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "FRAGMENT",
-                                      url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))}))})),
+                                      url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])}))}))})),
                           geometry : new SFNode(
                             new Sphere({}))})])}),
 

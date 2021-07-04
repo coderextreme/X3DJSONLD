@@ -67,12 +67,12 @@ public class geo {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
-                .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
-                .setFrontTexture(new ImageTexture().setUrl(new MFString8().getArray()))
-                .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
-                .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
-                .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
+                .setBack(new ImageTexture().setUrl(new MFString6().getArray()))
+                .setBottom(new ImageTexture().setUrl(new MFString7().getArray()))
+                .setFront(new ImageTexture().setUrl(new MFString8().getArray()))
+                .setLeft(new ImageTexture().setUrl(new MFString9().getArray()))
+                .setRight(new ImageTexture().setUrl(new MFString10().getArray()))
+                .setTop(new ImageTexture().setUrl(new MFString11().getArray())))
               .addShaders(new ComposedShader().setLanguage("GLSL")
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
@@ -90,7 +90,7 @@ public class geo {
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                .addParts(new ShaderPart().setUSE("common")))))))      ;
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray())))))))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -166,6 +166,11 @@ protected class MFString13 {
 protected class MFString14 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"});
+  }
+}
+protected class MFString15 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"});
   }
 }
 }

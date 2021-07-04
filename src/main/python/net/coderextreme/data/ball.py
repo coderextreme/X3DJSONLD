@@ -114,27 +114,27 @@ ComposedCubeMapTexture26.setDEF("texture")
 ImageTexture27 = x3d.ImageTexture()
 ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture26.setBackTexture(ImageTexture27)
+ComposedCubeMapTexture26.setBack(ImageTexture27)
 ImageTexture28 = x3d.ImageTexture()
 ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture26.setBottomTexture(ImageTexture28)
+ComposedCubeMapTexture26.setBottom(ImageTexture28)
 ImageTexture29 = x3d.ImageTexture()
 ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture26.setFrontTexture(ImageTexture29)
+ComposedCubeMapTexture26.setFront(ImageTexture29)
 ImageTexture30 = x3d.ImageTexture()
 ImageTexture30.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture26.setLeftTexture(ImageTexture30)
+ComposedCubeMapTexture26.setLeft(ImageTexture30)
 ImageTexture31 = x3d.ImageTexture()
 ImageTexture31.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture26.setRightTexture(ImageTexture31)
+ComposedCubeMapTexture26.setRight(ImageTexture31)
 ImageTexture32 = x3d.ImageTexture()
 ImageTexture32.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture26.setTopTexture(ImageTexture32)
+ComposedCubeMapTexture26.setTop(ImageTexture32)
 
 Appearance24.setTexture(ComposedCubeMapTexture26)
 #<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>
@@ -183,7 +183,7 @@ field39.setValue("2")
 
 ComposedShader33.addField(field39)
 ShaderPart40 = x3d.ShaderPart()
-ShaderPart40.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"])
+ShaderPart40.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])
 ShaderPart40.setType("VERTEX")
 
 ComposedShader33.addParts(ShaderPart40)
@@ -241,7 +241,8 @@ ShaderPart49.setType("VERTEX")
 
 ComposedShader42.addParts(ShaderPart49)
 ShaderPart50 = x3d.ShaderPart()
-ShaderPart50.setUSE("common")
+ShaderPart50.setUrl(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
+ShaderPart50.setType("FRAGMENT")
 
 ComposedShader42.addParts(ShaderPart50)
 

@@ -114,7 +114,7 @@ field24.value = "2";
 ComposedShader18.field[4] = field24;
 
 let ShaderPart25 = browser.currentScene.createNode("ShaderPart");
-ShaderPart25.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"]);
+ShaderPart25.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
 ShaderPart25.type = "VERTEX";
 ComposedShader18.parts[5] = ShaderPart25;
 
@@ -178,7 +178,8 @@ ShaderPart34.type = "VERTEX";
 ComposedShader27.parts[5] = ShaderPart34;
 
 let ShaderPart35 = browser.currentScene.createNode("ShaderPart");
-ShaderPart35.USE = "common";
+ShaderPart35.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
+ShaderPart35.type = "FRAGMENT";
 ComposedShader27.parts[6] = ShaderPart35;
 
 Appearance9.shaders[1] = ComposedShader27;
