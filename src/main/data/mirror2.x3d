@@ -38,7 +38,7 @@
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
 		  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_itemix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
                 <ComposedShader DEF="x3dom" language='GLSL'>
 <!--http://hypertextbook.com/facts/2005/JustinChe.shtml-->
