@@ -54,7 +54,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 July 2021"
+            "@content":"04 July 2021"
           },
           {
             "@name":"generator",
@@ -152,7 +152,7 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]
+                                      "@url":["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]
                                     }
                                   }
                                 ]

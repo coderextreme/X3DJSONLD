@@ -43,7 +43,7 @@
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
 <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_itemix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_itemix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>
