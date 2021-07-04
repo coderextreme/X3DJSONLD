@@ -28,7 +28,7 @@
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
 <ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_itemix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="x3dom" language="GLSL"><!--http://hypertextbook.com/facts/2005/JustinChe.shtml--><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
 <field name="cube" accessType="inputOutput" type="SFInt32" value="0"></field>
