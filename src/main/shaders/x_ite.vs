@@ -23,11 +23,11 @@ uniform float bias;
 uniform float scale;
 uniform float power;
 
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+out vec3 t;
+out vec3 tr;
+out vec3 tg;
+out vec3 tb;
+out float rfac;
 
 void main()
 {

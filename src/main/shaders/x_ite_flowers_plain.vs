@@ -19,9 +19,9 @@ vec4 ftransform() {
 #define gl_Normal x3d_Normal
 #define gl_LightSource x3d_LightSource
 
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec3 texcoord;
+in vec3 position;
+in vec3 normal;
+in vec2 texcoord;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -34,11 +34,11 @@ uniform float d;
 uniform float tdelta;
 uniform float pdelta;
 
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+out vec3 t;
+out vec3 tr;
+out vec3 tg;
+out vec3 tb;
+out float rfac;
 
 vec3 cart2sphere(vec3 p) {
      float r = pow(p.x*p.x + p.y*p.y + p.z*p.z, 0.5);

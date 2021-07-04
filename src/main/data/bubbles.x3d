@@ -41,7 +41,7 @@
                     <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
 		    <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		    <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		    <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
 		    </ComposedShader>
 		    <ComposedShader DEF="x3dom" containerField='shaders' language='GLSL'>
 		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
