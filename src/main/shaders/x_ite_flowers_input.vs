@@ -1,11 +1,11 @@
+#version 300 es
 #ifdef GL_ES
   precision highp float;
 #endif
 
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
-in vec4 x3d_Vertex;
+in vec3 position;
+in vec3 normal;
+in vec2 texcoord;
 
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
@@ -21,11 +21,11 @@ uniform float set_d;
 uniform float set_tdelta;
 uniform float set_pdelta;
 
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+out vec3 t;
+out vec3 tr;
+out vec3 tg;
+out vec3 tb;
+out float rfac;
 
 vec3 cart2sphere(vec3 p) {
      float r = pow(p.x*p.x + p.y*p.y + p.z*p.z, 0.5);

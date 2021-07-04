@@ -78,7 +78,7 @@
                   <field name='tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
 		  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                               </ComposedShader>
                     </Appearance>
 	    	    <Sphere/>
