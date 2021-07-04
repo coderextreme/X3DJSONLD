@@ -47,7 +47,7 @@
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
             <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"'/>
-            <ShaderPart type='FRAGMENT' url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/x_itemix.fs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_itemix.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture>
             <ImageTexture DEF='backShader' containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"'/>
