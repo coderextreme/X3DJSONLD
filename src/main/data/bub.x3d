@@ -91,7 +91,7 @@
                                 <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
                                 <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
                                 <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-				<ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"' type='VERTEX'>
+				<ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type='VERTEX'>
                                 </ShaderPart>
 				<ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'>
                                 </ShaderPart>

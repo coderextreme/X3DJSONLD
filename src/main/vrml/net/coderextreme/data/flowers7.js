@@ -255,7 +255,7 @@ ShaderPart43.type = "VERTEX";
 ComposedShader30.parts[11] = ShaderPart43;
 
 let ShaderPart44 = browser.currentScene.createNode("ShaderPart");
-ShaderPart44.url = new MFString(new java.lang.String["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]);
+ShaderPart44.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
 ShaderPart44.type = "FRAGMENT";
 ComposedShader30.parts[12] = ShaderPart44;
 
