@@ -2,6 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
    <head>
+        <component name='EnvironmentalEffects' level='1'/>
         <component name='EnvironmentalEffects' level='3'/>
 	      <component name='Shaders' level='1'></component>
 	      <component name='CubeMapTexturing' level='1'></component>
@@ -13,7 +14,7 @@
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/bubbles.x3d'/>
-        <meta name='description' content='not sure what this is'/>      
+        <meta name='description' content='not sure what this is'/>
      </head>
      <Scene>
         <NavigationInfo type='"EXAMINE"'></NavigationInfo>
@@ -26,12 +27,12 @@
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'></Material>
 		    <ComposedCubeMapTexture containerField='texture'>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"' containerField='back'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottom'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"' containerField='front'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"' containerField='left'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
-		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"' containerField='backTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottomTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"' containerField='frontTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"' containerField='leftTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"' containerField='rightTexture'/>
+		    <ImageTexture url='"../resources/images/all_probes/uffizi_cross/uffizi_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"' containerField='topTexture'/>
 		    </ComposedCubeMapTexture>
 		    <ComposedShader DEF="x_ite" containerField='shaders' language='GLSL'>
 		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
@@ -62,6 +63,7 @@
             <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0'/>
             <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'></field>
             <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'></field>
+            <field name='fraction_changed' accessType='outputOnly' type='SFFloat'/>
             <field name='position_changed' accessType='outputOnly' type='MFVec3f'/>
             <field name='set_orientation' accessType='inputOnly' type='MFRotation'/>
 	    <field name='orientation_changed' accessType='outputOnly' type='MFRotation'/>
@@ -74,13 +76,13 @@
                         } while (lastKey === ov);
                         var vc = lastKey;
 
-                        position_changed = new MFVec3f();
-                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);
-                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
-                        
-                        orientation_changed = new MFRotation();
+                        position_changed[0] = positions[ov];
+                        position_changed[1] = positions[vc];
+
                         orientation_changed[0] = orientations[ov];
                         orientation_changed[1] = orientations[vc];
+
+                        fraction_changed = 0;
 		   } catch (e) {
 		   	if (typeof console.log === 'function') {
 				console.log(e);
@@ -88,6 +90,8 @@
 		   }
                }]]></Script>
         <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_cycle'/>
+        <ROUTE fromNode='RandomTourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'/>
+        <ROUTE fromNode='RandomTourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>
         <ROUTE fromNode='RandomTourTime' fromField='orientation_changed' toNode='TourOrientation' toField='set_keyValue'/>
         <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='set_keyValue'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'/>
