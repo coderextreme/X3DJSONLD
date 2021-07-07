@@ -15,41 +15,33 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 */
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
-in vec3 x3d_Normal;
-in vec4 x3d_Vertex;
+uniform mat3 x3d_NormalMatrix;
 
-uniform vec3 chromaticDispertion;
+uniform vec3  chromaticDispertion;
 uniform float bias;
 uniform float scale;
 uniform float power;
 
-out vec3 t;
-out vec3 tr;
-out vec3 tg;
-out vec3 tb;
+in vec3 x3d_Normal;
+in vec4 x3d_Vertex;
+
+out vec3  t;
+out vec3  tr;
+out vec3  tg;
+out vec3  tb;
 out float rfac;
 
-void main()
+void
+main ()
 {
-    vec3 normal = x3d_Normal.xyz;
-    mat3 mvm3=mat3(
-	x3d_ModelViewMatrix[0].x,
-	x3d_ModelViewMatrix[0].y,
-	x3d_ModelViewMatrix[0].z,
-	x3d_ModelViewMatrix[1].x,
-	x3d_ModelViewMatrix[1].y,
-	x3d_ModelViewMatrix[1].z,
-	x3d_ModelViewMatrix[2].x,
-	x3d_ModelViewMatrix[2].y,
-	x3d_ModelViewMatrix[2].z
-    );
+  vec3 fragNormal = normalize (x3d_NormalMatrix * x3d_Normal);
+  vec3 incident   = normalize ((x3d_ModelViewMatrix * x3d_Vertex) .xyz);
 
-    vec3 fragNormal = mvm3*normal;
-    gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-    vec3 incident = normalize((x3d_ModelViewMatrix * x3d_Vertex).xyz);
-    t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
+  t    = reflect (incident, fragNormal) * x3d_NormalMatrix;
+  tr   = refract (incident, fragNormal, chromaticDispertion .x) * x3d_NormalMatrix;
+  tg   = refract (incident, fragNormal, chromaticDispertion .y) * x3d_NormalMatrix;
+  tb   = refract (incident, fragNormal, chromaticDispertion .z) * x3d_NormalMatrix;
+  rfac = bias + scale * pow (clamp (0.5 + 0.5 * dot (incident, fragNormal), 0.0, 1.0), power);
+
+  gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
 }
