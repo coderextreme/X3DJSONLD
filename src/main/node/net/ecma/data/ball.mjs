@@ -231,5 +231,5 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])}))}))}))})])})])}))});
+                              url : new MFString(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"])}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());
