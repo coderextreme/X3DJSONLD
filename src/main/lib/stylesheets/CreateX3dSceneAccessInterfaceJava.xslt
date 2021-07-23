@@ -12960,13 +12960,13 @@ setAttribute method invocations).
             <xsl:text>
         String correctedContainerField;</xsl:text>
             <xsl:for-each select="InterfaceDefinition/field[string-length(@synonym) > 0][@type = 'SFNode']">
-                <xsl:if test="(position() = 1)">
+                <!--xsl:if test="(position() = 1)"-->
                     <xsl:text disable-output-escaping="yes"><![CDATA[
         if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("3"))
              correctedContainerField = "]]></xsl:text><xsl:value-of select="@synonym"/><xsl:text>";
         else correctedContainerField = "</xsl:text>   <xsl:value-of select="@name"/><xsl:text>";
 </xsl:text>
-                </xsl:if>
+                <!--/xsl:if-->
                 <xsl:variable name="CamelCaseName"><!-- upper camel case -->
                     <xsl:value-of select="translate(substring(@name,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
                     <xsl:value-of select="substring(@name,2)"/>

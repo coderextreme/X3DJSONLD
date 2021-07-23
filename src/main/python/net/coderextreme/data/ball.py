@@ -241,7 +241,7 @@ ShaderPart49.setType("VERTEX")
 
 ComposedShader42.addParts(ShaderPart49)
 ShaderPart50 = x3d.ShaderPart()
-ShaderPart50.setUrl(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])
+ShaderPart50.setUrl(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"])
 ShaderPart50.setType("FRAGMENT")
 
 ComposedShader42.addParts(ShaderPart50)
