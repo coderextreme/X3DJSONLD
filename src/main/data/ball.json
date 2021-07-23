@@ -71,7 +71,7 @@
           },
           {
             "@name":"translated",
-            "@content":"04 July 2021"
+            "@content":"23 July 2021"
           },
           {
             "@name":"generator",
@@ -298,7 +298,7 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],
+                                      "@url":["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

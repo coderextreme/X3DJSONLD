@@ -2814,7 +2814,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>HtmlID</xsl:text><!-- method special case -->
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:if test="(local-name() = 'class')">
+                            <xsl:if test="(local-name() = 'class') or (local-name() = 'style')">
                                 <xsl:text>Css</xsl:text><!-- method prefix -->
                             </xsl:if>
                             <!-- upper camel case -->

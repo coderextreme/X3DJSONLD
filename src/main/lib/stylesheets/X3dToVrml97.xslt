@@ -5175,23 +5175,47 @@ EXTERNPROTO TransmitterPdu [
       <xsl:variable name="url" select="normalize-space(@url)" />
       <xsl:call-template name="output-hint">
         <xsl:with-param name="hintString">
-          <xsl:text>For best scene portability, append alternate online address for revised url=' </xsl:text>
-          <xsl:text>"</xsl:text>
-          <xsl:value-of select="translate($url,'&quot;','')" />
-          <xsl:text>" "</xsl:text>
-          <xsl:choose>
-            <xsl:when test="(//meta[@name='identifier']/@content) and (//meta[@name='title']/@content) and contains(//meta[@name='identifier']/@content,//meta[@name='title']/@content)">
-              <xsl:value-of select="substring-before(//meta[@name='identifier']/@content,//meta[@name='title']/@content)" />
-            </xsl:when>
-            <xsl:when test="(//meta[@name='url']/@content) and (//meta[@name='title']/@content) and contains(//meta[@name='url']/@content,//meta[@name='title']/@content)">
-              <xsl:value-of select="substring-before(//meta[@name='url']/@content,//meta[@name='title']/@content)" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:text>http://...address.../</xsl:text>
-            </xsl:otherwise>
-          </xsl:choose>
-          <xsl:value-of select="translate($url,'&quot;','')" />
-          <xsl:text>" '</xsl:text>
+          <xsl:text>For best scene portability, append alternate online address for revised </xsl:text>
+          <xsl:if test="not(local-name()='Background')">
+            <xsl:text>url=' </xsl:text>
+            <xsl:text>"</xsl:text>
+            <xsl:value-of select="translate($url,'&quot;','')" />
+            <xsl:text>" "</xsl:text>
+            <xsl:choose>
+              <xsl:when test="(//meta[@name='identifier']/@content) and (//meta[@name='title']/@content) and contains(//meta[@name='identifier']/@content,//meta[@name='title']/@content)">
+                <xsl:value-of select="substring-before(//meta[@name='identifier']/@content,//meta[@name='title']/@content)" />
+              </xsl:when>
+              <xsl:when test="(//meta[@name='url']/@content) and (//meta[@name='title']/@content) and contains(//meta[@name='url']/@content,//meta[@name='title']/@content)">
+                <xsl:value-of select="substring-before(//meta[@name='url']/@content,//meta[@name='title']/@content)" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>http://...address.../</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+            <xsl:value-of select="translate($url,'&quot;','')" />
+            <xsl:text>" '</xsl:text>
+          </xsl:if>
+          <xsl:if test="(local-name()='Background')">
+              <xsl:text>fields:</xsl:text>
+              <xsl:if test="(@frontUrl  and (string-length(normalize-space(@frontUrl))  &gt; 0) and not(contains(@frontUrl, 'http://') or contains(@frontUrl, 'https://')))">
+                <xsl:text> frontUrl</xsl:text>
+              </xsl:if>
+              <xsl:if test="(@backUrl  and (string-length(normalize-space(@backUrl))  &gt; 0) and not(contains(@backUrl, 'http://') or contains(@backUrl, 'https://')))">
+                <xsl:text> backUrl</xsl:text>
+              </xsl:if>
+              <xsl:if test="(@leftUrl  and (string-length(normalize-space(@leftUrl))  &gt; 0) and not(contains(@leftUrl, 'http://') or contains(@leftUrl, 'https://')))">
+                <xsl:text> leftUrl</xsl:text>
+              </xsl:if>
+              <xsl:if test="(@rightUrl  and (string-length(normalize-space(@rightUrl))  &gt; 0) and not(contains(@rightUrl, 'http://') or contains(@rightUrl, 'https://')))">
+                <xsl:text> rightUrl</xsl:text>
+              </xsl:if>
+              <xsl:if test="(@topUrl  and (string-length(normalize-space(@topUrl))  &gt; 0) and not(contains(@topUrl, 'http://') or contains(@topUrl, 'https://')))">
+                <xsl:text> topUrl</xsl:text>
+              </xsl:if>
+              <xsl:if test="(@bottomUrl  and (string-length(normalize-space(@bottomUrl))  &gt; 0) and not(contains(@bottomUrl, 'http://') or contains(@bottomUrl, 'https://')))">
+                <xsl:text> bottomUrl</xsl:text>
+              </xsl:if>
+          </xsl:if>
        </xsl:with-param>
         <xsl:with-param name="node">
           <xsl:value-of select="local-name()" />

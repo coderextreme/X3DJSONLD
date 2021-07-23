@@ -322,9 +322,10 @@ magic("*.swf", "application/x-shockwave-flash");
 magic("/**/schema/*.json", "text/json");
 magic("*.x3d", "model/x3d+xml");
 magic("*.wrl", "model/vrml");
-/*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
+magic("*.bin", "application/octet-stream");
+/*
 magic("*.xml", "text/xml");
 */
 

@@ -178,7 +178,7 @@ ShaderPart34.type = "VERTEX";
 ComposedShader27.parts[5] = ShaderPart34;
 
 let ShaderPart35 = browser.currentScene.createNode("ShaderPart");
-ShaderPart35.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
+ShaderPart35.url = new MFString(new java.lang.String["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]);
 ShaderPart35.type = "FRAGMENT";
 ComposedShader27.parts[6] = ShaderPart35;
 
