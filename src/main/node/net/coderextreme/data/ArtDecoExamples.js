@@ -111,7 +111,7 @@ var ProtoInstance34 = null;
           .addChild((new autoclass.DirectionalLight()).setDirection(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(-0.5)])).setIntensity(java.newFloat(0.5)))
           .addChild((new autoclass.Anchor()).setDescription("Back to front view").setUrl(java.newArray("java.lang.String", ["#Front"]))
             .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-0.5)]))
-              .addChild((new autoclass.Inline()).setUrl(java.newArray("java.lang.String", ["../data/gridBack.json"])))))
+              .addChild((new autoclass.Inline()).setUrl(java.newArray("java.lang.String", ["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])))))
           .addChild((new autoclass.Viewpoint()).setDEF("View00").setDescription("ArtDeco00").setPosition(java.newArray("float", [java.newFloat(-3.75), java.newFloat(3.75), java.newFloat(3)])))
           .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(-3.75), java.newFloat(3.75), java.newFloat(0)]))
             .addChild((new autoclass.Anchor()).setDescription("ArtDeco00 view").setUrl(java.newArray("java.lang.String", ["#View00"]))
