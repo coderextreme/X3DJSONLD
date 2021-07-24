@@ -362,7 +362,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0,-0.5]),
                       children : new MFNode([
                         new Inline({
-                          url : new MFString(["../data/gridBack.json"])})])})])}),
+                          url : new MFString(["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])})])})])}),
 
                 new Viewpoint({
                   DEF : new SFString("View00"),

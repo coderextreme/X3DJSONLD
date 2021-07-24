@@ -155,7 +155,7 @@ ArtDecoExamples.prototype = {
       .addChild((new autoclass.DirectionalLight()).setDirection(0.0,1.0,-0.5).setIntensity(0.5))
       .addChild((new autoclass.Anchor()).setDescription("Back to front view").setUrl(new autoclass.MFString("\"#Front\""))
         .addChild((new autoclass.Transform()).setTranslation(0.0,0.0,-0.5)
-          .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"../data/gridBack.json\"")))))
+          .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"../data/gridBack.json\" \"../data/gridBack.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d\" \"gridBack.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl\"")))))
       .addChild((new autoclass.Viewpoint("View00")).setDescription("ArtDeco00").setPosition(-3.75,3.75,3.0))
       .addChild((new autoclass.Transform()).setTranslation(-3.75,3.75,0.0)
         .addChild((new autoclass.Anchor()).setDescription("ArtDeco00 view").setUrl(new autoclass.MFString("\"#View00\""))
