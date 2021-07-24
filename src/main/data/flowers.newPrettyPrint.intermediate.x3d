@@ -56,7 +56,7 @@
                 <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
                 <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
                 <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
-                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
+                <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
               </ComposedShader>
               <ComposedCubeMapTexture DEF='texture'>
                 <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>

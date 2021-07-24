@@ -71,7 +71,7 @@ public class flowers7
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("Shaders").setLevel(1))
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
@@ -132,7 +132,7 @@ public class flowers7
             .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(0))
             .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(0))
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"}))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"}))))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))))
         .setGeometry(new Sphere())))
     .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 

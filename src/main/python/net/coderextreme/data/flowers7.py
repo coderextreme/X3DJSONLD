@@ -94,32 +94,32 @@ ImageTexture22 = x3d.ImageTexture()
 ImageTexture22.setDEF("backShader")
 ImageTexture22.setUrl(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])
 
-ComposedCubeMapTexture21.setBack(ImageTexture22)
+ComposedCubeMapTexture21.setBackTexture(ImageTexture22)
 ImageTexture23 = x3d.ImageTexture()
 ImageTexture23.setDEF("bottomShader")
 ImageTexture23.setUrl(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])
 
-ComposedCubeMapTexture21.setBottom(ImageTexture23)
+ComposedCubeMapTexture21.setBottomTexture(ImageTexture23)
 ImageTexture24 = x3d.ImageTexture()
 ImageTexture24.setDEF("frontShader")
 ImageTexture24.setUrl(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])
 
-ComposedCubeMapTexture21.setFront(ImageTexture24)
+ComposedCubeMapTexture21.setFrontTexture(ImageTexture24)
 ImageTexture25 = x3d.ImageTexture()
 ImageTexture25.setDEF("leftShader")
 ImageTexture25.setUrl(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])
 
-ComposedCubeMapTexture21.setLeft(ImageTexture25)
+ComposedCubeMapTexture21.setLeftTexture(ImageTexture25)
 ImageTexture26 = x3d.ImageTexture()
 ImageTexture26.setDEF("rightShader")
 ImageTexture26.setUrl(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])
 
-ComposedCubeMapTexture21.setRight(ImageTexture26)
+ComposedCubeMapTexture21.setRightTexture(ImageTexture26)
 ImageTexture27 = x3d.ImageTexture()
 ImageTexture27.setDEF("topShader")
 ImageTexture27.setUrl(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])
 
-ComposedCubeMapTexture21.setTop(ImageTexture27)
+ComposedCubeMapTexture21.setTopTexture(ImageTexture27)
 
 Appearance19.setTexture(ComposedCubeMapTexture21)
 ComposedShader28 = x3d.ComposedShader()

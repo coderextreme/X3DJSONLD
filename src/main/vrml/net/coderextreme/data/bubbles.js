@@ -231,22 +231,28 @@ field41.value = "0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 
 Script37.field[3] = field41;
 
 let field42 = browser.currentScene.createNode("field");
-field42.name = "position_changed";
+field42.name = "fraction_changed";
 field42.accessType = "outputOnly";
-field42.type = "MFVec3f";
+field42.type = "SFFloat";
 Script37.field[4] = field42;
 
 let field43 = browser.currentScene.createNode("field");
-field43.name = "set_orientation";
-field43.accessType = "inputOnly";
-field43.type = "MFRotation";
+field43.name = "position_changed";
+field43.accessType = "outputOnly";
+field43.type = "MFVec3f";
 Script37.field[5] = field43;
 
 let field44 = browser.currentScene.createNode("field");
-field44.name = "orientation_changed";
-field44.accessType = "outputOnly";
+field44.name = "set_orientation";
+field44.accessType = "inputOnly";
 field44.type = "MFRotation";
 Script37.field[6] = field44;
+
+let field45 = browser.currentScene.createNode("field");
+field45.name = "orientation_changed";
+field45.accessType = "outputOnly";
+field45.type = "MFRotation";
+Script37.field[7] = field45;
 
 
 Script37.setSourceCode(`ecmascript:\n"+
@@ -258,13 +264,13 @@ Script37.setSourceCode(`ecmascript:\n"+
 "                        } while (lastKey === ov);\n"+
 "                        var vc = lastKey;\n"+
 "\n"+
-"                        position_changed = new MFVec3f();\n"+
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
+"                        position_changed[0] = positions[ov];\n"+
+"                        position_changed[1] = positions[vc];\n"+
 "\n"+
-"                        orientation_changed = new MFRotation();\n"+
 "                        orientation_changed[0] = orientations[ov];\n"+
 "                        orientation_changed[1] = orientations[vc];\n"+
+"\n"+
+"                        fraction_changed = 0;\n"+
 "		   } catch (e) {\n"+
 "		   	if (typeof console.log === 'function') {\n"+
 "				console.log(e);\n"+
@@ -273,52 +279,66 @@ Script37.setSourceCode(`ecmascript:\n"+
 "               }`)
 browser.currentScene.children[8] = Script37;
 
-let ROUTE45 = browser.currentScene.createNode("ROUTE");
-ROUTE45.fromNode = "TourTime";
-ROUTE45.fromField = "cycleTime";
-ROUTE45.toNode = "RandomTourTime";
-ROUTE45.toField = "set_cycle";
-browser.currentScene.children[9] = ROUTE45;
-
 let ROUTE46 = browser.currentScene.createNode("ROUTE");
-ROUTE46.fromNode = "RandomTourTime";
-ROUTE46.fromField = "orientation_changed";
-ROUTE46.toNode = "TourOrientation";
-ROUTE46.toField = "set_keyValue";
-browser.currentScene.children[10] = ROUTE46;
+ROUTE46.fromNode = "TourTime";
+ROUTE46.fromField = "cycleTime";
+ROUTE46.toNode = "RandomTourTime";
+ROUTE46.toField = "set_cycle";
+browser.currentScene.children[9] = ROUTE46;
 
 let ROUTE47 = browser.currentScene.createNode("ROUTE");
 ROUTE47.fromNode = "RandomTourTime";
-ROUTE47.fromField = "position_changed";
-ROUTE47.toNode = "TourPosition";
-ROUTE47.toField = "set_keyValue";
-browser.currentScene.children[11] = ROUTE47;
+ROUTE47.fromField = "fraction_changed";
+ROUTE47.toNode = "TourOrientation";
+ROUTE47.toField = "set_fraction";
+browser.currentScene.children[10] = ROUTE47;
 
 let ROUTE48 = browser.currentScene.createNode("ROUTE");
-ROUTE48.fromNode = "TourTime";
+ROUTE48.fromNode = "RandomTourTime";
 ROUTE48.fromField = "fraction_changed";
-ROUTE48.toNode = "TourOrientation";
+ROUTE48.toNode = "TourPosition";
 ROUTE48.toField = "set_fraction";
-browser.currentScene.children[12] = ROUTE48;
+browser.currentScene.children[11] = ROUTE48;
 
 let ROUTE49 = browser.currentScene.createNode("ROUTE");
-ROUTE49.fromNode = "TourOrientation";
-ROUTE49.fromField = "value_changed";
-ROUTE49.toNode = "Tour";
-ROUTE49.toField = "set_orientation";
-browser.currentScene.children[13] = ROUTE49;
+ROUTE49.fromNode = "RandomTourTime";
+ROUTE49.fromField = "orientation_changed";
+ROUTE49.toNode = "TourOrientation";
+ROUTE49.toField = "set_keyValue";
+browser.currentScene.children[12] = ROUTE49;
 
 let ROUTE50 = browser.currentScene.createNode("ROUTE");
-ROUTE50.fromNode = "TourTime";
-ROUTE50.fromField = "fraction_changed";
+ROUTE50.fromNode = "RandomTourTime";
+ROUTE50.fromField = "position_changed";
 ROUTE50.toNode = "TourPosition";
-ROUTE50.toField = "set_fraction";
-browser.currentScene.children[14] = ROUTE50;
+ROUTE50.toField = "set_keyValue";
+browser.currentScene.children[13] = ROUTE50;
 
 let ROUTE51 = browser.currentScene.createNode("ROUTE");
-ROUTE51.fromNode = "TourPosition";
-ROUTE51.fromField = "value_changed";
-ROUTE51.toNode = "Tour";
-ROUTE51.toField = "set_position";
-browser.currentScene.children[15] = ROUTE51;
+ROUTE51.fromNode = "TourTime";
+ROUTE51.fromField = "fraction_changed";
+ROUTE51.toNode = "TourOrientation";
+ROUTE51.toField = "set_fraction";
+browser.currentScene.children[14] = ROUTE51;
+
+let ROUTE52 = browser.currentScene.createNode("ROUTE");
+ROUTE52.fromNode = "TourOrientation";
+ROUTE52.fromField = "value_changed";
+ROUTE52.toNode = "Tour";
+ROUTE52.toField = "set_orientation";
+browser.currentScene.children[15] = ROUTE52;
+
+let ROUTE53 = browser.currentScene.createNode("ROUTE");
+ROUTE53.fromNode = "TourTime";
+ROUTE53.fromField = "fraction_changed";
+ROUTE53.toNode = "TourPosition";
+ROUTE53.toField = "set_fraction";
+browser.currentScene.children[16] = ROUTE53;
+
+let ROUTE54 = browser.currentScene.createNode("ROUTE");
+ROUTE54.fromNode = "TourPosition";
+ROUTE54.fromField = "value_changed";
+ROUTE54.toNode = "Tour";
+ROUTE54.toField = "set_position";
+browser.currentScene.children[17] = ROUTE54;
 

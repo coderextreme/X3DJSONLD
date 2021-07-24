@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(name='Shaders',level=1),
@@ -61,9 +61,8 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
             parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
-            ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"],type='FRAGMENT')),
+            ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"],type='FRAGMENT')),
           ComposedShader(DEF='x3dom',language='GLSL',
-            # http://hypertextbook.com/facts/2005/JustinChe.shtml
             field=[
             field(name='chromaticDispertion',accessType='inputOutput',type='SFVec3f',value=(0.98,1,1.033)),
             field(name='cube',accessType='inputOutput',type='SFInt32',value=0),

@@ -153,7 +153,7 @@ ball.prototype = {
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs\"")))
+            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
             .addParts((new autoclass.ShaderPart("common")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
@@ -163,7 +163,7 @@ ball.prototype = {
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts((new autoclass.ShaderPart()).setUSE("common")))))));
+            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\""))))))));
   },
   // end of initialize() method
 

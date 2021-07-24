@@ -74,13 +74,14 @@ done
 #	popd
 #done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONODE -e $DATATONODE -e $ROOTTONODE| xargs ls -d`
-do
-	pushd ../node
-	echo $i
-	${NODE} $i
-	popd
-done
+# TODO turned off until node-java is fixed.
+#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONODE -e $DATATONODE -e $ROOTTONODE| xargs ls -d`
+#do
+#	pushd ../node
+#	echo $i
+#	${NODE} $i
+#	popd
+#done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do

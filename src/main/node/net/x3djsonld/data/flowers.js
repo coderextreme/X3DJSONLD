@@ -67,7 +67,7 @@ flowers.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
@@ -130,7 +130,7 @@ flowers.prototype = {
                 .addField((new autoclass.field()).setAccessType("inputOnly").setName("tdelta").setType("SFFloat").setValue("0"))
                 .addField((new autoclass.field()).setAccessType("inputOnly").setName("pdelta").setType("SFFloat").setValue("0"))
                 .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"")))
-                .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"")))))
+                .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\"")))))
             .setGeometry((new autoclass.Sphere()))))
         .addChild((new autoclass.Script("Animate")).setSourceCode("\n" + 
 "\n" + 

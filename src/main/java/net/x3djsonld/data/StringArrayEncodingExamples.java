@@ -129,7 +129,7 @@ public class StringArrayEncodingExamples
       .setGeometry(new Text().setString(new String[] {"One, Two, Three","","He said, \"Immel did it!\""})
         .addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
         .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-        .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setStyle("BOLD")))
+        .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setCssStyle("BOLD")))
       .setAppearance(new Appearance()
         .setMaterial(new Material().setDiffuseColor(0.6,0.4,0.2)))));
     }

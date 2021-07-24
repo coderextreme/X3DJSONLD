@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(name='EnvironmentalEffects',level=3),
@@ -41,26 +41,25 @@ newModel=X3D(profile='Immersive',version='3.3',
     children=[
     Viewpoint(position=(0,5,100),description='Switch background and images texture'),
     TextureBackground(
-      leftTexture=ImageTexture(DEF='leftBack',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"]),
-      rightTexture=ImageTexture(DEF='rightBack',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"]),
-      frontTexture=ImageTexture(DEF='frontBack',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"]),
-      backTexture=ImageTexture(DEF='backBack',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"]),
-      topTexture=ImageTexture(DEF='topBack',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"]),
-      bottomTexture=ImageTexture(DEF='bottomBack',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"])),
+      leftTexture=ImageTexture(DEF='leftBack',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+      rightTexture=ImageTexture(DEF='rightBack',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+      frontTexture=ImageTexture(DEF='frontBack',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+      backTexture=ImageTexture(DEF='backBack',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+      topTexture=ImageTexture(DEF='topBack',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
+      bottomTexture=ImageTexture(DEF='bottomBack',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
     Transform(
       children=[
       Shape(
         appearance=Appearance(
           material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
           texture=ComposedCubeMapTexture(
-            backTexture=ImageTexture(DEF='backShader',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"]),
-            bottomTexture=ImageTexture(DEF='bottomShader',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"]),
-            frontTexture=ImageTexture(DEF='frontShader',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"]),
-            leftTexture=ImageTexture(DEF='leftShader',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"]),
-            rightTexture=ImageTexture(DEF='rightShader',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"]),
-            topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"])),
+            backTexture=ImageTexture(DEF='backShader',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+            bottomTexture=ImageTexture(DEF='bottomShader',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]),
+            frontTexture=ImageTexture(DEF='frontShader',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+            leftTexture=ImageTexture(DEF='leftShader',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+            rightTexture=ImageTexture(DEF='rightShader',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+            topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])),
           shaders=ComposedShader(DEF='x3dom',language='GLSL',
-            # http://hypertextbook.com/facts/2005/JustinChe.shtml
             field=[
             field(name='chromaticDispertion',accessType='inputOutput',type='SFVec3f',value=(0.98,1,1.033)),
             field(name='cube',accessType='inputOutput',type='SFInt32',value=0),
@@ -77,8 +76,8 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='bias',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
-            parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"]),
-            ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"],type='FRAGMENT'))),
+            parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
+            ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"],type='FRAGMENT'))),
         geometry=Sphere(radius=30)),
       Script(DEF='UrlSelector',directOutput=True,
         field=[

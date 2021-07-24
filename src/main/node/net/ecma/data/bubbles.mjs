@@ -44,6 +44,10 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("EnvironmentalEffects"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("EnvironmentalEffects"),
               level : new SFInt32(3)})),
           component : new SFNode(
             new component({
@@ -271,6 +275,11 @@ var X3D0 =  new X3D({
                   value : new SFString("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10")}),
 
                 new field({
+                  type : field.TYPE_SFFLOAT,
+                  name : new SFString("fraction_changed"),
+                  accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                new field({
                   type : field.TYPE_MFVEC3F,
                   name : new SFString("position_changed"),
                   accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
@@ -294,13 +303,13 @@ ecmascript:eval (0
                         } while (lastKey === ov);
                         var vc = lastKey;
 
-                        position_changed = new MFVec3f();
-                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);
-                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
+                        position_changed[0] = positions[ov];
+                        position_changed[1] = positions[vc];
 
-                        orientation_changed = new MFRotation();
                         orientation_changed[0] = orientations[ov];
                         orientation_changed[1] = orientations[vc];
+
+                        fraction_changed = 0;
 		   } catch (e) {
 		   	if (typeof console.log === ', function') {
 				console.log(e);
@@ -313,6 +322,18 @@ ecmascript:eval (0
               fromField : new SFString("cycleTime"),
               toNode : new SFString("RandomTourTime"),
               toField : new SFString("set_cycle")}),
+
+            new ROUTE({
+              fromNode : new SFString("RandomTourTime"),
+              fromField : new SFString("fraction_changed"),
+              toNode : new SFString("TourOrientation"),
+              toField : new SFString("set_fraction")}),
+
+            new ROUTE({
+              fromNode : new SFString("RandomTourTime"),
+              fromField : new SFString("fraction_changed"),
+              toNode : new SFString("TourPosition"),
+              toField : new SFString("set_fraction")}),
 
             new ROUTE({
               fromNode : new SFString("RandomTourTime"),
