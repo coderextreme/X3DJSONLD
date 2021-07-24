@@ -169,7 +169,7 @@ public class SpatialAudioCameraAnimation
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
-).setStyle("BOLD").setToptobottom("true"
+).setCssStyle("BOLD").setToptobottom("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
     .addChild(new Transform("Audio2").setTranslation(933.475586,0.000000,924.423218)
@@ -208,7 +208,7 @@ public class SpatialAudioCameraAnimation
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
-).setStyle("BOLD").setToptobottom("true"
+).setCssStyle("BOLD").setToptobottom("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
     .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView(true))

@@ -172,7 +172,7 @@ public class ArtDecoExamples
               .setAppearance(new Appearance()
                 .setMaterial(new Material("TextMat").setDiffuseColor(1.0,1.0,1.0)))
               .setGeometry(new Text().setString(new String[] {"ArtDeco00"})
-                .setFontStyle(new FontStyle("Style").setFamily(new String[] {"SANS"}).setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.3).setStyle("BOLD")))))))
+                .setFontStyle(new FontStyle("Style").setFamily(new String[] {"SANS"}).setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.3).setCssStyle("BOLD")))))))
       .addChild(new Viewpoint("View01").setDescription("ArtDeco01").setPosition(-2.25,3.75,3.0))
       .addChild(new Transform().setTranslation(-2.25,3.75,0.0)
         .addChild(new Anchor().setDescription("ArtDeco01 view").setUrl(new String[] {"#View01"})

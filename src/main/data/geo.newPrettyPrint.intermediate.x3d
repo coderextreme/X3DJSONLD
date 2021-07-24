@@ -43,7 +43,7 @@
             <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
             <field name='power' accessType='initializeOnly' type='SFFloat' value='2.0'/>
             <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
-            <ShaderPart USE='common'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture DEF='texture'>
             <ImageTexture containerField='backTexture' url='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>

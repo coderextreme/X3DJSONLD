@@ -118,7 +118,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='bias',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
-            parts=ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"]),
+            parts=ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
             ShaderPart(DEF='common',url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')),
           ComposedShader(language='GLSL',
             field=[
@@ -130,7 +130,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='scale',accessType='initializeOnly',type='SFFloat',value=0.5),
             field(name='power',accessType='initializeOnly',type='SFFloat',value=2)],
             parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
-            ShaderPart(USE='common'))))])])
+            ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT'))))])])
 ) # X3D model complete
 
 ###############################################

@@ -86,27 +86,27 @@ ComposedCubeMapTexture20 = x3d.ComposedCubeMapTexture()
 ImageTexture21 = x3d.ImageTexture()
 ImageTexture21.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture20.setBack(ImageTexture21)
+ComposedCubeMapTexture20.setBackTexture(ImageTexture21)
 ImageTexture22 = x3d.ImageTexture()
 ImageTexture22.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture20.setBottom(ImageTexture22)
+ComposedCubeMapTexture20.setBottomTexture(ImageTexture22)
 ImageTexture23 = x3d.ImageTexture()
 ImageTexture23.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture20.setFront(ImageTexture23)
+ComposedCubeMapTexture20.setFrontTexture(ImageTexture23)
 ImageTexture24 = x3d.ImageTexture()
 ImageTexture24.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture20.setLeft(ImageTexture24)
+ComposedCubeMapTexture20.setLeftTexture(ImageTexture24)
 ImageTexture25 = x3d.ImageTexture()
 ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture20.setRight(ImageTexture25)
+ComposedCubeMapTexture20.setRightTexture(ImageTexture25)
 ImageTexture26 = x3d.ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture20.setTop(ImageTexture26)
+ComposedCubeMapTexture20.setTopTexture(ImageTexture26)
 
 Appearance18.setTexture(ComposedCubeMapTexture20)
 ComposedShader27 = x3d.ComposedShader()

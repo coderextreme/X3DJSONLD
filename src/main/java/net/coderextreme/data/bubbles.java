@@ -45,6 +45,7 @@ public class bubbles {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
@@ -68,12 +69,12 @@ public class bubbles {
             .setAppearance(new Appearance().setDEF("_01_-_Default")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTexture()
-                .setBack(new ImageTexture().setUrl(new MFString6().getArray()))
-                .setBottom(new ImageTexture().setUrl(new MFString7().getArray()))
-                .setFront(new ImageTexture().setUrl(new MFString8().getArray()))
-                .setLeft(new ImageTexture().setUrl(new MFString9().getArray()))
-                .setRight(new ImageTexture().setUrl(new MFString10().getArray()))
-                .setTop(new ImageTexture().setUrl(new MFString11().getArray())))
+                .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
+                .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))
+                .setFrontTexture(new ImageTexture().setUrl(new MFString8().getArray()))
+                .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
+                .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
+                .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
               .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
                 .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
@@ -98,6 +99,7 @@ public class bubbles {
           .addField(new field().setType("SFFloat").setName("lastKey").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new field().setType("MFRotation").setName("orientations").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"))
           .addField(new field().setType("MFVec3f").setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10"))
+          .addField(new field().setType("SFFloat").setName("fraction_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("MFVec3f").setName("position_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("MFRotation").setName("set_orientation").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType("MFRotation").setName("orientation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
@@ -110,13 +112,13 @@ public class bubbles {
 "                        } while (lastKey === ov);\n"+
 "                        var vc = lastKey;\n"+
 "\n"+
-"                        position_changed = new MFVec3f();\n"+
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
+"                        position_changed[0] = positions[ov];\n"+
+"                        position_changed[1] = positions[vc];\n"+
 "\n"+
-"                        orientation_changed = new MFRotation();\n"+
 "                        orientation_changed[0] = orientations[ov];\n"+
 "                        orientation_changed[1] = orientations[vc];\n"+
+"\n"+
+"                        fraction_changed = 0;\n"+
 "		   } catch (e) {\n"+
 "		   	if (typeof console.log === 'function') {\n"+
 "				console.log(e);\n"+
@@ -124,6 +126,8 @@ public class bubbles {
 "		   }\n"+
 "               }"))
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
+        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
         .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))

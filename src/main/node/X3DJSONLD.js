@@ -8,7 +8,8 @@ if (typeof require === 'function' && typeof load !== 'function') {
 	var fs = require("fs");
 	var http = require("http");
 	var https = require("https");
-	var runAndSend = require("./runAndSend");
+	// TODO turned off until node-java is fixed
+	// var runAndSend = require("./runAndSend");
 	var xmldom = require('xmldom');
 	var domserializer = new xmldom.XMLSerializer();
 	var DOMParser = xmldom.DOMParser;

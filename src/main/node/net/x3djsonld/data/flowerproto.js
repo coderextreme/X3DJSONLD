@@ -67,7 +67,7 @@ flowerproto.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))

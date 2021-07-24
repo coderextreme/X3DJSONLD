@@ -67,7 +67,7 @@ geo.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
@@ -84,19 +84,19 @@ geo.prototype = {
     .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\"")))
     .addChild((new autoclass.Viewpoint("Tour")).setDescription("Tour Views"))
     .addComments("Viewpoint position='0 0 4' description='sphere in road'/")
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")).setBottomUrl(new autoclass.MFString("\"resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")).setFrontUrl(new autoclass.MFString("\"resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")).setLeftUrl(new autoclass.MFString("\"resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")).setRightUrl(new autoclass.MFString("\"resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")).setTopUrl(new autoclass.MFString("\"resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\"")))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\"")))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Sphere()))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7))
           .setTexture((new autoclass.ComposedCubeMapTexture("texture"))
-            .setBackTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")))
-            .setBottomTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")))
-            .setFrontTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")))
-            .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")))
-            .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")))
-            .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\""))))
+            .setBackTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bBK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png\"")))
+            .setBottomTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bBT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png\"")))
+            .setFrontTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bFR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png\"")))
+            .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bLF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png\"")))
+            .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bRT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png\"")))
+            .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/bTP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png\""))))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -114,7 +114,7 @@ geo.prototype = {
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts((new autoclass.ShaderPart()).setUSE("common")))))));
+            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs\""))))))));
   },
   // end of initialize() method
 

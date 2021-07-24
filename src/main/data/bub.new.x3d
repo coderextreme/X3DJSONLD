@@ -43,8 +43,8 @@
                 <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                 <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                 <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-                <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"'/>
-                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
+                <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
+                <ShaderPart type='FRAGMENT' url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"'/>
               </ComposedShader>
               <ComposedCubeMapTexture DEF='texture'>
                 <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>

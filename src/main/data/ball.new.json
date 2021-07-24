@@ -71,7 +71,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 July 2021"
+            "@content":"24 July 2021"
           },
           {
             "@name":"generator",
@@ -188,7 +188,7 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"]
+                                      "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
                                     }
                                   },
                                   { "ShaderPart":
@@ -251,7 +251,8 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@USE":"common"
+                                      "@type":"FRAGMENT",
+                                      "@url":["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]
                                     }
                                   }
                                 ]

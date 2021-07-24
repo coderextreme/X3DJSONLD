@@ -220,7 +220,7 @@ public class DiamondManLOA2
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(new String[] {"Humanoid Root"})
-                    .setFontStyle(new FontStyle().setFamily(new String[] {"SANS"}).setSize(0.01).setStyle("ITALIC")))
+                    .setFontStyle(new FontStyle().setFamily(new String[] {"SANS"}).setSize(0.01).setCssStyle("ITALIC")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(0.039216,1.0,0.568627))))))))
         .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.9149,0.0016).setStiffness(new double[] {0.0,0.0,0.0})
