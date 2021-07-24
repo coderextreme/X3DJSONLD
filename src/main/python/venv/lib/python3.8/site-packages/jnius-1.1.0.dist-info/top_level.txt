@@ -1,2 +1,0 @@
-jnius
-jnius_config
