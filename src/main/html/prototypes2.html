@@ -85,7 +85,7 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			// json = protoExpander.prototypeExpander(url, json, "");
 			load_X_ITE_JS(json, "#x_itejson"); // loads into X_ITE element on page.
-			var url = '../data/SFVec3f.json';
+			var url = '../data/sphere.json';
 			getJSON(url).then(function(subjson) {
 				// subjson = protoExpander.prototypeExpander(url, subjson, "");
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
