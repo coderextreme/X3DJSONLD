@@ -1,6 +1,6 @@
 {
   "name": "X3DJSONLD",
-  "version": "1.0.0",
+  "version": "9.0.0",
   "private": true,
   "main": "index.js",
   "dependencies": {
@@ -9,9 +9,8 @@
     "axios": ">=0.21.1",
     "express": "*",
     "glob": "*",
-    "java": "^0.12.1",
+    "java": "^0.12.2",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
-    "lodash": ">=4.17.21",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "three": "*",
