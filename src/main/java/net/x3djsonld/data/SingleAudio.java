@@ -135,7 +135,7 @@ public class SingleAudio
             .setAppearance(new Appearance()
               .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(0.345,0.345,0.882).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
             .setGeometry(new Text().setString(new String[] {"Sound Source"})
-              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setJustify(FontStyle.JUSTIFY_BEGIN).setStyle("BOLD")))))))
+              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setJustify(FontStyle.JUSTIFY_BEGIN).setCssStyle("BOLD")))))))
     .addChild(new AudioSound()
       .addChild(new Transform().setUSE("Audio1"))
       .addChild(new SpatialSound().setConeInnerAngle(360).setConeOuterAngle(360).setEnableHRTF(true))

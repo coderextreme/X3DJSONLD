@@ -25,6 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
+    component(name='EnvironmentalEffects',level=1),
     component(name='EnvironmentalEffects',level=3),
     component(name='Shaders',level=1),
     component(name='CubeMapTexturing',level=1),
@@ -65,18 +66,15 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
             parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
             ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT')),
-          # 
-		    <ComposedShader DEF="x3dom" containerField='shaders' language='GLSL'>
-		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
-                    <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                    <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                    <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                    <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-		    <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		    <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-		    </ComposedShader>
-
-          ))]),
+          ComposedShader(DEF='x3dom',language='GLSL',
+            field=[
+            field(name='cube',accessType='inputOutput',type='SFInt32',value=0),
+            field(name='chromaticDispertion',accessType='inputOutput',type='SFVec3f',value=(0.98,1,1.033)),
+            field(name='bias',accessType='inputOutput',type='SFFloat',value=0.5),
+            field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
+            field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
+            parts=ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
+            ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT'))))]),
     TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
     PositionInterpolator(DEF='TourPosition',key=[0,1],keyValue=[(0,0,10),(0,0,-10)]),
     OrientationInterpolator(DEF='TourOrientation',key=[0,1],keyValue=[(0,1,0,0),(0,1,0,3.1416)]),
@@ -86,10 +84,13 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='lastKey',accessType='inputOutput',type='SFFloat',value=0),
       field(name='orientations',accessType='inputOutput',type='MFRotation',value=[(0,1,0,0),(0,1,0,-1.57),(0,1,0,3.14),(0,1,0,1.57),(0,1,0,0),(1,0,0,-1.57),(0,1,0,0),(1,0,0,1.57),(0,1,0,0)]),
       field(name='positions',accessType='inputOutput',type='MFVec3f',value=[(0,0,10),(-10,0,0),(0,0,-10),(10,0,0),(0,0,10),(0,10,0),(0,0,10),(0,-10,0),(0,0,10)]),
+      field(name='fraction_changed',accessType='outputOnly',type='SFFloat'),
       field(name='position_changed',accessType='outputOnly',type='MFVec3f'),
       field(name='set_orientation',accessType='inputOnly',type='MFRotation'),
       field(name='orientation_changed',accessType='outputOnly',type='MFRotation')]),
     ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='RandomTourTime',toField='set_cycle'),
+    ROUTE(fromNode='RandomTourTime',fromField='fraction_changed',toNode='TourOrientation',toField='set_fraction'),
+    ROUTE(fromNode='RandomTourTime',fromField='fraction_changed',toNode='TourPosition',toField='set_fraction'),
     ROUTE(fromNode='RandomTourTime',fromField='orientation_changed',toNode='TourOrientation',toField='set_keyValue'),
     ROUTE(fromNode='RandomTourTime',fromField='position_changed',toNode='TourPosition',toField='set_keyValue'),
     ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='TourOrientation',toField='set_fraction'),

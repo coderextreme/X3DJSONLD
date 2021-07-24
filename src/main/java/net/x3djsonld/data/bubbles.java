@@ -74,6 +74,7 @@ public class bubbles
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
+    .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
     .addComponent(new component().setName("Shaders").setLevel(1))
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
@@ -111,16 +112,14 @@ public class bubbles
             .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2))
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"})))
-          .addComments(new String[] {"",
-"		    <ComposedShader DEF=\"x3dom\" containerField='shaders' language='GLSL'>",
-"		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>",
-"                    <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>",
-"                    <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>",
-"                    <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>",
-"                    <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>",
-"		    <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"' containerField='parts' type='VERTEX'></ShaderPart>",
-"		    <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
-"		    </ComposedShader>"}))))
+          .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
+            .addField(new field().setName("cube").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+            .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.98,1.0,1.033)))
+            .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+            .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+            .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2))
+            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}))))))
     .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new PositionInterpolator("TourPosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,10.0,0.0,0.0,-10.0})))
     .addChild(new OrientationInterpolator("TourOrientation").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416})))
@@ -134,13 +133,13 @@ public class bubbles
 "                        } while (lastKey === ov);" + "\n" + 
 "                        var vc = lastKey;" + "\n" + 
 "\n" + 
-"                        position_changed = new MFVec3f();" + "\n" + 
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
-"                        " + "\n" + 
-"                        orientation_changed = new MFRotation();" + "\n" + 
+"                        position_changed[0] = positions[ov];" + "\n" + 
+"                        position_changed[1] = positions[vc];" + "\n" + 
+"\n" + 
 "                        orientation_changed[0] = orientations[ov];" + "\n" + 
 "                        orientation_changed[1] = orientations[vc];" + "\n" + 
+"\n" + 
+"                        fraction_changed = 0;" + "\n" + 
 "		   } catch (e) {" + "\n" + 
 "		   	if (typeof console.log === 'function') {" + "\n" + 
 "				console.log(e);" + "\n" + 
@@ -151,10 +150,13 @@ public class bubbles
       .addField(new field().setName("lastKey").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("orientations").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFRotation(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,-1.57,0.0,1.0,0.0,3.14,0.0,1.0,0.0,1.57,0.0,1.0,0.0,0.0,1.0,0.0,0.0,-1.57,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.57,0.0,1.0,0.0,0.0}))))
       .addField(new field().setName("positions").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {0.0,0.0,10.0,-10.0,0.0,0.0,0.0,0.0,-10.0,10.0,0.0,0.0,0.0,0.0,10.0,0.0,10.0,0.0,0.0,0.0,10.0,0.0,-10.0,0.0,0.0,0.0,10.0}))))
+      .addField(new field().setName("fraction_changed").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("position_changed").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("set_orientation").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("orientation_changed").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
     .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
+    .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
     .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
     .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))

@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='Scripting'),
@@ -93,7 +93,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 field(name='tdelta',type='SFFloat',accessType='inputOnly',value=0),
                 field(name='pdelta',type='SFFloat',accessType='inputOnly',value=0)],
                 parts=ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
-                ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT'))),
+                ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT'))),
             geometry=Sphere(),)]),
         Script(DEF='Animate',
           field=[

@@ -40,7 +40,7 @@
             <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-            <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs"'/>
+            <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
             <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
           </ComposedShader>
           <ComposedShader language='GLSL'>
@@ -52,7 +52,7 @@
             <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
             <field name='power' accessType='initializeOnly' type='SFFloat' value='2.0'/>
             <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
-            <ShaderPart USE='common'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture DEF='texture'>
             <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
