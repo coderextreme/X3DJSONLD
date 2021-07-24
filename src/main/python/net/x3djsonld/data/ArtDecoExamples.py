@@ -92,7 +92,7 @@ newModel=X3D(profile='Immersive',version='3.0',
         children=[
         Transform(translation=(0.0,0.0,-0.5),
           children=[
-          Inline(url=["../data/gridBack.json"])])]),
+          Inline(url=["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])])]),
       Viewpoint(DEF='View00',description='ArtDeco00',position=(-3.75,3.75,3.0)),
       Transform(translation=(-3.75,3.75,0.0),
         children=[

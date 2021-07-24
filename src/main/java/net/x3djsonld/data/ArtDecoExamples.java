@@ -158,7 +158,7 @@ public class ArtDecoExamples
       .addChild(new DirectionalLight().setDirection(0.0,1.0,-0.5).setIntensity(0.5))
       .addChild(new Anchor().setDescription("Back to front view").setUrl(new String[] {"#Front"})
         .addChild(new Transform().setTranslation(0.0,0.0,-0.5)
-          .addChild(new Inline().setUrl(new String[] {"../data/gridBack.json"}))))
+          .addChild(new Inline().setUrl(new String[] {"../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"}))))
       .addChild(new Viewpoint("View00").setDescription("ArtDeco00").setPosition(-3.75,3.75,3.0))
       .addChild(new Transform().setTranslation(-3.75,3.75,0.0)
         .addChild(new Anchor().setDescription("ArtDeco00 view").setUrl(new String[] {"#View00"})

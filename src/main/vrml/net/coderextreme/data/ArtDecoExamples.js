@@ -326,7 +326,7 @@ Anchor50.url = new MFString(new java.lang.String["#Front"]);
 let Transform51 = browser.currentScene.createNode("Transform");
 Transform51.translation = new SFVec3f(new float[0,0,-0.5]);
 let Inline52 = browser.currentScene.createNode("Inline");
-Inline52.url = new MFString(new java.lang.String["../data/gridBack.json"]);
+Inline52.url = new MFString(new java.lang.String["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]);
 Transform51.children = new MFNode();
 
 Transform51.children[0] = Inline52;

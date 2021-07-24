@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
-export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3.8/dist-packages/pkg_resources/:/usr/lib/python3.8/dist-packages
+export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
@@ -22,7 +22,7 @@ popd
 
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
-# install python3.8 packages
+# install python3 packages
 pip3 install beautifulsoup4
 pip3 install lxml
 pip3 install jnius
@@ -33,16 +33,16 @@ pip3 install fastjsonschema
 # bash generateSchema.sh
 # popd
 pushd src/main/python
-python3.8 generateSchemas.py
+python3 generateSchemas.py
 popd
 
 # generate helpful JavaScript classes
 pushd src/main/python
-python3.8 autoclass.py
-# python3.8 classes.py
-python3.8 nodeclasses.py
-python3.8 fieldTypesGenerator.py
-python3.8 mapToMethodGenerator.py
+python3 autoclass.py
+# python3 classes.py
+python3 nodeclasses.py
+python3 fieldTypesGenerator.py
+python3 mapToMethodGenerator.py
 popd
 
 # copy to another location

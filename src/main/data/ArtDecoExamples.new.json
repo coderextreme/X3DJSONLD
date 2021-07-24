@@ -440,7 +440,7 @@
                           "-children":[
                             { "Inline":
                               {
-                                "@url":["../data/gridBack.json"]
+                                "@url":["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]
                               }
                             }
                           ]
