@@ -8,8 +8,8 @@ if (typeof require === 'function' && typeof load !== 'function') {
 	var fs = require("fs");
 	var http = require("http");
 	var https = require("https");
-	// TODO turned off until node-java is fixed
-	// var runAndSend = require("./runAndSend");
+	// TODO this causes node-java 0.12.2 to hang
+	var runAndSend = require("./runAndSend");
 	var xmldom = require('xmldom');
 	var domserializer = new xmldom.XMLSerializer();
 	var DOMParser = xmldom.DOMParser;
