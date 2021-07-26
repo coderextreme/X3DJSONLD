@@ -15,6 +15,12 @@ convertJSON([
 	codeOutput : "../"
 	},
 	{ 
+	serializer : "./DartSerializer.js",
+	folder : "../dart/net/coderextreme/",
+	extension : ".dart",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : "./ECMAScriptSerializer.js",
 	folder : "../node/net/ecma/",
 	extension : ".mjs",
