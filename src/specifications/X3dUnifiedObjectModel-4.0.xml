@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-06-08-07:00 22:00:11.634-07:00 -->
+<!-- Generated 2021-07-27-07:00 20:03:54.792-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -28001,6 +28001,12 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ComposedCubeMapTexture"/>
+               <NodeContentModel name="GeneratedCubeMapTexture"/>
+               <NodeContentModel name="ImageCubeMapTexture"/>
+               <NodeContentModel name="ComposedTexture3D"/>
+               <NodeContentModel name="ImageTexture3D"/>
+               <NodeContentModel name="PixelTexture3D"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
