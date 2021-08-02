@@ -212,6 +212,12 @@ POSSIBILITY OF SUCH DAMAGE.
 
 # Statements
 
+:X3DStatement a owl:Class ;
+  rdfs:label "X3DStatement is the abstract type from which all non-node statements are derived." ;
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html" ;
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#AbstractX3DStructure" .
+#:class :id and :style connected via X3D definitions
+
 </xsl:text>
         <xsl:apply-templates select="//Statements/*"/>
         <xsl:text>###############################################
@@ -466,10 +472,17 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:text>:</xsl:text><!-- local namespace -->
         <xsl:value-of select="$elementName"/>
         
-        <xsl:text> a </xsl:text>
-        <xsl:text>owl:Class</xsl:text>
+        <xsl:text> a owl:Class</xsl:text>
         
         <!-- subclasses -->
+        <xsl:if test="(local-name() = 'Statement')">
+            <xsl:text> ;</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>  </xsl:text>
+            <xsl:text>rdfs:subClassOf </xsl:text>
+            <xsl:text>:</xsl:text><!-- local namespace -->
+            <xsl:text>X3DStatement</xsl:text>
+        </xsl:if>
         <xsl:if test="(string-length(InterfaceDefinition/Inheritance/@baseType) > 0)">
             <xsl:text> ;</xsl:text>
             <xsl:text>&#10;</xsl:text>
@@ -517,17 +530,13 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:choose>
         <xsl:text>"</xsl:text>
         
-        <!-- <xsl:apply-templates select="@*"/> process attributes for this element -->
-        
-        <!-- <xsl:apply-templates select="*"/> no need to recurse on child elements -->
-        
         <!-- common final processing for each element -->
         <xsl:text> .</xsl:text><!-- end triple -->
         <xsl:text>&#10;</xsl:text>
             
         <xsl:if test="(count(InterfaceDefinition/AdditionalInheritance) > 1)">
             <xsl:message>
-                <xsl:text>*** of note: </xsl:text>
+                <xsl:text>*** info:   </xsl:text>
                 <xsl:value-of select="$elementName"/>
                 <xsl:text> has multiple AdditionalInterface definitions:</xsl:text>
                 <xsl:for-each select="InterfaceDefinition/AdditionalInheritance">
@@ -541,17 +550,43 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="interfaceFieldsList" select="InterfaceDefinition/field"/><!-- filter accessType [(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')] -->
         
         <xsl:for-each select="$interfaceFieldsList">
+            <xsl:sort select="(@name = 'style')"/>
+            <xsl:sort select="(@name = 'id')"/>
+            <xsl:sort select="(@name = 'class')"/>
             <xsl:sort select="(@name = 'metadata')"/>
             <xsl:sort select="(@name = 'IS')"/>
-            <xsl:sort select="(@name = 'class')"/>
             <xsl:sort select="(@name = 'USE')"/>
             <xsl:sort select="(@name = 'DEF')"/>
+            <xsl:sort select="lower-case(@name)" order="ascending"/>
 
-            <xsl:variable name="fieldName"                 select="@name"/>
+            <xsl:variable name="fieldName">
+                <xsl:choose>
+                    <xsl:when test="(@name='style') and ((../../@name = 'FontStyle') or (../../@name = 'ScreenFontStyle'))">
+                        <!-- debug diagnostic -->
+                        <xsl:message>
+                            <xsl:text>*** rename: </xsl:text>
+                            <xsl:value-of select="../../@name"/><!-- parent ConcreteNode -->
+                            <xsl:text> field '</xsl:text>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>' renamed as '</xsl:text>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>Selection'</xsl:text>
+                            <xsl:if test="(@name='style')">
+                                <xsl:text> to avoid name collision with CSS style attribute</xsl:text>
+                            </xsl:if>
+                        </xsl:message>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>Selection</xsl:text><!-- avoid name collision with CSS style attribute -->
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@name"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="inheritanceName"           select="../Inheritance/@baseType"/>
             <xsl:variable name="additionalInheritanceName" select="../AdditionalInheritance/@baseType"/>
-            <xsl:variable name="upperFieldName"            select="concat(upper-case(substring(@name,1,1)),substring(@name,2))"/>
-            <xsl:variable name="upperSynonymName"          select="concat(upper-case(substring(@name,1,1)),substring(@synonym,2))"/>
+            <xsl:variable name="upperFieldName"            select="concat(upper-case(substring($fieldName,1,1)),substring($fieldName,2))"/>
+            <xsl:variable name="upperSynonymName"          select="concat(upper-case(substring(@synonym,1,1)),substring(@synonym,2))"/>
             <xsl:variable name="isNodeType"                select="(@type = 'SFNode') or (@type = 'MFNode')"/>
             <xsl:variable name="inheritedFrom"             select="@inheritedFrom"/>
             <xsl:variable name="accessTypePropertyName"    select="concat('accessType',upper-case(substring(@accessType,1,1)),substring(@accessType,2))"/>
@@ -611,7 +646,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>has</xsl:text>
                             <xsl:value-of select="$upperFieldName"/>
                         </xsl:when>
-                        <xsl:otherwise>
+                       <xsl:otherwise>
                             <xsl:value-of select="@name"/>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -653,7 +688,14 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>  rdfs:label </xsl:text>
                     <xsl:text>"</xsl:text>
                     <xsl:value-of select="$abstractNodeTypeName"/>
-                    <xsl:text> field </xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="(@name = 'class') or (@name = 'id') or (@name = 'style')">
+                            <xsl:text> attribute </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> field </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:value-of select="@name"/>
                     <xsl:text> is implemented by </xsl:text>
                     <xsl:choose>
@@ -683,14 +725,30 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- do not use [ owl:unionOf ( ...node list... ) ] with rdfs:domain because it creates blank nodes, which fail documentation and are unhelpful. -->
                     <!-- use simple unadorned list of types and nodes instead. -->
                     <xsl:text>  rdfs:domain </xsl:text>
-                        <xsl:text>:</xsl:text>
-                            <xsl:value-of select="$abstractNodeTypeName"/>
+                    <xsl:text>:</xsl:text>
+                    <xsl:value-of select="$abstractNodeTypeName"/>
+                        <xsl:if test="($abstractNodeTypeName = 'X3DNode') and ((@name = 'class') or (@name = 'id') or (@name = 'style'))">
+                            <!-- debug diagnostic
+                            <xsl:message>
+                                <xsl:text>*** looking to connect X3DStatement </xsl:text>
+                                <xsl:value-of select="@name"/>
+                                <xsl:text> to X3DNode, $abstractNodeTypeName=</xsl:text>
+                                <xsl:value-of select="$abstractNodeTypeName"/>
+                            </xsl:message> -->
+                            <xsl:text> ,</xsl:text>
+                            <xsl:text> :X3DStatement</xsl:text>
+                            <xsl:for-each select="//Statement">
+                                <xsl:text> ,</xsl:text>
+                                <xsl:text> :</xsl:text>
+                                <xsl:value-of select="@name"/>
+                            </xsl:for-each>
+                        </xsl:if>
                     <xsl:for-each select="//InterfaceDefinition/field[@name = $fieldName][(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')][@inheritedFrom = $abstractNodeTypeName]">
                         <xsl:sort select="@name" order="ascending"/>
 
                         <xsl:text> ,</xsl:text>
                         <xsl:text> :</xsl:text>
-                        <xsl:value-of select="../../@name"/><!--parent ConcreteNode -->
+                        <xsl:value-of select="../../@name"/><!-- parent ConcreteNode -->
                     </xsl:for-each>
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
@@ -744,7 +802,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text> ;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>  :</xsl:text>
-                        <xsl:value-of select="@name"/>
+                        <xsl:value-of select="$fieldName"/>
                         <xsl:text>Default </xsl:text>
                         <xsl:choose>
                             <xsl:when test="(@type = 'SFBool')">
@@ -839,12 +897,15 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:value-of select="$upperFieldName"/>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:value-of select="@name"/>
+                                    <xsl:value-of select="$fieldName"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                             <xsl:text> a owl:DatatypeProperty ;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
+                    <xsl:if test="(@name = 'style') and not(@name = $fieldName)">
+                        <xsl:text> ### renamed to avoid naming collision with CSS style attribute</xsl:text>
+                    </xsl:if>
                     <xsl:text>&#10;</xsl:text>
                     
                     <xsl:if test="(string-length(@accessType) > 0)">
@@ -954,6 +1015,9 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:variable name="quote"><xsl:text>"</xsl:text></xsl:variable>
                         <xsl:variable name="apos" ><xsl:text>'</xsl:text></xsl:variable>
                         <xsl:value-of select="translate(@description,$quote,$apos)"/>
+                        <xsl:if test="(@name='style') and contains(@description,'BOLDITALIC')">
+                            <xsl:text> Renamed from original 'style' as 'styleSelection' to avoid name collision with CSS style attribute.</xsl:text>
+                        </xsl:if>
                         <xsl:text>"</xsl:text>
                     </xsl:if>
 
@@ -962,7 +1026,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text> ;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>  :</xsl:text>
-                        <xsl:value-of select="@name"/>
+                        <xsl:value-of select="$fieldName"/>
                         <xsl:text>Default </xsl:text>
                         <xsl:choose>
                             <xsl:when test="(@type = 'SFBool')">
