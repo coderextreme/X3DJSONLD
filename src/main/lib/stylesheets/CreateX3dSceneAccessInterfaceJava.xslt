@@ -10571,6 +10571,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @param newValue is new value for the style field.
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
@@ -10598,6 +10600,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @param newValue is new value for the style field.
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
@@ -12960,13 +12964,12 @@ setAttribute method invocations).
             <xsl:text>
         String correctedContainerField;</xsl:text>
             <xsl:for-each select="InterfaceDefinition/field[string-length(@synonym) > 0][@type = 'SFNode']">
-                <!--xsl:if test="(position() = 1)"-->
-                    <xsl:text disable-output-escaping="yes"><![CDATA[
+                <!-- great bugfix by John Carlson, this block needs to be repeated for each SFNode field -->
+                <xsl:text disable-output-escaping="yes"><![CDATA[
         if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("3"))
              correctedContainerField = "]]></xsl:text><xsl:value-of select="@synonym"/><xsl:text>";
         else correctedContainerField = "</xsl:text>   <xsl:value-of select="@name"/><xsl:text>";
 </xsl:text>
-                <!--/xsl:if-->
                 <xsl:variable name="CamelCaseName"><!-- upper camel case -->
                     <xsl:value-of select="translate(substring(@name,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
                     <xsl:value-of select="substring(@name,2)"/>
@@ -17574,6 +17577,7 @@ public </xsl:text>
         <xsl:text>
 /* @Override */</xsl:text>
     </xsl:if>
+    <!--
     <xsl:text disable-output-escaping="yes"><![CDATA[
 /** DO NOT USE: operation ignored since no such field exists for this element. This method has no effect, a stub method is necessary to implement X3DChildNode interface.
  * @param newValue ignored
@@ -17589,6 +17593,7 @@ public ]]></xsl:text>
     return this; // no action
 }
 ]]></xsl:text>
+-->
 			</xsl:if>
 			<xsl:if test="($name = 'CommentsBlock')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -31155,7 +31160,7 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="componentName"                       select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
 			<xsl:variable name="componentLevel"                      select="InterfaceDefinition/componentInfo/@level"/>
 			<xsl:variable name="implements">
-				<!-- X3D statements are not defined in specification abstract org.web3d.x3d.sai -->
+				<!-- X3D statements are not defined in specification abstract org.web3d.x3d.sai but are listed in X3DUOM as Statement elements -->
 				<xsl:choose>
 					<xsl:when test="($name = 'ROUTE') or ($name = 'IMPORT') or ($name = 'EXPORT') or 
 									($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare') or ($name = 'ProtoInstance')">
@@ -33904,6 +33909,131 @@ showing default attribute values, and other custom settings.</p>
 		</xsl:with-param>
 		<xsl:with-param name="implementationBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
+
+	/** the <i>id</i> attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	private String htmlID = ID_DEFAULT_VALUE;
+
+	/** The <i>class</i> field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	private String cssClass = CLASS_DEFAULT_VALUE;
+
+	/** The <i>style</i> field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
+	private String cssStyle = STYLE_DEFAULT_VALUE;
+
+	/** SFString field named <i>id</i> for html has default value equal to an empty string. */
+	public static final String ID_DEFAULT_VALUE = "";
+
+	/** SFString field named <i>class</i> for CSS has default value equal to an empty string. */
+	public static final String CLASS_DEFAULT_VALUE = "";
+
+	/** SFString field named <i>style</i> for CSS has default value equal to an empty string. */
+	public static final String STYLE_DEFAULT_VALUE = "";
+				
+	/** Initialize all member variables to default values. */
+	public void initialize()
+	{
+		setParent(null);
+		// no super to initialize, we are at the top of the hierarchy
+          htmlID =    ID_DEFAULT_VALUE;
+		cssClass = CLASS_DEFAULT_VALUE;
+		cssStyle = STYLE_DEFAULT_VALUE;
+	}
+
+	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the class field.
+	 */
+	protected void setConcreteCssClass(String newValue)
+	{
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #4
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		cssClass = newValue;
+	}
+	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlID(newValue) instead.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+     * <br />
+     * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
+	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the id field.
+	 */
+	protected void setConcreteHtmlID(String newValue)
+	{
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #4
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		htmlID = newValue;
+	}
+	/** Protected internal superclass method to keep cssStyles private, scene authors should use method setCssStyle(newValue) instead.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @param newValue is new value for the style field.
+	 */
+	protected void setConcreteCssStyle(String newValue)
+	{
+		if (newValue == null)
+			newValue = new String(); // Principle of Least Astonishment (POLA) #4
+			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		cssStyle = newValue;
+	}
+	/**
+	 * Provide String value from inputOutput SFString field named <i>id</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @return value of class field
+	 */
+	public String getHtmlID()
+	{
+		return htmlID;
+	}
+	/**
+	 * Provide String value from inputOutput SFString field named <i>class</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @return value of class field
+	 */
+	public String getCssClass()
+	{
+		return cssClass;
+	}
+	/**
+	 * Provide String value from inputOutput SFString field named <i>style</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
+	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @return value of style field
+	 */
+	public String getCssStyle()
+	{
+		return cssStyle;
+	}
 		
 	/** Results log of local validation. */
 	protected StringBuilder validationResult = new StringBuilder();
@@ -34114,18 +34244,6 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
 
-	/** the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
-	private String htmlID = ID_DEFAULT_VALUE;
-
-	/** The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
-	private String cssClass = CLASS_DEFAULT_VALUE;
-
-	/** The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
-	private String cssStyle = STYLE_DEFAULT_VALUE;
-
 	// String constants for default field values match X3D Schema definitions
 
 	/** SFString field named <i>DEF</i> has default value equal to an empty string. */
@@ -34133,15 +34251,6 @@ showing default attribute values, and other custom settings.</p>
 
 	/** SFString field named <i>USE</i> has default value equal to an empty string. */
 	public static final String USE_DEFAULT_VALUE = "";
-
-	/** SFString field named <i>id</i> for html has default value equal to an empty string. */
-	public static final String ID_DEFAULT_VALUE = "";
-
-	/** SFString field named <i>class</i> for CSS has default value equal to an empty string. */
-	public static final String CLASS_DEFAULT_VALUE = "";
-
-	/** SFString field named <i>style</i> for CSS has default value equal to an empty string. */
-	public static final String STYLE_DEFAULT_VALUE = "";
 
 	/** containerFieldOverride describes non-default field relationship of a node to its parent.
 	 * Programmer usage is not ordinarily needed when using this API. */
@@ -34151,11 +34260,9 @@ showing default attribute values, and other custom settings.</p>
 	public void initialize()
 	{
 		setParent(null);
-		     DEF =   DEF_DEFAULT_VALUE;
-		     USE =   USE_DEFAULT_VALUE;
-          htmlID =    ID_DEFAULT_VALUE;
-		cssClass = CLASS_DEFAULT_VALUE;
-		cssStyle = STYLE_DEFAULT_VALUE;
+		super.initialize();
+        DEF =   DEF_DEFAULT_VALUE;
+        USE =   USE_DEFAULT_VALUE;
 	}
     
     private boolean hasNameField = false;
@@ -34249,48 +34356,6 @@ showing default attribute values, and other custom settings.</p>
 	{
 		return !USE.isEmpty();
 	}
-	/**
-	 * Provide String value from inputOutput SFString field named <i>id</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @return value of class field
-	 */
-	public String getHtmlID()
-	{
-		return htmlID;
-	}
-	/**
-	 * Provide String value from inputOutput SFString field named <i>class</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> The class field is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @return value of class field
-	 */
-	public String getCssClass()
-	{
-		return cssClass;
-	}
-	/**
-	 * Provide String value from inputOutput SFString field named <i>style</i>.
-	 * <br><br>
-	 * <i>Tooltip:</i> The style field provides an inline block of CSS for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @return value of style field
-	 */
-	public String getCssStyle()
-	{
-		return cssStyle;
-	}
 	
 	/** Protected internal superclass method to keep DEF private, scene authors should use method setDEF(newValue) instead.
 	 * @param newValue is new value for the DEF field.
@@ -34331,53 +34396,6 @@ showing default attribute values, and other custom settings.</p>
 		}
 		USE = newValue.trim();
 	}
-	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
-	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @param newValue is new value for the class field.
-	 */
-	protected void setConcreteCssClass(String newValue)
-	{
-		if (newValue == null)
-			newValue = new String(); // Principle of Least Astonishment (POLA) #4
-			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
-		cssClass = newValue;
-	}
-	/** Protected internal superclass method to keep HTML id private, scene authors should use method setHtmlID(newValue) instead.
-	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
-     * <br />
-     * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L, HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
-	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
-	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @param newValue is new value for the id field.
-	 */
-	protected void setConcreteHtmlID(String newValue)
-	{
-		if (newValue == null)
-			newValue = new String(); // Principle of Least Astonishment (POLA) #4
-			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
-		htmlID = newValue;
-	}
-	/** Protected internal superclass method to keep cssStyles private, scene authors should use method setCssStyle(newValue) instead.
-	 * <i>Tooltip:</i> The style attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
-	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
-	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
-	 * @param newValue is new value for the style field.
-	 */
-	protected void setConcreteCssStyle(String newValue)
-	{
-		if (newValue == null)
-			newValue = new String(); // Principle of Least Astonishment (POLA) #4
-			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
-		cssStyle = newValue;
-	}
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * @param DEFlabel is new value for the DEF field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
@@ -34393,33 +34411,37 @@ showing default attribute values, and other custom settings.</p>
 	abstract public X3DConcreteNode setUSE(String USEname);
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param cssClass is new value for the class field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
 	abstract public X3DConcreteNode setCssClass(String cssClass);
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> the id attribute on each X3D node is considered a unique identifier when used as part of an encompassing HTML/DOM context.
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
      * <br />
      * <i>Warning:</i> the id attribute is in a distinct separate namespace from DEF identifiers and thus not applicable for USE nodes, ROUTE statements, or Script references.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L, HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#ContentDefinitionPagePresentation">X3D Architecture Annex L - HTML authoring guidelines, L.3.1 Content definition and page presentation</a>
 	 * @see <a href="https://www.w3.org/TR/html52">HTML 5.2</a> W3C Recommendation
 	 * @see <a href="https://www.w3.org/DOM/DOMTR">Document Object Model (DOM) Technical Reports</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param htmlID is new value for the id field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
 	abstract public X3DConcreteNode setHtmlID(String htmlID);
     
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
+	 * This attribute is only functional if the X3D model is loaded within an HTML page.
 	 * <i>Tooltip:</i> The style attribute provides an inline block of CSS source for element styling, reserved for use by CSS cascading stylesheets.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L, HTML authoring guidelines, CSS considerations</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @see <a href="https://www.w3.org/TR/css-2018">W3C CSS Snapshot</a>
-	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks, XML - Managing Data Exchange/XSLT and Style Sheets</a>
+	 * @see <a href="https://en.wikibooks.org/wiki/XML_-_Managing_Data_Exchange/XSLT_and_Style_Sheets">Wikibooks: XML - Managing Data Exchange/XSLT and Style Sheets</a>
 	 * @param cssStyle is new value for the class field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object). */
 	abstract public X3DConcreteNode setCssStyle(String cssStyle);
@@ -34589,6 +34611,7 @@ ProtoBody nodes.
 	public void initialize()
 	{
 		setParent(null);
+		super.initialize();
 	}]]></xsl:text>
 		</xsl:with-param>
 	</xsl:call-template>
@@ -36466,7 +36489,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 2.92"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 2.93"; // escape \
 	
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -37205,6 +37228,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
     /** Default name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12"><https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12</a>
 	 * @see #checkMeshLabPath()
 	 * @see #setMeshLabPath(String)
      */
@@ -37309,6 +37333,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
             {
                 String errorNotice = "Invalid setMeshLabPath(String newValue) invocation, newValue='" + newValue + 
                                      "', " + getMeshLabServerExecutableName() + " program not found at this location";
+                errorNotice += "\nFor 2021 MeshLab releases, meshlabserver is discontinued.  See https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12";
 //              validationResult.append(errorNotice).append("\n");
                 throw new InvalidFieldValueException(errorNotice);
             }
