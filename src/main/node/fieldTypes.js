@@ -25,6 +25,8 @@ var fieldTypes = {"X3DNode" : {
 	"id" : "SFString",
 	"style" : "SFString",
 },
+"X3DArrayField" : {
+},
 "X3DChildNode" : {
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
@@ -62,12 +64,6 @@ var fieldTypes = {"X3DNode" : {
 	"class" : "SFString",
 	"id" : "SFString",
 	"style" : "SFString",
-},
-"X3DBoundedObject" : {
-	"bboxCenter" : "SFVec3f",
-	"bboxDisplay" : "SFBool",
-	"bboxSize" : "SFVec3f",
-	"visible" : "SFBool",
 },
 "X3DFollowerNode" : {
 	"IS" : "SFNode",
@@ -251,17 +247,19 @@ var fieldTypes = {"X3DNode" : {
 },
 "X3DField" : {
 },
-"X3DFogObject" : {
-	"color" : "SFColor",
-	"fogType" : "SFString",
-	"visibilityRange" : "SFFloat",
-},
 "X3DFontStyleNode" : {
 	"class" : "SFString",
+	"id" : "SFString",
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
 	"DEF" : "SFString",
 	"USE" : "SFString",
+},
+"X3DBoundedObject" : {
+	"bboxCenter" : "SFVec3f",
+	"bboxDisplay" : "SFBool",
+	"bboxSize" : "SFVec3f",
+	"visible" : "SFBool",
 },
 "X3DGroupingNode" : {
 	"addChildren" : "MFNode",
@@ -358,10 +356,6 @@ var fieldTypes = {"X3DNode" : {
 	"class" : "SFString",
 	"id" : "SFString",
 	"style" : "SFString",
-},
-"X3DMetadataObject" : {
-	"name" : "SFString",
-	"reference" : "SFString",
 },
 "X3DNBodyCollidableNode" : {
 	"bboxCenter" : "SFVec3f",
@@ -513,13 +507,6 @@ var fieldTypes = {"X3DNode" : {
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
 	"name" : "SFString",
-	"DEF" : "SFString",
-	"USE" : "SFString",
-	"class" : "SFString",
-	"id" : "SFString",
-	"style" : "SFString",
-},
-"X3DProgrammableShaderObject" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
@@ -887,6 +874,22 @@ var fieldTypes = {"X3DNode" : {
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
 	"visible" : "SFBool",
+	"DEF" : "SFString",
+	"USE" : "SFString",
+	"class" : "SFString",
+	"id" : "SFString",
+	"style" : "SFString",
+},
+"X3DFogObject" : {
+	"color" : "SFColor",
+	"fogType" : "SFString",
+	"visibilityRange" : "SFFloat",
+},
+"X3DMetadataObject" : {
+	"name" : "SFString",
+	"reference" : "SFString",
+},
+"X3DProgrammableShaderObject" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
@@ -2299,6 +2302,7 @@ var fieldTypes = {"X3DNode" : {
 	"class" : "SFString",
 	"family" : "MFString",
 	"horizontal" : "SFBool",
+	"id" : "SFString",
 	"IS" : "SFNode",
 	"justify" : "MFString",
 	"language" : "SFString",
@@ -4417,6 +4421,7 @@ var fieldTypes = {"X3DNode" : {
 	"class" : "SFString",
 	"family" : "MFString",
 	"horizontal" : "SFBool",
+	"id" : "SFString",
 	"IS" : "SFNode",
 	"justify" : "MFString",
 	"language" : "SFString",

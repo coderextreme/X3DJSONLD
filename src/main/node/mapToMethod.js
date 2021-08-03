@@ -43,6 +43,8 @@ var mapToMethod = {"X3DNode" : {
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
 },
+"X3DArrayField" : {
+},
 "X3DChildNode" : {
 	"IS" : "setIS",
 	"IS" : "setIS",
@@ -87,8 +89,6 @@ var mapToMethod = {"X3DNode" : {
 	"MetadataSet" : "setMetadata",
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
-},
-"X3DBoundedObject" : {
 },
 "X3DFollowerNode" : {
 	"IS" : "setIS",
@@ -382,8 +382,6 @@ var mapToMethod = {"X3DNode" : {
 },
 "X3DField" : {
 },
-"X3DFogObject" : {
-},
 "X3DFontStyleNode" : {
 	"IS" : "setIS",
 	"IS" : "setIS",
@@ -398,6 +396,8 @@ var mapToMethod = {"X3DNode" : {
 	"MetadataSet" : "setMetadata",
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
+},
+"X3DBoundedObject" : {
 },
 "X3DGroupingNode" : {
 	"X3DChildNode" : "addChildren",
@@ -1008,8 +1008,6 @@ var mapToMethod = {"X3DNode" : {
 	"MetadataSet" : "setMetadata",
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
-},
-"X3DMetadataObject" : {
 },
 "X3DNBodyCollidableNode" : {
 	"IS" : "setIS",
@@ -1774,8 +1772,6 @@ var mapToMethod = {"X3DNode" : {
 	"MetadataSet" : "setMetadata",
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
-},
-"X3DProgrammableShaderObject" : {
 },
 "X3DPrototypeInstance" : {
 	"IS" : "setIS",
@@ -2747,6 +2743,12 @@ var mapToMethod = {"X3DNode" : {
 "X3DConcreteNode" : {
 },
 "X3DConcreteStatement" : {
+},
+"X3DFogObject" : {
+},
+"X3DMetadataObject" : {
+},
+"X3DProgrammableShaderObject" : {
 },
 "AcousticProperties" : {
 	"IS" : "setIS",

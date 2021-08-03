@@ -948,16 +948,21 @@ Additional references of interest:
 		<xsl:variable name="hasChildrenField" select="string((count(InterfaceDefinition/field[@name = 'children']) > 0)
 														and not($name = 'CADPart'))"/>
 			<!-- note that GeoLOD has outputOnly children field -->
-<!-- debug 
+<!-- debug diagnostic
 <xsl:message>
 	<xsl:text>*** outputFile/$name=</xsl:text>
 	<xsl:value-of select="$name"/>
+	<xsl:text> $targetPath=</xsl:text>
+	<xsl:value-of select="$targetPath"/>
+	<xsl:text> $sourceFilePath=</xsl:text>
+	<xsl:value-of select="$sourceFilePath"/>
 	<xsl:text>, $hasChildrenField=</xsl:text>
 	<xsl:value-of select="$hasChildrenField"/>
 	<xsl:text>, $isInterface=</xsl:text>EXTERNALPROTOTYPE
 	<xsl:value-of select="$isInterface"/>
 </xsl:message>
 -->	
+    <xsl:if test="not(ends-with($sourceFilePath, 'X3DFieldxxxxxx.java'))"><!-- TODO clean this up, prior generation no longer needed? -->
 		<!-- create source file -->
 		<xsl:result-document href="{$targetPath}{$sourceFilePath}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no"
 			> 
@@ -10553,35 +10558,35 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////		// override abstract method in X3DConcreteNode
 ////		return super.getCssStyle();
 ////	}
-
-	/**
-	 * Accessor method to assign String value to inputOutput SFString field named <i>id</i>.
-	 * @param newValue is new value for the id field.
-	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
-	 */
-	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(String newValue)
-	{
-		// set-newValue-validity-checks #0
-		if (newValue == null)
-			newValue = new String(); // Principle of Least Astonishment (POLA) #5
-			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
-		setConcreteHtmlID(newValue); // private superclass method
-		return this;
-	}
-
-	/**
-	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
-	 * This attribute is only functional if the X3D model is loaded within an HTML page.
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
-	 * @param newValue is new value for the style field.
-	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
-	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(SFString newValue)
-	{
-			// set-newValue-validity-checks #1 gets handled by set-primitive method
-			setHtmlID(newValue.getPrimitiveValue());
-			return this;
-	}
+////
+////	/**	/**
+////	 * Accessor method to assign String value to inputOutput SFString field named <i>id</i>.
+////	 * @param newValue is new value for the id field.
+////	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+////	 */
+////	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(String newValue)
+////	{
+////		// set-newValue-validity-checks #0
+////		if (newValue == null)
+////			newValue = new String(); // Principle of Least Astonishment (POLA) #5
+////			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+////		setConcreteHtmlID(newValue); // private superclass method
+////		return this;
+////	}
+////
+////	/**
+////	 * Assign typed object value to SFString cssClass field, similar to {@link #setCssStyle(String)}.
+////	 * This attribute is only functional if the X3D model is loaded within an HTML page.
+////	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/htmlGuidelines.html#CSS">X3D Architecture Annex L - HTML authoring guidelines, CSS considerations</a>
+////	 * @param newValue is new value for the style field.
+////	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+////	 */
+////	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(SFString newValue)
+////	{
+////			// set-newValue-validity-checks #1 gets handled by set-primitive method
+////			setHtmlID(newValue.getPrimitiveValue());
+////			return this;
+////	}
 
 	/**
 	 * Accessor method to assign String value to inputOutput SFString field named <i>style</i>.
@@ -18167,6 +18172,7 @@ public String getAccessType(String fieldName)
 -->	
 
 		</xsl:result-document> <!-- save file -->
+    </xsl:if>
 	</xsl:template><!-- sourceFile -->
 
     <!-- ===================================================== -->
@@ -18498,14 +18504,15 @@ shall not include the underlying field's values at that point in time.
 		</xsl:call-template>
 	
 		<!-- ===================================================== -->
-	
+	<!-- TODO cleanup, avoiding duplicate file generation, move javadoc -->
+    <xsl:if test="false()">
 		<xsl:call-template name="generateSourceFile">
 			<xsl:with-param name="name"><xsl:text>X3DField</xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
 			<xsl:with-param name="extends"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
-			<xsl:with-param name="description"><xsl:text>Base representation of an X3D field type.</xsl:text></xsl:with-param>
+			<xsl:with-param name="description"><xsl:text>Base representation of a single-field (SF) X3D field type.</xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.4.5 X3DField</xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationRelativeUrl"><xsl:text>types.html#X3DField</xsl:text></xsl:with-param>
 			<xsl:with-param name="saiAbstractSpecificationSection"><xsl:text>5.2.13 SAIField</xsl:text></xsl:with-param>
@@ -18592,7 +18599,7 @@ shall not include the underlying field's values at that point in time.
     Object getUserData();
 -->
 		</xsl:call-template>
-	
+	</xsl:if>
 		<!-- ===================================================== -->
 	
 		<xsl:call-template name="generateSourceFile">
@@ -18918,7 +18925,11 @@ shall not include the underlying field's values at that point in time.
 				<xsl:with-param name="imports"><xsl:value-of select="$imports"/></xsl:with-param>
 				<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 				<xsl:with-param name="extends"><xsl:text>X3DConcreteField</xsl:text></xsl:with-param>
-				<xsl:with-param name="implements"><xsl:text>org.web3d.x3d.sai.</xsl:text><xsl:value-of select="$fieldName"/></xsl:with-param>
+				<xsl:with-param name="implements">
+                    <xsl:text>org.web3d.x3d.sai.</xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                    <!-- TODO X3DField, X3DArrayField -->
+                </xsl:with-param>
 				<xsl:with-param name="subPackage"><xsl:text>fields</xsl:text></xsl:with-param>
 				<xsl:with-param name="description">
 					<xsl:text>This utility class provides a concrete implementation corresponding to </xsl:text>
@@ -36038,12 +36049,16 @@ import org.web3d.x3d.sai.X3DException;
                         System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                     }
 					elementSetMethodName  = "set";
-					if  (attributeName.equals("class"))
-					  	 elementSetMethodName += "Css";
-					if  (attributeName.equals("id"))
-						 elementSetMethodName += "HtmlID";
-					else elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
-						   					     attributeName.substring(1); // setCamelCase
+					if      (attributeName.equals("class") || attributeName.equals("style"))
+					{
+                    	     elementSetMethodName += "Css";
+					         elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
+						   	    			         attributeName.substring(1); // setCamelCase
+					}
+					else if (attributeName.equals("id"))
+						     elementSetMethodName += "HtmlID";
+					else     elementSetMethodName += attributeName.substring(0,1).toUpperCase() + 
+						   	    			         attributeName.substring(1); // setCamelCase
 
 					// check for proper handling of SFString/MFString escape characters, particularly backslashed quotes
 					String unescapedAttributeValue = attributeValue.replace("\\\\\"", "\\\""); // TODO regex needed for other cases of special character inputss?
