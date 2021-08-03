@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-08-01-07:00 17:27:38.592-07:00 -->
+<!-- Generated 2021-08-02-07:00 09:04:30.425-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -4956,6 +4956,10 @@
             </ContentModel>
          </InterfaceDefinition>
       </AbstractNodeType>
+      <AbstractNodeType name="X3DArrayField">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html#X3DArrayField"
+                              appinfo="X3DArrayField is the abstract field type from which all field types that can contain multiple values are derived. All fields derived from X3DArrayField have names beginning with MF (multiple-valued field). MF fields may zero or more values, each of which shall be of the type indicated by the corresponding SF field type. It is illegal for any MF field to mix values of different SF field types."/>
+      </AbstractNodeType>
       <AbstractNodeType name="X3DBackgroundNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/environmentalEffects.html#X3DBackgroundNode"
                               appinfo="Abstract type from which all backgrounds inherit, also defining a background binding stack.">
@@ -5105,29 +5109,6 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
-         </InterfaceDefinition>
-      </AbstractNodeType>
-      <AbstractNodeType name="X3DBoundedObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/grouping.html#X3DBoundedObject"
-                              appinfo="X3DBoundedObject indicates that bounding box values can be provided (or computed) to encompass this node and any children.">
-            <componentInfo name="Grouping" level="1"/>
-            <field name="bboxCenter"
-                   type="SFVec3f"
-                   accessType="initializeOnly"
-                   default="0 0 0"/>
-            <field name="bboxDisplay"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="false"/>
-            <field name="bboxSize"
-                   type="SFVec3f"
-                   accessType="initializeOnly"
-                   default="-1 -1 -1"
-                   baseType="bboxSizeType"/>
-            <field name="visible"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="true"/>
          </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DChaserNode">
@@ -5762,36 +5743,8 @@
          </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DField">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/technicalinfo/specifications/vrml97/part1/fieldsRef.html#5.1.2"
-                              appinfo="X3DField is equivalent to SF (Single Field) simple non-Node types in the VRML97 Specification."/>
-      </AbstractNodeType>
-      <AbstractNodeType name="X3DFogObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/environmentalEffects.html#X3DFogOjbect"
-                              appinfo="Abstract type describing a node that influences the lighting equation through the use of fog semantics.">
-            <componentInfo name="EnvironmentalEffects" level="2"/>
-            <field name="color"
-                   type="SFColor"
-                   accessType="inputOutput"
-                   default="1 1 1"
-                   minInclusive="0"
-                   maxInclusive="1"/>
-            <field name="fogType"
-                   type="SFString"
-                   accessType="inputOutput"
-                   default="LINEAR"
-                   additionalEnumerationValuesAllowed="false"
-                   simpleType="fogTypeChoices"
-                   baseType="xs:NMTOKEN">
-               <enumeration value="LINEAR" appinfo="linear blending as a function of distance."/>
-               <enumeration value="EXPONENTIAL"
-                            appinfo="exponential blending as a function of distance."/>
-            </field>
-            <field name="visibilityRange"
-                   type="SFFloat"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"/>
-         </InterfaceDefinition>
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html#X3DField"
+                              appinfo="X3DField is the abstract field type from which all single values field types are derived. All fields directly derived from X3DField have names beginning with SF (single-valued field). SF fields may only contain a single value of the type indicated by the name of the field type."/>
       </AbstractNodeType>
       <AbstractNodeType name="X3DFollowerNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/followers.html#X3DFollowerNode"
@@ -5855,6 +5808,11 @@
                    accessType="inputOutput"
                    baseType="xs:NMTOKENS"
                    description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+            <field name="id"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"
+                   description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -6493,14 +6451,6 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
-         </InterfaceDefinition>
-      </AbstractNodeType>
-      <AbstractNodeType name="X3DMetadataObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#X3DMetadataObject"
-                              appinfo="Each node inheriting the X3DMetadataObject interface contains a single array of strictly typed values: MFBool, MFInt32, MFFloat, MFDouble, MFString, or MFNode, the latter having children that are all Metadata nodes.">
-            <componentInfo name="Core" level="1"/>
-            <field name="name" type="SFString" accessType="inputOutput"/>
-            <field name="reference" type="SFString" accessType="inputOutput"/>
          </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DNBodyCollidableNode">
@@ -7221,26 +7171,6 @@
             </ContentModel>
          </InterfaceDefinition>
       </AbstractNodeType>
-      <AbstractNodeType name="X3DPickableObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/picking.html#X3DPickableObject"
-                              appinfo="The X3DPickableObject abstract interface marks a node as being capable of having customized picking performed on its contents or children.">
-            <componentInfo name="Picking" level="1"/>
-            <field name="objectType"
-                   type="MFString"
-                   accessType="inputOutput"
-                   additionalEnumerationValuesAllowed="true"
-                   simpleType="pickableObjectTypeValues"
-                   baseType="MFString">
-               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
-               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
-               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
-            </field>
-            <field name="pickable"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="true"/>
-         </InterfaceDefinition>
-      </AbstractNodeType>
       <AbstractNodeType name="X3DPickSensorNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/picking.html#X3DPickSensorNode"
                               appinfo="The X3DPickSensorNode abstract node type is the base node type that represents the lowest common denominator of picking capabilities.">
@@ -7449,44 +7379,6 @@
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
             <field name="name" type="SFString" accessType="inputOutput"/>
-            <field name="DEF"
-                   type="SFString"
-                   accessType="inputOutput"
-                   inheritedFrom="X3DNode"
-                   baseType="xs:ID"
-                   description="DEF defines a unique ID name for this node, referenceable by other nodes."/>
-            <field name="USE"
-                   type="SFString"
-                   accessType="inputOutput"
-                   inheritedFrom="X3DNode"
-                   baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
-            <field name="class"
-                   type="SFString"
-                   accessType="inputOutput"
-                   inheritedFrom="X3DNode"
-                   baseType="xs:NMTOKENS"
-                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <field name="id"
-                   type="SFString"
-                   accessType="inputOutput"
-                   inheritedFrom="X3DNode"
-                   baseType="xs:NMTOKEN"
-                   description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
-            <field name="style"
-                   type="SFString"
-                   accessType="inputOutput"
-                   inheritedFrom="X3DNode"
-                   description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <ContentModel>
-               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
-            </ContentModel>
-         </InterfaceDefinition>
-      </AbstractNodeType>
-      <AbstractNodeType name="X3DProgrammableShaderObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shaders.html#X3DProgrammableShaderObject"
-                              appinfo="Base type for all nodes that specify arbitrary fields for interfacing with per-object attribute values.">
-            <componentInfo name="Shaders" level="1"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -9209,30 +9101,6 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
-         </InterfaceDefinition>
-      </AbstractNodeType>
-      <AbstractNodeType name="X3DUrlObject">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/networking.html#X3DUrlObject"
-                              appinfo="X3DUrlObject indicates that a node has content loaded from a Uniform Resource Locator (URL) and can be tracked via a LoadSensor. Such child nodes have containerField='children' to indicate their relationship to the parent LoadSensor node.">
-            <componentInfo name="Networking" level="1"/>
-            <field name="autoRefresh"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="0"
-                   minInclusive="0"/>
-            <field name="autoRefreshTimeLimit"
-                   type="SFTime"
-                   accessType="inputOutput"
-                   default="3600"
-                   minInclusive="0"/>
-            <field name="description" type="SFString" accessType="inputOutput"/>
-            <field name="load"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="true"/>
-            <field name="url" type="MFString" accessType="inputOutput">
-               <componentInfo name="Networking" level="4"/>
-            </field>
          </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DVertexAttributeNode">
@@ -18084,6 +17952,12 @@
                    accessType="inputOutput"
                    default="true"
                    description="Whether text direction is horizontal (true) or vertical (false)."/>
+            <field name="id"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKEN"
+                   description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -34028,6 +33902,12 @@
                    accessType="inputOutput"
                    default="true"
                    description="Whether text direction is horizontal (true) or vertical (false)."/>
+            <field name="id"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKEN"
+                   description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
