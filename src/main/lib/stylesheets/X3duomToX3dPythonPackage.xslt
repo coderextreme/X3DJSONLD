@@ -357,7 +357,7 @@ def isX3DNode(value):
 
 </xsl:text>
         <!-- Abstract type sorting is necessary in order for Python dependencies to be defined in correct order -->
-        <xsl:apply-templates select="//AbstractNodeTypes/AbstractNodeType[not(@name = 'X3DNode')]">
+        <xsl:apply-templates select="//AbstractNodeTypes/AbstractNodeType[not(@name = 'X3DNode') and not(@name = 'X3DStatement')]">
             <xsl:sort select="not((@name = 'X3DNode') or (@name = 'X3DBindableNode') or (@name = 'X3DChildNode') or (@name = 'X3DFollowerNode') or 
                                   (@name = 'X3DGeometricPropertyNode') or (@name = 'X3DVolumeRenderStyleNode') or (@name = 'X3DPointingDeviceSensorNode') or 
                                   (@name = 'X3DSensorNode') or (@name = 'X3DTextureNode') or (@name = 'X3DAppearanceChildNode') or 
@@ -408,6 +408,41 @@ class _X3DStatement(object):
     def SPECIFICATION_URL(self):
         ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure'
+    def __init__(self, class_="", id_="", style_=""):
+        self.class_ = class_
+        self.id_ = id_
+        self.style_ = style_
+        # if _DEBUG: print('... in X3DNode __init__(' + str(class_) + ',' + str(id_) + ',' + str(style_) + ',' + ')', flush=True)
+    @property # getter - - - - - - - - - -
+    def class_(self):
+        """ Space-separated list of classes, reserved for use by CSS cascading stylesheets. """
+        return self.__class_
+    @class_.setter
+    def class_(self, class_):
+        if  class_ is None:
+            class_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(class_)
+        self.__class_ = class_
+    @property # getter - - - - - - - - - -
+    def id_(self):
+        """ id_ attribute is a unique identifier for use within HTML pages. """
+        return self.__id_
+    @id_.setter
+    def id_(self, id_):
+        if  id_ is None:
+            id_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(id_)
+        self.__id_ = id_
+    @property # getter - - - - - - - - - -
+    def style_(self):
+        """ Space-separated list of classes, reserved for use by CSS cascading style_sheets. """
+        return self.__style_
+    @style_.setter
+    def style_(self, style_):
+        if  style_ is None:
+            style_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(style_)
+        self.__style_ = style_
     def __repl__(self):
         result = self.NAME() + '('
         # if _DEBUG: print(self.NAME() + ' self.FIELD_DECLARATIONS() : ' + str(self.FIELD_DECLARATIONS() ))
@@ -1903,16 +1938,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:choose>
             <xsl:when test="(@name = 'X3DNode')">
             <xsl:text>
-    def __init__(self, DEF="", USE="", class_="", style_="", metadata=None, IS=None):
+    def __init__(self, DEF="", USE="", class_="", id_="", style_="", metadata=None, IS=None):
         self.DEF = DEF
         self.USE = USE
         self.class_ = class_
+        self.id_ = id_
         self.style_ = style_
         self.IS = IS
         self.metadata = metadata
         # if _DEBUG: print('... in </xsl:text>
                 <xsl:value-of select="@name"/>
-                <xsl:text> __init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
+                <xsl:text> __init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(id_) + ',' + str(style) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
     @property # getter - - - - - - - - - -
     def DEF(self):
         """ Unique ID name for this node, referenceable by other nodes. """
@@ -1948,8 +1984,18 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         assertValidSFString(class_)
         self.__class_ = class_
     @property # getter - - - - - - - - - -
+    def id_(self):
+        """ id_ attribute is a unique identifier for use within HTML pages. """
+        return self.__id
+    @id_.setter
+    def id_(self, id_):
+        if  id_ is None:
+            id_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(id_)
+        self.__id = id_
+    @property # getter - - - - - - - - - -
     def style_(self):
-        """ Space-separated list of classes, reserved for use by CSS cascading stylesheets. """
+        """ Space-separated list of classes, reserved for use by CSS cascading style_sheets. """
         return self.__style_
     @style_.setter
     def style_(self, style_):
@@ -2038,13 +2084,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
                      see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
                 <xsl:text>
-    def __init__(self, DEF, USE, class_, style_, IS, metadata):
+    def __init__(self, DEF, USE, class_, id_, style_, IS, metadata):
         # if _DEBUG: print('... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>
-                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
-        super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
+                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(id_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
+        super().__init__(DEF, USE, class_, id_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
             </xsl:when>
         </xsl:choose>
 
@@ -2299,8 +2345,41 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     def FIELD_DECLARATIONS(self):
         ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [('children', None, FieldType.MFNode, AccessType.inputOutput, 'head')]
-    def __init__(self, children=None):
+    def __init__(self, class_="", id_="", style_="", children=None):
+        self.class_ = class_
+        self.id_ = id_
+        self.style_ = style_
         self.children = children
+    @property # getter - - - - - - - - - -
+    def class_(self):
+        """ Space-separated list of classes, reserved for use by CSS cascading stylesheets. """
+        return self.__class_
+    @class_.setter
+    def class_(self, class_):
+        if  class_ is None:
+            class_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(class_)
+        self.__class_ = class_
+    @property # getter - - - - - - - - - -
+    def id_(self):
+        """ id_ attribute is a unique identifier for use within HTML pages. """
+        return self.__id
+    @id_.setter
+    def id_(self, id_):
+        if  id_ is None:
+            id_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(id_)
+        self.__id = id_
+    @property # getter - - - - - - - - - -
+    def style_(self):
+        """ Space-separated list of classes, reserved for use by CSS cascading style_sheets. """
+        return self.__style_
+    @style_.setter
+    def style_(self, style_):
+        if  style_ is None:
+            style_ = SFString.DEFAULT_VALUE(self)
+        assertValidSFString(style_)
+        self.__style_ = style_
     @property # getter - - - - - - - - - -
     def children(self):
         """ The head statement has children consisting of component, unit and meta statements. """
@@ -2316,15 +2395,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 
         <!-- field default values -->
         <xsl:for-each select="$allFields">
+                <xsl:sort select="(@name = 'style')"/>
+                <xsl:sort select="(@name = 'id')"/>
+                <xsl:sort select="(@name = 'class')"/>
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
-                <xsl:sort select="(@name = 'class')"/>
-                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2396,15 +2476,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:text>,</xsl:text>
             <xsl:for-each select="$allFields">
                 <!-- all fields get initial values so that any-order invocation of __init__.py is supported -->
+                <xsl:sort select="(@name = 'style')"/>
+                <xsl:sort select="(@name = 'id')"/>
+                <xsl:sort select="(@name = 'class')"/>
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
-                <xsl:sort select="(@name = 'class')"/>
-                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
                 
                 <xsl:variable name="fieldName">
                     <xsl:call-template name="fieldName">
@@ -2452,7 +2533,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:for-each>
             <xsl:text>):</xsl:text>
         </xsl:if>
-        <xsl:if test="(local-name() = 'ConcreteNode')">
+        <xsl:choose>
+            <xsl:when test="(local-name() = 'ConcreteNode')">
             <xsl:text>
         # if _DEBUG: print('... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
@@ -2460,21 +2542,34 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="@name"/>
                 <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
                      see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
-                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
-        super().__init__(DEF, USE, class_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
-        </xsl:if>
+                <xsl:text> __init__ calling super.__init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(id_) + ',' + str(style_) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
+        super().__init__(DEF, USE, class_, id_, style_, IS, metadata) # fields for _X3DNode only</xsl:text>
+            </xsl:when>
+            <xsl:when test="(local-name() = 'Statement')">
+                <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
+                     see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
+                <xsl:text>
+        # if _DEBUG: print('... in </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="@name"/>
+                <xsl:text> __init__ calling super.__init__(' + str(class_) + ',' + str(id_) + ',' + str(style_) +  + ')', flush=True)
+        super().__init__(class_, id_, style_) # fields for _X3DStatement only</xsl:text>
+            </xsl:when>
+        </xsl:choose>
         
         <!-- field initializations -->
         <xsl:for-each select="$allFields">
+            <xsl:sort select="(@name = 'style')"/>
+            <xsl:sort select="(@name = 'id')"/>
+            <xsl:sort select="(@name = 'class')"/>
             <xsl:sort select="(@name = 'metadata')"/>
             <xsl:sort select="(@name = 'IS')"/>
-            <xsl:sort select="(@name = 'class')"/>
-            <xsl:sort select="(@name = 'style')"/>
             <xsl:sort select="(@name = 'USE')"/>
             <xsl:sort select="(@name = 'DEF')"/>
             <xsl:sort select="(@type='MFNode')"/>
             <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-            <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
+            <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class')  and not(@name = 'id') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2482,8 +2577,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:call-template>
             </xsl:variable>
             
-            <!-- do not redeclare fields included in X3DNode -->
-            <xsl:if test="not($fieldName = 'DEF')      and not($fieldName = 'USE') and not($fieldName = 'class_') and
+            <!-- do not redeclare fields included in X3DNode or X3DStatement -->
+            <xsl:if test="not($fieldName = 'DEF')      and not($fieldName = 'USE') and
+                          not($fieldName = 'class_')   and not($fieldName = 'id')  and not($fieldName = 'style') and
                           not($fieldName = 'metadata') and not($fieldName = 'IS')">
                 <xsl:text>
         self.</xsl:text>
@@ -2495,15 +2591,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         
         <!-- property of each field in this element -->
         <xsl:for-each select="$allFields">
+                <xsl:sort select="(@name = 'style')"/>
+                <xsl:sort select="(@name = 'id')"/>
+                <xsl:sort select="(@name = 'class')"/>
                 <xsl:sort select="(@name = 'metadata')"/>
                 <xsl:sort select="(@name = 'IS')"/>
-                <xsl:sort select="(@name = 'class')"/>
-                <xsl:sort select="(@name = 'style')"/>
                 <xsl:sort select="(@name = 'USE')"/>
                 <xsl:sort select="(@name = 'DEF')"/>
                 <xsl:sort select="(@type='MFNode')"/>
                 <xsl:sort select="(@type='SFNode') and not(@name = 'IS') and not(@name = 'metadata')"/>
-                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'style')"/>
+                <xsl:sort select="not(contains(@type,'Node')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'class') and not(@name = 'id') and not(@name = 'style')"/>
 
             <xsl:variable name="fieldName">
                 <xsl:call-template name="fieldName">
@@ -2587,8 +2684,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:if>
             </xsl:message> -->
             
-            <!-- do not redeclare fields included in X3DNode -->
-            <xsl:if test="not($fieldName = 'DEF')      and not($fieldName = 'USE') and not($fieldName = 'class_') and
+            <!-- do not redeclare fields included in X3DNode and X3DStatement -->
+            <xsl:if test="not($fieldName = 'DEF')      and not($fieldName = 'USE') and
+                          not($fieldName = 'class_')   and not($fieldName = 'id')  and not($fieldName = 'style') and
                           not($fieldName = 'metadata') and not($fieldName = 'IS')">
                 <xsl:text>
     @property # getter - - - - - - - - - -
@@ -2967,7 +3065,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:choose>
                         <xsl:text>
             result += " </xsl:text>
-                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ and style_ attributes -->
+                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
                         <xsl:text>='" + </xsl:text>
                         <xsl:choose>
                             <!-- always stringify value in field/fieldValue since it is arbitrary type -->
@@ -3222,7 +3320,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:choose>
                         <xsl:text>
             result += " </xsl:text>
-                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ and style_ attributes -->
+                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
                         <xsl:text> </xsl:text>
                         <xsl:text>" + </xsl:text>
                         <xsl:choose>
@@ -3365,7 +3463,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
             <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
             <xsl:choose>
-                <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global') or (local-name() = 'type')">
+                <xsl:when test="(local-name() = 'class') or (local-name() = 'global') or (local-name() = 'type')">
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>_</xsl:text>
                 </xsl:when>
@@ -3535,7 +3633,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
     
         <xsl:choose>
-            <xsl:when test="($name='class') or ($name='style') or ($name='global')">
+            <xsl:when test="($name='class') or ($name='id') or ($name='style') or ($name='global')">
                 <xsl:value-of select="$name"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>
