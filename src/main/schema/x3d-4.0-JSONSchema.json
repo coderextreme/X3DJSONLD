@@ -1963,7 +1963,7 @@
             },
             "@mediaDeviceID": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString outputOnly",
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-metadata": {
@@ -11456,6 +11456,11 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@justify": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "MFString inputOutput",
@@ -19556,7 +19561,7 @@
             },
             "@mediaDeviceID": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString outputOnly",
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-metadata": {
@@ -27729,6 +27734,11 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
+            "@id": {
+              "pattern": "^(\\s|\\S)*$",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@justify": {
               "pattern": "^(\\s|\\S)*$",
               "$comment": "MFString inputOutput",
@@ -30810,7 +30820,7 @@
             },
             "@mediaDeviceID": {
               "pattern": "^(\\s|\\S)*$",
-              "$comment": "SFString outputOnly",
+              "$comment": "SFString inputOutput",
               "type": "string"
             },
             "-metadata": {
@@ -36714,6 +36724,16 @@
           "-children": {
             "$ref": "#/definitions/-childStatements"
           },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@id": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@level": {
             "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
             "maximum": 5,
@@ -36765,6 +36785,11 @@
             ],
             "$comment": "SFString inputOutput",
             "type": "string"
+          },
+          "@style": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
           }
         },
         "required": [
@@ -36782,12 +36807,27 @@
           "-children": {
             "$ref": "#/definitions/-childStatements"
           },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@id": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@nodeField": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
           },
           "@protoField": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@style": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -36811,7 +36851,22 @@
           "$comment": "SFString inputOutput",
           "type": "string"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@localDEF": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -36833,6 +36888,11 @@
           "$comment": "SFString inputOutput",
           "type": "string"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@documentation": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
@@ -36841,7 +36901,17 @@
         "field": {
           "$ref": "#/definitions/field"
         },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@name": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -36887,12 +36957,27 @@
           "-children": {
             "$ref": "#/definitions/-X3DNodeMFNode"
           },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@documentation": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
           },
+          "@id": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@style": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -36966,7 +37051,22 @@
           "-children": {
             "$ref": "#/definitions/-X3DNodeMFNode"
           },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@id": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@style": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -36987,11 +37087,26 @@
         "-children": {
           "$ref": "#/definitions/-childStatements"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "component": {
           "$ref": "#/definitions/component"
         },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "meta": {
           "$ref": "#/definitions/meta"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         },
         "unit": {
           "$ref": "#/definitions/unit"
@@ -37010,12 +37125,27 @@
           "$comment": "SFString inputOutput",
           "type": "string"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@importedDEF": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
         },
         "@inlineDEF": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -37033,8 +37163,23 @@
         "-children": {
           "$ref": "#/definitions/-childStatements"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "connect": {
           "$ref": "#/definitions/connect"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -37046,6 +37191,11 @@
         "properties": {
           "-children": {
             "$ref": "#/definitions/-childStatements"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
           },
           "@content": {
             "pattern": "^(\\s|\\S)*$",
@@ -37062,6 +37212,11 @@
             "type": "string"
           },
           "@http-equiv": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@id": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -37131,6 +37286,11 @@
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
+          },
+          "@style": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
           }
         },
         "required": [
@@ -37145,6 +37305,21 @@
       "properties": {
         "-children": {
           "$ref": "#/definitions/-X3DNodeMFNode"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -37160,7 +37335,17 @@
           "$comment": "SFString inputOutput",
           "type": "string"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@documentation": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -37175,6 +37360,11 @@
         },
         "ProtoInterface": {
           "$ref": "#/definitions/ProtoInterface"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         }
       },
       "required": [
@@ -37188,8 +37378,23 @@
         "-children": {
           "$ref": "#/definitions/-childStatements"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "field": {
           "$ref": "#/definitions/field"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -37200,12 +37405,27 @@
         "-children": {
           "$ref": "#/definitions/-childStatements"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "@fromField": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
         },
         "@fromNode": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
           "pattern": "^(\\s|\\S)*$",
           "$comment": "SFString inputOutput",
           "type": "string"
@@ -37234,6 +37454,21 @@
       "properties": {
         "-children": {
           "$ref": "#/definitions/-X3DChildNode-X3DMetadataObject-LayerSetMFNode"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -37257,6 +37492,11 @@
             "$comment": "SFString initializeOnly",
             "type": "string"
           },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@conversionFactor": {
             "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
             "exclusiveMinimum": 0,
@@ -37264,7 +37504,17 @@
             "$comment": "SFDouble inputOutput",
             "type": "number"
           },
+          "@id": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
           "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@style": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -37299,8 +37549,18 @@
         "-children": {
           "$ref": "#/definitions/-childStatements"
         },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
         "head": {
           "$ref": "#/definitions/head"
+        },
+        "@id": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         },
         "@profile": {
           "pattern": "^(\\s|\\S)*$",
@@ -37320,6 +37580,11 @@
         },
         "Scene": {
           "$ref": "#/definitions/Scene"
+        },
+        "@style": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         },
         "@version": {
           "pattern": "^(\\s|\\S)*$",
