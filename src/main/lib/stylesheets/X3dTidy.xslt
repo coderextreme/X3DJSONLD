@@ -4070,6 +4070,7 @@ Recommended tools:
                         <xsl:text>: change attribute name emmisiveColor to emissiveColor</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <!-- id is external, DEF is internal, can test accordingly
                 <xsl:when test="(local-name() = 'id') and (string-length(../@DEF) > 0)">
                     <xsl:text>id</xsl:text>
                     <xsl:message>
@@ -4094,6 +4095,7 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                -->
                 
                 <!-- *** start: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
                 <xsl:when test="(lower-case(local-name()) = 'autocalc') and not(local-name() = 'autoCalc')"><xsl:text>autoCalc</xsl:text><xsl:message><xsl:text>*** fix capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to autoCalc</xsl:text></xsl:message></xsl:when>

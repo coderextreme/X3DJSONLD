@@ -935,6 +935,23 @@
         }
       ]
     },
+    "SceneGraphStructureStatement": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "Anchor": {
       "type": "object",
       "oneOf": [
@@ -2928,6 +2945,73 @@
         }
       ]
     },
+    "component": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "-children": {
+            "$ref": "#/definitions/-childStatements"
+          },
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@level": {
+            "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
+            "maximum": 5,
+            "minimum": 1,
+            "default": 1,
+            "$comment": "SFInt32 inputOutput",
+            "type": "integer"
+          },
+          "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "enum": [
+              "Core",
+              "CADGeometry",
+              "CubeMapTexturing",
+              "DIS",
+              "EnvironmentalEffects",
+              "EnvironmentalSensor",
+              "EventUtilities",
+              "Geometry2D",
+              "Geometry3D",
+              "Geospatial",
+              "Grouping",
+              "H-Anim",
+              "Interpolation",
+              "KeyDeviceSensor",
+              "Lighting",
+              "Navigation",
+              "Networking",
+              "NURBS",
+              "PointingDeviceSensor",
+              "Rendering",
+              "Scripting",
+              "Shaders",
+              "Shape",
+              "Sound",
+              "Text",
+              "Texturing",
+              "Texturing3D",
+              "Time"
+            ],
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@level",
+          "@name"
+        ],
+        "additionalProperties": false
+      }
+    },
     "ComposedCubeMapTexture": {
       "type": "object",
       "oneOf": [
@@ -3268,6 +3352,40 @@
           "additionalProperties": false
         }
       ]
+    },
+    "connect": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "-children": {
+            "$ref": "#/definitions/-childStatements"
+          },
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@nodeField": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@protoField": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@nodeField",
+          "@protoField"
+        ],
+        "additionalProperties": false
+      }
     },
     "Contour2D": {
       "type": "object",
@@ -4979,6 +5097,85 @@
         }
       ]
     },
+    "EXPORT": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@AS": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@localDEF": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@localDEF"
+      ],
+      "additionalProperties": false
+    },
+    "ExternProtoDeclare": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "$ref": "#/definitions/field"
+        },
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@appinfo": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@documentation": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@name": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@url": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "MFString inputOutput",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "format": "uri-reference",
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "@name",
+        "@url"
+      ],
+      "additionalProperties": false
+    },
     "Extrusion": {
       "type": "object",
       "oneOf": [
@@ -5232,6 +5429,140 @@
           "additionalProperties": false
         }
       ]
+    },
+    "field": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
+          "@accessType": {
+            "pattern": "^(\\s|\\S)*$",
+            "enum": [
+              "initializeOnly",
+              "inputOnly",
+              "outputOnly",
+              "inputOutput"
+            ],
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@appinfo": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "-children": {
+            "$ref": "#/definitions/-X3DNodeMFNode"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@documentation": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@type": {
+            "pattern": "^(\\s|\\S)*$",
+            "enum": [
+              "SFBool",
+              "MFBool",
+              "SFColor",
+              "MFColor",
+              "SFColorRGBA",
+              "MFColorRGBA",
+              "SFDouble",
+              "MFDouble",
+              "SFFloat",
+              "MFFloat",
+              "SFImage",
+              "MFImage",
+              "SFInt32",
+              "MFInt32",
+              "SFNode",
+              "MFNode",
+              "SFRotation",
+              "MFRotation",
+              "SFString",
+              "MFString",
+              "SFTime",
+              "MFTime",
+              "SFVec2d",
+              "MFVec2d",
+              "SFVec2f",
+              "MFVec2f",
+              "SFVec3d",
+              "MFVec3d",
+              "SFVec3f",
+              "MFVec3f",
+              "SFVec4d",
+              "MFVec4d",
+              "SFVec4f",
+              "MFVec4f",
+              "SFMatrix3d",
+              "MFMatrix3d",
+              "SFMatrix3f",
+              "MFMatrix3f",
+              "SFMatrix4d",
+              "MFMatrix4d",
+              "SFMatrix4f",
+              "MFMatrix4f"
+            ],
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@value": {
+            "pattern": "^(\\s|\\S)*$"
+          }
+        },
+        "required": [
+          "@accessType",
+          "@name",
+          "@type"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "fieldValue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
+          "-children": {
+            "$ref": "#/definitions/-X3DNodeMFNode"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@value": {
+            "pattern": "^(\\s|\\S)*$"
+          }
+        },
+        "required": [
+          "@name"
+        ],
+        "additionalProperties": false
+      }
     },
     "FillProperties": {
       "type": "object",
@@ -8202,6 +8533,29 @@
         }
       ]
     },
+    "head": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "component": {
+          "$ref": "#/definitions/component"
+        },
+        "meta": {
+          "$ref": "#/definitions/meta"
+        }
+      },
+      "additionalProperties": false
+    },
     "ImageCubeMapTexture": {
       "type": "object",
       "oneOf": [
@@ -8435,6 +8789,42 @@
           "additionalProperties": false
         }
       ]
+    },
+    "IMPORT": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@AS": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@importedDEF": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@inlineDEF": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@importedDEF",
+        "@inlineDEF"
+      ],
+      "additionalProperties": false
     },
     "IndexedFaceSet": {
       "type": "object",
@@ -9469,6 +9859,26 @@
         }
       ]
     },
+    "IS": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "connect": {
+          "$ref": "#/definitions/connect"
+        }
+      },
+      "additionalProperties": false
+    },
     "KeySensor": {
       "type": "object",
       "oneOf": [
@@ -10298,6 +10708,115 @@
           "additionalProperties": false
         }
       ]
+    },
+    "meta": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "-children": {
+            "$ref": "#/definitions/-childStatements"
+          },
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
+          "@class": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@content": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@dir": {
+            "pattern": "^(\\s|\\S)*$",
+            "enum": [
+              "rtl",
+              "ltr"
+            ],
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@http-equiv": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@lang": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@name": {
+            "pattern": "^(\\s|\\S)*$",
+            "anyOf": [
+              {
+                "enum": [
+                  "accessRights",
+                  "author",
+                  "contributor",
+                  "created",
+                  "creator",
+                  "description",
+                  "disclaimer",
+                  "drawing",
+                  "error",
+                  "generator",
+                  "hint",
+                  "identifier",
+                  "Image",
+                  "info",
+                  "information",
+                  "isVersionOf",
+                  "keywords",
+                  "license",
+                  "mediator",
+                  "modified",
+                  "movie",
+                  "MovingImage",
+                  "original",
+                  "photo",
+                  "photograph",
+                  "publisher",
+                  "reference",
+                  "requires",
+                  "rights",
+                  "robots",
+                  "Sound",
+                  "source",
+                  "specificationSection",
+                  "specificationUrl",
+                  "subject",
+                  "Text",
+                  "title",
+                  "TODO",
+                  "translator",
+                  "translated",
+                  "version",
+                  "warning"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          },
+          "@scheme": {
+            "pattern": "^(\\s|\\S)*$",
+            "$comment": "SFString inputOutput",
+            "type": "string"
+          }
+        },
+        "required": [
+          "@content",
+          "@name"
+        ],
+        "additionalProperties": false
+      }
     },
     "MetadataDouble": {
       "type": "object",
@@ -13797,6 +14316,64 @@
         }
       ]
     },
+    "ProtoBody": {
+      "type": "object",
+      "properties": {
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "-children": {
+          "$ref": "#/definitions/-X3DNodeMFNode"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProtoDeclare": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@appinfo": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@documentation": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@name": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "ProtoBody": {
+          "$ref": "#/definitions/ProtoBody"
+        },
+        "ProtoInterface": {
+          "$ref": "#/definitions/ProtoInterface"
+        }
+      },
+      "required": [
+        "@name"
+      ],
+      "additionalProperties": false
+    },
     "ProtoInstance": {
       "type": "object",
       "oneOf": [
@@ -13872,6 +14449,26 @@
           "additionalProperties": false
         }
       ]
+    },
+    "ProtoInterface": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "$ref": "#/definitions/field"
+        },
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "ProximitySensor": {
       "type": "object",
@@ -14434,6 +15031,49 @@
         }
       ]
     },
+    "ROUTE": {
+      "type": "object",
+      "properties": {
+        "-children": {
+          "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@fromField": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@fromNode": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@toField": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        },
+        "@toNode": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@fromField",
+        "@fromNode",
+        "@toField",
+        "@toNode"
+      ],
+      "additionalProperties": false
+    },
     "ScalarInterpolator": {
       "type": "object",
       "oneOf": [
@@ -14517,6 +15157,23 @@
           "additionalProperties": false
         }
       ]
+    },
+    "Scene": {
+      "type": "object",
+      "properties": {
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "-children": {
+          "$ref": "#/definitions/-X3DChildNode-X3DMetadataObjectMFNode"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "Script": {
       "type": "object",
@@ -18332,526 +18989,6 @@
         }
       ]
     },
-    "component": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "-children": {
-            "$ref": "#/definitions/-childStatements"
-          },
-          "@level": {
-            "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
-            "maximum": 5,
-            "minimum": 1,
-            "default": 1,
-            "$comment": "SFInt32 inputOutput",
-            "type": "integer"
-          },
-          "@name": {
-            "pattern": "^(\\s|\\S)*$",
-            "enum": [
-              "Core",
-              "CADGeometry",
-              "CubeMapTexturing",
-              "DIS",
-              "EnvironmentalEffects",
-              "EnvironmentalSensor",
-              "EventUtilities",
-              "Geometry2D",
-              "Geometry3D",
-              "Geospatial",
-              "Grouping",
-              "H-Anim",
-              "Interpolation",
-              "KeyDeviceSensor",
-              "Lighting",
-              "Navigation",
-              "Networking",
-              "NURBS",
-              "PointingDeviceSensor",
-              "Rendering",
-              "Scripting",
-              "Shaders",
-              "Shape",
-              "Sound",
-              "Text",
-              "Texturing",
-              "Texturing3D",
-              "Time"
-            ],
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@level",
-          "@name"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "connect": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "-children": {
-            "$ref": "#/definitions/-childStatements"
-          },
-          "@nodeField": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@protoField": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@nodeField",
-          "@protoField"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "EXPORT": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "@AS": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@localDEF": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        }
-      },
-      "required": [
-        "@localDEF"
-      ],
-      "additionalProperties": false
-    },
-    "ExternProtoDeclare": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "@appinfo": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@documentation": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "field": {
-          "$ref": "#/definitions/field"
-        },
-        "@name": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@url": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "MFString inputOutput",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "format": "uri-reference",
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "@name",
-        "@url"
-      ],
-      "additionalProperties": false
-    },
-    "field": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "@accessType": {
-            "pattern": "^(\\s|\\S)*$",
-            "enum": [
-              "initializeOnly",
-              "inputOnly",
-              "outputOnly",
-              "inputOutput"
-            ],
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@appinfo": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "-children": {
-            "$ref": "#/definitions/-X3DNodeMFNode"
-          },
-          "@documentation": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@name": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@type": {
-            "pattern": "^(\\s|\\S)*$",
-            "enum": [
-              "SFBool",
-              "MFBool",
-              "SFColor",
-              "MFColor",
-              "SFColorRGBA",
-              "MFColorRGBA",
-              "SFDouble",
-              "MFDouble",
-              "SFFloat",
-              "MFFloat",
-              "SFImage",
-              "MFImage",
-              "SFInt32",
-              "MFInt32",
-              "SFNode",
-              "MFNode",
-              "SFRotation",
-              "MFRotation",
-              "SFString",
-              "MFString",
-              "SFTime",
-              "MFTime",
-              "SFVec2d",
-              "MFVec2d",
-              "SFVec2f",
-              "MFVec2f",
-              "SFVec3d",
-              "MFVec3d",
-              "SFVec3f",
-              "MFVec3f",
-              "SFVec4d",
-              "MFVec4d",
-              "SFVec4f",
-              "MFVec4f",
-              "SFMatrix3d",
-              "MFMatrix3d",
-              "SFMatrix3f",
-              "MFMatrix3f",
-              "SFMatrix4d",
-              "MFMatrix4d",
-              "SFMatrix4f",
-              "MFMatrix4f"
-            ],
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@value": {
-            "pattern": "^(\\s|\\S)*$"
-          }
-        },
-        "required": [
-          "@accessType",
-          "@name",
-          "@type"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "fieldValue": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "-children": {
-            "$ref": "#/definitions/-X3DNodeMFNode"
-          },
-          "@name": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@value": {
-            "pattern": "^(\\s|\\S)*$"
-          }
-        },
-        "required": [
-          "@name"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "head": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "component": {
-          "$ref": "#/definitions/component"
-        },
-        "meta": {
-          "$ref": "#/definitions/meta"
-        }
-      },
-      "additionalProperties": false
-    },
-    "IMPORT": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "@AS": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@importedDEF": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@inlineDEF": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        }
-      },
-      "required": [
-        "@importedDEF",
-        "@inlineDEF"
-      ],
-      "additionalProperties": false
-    },
-    "IS": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "connect": {
-          "$ref": "#/definitions/connect"
-        }
-      },
-      "additionalProperties": false
-    },
-    "meta": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "-children": {
-            "$ref": "#/definitions/-childStatements"
-          },
-          "@content": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@dir": {
-            "pattern": "^(\\s|\\S)*$",
-            "enum": [
-              "rtl",
-              "ltr"
-            ],
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@http-equiv": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@lang": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@name": {
-            "pattern": "^(\\s|\\S)*$",
-            "anyOf": [
-              {
-                "enum": [
-                  "accessRights",
-                  "author",
-                  "contributor",
-                  "created",
-                  "creator",
-                  "description",
-                  "disclaimer",
-                  "drawing",
-                  "error",
-                  "generator",
-                  "hint",
-                  "identifier",
-                  "Image",
-                  "info",
-                  "information",
-                  "isVersionOf",
-                  "keywords",
-                  "license",
-                  "mediator",
-                  "modified",
-                  "movie",
-                  "MovingImage",
-                  "original",
-                  "photo",
-                  "photograph",
-                  "publisher",
-                  "reference",
-                  "requires",
-                  "rights",
-                  "robots",
-                  "Sound",
-                  "source",
-                  "specificationSection",
-                  "specificationUrl",
-                  "subject",
-                  "Text",
-                  "title",
-                  "TODO",
-                  "translator",
-                  "translated",
-                  "version",
-                  "warning"
-                ]
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          },
-          "@scheme": {
-            "pattern": "^(\\s|\\S)*$",
-            "$comment": "SFString inputOutput",
-            "type": "string"
-          }
-        },
-        "required": [
-          "@content",
-          "@name"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "ProtoBody": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-X3DNodeMFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "ProtoDeclare": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "@appinfo": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@documentation": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@name": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "ProtoBody": {
-          "$ref": "#/definitions/ProtoBody"
-        },
-        "ProtoInterface": {
-          "$ref": "#/definitions/ProtoInterface"
-        }
-      },
-      "required": [
-        "@name"
-      ],
-      "additionalProperties": false
-    },
-    "ProtoInterface": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "field": {
-          "$ref": "#/definitions/field"
-        }
-      },
-      "additionalProperties": false
-    },
-    "ROUTE": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "@fromField": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@fromNode": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@toField": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@toNode": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        }
-      },
-      "required": [
-        "@fromField",
-        "@fromNode",
-        "@toField",
-        "@toNode"
-      ],
-      "additionalProperties": false
-    },
-    "Scene": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-X3DChildNode-X3DMetadataObjectMFNode"
-        }
-      },
-      "additionalProperties": false
-    },
     "X3D": {
       "type": "object",
       "properties": {
@@ -18872,6 +19009,14 @@
         },
         "-children": {
           "$ref": "#/definitions/-childStatements"
+        },
+        "IS": {
+          "$ref": "#/definitions/IS"
+        },
+        "@class": {
+          "pattern": "^(\\s|\\S)*$",
+          "$comment": "SFString inputOutput",
+          "type": "string"
         },
         "head": {
           "$ref": "#/definitions/head"
@@ -18922,21 +19067,6 @@
         "properties": {
           "#comment": {
             "type": "string"
-          },
-          "EXPORT": {
-            "$ref": "#/definitions/EXPORT"
-          },
-          "ExternProtoDeclare": {
-            "$ref": "#/definitions/ExternProtoDeclare"
-          },
-          "IMPORT": {
-            "$ref": "#/definitions/IMPORT"
-          },
-          "ProtoDeclare": {
-            "$ref": "#/definitions/ProtoDeclare"
-          },
-          "ROUTE": {
-            "$ref": "#/definitions/ROUTE"
           },
           "Background": {
             "$ref": "#/definitions/Background"
@@ -19121,6 +19251,9 @@
           "BooleanToggle": {
             "$ref": "#/definitions/BooleanToggle"
           },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
           "GeoLOD": {
             "$ref": "#/definitions/GeoLOD"
           },
@@ -19148,8 +19281,14 @@
           "NurbsSurfaceInterpolator": {
             "$ref": "#/definitions/NurbsSurfaceInterpolator"
           },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
           },
           "StaticGroup": {
             "$ref": "#/definitions/StaticGroup"
@@ -19345,21 +19484,6 @@
     "-X3DChildNodeSFNode": {
       "type": "object",
       "properties": {
-        "EXPORT": {
-          "$ref": "#/definitions/EXPORT"
-        },
-        "ExternProtoDeclare": {
-          "$ref": "#/definitions/ExternProtoDeclare"
-        },
-        "IMPORT": {
-          "$ref": "#/definitions/IMPORT"
-        },
-        "ProtoDeclare": {
-          "$ref": "#/definitions/ProtoDeclare"
-        },
-        "ROUTE": {
-          "$ref": "#/definitions/ROUTE"
-        },
         "Background": {
           "$ref": "#/definitions/Background"
         },
@@ -19543,6 +19667,9 @@
         "BooleanToggle": {
           "$ref": "#/definitions/BooleanToggle"
         },
+        "ExternProtoDeclare": {
+          "$ref": "#/definitions/ExternProtoDeclare"
+        },
         "GeoLOD": {
           "$ref": "#/definitions/GeoLOD"
         },
@@ -19570,8 +19697,14 @@
         "NurbsSurfaceInterpolator": {
           "$ref": "#/definitions/NurbsSurfaceInterpolator"
         },
+        "ProtoDeclare": {
+          "$ref": "#/definitions/ProtoDeclare"
+        },
         "ProtoInstance": {
           "$ref": "#/definitions/ProtoInstance"
+        },
+        "ROUTE": {
+          "$ref": "#/definitions/ROUTE"
         },
         "StaticGroup": {
           "$ref": "#/definitions/StaticGroup"
@@ -19755,18 +19888,6 @@
       },
       "additionalProperties": false
     },
-    "-GeoOriginSFNode": {
-      "type": "object",
-      "properties": {
-        "GeoOrigin": {
-          "$ref": "#/definitions/GeoOrigin"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -19839,21 +19960,6 @@
           },
           "Appearance": {
             "$ref": "#/definitions/Appearance"
-          },
-          "EXPORT": {
-            "$ref": "#/definitions/EXPORT"
-          },
-          "ExternProtoDeclare": {
-            "$ref": "#/definitions/ExternProtoDeclare"
-          },
-          "IMPORT": {
-            "$ref": "#/definitions/IMPORT"
-          },
-          "ProtoDeclare": {
-            "$ref": "#/definitions/ProtoDeclare"
-          },
-          "ROUTE": {
-            "$ref": "#/definitions/ROUTE"
           },
           "Background": {
             "$ref": "#/definitions/Background"
@@ -20035,6 +20141,9 @@
           "BooleanToggle": {
             "$ref": "#/definitions/BooleanToggle"
           },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
           "GeoLOD": {
             "$ref": "#/definitions/GeoLOD"
           },
@@ -20062,8 +20171,14 @@
           "NurbsSurfaceInterpolator": {
             "$ref": "#/definitions/NurbsSurfaceInterpolator"
           },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
           },
           "StaticGroup": {
             "$ref": "#/definitions/StaticGroup"
@@ -20257,6 +20372,18 @@
         },
         "additionalProperties": false
       }
+    },
+    "-GeoOriginSFNode": {
+      "type": "object",
+      "properties": {
+        "GeoOrigin": {
+          "$ref": "#/definitions/GeoOrigin"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-HAnimJointMFNode": {
       "$comment": "MFNode inputOutput",
@@ -20744,174 +20871,6 @@
         "additionalProperties": false
       }
     },
-    "-X3DAppearanceNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "Appearance": {
-          "$ref": "#/definitions/Appearance"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DGeometryNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "IndexedFaceSet": {
-          "$ref": "#/definitions/IndexedFaceSet"
-        },
-        "IndexedQuadSet": {
-          "$ref": "#/definitions/IndexedQuadSet"
-        },
-        "IndexedTriangleFanSet": {
-          "$ref": "#/definitions/IndexedTriangleFanSet"
-        },
-        "IndexedTriangleSet": {
-          "$ref": "#/definitions/IndexedTriangleSet"
-        },
-        "IndexedTriangleStripSet": {
-          "$ref": "#/definitions/IndexedTriangleStripSet"
-        },
-        "QuadSet": {
-          "$ref": "#/definitions/QuadSet"
-        },
-        "TriangleFanSet": {
-          "$ref": "#/definitions/TriangleFanSet"
-        },
-        "TriangleSet": {
-          "$ref": "#/definitions/TriangleSet"
-        },
-        "TriangleStripSet": {
-          "$ref": "#/definitions/TriangleStripSet"
-        },
-        "NurbsPatchSurface": {
-          "$ref": "#/definitions/NurbsPatchSurface"
-        },
-        "NurbsTrimmedSurface": {
-          "$ref": "#/definitions/NurbsTrimmedSurface"
-        },
-        "NurbsCurve": {
-          "$ref": "#/definitions/NurbsCurve"
-        },
-        "NurbsSweptSurface": {
-          "$ref": "#/definitions/NurbsSweptSurface"
-        },
-        "NurbsSwungSurface": {
-          "$ref": "#/definitions/NurbsSwungSurface"
-        },
-        "Arc2D": {
-          "$ref": "#/definitions/Arc2D"
-        },
-        "ArcClose2D": {
-          "$ref": "#/definitions/ArcClose2D"
-        },
-        "Box": {
-          "$ref": "#/definitions/Box"
-        },
-        "Circle2D": {
-          "$ref": "#/definitions/Circle2D"
-        },
-        "Cone": {
-          "$ref": "#/definitions/Cone"
-        },
-        "Cylinder": {
-          "$ref": "#/definitions/Cylinder"
-        },
-        "Disk2D": {
-          "$ref": "#/definitions/Disk2D"
-        },
-        "ElevationGrid": {
-          "$ref": "#/definitions/ElevationGrid"
-        },
-        "Extrusion": {
-          "$ref": "#/definitions/Extrusion"
-        },
-        "GeoElevationGrid": {
-          "$ref": "#/definitions/GeoElevationGrid"
-        },
-        "IndexedLineSet": {
-          "$ref": "#/definitions/IndexedLineSet"
-        },
-        "LineSet": {
-          "$ref": "#/definitions/LineSet"
-        },
-        "PointSet": {
-          "$ref": "#/definitions/PointSet"
-        },
-        "Polyline2D": {
-          "$ref": "#/definitions/Polyline2D"
-        },
-        "Polypoint2D": {
-          "$ref": "#/definitions/Polypoint2D"
-        },
-        "Rectangle2D": {
-          "$ref": "#/definitions/Rectangle2D"
-        },
-        "Sphere": {
-          "$ref": "#/definitions/Sphere"
-        },
-        "Text": {
-          "$ref": "#/definitions/Text"
-        },
-        "TriangleSet2D": {
-          "$ref": "#/definitions/TriangleSet2D"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DSoundSourceNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "AudioClip": {
-          "$ref": "#/definitions/AudioClip"
-        },
-        "MovieTexture": {
-          "$ref": "#/definitions/MovieTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DFontStyleNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "FontStyle": {
-          "$ref": "#/definitions/FontStyle"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DTexture2DNode-MultiTextureSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/definitions/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/definitions/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/definitions/PixelTexture"
-        },
-        "MultiTexture": {
-          "$ref": "#/definitions/MultiTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/definitions/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DChildNode-X3DMetadataObjectMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -20921,21 +20880,6 @@
         "properties": {
           "#comment": {
             "type": "string"
-          },
-          "EXPORT": {
-            "$ref": "#/definitions/EXPORT"
-          },
-          "ExternProtoDeclare": {
-            "$ref": "#/definitions/ExternProtoDeclare"
-          },
-          "IMPORT": {
-            "$ref": "#/definitions/IMPORT"
-          },
-          "ProtoDeclare": {
-            "$ref": "#/definitions/ProtoDeclare"
-          },
-          "ROUTE": {
-            "$ref": "#/definitions/ROUTE"
           },
           "Background": {
             "$ref": "#/definitions/Background"
@@ -21120,6 +21064,9 @@
           "BooleanToggle": {
             "$ref": "#/definitions/BooleanToggle"
           },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
           "GeoLOD": {
             "$ref": "#/definitions/GeoLOD"
           },
@@ -21147,8 +21094,14 @@
           "NurbsSurfaceInterpolator": {
             "$ref": "#/definitions/NurbsSurfaceInterpolator"
           },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
           },
           "StaticGroup": {
             "$ref": "#/definitions/StaticGroup"
@@ -21171,6 +21124,174 @@
         },
         "additionalProperties": false
       }
+    },
+    "-X3DAppearanceNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "Appearance": {
+          "$ref": "#/definitions/Appearance"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DGeometryNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "IndexedFaceSet": {
+          "$ref": "#/definitions/IndexedFaceSet"
+        },
+        "IndexedQuadSet": {
+          "$ref": "#/definitions/IndexedQuadSet"
+        },
+        "IndexedTriangleFanSet": {
+          "$ref": "#/definitions/IndexedTriangleFanSet"
+        },
+        "IndexedTriangleSet": {
+          "$ref": "#/definitions/IndexedTriangleSet"
+        },
+        "IndexedTriangleStripSet": {
+          "$ref": "#/definitions/IndexedTriangleStripSet"
+        },
+        "QuadSet": {
+          "$ref": "#/definitions/QuadSet"
+        },
+        "TriangleFanSet": {
+          "$ref": "#/definitions/TriangleFanSet"
+        },
+        "TriangleSet": {
+          "$ref": "#/definitions/TriangleSet"
+        },
+        "TriangleStripSet": {
+          "$ref": "#/definitions/TriangleStripSet"
+        },
+        "NurbsPatchSurface": {
+          "$ref": "#/definitions/NurbsPatchSurface"
+        },
+        "NurbsTrimmedSurface": {
+          "$ref": "#/definitions/NurbsTrimmedSurface"
+        },
+        "NurbsCurve": {
+          "$ref": "#/definitions/NurbsCurve"
+        },
+        "NurbsSweptSurface": {
+          "$ref": "#/definitions/NurbsSweptSurface"
+        },
+        "NurbsSwungSurface": {
+          "$ref": "#/definitions/NurbsSwungSurface"
+        },
+        "Arc2D": {
+          "$ref": "#/definitions/Arc2D"
+        },
+        "ArcClose2D": {
+          "$ref": "#/definitions/ArcClose2D"
+        },
+        "Box": {
+          "$ref": "#/definitions/Box"
+        },
+        "Circle2D": {
+          "$ref": "#/definitions/Circle2D"
+        },
+        "Cone": {
+          "$ref": "#/definitions/Cone"
+        },
+        "Cylinder": {
+          "$ref": "#/definitions/Cylinder"
+        },
+        "Disk2D": {
+          "$ref": "#/definitions/Disk2D"
+        },
+        "ElevationGrid": {
+          "$ref": "#/definitions/ElevationGrid"
+        },
+        "Extrusion": {
+          "$ref": "#/definitions/Extrusion"
+        },
+        "GeoElevationGrid": {
+          "$ref": "#/definitions/GeoElevationGrid"
+        },
+        "IndexedLineSet": {
+          "$ref": "#/definitions/IndexedLineSet"
+        },
+        "LineSet": {
+          "$ref": "#/definitions/LineSet"
+        },
+        "PointSet": {
+          "$ref": "#/definitions/PointSet"
+        },
+        "Polyline2D": {
+          "$ref": "#/definitions/Polyline2D"
+        },
+        "Polypoint2D": {
+          "$ref": "#/definitions/Polypoint2D"
+        },
+        "Rectangle2D": {
+          "$ref": "#/definitions/Rectangle2D"
+        },
+        "Sphere": {
+          "$ref": "#/definitions/Sphere"
+        },
+        "Text": {
+          "$ref": "#/definitions/Text"
+        },
+        "TriangleSet2D": {
+          "$ref": "#/definitions/TriangleSet2D"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DSoundSourceNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "AudioClip": {
+          "$ref": "#/definitions/AudioClip"
+        },
+        "MovieTexture": {
+          "$ref": "#/definitions/MovieTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DFontStyleNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "FontStyle": {
+          "$ref": "#/definitions/FontStyle"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DTexture2DNode-MultiTextureSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/definitions/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/definitions/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/definitions/PixelTexture"
+        },
+        "MultiTexture": {
+          "$ref": "#/definitions/MultiTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

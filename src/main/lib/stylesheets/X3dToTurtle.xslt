@@ -32,7 +32,7 @@
         <!-- default namespace for scene matches meta identifier, if given -->
         <xsl:choose>
             <xsl:when test="(string-length($defaultModelPrefix) > 0)">
-                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix dc: <]]></xsl:text>
+                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix dcterms: <]]></xsl:text>
                 <xsl:value-of select="$defaultModelPrefix"/>
                 <xsl:text disable-output-escaping="yes"><![CDATA[#> .]]></xsl:text>
 				<xsl:text>&#10;</xsl:text>
@@ -50,7 +50,7 @@
                         </xsl:message>
                     </xsl:when>
                 </xsl:choose>
-                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix :       <]]></xsl:text>
+                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix :        <]]></xsl:text>
                 <xsl:variable name="modelName">
                     <xsl:choose>
                         <xsl:when test="not(string-length(substring-before(//meta[@name='identifier']/@content,'.x3d')) > 0) or
@@ -68,18 +68,18 @@
 				<xsl:text>&#10;</xsl:text>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <#> .]]></xsl:text>
+                <xsl:text disable-output-escaping="yes"><![CDATA[@prefix :        <#>  .]]></xsl:text>
 				<xsl:text>&#10;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-		<xsl:text disable-output-escaping="yes"><![CDATA[@prefix dc:     <http://purl.org/dc/terms/> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
-@prefix x3do:   <https://www.web3d.org/specifications/X3dOntology4.0#> .
+		<xsl:text disable-output-escaping="yes"><![CDATA[@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
 
 ]]></xsl:text>
 <!--
@@ -1162,9 +1162,15 @@
                             not(contains(local-name(),'_changed')) and
                             .)" >
 
+                        <xsl:variable name="fieldName">
+                            <xsl:call-template name="attributeNameAdjustment">
+                                <xsl:with-param name=  "elementName" select="local-name(..)"/>
+                                <xsl:with-param name="attributeName" select="local-name()"/>
+                            </xsl:call-template>
+                        </xsl:variable>
                         <xsl:text> ;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
-                        <xsl:text>  x3do:</xsl:text><xsl:value-of select="local-name()"/>
+                        <xsl:text>  x3do:</xsl:text><xsl:value-of select="$fieldName"/>
                         <xsl:text> </xsl:text><!-- tab &#09; -->
 
                         <!-- figure out precise X3D type of attribute so that numeric values might appear here -->
@@ -1347,6 +1353,63 @@
             <xsl:text>&#10;</xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:if>
+
+        <!-- special handling of Dublin Core ontology -->
+        <xsl:if test="(local-name() = 'meta') and (count(following-sibling::*[local-name() = 'meta']) = 0)">
+            <xsl:for-each select="//meta">
+                <xsl:variable name="dcterm">
+                    <xsl:choose>
+                        <xsl:when test="(lower-case(@name) = 'identifier') or (lower-case(@name) = 'title') or 
+                                        (lower-case(@name) = 'modified')   or (lower-case(@name) = 'description') or 
+                                        (lower-case(@name) = 'creator')    or (lower-case(@name) = 'translator') or 
+                                        (lower-case(@name) = 'created')    or (lower-case(@name) = 'translated') or 
+                                        (lower-case(@name) = 'version')    or (lower-case(@name) = 'reference') or 
+                                        (lower-case(@name) = 'requires')   or (lower-case(@name) = 'rights') or 
+                                        (lower-case(@name) = 'drawing')    or (lower-case(@name) = 'photo') or 
+                                        (lower-case(@name) = 'subject')    or (lower-case(@name) = 'warning') or 
+                                        (lower-case(@name) = 'generator')  or (lower-case(@name) = 'license')">
+                            <xsl:value-of select="lower-case(@name)"/>
+                        </xsl:when>
+                        <!-- note correct capitalization in following terms -->
+                        <xsl:when test="(lower-case(@name) = 'accessrights')">
+                            <xsl:text>accessRights</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(lower-case(@name) = 'image')">
+                            <xsl:text>Image</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(lower-case(@name) = 'movingimage')">
+                            <xsl:text>MovingImage</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(lower-case(@name) = 'sound')">
+                            <xsl:text>Sound</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(lower-case(@name) = 'hint') or (lower-case(@name) = 'info') or (lower-case(@name) = 'TODO')">
+                            <!-- permitted without comment, ignored -->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message>
+                                <xsl:text>*** &lt;meta name='</xsl:text>
+                                <xsl:value-of select="@name"/>
+                                <xsl:text>'/&gt; not found in stylesheet list of Dublin Core terms</xsl:text>
+                            </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:if test="(string-length($dcterm) > 0)">
+                    <!-- TODO attach to :head or :X3D? -->
+                    <xsl:text>:head </xsl:text>
+                    <xsl:text>dcterms:</xsl:text>
+                    <xsl:value-of select="$dcterm"/>
+                    <xsl:text> "</xsl:text>
+                    <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
+                        <xsl:with-param name="inputString" select="@content"/>
+                    </xsl:call-template>
+                    <xsl:text>" .</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:if>
+        <!-- TODO special handling of other ontologies goes here -->
     </xsl:template>
     
     <!-- ===================================================== -->
@@ -1463,6 +1526,51 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
+    </xsl:template>
+
+    <!-- ===================================================== -->
+
+    <xsl:template name="escape-quote-characters">
+        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+        <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
+        <!-- debug: 
+			<xsl:variable name="apostrophe"><xsl:text disable-output-escaping="yes">'</xsl:text></xsl:variable>
+			<xsl:message>
+				   <xsl:text>### $apostrophe</xsl:text>
+				   <xsl:text>=</xsl:text>
+				   <xsl:value-of select="$apostrophe" disable-output-escaping="yes"/>
+			</xsl:message>
+		-->
+        <xsl:choose>
+            <xsl:when test="contains($inputString,'&quot;')">
+                <xsl:value-of select="substring-before($inputString,'&quot;')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="yes">\"</xsl:text>
+                <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
+                    <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+                </xsl:call-template>
+            </xsl:when>
+			<!-- unneeded
+            <xsl:when test='contains($inputString,$apostrophe)'>
+                <xsl:message>
+                    <xsl:text>...found  </xsl:text>
+                    <xsl:value-of select="$apostrophe" disable-output-escaping="no"/>
+                    <xsl:text>$apostrophe</xsl:text>
+                    <xsl:value-of select="$apostrophe" disable-output-escaping="no"/>
+                    <xsl:text>: </xsl:text>
+                    <xsl:value-of select="$inputString"/>
+                </xsl:message>
+                <xsl:value-of select='substring-before($inputString,$apostrophe)'/>
+                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
+                <xsl:text disable-output-escaping="no" >apos;</xsl:text>
+                <xsl:call-template name="escape-apostrophe-characters">
+                    <xsl:with-param name="inputString" select='substring-after($inputString,$apostrophe)'/>
+                </xsl:call-template>
+            </xsl:when>-->
+            <xsl:otherwise>
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- ===================================================== -->
@@ -2111,6 +2219,23 @@
 		  </xsl:otherwise>
 		</xsl:choose>
 
+    </xsl:template>
+
+    <!-- ===================================================== -->
+
+    <xsl:template name="attributeNameAdjustment">
+        <xsl:param name=  "elementName"></xsl:param>
+        <xsl:param name="attributeName"></xsl:param>
+        
+        <xsl:choose>
+            <xsl:when test="(($elementName = 'FontStyle') or ($elementName = 'ScreenFontStyle')) and ($attributeName = 'style')">
+                <xsl:text>cssStyle</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$attributeName"/>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
 
     <!-- ===================================================== -->
