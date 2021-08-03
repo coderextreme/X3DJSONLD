@@ -764,7 +764,7 @@ Recommended tool:
         </xsl:element>
         
         <xsl:element name="AbstractNodeTypes">
-            <xsl:for-each select="//xs:schema/xs:complexType[ends-with(@name,'Node') or (@name='X3DPrototypeInstance')]">
+            <xsl:for-each select="//xs:schema/xs:complexType[not(@name='X3DNodeMixedContent') and not(ends-with(@name,'Object'))]">
                 <xsl:sort select="lower-case(@name)"/>
                 <xsl:variable name="abstractNodeTypeName" select="@name"/>
                 <xsl:element name="AbstractNodeType">
@@ -979,7 +979,7 @@ Recommended tool:
         </xsl:element>
         
         <xsl:element name="ConcreteNodes">
-            <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='SceneGraphStructureStatement') or (not(*//xs:extension/@base))]">
+            <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='X3DStatement') or (not(*//xs:extension/@base))]">
                 <xsl:sort select="lower-case(@name)"/>
                 <xsl:variable name="concreteNodeName"  select="@name"/>
                 <xsl:variable name="initialX3dVersion" select="@initialX3dVersion"/>
@@ -1343,7 +1343,7 @@ Recommended tool:
         </xsl:element>
 
         <xsl:element name="Statements">
-            <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='SceneGraphStructureStatement']">
+            <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='X3DStatement']">
                 <xsl:sort select="lower-case(@name)"/>
                 <xsl:variable name="statementName" select="@name"/>
                 <xsl:element name="Statement">
@@ -1366,12 +1366,13 @@ Recommended tool:
                             </xsl:element>
                         </xsl:if>
                         <xsl:variable name="nonNodeFieldList" select="
-							  xs:complexType/xs:complexContent/xs:extension/xs:attribute
-                            | xs:annotation/xs:appinfo/xs:attribute"/>
+							  xs:complexType/xs:complexContent/xs:extension/xs:attribute |
+                              xs:annotation/xs:appinfo/xs:attribute | 
+                              /xs:schema/xs:attributeGroup[@name = 'globalAttributes']/xs:attribute"/>
                         <xsl:variable name="nodeFieldList" select="xs:annotation/xs:appinfo/xs:element"/>
                         <xsl:variable name="allFieldList" select="$nonNodeFieldList[(@name!='containerField') and (@name!='additionalInterface') and (@name!='componentName') and (@name!='componentLevel')] | $nodeFieldList"/>
 						
-			<xsl:for-each select="$allFieldList">
+                        <xsl:for-each select="$allFieldList">
                             <xsl:sort select="lower-case(@name)"/>
 							<!-- debug diagnostic
 							<xsl:if test="($statementName = 'X3D')">
@@ -1388,6 +1389,22 @@ Recommended tool:
                                 <xsl:with-param name="isStatement">true</xsl:with-param>
                             </xsl:call-template>
                         </xsl:for-each>
+                            <!-- debug diagnostic
+                        <xsl:for-each select="/xs:schema/xs:attributeGroup[@name = 'globalAttributes']/xs:attribute">
+                            <xsl:message>
+                                <xsl:text>*** Node </xsl:text>
+                                <xsl:value-of select="$statementName"/>
+                                <xsl:text> has xs:attributeGroup/@ref=</xsl:text>
+                                <xsl:value-of select="$attributeGroupRef"/>
+                                <xsl:text>, creating field for xs:attribute/@name=</xsl:text>
+                                <xsl:value-of select="@name"/>
+                            </xsl:message>
+                            <xsl:call-template name="doField">
+                                <xsl:with-param name="containerName" select="$statementName"/>
+                                <xsl:with-param name="isStatement">true</xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:for-each>
+                             -->
                         <xsl:variable name="contentModelGroups" select=".//xs:group[(@ref != 'ChildContentModelSceneGraphStructure')]"/>
                         <xsl:variable name="contentModelElements" select="xs:complexType//xs:element[(@ref!='IS')]"/>
                         <xsl:variable name="hasContentModel" select="((count($contentModelGroups) + count($contentModelElements)) gt 0)"/>
@@ -1445,7 +1462,7 @@ Recommended tool:
     <xsl:param name="containerName"/>
     <xsl:param name="isStatement">false</xsl:param>
 	<!-- debug diagnostic
-	<xsl:if test="(@name='style')">
+	<xsl:if test="(@name='style') and ($containerName='ROUTE')">
 		<xsl:message>
 			<xsl:text>*** doField name=</xsl:text>
 			<xsl:value-of select="@name"/>
@@ -1454,8 +1471,8 @@ Recommended tool:
 			<xsl:text>) found! @type=</xsl:text>
 			<xsl:value-of select="@type"/>
 		</xsl:message>
-	</xsl:if> -->
-	
+	</xsl:if>
+	 -->
     <xsl:variable name="fieldName" select="@name"/>
     <xsl:variable name="givenType">
         <xsl:choose>
@@ -1887,8 +1904,23 @@ Recommended tool:
                     <!-- inheritedFrom attribute -->
                     <xsl:if test="($originInheritedFrom != $containerName) and not($containerName = 'X3DNode') "><!-- avoid DEF, USE, class -->
                         <xsl:choose>
+                            <xsl:when test="(//xs:element[@name = $containerName]//xs:extension[@base='X3DStatement']) and
+                                            (($fieldName = 'class') or ($fieldName = 'id') or ($fieldName = 'style'))">
+                                <!-- debug diagnostic
+                                    <xsl:message>
+                                        <xsl:text>*** found statement </xsl:text>
+                                        <xsl:value-of select="$containerName"/>
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of select="$fieldName"/>
+                                        <xsl:text> inheritedFrom=X3DStatement </xsl:text>
+                                    </xsl:message>
+                                -->
+                                <xsl:attribute name="inheritedFrom">
+                                    <xsl:text>X3DStatement</xsl:text>
+                                </xsl:attribute>
+                            </xsl:when>
                             <xsl:when test="($originInheritedFrom = 'X3DNodeMixedContent') or ($fieldName = 'DEF') or ($fieldName = 'USE') or
-                                            ($fieldName = 'class') or ($fieldName = 'id') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
+                                            ($fieldName = 'class') or ($fieldName = 'id') or ($fieldName = 'style') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
                                 <xsl:attribute name="inheritedFrom">
                                     <xsl:text>X3DNode</xsl:text>
                                 </xsl:attribute>
