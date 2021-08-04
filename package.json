@@ -15,7 +15,7 @@
     "node-mkdirp": "*",
     "three": "*",
     "xml2js": "^0.4.23",
-    "xmldom": "*",
+    "xmldom": "git://github.com/xmldom/xmldom.git#v0.7.0",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
