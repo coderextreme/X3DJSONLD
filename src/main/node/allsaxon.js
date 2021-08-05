@@ -16,6 +16,7 @@ java.classpath.push("target/X3DJSONLD-1.0-SNAPSHOT.jar");
 java.classpath.push("../target/X3DJSONLD-1.0-SNAPSHOT.jar");
 java.classpath.push("../../target/X3DJSONLD-1.0-SNAPSHOT.jar");
 java.classpath.push("../../../target/X3DJSONLD-1.0-SNAPSHOT.jar");
+java.classpath.push(".");
 
 function translate(infiles) {
 	java.callStaticMethodSync("net.coderextreme.RunSaxon", "main", infiles);
