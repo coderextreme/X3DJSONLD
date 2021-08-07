@@ -50,6 +50,18 @@ convertJSON([
 	extension : ".js",
 	codeOutput : "../"
 	},
+	{ 
+	serializer : './CSerializer.js',
+	folder : "../c/net/coderextreme/",
+	extension : ".c",
+	codeOutput : "../"
+	},
+	{ 
+	serializer : './CppSerializer.js',
+	folder : "../cplusplus/net/coderextreme/",
+	extension : ".cpp",
+	codeOutput : "../"
+	},
 /*
 	{ 
 	serializer : './JavaScriptSerializer.js',
