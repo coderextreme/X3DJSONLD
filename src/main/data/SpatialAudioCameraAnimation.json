@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 April 2021"
+            "@content":"4 August 2021"
           },
           {
             "@name":"reference",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.medialab.teicrete.gr/minipages/x3domAudio"
+            "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio"
           },
           {
             "@name":"identifier",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"04 August 2021"
+            "@content":"07 August 2021"
           },
           {
             "@name":"generator",
@@ -87,7 +87,7 @@
           { "Viewpoint":
             {
               "@DEF":"Camera001",
-              "@description":"Camera001",
+              "@description":"Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view",
               "@jump":TRUE,
               "@orientation":[1.000000,0.000000,-0.000000,-0.523599],
               "@position":[0.000000,2000.000000,3500.000000],
@@ -225,11 +225,6 @@
                                       "-material":
                                         { "Material":
                                           {
-                                            "@diffuseColor":[0.345,0.345,0.882]
-                                          }
-                                        },
-                                        { "Material":
-                                          {
                                             "@ambientintensity":0.0933,
                                             "@diffusecolor":[1,1,1],
                                             "@emissivecolor":[0,0,0],
@@ -246,20 +241,15 @@
                                       "@lit":true,
                                       "@string":["Violin"],
                                       "@usegeocache":true,
-                                      "-IllegalChildNodeFieldNameNotFound":[
-                                        { "fontstyle":
+                                      "-fontStyle":
+                                        { "FontStyle":
                                           {
-                                            "@family":"'Times'",
-                                            "@horizontal":true,
-                                            "@justify":"BEGIN",
+                                            "@justify":["BEGIN"],
                                             "@lefttoright":true,
-                                            "@size":1,
-                                            "@spacing":1,
                                             "@style":"BOLD",
                                             "@toptobottom":true
                                           }
                                         }
-                                      ]
                                     }
                                   }
                               }
@@ -319,11 +309,6 @@
                                       "-material":
                                         { "Material":
                                           {
-                                            "@diffuseColor":[0.345,0.345,0.882]
-                                          }
-                                        },
-                                        { "Material":
-                                          {
                                             "@ambientintensity":0.0933,
                                             "@diffusecolor":[1,1,1],
                                             "@emissivecolor":[0,0,0],
@@ -340,20 +325,16 @@
                                       "@lit":true,
                                       "@string":["Saxophone"],
                                       "@usegeocache":true,
-                                      "-IllegalChildNodeFieldNameNotFound":[
-                                        { "fontstyle":
+                                      "-fontStyle":
+                                        { "FontStyle":
                                           {
-                                            "@family":"'Times'",
-                                            "@horizontal":true,
-                                            "@justify":"BEGIN",
+                                            "@family":["Times"],
+                                            "@justify":["BEGIN"],
                                             "@lefttoright":true,
-                                            "@size":1,
-                                            "@spacing":1,
                                             "@style":"BOLD",
                                             "@toptobottom":true
                                           }
                                         }
-                                      ]
                                     }
                                   }
                               }
@@ -365,6 +346,11 @@
                   }
                 }
               ]
+            }
+          },
+          { "ListenerPointSource":
+            {
+              "@trackCurrentView":true
             }
           },
           { "AudioDestination":
