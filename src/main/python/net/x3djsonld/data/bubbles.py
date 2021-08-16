@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    component(name='EnvironmentalEffects',level=1),
+    # component name='EnvironmentalEffects' level='1'/
     component(name='EnvironmentalEffects',level=3),
     component(name='Shaders',level=1),
     component(name='CubeMapTexturing',level=1),
