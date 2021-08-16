@@ -77,3 +77,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("DiscreteFrameStepper").setToField("set_fraction").setToNode("Interpolator3"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Interpolator3").setToField("set_rotation").setToNode("Transform3")))      ;
     X3D0.toFileX3D("../data/RotationTests.new.x3d");
+    process.exit(0);

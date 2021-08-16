@@ -2,386 +2,394 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.title = "ObliqueStrategies.x3d";
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "ObliqueStrategies.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "Text scripting and animation example using Oblique Strategies card set by Brian Eno.";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "creator";
+meta4.content = "Don Brutzman, John Kelly, Ben Cheng";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "created";
+meta5.content = "3 November 2013";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "modified";
+meta6.content = "10 November 2019";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "reference";
+meta7.content = "oblique.html";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "reference";
+meta8.content = "ObliqueStrategies.txt";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "reference";
+meta9.content = "ObliqueStrategiesScript.js";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "reference";
+meta10.content = "http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "reference";
+meta11.content = "http://www.eno-web.co.uk/obliques.html";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "reference";
+meta12.content = "http://gothpunk.com/haiku-intro.html";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "reference";
+meta13.content = "http://www.rtqe.net/ObliqueStrategies/OSintro.html";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "reference";
+meta14.content = "https://en.wikipedia.org/wiki/Oblique_Strategies";
+head1.meta[12] = meta14;
+
+let meta15 = browser.currentScene.createNode("meta");
+meta15.name = "subject";
+meta15.content = "Brian Eno, Oblique Strategies";
+head1.meta[13] = meta15;
+
+let meta16 = browser.currentScene.createNode("meta");
+meta16.name = "Image";
+meta16.content = "images/ObliqueStrategiesEntryScreen.png";
+head1.meta[14] = meta16;
+
+let meta17 = browser.currentScene.createNode("meta");
+meta17.name = "Sound";
+meta17.content = "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D";
+head1.meta[15] = meta17;
+
+let meta18 = browser.currentScene.createNode("meta");
+meta18.name = "Sound";
+meta18.content = "translate_tts_HelloX3D.mp3";
+head1.meta[16] = meta18;
+
+let meta19 = browser.currentScene.createNode("meta");
+meta19.name = "Sound";
+meta19.content = "translate_tts_HelloX3D.wav";
+head1.meta[17] = meta19;
+
+let meta20 = browser.currentScene.createNode("meta");
+meta20.name = "TODO";
+meta20.content = "multiliingual translation parameter";
+head1.meta[18] = meta20;
+
+let meta21 = browser.currentScene.createNode("meta");
+meta21.name = "reference";
+meta21.content = "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech";
+head1.meta[19] = meta21;
+
+let meta22 = browser.currentScene.createNode("meta");
+meta22.name = "reference";
+meta22.content = "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html";
+head1.meta[20] = meta22;
+
+let meta23 = browser.currentScene.createNode("meta");
+meta23.name = "warning";
+meta23.content = "under development, scene Sound/AudioClip triggering (or retrieved file format) not working";
+head1.meta[21] = meta23;
+
+let meta24 = browser.currentScene.createNode("meta");
+meta24.name = "warning";
+meta24.content = "TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];";
+head1.meta[22] = meta24;
+
+let meta25 = browser.currentScene.createNode("meta");
+meta25.name = "reference";
+meta25.content = "https://gist.github.com/alotaiba/1728771";
+head1.meta[23] = meta25;
+
+let meta26 = browser.currentScene.createNode("meta");
+meta26.name = "reference";
+meta26.content = "https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api";
+head1.meta[24] = meta26;
+
+let meta27 = browser.currentScene.createNode("meta");
+meta27.name = "Sound";
+meta27.content = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4";
+head1.meta[25] = meta27;
+
+let meta28 = browser.currentScene.createNode("meta");
+meta28.name = "Sound";
+meta28.content = "translate_tts_HelloX3D4.mp3";
+head1.meta[26] = meta28;
+
+let meta29 = browser.currentScene.createNode("meta");
+meta29.name = "reference";
+meta29.content = "https://cloud.google.com/translate/docs/basic/translating-text";
+head1.meta[27] = meta29;
+
+let meta30 = browser.currentScene.createNode("meta");
+meta30.name = "identifier";
+meta30.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d";
+head1.meta[28] = meta30;
+
+let meta31 = browser.currentScene.createNode("meta");
+meta31.name = "generator";
+meta31.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[29] = meta31;
+
+let meta32 = browser.currentScene.createNode("meta");
+meta32.name = "license";
+meta32.content = "../license.html";
+head1.meta[30] = meta32;
+
+head = head1;
+
+let WorldInfo34 = browser.currentScene.createNode("WorldInfo");
+WorldInfo34.title = "ObliqueStrategies.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo2;
+browser.currentScene.children[0] = WorldInfo34;
 
-let NavigationInfo3 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo3.type = new MFString(new java.lang.String["NONE"]);
-browser.currentScene.children[1] = NavigationInfo3;
+let NavigationInfo35 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo35.type = new MFString(new java.lang.String["NONE"]);
+browser.currentScene.children[1] = NavigationInfo35;
 
-let Background4 = browser.currentScene.createNode("Background");
-Background4.skyColor = new MFColor(new float[0.419608,0.427451,1]);
-browser.currentScene.children[2] = Background4;
+let Background36 = browser.currentScene.createNode("Background");
+Background36.skyColor = new MFColor(new float[0.419608,0.427451,1]);
+browser.currentScene.children[2] = Background36;
 
-let Transform5 = browser.currentScene.createNode("Transform");
-Transform5.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform5.translation = new SFVec3f(new float[0,1,0]);
-let TouchSensor6 = browser.currentScene.createNode("TouchSensor");
-TouchSensor6.DEF = "RandomTextClickedSensor";
-TouchSensor6.description = "Select to see a new strategy";
-Transform5.children = new MFNode();
+let Transform37 = browser.currentScene.createNode("Transform");
+Transform37.scale = new SFVec3f(new float[0.4,0.4,0.4]);
+Transform37.translation = new SFVec3f(new float[0,1,0]);
+let TouchSensor38 = browser.currentScene.createNode("TouchSensor");
+TouchSensor38.DEF = "RandomTextClickedSensor";
+TouchSensor38.description = "Select to see a new strategy";
+Transform37.children = new MFNode();
 
-Transform5.children[0] = TouchSensor6;
+Transform37.children[0] = TouchSensor38;
 
-let Shape7 = browser.currentScene.createNode("Shape");
-let Text8 = browser.currentScene.createNode("Text");
-Text8.string = new MFString(new java.lang.String["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"]);
-let FontStyle9 = browser.currentScene.createNode("FontStyle");
-FontStyle9.DEF = "MessageFont";
-FontStyle9.family = new MFString(new java.lang.String["SANS"]);
-FontStyle9.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle9.style = "BOLD";
-Text8.fontStyle = FontStyle9;
+let Shape39 = browser.currentScene.createNode("Shape");
+let Text40 = browser.currentScene.createNode("Text");
+Text40.string = new MFString(new java.lang.String["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"]);
+let FontStyle41 = browser.currentScene.createNode("FontStyle");
+FontStyle41.DEF = "MessageFont";
+FontStyle41.family = new MFString(new java.lang.String["SANS"]);
+FontStyle41.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle41.style = "BOLD";
+Text40.fontStyle = FontStyle41;
 
-Shape7.geometry = Text8;
+Shape39.geometry = Text40;
 
-let Appearance10 = browser.currentScene.createNode("Appearance");
-let Material11 = browser.currentScene.createNode("Material");
-Material11.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance10.material = Material11;
+let Appearance42 = browser.currentScene.createNode("Appearance");
+let Material43 = browser.currentScene.createNode("Material");
+Material43.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance42.material = Material43;
 
-Shape7.appearance = Appearance10;
+Shape39.appearance = Appearance42;
 
-Transform5.children[1] = Shape7;
+Transform37.children[1] = Shape39;
 
-let Transform12 = browser.currentScene.createNode("Transform");
-Transform12.scale = new SFVec3f(new float[10,3,1]);
-let Shape13 = browser.currentScene.createNode("Shape");
-Shape13.DEF = "HeadlineClickSurface";
-let IndexedFaceSet14 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet14.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
-IndexedFaceSet14.solid = False;
-let Coordinate15 = browser.currentScene.createNode("Coordinate");
-Coordinate15.point = new MFVec3f(new float[1,1,0,1,-1,0,-1,-1,0,-1,1,0]);
-IndexedFaceSet14.coord = Coordinate15;
+let Transform44 = browser.currentScene.createNode("Transform");
+Transform44.scale = new SFVec3f(new float[10,3,1]);
+let Shape45 = browser.currentScene.createNode("Shape");
+Shape45.DEF = "HeadlineClickSurface";
+let IndexedFaceSet46 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet46.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
+IndexedFaceSet46.solid = False;
+let Coordinate47 = browser.currentScene.createNode("Coordinate");
+Coordinate47.point = new MFVec3f(new float[1,1,0,1,-1,0,-1,-1,0,-1,1,0]);
+IndexedFaceSet46.coord = Coordinate47;
 
-Shape13.geometry = IndexedFaceSet14;
+Shape45.geometry = IndexedFaceSet46;
 
-let Appearance16 = browser.currentScene.createNode("Appearance");
-let Material17 = browser.currentScene.createNode("Material");
-Material17.ambientIntensity = 0.245763;
-Material17.diffuseColor = new SFColor(new float[0.34773,0.090909,0.005289]);
-Material17.shininess = 0.07;
-Material17.specularColor = new SFColor(new float[0.336735,0.051091,0.051091]);
-Material17.transparency = 0.8;
-Appearance16.material = Material17;
+let Appearance48 = browser.currentScene.createNode("Appearance");
+let Material49 = browser.currentScene.createNode("Material");
+Material49.ambientIntensity = 0.245763;
+Material49.diffuseColor = new SFColor(new float[0.34773,0.090909,0.005289]);
+Material49.shininess = 0.07;
+Material49.specularColor = new SFColor(new float[0.336735,0.051091,0.051091]);
+Material49.transparency = 0.8;
+Appearance48.material = Material49;
 
-Shape13.appearance = Appearance16;
+Shape45.appearance = Appearance48;
 
-Transform12.children = new MFNode();
+Transform44.children = new MFNode();
 
-Transform12.children[0] = Shape13;
+Transform44.children[0] = Shape45;
 
-Transform5.children[2] = Transform12;
+Transform37.children[2] = Transform44;
 
-browser.currentScene.children[3] = Transform5;
+browser.currentScene.children[3] = Transform37;
 
-let Script18 = browser.currentScene.createNode("Script");
-Script18.DEF = "TextScript";
-Script18.url = new MFString(new java.lang.String["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]);
+let Script50 = browser.currentScene.createNode("Script");
+Script50.DEF = "TextScript";
+Script50.url = new MFString(new java.lang.String["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]);
 //initialize() method includes unit test to printAllStrategies() to console
 //TODO insert field definitions here (index string_changed previous next random) and then animate!
-let field19 = browser.currentScene.createNode("field");
-field19.name = "index";
-field19.accessType = "initializeOnly";
-field19.appinfo = "index for active strategy card, -1 means no selection";
-field19.type = "SFInt32";
-field19.value = "0";
-Script18.field = new MFNode();
+let field51 = browser.currentScene.createNode("field");
+field51.name = "index";
+field51.accessType = "initializeOnly";
+field51.appinfo = "index for active strategy card, -1 means no selection";
+field51.type = "SFInt32";
+field51.value = "0";
+Script50.field = new MFNode();
 
-Script18.field[0] = field19;
+Script50.field[0] = field51;
 
-let field20 = browser.currentScene.createNode("field");
-field20.name = "string_changed";
-field20.accessType = "outputOnly";
-field20.appinfo = "latest strategy card value";
-field20.type = "MFString";
-Script18.field[1] = field20;
+let field52 = browser.currentScene.createNode("field");
+field52.name = "string_changed";
+field52.accessType = "outputOnly";
+field52.appinfo = "latest strategy card value";
+field52.type = "MFString";
+Script50.field[1] = field52;
 
-let field21 = browser.currentScene.createNode("field");
-field21.name = "textToSpeechUrl";
-field21.accessType = "outputOnly";
-field21.appinfo = "\"url to invoke Google Translate\"";
-field21.type = "MFString";
-Script18.field[2] = field21;
+let field53 = browser.currentScene.createNode("field");
+field53.name = "textToSpeechUrl";
+field53.accessType = "outputOnly";
+field53.appinfo = "\"url to invoke Google Translate\"";
+field53.type = "MFString";
+Script50.field[2] = field53;
 
-let field22 = browser.currentScene.createNode("field");
-field22.name = "newCardTime";
-field22.accessType = "outputOnly";
-field22.appinfo = "activate Sound node";
-field22.type = "SFTime";
-Script18.field[3] = field22;
+let field54 = browser.currentScene.createNode("field");
+field54.name = "newCardTime";
+field54.accessType = "outputOnly";
+field54.appinfo = "activate Sound node";
+field54.type = "SFTime";
+Script50.field[3] = field54;
 
-let field23 = browser.currentScene.createNode("field");
-field23.name = "selectPreviousCard";
-field23.accessType = "inputOnly";
-field23.type = "SFBool";
-Script18.field[4] = field23;
+let field55 = browser.currentScene.createNode("field");
+field55.name = "selectPreviousCard";
+field55.accessType = "inputOnly";
+field55.type = "SFBool";
+Script50.field[4] = field55;
 
-let field24 = browser.currentScene.createNode("field");
-field24.name = "selectNextCard";
-field24.accessType = "inputOnly";
-field24.type = "SFBool";
-Script18.field[5] = field24;
+let field56 = browser.currentScene.createNode("field");
+field56.name = "selectNextCard";
+field56.accessType = "inputOnly";
+field56.type = "SFBool";
+Script50.field[5] = field56;
 
-let field25 = browser.currentScene.createNode("field");
-field25.name = "selectRandomCard";
-field25.accessType = "inputOnly";
-field25.type = "SFBool";
-Script18.field[6] = field25;
+let field57 = browser.currentScene.createNode("field");
+field57.name = "selectRandomCard";
+field57.accessType = "inputOnly";
+field57.type = "SFBool";
+Script50.field[6] = field57;
 
-let field26 = browser.currentScene.createNode("field");
-field26.name = "traceEnabled";
-field26.accessType = "initializeOnly";
-field26.appinfo = "controls console tracing";
-field26.type = "SFBool";
-field26.value = "true";
-Script18.field[7] = field26;
+let field58 = browser.currentScene.createNode("field");
+field58.name = "traceEnabled";
+field58.accessType = "initializeOnly";
+field58.appinfo = "controls console tracing";
+field58.type = "SFBool";
+field58.value = "true";
+Script50.field[7] = field58;
 
-browser.currentScene.children[4] = Script18;
-
-let Transform27 = browser.currentScene.createNode("Transform");
-Transform27.DEF = "CardTransform";
-Transform27.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform27.translation = new SFVec3f(new float[0,-1.5,0]);
-let Shape28 = browser.currentScene.createNode("Shape");
-let Text29 = browser.currentScene.createNode("Text");
-Text29.DEF = "CardText";
-let FontStyle30 = browser.currentScene.createNode("FontStyle");
-FontStyle30.family = new MFString(new java.lang.String["SANS"]);
-FontStyle30.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle30.style = "BOLD";
-Text29.fontStyle = FontStyle30;
-
-Shape28.geometry = Text29;
-
-let Appearance31 = browser.currentScene.createNode("Appearance");
-let Material32 = browser.currentScene.createNode("Material");
-Material32.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance31.material = Material32;
-
-Shape28.appearance = Appearance31;
-
-Transform27.children = new MFNode();
-
-Transform27.children[0] = Shape28;
-
-let ROUTE33 = browser.currentScene.createNode("ROUTE");
-ROUTE33.fromField = "string_changed";
-ROUTE33.fromNode = "TextScript";
-ROUTE33.toField = "string";
-ROUTE33.toNode = "CardText";
-Transform27.children[1] = ROUTE33;
-
-let Sound34 = browser.currentScene.createNode("Sound");
-Sound34.DEF = "CardSoundSpatialization";
-Sound34.maxBack = 100;
-Sound34.maxFront = 100;
-Sound34.minBack = 20;
-Sound34.minFront = 20;
-//Make sure the sound source AudioClip is audible at the user location
-//Not all X3D players seem to use the .mp3
-//&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
-//%20 is space character used in uri/url encoding
-let AudioClip35 = browser.currentScene.createNode("AudioClip");
-AudioClip35.DEF = "TextToSpeechAudioClip";
-AudioClip35.description = "sends strategy text google translate";
-AudioClip35.url = new MFString(new java.lang.String["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]);
-Sound34.source = AudioClip35;
-
-Transform27.children[2] = Sound34;
-
-let ROUTE36 = browser.currentScene.createNode("ROUTE");
-ROUTE36.fromField = "textToSpeechUrl";
-ROUTE36.fromNode = "TextScript";
-ROUTE36.toField = "url";
-ROUTE36.toNode = "TextToSpeechAudioClip";
-Transform27.children[3] = ROUTE36;
-
-let ROUTE37 = browser.currentScene.createNode("ROUTE");
-ROUTE37.fromField = "newCardTime";
-ROUTE37.fromNode = "TextScript";
-ROUTE37.toField = "startTime";
-ROUTE37.toNode = "TextToSpeechAudioClip";
-Transform27.children[4] = ROUTE37;
-
-browser.currentScene.children[5] = Transform27;
-
-let Transform38 = browser.currentScene.createNode("Transform");
-Transform38.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform38.translation = new SFVec3f(new float[-3.2,2.5,0]);
-let TouchSensor39 = browser.currentScene.createNode("TouchSensor");
-TouchSensor39.DEF = "PreviousTextClickedSensor";
-TouchSensor39.description = "Select to see previous strategy";
-Transform38.children = new MFNode();
-
-Transform38.children[0] = TouchSensor39;
-
-let ROUTE40 = browser.currentScene.createNode("ROUTE");
-ROUTE40.fromField = "isActive";
-ROUTE40.fromNode = "PreviousTextClickedSensor";
-ROUTE40.toField = "selectPreviousCard";
-ROUTE40.toNode = "TextScript";
-Transform38.children[1] = ROUTE40;
-
-let Shape41 = browser.currentScene.createNode("Shape");
-let Text42 = browser.currentScene.createNode("Text");
-Text42.string = new MFString(new java.lang.String["previous"]);
-let FontStyle43 = browser.currentScene.createNode("FontStyle");
-FontStyle43.USE = "MessageFont";
-Text42.fontStyle = FontStyle43;
-
-Shape41.geometry = Text42;
-
-let Appearance44 = browser.currentScene.createNode("Appearance");
-Appearance44.DEF = "InterfaceAppearance";
-let Material45 = browser.currentScene.createNode("Material");
-Material45.diffuseColor = new SFColor(new float[1,0,0.6]);
-Appearance44.material = Material45;
-
-Shape41.appearance = Appearance44;
-
-Transform38.children[2] = Shape41;
-
-let Transform46 = browser.currentScene.createNode("Transform");
-Transform46.scale = new SFVec3f(new float[2,0.6,1]);
-let Shape47 = browser.currentScene.createNode("Shape");
-Shape47.DEF = "TransparentClickSurface";
-//support Selectable Text with a scalable IFS
-let IndexedFaceSet48 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet48.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
-IndexedFaceSet48.solid = False;
-let Coordinate49 = browser.currentScene.createNode("Coordinate");
-Coordinate49.point = new MFVec3f(new float[1,1,0,1,-1,0,-1,-1,0,-1,1,0]);
-IndexedFaceSet48.coord = Coordinate49;
-
-Shape47.geometry = IndexedFaceSet48;
-
-let Appearance50 = browser.currentScene.createNode("Appearance");
-let Material51 = browser.currentScene.createNode("Material");
-Material51.transparency = 1;
-Appearance50.material = Material51;
-
-Shape47.appearance = Appearance50;
-
-Transform46.children = new MFNode();
-
-Transform46.children[0] = Shape47;
-
-Transform38.children[3] = Transform46;
-
-browser.currentScene.children[6] = Transform38;
-
-let Transform52 = browser.currentScene.createNode("Transform");
-Transform52.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform52.translation = new SFVec3f(new float[3.5,2.5,0]);
-let TouchSensor53 = browser.currentScene.createNode("TouchSensor");
-TouchSensor53.DEF = "NextTextClickedSensor";
-TouchSensor53.description = "Select to see next strategy";
-Transform52.children = new MFNode();
-
-Transform52.children[0] = TouchSensor53;
-
-let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromField = "isActive";
-ROUTE54.fromNode = "NextTextClickedSensor";
-ROUTE54.toField = "selectNextCard";
-ROUTE54.toNode = "TextScript";
-Transform52.children[1] = ROUTE54;
-
-let Shape55 = browser.currentScene.createNode("Shape");
-let Text56 = browser.currentScene.createNode("Text");
-Text56.string = new MFString(new java.lang.String["next"]);
-let FontStyle57 = browser.currentScene.createNode("FontStyle");
-FontStyle57.USE = "MessageFont";
-Text56.fontStyle = FontStyle57;
-
-Shape55.geometry = Text56;
-
-let Appearance58 = browser.currentScene.createNode("Appearance");
-Appearance58.USE = "InterfaceAppearance";
-Shape55.appearance = Appearance58;
-
-Transform52.children[2] = Shape55;
+browser.currentScene.children[4] = Script50;
 
 let Transform59 = browser.currentScene.createNode("Transform");
-Transform59.scale = new SFVec3f(new float[1.2,0.6,1]);
+Transform59.DEF = "CardTransform";
+Transform59.scale = new SFVec3f(new float[0.4,0.4,0.4]);
+Transform59.translation = new SFVec3f(new float[0,-1.5,0]);
 let Shape60 = browser.currentScene.createNode("Shape");
-Shape60.USE = "TransparentClickSurface";
+let Text61 = browser.currentScene.createNode("Text");
+Text61.DEF = "CardText";
+let FontStyle62 = browser.currentScene.createNode("FontStyle");
+FontStyle62.family = new MFString(new java.lang.String["SANS"]);
+FontStyle62.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle62.style = "BOLD";
+Text61.fontStyle = FontStyle62;
+
+Shape60.geometry = Text61;
+
+let Appearance63 = browser.currentScene.createNode("Appearance");
+let Material64 = browser.currentScene.createNode("Material");
+Material64.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance63.material = Material64;
+
+Shape60.appearance = Appearance63;
+
 Transform59.children = new MFNode();
 
 Transform59.children[0] = Shape60;
 
-Transform52.children[3] = Transform59;
+let ROUTE65 = browser.currentScene.createNode("ROUTE");
+ROUTE65.fromField = "string_changed";
+ROUTE65.fromNode = "TextScript";
+ROUTE65.toField = "string";
+ROUTE65.toNode = "CardText";
+Transform59.children[1] = ROUTE65;
 
-browser.currentScene.children[7] = Transform52;
+let Sound66 = browser.currentScene.createNode("Sound");
+Sound66.DEF = "CardSoundSpatialization";
+Sound66.maxBack = 100;
+Sound66.maxFront = 100;
+Sound66.minBack = 20;
+Sound66.minFront = 20;
+//Make sure the sound source AudioClip is audible at the user location
+//Not all X3D players seem to use the .mp3
+//&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
+//%20 is space character used in uri/url encoding
+let AudioClip67 = browser.currentScene.createNode("AudioClip");
+AudioClip67.DEF = "TextToSpeechAudioClip";
+AudioClip67.description = "sends strategy text google translate";
+AudioClip67.url = new MFString(new java.lang.String["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]);
+Sound66.source = AudioClip67;
 
-let Transform61 = browser.currentScene.createNode("Transform");
-Transform61.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform61.translation = new SFVec3f(new float[-3.3,-0.5,0]);
-let TouchSensor62 = browser.currentScene.createNode("TouchSensor");
-TouchSensor62.USE = "RandomTextClickedSensor";
-Transform61.children = new MFNode();
+Transform59.children[2] = Sound66;
 
-Transform61.children[0] = TouchSensor62;
+let ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromField = "textToSpeechUrl";
+ROUTE68.fromNode = "TextScript";
+ROUTE68.toField = "url";
+ROUTE68.toNode = "TextToSpeechAudioClip";
+Transform59.children[3] = ROUTE68;
 
-let ROUTE63 = browser.currentScene.createNode("ROUTE");
-ROUTE63.fromField = "isActive";
-ROUTE63.fromNode = "RandomTextClickedSensor";
-ROUTE63.toField = "selectRandomCard";
-ROUTE63.toNode = "TextScript";
-Transform61.children[1] = ROUTE63;
+let ROUTE69 = browser.currentScene.createNode("ROUTE");
+ROUTE69.fromField = "newCardTime";
+ROUTE69.fromNode = "TextScript";
+ROUTE69.toField = "startTime";
+ROUTE69.toNode = "TextToSpeechAudioClip";
+Transform59.children[4] = ROUTE69;
 
-let Shape64 = browser.currentScene.createNode("Shape");
-let Text65 = browser.currentScene.createNode("Text");
-Text65.string = new MFString(new java.lang.String["random"]);
-let FontStyle66 = browser.currentScene.createNode("FontStyle");
-FontStyle66.USE = "MessageFont";
-Text65.fontStyle = FontStyle66;
-
-Shape64.geometry = Text65;
-
-let Appearance67 = browser.currentScene.createNode("Appearance");
-Appearance67.USE = "InterfaceAppearance";
-Shape64.appearance = Appearance67;
-
-Transform61.children[2] = Shape64;
-
-let Transform68 = browser.currentScene.createNode("Transform");
-Transform68.scale = new SFVec3f(new float[1.8,0.6,1]);
-let Shape69 = browser.currentScene.createNode("Shape");
-Shape69.USE = "TransparentClickSurface";
-Transform68.children = new MFNode();
-
-Transform68.children[0] = Shape69;
-
-Transform61.children[3] = Transform68;
-
-browser.currentScene.children[8] = Transform61;
+browser.currentScene.children[5] = Transform59;
 
 let Transform70 = browser.currentScene.createNode("Transform");
 Transform70.scale = new SFVec3f(new float[0.4,0.4,0.4]);
-Transform70.translation = new SFVec3f(new float[3.3,-0.5,0]);
-let Anchor71 = browser.currentScene.createNode("Anchor");
-Anchor71.DEF = "TextToSpeechAnchor";
-Anchor71.description = "text to speech in browser";
-Anchor71.parameter = new MFString(new java.lang.String["target=_blank"]);
-Anchor71.url = new MFString(new java.lang.String["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]);
-let ROUTE72 = browser.currentScene.createNode("ROUTE");
-ROUTE72.fromField = "textToSpeechUrl";
-ROUTE72.fromNode = "TextScript";
-ROUTE72.toField = "url";
-ROUTE72.toNode = "TextToSpeechAnchor";
-Anchor71.children = new MFNode();
+Transform70.translation = new SFVec3f(new float[-3.2,2.5,0]);
+let TouchSensor71 = browser.currentScene.createNode("TouchSensor");
+TouchSensor71.DEF = "PreviousTextClickedSensor";
+TouchSensor71.description = "Select to see previous strategy";
+Transform70.children = new MFNode();
 
-Anchor71.children[0] = ROUTE72;
+Transform70.children[0] = TouchSensor71;
+
+let ROUTE72 = browser.currentScene.createNode("ROUTE");
+ROUTE72.fromField = "isActive";
+ROUTE72.fromNode = "PreviousTextClickedSensor";
+ROUTE72.toField = "selectPreviousCard";
+ROUTE72.toNode = "TextScript";
+Transform70.children[1] = ROUTE72;
 
 let Shape73 = browser.currentScene.createNode("Shape");
 let Text74 = browser.currentScene.createNode("Text");
-Text74.string = new MFString(new java.lang.String["speech"]);
+Text74.string = new MFString(new java.lang.String["previous"]);
 let FontStyle75 = browser.currentScene.createNode("FontStyle");
 FontStyle75.USE = "MessageFont";
 Text74.fontStyle = FontStyle75;
@@ -389,24 +397,176 @@ Text74.fontStyle = FontStyle75;
 Shape73.geometry = Text74;
 
 let Appearance76 = browser.currentScene.createNode("Appearance");
-Appearance76.USE = "InterfaceAppearance";
+Appearance76.DEF = "InterfaceAppearance";
+let Material77 = browser.currentScene.createNode("Material");
+Material77.diffuseColor = new SFColor(new float[1,0,0.6]);
+Appearance76.material = Material77;
+
 Shape73.appearance = Appearance76;
 
-Anchor71.children[1] = Shape73;
+Transform70.children[2] = Shape73;
 
-let Transform77 = browser.currentScene.createNode("Transform");
-Transform77.scale = new SFVec3f(new float[1.8,0.6,1]);
-let Shape78 = browser.currentScene.createNode("Shape");
-Shape78.USE = "TransparentClickSurface";
-Transform77.children = new MFNode();
+let Transform78 = browser.currentScene.createNode("Transform");
+Transform78.scale = new SFVec3f(new float[2,0.6,1]);
+let Shape79 = browser.currentScene.createNode("Shape");
+Shape79.DEF = "TransparentClickSurface";
+//support Selectable Text with a scalable IFS
+let IndexedFaceSet80 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet80.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
+IndexedFaceSet80.solid = False;
+let Coordinate81 = browser.currentScene.createNode("Coordinate");
+Coordinate81.point = new MFVec3f(new float[1,1,0,1,-1,0,-1,-1,0,-1,1,0]);
+IndexedFaceSet80.coord = Coordinate81;
 
-Transform77.children[0] = Shape78;
+Shape79.geometry = IndexedFaceSet80;
 
-Anchor71.children[2] = Transform77;
+let Appearance82 = browser.currentScene.createNode("Appearance");
+let Material83 = browser.currentScene.createNode("Material");
+Material83.transparency = 1;
+Appearance82.material = Material83;
 
-Transform70.children = new MFNode();
+Shape79.appearance = Appearance82;
 
-Transform70.children[0] = Anchor71;
+Transform78.children = new MFNode();
 
-browser.currentScene.children[9] = Transform70;
+Transform78.children[0] = Shape79;
+
+Transform70.children[3] = Transform78;
+
+browser.currentScene.children[6] = Transform70;
+
+let Transform84 = browser.currentScene.createNode("Transform");
+Transform84.scale = new SFVec3f(new float[0.4,0.4,0.4]);
+Transform84.translation = new SFVec3f(new float[3.5,2.5,0]);
+let TouchSensor85 = browser.currentScene.createNode("TouchSensor");
+TouchSensor85.DEF = "NextTextClickedSensor";
+TouchSensor85.description = "Select to see next strategy";
+Transform84.children = new MFNode();
+
+Transform84.children[0] = TouchSensor85;
+
+let ROUTE86 = browser.currentScene.createNode("ROUTE");
+ROUTE86.fromField = "isActive";
+ROUTE86.fromNode = "NextTextClickedSensor";
+ROUTE86.toField = "selectNextCard";
+ROUTE86.toNode = "TextScript";
+Transform84.children[1] = ROUTE86;
+
+let Shape87 = browser.currentScene.createNode("Shape");
+let Text88 = browser.currentScene.createNode("Text");
+Text88.string = new MFString(new java.lang.String["next"]);
+let FontStyle89 = browser.currentScene.createNode("FontStyle");
+FontStyle89.USE = "MessageFont";
+Text88.fontStyle = FontStyle89;
+
+Shape87.geometry = Text88;
+
+let Appearance90 = browser.currentScene.createNode("Appearance");
+Appearance90.USE = "InterfaceAppearance";
+Shape87.appearance = Appearance90;
+
+Transform84.children[2] = Shape87;
+
+let Transform91 = browser.currentScene.createNode("Transform");
+Transform91.scale = new SFVec3f(new float[1.2,0.6,1]);
+let Shape92 = browser.currentScene.createNode("Shape");
+Shape92.USE = "TransparentClickSurface";
+Transform91.children = new MFNode();
+
+Transform91.children[0] = Shape92;
+
+Transform84.children[3] = Transform91;
+
+browser.currentScene.children[7] = Transform84;
+
+let Transform93 = browser.currentScene.createNode("Transform");
+Transform93.scale = new SFVec3f(new float[0.4,0.4,0.4]);
+Transform93.translation = new SFVec3f(new float[-3.3,-0.5,0]);
+let TouchSensor94 = browser.currentScene.createNode("TouchSensor");
+TouchSensor94.USE = "RandomTextClickedSensor";
+Transform93.children = new MFNode();
+
+Transform93.children[0] = TouchSensor94;
+
+let ROUTE95 = browser.currentScene.createNode("ROUTE");
+ROUTE95.fromField = "isActive";
+ROUTE95.fromNode = "RandomTextClickedSensor";
+ROUTE95.toField = "selectRandomCard";
+ROUTE95.toNode = "TextScript";
+Transform93.children[1] = ROUTE95;
+
+let Shape96 = browser.currentScene.createNode("Shape");
+let Text97 = browser.currentScene.createNode("Text");
+Text97.string = new MFString(new java.lang.String["random"]);
+let FontStyle98 = browser.currentScene.createNode("FontStyle");
+FontStyle98.USE = "MessageFont";
+Text97.fontStyle = FontStyle98;
+
+Shape96.geometry = Text97;
+
+let Appearance99 = browser.currentScene.createNode("Appearance");
+Appearance99.USE = "InterfaceAppearance";
+Shape96.appearance = Appearance99;
+
+Transform93.children[2] = Shape96;
+
+let Transform100 = browser.currentScene.createNode("Transform");
+Transform100.scale = new SFVec3f(new float[1.8,0.6,1]);
+let Shape101 = browser.currentScene.createNode("Shape");
+Shape101.USE = "TransparentClickSurface";
+Transform100.children = new MFNode();
+
+Transform100.children[0] = Shape101;
+
+Transform93.children[3] = Transform100;
+
+browser.currentScene.children[8] = Transform93;
+
+let Transform102 = browser.currentScene.createNode("Transform");
+Transform102.scale = new SFVec3f(new float[0.4,0.4,0.4]);
+Transform102.translation = new SFVec3f(new float[3.3,-0.5,0]);
+let Anchor103 = browser.currentScene.createNode("Anchor");
+Anchor103.DEF = "TextToSpeechAnchor";
+Anchor103.description = "text to speech in browser";
+Anchor103.parameter = new MFString(new java.lang.String["target=_blank"]);
+Anchor103.url = new MFString(new java.lang.String["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]);
+let ROUTE104 = browser.currentScene.createNode("ROUTE");
+ROUTE104.fromField = "textToSpeechUrl";
+ROUTE104.fromNode = "TextScript";
+ROUTE104.toField = "url";
+ROUTE104.toNode = "TextToSpeechAnchor";
+Anchor103.children = new MFNode();
+
+Anchor103.children[0] = ROUTE104;
+
+let Shape105 = browser.currentScene.createNode("Shape");
+let Text106 = browser.currentScene.createNode("Text");
+Text106.string = new MFString(new java.lang.String["speech"]);
+let FontStyle107 = browser.currentScene.createNode("FontStyle");
+FontStyle107.USE = "MessageFont";
+Text106.fontStyle = FontStyle107;
+
+Shape105.geometry = Text106;
+
+let Appearance108 = browser.currentScene.createNode("Appearance");
+Appearance108.USE = "InterfaceAppearance";
+Shape105.appearance = Appearance108;
+
+Anchor103.children[1] = Shape105;
+
+let Transform109 = browser.currentScene.createNode("Transform");
+Transform109.scale = new SFVec3f(new float[1.8,0.6,1]);
+let Shape110 = browser.currentScene.createNode("Shape");
+Shape110.USE = "TransparentClickSurface";
+Transform109.children = new MFNode();
+
+Transform109.children[0] = Shape110;
+
+Anchor103.children[2] = Transform109;
+
+Transform102.children = new MFNode();
+
+Transform102.children[0] = Anchor103;
+
+browser.currentScene.children[9] = Transform102;
 

@@ -225,3 +225,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("FireSensor").setToField("set_bind").setToNode("MissileLaunchView"))
         .addComments((new autoclass.CommentsBlock("TODO fix type, add filter"))))      ;
     X3D0.toFileX3D("../data/F16.new.x3d");
+    process.exit(0);

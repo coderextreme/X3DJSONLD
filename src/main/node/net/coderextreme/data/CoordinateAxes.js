@@ -90,3 +90,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Z"]))
                       .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT"))))))))))      ;
     X3D0.toFileX3D("../data/CoordinateAxes.new.x3d");
+    process.exit(0);

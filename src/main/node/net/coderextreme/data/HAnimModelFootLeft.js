@@ -361,3 +361,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_tarsal_proximal_phalanx_4"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_tarsal_proximal_phalanx_5"))))      ;
     X3D0.toFileX3D("../data/HAnimModelFootLeft.new.x3d");
+    process.exit(0);

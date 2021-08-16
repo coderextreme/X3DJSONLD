@@ -332,3 +332,4 @@ var ProtoInstance1 = null;
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("L_SHOULDER_ANIMATOR").setToField("set_rotation").setToNode("hanim_l_shoulder"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("SKULLBASE_ANIMATOR").setToField("set_rotation").setToNode("hanim_skullbase")))      ;
     X3D0.toFileX3D("../data/AllenStandShootRifleM24.new.x3d");
+    process.exit(0);

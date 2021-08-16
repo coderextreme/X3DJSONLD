@@ -2,13 +2,68 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.0";
-let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.title = "Figure31_9SpinGroupPrototype.x3d";
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "Figure31_9SpinGroupPrototype.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "creator";
+meta3.content = "Figure 31.9, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "reference";
+meta4.content = "http://www.wiley.com/legacy/compbooks/vrml2sbk/ch31/31fig09.htm";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "translator";
+meta5.content = "Don Brutzman";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "created";
+meta6.content = "24 October 2000";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "modified";
+meta7.content = "20 October 2019";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "description";
+meta8.content = "The SpinGroup prototype is used to automatically spin a group of three long rectangular boxes. Click on blue crossbar to activate second SpinGroup.";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "identifier";
+meta9.content = "https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_9SpinGroupPrototype.x3d";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "generator";
+meta10.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "license";
+meta11.content = "../../license.html";
+head1.meta[9] = meta11;
+
+head = head1;
+
+let WorldInfo13 = browser.currentScene.createNode("WorldInfo");
+WorldInfo13.title = "Figure31_9SpinGroupPrototype.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo2;
+browser.currentScene.children[0] = WorldInfo13;
 
-let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="SpinGroup" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><!--NULL node initialization--></field>
 <field name="cycleInterval" accessType="inputOutput" type="SFTime" value="1"></field>
@@ -30,176 +85,131 @@ let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ROUTE fromField="value_changed" fromNode="Spinner" toField="set_rotation" toNode="SpinGroupTransform"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare3.name = "SpinGroup";
-let ProtoInterface4 = browser.currentScene.createNode("ProtoInterface");
-let field5 = browser.currentScene.createNode("field");
-field5.name = "children";
-field5.accessType = "inputOutput";
-field5.type = "MFNode";
+ProtoDeclare14.name = "SpinGroup";
+let ProtoInterface15 = browser.currentScene.createNode("ProtoInterface");
+let field16 = browser.currentScene.createNode("field");
+field16.name = "children";
+field16.accessType = "inputOutput";
+field16.type = "MFNode";
 //NULL node initialization
-ProtoInterface4.field = new MFNode();
+ProtoInterface15.field = new MFNode();
 
-ProtoInterface4.field[0] = field5;
+ProtoInterface15.field[0] = field16;
 
-let field6 = browser.currentScene.createNode("field");
-field6.name = "cycleInterval";
-field6.accessType = "inputOutput";
-field6.type = "SFTime";
-field6.value = "1";
-ProtoInterface4.field[1] = field6;
+let field17 = browser.currentScene.createNode("field");
+field17.name = "cycleInterval";
+field17.accessType = "inputOutput";
+field17.type = "SFTime";
+field17.value = "1";
+ProtoInterface15.field[1] = field17;
 
-let field7 = browser.currentScene.createNode("field");
-field7.name = "loop";
-field7.accessType = "inputOutput";
-field7.type = "SFBool";
-field7.value = "false";
-ProtoInterface4.field[2] = field7;
+let field18 = browser.currentScene.createNode("field");
+field18.name = "loop";
+field18.accessType = "inputOutput";
+field18.type = "SFBool";
+field18.value = "false";
+ProtoInterface15.field[2] = field18;
 
-let field8 = browser.currentScene.createNode("field");
-field8.name = "startTime";
-field8.accessType = "inputOutput";
-field8.type = "SFTime";
-field8.value = "0";
-ProtoInterface4.field[3] = field8;
+let field19 = browser.currentScene.createNode("field");
+field19.name = "startTime";
+field19.accessType = "inputOutput";
+field19.type = "SFTime";
+field19.value = "0";
+ProtoInterface15.field[3] = field19;
 
-let field9 = browser.currentScene.createNode("field");
-field9.name = "stopTime";
-field9.accessType = "inputOutput";
-field9.type = "SFTime";
-field9.value = "0";
-ProtoInterface4.field[4] = field9;
+let field20 = browser.currentScene.createNode("field");
+field20.name = "stopTime";
+field20.accessType = "inputOutput";
+field20.type = "SFTime";
+field20.value = "0";
+ProtoInterface15.field[4] = field20;
 
-ProtoDeclare3.protoInterface = ProtoInterface4;
+ProtoDeclare14.protoInterface = ProtoInterface15;
 
-let ProtoBody10 = browser.currentScene.createNode("ProtoBody");
-let Transform11 = browser.currentScene.createNode("Transform");
-Transform11.DEF = "SpinGroupTransform";
-let IS12 = browser.currentScene.createNode("IS");
-let connect13 = browser.currentScene.createNode("connect");
-connect13.nodeField = "children";
-connect13.protoField = "children";
-IS12.connect = new MFNode();
+let ProtoBody21 = browser.currentScene.createNode("ProtoBody");
+let Transform22 = browser.currentScene.createNode("Transform");
+Transform22.DEF = "SpinGroupTransform";
+let IS23 = browser.currentScene.createNode("IS");
+let connect24 = browser.currentScene.createNode("connect");
+connect24.nodeField = "children";
+connect24.protoField = "children";
+IS23.connect = new MFNode();
 
-IS12.connect[0] = connect13;
+IS23.connect[0] = connect24;
 
-Transform11.iS = IS12;
+Transform22.iS = IS23;
 
-ProtoBody10.children = new MFNode();
+ProtoBody21.children = new MFNode();
 
-ProtoBody10.children[0] = Transform11;
+ProtoBody21.children[0] = Transform22;
 
 //following nodes will not be rendered, only the first node of a ProtoBody is drawn
-let TimeSensor14 = browser.currentScene.createNode("TimeSensor");
-TimeSensor14.DEF = "SpinGroupClock";
-let IS15 = browser.currentScene.createNode("IS");
-let connect16 = browser.currentScene.createNode("connect");
-connect16.nodeField = "cycleInterval";
-connect16.protoField = "cycleInterval";
-IS15.connect = new MFNode();
+let TimeSensor25 = browser.currentScene.createNode("TimeSensor");
+TimeSensor25.DEF = "SpinGroupClock";
+let IS26 = browser.currentScene.createNode("IS");
+let connect27 = browser.currentScene.createNode("connect");
+connect27.nodeField = "cycleInterval";
+connect27.protoField = "cycleInterval";
+IS26.connect = new MFNode();
 
-IS15.connect[0] = connect16;
+IS26.connect[0] = connect27;
 
-let connect17 = browser.currentScene.createNode("connect");
-connect17.nodeField = "loop";
-connect17.protoField = "loop";
-IS15.connect[1] = connect17;
+let connect28 = browser.currentScene.createNode("connect");
+connect28.nodeField = "loop";
+connect28.protoField = "loop";
+IS26.connect[1] = connect28;
 
-let connect18 = browser.currentScene.createNode("connect");
-connect18.nodeField = "startTime";
-connect18.protoField = "startTime";
-IS15.connect[2] = connect18;
+let connect29 = browser.currentScene.createNode("connect");
+connect29.nodeField = "startTime";
+connect29.protoField = "startTime";
+IS26.connect[2] = connect29;
 
-let connect19 = browser.currentScene.createNode("connect");
-connect19.nodeField = "stopTime";
-connect19.protoField = "stopTime";
-IS15.connect[3] = connect19;
+let connect30 = browser.currentScene.createNode("connect");
+connect30.nodeField = "stopTime";
+connect30.protoField = "stopTime";
+IS26.connect[3] = connect30;
 
-TimeSensor14.iS = IS15;
+TimeSensor25.iS = IS26;
 
-ProtoBody10.children[1] = TimeSensor14;
+ProtoBody21.children[1] = TimeSensor25;
 
-let OrientationInterpolator20 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator20.DEF = "Spinner";
-OrientationInterpolator20.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator20.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.14,0,1,0,6.28]);
-ProtoBody10.children[2] = OrientationInterpolator20;
+let OrientationInterpolator31 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator31.DEF = "Spinner";
+OrientationInterpolator31.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator31.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.14,0,1,0,6.28]);
+ProtoBody21.children[2] = OrientationInterpolator31;
 
-let ROUTE21 = browser.currentScene.createNode("ROUTE");
-ROUTE21.fromField = "fraction_changed";
-ROUTE21.fromNode = "SpinGroupClock";
-ROUTE21.toField = "set_fraction";
-ROUTE21.toNode = "Spinner";
-ProtoBody10.children[3] = ROUTE21;
+let ROUTE32 = browser.currentScene.createNode("ROUTE");
+ROUTE32.fromField = "fraction_changed";
+ROUTE32.fromNode = "SpinGroupClock";
+ROUTE32.toField = "set_fraction";
+ROUTE32.toNode = "Spinner";
+ProtoBody21.children[3] = ROUTE32;
 
-let ROUTE22 = browser.currentScene.createNode("ROUTE");
-ROUTE22.fromField = "value_changed";
-ROUTE22.fromNode = "Spinner";
-ROUTE22.toField = "set_rotation";
-ROUTE22.toNode = "SpinGroupTransform";
-ProtoBody10.children[4] = ROUTE22;
+let ROUTE33 = browser.currentScene.createNode("ROUTE");
+ROUTE33.fromField = "value_changed";
+ROUTE33.fromNode = "Spinner";
+ROUTE33.toField = "set_rotation";
+ROUTE33.toNode = "SpinGroupTransform";
+ProtoBody21.children[4] = ROUTE33;
 
-ProtoDeclare3.protoBody = ProtoBody10;
+ProtoDeclare14.protoBody = ProtoBody21;
 
-browser.currentScene.children[1] = ProtoDeclare3;
+browser.currentScene.children[1] = ProtoDeclare14;
 
 //Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare).
-let Viewpoint23 = browser.currentScene.createNode("Viewpoint");
-Viewpoint23.description = "Click on blue crossbar to activate second SpinGroup";
-Viewpoint23.orientation = new SFRotation(new float[1,0,0,-0.52]);
-Viewpoint23.position = new SFVec3f(new float[0,18,30]);
-browser.currentScene.children[2] = Viewpoint23;
+let Viewpoint34 = browser.currentScene.createNode("Viewpoint");
+Viewpoint34.description = "Click on blue crossbar to activate second SpinGroup";
+Viewpoint34.orientation = new SFRotation(new float[1,0,0,-0.52]);
+Viewpoint34.position = new SFVec3f(new float[0,18,30]);
+browser.currentScene.children[2] = Viewpoint34;
 
 //Create an instance, meaning actual nodes that render
-let ProtoInstance24 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance24.name = "SpinGroup";
-let fieldValue25 = browser.currentScene.createNode("fieldValue");
-fieldValue25.name = "cycleInterval";
-fieldValue25.value = "8";
-ProtoInstance24.fieldValue = new MFNode();
-
-ProtoInstance24.fieldValue[0] = fieldValue25;
-
-let fieldValue26 = browser.currentScene.createNode("fieldValue");
-fieldValue26.name = "loop";
-fieldValue26.value = "true";
-ProtoInstance24.fieldValue[1] = fieldValue26;
-
-let fieldValue27 = browser.currentScene.createNode("fieldValue");
-fieldValue27.name = "children";
-let Shape28 = browser.currentScene.createNode("Shape");
-let Box29 = browser.currentScene.createNode("Box");
-Box29.size = new SFVec3f(new float[25,2,2]);
-Shape28.geometry = Box29;
-
-let Appearance30 = browser.currentScene.createNode("Appearance");
-Appearance30.DEF = "Green";
-let Material31 = browser.currentScene.createNode("Material");
-Material31.diffuseColor = new SFColor(new float[0,1,0.3]);
-Appearance30.material = Material31;
-
-Shape28.appearance = Appearance30;
-
-fieldValue27.children = new MFNode();
-
-fieldValue27.children[0] = Shape28;
-
-let Shape32 = browser.currentScene.createNode("Shape");
-let Box33 = browser.currentScene.createNode("Box");
-Box33.size = new SFVec3f(new float[2,25,2]);
-Shape32.geometry = Box33;
-
-let Appearance34 = browser.currentScene.createNode("Appearance");
-Appearance34.USE = "Green";
-Shape32.appearance = Appearance34;
-
-fieldValue27.children[1] = Shape32;
-
 let ProtoInstance35 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance35.name = "SpinGroup";
-ProtoInstance35.DEF = "SecondSpinGroup";
 let fieldValue36 = browser.currentScene.createNode("fieldValue");
 fieldValue36.name = "cycleInterval";
-fieldValue36.value = "4";
+fieldValue36.value = "8";
 ProtoInstance35.fieldValue = new MFNode();
 
 ProtoInstance35.fieldValue[0] = fieldValue36;
@@ -210,46 +220,91 @@ fieldValue37.value = "true";
 ProtoInstance35.fieldValue[1] = fieldValue37;
 
 let fieldValue38 = browser.currentScene.createNode("fieldValue");
-fieldValue38.name = "stopTime";
-fieldValue38.value = "1";
-ProtoInstance35.fieldValue[2] = fieldValue38;
+fieldValue38.name = "children";
+let Shape39 = browser.currentScene.createNode("Shape");
+let Box40 = browser.currentScene.createNode("Box");
+Box40.size = new SFVec3f(new float[25,2,2]);
+Shape39.geometry = Box40;
 
-let fieldValue39 = browser.currentScene.createNode("fieldValue");
-fieldValue39.name = "children";
-let TouchSensor40 = browser.currentScene.createNode("TouchSensor");
-TouchSensor40.DEF = "ActivateSecondSpinGroup";
-TouchSensor40.description = "Activate second SpinGroup by clicking blue bar";
-fieldValue39.children = new MFNode();
+let Appearance41 = browser.currentScene.createNode("Appearance");
+Appearance41.DEF = "Green";
+let Material42 = browser.currentScene.createNode("Material");
+Material42.diffuseColor = new SFColor(new float[0,1,0.3]);
+Appearance41.material = Material42;
 
-fieldValue39.children[0] = TouchSensor40;
+Shape39.appearance = Appearance41;
 
-let Shape41 = browser.currentScene.createNode("Shape");
-let Box42 = browser.currentScene.createNode("Box");
-Box42.size = new SFVec3f(new float[2,2.05,25]);
-Shape41.geometry = Box42;
+fieldValue38.children = new MFNode();
 
-let Appearance43 = browser.currentScene.createNode("Appearance");
-let Material44 = browser.currentScene.createNode("Material");
-Material44.diffuseColor = new SFColor(new float[0,0.3,1]);
-Appearance43.material = Material44;
+fieldValue38.children[0] = Shape39;
 
-Shape41.appearance = Appearance43;
+let Shape43 = browser.currentScene.createNode("Shape");
+let Box44 = browser.currentScene.createNode("Box");
+Box44.size = new SFVec3f(new float[2,25,2]);
+Shape43.geometry = Box44;
 
-fieldValue39.children[1] = Shape41;
+let Appearance45 = browser.currentScene.createNode("Appearance");
+Appearance45.USE = "Green";
+Shape43.appearance = Appearance45;
 
-ProtoInstance35.fieldValue[3] = fieldValue39;
+fieldValue38.children[1] = Shape43;
+
+let ProtoInstance46 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance46.name = "SpinGroup";
+ProtoInstance46.DEF = "SecondSpinGroup";
+let fieldValue47 = browser.currentScene.createNode("fieldValue");
+fieldValue47.name = "cycleInterval";
+fieldValue47.value = "4";
+ProtoInstance46.fieldValue = new MFNode();
+
+ProtoInstance46.fieldValue[0] = fieldValue47;
+
+let fieldValue48 = browser.currentScene.createNode("fieldValue");
+fieldValue48.name = "loop";
+fieldValue48.value = "true";
+ProtoInstance46.fieldValue[1] = fieldValue48;
+
+let fieldValue49 = browser.currentScene.createNode("fieldValue");
+fieldValue49.name = "stopTime";
+fieldValue49.value = "1";
+ProtoInstance46.fieldValue[2] = fieldValue49;
+
+let fieldValue50 = browser.currentScene.createNode("fieldValue");
+fieldValue50.name = "children";
+let TouchSensor51 = browser.currentScene.createNode("TouchSensor");
+TouchSensor51.DEF = "ActivateSecondSpinGroup";
+TouchSensor51.description = "Activate second SpinGroup by clicking blue bar";
+fieldValue50.children = new MFNode();
+
+fieldValue50.children[0] = TouchSensor51;
+
+let Shape52 = browser.currentScene.createNode("Shape");
+let Box53 = browser.currentScene.createNode("Box");
+Box53.size = new SFVec3f(new float[2,2.05,25]);
+Shape52.geometry = Box53;
+
+let Appearance54 = browser.currentScene.createNode("Appearance");
+let Material55 = browser.currentScene.createNode("Material");
+Material55.diffuseColor = new SFColor(new float[0,0.3,1]);
+Appearance54.material = Material55;
+
+Shape52.appearance = Appearance54;
+
+fieldValue50.children[1] = Shape52;
+
+ProtoInstance46.fieldValue[3] = fieldValue50;
 
 //stopTime > startTime ensures that initial state is stopped
-fieldValue27.children[2] = ProtoInstance35;
+fieldValue38.children[2] = ProtoInstance46;
 
-ProtoInstance24.fieldValue[2] = fieldValue27;
+ProtoInstance35.fieldValue[2] = fieldValue38;
 
-browser.currentScene.children[3] = ProtoInstance24;
+browser.currentScene.children[3] = ProtoInstance35;
 
-let ROUTE45 = browser.currentScene.createNode("ROUTE");
-ROUTE45.fromField = "touchTime";
-ROUTE45.fromNode = "ActivateSecondSpinGroup";
-ROUTE45.toField = "startTime";
-ROUTE45.toNode = "SecondSpinGroup";
-browser.currentScene.children[4] = ROUTE45;
+let ROUTE56 = browser.currentScene.createNode("ROUTE");
+ROUTE56.fromField = "touchTime";
+ROUTE56.fromNode = "ActivateSecondSpinGroup";
+ROUTE56.toField = "startTime";
+ROUTE56.toNode = "SecondSpinGroup";
+browser.currentScene.children[4] = ROUTE56;
 

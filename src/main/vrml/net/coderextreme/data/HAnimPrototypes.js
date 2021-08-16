@@ -2,8 +2,119 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
+let head1 = browser.currentScene.createNode("head");
+//Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "HAnimPrototypes.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes.";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "warning";
+meta4.content = "These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes.";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "warning";
+meta5.content = "Developer note: names for these HAnim Prototypes need to be corrected if used internally in an X3D player implementation (e.g. Joint to HAnimJoint).";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "warning";
+meta6.content = "Need support for skin";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "creator";
+meta7.content = "Ozan APAYDIN, Don Brutzman";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "translator";
+meta8.content = "Ozan APAYDIN, Don Brutzman";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "created";
+meta9.content = "15 November 2001";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "modified";
+meta10.content = "23 May 2020";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "TODO";
+meta11.content = "upgrade to match support requirements for HAnim 2.2";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "reference";
+meta12.content = "https://www.web3d.org/files/specifications/19774/V1.0/HAnim/HAnim.html";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "reference";
+meta13.content = "https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/hanim.html";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "reference";
+meta14.content = "http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl";
+head1.meta[12] = meta14;
+
+let meta15 = browser.currentScene.createNode("meta");
+meta15.name = "reference";
+meta15.content = "http://HAnim.org/Specifications/HAnim2001";
+head1.meta[13] = meta15;
+
+let meta16 = browser.currentScene.createNode("meta");
+meta16.name = "reference";
+meta16.content = "http://www.HAnim.org";
+head1.meta[14] = meta16;
+
+let meta17 = browser.currentScene.createNode("meta");
+meta17.name = "reference";
+meta17.content = "http://HAnim.org/Models";
+head1.meta[15] = meta17;
+
+let meta18 = browser.currentScene.createNode("meta");
+meta18.name = "reference";
+meta18.content = "http://HAnim.org/Specifications";
+head1.meta[16] = meta18;
+
+let meta19 = browser.currentScene.createNode("meta");
+meta19.name = "reference";
+meta19.content = "InterchangableActorsViaDynamicRoutingPrototypes.x3d";
+head1.meta[17] = meta19;
+
+let meta20 = browser.currentScene.createNode("meta");
+meta20.name = "identifier";
+meta20.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d";
+head1.meta[18] = meta20;
+
+let meta21 = browser.currentScene.createNode("meta");
+meta21.name = "generator";
+meta21.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[19] = meta21;
+
+let meta22 = browser.currentScene.createNode("meta");
+meta22.name = "license";
+meta22.content = "../license.html";
+head1.meta[20] = meta22;
+
+head = head1;
+
 //**********Human Model Protypes*********
-let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Humanoid1_1" appinfo="The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html" ><ProtoInterface><!--HAnim v1.1 field definitions--><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="version" accessType="inputOutput" appinfo="legal values: 1.1 or 2.0" type="SFString" value="1.1"></field>
@@ -45,249 +156,249 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare2.name = "Humanoid1_1";
-ProtoDeclare2.appinfo = "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.";
-ProtoDeclare2.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html";
-let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+ProtoDeclare24.name = "Humanoid1_1";
+ProtoDeclare24.appinfo = "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.";
+ProtoDeclare24.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html";
+let ProtoInterface25 = browser.currentScene.createNode("ProtoInterface");
 //HAnim v1.1 field definitions
-let field4 = browser.currentScene.createNode("field");
-field4.name = "name";
-field4.accessType = "inputOutput";
-field4.type = "SFString";
-ProtoInterface3.field = new MFNode();
+let field26 = browser.currentScene.createNode("field");
+field26.name = "name";
+field26.accessType = "inputOutput";
+field26.type = "SFString";
+ProtoInterface25.field = new MFNode();
 
-ProtoInterface3.field[0] = field4;
+ProtoInterface25.field[0] = field26;
 
-let field5 = browser.currentScene.createNode("field");
-field5.name = "version";
-field5.accessType = "inputOutput";
-field5.appinfo = "legal values: 1.1 or 2.0";
-field5.type = "SFString";
-field5.value = "1.1";
-ProtoInterface3.field[1] = field5;
+let field27 = browser.currentScene.createNode("field");
+field27.name = "version";
+field27.accessType = "inputOutput";
+field27.appinfo = "legal values: 1.1 or 2.0";
+field27.type = "SFString";
+field27.value = "1.1";
+ProtoInterface25.field[1] = field27;
 
-let field6 = browser.currentScene.createNode("field");
-field6.name = "humanoidVersion";
-field6.accessType = "inputOutput";
-field6.appinfo = "Version of the humanoid being modeled. Hint: HAnim version 2.0";
-field6.type = "SFString";
-ProtoInterface3.field[2] = field6;
+let field28 = browser.currentScene.createNode("field");
+field28.name = "humanoidVersion";
+field28.accessType = "inputOutput";
+field28.appinfo = "Version of the humanoid being modeled. Hint: HAnim version 2.0";
+field28.type = "SFString";
+ProtoInterface25.field[2] = field28;
 
-let field7 = browser.currentScene.createNode("field");
-field7.name = "info";
-field7.accessType = "inputOutput";
-field7.type = "MFString";
-ProtoInterface3.field[3] = field7;
+let field29 = browser.currentScene.createNode("field");
+field29.name = "info";
+field29.accessType = "inputOutput";
+field29.type = "MFString";
+ProtoInterface25.field[3] = field29;
 
-let field8 = browser.currentScene.createNode("field");
-field8.name = "translation";
-field8.accessType = "inputOutput";
-field8.type = "SFVec3f";
-field8.value = "0 0 0";
-ProtoInterface3.field[4] = field8;
+let field30 = browser.currentScene.createNode("field");
+field30.name = "translation";
+field30.accessType = "inputOutput";
+field30.type = "SFVec3f";
+field30.value = "0 0 0";
+ProtoInterface25.field[4] = field30;
 
-let field9 = browser.currentScene.createNode("field");
-field9.name = "rotation";
-field9.accessType = "inputOutput";
-field9.type = "SFRotation";
-field9.value = "0 0 1 0";
-ProtoInterface3.field[5] = field9;
+let field31 = browser.currentScene.createNode("field");
+field31.name = "rotation";
+field31.accessType = "inputOutput";
+field31.type = "SFRotation";
+field31.value = "0 0 1 0";
+ProtoInterface25.field[5] = field31;
 
-let field10 = browser.currentScene.createNode("field");
-field10.name = "center";
-field10.accessType = "inputOutput";
-field10.type = "SFVec3f";
-field10.value = "0 0 0";
-ProtoInterface3.field[6] = field10;
+let field32 = browser.currentScene.createNode("field");
+field32.name = "center";
+field32.accessType = "inputOutput";
+field32.type = "SFVec3f";
+field32.value = "0 0 0";
+ProtoInterface25.field[6] = field32;
 
-let field11 = browser.currentScene.createNode("field");
-field11.name = "scale";
-field11.accessType = "inputOutput";
-field11.type = "SFVec3f";
-field11.value = "1 1 1";
-ProtoInterface3.field[7] = field11;
+let field33 = browser.currentScene.createNode("field");
+field33.name = "scale";
+field33.accessType = "inputOutput";
+field33.type = "SFVec3f";
+field33.value = "1 1 1";
+ProtoInterface25.field[7] = field33;
 
-let field12 = browser.currentScene.createNode("field");
-field12.name = "scaleOrientation";
-field12.accessType = "inputOutput";
-field12.type = "SFRotation";
-field12.value = "0 0 1 0";
-ProtoInterface3.field[8] = field12;
+let field34 = browser.currentScene.createNode("field");
+field34.name = "scaleOrientation";
+field34.accessType = "inputOutput";
+field34.type = "SFRotation";
+field34.value = "0 0 1 0";
+ProtoInterface25.field[8] = field34;
 
-let field13 = browser.currentScene.createNode("field");
-field13.name = "bboxCenter";
-field13.accessType = "initializeOnly";
-field13.type = "SFVec3f";
-field13.value = "0 0 0";
-ProtoInterface3.field[9] = field13;
+let field35 = browser.currentScene.createNode("field");
+field35.name = "bboxCenter";
+field35.accessType = "initializeOnly";
+field35.type = "SFVec3f";
+field35.value = "0 0 0";
+ProtoInterface25.field[9] = field35;
 
-let field14 = browser.currentScene.createNode("field");
-field14.name = "bboxSize";
-field14.accessType = "initializeOnly";
-field14.type = "SFVec3f";
-field14.value = "-1 -1 -1";
-ProtoInterface3.field[10] = field14;
+let field36 = browser.currentScene.createNode("field");
+field36.name = "bboxSize";
+field36.accessType = "initializeOnly";
+field36.type = "SFVec3f";
+field36.value = "-1 -1 -1";
+ProtoInterface25.field[10] = field36;
 
-let field15 = browser.currentScene.createNode("field");
-field15.name = "humanoidBody";
-field15.accessType = "inputOutput";
-field15.appinfo = "HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.";
-field15.documentation = "http://HAnim.org/Specifications/HAnim1.1/#humanoid";
-field15.type = "MFNode";
-ProtoInterface3.field[11] = field15;
+let field37 = browser.currentScene.createNode("field");
+field37.name = "humanoidBody";
+field37.accessType = "inputOutput";
+field37.appinfo = "HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.";
+field37.documentation = "http://HAnim.org/Specifications/HAnim1.1/#humanoid";
+field37.type = "MFNode";
+ProtoInterface25.field[11] = field37;
 
-let field16 = browser.currentScene.createNode("field");
-field16.name = "skeleton";
-field16.accessType = "inputOutput";
-field16.appinfo = "HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody";
-field16.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html";
-field16.type = "MFNode";
-ProtoInterface3.field[12] = field16;
+let field38 = browser.currentScene.createNode("field");
+field38.name = "skeleton";
+field38.accessType = "inputOutput";
+field38.appinfo = "HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody";
+field38.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html";
+field38.type = "MFNode";
+ProtoInterface25.field[12] = field38;
 
-let field17 = browser.currentScene.createNode("field");
-field17.name = "joints";
-field17.accessType = "inputOutput";
-field17.appinfo = "Container field for Joint nodes";
-field17.type = "MFNode";
-ProtoInterface3.field[13] = field17;
+let field39 = browser.currentScene.createNode("field");
+field39.name = "joints";
+field39.accessType = "inputOutput";
+field39.appinfo = "Container field for Joint nodes";
+field39.type = "MFNode";
+ProtoInterface25.field[13] = field39;
 
-let field18 = browser.currentScene.createNode("field");
-field18.name = "segments";
-field18.accessType = "inputOutput";
-field18.appinfo = "Container field for Segment nodes";
-field18.type = "MFNode";
-ProtoInterface3.field[14] = field18;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "segments";
+field40.accessType = "inputOutput";
+field40.appinfo = "Container field for Segment nodes";
+field40.type = "MFNode";
+ProtoInterface25.field[14] = field40;
 
-let field19 = browser.currentScene.createNode("field");
-field19.name = "sites";
-field19.accessType = "inputOutput";
-field19.appinfo = "Container field for Site nodes";
-field19.type = "MFNode";
-ProtoInterface3.field[15] = field19;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "sites";
+field41.accessType = "inputOutput";
+field41.appinfo = "Container field for Site nodes";
+field41.type = "MFNode";
+ProtoInterface25.field[15] = field41;
 
-let field20 = browser.currentScene.createNode("field");
-field20.name = "viewpoints";
-field20.accessType = "inputOutput";
-field20.appinfo = "Container field for Viewpoint nodes";
-field20.type = "MFNode";
-ProtoInterface3.field[16] = field20;
+let field42 = browser.currentScene.createNode("field");
+field42.name = "viewpoints";
+field42.accessType = "inputOutput";
+field42.appinfo = "Container field for Viewpoint nodes";
+field42.type = "MFNode";
+ProtoInterface25.field[16] = field42;
 
-let field21 = browser.currentScene.createNode("field");
-field21.name = "skinCoord";
-field21.accessType = "inputOutput";
-field21.appinfo = "Hint: HAnim version 2.0";
-field21.type = "SFNode";
+let field43 = browser.currentScene.createNode("field");
+field43.name = "skinCoord";
+field43.accessType = "inputOutput";
+field43.appinfo = "Hint: HAnim version 2.0";
+field43.type = "SFNode";
 //NULL
-ProtoInterface3.field[17] = field21;
+ProtoInterface25.field[17] = field43;
 
-let field22 = browser.currentScene.createNode("field");
-field22.name = "skinNormal";
-field22.accessType = "inputOutput";
-field22.appinfo = "Hint: HAnim version 2.0";
-field22.type = "SFNode";
+let field44 = browser.currentScene.createNode("field");
+field44.name = "skinNormal";
+field44.accessType = "inputOutput";
+field44.appinfo = "Hint: HAnim version 2.0";
+field44.type = "SFNode";
 //NULL
-ProtoInterface3.field[18] = field22;
+ProtoInterface25.field[18] = field44;
 
-ProtoDeclare2.protoInterface = ProtoInterface3;
+ProtoDeclare24.protoInterface = ProtoInterface25;
 
-let ProtoBody23 = browser.currentScene.createNode("ProtoBody");
-let Transform24 = browser.currentScene.createNode("Transform");
-Transform24.DEF = "HumanoidTransform";
-let IS25 = browser.currentScene.createNode("IS");
-let connect26 = browser.currentScene.createNode("connect");
-connect26.nodeField = "translation";
-connect26.protoField = "translation";
-IS25.connect = new MFNode();
+let ProtoBody45 = browser.currentScene.createNode("ProtoBody");
+let Transform46 = browser.currentScene.createNode("Transform");
+Transform46.DEF = "HumanoidTransform";
+let IS47 = browser.currentScene.createNode("IS");
+let connect48 = browser.currentScene.createNode("connect");
+connect48.nodeField = "translation";
+connect48.protoField = "translation";
+IS47.connect = new MFNode();
 
-IS25.connect[0] = connect26;
+IS47.connect[0] = connect48;
 
-let connect27 = browser.currentScene.createNode("connect");
-connect27.nodeField = "rotation";
-connect27.protoField = "rotation";
-IS25.connect[1] = connect27;
+let connect49 = browser.currentScene.createNode("connect");
+connect49.nodeField = "rotation";
+connect49.protoField = "rotation";
+IS47.connect[1] = connect49;
 
-let connect28 = browser.currentScene.createNode("connect");
-connect28.nodeField = "center";
-connect28.protoField = "center";
-IS25.connect[2] = connect28;
+let connect50 = browser.currentScene.createNode("connect");
+connect50.nodeField = "center";
+connect50.protoField = "center";
+IS47.connect[2] = connect50;
 
-let connect29 = browser.currentScene.createNode("connect");
-connect29.nodeField = "scale";
-connect29.protoField = "scale";
-IS25.connect[3] = connect29;
+let connect51 = browser.currentScene.createNode("connect");
+connect51.nodeField = "scale";
+connect51.protoField = "scale";
+IS47.connect[3] = connect51;
 
-let connect30 = browser.currentScene.createNode("connect");
-connect30.nodeField = "scaleOrientation";
-connect30.protoField = "scaleOrientation";
-IS25.connect[4] = connect30;
+let connect52 = browser.currentScene.createNode("connect");
+connect52.nodeField = "scaleOrientation";
+connect52.protoField = "scaleOrientation";
+IS47.connect[4] = connect52;
 
-let connect31 = browser.currentScene.createNode("connect");
-connect31.nodeField = "bboxCenter";
-connect31.protoField = "bboxCenter";
-IS25.connect[5] = connect31;
+let connect53 = browser.currentScene.createNode("connect");
+connect53.nodeField = "bboxCenter";
+connect53.protoField = "bboxCenter";
+IS47.connect[5] = connect53;
 
-let connect32 = browser.currentScene.createNode("connect");
-connect32.nodeField = "bboxSize";
-connect32.protoField = "bboxSize";
-IS25.connect[6] = connect32;
+let connect54 = browser.currentScene.createNode("connect");
+connect54.nodeField = "bboxSize";
+connect54.protoField = "bboxSize";
+IS47.connect[6] = connect54;
 
-Transform24.iS = IS25;
+Transform46.iS = IS47;
 
-let Group33 = browser.currentScene.createNode("Group");
-Group33.DEF = "HumanoidGroup1";
-let IS34 = browser.currentScene.createNode("IS");
-let connect35 = browser.currentScene.createNode("connect");
-connect35.nodeField = "children";
-connect35.protoField = "humanoidBody";
-IS34.connect = new MFNode();
+let Group55 = browser.currentScene.createNode("Group");
+Group55.DEF = "HumanoidGroup1";
+let IS56 = browser.currentScene.createNode("IS");
+let connect57 = browser.currentScene.createNode("connect");
+connect57.nodeField = "children";
+connect57.protoField = "humanoidBody";
+IS56.connect = new MFNode();
 
-IS34.connect[0] = connect35;
+IS56.connect[0] = connect57;
 
-Group33.iS = IS34;
+Group55.iS = IS56;
 
-Transform24.children = new MFNode();
+Transform46.children = new MFNode();
 
-Transform24.children[0] = Group33;
+Transform46.children[0] = Group55;
 
-let Group36 = browser.currentScene.createNode("Group");
-Group36.DEF = "HumanoidGroup2";
-let IS37 = browser.currentScene.createNode("IS");
-let connect38 = browser.currentScene.createNode("connect");
-connect38.nodeField = "children";
-connect38.protoField = "skeleton";
-IS37.connect = new MFNode();
+let Group58 = browser.currentScene.createNode("Group");
+Group58.DEF = "HumanoidGroup2";
+let IS59 = browser.currentScene.createNode("IS");
+let connect60 = browser.currentScene.createNode("connect");
+connect60.nodeField = "children";
+connect60.protoField = "skeleton";
+IS59.connect = new MFNode();
 
-IS37.connect[0] = connect38;
+IS59.connect[0] = connect60;
 
-Group36.iS = IS37;
+Group58.iS = IS59;
 
-Transform24.children[1] = Group36;
+Transform46.children[1] = Group58;
 
-let Group39 = browser.currentScene.createNode("Group");
-Group39.DEF = "HumanoidGroup3";
-let IS40 = browser.currentScene.createNode("IS");
-let connect41 = browser.currentScene.createNode("connect");
-connect41.nodeField = "children";
-connect41.protoField = "viewpoints";
-IS40.connect = new MFNode();
+let Group61 = browser.currentScene.createNode("Group");
+Group61.DEF = "HumanoidGroup3";
+let IS62 = browser.currentScene.createNode("IS");
+let connect63 = browser.currentScene.createNode("connect");
+connect63.nodeField = "children";
+connect63.protoField = "viewpoints";
+IS62.connect = new MFNode();
 
-IS40.connect[0] = connect41;
+IS62.connect[0] = connect63;
 
-Group39.iS = IS40;
+Group61.iS = IS62;
 
-Transform24.children[2] = Group39;
+Transform46.children[2] = Group61;
 
-ProtoBody23.children = new MFNode();
+ProtoBody45.children = new MFNode();
 
-ProtoBody23.children[0] = Transform24;
+ProtoBody45.children[0] = Transform46;
 
-ProtoDeclare2.protoBody = ProtoBody23;
+ProtoDeclare24.protoBody = ProtoBody45;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = ProtoDeclare2;
+browser.currentScene.children[0] = ProtoDeclare24;
 
-let ProtoDeclare42 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare64 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Joint" appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Joint.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="ulimit" accessType="inputOutput" type="MFFloat"></field>
@@ -321,192 +432,192 @@ let ProtoDeclare42 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare42.name = "Joint";
-ProtoDeclare42.appinfo = "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.";
-ProtoDeclare42.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Joint.html";
-let ProtoInterface43 = browser.currentScene.createNode("ProtoInterface");
-let field44 = browser.currentScene.createNode("field");
-field44.name = "name";
-field44.accessType = "inputOutput";
-field44.type = "SFString";
-ProtoInterface43.field = new MFNode();
+ProtoDeclare64.name = "Joint";
+ProtoDeclare64.appinfo = "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.";
+ProtoDeclare64.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Joint.html";
+let ProtoInterface65 = browser.currentScene.createNode("ProtoInterface");
+let field66 = browser.currentScene.createNode("field");
+field66.name = "name";
+field66.accessType = "inputOutput";
+field66.type = "SFString";
+ProtoInterface65.field = new MFNode();
 
-ProtoInterface43.field[0] = field44;
+ProtoInterface65.field[0] = field66;
 
-let field45 = browser.currentScene.createNode("field");
-field45.name = "ulimit";
-field45.accessType = "inputOutput";
-field45.type = "MFFloat";
-ProtoInterface43.field[1] = field45;
+let field67 = browser.currentScene.createNode("field");
+field67.name = "ulimit";
+field67.accessType = "inputOutput";
+field67.type = "MFFloat";
+ProtoInterface65.field[1] = field67;
 
-let field46 = browser.currentScene.createNode("field");
-field46.name = "llimit";
-field46.accessType = "inputOutput";
-field46.type = "MFFloat";
-ProtoInterface43.field[2] = field46;
+let field68 = browser.currentScene.createNode("field");
+field68.name = "llimit";
+field68.accessType = "inputOutput";
+field68.type = "MFFloat";
+ProtoInterface65.field[2] = field68;
 
-let field47 = browser.currentScene.createNode("field");
-field47.name = "limitOrientation";
-field47.accessType = "inputOutput";
-field47.type = "SFRotation";
-field47.value = "0 0 1 0";
-ProtoInterface43.field[3] = field47;
+let field69 = browser.currentScene.createNode("field");
+field69.name = "limitOrientation";
+field69.accessType = "inputOutput";
+field69.type = "SFRotation";
+field69.value = "0 0 1 0";
+ProtoInterface65.field[3] = field69;
 
-let field48 = browser.currentScene.createNode("field");
-field48.name = "skinCoordIndex";
-field48.accessType = "inputOutput";
-field48.type = "MFInt32";
-ProtoInterface43.field[4] = field48;
+let field70 = browser.currentScene.createNode("field");
+field70.name = "skinCoordIndex";
+field70.accessType = "inputOutput";
+field70.type = "MFInt32";
+ProtoInterface65.field[4] = field70;
 
-let field49 = browser.currentScene.createNode("field");
-field49.name = "skinCoordWeight";
-field49.accessType = "inputOutput";
-field49.type = "MFFloat";
-ProtoInterface43.field[5] = field49;
+let field71 = browser.currentScene.createNode("field");
+field71.name = "skinCoordWeight";
+field71.accessType = "inputOutput";
+field71.type = "MFFloat";
+ProtoInterface65.field[5] = field71;
 
-let field50 = browser.currentScene.createNode("field");
-field50.name = "stiffness";
-field50.accessType = "inputOutput";
-field50.type = "MFFloat";
-field50.value = "0 0 0";
-ProtoInterface43.field[6] = field50;
+let field72 = browser.currentScene.createNode("field");
+field72.name = "stiffness";
+field72.accessType = "inputOutput";
+field72.type = "MFFloat";
+field72.value = "0 0 0";
+ProtoInterface65.field[6] = field72;
 
-let field51 = browser.currentScene.createNode("field");
-field51.name = "translation";
-field51.accessType = "inputOutput";
-field51.type = "SFVec3f";
-field51.value = "0 0 0";
-ProtoInterface43.field[7] = field51;
+let field73 = browser.currentScene.createNode("field");
+field73.name = "translation";
+field73.accessType = "inputOutput";
+field73.type = "SFVec3f";
+field73.value = "0 0 0";
+ProtoInterface65.field[7] = field73;
 
-let field52 = browser.currentScene.createNode("field");
-field52.name = "rotation";
-field52.accessType = "inputOutput";
-field52.type = "SFRotation";
-field52.value = "0 0 1 0";
-ProtoInterface43.field[8] = field52;
+let field74 = browser.currentScene.createNode("field");
+field74.name = "rotation";
+field74.accessType = "inputOutput";
+field74.type = "SFRotation";
+field74.value = "0 0 1 0";
+ProtoInterface65.field[8] = field74;
 
-let field53 = browser.currentScene.createNode("field");
-field53.name = "scale";
-field53.accessType = "inputOutput";
-field53.type = "SFVec3f";
-field53.value = "1 1 1";
-ProtoInterface43.field[9] = field53;
+let field75 = browser.currentScene.createNode("field");
+field75.name = "scale";
+field75.accessType = "inputOutput";
+field75.type = "SFVec3f";
+field75.value = "1 1 1";
+ProtoInterface65.field[9] = field75;
 
-let field54 = browser.currentScene.createNode("field");
-field54.name = "scaleOrientation";
-field54.accessType = "inputOutput";
-field54.type = "SFRotation";
-field54.value = "0 0 1 0";
-ProtoInterface43.field[10] = field54;
+let field76 = browser.currentScene.createNode("field");
+field76.name = "scaleOrientation";
+field76.accessType = "inputOutput";
+field76.type = "SFRotation";
+field76.value = "0 0 1 0";
+ProtoInterface65.field[10] = field76;
 
-let field55 = browser.currentScene.createNode("field");
-field55.name = "center";
-field55.accessType = "inputOutput";
-field55.type = "SFVec3f";
-field55.value = "0 0 0";
-ProtoInterface43.field[11] = field55;
+let field77 = browser.currentScene.createNode("field");
+field77.name = "center";
+field77.accessType = "inputOutput";
+field77.type = "SFVec3f";
+field77.value = "0 0 0";
+ProtoInterface65.field[11] = field77;
 
-let field56 = browser.currentScene.createNode("field");
-field56.name = "bboxCenter";
-field56.accessType = "initializeOnly";
-field56.type = "SFVec3f";
-field56.value = "0 0 0";
-ProtoInterface43.field[12] = field56;
+let field78 = browser.currentScene.createNode("field");
+field78.name = "bboxCenter";
+field78.accessType = "initializeOnly";
+field78.type = "SFVec3f";
+field78.value = "0 0 0";
+ProtoInterface65.field[12] = field78;
 
-let field57 = browser.currentScene.createNode("field");
-field57.name = "bboxSize";
-field57.accessType = "initializeOnly";
-field57.type = "SFVec3f";
-field57.value = "-1 -1 -1";
-ProtoInterface43.field[13] = field57;
+let field79 = browser.currentScene.createNode("field");
+field79.name = "bboxSize";
+field79.accessType = "initializeOnly";
+field79.type = "SFVec3f";
+field79.value = "-1 -1 -1";
+ProtoInterface65.field[13] = field79;
 
-let field58 = browser.currentScene.createNode("field");
-field58.name = "children";
-field58.accessType = "inputOutput";
-field58.type = "MFNode";
-ProtoInterface43.field[14] = field58;
+let field80 = browser.currentScene.createNode("field");
+field80.name = "children";
+field80.accessType = "inputOutput";
+field80.type = "MFNode";
+ProtoInterface65.field[14] = field80;
 
-let field59 = browser.currentScene.createNode("field");
-field59.name = "addChildren";
-field59.accessType = "inputOnly";
-field59.type = "MFNode";
-ProtoInterface43.field[15] = field59;
+let field81 = browser.currentScene.createNode("field");
+field81.name = "addChildren";
+field81.accessType = "inputOnly";
+field81.type = "MFNode";
+ProtoInterface65.field[15] = field81;
 
-let field60 = browser.currentScene.createNode("field");
-field60.name = "removeChildren";
-field60.accessType = "inputOnly";
-field60.type = "MFNode";
-ProtoInterface43.field[16] = field60;
+let field82 = browser.currentScene.createNode("field");
+field82.name = "removeChildren";
+field82.accessType = "inputOnly";
+field82.type = "MFNode";
+ProtoInterface65.field[16] = field82;
 
-ProtoDeclare42.protoInterface = ProtoInterface43;
+ProtoDeclare64.protoInterface = ProtoInterface65;
 
-let ProtoBody61 = browser.currentScene.createNode("ProtoBody");
-let Transform62 = browser.currentScene.createNode("Transform");
-Transform62.DEF = "JointTransform";
-let IS63 = browser.currentScene.createNode("IS");
-let connect64 = browser.currentScene.createNode("connect");
-connect64.nodeField = "translation";
-connect64.protoField = "translation";
-IS63.connect = new MFNode();
+let ProtoBody83 = browser.currentScene.createNode("ProtoBody");
+let Transform84 = browser.currentScene.createNode("Transform");
+Transform84.DEF = "JointTransform";
+let IS85 = browser.currentScene.createNode("IS");
+let connect86 = browser.currentScene.createNode("connect");
+connect86.nodeField = "translation";
+connect86.protoField = "translation";
+IS85.connect = new MFNode();
 
-IS63.connect[0] = connect64;
+IS85.connect[0] = connect86;
 
-let connect65 = browser.currentScene.createNode("connect");
-connect65.nodeField = "rotation";
-connect65.protoField = "rotation";
-IS63.connect[1] = connect65;
+let connect87 = browser.currentScene.createNode("connect");
+connect87.nodeField = "rotation";
+connect87.protoField = "rotation";
+IS85.connect[1] = connect87;
 
-let connect66 = browser.currentScene.createNode("connect");
-connect66.nodeField = "center";
-connect66.protoField = "center";
-IS63.connect[2] = connect66;
+let connect88 = browser.currentScene.createNode("connect");
+connect88.nodeField = "center";
+connect88.protoField = "center";
+IS85.connect[2] = connect88;
 
-let connect67 = browser.currentScene.createNode("connect");
-connect67.nodeField = "scale";
-connect67.protoField = "scale";
-IS63.connect[3] = connect67;
+let connect89 = browser.currentScene.createNode("connect");
+connect89.nodeField = "scale";
+connect89.protoField = "scale";
+IS85.connect[3] = connect89;
 
-let connect68 = browser.currentScene.createNode("connect");
-connect68.nodeField = "scaleOrientation";
-connect68.protoField = "scaleOrientation";
-IS63.connect[4] = connect68;
+let connect90 = browser.currentScene.createNode("connect");
+connect90.nodeField = "scaleOrientation";
+connect90.protoField = "scaleOrientation";
+IS85.connect[4] = connect90;
 
-let connect69 = browser.currentScene.createNode("connect");
-connect69.nodeField = "bboxCenter";
-connect69.protoField = "bboxCenter";
-IS63.connect[5] = connect69;
+let connect91 = browser.currentScene.createNode("connect");
+connect91.nodeField = "bboxCenter";
+connect91.protoField = "bboxCenter";
+IS85.connect[5] = connect91;
 
-let connect70 = browser.currentScene.createNode("connect");
-connect70.nodeField = "bboxSize";
-connect70.protoField = "bboxSize";
-IS63.connect[6] = connect70;
+let connect92 = browser.currentScene.createNode("connect");
+connect92.nodeField = "bboxSize";
+connect92.protoField = "bboxSize";
+IS85.connect[6] = connect92;
 
-let connect71 = browser.currentScene.createNode("connect");
-connect71.nodeField = "children";
-connect71.protoField = "children";
-IS63.connect[7] = connect71;
+let connect93 = browser.currentScene.createNode("connect");
+connect93.nodeField = "children";
+connect93.protoField = "children";
+IS85.connect[7] = connect93;
 
-let connect72 = browser.currentScene.createNode("connect");
-connect72.nodeField = "addChildren";
-connect72.protoField = "addChildren";
-IS63.connect[8] = connect72;
+let connect94 = browser.currentScene.createNode("connect");
+connect94.nodeField = "addChildren";
+connect94.protoField = "addChildren";
+IS85.connect[8] = connect94;
 
-let connect73 = browser.currentScene.createNode("connect");
-connect73.nodeField = "removeChildren";
-connect73.protoField = "removeChildren";
-IS63.connect[9] = connect73;
+let connect95 = browser.currentScene.createNode("connect");
+connect95.nodeField = "removeChildren";
+connect95.protoField = "removeChildren";
+IS85.connect[9] = connect95;
 
-Transform62.iS = IS63;
+Transform84.iS = IS85;
 
-ProtoBody61.children = new MFNode();
+ProtoBody83.children = new MFNode();
 
-ProtoBody61.children[0] = Transform62;
+ProtoBody83.children[0] = Transform84;
 
-ProtoDeclare42.protoBody = ProtoBody61;
+ProtoDeclare64.protoBody = ProtoBody83;
 
-browser.currentScene.children[1] = ProtoDeclare42;
+browser.currentScene.children[1] = ProtoDeclare64;
 
-let ProtoDeclare74 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare96 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Segment" appinfo="The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Segment.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="mass" accessType="inputOutput" type="SFFloat" value="0"></field>
@@ -529,130 +640,130 @@ let ProtoDeclare74 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare74.name = "Segment";
-ProtoDeclare74.appinfo = "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.";
-ProtoDeclare74.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Segment.html";
-let ProtoInterface75 = browser.currentScene.createNode("ProtoInterface");
-let field76 = browser.currentScene.createNode("field");
-field76.name = "name";
-field76.accessType = "inputOutput";
-field76.type = "SFString";
-ProtoInterface75.field = new MFNode();
+ProtoDeclare96.name = "Segment";
+ProtoDeclare96.appinfo = "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.";
+ProtoDeclare96.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Segment.html";
+let ProtoInterface97 = browser.currentScene.createNode("ProtoInterface");
+let field98 = browser.currentScene.createNode("field");
+field98.name = "name";
+field98.accessType = "inputOutput";
+field98.type = "SFString";
+ProtoInterface97.field = new MFNode();
 
-ProtoInterface75.field[0] = field76;
+ProtoInterface97.field[0] = field98;
 
-let field77 = browser.currentScene.createNode("field");
-field77.name = "mass";
-field77.accessType = "inputOutput";
-field77.type = "SFFloat";
-field77.value = "0";
-ProtoInterface75.field[1] = field77;
+let field99 = browser.currentScene.createNode("field");
+field99.name = "mass";
+field99.accessType = "inputOutput";
+field99.type = "SFFloat";
+field99.value = "0";
+ProtoInterface97.field[1] = field99;
 
-let field78 = browser.currentScene.createNode("field");
-field78.name = "centerOfMass";
-field78.accessType = "inputOutput";
-field78.type = "SFVec3f";
-field78.value = "0 0 0";
-ProtoInterface75.field[2] = field78;
+let field100 = browser.currentScene.createNode("field");
+field100.name = "centerOfMass";
+field100.accessType = "inputOutput";
+field100.type = "SFVec3f";
+field100.value = "0 0 0";
+ProtoInterface97.field[2] = field100;
 
-let field79 = browser.currentScene.createNode("field");
-field79.name = "momentsOfInertia";
-field79.accessType = "inputOutput";
-field79.type = "MFFloat";
-field79.value = "0 0 0 0 0 0 0 0 0";
-ProtoInterface75.field[3] = field79;
+let field101 = browser.currentScene.createNode("field");
+field101.name = "momentsOfInertia";
+field101.accessType = "inputOutput";
+field101.type = "MFFloat";
+field101.value = "0 0 0 0 0 0 0 0 0";
+ProtoInterface97.field[3] = field101;
 
-let field80 = browser.currentScene.createNode("field");
-field80.name = "bboxCenter";
-field80.accessType = "initializeOnly";
-field80.type = "SFVec3f";
-field80.value = "0 0 0";
-ProtoInterface75.field[4] = field80;
+let field102 = browser.currentScene.createNode("field");
+field102.name = "bboxCenter";
+field102.accessType = "initializeOnly";
+field102.type = "SFVec3f";
+field102.value = "0 0 0";
+ProtoInterface97.field[4] = field102;
 
-let field81 = browser.currentScene.createNode("field");
-field81.name = "bboxSize";
-field81.accessType = "initializeOnly";
-field81.type = "SFVec3f";
-field81.value = "-1 -1 -1";
-ProtoInterface75.field[5] = field81;
+let field103 = browser.currentScene.createNode("field");
+field103.name = "bboxSize";
+field103.accessType = "initializeOnly";
+field103.type = "SFVec3f";
+field103.value = "-1 -1 -1";
+ProtoInterface97.field[5] = field103;
 
-let field82 = browser.currentScene.createNode("field");
-field82.name = "children";
-field82.accessType = "inputOutput";
-field82.type = "MFNode";
-ProtoInterface75.field[6] = field82;
+let field104 = browser.currentScene.createNode("field");
+field104.name = "children";
+field104.accessType = "inputOutput";
+field104.type = "MFNode";
+ProtoInterface97.field[6] = field104;
 
-let field83 = browser.currentScene.createNode("field");
-field83.name = "addChildren";
-field83.accessType = "inputOnly";
-field83.type = "MFNode";
-ProtoInterface75.field[7] = field83;
+let field105 = browser.currentScene.createNode("field");
+field105.name = "addChildren";
+field105.accessType = "inputOnly";
+field105.type = "MFNode";
+ProtoInterface97.field[7] = field105;
 
-let field84 = browser.currentScene.createNode("field");
-field84.name = "removeChildren";
-field84.accessType = "inputOnly";
-field84.type = "MFNode";
-ProtoInterface75.field[8] = field84;
+let field106 = browser.currentScene.createNode("field");
+field106.name = "removeChildren";
+field106.accessType = "inputOnly";
+field106.type = "MFNode";
+ProtoInterface97.field[8] = field106;
 
-let field85 = browser.currentScene.createNode("field");
-field85.name = "coord";
-field85.accessType = "inputOutput";
-field85.appinfo = "contains Coordinate nodes";
-field85.type = "SFNode";
+let field107 = browser.currentScene.createNode("field");
+field107.name = "coord";
+field107.accessType = "inputOutput";
+field107.appinfo = "contains Coordinate nodes";
+field107.type = "SFNode";
 //NULL
-ProtoInterface75.field[9] = field85;
+ProtoInterface97.field[9] = field107;
 
-let field86 = browser.currentScene.createNode("field");
-field86.name = "displacers";
-field86.accessType = "inputOutput";
-field86.appinfo = "contains Displacer nodes";
-field86.type = "MFNode";
-ProtoInterface75.field[10] = field86;
+let field108 = browser.currentScene.createNode("field");
+field108.name = "displacers";
+field108.accessType = "inputOutput";
+field108.appinfo = "contains Displacer nodes";
+field108.type = "MFNode";
+ProtoInterface97.field[10] = field108;
 
-ProtoDeclare74.protoInterface = ProtoInterface75;
+ProtoDeclare96.protoInterface = ProtoInterface97;
 
-let ProtoBody87 = browser.currentScene.createNode("ProtoBody");
-let Group88 = browser.currentScene.createNode("Group");
-Group88.DEF = "SegmentGroup";
-let IS89 = browser.currentScene.createNode("IS");
-let connect90 = browser.currentScene.createNode("connect");
-connect90.nodeField = "bboxCenter";
-connect90.protoField = "bboxCenter";
-IS89.connect = new MFNode();
+let ProtoBody109 = browser.currentScene.createNode("ProtoBody");
+let Group110 = browser.currentScene.createNode("Group");
+Group110.DEF = "SegmentGroup";
+let IS111 = browser.currentScene.createNode("IS");
+let connect112 = browser.currentScene.createNode("connect");
+connect112.nodeField = "bboxCenter";
+connect112.protoField = "bboxCenter";
+IS111.connect = new MFNode();
 
-IS89.connect[0] = connect90;
+IS111.connect[0] = connect112;
 
-let connect91 = browser.currentScene.createNode("connect");
-connect91.nodeField = "bboxSize";
-connect91.protoField = "bboxSize";
-IS89.connect[1] = connect91;
+let connect113 = browser.currentScene.createNode("connect");
+connect113.nodeField = "bboxSize";
+connect113.protoField = "bboxSize";
+IS111.connect[1] = connect113;
 
-let connect92 = browser.currentScene.createNode("connect");
-connect92.nodeField = "children";
-connect92.protoField = "children";
-IS89.connect[2] = connect92;
+let connect114 = browser.currentScene.createNode("connect");
+connect114.nodeField = "children";
+connect114.protoField = "children";
+IS111.connect[2] = connect114;
 
-let connect93 = browser.currentScene.createNode("connect");
-connect93.nodeField = "addChildren";
-connect93.protoField = "addChildren";
-IS89.connect[3] = connect93;
+let connect115 = browser.currentScene.createNode("connect");
+connect115.nodeField = "addChildren";
+connect115.protoField = "addChildren";
+IS111.connect[3] = connect115;
 
-let connect94 = browser.currentScene.createNode("connect");
-connect94.nodeField = "removeChildren";
-connect94.protoField = "removeChildren";
-IS89.connect[4] = connect94;
+let connect116 = browser.currentScene.createNode("connect");
+connect116.nodeField = "removeChildren";
+connect116.protoField = "removeChildren";
+IS111.connect[4] = connect116;
 
-Group88.iS = IS89;
+Group110.iS = IS111;
 
-ProtoBody87.children = new MFNode();
+ProtoBody109.children = new MFNode();
 
-ProtoBody87.children[0] = Group88;
+ProtoBody109.children[0] = Group110;
 
-ProtoDeclare74.protoBody = ProtoBody87;
+ProtoDeclare96.protoBody = ProtoBody109;
 
-browser.currentScene.children[2] = ProtoDeclare74;
+browser.currentScene.children[2] = ProtoDeclare96;
 
-let ProtoDeclare95 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare117 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Site" appinfo="The Site node can be used for three purposes: (a) to define an &quot;end effector&quot; location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view &quot;through the eyes&quot; of the humanoid for use in multi-user worlds)." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Site.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -680,154 +791,154 @@ let ProtoDeclare95 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare95.name = "Site";
-ProtoDeclare95.appinfo = "The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).";
-ProtoDeclare95.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Site.html";
-let ProtoInterface96 = browser.currentScene.createNode("ProtoInterface");
-let field97 = browser.currentScene.createNode("field");
-field97.name = "name";
-field97.accessType = "inputOutput";
-field97.type = "SFString";
-ProtoInterface96.field = new MFNode();
+ProtoDeclare117.name = "Site";
+ProtoDeclare117.appinfo = "The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).";
+ProtoDeclare117.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Site.html";
+let ProtoInterface118 = browser.currentScene.createNode("ProtoInterface");
+let field119 = browser.currentScene.createNode("field");
+field119.name = "name";
+field119.accessType = "inputOutput";
+field119.type = "SFString";
+ProtoInterface118.field = new MFNode();
 
-ProtoInterface96.field[0] = field97;
+ProtoInterface118.field[0] = field119;
 
-let field98 = browser.currentScene.createNode("field");
-field98.name = "translation";
-field98.accessType = "inputOutput";
-field98.type = "SFVec3f";
-field98.value = "0 0 0";
-ProtoInterface96.field[1] = field98;
+let field120 = browser.currentScene.createNode("field");
+field120.name = "translation";
+field120.accessType = "inputOutput";
+field120.type = "SFVec3f";
+field120.value = "0 0 0";
+ProtoInterface118.field[1] = field120;
 
-let field99 = browser.currentScene.createNode("field");
-field99.name = "rotation";
-field99.accessType = "inputOutput";
-field99.type = "SFRotation";
-field99.value = "0 0 1 0";
-ProtoInterface96.field[2] = field99;
+let field121 = browser.currentScene.createNode("field");
+field121.name = "rotation";
+field121.accessType = "inputOutput";
+field121.type = "SFRotation";
+field121.value = "0 0 1 0";
+ProtoInterface118.field[2] = field121;
 
-let field100 = browser.currentScene.createNode("field");
-field100.name = "scale";
-field100.accessType = "inputOutput";
-field100.type = "SFVec3f";
-field100.value = "1 1 1";
-ProtoInterface96.field[3] = field100;
+let field122 = browser.currentScene.createNode("field");
+field122.name = "scale";
+field122.accessType = "inputOutput";
+field122.type = "SFVec3f";
+field122.value = "1 1 1";
+ProtoInterface118.field[3] = field122;
 
-let field101 = browser.currentScene.createNode("field");
-field101.name = "scaleOrientation";
-field101.accessType = "inputOutput";
-field101.type = "SFRotation";
-field101.value = "0 0 1 0";
-ProtoInterface96.field[4] = field101;
+let field123 = browser.currentScene.createNode("field");
+field123.name = "scaleOrientation";
+field123.accessType = "inputOutput";
+field123.type = "SFRotation";
+field123.value = "0 0 1 0";
+ProtoInterface118.field[4] = field123;
 
-let field102 = browser.currentScene.createNode("field");
-field102.name = "center";
-field102.accessType = "inputOutput";
-field102.type = "SFVec3f";
-field102.value = "0 0 0";
-ProtoInterface96.field[5] = field102;
+let field124 = browser.currentScene.createNode("field");
+field124.name = "center";
+field124.accessType = "inputOutput";
+field124.type = "SFVec3f";
+field124.value = "0 0 0";
+ProtoInterface118.field[5] = field124;
 
-let field103 = browser.currentScene.createNode("field");
-field103.name = "bboxCenter";
-field103.accessType = "initializeOnly";
-field103.type = "SFVec3f";
-field103.value = "0 0 0";
-ProtoInterface96.field[6] = field103;
+let field125 = browser.currentScene.createNode("field");
+field125.name = "bboxCenter";
+field125.accessType = "initializeOnly";
+field125.type = "SFVec3f";
+field125.value = "0 0 0";
+ProtoInterface118.field[6] = field125;
 
-let field104 = browser.currentScene.createNode("field");
-field104.name = "bboxSize";
-field104.accessType = "initializeOnly";
-field104.type = "SFVec3f";
-field104.value = "-1 -1 -1";
-ProtoInterface96.field[7] = field104;
+let field126 = browser.currentScene.createNode("field");
+field126.name = "bboxSize";
+field126.accessType = "initializeOnly";
+field126.type = "SFVec3f";
+field126.value = "-1 -1 -1";
+ProtoInterface118.field[7] = field126;
 
-let field105 = browser.currentScene.createNode("field");
-field105.name = "children";
-field105.accessType = "inputOutput";
-field105.type = "MFNode";
-ProtoInterface96.field[8] = field105;
+let field127 = browser.currentScene.createNode("field");
+field127.name = "children";
+field127.accessType = "inputOutput";
+field127.type = "MFNode";
+ProtoInterface118.field[8] = field127;
 
-let field106 = browser.currentScene.createNode("field");
-field106.name = "addChildren";
-field106.accessType = "inputOnly";
-field106.type = "MFNode";
-ProtoInterface96.field[9] = field106;
+let field128 = browser.currentScene.createNode("field");
+field128.name = "addChildren";
+field128.accessType = "inputOnly";
+field128.type = "MFNode";
+ProtoInterface118.field[9] = field128;
 
-let field107 = browser.currentScene.createNode("field");
-field107.name = "removeChildren";
-field107.accessType = "inputOnly";
-field107.type = "MFNode";
-ProtoInterface96.field[10] = field107;
+let field129 = browser.currentScene.createNode("field");
+field129.name = "removeChildren";
+field129.accessType = "inputOnly";
+field129.type = "MFNode";
+ProtoInterface118.field[10] = field129;
 
-ProtoDeclare95.protoInterface = ProtoInterface96;
+ProtoDeclare117.protoInterface = ProtoInterface118;
 
-let ProtoBody108 = browser.currentScene.createNode("ProtoBody");
-let Transform109 = browser.currentScene.createNode("Transform");
-Transform109.DEF = "SiteTransform";
-let IS110 = browser.currentScene.createNode("IS");
-let connect111 = browser.currentScene.createNode("connect");
-connect111.nodeField = "translation";
-connect111.protoField = "translation";
-IS110.connect = new MFNode();
+let ProtoBody130 = browser.currentScene.createNode("ProtoBody");
+let Transform131 = browser.currentScene.createNode("Transform");
+Transform131.DEF = "SiteTransform";
+let IS132 = browser.currentScene.createNode("IS");
+let connect133 = browser.currentScene.createNode("connect");
+connect133.nodeField = "translation";
+connect133.protoField = "translation";
+IS132.connect = new MFNode();
 
-IS110.connect[0] = connect111;
+IS132.connect[0] = connect133;
 
-let connect112 = browser.currentScene.createNode("connect");
-connect112.nodeField = "rotation";
-connect112.protoField = "rotation";
-IS110.connect[1] = connect112;
+let connect134 = browser.currentScene.createNode("connect");
+connect134.nodeField = "rotation";
+connect134.protoField = "rotation";
+IS132.connect[1] = connect134;
 
-let connect113 = browser.currentScene.createNode("connect");
-connect113.nodeField = "center";
-connect113.protoField = "center";
-IS110.connect[2] = connect113;
+let connect135 = browser.currentScene.createNode("connect");
+connect135.nodeField = "center";
+connect135.protoField = "center";
+IS132.connect[2] = connect135;
 
-let connect114 = browser.currentScene.createNode("connect");
-connect114.nodeField = "scale";
-connect114.protoField = "scale";
-IS110.connect[3] = connect114;
+let connect136 = browser.currentScene.createNode("connect");
+connect136.nodeField = "scale";
+connect136.protoField = "scale";
+IS132.connect[3] = connect136;
 
-let connect115 = browser.currentScene.createNode("connect");
-connect115.nodeField = "scaleOrientation";
-connect115.protoField = "scaleOrientation";
-IS110.connect[4] = connect115;
+let connect137 = browser.currentScene.createNode("connect");
+connect137.nodeField = "scaleOrientation";
+connect137.protoField = "scaleOrientation";
+IS132.connect[4] = connect137;
 
-let connect116 = browser.currentScene.createNode("connect");
-connect116.nodeField = "bboxCenter";
-connect116.protoField = "bboxCenter";
-IS110.connect[5] = connect116;
+let connect138 = browser.currentScene.createNode("connect");
+connect138.nodeField = "bboxCenter";
+connect138.protoField = "bboxCenter";
+IS132.connect[5] = connect138;
 
-let connect117 = browser.currentScene.createNode("connect");
-connect117.nodeField = "bboxSize";
-connect117.protoField = "bboxSize";
-IS110.connect[6] = connect117;
+let connect139 = browser.currentScene.createNode("connect");
+connect139.nodeField = "bboxSize";
+connect139.protoField = "bboxSize";
+IS132.connect[6] = connect139;
 
-let connect118 = browser.currentScene.createNode("connect");
-connect118.nodeField = "children";
-connect118.protoField = "children";
-IS110.connect[7] = connect118;
+let connect140 = browser.currentScene.createNode("connect");
+connect140.nodeField = "children";
+connect140.protoField = "children";
+IS132.connect[7] = connect140;
 
-let connect119 = browser.currentScene.createNode("connect");
-connect119.nodeField = "addChildren";
-connect119.protoField = "addChildren";
-IS110.connect[8] = connect119;
+let connect141 = browser.currentScene.createNode("connect");
+connect141.nodeField = "addChildren";
+connect141.protoField = "addChildren";
+IS132.connect[8] = connect141;
 
-let connect120 = browser.currentScene.createNode("connect");
-connect120.nodeField = "removeChildren";
-connect120.protoField = "removeChildren";
-IS110.connect[9] = connect120;
+let connect142 = browser.currentScene.createNode("connect");
+connect142.nodeField = "removeChildren";
+connect142.protoField = "removeChildren";
+IS132.connect[9] = connect142;
 
-Transform109.iS = IS110;
+Transform131.iS = IS132;
 
-ProtoBody108.children = new MFNode();
+ProtoBody130.children = new MFNode();
 
-ProtoBody108.children[0] = Transform109;
+ProtoBody130.children[0] = Transform131;
 
-ProtoDeclare95.protoBody = ProtoBody108;
+ProtoDeclare117.protoBody = ProtoBody130;
 
-browser.currentScene.children[3] = ProtoDeclare95;
+browser.currentScene.children[3] = ProtoDeclare117;
 
-let ProtoDeclare121 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare143 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Displacer" appinfo="A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html" ><ProtoInterface><field name="name" accessType="inputOutput" type="SFString"></field>
 <field name="coordIndex" accessType="inputOutput" type="MFInt32"></field>
@@ -836,62 +947,62 @@ let ProtoDeclare121 = browser.createX3DFromString(`<?xml version="1.0" encoding=
 <ProtoBody><WorldInfo info="&quot;null body node&quot;"></WorldInfo>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare121.name = "Displacer";
-ProtoDeclare121.appinfo = "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.";
-ProtoDeclare121.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html";
-let ProtoInterface122 = browser.currentScene.createNode("ProtoInterface");
-let field123 = browser.currentScene.createNode("field");
-field123.name = "name";
-field123.accessType = "inputOutput";
-field123.type = "SFString";
-ProtoInterface122.field = new MFNode();
+ProtoDeclare143.name = "Displacer";
+ProtoDeclare143.appinfo = "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.";
+ProtoDeclare143.documentation = "http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html";
+let ProtoInterface144 = browser.currentScene.createNode("ProtoInterface");
+let field145 = browser.currentScene.createNode("field");
+field145.name = "name";
+field145.accessType = "inputOutput";
+field145.type = "SFString";
+ProtoInterface144.field = new MFNode();
 
-ProtoInterface122.field[0] = field123;
+ProtoInterface144.field[0] = field145;
 
-let field124 = browser.currentScene.createNode("field");
-field124.name = "coordIndex";
-field124.accessType = "inputOutput";
-field124.type = "MFInt32";
-ProtoInterface122.field[1] = field124;
+let field146 = browser.currentScene.createNode("field");
+field146.name = "coordIndex";
+field146.accessType = "inputOutput";
+field146.type = "MFInt32";
+ProtoInterface144.field[1] = field146;
 
-let field125 = browser.currentScene.createNode("field");
-field125.name = "displacements";
-field125.accessType = "inputOutput";
-field125.type = "MFVec3f";
-ProtoInterface122.field[2] = field125;
+let field147 = browser.currentScene.createNode("field");
+field147.name = "displacements";
+field147.accessType = "inputOutput";
+field147.type = "MFVec3f";
+ProtoInterface144.field[2] = field147;
 
-ProtoDeclare121.protoInterface = ProtoInterface122;
+ProtoDeclare143.protoInterface = ProtoInterface144;
 
-let ProtoBody126 = browser.currentScene.createNode("ProtoBody");
-let WorldInfo127 = browser.currentScene.createNode("WorldInfo");
-WorldInfo127.info = new MFString(new java.lang.String["null body node"]);
-ProtoBody126.children = new MFNode();
+let ProtoBody148 = browser.currentScene.createNode("ProtoBody");
+let WorldInfo149 = browser.currentScene.createNode("WorldInfo");
+WorldInfo149.info = new MFString(new java.lang.String["null body node"]);
+ProtoBody148.children = new MFNode();
 
-ProtoBody126.children[0] = WorldInfo127;
+ProtoBody148.children[0] = WorldInfo149;
 
-ProtoDeclare121.protoBody = ProtoBody126;
+ProtoDeclare143.protoBody = ProtoBody148;
 
-browser.currentScene.children[4] = ProtoDeclare121;
+browser.currentScene.children[4] = ProtoDeclare143;
 
-let Shape128 = browser.currentScene.createNode("Shape");
-let Text129 = browser.currentScene.createNode("Text");
-Text129.string = new MFString(new java.lang.String["Humanoid Animation","(HAnim) prototype","implementations"]);
-let FontStyle130 = browser.currentScene.createNode("FontStyle");
-FontStyle130.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-Text129.fontStyle = FontStyle130;
+let Shape150 = browser.currentScene.createNode("Shape");
+let Text151 = browser.currentScene.createNode("Text");
+Text151.string = new MFString(new java.lang.String["Humanoid Animation","(HAnim) prototype","implementations"]);
+let FontStyle152 = browser.currentScene.createNode("FontStyle");
+FontStyle152.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text151.fontStyle = FontStyle152;
 
-Shape128.geometry = Text129;
+Shape150.geometry = Text151;
 
-let Appearance131 = browser.currentScene.createNode("Appearance");
-let Material132 = browser.currentScene.createNode("Material");
-Material132.ambientIntensity = 0.25;
-Material132.diffuseColor = new SFColor(new float[0.795918,0.505869,0.093315]);
-Material132.shininess = 0.39;
-Material132.specularColor = new SFColor(new float[0.923469,0.428866,0.006369]);
+let Appearance153 = browser.currentScene.createNode("Appearance");
+let Material154 = browser.currentScene.createNode("Material");
+Material154.ambientIntensity = 0.25;
+Material154.diffuseColor = new SFColor(new float[0.795918,0.505869,0.093315]);
+Material154.shininess = 0.39;
+Material154.specularColor = new SFColor(new float[0.923469,0.428866,0.006369]);
 //Universal Media Library: Autumn 9
-Appearance131.material = Material132;
+Appearance153.material = Material154;
 
-Shape128.appearance = Appearance131;
+Shape150.appearance = Appearance153;
 
-browser.currentScene.children[5] = Shape128;
+browser.currentScene.children[5] = Shape150;
 

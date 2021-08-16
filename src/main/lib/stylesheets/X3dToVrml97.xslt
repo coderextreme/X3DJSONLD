@@ -5543,8 +5543,8 @@ EXTERNPROTO TransmitterPdu [
       </xsl:call-template>
     </xsl:if>
     <!-- no values allowed for fields with accessType inputOnly, outputOnly -->
-    <xsl:if test="not(.='') and
-    		 ((starts-with(local-name(.),'set_')) or
+    <xsl:if test="(string-length(string(.)) > 0) and
+    		 ((starts-with(local-name(),'set_')) or
     		  (contains(local-name(),'_changed')) or
     		  (local-name()='bindTime') or
     		  (local-name()='isBound') or

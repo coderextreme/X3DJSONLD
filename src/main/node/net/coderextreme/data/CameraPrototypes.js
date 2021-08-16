@@ -878,3 +878,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0.2)]))))))))      ;
     X3D0.toFileX3D("../data/CameraPrototypes.new.x3d");
+    process.exit(0);

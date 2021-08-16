@@ -49,3 +49,4 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/common.fs\""));
     X3D0.toFileX3D("../data/x3domflowers.new.x3d");
+    process.exit(0);

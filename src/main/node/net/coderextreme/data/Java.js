@@ -254,3 +254,4 @@ ProtoInstance0
 ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
     X3D0.toFileX3D("../data/Java.new.x3d");
+    process.exit(0);

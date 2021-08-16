@@ -605,3 +605,4 @@ var ProtoInstance34 = null;
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("Close_Time").setToField("set_fraction").setToNode("Close_Mover"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Close_Mover").setToField("set_translation").setToNode("Close_travel")))      ;
     X3D0.toFileX3D("../data/ArtDecoExamples.new.x3d");
+    process.exit(0);

@@ -59,3 +59,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild((new autoclass.ROUTE()).setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")))      ;
     X3D0.toFileX3D("../data/geobubbles.new.x3d");
+    process.exit(0);

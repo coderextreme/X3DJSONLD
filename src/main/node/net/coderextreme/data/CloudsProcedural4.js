@@ -434,3 +434,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "}"))
           .addChild((new autoclass.DirectionalLight()).setAmbientIntensity(java.newFloat(1)).setColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])).setDirection(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(0)])).setGlobal(true))))      ;
     X3D0.toFileX3D("../data/CloudsProcedural4.new.x3d");
+    process.exit(0);

@@ -388,3 +388,4 @@ ProtoInstance54
 ProtoInstance55
               .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("456.70001220703125 0.10000000149011612 -261.79998779296875"));
     X3D0.toFileX3D("../data/t1.new.x3d");
+    process.exit(0);

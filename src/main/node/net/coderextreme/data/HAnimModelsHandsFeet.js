@@ -53,3 +53,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.Inline()).setUrl(java.newArray("java.lang.String", ["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"])))
           .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale"))))      ;
     X3D0.toFileX3D("../data/HAnimModelsHandsFeet.new.x3d");
+    process.exit(0);

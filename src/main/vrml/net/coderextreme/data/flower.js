@@ -2,83 +2,113 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "flower.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "creator";
+meta3.content = "John Carlson";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "generator";
+meta4.content = "manual";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "identifier";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "description";
+meta6.content = "a flower";
+head1.meta[4] = meta6;
+
+head = head1;
+
+let NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = NavigationInfo2;
+browser.currentScene.children[0] = NavigationInfo8;
 
-let DirectionalLight3 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight3.direction = new SFVec3f(new float[0,-0.8,-0.2]);
-DirectionalLight3.intensity = 0.5;
-browser.currentScene.children[1] = DirectionalLight3;
+let DirectionalLight9 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight9.direction = new SFVec3f(new float[0,-0.8,-0.2]);
+DirectionalLight9.intensity = 0.5;
+browser.currentScene.children[1] = DirectionalLight9;
 
-let Background4 = browser.currentScene.createNode("Background");
-Background4.skyColor = new MFColor(new float[1,1,1]);
-browser.currentScene.children[2] = Background4;
+let Background10 = browser.currentScene.createNode("Background");
+Background10.skyColor = new MFColor(new float[1,1,1]);
+browser.currentScene.children[2] = Background10;
 
-let Viewpoint5 = browser.currentScene.createNode("Viewpoint");
-Viewpoint5.description = "One mathematical orbital";
-Viewpoint5.position = new SFVec3f(new float[0,0,50]);
-browser.currentScene.children[3] = Viewpoint5;
+let Viewpoint11 = browser.currentScene.createNode("Viewpoint");
+Viewpoint11.description = "One mathematical orbital";
+Viewpoint11.position = new SFVec3f(new float[0,0,50]);
+browser.currentScene.children[3] = Viewpoint11;
 
-let Transform6 = browser.currentScene.createNode("Transform");
-Transform6.translation = new SFVec3f(new float[0,-1,1]);
-Transform6.rotation = new SFRotation(new float[0,1,0,3.1415926]);
-Transform6.scale = new SFVec3f(new float[1.5,1.5,1.5]);
-let Shape7 = browser.currentScene.createNode("Shape");
-let Appearance8 = browser.currentScene.createNode("Appearance");
-let Material9 = browser.currentScene.createNode("Material");
-Material9.transparency = 0.1;
-Material9.diffuseColor = new SFColor(new float[0.9,0.3,0.3]);
-Material9.specularColor = new SFColor(new float[0.8,0.8,0.8]);
-Material9.shininess = 0.145;
-Appearance8.material = Material9;
+let Transform12 = browser.currentScene.createNode("Transform");
+Transform12.translation = new SFVec3f(new float[0,-1,1]);
+Transform12.rotation = new SFRotation(new float[0,1,0,3.1415926]);
+Transform12.scale = new SFVec3f(new float[1.5,1.5,1.5]);
+let Shape13 = browser.currentScene.createNode("Shape");
+let Appearance14 = browser.currentScene.createNode("Appearance");
+let Material15 = browser.currentScene.createNode("Material");
+Material15.transparency = 0.1;
+Material15.diffuseColor = new SFColor(new float[0.9,0.3,0.3]);
+Material15.specularColor = new SFColor(new float[0.8,0.8,0.8]);
+Material15.shininess = 0.145;
+Appearance14.material = Material15;
 
-Shape7.appearance = Appearance8;
+Shape13.appearance = Appearance14;
 
-let IndexedFaceSet10 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet10.ccw = False;
-IndexedFaceSet10.convex = False;
-IndexedFaceSet10.coordIndex = new MFInt32(new int[0,1,2,-1]);
-IndexedFaceSet10.DEF = "Orbit";
-let Coordinate11 = browser.currentScene.createNode("Coordinate");
-Coordinate11.DEF = "OrbitCoordinates";
-Coordinate11.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
-IndexedFaceSet10.coord = Coordinate11;
+let IndexedFaceSet16 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet16.ccw = False;
+IndexedFaceSet16.convex = False;
+IndexedFaceSet16.coordIndex = new MFInt32(new int[0,1,2,-1]);
+IndexedFaceSet16.DEF = "Orbit";
+let Coordinate17 = browser.currentScene.createNode("Coordinate");
+Coordinate17.DEF = "OrbitCoordinates";
+Coordinate17.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
+IndexedFaceSet16.coord = Coordinate17;
 
-Shape7.geometry = IndexedFaceSet10;
+Shape13.geometry = IndexedFaceSet16;
 
-Transform6.children = new MFNode();
+Transform12.children = new MFNode();
 
-Transform6.children[0] = Shape7;
+Transform12.children[0] = Shape13;
 
-browser.currentScene.children[4] = Transform6;
+browser.currentScene.children[4] = Transform12;
 
-let Script12 = browser.currentScene.createNode("Script");
-Script12.DEF = "OrbitScript";
-let field13 = browser.currentScene.createNode("field");
-field13.name = "set_fraction";
-field13.accessType = "inputOnly";
-field13.type = "SFFloat";
-Script12.field = new MFNode();
+let Script18 = browser.currentScene.createNode("Script");
+Script18.DEF = "OrbitScript";
+let field19 = browser.currentScene.createNode("field");
+field19.name = "set_fraction";
+field19.accessType = "inputOnly";
+field19.type = "SFFloat";
+Script18.field = new MFNode();
 
-Script12.field[0] = field13;
+Script18.field[0] = field19;
 
-let field14 = browser.currentScene.createNode("field");
-field14.name = "coordinates";
-field14.accessType = "outputOnly";
-field14.type = "MFVec3f";
-Script12.field[1] = field14;
+let field20 = browser.currentScene.createNode("field");
+field20.name = "coordinates";
+field20.accessType = "outputOnly";
+field20.type = "MFVec3f";
+Script18.field[1] = field20;
 
-let field15 = browser.currentScene.createNode("field");
-field15.name = "coordIndexes";
-field15.accessType = "outputOnly";
-field15.type = "MFInt32";
-Script12.field[2] = field15;
+let field21 = browser.currentScene.createNode("field");
+field21.name = "coordIndexes";
+field21.accessType = "outputOnly";
+field21.type = "MFInt32";
+Script18.field[2] = field21;
 
 //<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
 
-Script12.setSourceCode(`ecmascript:\n"+
+Script18.setSourceCode(`ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -152,32 +182,32 @@ Script12.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}`)
-browser.currentScene.children[5] = Script12;
+browser.currentScene.children[5] = Script18;
 
-let TimeSensor16 = browser.currentScene.createNode("TimeSensor");
-TimeSensor16.DEF = "Clock";
-TimeSensor16.cycleInterval = 16;
-TimeSensor16.loop = True;
-browser.currentScene.children[6] = TimeSensor16;
+let TimeSensor22 = browser.currentScene.createNode("TimeSensor");
+TimeSensor22.DEF = "Clock";
+TimeSensor22.cycleInterval = 16;
+TimeSensor22.loop = True;
+browser.currentScene.children[6] = TimeSensor22;
 
-let ROUTE17 = browser.currentScene.createNode("ROUTE");
-ROUTE17.fromNode = "OrbitScript";
-ROUTE17.fromField = "coordIndexes";
-ROUTE17.toNode = "Orbit";
-ROUTE17.toField = "set_coordIndex";
-browser.currentScene.children[7] = ROUTE17;
+let ROUTE23 = browser.currentScene.createNode("ROUTE");
+ROUTE23.fromNode = "OrbitScript";
+ROUTE23.fromField = "coordIndexes";
+ROUTE23.toNode = "Orbit";
+ROUTE23.toField = "set_coordIndex";
+browser.currentScene.children[7] = ROUTE23;
 
-let ROUTE18 = browser.currentScene.createNode("ROUTE");
-ROUTE18.fromNode = "OrbitScript";
-ROUTE18.fromField = "coordinates";
-ROUTE18.toNode = "OrbitCoordinates";
-ROUTE18.toField = "point";
-browser.currentScene.children[8] = ROUTE18;
+let ROUTE24 = browser.currentScene.createNode("ROUTE");
+ROUTE24.fromNode = "OrbitScript";
+ROUTE24.fromField = "coordinates";
+ROUTE24.toNode = "OrbitCoordinates";
+ROUTE24.toField = "point";
+browser.currentScene.children[8] = ROUTE24;
 
-let ROUTE19 = browser.currentScene.createNode("ROUTE");
-ROUTE19.fromNode = "Clock";
-ROUTE19.fromField = "fraction_changed";
-ROUTE19.toNode = "OrbitScript";
-ROUTE19.toField = "set_fraction";
-browser.currentScene.children[9] = ROUTE19;
+let ROUTE25 = browser.currentScene.createNode("ROUTE");
+ROUTE25.fromNode = "Clock";
+ROUTE25.fromField = "fraction_changed";
+ROUTE25.toNode = "OrbitScript";
+ROUTE25.toField = "set_fraction";
+browser.currentScene.children[9] = ROUTE25;
 

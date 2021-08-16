@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 April 2021 </td>
+			<td> 4 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -56,7 +56,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://www.medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://www.medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -104,17 +104,17 @@ public class SpatialAudioCameraAnimation
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 April 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 August 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setHtmlID("NAV"))
     .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png"}))
-    .addChild(new Viewpoint("Camera001").setDescription("Camera001").setJump(TRUE).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000).setZFar("0"
+    .addChild(new Viewpoint("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setJump(TRUE).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000).setZFar("0"
 // [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint zFar: $isNumeric=true, $attributeType=, value='0']
 ).setZNear("1.000000"
 // [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint zNear: $isNumeric=true, $attributeType=, value='1.000000']
@@ -142,7 +142,6 @@ public class SpatialAudioCameraAnimation
         .addChild(new Transform("violin").setRotation(1.0,0.0,0.0,-0.5).setScale(100.0,100.0,100.0).setTranslation(0.0,100.0,0.0)
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
               .setMaterial(new Material().setAmbientintensity("0.0933"
 // [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
 ).setDiffusecolor("1 1 1"
@@ -157,20 +156,10 @@ public class SpatialAudioCameraAnimation
 ).setString(new String[] {"Violin"}).setUsegeocache("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
-              .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
-).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
-).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
-).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
-).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+              .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
     .addChild(new Transform("Audio2").setTranslation(933.475586,0.000000,924.423218)
       .addChild(new Shape()
@@ -181,7 +170,6 @@ public class SpatialAudioCameraAnimation
         .addChild(new Transform("saxophone").setRotation(1.0,0.0,0.0,-0.5).setScale(100.0,100.0,100.0).setTranslation(0.0,100.0,0.0)
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
               .setMaterial(new Material().setAmbientintensity("0.0933"
 // [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
 ).setDiffusecolor("1 1 1"
@@ -196,27 +184,17 @@ public class SpatialAudioCameraAnimation
 ).setString(new String[] {"Saxophone"}).setUsegeocache("true"
 // [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
-              .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
-).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
-).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
-).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
-).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 )))))))
-    .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView(true))
+    .addChild(new ListenerPointSource().setHtmlID("ListenerPointSource").setTrackCurrentView(true))
     .addChild(new AudioDestination().setHtmlID("AudioDestination")
-      .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound1").setMaxDistance(3500)
+      .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(6.28319).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound1").setMaxDistance(3500)
         .addChild(new Gain().setHtmlID("Gain1")
           .setSource(new AudioClip().setHtmlID("AudioClip1").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3"}))))
-      .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(360).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound2").setMaxDistance(3500)
+      .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(6.28319).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound2").setMaxDistance(3500)
         .addChild(new Gain().setHtmlID("Gain2")
           .setSource(new AudioClip().setHtmlID("AudioClip2").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/saxophone.mp3"}))))));
     }

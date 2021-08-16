@@ -54,3 +54,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Sound()).setLocation(java.newArray("float", [java.newFloat(0), java.newFloat(1.6), java.newFloat(0)]))
           .setSource((new autoclass.MovieTexture()).setDescription("testing").setUrl(java.newArray("java.lang.String", ["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])))))      ;
     X3D0.toFileX3D("../data/AllAudioGraphNodesTest.new.x3d");
+    process.exit(0);

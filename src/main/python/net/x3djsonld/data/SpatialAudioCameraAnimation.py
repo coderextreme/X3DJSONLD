@@ -30,10 +30,10 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='20 April 2021',name='modified'),
+    meta(content='4 August 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
-    meta(content='http://www.medialab.teicrete.gr/minipages/x3domAudio',name='reference'),
+    meta(content='https://www.medialab.hmu.gr/minipages/x3domAudio',name='reference'),
     meta(content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d',name='identifier'),
     meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
@@ -41,7 +41,7 @@ newModel=X3D(profile='Full',version='4.0',
     children=[
     NavigationInfo(id='NAV'),
     Background(backUrl=["images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png"],frontUrl=["images/generic/FR1.png"],leftUrl=["images/generic/LF1.png"],rightUrl=["images/generic/RT1.png"],topUrl=["images/generic/UP1.png"]),
-    Viewpoint(DEF='Camera001',description='Camera001',jump=TRUE,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000),zFar=0,zNear=1.000000),
+    Viewpoint(DEF='Camera001',description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view',jump=TRUE,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000),zFar=0,zNear=1.000000),
     TimeSensor(DEF='TIMER',cycleInterval=33.333332,loop=TRUE),
     PositionInterpolator(DEF='Camera001-POS-INTERP',key=[0,0.25,0.5,0.75,1],keyValue=[(0,2000,3500),(0,2000,0),(0,2000,-3500),(0,2000,0),(0,2000,3500)]),
     OrientationInterpolator(DEF='Camera001-ROT-INTERP',key=[0,0.25,0.5,0.75,1],keyValue=[(1.000000,0.000000,-0.000000,-0.523599),(0.999990,0.003554,0.002727,-1.309007),(0.000000,-0.965926,-0.258819,-3.141593),(0.002282,-0.793351,-0.608760,-3.135645),(1.000000,-0.000001,-0.000000,-0.523599)]),
@@ -69,11 +69,9 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           Shape(
             appearance=Appearance(
-              material=Material(diffuseColor=(0.345,0.345,0.882)),
-              Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-            geometry=Text(ccw=True,lit=true,string=['Violin'],usegeocache=true,
-              children=[
-              fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])])]),
+              material=Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
+            geometry=Text(ccw=True,lit=true,string=["Violin"],usegeocache=true,
+              fontStyle=FontStyle(justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])])]),
     Transform(DEF='Audio2',translation=(933.475586,0.000000,924.423218),
       children=[
       Shape(
@@ -87,22 +85,20 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           Shape(
             appearance=Appearance(
-              material=Material(diffuseColor=(0.345,0.345,0.882)),
-              Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-            geometry=Text(ccw=True,lit=true,string=['Saxophone'],usegeocache=true,
-              children=[
-              fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])])]),
-    ListenerPoint(id='ListenerPoint',trackCurrentView=true),
+              material=Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
+            geometry=Text(ccw=True,lit=true,string=["Saxophone"],usegeocache=true,
+              fontStyle=FontStyle(family=["Times"],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])])]),
+    ListenerPointSource(id='ListenerPointSource',trackCurrentView=true),
     AudioDestination(id='AudioDestination',
       children=[
-      SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound1',maxDistance=3500,
+      SpatialSound(USE='Audio1',coneInnerAngle=6.28319,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound1',maxDistance=3500,
         children=[
         Gain(id='Gain1',
-          source=AudioClip(id='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3']))]),
-      SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound2',maxDistance=3500,
+          source=AudioClip(id='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3"]))]),
+      SpatialSound(USE='Audio2',coneInnerAngle=6.28319,coneOuterAngle=0,distanceModel=linear,enableHRTF=true,id='SpatialSound2',maxDistance=3500,
         children=[
         Gain(id='Gain2',
-          source=AudioClip(id='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/saxophone.mp3']))])])])
+          source=AudioClip(id='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3"]))])])])
 ) # X3D model complete
 
 ###############################################

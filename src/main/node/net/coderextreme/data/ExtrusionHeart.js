@@ -30,3 +30,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0.3), java.newFloat(0.3)])))))))      ;
     X3D0.toFileX3D("../data/ExtrusionHeart.new.x3d");
+    process.exit(0);

@@ -2,279 +2,339 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
-let Viewpoint2 = browser.currentScene.createNode("Viewpoint");
-Viewpoint2.position = new SFVec3f(new float[0,5,100]);
-Viewpoint2.description = "Switch background and images texture";
+let head1 = browser.currentScene.createNode("head");
+let component2 = browser.currentScene.createNode("component");
+component2.name = "Shaders";
+component2.level = 1;
+head1.component = new MFNode();
+
+head1.component[0] = component2;
+
+let component3 = browser.currentScene.createNode("component");
+component3.name = "CubeMapTexturing";
+component3.level = 1;
+head1.component[1] = component3;
+
+let component4 = browser.currentScene.createNode("component");
+component4.name = "Texturing";
+component4.level = 1;
+head1.component[2] = component4;
+
+let component5 = browser.currentScene.createNode("component");
+component5.name = "Rendering";
+component5.level = 1;
+head1.component[3] = component5;
+
+let component6 = browser.currentScene.createNode("component");
+component6.name = "Shape";
+component6.level = 4;
+head1.component[4] = component6;
+
+let component7 = browser.currentScene.createNode("component");
+component7.name = "Grouping";
+component7.level = 3;
+head1.component[5] = component7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "title";
+meta8.content = "mirror2.x3d";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "creator";
+meta9.content = "John Carlson";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "generator";
+meta10.content = "manual";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "identifier";
+meta11.content = "https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "description";
+meta12.content = "a mirrored sphere";
+head1.meta[10] = meta12;
+
+head = head1;
+
+let Viewpoint14 = browser.currentScene.createNode("Viewpoint");
+Viewpoint14.position = new SFVec3f(new float[0,5,100]);
+Viewpoint14.description = "Switch background and images texture";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Viewpoint2;
+browser.currentScene.children[0] = Viewpoint14;
 
-let Background3 = browser.currentScene.createNode("Background");
-Background3.DEF = "cube";
-Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
-Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
-Background3.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
-Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
-Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
-Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
-browser.currentScene.children[1] = Background3;
+let Background15 = browser.currentScene.createNode("Background");
+Background15.DEF = "cube";
+Background15.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
+Background15.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
+Background15.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
+Background15.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
+Background15.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
+Background15.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
+browser.currentScene.children[1] = Background15;
 
-let Transform4 = browser.currentScene.createNode("Transform");
-let Shape5 = browser.currentScene.createNode("Shape");
-let Appearance6 = browser.currentScene.createNode("Appearance");
-let Material7 = browser.currentScene.createNode("Material");
-Material7.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material7.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance6.material = Material7;
+let Transform16 = browser.currentScene.createNode("Transform");
+let Shape17 = browser.currentScene.createNode("Shape");
+let Appearance18 = browser.currentScene.createNode("Appearance");
+let Material19 = browser.currentScene.createNode("Material");
+Material19.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material19.specularColor = new SFColor(new float[0.5,0.5,0.5]);
+Appearance18.material = Material19;
 
-let ComposedCubeMapTexture8 = browser.currentScene.createNode("ComposedCubeMapTexture");
-let ImageTexture9 = browser.currentScene.createNode("ImageTexture");
-ImageTexture9.DEF = "backShader";
-ImageTexture9.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture9;
+let ComposedCubeMapTexture20 = browser.currentScene.createNode("ComposedCubeMapTexture");
+let ImageTexture21 = browser.currentScene.createNode("ImageTexture");
+ImageTexture21.DEF = "backShader";
+ImageTexture21.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture21;
 
-let ImageTexture10 = browser.currentScene.createNode("ImageTexture");
-ImageTexture10.DEF = "bottomShader";
-ImageTexture10.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture10;
+let ImageTexture22 = browser.currentScene.createNode("ImageTexture");
+ImageTexture22.DEF = "bottomShader";
+ImageTexture22.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture22;
 
-let ImageTexture11 = browser.currentScene.createNode("ImageTexture");
-ImageTexture11.DEF = "frontShader";
-ImageTexture11.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture11;
+let ImageTexture23 = browser.currentScene.createNode("ImageTexture");
+ImageTexture23.DEF = "frontShader";
+ImageTexture23.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture23;
 
-let ImageTexture12 = browser.currentScene.createNode("ImageTexture");
-ImageTexture12.DEF = "leftShader";
-ImageTexture12.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture12;
+let ImageTexture24 = browser.currentScene.createNode("ImageTexture");
+ImageTexture24.DEF = "leftShader";
+ImageTexture24.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture24;
 
-let ImageTexture13 = browser.currentScene.createNode("ImageTexture");
-ImageTexture13.DEF = "rightShader";
-ImageTexture13.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture13;
+let ImageTexture25 = browser.currentScene.createNode("ImageTexture");
+ImageTexture25.DEF = "rightShader";
+ImageTexture25.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture25;
 
-let ImageTexture14 = browser.currentScene.createNode("ImageTexture");
-ImageTexture14.DEF = "topShader";
-ImageTexture14.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
-ComposedCubeMapTexture8.topTexture = ImageTexture14;
+let ImageTexture26 = browser.currentScene.createNode("ImageTexture");
+ImageTexture26.DEF = "topShader";
+ImageTexture26.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
+ComposedCubeMapTexture20.topTexture = ImageTexture26;
 
-Appearance6.texture = ComposedCubeMapTexture8;
+Appearance18.texture = ComposedCubeMapTexture20;
 
-let ComposedShader15 = browser.currentScene.createNode("ComposedShader");
-ComposedShader15.DEF = "x_ite";
-ComposedShader15.language = "GLSL";
+let ComposedShader27 = browser.currentScene.createNode("ComposedShader");
+ComposedShader27.DEF = "x_ite";
+ComposedShader27.language = "GLSL";
 //http://hypertextbook.com/facts/2005/JustinChe.shtml
-let field16 = browser.currentScene.createNode("field");
-field16.name = "chromaticDispertion";
-field16.accessType = "inputOutput";
-field16.type = "SFVec3f";
-field16.value = "0.98 1 1.033";
-ComposedShader15.field = new MFNode();
-
-ComposedShader15.field[0] = field16;
-
-let field17 = browser.currentScene.createNode("field");
-field17.name = "cube";
-field17.accessType = "inputOutput";
-field17.type = "SFInt32";
-field17.value = "0";
-ComposedShader15.field[1] = field17;
-
-let field18 = browser.currentScene.createNode("field");
-field18.name = "bias";
-field18.accessType = "inputOutput";
-field18.type = "SFFloat";
-field18.value = "0.5";
-ComposedShader15.field[2] = field18;
-
-let field19 = browser.currentScene.createNode("field");
-field19.name = "scale";
-field19.accessType = "inputOutput";
-field19.type = "SFFloat";
-field19.value = "0.5";
-ComposedShader15.field[3] = field19;
-
-let field20 = browser.currentScene.createNode("field");
-field20.name = "power";
-field20.accessType = "inputOutput";
-field20.type = "SFFloat";
-field20.value = "2";
-ComposedShader15.field[4] = field20;
-
-let ShaderPart21 = browser.currentScene.createNode("ShaderPart");
-ShaderPart21.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
-ShaderPart21.type = "VERTEX";
-ComposedShader15.parts[5] = ShaderPart21;
-
-let ShaderPart22 = browser.currentScene.createNode("ShaderPart");
-ShaderPart22.url = new MFString(new java.lang.String["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]);
-ShaderPart22.type = "FRAGMENT";
-ComposedShader15.parts[6] = ShaderPart22;
-
-Appearance6.shaders = new MFNode();
-
-Appearance6.shaders[0] = ComposedShader15;
-
-let ComposedShader23 = browser.currentScene.createNode("ComposedShader");
-ComposedShader23.DEF = "x3dom";
-ComposedShader23.language = "GLSL";
-let field24 = browser.currentScene.createNode("field");
-field24.name = "chromaticDispertion";
-field24.accessType = "inputOutput";
-field24.type = "SFVec3f";
-field24.value = "0.98 1 1.033";
-ComposedShader23.field = new MFNode();
-
-ComposedShader23.field[0] = field24;
-
-let field25 = browser.currentScene.createNode("field");
-field25.name = "cube";
-field25.accessType = "inputOutput";
-field25.type = "SFInt32";
-field25.value = "0";
-ComposedShader23.field[1] = field25;
-
-let field26 = browser.currentScene.createNode("field");
-field26.name = "bias";
-field26.accessType = "inputOutput";
-field26.type = "SFFloat";
-field26.value = "0.5";
-ComposedShader23.field[2] = field26;
-
-let field27 = browser.currentScene.createNode("field");
-field27.name = "scale";
-field27.accessType = "inputOutput";
-field27.type = "SFFloat";
-field27.value = "0.5";
-ComposedShader23.field[3] = field27;
-
 let field28 = browser.currentScene.createNode("field");
-field28.name = "power";
+field28.name = "chromaticDispertion";
 field28.accessType = "inputOutput";
-field28.type = "SFFloat";
-field28.value = "2";
-ComposedShader23.field[4] = field28;
+field28.type = "SFVec3f";
+field28.value = "0.98 1 1.033";
+ComposedShader27.field = new MFNode();
 
-let ShaderPart29 = browser.currentScene.createNode("ShaderPart");
-ShaderPart29.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
-ShaderPart29.type = "VERTEX";
-ComposedShader23.parts[5] = ShaderPart29;
+ComposedShader27.field[0] = field28;
 
-let ShaderPart30 = browser.currentScene.createNode("ShaderPart");
-ShaderPart30.url = new MFString(new java.lang.String["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]);
-ShaderPart30.type = "FRAGMENT";
-ComposedShader23.parts[6] = ShaderPart30;
+let field29 = browser.currentScene.createNode("field");
+field29.name = "cube";
+field29.accessType = "inputOutput";
+field29.type = "SFInt32";
+field29.value = "0";
+ComposedShader27.field[1] = field29;
 
-Appearance6.shaders[1] = ComposedShader23;
+let field30 = browser.currentScene.createNode("field");
+field30.name = "bias";
+field30.accessType = "inputOutput";
+field30.type = "SFFloat";
+field30.value = "0.5";
+ComposedShader27.field[2] = field30;
 
-Shape5.appearance = Appearance6;
+let field31 = browser.currentScene.createNode("field");
+field31.name = "scale";
+field31.accessType = "inputOutput";
+field31.type = "SFFloat";
+field31.value = "0.5";
+ComposedShader27.field[3] = field31;
 
-let Sphere31 = browser.currentScene.createNode("Sphere");
-Sphere31.radius = 30;
-Shape5.geometry = Sphere31;
+let field32 = browser.currentScene.createNode("field");
+field32.name = "power";
+field32.accessType = "inputOutput";
+field32.type = "SFFloat";
+field32.value = "2";
+ComposedShader27.field[4] = field32;
 
-Transform4.children = new MFNode();
+let ShaderPart33 = browser.currentScene.createNode("ShaderPart");
+ShaderPart33.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
+ShaderPart33.type = "VERTEX";
+ComposedShader27.parts[5] = ShaderPart33;
 
-Transform4.children[0] = Shape5;
+let ShaderPart34 = browser.currentScene.createNode("ShaderPart");
+ShaderPart34.url = new MFString(new java.lang.String["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]);
+ShaderPart34.type = "FRAGMENT";
+ComposedShader27.parts[6] = ShaderPart34;
 
-let Script32 = browser.currentScene.createNode("Script");
-Script32.DEF = "UrlSelector";
-Script32.directOutput = True;
-let field33 = browser.currentScene.createNode("field");
-field33.name = "frontUrls";
-field33.type = "MFString";
-field33.accessType = "initializeOnly";
-field33.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
-Script32.field = new MFNode();
+Appearance18.shaders = new MFNode();
 
-Script32.field[0] = field33;
+Appearance18.shaders[0] = ComposedShader27;
 
-let field34 = browser.currentScene.createNode("field");
-field34.name = "backUrls";
-field34.type = "MFString";
-field34.accessType = "initializeOnly";
-field34.value = "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"";
-Script32.field[1] = field34;
-
-let field35 = browser.currentScene.createNode("field");
-field35.name = "leftUrls";
-field35.type = "MFString";
-field35.accessType = "initializeOnly";
-field35.value = "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"";
-Script32.field[2] = field35;
-
+let ComposedShader35 = browser.currentScene.createNode("ComposedShader");
+ComposedShader35.DEF = "x3dom";
+ComposedShader35.language = "GLSL";
 let field36 = browser.currentScene.createNode("field");
-field36.name = "rightUrls";
-field36.type = "MFString";
-field36.accessType = "initializeOnly";
-field36.value = "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"";
-Script32.field[3] = field36;
+field36.name = "chromaticDispertion";
+field36.accessType = "inputOutput";
+field36.type = "SFVec3f";
+field36.value = "0.98 1 1.033";
+ComposedShader35.field = new MFNode();
+
+ComposedShader35.field[0] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "topUrls";
-field37.type = "MFString";
-field37.accessType = "initializeOnly";
-field37.value = "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"";
-Script32.field[4] = field37;
+field37.name = "cube";
+field37.accessType = "inputOutput";
+field37.type = "SFInt32";
+field37.value = "0";
+ComposedShader35.field[1] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "bottomUrls";
-field38.type = "MFString";
-field38.accessType = "initializeOnly";
-field38.value = "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"";
-Script32.field[5] = field38;
+field38.name = "bias";
+field38.accessType = "inputOutput";
+field38.type = "SFFloat";
+field38.value = "0.5";
+ComposedShader35.field[2] = field38;
 
 let field39 = browser.currentScene.createNode("field");
-field39.name = "front_changed";
-field39.type = "MFString";
-field39.accessType = "outputOnly";
-Script32.field[6] = field39;
+field39.name = "scale";
+field39.accessType = "inputOutput";
+field39.type = "SFFloat";
+field39.value = "0.5";
+ComposedShader35.field[3] = field39;
 
 let field40 = browser.currentScene.createNode("field");
-field40.name = "back_changed";
-field40.type = "MFString";
-field40.accessType = "outputOnly";
-Script32.field[7] = field40;
+field40.name = "power";
+field40.accessType = "inputOutput";
+field40.type = "SFFloat";
+field40.value = "2";
+ComposedShader35.field[4] = field40;
 
-let field41 = browser.currentScene.createNode("field");
-field41.name = "left_changed";
-field41.type = "MFString";
-field41.accessType = "outputOnly";
-Script32.field[8] = field41;
+let ShaderPart41 = browser.currentScene.createNode("ShaderPart");
+ShaderPart41.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
+ShaderPart41.type = "VERTEX";
+ComposedShader35.parts[5] = ShaderPart41;
 
-let field42 = browser.currentScene.createNode("field");
-field42.name = "right_changed";
-field42.type = "MFString";
-field42.accessType = "outputOnly";
-Script32.field[9] = field42;
+let ShaderPart42 = browser.currentScene.createNode("ShaderPart");
+ShaderPart42.url = new MFString(new java.lang.String["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]);
+ShaderPart42.type = "FRAGMENT";
+ComposedShader35.parts[6] = ShaderPart42;
 
-let field43 = browser.currentScene.createNode("field");
-field43.name = "top_changed";
-field43.type = "MFString";
-field43.accessType = "outputOnly";
-Script32.field[10] = field43;
+Appearance18.shaders[1] = ComposedShader35;
 
-let field44 = browser.currentScene.createNode("field");
-field44.name = "bottom_changed";
-field44.type = "MFString";
-field44.accessType = "outputOnly";
-Script32.field[11] = field44;
+Shape17.appearance = Appearance18;
 
+let Sphere43 = browser.currentScene.createNode("Sphere");
+Sphere43.radius = 30;
+Shape17.geometry = Sphere43;
+
+Transform16.children = new MFNode();
+
+Transform16.children[0] = Shape17;
+
+let Script44 = browser.currentScene.createNode("Script");
+Script44.DEF = "UrlSelector";
+Script44.directOutput = True;
 let field45 = browser.currentScene.createNode("field");
-field45.name = "set_fraction";
-field45.type = "SFFloat";
-field45.accessType = "inputOnly";
-Script32.field[12] = field45;
+field45.name = "frontUrls";
+field45.type = "MFString";
+field45.accessType = "initializeOnly";
+field45.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
+Script44.field = new MFNode();
+
+Script44.field[0] = field45;
 
 let field46 = browser.currentScene.createNode("field");
-field46.name = "old";
-field46.type = "SFInt32";
-field46.accessType = "inputOutput";
-field46.value = "-1";
-Script32.field[13] = field46;
+field46.name = "backUrls";
+field46.type = "MFString";
+field46.accessType = "initializeOnly";
+field46.value = "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"";
+Script44.field[1] = field46;
+
+let field47 = browser.currentScene.createNode("field");
+field47.name = "leftUrls";
+field47.type = "MFString";
+field47.accessType = "initializeOnly";
+field47.value = "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"";
+Script44.field[2] = field47;
+
+let field48 = browser.currentScene.createNode("field");
+field48.name = "rightUrls";
+field48.type = "MFString";
+field48.accessType = "initializeOnly";
+field48.value = "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"";
+Script44.field[3] = field48;
+
+let field49 = browser.currentScene.createNode("field");
+field49.name = "topUrls";
+field49.type = "MFString";
+field49.accessType = "initializeOnly";
+field49.value = "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"";
+Script44.field[4] = field49;
+
+let field50 = browser.currentScene.createNode("field");
+field50.name = "bottomUrls";
+field50.type = "MFString";
+field50.accessType = "initializeOnly";
+field50.value = "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"";
+Script44.field[5] = field50;
+
+let field51 = browser.currentScene.createNode("field");
+field51.name = "front_changed";
+field51.type = "MFString";
+field51.accessType = "outputOnly";
+Script44.field[6] = field51;
+
+let field52 = browser.currentScene.createNode("field");
+field52.name = "back_changed";
+field52.type = "MFString";
+field52.accessType = "outputOnly";
+Script44.field[7] = field52;
+
+let field53 = browser.currentScene.createNode("field");
+field53.name = "left_changed";
+field53.type = "MFString";
+field53.accessType = "outputOnly";
+Script44.field[8] = field53;
+
+let field54 = browser.currentScene.createNode("field");
+field54.name = "right_changed";
+field54.type = "MFString";
+field54.accessType = "outputOnly";
+Script44.field[9] = field54;
+
+let field55 = browser.currentScene.createNode("field");
+field55.name = "top_changed";
+field55.type = "MFString";
+field55.accessType = "outputOnly";
+Script44.field[10] = field55;
+
+let field56 = browser.currentScene.createNode("field");
+field56.name = "bottom_changed";
+field56.type = "MFString";
+field56.accessType = "outputOnly";
+Script44.field[11] = field56;
+
+let field57 = browser.currentScene.createNode("field");
+field57.name = "set_fraction";
+field57.type = "SFFloat";
+field57.accessType = "inputOnly";
+Script44.field[12] = field57;
+
+let field58 = browser.currentScene.createNode("field");
+field58.name = "old";
+field58.type = "SFInt32";
+field58.accessType = "inputOutput";
+field58.value = "-1";
+Script44.field[13] = field58;
 
 
-Script32.setSourceCode(`ecmascript:\n"+
+Script44.setSourceCode(`ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+
@@ -291,104 +351,104 @@ Script32.setSourceCode(`ecmascript:\n"+
 "		    bottom_changed[0] = bottomUrls[side];\n"+
 "            }\n"+
 "        }`)
-Transform4.children[1] = Script32;
+Transform16.children[1] = Script44;
 
-let TimeSensor47 = browser.currentScene.createNode("TimeSensor");
-TimeSensor47.DEF = "Clock";
-TimeSensor47.cycleInterval = 45;
-TimeSensor47.loop = True;
-Transform4.children[2] = TimeSensor47;
-
-let ROUTE48 = browser.currentScene.createNode("ROUTE");
-ROUTE48.fromNode = "Clock";
-ROUTE48.fromField = "fraction_changed";
-ROUTE48.toNode = "UrlSelector";
-ROUTE48.toField = "set_fraction";
-Transform4.children[3] = ROUTE48;
-
-let ROUTE49 = browser.currentScene.createNode("ROUTE");
-ROUTE49.fromNode = "UrlSelector";
-ROUTE49.fromField = "front_changed";
-ROUTE49.toNode = "cube";
-ROUTE49.toField = "frontUrl";
-Transform4.children[4] = ROUTE49;
-
-let ROUTE50 = browser.currentScene.createNode("ROUTE");
-ROUTE50.fromNode = "UrlSelector";
-ROUTE50.fromField = "back_changed";
-ROUTE50.toNode = "cube";
-ROUTE50.toField = "backUrl";
-Transform4.children[5] = ROUTE50;
-
-let ROUTE51 = browser.currentScene.createNode("ROUTE");
-ROUTE51.fromNode = "UrlSelector";
-ROUTE51.fromField = "left_changed";
-ROUTE51.toNode = "cube";
-ROUTE51.toField = "leftUrl";
-Transform4.children[6] = ROUTE51;
-
-let ROUTE52 = browser.currentScene.createNode("ROUTE");
-ROUTE52.fromNode = "UrlSelector";
-ROUTE52.fromField = "right_changed";
-ROUTE52.toNode = "cube";
-ROUTE52.toField = "rightUrl";
-Transform4.children[7] = ROUTE52;
-
-let ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromNode = "UrlSelector";
-ROUTE53.fromField = "top_changed";
-ROUTE53.toNode = "cube";
-ROUTE53.toField = "topUrl";
-Transform4.children[8] = ROUTE53;
-
-let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromNode = "UrlSelector";
-ROUTE54.fromField = "bottom_changed";
-ROUTE54.toNode = "cube";
-ROUTE54.toField = "bottomUrl";
-Transform4.children[9] = ROUTE54;
-
-let ROUTE55 = browser.currentScene.createNode("ROUTE");
-ROUTE55.fromNode = "UrlSelector";
-ROUTE55.fromField = "front_changed";
-ROUTE55.toNode = "frontShader";
-ROUTE55.toField = "url";
-Transform4.children[10] = ROUTE55;
-
-let ROUTE56 = browser.currentScene.createNode("ROUTE");
-ROUTE56.fromNode = "UrlSelector";
-ROUTE56.fromField = "back_changed";
-ROUTE56.toNode = "backShader";
-ROUTE56.toField = "url";
-Transform4.children[11] = ROUTE56;
-
-let ROUTE57 = browser.currentScene.createNode("ROUTE");
-ROUTE57.fromNode = "UrlSelector";
-ROUTE57.fromField = "left_changed";
-ROUTE57.toNode = "leftShader";
-ROUTE57.toField = "url";
-Transform4.children[12] = ROUTE57;
-
-let ROUTE58 = browser.currentScene.createNode("ROUTE");
-ROUTE58.fromNode = "UrlSelector";
-ROUTE58.fromField = "right_changed";
-ROUTE58.toNode = "rightShader";
-ROUTE58.toField = "url";
-Transform4.children[13] = ROUTE58;
-
-let ROUTE59 = browser.currentScene.createNode("ROUTE");
-ROUTE59.fromNode = "UrlSelector";
-ROUTE59.fromField = "top_changed";
-ROUTE59.toNode = "topShader";
-ROUTE59.toField = "url";
-Transform4.children[14] = ROUTE59;
+let TimeSensor59 = browser.currentScene.createNode("TimeSensor");
+TimeSensor59.DEF = "Clock";
+TimeSensor59.cycleInterval = 45;
+TimeSensor59.loop = True;
+Transform16.children[2] = TimeSensor59;
 
 let ROUTE60 = browser.currentScene.createNode("ROUTE");
-ROUTE60.fromNode = "UrlSelector";
-ROUTE60.fromField = "bottom_changed";
-ROUTE60.toNode = "bottomShader";
-ROUTE60.toField = "url";
-Transform4.children[15] = ROUTE60;
+ROUTE60.fromNode = "Clock";
+ROUTE60.fromField = "fraction_changed";
+ROUTE60.toNode = "UrlSelector";
+ROUTE60.toField = "set_fraction";
+Transform16.children[3] = ROUTE60;
 
-browser.currentScene.children[2] = Transform4;
+let ROUTE61 = browser.currentScene.createNode("ROUTE");
+ROUTE61.fromNode = "UrlSelector";
+ROUTE61.fromField = "front_changed";
+ROUTE61.toNode = "cube";
+ROUTE61.toField = "frontUrl";
+Transform16.children[4] = ROUTE61;
+
+let ROUTE62 = browser.currentScene.createNode("ROUTE");
+ROUTE62.fromNode = "UrlSelector";
+ROUTE62.fromField = "back_changed";
+ROUTE62.toNode = "cube";
+ROUTE62.toField = "backUrl";
+Transform16.children[5] = ROUTE62;
+
+let ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromNode = "UrlSelector";
+ROUTE63.fromField = "left_changed";
+ROUTE63.toNode = "cube";
+ROUTE63.toField = "leftUrl";
+Transform16.children[6] = ROUTE63;
+
+let ROUTE64 = browser.currentScene.createNode("ROUTE");
+ROUTE64.fromNode = "UrlSelector";
+ROUTE64.fromField = "right_changed";
+ROUTE64.toNode = "cube";
+ROUTE64.toField = "rightUrl";
+Transform16.children[7] = ROUTE64;
+
+let ROUTE65 = browser.currentScene.createNode("ROUTE");
+ROUTE65.fromNode = "UrlSelector";
+ROUTE65.fromField = "top_changed";
+ROUTE65.toNode = "cube";
+ROUTE65.toField = "topUrl";
+Transform16.children[8] = ROUTE65;
+
+let ROUTE66 = browser.currentScene.createNode("ROUTE");
+ROUTE66.fromNode = "UrlSelector";
+ROUTE66.fromField = "bottom_changed";
+ROUTE66.toNode = "cube";
+ROUTE66.toField = "bottomUrl";
+Transform16.children[9] = ROUTE66;
+
+let ROUTE67 = browser.currentScene.createNode("ROUTE");
+ROUTE67.fromNode = "UrlSelector";
+ROUTE67.fromField = "front_changed";
+ROUTE67.toNode = "frontShader";
+ROUTE67.toField = "url";
+Transform16.children[10] = ROUTE67;
+
+let ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromNode = "UrlSelector";
+ROUTE68.fromField = "back_changed";
+ROUTE68.toNode = "backShader";
+ROUTE68.toField = "url";
+Transform16.children[11] = ROUTE68;
+
+let ROUTE69 = browser.currentScene.createNode("ROUTE");
+ROUTE69.fromNode = "UrlSelector";
+ROUTE69.fromField = "left_changed";
+ROUTE69.toNode = "leftShader";
+ROUTE69.toField = "url";
+Transform16.children[12] = ROUTE69;
+
+let ROUTE70 = browser.currentScene.createNode("ROUTE");
+ROUTE70.fromNode = "UrlSelector";
+ROUTE70.fromField = "right_changed";
+ROUTE70.toNode = "rightShader";
+ROUTE70.toField = "url";
+Transform16.children[13] = ROUTE70;
+
+let ROUTE71 = browser.currentScene.createNode("ROUTE");
+ROUTE71.fromNode = "UrlSelector";
+ROUTE71.fromField = "top_changed";
+ROUTE71.toNode = "topShader";
+ROUTE71.toField = "url";
+Transform16.children[14] = ROUTE71;
+
+let ROUTE72 = browser.currentScene.createNode("ROUTE");
+ROUTE72.fromNode = "UrlSelector";
+ROUTE72.fromField = "bottom_changed";
+ROUTE72.toNode = "bottomShader";
+ROUTE72.toField = "url";
+Transform16.children[15] = ROUTE72;
+
+browser.currentScene.children[2] = Transform16;
 

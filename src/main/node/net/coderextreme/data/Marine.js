@@ -60,3 +60,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild((new autoclass.Viewpoint()).setDEF("Viewpoint1").setDescription("Sailor Front").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.571)])).setPosition(java.newArray("float", [java.newFloat(2.293), java.newFloat(1.66), java.newFloat(0)])))
             .addChild((new autoclass.Viewpoint()).setDEF("Viewpoint2").setDescription("Sailor Back").setOrientation(java.newArray("float", [java.newFloat(-0.185), java.newFloat(-0.965), java.newFloat(-0.185), java.newFloat(1.605)])).setPosition(java.newArray("float", [java.newFloat(-1.208), java.newFloat(2), java.newFloat(0)]))))))      ;
     X3D0.toFileX3D("../data/Marine.new.x3d");
+    process.exit(0);
