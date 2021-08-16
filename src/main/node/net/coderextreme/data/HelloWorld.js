@@ -56,3 +56,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))))))      ;
     X3D0.toFileX3D("../data/HelloWorld.new.x3d");
+    process.exit(0);

@@ -58,6 +58,7 @@ NodeSerializer.prototype = {
 			}
 		}
 		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x3d\");\n";
+		str += "    process.exit(0);\n";
 
 		return str;
 	},

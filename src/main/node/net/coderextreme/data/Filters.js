@@ -75,3 +75,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .addChild((new autoclass.BiquadFilter()).setType(autoclass.field.TYPE_ALLPASS).setFrequency(java.newFloat(1000)).setQualityFactor(java.newFloat(0))
                       .addChild((new autoclass.AudioClip()).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(java.newArray("java.lang.String", ["sound/wobble_loop.mp3"])))))))))))      ;
     X3D0.toFileX3D("../data/Filters.new.x3d");
+    process.exit(0);

@@ -2017,3 +2017,4 @@ ProtoInstance313
 ProtoInstance313
               .addFieldValue((new autoclass.fieldValue()).setName("translation").setValue("0.006899999920278788 1.09660005569458 0.10170000046491623"));
     X3D0.toFileX3D("../data/foo.new.x3d");
+    process.exit(0);

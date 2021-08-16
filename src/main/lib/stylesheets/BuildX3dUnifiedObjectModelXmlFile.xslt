@@ -1585,7 +1585,7 @@ Recommended tool:
     <xsl:variable name="fieldType">
             <xsl:choose>
                 <xsl:when test="starts-with(@type,'SF') or starts-with(@type,'MF')">
-                        <xsl:value-of select="@type"/>
+                    <xsl:value-of select="@type"/>
                 </xsl:when>
                 <xsl:when test="starts-with($givenType, 'SF') or starts-with($givenType, 'MF')">
                     <xsl:value-of select="$givenType"/>
@@ -1693,6 +1693,20 @@ Recommended tool:
 		</xsl:message>
         -->
 	</xsl:if>
+	<!-- debug diagnostic to determine MF types with default values (used for Mantis 1113)
+    <xsl:if test="starts-with($fieldType, 'MF') and (string-length(@default) > 0) and not(ends-with($fieldType, 'Node')) and not(ends-with($fieldType, 'String'))">
+		<xsl:message>
+			<xsl:text>*** found </xsl:text>
+			<xsl:value-of select="$containerName"/>
+			<xsl:text> field name=</xsl:text>
+			<xsl:value-of select="$fieldName"/>
+			<xsl:text> type=</xsl:text>
+			<xsl:value-of select="$fieldType"/>
+			<xsl:text> with non-empty default=</xsl:text>
+			<xsl:value-of select="@default"/>
+		</xsl:message>
+	</xsl:if>
+        -->
 	
 	<!-- some schema field definitions include optional enumerations in the xs:annotation/xs:appinfo section, 
 	     let those take precedence over validation definitions in order to avoid duplicate field definitions here -->

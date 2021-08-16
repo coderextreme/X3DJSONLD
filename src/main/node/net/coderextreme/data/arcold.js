@@ -199,3 +199,4 @@ ProtoInstance10
           .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
             .addChild((new autoclass.Transform()).setUSE("rotscale3")));
     X3D0.toFileX3D("../data/arcold.new.x3d");
+    process.exit(0);

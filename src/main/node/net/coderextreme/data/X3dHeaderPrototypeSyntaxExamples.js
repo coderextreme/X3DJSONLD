@@ -102,3 +102,4 @@ ProtoInstance2
 ProtoInstance3
           .addFieldValue((new autoclass.fieldValue()).setName("enabled").setValue("true"));
     X3D0.toFileX3D("../data/X3dHeaderPrototypeSyntaxExamples.new.x3d");
+    process.exit(0);

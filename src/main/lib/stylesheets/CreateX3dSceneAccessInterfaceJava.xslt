@@ -30974,20 +30974,49 @@ browser instance or there is some other problem.]]></xsl:text>
 			
 		</xsl:for-each>
 		
-		<!-- create Javadoc package.html files for each subpackage -->
+		<!-- create Javadoc package-info.java files for each subpackage -->
 		<xsl:for-each select="//componentInfo[not(@name = preceding::componentInfo/@name)]">
+
+            <xsl:variable name="componentName" select="translate(@name,'-','')"/>
+            <xsl:variable name="sourceFilePath">
+                <xsl:value-of select="$saiPackageDirectorySource"/>
+                <xsl:text>/</xsl:text>
+                <xsl:value-of select="$componentName"/><!-- no componentName hypens allowed (e.g. HAnim) -->
+                <xsl:text>/</xsl:text>
+                <xsl:text>package-info.java</xsl:text>
+            </xsl:variable>
 		
-			<xsl:variable name="componentName" select="translate(@name,'-','')"/>
-			<xsl:variable name="sourceFilePath">
-				<xsl:value-of select="$saiPackageDirectorySource"/>
-				<xsl:text>/</xsl:text>
-				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. HAnim) -->
-				<xsl:text>/</xsl:text>
-				<xsl:text>package.html</xsl:text>
-			</xsl:variable>
-			
-			<xsl:variable name="componentDescription" select="//SimpleType[@name='componentNameChoices']/enumeration[translate(@value,'-','') = $componentName]/@appinfo"/>
-			
+            <xsl:result-document href="{$targetPath}{$sourceFilePath}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+
+                <xsl:variable name="componentName" select="translate(@name,'-','')"/> <!-- look out, prior variables have lost scope inside result-document -->
+                <xsl:variable name="componentDescription" select="//SimpleType[@name='componentNameChoices']/enumeration[translate(@value,'-','') = $componentName]/@appinfo"/>
+
+<xsl:text disable-output-escaping="yes"><![CDATA[/**
+ * ]]></xsl:text>	
+    <xsl:value-of select="$componentDescription"/>
+<xsl:text disable-output-escaping="yes"><![CDATA[
+ * <p> The Scene Access Interface Library (sai) package provides abstract interface classes for each X3D node and statement,
+ * in accordance witht the X3D SAI Specification.
+ * </p>
+ * <p> <i>Warning:</a> these interfaces are primarily for internal use to ensure consistency.
+ * Java programmers need only use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
+ *</p>
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.sai.]]></xsl:text>
+        <xsl:value-of select="$componentName"/>
+        <xsl:text>;</xsl:text>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:text>&#10;</xsl:text>
+            
 			<!-- debug
 			<xsl:message>
 				<xsl:text>*** componentName=</xsl:text>
@@ -30996,62 +31025,63 @@ browser instance or there is some other problem.]]></xsl:text>
 				<xsl:value-of select="$sourceFilePath"/>
 				<xsl:text>, componentDescription=</xsl:text>
 				<xsl:value-of select="$componentDescription"/>
+				<xsl:text>,</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>javadocBody=</xsl:text>
+				<xsl:value-of select="$javadocBody"/>
 			</xsl:message> 
 			-->
-			
-			<xsl:if test="(string-length(normalize-space($componentDescription[1])) > 0)">
-				<!-- create source file -->
-				<xsl:result-document href="{$targetPath}{$sourceFilePath}" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
-					<xsl:element name="html">
-						<xsl:element name="body">
-							<xsl:element name="p">
-								<xsl:text>&#10;</xsl:text>
-								<xsl:value-of select="$componentDescription"/>
-							</xsl:element>
-						</xsl:element>
-					</xsl:element>
-
-				</xsl:result-document>
-			</xsl:if>			
-		</xsl:for-each><!-- finished Javadoc package.html files for each subpackage -->
+        </xsl:result-document>
+		</xsl:for-each><!-- finished Javadoc package-info.java files for each subpackage -->
 		
-		<!-- root package.html -->
-		<xsl:result-document href="{$targetPath}{$saiPackageDirectorySource}/package.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
-			<xsl:element name="html">
-				<xsl:element name="body">
-					<xsl:element name="p">
-						<xsl:text>
-	The X3D Java Scene Access Interface (SAI) package is designed to 
-	provide access to a browser and its contained scene graph,
-	either within an internal X3D Script node or an external HTML script.
-</xsl:text>
-					</xsl:element>
-					<xsl:element name="p">
-						<xsl:text>
-    This package contains specification-defined X3D SAI interfaces
-    and utility classes, used for compiling Java source code to be
-    used by an X3D Script node.
-</xsl:text>
-					</xsl:element>
-				</xsl:element>
-			</xsl:element>
+		<!-- root package-info.java -->
+		<xsl:result-document href="{$targetPath}{$saiPackageDirectorySource}/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	<p> The X3D Java Scene Access Interface (SAI) package is designed to 
+ *	provide access to a browser and its contained scene graph,
+ *	either as an internal X3D Script node, or as an standalone Java program.</p>
+ *
+ * <p> This package contains specification-defined X3D SAI interfaces
+ *  and utility classes, used for compiling Java source code to be
+ *  used by an X3D Script node.</p>
+ *
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.sai;
+
+]]></xsl:text>
 		</xsl:result-document>
 		
-		<!-- root package.html -->
-		<xsl:result-document href="{$targetPath}{$testsPackageDirectorySource}/package.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
-			<xsl:element name="html">
-				<xsl:element name="body">
-					<xsl:element name="p">
-						<xsl:text>
-	The X3D Java tests package is designed to test the X3DJSAIL library.</xsl:text>
-					</xsl:element>
-					<xsl:element name="p">
-						<xsl:text>
-    This package contains unit tests of specification-defined X3DJSAIL interfaces
-    and utility classes.</xsl:text>
-					</xsl:element>
-				</xsl:element>
-			</xsl:element>
+		<!-- root package-info.java -->
+		<xsl:result-document href="{$targetPath}{$testsPackageDirectorySource}/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	The X3D Java tests package is designed to test the X3DJSAIL library.
+ *
+ *  This package contains unit tests of specification-defined X3DJSAIL interfaces and utility classes.
+ *  
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.jsail.tests;
+
+]]></xsl:text>
 		</xsl:result-document>
 		
     </xsl:template>
@@ -31227,67 +31257,175 @@ browser instance or there is some other problem.]]></xsl:text>
 			
 		</xsl:for-each>
 		
-		<!-- create Javadoc package.html files for each subpackage -->
-		<xsl:for-each select="//componentInfo[not(@name = preceding::componentInfo/@name)]">
-		
-			<xsl:variable name="componentName" select="translate(@name,'-','')"/>
-			<xsl:variable name="sourceFilePath">
-				<xsl:value-of select="$concretePackageDirectorySource"/>
-				<xsl:text>/</xsl:text>
-				<xsl:value-of select="translate(@name,'-','')"/><!-- no componentName hypens allowed (e.g. HAnim) -->
-				<xsl:text>/</xsl:text>
-				<xsl:text>package.html</xsl:text>
-			</xsl:variable>
-			
-			<xsl:variable name="componentDescription" select="//SimpleType[@name='componentNameChoices']/enumeration[translate(@value,'-','') = $componentName]/@appinfo"/>
-			
-			<!-- debug
-			<xsl:message>
-				<xsl:text>*** componentName=</xsl:text>
-				<xsl:value-of select="$componentName"/>
-				<xsl:text>, sourceFilePath=</xsl:text>
-				<xsl:value-of select="$sourceFilePath"/>
-				<xsl:text>, componentDescription=</xsl:text>
-				<xsl:value-of select="$componentDescription"/>
-			</xsl:message> 
-			-->
-			
-			<xsl:if test="(string-length(normalize-space($componentDescription[1])) > 0)">
-				<!-- create source file -->
-				<xsl:result-document href="{$targetPath}{$sourceFilePath}" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
-					<xsl:element name="html">
-						<xsl:element name="body">
-							<xsl:element name="p">
-								<xsl:text>&#10;</xsl:text>
-								<xsl:value-of select="$componentDescription"/>
-							</xsl:element>
-						</xsl:element>
-					</xsl:element>
+        <xsl:for-each select="//componentInfo[not(@name = preceding::componentInfo/@name)]">
 
-				</xsl:result-document>
-			</xsl:if>
-			
-		</xsl:for-each>
+            <xsl:variable name="componentName" select="translate(@name,'-','')"/>
+            <xsl:variable name="sourceFilePath">
+                <xsl:value-of select="$concretePackageDirectorySource"/>
+                <xsl:text>/</xsl:text>
+                <xsl:value-of select="$componentName"/><!-- no componentName hypens allowed (e.g. HAnim) -->
+                <xsl:text>/</xsl:text>
+                <xsl:text>package-info.java</xsl:text>
+            </xsl:variable>
+            
+            <!-- create Javadoc package-info.java files for each subpackage -->
+            <xsl:result-document href="{$targetPath}{$sourceFilePath}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+
+                <xsl:variable name="componentName" select="translate(@name,'-','')"/>
+                <xsl:variable name="componentDescription" select="//SimpleType[@name='componentNameChoices']/enumeration[translate(@value,'-','') = $componentName]/@appinfo"/>
+
+                <!-- debug
+                <xsl:message>
+                    <xsl:text>*** componentName=</xsl:text>
+                    <xsl:value-of select="$componentName"/>
+                    <xsl:text>, sourceFilePath=</xsl:text>
+                    <xsl:value-of select="$sourceFilePath"/>
+                    <xsl:text>, componentDescription=</xsl:text>
+                    <xsl:value-of select="$componentDescription"/>
+                </xsl:message> 
+                -->
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ * ]]></xsl:text>
+    <xsl:value-of select="$componentDescription"/>
+<xsl:text disable-output-escaping="yes"><![CDATA[
+ * <p> The X3D Java Scene Access Interface (x3djsail) package provides concrete classes for each X3D node and statement. </p>
+ *  
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.jsail.]]></xsl:text>
+                <xsl:value-of select="$componentName"/><!-- no componentName hypens allowed (e.g. HAnim) -->
+                <xsl:text>;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+
+		    </xsl:result-document>
+        </xsl:for-each>
 		
-		<!-- root package.html -->
-		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/package.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
-			<xsl:element name="html">
-				<xsl:element name="body">
-					<xsl:element name="p">
-						<xsl:text>
-        The X3D Java Scene Access Interface Library (X3DJSAIL) provides a
-        comprehensive set of strongly typed X3D Java interfaces for
-        concrete implementation classes.
-</xsl:text>
-					</xsl:element>
-					<xsl:element name="p">
-						<xsl:text>
-        This package contains several library utility classes, plus three 
-        abstract interfaces that are used for all X3D nodes and statements.
-</xsl:text>
-					</xsl:element>
-				</xsl:element>
-			</xsl:element>
+		<!-- root package-info.java -->
+		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	
+ * <p> The X3D Java Scene Access Interface Library (X3DJSAIL) provides a
+ * comprehensive set of strongly typed X3D Java interfaces for
+ * concrete implementation classes.
+ * This package also contains several library utility classe and
+ * abstract interfaces that are used for all X3D nodes and statements.</p>
+ *
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.jsail;
+
+]]></xsl:text>
+		</xsl:result-document>
+		
+		<!-- fields package-info.java -->
+		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/fields/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	
+ * <p> The X3D Java fields package provides a
+ * comprehensive set of strongly typed X3D Java classes for
+ * concrete implementation of X3D field types.
+ *
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type Definitions</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FieldTypesTable">X3D Tooltips: Field Types Table</a>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.jsail.fields;
+
+]]></xsl:text>
+		</xsl:result-document>
+		
+		<!-- EXI package-info.java -->
+		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/../util/exi/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	
+ * <p> The X3D Java x3duom package supports
+ *  Java utility classes for Efficient XML Interchange (EXI) compression.
+ *
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see <a href="http://openexi.sourceforge.net">Nagasena for EXI</a>
+ * @see <a href="http://exificient.github.io">EXIficient for EXI</a>
+ * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/standards/xml/exi">EFFICIENT INTERCHANGE</a>
+ * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/TR/2014/REC-exi-20140211">Efficient XML Interchange (EXI) Format 1.0 (Second Edition)</a>
+ * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/TR/exi-for-json">EXI for JSON (EXI4JSON)</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.util.exi;
+
+]]></xsl:text>
+		</xsl:result-document>
+		<!-- X3DUOM package-info.java -->
+		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/../util/x3duom/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+<xsl:text disable-output-escaping="yes"><![CDATA[
+/**
+ *	
+ * <p> The X3D Java x3duom package provides a
+ * set of Java utility classes for the X3D Unified Object Model (X3DUOM).
+ *
+ * <p> Online:
+ *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     and 
+ *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ * </p>
+ * @see <a href="https://www.web3d.org/specifications/X3DUOM.html">X3D Unified Object Model (X3DUOM)</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
+ * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+ * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
+ * @see java.lang.Package
+ * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
+ * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
+ */
+
+package org.web3d.x3d.util.x3duom;
+
+]]></xsl:text>
 		</xsl:result-document>
 		
     <!-- ===================================================== -->
@@ -32653,7 +32791,7 @@ import javax.script.ScriptException;</xsl:text>
     }
 
     /** Open X3D Scene Authoring Hints page
-     * @see <a href="https://www.web3d.org/x3d/tooltips/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+     * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
      */
     public static void openX3dSceneAuthoringHintsPage ()
     {
@@ -32662,7 +32800,7 @@ import javax.script.ScriptException;</xsl:text>
 
     /** Open X3D Scene Authoring Hints page at a given bookmark
 	 * @param bookmark anchor bookmark of interest for this page
-     * @see <a href="https://www.web3d.org/x3d/tooltips/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
+     * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
      */
     public static void openX3dSceneAuthoringHintsPage (String bookmark)
     {

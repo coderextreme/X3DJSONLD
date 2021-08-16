@@ -68,3 +68,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments((new autoclass.CommentsBlock("Transform complete"))))
         .addComments((new autoclass.CommentsBlock("Group complete"))))      ;
     X3D0.toFileX3D("../data/HelloWorldCommented.new.x3d");
+    process.exit(0);

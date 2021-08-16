@@ -626,3 +626,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(-0.159029), java.newFloat(-0.396009), java.newFloat(-4.70544)]))
                 .addChild((new autoclass.SpotLight()).setDEF("StarboardAftNavSpotLight").setBeamWidth(java.newFloat(1.57079)).setCutOffAngle(java.newFloat(1.57)).setDirection(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setRadius(java.newFloat(3))))))))      ;
     X3D0.toFileX3D("../data/SuperCobraLightsOn.new.x3d");
+    process.exit(0);

@@ -47,3 +47,4 @@ ProtoInstance1
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Box()))));
     X3D0.toFileX3D("../data/asmallbox.new.x3d");
+    process.exit(0);

@@ -66,3 +66,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [3,2,4,4278190335,16711935,65535,4278190207,16711807,65407]))))
             .setGeometry((new autoclass.Box()).setUSE("StandardBox")))))      ;
     X3D0.toFileX3D("../data/Table5_18PixelTexture.new.x3d");
+    process.exit(0);

@@ -72,3 +72,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setAppearance((new autoclass.Appearance()).setUSE("CameraAppearance"))
                 .setGeometry((new autoclass.IndexedFaceSet()).setUSE("pSphere1_0Geo")))))))      ;
     X3D0.toFileX3D("../data/CameraShape.new.x3d");
+    process.exit(0);

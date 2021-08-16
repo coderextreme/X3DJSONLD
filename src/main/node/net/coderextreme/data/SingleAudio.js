@@ -53,3 +53,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Sound Source"]))
                   .setFontStyle((new autoclass.FontStyle()).setFamily(java.newArray("java.lang.String", ["Times"])).setJustify(java.newArray("java.lang.String", ["BEGIN"])).setStyle("BOLD"))))))))      ;
     X3D0.toFileX3D("../data/SingleAudio.new.x3d");
+    process.exit(0);

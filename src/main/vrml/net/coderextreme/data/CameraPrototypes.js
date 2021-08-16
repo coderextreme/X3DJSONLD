@@ -2,8 +2,83 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.2";
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "CameraPrototypes.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "creator";
+meta4.content = "Don Brutzman and Jeff Weekley";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "created";
+meta5.content = "16 March 2009";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "modified";
+meta6.content = "25 October 2016";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "TODO";
+meta7.content = "Schematron rules, backed up by initialize() checks";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "reference";
+meta8.content = "BeyondViewpointCameraNodesWeb3D2009.pdf";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "reference";
+meta9.content = "https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "subject";
+meta10.content = "Camera nodes for Viewpoint navigation control";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "reference";
+meta11.content = "CameraExamples.x3d";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "identifier";
+meta12.content = "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "reference";
+meta13.content = "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "generator";
+meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[12] = meta14;
+
+let meta15 = browser.currentScene.createNode("meta");
+meta15.name = "license";
+meta15.content = "../license.html";
+head1.meta[13] = meta15;
+
+head = head1;
+
 //=============== Camera ==============
-let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Camera" appinfo="Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images." ><ProtoInterface><!--Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields--><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this Camera" type="SFString"></field>
 <field name="position" accessType="inputOutput" appinfo="Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated" type="SFVec3f" value="0 0 10"></field>
@@ -458,699 +533,699 @@ function alwaysPrint (outputValue)
 <ROUTE fromField="isActive" fromNode="CameraScript" toField="on" toNode="CameraDirectionalLight"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare2.name = "Camera";
-ProtoDeclare2.appinfo = "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.";
-let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+ProtoDeclare17.name = "Camera";
+ProtoDeclare17.appinfo = "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.";
+let ProtoInterface18 = browser.currentScene.createNode("ProtoInterface");
 //Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields
-let field4 = browser.currentScene.createNode("field");
-field4.name = "description";
-field4.accessType = "inputOutput";
-field4.appinfo = "Text description to be displayed for this Camera";
-field4.type = "SFString";
-ProtoInterface3.field = new MFNode();
-
-ProtoInterface3.field[0] = field4;
-
-let field5 = browser.currentScene.createNode("field");
-field5.name = "position";
-field5.accessType = "inputOutput";
-field5.appinfo = "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated";
-field5.type = "SFVec3f";
-field5.value = "0 0 10";
-ProtoInterface3.field[1] = field5;
-
-let field6 = browser.currentScene.createNode("field");
-field6.name = "orientation";
-field6.accessType = "inputOutput";
-field6.appinfo = "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated";
-field6.type = "SFRotation";
-field6.value = "0 0 1 0";
-ProtoInterface3.field[2] = field6;
-
-let field7 = browser.currentScene.createNode("field");
-field7.name = "fieldOfView";
-field7.accessType = "inputOutput";
-field7.appinfo = "pi/4";
-field7.type = "SFFloat";
-field7.value = "0.7854";
-ProtoInterface3.field[3] = field7;
-
-let field8 = browser.currentScene.createNode("field");
-field8.name = "set_fraction";
-field8.accessType = "inputOnly";
-field8.appinfo = "input fraction drives interpolators";
-field8.type = "SFFloat";
-ProtoInterface3.field[4] = field8;
-
-let field9 = browser.currentScene.createNode("field");
-field9.name = "set_bind";
-field9.accessType = "inputOnly";
-field9.appinfo = "input event binds or unbinds this Camera";
-field9.type = "SFBool";
-ProtoInterface3.field[5] = field9;
-
-let field10 = browser.currentScene.createNode("field");
-field10.name = "bindTime";
-field10.accessType = "outputOnly";
-field10.appinfo = "output event indicates when this Camera is bound";
-field10.type = "SFTime";
-ProtoInterface3.field[6] = field10;
-
-let field11 = browser.currentScene.createNode("field");
-field11.name = "isBound";
-field11.accessType = "outputOnly";
-field11.appinfo = "output event indicates whether this Camera is bound or unbound";
-field11.type = "SFBool";
-ProtoInterface3.field[7] = field11;
-
-let field12 = browser.currentScene.createNode("field");
-field12.name = "nearClipPlane";
-field12.accessType = "inputOutput";
-field12.appinfo = "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]";
-field12.type = "SFFloat";
-field12.value = "0.25";
-ProtoInterface3.field[8] = field12;
-
-let field13 = browser.currentScene.createNode("field");
-field13.name = "farClipPlane";
-field13.accessType = "inputOutput";
-field13.appinfo = "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit";
-field13.type = "SFFloat";
-field13.value = "0";
-ProtoInterface3.field[9] = field13;
-
-let field14 = browser.currentScene.createNode("field");
-field14.name = "shots";
-field14.accessType = "inputOutput";
-field14.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes";
-field14.type = "MFNode";
-//initialization nodes (if any) go here
-ProtoInterface3.field[10] = field14;
-
-let field15 = browser.currentScene.createNode("field");
-field15.name = "headlight";
-field15.accessType = "inputOutput";
-field15.appinfo = "Whether camera headlight is on or off";
-field15.type = "SFBool";
-field15.value = "true";
-ProtoInterface3.field[11] = field15;
-
-let field16 = browser.currentScene.createNode("field");
-field16.name = "headlightColor";
-field16.accessType = "inputOutput";
-field16.appinfo = "Camera headlight color";
-field16.type = "SFColor";
-field16.value = "1 1 1";
-ProtoInterface3.field[12] = field16;
-
-let field17 = browser.currentScene.createNode("field");
-field17.name = "headlightIntensity";
-field17.accessType = "inputOutput";
-field17.appinfo = "Camera headlight intensity";
-field17.type = "SFFloat";
-field17.value = "1";
-ProtoInterface3.field[13] = field17;
-
-let field18 = browser.currentScene.createNode("field");
-field18.name = "filterColor";
-field18.accessType = "inputOutput";
-field18.appinfo = "Camera filter color that modifies virtual lens capture";
-field18.type = "SFColor";
-field18.value = "1 1 1";
-ProtoInterface3.field[14] = field18;
-
 let field19 = browser.currentScene.createNode("field");
-field19.name = "filterTransparency";
+field19.name = "description";
 field19.accessType = "inputOutput";
-field19.appinfo = "Camera filter transparency that modifies virtual lens capture";
-field19.type = "SFFloat";
-field19.value = "1";
-ProtoInterface3.field[15] = field19;
+field19.appinfo = "Text description to be displayed for this Camera";
+field19.type = "SFString";
+ProtoInterface18.field = new MFNode();
+
+ProtoInterface18.field[0] = field19;
 
 let field20 = browser.currentScene.createNode("field");
-field20.name = "upVector";
+field20.name = "position";
 field20.accessType = "inputOutput";
-field20.appinfo = "upVector changes modify camera orientation (and possibly vice versa)";
+field20.appinfo = "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated";
 field20.type = "SFVec3f";
-field20.value = "0 1 0";
-ProtoInterface3.field[16] = field20;
+field20.value = "0 0 10";
+ProtoInterface18.field[1] = field20;
 
 let field21 = browser.currentScene.createNode("field");
-field21.name = "fStop";
+field21.name = "orientation";
 field21.accessType = "inputOutput";
-field21.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
-field21.type = "SFFloat";
-field21.value = "5.6";
-ProtoInterface3.field[17] = field21;
+field21.appinfo = "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated";
+field21.type = "SFRotation";
+field21.value = "0 0 1 0";
+ProtoInterface18.field[2] = field21;
 
 let field22 = browser.currentScene.createNode("field");
-field22.name = "focusDistance";
+field22.name = "fieldOfView";
 field22.accessType = "inputOutput";
-field22.appinfo = "Distance to focal plane of sharpest focus";
+field22.appinfo = "pi/4";
 field22.type = "SFFloat";
-field22.value = "10";
-ProtoInterface3.field[18] = field22;
+field22.value = "0.7854";
+ProtoInterface18.field[3] = field22;
 
 let field23 = browser.currentScene.createNode("field");
-field23.name = "isActive";
-field23.accessType = "outputOnly";
-field23.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field23.type = "SFBool";
-ProtoInterface3.field[19] = field23;
+field23.name = "set_fraction";
+field23.accessType = "inputOnly";
+field23.appinfo = "input fraction drives interpolators";
+field23.type = "SFFloat";
+ProtoInterface18.field[4] = field23;
 
 let field24 = browser.currentScene.createNode("field");
-field24.name = "totalDuration";
-field24.accessType = "outputOnly";
-field24.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations";
-field24.type = "SFTime";
-ProtoInterface3.field[20] = field24;
+field24.name = "set_bind";
+field24.accessType = "inputOnly";
+field24.appinfo = "input event binds or unbinds this Camera";
+field24.type = "SFBool";
+ProtoInterface18.field[5] = field24;
 
 let field25 = browser.currentScene.createNode("field");
-field25.name = "offlineRender";
-field25.accessType = "inputOutput";
-field25.appinfo = "OfflineRender node";
-field25.type = "SFNode";
-//initialization node (if any) goes here
-ProtoInterface3.field[21] = field25;
+field25.name = "bindTime";
+field25.accessType = "outputOnly";
+field25.appinfo = "output event indicates when this Camera is bound";
+field25.type = "SFTime";
+ProtoInterface18.field[6] = field25;
 
 let field26 = browser.currentScene.createNode("field");
-field26.name = "traceEnabled";
-field26.accessType = "initializeOnly";
-field26.appinfo = "enable console output to trace script computations and prototype progress";
+field26.name = "isBound";
+field26.accessType = "outputOnly";
+field26.appinfo = "output event indicates whether this Camera is bound or unbound";
 field26.type = "SFBool";
-field26.value = "false";
-ProtoInterface3.field[22] = field26;
+ProtoInterface18.field[7] = field26;
 
-ProtoDeclare2.protoInterface = ProtoInterface3;
+let field27 = browser.currentScene.createNode("field");
+field27.name = "nearClipPlane";
+field27.accessType = "inputOutput";
+field27.appinfo = "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]";
+field27.type = "SFFloat";
+field27.value = "0.25";
+ProtoInterface18.field[8] = field27;
 
-let ProtoBody27 = browser.currentScene.createNode("ProtoBody");
-let Viewpoint28 = browser.currentScene.createNode("Viewpoint");
-Viewpoint28.DEF = "CameraViewpoint";
-let IS29 = browser.currentScene.createNode("IS");
-let connect30 = browser.currentScene.createNode("connect");
-connect30.nodeField = "description";
-connect30.protoField = "description";
-IS29.connect = new MFNode();
+let field28 = browser.currentScene.createNode("field");
+field28.name = "farClipPlane";
+field28.accessType = "inputOutput";
+field28.appinfo = "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit";
+field28.type = "SFFloat";
+field28.value = "0";
+ProtoInterface18.field[9] = field28;
 
-IS29.connect[0] = connect30;
+let field29 = browser.currentScene.createNode("field");
+field29.name = "shots";
+field29.accessType = "inputOutput";
+field29.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes";
+field29.type = "MFNode";
+//initialization nodes (if any) go here
+ProtoInterface18.field[10] = field29;
 
-let connect31 = browser.currentScene.createNode("connect");
-connect31.nodeField = "position";
-connect31.protoField = "position";
-IS29.connect[1] = connect31;
+let field30 = browser.currentScene.createNode("field");
+field30.name = "headlight";
+field30.accessType = "inputOutput";
+field30.appinfo = "Whether camera headlight is on or off";
+field30.type = "SFBool";
+field30.value = "true";
+ProtoInterface18.field[11] = field30;
 
-let connect32 = browser.currentScene.createNode("connect");
-connect32.nodeField = "orientation";
-connect32.protoField = "orientation";
-IS29.connect[2] = connect32;
+let field31 = browser.currentScene.createNode("field");
+field31.name = "headlightColor";
+field31.accessType = "inputOutput";
+field31.appinfo = "Camera headlight color";
+field31.type = "SFColor";
+field31.value = "1 1 1";
+ProtoInterface18.field[12] = field31;
 
-let connect33 = browser.currentScene.createNode("connect");
-connect33.nodeField = "fieldOfView";
-connect33.protoField = "fieldOfView";
-IS29.connect[3] = connect33;
+let field32 = browser.currentScene.createNode("field");
+field32.name = "headlightIntensity";
+field32.accessType = "inputOutput";
+field32.appinfo = "Camera headlight intensity";
+field32.type = "SFFloat";
+field32.value = "1";
+ProtoInterface18.field[13] = field32;
 
-let connect34 = browser.currentScene.createNode("connect");
-connect34.nodeField = "set_bind";
-connect34.protoField = "set_bind";
-IS29.connect[4] = connect34;
+let field33 = browser.currentScene.createNode("field");
+field33.name = "filterColor";
+field33.accessType = "inputOutput";
+field33.appinfo = "Camera filter color that modifies virtual lens capture";
+field33.type = "SFColor";
+field33.value = "1 1 1";
+ProtoInterface18.field[14] = field33;
 
-let connect35 = browser.currentScene.createNode("connect");
-connect35.nodeField = "bindTime";
-connect35.protoField = "bindTime";
-IS29.connect[5] = connect35;
+let field34 = browser.currentScene.createNode("field");
+field34.name = "filterTransparency";
+field34.accessType = "inputOutput";
+field34.appinfo = "Camera filter transparency that modifies virtual lens capture";
+field34.type = "SFFloat";
+field34.value = "1";
+ProtoInterface18.field[15] = field34;
 
-let connect36 = browser.currentScene.createNode("connect");
-connect36.nodeField = "isBound";
-connect36.protoField = "isBound";
-IS29.connect[6] = connect36;
+let field35 = browser.currentScene.createNode("field");
+field35.name = "upVector";
+field35.accessType = "inputOutput";
+field35.appinfo = "upVector changes modify camera orientation (and possibly vice versa)";
+field35.type = "SFVec3f";
+field35.value = "0 1 0";
+ProtoInterface18.field[16] = field35;
 
-Viewpoint28.iS = IS29;
+let field36 = browser.currentScene.createNode("field");
+field36.name = "fStop";
+field36.accessType = "inputOutput";
+field36.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field36.type = "SFFloat";
+field36.value = "5.6";
+ProtoInterface18.field[17] = field36;
 
-ProtoBody27.children = new MFNode();
+let field37 = browser.currentScene.createNode("field");
+field37.name = "focusDistance";
+field37.accessType = "inputOutput";
+field37.appinfo = "Distance to focal plane of sharpest focus";
+field37.type = "SFFloat";
+field37.value = "10";
+ProtoInterface18.field[18] = field37;
 
-ProtoBody27.children[0] = Viewpoint28;
+let field38 = browser.currentScene.createNode("field");
+field38.name = "isActive";
+field38.accessType = "outputOnly";
+field38.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
+field38.type = "SFBool";
+ProtoInterface18.field[19] = field38;
 
-//NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
-let NavigationInfo37 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo37.DEF = "CameraNavInfo";
-NavigationInfo37.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
-let IS38 = browser.currentScene.createNode("IS");
-let connect39 = browser.currentScene.createNode("connect");
-connect39.nodeField = "set_bind";
-connect39.protoField = "set_bind";
-IS38.connect = new MFNode();
+let field39 = browser.currentScene.createNode("field");
+field39.name = "totalDuration";
+field39.accessType = "outputOnly";
+field39.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations";
+field39.type = "SFTime";
+ProtoInterface18.field[20] = field39;
 
-IS38.connect[0] = connect39;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "offlineRender";
+field40.accessType = "inputOutput";
+field40.appinfo = "OfflineRender node";
+field40.type = "SFNode";
+//initialization node (if any) goes here
+ProtoInterface18.field[21] = field40;
 
-let connect40 = browser.currentScene.createNode("connect");
-connect40.nodeField = "headlight";
-connect40.protoField = "headlight";
-IS38.connect[1] = connect40;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "traceEnabled";
+field41.accessType = "initializeOnly";
+field41.appinfo = "enable console output to trace script computations and prototype progress";
+field41.type = "SFBool";
+field41.value = "false";
+ProtoInterface18.field[22] = field41;
 
-let connect41 = browser.currentScene.createNode("connect");
-connect41.nodeField = "visibilityLimit";
-connect41.protoField = "farClipPlane";
-IS38.connect[2] = connect41;
+ProtoDeclare17.protoInterface = ProtoInterface18;
 
-//No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.
-NavigationInfo37.iS = IS38;
-
-ProtoBody27.children[1] = NavigationInfo37;
-
-//this DirectionalLight replaces NavigationInfo headlight in order to add color capability
-let DirectionalLight42 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight42.DEF = "CameraDirectionalLight";
-DirectionalLight42.global = True;
-//TODO confirm other default field values match NavigationInfo spec
-let IS43 = browser.currentScene.createNode("IS");
-let connect44 = browser.currentScene.createNode("connect");
-connect44.nodeField = "on";
-connect44.protoField = "headlight";
-IS43.connect = new MFNode();
-
-IS43.connect[0] = connect44;
-
+let ProtoBody42 = browser.currentScene.createNode("ProtoBody");
+let Viewpoint43 = browser.currentScene.createNode("Viewpoint");
+Viewpoint43.DEF = "CameraViewpoint";
+let IS44 = browser.currentScene.createNode("IS");
 let connect45 = browser.currentScene.createNode("connect");
-connect45.nodeField = "color";
-connect45.protoField = "headlightColor";
-IS43.connect[1] = connect45;
+connect45.nodeField = "description";
+connect45.protoField = "description";
+IS44.connect = new MFNode();
+
+IS44.connect[0] = connect45;
 
 let connect46 = browser.currentScene.createNode("connect");
-connect46.nodeField = "intensity";
-connect46.protoField = "headlightIntensity";
-IS43.connect[2] = connect46;
+connect46.nodeField = "position";
+connect46.protoField = "position";
+IS44.connect[1] = connect46;
 
-DirectionalLight42.iS = IS43;
+let connect47 = browser.currentScene.createNode("connect");
+connect47.nodeField = "orientation";
+connect47.protoField = "orientation";
+IS44.connect[2] = connect47;
 
-ProtoBody27.children[2] = DirectionalLight42;
+let connect48 = browser.currentScene.createNode("connect");
+connect48.nodeField = "fieldOfView";
+connect48.protoField = "fieldOfView";
+IS44.connect[3] = connect48;
 
-let PositionInterpolator47 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator47.DEF = "CameraPositionInterpolator";
-PositionInterpolator47.key = new MFFloat(new float[0,1]);
-PositionInterpolator47.keyValue = new MFVec3f(new float[0,0,0,0,0,0]);
-let IS48 = browser.currentScene.createNode("IS");
 let connect49 = browser.currentScene.createNode("connect");
-connect49.nodeField = "set_fraction";
-connect49.protoField = "set_fraction";
-IS48.connect = new MFNode();
+connect49.nodeField = "set_bind";
+connect49.protoField = "set_bind";
+IS44.connect[4] = connect49;
 
-IS48.connect[0] = connect49;
+let connect50 = browser.currentScene.createNode("connect");
+connect50.nodeField = "bindTime";
+connect50.protoField = "bindTime";
+IS44.connect[5] = connect50;
 
-PositionInterpolator47.iS = IS48;
+let connect51 = browser.currentScene.createNode("connect");
+connect51.nodeField = "isBound";
+connect51.protoField = "isBound";
+IS44.connect[6] = connect51;
 
-ProtoBody27.children[3] = PositionInterpolator47;
+Viewpoint43.iS = IS44;
 
-let OrientationInterpolator50 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator50.DEF = "CameraOrientationInterpolator";
-OrientationInterpolator50.key = new MFFloat(new float[0,1]);
-OrientationInterpolator50.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,0]);
-let IS51 = browser.currentScene.createNode("IS");
-let connect52 = browser.currentScene.createNode("connect");
-connect52.nodeField = "set_fraction";
-connect52.protoField = "set_fraction";
-IS51.connect = new MFNode();
+ProtoBody42.children = new MFNode();
 
-IS51.connect[0] = connect52;
+ProtoBody42.children[0] = Viewpoint43;
 
-OrientationInterpolator50.iS = IS51;
+//NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
+let NavigationInfo52 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo52.DEF = "CameraNavInfo";
+NavigationInfo52.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
+let IS53 = browser.currentScene.createNode("IS");
+let connect54 = browser.currentScene.createNode("connect");
+connect54.nodeField = "set_bind";
+connect54.protoField = "set_bind";
+IS53.connect = new MFNode();
 
-ProtoBody27.children[4] = OrientationInterpolator50;
+IS53.connect[0] = connect54;
 
-let ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromField = "value_changed";
-ROUTE53.fromNode = "CameraPositionInterpolator";
-ROUTE53.toField = "position";
-ROUTE53.toNode = "CameraViewpoint";
-ProtoBody27.children[5] = ROUTE53;
+let connect55 = browser.currentScene.createNode("connect");
+connect55.nodeField = "headlight";
+connect55.protoField = "headlight";
+IS53.connect[1] = connect55;
 
-let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromField = "value_changed";
-ROUTE54.fromNode = "CameraOrientationInterpolator";
-ROUTE54.toField = "orientation";
-ROUTE54.toNode = "CameraViewpoint";
-ProtoBody27.children[6] = ROUTE54;
+let connect56 = browser.currentScene.createNode("connect");
+connect56.nodeField = "visibilityLimit";
+connect56.protoField = "farClipPlane";
+IS53.connect[2] = connect56;
 
-let Script55 = browser.currentScene.createNode("Script");
-Script55.DEF = "CameraScript";
-Script55.directOutput = True;
-Script55.mustEvaluate = True;
+//No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.
+NavigationInfo52.iS = IS53;
+
+ProtoBody42.children[1] = NavigationInfo52;
+
+//this DirectionalLight replaces NavigationInfo headlight in order to add color capability
+let DirectionalLight57 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight57.DEF = "CameraDirectionalLight";
+DirectionalLight57.global = True;
+//TODO confirm other default field values match NavigationInfo spec
+let IS58 = browser.currentScene.createNode("IS");
+let connect59 = browser.currentScene.createNode("connect");
+connect59.nodeField = "on";
+connect59.protoField = "headlight";
+IS58.connect = new MFNode();
+
+IS58.connect[0] = connect59;
+
+let connect60 = browser.currentScene.createNode("connect");
+connect60.nodeField = "color";
+connect60.protoField = "headlightColor";
+IS58.connect[1] = connect60;
+
+let connect61 = browser.currentScene.createNode("connect");
+connect61.nodeField = "intensity";
+connect61.protoField = "headlightIntensity";
+IS58.connect[2] = connect61;
+
+DirectionalLight57.iS = IS58;
+
+ProtoBody42.children[2] = DirectionalLight57;
+
+let PositionInterpolator62 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator62.DEF = "CameraPositionInterpolator";
+PositionInterpolator62.key = new MFFloat(new float[0,1]);
+PositionInterpolator62.keyValue = new MFVec3f(new float[0,0,0,0,0,0]);
+let IS63 = browser.currentScene.createNode("IS");
+let connect64 = browser.currentScene.createNode("connect");
+connect64.nodeField = "set_fraction";
+connect64.protoField = "set_fraction";
+IS63.connect = new MFNode();
+
+IS63.connect[0] = connect64;
+
+PositionInterpolator62.iS = IS63;
+
+ProtoBody42.children[3] = PositionInterpolator62;
+
+let OrientationInterpolator65 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator65.DEF = "CameraOrientationInterpolator";
+OrientationInterpolator65.key = new MFFloat(new float[0,1]);
+OrientationInterpolator65.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,0]);
+let IS66 = browser.currentScene.createNode("IS");
+let connect67 = browser.currentScene.createNode("connect");
+connect67.nodeField = "set_fraction";
+connect67.protoField = "set_fraction";
+IS66.connect = new MFNode();
+
+IS66.connect[0] = connect67;
+
+OrientationInterpolator65.iS = IS66;
+
+ProtoBody42.children[4] = OrientationInterpolator65;
+
+let ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromField = "value_changed";
+ROUTE68.fromNode = "CameraPositionInterpolator";
+ROUTE68.toField = "position";
+ROUTE68.toNode = "CameraViewpoint";
+ProtoBody42.children[5] = ROUTE68;
+
+let ROUTE69 = browser.currentScene.createNode("ROUTE");
+ROUTE69.fromField = "value_changed";
+ROUTE69.fromNode = "CameraOrientationInterpolator";
+ROUTE69.toField = "orientation";
+ROUTE69.toNode = "CameraViewpoint";
+ProtoBody42.children[6] = ROUTE69;
+
+let Script70 = browser.currentScene.createNode("Script");
+Script70.DEF = "CameraScript";
+Script70.directOutput = True;
+Script70.mustEvaluate = True;
 //binding is controlled externally, all camera operations proceed the same regardless of whether bound or not
-let field56 = browser.currentScene.createNode("field");
-field56.name = "description";
-field56.accessType = "inputOutput";
-field56.appinfo = "Text description to be displayed for this Camera";
-field56.type = "SFString";
-Script55.field = new MFNode();
-
-Script55.field[0] = field56;
-
-let field57 = browser.currentScene.createNode("field");
-field57.name = "position";
-field57.accessType = "inputOutput";
-field57.appinfo = "Camera position in local transformation frame";
-field57.type = "SFVec3f";
-Script55.field[1] = field57;
-
-let field58 = browser.currentScene.createNode("field");
-field58.name = "orientation";
-field58.accessType = "inputOutput";
-field58.appinfo = "Camera rotation in local transformation frame";
-field58.type = "SFRotation";
-Script55.field[2] = field58;
-
-let field59 = browser.currentScene.createNode("field");
-field59.name = "set_fraction";
-field59.accessType = "inputOnly";
-field59.appinfo = "input fraction drives interpolators";
-field59.type = "SFFloat";
-Script55.field[3] = field59;
-
-let field60 = browser.currentScene.createNode("field");
-field60.name = "set_bind";
-field60.accessType = "inputOnly";
-field60.appinfo = "input event binds or unbinds this Camera";
-field60.type = "SFBool";
-Script55.field[4] = field60;
-
-let field61 = browser.currentScene.createNode("field");
-field61.name = "fieldOfView";
-field61.accessType = "inputOutput";
-field61.appinfo = "pi/4";
-field61.type = "SFFloat";
-Script55.field[5] = field61;
-
-let field62 = browser.currentScene.createNode("field");
-field62.name = "nearClipPlane";
-field62.accessType = "inputOutput";
-field62.appinfo = "Vector distance to near clipping plane";
-field62.type = "SFFloat";
-Script55.field[6] = field62;
-
-let field63 = browser.currentScene.createNode("field");
-field63.name = "farClipPlane";
-field63.accessType = "inputOutput";
-field63.appinfo = "Vector distance to far clipping plane";
-field63.type = "SFFloat";
-Script55.field[7] = field63;
-
-let field64 = browser.currentScene.createNode("field");
-field64.name = "shots";
-field64.accessType = "inputOutput";
-field64.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes";
-field64.type = "MFNode";
-//initialization nodes (if any) go here
-Script55.field[8] = field64;
-
-let field65 = browser.currentScene.createNode("field");
-field65.name = "filterColor";
-field65.accessType = "inputOutput";
-field65.appinfo = "Camera filter color that modifies virtual lens capture";
-field65.type = "SFColor";
-Script55.field[9] = field65;
-
-let field66 = browser.currentScene.createNode("field");
-field66.name = "filterTransparency";
-field66.accessType = "inputOutput";
-field66.appinfo = "Camera filter transparency that modifies virtual lens capture";
-field66.type = "SFFloat";
-Script55.field[10] = field66;
-
-let field67 = browser.currentScene.createNode("field");
-field67.name = "upVector";
-field67.accessType = "inputOutput";
-field67.appinfo = "upVector changes modify camera orientation (and possibly vice versa)";
-field67.type = "SFVec3f";
-Script55.field[11] = field67;
-
-let field68 = browser.currentScene.createNode("field");
-field68.name = "fStop";
-field68.accessType = "inputOutput";
-field68.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
-field68.type = "SFFloat";
-Script55.field[12] = field68;
-
-let field69 = browser.currentScene.createNode("field");
-field69.name = "focusDistance";
-field69.accessType = "inputOutput";
-field69.appinfo = "Distance to focal plane of sharpest focus";
-field69.type = "SFFloat";
-Script55.field[13] = field69;
-
-let field70 = browser.currentScene.createNode("field");
-field70.name = "isActive";
-field70.accessType = "outputOnly";
-field70.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field70.type = "SFBool";
-Script55.field[14] = field70;
-
 let field71 = browser.currentScene.createNode("field");
-field71.name = "totalDuration";
-field71.accessType = "outputOnly";
-field71.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations";
-field71.type = "SFTime";
-Script55.field[15] = field71;
+field71.name = "description";
+field71.accessType = "inputOutput";
+field71.appinfo = "Text description to be displayed for this Camera";
+field71.type = "SFString";
+Script70.field = new MFNode();
+
+Script70.field[0] = field71;
 
 let field72 = browser.currentScene.createNode("field");
-field72.name = "offlineRender";
+field72.name = "position";
 field72.accessType = "inputOutput";
-field72.appinfo = "OfflineRender node";
-field72.type = "SFNode";
-//initialization node (if any) goes here
-Script55.field[16] = field72;
+field72.appinfo = "Camera position in local transformation frame";
+field72.type = "SFVec3f";
+Script70.field[1] = field72;
 
 let field73 = browser.currentScene.createNode("field");
-field73.name = "ViewpointNode";
-field73.accessType = "initializeOnly";
-field73.appinfo = "node reference to permit getting setting fields from within Script";
-field73.type = "SFNode";
-let Viewpoint74 = browser.currentScene.createNode("Viewpoint");
-Viewpoint74.USE = "CameraViewpoint";
-field73.children = new MFNode();
+field73.name = "orientation";
+field73.accessType = "inputOutput";
+field73.appinfo = "Camera rotation in local transformation frame";
+field73.type = "SFRotation";
+Script70.field[2] = field73;
 
-field73.children[0] = Viewpoint74;
-
-Script55.field[17] = field73;
+let field74 = browser.currentScene.createNode("field");
+field74.name = "set_fraction";
+field74.accessType = "inputOnly";
+field74.appinfo = "input fraction drives interpolators";
+field74.type = "SFFloat";
+Script70.field[3] = field74;
 
 let field75 = browser.currentScene.createNode("field");
-field75.name = "NavInfoNode";
-field75.accessType = "initializeOnly";
-field75.appinfo = "node reference to permit getting setting fields from within Script";
-field75.type = "SFNode";
-let NavigationInfo76 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo76.USE = "CameraNavInfo";
-field75.children = new MFNode();
+field75.name = "set_bind";
+field75.accessType = "inputOnly";
+field75.appinfo = "input event binds or unbinds this Camera";
+field75.type = "SFBool";
+Script70.field[4] = field75;
 
-field75.children[0] = NavigationInfo76;
-
-Script55.field[18] = field75;
+let field76 = browser.currentScene.createNode("field");
+field76.name = "fieldOfView";
+field76.accessType = "inputOutput";
+field76.appinfo = "pi/4";
+field76.type = "SFFloat";
+Script70.field[5] = field76;
 
 let field77 = browser.currentScene.createNode("field");
-field77.name = "CameraPI";
-field77.accessType = "initializeOnly";
-field77.appinfo = "node reference to permit getting setting fields from within Script";
-field77.type = "SFNode";
-let PositionInterpolator78 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator78.USE = "CameraPositionInterpolator";
-field77.children = new MFNode();
+field77.name = "nearClipPlane";
+field77.accessType = "inputOutput";
+field77.appinfo = "Vector distance to near clipping plane";
+field77.type = "SFFloat";
+Script70.field[6] = field77;
 
-field77.children[0] = PositionInterpolator78;
-
-Script55.field[19] = field77;
+let field78 = browser.currentScene.createNode("field");
+field78.name = "farClipPlane";
+field78.accessType = "inputOutput";
+field78.appinfo = "Vector distance to far clipping plane";
+field78.type = "SFFloat";
+Script70.field[7] = field78;
 
 let field79 = browser.currentScene.createNode("field");
-field79.name = "CameraOI";
-field79.accessType = "initializeOnly";
-field79.appinfo = "node reference to permit getting setting fields from within Script";
-field79.type = "SFNode";
-let OrientationInterpolator80 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator80.USE = "CameraOrientationInterpolator";
-field79.children = new MFNode();
+field79.name = "shots";
+field79.accessType = "inputOutput";
+field79.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes";
+field79.type = "MFNode";
+//initialization nodes (if any) go here
+Script70.field[8] = field79;
 
-field79.children[0] = OrientationInterpolator80;
-
-Script55.field[20] = field79;
+let field80 = browser.currentScene.createNode("field");
+field80.name = "filterColor";
+field80.accessType = "inputOutput";
+field80.appinfo = "Camera filter color that modifies virtual lens capture";
+field80.type = "SFColor";
+Script70.field[9] = field80;
 
 let field81 = browser.currentScene.createNode("field");
-field81.name = "key";
+field81.name = "filterTransparency";
 field81.accessType = "inputOutput";
-field81.appinfo = "key array for interpolators";
-field81.type = "MFFloat";
-Script55.field[21] = field81;
+field81.appinfo = "Camera filter transparency that modifies virtual lens capture";
+field81.type = "SFFloat";
+Script70.field[10] = field81;
 
 let field82 = browser.currentScene.createNode("field");
-field82.name = "keyValuePosition";
+field82.name = "upVector";
 field82.accessType = "inputOutput";
-field82.appinfo = "keyValue array for PositionInterpolator";
-field82.type = "MFVec3f";
-Script55.field[22] = field82;
+field82.appinfo = "upVector changes modify camera orientation (and possibly vice versa)";
+field82.type = "SFVec3f";
+Script70.field[11] = field82;
 
 let field83 = browser.currentScene.createNode("field");
-field83.name = "keyValueOrientation";
+field83.name = "fStop";
 field83.accessType = "inputOutput";
-field83.appinfo = "keyValue array for OrientationInterpolator";
-field83.type = "MFRotation";
-Script55.field[23] = field83;
+field83.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field83.type = "SFFloat";
+Script70.field[12] = field83;
 
 let field84 = browser.currentScene.createNode("field");
-field84.name = "animated";
+field84.name = "focusDistance";
 field84.accessType = "inputOutput";
-field84.appinfo = "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events";
-field84.type = "SFBool";
-field84.value = "false";
-Script55.field[24] = field84;
+field84.appinfo = "Distance to focal plane of sharpest focus";
+field84.type = "SFFloat";
+Script70.field[13] = field84;
 
 let field85 = browser.currentScene.createNode("field");
-field85.name = "initialized";
-field85.accessType = "initializeOnly";
-field85.appinfo = "perform checkShots() function once immediately after initialization";
+field85.name = "isActive";
+field85.accessType = "outputOnly";
+field85.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
 field85.type = "SFBool";
-field85.value = "false";
-Script55.field[25] = field85;
+Script70.field[14] = field85;
 
 let field86 = browser.currentScene.createNode("field");
-field86.name = "shotCount";
-field86.accessType = "initializeOnly";
-field86.appinfo = "how many CameraShot nodes are contained in shots array";
-field86.type = "SFInt32";
-field86.value = "0";
-Script55.field[26] = field86;
+field86.name = "totalDuration";
+field86.accessType = "outputOnly";
+field86.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations";
+field86.type = "SFTime";
+Script70.field[15] = field86;
 
 let field87 = browser.currentScene.createNode("field");
-field87.name = "movesCount";
-field87.accessType = "initializeOnly";
-field87.appinfo = "how many CameraMove nodes are contained in moves array";
-field87.type = "SFInt32";
-field87.value = "0";
-Script55.field[27] = field87;
+field87.name = "offlineRender";
+field87.accessType = "inputOutput";
+field87.appinfo = "OfflineRender node";
+field87.type = "SFNode";
+//initialization node (if any) goes here
+Script70.field[16] = field87;
 
 let field88 = browser.currentScene.createNode("field");
-field88.name = "frameCount";
+field88.name = "ViewpointNode";
 field88.accessType = "initializeOnly";
-field88.appinfo = "how many frames were created in current loop";
-field88.type = "SFFloat";
-field88.value = "0";
-Script55.field[28] = field88;
+field88.appinfo = "node reference to permit getting setting fields from within Script";
+field88.type = "SFNode";
+let Viewpoint89 = browser.currentScene.createNode("Viewpoint");
+Viewpoint89.USE = "CameraViewpoint";
+field88.children = new MFNode();
 
-let field89 = browser.currentScene.createNode("field");
-field89.name = "startTime";
-field89.accessType = "initializeOnly";
-field89.appinfo = "holding variable";
-field89.type = "SFTime";
-field89.value = "0";
-Script55.field[29] = field89;
+field88.children[0] = Viewpoint89;
+
+Script70.field[17] = field88;
 
 let field90 = browser.currentScene.createNode("field");
-field90.name = "priorTraceTime";
+field90.name = "NavInfoNode";
 field90.accessType = "initializeOnly";
-field90.appinfo = "holding variable";
-field90.type = "SFTime";
-field90.value = "0";
-Script55.field[30] = field90;
+field90.appinfo = "node reference to permit getting setting fields from within Script";
+field90.type = "SFNode";
+let NavigationInfo91 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo91.USE = "CameraNavInfo";
+field90.children = new MFNode();
 
-let field91 = browser.currentScene.createNode("field");
-field91.name = "traceEnabled";
-field91.accessType = "initializeOnly";
-field91.appinfo = "enable console output to trace script computations and prototype progress";
-field91.type = "SFBool";
-Script55.field[31] = field91;
+field90.children[0] = NavigationInfo91;
 
-let IS92 = browser.currentScene.createNode("IS");
-let connect93 = browser.currentScene.createNode("connect");
-connect93.nodeField = "description";
-connect93.protoField = "description";
-IS92.connect = new MFNode();
+Script70.field[18] = field90;
 
-IS92.connect[0] = connect93;
+let field92 = browser.currentScene.createNode("field");
+field92.name = "CameraPI";
+field92.accessType = "initializeOnly";
+field92.appinfo = "node reference to permit getting setting fields from within Script";
+field92.type = "SFNode";
+let PositionInterpolator93 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator93.USE = "CameraPositionInterpolator";
+field92.children = new MFNode();
 
-let connect94 = browser.currentScene.createNode("connect");
-connect94.nodeField = "position";
-connect94.protoField = "position";
-IS92.connect[1] = connect94;
+field92.children[0] = PositionInterpolator93;
 
-let connect95 = browser.currentScene.createNode("connect");
-connect95.nodeField = "orientation";
-connect95.protoField = "orientation";
-IS92.connect[2] = connect95;
+Script70.field[19] = field92;
 
-let connect96 = browser.currentScene.createNode("connect");
-connect96.nodeField = "set_fraction";
-connect96.protoField = "set_fraction";
-IS92.connect[3] = connect96;
+let field94 = browser.currentScene.createNode("field");
+field94.name = "CameraOI";
+field94.accessType = "initializeOnly";
+field94.appinfo = "node reference to permit getting setting fields from within Script";
+field94.type = "SFNode";
+let OrientationInterpolator95 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator95.USE = "CameraOrientationInterpolator";
+field94.children = new MFNode();
 
-let connect97 = browser.currentScene.createNode("connect");
-connect97.nodeField = "set_bind";
-connect97.protoField = "set_bind";
-IS92.connect[4] = connect97;
+field94.children[0] = OrientationInterpolator95;
 
-let connect98 = browser.currentScene.createNode("connect");
-connect98.nodeField = "fieldOfView";
-connect98.protoField = "fieldOfView";
-IS92.connect[5] = connect98;
+Script70.field[20] = field94;
 
-let connect99 = browser.currentScene.createNode("connect");
-connect99.nodeField = "nearClipPlane";
-connect99.protoField = "nearClipPlane";
-IS92.connect[6] = connect99;
+let field96 = browser.currentScene.createNode("field");
+field96.name = "key";
+field96.accessType = "inputOutput";
+field96.appinfo = "key array for interpolators";
+field96.type = "MFFloat";
+Script70.field[21] = field96;
 
-let connect100 = browser.currentScene.createNode("connect");
-connect100.nodeField = "farClipPlane";
-connect100.protoField = "farClipPlane";
-IS92.connect[7] = connect100;
+let field97 = browser.currentScene.createNode("field");
+field97.name = "keyValuePosition";
+field97.accessType = "inputOutput";
+field97.appinfo = "keyValue array for PositionInterpolator";
+field97.type = "MFVec3f";
+Script70.field[22] = field97;
 
-let connect101 = browser.currentScene.createNode("connect");
-connect101.nodeField = "shots";
-connect101.protoField = "shots";
-IS92.connect[8] = connect101;
+let field98 = browser.currentScene.createNode("field");
+field98.name = "keyValueOrientation";
+field98.accessType = "inputOutput";
+field98.appinfo = "keyValue array for OrientationInterpolator";
+field98.type = "MFRotation";
+Script70.field[23] = field98;
 
-let connect102 = browser.currentScene.createNode("connect");
-connect102.nodeField = "filterColor";
-connect102.protoField = "filterColor";
-IS92.connect[9] = connect102;
+let field99 = browser.currentScene.createNode("field");
+field99.name = "animated";
+field99.accessType = "inputOutput";
+field99.appinfo = "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events";
+field99.type = "SFBool";
+field99.value = "false";
+Script70.field[24] = field99;
 
-let connect103 = browser.currentScene.createNode("connect");
-connect103.nodeField = "filterTransparency";
-connect103.protoField = "filterTransparency";
-IS92.connect[10] = connect103;
+let field100 = browser.currentScene.createNode("field");
+field100.name = "initialized";
+field100.accessType = "initializeOnly";
+field100.appinfo = "perform checkShots() function once immediately after initialization";
+field100.type = "SFBool";
+field100.value = "false";
+Script70.field[25] = field100;
 
-let connect104 = browser.currentScene.createNode("connect");
-connect104.nodeField = "upVector";
-connect104.protoField = "upVector";
-IS92.connect[11] = connect104;
+let field101 = browser.currentScene.createNode("field");
+field101.name = "shotCount";
+field101.accessType = "initializeOnly";
+field101.appinfo = "how many CameraShot nodes are contained in shots array";
+field101.type = "SFInt32";
+field101.value = "0";
+Script70.field[26] = field101;
 
-let connect105 = browser.currentScene.createNode("connect");
-connect105.nodeField = "fStop";
-connect105.protoField = "fStop";
-IS92.connect[12] = connect105;
+let field102 = browser.currentScene.createNode("field");
+field102.name = "movesCount";
+field102.accessType = "initializeOnly";
+field102.appinfo = "how many CameraMove nodes are contained in moves array";
+field102.type = "SFInt32";
+field102.value = "0";
+Script70.field[27] = field102;
 
-let connect106 = browser.currentScene.createNode("connect");
-connect106.nodeField = "focusDistance";
-connect106.protoField = "focusDistance";
-IS92.connect[13] = connect106;
+let field103 = browser.currentScene.createNode("field");
+field103.name = "frameCount";
+field103.accessType = "initializeOnly";
+field103.appinfo = "how many frames were created in current loop";
+field103.type = "SFFloat";
+field103.value = "0";
+Script70.field[28] = field103;
 
-let connect107 = browser.currentScene.createNode("connect");
-connect107.nodeField = "isActive";
-connect107.protoField = "isActive";
-IS92.connect[14] = connect107;
+let field104 = browser.currentScene.createNode("field");
+field104.name = "startTime";
+field104.accessType = "initializeOnly";
+field104.appinfo = "holding variable";
+field104.type = "SFTime";
+field104.value = "0";
+Script70.field[29] = field104;
 
+let field105 = browser.currentScene.createNode("field");
+field105.name = "priorTraceTime";
+field105.accessType = "initializeOnly";
+field105.appinfo = "holding variable";
+field105.type = "SFTime";
+field105.value = "0";
+Script70.field[30] = field105;
+
+let field106 = browser.currentScene.createNode("field");
+field106.name = "traceEnabled";
+field106.accessType = "initializeOnly";
+field106.appinfo = "enable console output to trace script computations and prototype progress";
+field106.type = "SFBool";
+Script70.field[31] = field106;
+
+let IS107 = browser.currentScene.createNode("IS");
 let connect108 = browser.currentScene.createNode("connect");
-connect108.nodeField = "totalDuration";
-connect108.protoField = "totalDuration";
-IS92.connect[15] = connect108;
+connect108.nodeField = "description";
+connect108.protoField = "description";
+IS107.connect = new MFNode();
+
+IS107.connect[0] = connect108;
 
 let connect109 = browser.currentScene.createNode("connect");
-connect109.nodeField = "offlineRender";
-connect109.protoField = "offlineRender";
-IS92.connect[16] = connect109;
+connect109.nodeField = "position";
+connect109.protoField = "position";
+IS107.connect[1] = connect109;
 
 let connect110 = browser.currentScene.createNode("connect");
-connect110.nodeField = "traceEnabled";
-connect110.protoField = "traceEnabled";
-IS92.connect[17] = connect110;
+connect110.nodeField = "orientation";
+connect110.protoField = "orientation";
+IS107.connect[2] = connect110;
 
-Script55.iS = IS92;
+let connect111 = browser.currentScene.createNode("connect");
+connect111.nodeField = "set_fraction";
+connect111.protoField = "set_fraction";
+IS107.connect[3] = connect111;
+
+let connect112 = browser.currentScene.createNode("connect");
+connect112.nodeField = "set_bind";
+connect112.protoField = "set_bind";
+IS107.connect[4] = connect112;
+
+let connect113 = browser.currentScene.createNode("connect");
+connect113.nodeField = "fieldOfView";
+connect113.protoField = "fieldOfView";
+IS107.connect[5] = connect113;
+
+let connect114 = browser.currentScene.createNode("connect");
+connect114.nodeField = "nearClipPlane";
+connect114.protoField = "nearClipPlane";
+IS107.connect[6] = connect114;
+
+let connect115 = browser.currentScene.createNode("connect");
+connect115.nodeField = "farClipPlane";
+connect115.protoField = "farClipPlane";
+IS107.connect[7] = connect115;
+
+let connect116 = browser.currentScene.createNode("connect");
+connect116.nodeField = "shots";
+connect116.protoField = "shots";
+IS107.connect[8] = connect116;
+
+let connect117 = browser.currentScene.createNode("connect");
+connect117.nodeField = "filterColor";
+connect117.protoField = "filterColor";
+IS107.connect[9] = connect117;
+
+let connect118 = browser.currentScene.createNode("connect");
+connect118.nodeField = "filterTransparency";
+connect118.protoField = "filterTransparency";
+IS107.connect[10] = connect118;
+
+let connect119 = browser.currentScene.createNode("connect");
+connect119.nodeField = "upVector";
+connect119.protoField = "upVector";
+IS107.connect[11] = connect119;
+
+let connect120 = browser.currentScene.createNode("connect");
+connect120.nodeField = "fStop";
+connect120.protoField = "fStop";
+IS107.connect[12] = connect120;
+
+let connect121 = browser.currentScene.createNode("connect");
+connect121.nodeField = "focusDistance";
+connect121.protoField = "focusDistance";
+IS107.connect[13] = connect121;
+
+let connect122 = browser.currentScene.createNode("connect");
+connect122.nodeField = "isActive";
+connect122.protoField = "isActive";
+IS107.connect[14] = connect122;
+
+let connect123 = browser.currentScene.createNode("connect");
+connect123.nodeField = "totalDuration";
+connect123.protoField = "totalDuration";
+IS107.connect[15] = connect123;
+
+let connect124 = browser.currentScene.createNode("connect");
+connect124.nodeField = "offlineRender";
+connect124.protoField = "offlineRender";
+IS107.connect[16] = connect124;
+
+let connect125 = browser.currentScene.createNode("connect");
+connect125.nodeField = "traceEnabled";
+connect125.protoField = "traceEnabled";
+IS107.connect[17] = connect125;
+
+Script70.iS = IS107;
 
 
-Script55.setSourceCode(`ecmascript:\n"+
+Script70.setSourceCode(`ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1490,51 +1565,51 @@ Script55.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[Camera] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody27.children[7] = Script55;
+ProtoBody42.children[7] = Script70;
 
-let ROUTE111 = browser.currentScene.createNode("ROUTE");
-ROUTE111.fromField = "position";
-ROUTE111.fromNode = "CameraScript";
-ROUTE111.toField = "position";
-ROUTE111.toNode = "CameraViewpoint";
-ProtoBody27.children[8] = ROUTE111;
+let ROUTE126 = browser.currentScene.createNode("ROUTE");
+ROUTE126.fromField = "position";
+ROUTE126.fromNode = "CameraScript";
+ROUTE126.toField = "position";
+ROUTE126.toNode = "CameraViewpoint";
+ProtoBody42.children[8] = ROUTE126;
 
-let ROUTE112 = browser.currentScene.createNode("ROUTE");
-ROUTE112.fromField = "orientation";
-ROUTE112.fromNode = "CameraScript";
-ROUTE112.toField = "orientation";
-ROUTE112.toNode = "CameraViewpoint";
-ProtoBody27.children[9] = ROUTE112;
+let ROUTE127 = browser.currentScene.createNode("ROUTE");
+ROUTE127.fromField = "orientation";
+ROUTE127.fromNode = "CameraScript";
+ROUTE127.toField = "orientation";
+ROUTE127.toNode = "CameraViewpoint";
+ProtoBody42.children[9] = ROUTE127;
 
-let ROUTE113 = browser.currentScene.createNode("ROUTE");
-ROUTE113.fromField = "isActive";
-ROUTE113.fromNode = "CameraScript";
-ROUTE113.toField = "set_bind";
-ROUTE113.toNode = "CameraViewpoint";
-ProtoBody27.children[10] = ROUTE113;
+let ROUTE128 = browser.currentScene.createNode("ROUTE");
+ROUTE128.fromField = "isActive";
+ROUTE128.fromNode = "CameraScript";
+ROUTE128.toField = "set_bind";
+ROUTE128.toNode = "CameraViewpoint";
+ProtoBody42.children[10] = ROUTE128;
 
-let ROUTE114 = browser.currentScene.createNode("ROUTE");
-ROUTE114.fromField = "isActive";
-ROUTE114.fromNode = "CameraScript";
-ROUTE114.toField = "set_bind";
-ROUTE114.toNode = "CameraNavInfo";
-ProtoBody27.children[11] = ROUTE114;
+let ROUTE129 = browser.currentScene.createNode("ROUTE");
+ROUTE129.fromField = "isActive";
+ROUTE129.fromNode = "CameraScript";
+ROUTE129.toField = "set_bind";
+ROUTE129.toNode = "CameraNavInfo";
+ProtoBody42.children[11] = ROUTE129;
 
-let ROUTE115 = browser.currentScene.createNode("ROUTE");
-ROUTE115.fromField = "isActive";
-ROUTE115.fromNode = "CameraScript";
-ROUTE115.toField = "on";
-ROUTE115.toNode = "CameraDirectionalLight";
-ProtoBody27.children[12] = ROUTE115;
+let ROUTE130 = browser.currentScene.createNode("ROUTE");
+ROUTE130.fromField = "isActive";
+ROUTE130.fromNode = "CameraScript";
+ROUTE130.toField = "on";
+ROUTE130.toNode = "CameraDirectionalLight";
+ProtoBody42.children[12] = ROUTE130;
 
-ProtoDeclare2.protoBody = ProtoBody27;
+ProtoDeclare17.protoBody = ProtoBody42;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = ProtoDeclare2;
+browser.currentScene.children[0] = ProtoDeclare17;
 
 //=============== CameraShot ==============
-let ProtoDeclare116 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare131 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="CameraShot" appinfo="CameraShot collects a specific set of CameraMovement animations that make up an individual shot." ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this CameraShot" type="SFString"></field>
 <field name="enabled" accessType="inputOutput" appinfo="Whether this CameraShot can be activated" type="SFBool" value="true"></field>
@@ -1672,286 +1747,286 @@ function alwaysPrint (outputValue)
 }]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare116.name = "CameraShot";
-ProtoDeclare116.appinfo = "CameraShot collects a specific set of CameraMovement animations that make up an individual shot.";
-let ProtoInterface117 = browser.currentScene.createNode("ProtoInterface");
-let field118 = browser.currentScene.createNode("field");
-field118.name = "description";
-field118.accessType = "inputOutput";
-field118.appinfo = "Text description to be displayed for this CameraShot";
-field118.type = "SFString";
-ProtoInterface117.field = new MFNode();
-
-ProtoInterface117.field[0] = field118;
-
-let field119 = browser.currentScene.createNode("field");
-field119.name = "enabled";
-field119.accessType = "inputOutput";
-field119.appinfo = "Whether this CameraShot can be activated";
-field119.type = "SFBool";
-field119.value = "true";
-ProtoInterface117.field[1] = field119;
-
-let field120 = browser.currentScene.createNode("field");
-field120.name = "moves";
-field120.accessType = "inputOutput";
-field120.appinfo = "Set of CameraMovement nodes";
-field120.type = "MFNode";
-//initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
-ProtoInterface117.field[2] = field120;
-
-let field121 = browser.currentScene.createNode("field");
-field121.name = "initialPosition";
-field121.accessType = "inputOutput";
-field121.appinfo = "Setup to reinitialize camera position for this shot";
-field121.type = "SFVec3f";
-field121.value = "0 0 10";
-ProtoInterface117.field[3] = field121;
-
-let field122 = browser.currentScene.createNode("field");
-field122.name = "initialOrientation";
-field122.accessType = "inputOutput";
-field122.appinfo = "Setup to reinitialize camera rotation for this shot";
-field122.type = "SFRotation";
-field122.value = "0 0 1 0";
-ProtoInterface117.field[4] = field122;
-
-let field123 = browser.currentScene.createNode("field");
-field123.name = "initialAimPoint";
-field123.accessType = "inputOutput";
-field123.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot";
-field123.type = "SFVec3f";
-field123.value = "0 0 0";
-ProtoInterface117.field[5] = field123;
-
-let field124 = browser.currentScene.createNode("field");
-field124.name = "initialFieldOfView";
-field124.accessType = "inputOutput";
-field124.appinfo = "pi/4";
-field124.type = "SFFloat";
-field124.value = "0.7854";
-ProtoInterface117.field[6] = field124;
-
-let field125 = browser.currentScene.createNode("field");
-field125.name = "initialFStop";
-field125.accessType = "inputOutput";
-field125.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
-field125.type = "SFFloat";
-field125.value = "5.6";
-ProtoInterface117.field[7] = field125;
-
-let field126 = browser.currentScene.createNode("field");
-field126.name = "initialFocusDistance";
-field126.accessType = "inputOutput";
-field126.appinfo = "Distance to focal plane of sharpest focus";
-field126.type = "SFFloat";
-field126.value = "10";
-ProtoInterface117.field[8] = field126;
-
-let field127 = browser.currentScene.createNode("field");
-field127.name = "shotDuration";
-field127.accessType = "outputOnly";
-field127.appinfo = "Subtotal duration of contained CameraMovement move durations";
-field127.type = "SFTime";
-ProtoInterface117.field[9] = field127;
-
-let field128 = browser.currentScene.createNode("field");
-field128.name = "isActive";
-field128.accessType = "outputOnly";
-field128.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field128.type = "SFBool";
-ProtoInterface117.field[10] = field128;
-
-let field129 = browser.currentScene.createNode("field");
-field129.name = "traceEnabled";
-field129.accessType = "initializeOnly";
-field129.appinfo = "enable console output to trace script computations and prototype progress";
-field129.type = "SFBool";
-field129.value = "false";
-ProtoInterface117.field[11] = field129;
-
-ProtoDeclare116.protoInterface = ProtoInterface117;
-
-let ProtoBody130 = browser.currentScene.createNode("ProtoBody");
-let Script131 = browser.currentScene.createNode("Script");
-Script131.DEF = "CameraShotScript";
-Script131.directOutput = True;
-Script131.mustEvaluate = True;
-let field132 = browser.currentScene.createNode("field");
-field132.name = "description";
-field132.accessType = "inputOutput";
-field132.appinfo = "Text description to be displayed for this CameraShot";
-field132.type = "SFString";
-Script131.field = new MFNode();
-
-Script131.field[0] = field132;
-
+ProtoDeclare131.name = "CameraShot";
+ProtoDeclare131.appinfo = "CameraShot collects a specific set of CameraMovement animations that make up an individual shot.";
+let ProtoInterface132 = browser.currentScene.createNode("ProtoInterface");
 let field133 = browser.currentScene.createNode("field");
-field133.name = "enabled";
+field133.name = "description";
 field133.accessType = "inputOutput";
-field133.appinfo = "Whether this CameraShot can be activated";
-field133.type = "SFBool";
-Script131.field[1] = field133;
+field133.appinfo = "Text description to be displayed for this CameraShot";
+field133.type = "SFString";
+ProtoInterface132.field = new MFNode();
+
+ProtoInterface132.field[0] = field133;
 
 let field134 = browser.currentScene.createNode("field");
-field134.name = "moves";
+field134.name = "enabled";
 field134.accessType = "inputOutput";
-field134.appinfo = "Set of CameraMovement nodes";
-field134.type = "MFNode";
-//initialization nodes (if any) go here
-Script131.field[2] = field134;
+field134.appinfo = "Whether this CameraShot can be activated";
+field134.type = "SFBool";
+field134.value = "true";
+ProtoInterface132.field[1] = field134;
 
 let field135 = browser.currentScene.createNode("field");
-field135.name = "initialPosition";
+field135.name = "moves";
 field135.accessType = "inputOutput";
-field135.appinfo = "Setup to reinitialize camera position for this shot";
-field135.type = "SFVec3f";
-Script131.field[3] = field135;
+field135.appinfo = "Set of CameraMovement nodes";
+field135.type = "MFNode";
+//initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
+ProtoInterface132.field[2] = field135;
 
 let field136 = browser.currentScene.createNode("field");
-field136.name = "initialOrientation";
+field136.name = "initialPosition";
 field136.accessType = "inputOutput";
-field136.appinfo = "Setup to reinitialize camera rotation for this shot";
-field136.type = "SFRotation";
-Script131.field[4] = field136;
+field136.appinfo = "Setup to reinitialize camera position for this shot";
+field136.type = "SFVec3f";
+field136.value = "0 0 10";
+ProtoInterface132.field[3] = field136;
 
 let field137 = browser.currentScene.createNode("field");
-field137.name = "initialAimPoint";
+field137.name = "initialOrientation";
 field137.accessType = "inputOutput";
-field137.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot";
-field137.type = "SFVec3f";
-Script131.field[5] = field137;
+field137.appinfo = "Setup to reinitialize camera rotation for this shot";
+field137.type = "SFRotation";
+field137.value = "0 0 1 0";
+ProtoInterface132.field[4] = field137;
 
 let field138 = browser.currentScene.createNode("field");
-field138.name = "initialFieldOfView";
+field138.name = "initialAimPoint";
 field138.accessType = "inputOutput";
-field138.appinfo = "pi/4";
-field138.type = "SFFloat";
-Script131.field[6] = field138;
+field138.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot";
+field138.type = "SFVec3f";
+field138.value = "0 0 0";
+ProtoInterface132.field[5] = field138;
 
 let field139 = browser.currentScene.createNode("field");
-field139.name = "initialFStop";
+field139.name = "initialFieldOfView";
 field139.accessType = "inputOutput";
-field139.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field139.appinfo = "pi/4";
 field139.type = "SFFloat";
-Script131.field[7] = field139;
+field139.value = "0.7854";
+ProtoInterface132.field[6] = field139;
 
 let field140 = browser.currentScene.createNode("field");
-field140.name = "initialFocusDistance";
+field140.name = "initialFStop";
 field140.accessType = "inputOutput";
-field140.appinfo = "Distance to focal plane of sharpest focus";
+field140.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
 field140.type = "SFFloat";
-Script131.field[8] = field140;
+field140.value = "5.6";
+ProtoInterface132.field[7] = field140;
 
 let field141 = browser.currentScene.createNode("field");
-field141.name = "shotDuration";
-field141.accessType = "outputOnly";
-field141.appinfo = "Subtotal duration of contained CameraMovement move durations";
-field141.type = "SFTime";
-Script131.field[9] = field141;
+field141.name = "initialFocusDistance";
+field141.accessType = "inputOutput";
+field141.appinfo = "Distance to focal plane of sharpest focus";
+field141.type = "SFFloat";
+field141.value = "10";
+ProtoInterface132.field[8] = field141;
 
 let field142 = browser.currentScene.createNode("field");
-field142.name = "isActive";
+field142.name = "shotDuration";
 field142.accessType = "outputOnly";
-field142.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field142.type = "SFBool";
-Script131.field[10] = field142;
+field142.appinfo = "Subtotal duration of contained CameraMovement move durations";
+field142.type = "SFTime";
+ProtoInterface132.field[9] = field142;
 
 let field143 = browser.currentScene.createNode("field");
-field143.name = "traceEnabled";
-field143.accessType = "initializeOnly";
-field143.appinfo = "enable console output to trace script computations and prototype progress";
+field143.name = "isActive";
+field143.accessType = "outputOnly";
+field143.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
 field143.type = "SFBool";
-Script131.field[11] = field143;
+ProtoInterface132.field[10] = field143;
 
 let field144 = browser.currentScene.createNode("field");
-field144.name = "key";
-field144.accessType = "inputOutput";
-field144.appinfo = "key array for interpolators";
-field144.type = "MFFloat";
-Script131.field[12] = field144;
+field144.name = "traceEnabled";
+field144.accessType = "initializeOnly";
+field144.appinfo = "enable console output to trace script computations and prototype progress";
+field144.type = "SFBool";
+field144.value = "false";
+ProtoInterface132.field[11] = field144;
 
-let field145 = browser.currentScene.createNode("field");
-field145.name = "keyValuePosition";
-field145.accessType = "inputOutput";
-field145.appinfo = "keyValue array for PositionInterpolator";
-field145.type = "MFVec3f";
-Script131.field[13] = field145;
+ProtoDeclare131.protoInterface = ProtoInterface132;
 
-let field146 = browser.currentScene.createNode("field");
-field146.name = "keyValueOrientation";
-field146.accessType = "inputOutput";
-field146.appinfo = "keyValue array for OrientationInterpolator";
-field146.type = "MFRotation";
-Script131.field[14] = field146;
+let ProtoBody145 = browser.currentScene.createNode("ProtoBody");
+let Script146 = browser.currentScene.createNode("Script");
+Script146.DEF = "CameraShotScript";
+Script146.directOutput = True;
+Script146.mustEvaluate = True;
+let field147 = browser.currentScene.createNode("field");
+field147.name = "description";
+field147.accessType = "inputOutput";
+field147.appinfo = "Text description to be displayed for this CameraShot";
+field147.type = "SFString";
+Script146.field = new MFNode();
 
-let IS147 = browser.currentScene.createNode("IS");
-let connect148 = browser.currentScene.createNode("connect");
-connect148.nodeField = "description";
-connect148.protoField = "description";
-IS147.connect = new MFNode();
+Script146.field[0] = field147;
 
-IS147.connect[0] = connect148;
+let field148 = browser.currentScene.createNode("field");
+field148.name = "enabled";
+field148.accessType = "inputOutput";
+field148.appinfo = "Whether this CameraShot can be activated";
+field148.type = "SFBool";
+Script146.field[1] = field148;
 
-let connect149 = browser.currentScene.createNode("connect");
-connect149.nodeField = "enabled";
-connect149.protoField = "enabled";
-IS147.connect[1] = connect149;
+let field149 = browser.currentScene.createNode("field");
+field149.name = "moves";
+field149.accessType = "inputOutput";
+field149.appinfo = "Set of CameraMovement nodes";
+field149.type = "MFNode";
+//initialization nodes (if any) go here
+Script146.field[2] = field149;
 
-let connect150 = browser.currentScene.createNode("connect");
-connect150.nodeField = "moves";
-connect150.protoField = "moves";
-IS147.connect[2] = connect150;
+let field150 = browser.currentScene.createNode("field");
+field150.name = "initialPosition";
+field150.accessType = "inputOutput";
+field150.appinfo = "Setup to reinitialize camera position for this shot";
+field150.type = "SFVec3f";
+Script146.field[3] = field150;
 
-let connect151 = browser.currentScene.createNode("connect");
-connect151.nodeField = "initialPosition";
-connect151.protoField = "initialPosition";
-IS147.connect[3] = connect151;
+let field151 = browser.currentScene.createNode("field");
+field151.name = "initialOrientation";
+field151.accessType = "inputOutput";
+field151.appinfo = "Setup to reinitialize camera rotation for this shot";
+field151.type = "SFRotation";
+Script146.field[4] = field151;
 
-let connect152 = browser.currentScene.createNode("connect");
-connect152.nodeField = "initialOrientation";
-connect152.protoField = "initialOrientation";
-IS147.connect[4] = connect152;
+let field152 = browser.currentScene.createNode("field");
+field152.name = "initialAimPoint";
+field152.accessType = "inputOutput";
+field152.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot";
+field152.type = "SFVec3f";
+Script146.field[5] = field152;
 
-let connect153 = browser.currentScene.createNode("connect");
-connect153.nodeField = "initialAimPoint";
-connect153.protoField = "initialAimPoint";
-IS147.connect[5] = connect153;
+let field153 = browser.currentScene.createNode("field");
+field153.name = "initialFieldOfView";
+field153.accessType = "inputOutput";
+field153.appinfo = "pi/4";
+field153.type = "SFFloat";
+Script146.field[6] = field153;
 
-let connect154 = browser.currentScene.createNode("connect");
-connect154.nodeField = "initialFieldOfView";
-connect154.protoField = "initialFieldOfView";
-IS147.connect[6] = connect154;
+let field154 = browser.currentScene.createNode("field");
+field154.name = "initialFStop";
+field154.accessType = "inputOutput";
+field154.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field154.type = "SFFloat";
+Script146.field[7] = field154;
 
-let connect155 = browser.currentScene.createNode("connect");
-connect155.nodeField = "initialFStop";
-connect155.protoField = "initialFStop";
-IS147.connect[7] = connect155;
+let field155 = browser.currentScene.createNode("field");
+field155.name = "initialFocusDistance";
+field155.accessType = "inputOutput";
+field155.appinfo = "Distance to focal plane of sharpest focus";
+field155.type = "SFFloat";
+Script146.field[8] = field155;
 
-let connect156 = browser.currentScene.createNode("connect");
-connect156.nodeField = "initialFocusDistance";
-connect156.protoField = "initialFocusDistance";
-IS147.connect[8] = connect156;
+let field156 = browser.currentScene.createNode("field");
+field156.name = "shotDuration";
+field156.accessType = "outputOnly";
+field156.appinfo = "Subtotal duration of contained CameraMovement move durations";
+field156.type = "SFTime";
+Script146.field[9] = field156;
 
-let connect157 = browser.currentScene.createNode("connect");
-connect157.nodeField = "shotDuration";
-connect157.protoField = "shotDuration";
-IS147.connect[9] = connect157;
+let field157 = browser.currentScene.createNode("field");
+field157.name = "isActive";
+field157.accessType = "outputOnly";
+field157.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
+field157.type = "SFBool";
+Script146.field[10] = field157;
 
-let connect158 = browser.currentScene.createNode("connect");
-connect158.nodeField = "isActive";
-connect158.protoField = "isActive";
-IS147.connect[10] = connect158;
+let field158 = browser.currentScene.createNode("field");
+field158.name = "traceEnabled";
+field158.accessType = "initializeOnly";
+field158.appinfo = "enable console output to trace script computations and prototype progress";
+field158.type = "SFBool";
+Script146.field[11] = field158;
 
-let connect159 = browser.currentScene.createNode("connect");
-connect159.nodeField = "traceEnabled";
-connect159.protoField = "traceEnabled";
-IS147.connect[11] = connect159;
+let field159 = browser.currentScene.createNode("field");
+field159.name = "key";
+field159.accessType = "inputOutput";
+field159.appinfo = "key array for interpolators";
+field159.type = "MFFloat";
+Script146.field[12] = field159;
 
-Script131.iS = IS147;
+let field160 = browser.currentScene.createNode("field");
+field160.name = "keyValuePosition";
+field160.accessType = "inputOutput";
+field160.appinfo = "keyValue array for PositionInterpolator";
+field160.type = "MFVec3f";
+Script146.field[13] = field160;
+
+let field161 = browser.currentScene.createNode("field");
+field161.name = "keyValueOrientation";
+field161.accessType = "inputOutput";
+field161.appinfo = "keyValue array for OrientationInterpolator";
+field161.type = "MFRotation";
+Script146.field[14] = field161;
+
+let IS162 = browser.currentScene.createNode("IS");
+let connect163 = browser.currentScene.createNode("connect");
+connect163.nodeField = "description";
+connect163.protoField = "description";
+IS162.connect = new MFNode();
+
+IS162.connect[0] = connect163;
+
+let connect164 = browser.currentScene.createNode("connect");
+connect164.nodeField = "enabled";
+connect164.protoField = "enabled";
+IS162.connect[1] = connect164;
+
+let connect165 = browser.currentScene.createNode("connect");
+connect165.nodeField = "moves";
+connect165.protoField = "moves";
+IS162.connect[2] = connect165;
+
+let connect166 = browser.currentScene.createNode("connect");
+connect166.nodeField = "initialPosition";
+connect166.protoField = "initialPosition";
+IS162.connect[3] = connect166;
+
+let connect167 = browser.currentScene.createNode("connect");
+connect167.nodeField = "initialOrientation";
+connect167.protoField = "initialOrientation";
+IS162.connect[4] = connect167;
+
+let connect168 = browser.currentScene.createNode("connect");
+connect168.nodeField = "initialAimPoint";
+connect168.protoField = "initialAimPoint";
+IS162.connect[5] = connect168;
+
+let connect169 = browser.currentScene.createNode("connect");
+connect169.nodeField = "initialFieldOfView";
+connect169.protoField = "initialFieldOfView";
+IS162.connect[6] = connect169;
+
+let connect170 = browser.currentScene.createNode("connect");
+connect170.nodeField = "initialFStop";
+connect170.protoField = "initialFStop";
+IS162.connect[7] = connect170;
+
+let connect171 = browser.currentScene.createNode("connect");
+connect171.nodeField = "initialFocusDistance";
+connect171.protoField = "initialFocusDistance";
+IS162.connect[8] = connect171;
+
+let connect172 = browser.currentScene.createNode("connect");
+connect172.nodeField = "shotDuration";
+connect172.protoField = "shotDuration";
+IS162.connect[9] = connect172;
+
+let connect173 = browser.currentScene.createNode("connect");
+connect173.nodeField = "isActive";
+connect173.protoField = "isActive";
+IS162.connect[10] = connect173;
+
+let connect174 = browser.currentScene.createNode("connect");
+connect174.nodeField = "traceEnabled";
+connect174.protoField = "traceEnabled";
+IS162.connect[11] = connect174;
+
+Script146.iS = IS162;
 
 
-Script131.setSourceCode(`ecmascript:\n"+
+Script146.setSourceCode(`ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -2044,17 +2119,17 @@ Script131.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody130.children = new MFNode();
+ProtoBody145.children = new MFNode();
 
-ProtoBody130.children[0] = Script131;
+ProtoBody145.children[0] = Script146;
 
 //Add any ROUTEs here, going from Script to other nodes within ProtoBody
-ProtoDeclare116.protoBody = ProtoBody130;
+ProtoDeclare131.protoBody = ProtoBody145;
 
-browser.currentScene.children[1] = ProtoDeclare116;
+browser.currentScene.children[1] = ProtoDeclare131;
 
 //=============== CameraMovement ==============
-let ProtoDeclare160 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare175 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="CameraMovement" appinfo="CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView." ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this CameraMovement" type="SFString"></field>
 <field name="enabled" accessType="inputOutput" appinfo="Whether this CameraMovement can be activated" type="SFBool" value="true"></field>
@@ -2186,268 +2261,268 @@ function alwaysPrint (outputValue)
 }]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare160.name = "CameraMovement";
-ProtoDeclare160.appinfo = "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.";
-let ProtoInterface161 = browser.currentScene.createNode("ProtoInterface");
-let field162 = browser.currentScene.createNode("field");
-field162.name = "description";
-field162.accessType = "inputOutput";
-field162.appinfo = "Text description to be displayed for this CameraMovement";
-field162.type = "SFString";
-ProtoInterface161.field = new MFNode();
+ProtoDeclare175.name = "CameraMovement";
+ProtoDeclare175.appinfo = "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.";
+let ProtoInterface176 = browser.currentScene.createNode("ProtoInterface");
+let field177 = browser.currentScene.createNode("field");
+field177.name = "description";
+field177.accessType = "inputOutput";
+field177.appinfo = "Text description to be displayed for this CameraMovement";
+field177.type = "SFString";
+ProtoInterface176.field = new MFNode();
 
-ProtoInterface161.field[0] = field162;
+ProtoInterface176.field[0] = field177;
 
-let field163 = browser.currentScene.createNode("field");
-field163.name = "enabled";
-field163.accessType = "inputOutput";
-field163.appinfo = "Whether this CameraMovement can be activated";
-field163.type = "SFBool";
-field163.value = "true";
-ProtoInterface161.field[1] = field163;
+let field178 = browser.currentScene.createNode("field");
+field178.name = "enabled";
+field178.accessType = "inputOutput";
+field178.appinfo = "Whether this CameraMovement can be activated";
+field178.type = "SFBool";
+field178.value = "true";
+ProtoInterface176.field[1] = field178;
 
-let field164 = browser.currentScene.createNode("field");
-field164.name = "duration";
-field164.accessType = "inputOutput";
-field164.appinfo = "Duration in seconds for this move";
-field164.type = "SFFloat";
-field164.value = "0";
-ProtoInterface161.field[2] = field164;
+let field179 = browser.currentScene.createNode("field");
+field179.name = "duration";
+field179.accessType = "inputOutput";
+field179.appinfo = "Duration in seconds for this move";
+field179.type = "SFFloat";
+field179.value = "0";
+ProtoInterface176.field[2] = field179;
 
-let field165 = browser.currentScene.createNode("field");
-field165.name = "goalPosition";
-field165.accessType = "inputOutput";
-field165.appinfo = "Goal camera position for this move";
-field165.type = "SFVec3f";
-field165.value = "0 0 10";
-ProtoInterface161.field[3] = field165;
+let field180 = browser.currentScene.createNode("field");
+field180.name = "goalPosition";
+field180.accessType = "inputOutput";
+field180.appinfo = "Goal camera position for this move";
+field180.type = "SFVec3f";
+field180.value = "0 0 10";
+ProtoInterface176.field[3] = field180;
 
-let field166 = browser.currentScene.createNode("field");
-field166.name = "goalOrientation";
-field166.accessType = "inputOutput";
-field166.appinfo = "Goal camera rotation for this move";
-field166.type = "SFRotation";
-field166.value = "0 0 1 0";
-ProtoInterface161.field[4] = field166;
+let field181 = browser.currentScene.createNode("field");
+field181.name = "goalOrientation";
+field181.accessType = "inputOutput";
+field181.appinfo = "Goal camera rotation for this move";
+field181.type = "SFRotation";
+field181.value = "0 0 1 0";
+ProtoInterface176.field[4] = field181;
 
-let field167 = browser.currentScene.createNode("field");
-field167.name = "tracking";
-field167.accessType = "inputOutput";
-field167.appinfo = "Whether or not camera direction is tracking towards the aimPoint";
-field167.type = "SFBool";
-field167.value = "false";
-ProtoInterface161.field[5] = field167;
+let field182 = browser.currentScene.createNode("field");
+field182.name = "tracking";
+field182.accessType = "inputOutput";
+field182.appinfo = "Whether or not camera direction is tracking towards the aimPoint";
+field182.type = "SFBool";
+field182.value = "false";
+ProtoInterface176.field[5] = field182;
 
-let field168 = browser.currentScene.createNode("field");
-field168.name = "goalAimPoint";
-field168.accessType = "inputOutput";
-field168.appinfo = "Goal aimPoint for this move, ignored if tracking=false";
-field168.type = "SFVec3f";
-field168.value = "0 0 0";
-ProtoInterface161.field[6] = field168;
+let field183 = browser.currentScene.createNode("field");
+field183.name = "goalAimPoint";
+field183.accessType = "inputOutput";
+field183.appinfo = "Goal aimPoint for this move, ignored if tracking=false";
+field183.type = "SFVec3f";
+field183.value = "0 0 0";
+ProtoInterface176.field[6] = field183;
 
-let field169 = browser.currentScene.createNode("field");
-field169.name = "goalFieldOfView";
-field169.accessType = "inputOutput";
-field169.appinfo = "Goal fieldOfView for this move";
-field169.type = "SFFloat";
-field169.value = "0.7854";
-ProtoInterface161.field[7] = field169;
+let field184 = browser.currentScene.createNode("field");
+field184.name = "goalFieldOfView";
+field184.accessType = "inputOutput";
+field184.appinfo = "Goal fieldOfView for this move";
+field184.type = "SFFloat";
+field184.value = "0.7854";
+ProtoInterface176.field[7] = field184;
 
-let field170 = browser.currentScene.createNode("field");
-field170.name = "goalFStop";
-field170.accessType = "inputOutput";
-field170.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
-field170.type = "SFFloat";
-field170.value = "5.6";
-ProtoInterface161.field[8] = field170;
+let field185 = browser.currentScene.createNode("field");
+field185.name = "goalFStop";
+field185.accessType = "inputOutput";
+field185.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field185.type = "SFFloat";
+field185.value = "5.6";
+ProtoInterface176.field[8] = field185;
 
-let field171 = browser.currentScene.createNode("field");
-field171.name = "goalFocusDistance";
-field171.accessType = "inputOutput";
-field171.appinfo = "Distance to focal plane of sharpest focus";
-field171.type = "SFFloat";
-field171.value = "10";
-ProtoInterface161.field[9] = field171;
+let field186 = browser.currentScene.createNode("field");
+field186.name = "goalFocusDistance";
+field186.accessType = "inputOutput";
+field186.appinfo = "Distance to focal plane of sharpest focus";
+field186.type = "SFFloat";
+field186.value = "10";
+ProtoInterface176.field[9] = field186;
 
-let field172 = browser.currentScene.createNode("field");
-field172.name = "isActive";
-field172.accessType = "outputOnly";
-field172.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field172.type = "SFBool";
-ProtoInterface161.field[10] = field172;
+let field187 = browser.currentScene.createNode("field");
+field187.name = "isActive";
+field187.accessType = "outputOnly";
+field187.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
+field187.type = "SFBool";
+ProtoInterface176.field[10] = field187;
 
-let field173 = browser.currentScene.createNode("field");
-field173.name = "traceEnabled";
-field173.accessType = "initializeOnly";
-field173.appinfo = "enable console output to trace script computations and prototype progress";
-field173.type = "SFBool";
-field173.value = "false";
-ProtoInterface161.field[11] = field173;
+let field188 = browser.currentScene.createNode("field");
+field188.name = "traceEnabled";
+field188.accessType = "initializeOnly";
+field188.appinfo = "enable console output to trace script computations and prototype progress";
+field188.type = "SFBool";
+field188.value = "false";
+ProtoInterface176.field[11] = field188;
 
-ProtoDeclare160.protoInterface = ProtoInterface161;
+ProtoDeclare175.protoInterface = ProtoInterface176;
 
-let ProtoBody174 = browser.currentScene.createNode("ProtoBody");
+let ProtoBody189 = browser.currentScene.createNode("ProtoBody");
 //First node determines node type of this prototype
 //Subsequent nodes do not render, but still must be a valid X3D subgraph
 //Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events
-let Script175 = browser.currentScene.createNode("Script");
-Script175.DEF = "CameraMovementScript";
-Script175.directOutput = True;
-Script175.mustEvaluate = True;
-let field176 = browser.currentScene.createNode("field");
-field176.name = "description";
-field176.accessType = "inputOutput";
-field176.appinfo = "Text description to be displayed for this CameraMovement";
-field176.type = "SFString";
-Script175.field = new MFNode();
+let Script190 = browser.currentScene.createNode("Script");
+Script190.DEF = "CameraMovementScript";
+Script190.directOutput = True;
+Script190.mustEvaluate = True;
+let field191 = browser.currentScene.createNode("field");
+field191.name = "description";
+field191.accessType = "inputOutput";
+field191.appinfo = "Text description to be displayed for this CameraMovement";
+field191.type = "SFString";
+Script190.field = new MFNode();
 
-Script175.field[0] = field176;
+Script190.field[0] = field191;
 
-let field177 = browser.currentScene.createNode("field");
-field177.name = "enabled";
-field177.accessType = "inputOutput";
-field177.appinfo = "Whether this CameraMovement can be activated";
-field177.type = "SFBool";
-Script175.field[1] = field177;
+let field192 = browser.currentScene.createNode("field");
+field192.name = "enabled";
+field192.accessType = "inputOutput";
+field192.appinfo = "Whether this CameraMovement can be activated";
+field192.type = "SFBool";
+Script190.field[1] = field192;
 
-let field178 = browser.currentScene.createNode("field");
-field178.name = "duration";
-field178.accessType = "inputOutput";
-field178.appinfo = "Duration in seconds for this move";
-field178.type = "SFFloat";
-Script175.field[2] = field178;
+let field193 = browser.currentScene.createNode("field");
+field193.name = "duration";
+field193.accessType = "inputOutput";
+field193.appinfo = "Duration in seconds for this move";
+field193.type = "SFFloat";
+Script190.field[2] = field193;
 
-let field179 = browser.currentScene.createNode("field");
-field179.name = "goalPosition";
-field179.accessType = "inputOutput";
-field179.appinfo = "Goal camera position for this move";
-field179.type = "SFVec3f";
-Script175.field[3] = field179;
+let field194 = browser.currentScene.createNode("field");
+field194.name = "goalPosition";
+field194.accessType = "inputOutput";
+field194.appinfo = "Goal camera position for this move";
+field194.type = "SFVec3f";
+Script190.field[3] = field194;
 
-let field180 = browser.currentScene.createNode("field");
-field180.name = "goalOrientation";
-field180.accessType = "inputOutput";
-field180.appinfo = "Goal camera rotation for this move";
-field180.type = "SFRotation";
-Script175.field[4] = field180;
+let field195 = browser.currentScene.createNode("field");
+field195.name = "goalOrientation";
+field195.accessType = "inputOutput";
+field195.appinfo = "Goal camera rotation for this move";
+field195.type = "SFRotation";
+Script190.field[4] = field195;
 
-let field181 = browser.currentScene.createNode("field");
-field181.name = "tracking";
-field181.accessType = "inputOutput";
-field181.appinfo = "Whether or not camera direction is tracking towards the aimPoint";
-field181.type = "SFBool";
-Script175.field[5] = field181;
+let field196 = browser.currentScene.createNode("field");
+field196.name = "tracking";
+field196.accessType = "inputOutput";
+field196.appinfo = "Whether or not camera direction is tracking towards the aimPoint";
+field196.type = "SFBool";
+Script190.field[5] = field196;
 
-let field182 = browser.currentScene.createNode("field");
-field182.name = "goalAimPoint";
-field182.accessType = "inputOutput";
-field182.appinfo = "Goal aimPoint for this move, ignored if tracking=false";
-field182.type = "SFVec3f";
-Script175.field[6] = field182;
+let field197 = browser.currentScene.createNode("field");
+field197.name = "goalAimPoint";
+field197.accessType = "inputOutput";
+field197.appinfo = "Goal aimPoint for this move, ignored if tracking=false";
+field197.type = "SFVec3f";
+Script190.field[6] = field197;
 
-let field183 = browser.currentScene.createNode("field");
-field183.name = "goalFieldOfView";
-field183.accessType = "inputOutput";
-field183.appinfo = "Goal fieldOfView for this move";
-field183.type = "SFFloat";
-Script175.field[7] = field183;
+let field198 = browser.currentScene.createNode("field");
+field198.name = "goalFieldOfView";
+field198.accessType = "inputOutput";
+field198.appinfo = "Goal fieldOfView for this move";
+field198.type = "SFFloat";
+Script190.field[7] = field198;
 
-let field184 = browser.currentScene.createNode("field");
-field184.name = "goalFStop";
-field184.accessType = "inputOutput";
-field184.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
-field184.type = "SFFloat";
-Script175.field[8] = field184;
+let field199 = browser.currentScene.createNode("field");
+field199.name = "goalFStop";
+field199.accessType = "inputOutput";
+field199.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane";
+field199.type = "SFFloat";
+Script190.field[8] = field199;
 
-let field185 = browser.currentScene.createNode("field");
-field185.name = "goalFocusDistance";
-field185.accessType = "inputOutput";
-field185.appinfo = "Distance to focal plane of sharpest focus";
-field185.type = "SFFloat";
-Script175.field[9] = field185;
+let field200 = browser.currentScene.createNode("field");
+field200.name = "goalFocusDistance";
+field200.accessType = "inputOutput";
+field200.appinfo = "Distance to focal plane of sharpest focus";
+field200.type = "SFFloat";
+Script190.field[9] = field200;
 
-let field186 = browser.currentScene.createNode("field");
-field186.name = "isActive";
-field186.accessType = "outputOnly";
-field186.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
-field186.type = "SFBool";
-Script175.field[10] = field186;
+let field201 = browser.currentScene.createNode("field");
+field201.name = "isActive";
+field201.accessType = "outputOnly";
+field201.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations";
+field201.type = "SFBool";
+Script190.field[10] = field201;
 
-let field187 = browser.currentScene.createNode("field");
-field187.name = "traceEnabled";
-field187.accessType = "initializeOnly";
-field187.appinfo = "enable console output to trace script computations and prototype progress";
-field187.type = "SFBool";
-Script175.field[11] = field187;
+let field202 = browser.currentScene.createNode("field");
+field202.name = "traceEnabled";
+field202.accessType = "initializeOnly";
+field202.appinfo = "enable console output to trace script computations and prototype progress";
+field202.type = "SFBool";
+Script190.field[11] = field202;
 
-let IS188 = browser.currentScene.createNode("IS");
-let connect189 = browser.currentScene.createNode("connect");
-connect189.nodeField = "description";
-connect189.protoField = "description";
-IS188.connect = new MFNode();
+let IS203 = browser.currentScene.createNode("IS");
+let connect204 = browser.currentScene.createNode("connect");
+connect204.nodeField = "description";
+connect204.protoField = "description";
+IS203.connect = new MFNode();
 
-IS188.connect[0] = connect189;
+IS203.connect[0] = connect204;
 
-let connect190 = browser.currentScene.createNode("connect");
-connect190.nodeField = "enabled";
-connect190.protoField = "enabled";
-IS188.connect[1] = connect190;
+let connect205 = browser.currentScene.createNode("connect");
+connect205.nodeField = "enabled";
+connect205.protoField = "enabled";
+IS203.connect[1] = connect205;
 
-let connect191 = browser.currentScene.createNode("connect");
-connect191.nodeField = "duration";
-connect191.protoField = "duration";
-IS188.connect[2] = connect191;
+let connect206 = browser.currentScene.createNode("connect");
+connect206.nodeField = "duration";
+connect206.protoField = "duration";
+IS203.connect[2] = connect206;
 
-let connect192 = browser.currentScene.createNode("connect");
-connect192.nodeField = "goalPosition";
-connect192.protoField = "goalPosition";
-IS188.connect[3] = connect192;
+let connect207 = browser.currentScene.createNode("connect");
+connect207.nodeField = "goalPosition";
+connect207.protoField = "goalPosition";
+IS203.connect[3] = connect207;
 
-let connect193 = browser.currentScene.createNode("connect");
-connect193.nodeField = "goalOrientation";
-connect193.protoField = "goalOrientation";
-IS188.connect[4] = connect193;
+let connect208 = browser.currentScene.createNode("connect");
+connect208.nodeField = "goalOrientation";
+connect208.protoField = "goalOrientation";
+IS203.connect[4] = connect208;
 
-let connect194 = browser.currentScene.createNode("connect");
-connect194.nodeField = "tracking";
-connect194.protoField = "tracking";
-IS188.connect[5] = connect194;
+let connect209 = browser.currentScene.createNode("connect");
+connect209.nodeField = "tracking";
+connect209.protoField = "tracking";
+IS203.connect[5] = connect209;
 
-let connect195 = browser.currentScene.createNode("connect");
-connect195.nodeField = "goalAimPoint";
-connect195.protoField = "goalAimPoint";
-IS188.connect[6] = connect195;
+let connect210 = browser.currentScene.createNode("connect");
+connect210.nodeField = "goalAimPoint";
+connect210.protoField = "goalAimPoint";
+IS203.connect[6] = connect210;
 
-let connect196 = browser.currentScene.createNode("connect");
-connect196.nodeField = "goalFieldOfView";
-connect196.protoField = "goalFieldOfView";
-IS188.connect[7] = connect196;
+let connect211 = browser.currentScene.createNode("connect");
+connect211.nodeField = "goalFieldOfView";
+connect211.protoField = "goalFieldOfView";
+IS203.connect[7] = connect211;
 
-let connect197 = browser.currentScene.createNode("connect");
-connect197.nodeField = "goalFStop";
-connect197.protoField = "goalFStop";
-IS188.connect[8] = connect197;
+let connect212 = browser.currentScene.createNode("connect");
+connect212.nodeField = "goalFStop";
+connect212.protoField = "goalFStop";
+IS203.connect[8] = connect212;
 
-let connect198 = browser.currentScene.createNode("connect");
-connect198.nodeField = "goalFocusDistance";
-connect198.protoField = "goalFocusDistance";
-IS188.connect[9] = connect198;
+let connect213 = browser.currentScene.createNode("connect");
+connect213.nodeField = "goalFocusDistance";
+connect213.protoField = "goalFocusDistance";
+IS203.connect[9] = connect213;
 
-let connect199 = browser.currentScene.createNode("connect");
-connect199.nodeField = "isActive";
-connect199.protoField = "isActive";
-IS188.connect[10] = connect199;
+let connect214 = browser.currentScene.createNode("connect");
+connect214.nodeField = "isActive";
+connect214.protoField = "isActive";
+IS203.connect[10] = connect214;
 
-let connect200 = browser.currentScene.createNode("connect");
-connect200.nodeField = "traceEnabled";
-connect200.protoField = "traceEnabled";
-IS188.connect[11] = connect200;
+let connect215 = browser.currentScene.createNode("connect");
+connect215.nodeField = "traceEnabled";
+connect215.protoField = "traceEnabled";
+IS203.connect[11] = connect215;
 
-Script175.iS = IS188;
+Script190.iS = IS203;
 
 
-Script175.setSourceCode(`ecmascript:\n"+
+Script190.setSourceCode(`ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -2537,17 +2612,17 @@ Script175.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody174.children = new MFNode();
+ProtoBody189.children = new MFNode();
 
-ProtoBody174.children[0] = Script175;
+ProtoBody189.children[0] = Script190;
 
 //Add any ROUTEs here, going from Script to other nodes within ProtoBody
-ProtoDeclare160.protoBody = ProtoBody174;
+ProtoDeclare175.protoBody = ProtoBody189;
 
-browser.currentScene.children[2] = ProtoDeclare160;
+browser.currentScene.children[2] = ProtoDeclare175;
 
 //=============== OfflineRender ==============
-let ProtoDeclare201 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare216 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="OfflineRender" appinfo="OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)." ><ProtoInterface><!--TODO non-photorealistic rendering (NPR) parameters--><field name="description" accessType="inputOutput" appinfo="Text description to be displayed for this OfflineRender" type="SFString"></field>
 <field name="enabled" accessType="inputOutput" appinfo="Whether this OfflineRender can be activated" type="SFBool" value="true"></field>
@@ -2640,245 +2715,245 @@ function alwaysPrint (outputValue)
 }]]></Script>
 <!--Add any ROUTEs here, going from Script to other nodes within ProtoBody--></ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare201.name = "OfflineRender";
-ProtoDeclare201.appinfo = "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).";
-let ProtoInterface202 = browser.currentScene.createNode("ProtoInterface");
+ProtoDeclare216.name = "OfflineRender";
+ProtoDeclare216.appinfo = "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).";
+let ProtoInterface217 = browser.currentScene.createNode("ProtoInterface");
 //TODO non-photorealistic rendering (NPR) parameters
-let field203 = browser.currentScene.createNode("field");
-field203.name = "description";
-field203.accessType = "inputOutput";
-field203.appinfo = "Text description to be displayed for this OfflineRender";
-field203.type = "SFString";
-ProtoInterface202.field = new MFNode();
-
-ProtoInterface202.field[0] = field203;
-
-let field204 = browser.currentScene.createNode("field");
-field204.name = "enabled";
-field204.accessType = "inputOutput";
-field204.appinfo = "Whether this OfflineRender can be activated";
-field204.type = "SFBool";
-field204.value = "true";
-ProtoInterface202.field[1] = field204;
-
-let field205 = browser.currentScene.createNode("field");
-field205.name = "frameRate";
-field205.accessType = "inputOutput";
-field205.appinfo = "Frames per second recorded for this rendering";
-field205.type = "SFFloat";
-field205.value = "30";
-ProtoInterface202.field[2] = field205;
-
-let field206 = browser.currentScene.createNode("field");
-field206.name = "frameSize";
-field206.accessType = "inputOutput";
-field206.appinfo = "Size of frame in number of pixels width and height";
-field206.type = "SFVec2f";
-field206.value = "640 480";
-ProtoInterface202.field[3] = field206;
-
-let field207 = browser.currentScene.createNode("field");
-field207.name = "pixelAspectRatio";
-field207.accessType = "inputOutput";
-field207.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1";
-field207.type = "SFFloat";
-field207.value = "1.33";
-ProtoInterface202.field[4] = field207;
-
-let field208 = browser.currentScene.createNode("field");
-field208.name = "set_startTime";
-field208.accessType = "inputOnly";
-field208.appinfo = "Begin render operation";
-field208.type = "SFTime";
-ProtoInterface202.field[5] = field208;
-
-let field209 = browser.currentScene.createNode("field");
-field209.name = "progress";
-field209.accessType = "outputOnly";
-field209.appinfo = "Progress performing render operation (0..1)";
-field209.type = "SFFloat";
-ProtoInterface202.field[6] = field209;
-
-let field210 = browser.currentScene.createNode("field");
-field210.name = "renderCompleteTime";
-field210.accessType = "outputOnly";
-field210.appinfo = "Render operation complete";
-field210.type = "SFTime";
-ProtoInterface202.field[7] = field210;
-
-let field211 = browser.currentScene.createNode("field");
-field211.name = "movieFormat";
-field211.accessType = "initializeOnly";
-field211.appinfo = "Format of rendered output movie (mpeg mp4 etc.), use first supported format";
-field211.type = "MFString";
-field211.value = "\"mpeg\"";
-ProtoInterface202.field[8] = field211;
-
-let field212 = browser.currentScene.createNode("field");
-field212.name = "imageFormat";
-field212.accessType = "initializeOnly";
-field212.appinfo = "Format of rendered output images (png jpeg gif tiff etc.) use first supported format";
-field212.type = "MFString";
-field212.value = "\"png\"";
-ProtoInterface202.field[9] = field212;
-
-let field213 = browser.currentScene.createNode("field");
-field213.name = "traceEnabled";
-field213.accessType = "initializeOnly";
-field213.appinfo = "enable console output to trace script computations and prototype progress";
-field213.type = "SFBool";
-field213.value = "false";
-ProtoInterface202.field[10] = field213;
-
-ProtoDeclare201.protoInterface = ProtoInterface202;
-
-let ProtoBody214 = browser.currentScene.createNode("ProtoBody");
-//First node determines node type of this prototype
-//Subsequent nodes do not render, but still must be a valid X3D subgraph
-let Script215 = browser.currentScene.createNode("Script");
-Script215.DEF = "OfflineRenderScript";
-Script215.mustEvaluate = True;
-let field216 = browser.currentScene.createNode("field");
-field216.name = "description";
-field216.accessType = "inputOutput";
-field216.appinfo = "Text description to be displayed for this OfflineRender";
-field216.type = "SFString";
-Script215.field = new MFNode();
-
-Script215.field[0] = field216;
-
-let field217 = browser.currentScene.createNode("field");
-field217.name = "enabled";
-field217.accessType = "inputOutput";
-field217.appinfo = "Whether this OfflineRender can be activated";
-field217.type = "SFBool";
-Script215.field[1] = field217;
-
 let field218 = browser.currentScene.createNode("field");
-field218.name = "frameRate";
+field218.name = "description";
 field218.accessType = "inputOutput";
-field218.appinfo = "Frames per second recorded for this rendering";
-field218.type = "SFFloat";
-Script215.field[2] = field218;
+field218.appinfo = "Text description to be displayed for this OfflineRender";
+field218.type = "SFString";
+ProtoInterface217.field = new MFNode();
+
+ProtoInterface217.field[0] = field218;
 
 let field219 = browser.currentScene.createNode("field");
-field219.name = "frameSize";
+field219.name = "enabled";
 field219.accessType = "inputOutput";
-field219.appinfo = "Size of frame in number of pixels width and height";
-field219.type = "SFVec2f";
-Script215.field[3] = field219;
+field219.appinfo = "Whether this OfflineRender can be activated";
+field219.type = "SFBool";
+field219.value = "true";
+ProtoInterface217.field[1] = field219;
 
 let field220 = browser.currentScene.createNode("field");
-field220.name = "pixelAspectRatio";
+field220.name = "frameRate";
 field220.accessType = "inputOutput";
-field220.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1";
+field220.appinfo = "Frames per second recorded for this rendering";
 field220.type = "SFFloat";
-Script215.field[4] = field220;
+field220.value = "30";
+ProtoInterface217.field[2] = field220;
 
 let field221 = browser.currentScene.createNode("field");
-field221.name = "set_startTime";
-field221.accessType = "inputOnly";
-field221.appinfo = "Begin render operation";
-field221.type = "SFTime";
-Script215.field[5] = field221;
+field221.name = "frameSize";
+field221.accessType = "inputOutput";
+field221.appinfo = "Size of frame in number of pixels width and height";
+field221.type = "SFVec2f";
+field221.value = "640 480";
+ProtoInterface217.field[3] = field221;
 
 let field222 = browser.currentScene.createNode("field");
-field222.name = "progress";
-field222.accessType = "outputOnly";
-field222.appinfo = "Progress performing render operation (0..1)";
+field222.name = "pixelAspectRatio";
+field222.accessType = "inputOutput";
+field222.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1";
 field222.type = "SFFloat";
-Script215.field[6] = field222;
+field222.value = "1.33";
+ProtoInterface217.field[4] = field222;
 
 let field223 = browser.currentScene.createNode("field");
-field223.name = "renderCompleteTime";
-field223.accessType = "outputOnly";
-field223.appinfo = "Render operation complete";
+field223.name = "set_startTime";
+field223.accessType = "inputOnly";
+field223.appinfo = "Begin render operation";
 field223.type = "SFTime";
-Script215.field[7] = field223;
+ProtoInterface217.field[5] = field223;
 
 let field224 = browser.currentScene.createNode("field");
-field224.name = "movieFormat";
-field224.accessType = "initializeOnly";
-field224.appinfo = "Format of rendered output movie (mpeg mp4 etc.)";
-field224.type = "MFString";
-Script215.field[8] = field224;
+field224.name = "progress";
+field224.accessType = "outputOnly";
+field224.appinfo = "Progress performing render operation (0..1)";
+field224.type = "SFFloat";
+ProtoInterface217.field[6] = field224;
 
 let field225 = browser.currentScene.createNode("field");
-field225.name = "imageFormat";
-field225.accessType = "initializeOnly";
-field225.appinfo = "Format of rendered output images (png jpeg gif tiff etc.)";
-field225.type = "MFString";
-Script215.field[9] = field225;
+field225.name = "renderCompleteTime";
+field225.accessType = "outputOnly";
+field225.appinfo = "Render operation complete";
+field225.type = "SFTime";
+ProtoInterface217.field[7] = field225;
 
 let field226 = browser.currentScene.createNode("field");
-field226.name = "traceEnabled";
+field226.name = "movieFormat";
 field226.accessType = "initializeOnly";
-field226.appinfo = "enable console output to trace script computations and prototype progress";
-field226.type = "SFBool";
-Script215.field[10] = field226;
+field226.appinfo = "Format of rendered output movie (mpeg mp4 etc.), use first supported format";
+field226.type = "MFString";
+field226.value = "\"mpeg\"";
+ProtoInterface217.field[8] = field226;
 
-let IS227 = browser.currentScene.createNode("IS");
-let connect228 = browser.currentScene.createNode("connect");
-connect228.nodeField = "description";
-connect228.protoField = "description";
-IS227.connect = new MFNode();
+let field227 = browser.currentScene.createNode("field");
+field227.name = "imageFormat";
+field227.accessType = "initializeOnly";
+field227.appinfo = "Format of rendered output images (png jpeg gif tiff etc.) use first supported format";
+field227.type = "MFString";
+field227.value = "\"png\"";
+ProtoInterface217.field[9] = field227;
 
-IS227.connect[0] = connect228;
+let field228 = browser.currentScene.createNode("field");
+field228.name = "traceEnabled";
+field228.accessType = "initializeOnly";
+field228.appinfo = "enable console output to trace script computations and prototype progress";
+field228.type = "SFBool";
+field228.value = "false";
+ProtoInterface217.field[10] = field228;
 
-let connect229 = browser.currentScene.createNode("connect");
-connect229.nodeField = "enabled";
-connect229.protoField = "enabled";
-IS227.connect[1] = connect229;
+ProtoDeclare216.protoInterface = ProtoInterface217;
 
-let connect230 = browser.currentScene.createNode("connect");
-connect230.nodeField = "frameRate";
-connect230.protoField = "frameRate";
-IS227.connect[2] = connect230;
+let ProtoBody229 = browser.currentScene.createNode("ProtoBody");
+//First node determines node type of this prototype
+//Subsequent nodes do not render, but still must be a valid X3D subgraph
+let Script230 = browser.currentScene.createNode("Script");
+Script230.DEF = "OfflineRenderScript";
+Script230.mustEvaluate = True;
+let field231 = browser.currentScene.createNode("field");
+field231.name = "description";
+field231.accessType = "inputOutput";
+field231.appinfo = "Text description to be displayed for this OfflineRender";
+field231.type = "SFString";
+Script230.field = new MFNode();
 
-let connect231 = browser.currentScene.createNode("connect");
-connect231.nodeField = "frameSize";
-connect231.protoField = "frameSize";
-IS227.connect[3] = connect231;
+Script230.field[0] = field231;
 
-let connect232 = browser.currentScene.createNode("connect");
-connect232.nodeField = "pixelAspectRatio";
-connect232.protoField = "pixelAspectRatio";
-IS227.connect[4] = connect232;
+let field232 = browser.currentScene.createNode("field");
+field232.name = "enabled";
+field232.accessType = "inputOutput";
+field232.appinfo = "Whether this OfflineRender can be activated";
+field232.type = "SFBool";
+Script230.field[1] = field232;
 
-let connect233 = browser.currentScene.createNode("connect");
-connect233.nodeField = "set_startTime";
-connect233.protoField = "set_startTime";
-IS227.connect[5] = connect233;
+let field233 = browser.currentScene.createNode("field");
+field233.name = "frameRate";
+field233.accessType = "inputOutput";
+field233.appinfo = "Frames per second recorded for this rendering";
+field233.type = "SFFloat";
+Script230.field[2] = field233;
 
-let connect234 = browser.currentScene.createNode("connect");
-connect234.nodeField = "progress";
-connect234.protoField = "progress";
-IS227.connect[6] = connect234;
+let field234 = browser.currentScene.createNode("field");
+field234.name = "frameSize";
+field234.accessType = "inputOutput";
+field234.appinfo = "Size of frame in number of pixels width and height";
+field234.type = "SFVec2f";
+Script230.field[3] = field234;
 
-let connect235 = browser.currentScene.createNode("connect");
-connect235.nodeField = "renderCompleteTime";
-connect235.protoField = "renderCompleteTime";
-IS227.connect[7] = connect235;
+let field235 = browser.currentScene.createNode("field");
+field235.name = "pixelAspectRatio";
+field235.accessType = "inputOutput";
+field235.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1";
+field235.type = "SFFloat";
+Script230.field[4] = field235;
 
-let connect236 = browser.currentScene.createNode("connect");
-connect236.nodeField = "movieFormat";
-connect236.protoField = "movieFormat";
-IS227.connect[8] = connect236;
+let field236 = browser.currentScene.createNode("field");
+field236.name = "set_startTime";
+field236.accessType = "inputOnly";
+field236.appinfo = "Begin render operation";
+field236.type = "SFTime";
+Script230.field[5] = field236;
 
-let connect237 = browser.currentScene.createNode("connect");
-connect237.nodeField = "imageFormat";
-connect237.protoField = "imageFormat";
-IS227.connect[9] = connect237;
+let field237 = browser.currentScene.createNode("field");
+field237.name = "progress";
+field237.accessType = "outputOnly";
+field237.appinfo = "Progress performing render operation (0..1)";
+field237.type = "SFFloat";
+Script230.field[6] = field237;
 
-let connect238 = browser.currentScene.createNode("connect");
-connect238.nodeField = "traceEnabled";
-connect238.protoField = "traceEnabled";
-IS227.connect[10] = connect238;
+let field238 = browser.currentScene.createNode("field");
+field238.name = "renderCompleteTime";
+field238.accessType = "outputOnly";
+field238.appinfo = "Render operation complete";
+field238.type = "SFTime";
+Script230.field[7] = field238;
 
-Script215.iS = IS227;
+let field239 = browser.currentScene.createNode("field");
+field239.name = "movieFormat";
+field239.accessType = "initializeOnly";
+field239.appinfo = "Format of rendered output movie (mpeg mp4 etc.)";
+field239.type = "MFString";
+Script230.field[8] = field239;
+
+let field240 = browser.currentScene.createNode("field");
+field240.name = "imageFormat";
+field240.accessType = "initializeOnly";
+field240.appinfo = "Format of rendered output images (png jpeg gif tiff etc.)";
+field240.type = "MFString";
+Script230.field[9] = field240;
+
+let field241 = browser.currentScene.createNode("field");
+field241.name = "traceEnabled";
+field241.accessType = "initializeOnly";
+field241.appinfo = "enable console output to trace script computations and prototype progress";
+field241.type = "SFBool";
+Script230.field[10] = field241;
+
+let IS242 = browser.currentScene.createNode("IS");
+let connect243 = browser.currentScene.createNode("connect");
+connect243.nodeField = "description";
+connect243.protoField = "description";
+IS242.connect = new MFNode();
+
+IS242.connect[0] = connect243;
+
+let connect244 = browser.currentScene.createNode("connect");
+connect244.nodeField = "enabled";
+connect244.protoField = "enabled";
+IS242.connect[1] = connect244;
+
+let connect245 = browser.currentScene.createNode("connect");
+connect245.nodeField = "frameRate";
+connect245.protoField = "frameRate";
+IS242.connect[2] = connect245;
+
+let connect246 = browser.currentScene.createNode("connect");
+connect246.nodeField = "frameSize";
+connect246.protoField = "frameSize";
+IS242.connect[3] = connect246;
+
+let connect247 = browser.currentScene.createNode("connect");
+connect247.nodeField = "pixelAspectRatio";
+connect247.protoField = "pixelAspectRatio";
+IS242.connect[4] = connect247;
+
+let connect248 = browser.currentScene.createNode("connect");
+connect248.nodeField = "set_startTime";
+connect248.protoField = "set_startTime";
+IS242.connect[5] = connect248;
+
+let connect249 = browser.currentScene.createNode("connect");
+connect249.nodeField = "progress";
+connect249.protoField = "progress";
+IS242.connect[6] = connect249;
+
+let connect250 = browser.currentScene.createNode("connect");
+connect250.nodeField = "renderCompleteTime";
+connect250.protoField = "renderCompleteTime";
+IS242.connect[7] = connect250;
+
+let connect251 = browser.currentScene.createNode("connect");
+connect251.nodeField = "movieFormat";
+connect251.protoField = "movieFormat";
+IS242.connect[8] = connect251;
+
+let connect252 = browser.currentScene.createNode("connect");
+connect252.nodeField = "imageFormat";
+connect252.protoField = "imageFormat";
+IS242.connect[9] = connect252;
+
+let connect253 = browser.currentScene.createNode("connect");
+connect253.nodeField = "traceEnabled";
+connect253.protoField = "traceEnabled";
+IS242.connect[10] = connect253;
+
+Script230.iS = IS242;
 
 
-Script215.setSourceCode(`ecmascript:\n"+
+Script230.setSourceCode(`ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -2932,47 +3007,47 @@ Script215.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody214.children = new MFNode();
+ProtoBody229.children = new MFNode();
 
-ProtoBody214.children[0] = Script215;
+ProtoBody229.children[0] = Script230;
 
 //Add any ROUTEs here, going from Script to other nodes within ProtoBody
-ProtoDeclare201.protoBody = ProtoBody214;
+ProtoDeclare216.protoBody = ProtoBody229;
 
-browser.currentScene.children[3] = ProtoDeclare201;
+browser.currentScene.children[3] = ProtoDeclare216;
 
 //=============== Launch Prototype Example ==============
-let Background239 = browser.currentScene.createNode("Background");
-Background239.skyColor = new MFColor(new float[0.282353,0.380392,0.470588]);
-browser.currentScene.children[4] = Background239;
+let Background254 = browser.currentScene.createNode("Background");
+Background254.skyColor = new MFColor(new float[0.282353,0.380392,0.470588]);
+browser.currentScene.children[4] = Background254;
 
-let Anchor240 = browser.currentScene.createNode("Anchor");
-Anchor240.description = "launch CameraExample scene";
-Anchor240.url = new MFString(new java.lang.String["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]);
-let Transform241 = browser.currentScene.createNode("Transform");
-let Shape242 = browser.currentScene.createNode("Shape");
-let Text243 = browser.currentScene.createNode("Text");
-Text243.string = new MFString(new java.lang.String["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"]);
-let FontStyle244 = browser.currentScene.createNode("FontStyle");
-FontStyle244.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-Text243.fontStyle = FontStyle244;
+let Anchor255 = browser.currentScene.createNode("Anchor");
+Anchor255.description = "launch CameraExample scene";
+Anchor255.url = new MFString(new java.lang.String["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]);
+let Transform256 = browser.currentScene.createNode("Transform");
+let Shape257 = browser.currentScene.createNode("Shape");
+let Text258 = browser.currentScene.createNode("Text");
+Text258.string = new MFString(new java.lang.String["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"]);
+let FontStyle259 = browser.currentScene.createNode("FontStyle");
+FontStyle259.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text258.fontStyle = FontStyle259;
 
-Shape242.geometry = Text243;
+Shape257.geometry = Text258;
 
-let Appearance245 = browser.currentScene.createNode("Appearance");
-let Material246 = browser.currentScene.createNode("Material");
-Material246.diffuseColor = new SFColor(new float[1,1,0.2]);
-Appearance245.material = Material246;
+let Appearance260 = browser.currentScene.createNode("Appearance");
+let Material261 = browser.currentScene.createNode("Material");
+Material261.diffuseColor = new SFColor(new float[1,1,0.2]);
+Appearance260.material = Material261;
 
-Shape242.appearance = Appearance245;
+Shape257.appearance = Appearance260;
 
-Transform241.children = new MFNode();
+Transform256.children = new MFNode();
 
-Transform241.children[0] = Shape242;
+Transform256.children[0] = Shape257;
 
-Anchor240.children = new MFNode();
+Anchor255.children = new MFNode();
 
-Anchor240.children[0] = Transform241;
+Anchor255.children[0] = Transform256;
 
-browser.currentScene.children[5] = Anchor240;
+browser.currentScene.children[5] = Anchor255;
 

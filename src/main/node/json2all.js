@@ -77,3 +77,4 @@ convertJSON([
 	codeOutput : "../"
 	}
 	]);
+process.exit(0);

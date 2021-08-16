@@ -36,3 +36,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["hello, world"])))))      ;
     X3D0.toFileX3D("../data/HelloWorldMinimal.new.x3d");
+    process.exit(0);

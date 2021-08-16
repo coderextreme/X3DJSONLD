@@ -87,3 +87,4 @@ var ProtoInstance0 = null;
               .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleA")))      ;
     X3D0.toFileX3D("../data/bubble.new.x3d");
+    process.exit(0);

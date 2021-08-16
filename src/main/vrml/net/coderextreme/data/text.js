@@ -2,73 +2,108 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let Transform2 = browser.currentScene.createNode("Transform");
-let Shape3 = browser.currentScene.createNode("Shape");
-let Text4 = browser.currentScene.createNode("Text");
-Text4.string = new MFString(new java.lang.String["Node\"\"\""]);
-let FontStyle5 = browser.currentScene.createNode("FontStyle");
-Text4.fontStyle = FontStyle5;
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "creator";
+meta2.content = "John W Carlson";
+head1.meta = new MFNode();
 
-Shape3.geometry = Text4;
+head1.meta[0] = meta2;
 
-let Appearance6 = browser.currentScene.createNode("Appearance");
-let Material7 = browser.currentScene.createNode("Material");
-Appearance6.material = Material7;
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "created";
+meta3.content = "December 13 2015";
+head1.meta[1] = meta3;
 
-Shape3.appearance = Appearance6;
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "title";
+meta4.content = "text.x3d";
+head1.meta[2] = meta4;
 
-Transform2.children = new MFNode();
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "identifier";
+meta5.content = "https://coderextreme.net/X3DJSONLD/text.x3d";
+head1.meta[3] = meta5;
 
-Transform2.children[0] = Shape3;
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "description";
+meta6.content = "test \\n text";
+head1.meta[4] = meta6;
 
-let Shape8 = browser.currentScene.createNode("Shape");
-let Text9 = browser.currentScene.createNode("Text");
-Text9.string = new MFString(new java.lang.String["Node2","\\\\","\\\\\\\\","Node2"]);
-let FontStyle10 = browser.currentScene.createNode("FontStyle");
-Text9.fontStyle = FontStyle10;
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "generator";
+meta7.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[5] = meta7;
 
-Shape8.geometry = Text9;
+head = head1;
 
-let Appearance11 = browser.currentScene.createNode("Appearance");
-let Material12 = browser.currentScene.createNode("Material");
-Appearance11.material = Material12;
+let Transform9 = browser.currentScene.createNode("Transform");
+let Shape10 = browser.currentScene.createNode("Shape");
+let Text11 = browser.currentScene.createNode("Text");
+Text11.string = new MFString(new java.lang.String["Node\"\"\""]);
+let FontStyle12 = browser.currentScene.createNode("FontStyle");
+Text11.fontStyle = FontStyle12;
 
-Shape8.appearance = Appearance11;
+Shape10.geometry = Text11;
 
-Transform2.children[1] = Shape8;
+let Appearance13 = browser.currentScene.createNode("Appearance");
+let Material14 = browser.currentScene.createNode("Material");
+Appearance13.material = Material14;
 
-let Shape13 = browser.currentScene.createNode("Shape");
-let Text14 = browser.currentScene.createNode("Text");
-Text14.string = new MFString(new java.lang.String["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]);
-let FontStyle15 = browser.currentScene.createNode("FontStyle");
-Text14.fontStyle = FontStyle15;
+Shape10.appearance = Appearance13;
 
-Shape13.geometry = Text14;
+Transform9.children = new MFNode();
 
-let Appearance16 = browser.currentScene.createNode("Appearance");
-let Material17 = browser.currentScene.createNode("Material");
-Appearance16.material = Material17;
+Transform9.children[0] = Shape10;
 
-Shape13.appearance = Appearance16;
+let Shape15 = browser.currentScene.createNode("Shape");
+let Text16 = browser.currentScene.createNode("Text");
+Text16.string = new MFString(new java.lang.String["Node2","\\\\","\\\\\\\\","Node2"]);
+let FontStyle17 = browser.currentScene.createNode("FontStyle");
+Text16.fontStyle = FontStyle17;
 
-Transform2.children[2] = Shape13;
+Shape15.geometry = Text16;
 
-let Script18 = browser.currentScene.createNode("Script");
-let field19 = browser.currentScene.createNode("field");
-field19.name = "frontUrls";
-field19.type = "MFString";
-field19.accessType = "initializeOnly";
-field19.value = "\"rnl_front.png\" \"uffizi_front.png\"";
-Script18.field = new MFNode();
+let Appearance18 = browser.currentScene.createNode("Appearance");
+let Material19 = browser.currentScene.createNode("Material");
+Appearance18.material = Material19;
 
-Script18.field[0] = field19;
+Shape15.appearance = Appearance18;
+
+Transform9.children[1] = Shape15;
+
+let Shape20 = browser.currentScene.createNode("Shape");
+let Text21 = browser.currentScene.createNode("Text");
+Text21.string = new MFString(new java.lang.String["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]);
+let FontStyle22 = browser.currentScene.createNode("FontStyle");
+Text21.fontStyle = FontStyle22;
+
+Shape20.geometry = Text21;
+
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
+Appearance23.material = Material24;
+
+Shape20.appearance = Appearance23;
+
+Transform9.children[2] = Shape20;
+
+let Script25 = browser.currentScene.createNode("Script");
+let field26 = browser.currentScene.createNode("field");
+field26.name = "frontUrls";
+field26.type = "MFString";
+field26.accessType = "initializeOnly";
+field26.value = "\"rnl_front.png\" \"uffizi_front.png\"";
+Script25.field = new MFNode();
+
+Script25.field[0] = field26;
 
 
-Script18.setSourceCode(`ecmascript:\n"+
+Script25.setSourceCode(`ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';`)
-Transform2.children[3] = Script18;
+Transform9.children[3] = Script25;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Transform2;
+browser.currentScene.children[0] = Transform9;
 

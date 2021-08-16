@@ -442,3 +442,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("FrameStepper").setToField("set_fraction").setToNode("Interpolator21_skullbase"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Interpolator21_skullbase").setToField("set_rotation").setToNode("Bvh1_skullbase"))))      ;
     X3D0.toFileX3D("../data/BvhConversion1Invisible.new.x3d");
+    process.exit(0);

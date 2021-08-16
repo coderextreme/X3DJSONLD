@@ -26,3 +26,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
             .setGeometry((new autoclass.Sphere())))))      ;
     X3D0.toFileX3D("../data/sphere.new.x3d");
+    process.exit(0);
