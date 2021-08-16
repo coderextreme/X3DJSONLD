@@ -40,3 +40,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.6), java.newFloat(0.4), java.newFloat(0.2)]))))))      ;
     X3D0.toFileX3D("../data/StringArrayEncodingExamples.new.x3d");
+    process.exit(0);

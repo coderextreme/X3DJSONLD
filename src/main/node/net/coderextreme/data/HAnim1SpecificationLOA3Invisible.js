@@ -665,3 +665,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_l_ulnar_styloid_pt"))
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_ulnar_styloid_pt"))))      ;
     X3D0.toFileX3D("../data/HAnim1SpecificationLOA3Invisible.new.x3d");
+    process.exit(0);

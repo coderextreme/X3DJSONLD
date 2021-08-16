@@ -41,3 +41,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
         .addChild((new autoclass.ROUTE()).setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
     X3D0.toFileX3D("../data/flipp.new.x3d");
+    process.exit(0);

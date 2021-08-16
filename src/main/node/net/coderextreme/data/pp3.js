@@ -136,3 +136,4 @@ var ProtoInstance2 = null;
         .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2.5), java.newFloat(0)]))
           .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Process"))))      ;
     X3D0.toFileX3D("../data/pp3.new.x3d");
+    process.exit(0);

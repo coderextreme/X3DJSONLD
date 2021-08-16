@@ -41,3 +41,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Transform()).setDEF("InlineScene")
           .addChild((new autoclass.Inline()).setDEF("inline").setUrl(java.newArray("java.lang.String", ["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"])))))      ;
     X3D0.toFileX3D("../data/InlineSoundSource.new.x3d");
+    process.exit(0);

@@ -9,7 +9,7 @@ int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
 CX3D* X3D0 = new CX3D();
-CGroup* group = (CGroup*)m_pScene.createNode("Group");
+CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
 X3D0->setVersion("3.2");
@@ -17,171 +17,171 @@ Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
 meta2->setContent("CloudsProcedural4.x3d");
-head1->addMeta(meta2);
+head1->addMeta(*meta2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("description");
 meta3->setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.");
-head1->addMeta(meta3);
+head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
 meta4->setName("creator");
 meta4->setContent("Capt Darren W. Murphy");
-head1->addMeta(meta4);
+head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("created");
 meta5->setContent("1 November 2007");
-head1->addMeta(meta5);
+head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("modified");
 meta6->setContent("14 January 2014");
-head1->addMeta(meta6);
+head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("identifier");
 meta7->setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d");
-head1->addMeta(meta7);
+head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("generator");
 meta8->setContent("X3D-Edit, https://www.web3d.org/x3d/content/README.X3D-Edit.html");
-head1->addMeta(meta8);
+head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
 meta9->setName("license");
 meta9->setContent("../../license.html");
-head1->addMeta(meta9);
+head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("TODO");
 meta10->setContent("fix links");
-head1->addMeta(meta10);
+head1->addMeta(*meta10);
 
-X3D0->setHead(head1);
+X3D0->setHead(*head1);
 
 CScene* Scene11 = new CScene();
 //A png image file for the cloud texture must be designated in the ecmascript node.
-CViewpoint* Viewpoint12 = (CViewpoint *)m_pScene.createNode("Viewpoint");
+CViewpoint* Viewpoint12 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint12->setDescription("Main");
 Viewpoint12->setJump(False);
 Viewpoint12->setOrientation(new float[4]{0,1,0,1.57});
 Viewpoint12->setPosition(new float[3]{50000,1000,42000});
-group->addChildren(Viewpoint12);
+group->addChildren(*Viewpoint12);
 
-CViewpoint* Viewpoint13 = (CViewpoint *)m_pScene.createNode("Viewpoint");
+CViewpoint* Viewpoint13 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint13->setDescription("Light House Tower");
 Viewpoint13->setJump(False);
 Viewpoint13->setOrientation(new float[4]{0,1,0,1.3});
 Viewpoint13->setPosition(new float[3]{45000,1290,44000});
-group->addChildren(Viewpoint13);
+group->addChildren(*Viewpoint13);
 
-CViewpoint* Viewpoint14 = (CViewpoint *)m_pScene.createNode("Viewpoint");
+CViewpoint* Viewpoint14 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint14->setDescription("centerWest");
 Viewpoint14->setJump(False);
 Viewpoint14->setOrientation(new float[4]{0,1,0,2.5});
 Viewpoint14->setPosition(new float[3]{48000,1000,20000});
-group->addChildren(Viewpoint14);
+group->addChildren(*Viewpoint14);
 
-CBackground* Background15 = (CBackground *)m_pScene.createNode("Background");
+CBackground* Background15 = (CBackground *)(m_pScene.createNode("Background"));
 Background15->setGroundColor(new float[3]{0,0,1});
 Background15->setSkyColor(new float[3]{0,0,1});
-group->addChildren(Background15);
+group->addChildren(*Background15);
 
-CDirectionalLight* DirectionalLight16 = (CDirectionalLight *)m_pScene.createNode("DirectionalLight");
+CDirectionalLight* DirectionalLight16 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
 DirectionalLight16->setAmbientIntensity(1);
 DirectionalLight16->setDirection(new float[3]{-1,0,0});
 DirectionalLight16->setGlobal(True);
-group->addChildren(DirectionalLight16);
+group->addChildren(*DirectionalLight16);
 
-CGroup* Group17 = (CGroup *)m_pScene.createNode("Group");
+CGroup* Group17 = (CGroup *)(m_pScene.createNode("Group"));
 Group17->setDEF("Terrain");
-CTransform* Transform18 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform18->setScale(new float[3]{50,50,50});
 Transform18->setTranslation(new float[3]{25000,0,25000});
-CInline* Inline19 = (CInline *)m_pScene.createNode("Inline");
+CInline* Inline19 = (CInline *)(m_pScene.createNode("Inline"));
 Inline19->setUrl(new CString[4]{"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"}, 4);
-Transform18->addChildren(Inline19);
+Transform18->addChildren(*Inline19);
 
-Group17->addChildren(Transform18);
+Group17->addChildren(*Transform18);
 
-CTransform* Transform20 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform20 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform20->setRotation(new float[4]{1,0,0,1.57});
 Transform20->setTranslation(new float[3]{25000,0,25000});
-CShape* Shape21 = (CShape *)m_pScene.createNode("Shape");
-CRectangle2D* Rectangle2D22 = (CRectangle2D *)m_pScene.createNode("Rectangle2D");
+CShape* Shape21 = (CShape *)(m_pScene.createNode("Shape"));
+CRectangle2D* Rectangle2D22 = (CRectangle2D *)(m_pScene.createNode("Rectangle2D"));
 Rectangle2D22->setSize(new float[2]{77000,55000});
 Shape21->setGeometry(Rectangle2D22);
 
-CAppearance* Appearance23 = (CAppearance *)m_pScene.createNode("Appearance");
-CImageTexture* ImageTexture24 = (CImageTexture *)m_pScene.createNode("ImageTexture");
+CAppearance* Appearance23 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture24 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture24->setUrl(new CString[2]{"ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"}, 2);
-Appearance23->setTexture(ImageTexture24);
+Appearance23->setTexture(*ImageTexture24);
 
-Shape21->setAppearance(Appearance23);
+Shape21->setAppearance(*Appearance23);
 
-Transform20->addChildren(Shape21);
+Transform20->addChildren(*Shape21);
 
-Group17->addChildren(Transform20);
+Group17->addChildren(*Transform20);
 
-group->addChildren(Group17);
+group->addChildren(*Group17);
 
-CGroup* Group25 = (CGroup *)m_pScene.createNode("Group");
+CGroup* Group25 = (CGroup *)(m_pScene.createNode("Group"));
 Group25->setDEF("Placemarks");
-CTransform* Transform26 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform26->setScale(new float[3]{50,50,50});
 Transform26->setTranslation(new float[3]{45000,30,44000});
-CInline* Inline27 = (CInline *)m_pScene.createNode("Inline");
+CInline* Inline27 = (CInline *)(m_pScene.createNode("Inline"));
 Inline27->setUrl(new CString[4]{"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"}, 4);
-Transform26->addChildren(Inline27);
+Transform26->addChildren(*Inline27);
 
-Group25->addChildren(Transform26);
+Group25->addChildren(*Transform26);
 
-group->addChildren(Group25);
+group->addChildren(*Group25);
 
-CGroup* Group28 = (CGroup *)m_pScene.createNode("Group");
+CGroup* Group28 = (CGroup *)(m_pScene.createNode("Group"));
 Group28->setDEF("Clouds");
-CTransform* Transform29 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform29->setDEF("Cumulus");
-Group28->addChildren(Transform29);
+Group28->addChildren(*Transform29);
 
-CTransform* Transform30 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform30 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform30->setDEF("Cirrus");
-Group28->addChildren(Transform30);
+Group28->addChildren(*Transform30);
 
-CTransform* Transform31 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform31->setDEF("Fog");
-Group28->addChildren(Transform31);
+Group28->addChildren(*Transform31);
 
-CScript* Script32 = (CScript *)m_pScene.createNode("Script");
+CScript* Script32 = (CScript *)(m_pScene.createNode("Script"));
 Script32->setDEF("PixelScript");
 Script32->setDirectOutput(True);
 Cfield* field33 = new Cfield();
 field33->setName("Cumulus");
 field33->setAccessType("initializeOnly");
 field33->setType("SFNode");
-CTransform* Transform34 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform34 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform34->setUSE("Cumulus");
-field33->addChildren(Transform34);
+field33->addChildren(*Transform34);
 
-Script32->addField(field33);
+Script32->addField(*field33);
 
 Cfield* field35 = new Cfield();
 field35->setName("Cirrus");
 field35->setAccessType("initializeOnly");
 field35->setType("SFNode");
-CTransform* Transform36 = (CTransform *)m_pScene.createNode("Transform");
+CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform36->setUSE("Cirrus");
-field35->addChildren(Transform36);
+field35->addChildren(*Transform36);
 
-Script32->addField(field35);
+Script32->addField(*field35);
 
 Cfield* field37 = new Cfield();
 field37->setName("Fog");
 field37->setAccessType("initializeOnly");
 field37->setType("SFNode");
-Script32->addField(field37);
+Script32->addField(*field37);
 
 
 Script32.setSourceCode(`ecmascript:\n"+
@@ -565,18 +565,18 @@ Script32.setSourceCode(`ecmascript:\n"+
 "\n"+
 "cirrus();\n"+
 "}`)
-Group28->addChildren(Script32);
+Group28->addChildren(*Script32);
 
-CDirectionalLight* DirectionalLight38 = (CDirectionalLight *)m_pScene.createNode("DirectionalLight");
+CDirectionalLight* DirectionalLight38 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
 DirectionalLight38->setAmbientIntensity(1);
 DirectionalLight38->setColor(new float[3]{1,0,0});
 DirectionalLight38->setDirection(new float[3]{-1,-1,0});
 DirectionalLight38->setGlobal(True);
-Group28->addChildren(DirectionalLight38);
+Group28->addChildren(*DirectionalLight38);
 
-group->addChildren(Group28);
+group->addChildren(*Group28);
 
-X3D0->setScene(Scene11);
+X3D0->setScene(*Scene11);
 
 m_pScene.addRootNode(group);
 }

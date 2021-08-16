@@ -42,7 +42,7 @@ CppScriptSerializer.prototype = {
 		bodystr += "CX3DScene m_pScene;\n";
 		bodystr += "CBrowser browser = X3D.getBrowser();\n";
 		bodystr += "C"+element.nodeName+"* "+element.nodeName+stack[0]+" = new C"+element.nodeName+"();\n";
-        	bodystr += 'CGroup* group = (CGroup*)m_pScene.createNode("Group");\n';
+        	bodystr += 'CGroup* group = (CGroup*)(m_pScene.createNode("Group"));\n';
         	bodystr += "group->addChildren("+element.nodeName+stack[0]+");\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
         	bodystr += "m_pScene.addRootNode(group);\n";
@@ -335,7 +335,7 @@ let statements = {
 				} else if (statements[node.nodeName]) {
 					ch += "C"+node.nodeName+"* "+node.nodeName+stack[0]+" = new C"+node.nodeName+"();\n";
 				} else {
-					ch += "C"+node.nodeName+"* "+node.nodeName+stack[0]+" = (C"+node.nodeName+" *)m_pScene.createNode(\""+ node.nodeName+"\");\n";
+					ch += "C"+node.nodeName+"* "+node.nodeName+stack[0]+" = (C"+node.nodeName+" *)(m_pScene.createNode(\""+ node.nodeName+"\"));\n";
 				}
 
 				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
@@ -354,7 +354,11 @@ let statements = {
 					}
 				// }
 				// console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
-				ch += method+"("+node.nodeName+stack[0]+");\n\n";
+				if (method === "->setGeometry") {
+					ch += method+"("+node.nodeName+stack[0]+");\n\n";
+				} else {
+					ch += method+"(*"+node.nodeName+stack[0]+");\n\n";
+				}
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {

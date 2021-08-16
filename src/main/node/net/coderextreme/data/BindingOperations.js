@@ -193,3 +193,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View3").setToField("view3Bound").setToNode("BindingSequencerEngine"))
           .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View4").setToField("view4Bound").setToNode("BindingSequencerEngine"))))      ;
     X3D0.toFileX3D("../data/BindingOperations.new.x3d");
+    process.exit(0);

@@ -327,3 +327,4 @@ ProtoInstance1
 ProtoInstance4
             .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("testing 1 2 3"));
     X3D0.toFileX3D("../data/HelloWorldProgramOutput.new.x3d");
+    process.exit(0);

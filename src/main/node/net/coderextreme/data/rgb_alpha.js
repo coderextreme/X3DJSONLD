@@ -60,3 +60,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
               .setGeometry((new autoclass.Cylinder()))))))      ;
     X3D0.toFileX3D("../data/rgb_alpha.new.x3d");
+    process.exit(0);

@@ -3545,3 +3545,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("stopTime").setToNode("KickTimer"))
           .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("Stop_Touch").setToField("startTime").setToNode("StopTimer"))))      ;
     X3D0.toFileX3D("../data/HAnim1SpecificationLOA3Animation.new.x3d");
+    process.exit(0);

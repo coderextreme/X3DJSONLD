@@ -166,3 +166,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
         .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta")))      ;
     X3D0.toFileX3D("../data/flowers7.new.x3d");
+    process.exit(0);

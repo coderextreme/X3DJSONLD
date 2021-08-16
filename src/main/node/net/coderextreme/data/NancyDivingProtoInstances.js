@@ -965,3 +965,4 @@ ProtoInstance35
                                                 .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("BubblePath9").setToField("set_translation").setToNode("bubble9"))
                                                 .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("BubblePath10").setToField("set_translation").setToNode("bubble10"))))));
     X3D0.toFileX3D("../data/NancyDivingProtoInstances.new.x3d");
+    process.exit(0);

@@ -125,3 +125,4 @@ ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
             .addChild((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))));
     X3D0.toFileX3D("../data/rubikOnFire.new.x3d");
+    process.exit(0);

@@ -2,256 +2,321 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Full";
 X3D0.version = "4.0";
-let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "Filters.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "This X3D scene involves three sound sources. Each of them is visualized by a 3D object (in our case is a sphere) that depicts the sound effects. Specifically, we have added filters through of them we are able to manage the different sound effects in an impressive way. Filters can be composed of a number of attributes, frequency, detune, gain and the quality factor which also known as Q. Furthermore, the filters are classified in some specific types, depending on the sound effects that produce. In detail, there is the Low-pass filter which can create more muffled sound. Another one is the High-pass filter, which is used to generate tinny sound. Equally important is the Band-pass filter, which cuts off low and high frequencies and passes through only these within a certain range. On the contrary, the Notch filter has exactly the opposite operation of the Band-pass filter. Then is the Low-shelf filter, its role is to change the amount of bass in a sound, as a result the frequencies that are lower than the current frequency get a boost, while them that are over it remain unchanged. Next, the High-shelf filter is responsible for the quantity of treble in a sound. Moreover, Peaking filter is used in order to handle the amount of midrange in a sound. Lastly, there is the All-pass filter, whose role is to introduce phaser effects.";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "info";
+meta4.content = "This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "creator";
+meta5.content = "Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "created";
+meta6.content = "28 October 2020";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "modified";
+meta7.content = "20 April 2021";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "reference";
+meta8.content = "CHANGELOG.txt";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "TODO";
+meta9.content = "credit for audio files";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "reference";
+meta10.content = "http://www.medialab.teicrete.gr/minipages/x3domAudio";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "identifier";
+meta11.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "generator";
+meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "license";
+meta13.content = "../license.html";
+head1.meta[11] = meta13;
+
+head = head1;
+
+let NavigationInfo15 = browser.currentScene.createNode("NavigationInfo");
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = NavigationInfo2;
+browser.currentScene.children[0] = NavigationInfo15;
 
-let Background3 = browser.currentScene.createNode("Background");
-Background3.skyColor = new MFColor(new float[0.2,0.2,0.2]);
-browser.currentScene.children[1] = Background3;
+let Background16 = browser.currentScene.createNode("Background");
+Background16.skyColor = new MFColor(new float[0.2,0.2,0.2]);
+browser.currentScene.children[1] = Background16;
 
-let Viewpoint4 = browser.currentScene.createNode("Viewpoint");
-Viewpoint4.bind = "true";
-Viewpoint4.orientation = new SFRotation(new float[1,0,0,-0.5]);
-Viewpoint4.position = new SFVec3f(new float[0,500,600]);
-Viewpoint4.retainUserOffsets = True;
-browser.currentScene.children[2] = Viewpoint4;
+let Viewpoint17 = browser.currentScene.createNode("Viewpoint");
+Viewpoint17.bind = "true";
+Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.5]);
+Viewpoint17.position = new SFVec3f(new float[0,500,600]);
+Viewpoint17.retainUserOffsets = True;
+browser.currentScene.children[2] = Viewpoint17;
 
-let Transform5 = browser.currentScene.createNode("Transform");
-Transform5.DEF = "Audio1";
-Transform5.translation = new SFVec3f(new float[-200,50,0]);
-let Shape6 = browser.currentScene.createNode("Shape");
-let Appearance7 = browser.currentScene.createNode("Appearance");
-Appearance7.DEF = "audio_emit";
-let Material8 = browser.currentScene.createNode("Material");
-Material8.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material8.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material8.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance7.material = Material8;
+let Transform18 = browser.currentScene.createNode("Transform");
+Transform18.DEF = "Audio1";
+Transform18.translation = new SFVec3f(new float[-200,50,0]);
+let Shape19 = browser.currentScene.createNode("Shape");
+let Appearance20 = browser.currentScene.createNode("Appearance");
+Appearance20.DEF = "audio_emit";
+let Material21 = browser.currentScene.createNode("Material");
+Material21.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material21.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material21.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance20.material = Material21;
 
-Shape6.appearance = Appearance7;
+Shape19.appearance = Appearance20;
 
-let Sphere9 = browser.currentScene.createNode("Sphere");
-Sphere9.radius = 30;
-Shape6.geometry = Sphere9;
+let Sphere22 = browser.currentScene.createNode("Sphere");
+Sphere22.radius = 30;
+Shape19.geometry = Sphere22;
 
-Transform5.children = new MFNode();
+Transform18.children = new MFNode();
 
-Transform5.children[0] = Shape6;
+Transform18.children[0] = Shape19;
 
-browser.currentScene.children[3] = Transform5;
-
-let Transform10 = browser.currentScene.createNode("Transform");
-Transform10.DEF = "Audio2";
-Transform10.translation = new SFVec3f(new float[0,50,0]);
-let Shape11 = browser.currentScene.createNode("Shape");
-let Appearance12 = browser.currentScene.createNode("Appearance");
-Appearance12.DEF = "audio_emit";
-let Material13 = browser.currentScene.createNode("Material");
-Material13.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material13.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material13.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance12.material = Material13;
-
-Shape11.appearance = Appearance12;
-
-let Sphere14 = browser.currentScene.createNode("Sphere");
-Sphere14.radius = 30;
-Shape11.geometry = Sphere14;
-
-Transform10.children = new MFNode();
-
-Transform10.children[0] = Shape11;
-
-browser.currentScene.children[4] = Transform10;
-
-let Transform15 = browser.currentScene.createNode("Transform");
-Transform15.DEF = "Audio3";
-Transform15.translation = new SFVec3f(new float[200,50,0]);
-let Shape16 = browser.currentScene.createNode("Shape");
-let Appearance17 = browser.currentScene.createNode("Appearance");
-Appearance17.DEF = "audio_emit";
-let Material18 = browser.currentScene.createNode("Material");
-Material18.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material18.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material18.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance17.material = Material18;
-
-Shape16.appearance = Appearance17;
-
-let Sphere19 = browser.currentScene.createNode("Sphere");
-Sphere19.radius = 30;
-Shape16.geometry = Sphere19;
-
-Transform15.children = new MFNode();
-
-Transform15.children[0] = Shape16;
-
-browser.currentScene.children[5] = Transform15;
-
-let Transform20 = browser.currentScene.createNode("Transform");
-Transform20.DEF = "AnimData";
-Transform20.translation = new SFVec3f(new float[0,50,0]);
-browser.currentScene.children[6] = Transform20;
-
-let Transform21 = browser.currentScene.createNode("Transform");
-Transform21.DEF = "AnimDataBoxH";
-Transform21.translation = new SFVec3f(new float[0,100,0]);
-browser.currentScene.children[7] = Transform21;
-
-let Transform22 = browser.currentScene.createNode("Transform");
-Transform22.DEF = "AnimDataBoxM";
-Transform22.translation = new SFVec3f(new float[15,100,0]);
-browser.currentScene.children[8] = Transform22;
+browser.currentScene.children[3] = Transform18;
 
 let Transform23 = browser.currentScene.createNode("Transform");
-Transform23.DEF = "AnimDataBoxL";
-Transform23.translation = new SFVec3f(new float[30,100,0]);
-browser.currentScene.children[9] = Transform23;
+Transform23.DEF = "Audio2";
+Transform23.translation = new SFVec3f(new float[0,50,0]);
+let Shape24 = browser.currentScene.createNode("Shape");
+let Appearance25 = browser.currentScene.createNode("Appearance");
+Appearance25.DEF = "audio_emit";
+let Material26 = browser.currentScene.createNode("Material");
+Material26.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material26.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material26.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance25.material = Material26;
 
-let Transform24 = browser.currentScene.createNode("Transform");
-Transform24.DEF = "AnimDataBoxMM";
-Transform24.translation = new SFVec3f(new float[-15,100,0]);
-browser.currentScene.children[10] = Transform24;
+Shape24.appearance = Appearance25;
 
-let Transform25 = browser.currentScene.createNode("Transform");
-Transform25.DEF = "AnimDataBoxLM";
-Transform25.translation = new SFVec3f(new float[-30,100,0]);
-browser.currentScene.children[11] = Transform25;
+let Sphere27 = browser.currentScene.createNode("Sphere");
+Sphere27.radius = 30;
+Shape24.geometry = Sphere27;
 
-let Transform26 = browser.currentScene.createNode("Transform");
-let Shape27 = browser.currentScene.createNode("Shape");
-let Appearance28 = browser.currentScene.createNode("Appearance");
-Appearance28.DEF = "floor";
-let Material29 = browser.currentScene.createNode("Material");
-Material29.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material29.shininess = 0.8;
-Material29.specularColor = new SFColor(new float[0.5,0.6,0.7]);
-Appearance28.material = Material29;
+Transform23.children = new MFNode();
 
-Shape27.appearance = Appearance28;
+Transform23.children[0] = Shape24;
 
-let Cylinder30 = browser.currentScene.createNode("Cylinder");
-Cylinder30.radius = 500;
-Shape27.geometry = Cylinder30;
+browser.currentScene.children[4] = Transform23;
 
-Transform26.children = new MFNode();
+let Transform28 = browser.currentScene.createNode("Transform");
+Transform28.DEF = "Audio3";
+Transform28.translation = new SFVec3f(new float[200,50,0]);
+let Shape29 = browser.currentScene.createNode("Shape");
+let Appearance30 = browser.currentScene.createNode("Appearance");
+Appearance30.DEF = "audio_emit";
+let Material31 = browser.currentScene.createNode("Material");
+Material31.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material31.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material31.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance30.material = Material31;
 
-Transform26.children[0] = Shape27;
+Shape29.appearance = Appearance30;
 
-browser.currentScene.children[12] = Transform26;
+let Sphere32 = browser.currentScene.createNode("Sphere");
+Sphere32.radius = 30;
+Shape29.geometry = Sphere32;
 
-let AudioDestination31 = browser.currentScene.createNode("AudioDestination");
-let DynamicsCompressor32 = browser.currentScene.createNode("DynamicsCompressor");
-let Gain33 = browser.currentScene.createNode("Gain");
-let SpatialSound34 = browser.currentScene.createNode("SpatialSound");
-SpatialSound34.USE = "Audio1";
-let Gain35 = browser.currentScene.createNode("Gain");
-let Analyser36 = browser.currentScene.createNode("Analyser");
-let BiquadFilter37 = browser.currentScene.createNode("BiquadFilter");
-BiquadFilter37.detune = 50;
-BiquadFilter37.frequency = 600;
-BiquadFilter37.qualityFactor = 30;
-BiquadFilter37.type = "allpass";
-let AudioClip38 = browser.currentScene.createNode("AudioClip");
-AudioClip38.loop = True;
-AudioClip38.pauseTime = -1;
-AudioClip38.resumeTime = -1;
-AudioClip38.stopTime = -1;
-AudioClip38.url = new MFString(new java.lang.String["sound/techno_beat.mp3"]);
-BiquadFilter37.children = new MFNode();
+Transform28.children = new MFNode();
 
-BiquadFilter37.children[0] = AudioClip38;
+Transform28.children[0] = Shape29;
 
-Analyser36.children = new MFNode();
+browser.currentScene.children[5] = Transform28;
 
-Analyser36.children[0] = BiquadFilter37;
+let Transform33 = browser.currentScene.createNode("Transform");
+Transform33.DEF = "AnimData";
+Transform33.translation = new SFVec3f(new float[0,50,0]);
+browser.currentScene.children[6] = Transform33;
 
-Gain35.children = new MFNode();
+let Transform34 = browser.currentScene.createNode("Transform");
+Transform34.DEF = "AnimDataBoxH";
+Transform34.translation = new SFVec3f(new float[0,100,0]);
+browser.currentScene.children[7] = Transform34;
 
-Gain35.children[0] = Analyser36;
+let Transform35 = browser.currentScene.createNode("Transform");
+Transform35.DEF = "AnimDataBoxM";
+Transform35.translation = new SFVec3f(new float[15,100,0]);
+browser.currentScene.children[8] = Transform35;
 
-SpatialSound34.children = new MFNode();
+let Transform36 = browser.currentScene.createNode("Transform");
+Transform36.DEF = "AnimDataBoxL";
+Transform36.translation = new SFVec3f(new float[30,100,0]);
+browser.currentScene.children[9] = Transform36;
 
-SpatialSound34.children[0] = Gain35;
+let Transform37 = browser.currentScene.createNode("Transform");
+Transform37.DEF = "AnimDataBoxMM";
+Transform37.translation = new SFVec3f(new float[-15,100,0]);
+browser.currentScene.children[10] = Transform37;
 
-Gain33.children = new MFNode();
+let Transform38 = browser.currentScene.createNode("Transform");
+Transform38.DEF = "AnimDataBoxLM";
+Transform38.translation = new SFVec3f(new float[-30,100,0]);
+browser.currentScene.children[11] = Transform38;
 
-Gain33.children[0] = SpatialSound34;
+let Transform39 = browser.currentScene.createNode("Transform");
+let Shape40 = browser.currentScene.createNode("Shape");
+let Appearance41 = browser.currentScene.createNode("Appearance");
+Appearance41.DEF = "floor";
+let Material42 = browser.currentScene.createNode("Material");
+Material42.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material42.shininess = 0.8;
+Material42.specularColor = new SFColor(new float[0.5,0.6,0.7]);
+Appearance41.material = Material42;
 
-let SpatialSound39 = browser.currentScene.createNode("SpatialSound");
-SpatialSound39.USE = "Audio2";
-let Gain40 = browser.currentScene.createNode("Gain");
-let Analyser41 = browser.currentScene.createNode("Analyser");
-let BiquadFilter42 = browser.currentScene.createNode("BiquadFilter");
-BiquadFilter42.detune = 15;
-BiquadFilter42.frequency = 600;
-BiquadFilter42.qualityFactor = 15;
-BiquadFilter42.type = "allpass";
-let AudioClip43 = browser.currentScene.createNode("AudioClip");
-AudioClip43.loop = True;
-AudioClip43.pauseTime = -1;
-AudioClip43.resumeTime = -1;
-AudioClip43.stopTime = -1;
-AudioClip43.url = new MFString(new java.lang.String["sound/beat.mp3"]);
-BiquadFilter42.children = new MFNode();
+Shape40.appearance = Appearance41;
 
-BiquadFilter42.children[0] = AudioClip43;
+let Cylinder43 = browser.currentScene.createNode("Cylinder");
+Cylinder43.radius = 500;
+Shape40.geometry = Cylinder43;
 
-Analyser41.children = new MFNode();
+Transform39.children = new MFNode();
 
-Analyser41.children[0] = BiquadFilter42;
+Transform39.children[0] = Shape40;
 
-Gain40.children = new MFNode();
+browser.currentScene.children[12] = Transform39;
 
-Gain40.children[0] = Analyser41;
+let AudioDestination44 = browser.currentScene.createNode("AudioDestination");
+let DynamicsCompressor45 = browser.currentScene.createNode("DynamicsCompressor");
+let Gain46 = browser.currentScene.createNode("Gain");
+let SpatialSound47 = browser.currentScene.createNode("SpatialSound");
+SpatialSound47.USE = "Audio1";
+let Gain48 = browser.currentScene.createNode("Gain");
+let Analyser49 = browser.currentScene.createNode("Analyser");
+let BiquadFilter50 = browser.currentScene.createNode("BiquadFilter");
+BiquadFilter50.detune = 50;
+BiquadFilter50.frequency = 600;
+BiquadFilter50.qualityFactor = 30;
+BiquadFilter50.type = "allpass";
+let AudioClip51 = browser.currentScene.createNode("AudioClip");
+AudioClip51.loop = True;
+AudioClip51.pauseTime = -1;
+AudioClip51.resumeTime = -1;
+AudioClip51.stopTime = -1;
+AudioClip51.url = new MFString(new java.lang.String["sound/techno_beat.mp3"]);
+BiquadFilter50.children = new MFNode();
 
-SpatialSound39.children = new MFNode();
+BiquadFilter50.children[0] = AudioClip51;
 
-SpatialSound39.children[0] = Gain40;
+Analyser49.children = new MFNode();
 
-Gain33.children[1] = SpatialSound39;
+Analyser49.children[0] = BiquadFilter50;
 
-let SpatialSound44 = browser.currentScene.createNode("SpatialSound");
-SpatialSound44.USE = "Audio3";
-let Gain45 = browser.currentScene.createNode("Gain");
-let Analyser46 = browser.currentScene.createNode("Analyser");
-let BiquadFilter47 = browser.currentScene.createNode("BiquadFilter");
-BiquadFilter47.frequency = 1000;
-BiquadFilter47.qualityFactor = 0;
-BiquadFilter47.type = "allpass";
-let AudioClip48 = browser.currentScene.createNode("AudioClip");
-AudioClip48.loop = True;
-AudioClip48.pauseTime = -1;
-AudioClip48.resumeTime = -1;
-AudioClip48.stopTime = -1;
-AudioClip48.url = new MFString(new java.lang.String["sound/wobble_loop.mp3"]);
-BiquadFilter47.children = new MFNode();
+Gain48.children = new MFNode();
 
-BiquadFilter47.children[0] = AudioClip48;
+Gain48.children[0] = Analyser49;
 
-Analyser46.children = new MFNode();
+SpatialSound47.children = new MFNode();
 
-Analyser46.children[0] = BiquadFilter47;
+SpatialSound47.children[0] = Gain48;
 
-Gain45.children = new MFNode();
+Gain46.children = new MFNode();
 
-Gain45.children[0] = Analyser46;
+Gain46.children[0] = SpatialSound47;
 
-SpatialSound44.children = new MFNode();
+let SpatialSound52 = browser.currentScene.createNode("SpatialSound");
+SpatialSound52.USE = "Audio2";
+let Gain53 = browser.currentScene.createNode("Gain");
+let Analyser54 = browser.currentScene.createNode("Analyser");
+let BiquadFilter55 = browser.currentScene.createNode("BiquadFilter");
+BiquadFilter55.detune = 15;
+BiquadFilter55.frequency = 600;
+BiquadFilter55.qualityFactor = 15;
+BiquadFilter55.type = "allpass";
+let AudioClip56 = browser.currentScene.createNode("AudioClip");
+AudioClip56.loop = True;
+AudioClip56.pauseTime = -1;
+AudioClip56.resumeTime = -1;
+AudioClip56.stopTime = -1;
+AudioClip56.url = new MFString(new java.lang.String["sound/beat.mp3"]);
+BiquadFilter55.children = new MFNode();
 
-SpatialSound44.children[0] = Gain45;
+BiquadFilter55.children[0] = AudioClip56;
 
-Gain33.children[2] = SpatialSound44;
+Analyser54.children = new MFNode();
 
-DynamicsCompressor32.children = new MFNode();
+Analyser54.children[0] = BiquadFilter55;
 
-DynamicsCompressor32.children[0] = Gain33;
+Gain53.children = new MFNode();
 
-AudioDestination31.children = new MFNode();
+Gain53.children[0] = Analyser54;
 
-AudioDestination31.children[0] = DynamicsCompressor32;
+SpatialSound52.children = new MFNode();
 
-browser.currentScene.children[13] = AudioDestination31;
+SpatialSound52.children[0] = Gain53;
+
+Gain46.children[1] = SpatialSound52;
+
+let SpatialSound57 = browser.currentScene.createNode("SpatialSound");
+SpatialSound57.USE = "Audio3";
+let Gain58 = browser.currentScene.createNode("Gain");
+let Analyser59 = browser.currentScene.createNode("Analyser");
+let BiquadFilter60 = browser.currentScene.createNode("BiquadFilter");
+BiquadFilter60.frequency = 1000;
+BiquadFilter60.qualityFactor = 0;
+BiquadFilter60.type = "allpass";
+let AudioClip61 = browser.currentScene.createNode("AudioClip");
+AudioClip61.loop = True;
+AudioClip61.pauseTime = -1;
+AudioClip61.resumeTime = -1;
+AudioClip61.stopTime = -1;
+AudioClip61.url = new MFString(new java.lang.String["sound/wobble_loop.mp3"]);
+BiquadFilter60.children = new MFNode();
+
+BiquadFilter60.children[0] = AudioClip61;
+
+Analyser59.children = new MFNode();
+
+Analyser59.children[0] = BiquadFilter60;
+
+Gain58.children = new MFNode();
+
+Gain58.children[0] = Analyser59;
+
+SpatialSound57.children = new MFNode();
+
+SpatialSound57.children[0] = Gain58;
+
+Gain46.children[2] = SpatialSound57;
+
+DynamicsCompressor45.children = new MFNode();
+
+DynamicsCompressor45.children[0] = Gain46;
+
+AudioDestination44.children = new MFNode();
+
+AudioDestination44.children[0] = DynamicsCompressor45;
+
+browser.currentScene.children[13] = AudioDestination44;
 

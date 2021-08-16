@@ -2,13 +2,83 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.title = "ViewFrustumPrototype.x3d";
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "ViewFrustumPrototype.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype.";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "creator";
+meta4.content = "Don Brutzman";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "translated";
+meta5.content = "16 August 2008";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "modified";
+meta6.content = "20 October 2019";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "reference";
+meta7.content = "ViewFrustumExample.x3d";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "drawing";
+meta8.content = "ViewFrustumComputation.png";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "Image";
+meta9.content = "ViewFrustumOverheadView.png";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "Image";
+meta10.content = "ViewFrustumObliqueView.png";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "subject";
+meta11.content = "view culling frustum";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "identifier";
+meta12.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "generator";
+meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "license";
+meta14.content = "../license.html";
+head1.meta[12] = meta14;
+
+head = head1;
+
+let WorldInfo16 = browser.currentScene.createNode("WorldInfo");
+WorldInfo16.title = "ViewFrustumPrototype.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo2;
+browser.currentScene.children[0] = WorldInfo16;
 
-let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="ViewFrustum" appinfo="Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes" ><ProtoInterface><field name="ViewpointNode" accessType="initializeOnly" appinfo="required: insert Viewpoint DEF or USE node for view of interest" type="SFNode"><!--NULL node, ProtoInstance must provide--></field>
 <field name="NavigationInfoNode" accessType="initializeOnly" appinfo="required: insert NavigationInfo DEF or USE node of interest" type="SFNode"><!--NULL node, ProtoInstance must provide--></field>
@@ -70,378 +140,378 @@ let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ROUTE fromField="point_changed" fromNode="GeometryComputationScript" toField="point" toNode="FrustumCoordinate"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare3.name = "ViewFrustum";
-ProtoDeclare3.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes";
-let ProtoInterface4 = browser.currentScene.createNode("ProtoInterface");
-let field5 = browser.currentScene.createNode("field");
-field5.name = "ViewpointNode";
-field5.accessType = "initializeOnly";
-field5.appinfo = "required: insert Viewpoint DEF or USE node for view of interest";
-field5.type = "SFNode";
+ProtoDeclare17.name = "ViewFrustum";
+ProtoDeclare17.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes";
+let ProtoInterface18 = browser.currentScene.createNode("ProtoInterface");
+let field19 = browser.currentScene.createNode("field");
+field19.name = "ViewpointNode";
+field19.accessType = "initializeOnly";
+field19.appinfo = "required: insert Viewpoint DEF or USE node for view of interest";
+field19.type = "SFNode";
 //NULL node, ProtoInstance must provide
-ProtoInterface4.field = new MFNode();
+ProtoInterface18.field = new MFNode();
 
-ProtoInterface4.field[0] = field5;
+ProtoInterface18.field[0] = field19;
 
-let field6 = browser.currentScene.createNode("field");
-field6.name = "NavigationInfoNode";
-field6.accessType = "initializeOnly";
-field6.appinfo = "required: insert NavigationInfo DEF or USE node of interest";
-field6.type = "SFNode";
+let field20 = browser.currentScene.createNode("field");
+field20.name = "NavigationInfoNode";
+field20.accessType = "initializeOnly";
+field20.appinfo = "required: insert NavigationInfo DEF or USE node of interest";
+field20.type = "SFNode";
 //NULL node, ProtoInstance must provide
-ProtoInterface4.field[1] = field6;
+ProtoInterface18.field[1] = field20;
 
-let field7 = browser.currentScene.createNode("field");
-field7.name = "visible";
-field7.accessType = "inputOutput";
-field7.appinfo = "whether or not frustum geometry is rendered";
-field7.type = "SFBool";
-field7.value = "true";
-ProtoInterface4.field[2] = field7;
+let field21 = browser.currentScene.createNode("field");
+field21.name = "visible";
+field21.accessType = "inputOutput";
+field21.appinfo = "whether or not frustum geometry is rendered";
+field21.type = "SFBool";
+field21.value = "true";
+ProtoInterface18.field[2] = field21;
 
-let field8 = browser.currentScene.createNode("field");
-field8.name = "lineColor";
-field8.accessType = "inputOutput";
-field8.appinfo = "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9";
-field8.type = "SFColor";
-field8.value = "0.9 0.9 0.9";
-ProtoInterface4.field[3] = field8;
+let field22 = browser.currentScene.createNode("field");
+field22.name = "lineColor";
+field22.accessType = "inputOutput";
+field22.appinfo = "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9";
+field22.type = "SFColor";
+field22.value = "0.9 0.9 0.9";
+ProtoInterface18.field[3] = field22;
 
-let field9 = browser.currentScene.createNode("field");
-field9.name = "frustumColor";
-field9.accessType = "inputOutput";
-field9.appinfo = "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8";
-field9.type = "SFColor";
-field9.value = "0.8 0.8 0.8";
-ProtoInterface4.field[4] = field9;
+let field23 = browser.currentScene.createNode("field");
+field23.name = "frustumColor";
+field23.accessType = "inputOutput";
+field23.appinfo = "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8";
+field23.type = "SFColor";
+field23.value = "0.8 0.8 0.8";
+ProtoInterface18.field[4] = field23;
 
-let field10 = browser.currentScene.createNode("field");
-field10.name = "transparency";
-field10.accessType = "inputOutput";
-field10.appinfo = "transparency of ViewFrustum hull geometry, default value 0.5";
-field10.type = "SFFloat";
-field10.value = "0.5";
-ProtoInterface4.field[5] = field10;
+let field24 = browser.currentScene.createNode("field");
+field24.name = "transparency";
+field24.accessType = "inputOutput";
+field24.appinfo = "transparency of ViewFrustum hull geometry, default value 0.5";
+field24.type = "SFFloat";
+field24.value = "0.5";
+ProtoInterface18.field[5] = field24;
 
-let field11 = browser.currentScene.createNode("field");
-field11.name = "aspectRatio";
-field11.accessType = "inputOutput";
-field11.appinfo = "assumed ratio height/width, default value 0.75";
-field11.type = "SFFloat";
-field11.value = "0.75";
-ProtoInterface4.field[6] = field11;
+let field25 = browser.currentScene.createNode("field");
+field25.name = "aspectRatio";
+field25.accessType = "inputOutput";
+field25.appinfo = "assumed ratio height/width, default value 0.75";
+field25.type = "SFFloat";
+field25.value = "0.75";
+ProtoInterface18.field[6] = field25;
 
-let field12 = browser.currentScene.createNode("field");
-field12.name = "trace";
-field12.accessType = "initializeOnly";
-field12.appinfo = "debug support, default false";
-field12.type = "SFBool";
-field12.value = "false";
-ProtoInterface4.field[7] = field12;
+let field26 = browser.currentScene.createNode("field");
+field26.name = "trace";
+field26.accessType = "initializeOnly";
+field26.appinfo = "debug support, default false";
+field26.type = "SFBool";
+field26.value = "false";
+ProtoInterface18.field[7] = field26;
 
-ProtoDeclare3.protoInterface = ProtoInterface4;
+ProtoDeclare17.protoInterface = ProtoInterface18;
 
-let ProtoBody13 = browser.currentScene.createNode("ProtoBody");
-let Switch14 = browser.currentScene.createNode("Switch");
-Switch14.DEF = "VisibilitySwitch";
-Switch14.whichChoice = -1;
-let Transform15 = browser.currentScene.createNode("Transform");
-Transform15.DEF = "PositionTransform";
-Transform15.rotation = new SFRotation(new float[0,1,0,3.14159]);
-let Transform16 = browser.currentScene.createNode("Transform");
-Transform16.DEF = "OrientationTransform";
-let Shape17 = browser.currentScene.createNode("Shape");
-let IndexedLineSet18 = browser.currentScene.createNode("IndexedLineSet");
-IndexedLineSet18.DEF = "FrustumLines";
-IndexedLineSet18.coordIndex = new MFInt32(new int[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]);
-let Coordinate19 = browser.currentScene.createNode("Coordinate");
-Coordinate19.DEF = "FrustumCoordinate";
-Coordinate19.point = new MFVec3f(new float[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
-IndexedLineSet18.coord = Coordinate19;
-
-Shape17.geometry = IndexedLineSet18;
-
-let Appearance20 = browser.currentScene.createNode("Appearance");
-let Material21 = browser.currentScene.createNode("Material");
-let IS22 = browser.currentScene.createNode("IS");
-let connect23 = browser.currentScene.createNode("connect");
-connect23.nodeField = "emissiveColor";
-connect23.protoField = "lineColor";
-IS22.connect = new MFNode();
-
-IS22.connect[0] = connect23;
-
-Material21.iS = IS22;
-
-Appearance20.material = Material21;
-
-Shape17.appearance = Appearance20;
-
-Transform16.children = new MFNode();
-
-Transform16.children[0] = Shape17;
-
-let Shape24 = browser.currentScene.createNode("Shape");
-let Extrusion25 = browser.currentScene.createNode("Extrusion");
-Extrusion25.DEF = "FrustumExtrusion";
-Shape24.geometry = Extrusion25;
-
-let Appearance26 = browser.currentScene.createNode("Appearance");
-Appearance26.DEF = "FrustumAppearance";
-let Material27 = browser.currentScene.createNode("Material");
-let IS28 = browser.currentScene.createNode("IS");
-let connect29 = browser.currentScene.createNode("connect");
-connect29.nodeField = "diffuseColor";
-connect29.protoField = "frustumColor";
-IS28.connect = new MFNode();
-
-IS28.connect[0] = connect29;
-
-let connect30 = browser.currentScene.createNode("connect");
-connect30.nodeField = "transparency";
-connect30.protoField = "transparency";
-IS28.connect[1] = connect30;
-
-Material27.iS = IS28;
-
-Appearance26.material = Material27;
-
-Shape24.appearance = Appearance26;
-
-Transform16.children[1] = Shape24;
-
+let ProtoBody27 = browser.currentScene.createNode("ProtoBody");
+let Switch28 = browser.currentScene.createNode("Switch");
+Switch28.DEF = "VisibilitySwitch";
+Switch28.whichChoice = -1;
+let Transform29 = browser.currentScene.createNode("Transform");
+Transform29.DEF = "PositionTransform";
+Transform29.rotation = new SFRotation(new float[0,1,0,3.14159]);
+let Transform30 = browser.currentScene.createNode("Transform");
+Transform30.DEF = "OrientationTransform";
 let Shape31 = browser.currentScene.createNode("Shape");
-let Sphere32 = browser.currentScene.createNode("Sphere");
-Sphere32.radius = 0.08;
-Shape31.geometry = Sphere32;
+let IndexedLineSet32 = browser.currentScene.createNode("IndexedLineSet");
+IndexedLineSet32.DEF = "FrustumLines";
+IndexedLineSet32.coordIndex = new MFInt32(new int[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]);
+let Coordinate33 = browser.currentScene.createNode("Coordinate");
+Coordinate33.DEF = "FrustumCoordinate";
+Coordinate33.point = new MFVec3f(new float[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+IndexedLineSet32.coord = Coordinate33;
 
-let Appearance33 = browser.currentScene.createNode("Appearance");
-Appearance33.USE = "FrustumAppearance";
-Shape31.appearance = Appearance33;
+Shape31.geometry = IndexedLineSet32;
 
-Transform16.children[2] = Shape31;
+let Appearance34 = browser.currentScene.createNode("Appearance");
+let Material35 = browser.currentScene.createNode("Material");
+let IS36 = browser.currentScene.createNode("IS");
+let connect37 = browser.currentScene.createNode("connect");
+connect37.nodeField = "emissiveColor";
+connect37.protoField = "lineColor";
+IS36.connect = new MFNode();
 
-Transform15.children = new MFNode();
+IS36.connect[0] = connect37;
 
-Transform15.children[0] = Transform16;
+Material35.iS = IS36;
 
-Switch14.children = new MFNode();
+Appearance34.material = Material35;
 
-Switch14.children[0] = Transform15;
+Shape31.appearance = Appearance34;
 
-ProtoBody13.children = new MFNode();
+Transform30.children = new MFNode();
 
-ProtoBody13.children[0] = Switch14;
+Transform30.children[0] = Shape31;
 
-let Script34 = browser.currentScene.createNode("Script");
-Script34.DEF = "GeometryComputationScript";
-Script34.directOutput = True;
-Script34.url = new MFString(new java.lang.String["ViewFrustumPrototypeScript.js"]);
-let field35 = browser.currentScene.createNode("field");
-field35.name = "visible";
-field35.accessType = "inputOutput";
-field35.appinfo = "Whether or not frustum geometry is rendered";
-field35.type = "SFBool";
-Script34.field = new MFNode();
+let Shape38 = browser.currentScene.createNode("Shape");
+let Extrusion39 = browser.currentScene.createNode("Extrusion");
+Extrusion39.DEF = "FrustumExtrusion";
+Shape38.geometry = Extrusion39;
 
-Script34.field[0] = field35;
+let Appearance40 = browser.currentScene.createNode("Appearance");
+Appearance40.DEF = "FrustumAppearance";
+let Material41 = browser.currentScene.createNode("Material");
+let IS42 = browser.currentScene.createNode("IS");
+let connect43 = browser.currentScene.createNode("connect");
+connect43.nodeField = "diffuseColor";
+connect43.protoField = "frustumColor";
+IS42.connect = new MFNode();
 
-let field36 = browser.currentScene.createNode("field");
-field36.name = "visibilitySwitchSelection";
-field36.accessType = "outputOnly";
-field36.appinfo = "Adjust Switch selection to make geometry visible or not";
-field36.type = "SFInt32";
-Script34.field[1] = field36;
+IS42.connect[0] = connect43;
 
-let field37 = browser.currentScene.createNode("field");
-field37.name = "ViewpointNode";
-field37.accessType = "initializeOnly";
-field37.type = "SFNode";
-//initialization node (if any) goes here
-Script34.field[2] = field37;
+let connect44 = browser.currentScene.createNode("connect");
+connect44.nodeField = "transparency";
+connect44.protoField = "transparency";
+IS42.connect[1] = connect44;
 
-let field38 = browser.currentScene.createNode("field");
-field38.name = "NavigationInfoNode";
-field38.accessType = "initializeOnly";
-field38.type = "SFNode";
-//initialization node (if any) goes here
-Script34.field[3] = field38;
+Material41.iS = IS42;
 
-let field39 = browser.currentScene.createNode("field");
-field39.name = "FrustumCoordinate";
-field39.accessType = "initializeOnly";
-field39.type = "SFNode";
-let Coordinate40 = browser.currentScene.createNode("Coordinate");
-Coordinate40.USE = "FrustumCoordinate";
-field39.children = new MFNode();
+Appearance40.material = Material41;
 
-field39.children[0] = Coordinate40;
+Shape38.appearance = Appearance40;
 
-Script34.field[4] = field39;
+Transform30.children[1] = Shape38;
 
-let field41 = browser.currentScene.createNode("field");
-field41.name = "FrustumExtrusion";
-field41.accessType = "initializeOnly";
-field41.type = "SFNode";
-let Extrusion42 = browser.currentScene.createNode("Extrusion");
-Extrusion42.USE = "FrustumExtrusion";
-field41.children = new MFNode();
+let Shape45 = browser.currentScene.createNode("Shape");
+let Sphere46 = browser.currentScene.createNode("Sphere");
+Sphere46.radius = 0.08;
+Shape45.geometry = Sphere46;
 
-field41.children[0] = Extrusion42;
+let Appearance47 = browser.currentScene.createNode("Appearance");
+Appearance47.USE = "FrustumAppearance";
+Shape45.appearance = Appearance47;
 
-Script34.field[5] = field41;
+Transform30.children[2] = Shape45;
 
-let field43 = browser.currentScene.createNode("field");
-field43.name = "recompute";
-field43.accessType = "inputOnly";
-field43.type = "SFBool";
-Script34.field[6] = field43;
+Transform29.children = new MFNode();
 
-let field44 = browser.currentScene.createNode("field");
-field44.name = "aspectRatio";
-field44.accessType = "inputOutput";
-field44.appinfo = "assumed ratio height/width";
-field44.type = "SFFloat";
-Script34.field[7] = field44;
+Transform29.children[0] = Transform30;
 
-let field45 = browser.currentScene.createNode("field");
-field45.name = "position_changed";
-field45.accessType = "outputOnly";
-field45.type = "SFVec3f";
-Script34.field[8] = field45;
+Switch28.children = new MFNode();
 
-let field46 = browser.currentScene.createNode("field");
-field46.name = "orientation_changed";
-field46.accessType = "outputOnly";
-field46.type = "SFRotation";
-Script34.field[9] = field46;
+Switch28.children[0] = Transform29;
 
-let field47 = browser.currentScene.createNode("field");
-field47.name = "spine_changed";
-field47.accessType = "outputOnly";
-field47.type = "MFVec3f";
-Script34.field[10] = field47;
+ProtoBody27.children = new MFNode();
 
-let field48 = browser.currentScene.createNode("field");
-field48.name = "scale_changed";
-field48.accessType = "outputOnly";
-field48.type = "MFVec2f";
-Script34.field[11] = field48;
+ProtoBody27.children[0] = Switch28;
 
+let Script48 = browser.currentScene.createNode("Script");
+Script48.DEF = "GeometryComputationScript";
+Script48.directOutput = True;
+Script48.url = new MFString(new java.lang.String["ViewFrustumPrototypeScript.js"]);
 let field49 = browser.currentScene.createNode("field");
-field49.name = "point_changed";
-field49.accessType = "outputOnly";
-field49.type = "MFVec3f";
-Script34.field[12] = field49;
+field49.name = "visible";
+field49.accessType = "inputOutput";
+field49.appinfo = "Whether or not frustum geometry is rendered";
+field49.type = "SFBool";
+Script48.field = new MFNode();
+
+Script48.field[0] = field49;
 
 let field50 = browser.currentScene.createNode("field");
-field50.name = "trace";
-field50.accessType = "initializeOnly";
-field50.type = "SFBool";
-Script34.field[13] = field50;
+field50.name = "visibilitySwitchSelection";
+field50.accessType = "outputOnly";
+field50.appinfo = "Adjust Switch selection to make geometry visible or not";
+field50.type = "SFInt32";
+Script48.field[1] = field50;
 
-let IS51 = browser.currentScene.createNode("IS");
-let connect52 = browser.currentScene.createNode("connect");
-connect52.nodeField = "visible";
-connect52.protoField = "visible";
-IS51.connect = new MFNode();
+let field51 = browser.currentScene.createNode("field");
+field51.name = "ViewpointNode";
+field51.accessType = "initializeOnly";
+field51.type = "SFNode";
+//initialization node (if any) goes here
+Script48.field[2] = field51;
 
-IS51.connect[0] = connect52;
+let field52 = browser.currentScene.createNode("field");
+field52.name = "NavigationInfoNode";
+field52.accessType = "initializeOnly";
+field52.type = "SFNode";
+//initialization node (if any) goes here
+Script48.field[3] = field52;
 
-let connect53 = browser.currentScene.createNode("connect");
-connect53.nodeField = "ViewpointNode";
-connect53.protoField = "ViewpointNode";
-IS51.connect[1] = connect53;
+let field53 = browser.currentScene.createNode("field");
+field53.name = "FrustumCoordinate";
+field53.accessType = "initializeOnly";
+field53.type = "SFNode";
+let Coordinate54 = browser.currentScene.createNode("Coordinate");
+Coordinate54.USE = "FrustumCoordinate";
+field53.children = new MFNode();
 
-let connect54 = browser.currentScene.createNode("connect");
-connect54.nodeField = "NavigationInfoNode";
-connect54.protoField = "NavigationInfoNode";
-IS51.connect[2] = connect54;
+field53.children[0] = Coordinate54;
 
-let connect55 = browser.currentScene.createNode("connect");
-connect55.nodeField = "aspectRatio";
-connect55.protoField = "aspectRatio";
-IS51.connect[3] = connect55;
+Script48.field[4] = field53;
 
-let connect56 = browser.currentScene.createNode("connect");
-connect56.nodeField = "trace";
-connect56.protoField = "trace";
-IS51.connect[4] = connect56;
+let field55 = browser.currentScene.createNode("field");
+field55.name = "FrustumExtrusion";
+field55.accessType = "initializeOnly";
+field55.type = "SFNode";
+let Extrusion56 = browser.currentScene.createNode("Extrusion");
+Extrusion56.USE = "FrustumExtrusion";
+field55.children = new MFNode();
 
-Script34.iS = IS51;
+field55.children[0] = Extrusion56;
 
-ProtoBody13.children[1] = Script34;
+Script48.field[5] = field55;
 
-let ROUTE57 = browser.currentScene.createNode("ROUTE");
-ROUTE57.fromField = "visibilitySwitchSelection";
-ROUTE57.fromNode = "GeometryComputationScript";
-ROUTE57.toField = "whichChoice";
-ROUTE57.toNode = "VisibilitySwitch";
-ProtoBody13.children[2] = ROUTE57;
+let field57 = browser.currentScene.createNode("field");
+field57.name = "recompute";
+field57.accessType = "inputOnly";
+field57.type = "SFBool";
+Script48.field[6] = field57;
 
-let ROUTE58 = browser.currentScene.createNode("ROUTE");
-ROUTE58.fromField = "position_changed";
-ROUTE58.fromNode = "GeometryComputationScript";
-ROUTE58.toField = "translation";
-ROUTE58.toNode = "PositionTransform";
-ProtoBody13.children[3] = ROUTE58;
+let field58 = browser.currentScene.createNode("field");
+field58.name = "aspectRatio";
+field58.accessType = "inputOutput";
+field58.appinfo = "assumed ratio height/width";
+field58.type = "SFFloat";
+Script48.field[7] = field58;
 
-let ROUTE59 = browser.currentScene.createNode("ROUTE");
-ROUTE59.fromField = "orientation_changed";
-ROUTE59.fromNode = "GeometryComputationScript";
-ROUTE59.toField = "rotation";
-ROUTE59.toNode = "OrientationTransform";
-ProtoBody13.children[4] = ROUTE59;
+let field59 = browser.currentScene.createNode("field");
+field59.name = "position_changed";
+field59.accessType = "outputOnly";
+field59.type = "SFVec3f";
+Script48.field[8] = field59;
 
-let ROUTE60 = browser.currentScene.createNode("ROUTE");
-ROUTE60.fromField = "spine_changed";
-ROUTE60.fromNode = "GeometryComputationScript";
-ROUTE60.toField = "set_spine";
-ROUTE60.toNode = "FrustumExtrusion";
-ProtoBody13.children[5] = ROUTE60;
+let field60 = browser.currentScene.createNode("field");
+field60.name = "orientation_changed";
+field60.accessType = "outputOnly";
+field60.type = "SFRotation";
+Script48.field[9] = field60;
 
-let ROUTE61 = browser.currentScene.createNode("ROUTE");
-ROUTE61.fromField = "scale_changed";
-ROUTE61.fromNode = "GeometryComputationScript";
-ROUTE61.toField = "set_scale";
-ROUTE61.toNode = "FrustumExtrusion";
-ProtoBody13.children[6] = ROUTE61;
+let field61 = browser.currentScene.createNode("field");
+field61.name = "spine_changed";
+field61.accessType = "outputOnly";
+field61.type = "MFVec3f";
+Script48.field[10] = field61;
 
-let ROUTE62 = browser.currentScene.createNode("ROUTE");
-ROUTE62.fromField = "point_changed";
-ROUTE62.fromNode = "GeometryComputationScript";
-ROUTE62.toField = "point";
-ROUTE62.toNode = "FrustumCoordinate";
-ProtoBody13.children[7] = ROUTE62;
+let field62 = browser.currentScene.createNode("field");
+field62.name = "scale_changed";
+field62.accessType = "outputOnly";
+field62.type = "MFVec2f";
+Script48.field[11] = field62;
 
-ProtoDeclare3.protoBody = ProtoBody13;
+let field63 = browser.currentScene.createNode("field");
+field63.name = "point_changed";
+field63.accessType = "outputOnly";
+field63.type = "MFVec3f";
+Script48.field[12] = field63;
 
-browser.currentScene.children[1] = ProtoDeclare3;
+let field64 = browser.currentScene.createNode("field");
+field64.name = "trace";
+field64.accessType = "initializeOnly";
+field64.type = "SFBool";
+Script48.field[13] = field64;
+
+let IS65 = browser.currentScene.createNode("IS");
+let connect66 = browser.currentScene.createNode("connect");
+connect66.nodeField = "visible";
+connect66.protoField = "visible";
+IS65.connect = new MFNode();
+
+IS65.connect[0] = connect66;
+
+let connect67 = browser.currentScene.createNode("connect");
+connect67.nodeField = "ViewpointNode";
+connect67.protoField = "ViewpointNode";
+IS65.connect[1] = connect67;
+
+let connect68 = browser.currentScene.createNode("connect");
+connect68.nodeField = "NavigationInfoNode";
+connect68.protoField = "NavigationInfoNode";
+IS65.connect[2] = connect68;
+
+let connect69 = browser.currentScene.createNode("connect");
+connect69.nodeField = "aspectRatio";
+connect69.protoField = "aspectRatio";
+IS65.connect[3] = connect69;
+
+let connect70 = browser.currentScene.createNode("connect");
+connect70.nodeField = "trace";
+connect70.protoField = "trace";
+IS65.connect[4] = connect70;
+
+Script48.iS = IS65;
+
+ProtoBody27.children[1] = Script48;
+
+let ROUTE71 = browser.currentScene.createNode("ROUTE");
+ROUTE71.fromField = "visibilitySwitchSelection";
+ROUTE71.fromNode = "GeometryComputationScript";
+ROUTE71.toField = "whichChoice";
+ROUTE71.toNode = "VisibilitySwitch";
+ProtoBody27.children[2] = ROUTE71;
+
+let ROUTE72 = browser.currentScene.createNode("ROUTE");
+ROUTE72.fromField = "position_changed";
+ROUTE72.fromNode = "GeometryComputationScript";
+ROUTE72.toField = "translation";
+ROUTE72.toNode = "PositionTransform";
+ProtoBody27.children[3] = ROUTE72;
+
+let ROUTE73 = browser.currentScene.createNode("ROUTE");
+ROUTE73.fromField = "orientation_changed";
+ROUTE73.fromNode = "GeometryComputationScript";
+ROUTE73.toField = "rotation";
+ROUTE73.toNode = "OrientationTransform";
+ProtoBody27.children[4] = ROUTE73;
+
+let ROUTE74 = browser.currentScene.createNode("ROUTE");
+ROUTE74.fromField = "spine_changed";
+ROUTE74.fromNode = "GeometryComputationScript";
+ROUTE74.toField = "set_spine";
+ROUTE74.toNode = "FrustumExtrusion";
+ProtoBody27.children[5] = ROUTE74;
+
+let ROUTE75 = browser.currentScene.createNode("ROUTE");
+ROUTE75.fromField = "scale_changed";
+ROUTE75.fromNode = "GeometryComputationScript";
+ROUTE75.toField = "set_scale";
+ROUTE75.toNode = "FrustumExtrusion";
+ProtoBody27.children[6] = ROUTE75;
+
+let ROUTE76 = browser.currentScene.createNode("ROUTE");
+ROUTE76.fromField = "point_changed";
+ROUTE76.fromNode = "GeometryComputationScript";
+ROUTE76.toField = "point";
+ROUTE76.toNode = "FrustumCoordinate";
+ProtoBody27.children[7] = ROUTE76;
+
+ProtoDeclare17.protoBody = ProtoBody27;
+
+browser.currentScene.children[1] = ProtoDeclare17;
 
 //Example use is in separate scene
-let Anchor63 = browser.currentScene.createNode("Anchor");
-Anchor63.description = "ViewFrustum Example";
-Anchor63.url = new MFString(new java.lang.String["ViewFrustumExample.x3d"]);
-let Shape64 = browser.currentScene.createNode("Shape");
-let Appearance65 = browser.currentScene.createNode("Appearance");
-let Material66 = browser.currentScene.createNode("Material");
-Material66.diffuseColor = new SFColor(new float[0.8,0.4,0]);
-Appearance65.material = Material66;
+let Anchor77 = browser.currentScene.createNode("Anchor");
+Anchor77.description = "ViewFrustum Example";
+Anchor77.url = new MFString(new java.lang.String["ViewFrustumExample.x3d"]);
+let Shape78 = browser.currentScene.createNode("Shape");
+let Appearance79 = browser.currentScene.createNode("Appearance");
+let Material80 = browser.currentScene.createNode("Material");
+Material80.diffuseColor = new SFColor(new float[0.8,0.4,0]);
+Appearance79.material = Material80;
 
-Shape64.appearance = Appearance65;
+Shape78.appearance = Appearance79;
 
-let Text67 = browser.currentScene.createNode("Text");
-Text67.string = new MFString(new java.lang.String["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]);
-let FontStyle68 = browser.currentScene.createNode("FontStyle");
-FontStyle68.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle68.size = 0.8;
-Text67.fontStyle = FontStyle68;
+let Text81 = browser.currentScene.createNode("Text");
+Text81.string = new MFString(new java.lang.String["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]);
+let FontStyle82 = browser.currentScene.createNode("FontStyle");
+FontStyle82.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle82.size = 0.8;
+Text81.fontStyle = FontStyle82;
 
-Shape64.geometry = Text67;
+Shape78.geometry = Text81;
 
-Anchor63.children = new MFNode();
+Anchor77.children = new MFNode();
 
-Anchor63.children[0] = Shape64;
+Anchor77.children[0] = Shape78;
 
-browser.currentScene.children[2] = Anchor63;
+browser.currentScene.children[2] = Anchor77;
 

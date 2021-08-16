@@ -290,9 +290,11 @@ VRMLScriptSerializer.prototype = {
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+/*
 				if (node.nodeName === "head") {
 					continue;
 				}
+*/
 				stack.unshift(this.preno);
 				this.preno++;
 				let ch = "";

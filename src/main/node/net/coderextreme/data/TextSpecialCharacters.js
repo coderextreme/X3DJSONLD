@@ -42,3 +42,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDEF("DefaultMaterial").setDiffuseColor(java.newArray("float", [java.newFloat(0.2), java.newFloat(0.2), java.newFloat(0.2)]))))))      ;
     X3D0.toFileX3D("../data/TextSpecialCharacters.new.x3d");
+    process.exit(0);

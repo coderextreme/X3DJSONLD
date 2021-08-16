@@ -2,13 +2,98 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.title = "HAnimBehaviorPrototypes.x3d";
+let head1 = browser.currentScene.createNode("head");
+let component2 = browser.currentScene.createNode("component");
+component2.name = "H-Anim";
+component2.level = 1;
+head1.component = new MFNode();
+
+head1.component[0] = component2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "title";
+meta3.content = "HAnimBehaviorPrototypes.x3d";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "description";
+meta4.content = "Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "creator";
+meta5.content = "Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "created";
+meta6.content = "2 May 2006";
+head1.meta[4] = meta6;
+
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "modified";
+meta7.content = "4 July 2020";
+head1.meta[5] = meta7;
+
+let meta8 = browser.currentScene.createNode("meta");
+meta8.name = "reference";
+meta8.content = "Web3D2007BlendedBehaviorsChangeableBodies.pdf";
+head1.meta[6] = meta8;
+
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "reference";
+meta9.content = "https://www.web3d.org/files/specifications/19774/V1.0";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "reference";
+meta10.content = "https://www.web3d.org/x3d/specifications/ISO-IEC-19775-X3DAbstractSpecification_Revision1_to_Part1/Part01/components/hanim.html";
+head1.meta[8] = meta10;
+
+let meta11 = browser.currentScene.createNode("meta");
+meta11.name = "reference";
+meta11.content = "InterchangableActorsViaDynamicRoutingPrototypes.x3d";
+head1.meta[9] = meta11;
+
+let meta12 = browser.currentScene.createNode("meta");
+meta12.name = "reference";
+meta12.content = "ApaydinThesis.pdf";
+head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "subject";
+meta13.content = "X3D HAnim humanoid animation behaviors";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "warning";
+meta14.content = "under development. should joint translations be exposed? upgrade to HAnim v2.2";
+head1.meta[12] = meta14;
+
+let meta15 = browser.currentScene.createNode("meta");
+meta15.name = "identifier";
+meta15.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d";
+head1.meta[13] = meta15;
+
+let meta16 = browser.currentScene.createNode("meta");
+meta16.name = "generator";
+meta16.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[14] = meta16;
+
+let meta17 = browser.currentScene.createNode("meta");
+meta17.name = "license";
+meta17.content = "../license.html";
+head1.meta[15] = meta17;
+
+head = head1;
+
+let WorldInfo19 = browser.currentScene.createNode("WorldInfo");
+WorldInfo19.title = "HAnimBehaviorPrototypes.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo2;
+browser.currentScene.children[0] = WorldInfo19;
 
-let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="HAnimBehavior" appinfo="The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior." documentation="https://www.web3d.org/files/specifications/19774/V1.0/" ><ProtoInterface><!--supported Level of Articulation (LOA)--><!--shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations--><!--TODO: add other X3D 3.0 TimeSensor fields (pause etc.)--><!--Not supported: animated translation of individual joints--><!--pass in key/keyValue array pairs for single PositionInterpolator--><!--pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint--><field name="supportedLOA" accessType="inputOutput" appinfo="Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3." type="SFInt32" value="-1"></field>
 <field name="enabled" accessType="inputOutput" appinfo="is this behavior enabled?" type="SFBool" value="true"></field>
@@ -1746,9864 +1831,9864 @@ let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ROUTE fromField="fraction_changed" fromNode="BehaviorClock" toField="set_fraction" toNode="vt12_OI"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare3.name = "HAnimBehavior";
-ProtoDeclare3.appinfo = "The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.";
-ProtoDeclare3.documentation = "https://www.web3d.org/files/specifications/19774/V1.0/";
-let ProtoInterface4 = browser.currentScene.createNode("ProtoInterface");
+ProtoDeclare20.name = "HAnimBehavior";
+ProtoDeclare20.appinfo = "The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.";
+ProtoDeclare20.documentation = "https://www.web3d.org/files/specifications/19774/V1.0/";
+let ProtoInterface21 = browser.currentScene.createNode("ProtoInterface");
 //supported Level of Articulation (LOA)
 //shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations
 //TODO: add other X3D 3.0 TimeSensor fields (pause etc.)
 //Not supported: animated translation of individual joints
 //pass in key/keyValue array pairs for single PositionInterpolator
 //pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint
-let field5 = browser.currentScene.createNode("field");
-field5.name = "supportedLOA";
-field5.accessType = "inputOutput";
-field5.appinfo = "Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.";
-field5.type = "SFInt32";
-field5.value = "-1";
-ProtoInterface4.field = new MFNode();
-
-ProtoInterface4.field[0] = field5;
-
-let field6 = browser.currentScene.createNode("field");
-field6.name = "enabled";
-field6.accessType = "inputOutput";
-field6.appinfo = "is this behavior enabled?";
-field6.type = "SFBool";
-field6.value = "true";
-ProtoInterface4.field[1] = field6;
-
-let field7 = browser.currentScene.createNode("field");
-field7.name = "cycleInterval";
-field7.accessType = "inputOutput";
-field7.appinfo = "how long do these interpolators take to execute?";
-field7.type = "SFTime";
-field7.value = "1";
-ProtoInterface4.field[2] = field7;
-
-let field8 = browser.currentScene.createNode("field");
-field8.name = "loop";
-field8.accessType = "inputOutput";
-field8.appinfo = "whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).";
-field8.type = "SFBool";
-field8.value = "false";
-ProtoInterface4.field[3] = field8;
-
-let field9 = browser.currentScene.createNode("field");
-field9.name = "startTime";
-field9.accessType = "inputOutput";
-field9.appinfo = "when time now >= startTime isActive becomes true and TimeSensor becomes active";
-field9.type = "SFTime";
-field9.value = "0";
-ProtoInterface4.field[4] = field9;
-
-let field10 = browser.currentScene.createNode("field");
-field10.name = "stopTime";
-field10.accessType = "inputOutput";
-field10.appinfo = "when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive";
-field10.type = "SFTime";
-field10.value = "0";
-ProtoInterface4.field[5] = field10;
-
-let field11 = browser.currentScene.createNode("field");
-field11.name = "pauseTime";
-field11.accessType = "inputOutput";
-field11.appinfo = "when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused";
-field11.type = "SFTime";
-field11.value = "0";
-ProtoInterface4.field[6] = field11;
-
-let field12 = browser.currentScene.createNode("field");
-field12.name = "resumeTime";
-field12.accessType = "inputOutput";
-field12.appinfo = "when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive";
-field12.type = "SFTime";
-field12.value = "0";
-ProtoInterface4.field[7] = field12;
-
-let field13 = browser.currentScene.createNode("field");
-field13.name = "cycleTime";
-field13.accessType = "outputOnly";
-field13.appinfo = "cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle";
-field13.type = "SFTime";
-ProtoInterface4.field[8] = field13;
-
-let field14 = browser.currentScene.createNode("field");
-field14.name = "isActive";
-field14.accessType = "outputOnly";
-field14.appinfo = "isActive true/false events are sent when TimeSensor starts/stops running";
-field14.type = "SFBool";
-ProtoInterface4.field[9] = field14;
-
-let field15 = browser.currentScene.createNode("field");
-field15.name = "isPaused";
-field15.accessType = "outputOnly";
-field15.appinfo = "isPaused true/false events are sent when TimeSensor is paused/resumed";
-field15.type = "SFBool";
-ProtoInterface4.field[10] = field15;
-
-let field16 = browser.currentScene.createNode("field");
-field16.name = "elapsedTime";
-field16.accessType = "outputOnly";
-field16.appinfo = "current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time";
-field16.type = "SFBool";
-ProtoInterface4.field[11] = field16;
-
-let field17 = browser.currentScene.createNode("field");
-field17.name = "time";
-field17.accessType = "outputOnly";
-field17.appinfo = "continuously sends the absolute time (since January 1 1970)";
-field17.type = "SFBool";
-ProtoInterface4.field[12] = field17;
-
-let field18 = browser.currentScene.createNode("field");
-field18.name = "fraction_changed";
-field18.accessType = "outputOnly";
-field18.appinfo = "fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.";
-field18.type = "SFFloat";
-ProtoInterface4.field[13] = field18;
-
-let field19 = browser.currentScene.createNode("field");
-field19.name = "HumanoidRoot_translation_key";
-field19.accessType = "inputOutput";
-field19.type = "MFFloat";
-//no default value
-ProtoInterface4.field[14] = field19;
-
-let field20 = browser.currentScene.createNode("field");
-field20.name = "HumanoidRoot_translation_keyValue";
-field20.accessType = "inputOutput";
-field20.type = "MFVec3f";
-//no default value
-ProtoInterface4.field[15] = field20;
-
-let field21 = browser.currentScene.createNode("field");
-field21.name = "HumanoidRoot_translation_changed";
-field21.accessType = "outputOnly";
-field21.type = "SFVec3f";
-ProtoInterface4.field[16] = field21;
-
 let field22 = browser.currentScene.createNode("field");
-field22.name = "HumanoidRoot_rotation_key";
+field22.name = "supportedLOA";
 field22.accessType = "inputOutput";
-field22.type = "MFFloat";
-//no default value
-ProtoInterface4.field[17] = field22;
+field22.appinfo = "Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.";
+field22.type = "SFInt32";
+field22.value = "-1";
+ProtoInterface21.field = new MFNode();
+
+ProtoInterface21.field[0] = field22;
 
 let field23 = browser.currentScene.createNode("field");
-field23.name = "HumanoidRoot_rotation_keyValue";
+field23.name = "enabled";
 field23.accessType = "inputOutput";
-field23.type = "MFRotation";
-//no default value
-ProtoInterface4.field[18] = field23;
+field23.appinfo = "is this behavior enabled?";
+field23.type = "SFBool";
+field23.value = "true";
+ProtoInterface21.field[1] = field23;
 
 let field24 = browser.currentScene.createNode("field");
-field24.name = "HumanoidRoot_rotation_changed";
-field24.accessType = "outputOnly";
-field24.type = "SFRotation";
-ProtoInterface4.field[19] = field24;
+field24.name = "cycleInterval";
+field24.accessType = "inputOutput";
+field24.appinfo = "how long do these interpolators take to execute?";
+field24.type = "SFTime";
+field24.value = "1";
+ProtoInterface21.field[2] = field24;
 
 let field25 = browser.currentScene.createNode("field");
-field25.name = "c1_key";
+field25.name = "loop";
 field25.accessType = "inputOutput";
-field25.type = "MFFloat";
-//no default value
-ProtoInterface4.field[20] = field25;
+field25.appinfo = "whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).";
+field25.type = "SFBool";
+field25.value = "false";
+ProtoInterface21.field[3] = field25;
 
 let field26 = browser.currentScene.createNode("field");
-field26.name = "c1_keyValue";
+field26.name = "startTime";
 field26.accessType = "inputOutput";
-field26.type = "MFRotation";
-//no default value
-ProtoInterface4.field[21] = field26;
+field26.appinfo = "when time now >= startTime isActive becomes true and TimeSensor becomes active";
+field26.type = "SFTime";
+field26.value = "0";
+ProtoInterface21.field[4] = field26;
 
 let field27 = browser.currentScene.createNode("field");
-field27.name = "c1_changed";
-field27.accessType = "outputOnly";
-field27.type = "SFRotation";
-ProtoInterface4.field[22] = field27;
+field27.name = "stopTime";
+field27.accessType = "inputOutput";
+field27.appinfo = "when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive";
+field27.type = "SFTime";
+field27.value = "0";
+ProtoInterface21.field[5] = field27;
 
 let field28 = browser.currentScene.createNode("field");
-field28.name = "c2_key";
+field28.name = "pauseTime";
 field28.accessType = "inputOutput";
-field28.type = "MFFloat";
-//no default value
-ProtoInterface4.field[23] = field28;
+field28.appinfo = "when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused";
+field28.type = "SFTime";
+field28.value = "0";
+ProtoInterface21.field[6] = field28;
 
 let field29 = browser.currentScene.createNode("field");
-field29.name = "c2_keyValue";
+field29.name = "resumeTime";
 field29.accessType = "inputOutput";
-field29.type = "MFRotation";
-//no default value
-ProtoInterface4.field[24] = field29;
+field29.appinfo = "when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive";
+field29.type = "SFTime";
+field29.value = "0";
+ProtoInterface21.field[7] = field29;
 
 let field30 = browser.currentScene.createNode("field");
-field30.name = "c2_changed";
+field30.name = "cycleTime";
 field30.accessType = "outputOnly";
-field30.type = "SFRotation";
-ProtoInterface4.field[25] = field30;
+field30.appinfo = "cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle";
+field30.type = "SFTime";
+ProtoInterface21.field[8] = field30;
 
 let field31 = browser.currentScene.createNode("field");
-field31.name = "c3_key";
-field31.accessType = "inputOutput";
-field31.type = "MFFloat";
-//no default value
-ProtoInterface4.field[26] = field31;
+field31.name = "isActive";
+field31.accessType = "outputOnly";
+field31.appinfo = "isActive true/false events are sent when TimeSensor starts/stops running";
+field31.type = "SFBool";
+ProtoInterface21.field[9] = field31;
 
 let field32 = browser.currentScene.createNode("field");
-field32.name = "c3_keyValue";
-field32.accessType = "inputOutput";
-field32.type = "MFRotation";
-//no default value
-ProtoInterface4.field[27] = field32;
+field32.name = "isPaused";
+field32.accessType = "outputOnly";
+field32.appinfo = "isPaused true/false events are sent when TimeSensor is paused/resumed";
+field32.type = "SFBool";
+ProtoInterface21.field[10] = field32;
 
 let field33 = browser.currentScene.createNode("field");
-field33.name = "c3_changed";
+field33.name = "elapsedTime";
 field33.accessType = "outputOnly";
-field33.type = "SFRotation";
-ProtoInterface4.field[28] = field33;
+field33.appinfo = "current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time";
+field33.type = "SFBool";
+ProtoInterface21.field[11] = field33;
 
 let field34 = browser.currentScene.createNode("field");
-field34.name = "c4_key";
-field34.accessType = "inputOutput";
-field34.type = "MFFloat";
-//no default value
-ProtoInterface4.field[29] = field34;
+field34.name = "time";
+field34.accessType = "outputOnly";
+field34.appinfo = "continuously sends the absolute time (since January 1 1970)";
+field34.type = "SFBool";
+ProtoInterface21.field[12] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "c4_keyValue";
-field35.accessType = "inputOutput";
-field35.type = "MFRotation";
-//no default value
-ProtoInterface4.field[30] = field35;
+field35.name = "fraction_changed";
+field35.accessType = "outputOnly";
+field35.appinfo = "fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.";
+field35.type = "SFFloat";
+ProtoInterface21.field[13] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "c4_changed";
-field36.accessType = "outputOnly";
-field36.type = "SFRotation";
-ProtoInterface4.field[31] = field36;
+field36.name = "HumanoidRoot_translation_key";
+field36.accessType = "inputOutput";
+field36.type = "MFFloat";
+//no default value
+ProtoInterface21.field[14] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "c5_key";
+field37.name = "HumanoidRoot_translation_keyValue";
 field37.accessType = "inputOutput";
-field37.type = "MFFloat";
+field37.type = "MFVec3f";
 //no default value
-ProtoInterface4.field[32] = field37;
+ProtoInterface21.field[15] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "c5_keyValue";
-field38.accessType = "inputOutput";
-field38.type = "MFRotation";
-//no default value
-ProtoInterface4.field[33] = field38;
+field38.name = "HumanoidRoot_translation_changed";
+field38.accessType = "outputOnly";
+field38.type = "SFVec3f";
+ProtoInterface21.field[16] = field38;
 
 let field39 = browser.currentScene.createNode("field");
-field39.name = "c5_changed";
-field39.accessType = "outputOnly";
-field39.type = "SFRotation";
-ProtoInterface4.field[34] = field39;
+field39.name = "HumanoidRoot_rotation_key";
+field39.accessType = "inputOutput";
+field39.type = "MFFloat";
+//no default value
+ProtoInterface21.field[17] = field39;
 
 let field40 = browser.currentScene.createNode("field");
-field40.name = "c6_key";
+field40.name = "HumanoidRoot_rotation_keyValue";
 field40.accessType = "inputOutput";
-field40.type = "MFFloat";
+field40.type = "MFRotation";
 //no default value
-ProtoInterface4.field[35] = field40;
+ProtoInterface21.field[18] = field40;
 
 let field41 = browser.currentScene.createNode("field");
-field41.name = "c6_keyValue";
-field41.accessType = "inputOutput";
-field41.type = "MFRotation";
-//no default value
-ProtoInterface4.field[36] = field41;
+field41.name = "HumanoidRoot_rotation_changed";
+field41.accessType = "outputOnly";
+field41.type = "SFRotation";
+ProtoInterface21.field[19] = field41;
 
 let field42 = browser.currentScene.createNode("field");
-field42.name = "c6_changed";
-field42.accessType = "outputOnly";
-field42.type = "SFRotation";
-ProtoInterface4.field[37] = field42;
+field42.name = "c1_key";
+field42.accessType = "inputOutput";
+field42.type = "MFFloat";
+//no default value
+ProtoInterface21.field[20] = field42;
 
 let field43 = browser.currentScene.createNode("field");
-field43.name = "c7_key";
+field43.name = "c1_keyValue";
 field43.accessType = "inputOutput";
-field43.type = "MFFloat";
+field43.type = "MFRotation";
 //no default value
-ProtoInterface4.field[38] = field43;
+ProtoInterface21.field[21] = field43;
 
 let field44 = browser.currentScene.createNode("field");
-field44.name = "c7_keyValue";
-field44.accessType = "inputOutput";
-field44.type = "MFRotation";
-//no default value
-ProtoInterface4.field[39] = field44;
+field44.name = "c1_changed";
+field44.accessType = "outputOnly";
+field44.type = "SFRotation";
+ProtoInterface21.field[22] = field44;
 
 let field45 = browser.currentScene.createNode("field");
-field45.name = "c7_changed";
-field45.accessType = "outputOnly";
-field45.type = "SFRotation";
-ProtoInterface4.field[40] = field45;
+field45.name = "c2_key";
+field45.accessType = "inputOutput";
+field45.type = "MFFloat";
+//no default value
+ProtoInterface21.field[23] = field45;
 
 let field46 = browser.currentScene.createNode("field");
-field46.name = "jaw_key";
+field46.name = "c2_keyValue";
 field46.accessType = "inputOutput";
-field46.type = "MFFloat";
+field46.type = "MFRotation";
 //no default value
-ProtoInterface4.field[41] = field46;
+ProtoInterface21.field[24] = field46;
 
 let field47 = browser.currentScene.createNode("field");
-field47.name = "jaw_keyValue";
-field47.accessType = "inputOutput";
-field47.type = "MFRotation";
-//no default value
-ProtoInterface4.field[42] = field47;
+field47.name = "c2_changed";
+field47.accessType = "outputOnly";
+field47.type = "SFRotation";
+ProtoInterface21.field[25] = field47;
 
 let field48 = browser.currentScene.createNode("field");
-field48.name = "jaw_changed";
-field48.accessType = "outputOnly";
-field48.type = "SFRotation";
-ProtoInterface4.field[43] = field48;
+field48.name = "c3_key";
+field48.accessType = "inputOutput";
+field48.type = "MFFloat";
+//no default value
+ProtoInterface21.field[26] = field48;
 
 let field49 = browser.currentScene.createNode("field");
-field49.name = "l1_key";
+field49.name = "c3_keyValue";
 field49.accessType = "inputOutput";
-field49.type = "MFFloat";
+field49.type = "MFRotation";
 //no default value
-ProtoInterface4.field[44] = field49;
+ProtoInterface21.field[27] = field49;
 
 let field50 = browser.currentScene.createNode("field");
-field50.name = "l1_keyValue";
-field50.accessType = "inputOutput";
-field50.type = "MFRotation";
-//no default value
-ProtoInterface4.field[45] = field50;
+field50.name = "c3_changed";
+field50.accessType = "outputOnly";
+field50.type = "SFRotation";
+ProtoInterface21.field[28] = field50;
 
 let field51 = browser.currentScene.createNode("field");
-field51.name = "l1_changed";
-field51.accessType = "outputOnly";
-field51.type = "SFRotation";
-ProtoInterface4.field[46] = field51;
+field51.name = "c4_key";
+field51.accessType = "inputOutput";
+field51.type = "MFFloat";
+//no default value
+ProtoInterface21.field[29] = field51;
 
 let field52 = browser.currentScene.createNode("field");
-field52.name = "l2_key";
+field52.name = "c4_keyValue";
 field52.accessType = "inputOutput";
-field52.type = "MFFloat";
+field52.type = "MFRotation";
 //no default value
-ProtoInterface4.field[47] = field52;
+ProtoInterface21.field[30] = field52;
 
 let field53 = browser.currentScene.createNode("field");
-field53.name = "l2_keyValue";
-field53.accessType = "inputOutput";
-field53.type = "MFRotation";
-//no default value
-ProtoInterface4.field[48] = field53;
+field53.name = "c4_changed";
+field53.accessType = "outputOnly";
+field53.type = "SFRotation";
+ProtoInterface21.field[31] = field53;
 
 let field54 = browser.currentScene.createNode("field");
-field54.name = "l2_changed";
-field54.accessType = "outputOnly";
-field54.type = "SFRotation";
-ProtoInterface4.field[49] = field54;
+field54.name = "c5_key";
+field54.accessType = "inputOutput";
+field54.type = "MFFloat";
+//no default value
+ProtoInterface21.field[32] = field54;
 
 let field55 = browser.currentScene.createNode("field");
-field55.name = "l3_key";
+field55.name = "c5_keyValue";
 field55.accessType = "inputOutput";
-field55.type = "MFFloat";
+field55.type = "MFRotation";
 //no default value
-ProtoInterface4.field[50] = field55;
+ProtoInterface21.field[33] = field55;
 
 let field56 = browser.currentScene.createNode("field");
-field56.name = "l3_keyValue";
-field56.accessType = "inputOutput";
-field56.type = "MFRotation";
-//no default value
-ProtoInterface4.field[51] = field56;
+field56.name = "c5_changed";
+field56.accessType = "outputOnly";
+field56.type = "SFRotation";
+ProtoInterface21.field[34] = field56;
 
 let field57 = browser.currentScene.createNode("field");
-field57.name = "l3_changed";
-field57.accessType = "outputOnly";
-field57.type = "SFRotation";
-ProtoInterface4.field[52] = field57;
+field57.name = "c6_key";
+field57.accessType = "inputOutput";
+field57.type = "MFFloat";
+//no default value
+ProtoInterface21.field[35] = field57;
 
 let field58 = browser.currentScene.createNode("field");
-field58.name = "l4_key";
+field58.name = "c6_keyValue";
 field58.accessType = "inputOutput";
-field58.type = "MFFloat";
+field58.type = "MFRotation";
 //no default value
-ProtoInterface4.field[53] = field58;
+ProtoInterface21.field[36] = field58;
 
 let field59 = browser.currentScene.createNode("field");
-field59.name = "l4_keyValue";
-field59.accessType = "inputOutput";
-field59.type = "MFRotation";
-//no default value
-ProtoInterface4.field[54] = field59;
+field59.name = "c6_changed";
+field59.accessType = "outputOnly";
+field59.type = "SFRotation";
+ProtoInterface21.field[37] = field59;
 
 let field60 = browser.currentScene.createNode("field");
-field60.name = "l4_changed";
-field60.accessType = "outputOnly";
-field60.type = "SFRotation";
-ProtoInterface4.field[55] = field60;
+field60.name = "c7_key";
+field60.accessType = "inputOutput";
+field60.type = "MFFloat";
+//no default value
+ProtoInterface21.field[38] = field60;
 
 let field61 = browser.currentScene.createNode("field");
-field61.name = "l5_key";
+field61.name = "c7_keyValue";
 field61.accessType = "inputOutput";
-field61.type = "MFFloat";
+field61.type = "MFRotation";
 //no default value
-ProtoInterface4.field[56] = field61;
+ProtoInterface21.field[39] = field61;
 
 let field62 = browser.currentScene.createNode("field");
-field62.name = "l5_keyValue";
-field62.accessType = "inputOutput";
-field62.type = "MFRotation";
-//no default value
-ProtoInterface4.field[57] = field62;
+field62.name = "c7_changed";
+field62.accessType = "outputOnly";
+field62.type = "SFRotation";
+ProtoInterface21.field[40] = field62;
 
 let field63 = browser.currentScene.createNode("field");
-field63.name = "l5_changed";
-field63.accessType = "outputOnly";
-field63.type = "SFRotation";
-ProtoInterface4.field[58] = field63;
+field63.name = "jaw_key";
+field63.accessType = "inputOutput";
+field63.type = "MFFloat";
+//no default value
+ProtoInterface21.field[41] = field63;
 
 let field64 = browser.currentScene.createNode("field");
-field64.name = "l_acromioclavicular_key";
+field64.name = "jaw_keyValue";
 field64.accessType = "inputOutput";
-field64.type = "MFFloat";
+field64.type = "MFRotation";
 //no default value
-ProtoInterface4.field[59] = field64;
+ProtoInterface21.field[42] = field64;
 
 let field65 = browser.currentScene.createNode("field");
-field65.name = "l_acromioclavicular_keyValue";
-field65.accessType = "inputOutput";
-field65.type = "MFRotation";
-//no default value
-ProtoInterface4.field[60] = field65;
+field65.name = "jaw_changed";
+field65.accessType = "outputOnly";
+field65.type = "SFRotation";
+ProtoInterface21.field[43] = field65;
 
 let field66 = browser.currentScene.createNode("field");
-field66.name = "l_acromioclavicular_changed";
-field66.accessType = "outputOnly";
-field66.type = "SFRotation";
-ProtoInterface4.field[61] = field66;
+field66.name = "l1_key";
+field66.accessType = "inputOutput";
+field66.type = "MFFloat";
+//no default value
+ProtoInterface21.field[44] = field66;
 
 let field67 = browser.currentScene.createNode("field");
-field67.name = "l_ankle_key";
+field67.name = "l1_keyValue";
 field67.accessType = "inputOutput";
-field67.type = "MFFloat";
+field67.type = "MFRotation";
 //no default value
-ProtoInterface4.field[62] = field67;
+ProtoInterface21.field[45] = field67;
 
 let field68 = browser.currentScene.createNode("field");
-field68.name = "l_ankle_keyValue";
-field68.accessType = "inputOutput";
-field68.type = "MFRotation";
-//no default value
-ProtoInterface4.field[63] = field68;
+field68.name = "l1_changed";
+field68.accessType = "outputOnly";
+field68.type = "SFRotation";
+ProtoInterface21.field[46] = field68;
 
 let field69 = browser.currentScene.createNode("field");
-field69.name = "l_ankle_changed";
-field69.accessType = "outputOnly";
-field69.type = "SFRotation";
-ProtoInterface4.field[64] = field69;
+field69.name = "l2_key";
+field69.accessType = "inputOutput";
+field69.type = "MFFloat";
+//no default value
+ProtoInterface21.field[47] = field69;
 
 let field70 = browser.currentScene.createNode("field");
-field70.name = "l_calf_key";
+field70.name = "l2_keyValue";
 field70.accessType = "inputOutput";
-field70.type = "MFFloat";
+field70.type = "MFRotation";
 //no default value
-ProtoInterface4.field[65] = field70;
+ProtoInterface21.field[48] = field70;
 
 let field71 = browser.currentScene.createNode("field");
-field71.name = "l_calf_keyValue";
-field71.accessType = "inputOutput";
-field71.type = "MFRotation";
-//no default value
-ProtoInterface4.field[66] = field71;
+field71.name = "l2_changed";
+field71.accessType = "outputOnly";
+field71.type = "SFRotation";
+ProtoInterface21.field[49] = field71;
 
 let field72 = browser.currentScene.createNode("field");
-field72.name = "l_calf_changed";
-field72.accessType = "outputOnly";
-field72.type = "SFRotation";
-ProtoInterface4.field[67] = field72;
+field72.name = "l3_key";
+field72.accessType = "inputOutput";
+field72.type = "MFFloat";
+//no default value
+ProtoInterface21.field[50] = field72;
 
 let field73 = browser.currentScene.createNode("field");
-field73.name = "l_clavicle_key";
+field73.name = "l3_keyValue";
 field73.accessType = "inputOutput";
-field73.type = "MFFloat";
+field73.type = "MFRotation";
 //no default value
-ProtoInterface4.field[68] = field73;
+ProtoInterface21.field[51] = field73;
 
 let field74 = browser.currentScene.createNode("field");
-field74.name = "l_clavicle_keyValue";
-field74.accessType = "inputOutput";
-field74.type = "MFRotation";
-//no default value
-ProtoInterface4.field[69] = field74;
+field74.name = "l3_changed";
+field74.accessType = "outputOnly";
+field74.type = "SFRotation";
+ProtoInterface21.field[52] = field74;
 
 let field75 = browser.currentScene.createNode("field");
-field75.name = "l_clavicle_changed";
-field75.accessType = "outputOnly";
-field75.type = "SFRotation";
-ProtoInterface4.field[70] = field75;
+field75.name = "l4_key";
+field75.accessType = "inputOutput";
+field75.type = "MFFloat";
+//no default value
+ProtoInterface21.field[53] = field75;
 
 let field76 = browser.currentScene.createNode("field");
-field76.name = "l_elbow_key";
+field76.name = "l4_keyValue";
 field76.accessType = "inputOutput";
-field76.type = "MFFloat";
+field76.type = "MFRotation";
 //no default value
-ProtoInterface4.field[71] = field76;
+ProtoInterface21.field[54] = field76;
 
 let field77 = browser.currentScene.createNode("field");
-field77.name = "l_elbow_keyValue";
-field77.accessType = "inputOutput";
-field77.type = "MFRotation";
-//no default value
-ProtoInterface4.field[72] = field77;
+field77.name = "l4_changed";
+field77.accessType = "outputOnly";
+field77.type = "SFRotation";
+ProtoInterface21.field[55] = field77;
 
 let field78 = browser.currentScene.createNode("field");
-field78.name = "l_elbow_changed";
-field78.accessType = "outputOnly";
-field78.type = "SFRotation";
-ProtoInterface4.field[73] = field78;
+field78.name = "l5_key";
+field78.accessType = "inputOutput";
+field78.type = "MFFloat";
+//no default value
+ProtoInterface21.field[56] = field78;
 
 let field79 = browser.currentScene.createNode("field");
-field79.name = "l_eyeball_key";
+field79.name = "l5_keyValue";
 field79.accessType = "inputOutput";
-field79.type = "MFFloat";
+field79.type = "MFRotation";
 //no default value
-ProtoInterface4.field[74] = field79;
+ProtoInterface21.field[57] = field79;
 
 let field80 = browser.currentScene.createNode("field");
-field80.name = "l_eyeball_keyValue";
-field80.accessType = "inputOutput";
-field80.type = "MFRotation";
-//no default value
-ProtoInterface4.field[75] = field80;
+field80.name = "l5_changed";
+field80.accessType = "outputOnly";
+field80.type = "SFRotation";
+ProtoInterface21.field[58] = field80;
 
 let field81 = browser.currentScene.createNode("field");
-field81.name = "l_eyeball_changed";
-field81.accessType = "outputOnly";
-field81.type = "SFRotation";
-ProtoInterface4.field[76] = field81;
+field81.name = "l_acromioclavicular_key";
+field81.accessType = "inputOutput";
+field81.type = "MFFloat";
+//no default value
+ProtoInterface21.field[59] = field81;
 
 let field82 = browser.currentScene.createNode("field");
-field82.name = "l_eyeball_joint_key";
+field82.name = "l_acromioclavicular_keyValue";
 field82.accessType = "inputOutput";
-field82.type = "MFFloat";
+field82.type = "MFRotation";
 //no default value
-ProtoInterface4.field[77] = field82;
+ProtoInterface21.field[60] = field82;
 
 let field83 = browser.currentScene.createNode("field");
-field83.name = "l_eyeball_joint_keyValue";
-field83.accessType = "inputOutput";
-field83.type = "MFRotation";
-//no default value
-ProtoInterface4.field[78] = field83;
+field83.name = "l_acromioclavicular_changed";
+field83.accessType = "outputOnly";
+field83.type = "SFRotation";
+ProtoInterface21.field[61] = field83;
 
 let field84 = browser.currentScene.createNode("field");
-field84.name = "l_eyeball_joint_changed";
-field84.accessType = "outputOnly";
-field84.type = "SFRotation";
-ProtoInterface4.field[79] = field84;
+field84.name = "l_ankle_key";
+field84.accessType = "inputOutput";
+field84.type = "MFFloat";
+//no default value
+ProtoInterface21.field[62] = field84;
 
 let field85 = browser.currentScene.createNode("field");
-field85.name = "l_eyebrow_key";
+field85.name = "l_ankle_keyValue";
 field85.accessType = "inputOutput";
-field85.type = "MFFloat";
+field85.type = "MFRotation";
 //no default value
-ProtoInterface4.field[80] = field85;
+ProtoInterface21.field[63] = field85;
 
 let field86 = browser.currentScene.createNode("field");
-field86.name = "l_eyebrow_keyValue";
-field86.accessType = "inputOutput";
-field86.type = "MFRotation";
-//no default value
-ProtoInterface4.field[81] = field86;
+field86.name = "l_ankle_changed";
+field86.accessType = "outputOnly";
+field86.type = "SFRotation";
+ProtoInterface21.field[64] = field86;
 
 let field87 = browser.currentScene.createNode("field");
-field87.name = "l_eyebrow_changed";
-field87.accessType = "outputOnly";
-field87.type = "SFRotation";
-ProtoInterface4.field[82] = field87;
+field87.name = "l_calf_key";
+field87.accessType = "inputOutput";
+field87.type = "MFFloat";
+//no default value
+ProtoInterface21.field[65] = field87;
 
 let field88 = browser.currentScene.createNode("field");
-field88.name = "l_eyebrow_joint_key";
+field88.name = "l_calf_keyValue";
 field88.accessType = "inputOutput";
-field88.type = "MFFloat";
+field88.type = "MFRotation";
 //no default value
-ProtoInterface4.field[83] = field88;
+ProtoInterface21.field[66] = field88;
 
 let field89 = browser.currentScene.createNode("field");
-field89.name = "l_eyebrow_joint_keyValue";
-field89.accessType = "inputOutput";
-field89.type = "MFRotation";
-//no default value
-ProtoInterface4.field[84] = field89;
+field89.name = "l_calf_changed";
+field89.accessType = "outputOnly";
+field89.type = "SFRotation";
+ProtoInterface21.field[67] = field89;
 
 let field90 = browser.currentScene.createNode("field");
-field90.name = "l_eyebrow_joint_changed";
-field90.accessType = "outputOnly";
-field90.type = "SFRotation";
-ProtoInterface4.field[85] = field90;
+field90.name = "l_clavicle_key";
+field90.accessType = "inputOutput";
+field90.type = "MFFloat";
+//no default value
+ProtoInterface21.field[68] = field90;
 
 let field91 = browser.currentScene.createNode("field");
-field91.name = "l_eyelid_key";
+field91.name = "l_clavicle_keyValue";
 field91.accessType = "inputOutput";
-field91.type = "MFFloat";
+field91.type = "MFRotation";
 //no default value
-ProtoInterface4.field[86] = field91;
+ProtoInterface21.field[69] = field91;
 
 let field92 = browser.currentScene.createNode("field");
-field92.name = "l_eyelid_keyValue";
-field92.accessType = "inputOutput";
-field92.type = "MFRotation";
-//no default value
-ProtoInterface4.field[87] = field92;
+field92.name = "l_clavicle_changed";
+field92.accessType = "outputOnly";
+field92.type = "SFRotation";
+ProtoInterface21.field[70] = field92;
 
 let field93 = browser.currentScene.createNode("field");
-field93.name = "l_eyelid_changed";
-field93.accessType = "outputOnly";
-field93.type = "SFRotation";
-ProtoInterface4.field[88] = field93;
+field93.name = "l_elbow_key";
+field93.accessType = "inputOutput";
+field93.type = "MFFloat";
+//no default value
+ProtoInterface21.field[71] = field93;
 
 let field94 = browser.currentScene.createNode("field");
-field94.name = "l_eyelid_joint_key";
+field94.name = "l_elbow_keyValue";
 field94.accessType = "inputOutput";
-field94.type = "MFFloat";
+field94.type = "MFRotation";
 //no default value
-ProtoInterface4.field[89] = field94;
+ProtoInterface21.field[72] = field94;
 
 let field95 = browser.currentScene.createNode("field");
-field95.name = "l_eyelid_joint_keyValue";
-field95.accessType = "inputOutput";
-field95.type = "MFRotation";
-//no default value
-ProtoInterface4.field[90] = field95;
+field95.name = "l_elbow_changed";
+field95.accessType = "outputOnly";
+field95.type = "SFRotation";
+ProtoInterface21.field[73] = field95;
 
 let field96 = browser.currentScene.createNode("field");
-field96.name = "l_eyelid_joint_changed";
-field96.accessType = "outputOnly";
-field96.type = "SFRotation";
-ProtoInterface4.field[91] = field96;
+field96.name = "l_eyeball_key";
+field96.accessType = "inputOutput";
+field96.type = "MFFloat";
+//no default value
+ProtoInterface21.field[74] = field96;
 
 let field97 = browser.currentScene.createNode("field");
-field97.name = "l_forearm_key";
+field97.name = "l_eyeball_keyValue";
 field97.accessType = "inputOutput";
-field97.type = "MFFloat";
+field97.type = "MFRotation";
 //no default value
-ProtoInterface4.field[92] = field97;
+ProtoInterface21.field[75] = field97;
 
 let field98 = browser.currentScene.createNode("field");
-field98.name = "l_forearm_keyValue";
-field98.accessType = "inputOutput";
-field98.type = "MFRotation";
-//no default value
-ProtoInterface4.field[93] = field98;
+field98.name = "l_eyeball_changed";
+field98.accessType = "outputOnly";
+field98.type = "SFRotation";
+ProtoInterface21.field[76] = field98;
 
 let field99 = browser.currentScene.createNode("field");
-field99.name = "l_forearm_changed";
-field99.accessType = "outputOnly";
-field99.type = "SFRotation";
-ProtoInterface4.field[94] = field99;
+field99.name = "l_eyeball_joint_key";
+field99.accessType = "inputOutput";
+field99.type = "MFFloat";
+//no default value
+ProtoInterface21.field[77] = field99;
 
 let field100 = browser.currentScene.createNode("field");
-field100.name = "l_forefoot_key";
+field100.name = "l_eyeball_joint_keyValue";
 field100.accessType = "inputOutput";
-field100.type = "MFFloat";
+field100.type = "MFRotation";
 //no default value
-ProtoInterface4.field[95] = field100;
+ProtoInterface21.field[78] = field100;
 
 let field101 = browser.currentScene.createNode("field");
-field101.name = "l_forefoot_keyValue";
-field101.accessType = "inputOutput";
-field101.type = "MFRotation";
-//no default value
-ProtoInterface4.field[96] = field101;
+field101.name = "l_eyeball_joint_changed";
+field101.accessType = "outputOnly";
+field101.type = "SFRotation";
+ProtoInterface21.field[79] = field101;
 
 let field102 = browser.currentScene.createNode("field");
-field102.name = "l_forefoot_changed";
-field102.accessType = "outputOnly";
-field102.type = "SFRotation";
-ProtoInterface4.field[97] = field102;
+field102.name = "l_eyebrow_key";
+field102.accessType = "inputOutput";
+field102.type = "MFFloat";
+//no default value
+ProtoInterface21.field[80] = field102;
 
 let field103 = browser.currentScene.createNode("field");
-field103.name = "l_hand_key";
+field103.name = "l_eyebrow_keyValue";
 field103.accessType = "inputOutput";
-field103.type = "MFFloat";
+field103.type = "MFRotation";
 //no default value
-ProtoInterface4.field[98] = field103;
+ProtoInterface21.field[81] = field103;
 
 let field104 = browser.currentScene.createNode("field");
-field104.name = "l_hand_keyValue";
-field104.accessType = "inputOutput";
-field104.type = "MFRotation";
-//no default value
-ProtoInterface4.field[99] = field104;
+field104.name = "l_eyebrow_changed";
+field104.accessType = "outputOnly";
+field104.type = "SFRotation";
+ProtoInterface21.field[82] = field104;
 
 let field105 = browser.currentScene.createNode("field");
-field105.name = "l_hand_changed";
-field105.accessType = "outputOnly";
-field105.type = "SFRotation";
-ProtoInterface4.field[100] = field105;
+field105.name = "l_eyebrow_joint_key";
+field105.accessType = "inputOutput";
+field105.type = "MFFloat";
+//no default value
+ProtoInterface21.field[83] = field105;
 
 let field106 = browser.currentScene.createNode("field");
-field106.name = "l_hindfoot_key";
+field106.name = "l_eyebrow_joint_keyValue";
 field106.accessType = "inputOutput";
-field106.type = "MFFloat";
+field106.type = "MFRotation";
 //no default value
-ProtoInterface4.field[101] = field106;
+ProtoInterface21.field[84] = field106;
 
 let field107 = browser.currentScene.createNode("field");
-field107.name = "l_hindfoot_keyValue";
-field107.accessType = "inputOutput";
-field107.type = "MFRotation";
-//no default value
-ProtoInterface4.field[102] = field107;
+field107.name = "l_eyebrow_joint_changed";
+field107.accessType = "outputOnly";
+field107.type = "SFRotation";
+ProtoInterface21.field[85] = field107;
 
 let field108 = browser.currentScene.createNode("field");
-field108.name = "l_hindfoot_changed";
-field108.accessType = "outputOnly";
-field108.type = "SFRotation";
-ProtoInterface4.field[103] = field108;
+field108.name = "l_eyelid_key";
+field108.accessType = "inputOutput";
+field108.type = "MFFloat";
+//no default value
+ProtoInterface21.field[86] = field108;
 
 let field109 = browser.currentScene.createNode("field");
-field109.name = "l_hip_key";
+field109.name = "l_eyelid_keyValue";
 field109.accessType = "inputOutput";
-field109.type = "MFFloat";
+field109.type = "MFRotation";
 //no default value
-ProtoInterface4.field[104] = field109;
+ProtoInterface21.field[87] = field109;
 
 let field110 = browser.currentScene.createNode("field");
-field110.name = "l_hip_keyValue";
-field110.accessType = "inputOutput";
-field110.type = "MFRotation";
-//no default value
-ProtoInterface4.field[105] = field110;
+field110.name = "l_eyelid_changed";
+field110.accessType = "outputOnly";
+field110.type = "SFRotation";
+ProtoInterface21.field[88] = field110;
 
 let field111 = browser.currentScene.createNode("field");
-field111.name = "l_hip_changed";
-field111.accessType = "outputOnly";
-field111.type = "SFRotation";
-ProtoInterface4.field[106] = field111;
+field111.name = "l_eyelid_joint_key";
+field111.accessType = "inputOutput";
+field111.type = "MFFloat";
+//no default value
+ProtoInterface21.field[89] = field111;
 
 let field112 = browser.currentScene.createNode("field");
-field112.name = "l_index0_key";
+field112.name = "l_eyelid_joint_keyValue";
 field112.accessType = "inputOutput";
-field112.type = "MFFloat";
+field112.type = "MFRotation";
 //no default value
-ProtoInterface4.field[107] = field112;
+ProtoInterface21.field[90] = field112;
 
 let field113 = browser.currentScene.createNode("field");
-field113.name = "l_index0_keyValue";
-field113.accessType = "inputOutput";
-field113.type = "MFRotation";
-//no default value
-ProtoInterface4.field[108] = field113;
+field113.name = "l_eyelid_joint_changed";
+field113.accessType = "outputOnly";
+field113.type = "SFRotation";
+ProtoInterface21.field[91] = field113;
 
 let field114 = browser.currentScene.createNode("field");
-field114.name = "l_index0_changed";
-field114.accessType = "outputOnly";
-field114.type = "SFRotation";
-ProtoInterface4.field[109] = field114;
+field114.name = "l_forearm_key";
+field114.accessType = "inputOutput";
+field114.type = "MFFloat";
+//no default value
+ProtoInterface21.field[92] = field114;
 
 let field115 = browser.currentScene.createNode("field");
-field115.name = "l_index1_key";
+field115.name = "l_forearm_keyValue";
 field115.accessType = "inputOutput";
-field115.type = "MFFloat";
+field115.type = "MFRotation";
 //no default value
-ProtoInterface4.field[110] = field115;
+ProtoInterface21.field[93] = field115;
 
 let field116 = browser.currentScene.createNode("field");
-field116.name = "l_index1_keyValue";
-field116.accessType = "inputOutput";
-field116.type = "MFRotation";
-//no default value
-ProtoInterface4.field[111] = field116;
+field116.name = "l_forearm_changed";
+field116.accessType = "outputOnly";
+field116.type = "SFRotation";
+ProtoInterface21.field[94] = field116;
 
 let field117 = browser.currentScene.createNode("field");
-field117.name = "l_index1_changed";
-field117.accessType = "outputOnly";
-field117.type = "SFRotation";
-ProtoInterface4.field[112] = field117;
+field117.name = "l_forefoot_key";
+field117.accessType = "inputOutput";
+field117.type = "MFFloat";
+//no default value
+ProtoInterface21.field[95] = field117;
 
 let field118 = browser.currentScene.createNode("field");
-field118.name = "l_index2_key";
+field118.name = "l_forefoot_keyValue";
 field118.accessType = "inputOutput";
-field118.type = "MFFloat";
+field118.type = "MFRotation";
 //no default value
-ProtoInterface4.field[113] = field118;
+ProtoInterface21.field[96] = field118;
 
 let field119 = browser.currentScene.createNode("field");
-field119.name = "l_index2_keyValue";
-field119.accessType = "inputOutput";
-field119.type = "MFRotation";
-//no default value
-ProtoInterface4.field[114] = field119;
+field119.name = "l_forefoot_changed";
+field119.accessType = "outputOnly";
+field119.type = "SFRotation";
+ProtoInterface21.field[97] = field119;
 
 let field120 = browser.currentScene.createNode("field");
-field120.name = "l_index2_changed";
-field120.accessType = "outputOnly";
-field120.type = "SFRotation";
-ProtoInterface4.field[115] = field120;
+field120.name = "l_hand_key";
+field120.accessType = "inputOutput";
+field120.type = "MFFloat";
+//no default value
+ProtoInterface21.field[98] = field120;
 
 let field121 = browser.currentScene.createNode("field");
-field121.name = "l_index3_key";
+field121.name = "l_hand_keyValue";
 field121.accessType = "inputOutput";
-field121.type = "MFFloat";
+field121.type = "MFRotation";
 //no default value
-ProtoInterface4.field[116] = field121;
+ProtoInterface21.field[99] = field121;
 
 let field122 = browser.currentScene.createNode("field");
-field122.name = "l_index3_keyValue";
-field122.accessType = "inputOutput";
-field122.type = "MFRotation";
-//no default value
-ProtoInterface4.field[117] = field122;
+field122.name = "l_hand_changed";
+field122.accessType = "outputOnly";
+field122.type = "SFRotation";
+ProtoInterface21.field[100] = field122;
 
 let field123 = browser.currentScene.createNode("field");
-field123.name = "l_index3_changed";
-field123.accessType = "outputOnly";
-field123.type = "SFRotation";
-ProtoInterface4.field[118] = field123;
+field123.name = "l_hindfoot_key";
+field123.accessType = "inputOutput";
+field123.type = "MFFloat";
+//no default value
+ProtoInterface21.field[101] = field123;
 
 let field124 = browser.currentScene.createNode("field");
-field124.name = "l_index_distal_key";
+field124.name = "l_hindfoot_keyValue";
 field124.accessType = "inputOutput";
-field124.type = "MFFloat";
+field124.type = "MFRotation";
 //no default value
-ProtoInterface4.field[119] = field124;
+ProtoInterface21.field[102] = field124;
 
 let field125 = browser.currentScene.createNode("field");
-field125.name = "l_index_distal_keyValue";
-field125.accessType = "inputOutput";
-field125.type = "MFRotation";
-//no default value
-ProtoInterface4.field[120] = field125;
+field125.name = "l_hindfoot_changed";
+field125.accessType = "outputOnly";
+field125.type = "SFRotation";
+ProtoInterface21.field[103] = field125;
 
 let field126 = browser.currentScene.createNode("field");
-field126.name = "l_index_distal_changed";
-field126.accessType = "outputOnly";
-field126.type = "SFRotation";
-ProtoInterface4.field[121] = field126;
+field126.name = "l_hip_key";
+field126.accessType = "inputOutput";
+field126.type = "MFFloat";
+//no default value
+ProtoInterface21.field[104] = field126;
 
 let field127 = browser.currentScene.createNode("field");
-field127.name = "l_index_metacarpal_key";
+field127.name = "l_hip_keyValue";
 field127.accessType = "inputOutput";
-field127.type = "MFFloat";
+field127.type = "MFRotation";
 //no default value
-ProtoInterface4.field[122] = field127;
+ProtoInterface21.field[105] = field127;
 
 let field128 = browser.currentScene.createNode("field");
-field128.name = "l_index_metacarpal_keyValue";
-field128.accessType = "inputOutput";
-field128.type = "MFRotation";
-//no default value
-ProtoInterface4.field[123] = field128;
+field128.name = "l_hip_changed";
+field128.accessType = "outputOnly";
+field128.type = "SFRotation";
+ProtoInterface21.field[106] = field128;
 
 let field129 = browser.currentScene.createNode("field");
-field129.name = "l_index_metacarpal_changed";
-field129.accessType = "outputOnly";
-field129.type = "SFRotation";
-ProtoInterface4.field[124] = field129;
+field129.name = "l_index0_key";
+field129.accessType = "inputOutput";
+field129.type = "MFFloat";
+//no default value
+ProtoInterface21.field[107] = field129;
 
 let field130 = browser.currentScene.createNode("field");
-field130.name = "l_index_middle_key";
+field130.name = "l_index0_keyValue";
 field130.accessType = "inputOutput";
-field130.type = "MFFloat";
+field130.type = "MFRotation";
 //no default value
-ProtoInterface4.field[125] = field130;
+ProtoInterface21.field[108] = field130;
 
 let field131 = browser.currentScene.createNode("field");
-field131.name = "l_index_middle_keyValue";
-field131.accessType = "inputOutput";
-field131.type = "MFRotation";
-//no default value
-ProtoInterface4.field[126] = field131;
+field131.name = "l_index0_changed";
+field131.accessType = "outputOnly";
+field131.type = "SFRotation";
+ProtoInterface21.field[109] = field131;
 
 let field132 = browser.currentScene.createNode("field");
-field132.name = "l_index_middle_changed";
-field132.accessType = "outputOnly";
-field132.type = "SFRotation";
-ProtoInterface4.field[127] = field132;
+field132.name = "l_index1_key";
+field132.accessType = "inputOutput";
+field132.type = "MFFloat";
+//no default value
+ProtoInterface21.field[110] = field132;
 
 let field133 = browser.currentScene.createNode("field");
-field133.name = "l_index_proximal_key";
+field133.name = "l_index1_keyValue";
 field133.accessType = "inputOutput";
-field133.type = "MFFloat";
+field133.type = "MFRotation";
 //no default value
-ProtoInterface4.field[128] = field133;
+ProtoInterface21.field[111] = field133;
 
 let field134 = browser.currentScene.createNode("field");
-field134.name = "l_index_proximal_keyValue";
-field134.accessType = "inputOutput";
-field134.type = "MFRotation";
-//no default value
-ProtoInterface4.field[129] = field134;
+field134.name = "l_index1_changed";
+field134.accessType = "outputOnly";
+field134.type = "SFRotation";
+ProtoInterface21.field[112] = field134;
 
 let field135 = browser.currentScene.createNode("field");
-field135.name = "l_index_proximal_changed";
-field135.accessType = "outputOnly";
-field135.type = "SFRotation";
-ProtoInterface4.field[130] = field135;
+field135.name = "l_index2_key";
+field135.accessType = "inputOutput";
+field135.type = "MFFloat";
+//no default value
+ProtoInterface21.field[113] = field135;
 
 let field136 = browser.currentScene.createNode("field");
-field136.name = "l_knee_key";
+field136.name = "l_index2_keyValue";
 field136.accessType = "inputOutput";
-field136.type = "MFFloat";
+field136.type = "MFRotation";
 //no default value
-ProtoInterface4.field[131] = field136;
+ProtoInterface21.field[114] = field136;
 
 let field137 = browser.currentScene.createNode("field");
-field137.name = "l_knee_keyValue";
-field137.accessType = "inputOutput";
-field137.type = "MFRotation";
-//no default value
-ProtoInterface4.field[132] = field137;
+field137.name = "l_index2_changed";
+field137.accessType = "outputOnly";
+field137.type = "SFRotation";
+ProtoInterface21.field[115] = field137;
 
 let field138 = browser.currentScene.createNode("field");
-field138.name = "l_knee_changed";
-field138.accessType = "outputOnly";
-field138.type = "SFRotation";
-ProtoInterface4.field[133] = field138;
+field138.name = "l_index3_key";
+field138.accessType = "inputOutput";
+field138.type = "MFFloat";
+//no default value
+ProtoInterface21.field[116] = field138;
 
 let field139 = browser.currentScene.createNode("field");
-field139.name = "l_metatarsal_key";
+field139.name = "l_index3_keyValue";
 field139.accessType = "inputOutput";
-field139.type = "MFFloat";
+field139.type = "MFRotation";
 //no default value
-ProtoInterface4.field[134] = field139;
+ProtoInterface21.field[117] = field139;
 
 let field140 = browser.currentScene.createNode("field");
-field140.name = "l_metatarsal_keyValue";
-field140.accessType = "inputOutput";
-field140.type = "MFRotation";
-//no default value
-ProtoInterface4.field[135] = field140;
+field140.name = "l_index3_changed";
+field140.accessType = "outputOnly";
+field140.type = "SFRotation";
+ProtoInterface21.field[118] = field140;
 
 let field141 = browser.currentScene.createNode("field");
-field141.name = "l_metatarsal_changed";
-field141.accessType = "outputOnly";
-field141.type = "SFRotation";
-ProtoInterface4.field[136] = field141;
+field141.name = "l_index_distal_key";
+field141.accessType = "inputOutput";
+field141.type = "MFFloat";
+//no default value
+ProtoInterface21.field[119] = field141;
 
 let field142 = browser.currentScene.createNode("field");
-field142.name = "l_middistal_key";
+field142.name = "l_index_distal_keyValue";
 field142.accessType = "inputOutput";
-field142.type = "MFFloat";
+field142.type = "MFRotation";
 //no default value
-ProtoInterface4.field[137] = field142;
+ProtoInterface21.field[120] = field142;
 
 let field143 = browser.currentScene.createNode("field");
-field143.name = "l_middistal_keyValue";
-field143.accessType = "inputOutput";
-field143.type = "MFRotation";
-//no default value
-ProtoInterface4.field[138] = field143;
+field143.name = "l_index_distal_changed";
+field143.accessType = "outputOnly";
+field143.type = "SFRotation";
+ProtoInterface21.field[121] = field143;
 
 let field144 = browser.currentScene.createNode("field");
-field144.name = "l_middistal_changed";
-field144.accessType = "outputOnly";
-field144.type = "SFRotation";
-ProtoInterface4.field[139] = field144;
+field144.name = "l_index_metacarpal_key";
+field144.accessType = "inputOutput";
+field144.type = "MFFloat";
+//no default value
+ProtoInterface21.field[122] = field144;
 
 let field145 = browser.currentScene.createNode("field");
-field145.name = "l_middle0_key";
+field145.name = "l_index_metacarpal_keyValue";
 field145.accessType = "inputOutput";
-field145.type = "MFFloat";
+field145.type = "MFRotation";
 //no default value
-ProtoInterface4.field[140] = field145;
+ProtoInterface21.field[123] = field145;
 
 let field146 = browser.currentScene.createNode("field");
-field146.name = "l_middle0_keyValue";
-field146.accessType = "inputOutput";
-field146.type = "MFRotation";
-//no default value
-ProtoInterface4.field[141] = field146;
+field146.name = "l_index_metacarpal_changed";
+field146.accessType = "outputOnly";
+field146.type = "SFRotation";
+ProtoInterface21.field[124] = field146;
 
 let field147 = browser.currentScene.createNode("field");
-field147.name = "l_middle0_changed";
-field147.accessType = "outputOnly";
-field147.type = "SFRotation";
-ProtoInterface4.field[142] = field147;
+field147.name = "l_index_middle_key";
+field147.accessType = "inputOutput";
+field147.type = "MFFloat";
+//no default value
+ProtoInterface21.field[125] = field147;
 
 let field148 = browser.currentScene.createNode("field");
-field148.name = "l_middle1_key";
+field148.name = "l_index_middle_keyValue";
 field148.accessType = "inputOutput";
-field148.type = "MFFloat";
+field148.type = "MFRotation";
 //no default value
-ProtoInterface4.field[143] = field148;
+ProtoInterface21.field[126] = field148;
 
 let field149 = browser.currentScene.createNode("field");
-field149.name = "l_middle1_keyValue";
-field149.accessType = "inputOutput";
-field149.type = "MFRotation";
-//no default value
-ProtoInterface4.field[144] = field149;
+field149.name = "l_index_middle_changed";
+field149.accessType = "outputOnly";
+field149.type = "SFRotation";
+ProtoInterface21.field[127] = field149;
 
 let field150 = browser.currentScene.createNode("field");
-field150.name = "l_middle1_changed";
-field150.accessType = "outputOnly";
-field150.type = "SFRotation";
-ProtoInterface4.field[145] = field150;
+field150.name = "l_index_proximal_key";
+field150.accessType = "inputOutput";
+field150.type = "MFFloat";
+//no default value
+ProtoInterface21.field[128] = field150;
 
 let field151 = browser.currentScene.createNode("field");
-field151.name = "l_middle2_key";
+field151.name = "l_index_proximal_keyValue";
 field151.accessType = "inputOutput";
-field151.type = "MFFloat";
+field151.type = "MFRotation";
 //no default value
-ProtoInterface4.field[146] = field151;
+ProtoInterface21.field[129] = field151;
 
 let field152 = browser.currentScene.createNode("field");
-field152.name = "l_middle2_keyValue";
-field152.accessType = "inputOutput";
-field152.type = "MFRotation";
-//no default value
-ProtoInterface4.field[147] = field152;
+field152.name = "l_index_proximal_changed";
+field152.accessType = "outputOnly";
+field152.type = "SFRotation";
+ProtoInterface21.field[130] = field152;
 
 let field153 = browser.currentScene.createNode("field");
-field153.name = "l_middle2_changed";
-field153.accessType = "outputOnly";
-field153.type = "SFRotation";
-ProtoInterface4.field[148] = field153;
+field153.name = "l_knee_key";
+field153.accessType = "inputOutput";
+field153.type = "MFFloat";
+//no default value
+ProtoInterface21.field[131] = field153;
 
 let field154 = browser.currentScene.createNode("field");
-field154.name = "l_middle3_key";
+field154.name = "l_knee_keyValue";
 field154.accessType = "inputOutput";
-field154.type = "MFFloat";
+field154.type = "MFRotation";
 //no default value
-ProtoInterface4.field[149] = field154;
+ProtoInterface21.field[132] = field154;
 
 let field155 = browser.currentScene.createNode("field");
-field155.name = "l_middle3_keyValue";
-field155.accessType = "inputOutput";
-field155.type = "MFRotation";
-//no default value
-ProtoInterface4.field[150] = field155;
+field155.name = "l_knee_changed";
+field155.accessType = "outputOnly";
+field155.type = "SFRotation";
+ProtoInterface21.field[133] = field155;
 
 let field156 = browser.currentScene.createNode("field");
-field156.name = "l_middle3_changed";
-field156.accessType = "outputOnly";
-field156.type = "SFRotation";
-ProtoInterface4.field[151] = field156;
+field156.name = "l_metatarsal_key";
+field156.accessType = "inputOutput";
+field156.type = "MFFloat";
+//no default value
+ProtoInterface21.field[134] = field156;
 
 let field157 = browser.currentScene.createNode("field");
-field157.name = "l_middle_distal_key";
+field157.name = "l_metatarsal_keyValue";
 field157.accessType = "inputOutput";
-field157.type = "MFFloat";
+field157.type = "MFRotation";
 //no default value
-ProtoInterface4.field[152] = field157;
+ProtoInterface21.field[135] = field157;
 
 let field158 = browser.currentScene.createNode("field");
-field158.name = "l_middle_distal_keyValue";
-field158.accessType = "inputOutput";
-field158.type = "MFRotation";
-//no default value
-ProtoInterface4.field[153] = field158;
+field158.name = "l_metatarsal_changed";
+field158.accessType = "outputOnly";
+field158.type = "SFRotation";
+ProtoInterface21.field[136] = field158;
 
 let field159 = browser.currentScene.createNode("field");
-field159.name = "l_middle_distal_changed";
-field159.accessType = "outputOnly";
-field159.type = "SFRotation";
-ProtoInterface4.field[154] = field159;
+field159.name = "l_middistal_key";
+field159.accessType = "inputOutput";
+field159.type = "MFFloat";
+//no default value
+ProtoInterface21.field[137] = field159;
 
 let field160 = browser.currentScene.createNode("field");
-field160.name = "l_middle_metacarpal_key";
+field160.name = "l_middistal_keyValue";
 field160.accessType = "inputOutput";
-field160.type = "MFFloat";
+field160.type = "MFRotation";
 //no default value
-ProtoInterface4.field[155] = field160;
+ProtoInterface21.field[138] = field160;
 
 let field161 = browser.currentScene.createNode("field");
-field161.name = "l_middle_metacarpal_keyValue";
-field161.accessType = "inputOutput";
-field161.type = "MFRotation";
-//no default value
-ProtoInterface4.field[156] = field161;
+field161.name = "l_middistal_changed";
+field161.accessType = "outputOnly";
+field161.type = "SFRotation";
+ProtoInterface21.field[139] = field161;
 
 let field162 = browser.currentScene.createNode("field");
-field162.name = "l_middle_metacarpal_changed";
-field162.accessType = "outputOnly";
-field162.type = "SFRotation";
-ProtoInterface4.field[157] = field162;
+field162.name = "l_middle0_key";
+field162.accessType = "inputOutput";
+field162.type = "MFFloat";
+//no default value
+ProtoInterface21.field[140] = field162;
 
 let field163 = browser.currentScene.createNode("field");
-field163.name = "l_middle_middle_key";
+field163.name = "l_middle0_keyValue";
 field163.accessType = "inputOutput";
-field163.type = "MFFloat";
+field163.type = "MFRotation";
 //no default value
-ProtoInterface4.field[158] = field163;
+ProtoInterface21.field[141] = field163;
 
 let field164 = browser.currentScene.createNode("field");
-field164.name = "l_middle_middle_keyValue";
-field164.accessType = "inputOutput";
-field164.type = "MFRotation";
-//no default value
-ProtoInterface4.field[159] = field164;
+field164.name = "l_middle0_changed";
+field164.accessType = "outputOnly";
+field164.type = "SFRotation";
+ProtoInterface21.field[142] = field164;
 
 let field165 = browser.currentScene.createNode("field");
-field165.name = "l_middle_middle_changed";
-field165.accessType = "outputOnly";
-field165.type = "SFRotation";
-ProtoInterface4.field[160] = field165;
+field165.name = "l_middle1_key";
+field165.accessType = "inputOutput";
+field165.type = "MFFloat";
+//no default value
+ProtoInterface21.field[143] = field165;
 
 let field166 = browser.currentScene.createNode("field");
-field166.name = "l_middle_proximal_key";
+field166.name = "l_middle1_keyValue";
 field166.accessType = "inputOutput";
-field166.type = "MFFloat";
+field166.type = "MFRotation";
 //no default value
-ProtoInterface4.field[161] = field166;
+ProtoInterface21.field[144] = field166;
 
 let field167 = browser.currentScene.createNode("field");
-field167.name = "l_middle_proximal_keyValue";
-field167.accessType = "inputOutput";
-field167.type = "MFRotation";
-//no default value
-ProtoInterface4.field[162] = field167;
+field167.name = "l_middle1_changed";
+field167.accessType = "outputOnly";
+field167.type = "SFRotation";
+ProtoInterface21.field[145] = field167;
 
 let field168 = browser.currentScene.createNode("field");
-field168.name = "l_middle_proximal_changed";
-field168.accessType = "outputOnly";
-field168.type = "SFRotation";
-ProtoInterface4.field[163] = field168;
+field168.name = "l_middle2_key";
+field168.accessType = "inputOutput";
+field168.type = "MFFloat";
+//no default value
+ProtoInterface21.field[146] = field168;
 
 let field169 = browser.currentScene.createNode("field");
-field169.name = "l_midproximal_key";
+field169.name = "l_middle2_keyValue";
 field169.accessType = "inputOutput";
-field169.type = "MFFloat";
+field169.type = "MFRotation";
 //no default value
-ProtoInterface4.field[164] = field169;
+ProtoInterface21.field[147] = field169;
 
 let field170 = browser.currentScene.createNode("field");
-field170.name = "l_midproximal_keyValue";
-field170.accessType = "inputOutput";
-field170.type = "MFRotation";
-//no default value
-ProtoInterface4.field[165] = field170;
+field170.name = "l_middle2_changed";
+field170.accessType = "outputOnly";
+field170.type = "SFRotation";
+ProtoInterface21.field[148] = field170;
 
 let field171 = browser.currentScene.createNode("field");
-field171.name = "l_midproximal_changed";
-field171.accessType = "outputOnly";
-field171.type = "SFRotation";
-ProtoInterface4.field[166] = field171;
+field171.name = "l_middle3_key";
+field171.accessType = "inputOutput";
+field171.type = "MFFloat";
+//no default value
+ProtoInterface21.field[149] = field171;
 
 let field172 = browser.currentScene.createNode("field");
-field172.name = "l_midtarsal_key";
+field172.name = "l_middle3_keyValue";
 field172.accessType = "inputOutput";
-field172.type = "MFFloat";
+field172.type = "MFRotation";
 //no default value
-ProtoInterface4.field[167] = field172;
+ProtoInterface21.field[150] = field172;
 
 let field173 = browser.currentScene.createNode("field");
-field173.name = "l_midtarsal_keyValue";
-field173.accessType = "inputOutput";
-field173.type = "MFRotation";
-//no default value
-ProtoInterface4.field[168] = field173;
+field173.name = "l_middle3_changed";
+field173.accessType = "outputOnly";
+field173.type = "SFRotation";
+ProtoInterface21.field[151] = field173;
 
 let field174 = browser.currentScene.createNode("field");
-field174.name = "l_midtarsal_changed";
-field174.accessType = "outputOnly";
-field174.type = "SFRotation";
-ProtoInterface4.field[169] = field174;
+field174.name = "l_middle_distal_key";
+field174.accessType = "inputOutput";
+field174.type = "MFFloat";
+//no default value
+ProtoInterface21.field[152] = field174;
 
 let field175 = browser.currentScene.createNode("field");
-field175.name = "l_pinky0_key";
+field175.name = "l_middle_distal_keyValue";
 field175.accessType = "inputOutput";
-field175.type = "MFFloat";
+field175.type = "MFRotation";
 //no default value
-ProtoInterface4.field[170] = field175;
+ProtoInterface21.field[153] = field175;
 
 let field176 = browser.currentScene.createNode("field");
-field176.name = "l_pinky0_keyValue";
-field176.accessType = "inputOutput";
-field176.type = "MFRotation";
-//no default value
-ProtoInterface4.field[171] = field176;
+field176.name = "l_middle_distal_changed";
+field176.accessType = "outputOnly";
+field176.type = "SFRotation";
+ProtoInterface21.field[154] = field176;
 
 let field177 = browser.currentScene.createNode("field");
-field177.name = "l_pinky0_changed";
-field177.accessType = "outputOnly";
-field177.type = "SFRotation";
-ProtoInterface4.field[172] = field177;
+field177.name = "l_middle_metacarpal_key";
+field177.accessType = "inputOutput";
+field177.type = "MFFloat";
+//no default value
+ProtoInterface21.field[155] = field177;
 
 let field178 = browser.currentScene.createNode("field");
-field178.name = "l_pinky1_key";
+field178.name = "l_middle_metacarpal_keyValue";
 field178.accessType = "inputOutput";
-field178.type = "MFFloat";
+field178.type = "MFRotation";
 //no default value
-ProtoInterface4.field[173] = field178;
+ProtoInterface21.field[156] = field178;
 
 let field179 = browser.currentScene.createNode("field");
-field179.name = "l_pinky1_keyValue";
-field179.accessType = "inputOutput";
-field179.type = "MFRotation";
-//no default value
-ProtoInterface4.field[174] = field179;
+field179.name = "l_middle_metacarpal_changed";
+field179.accessType = "outputOnly";
+field179.type = "SFRotation";
+ProtoInterface21.field[157] = field179;
 
 let field180 = browser.currentScene.createNode("field");
-field180.name = "l_pinky1_changed";
-field180.accessType = "outputOnly";
-field180.type = "SFRotation";
-ProtoInterface4.field[175] = field180;
+field180.name = "l_middle_middle_key";
+field180.accessType = "inputOutput";
+field180.type = "MFFloat";
+//no default value
+ProtoInterface21.field[158] = field180;
 
 let field181 = browser.currentScene.createNode("field");
-field181.name = "l_pinky2_key";
+field181.name = "l_middle_middle_keyValue";
 field181.accessType = "inputOutput";
-field181.type = "MFFloat";
+field181.type = "MFRotation";
 //no default value
-ProtoInterface4.field[176] = field181;
+ProtoInterface21.field[159] = field181;
 
 let field182 = browser.currentScene.createNode("field");
-field182.name = "l_pinky2_keyValue";
-field182.accessType = "inputOutput";
-field182.type = "MFRotation";
-//no default value
-ProtoInterface4.field[177] = field182;
+field182.name = "l_middle_middle_changed";
+field182.accessType = "outputOnly";
+field182.type = "SFRotation";
+ProtoInterface21.field[160] = field182;
 
 let field183 = browser.currentScene.createNode("field");
-field183.name = "l_pinky2_changed";
-field183.accessType = "outputOnly";
-field183.type = "SFRotation";
-ProtoInterface4.field[178] = field183;
+field183.name = "l_middle_proximal_key";
+field183.accessType = "inputOutput";
+field183.type = "MFFloat";
+//no default value
+ProtoInterface21.field[161] = field183;
 
 let field184 = browser.currentScene.createNode("field");
-field184.name = "l_pinky3_key";
+field184.name = "l_middle_proximal_keyValue";
 field184.accessType = "inputOutput";
-field184.type = "MFFloat";
+field184.type = "MFRotation";
 //no default value
-ProtoInterface4.field[179] = field184;
+ProtoInterface21.field[162] = field184;
 
 let field185 = browser.currentScene.createNode("field");
-field185.name = "l_pinky3_keyValue";
-field185.accessType = "inputOutput";
-field185.type = "MFRotation";
-//no default value
-ProtoInterface4.field[180] = field185;
+field185.name = "l_middle_proximal_changed";
+field185.accessType = "outputOnly";
+field185.type = "SFRotation";
+ProtoInterface21.field[163] = field185;
 
 let field186 = browser.currentScene.createNode("field");
-field186.name = "l_pinky3_changed";
-field186.accessType = "outputOnly";
-field186.type = "SFRotation";
-ProtoInterface4.field[181] = field186;
+field186.name = "l_midproximal_key";
+field186.accessType = "inputOutput";
+field186.type = "MFFloat";
+//no default value
+ProtoInterface21.field[164] = field186;
 
 let field187 = browser.currentScene.createNode("field");
-field187.name = "l_pinky_distal_key";
+field187.name = "l_midproximal_keyValue";
 field187.accessType = "inputOutput";
-field187.type = "MFFloat";
+field187.type = "MFRotation";
 //no default value
-ProtoInterface4.field[182] = field187;
+ProtoInterface21.field[165] = field187;
 
 let field188 = browser.currentScene.createNode("field");
-field188.name = "l_pinky_distal_keyValue";
-field188.accessType = "inputOutput";
-field188.type = "MFRotation";
-//no default value
-ProtoInterface4.field[183] = field188;
+field188.name = "l_midproximal_changed";
+field188.accessType = "outputOnly";
+field188.type = "SFRotation";
+ProtoInterface21.field[166] = field188;
 
 let field189 = browser.currentScene.createNode("field");
-field189.name = "l_pinky_distal_changed";
-field189.accessType = "outputOnly";
-field189.type = "SFRotation";
-ProtoInterface4.field[184] = field189;
+field189.name = "l_midtarsal_key";
+field189.accessType = "inputOutput";
+field189.type = "MFFloat";
+//no default value
+ProtoInterface21.field[167] = field189;
 
 let field190 = browser.currentScene.createNode("field");
-field190.name = "l_pinky_metacarpal_key";
+field190.name = "l_midtarsal_keyValue";
 field190.accessType = "inputOutput";
-field190.type = "MFFloat";
+field190.type = "MFRotation";
 //no default value
-ProtoInterface4.field[185] = field190;
+ProtoInterface21.field[168] = field190;
 
 let field191 = browser.currentScene.createNode("field");
-field191.name = "l_pinky_metacarpal_keyValue";
-field191.accessType = "inputOutput";
-field191.type = "MFRotation";
-//no default value
-ProtoInterface4.field[186] = field191;
+field191.name = "l_midtarsal_changed";
+field191.accessType = "outputOnly";
+field191.type = "SFRotation";
+ProtoInterface21.field[169] = field191;
 
 let field192 = browser.currentScene.createNode("field");
-field192.name = "l_pinky_metacarpal_changed";
-field192.accessType = "outputOnly";
-field192.type = "SFRotation";
-ProtoInterface4.field[187] = field192;
+field192.name = "l_pinky0_key";
+field192.accessType = "inputOutput";
+field192.type = "MFFloat";
+//no default value
+ProtoInterface21.field[170] = field192;
 
 let field193 = browser.currentScene.createNode("field");
-field193.name = "l_pinky_middle_key";
+field193.name = "l_pinky0_keyValue";
 field193.accessType = "inputOutput";
-field193.type = "MFFloat";
+field193.type = "MFRotation";
 //no default value
-ProtoInterface4.field[188] = field193;
+ProtoInterface21.field[171] = field193;
 
 let field194 = browser.currentScene.createNode("field");
-field194.name = "l_pinky_middle_keyValue";
-field194.accessType = "inputOutput";
-field194.type = "MFRotation";
-//no default value
-ProtoInterface4.field[189] = field194;
+field194.name = "l_pinky0_changed";
+field194.accessType = "outputOnly";
+field194.type = "SFRotation";
+ProtoInterface21.field[172] = field194;
 
 let field195 = browser.currentScene.createNode("field");
-field195.name = "l_pinky_middle_changed";
-field195.accessType = "outputOnly";
-field195.type = "SFRotation";
-ProtoInterface4.field[190] = field195;
+field195.name = "l_pinky1_key";
+field195.accessType = "inputOutput";
+field195.type = "MFFloat";
+//no default value
+ProtoInterface21.field[173] = field195;
 
 let field196 = browser.currentScene.createNode("field");
-field196.name = "l_pinky_proximal_key";
+field196.name = "l_pinky1_keyValue";
 field196.accessType = "inputOutput";
-field196.type = "MFFloat";
+field196.type = "MFRotation";
 //no default value
-ProtoInterface4.field[191] = field196;
+ProtoInterface21.field[174] = field196;
 
 let field197 = browser.currentScene.createNode("field");
-field197.name = "l_pinky_proximal_keyValue";
-field197.accessType = "inputOutput";
-field197.type = "MFRotation";
-//no default value
-ProtoInterface4.field[192] = field197;
+field197.name = "l_pinky1_changed";
+field197.accessType = "outputOnly";
+field197.type = "SFRotation";
+ProtoInterface21.field[175] = field197;
 
 let field198 = browser.currentScene.createNode("field");
-field198.name = "l_pinky_proximal_changed";
-field198.accessType = "outputOnly";
-field198.type = "SFRotation";
-ProtoInterface4.field[193] = field198;
+field198.name = "l_pinky2_key";
+field198.accessType = "inputOutput";
+field198.type = "MFFloat";
+//no default value
+ProtoInterface21.field[176] = field198;
 
 let field199 = browser.currentScene.createNode("field");
-field199.name = "l_ring0_key";
+field199.name = "l_pinky2_keyValue";
 field199.accessType = "inputOutput";
-field199.type = "MFFloat";
+field199.type = "MFRotation";
 //no default value
-ProtoInterface4.field[194] = field199;
+ProtoInterface21.field[177] = field199;
 
 let field200 = browser.currentScene.createNode("field");
-field200.name = "l_ring0_keyValue";
-field200.accessType = "inputOutput";
-field200.type = "MFRotation";
-//no default value
-ProtoInterface4.field[195] = field200;
+field200.name = "l_pinky2_changed";
+field200.accessType = "outputOnly";
+field200.type = "SFRotation";
+ProtoInterface21.field[178] = field200;
 
 let field201 = browser.currentScene.createNode("field");
-field201.name = "l_ring0_changed";
-field201.accessType = "outputOnly";
-field201.type = "SFRotation";
-ProtoInterface4.field[196] = field201;
+field201.name = "l_pinky3_key";
+field201.accessType = "inputOutput";
+field201.type = "MFFloat";
+//no default value
+ProtoInterface21.field[179] = field201;
 
 let field202 = browser.currentScene.createNode("field");
-field202.name = "l_ring1_key";
+field202.name = "l_pinky3_keyValue";
 field202.accessType = "inputOutput";
-field202.type = "MFFloat";
+field202.type = "MFRotation";
 //no default value
-ProtoInterface4.field[197] = field202;
+ProtoInterface21.field[180] = field202;
 
 let field203 = browser.currentScene.createNode("field");
-field203.name = "l_ring1_keyValue";
-field203.accessType = "inputOutput";
-field203.type = "MFRotation";
-//no default value
-ProtoInterface4.field[198] = field203;
+field203.name = "l_pinky3_changed";
+field203.accessType = "outputOnly";
+field203.type = "SFRotation";
+ProtoInterface21.field[181] = field203;
 
 let field204 = browser.currentScene.createNode("field");
-field204.name = "l_ring1_changed";
-field204.accessType = "outputOnly";
-field204.type = "SFRotation";
-ProtoInterface4.field[199] = field204;
+field204.name = "l_pinky_distal_key";
+field204.accessType = "inputOutput";
+field204.type = "MFFloat";
+//no default value
+ProtoInterface21.field[182] = field204;
 
 let field205 = browser.currentScene.createNode("field");
-field205.name = "l_ring2_key";
+field205.name = "l_pinky_distal_keyValue";
 field205.accessType = "inputOutput";
-field205.type = "MFFloat";
+field205.type = "MFRotation";
 //no default value
-ProtoInterface4.field[200] = field205;
+ProtoInterface21.field[183] = field205;
 
 let field206 = browser.currentScene.createNode("field");
-field206.name = "l_ring2_keyValue";
-field206.accessType = "inputOutput";
-field206.type = "MFRotation";
-//no default value
-ProtoInterface4.field[201] = field206;
+field206.name = "l_pinky_distal_changed";
+field206.accessType = "outputOnly";
+field206.type = "SFRotation";
+ProtoInterface21.field[184] = field206;
 
 let field207 = browser.currentScene.createNode("field");
-field207.name = "l_ring2_changed";
-field207.accessType = "outputOnly";
-field207.type = "SFRotation";
-ProtoInterface4.field[202] = field207;
+field207.name = "l_pinky_metacarpal_key";
+field207.accessType = "inputOutput";
+field207.type = "MFFloat";
+//no default value
+ProtoInterface21.field[185] = field207;
 
 let field208 = browser.currentScene.createNode("field");
-field208.name = "l_ring3_key";
+field208.name = "l_pinky_metacarpal_keyValue";
 field208.accessType = "inputOutput";
-field208.type = "MFFloat";
+field208.type = "MFRotation";
 //no default value
-ProtoInterface4.field[203] = field208;
+ProtoInterface21.field[186] = field208;
 
 let field209 = browser.currentScene.createNode("field");
-field209.name = "l_ring3_keyValue";
-field209.accessType = "inputOutput";
-field209.type = "MFRotation";
-//no default value
-ProtoInterface4.field[204] = field209;
+field209.name = "l_pinky_metacarpal_changed";
+field209.accessType = "outputOnly";
+field209.type = "SFRotation";
+ProtoInterface21.field[187] = field209;
 
 let field210 = browser.currentScene.createNode("field");
-field210.name = "l_ring3_changed";
-field210.accessType = "outputOnly";
-field210.type = "SFRotation";
-ProtoInterface4.field[205] = field210;
+field210.name = "l_pinky_middle_key";
+field210.accessType = "inputOutput";
+field210.type = "MFFloat";
+//no default value
+ProtoInterface21.field[188] = field210;
 
 let field211 = browser.currentScene.createNode("field");
-field211.name = "l_ring_distal_key";
+field211.name = "l_pinky_middle_keyValue";
 field211.accessType = "inputOutput";
-field211.type = "MFFloat";
+field211.type = "MFRotation";
 //no default value
-ProtoInterface4.field[206] = field211;
+ProtoInterface21.field[189] = field211;
 
 let field212 = browser.currentScene.createNode("field");
-field212.name = "l_ring_distal_keyValue";
-field212.accessType = "inputOutput";
-field212.type = "MFRotation";
-//no default value
-ProtoInterface4.field[207] = field212;
+field212.name = "l_pinky_middle_changed";
+field212.accessType = "outputOnly";
+field212.type = "SFRotation";
+ProtoInterface21.field[190] = field212;
 
 let field213 = browser.currentScene.createNode("field");
-field213.name = "l_ring_distal_changed";
-field213.accessType = "outputOnly";
-field213.type = "SFRotation";
-ProtoInterface4.field[208] = field213;
+field213.name = "l_pinky_proximal_key";
+field213.accessType = "inputOutput";
+field213.type = "MFFloat";
+//no default value
+ProtoInterface21.field[191] = field213;
 
 let field214 = browser.currentScene.createNode("field");
-field214.name = "l_ring_metacarpal_key";
+field214.name = "l_pinky_proximal_keyValue";
 field214.accessType = "inputOutput";
-field214.type = "MFFloat";
+field214.type = "MFRotation";
 //no default value
-ProtoInterface4.field[209] = field214;
+ProtoInterface21.field[192] = field214;
 
 let field215 = browser.currentScene.createNode("field");
-field215.name = "l_ring_metacarpal_keyValue";
-field215.accessType = "inputOutput";
-field215.type = "MFRotation";
-//no default value
-ProtoInterface4.field[210] = field215;
+field215.name = "l_pinky_proximal_changed";
+field215.accessType = "outputOnly";
+field215.type = "SFRotation";
+ProtoInterface21.field[193] = field215;
 
 let field216 = browser.currentScene.createNode("field");
-field216.name = "l_ring_metacarpal_changed";
-field216.accessType = "outputOnly";
-field216.type = "SFRotation";
-ProtoInterface4.field[211] = field216;
+field216.name = "l_ring0_key";
+field216.accessType = "inputOutput";
+field216.type = "MFFloat";
+//no default value
+ProtoInterface21.field[194] = field216;
 
 let field217 = browser.currentScene.createNode("field");
-field217.name = "l_ring_middle_key";
+field217.name = "l_ring0_keyValue";
 field217.accessType = "inputOutput";
-field217.type = "MFFloat";
+field217.type = "MFRotation";
 //no default value
-ProtoInterface4.field[212] = field217;
+ProtoInterface21.field[195] = field217;
 
 let field218 = browser.currentScene.createNode("field");
-field218.name = "l_ring_middle_keyValue";
-field218.accessType = "inputOutput";
-field218.type = "MFRotation";
-//no default value
-ProtoInterface4.field[213] = field218;
+field218.name = "l_ring0_changed";
+field218.accessType = "outputOnly";
+field218.type = "SFRotation";
+ProtoInterface21.field[196] = field218;
 
 let field219 = browser.currentScene.createNode("field");
-field219.name = "l_ring_middle_changed";
-field219.accessType = "outputOnly";
-field219.type = "SFRotation";
-ProtoInterface4.field[214] = field219;
+field219.name = "l_ring1_key";
+field219.accessType = "inputOutput";
+field219.type = "MFFloat";
+//no default value
+ProtoInterface21.field[197] = field219;
 
 let field220 = browser.currentScene.createNode("field");
-field220.name = "l_ring_proximal_key";
+field220.name = "l_ring1_keyValue";
 field220.accessType = "inputOutput";
-field220.type = "MFFloat";
+field220.type = "MFRotation";
 //no default value
-ProtoInterface4.field[215] = field220;
+ProtoInterface21.field[198] = field220;
 
 let field221 = browser.currentScene.createNode("field");
-field221.name = "l_ring_proximal_keyValue";
-field221.accessType = "inputOutput";
-field221.type = "MFRotation";
-//no default value
-ProtoInterface4.field[216] = field221;
+field221.name = "l_ring1_changed";
+field221.accessType = "outputOnly";
+field221.type = "SFRotation";
+ProtoInterface21.field[199] = field221;
 
 let field222 = browser.currentScene.createNode("field");
-field222.name = "l_ring_proximal_changed";
-field222.accessType = "outputOnly";
-field222.type = "SFRotation";
-ProtoInterface4.field[217] = field222;
+field222.name = "l_ring2_key";
+field222.accessType = "inputOutput";
+field222.type = "MFFloat";
+//no default value
+ProtoInterface21.field[200] = field222;
 
 let field223 = browser.currentScene.createNode("field");
-field223.name = "l_scapula_key";
+field223.name = "l_ring2_keyValue";
 field223.accessType = "inputOutput";
-field223.type = "MFFloat";
+field223.type = "MFRotation";
 //no default value
-ProtoInterface4.field[218] = field223;
+ProtoInterface21.field[201] = field223;
 
 let field224 = browser.currentScene.createNode("field");
-field224.name = "l_scapula_keyValue";
-field224.accessType = "inputOutput";
-field224.type = "MFRotation";
-//no default value
-ProtoInterface4.field[219] = field224;
+field224.name = "l_ring2_changed";
+field224.accessType = "outputOnly";
+field224.type = "SFRotation";
+ProtoInterface21.field[202] = field224;
 
 let field225 = browser.currentScene.createNode("field");
-field225.name = "l_scapula_changed";
-field225.accessType = "outputOnly";
-field225.type = "SFRotation";
-ProtoInterface4.field[220] = field225;
+field225.name = "l_ring3_key";
+field225.accessType = "inputOutput";
+field225.type = "MFFloat";
+//no default value
+ProtoInterface21.field[203] = field225;
 
 let field226 = browser.currentScene.createNode("field");
-field226.name = "l_shoulder_key";
+field226.name = "l_ring3_keyValue";
 field226.accessType = "inputOutput";
-field226.type = "MFFloat";
+field226.type = "MFRotation";
 //no default value
-ProtoInterface4.field[221] = field226;
+ProtoInterface21.field[204] = field226;
 
 let field227 = browser.currentScene.createNode("field");
-field227.name = "l_shoulder_keyValue";
-field227.accessType = "inputOutput";
-field227.type = "MFRotation";
-//no default value
-ProtoInterface4.field[222] = field227;
+field227.name = "l_ring3_changed";
+field227.accessType = "outputOnly";
+field227.type = "SFRotation";
+ProtoInterface21.field[205] = field227;
 
 let field228 = browser.currentScene.createNode("field");
-field228.name = "l_shoulder_changed";
-field228.accessType = "outputOnly";
-field228.type = "SFRotation";
-ProtoInterface4.field[223] = field228;
+field228.name = "l_ring_distal_key";
+field228.accessType = "inputOutput";
+field228.type = "MFFloat";
+//no default value
+ProtoInterface21.field[206] = field228;
 
 let field229 = browser.currentScene.createNode("field");
-field229.name = "l_sternoclavicular_key";
+field229.name = "l_ring_distal_keyValue";
 field229.accessType = "inputOutput";
-field229.type = "MFFloat";
+field229.type = "MFRotation";
 //no default value
-ProtoInterface4.field[224] = field229;
+ProtoInterface21.field[207] = field229;
 
 let field230 = browser.currentScene.createNode("field");
-field230.name = "l_sternoclavicular_keyValue";
-field230.accessType = "inputOutput";
-field230.type = "MFRotation";
-//no default value
-ProtoInterface4.field[225] = field230;
+field230.name = "l_ring_distal_changed";
+field230.accessType = "outputOnly";
+field230.type = "SFRotation";
+ProtoInterface21.field[208] = field230;
 
 let field231 = browser.currentScene.createNode("field");
-field231.name = "l_sternoclavicular_changed";
-field231.accessType = "outputOnly";
-field231.type = "SFRotation";
-ProtoInterface4.field[226] = field231;
+field231.name = "l_ring_metacarpal_key";
+field231.accessType = "inputOutput";
+field231.type = "MFFloat";
+//no default value
+ProtoInterface21.field[209] = field231;
 
 let field232 = browser.currentScene.createNode("field");
-field232.name = "l_subtalar_key";
+field232.name = "l_ring_metacarpal_keyValue";
 field232.accessType = "inputOutput";
-field232.type = "MFFloat";
+field232.type = "MFRotation";
 //no default value
-ProtoInterface4.field[227] = field232;
+ProtoInterface21.field[210] = field232;
 
 let field233 = browser.currentScene.createNode("field");
-field233.name = "l_subtalar_keyValue";
-field233.accessType = "inputOutput";
-field233.type = "MFRotation";
-//no default value
-ProtoInterface4.field[228] = field233;
+field233.name = "l_ring_metacarpal_changed";
+field233.accessType = "outputOnly";
+field233.type = "SFRotation";
+ProtoInterface21.field[211] = field233;
 
 let field234 = browser.currentScene.createNode("field");
-field234.name = "l_subtalar_changed";
-field234.accessType = "outputOnly";
-field234.type = "SFRotation";
-ProtoInterface4.field[229] = field234;
+field234.name = "l_ring_middle_key";
+field234.accessType = "inputOutput";
+field234.type = "MFFloat";
+//no default value
+ProtoInterface21.field[212] = field234;
 
 let field235 = browser.currentScene.createNode("field");
-field235.name = "l_thigh_key";
+field235.name = "l_ring_middle_keyValue";
 field235.accessType = "inputOutput";
-field235.type = "MFFloat";
+field235.type = "MFRotation";
 //no default value
-ProtoInterface4.field[230] = field235;
+ProtoInterface21.field[213] = field235;
 
 let field236 = browser.currentScene.createNode("field");
-field236.name = "l_thigh_keyValue";
-field236.accessType = "inputOutput";
-field236.type = "MFRotation";
-//no default value
-ProtoInterface4.field[231] = field236;
+field236.name = "l_ring_middle_changed";
+field236.accessType = "outputOnly";
+field236.type = "SFRotation";
+ProtoInterface21.field[214] = field236;
 
 let field237 = browser.currentScene.createNode("field");
-field237.name = "l_thigh_changed";
-field237.accessType = "outputOnly";
-field237.type = "SFRotation";
-ProtoInterface4.field[232] = field237;
+field237.name = "l_ring_proximal_key";
+field237.accessType = "inputOutput";
+field237.type = "MFFloat";
+//no default value
+ProtoInterface21.field[215] = field237;
 
 let field238 = browser.currentScene.createNode("field");
-field238.name = "l_thumb1_key";
+field238.name = "l_ring_proximal_keyValue";
 field238.accessType = "inputOutput";
-field238.type = "MFFloat";
+field238.type = "MFRotation";
 //no default value
-ProtoInterface4.field[233] = field238;
+ProtoInterface21.field[216] = field238;
 
 let field239 = browser.currentScene.createNode("field");
-field239.name = "l_thumb1_keyValue";
-field239.accessType = "inputOutput";
-field239.type = "MFRotation";
-//no default value
-ProtoInterface4.field[234] = field239;
+field239.name = "l_ring_proximal_changed";
+field239.accessType = "outputOnly";
+field239.type = "SFRotation";
+ProtoInterface21.field[217] = field239;
 
 let field240 = browser.currentScene.createNode("field");
-field240.name = "l_thumb1_changed";
-field240.accessType = "outputOnly";
-field240.type = "SFRotation";
-ProtoInterface4.field[235] = field240;
+field240.name = "l_scapula_key";
+field240.accessType = "inputOutput";
+field240.type = "MFFloat";
+//no default value
+ProtoInterface21.field[218] = field240;
 
 let field241 = browser.currentScene.createNode("field");
-field241.name = "l_thumb2_key";
+field241.name = "l_scapula_keyValue";
 field241.accessType = "inputOutput";
-field241.type = "MFFloat";
+field241.type = "MFRotation";
 //no default value
-ProtoInterface4.field[236] = field241;
+ProtoInterface21.field[219] = field241;
 
 let field242 = browser.currentScene.createNode("field");
-field242.name = "l_thumb2_keyValue";
-field242.accessType = "inputOutput";
-field242.type = "MFRotation";
-//no default value
-ProtoInterface4.field[237] = field242;
+field242.name = "l_scapula_changed";
+field242.accessType = "outputOnly";
+field242.type = "SFRotation";
+ProtoInterface21.field[220] = field242;
 
 let field243 = browser.currentScene.createNode("field");
-field243.name = "l_thumb2_changed";
-field243.accessType = "outputOnly";
-field243.type = "SFRotation";
-ProtoInterface4.field[238] = field243;
+field243.name = "l_shoulder_key";
+field243.accessType = "inputOutput";
+field243.type = "MFFloat";
+//no default value
+ProtoInterface21.field[221] = field243;
 
 let field244 = browser.currentScene.createNode("field");
-field244.name = "l_thumb3_key";
+field244.name = "l_shoulder_keyValue";
 field244.accessType = "inputOutput";
-field244.type = "MFFloat";
+field244.type = "MFRotation";
 //no default value
-ProtoInterface4.field[239] = field244;
+ProtoInterface21.field[222] = field244;
 
 let field245 = browser.currentScene.createNode("field");
-field245.name = "l_thumb3_keyValue";
-field245.accessType = "inputOutput";
-field245.type = "MFRotation";
-//no default value
-ProtoInterface4.field[240] = field245;
+field245.name = "l_shoulder_changed";
+field245.accessType = "outputOnly";
+field245.type = "SFRotation";
+ProtoInterface21.field[223] = field245;
 
 let field246 = browser.currentScene.createNode("field");
-field246.name = "l_thumb3_changed";
-field246.accessType = "outputOnly";
-field246.type = "SFRotation";
-ProtoInterface4.field[241] = field246;
+field246.name = "l_sternoclavicular_key";
+field246.accessType = "inputOutput";
+field246.type = "MFFloat";
+//no default value
+ProtoInterface21.field[224] = field246;
 
 let field247 = browser.currentScene.createNode("field");
-field247.name = "l_thumb_distal_key";
+field247.name = "l_sternoclavicular_keyValue";
 field247.accessType = "inputOutput";
-field247.type = "MFFloat";
+field247.type = "MFRotation";
 //no default value
-ProtoInterface4.field[242] = field247;
+ProtoInterface21.field[225] = field247;
 
 let field248 = browser.currentScene.createNode("field");
-field248.name = "l_thumb_distal_keyValue";
-field248.accessType = "inputOutput";
-field248.type = "MFRotation";
-//no default value
-ProtoInterface4.field[243] = field248;
+field248.name = "l_sternoclavicular_changed";
+field248.accessType = "outputOnly";
+field248.type = "SFRotation";
+ProtoInterface21.field[226] = field248;
 
 let field249 = browser.currentScene.createNode("field");
-field249.name = "l_thumb_distal_changed";
-field249.accessType = "outputOnly";
-field249.type = "SFRotation";
-ProtoInterface4.field[244] = field249;
+field249.name = "l_subtalar_key";
+field249.accessType = "inputOutput";
+field249.type = "MFFloat";
+//no default value
+ProtoInterface21.field[227] = field249;
 
 let field250 = browser.currentScene.createNode("field");
-field250.name = "l_thumb_metacarpal_key";
+field250.name = "l_subtalar_keyValue";
 field250.accessType = "inputOutput";
-field250.type = "MFFloat";
+field250.type = "MFRotation";
 //no default value
-ProtoInterface4.field[245] = field250;
+ProtoInterface21.field[228] = field250;
 
 let field251 = browser.currentScene.createNode("field");
-field251.name = "l_thumb_metacarpal_keyValue";
-field251.accessType = "inputOutput";
-field251.type = "MFRotation";
-//no default value
-ProtoInterface4.field[246] = field251;
+field251.name = "l_subtalar_changed";
+field251.accessType = "outputOnly";
+field251.type = "SFRotation";
+ProtoInterface21.field[229] = field251;
 
 let field252 = browser.currentScene.createNode("field");
-field252.name = "l_thumb_metacarpal_changed";
-field252.accessType = "outputOnly";
-field252.type = "SFRotation";
-ProtoInterface4.field[247] = field252;
+field252.name = "l_thigh_key";
+field252.accessType = "inputOutput";
+field252.type = "MFFloat";
+//no default value
+ProtoInterface21.field[230] = field252;
 
 let field253 = browser.currentScene.createNode("field");
-field253.name = "l_thumb_proximal_key";
+field253.name = "l_thigh_keyValue";
 field253.accessType = "inputOutput";
-field253.type = "MFFloat";
+field253.type = "MFRotation";
 //no default value
-ProtoInterface4.field[248] = field253;
+ProtoInterface21.field[231] = field253;
 
 let field254 = browser.currentScene.createNode("field");
-field254.name = "l_thumb_proximal_keyValue";
-field254.accessType = "inputOutput";
-field254.type = "MFRotation";
-//no default value
-ProtoInterface4.field[249] = field254;
+field254.name = "l_thigh_changed";
+field254.accessType = "outputOnly";
+field254.type = "SFRotation";
+ProtoInterface21.field[232] = field254;
 
 let field255 = browser.currentScene.createNode("field");
-field255.name = "l_thumb_proximal_changed";
-field255.accessType = "outputOnly";
-field255.type = "SFRotation";
-ProtoInterface4.field[250] = field255;
+field255.name = "l_thumb1_key";
+field255.accessType = "inputOutput";
+field255.type = "MFFloat";
+//no default value
+ProtoInterface21.field[233] = field255;
 
 let field256 = browser.currentScene.createNode("field");
-field256.name = "l_upperarm_key";
+field256.name = "l_thumb1_keyValue";
 field256.accessType = "inputOutput";
-field256.type = "MFFloat";
+field256.type = "MFRotation";
 //no default value
-ProtoInterface4.field[251] = field256;
+ProtoInterface21.field[234] = field256;
 
 let field257 = browser.currentScene.createNode("field");
-field257.name = "l_upperarm_keyValue";
-field257.accessType = "inputOutput";
-field257.type = "MFRotation";
-//no default value
-ProtoInterface4.field[252] = field257;
+field257.name = "l_thumb1_changed";
+field257.accessType = "outputOnly";
+field257.type = "SFRotation";
+ProtoInterface21.field[235] = field257;
 
 let field258 = browser.currentScene.createNode("field");
-field258.name = "l_upperarm_changed";
-field258.accessType = "outputOnly";
-field258.type = "SFRotation";
-ProtoInterface4.field[253] = field258;
+field258.name = "l_thumb2_key";
+field258.accessType = "inputOutput";
+field258.type = "MFFloat";
+//no default value
+ProtoInterface21.field[236] = field258;
 
 let field259 = browser.currentScene.createNode("field");
-field259.name = "l_wrist_key";
+field259.name = "l_thumb2_keyValue";
 field259.accessType = "inputOutput";
-field259.type = "MFFloat";
+field259.type = "MFRotation";
 //no default value
-ProtoInterface4.field[254] = field259;
+ProtoInterface21.field[237] = field259;
 
 let field260 = browser.currentScene.createNode("field");
-field260.name = "l_wrist_keyValue";
-field260.accessType = "inputOutput";
-field260.type = "MFRotation";
-//no default value
-ProtoInterface4.field[255] = field260;
+field260.name = "l_thumb2_changed";
+field260.accessType = "outputOnly";
+field260.type = "SFRotation";
+ProtoInterface21.field[238] = field260;
 
 let field261 = browser.currentScene.createNode("field");
-field261.name = "l_wrist_changed";
-field261.accessType = "outputOnly";
-field261.type = "SFRotation";
-ProtoInterface4.field[256] = field261;
+field261.name = "l_thumb3_key";
+field261.accessType = "inputOutput";
+field261.type = "MFFloat";
+//no default value
+ProtoInterface21.field[239] = field261;
 
 let field262 = browser.currentScene.createNode("field");
-field262.name = "pelvis_key";
+field262.name = "l_thumb3_keyValue";
 field262.accessType = "inputOutput";
-field262.type = "MFFloat";
+field262.type = "MFRotation";
 //no default value
-ProtoInterface4.field[257] = field262;
+ProtoInterface21.field[240] = field262;
 
 let field263 = browser.currentScene.createNode("field");
-field263.name = "pelvis_keyValue";
-field263.accessType = "inputOutput";
-field263.type = "MFRotation";
-//no default value
-ProtoInterface4.field[258] = field263;
+field263.name = "l_thumb3_changed";
+field263.accessType = "outputOnly";
+field263.type = "SFRotation";
+ProtoInterface21.field[241] = field263;
 
 let field264 = browser.currentScene.createNode("field");
-field264.name = "pelvis_changed";
-field264.accessType = "outputOnly";
-field264.type = "SFRotation";
-ProtoInterface4.field[259] = field264;
+field264.name = "l_thumb_distal_key";
+field264.accessType = "inputOutput";
+field264.type = "MFFloat";
+//no default value
+ProtoInterface21.field[242] = field264;
 
 let field265 = browser.currentScene.createNode("field");
-field265.name = "r_acromioclavicular_key";
+field265.name = "l_thumb_distal_keyValue";
 field265.accessType = "inputOutput";
-field265.type = "MFFloat";
+field265.type = "MFRotation";
 //no default value
-ProtoInterface4.field[260] = field265;
+ProtoInterface21.field[243] = field265;
 
 let field266 = browser.currentScene.createNode("field");
-field266.name = "r_acromioclavicular_keyValue";
-field266.accessType = "inputOutput";
-field266.type = "MFRotation";
-//no default value
-ProtoInterface4.field[261] = field266;
+field266.name = "l_thumb_distal_changed";
+field266.accessType = "outputOnly";
+field266.type = "SFRotation";
+ProtoInterface21.field[244] = field266;
 
 let field267 = browser.currentScene.createNode("field");
-field267.name = "r_acromioclavicular_changed";
-field267.accessType = "outputOnly";
-field267.type = "SFRotation";
-ProtoInterface4.field[262] = field267;
+field267.name = "l_thumb_metacarpal_key";
+field267.accessType = "inputOutput";
+field267.type = "MFFloat";
+//no default value
+ProtoInterface21.field[245] = field267;
 
 let field268 = browser.currentScene.createNode("field");
-field268.name = "r_ankle_key";
+field268.name = "l_thumb_metacarpal_keyValue";
 field268.accessType = "inputOutput";
-field268.type = "MFFloat";
+field268.type = "MFRotation";
 //no default value
-ProtoInterface4.field[263] = field268;
+ProtoInterface21.field[246] = field268;
 
 let field269 = browser.currentScene.createNode("field");
-field269.name = "r_ankle_keyValue";
-field269.accessType = "inputOutput";
-field269.type = "MFRotation";
-//no default value
-ProtoInterface4.field[264] = field269;
+field269.name = "l_thumb_metacarpal_changed";
+field269.accessType = "outputOnly";
+field269.type = "SFRotation";
+ProtoInterface21.field[247] = field269;
 
 let field270 = browser.currentScene.createNode("field");
-field270.name = "r_ankle_changed";
-field270.accessType = "outputOnly";
-field270.type = "SFRotation";
-ProtoInterface4.field[265] = field270;
+field270.name = "l_thumb_proximal_key";
+field270.accessType = "inputOutput";
+field270.type = "MFFloat";
+//no default value
+ProtoInterface21.field[248] = field270;
 
 let field271 = browser.currentScene.createNode("field");
-field271.name = "r_calf_key";
+field271.name = "l_thumb_proximal_keyValue";
 field271.accessType = "inputOutput";
-field271.type = "MFFloat";
+field271.type = "MFRotation";
 //no default value
-ProtoInterface4.field[266] = field271;
+ProtoInterface21.field[249] = field271;
 
 let field272 = browser.currentScene.createNode("field");
-field272.name = "r_calf_keyValue";
-field272.accessType = "inputOutput";
-field272.type = "MFRotation";
-//no default value
-ProtoInterface4.field[267] = field272;
+field272.name = "l_thumb_proximal_changed";
+field272.accessType = "outputOnly";
+field272.type = "SFRotation";
+ProtoInterface21.field[250] = field272;
 
 let field273 = browser.currentScene.createNode("field");
-field273.name = "r_calf_changed";
-field273.accessType = "outputOnly";
-field273.type = "SFRotation";
-ProtoInterface4.field[268] = field273;
+field273.name = "l_upperarm_key";
+field273.accessType = "inputOutput";
+field273.type = "MFFloat";
+//no default value
+ProtoInterface21.field[251] = field273;
 
 let field274 = browser.currentScene.createNode("field");
-field274.name = "r_clavicle_key";
+field274.name = "l_upperarm_keyValue";
 field274.accessType = "inputOutput";
-field274.type = "MFFloat";
+field274.type = "MFRotation";
 //no default value
-ProtoInterface4.field[269] = field274;
+ProtoInterface21.field[252] = field274;
 
 let field275 = browser.currentScene.createNode("field");
-field275.name = "r_clavicle_keyValue";
-field275.accessType = "inputOutput";
-field275.type = "MFRotation";
-//no default value
-ProtoInterface4.field[270] = field275;
+field275.name = "l_upperarm_changed";
+field275.accessType = "outputOnly";
+field275.type = "SFRotation";
+ProtoInterface21.field[253] = field275;
 
 let field276 = browser.currentScene.createNode("field");
-field276.name = "r_clavicle_changed";
-field276.accessType = "outputOnly";
-field276.type = "SFRotation";
-ProtoInterface4.field[271] = field276;
+field276.name = "l_wrist_key";
+field276.accessType = "inputOutput";
+field276.type = "MFFloat";
+//no default value
+ProtoInterface21.field[254] = field276;
 
 let field277 = browser.currentScene.createNode("field");
-field277.name = "r_elbow_key";
+field277.name = "l_wrist_keyValue";
 field277.accessType = "inputOutput";
-field277.type = "MFFloat";
+field277.type = "MFRotation";
 //no default value
-ProtoInterface4.field[272] = field277;
+ProtoInterface21.field[255] = field277;
 
 let field278 = browser.currentScene.createNode("field");
-field278.name = "r_elbow_keyValue";
-field278.accessType = "inputOutput";
-field278.type = "MFRotation";
-//no default value
-ProtoInterface4.field[273] = field278;
+field278.name = "l_wrist_changed";
+field278.accessType = "outputOnly";
+field278.type = "SFRotation";
+ProtoInterface21.field[256] = field278;
 
 let field279 = browser.currentScene.createNode("field");
-field279.name = "r_elbow_changed";
-field279.accessType = "outputOnly";
-field279.type = "SFRotation";
-ProtoInterface4.field[274] = field279;
+field279.name = "pelvis_key";
+field279.accessType = "inputOutput";
+field279.type = "MFFloat";
+//no default value
+ProtoInterface21.field[257] = field279;
 
 let field280 = browser.currentScene.createNode("field");
-field280.name = "r_eyeball_key";
+field280.name = "pelvis_keyValue";
 field280.accessType = "inputOutput";
-field280.type = "MFFloat";
+field280.type = "MFRotation";
 //no default value
-ProtoInterface4.field[275] = field280;
+ProtoInterface21.field[258] = field280;
 
 let field281 = browser.currentScene.createNode("field");
-field281.name = "r_eyeball_keyValue";
-field281.accessType = "inputOutput";
-field281.type = "MFRotation";
-//no default value
-ProtoInterface4.field[276] = field281;
+field281.name = "pelvis_changed";
+field281.accessType = "outputOnly";
+field281.type = "SFRotation";
+ProtoInterface21.field[259] = field281;
 
 let field282 = browser.currentScene.createNode("field");
-field282.name = "r_eyeball_changed";
-field282.accessType = "outputOnly";
-field282.type = "SFRotation";
-ProtoInterface4.field[277] = field282;
+field282.name = "r_acromioclavicular_key";
+field282.accessType = "inputOutput";
+field282.type = "MFFloat";
+//no default value
+ProtoInterface21.field[260] = field282;
 
 let field283 = browser.currentScene.createNode("field");
-field283.name = "r_eyeball_joint_key";
+field283.name = "r_acromioclavicular_keyValue";
 field283.accessType = "inputOutput";
-field283.type = "MFFloat";
+field283.type = "MFRotation";
 //no default value
-ProtoInterface4.field[278] = field283;
+ProtoInterface21.field[261] = field283;
 
 let field284 = browser.currentScene.createNode("field");
-field284.name = "r_eyeball_joint_keyValue";
-field284.accessType = "inputOutput";
-field284.type = "MFRotation";
-//no default value
-ProtoInterface4.field[279] = field284;
+field284.name = "r_acromioclavicular_changed";
+field284.accessType = "outputOnly";
+field284.type = "SFRotation";
+ProtoInterface21.field[262] = field284;
 
 let field285 = browser.currentScene.createNode("field");
-field285.name = "r_eyeball_joint_changed";
-field285.accessType = "outputOnly";
-field285.type = "SFRotation";
-ProtoInterface4.field[280] = field285;
+field285.name = "r_ankle_key";
+field285.accessType = "inputOutput";
+field285.type = "MFFloat";
+//no default value
+ProtoInterface21.field[263] = field285;
 
 let field286 = browser.currentScene.createNode("field");
-field286.name = "r_eyebrow_key";
+field286.name = "r_ankle_keyValue";
 field286.accessType = "inputOutput";
-field286.type = "MFFloat";
+field286.type = "MFRotation";
 //no default value
-ProtoInterface4.field[281] = field286;
+ProtoInterface21.field[264] = field286;
 
 let field287 = browser.currentScene.createNode("field");
-field287.name = "r_eyebrow_keyValue";
-field287.accessType = "inputOutput";
-field287.type = "MFRotation";
-//no default value
-ProtoInterface4.field[282] = field287;
+field287.name = "r_ankle_changed";
+field287.accessType = "outputOnly";
+field287.type = "SFRotation";
+ProtoInterface21.field[265] = field287;
 
 let field288 = browser.currentScene.createNode("field");
-field288.name = "r_eyebrow_changed";
-field288.accessType = "outputOnly";
-field288.type = "SFRotation";
-ProtoInterface4.field[283] = field288;
+field288.name = "r_calf_key";
+field288.accessType = "inputOutput";
+field288.type = "MFFloat";
+//no default value
+ProtoInterface21.field[266] = field288;
 
 let field289 = browser.currentScene.createNode("field");
-field289.name = "r_eyebrow_joint_key";
+field289.name = "r_calf_keyValue";
 field289.accessType = "inputOutput";
-field289.type = "MFFloat";
+field289.type = "MFRotation";
 //no default value
-ProtoInterface4.field[284] = field289;
+ProtoInterface21.field[267] = field289;
 
 let field290 = browser.currentScene.createNode("field");
-field290.name = "r_eyebrow_joint_keyValue";
-field290.accessType = "inputOutput";
-field290.type = "MFRotation";
-//no default value
-ProtoInterface4.field[285] = field290;
+field290.name = "r_calf_changed";
+field290.accessType = "outputOnly";
+field290.type = "SFRotation";
+ProtoInterface21.field[268] = field290;
 
 let field291 = browser.currentScene.createNode("field");
-field291.name = "r_eyebrow_joint_changed";
-field291.accessType = "outputOnly";
-field291.type = "SFRotation";
-ProtoInterface4.field[286] = field291;
+field291.name = "r_clavicle_key";
+field291.accessType = "inputOutput";
+field291.type = "MFFloat";
+//no default value
+ProtoInterface21.field[269] = field291;
 
 let field292 = browser.currentScene.createNode("field");
-field292.name = "r_eyelid_key";
+field292.name = "r_clavicle_keyValue";
 field292.accessType = "inputOutput";
-field292.type = "MFFloat";
+field292.type = "MFRotation";
 //no default value
-ProtoInterface4.field[287] = field292;
+ProtoInterface21.field[270] = field292;
 
 let field293 = browser.currentScene.createNode("field");
-field293.name = "r_eyelid_keyValue";
-field293.accessType = "inputOutput";
-field293.type = "MFRotation";
-//no default value
-ProtoInterface4.field[288] = field293;
+field293.name = "r_clavicle_changed";
+field293.accessType = "outputOnly";
+field293.type = "SFRotation";
+ProtoInterface21.field[271] = field293;
 
 let field294 = browser.currentScene.createNode("field");
-field294.name = "r_eyelid_changed";
-field294.accessType = "outputOnly";
-field294.type = "SFRotation";
-ProtoInterface4.field[289] = field294;
+field294.name = "r_elbow_key";
+field294.accessType = "inputOutput";
+field294.type = "MFFloat";
+//no default value
+ProtoInterface21.field[272] = field294;
 
 let field295 = browser.currentScene.createNode("field");
-field295.name = "r_eyelid_joint_key";
+field295.name = "r_elbow_keyValue";
 field295.accessType = "inputOutput";
-field295.type = "MFFloat";
+field295.type = "MFRotation";
 //no default value
-ProtoInterface4.field[290] = field295;
+ProtoInterface21.field[273] = field295;
 
 let field296 = browser.currentScene.createNode("field");
-field296.name = "r_eyelid_joint_keyValue";
-field296.accessType = "inputOutput";
-field296.type = "MFRotation";
-//no default value
-ProtoInterface4.field[291] = field296;
+field296.name = "r_elbow_changed";
+field296.accessType = "outputOnly";
+field296.type = "SFRotation";
+ProtoInterface21.field[274] = field296;
 
 let field297 = browser.currentScene.createNode("field");
-field297.name = "r_eyelid_joint_changed";
-field297.accessType = "outputOnly";
-field297.type = "SFRotation";
-ProtoInterface4.field[292] = field297;
+field297.name = "r_eyeball_key";
+field297.accessType = "inputOutput";
+field297.type = "MFFloat";
+//no default value
+ProtoInterface21.field[275] = field297;
 
 let field298 = browser.currentScene.createNode("field");
-field298.name = "r_forearm_key";
+field298.name = "r_eyeball_keyValue";
 field298.accessType = "inputOutput";
-field298.type = "MFFloat";
+field298.type = "MFRotation";
 //no default value
-ProtoInterface4.field[293] = field298;
+ProtoInterface21.field[276] = field298;
 
 let field299 = browser.currentScene.createNode("field");
-field299.name = "r_forearm_keyValue";
-field299.accessType = "inputOutput";
-field299.type = "MFRotation";
-//no default value
-ProtoInterface4.field[294] = field299;
+field299.name = "r_eyeball_changed";
+field299.accessType = "outputOnly";
+field299.type = "SFRotation";
+ProtoInterface21.field[277] = field299;
 
 let field300 = browser.currentScene.createNode("field");
-field300.name = "r_forearm_changed";
-field300.accessType = "outputOnly";
-field300.type = "SFRotation";
-ProtoInterface4.field[295] = field300;
+field300.name = "r_eyeball_joint_key";
+field300.accessType = "inputOutput";
+field300.type = "MFFloat";
+//no default value
+ProtoInterface21.field[278] = field300;
 
 let field301 = browser.currentScene.createNode("field");
-field301.name = "r_forefoot_key";
+field301.name = "r_eyeball_joint_keyValue";
 field301.accessType = "inputOutput";
-field301.type = "MFFloat";
+field301.type = "MFRotation";
 //no default value
-ProtoInterface4.field[296] = field301;
+ProtoInterface21.field[279] = field301;
 
 let field302 = browser.currentScene.createNode("field");
-field302.name = "r_forefoot_keyValue";
-field302.accessType = "inputOutput";
-field302.type = "MFRotation";
-//no default value
-ProtoInterface4.field[297] = field302;
+field302.name = "r_eyeball_joint_changed";
+field302.accessType = "outputOnly";
+field302.type = "SFRotation";
+ProtoInterface21.field[280] = field302;
 
 let field303 = browser.currentScene.createNode("field");
-field303.name = "r_forefoot_changed";
-field303.accessType = "outputOnly";
-field303.type = "SFRotation";
-ProtoInterface4.field[298] = field303;
+field303.name = "r_eyebrow_key";
+field303.accessType = "inputOutput";
+field303.type = "MFFloat";
+//no default value
+ProtoInterface21.field[281] = field303;
 
 let field304 = browser.currentScene.createNode("field");
-field304.name = "r_hand_key";
+field304.name = "r_eyebrow_keyValue";
 field304.accessType = "inputOutput";
-field304.type = "MFFloat";
+field304.type = "MFRotation";
 //no default value
-ProtoInterface4.field[299] = field304;
+ProtoInterface21.field[282] = field304;
 
 let field305 = browser.currentScene.createNode("field");
-field305.name = "r_hand_keyValue";
-field305.accessType = "inputOutput";
-field305.type = "MFRotation";
-//no default value
-ProtoInterface4.field[300] = field305;
+field305.name = "r_eyebrow_changed";
+field305.accessType = "outputOnly";
+field305.type = "SFRotation";
+ProtoInterface21.field[283] = field305;
 
 let field306 = browser.currentScene.createNode("field");
-field306.name = "r_hand_changed";
-field306.accessType = "outputOnly";
-field306.type = "SFRotation";
-ProtoInterface4.field[301] = field306;
+field306.name = "r_eyebrow_joint_key";
+field306.accessType = "inputOutput";
+field306.type = "MFFloat";
+//no default value
+ProtoInterface21.field[284] = field306;
 
 let field307 = browser.currentScene.createNode("field");
-field307.name = "r_hindfoot_key";
+field307.name = "r_eyebrow_joint_keyValue";
 field307.accessType = "inputOutput";
-field307.type = "MFFloat";
+field307.type = "MFRotation";
 //no default value
-ProtoInterface4.field[302] = field307;
+ProtoInterface21.field[285] = field307;
 
 let field308 = browser.currentScene.createNode("field");
-field308.name = "r_hindfoot_keyValue";
-field308.accessType = "inputOutput";
-field308.type = "MFRotation";
-//no default value
-ProtoInterface4.field[303] = field308;
+field308.name = "r_eyebrow_joint_changed";
+field308.accessType = "outputOnly";
+field308.type = "SFRotation";
+ProtoInterface21.field[286] = field308;
 
 let field309 = browser.currentScene.createNode("field");
-field309.name = "r_hindfoot_changed";
-field309.accessType = "outputOnly";
-field309.type = "SFRotation";
-ProtoInterface4.field[304] = field309;
+field309.name = "r_eyelid_key";
+field309.accessType = "inputOutput";
+field309.type = "MFFloat";
+//no default value
+ProtoInterface21.field[287] = field309;
 
 let field310 = browser.currentScene.createNode("field");
-field310.name = "r_hip_key";
+field310.name = "r_eyelid_keyValue";
 field310.accessType = "inputOutput";
-field310.type = "MFFloat";
+field310.type = "MFRotation";
 //no default value
-ProtoInterface4.field[305] = field310;
+ProtoInterface21.field[288] = field310;
 
 let field311 = browser.currentScene.createNode("field");
-field311.name = "r_hip_keyValue";
-field311.accessType = "inputOutput";
-field311.type = "MFRotation";
-//no default value
-ProtoInterface4.field[306] = field311;
+field311.name = "r_eyelid_changed";
+field311.accessType = "outputOnly";
+field311.type = "SFRotation";
+ProtoInterface21.field[289] = field311;
 
 let field312 = browser.currentScene.createNode("field");
-field312.name = "r_hip_changed";
-field312.accessType = "outputOnly";
-field312.type = "SFRotation";
-ProtoInterface4.field[307] = field312;
+field312.name = "r_eyelid_joint_key";
+field312.accessType = "inputOutput";
+field312.type = "MFFloat";
+//no default value
+ProtoInterface21.field[290] = field312;
 
 let field313 = browser.currentScene.createNode("field");
-field313.name = "r_index0_key";
+field313.name = "r_eyelid_joint_keyValue";
 field313.accessType = "inputOutput";
-field313.type = "MFFloat";
+field313.type = "MFRotation";
 //no default value
-ProtoInterface4.field[308] = field313;
+ProtoInterface21.field[291] = field313;
 
 let field314 = browser.currentScene.createNode("field");
-field314.name = "r_index0_keyValue";
-field314.accessType = "inputOutput";
-field314.type = "MFRotation";
-//no default value
-ProtoInterface4.field[309] = field314;
+field314.name = "r_eyelid_joint_changed";
+field314.accessType = "outputOnly";
+field314.type = "SFRotation";
+ProtoInterface21.field[292] = field314;
 
 let field315 = browser.currentScene.createNode("field");
-field315.name = "r_index0_changed";
-field315.accessType = "outputOnly";
-field315.type = "SFRotation";
-ProtoInterface4.field[310] = field315;
+field315.name = "r_forearm_key";
+field315.accessType = "inputOutput";
+field315.type = "MFFloat";
+//no default value
+ProtoInterface21.field[293] = field315;
 
 let field316 = browser.currentScene.createNode("field");
-field316.name = "r_index1_key";
+field316.name = "r_forearm_keyValue";
 field316.accessType = "inputOutput";
-field316.type = "MFFloat";
+field316.type = "MFRotation";
 //no default value
-ProtoInterface4.field[311] = field316;
+ProtoInterface21.field[294] = field316;
 
 let field317 = browser.currentScene.createNode("field");
-field317.name = "r_index1_keyValue";
-field317.accessType = "inputOutput";
-field317.type = "MFRotation";
-//no default value
-ProtoInterface4.field[312] = field317;
+field317.name = "r_forearm_changed";
+field317.accessType = "outputOnly";
+field317.type = "SFRotation";
+ProtoInterface21.field[295] = field317;
 
 let field318 = browser.currentScene.createNode("field");
-field318.name = "r_index1_changed";
-field318.accessType = "outputOnly";
-field318.type = "SFRotation";
-ProtoInterface4.field[313] = field318;
+field318.name = "r_forefoot_key";
+field318.accessType = "inputOutput";
+field318.type = "MFFloat";
+//no default value
+ProtoInterface21.field[296] = field318;
 
 let field319 = browser.currentScene.createNode("field");
-field319.name = "r_index2_key";
+field319.name = "r_forefoot_keyValue";
 field319.accessType = "inputOutput";
-field319.type = "MFFloat";
+field319.type = "MFRotation";
 //no default value
-ProtoInterface4.field[314] = field319;
+ProtoInterface21.field[297] = field319;
 
 let field320 = browser.currentScene.createNode("field");
-field320.name = "r_index2_keyValue";
-field320.accessType = "inputOutput";
-field320.type = "MFRotation";
-//no default value
-ProtoInterface4.field[315] = field320;
+field320.name = "r_forefoot_changed";
+field320.accessType = "outputOnly";
+field320.type = "SFRotation";
+ProtoInterface21.field[298] = field320;
 
 let field321 = browser.currentScene.createNode("field");
-field321.name = "r_index2_changed";
-field321.accessType = "outputOnly";
-field321.type = "SFRotation";
-ProtoInterface4.field[316] = field321;
+field321.name = "r_hand_key";
+field321.accessType = "inputOutput";
+field321.type = "MFFloat";
+//no default value
+ProtoInterface21.field[299] = field321;
 
 let field322 = browser.currentScene.createNode("field");
-field322.name = "r_index3_key";
+field322.name = "r_hand_keyValue";
 field322.accessType = "inputOutput";
-field322.type = "MFFloat";
+field322.type = "MFRotation";
 //no default value
-ProtoInterface4.field[317] = field322;
+ProtoInterface21.field[300] = field322;
 
 let field323 = browser.currentScene.createNode("field");
-field323.name = "r_index3_keyValue";
-field323.accessType = "inputOutput";
-field323.type = "MFRotation";
-//no default value
-ProtoInterface4.field[318] = field323;
+field323.name = "r_hand_changed";
+field323.accessType = "outputOnly";
+field323.type = "SFRotation";
+ProtoInterface21.field[301] = field323;
 
 let field324 = browser.currentScene.createNode("field");
-field324.name = "r_index3_changed";
-field324.accessType = "outputOnly";
-field324.type = "SFRotation";
-ProtoInterface4.field[319] = field324;
+field324.name = "r_hindfoot_key";
+field324.accessType = "inputOutput";
+field324.type = "MFFloat";
+//no default value
+ProtoInterface21.field[302] = field324;
 
 let field325 = browser.currentScene.createNode("field");
-field325.name = "r_index_distal_key";
+field325.name = "r_hindfoot_keyValue";
 field325.accessType = "inputOutput";
-field325.type = "MFFloat";
+field325.type = "MFRotation";
 //no default value
-ProtoInterface4.field[320] = field325;
+ProtoInterface21.field[303] = field325;
 
 let field326 = browser.currentScene.createNode("field");
-field326.name = "r_index_distal_keyValue";
-field326.accessType = "inputOutput";
-field326.type = "MFRotation";
-//no default value
-ProtoInterface4.field[321] = field326;
+field326.name = "r_hindfoot_changed";
+field326.accessType = "outputOnly";
+field326.type = "SFRotation";
+ProtoInterface21.field[304] = field326;
 
 let field327 = browser.currentScene.createNode("field");
-field327.name = "r_index_distal_changed";
-field327.accessType = "outputOnly";
-field327.type = "SFRotation";
-ProtoInterface4.field[322] = field327;
+field327.name = "r_hip_key";
+field327.accessType = "inputOutput";
+field327.type = "MFFloat";
+//no default value
+ProtoInterface21.field[305] = field327;
 
 let field328 = browser.currentScene.createNode("field");
-field328.name = "r_index_metacarpal_key";
+field328.name = "r_hip_keyValue";
 field328.accessType = "inputOutput";
-field328.type = "MFFloat";
+field328.type = "MFRotation";
 //no default value
-ProtoInterface4.field[323] = field328;
+ProtoInterface21.field[306] = field328;
 
 let field329 = browser.currentScene.createNode("field");
-field329.name = "r_index_metacarpal_keyValue";
-field329.accessType = "inputOutput";
-field329.type = "MFRotation";
-//no default value
-ProtoInterface4.field[324] = field329;
+field329.name = "r_hip_changed";
+field329.accessType = "outputOnly";
+field329.type = "SFRotation";
+ProtoInterface21.field[307] = field329;
 
 let field330 = browser.currentScene.createNode("field");
-field330.name = "r_index_metacarpal_changed";
-field330.accessType = "outputOnly";
-field330.type = "SFRotation";
-ProtoInterface4.field[325] = field330;
+field330.name = "r_index0_key";
+field330.accessType = "inputOutput";
+field330.type = "MFFloat";
+//no default value
+ProtoInterface21.field[308] = field330;
 
 let field331 = browser.currentScene.createNode("field");
-field331.name = "r_index_middle_key";
+field331.name = "r_index0_keyValue";
 field331.accessType = "inputOutput";
-field331.type = "MFFloat";
+field331.type = "MFRotation";
 //no default value
-ProtoInterface4.field[326] = field331;
+ProtoInterface21.field[309] = field331;
 
 let field332 = browser.currentScene.createNode("field");
-field332.name = "r_index_middle_keyValue";
-field332.accessType = "inputOutput";
-field332.type = "MFRotation";
-//no default value
-ProtoInterface4.field[327] = field332;
+field332.name = "r_index0_changed";
+field332.accessType = "outputOnly";
+field332.type = "SFRotation";
+ProtoInterface21.field[310] = field332;
 
 let field333 = browser.currentScene.createNode("field");
-field333.name = "r_index_middle_changed";
-field333.accessType = "outputOnly";
-field333.type = "SFRotation";
-ProtoInterface4.field[328] = field333;
+field333.name = "r_index1_key";
+field333.accessType = "inputOutput";
+field333.type = "MFFloat";
+//no default value
+ProtoInterface21.field[311] = field333;
 
 let field334 = browser.currentScene.createNode("field");
-field334.name = "r_index_proximal_key";
+field334.name = "r_index1_keyValue";
 field334.accessType = "inputOutput";
-field334.type = "MFFloat";
+field334.type = "MFRotation";
 //no default value
-ProtoInterface4.field[329] = field334;
+ProtoInterface21.field[312] = field334;
 
 let field335 = browser.currentScene.createNode("field");
-field335.name = "r_index_proximal_keyValue";
-field335.accessType = "inputOutput";
-field335.type = "MFRotation";
-//no default value
-ProtoInterface4.field[330] = field335;
+field335.name = "r_index1_changed";
+field335.accessType = "outputOnly";
+field335.type = "SFRotation";
+ProtoInterface21.field[313] = field335;
 
 let field336 = browser.currentScene.createNode("field");
-field336.name = "r_index_proximal_changed";
-field336.accessType = "outputOnly";
-field336.type = "SFRotation";
-ProtoInterface4.field[331] = field336;
+field336.name = "r_index2_key";
+field336.accessType = "inputOutput";
+field336.type = "MFFloat";
+//no default value
+ProtoInterface21.field[314] = field336;
 
 let field337 = browser.currentScene.createNode("field");
-field337.name = "r_knee_key";
+field337.name = "r_index2_keyValue";
 field337.accessType = "inputOutput";
-field337.type = "MFFloat";
+field337.type = "MFRotation";
 //no default value
-ProtoInterface4.field[332] = field337;
+ProtoInterface21.field[315] = field337;
 
 let field338 = browser.currentScene.createNode("field");
-field338.name = "r_knee_keyValue";
-field338.accessType = "inputOutput";
-field338.type = "MFRotation";
-//no default value
-ProtoInterface4.field[333] = field338;
+field338.name = "r_index2_changed";
+field338.accessType = "outputOnly";
+field338.type = "SFRotation";
+ProtoInterface21.field[316] = field338;
 
 let field339 = browser.currentScene.createNode("field");
-field339.name = "r_knee_changed";
-field339.accessType = "outputOnly";
-field339.type = "SFRotation";
-ProtoInterface4.field[334] = field339;
+field339.name = "r_index3_key";
+field339.accessType = "inputOutput";
+field339.type = "MFFloat";
+//no default value
+ProtoInterface21.field[317] = field339;
 
 let field340 = browser.currentScene.createNode("field");
-field340.name = "r_metatarsal_key";
+field340.name = "r_index3_keyValue";
 field340.accessType = "inputOutput";
-field340.type = "MFFloat";
+field340.type = "MFRotation";
 //no default value
-ProtoInterface4.field[335] = field340;
+ProtoInterface21.field[318] = field340;
 
 let field341 = browser.currentScene.createNode("field");
-field341.name = "r_metatarsal_keyValue";
-field341.accessType = "inputOutput";
-field341.type = "MFRotation";
-//no default value
-ProtoInterface4.field[336] = field341;
+field341.name = "r_index3_changed";
+field341.accessType = "outputOnly";
+field341.type = "SFRotation";
+ProtoInterface21.field[319] = field341;
 
 let field342 = browser.currentScene.createNode("field");
-field342.name = "r_metatarsal_changed";
-field342.accessType = "outputOnly";
-field342.type = "SFRotation";
-ProtoInterface4.field[337] = field342;
+field342.name = "r_index_distal_key";
+field342.accessType = "inputOutput";
+field342.type = "MFFloat";
+//no default value
+ProtoInterface21.field[320] = field342;
 
 let field343 = browser.currentScene.createNode("field");
-field343.name = "r_middistal_key";
+field343.name = "r_index_distal_keyValue";
 field343.accessType = "inputOutput";
-field343.type = "MFFloat";
+field343.type = "MFRotation";
 //no default value
-ProtoInterface4.field[338] = field343;
+ProtoInterface21.field[321] = field343;
 
 let field344 = browser.currentScene.createNode("field");
-field344.name = "r_middistal_keyValue";
-field344.accessType = "inputOutput";
-field344.type = "MFRotation";
-//no default value
-ProtoInterface4.field[339] = field344;
+field344.name = "r_index_distal_changed";
+field344.accessType = "outputOnly";
+field344.type = "SFRotation";
+ProtoInterface21.field[322] = field344;
 
 let field345 = browser.currentScene.createNode("field");
-field345.name = "r_middistal_changed";
-field345.accessType = "outputOnly";
-field345.type = "SFRotation";
-ProtoInterface4.field[340] = field345;
+field345.name = "r_index_metacarpal_key";
+field345.accessType = "inputOutput";
+field345.type = "MFFloat";
+//no default value
+ProtoInterface21.field[323] = field345;
 
 let field346 = browser.currentScene.createNode("field");
-field346.name = "r_middle0_key";
+field346.name = "r_index_metacarpal_keyValue";
 field346.accessType = "inputOutput";
-field346.type = "MFFloat";
+field346.type = "MFRotation";
 //no default value
-ProtoInterface4.field[341] = field346;
+ProtoInterface21.field[324] = field346;
 
 let field347 = browser.currentScene.createNode("field");
-field347.name = "r_middle0_keyValue";
-field347.accessType = "inputOutput";
-field347.type = "MFRotation";
-//no default value
-ProtoInterface4.field[342] = field347;
+field347.name = "r_index_metacarpal_changed";
+field347.accessType = "outputOnly";
+field347.type = "SFRotation";
+ProtoInterface21.field[325] = field347;
 
 let field348 = browser.currentScene.createNode("field");
-field348.name = "r_middle0_changed";
-field348.accessType = "outputOnly";
-field348.type = "SFRotation";
-ProtoInterface4.field[343] = field348;
+field348.name = "r_index_middle_key";
+field348.accessType = "inputOutput";
+field348.type = "MFFloat";
+//no default value
+ProtoInterface21.field[326] = field348;
 
 let field349 = browser.currentScene.createNode("field");
-field349.name = "r_middle1_key";
+field349.name = "r_index_middle_keyValue";
 field349.accessType = "inputOutput";
-field349.type = "MFFloat";
+field349.type = "MFRotation";
 //no default value
-ProtoInterface4.field[344] = field349;
+ProtoInterface21.field[327] = field349;
 
 let field350 = browser.currentScene.createNode("field");
-field350.name = "r_middle1_keyValue";
-field350.accessType = "inputOutput";
-field350.type = "MFRotation";
-//no default value
-ProtoInterface4.field[345] = field350;
+field350.name = "r_index_middle_changed";
+field350.accessType = "outputOnly";
+field350.type = "SFRotation";
+ProtoInterface21.field[328] = field350;
 
 let field351 = browser.currentScene.createNode("field");
-field351.name = "r_middle1_changed";
-field351.accessType = "outputOnly";
-field351.type = "SFRotation";
-ProtoInterface4.field[346] = field351;
+field351.name = "r_index_proximal_key";
+field351.accessType = "inputOutput";
+field351.type = "MFFloat";
+//no default value
+ProtoInterface21.field[329] = field351;
 
 let field352 = browser.currentScene.createNode("field");
-field352.name = "r_middle2_key";
+field352.name = "r_index_proximal_keyValue";
 field352.accessType = "inputOutput";
-field352.type = "MFFloat";
+field352.type = "MFRotation";
 //no default value
-ProtoInterface4.field[347] = field352;
+ProtoInterface21.field[330] = field352;
 
 let field353 = browser.currentScene.createNode("field");
-field353.name = "r_middle2_keyValue";
-field353.accessType = "inputOutput";
-field353.type = "MFRotation";
-//no default value
-ProtoInterface4.field[348] = field353;
+field353.name = "r_index_proximal_changed";
+field353.accessType = "outputOnly";
+field353.type = "SFRotation";
+ProtoInterface21.field[331] = field353;
 
 let field354 = browser.currentScene.createNode("field");
-field354.name = "r_middle2_changed";
-field354.accessType = "outputOnly";
-field354.type = "SFRotation";
-ProtoInterface4.field[349] = field354;
+field354.name = "r_knee_key";
+field354.accessType = "inputOutput";
+field354.type = "MFFloat";
+//no default value
+ProtoInterface21.field[332] = field354;
 
 let field355 = browser.currentScene.createNode("field");
-field355.name = "r_middle3_key";
+field355.name = "r_knee_keyValue";
 field355.accessType = "inputOutput";
-field355.type = "MFFloat";
+field355.type = "MFRotation";
 //no default value
-ProtoInterface4.field[350] = field355;
+ProtoInterface21.field[333] = field355;
 
 let field356 = browser.currentScene.createNode("field");
-field356.name = "r_middle3_keyValue";
-field356.accessType = "inputOutput";
-field356.type = "MFRotation";
-//no default value
-ProtoInterface4.field[351] = field356;
+field356.name = "r_knee_changed";
+field356.accessType = "outputOnly";
+field356.type = "SFRotation";
+ProtoInterface21.field[334] = field356;
 
 let field357 = browser.currentScene.createNode("field");
-field357.name = "r_middle3_changed";
-field357.accessType = "outputOnly";
-field357.type = "SFRotation";
-ProtoInterface4.field[352] = field357;
+field357.name = "r_metatarsal_key";
+field357.accessType = "inputOutput";
+field357.type = "MFFloat";
+//no default value
+ProtoInterface21.field[335] = field357;
 
 let field358 = browser.currentScene.createNode("field");
-field358.name = "r_middle_distal_key";
+field358.name = "r_metatarsal_keyValue";
 field358.accessType = "inputOutput";
-field358.type = "MFFloat";
+field358.type = "MFRotation";
 //no default value
-ProtoInterface4.field[353] = field358;
+ProtoInterface21.field[336] = field358;
 
 let field359 = browser.currentScene.createNode("field");
-field359.name = "r_middle_distal_keyValue";
-field359.accessType = "inputOutput";
-field359.type = "MFRotation";
-//no default value
-ProtoInterface4.field[354] = field359;
+field359.name = "r_metatarsal_changed";
+field359.accessType = "outputOnly";
+field359.type = "SFRotation";
+ProtoInterface21.field[337] = field359;
 
 let field360 = browser.currentScene.createNode("field");
-field360.name = "r_middle_distal_changed";
-field360.accessType = "outputOnly";
-field360.type = "SFRotation";
-ProtoInterface4.field[355] = field360;
+field360.name = "r_middistal_key";
+field360.accessType = "inputOutput";
+field360.type = "MFFloat";
+//no default value
+ProtoInterface21.field[338] = field360;
 
 let field361 = browser.currentScene.createNode("field");
-field361.name = "r_middle_metacarpal_key";
+field361.name = "r_middistal_keyValue";
 field361.accessType = "inputOutput";
-field361.type = "MFFloat";
+field361.type = "MFRotation";
 //no default value
-ProtoInterface4.field[356] = field361;
+ProtoInterface21.field[339] = field361;
 
 let field362 = browser.currentScene.createNode("field");
-field362.name = "r_middle_metacarpal_keyValue";
-field362.accessType = "inputOutput";
-field362.type = "MFRotation";
-//no default value
-ProtoInterface4.field[357] = field362;
+field362.name = "r_middistal_changed";
+field362.accessType = "outputOnly";
+field362.type = "SFRotation";
+ProtoInterface21.field[340] = field362;
 
 let field363 = browser.currentScene.createNode("field");
-field363.name = "r_middle_metacarpal_changed";
-field363.accessType = "outputOnly";
-field363.type = "SFRotation";
-ProtoInterface4.field[358] = field363;
+field363.name = "r_middle0_key";
+field363.accessType = "inputOutput";
+field363.type = "MFFloat";
+//no default value
+ProtoInterface21.field[341] = field363;
 
 let field364 = browser.currentScene.createNode("field");
-field364.name = "r_middle_middle_key";
+field364.name = "r_middle0_keyValue";
 field364.accessType = "inputOutput";
-field364.type = "MFFloat";
+field364.type = "MFRotation";
 //no default value
-ProtoInterface4.field[359] = field364;
+ProtoInterface21.field[342] = field364;
 
 let field365 = browser.currentScene.createNode("field");
-field365.name = "r_middle_middle_keyValue";
-field365.accessType = "inputOutput";
-field365.type = "MFRotation";
-//no default value
-ProtoInterface4.field[360] = field365;
+field365.name = "r_middle0_changed";
+field365.accessType = "outputOnly";
+field365.type = "SFRotation";
+ProtoInterface21.field[343] = field365;
 
 let field366 = browser.currentScene.createNode("field");
-field366.name = "r_middle_middle_changed";
-field366.accessType = "outputOnly";
-field366.type = "SFRotation";
-ProtoInterface4.field[361] = field366;
+field366.name = "r_middle1_key";
+field366.accessType = "inputOutput";
+field366.type = "MFFloat";
+//no default value
+ProtoInterface21.field[344] = field366;
 
 let field367 = browser.currentScene.createNode("field");
-field367.name = "r_middle_proximal_key";
+field367.name = "r_middle1_keyValue";
 field367.accessType = "inputOutput";
-field367.type = "MFFloat";
+field367.type = "MFRotation";
 //no default value
-ProtoInterface4.field[362] = field367;
+ProtoInterface21.field[345] = field367;
 
 let field368 = browser.currentScene.createNode("field");
-field368.name = "r_middle_proximal_keyValue";
-field368.accessType = "inputOutput";
-field368.type = "MFRotation";
-//no default value
-ProtoInterface4.field[363] = field368;
+field368.name = "r_middle1_changed";
+field368.accessType = "outputOnly";
+field368.type = "SFRotation";
+ProtoInterface21.field[346] = field368;
 
 let field369 = browser.currentScene.createNode("field");
-field369.name = "r_middle_proximal_changed";
-field369.accessType = "outputOnly";
-field369.type = "SFRotation";
-ProtoInterface4.field[364] = field369;
+field369.name = "r_middle2_key";
+field369.accessType = "inputOutput";
+field369.type = "MFFloat";
+//no default value
+ProtoInterface21.field[347] = field369;
 
 let field370 = browser.currentScene.createNode("field");
-field370.name = "r_midproximal_key";
+field370.name = "r_middle2_keyValue";
 field370.accessType = "inputOutput";
-field370.type = "MFFloat";
+field370.type = "MFRotation";
 //no default value
-ProtoInterface4.field[365] = field370;
+ProtoInterface21.field[348] = field370;
 
 let field371 = browser.currentScene.createNode("field");
-field371.name = "r_midproximal_keyValue";
-field371.accessType = "inputOutput";
-field371.type = "MFRotation";
-//no default value
-ProtoInterface4.field[366] = field371;
+field371.name = "r_middle2_changed";
+field371.accessType = "outputOnly";
+field371.type = "SFRotation";
+ProtoInterface21.field[349] = field371;
 
 let field372 = browser.currentScene.createNode("field");
-field372.name = "r_midproximal_changed";
-field372.accessType = "outputOnly";
-field372.type = "SFRotation";
-ProtoInterface4.field[367] = field372;
+field372.name = "r_middle3_key";
+field372.accessType = "inputOutput";
+field372.type = "MFFloat";
+//no default value
+ProtoInterface21.field[350] = field372;
 
 let field373 = browser.currentScene.createNode("field");
-field373.name = "r_midtarsal_key";
+field373.name = "r_middle3_keyValue";
 field373.accessType = "inputOutput";
-field373.type = "MFFloat";
+field373.type = "MFRotation";
 //no default value
-ProtoInterface4.field[368] = field373;
+ProtoInterface21.field[351] = field373;
 
 let field374 = browser.currentScene.createNode("field");
-field374.name = "r_midtarsal_keyValue";
-field374.accessType = "inputOutput";
-field374.type = "MFRotation";
-//no default value
-ProtoInterface4.field[369] = field374;
+field374.name = "r_middle3_changed";
+field374.accessType = "outputOnly";
+field374.type = "SFRotation";
+ProtoInterface21.field[352] = field374;
 
 let field375 = browser.currentScene.createNode("field");
-field375.name = "r_midtarsal_changed";
-field375.accessType = "outputOnly";
-field375.type = "SFRotation";
-ProtoInterface4.field[370] = field375;
+field375.name = "r_middle_distal_key";
+field375.accessType = "inputOutput";
+field375.type = "MFFloat";
+//no default value
+ProtoInterface21.field[353] = field375;
 
 let field376 = browser.currentScene.createNode("field");
-field376.name = "r_pinky0_key";
+field376.name = "r_middle_distal_keyValue";
 field376.accessType = "inputOutput";
-field376.type = "MFFloat";
+field376.type = "MFRotation";
 //no default value
-ProtoInterface4.field[371] = field376;
+ProtoInterface21.field[354] = field376;
 
 let field377 = browser.currentScene.createNode("field");
-field377.name = "r_pinky0_keyValue";
-field377.accessType = "inputOutput";
-field377.type = "MFRotation";
-//no default value
-ProtoInterface4.field[372] = field377;
+field377.name = "r_middle_distal_changed";
+field377.accessType = "outputOnly";
+field377.type = "SFRotation";
+ProtoInterface21.field[355] = field377;
 
 let field378 = browser.currentScene.createNode("field");
-field378.name = "r_pinky0_changed";
-field378.accessType = "outputOnly";
-field378.type = "SFRotation";
-ProtoInterface4.field[373] = field378;
+field378.name = "r_middle_metacarpal_key";
+field378.accessType = "inputOutput";
+field378.type = "MFFloat";
+//no default value
+ProtoInterface21.field[356] = field378;
 
 let field379 = browser.currentScene.createNode("field");
-field379.name = "r_pinky1_key";
+field379.name = "r_middle_metacarpal_keyValue";
 field379.accessType = "inputOutput";
-field379.type = "MFFloat";
+field379.type = "MFRotation";
 //no default value
-ProtoInterface4.field[374] = field379;
+ProtoInterface21.field[357] = field379;
 
 let field380 = browser.currentScene.createNode("field");
-field380.name = "r_pinky1_keyValue";
-field380.accessType = "inputOutput";
-field380.type = "MFRotation";
-//no default value
-ProtoInterface4.field[375] = field380;
+field380.name = "r_middle_metacarpal_changed";
+field380.accessType = "outputOnly";
+field380.type = "SFRotation";
+ProtoInterface21.field[358] = field380;
 
 let field381 = browser.currentScene.createNode("field");
-field381.name = "r_pinky1_changed";
-field381.accessType = "outputOnly";
-field381.type = "SFRotation";
-ProtoInterface4.field[376] = field381;
+field381.name = "r_middle_middle_key";
+field381.accessType = "inputOutput";
+field381.type = "MFFloat";
+//no default value
+ProtoInterface21.field[359] = field381;
 
 let field382 = browser.currentScene.createNode("field");
-field382.name = "r_pinky2_key";
+field382.name = "r_middle_middle_keyValue";
 field382.accessType = "inputOutput";
-field382.type = "MFFloat";
+field382.type = "MFRotation";
 //no default value
-ProtoInterface4.field[377] = field382;
+ProtoInterface21.field[360] = field382;
 
 let field383 = browser.currentScene.createNode("field");
-field383.name = "r_pinky2_keyValue";
-field383.accessType = "inputOutput";
-field383.type = "MFRotation";
-//no default value
-ProtoInterface4.field[378] = field383;
+field383.name = "r_middle_middle_changed";
+field383.accessType = "outputOnly";
+field383.type = "SFRotation";
+ProtoInterface21.field[361] = field383;
 
 let field384 = browser.currentScene.createNode("field");
-field384.name = "r_pinky2_changed";
-field384.accessType = "outputOnly";
-field384.type = "SFRotation";
-ProtoInterface4.field[379] = field384;
+field384.name = "r_middle_proximal_key";
+field384.accessType = "inputOutput";
+field384.type = "MFFloat";
+//no default value
+ProtoInterface21.field[362] = field384;
 
 let field385 = browser.currentScene.createNode("field");
-field385.name = "r_pinky3_key";
+field385.name = "r_middle_proximal_keyValue";
 field385.accessType = "inputOutput";
-field385.type = "MFFloat";
+field385.type = "MFRotation";
 //no default value
-ProtoInterface4.field[380] = field385;
+ProtoInterface21.field[363] = field385;
 
 let field386 = browser.currentScene.createNode("field");
-field386.name = "r_pinky3_keyValue";
-field386.accessType = "inputOutput";
-field386.type = "MFRotation";
-//no default value
-ProtoInterface4.field[381] = field386;
+field386.name = "r_middle_proximal_changed";
+field386.accessType = "outputOnly";
+field386.type = "SFRotation";
+ProtoInterface21.field[364] = field386;
 
 let field387 = browser.currentScene.createNode("field");
-field387.name = "r_pinky3_changed";
-field387.accessType = "outputOnly";
-field387.type = "SFRotation";
-ProtoInterface4.field[382] = field387;
+field387.name = "r_midproximal_key";
+field387.accessType = "inputOutput";
+field387.type = "MFFloat";
+//no default value
+ProtoInterface21.field[365] = field387;
 
 let field388 = browser.currentScene.createNode("field");
-field388.name = "r_pinky_distal_key";
+field388.name = "r_midproximal_keyValue";
 field388.accessType = "inputOutput";
-field388.type = "MFFloat";
+field388.type = "MFRotation";
 //no default value
-ProtoInterface4.field[383] = field388;
+ProtoInterface21.field[366] = field388;
 
 let field389 = browser.currentScene.createNode("field");
-field389.name = "r_pinky_distal_keyValue";
-field389.accessType = "inputOutput";
-field389.type = "MFRotation";
-//no default value
-ProtoInterface4.field[384] = field389;
+field389.name = "r_midproximal_changed";
+field389.accessType = "outputOnly";
+field389.type = "SFRotation";
+ProtoInterface21.field[367] = field389;
 
 let field390 = browser.currentScene.createNode("field");
-field390.name = "r_pinky_distal_changed";
-field390.accessType = "outputOnly";
-field390.type = "SFRotation";
-ProtoInterface4.field[385] = field390;
+field390.name = "r_midtarsal_key";
+field390.accessType = "inputOutput";
+field390.type = "MFFloat";
+//no default value
+ProtoInterface21.field[368] = field390;
 
 let field391 = browser.currentScene.createNode("field");
-field391.name = "r_pinky_metacarpal_key";
+field391.name = "r_midtarsal_keyValue";
 field391.accessType = "inputOutput";
-field391.type = "MFFloat";
+field391.type = "MFRotation";
 //no default value
-ProtoInterface4.field[386] = field391;
+ProtoInterface21.field[369] = field391;
 
 let field392 = browser.currentScene.createNode("field");
-field392.name = "r_pinky_metacarpal_keyValue";
-field392.accessType = "inputOutput";
-field392.type = "MFRotation";
-//no default value
-ProtoInterface4.field[387] = field392;
+field392.name = "r_midtarsal_changed";
+field392.accessType = "outputOnly";
+field392.type = "SFRotation";
+ProtoInterface21.field[370] = field392;
 
 let field393 = browser.currentScene.createNode("field");
-field393.name = "r_pinky_metacarpal_changed";
-field393.accessType = "outputOnly";
-field393.type = "SFRotation";
-ProtoInterface4.field[388] = field393;
+field393.name = "r_pinky0_key";
+field393.accessType = "inputOutput";
+field393.type = "MFFloat";
+//no default value
+ProtoInterface21.field[371] = field393;
 
 let field394 = browser.currentScene.createNode("field");
-field394.name = "r_pinky_middle_key";
+field394.name = "r_pinky0_keyValue";
 field394.accessType = "inputOutput";
-field394.type = "MFFloat";
+field394.type = "MFRotation";
 //no default value
-ProtoInterface4.field[389] = field394;
+ProtoInterface21.field[372] = field394;
 
 let field395 = browser.currentScene.createNode("field");
-field395.name = "r_pinky_middle_keyValue";
-field395.accessType = "inputOutput";
-field395.type = "MFRotation";
-//no default value
-ProtoInterface4.field[390] = field395;
+field395.name = "r_pinky0_changed";
+field395.accessType = "outputOnly";
+field395.type = "SFRotation";
+ProtoInterface21.field[373] = field395;
 
 let field396 = browser.currentScene.createNode("field");
-field396.name = "r_pinky_middle_changed";
-field396.accessType = "outputOnly";
-field396.type = "SFRotation";
-ProtoInterface4.field[391] = field396;
+field396.name = "r_pinky1_key";
+field396.accessType = "inputOutput";
+field396.type = "MFFloat";
+//no default value
+ProtoInterface21.field[374] = field396;
 
 let field397 = browser.currentScene.createNode("field");
-field397.name = "r_pinky_proximal_key";
+field397.name = "r_pinky1_keyValue";
 field397.accessType = "inputOutput";
-field397.type = "MFFloat";
+field397.type = "MFRotation";
 //no default value
-ProtoInterface4.field[392] = field397;
+ProtoInterface21.field[375] = field397;
 
 let field398 = browser.currentScene.createNode("field");
-field398.name = "r_pinky_proximal_keyValue";
-field398.accessType = "inputOutput";
-field398.type = "MFRotation";
-//no default value
-ProtoInterface4.field[393] = field398;
+field398.name = "r_pinky1_changed";
+field398.accessType = "outputOnly";
+field398.type = "SFRotation";
+ProtoInterface21.field[376] = field398;
 
 let field399 = browser.currentScene.createNode("field");
-field399.name = "r_pinky_proximal_changed";
-field399.accessType = "outputOnly";
-field399.type = "SFRotation";
-ProtoInterface4.field[394] = field399;
+field399.name = "r_pinky2_key";
+field399.accessType = "inputOutput";
+field399.type = "MFFloat";
+//no default value
+ProtoInterface21.field[377] = field399;
 
 let field400 = browser.currentScene.createNode("field");
-field400.name = "r_ring0_key";
+field400.name = "r_pinky2_keyValue";
 field400.accessType = "inputOutput";
-field400.type = "MFFloat";
+field400.type = "MFRotation";
 //no default value
-ProtoInterface4.field[395] = field400;
+ProtoInterface21.field[378] = field400;
 
 let field401 = browser.currentScene.createNode("field");
-field401.name = "r_ring0_keyValue";
-field401.accessType = "inputOutput";
-field401.type = "MFRotation";
-//no default value
-ProtoInterface4.field[396] = field401;
+field401.name = "r_pinky2_changed";
+field401.accessType = "outputOnly";
+field401.type = "SFRotation";
+ProtoInterface21.field[379] = field401;
 
 let field402 = browser.currentScene.createNode("field");
-field402.name = "r_ring0_changed";
-field402.accessType = "outputOnly";
-field402.type = "SFRotation";
-ProtoInterface4.field[397] = field402;
+field402.name = "r_pinky3_key";
+field402.accessType = "inputOutput";
+field402.type = "MFFloat";
+//no default value
+ProtoInterface21.field[380] = field402;
 
 let field403 = browser.currentScene.createNode("field");
-field403.name = "r_ring1_key";
+field403.name = "r_pinky3_keyValue";
 field403.accessType = "inputOutput";
-field403.type = "MFFloat";
+field403.type = "MFRotation";
 //no default value
-ProtoInterface4.field[398] = field403;
+ProtoInterface21.field[381] = field403;
 
 let field404 = browser.currentScene.createNode("field");
-field404.name = "r_ring1_keyValue";
-field404.accessType = "inputOutput";
-field404.type = "MFRotation";
-//no default value
-ProtoInterface4.field[399] = field404;
+field404.name = "r_pinky3_changed";
+field404.accessType = "outputOnly";
+field404.type = "SFRotation";
+ProtoInterface21.field[382] = field404;
 
 let field405 = browser.currentScene.createNode("field");
-field405.name = "r_ring1_changed";
-field405.accessType = "outputOnly";
-field405.type = "SFRotation";
-ProtoInterface4.field[400] = field405;
+field405.name = "r_pinky_distal_key";
+field405.accessType = "inputOutput";
+field405.type = "MFFloat";
+//no default value
+ProtoInterface21.field[383] = field405;
 
 let field406 = browser.currentScene.createNode("field");
-field406.name = "r_ring2_key";
+field406.name = "r_pinky_distal_keyValue";
 field406.accessType = "inputOutput";
-field406.type = "MFFloat";
+field406.type = "MFRotation";
 //no default value
-ProtoInterface4.field[401] = field406;
+ProtoInterface21.field[384] = field406;
 
 let field407 = browser.currentScene.createNode("field");
-field407.name = "r_ring2_keyValue";
-field407.accessType = "inputOutput";
-field407.type = "MFRotation";
-//no default value
-ProtoInterface4.field[402] = field407;
+field407.name = "r_pinky_distal_changed";
+field407.accessType = "outputOnly";
+field407.type = "SFRotation";
+ProtoInterface21.field[385] = field407;
 
 let field408 = browser.currentScene.createNode("field");
-field408.name = "r_ring2_changed";
-field408.accessType = "outputOnly";
-field408.type = "SFRotation";
-ProtoInterface4.field[403] = field408;
+field408.name = "r_pinky_metacarpal_key";
+field408.accessType = "inputOutput";
+field408.type = "MFFloat";
+//no default value
+ProtoInterface21.field[386] = field408;
 
 let field409 = browser.currentScene.createNode("field");
-field409.name = "r_ring3_key";
+field409.name = "r_pinky_metacarpal_keyValue";
 field409.accessType = "inputOutput";
-field409.type = "MFFloat";
+field409.type = "MFRotation";
 //no default value
-ProtoInterface4.field[404] = field409;
+ProtoInterface21.field[387] = field409;
 
 let field410 = browser.currentScene.createNode("field");
-field410.name = "r_ring3_keyValue";
-field410.accessType = "inputOutput";
-field410.type = "MFRotation";
-//no default value
-ProtoInterface4.field[405] = field410;
+field410.name = "r_pinky_metacarpal_changed";
+field410.accessType = "outputOnly";
+field410.type = "SFRotation";
+ProtoInterface21.field[388] = field410;
 
 let field411 = browser.currentScene.createNode("field");
-field411.name = "r_ring3_changed";
-field411.accessType = "outputOnly";
-field411.type = "SFRotation";
-ProtoInterface4.field[406] = field411;
+field411.name = "r_pinky_middle_key";
+field411.accessType = "inputOutput";
+field411.type = "MFFloat";
+//no default value
+ProtoInterface21.field[389] = field411;
 
 let field412 = browser.currentScene.createNode("field");
-field412.name = "r_ring_distal_key";
+field412.name = "r_pinky_middle_keyValue";
 field412.accessType = "inputOutput";
-field412.type = "MFFloat";
+field412.type = "MFRotation";
 //no default value
-ProtoInterface4.field[407] = field412;
+ProtoInterface21.field[390] = field412;
 
 let field413 = browser.currentScene.createNode("field");
-field413.name = "r_ring_distal_keyValue";
-field413.accessType = "inputOutput";
-field413.type = "MFRotation";
-//no default value
-ProtoInterface4.field[408] = field413;
+field413.name = "r_pinky_middle_changed";
+field413.accessType = "outputOnly";
+field413.type = "SFRotation";
+ProtoInterface21.field[391] = field413;
 
 let field414 = browser.currentScene.createNode("field");
-field414.name = "r_ring_distal_changed";
-field414.accessType = "outputOnly";
-field414.type = "SFRotation";
-ProtoInterface4.field[409] = field414;
+field414.name = "r_pinky_proximal_key";
+field414.accessType = "inputOutput";
+field414.type = "MFFloat";
+//no default value
+ProtoInterface21.field[392] = field414;
 
 let field415 = browser.currentScene.createNode("field");
-field415.name = "r_ring_metacarpal_key";
+field415.name = "r_pinky_proximal_keyValue";
 field415.accessType = "inputOutput";
-field415.type = "MFFloat";
+field415.type = "MFRotation";
 //no default value
-ProtoInterface4.field[410] = field415;
+ProtoInterface21.field[393] = field415;
 
 let field416 = browser.currentScene.createNode("field");
-field416.name = "r_ring_metacarpal_keyValue";
-field416.accessType = "inputOutput";
-field416.type = "MFRotation";
-//no default value
-ProtoInterface4.field[411] = field416;
+field416.name = "r_pinky_proximal_changed";
+field416.accessType = "outputOnly";
+field416.type = "SFRotation";
+ProtoInterface21.field[394] = field416;
 
 let field417 = browser.currentScene.createNode("field");
-field417.name = "r_ring_metacarpal_changed";
-field417.accessType = "outputOnly";
-field417.type = "SFRotation";
-ProtoInterface4.field[412] = field417;
+field417.name = "r_ring0_key";
+field417.accessType = "inputOutput";
+field417.type = "MFFloat";
+//no default value
+ProtoInterface21.field[395] = field417;
 
 let field418 = browser.currentScene.createNode("field");
-field418.name = "r_ring_middle_key";
+field418.name = "r_ring0_keyValue";
 field418.accessType = "inputOutput";
-field418.type = "MFFloat";
+field418.type = "MFRotation";
 //no default value
-ProtoInterface4.field[413] = field418;
+ProtoInterface21.field[396] = field418;
 
 let field419 = browser.currentScene.createNode("field");
-field419.name = "r_ring_middle_keyValue";
-field419.accessType = "inputOutput";
-field419.type = "MFRotation";
-//no default value
-ProtoInterface4.field[414] = field419;
+field419.name = "r_ring0_changed";
+field419.accessType = "outputOnly";
+field419.type = "SFRotation";
+ProtoInterface21.field[397] = field419;
 
 let field420 = browser.currentScene.createNode("field");
-field420.name = "r_ring_middle_changed";
-field420.accessType = "outputOnly";
-field420.type = "SFRotation";
-ProtoInterface4.field[415] = field420;
+field420.name = "r_ring1_key";
+field420.accessType = "inputOutput";
+field420.type = "MFFloat";
+//no default value
+ProtoInterface21.field[398] = field420;
 
 let field421 = browser.currentScene.createNode("field");
-field421.name = "r_ring_proximal_key";
+field421.name = "r_ring1_keyValue";
 field421.accessType = "inputOutput";
-field421.type = "MFFloat";
+field421.type = "MFRotation";
 //no default value
-ProtoInterface4.field[416] = field421;
+ProtoInterface21.field[399] = field421;
 
 let field422 = browser.currentScene.createNode("field");
-field422.name = "r_ring_proximal_keyValue";
-field422.accessType = "inputOutput";
-field422.type = "MFRotation";
-//no default value
-ProtoInterface4.field[417] = field422;
+field422.name = "r_ring1_changed";
+field422.accessType = "outputOnly";
+field422.type = "SFRotation";
+ProtoInterface21.field[400] = field422;
 
 let field423 = browser.currentScene.createNode("field");
-field423.name = "r_ring_proximal_changed";
-field423.accessType = "outputOnly";
-field423.type = "SFRotation";
-ProtoInterface4.field[418] = field423;
+field423.name = "r_ring2_key";
+field423.accessType = "inputOutput";
+field423.type = "MFFloat";
+//no default value
+ProtoInterface21.field[401] = field423;
 
 let field424 = browser.currentScene.createNode("field");
-field424.name = "r_scapula_key";
+field424.name = "r_ring2_keyValue";
 field424.accessType = "inputOutput";
-field424.type = "MFFloat";
+field424.type = "MFRotation";
 //no default value
-ProtoInterface4.field[419] = field424;
+ProtoInterface21.field[402] = field424;
 
 let field425 = browser.currentScene.createNode("field");
-field425.name = "r_scapula_keyValue";
-field425.accessType = "inputOutput";
-field425.type = "MFRotation";
-//no default value
-ProtoInterface4.field[420] = field425;
+field425.name = "r_ring2_changed";
+field425.accessType = "outputOnly";
+field425.type = "SFRotation";
+ProtoInterface21.field[403] = field425;
 
 let field426 = browser.currentScene.createNode("field");
-field426.name = "r_scapula_changed";
-field426.accessType = "outputOnly";
-field426.type = "SFRotation";
-ProtoInterface4.field[421] = field426;
+field426.name = "r_ring3_key";
+field426.accessType = "inputOutput";
+field426.type = "MFFloat";
+//no default value
+ProtoInterface21.field[404] = field426;
 
 let field427 = browser.currentScene.createNode("field");
-field427.name = "r_shoulder_key";
+field427.name = "r_ring3_keyValue";
 field427.accessType = "inputOutput";
-field427.type = "MFFloat";
+field427.type = "MFRotation";
 //no default value
-ProtoInterface4.field[422] = field427;
+ProtoInterface21.field[405] = field427;
 
 let field428 = browser.currentScene.createNode("field");
-field428.name = "r_shoulder_keyValue";
-field428.accessType = "inputOutput";
-field428.type = "MFRotation";
-//no default value
-ProtoInterface4.field[423] = field428;
+field428.name = "r_ring3_changed";
+field428.accessType = "outputOnly";
+field428.type = "SFRotation";
+ProtoInterface21.field[406] = field428;
 
 let field429 = browser.currentScene.createNode("field");
-field429.name = "r_shoulder_changed";
-field429.accessType = "outputOnly";
-field429.type = "SFRotation";
-ProtoInterface4.field[424] = field429;
+field429.name = "r_ring_distal_key";
+field429.accessType = "inputOutput";
+field429.type = "MFFloat";
+//no default value
+ProtoInterface21.field[407] = field429;
 
 let field430 = browser.currentScene.createNode("field");
-field430.name = "r_sternoclavicular_key";
+field430.name = "r_ring_distal_keyValue";
 field430.accessType = "inputOutput";
-field430.type = "MFFloat";
+field430.type = "MFRotation";
 //no default value
-ProtoInterface4.field[425] = field430;
+ProtoInterface21.field[408] = field430;
 
 let field431 = browser.currentScene.createNode("field");
-field431.name = "r_sternoclavicular_keyValue";
-field431.accessType = "inputOutput";
-field431.type = "MFRotation";
-//no default value
-ProtoInterface4.field[426] = field431;
+field431.name = "r_ring_distal_changed";
+field431.accessType = "outputOnly";
+field431.type = "SFRotation";
+ProtoInterface21.field[409] = field431;
 
 let field432 = browser.currentScene.createNode("field");
-field432.name = "r_sternoclavicular_changed";
-field432.accessType = "outputOnly";
-field432.type = "SFRotation";
-ProtoInterface4.field[427] = field432;
+field432.name = "r_ring_metacarpal_key";
+field432.accessType = "inputOutput";
+field432.type = "MFFloat";
+//no default value
+ProtoInterface21.field[410] = field432;
 
 let field433 = browser.currentScene.createNode("field");
-field433.name = "r_subtalar_key";
+field433.name = "r_ring_metacarpal_keyValue";
 field433.accessType = "inputOutput";
-field433.type = "MFFloat";
+field433.type = "MFRotation";
 //no default value
-ProtoInterface4.field[428] = field433;
+ProtoInterface21.field[411] = field433;
 
 let field434 = browser.currentScene.createNode("field");
-field434.name = "r_subtalar_keyValue";
-field434.accessType = "inputOutput";
-field434.type = "MFRotation";
-//no default value
-ProtoInterface4.field[429] = field434;
+field434.name = "r_ring_metacarpal_changed";
+field434.accessType = "outputOnly";
+field434.type = "SFRotation";
+ProtoInterface21.field[412] = field434;
 
 let field435 = browser.currentScene.createNode("field");
-field435.name = "r_subtalar_changed";
-field435.accessType = "outputOnly";
-field435.type = "SFRotation";
-ProtoInterface4.field[430] = field435;
+field435.name = "r_ring_middle_key";
+field435.accessType = "inputOutput";
+field435.type = "MFFloat";
+//no default value
+ProtoInterface21.field[413] = field435;
 
 let field436 = browser.currentScene.createNode("field");
-field436.name = "r_thigh_key";
+field436.name = "r_ring_middle_keyValue";
 field436.accessType = "inputOutput";
-field436.type = "MFFloat";
+field436.type = "MFRotation";
 //no default value
-ProtoInterface4.field[431] = field436;
+ProtoInterface21.field[414] = field436;
 
 let field437 = browser.currentScene.createNode("field");
-field437.name = "r_thigh_keyValue";
-field437.accessType = "inputOutput";
-field437.type = "MFRotation";
-//no default value
-ProtoInterface4.field[432] = field437;
+field437.name = "r_ring_middle_changed";
+field437.accessType = "outputOnly";
+field437.type = "SFRotation";
+ProtoInterface21.field[415] = field437;
 
 let field438 = browser.currentScene.createNode("field");
-field438.name = "r_thigh_changed";
-field438.accessType = "outputOnly";
-field438.type = "SFRotation";
-ProtoInterface4.field[433] = field438;
+field438.name = "r_ring_proximal_key";
+field438.accessType = "inputOutput";
+field438.type = "MFFloat";
+//no default value
+ProtoInterface21.field[416] = field438;
 
 let field439 = browser.currentScene.createNode("field");
-field439.name = "r_thumb1_key";
+field439.name = "r_ring_proximal_keyValue";
 field439.accessType = "inputOutput";
-field439.type = "MFFloat";
+field439.type = "MFRotation";
 //no default value
-ProtoInterface4.field[434] = field439;
+ProtoInterface21.field[417] = field439;
 
 let field440 = browser.currentScene.createNode("field");
-field440.name = "r_thumb1_keyValue";
-field440.accessType = "inputOutput";
-field440.type = "MFRotation";
-//no default value
-ProtoInterface4.field[435] = field440;
+field440.name = "r_ring_proximal_changed";
+field440.accessType = "outputOnly";
+field440.type = "SFRotation";
+ProtoInterface21.field[418] = field440;
 
 let field441 = browser.currentScene.createNode("field");
-field441.name = "r_thumb1_changed";
-field441.accessType = "outputOnly";
-field441.type = "SFRotation";
-ProtoInterface4.field[436] = field441;
+field441.name = "r_scapula_key";
+field441.accessType = "inputOutput";
+field441.type = "MFFloat";
+//no default value
+ProtoInterface21.field[419] = field441;
 
 let field442 = browser.currentScene.createNode("field");
-field442.name = "r_thumb2_key";
+field442.name = "r_scapula_keyValue";
 field442.accessType = "inputOutput";
-field442.type = "MFFloat";
+field442.type = "MFRotation";
 //no default value
-ProtoInterface4.field[437] = field442;
+ProtoInterface21.field[420] = field442;
 
 let field443 = browser.currentScene.createNode("field");
-field443.name = "r_thumb2_keyValue";
-field443.accessType = "inputOutput";
-field443.type = "MFRotation";
-//no default value
-ProtoInterface4.field[438] = field443;
+field443.name = "r_scapula_changed";
+field443.accessType = "outputOnly";
+field443.type = "SFRotation";
+ProtoInterface21.field[421] = field443;
 
 let field444 = browser.currentScene.createNode("field");
-field444.name = "r_thumb2_changed";
-field444.accessType = "outputOnly";
-field444.type = "SFRotation";
-ProtoInterface4.field[439] = field444;
+field444.name = "r_shoulder_key";
+field444.accessType = "inputOutput";
+field444.type = "MFFloat";
+//no default value
+ProtoInterface21.field[422] = field444;
 
 let field445 = browser.currentScene.createNode("field");
-field445.name = "r_thumb3_key";
+field445.name = "r_shoulder_keyValue";
 field445.accessType = "inputOutput";
-field445.type = "MFFloat";
+field445.type = "MFRotation";
 //no default value
-ProtoInterface4.field[440] = field445;
+ProtoInterface21.field[423] = field445;
 
 let field446 = browser.currentScene.createNode("field");
-field446.name = "r_thumb3_keyValue";
-field446.accessType = "inputOutput";
-field446.type = "MFRotation";
-//no default value
-ProtoInterface4.field[441] = field446;
+field446.name = "r_shoulder_changed";
+field446.accessType = "outputOnly";
+field446.type = "SFRotation";
+ProtoInterface21.field[424] = field446;
 
 let field447 = browser.currentScene.createNode("field");
-field447.name = "r_thumb3_changed";
-field447.accessType = "outputOnly";
-field447.type = "SFRotation";
-ProtoInterface4.field[442] = field447;
+field447.name = "r_sternoclavicular_key";
+field447.accessType = "inputOutput";
+field447.type = "MFFloat";
+//no default value
+ProtoInterface21.field[425] = field447;
 
 let field448 = browser.currentScene.createNode("field");
-field448.name = "r_thumb_distal_key";
+field448.name = "r_sternoclavicular_keyValue";
 field448.accessType = "inputOutput";
-field448.type = "MFFloat";
+field448.type = "MFRotation";
 //no default value
-ProtoInterface4.field[443] = field448;
+ProtoInterface21.field[426] = field448;
 
 let field449 = browser.currentScene.createNode("field");
-field449.name = "r_thumb_distal_keyValue";
-field449.accessType = "inputOutput";
-field449.type = "MFRotation";
-//no default value
-ProtoInterface4.field[444] = field449;
+field449.name = "r_sternoclavicular_changed";
+field449.accessType = "outputOnly";
+field449.type = "SFRotation";
+ProtoInterface21.field[427] = field449;
 
 let field450 = browser.currentScene.createNode("field");
-field450.name = "r_thumb_distal_changed";
-field450.accessType = "outputOnly";
-field450.type = "SFRotation";
-ProtoInterface4.field[445] = field450;
+field450.name = "r_subtalar_key";
+field450.accessType = "inputOutput";
+field450.type = "MFFloat";
+//no default value
+ProtoInterface21.field[428] = field450;
 
 let field451 = browser.currentScene.createNode("field");
-field451.name = "r_thumb_metacarpal_key";
+field451.name = "r_subtalar_keyValue";
 field451.accessType = "inputOutput";
-field451.type = "MFFloat";
+field451.type = "MFRotation";
 //no default value
-ProtoInterface4.field[446] = field451;
+ProtoInterface21.field[429] = field451;
 
 let field452 = browser.currentScene.createNode("field");
-field452.name = "r_thumb_metacarpal_keyValue";
-field452.accessType = "inputOutput";
-field452.type = "MFRotation";
-//no default value
-ProtoInterface4.field[447] = field452;
+field452.name = "r_subtalar_changed";
+field452.accessType = "outputOnly";
+field452.type = "SFRotation";
+ProtoInterface21.field[430] = field452;
 
 let field453 = browser.currentScene.createNode("field");
-field453.name = "r_thumb_metacarpal_changed";
-field453.accessType = "outputOnly";
-field453.type = "SFRotation";
-ProtoInterface4.field[448] = field453;
+field453.name = "r_thigh_key";
+field453.accessType = "inputOutput";
+field453.type = "MFFloat";
+//no default value
+ProtoInterface21.field[431] = field453;
 
 let field454 = browser.currentScene.createNode("field");
-field454.name = "r_thumb_proximal_key";
+field454.name = "r_thigh_keyValue";
 field454.accessType = "inputOutput";
-field454.type = "MFFloat";
+field454.type = "MFRotation";
 //no default value
-ProtoInterface4.field[449] = field454;
+ProtoInterface21.field[432] = field454;
 
 let field455 = browser.currentScene.createNode("field");
-field455.name = "r_thumb_proximal_keyValue";
-field455.accessType = "inputOutput";
-field455.type = "MFRotation";
-//no default value
-ProtoInterface4.field[450] = field455;
+field455.name = "r_thigh_changed";
+field455.accessType = "outputOnly";
+field455.type = "SFRotation";
+ProtoInterface21.field[433] = field455;
 
 let field456 = browser.currentScene.createNode("field");
-field456.name = "r_thumb_proximal_changed";
-field456.accessType = "outputOnly";
-field456.type = "SFRotation";
-ProtoInterface4.field[451] = field456;
+field456.name = "r_thumb1_key";
+field456.accessType = "inputOutput";
+field456.type = "MFFloat";
+//no default value
+ProtoInterface21.field[434] = field456;
 
 let field457 = browser.currentScene.createNode("field");
-field457.name = "r_upperarm_key";
+field457.name = "r_thumb1_keyValue";
 field457.accessType = "inputOutput";
-field457.type = "MFFloat";
+field457.type = "MFRotation";
 //no default value
-ProtoInterface4.field[452] = field457;
+ProtoInterface21.field[435] = field457;
 
 let field458 = browser.currentScene.createNode("field");
-field458.name = "r_upperarm_keyValue";
-field458.accessType = "inputOutput";
-field458.type = "MFRotation";
-//no default value
-ProtoInterface4.field[453] = field458;
+field458.name = "r_thumb1_changed";
+field458.accessType = "outputOnly";
+field458.type = "SFRotation";
+ProtoInterface21.field[436] = field458;
 
 let field459 = browser.currentScene.createNode("field");
-field459.name = "r_upperarm_changed";
-field459.accessType = "outputOnly";
-field459.type = "SFRotation";
-ProtoInterface4.field[454] = field459;
+field459.name = "r_thumb2_key";
+field459.accessType = "inputOutput";
+field459.type = "MFFloat";
+//no default value
+ProtoInterface21.field[437] = field459;
 
 let field460 = browser.currentScene.createNode("field");
-field460.name = "r_wrist_key";
+field460.name = "r_thumb2_keyValue";
 field460.accessType = "inputOutput";
-field460.type = "MFFloat";
+field460.type = "MFRotation";
 //no default value
-ProtoInterface4.field[455] = field460;
+ProtoInterface21.field[438] = field460;
 
 let field461 = browser.currentScene.createNode("field");
-field461.name = "r_wrist_keyValue";
-field461.accessType = "inputOutput";
-field461.type = "MFRotation";
-//no default value
-ProtoInterface4.field[456] = field461;
+field461.name = "r_thumb2_changed";
+field461.accessType = "outputOnly";
+field461.type = "SFRotation";
+ProtoInterface21.field[439] = field461;
 
 let field462 = browser.currentScene.createNode("field");
-field462.name = "r_wrist_changed";
-field462.accessType = "outputOnly";
-field462.type = "SFRotation";
-ProtoInterface4.field[457] = field462;
+field462.name = "r_thumb3_key";
+field462.accessType = "inputOutput";
+field462.type = "MFFloat";
+//no default value
+ProtoInterface21.field[440] = field462;
 
 let field463 = browser.currentScene.createNode("field");
-field463.name = "sacroiliac_key";
+field463.name = "r_thumb3_keyValue";
 field463.accessType = "inputOutput";
-field463.type = "MFFloat";
+field463.type = "MFRotation";
 //no default value
-ProtoInterface4.field[458] = field463;
+ProtoInterface21.field[441] = field463;
 
 let field464 = browser.currentScene.createNode("field");
-field464.name = "sacroiliac_keyValue";
-field464.accessType = "inputOutput";
-field464.type = "MFRotation";
-//no default value
-ProtoInterface4.field[459] = field464;
+field464.name = "r_thumb3_changed";
+field464.accessType = "outputOnly";
+field464.type = "SFRotation";
+ProtoInterface21.field[442] = field464;
 
 let field465 = browser.currentScene.createNode("field");
-field465.name = "sacroiliac_changed";
-field465.accessType = "outputOnly";
-field465.type = "SFRotation";
-ProtoInterface4.field[460] = field465;
+field465.name = "r_thumb_distal_key";
+field465.accessType = "inputOutput";
+field465.type = "MFFloat";
+//no default value
+ProtoInterface21.field[443] = field465;
 
 let field466 = browser.currentScene.createNode("field");
-field466.name = "sacrum_key";
+field466.name = "r_thumb_distal_keyValue";
 field466.accessType = "inputOutput";
-field466.type = "MFFloat";
+field466.type = "MFRotation";
 //no default value
-ProtoInterface4.field[461] = field466;
+ProtoInterface21.field[444] = field466;
 
 let field467 = browser.currentScene.createNode("field");
-field467.name = "sacrum_keyValue";
-field467.accessType = "inputOutput";
-field467.type = "MFRotation";
-//no default value
-ProtoInterface4.field[462] = field467;
+field467.name = "r_thumb_distal_changed";
+field467.accessType = "outputOnly";
+field467.type = "SFRotation";
+ProtoInterface21.field[445] = field467;
 
 let field468 = browser.currentScene.createNode("field");
-field468.name = "sacrum_changed";
-field468.accessType = "outputOnly";
-field468.type = "SFRotation";
-ProtoInterface4.field[463] = field468;
+field468.name = "r_thumb_metacarpal_key";
+field468.accessType = "inputOutput";
+field468.type = "MFFloat";
+//no default value
+ProtoInterface21.field[446] = field468;
 
 let field469 = browser.currentScene.createNode("field");
-field469.name = "skull_key";
+field469.name = "r_thumb_metacarpal_keyValue";
 field469.accessType = "inputOutput";
-field469.type = "MFFloat";
+field469.type = "MFRotation";
 //no default value
-ProtoInterface4.field[464] = field469;
+ProtoInterface21.field[447] = field469;
 
 let field470 = browser.currentScene.createNode("field");
-field470.name = "skull_keyValue";
-field470.accessType = "inputOutput";
-field470.type = "MFRotation";
-//no default value
-ProtoInterface4.field[465] = field470;
+field470.name = "r_thumb_metacarpal_changed";
+field470.accessType = "outputOnly";
+field470.type = "SFRotation";
+ProtoInterface21.field[448] = field470;
 
 let field471 = browser.currentScene.createNode("field");
-field471.name = "skull_changed";
-field471.accessType = "outputOnly";
-field471.type = "SFRotation";
-ProtoInterface4.field[466] = field471;
+field471.name = "r_thumb_proximal_key";
+field471.accessType = "inputOutput";
+field471.type = "MFFloat";
+//no default value
+ProtoInterface21.field[449] = field471;
 
 let field472 = browser.currentScene.createNode("field");
-field472.name = "skullbase_key";
+field472.name = "r_thumb_proximal_keyValue";
 field472.accessType = "inputOutput";
-field472.type = "MFFloat";
+field472.type = "MFRotation";
 //no default value
-ProtoInterface4.field[467] = field472;
+ProtoInterface21.field[450] = field472;
 
 let field473 = browser.currentScene.createNode("field");
-field473.name = "skullbase_keyValue";
-field473.accessType = "inputOutput";
-field473.type = "MFRotation";
-//no default value
-ProtoInterface4.field[468] = field473;
+field473.name = "r_thumb_proximal_changed";
+field473.accessType = "outputOnly";
+field473.type = "SFRotation";
+ProtoInterface21.field[451] = field473;
 
 let field474 = browser.currentScene.createNode("field");
-field474.name = "skullbase_changed";
-field474.accessType = "outputOnly";
-field474.type = "SFRotation";
-ProtoInterface4.field[469] = field474;
+field474.name = "r_upperarm_key";
+field474.accessType = "inputOutput";
+field474.type = "MFFloat";
+//no default value
+ProtoInterface21.field[452] = field474;
 
 let field475 = browser.currentScene.createNode("field");
-field475.name = "t10_key";
+field475.name = "r_upperarm_keyValue";
 field475.accessType = "inputOutput";
-field475.type = "MFFloat";
+field475.type = "MFRotation";
 //no default value
-ProtoInterface4.field[470] = field475;
+ProtoInterface21.field[453] = field475;
 
 let field476 = browser.currentScene.createNode("field");
-field476.name = "t10_keyValue";
-field476.accessType = "inputOutput";
-field476.type = "MFRotation";
-//no default value
-ProtoInterface4.field[471] = field476;
+field476.name = "r_upperarm_changed";
+field476.accessType = "outputOnly";
+field476.type = "SFRotation";
+ProtoInterface21.field[454] = field476;
 
 let field477 = browser.currentScene.createNode("field");
-field477.name = "t10_changed";
-field477.accessType = "outputOnly";
-field477.type = "SFRotation";
-ProtoInterface4.field[472] = field477;
+field477.name = "r_wrist_key";
+field477.accessType = "inputOutput";
+field477.type = "MFFloat";
+//no default value
+ProtoInterface21.field[455] = field477;
 
 let field478 = browser.currentScene.createNode("field");
-field478.name = "t11_key";
+field478.name = "r_wrist_keyValue";
 field478.accessType = "inputOutput";
-field478.type = "MFFloat";
+field478.type = "MFRotation";
 //no default value
-ProtoInterface4.field[473] = field478;
+ProtoInterface21.field[456] = field478;
 
 let field479 = browser.currentScene.createNode("field");
-field479.name = "t11_keyValue";
-field479.accessType = "inputOutput";
-field479.type = "MFRotation";
-//no default value
-ProtoInterface4.field[474] = field479;
+field479.name = "r_wrist_changed";
+field479.accessType = "outputOnly";
+field479.type = "SFRotation";
+ProtoInterface21.field[457] = field479;
 
 let field480 = browser.currentScene.createNode("field");
-field480.name = "t11_changed";
-field480.accessType = "outputOnly";
-field480.type = "SFRotation";
-ProtoInterface4.field[475] = field480;
+field480.name = "sacroiliac_key";
+field480.accessType = "inputOutput";
+field480.type = "MFFloat";
+//no default value
+ProtoInterface21.field[458] = field480;
 
 let field481 = browser.currentScene.createNode("field");
-field481.name = "t12_key";
+field481.name = "sacroiliac_keyValue";
 field481.accessType = "inputOutput";
-field481.type = "MFFloat";
+field481.type = "MFRotation";
 //no default value
-ProtoInterface4.field[476] = field481;
+ProtoInterface21.field[459] = field481;
 
 let field482 = browser.currentScene.createNode("field");
-field482.name = "t12_keyValue";
-field482.accessType = "inputOutput";
-field482.type = "MFRotation";
-//no default value
-ProtoInterface4.field[477] = field482;
+field482.name = "sacroiliac_changed";
+field482.accessType = "outputOnly";
+field482.type = "SFRotation";
+ProtoInterface21.field[460] = field482;
 
 let field483 = browser.currentScene.createNode("field");
-field483.name = "t12_changed";
-field483.accessType = "outputOnly";
-field483.type = "SFRotation";
-ProtoInterface4.field[478] = field483;
+field483.name = "sacrum_key";
+field483.accessType = "inputOutput";
+field483.type = "MFFloat";
+//no default value
+ProtoInterface21.field[461] = field483;
 
 let field484 = browser.currentScene.createNode("field");
-field484.name = "t1_key";
+field484.name = "sacrum_keyValue";
 field484.accessType = "inputOutput";
-field484.type = "MFFloat";
+field484.type = "MFRotation";
 //no default value
-ProtoInterface4.field[479] = field484;
+ProtoInterface21.field[462] = field484;
 
 let field485 = browser.currentScene.createNode("field");
-field485.name = "t1_keyValue";
-field485.accessType = "inputOutput";
-field485.type = "MFRotation";
-//no default value
-ProtoInterface4.field[480] = field485;
+field485.name = "sacrum_changed";
+field485.accessType = "outputOnly";
+field485.type = "SFRotation";
+ProtoInterface21.field[463] = field485;
 
 let field486 = browser.currentScene.createNode("field");
-field486.name = "t1_changed";
-field486.accessType = "outputOnly";
-field486.type = "SFRotation";
-ProtoInterface4.field[481] = field486;
+field486.name = "skull_key";
+field486.accessType = "inputOutput";
+field486.type = "MFFloat";
+//no default value
+ProtoInterface21.field[464] = field486;
 
 let field487 = browser.currentScene.createNode("field");
-field487.name = "t2_key";
+field487.name = "skull_keyValue";
 field487.accessType = "inputOutput";
-field487.type = "MFFloat";
+field487.type = "MFRotation";
 //no default value
-ProtoInterface4.field[482] = field487;
+ProtoInterface21.field[465] = field487;
 
 let field488 = browser.currentScene.createNode("field");
-field488.name = "t2_keyValue";
-field488.accessType = "inputOutput";
-field488.type = "MFRotation";
-//no default value
-ProtoInterface4.field[483] = field488;
+field488.name = "skull_changed";
+field488.accessType = "outputOnly";
+field488.type = "SFRotation";
+ProtoInterface21.field[466] = field488;
 
 let field489 = browser.currentScene.createNode("field");
-field489.name = "t2_changed";
-field489.accessType = "outputOnly";
-field489.type = "SFRotation";
-ProtoInterface4.field[484] = field489;
+field489.name = "skullbase_key";
+field489.accessType = "inputOutput";
+field489.type = "MFFloat";
+//no default value
+ProtoInterface21.field[467] = field489;
 
 let field490 = browser.currentScene.createNode("field");
-field490.name = "t3_key";
+field490.name = "skullbase_keyValue";
 field490.accessType = "inputOutput";
-field490.type = "MFFloat";
+field490.type = "MFRotation";
 //no default value
-ProtoInterface4.field[485] = field490;
+ProtoInterface21.field[468] = field490;
 
 let field491 = browser.currentScene.createNode("field");
-field491.name = "t3_keyValue";
-field491.accessType = "inputOutput";
-field491.type = "MFRotation";
-//no default value
-ProtoInterface4.field[486] = field491;
+field491.name = "skullbase_changed";
+field491.accessType = "outputOnly";
+field491.type = "SFRotation";
+ProtoInterface21.field[469] = field491;
 
 let field492 = browser.currentScene.createNode("field");
-field492.name = "t3_changed";
-field492.accessType = "outputOnly";
-field492.type = "SFRotation";
-ProtoInterface4.field[487] = field492;
+field492.name = "t10_key";
+field492.accessType = "inputOutput";
+field492.type = "MFFloat";
+//no default value
+ProtoInterface21.field[470] = field492;
 
 let field493 = browser.currentScene.createNode("field");
-field493.name = "t4_key";
+field493.name = "t10_keyValue";
 field493.accessType = "inputOutput";
-field493.type = "MFFloat";
+field493.type = "MFRotation";
 //no default value
-ProtoInterface4.field[488] = field493;
+ProtoInterface21.field[471] = field493;
 
 let field494 = browser.currentScene.createNode("field");
-field494.name = "t4_keyValue";
-field494.accessType = "inputOutput";
-field494.type = "MFRotation";
-//no default value
-ProtoInterface4.field[489] = field494;
+field494.name = "t10_changed";
+field494.accessType = "outputOnly";
+field494.type = "SFRotation";
+ProtoInterface21.field[472] = field494;
 
 let field495 = browser.currentScene.createNode("field");
-field495.name = "t4_changed";
-field495.accessType = "outputOnly";
-field495.type = "SFRotation";
-ProtoInterface4.field[490] = field495;
+field495.name = "t11_key";
+field495.accessType = "inputOutput";
+field495.type = "MFFloat";
+//no default value
+ProtoInterface21.field[473] = field495;
 
 let field496 = browser.currentScene.createNode("field");
-field496.name = "t5_key";
+field496.name = "t11_keyValue";
 field496.accessType = "inputOutput";
-field496.type = "MFFloat";
+field496.type = "MFRotation";
 //no default value
-ProtoInterface4.field[491] = field496;
+ProtoInterface21.field[474] = field496;
 
 let field497 = browser.currentScene.createNode("field");
-field497.name = "t5_keyValue";
-field497.accessType = "inputOutput";
-field497.type = "MFRotation";
-//no default value
-ProtoInterface4.field[492] = field497;
+field497.name = "t11_changed";
+field497.accessType = "outputOnly";
+field497.type = "SFRotation";
+ProtoInterface21.field[475] = field497;
 
 let field498 = browser.currentScene.createNode("field");
-field498.name = "t5_changed";
-field498.accessType = "outputOnly";
-field498.type = "SFRotation";
-ProtoInterface4.field[493] = field498;
+field498.name = "t12_key";
+field498.accessType = "inputOutput";
+field498.type = "MFFloat";
+//no default value
+ProtoInterface21.field[476] = field498;
 
 let field499 = browser.currentScene.createNode("field");
-field499.name = "t6_key";
+field499.name = "t12_keyValue";
 field499.accessType = "inputOutput";
-field499.type = "MFFloat";
+field499.type = "MFRotation";
 //no default value
-ProtoInterface4.field[494] = field499;
+ProtoInterface21.field[477] = field499;
 
 let field500 = browser.currentScene.createNode("field");
-field500.name = "t6_keyValue";
-field500.accessType = "inputOutput";
-field500.type = "MFRotation";
-//no default value
-ProtoInterface4.field[495] = field500;
+field500.name = "t12_changed";
+field500.accessType = "outputOnly";
+field500.type = "SFRotation";
+ProtoInterface21.field[478] = field500;
 
 let field501 = browser.currentScene.createNode("field");
-field501.name = "t6_changed";
-field501.accessType = "outputOnly";
-field501.type = "SFRotation";
-ProtoInterface4.field[496] = field501;
+field501.name = "t1_key";
+field501.accessType = "inputOutput";
+field501.type = "MFFloat";
+//no default value
+ProtoInterface21.field[479] = field501;
 
 let field502 = browser.currentScene.createNode("field");
-field502.name = "t7_key";
+field502.name = "t1_keyValue";
 field502.accessType = "inputOutput";
-field502.type = "MFFloat";
+field502.type = "MFRotation";
 //no default value
-ProtoInterface4.field[497] = field502;
+ProtoInterface21.field[480] = field502;
 
 let field503 = browser.currentScene.createNode("field");
-field503.name = "t7_keyValue";
-field503.accessType = "inputOutput";
-field503.type = "MFRotation";
-//no default value
-ProtoInterface4.field[498] = field503;
+field503.name = "t1_changed";
+field503.accessType = "outputOnly";
+field503.type = "SFRotation";
+ProtoInterface21.field[481] = field503;
 
 let field504 = browser.currentScene.createNode("field");
-field504.name = "t7_changed";
-field504.accessType = "outputOnly";
-field504.type = "SFRotation";
-ProtoInterface4.field[499] = field504;
+field504.name = "t2_key";
+field504.accessType = "inputOutput";
+field504.type = "MFFloat";
+//no default value
+ProtoInterface21.field[482] = field504;
 
 let field505 = browser.currentScene.createNode("field");
-field505.name = "t8_key";
+field505.name = "t2_keyValue";
 field505.accessType = "inputOutput";
-field505.type = "MFFloat";
+field505.type = "MFRotation";
 //no default value
-ProtoInterface4.field[500] = field505;
+ProtoInterface21.field[483] = field505;
 
 let field506 = browser.currentScene.createNode("field");
-field506.name = "t8_keyValue";
-field506.accessType = "inputOutput";
-field506.type = "MFRotation";
-//no default value
-ProtoInterface4.field[501] = field506;
+field506.name = "t2_changed";
+field506.accessType = "outputOnly";
+field506.type = "SFRotation";
+ProtoInterface21.field[484] = field506;
 
 let field507 = browser.currentScene.createNode("field");
-field507.name = "t8_changed";
-field507.accessType = "outputOnly";
-field507.type = "SFRotation";
-ProtoInterface4.field[502] = field507;
+field507.name = "t3_key";
+field507.accessType = "inputOutput";
+field507.type = "MFFloat";
+//no default value
+ProtoInterface21.field[485] = field507;
 
 let field508 = browser.currentScene.createNode("field");
-field508.name = "t9_key";
+field508.name = "t3_keyValue";
 field508.accessType = "inputOutput";
-field508.type = "MFFloat";
+field508.type = "MFRotation";
 //no default value
-ProtoInterface4.field[503] = field508;
+ProtoInterface21.field[486] = field508;
 
 let field509 = browser.currentScene.createNode("field");
-field509.name = "t9_keyValue";
-field509.accessType = "inputOutput";
-field509.type = "MFRotation";
-//no default value
-ProtoInterface4.field[504] = field509;
+field509.name = "t3_changed";
+field509.accessType = "outputOnly";
+field509.type = "SFRotation";
+ProtoInterface21.field[487] = field509;
 
 let field510 = browser.currentScene.createNode("field");
-field510.name = "t9_changed";
-field510.accessType = "outputOnly";
-field510.type = "SFRotation";
-ProtoInterface4.field[505] = field510;
+field510.name = "t4_key";
+field510.accessType = "inputOutput";
+field510.type = "MFFloat";
+//no default value
+ProtoInterface21.field[488] = field510;
 
 let field511 = browser.currentScene.createNode("field");
-field511.name = "temporomandibular_key";
+field511.name = "t4_keyValue";
 field511.accessType = "inputOutput";
-field511.type = "MFFloat";
+field511.type = "MFRotation";
 //no default value
-ProtoInterface4.field[506] = field511;
+ProtoInterface21.field[489] = field511;
 
 let field512 = browser.currentScene.createNode("field");
-field512.name = "temporomandibular_keyValue";
-field512.accessType = "inputOutput";
-field512.type = "MFRotation";
-//no default value
-ProtoInterface4.field[507] = field512;
+field512.name = "t4_changed";
+field512.accessType = "outputOnly";
+field512.type = "SFRotation";
+ProtoInterface21.field[490] = field512;
 
 let field513 = browser.currentScene.createNode("field");
-field513.name = "temporomandibular_changed";
-field513.accessType = "outputOnly";
-field513.type = "SFRotation";
-ProtoInterface4.field[508] = field513;
+field513.name = "t5_key";
+field513.accessType = "inputOutput";
+field513.type = "MFFloat";
+//no default value
+ProtoInterface21.field[491] = field513;
 
 let field514 = browser.currentScene.createNode("field");
-field514.name = "vc1_key";
+field514.name = "t5_keyValue";
 field514.accessType = "inputOutput";
-field514.type = "MFFloat";
+field514.type = "MFRotation";
 //no default value
-ProtoInterface4.field[509] = field514;
+ProtoInterface21.field[492] = field514;
 
 let field515 = browser.currentScene.createNode("field");
-field515.name = "vc1_keyValue";
-field515.accessType = "inputOutput";
-field515.type = "MFRotation";
-//no default value
-ProtoInterface4.field[510] = field515;
+field515.name = "t5_changed";
+field515.accessType = "outputOnly";
+field515.type = "SFRotation";
+ProtoInterface21.field[493] = field515;
 
 let field516 = browser.currentScene.createNode("field");
-field516.name = "vc1_changed";
-field516.accessType = "outputOnly";
-field516.type = "SFRotation";
-ProtoInterface4.field[511] = field516;
+field516.name = "t6_key";
+field516.accessType = "inputOutput";
+field516.type = "MFFloat";
+//no default value
+ProtoInterface21.field[494] = field516;
 
 let field517 = browser.currentScene.createNode("field");
-field517.name = "vc2_key";
+field517.name = "t6_keyValue";
 field517.accessType = "inputOutput";
-field517.type = "MFFloat";
+field517.type = "MFRotation";
 //no default value
-ProtoInterface4.field[512] = field517;
+ProtoInterface21.field[495] = field517;
 
 let field518 = browser.currentScene.createNode("field");
-field518.name = "vc2_keyValue";
-field518.accessType = "inputOutput";
-field518.type = "MFRotation";
-//no default value
-ProtoInterface4.field[513] = field518;
+field518.name = "t6_changed";
+field518.accessType = "outputOnly";
+field518.type = "SFRotation";
+ProtoInterface21.field[496] = field518;
 
 let field519 = browser.currentScene.createNode("field");
-field519.name = "vc2_changed";
-field519.accessType = "outputOnly";
-field519.type = "SFRotation";
-ProtoInterface4.field[514] = field519;
+field519.name = "t7_key";
+field519.accessType = "inputOutput";
+field519.type = "MFFloat";
+//no default value
+ProtoInterface21.field[497] = field519;
 
 let field520 = browser.currentScene.createNode("field");
-field520.name = "vc3_key";
+field520.name = "t7_keyValue";
 field520.accessType = "inputOutput";
-field520.type = "MFFloat";
+field520.type = "MFRotation";
 //no default value
-ProtoInterface4.field[515] = field520;
+ProtoInterface21.field[498] = field520;
 
 let field521 = browser.currentScene.createNode("field");
-field521.name = "vc3_keyValue";
-field521.accessType = "inputOutput";
-field521.type = "MFRotation";
-//no default value
-ProtoInterface4.field[516] = field521;
+field521.name = "t7_changed";
+field521.accessType = "outputOnly";
+field521.type = "SFRotation";
+ProtoInterface21.field[499] = field521;
 
 let field522 = browser.currentScene.createNode("field");
-field522.name = "vc3_changed";
-field522.accessType = "outputOnly";
-field522.type = "SFRotation";
-ProtoInterface4.field[517] = field522;
+field522.name = "t8_key";
+field522.accessType = "inputOutput";
+field522.type = "MFFloat";
+//no default value
+ProtoInterface21.field[500] = field522;
 
 let field523 = browser.currentScene.createNode("field");
-field523.name = "vc4_key";
+field523.name = "t8_keyValue";
 field523.accessType = "inputOutput";
-field523.type = "MFFloat";
+field523.type = "MFRotation";
 //no default value
-ProtoInterface4.field[518] = field523;
+ProtoInterface21.field[501] = field523;
 
 let field524 = browser.currentScene.createNode("field");
-field524.name = "vc4_keyValue";
-field524.accessType = "inputOutput";
-field524.type = "MFRotation";
-//no default value
-ProtoInterface4.field[519] = field524;
+field524.name = "t8_changed";
+field524.accessType = "outputOnly";
+field524.type = "SFRotation";
+ProtoInterface21.field[502] = field524;
 
 let field525 = browser.currentScene.createNode("field");
-field525.name = "vc4_changed";
-field525.accessType = "outputOnly";
-field525.type = "SFRotation";
-ProtoInterface4.field[520] = field525;
+field525.name = "t9_key";
+field525.accessType = "inputOutput";
+field525.type = "MFFloat";
+//no default value
+ProtoInterface21.field[503] = field525;
 
 let field526 = browser.currentScene.createNode("field");
-field526.name = "vc5_key";
+field526.name = "t9_keyValue";
 field526.accessType = "inputOutput";
-field526.type = "MFFloat";
+field526.type = "MFRotation";
 //no default value
-ProtoInterface4.field[521] = field526;
+ProtoInterface21.field[504] = field526;
 
 let field527 = browser.currentScene.createNode("field");
-field527.name = "vc5_keyValue";
-field527.accessType = "inputOutput";
-field527.type = "MFRotation";
-//no default value
-ProtoInterface4.field[522] = field527;
+field527.name = "t9_changed";
+field527.accessType = "outputOnly";
+field527.type = "SFRotation";
+ProtoInterface21.field[505] = field527;
 
 let field528 = browser.currentScene.createNode("field");
-field528.name = "vc5_changed";
-field528.accessType = "outputOnly";
-field528.type = "SFRotation";
-ProtoInterface4.field[523] = field528;
+field528.name = "temporomandibular_key";
+field528.accessType = "inputOutput";
+field528.type = "MFFloat";
+//no default value
+ProtoInterface21.field[506] = field528;
 
 let field529 = browser.currentScene.createNode("field");
-field529.name = "vc6_key";
+field529.name = "temporomandibular_keyValue";
 field529.accessType = "inputOutput";
-field529.type = "MFFloat";
+field529.type = "MFRotation";
 //no default value
-ProtoInterface4.field[524] = field529;
+ProtoInterface21.field[507] = field529;
 
 let field530 = browser.currentScene.createNode("field");
-field530.name = "vc6_keyValue";
-field530.accessType = "inputOutput";
-field530.type = "MFRotation";
-//no default value
-ProtoInterface4.field[525] = field530;
+field530.name = "temporomandibular_changed";
+field530.accessType = "outputOnly";
+field530.type = "SFRotation";
+ProtoInterface21.field[508] = field530;
 
 let field531 = browser.currentScene.createNode("field");
-field531.name = "vc6_changed";
-field531.accessType = "outputOnly";
-field531.type = "SFRotation";
-ProtoInterface4.field[526] = field531;
+field531.name = "vc1_key";
+field531.accessType = "inputOutput";
+field531.type = "MFFloat";
+//no default value
+ProtoInterface21.field[509] = field531;
 
 let field532 = browser.currentScene.createNode("field");
-field532.name = "vc7_key";
+field532.name = "vc1_keyValue";
 field532.accessType = "inputOutput";
-field532.type = "MFFloat";
+field532.type = "MFRotation";
 //no default value
-ProtoInterface4.field[527] = field532;
+ProtoInterface21.field[510] = field532;
 
 let field533 = browser.currentScene.createNode("field");
-field533.name = "vc7_keyValue";
-field533.accessType = "inputOutput";
-field533.type = "MFRotation";
-//no default value
-ProtoInterface4.field[528] = field533;
+field533.name = "vc1_changed";
+field533.accessType = "outputOnly";
+field533.type = "SFRotation";
+ProtoInterface21.field[511] = field533;
 
 let field534 = browser.currentScene.createNode("field");
-field534.name = "vc7_changed";
-field534.accessType = "outputOnly";
-field534.type = "SFRotation";
-ProtoInterface4.field[529] = field534;
+field534.name = "vc2_key";
+field534.accessType = "inputOutput";
+field534.type = "MFFloat";
+//no default value
+ProtoInterface21.field[512] = field534;
 
 let field535 = browser.currentScene.createNode("field");
-field535.name = "vl1_key";
+field535.name = "vc2_keyValue";
 field535.accessType = "inputOutput";
-field535.type = "MFFloat";
+field535.type = "MFRotation";
 //no default value
-ProtoInterface4.field[530] = field535;
+ProtoInterface21.field[513] = field535;
 
 let field536 = browser.currentScene.createNode("field");
-field536.name = "vl1_keyValue";
-field536.accessType = "inputOutput";
-field536.type = "MFRotation";
-//no default value
-ProtoInterface4.field[531] = field536;
+field536.name = "vc2_changed";
+field536.accessType = "outputOnly";
+field536.type = "SFRotation";
+ProtoInterface21.field[514] = field536;
 
 let field537 = browser.currentScene.createNode("field");
-field537.name = "vl1_changed";
-field537.accessType = "outputOnly";
-field537.type = "SFRotation";
-ProtoInterface4.field[532] = field537;
+field537.name = "vc3_key";
+field537.accessType = "inputOutput";
+field537.type = "MFFloat";
+//no default value
+ProtoInterface21.field[515] = field537;
 
 let field538 = browser.currentScene.createNode("field");
-field538.name = "vl2_key";
+field538.name = "vc3_keyValue";
 field538.accessType = "inputOutput";
-field538.type = "MFFloat";
+field538.type = "MFRotation";
 //no default value
-ProtoInterface4.field[533] = field538;
+ProtoInterface21.field[516] = field538;
 
 let field539 = browser.currentScene.createNode("field");
-field539.name = "vl2_keyValue";
-field539.accessType = "inputOutput";
-field539.type = "MFRotation";
-//no default value
-ProtoInterface4.field[534] = field539;
+field539.name = "vc3_changed";
+field539.accessType = "outputOnly";
+field539.type = "SFRotation";
+ProtoInterface21.field[517] = field539;
 
 let field540 = browser.currentScene.createNode("field");
-field540.name = "vl2_changed";
-field540.accessType = "outputOnly";
-field540.type = "SFRotation";
-ProtoInterface4.field[535] = field540;
+field540.name = "vc4_key";
+field540.accessType = "inputOutput";
+field540.type = "MFFloat";
+//no default value
+ProtoInterface21.field[518] = field540;
 
 let field541 = browser.currentScene.createNode("field");
-field541.name = "vl3_key";
+field541.name = "vc4_keyValue";
 field541.accessType = "inputOutput";
-field541.type = "MFFloat";
+field541.type = "MFRotation";
 //no default value
-ProtoInterface4.field[536] = field541;
+ProtoInterface21.field[519] = field541;
 
 let field542 = browser.currentScene.createNode("field");
-field542.name = "vl3_keyValue";
-field542.accessType = "inputOutput";
-field542.type = "MFRotation";
-//no default value
-ProtoInterface4.field[537] = field542;
+field542.name = "vc4_changed";
+field542.accessType = "outputOnly";
+field542.type = "SFRotation";
+ProtoInterface21.field[520] = field542;
 
 let field543 = browser.currentScene.createNode("field");
-field543.name = "vl3_changed";
-field543.accessType = "outputOnly";
-field543.type = "SFRotation";
-ProtoInterface4.field[538] = field543;
+field543.name = "vc5_key";
+field543.accessType = "inputOutput";
+field543.type = "MFFloat";
+//no default value
+ProtoInterface21.field[521] = field543;
 
 let field544 = browser.currentScene.createNode("field");
-field544.name = "vl4_key";
+field544.name = "vc5_keyValue";
 field544.accessType = "inputOutput";
-field544.type = "MFFloat";
+field544.type = "MFRotation";
 //no default value
-ProtoInterface4.field[539] = field544;
+ProtoInterface21.field[522] = field544;
 
 let field545 = browser.currentScene.createNode("field");
-field545.name = "vl4_keyValue";
-field545.accessType = "inputOutput";
-field545.type = "MFRotation";
-//no default value
-ProtoInterface4.field[540] = field545;
+field545.name = "vc5_changed";
+field545.accessType = "outputOnly";
+field545.type = "SFRotation";
+ProtoInterface21.field[523] = field545;
 
 let field546 = browser.currentScene.createNode("field");
-field546.name = "vl4_changed";
-field546.accessType = "outputOnly";
-field546.type = "SFRotation";
-ProtoInterface4.field[541] = field546;
+field546.name = "vc6_key";
+field546.accessType = "inputOutput";
+field546.type = "MFFloat";
+//no default value
+ProtoInterface21.field[524] = field546;
 
 let field547 = browser.currentScene.createNode("field");
-field547.name = "vl5_key";
+field547.name = "vc6_keyValue";
 field547.accessType = "inputOutput";
-field547.type = "MFFloat";
+field547.type = "MFRotation";
 //no default value
-ProtoInterface4.field[542] = field547;
+ProtoInterface21.field[525] = field547;
 
 let field548 = browser.currentScene.createNode("field");
-field548.name = "vl5_keyValue";
-field548.accessType = "inputOutput";
-field548.type = "MFRotation";
-//no default value
-ProtoInterface4.field[543] = field548;
+field548.name = "vc6_changed";
+field548.accessType = "outputOnly";
+field548.type = "SFRotation";
+ProtoInterface21.field[526] = field548;
 
 let field549 = browser.currentScene.createNode("field");
-field549.name = "vl5_changed";
-field549.accessType = "outputOnly";
-field549.type = "SFRotation";
-ProtoInterface4.field[544] = field549;
+field549.name = "vc7_key";
+field549.accessType = "inputOutput";
+field549.type = "MFFloat";
+//no default value
+ProtoInterface21.field[527] = field549;
 
 let field550 = browser.currentScene.createNode("field");
-field550.name = "vt10_key";
+field550.name = "vc7_keyValue";
 field550.accessType = "inputOutput";
-field550.type = "MFFloat";
+field550.type = "MFRotation";
 //no default value
-ProtoInterface4.field[545] = field550;
+ProtoInterface21.field[528] = field550;
 
 let field551 = browser.currentScene.createNode("field");
-field551.name = "vt10_keyValue";
-field551.accessType = "inputOutput";
-field551.type = "MFRotation";
-//no default value
-ProtoInterface4.field[546] = field551;
+field551.name = "vc7_changed";
+field551.accessType = "outputOnly";
+field551.type = "SFRotation";
+ProtoInterface21.field[529] = field551;
 
 let field552 = browser.currentScene.createNode("field");
-field552.name = "vt10_changed";
-field552.accessType = "outputOnly";
-field552.type = "SFRotation";
-ProtoInterface4.field[547] = field552;
+field552.name = "vl1_key";
+field552.accessType = "inputOutput";
+field552.type = "MFFloat";
+//no default value
+ProtoInterface21.field[530] = field552;
 
 let field553 = browser.currentScene.createNode("field");
-field553.name = "vt11_key";
+field553.name = "vl1_keyValue";
 field553.accessType = "inputOutput";
-field553.type = "MFFloat";
+field553.type = "MFRotation";
 //no default value
-ProtoInterface4.field[548] = field553;
+ProtoInterface21.field[531] = field553;
 
 let field554 = browser.currentScene.createNode("field");
-field554.name = "vt11_keyValue";
-field554.accessType = "inputOutput";
-field554.type = "MFRotation";
-//no default value
-ProtoInterface4.field[549] = field554;
+field554.name = "vl1_changed";
+field554.accessType = "outputOnly";
+field554.type = "SFRotation";
+ProtoInterface21.field[532] = field554;
 
 let field555 = browser.currentScene.createNode("field");
-field555.name = "vt11_changed";
-field555.accessType = "outputOnly";
-field555.type = "SFRotation";
-ProtoInterface4.field[550] = field555;
+field555.name = "vl2_key";
+field555.accessType = "inputOutput";
+field555.type = "MFFloat";
+//no default value
+ProtoInterface21.field[533] = field555;
 
 let field556 = browser.currentScene.createNode("field");
-field556.name = "vt12_key";
+field556.name = "vl2_keyValue";
 field556.accessType = "inputOutput";
-field556.type = "MFFloat";
+field556.type = "MFRotation";
 //no default value
-ProtoInterface4.field[551] = field556;
+ProtoInterface21.field[534] = field556;
 
 let field557 = browser.currentScene.createNode("field");
-field557.name = "vt12_keyValue";
-field557.accessType = "inputOutput";
-field557.type = "MFRotation";
-//no default value
-ProtoInterface4.field[552] = field557;
+field557.name = "vl2_changed";
+field557.accessType = "outputOnly";
+field557.type = "SFRotation";
+ProtoInterface21.field[535] = field557;
 
 let field558 = browser.currentScene.createNode("field");
-field558.name = "vt12_changed";
-field558.accessType = "outputOnly";
-field558.type = "SFRotation";
-ProtoInterface4.field[553] = field558;
+field558.name = "vl3_key";
+field558.accessType = "inputOutput";
+field558.type = "MFFloat";
+//no default value
+ProtoInterface21.field[536] = field558;
 
 let field559 = browser.currentScene.createNode("field");
-field559.name = "vt1_key";
+field559.name = "vl3_keyValue";
 field559.accessType = "inputOutput";
-field559.type = "MFFloat";
+field559.type = "MFRotation";
 //no default value
-ProtoInterface4.field[554] = field559;
+ProtoInterface21.field[537] = field559;
 
 let field560 = browser.currentScene.createNode("field");
-field560.name = "vt1_keyValue";
-field560.accessType = "inputOutput";
-field560.type = "MFRotation";
-//no default value
-ProtoInterface4.field[555] = field560;
+field560.name = "vl3_changed";
+field560.accessType = "outputOnly";
+field560.type = "SFRotation";
+ProtoInterface21.field[538] = field560;
 
 let field561 = browser.currentScene.createNode("field");
-field561.name = "vt1_changed";
-field561.accessType = "outputOnly";
-field561.type = "SFRotation";
-ProtoInterface4.field[556] = field561;
+field561.name = "vl4_key";
+field561.accessType = "inputOutput";
+field561.type = "MFFloat";
+//no default value
+ProtoInterface21.field[539] = field561;
 
 let field562 = browser.currentScene.createNode("field");
-field562.name = "vt2_key";
+field562.name = "vl4_keyValue";
 field562.accessType = "inputOutput";
-field562.type = "MFFloat";
+field562.type = "MFRotation";
 //no default value
-ProtoInterface4.field[557] = field562;
+ProtoInterface21.field[540] = field562;
 
 let field563 = browser.currentScene.createNode("field");
-field563.name = "vt2_keyValue";
-field563.accessType = "inputOutput";
-field563.type = "MFRotation";
-//no default value
-ProtoInterface4.field[558] = field563;
+field563.name = "vl4_changed";
+field563.accessType = "outputOnly";
+field563.type = "SFRotation";
+ProtoInterface21.field[541] = field563;
 
 let field564 = browser.currentScene.createNode("field");
-field564.name = "vt2_changed";
-field564.accessType = "outputOnly";
-field564.type = "SFRotation";
-ProtoInterface4.field[559] = field564;
+field564.name = "vl5_key";
+field564.accessType = "inputOutput";
+field564.type = "MFFloat";
+//no default value
+ProtoInterface21.field[542] = field564;
 
 let field565 = browser.currentScene.createNode("field");
-field565.name = "vt3_key";
+field565.name = "vl5_keyValue";
 field565.accessType = "inputOutput";
-field565.type = "MFFloat";
+field565.type = "MFRotation";
 //no default value
-ProtoInterface4.field[560] = field565;
+ProtoInterface21.field[543] = field565;
 
 let field566 = browser.currentScene.createNode("field");
-field566.name = "vt3_keyValue";
-field566.accessType = "inputOutput";
-field566.type = "MFRotation";
-//no default value
-ProtoInterface4.field[561] = field566;
+field566.name = "vl5_changed";
+field566.accessType = "outputOnly";
+field566.type = "SFRotation";
+ProtoInterface21.field[544] = field566;
 
 let field567 = browser.currentScene.createNode("field");
-field567.name = "vt3_changed";
-field567.accessType = "outputOnly";
-field567.type = "SFRotation";
-ProtoInterface4.field[562] = field567;
+field567.name = "vt10_key";
+field567.accessType = "inputOutput";
+field567.type = "MFFloat";
+//no default value
+ProtoInterface21.field[545] = field567;
 
 let field568 = browser.currentScene.createNode("field");
-field568.name = "vt4_key";
+field568.name = "vt10_keyValue";
 field568.accessType = "inputOutput";
-field568.type = "MFFloat";
+field568.type = "MFRotation";
 //no default value
-ProtoInterface4.field[563] = field568;
+ProtoInterface21.field[546] = field568;
 
 let field569 = browser.currentScene.createNode("field");
-field569.name = "vt4_keyValue";
-field569.accessType = "inputOutput";
-field569.type = "MFRotation";
-//no default value
-ProtoInterface4.field[564] = field569;
+field569.name = "vt10_changed";
+field569.accessType = "outputOnly";
+field569.type = "SFRotation";
+ProtoInterface21.field[547] = field569;
 
 let field570 = browser.currentScene.createNode("field");
-field570.name = "vt4_changed";
-field570.accessType = "outputOnly";
-field570.type = "SFRotation";
-ProtoInterface4.field[565] = field570;
+field570.name = "vt11_key";
+field570.accessType = "inputOutput";
+field570.type = "MFFloat";
+//no default value
+ProtoInterface21.field[548] = field570;
 
 let field571 = browser.currentScene.createNode("field");
-field571.name = "vt5_key";
+field571.name = "vt11_keyValue";
 field571.accessType = "inputOutput";
-field571.type = "MFFloat";
+field571.type = "MFRotation";
 //no default value
-ProtoInterface4.field[566] = field571;
+ProtoInterface21.field[549] = field571;
 
 let field572 = browser.currentScene.createNode("field");
-field572.name = "vt5_keyValue";
-field572.accessType = "inputOutput";
-field572.type = "MFRotation";
-//no default value
-ProtoInterface4.field[567] = field572;
+field572.name = "vt11_changed";
+field572.accessType = "outputOnly";
+field572.type = "SFRotation";
+ProtoInterface21.field[550] = field572;
 
 let field573 = browser.currentScene.createNode("field");
-field573.name = "vt5_changed";
-field573.accessType = "outputOnly";
-field573.type = "SFRotation";
-ProtoInterface4.field[568] = field573;
+field573.name = "vt12_key";
+field573.accessType = "inputOutput";
+field573.type = "MFFloat";
+//no default value
+ProtoInterface21.field[551] = field573;
 
 let field574 = browser.currentScene.createNode("field");
-field574.name = "vt6_key";
+field574.name = "vt12_keyValue";
 field574.accessType = "inputOutput";
-field574.type = "MFFloat";
+field574.type = "MFRotation";
 //no default value
-ProtoInterface4.field[569] = field574;
+ProtoInterface21.field[552] = field574;
 
 let field575 = browser.currentScene.createNode("field");
-field575.name = "vt6_keyValue";
-field575.accessType = "inputOutput";
-field575.type = "MFRotation";
-//no default value
-ProtoInterface4.field[570] = field575;
+field575.name = "vt12_changed";
+field575.accessType = "outputOnly";
+field575.type = "SFRotation";
+ProtoInterface21.field[553] = field575;
 
 let field576 = browser.currentScene.createNode("field");
-field576.name = "vt6_changed";
-field576.accessType = "outputOnly";
-field576.type = "SFRotation";
-ProtoInterface4.field[571] = field576;
+field576.name = "vt1_key";
+field576.accessType = "inputOutput";
+field576.type = "MFFloat";
+//no default value
+ProtoInterface21.field[554] = field576;
 
 let field577 = browser.currentScene.createNode("field");
-field577.name = "vt7_key";
+field577.name = "vt1_keyValue";
 field577.accessType = "inputOutput";
-field577.type = "MFFloat";
+field577.type = "MFRotation";
 //no default value
-ProtoInterface4.field[572] = field577;
+ProtoInterface21.field[555] = field577;
 
 let field578 = browser.currentScene.createNode("field");
-field578.name = "vt7_keyValue";
-field578.accessType = "inputOutput";
-field578.type = "MFRotation";
-//no default value
-ProtoInterface4.field[573] = field578;
+field578.name = "vt1_changed";
+field578.accessType = "outputOnly";
+field578.type = "SFRotation";
+ProtoInterface21.field[556] = field578;
 
 let field579 = browser.currentScene.createNode("field");
-field579.name = "vt7_changed";
-field579.accessType = "outputOnly";
-field579.type = "SFRotation";
-ProtoInterface4.field[574] = field579;
+field579.name = "vt2_key";
+field579.accessType = "inputOutput";
+field579.type = "MFFloat";
+//no default value
+ProtoInterface21.field[557] = field579;
 
 let field580 = browser.currentScene.createNode("field");
-field580.name = "vt8_key";
+field580.name = "vt2_keyValue";
 field580.accessType = "inputOutput";
-field580.type = "MFFloat";
+field580.type = "MFRotation";
 //no default value
-ProtoInterface4.field[575] = field580;
+ProtoInterface21.field[558] = field580;
 
 let field581 = browser.currentScene.createNode("field");
-field581.name = "vt8_keyValue";
-field581.accessType = "inputOutput";
-field581.type = "MFRotation";
-//no default value
-ProtoInterface4.field[576] = field581;
+field581.name = "vt2_changed";
+field581.accessType = "outputOnly";
+field581.type = "SFRotation";
+ProtoInterface21.field[559] = field581;
 
 let field582 = browser.currentScene.createNode("field");
-field582.name = "vt8_changed";
-field582.accessType = "outputOnly";
-field582.type = "SFRotation";
-ProtoInterface4.field[577] = field582;
+field582.name = "vt3_key";
+field582.accessType = "inputOutput";
+field582.type = "MFFloat";
+//no default value
+ProtoInterface21.field[560] = field582;
 
 let field583 = browser.currentScene.createNode("field");
-field583.name = "vt9_key";
+field583.name = "vt3_keyValue";
 field583.accessType = "inputOutput";
-field583.type = "MFFloat";
+field583.type = "MFRotation";
 //no default value
-ProtoInterface4.field[578] = field583;
+ProtoInterface21.field[561] = field583;
 
 let field584 = browser.currentScene.createNode("field");
-field584.name = "vt9_keyValue";
-field584.accessType = "inputOutput";
-field584.type = "MFRotation";
-//no default value
-ProtoInterface4.field[579] = field584;
+field584.name = "vt3_changed";
+field584.accessType = "outputOnly";
+field584.type = "SFRotation";
+ProtoInterface21.field[562] = field584;
 
 let field585 = browser.currentScene.createNode("field");
-field585.name = "vt9_changed";
-field585.accessType = "outputOnly";
-field585.type = "SFRotation";
-ProtoInterface4.field[580] = field585;
+field585.name = "vt4_key";
+field585.accessType = "inputOutput";
+field585.type = "MFFloat";
+//no default value
+ProtoInterface21.field[563] = field585;
 
-ProtoDeclare3.protoInterface = ProtoInterface4;
+let field586 = browser.currentScene.createNode("field");
+field586.name = "vt4_keyValue";
+field586.accessType = "inputOutput";
+field586.type = "MFRotation";
+//no default value
+ProtoInterface21.field[564] = field586;
 
-let ProtoBody586 = browser.currentScene.createNode("ProtoBody");
+let field587 = browser.currentScene.createNode("field");
+field587.name = "vt4_changed";
+field587.accessType = "outputOnly";
+field587.type = "SFRotation";
+ProtoInterface21.field[565] = field587;
+
+let field588 = browser.currentScene.createNode("field");
+field588.name = "vt5_key";
+field588.accessType = "inputOutput";
+field588.type = "MFFloat";
+//no default value
+ProtoInterface21.field[566] = field588;
+
+let field589 = browser.currentScene.createNode("field");
+field589.name = "vt5_keyValue";
+field589.accessType = "inputOutput";
+field589.type = "MFRotation";
+//no default value
+ProtoInterface21.field[567] = field589;
+
+let field590 = browser.currentScene.createNode("field");
+field590.name = "vt5_changed";
+field590.accessType = "outputOnly";
+field590.type = "SFRotation";
+ProtoInterface21.field[568] = field590;
+
+let field591 = browser.currentScene.createNode("field");
+field591.name = "vt6_key";
+field591.accessType = "inputOutput";
+field591.type = "MFFloat";
+//no default value
+ProtoInterface21.field[569] = field591;
+
+let field592 = browser.currentScene.createNode("field");
+field592.name = "vt6_keyValue";
+field592.accessType = "inputOutput";
+field592.type = "MFRotation";
+//no default value
+ProtoInterface21.field[570] = field592;
+
+let field593 = browser.currentScene.createNode("field");
+field593.name = "vt6_changed";
+field593.accessType = "outputOnly";
+field593.type = "SFRotation";
+ProtoInterface21.field[571] = field593;
+
+let field594 = browser.currentScene.createNode("field");
+field594.name = "vt7_key";
+field594.accessType = "inputOutput";
+field594.type = "MFFloat";
+//no default value
+ProtoInterface21.field[572] = field594;
+
+let field595 = browser.currentScene.createNode("field");
+field595.name = "vt7_keyValue";
+field595.accessType = "inputOutput";
+field595.type = "MFRotation";
+//no default value
+ProtoInterface21.field[573] = field595;
+
+let field596 = browser.currentScene.createNode("field");
+field596.name = "vt7_changed";
+field596.accessType = "outputOnly";
+field596.type = "SFRotation";
+ProtoInterface21.field[574] = field596;
+
+let field597 = browser.currentScene.createNode("field");
+field597.name = "vt8_key";
+field597.accessType = "inputOutput";
+field597.type = "MFFloat";
+//no default value
+ProtoInterface21.field[575] = field597;
+
+let field598 = browser.currentScene.createNode("field");
+field598.name = "vt8_keyValue";
+field598.accessType = "inputOutput";
+field598.type = "MFRotation";
+//no default value
+ProtoInterface21.field[576] = field598;
+
+let field599 = browser.currentScene.createNode("field");
+field599.name = "vt8_changed";
+field599.accessType = "outputOnly";
+field599.type = "SFRotation";
+ProtoInterface21.field[577] = field599;
+
+let field600 = browser.currentScene.createNode("field");
+field600.name = "vt9_key";
+field600.accessType = "inputOutput";
+field600.type = "MFFloat";
+//no default value
+ProtoInterface21.field[578] = field600;
+
+let field601 = browser.currentScene.createNode("field");
+field601.name = "vt9_keyValue";
+field601.accessType = "inputOutput";
+field601.type = "MFRotation";
+//no default value
+ProtoInterface21.field[579] = field601;
+
+let field602 = browser.currentScene.createNode("field");
+field602.name = "vt9_changed";
+field602.accessType = "outputOnly";
+field602.type = "SFRotation";
+ProtoInterface21.field[580] = field602;
+
+ProtoDeclare20.protoInterface = ProtoInterface21;
+
+let ProtoBody603 = browser.currentScene.createNode("ProtoBody");
 //design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators
-let TimeSensor587 = browser.currentScene.createNode("TimeSensor");
-TimeSensor587.DEF = "BehaviorClock";
-let IS588 = browser.currentScene.createNode("IS");
-let connect589 = browser.currentScene.createNode("connect");
-connect589.nodeField = "enabled";
-connect589.protoField = "enabled";
-IS588.connect = new MFNode();
+let TimeSensor604 = browser.currentScene.createNode("TimeSensor");
+TimeSensor604.DEF = "BehaviorClock";
+let IS605 = browser.currentScene.createNode("IS");
+let connect606 = browser.currentScene.createNode("connect");
+connect606.nodeField = "enabled";
+connect606.protoField = "enabled";
+IS605.connect = new MFNode();
 
-IS588.connect[0] = connect589;
+IS605.connect[0] = connect606;
 
-let connect590 = browser.currentScene.createNode("connect");
-connect590.nodeField = "cycleInterval";
-connect590.protoField = "cycleInterval";
-IS588.connect[1] = connect590;
-
-let connect591 = browser.currentScene.createNode("connect");
-connect591.nodeField = "loop";
-connect591.protoField = "loop";
-IS588.connect[2] = connect591;
-
-let connect592 = browser.currentScene.createNode("connect");
-connect592.nodeField = "startTime";
-connect592.protoField = "startTime";
-IS588.connect[3] = connect592;
-
-let connect593 = browser.currentScene.createNode("connect");
-connect593.nodeField = "stopTime";
-connect593.protoField = "stopTime";
-IS588.connect[4] = connect593;
-
-let connect594 = browser.currentScene.createNode("connect");
-connect594.nodeField = "pauseTime";
-connect594.protoField = "pauseTime";
-IS588.connect[5] = connect594;
-
-let connect595 = browser.currentScene.createNode("connect");
-connect595.nodeField = "resumeTime";
-connect595.protoField = "resumeTime";
-IS588.connect[6] = connect595;
-
-let connect596 = browser.currentScene.createNode("connect");
-connect596.nodeField = "cycleTime";
-connect596.protoField = "cycleTime";
-IS588.connect[7] = connect596;
-
-let connect597 = browser.currentScene.createNode("connect");
-connect597.nodeField = "isActive";
-connect597.protoField = "isActive";
-IS588.connect[8] = connect597;
-
-let connect598 = browser.currentScene.createNode("connect");
-connect598.nodeField = "isPaused";
-connect598.protoField = "isPaused";
-IS588.connect[9] = connect598;
-
-let connect599 = browser.currentScene.createNode("connect");
-connect599.nodeField = "elapsedTime";
-connect599.protoField = "elapsedTime";
-IS588.connect[10] = connect599;
-
-let connect600 = browser.currentScene.createNode("connect");
-connect600.nodeField = "time";
-connect600.protoField = "time";
-IS588.connect[11] = connect600;
-
-let connect601 = browser.currentScene.createNode("connect");
-connect601.nodeField = "fraction_changed";
-connect601.protoField = "fraction_changed";
-IS588.connect[12] = connect601;
-
-TimeSensor587.iS = IS588;
-
-ProtoBody586.children = new MFNode();
-
-ProtoBody586.children[0] = TimeSensor587;
-
-//note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
-let Switch602 = browser.currentScene.createNode("Switch");
-Switch602.DEF = "SupportedLoaHolder1";
-Switch602.whichChoice = -1;
-let IS603 = browser.currentScene.createNode("IS");
-let connect604 = browser.currentScene.createNode("connect");
-connect604.nodeField = "whichChoice";
-connect604.protoField = "supportedLOA";
-IS603.connect = new MFNode();
-
-IS603.connect[0] = connect604;
-
-Switch602.iS = IS603;
-
-ProtoBody586.children[1] = Switch602;
-
-let PositionInterpolator605 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator605.DEF = "HumanoidRootPI";
-let IS606 = browser.currentScene.createNode("IS");
 let connect607 = browser.currentScene.createNode("connect");
-connect607.nodeField = "key";
-connect607.protoField = "HumanoidRoot_translation_key";
-IS606.connect = new MFNode();
-
-IS606.connect[0] = connect607;
+connect607.nodeField = "cycleInterval";
+connect607.protoField = "cycleInterval";
+IS605.connect[1] = connect607;
 
 let connect608 = browser.currentScene.createNode("connect");
-connect608.nodeField = "keyValue";
-connect608.protoField = "HumanoidRoot_translation_keyValue";
-IS606.connect[1] = connect608;
+connect608.nodeField = "loop";
+connect608.protoField = "loop";
+IS605.connect[2] = connect608;
 
 let connect609 = browser.currentScene.createNode("connect");
-connect609.nodeField = "value_changed";
-connect609.protoField = "HumanoidRoot_translation_changed";
-IS606.connect[2] = connect609;
+connect609.nodeField = "startTime";
+connect609.protoField = "startTime";
+IS605.connect[3] = connect609;
 
-PositionInterpolator605.iS = IS606;
+let connect610 = browser.currentScene.createNode("connect");
+connect610.nodeField = "stopTime";
+connect610.protoField = "stopTime";
+IS605.connect[4] = connect610;
 
-ProtoBody586.children[2] = PositionInterpolator605;
+let connect611 = browser.currentScene.createNode("connect");
+connect611.nodeField = "pauseTime";
+connect611.protoField = "pauseTime";
+IS605.connect[5] = connect611;
 
-let ROUTE610 = browser.currentScene.createNode("ROUTE");
-ROUTE610.fromField = "fraction_changed";
-ROUTE610.fromNode = "BehaviorClock";
-ROUTE610.toField = "set_fraction";
-ROUTE610.toNode = "HumanoidRootPI";
-ProtoBody586.children[3] = ROUTE610;
+let connect612 = browser.currentScene.createNode("connect");
+connect612.nodeField = "resumeTime";
+connect612.protoField = "resumeTime";
+IS605.connect[6] = connect612;
 
-let OrientationInterpolator611 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator611.DEF = "HumanoidRootOI";
-let IS612 = browser.currentScene.createNode("IS");
 let connect613 = browser.currentScene.createNode("connect");
-connect613.nodeField = "key";
-connect613.protoField = "HumanoidRoot_rotation_key";
-IS612.connect = new MFNode();
-
-IS612.connect[0] = connect613;
+connect613.nodeField = "cycleTime";
+connect613.protoField = "cycleTime";
+IS605.connect[7] = connect613;
 
 let connect614 = browser.currentScene.createNode("connect");
-connect614.nodeField = "keyValue";
-connect614.protoField = "HumanoidRoot_rotation_keyValue";
-IS612.connect[1] = connect614;
+connect614.nodeField = "isActive";
+connect614.protoField = "isActive";
+IS605.connect[8] = connect614;
 
 let connect615 = browser.currentScene.createNode("connect");
-connect615.nodeField = "value_changed";
-connect615.protoField = "HumanoidRoot_rotation_changed";
-IS612.connect[2] = connect615;
+connect615.nodeField = "isPaused";
+connect615.protoField = "isPaused";
+IS605.connect[9] = connect615;
 
-OrientationInterpolator611.iS = IS612;
+let connect616 = browser.currentScene.createNode("connect");
+connect616.nodeField = "elapsedTime";
+connect616.protoField = "elapsedTime";
+IS605.connect[10] = connect616;
 
-ProtoBody586.children[4] = OrientationInterpolator611;
+let connect617 = browser.currentScene.createNode("connect");
+connect617.nodeField = "time";
+connect617.protoField = "time";
+IS605.connect[11] = connect617;
 
-let ROUTE616 = browser.currentScene.createNode("ROUTE");
-ROUTE616.fromField = "fraction_changed";
-ROUTE616.fromNode = "BehaviorClock";
-ROUTE616.toField = "set_fraction";
-ROUTE616.toNode = "HumanoidRootOI";
-ProtoBody586.children[5] = ROUTE616;
+let connect618 = browser.currentScene.createNode("connect");
+connect618.nodeField = "fraction_changed";
+connect618.protoField = "fraction_changed";
+IS605.connect[12] = connect618;
 
-let OrientationInterpolator617 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator617.DEF = "c1_OI";
-let IS618 = browser.currentScene.createNode("IS");
-let connect619 = browser.currentScene.createNode("connect");
-connect619.nodeField = "key";
-connect619.protoField = "c1_key";
-IS618.connect = new MFNode();
+TimeSensor604.iS = IS605;
 
-IS618.connect[0] = connect619;
+ProtoBody603.children = new MFNode();
 
-let connect620 = browser.currentScene.createNode("connect");
-connect620.nodeField = "keyValue";
-connect620.protoField = "c1_keyValue";
-IS618.connect[1] = connect620;
+ProtoBody603.children[0] = TimeSensor604;
 
+//note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
+let Switch619 = browser.currentScene.createNode("Switch");
+Switch619.DEF = "SupportedLoaHolder1";
+Switch619.whichChoice = -1;
+let IS620 = browser.currentScene.createNode("IS");
 let connect621 = browser.currentScene.createNode("connect");
-connect621.nodeField = "value_changed";
-connect621.protoField = "c1_changed";
-IS618.connect[2] = connect621;
+connect621.nodeField = "whichChoice";
+connect621.protoField = "supportedLOA";
+IS620.connect = new MFNode();
 
-OrientationInterpolator617.iS = IS618;
+IS620.connect[0] = connect621;
 
-ProtoBody586.children[6] = OrientationInterpolator617;
+Switch619.iS = IS620;
 
-let ROUTE622 = browser.currentScene.createNode("ROUTE");
-ROUTE622.fromField = "fraction_changed";
-ROUTE622.fromNode = "BehaviorClock";
-ROUTE622.toField = "set_fraction";
-ROUTE622.toNode = "c1_OI";
-ProtoBody586.children[7] = ROUTE622;
+ProtoBody603.children[1] = Switch619;
 
-let OrientationInterpolator623 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator623.DEF = "c2_OI";
-let IS624 = browser.currentScene.createNode("IS");
+let PositionInterpolator622 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator622.DEF = "HumanoidRootPI";
+let IS623 = browser.currentScene.createNode("IS");
+let connect624 = browser.currentScene.createNode("connect");
+connect624.nodeField = "key";
+connect624.protoField = "HumanoidRoot_translation_key";
+IS623.connect = new MFNode();
+
+IS623.connect[0] = connect624;
+
 let connect625 = browser.currentScene.createNode("connect");
-connect625.nodeField = "key";
-connect625.protoField = "c2_key";
-IS624.connect = new MFNode();
-
-IS624.connect[0] = connect625;
+connect625.nodeField = "keyValue";
+connect625.protoField = "HumanoidRoot_translation_keyValue";
+IS623.connect[1] = connect625;
 
 let connect626 = browser.currentScene.createNode("connect");
-connect626.nodeField = "keyValue";
-connect626.protoField = "c2_keyValue";
-IS624.connect[1] = connect626;
+connect626.nodeField = "value_changed";
+connect626.protoField = "HumanoidRoot_translation_changed";
+IS623.connect[2] = connect626;
 
-let connect627 = browser.currentScene.createNode("connect");
-connect627.nodeField = "value_changed";
-connect627.protoField = "c2_changed";
-IS624.connect[2] = connect627;
+PositionInterpolator622.iS = IS623;
 
-OrientationInterpolator623.iS = IS624;
+ProtoBody603.children[2] = PositionInterpolator622;
 
-ProtoBody586.children[8] = OrientationInterpolator623;
+let ROUTE627 = browser.currentScene.createNode("ROUTE");
+ROUTE627.fromField = "fraction_changed";
+ROUTE627.fromNode = "BehaviorClock";
+ROUTE627.toField = "set_fraction";
+ROUTE627.toNode = "HumanoidRootPI";
+ProtoBody603.children[3] = ROUTE627;
 
-let ROUTE628 = browser.currentScene.createNode("ROUTE");
-ROUTE628.fromField = "fraction_changed";
-ROUTE628.fromNode = "BehaviorClock";
-ROUTE628.toField = "set_fraction";
-ROUTE628.toNode = "c2_OI";
-ProtoBody586.children[9] = ROUTE628;
+let OrientationInterpolator628 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator628.DEF = "HumanoidRootOI";
+let IS629 = browser.currentScene.createNode("IS");
+let connect630 = browser.currentScene.createNode("connect");
+connect630.nodeField = "key";
+connect630.protoField = "HumanoidRoot_rotation_key";
+IS629.connect = new MFNode();
 
-let OrientationInterpolator629 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator629.DEF = "c3_OI";
-let IS630 = browser.currentScene.createNode("IS");
+IS629.connect[0] = connect630;
+
 let connect631 = browser.currentScene.createNode("connect");
-connect631.nodeField = "key";
-connect631.protoField = "c3_key";
-IS630.connect = new MFNode();
-
-IS630.connect[0] = connect631;
+connect631.nodeField = "keyValue";
+connect631.protoField = "HumanoidRoot_rotation_keyValue";
+IS629.connect[1] = connect631;
 
 let connect632 = browser.currentScene.createNode("connect");
-connect632.nodeField = "keyValue";
-connect632.protoField = "c3_keyValue";
-IS630.connect[1] = connect632;
+connect632.nodeField = "value_changed";
+connect632.protoField = "HumanoidRoot_rotation_changed";
+IS629.connect[2] = connect632;
 
-let connect633 = browser.currentScene.createNode("connect");
-connect633.nodeField = "value_changed";
-connect633.protoField = "c3_changed";
-IS630.connect[2] = connect633;
+OrientationInterpolator628.iS = IS629;
 
-OrientationInterpolator629.iS = IS630;
+ProtoBody603.children[4] = OrientationInterpolator628;
 
-ProtoBody586.children[10] = OrientationInterpolator629;
+let ROUTE633 = browser.currentScene.createNode("ROUTE");
+ROUTE633.fromField = "fraction_changed";
+ROUTE633.fromNode = "BehaviorClock";
+ROUTE633.toField = "set_fraction";
+ROUTE633.toNode = "HumanoidRootOI";
+ProtoBody603.children[5] = ROUTE633;
 
-let ROUTE634 = browser.currentScene.createNode("ROUTE");
-ROUTE634.fromField = "fraction_changed";
-ROUTE634.fromNode = "BehaviorClock";
-ROUTE634.toField = "set_fraction";
-ROUTE634.toNode = "c3_OI";
-ProtoBody586.children[11] = ROUTE634;
+let OrientationInterpolator634 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator634.DEF = "c1_OI";
+let IS635 = browser.currentScene.createNode("IS");
+let connect636 = browser.currentScene.createNode("connect");
+connect636.nodeField = "key";
+connect636.protoField = "c1_key";
+IS635.connect = new MFNode();
 
-let OrientationInterpolator635 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator635.DEF = "c4_OI";
-let IS636 = browser.currentScene.createNode("IS");
+IS635.connect[0] = connect636;
+
 let connect637 = browser.currentScene.createNode("connect");
-connect637.nodeField = "key";
-connect637.protoField = "c4_key";
-IS636.connect = new MFNode();
-
-IS636.connect[0] = connect637;
+connect637.nodeField = "keyValue";
+connect637.protoField = "c1_keyValue";
+IS635.connect[1] = connect637;
 
 let connect638 = browser.currentScene.createNode("connect");
-connect638.nodeField = "keyValue";
-connect638.protoField = "c4_keyValue";
-IS636.connect[1] = connect638;
+connect638.nodeField = "value_changed";
+connect638.protoField = "c1_changed";
+IS635.connect[2] = connect638;
 
-let connect639 = browser.currentScene.createNode("connect");
-connect639.nodeField = "value_changed";
-connect639.protoField = "c4_changed";
-IS636.connect[2] = connect639;
+OrientationInterpolator634.iS = IS635;
 
-OrientationInterpolator635.iS = IS636;
+ProtoBody603.children[6] = OrientationInterpolator634;
 
-ProtoBody586.children[12] = OrientationInterpolator635;
+let ROUTE639 = browser.currentScene.createNode("ROUTE");
+ROUTE639.fromField = "fraction_changed";
+ROUTE639.fromNode = "BehaviorClock";
+ROUTE639.toField = "set_fraction";
+ROUTE639.toNode = "c1_OI";
+ProtoBody603.children[7] = ROUTE639;
 
-let ROUTE640 = browser.currentScene.createNode("ROUTE");
-ROUTE640.fromField = "fraction_changed";
-ROUTE640.fromNode = "BehaviorClock";
-ROUTE640.toField = "set_fraction";
-ROUTE640.toNode = "c4_OI";
-ProtoBody586.children[13] = ROUTE640;
+let OrientationInterpolator640 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator640.DEF = "c2_OI";
+let IS641 = browser.currentScene.createNode("IS");
+let connect642 = browser.currentScene.createNode("connect");
+connect642.nodeField = "key";
+connect642.protoField = "c2_key";
+IS641.connect = new MFNode();
 
-let OrientationInterpolator641 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator641.DEF = "c5_OI";
-let IS642 = browser.currentScene.createNode("IS");
+IS641.connect[0] = connect642;
+
 let connect643 = browser.currentScene.createNode("connect");
-connect643.nodeField = "key";
-connect643.protoField = "c5_key";
-IS642.connect = new MFNode();
-
-IS642.connect[0] = connect643;
+connect643.nodeField = "keyValue";
+connect643.protoField = "c2_keyValue";
+IS641.connect[1] = connect643;
 
 let connect644 = browser.currentScene.createNode("connect");
-connect644.nodeField = "keyValue";
-connect644.protoField = "c5_keyValue";
-IS642.connect[1] = connect644;
+connect644.nodeField = "value_changed";
+connect644.protoField = "c2_changed";
+IS641.connect[2] = connect644;
 
-let connect645 = browser.currentScene.createNode("connect");
-connect645.nodeField = "value_changed";
-connect645.protoField = "c5_changed";
-IS642.connect[2] = connect645;
+OrientationInterpolator640.iS = IS641;
 
-OrientationInterpolator641.iS = IS642;
+ProtoBody603.children[8] = OrientationInterpolator640;
 
-ProtoBody586.children[14] = OrientationInterpolator641;
+let ROUTE645 = browser.currentScene.createNode("ROUTE");
+ROUTE645.fromField = "fraction_changed";
+ROUTE645.fromNode = "BehaviorClock";
+ROUTE645.toField = "set_fraction";
+ROUTE645.toNode = "c2_OI";
+ProtoBody603.children[9] = ROUTE645;
 
-let ROUTE646 = browser.currentScene.createNode("ROUTE");
-ROUTE646.fromField = "fraction_changed";
-ROUTE646.fromNode = "BehaviorClock";
-ROUTE646.toField = "set_fraction";
-ROUTE646.toNode = "c5_OI";
-ProtoBody586.children[15] = ROUTE646;
+let OrientationInterpolator646 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator646.DEF = "c3_OI";
+let IS647 = browser.currentScene.createNode("IS");
+let connect648 = browser.currentScene.createNode("connect");
+connect648.nodeField = "key";
+connect648.protoField = "c3_key";
+IS647.connect = new MFNode();
 
-let OrientationInterpolator647 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator647.DEF = "c6_OI";
-let IS648 = browser.currentScene.createNode("IS");
+IS647.connect[0] = connect648;
+
 let connect649 = browser.currentScene.createNode("connect");
-connect649.nodeField = "key";
-connect649.protoField = "c6_key";
-IS648.connect = new MFNode();
-
-IS648.connect[0] = connect649;
+connect649.nodeField = "keyValue";
+connect649.protoField = "c3_keyValue";
+IS647.connect[1] = connect649;
 
 let connect650 = browser.currentScene.createNode("connect");
-connect650.nodeField = "keyValue";
-connect650.protoField = "c6_keyValue";
-IS648.connect[1] = connect650;
+connect650.nodeField = "value_changed";
+connect650.protoField = "c3_changed";
+IS647.connect[2] = connect650;
 
-let connect651 = browser.currentScene.createNode("connect");
-connect651.nodeField = "value_changed";
-connect651.protoField = "c6_changed";
-IS648.connect[2] = connect651;
+OrientationInterpolator646.iS = IS647;
 
-OrientationInterpolator647.iS = IS648;
+ProtoBody603.children[10] = OrientationInterpolator646;
 
-ProtoBody586.children[16] = OrientationInterpolator647;
+let ROUTE651 = browser.currentScene.createNode("ROUTE");
+ROUTE651.fromField = "fraction_changed";
+ROUTE651.fromNode = "BehaviorClock";
+ROUTE651.toField = "set_fraction";
+ROUTE651.toNode = "c3_OI";
+ProtoBody603.children[11] = ROUTE651;
 
-let ROUTE652 = browser.currentScene.createNode("ROUTE");
-ROUTE652.fromField = "fraction_changed";
-ROUTE652.fromNode = "BehaviorClock";
-ROUTE652.toField = "set_fraction";
-ROUTE652.toNode = "c6_OI";
-ProtoBody586.children[17] = ROUTE652;
+let OrientationInterpolator652 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator652.DEF = "c4_OI";
+let IS653 = browser.currentScene.createNode("IS");
+let connect654 = browser.currentScene.createNode("connect");
+connect654.nodeField = "key";
+connect654.protoField = "c4_key";
+IS653.connect = new MFNode();
 
-let OrientationInterpolator653 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator653.DEF = "c7_OI";
-let IS654 = browser.currentScene.createNode("IS");
+IS653.connect[0] = connect654;
+
 let connect655 = browser.currentScene.createNode("connect");
-connect655.nodeField = "key";
-connect655.protoField = "c7_key";
-IS654.connect = new MFNode();
-
-IS654.connect[0] = connect655;
+connect655.nodeField = "keyValue";
+connect655.protoField = "c4_keyValue";
+IS653.connect[1] = connect655;
 
 let connect656 = browser.currentScene.createNode("connect");
-connect656.nodeField = "keyValue";
-connect656.protoField = "c7_keyValue";
-IS654.connect[1] = connect656;
+connect656.nodeField = "value_changed";
+connect656.protoField = "c4_changed";
+IS653.connect[2] = connect656;
 
-let connect657 = browser.currentScene.createNode("connect");
-connect657.nodeField = "value_changed";
-connect657.protoField = "c7_changed";
-IS654.connect[2] = connect657;
+OrientationInterpolator652.iS = IS653;
 
-OrientationInterpolator653.iS = IS654;
+ProtoBody603.children[12] = OrientationInterpolator652;
 
-ProtoBody586.children[18] = OrientationInterpolator653;
+let ROUTE657 = browser.currentScene.createNode("ROUTE");
+ROUTE657.fromField = "fraction_changed";
+ROUTE657.fromNode = "BehaviorClock";
+ROUTE657.toField = "set_fraction";
+ROUTE657.toNode = "c4_OI";
+ProtoBody603.children[13] = ROUTE657;
 
-let ROUTE658 = browser.currentScene.createNode("ROUTE");
-ROUTE658.fromField = "fraction_changed";
-ROUTE658.fromNode = "BehaviorClock";
-ROUTE658.toField = "set_fraction";
-ROUTE658.toNode = "c7_OI";
-ProtoBody586.children[19] = ROUTE658;
+let OrientationInterpolator658 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator658.DEF = "c5_OI";
+let IS659 = browser.currentScene.createNode("IS");
+let connect660 = browser.currentScene.createNode("connect");
+connect660.nodeField = "key";
+connect660.protoField = "c5_key";
+IS659.connect = new MFNode();
 
-let OrientationInterpolator659 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator659.DEF = "jaw_OI";
-let IS660 = browser.currentScene.createNode("IS");
+IS659.connect[0] = connect660;
+
 let connect661 = browser.currentScene.createNode("connect");
-connect661.nodeField = "key";
-connect661.protoField = "jaw_key";
-IS660.connect = new MFNode();
-
-IS660.connect[0] = connect661;
+connect661.nodeField = "keyValue";
+connect661.protoField = "c5_keyValue";
+IS659.connect[1] = connect661;
 
 let connect662 = browser.currentScene.createNode("connect");
-connect662.nodeField = "keyValue";
-connect662.protoField = "jaw_keyValue";
-IS660.connect[1] = connect662;
+connect662.nodeField = "value_changed";
+connect662.protoField = "c5_changed";
+IS659.connect[2] = connect662;
 
-let connect663 = browser.currentScene.createNode("connect");
-connect663.nodeField = "value_changed";
-connect663.protoField = "jaw_changed";
-IS660.connect[2] = connect663;
+OrientationInterpolator658.iS = IS659;
 
-OrientationInterpolator659.iS = IS660;
+ProtoBody603.children[14] = OrientationInterpolator658;
 
-ProtoBody586.children[20] = OrientationInterpolator659;
+let ROUTE663 = browser.currentScene.createNode("ROUTE");
+ROUTE663.fromField = "fraction_changed";
+ROUTE663.fromNode = "BehaviorClock";
+ROUTE663.toField = "set_fraction";
+ROUTE663.toNode = "c5_OI";
+ProtoBody603.children[15] = ROUTE663;
 
-let ROUTE664 = browser.currentScene.createNode("ROUTE");
-ROUTE664.fromField = "fraction_changed";
-ROUTE664.fromNode = "BehaviorClock";
-ROUTE664.toField = "set_fraction";
-ROUTE664.toNode = "jaw_OI";
-ProtoBody586.children[21] = ROUTE664;
+let OrientationInterpolator664 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator664.DEF = "c6_OI";
+let IS665 = browser.currentScene.createNode("IS");
+let connect666 = browser.currentScene.createNode("connect");
+connect666.nodeField = "key";
+connect666.protoField = "c6_key";
+IS665.connect = new MFNode();
 
-let OrientationInterpolator665 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator665.DEF = "l1_OI";
-let IS666 = browser.currentScene.createNode("IS");
+IS665.connect[0] = connect666;
+
 let connect667 = browser.currentScene.createNode("connect");
-connect667.nodeField = "key";
-connect667.protoField = "l1_key";
-IS666.connect = new MFNode();
-
-IS666.connect[0] = connect667;
+connect667.nodeField = "keyValue";
+connect667.protoField = "c6_keyValue";
+IS665.connect[1] = connect667;
 
 let connect668 = browser.currentScene.createNode("connect");
-connect668.nodeField = "keyValue";
-connect668.protoField = "l1_keyValue";
-IS666.connect[1] = connect668;
+connect668.nodeField = "value_changed";
+connect668.protoField = "c6_changed";
+IS665.connect[2] = connect668;
 
-let connect669 = browser.currentScene.createNode("connect");
-connect669.nodeField = "value_changed";
-connect669.protoField = "l1_changed";
-IS666.connect[2] = connect669;
+OrientationInterpolator664.iS = IS665;
 
-OrientationInterpolator665.iS = IS666;
+ProtoBody603.children[16] = OrientationInterpolator664;
 
-ProtoBody586.children[22] = OrientationInterpolator665;
+let ROUTE669 = browser.currentScene.createNode("ROUTE");
+ROUTE669.fromField = "fraction_changed";
+ROUTE669.fromNode = "BehaviorClock";
+ROUTE669.toField = "set_fraction";
+ROUTE669.toNode = "c6_OI";
+ProtoBody603.children[17] = ROUTE669;
 
-let ROUTE670 = browser.currentScene.createNode("ROUTE");
-ROUTE670.fromField = "fraction_changed";
-ROUTE670.fromNode = "BehaviorClock";
-ROUTE670.toField = "set_fraction";
-ROUTE670.toNode = "l1_OI";
-ProtoBody586.children[23] = ROUTE670;
+let OrientationInterpolator670 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator670.DEF = "c7_OI";
+let IS671 = browser.currentScene.createNode("IS");
+let connect672 = browser.currentScene.createNode("connect");
+connect672.nodeField = "key";
+connect672.protoField = "c7_key";
+IS671.connect = new MFNode();
 
-let OrientationInterpolator671 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator671.DEF = "l2_OI";
-let IS672 = browser.currentScene.createNode("IS");
+IS671.connect[0] = connect672;
+
 let connect673 = browser.currentScene.createNode("connect");
-connect673.nodeField = "key";
-connect673.protoField = "l2_key";
-IS672.connect = new MFNode();
-
-IS672.connect[0] = connect673;
+connect673.nodeField = "keyValue";
+connect673.protoField = "c7_keyValue";
+IS671.connect[1] = connect673;
 
 let connect674 = browser.currentScene.createNode("connect");
-connect674.nodeField = "keyValue";
-connect674.protoField = "l2_keyValue";
-IS672.connect[1] = connect674;
+connect674.nodeField = "value_changed";
+connect674.protoField = "c7_changed";
+IS671.connect[2] = connect674;
 
-let connect675 = browser.currentScene.createNode("connect");
-connect675.nodeField = "value_changed";
-connect675.protoField = "l2_changed";
-IS672.connect[2] = connect675;
+OrientationInterpolator670.iS = IS671;
 
-OrientationInterpolator671.iS = IS672;
+ProtoBody603.children[18] = OrientationInterpolator670;
 
-ProtoBody586.children[24] = OrientationInterpolator671;
+let ROUTE675 = browser.currentScene.createNode("ROUTE");
+ROUTE675.fromField = "fraction_changed";
+ROUTE675.fromNode = "BehaviorClock";
+ROUTE675.toField = "set_fraction";
+ROUTE675.toNode = "c7_OI";
+ProtoBody603.children[19] = ROUTE675;
 
-let ROUTE676 = browser.currentScene.createNode("ROUTE");
-ROUTE676.fromField = "fraction_changed";
-ROUTE676.fromNode = "BehaviorClock";
-ROUTE676.toField = "set_fraction";
-ROUTE676.toNode = "l2_OI";
-ProtoBody586.children[25] = ROUTE676;
+let OrientationInterpolator676 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator676.DEF = "jaw_OI";
+let IS677 = browser.currentScene.createNode("IS");
+let connect678 = browser.currentScene.createNode("connect");
+connect678.nodeField = "key";
+connect678.protoField = "jaw_key";
+IS677.connect = new MFNode();
 
-let OrientationInterpolator677 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator677.DEF = "l3_OI";
-let IS678 = browser.currentScene.createNode("IS");
+IS677.connect[0] = connect678;
+
 let connect679 = browser.currentScene.createNode("connect");
-connect679.nodeField = "key";
-connect679.protoField = "l3_key";
-IS678.connect = new MFNode();
-
-IS678.connect[0] = connect679;
+connect679.nodeField = "keyValue";
+connect679.protoField = "jaw_keyValue";
+IS677.connect[1] = connect679;
 
 let connect680 = browser.currentScene.createNode("connect");
-connect680.nodeField = "keyValue";
-connect680.protoField = "l3_keyValue";
-IS678.connect[1] = connect680;
+connect680.nodeField = "value_changed";
+connect680.protoField = "jaw_changed";
+IS677.connect[2] = connect680;
 
-let connect681 = browser.currentScene.createNode("connect");
-connect681.nodeField = "value_changed";
-connect681.protoField = "l3_changed";
-IS678.connect[2] = connect681;
+OrientationInterpolator676.iS = IS677;
 
-OrientationInterpolator677.iS = IS678;
+ProtoBody603.children[20] = OrientationInterpolator676;
 
-ProtoBody586.children[26] = OrientationInterpolator677;
+let ROUTE681 = browser.currentScene.createNode("ROUTE");
+ROUTE681.fromField = "fraction_changed";
+ROUTE681.fromNode = "BehaviorClock";
+ROUTE681.toField = "set_fraction";
+ROUTE681.toNode = "jaw_OI";
+ProtoBody603.children[21] = ROUTE681;
 
-let ROUTE682 = browser.currentScene.createNode("ROUTE");
-ROUTE682.fromField = "fraction_changed";
-ROUTE682.fromNode = "BehaviorClock";
-ROUTE682.toField = "set_fraction";
-ROUTE682.toNode = "l3_OI";
-ProtoBody586.children[27] = ROUTE682;
+let OrientationInterpolator682 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator682.DEF = "l1_OI";
+let IS683 = browser.currentScene.createNode("IS");
+let connect684 = browser.currentScene.createNode("connect");
+connect684.nodeField = "key";
+connect684.protoField = "l1_key";
+IS683.connect = new MFNode();
 
-let OrientationInterpolator683 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator683.DEF = "l4_OI";
-let IS684 = browser.currentScene.createNode("IS");
+IS683.connect[0] = connect684;
+
 let connect685 = browser.currentScene.createNode("connect");
-connect685.nodeField = "key";
-connect685.protoField = "l4_key";
-IS684.connect = new MFNode();
-
-IS684.connect[0] = connect685;
+connect685.nodeField = "keyValue";
+connect685.protoField = "l1_keyValue";
+IS683.connect[1] = connect685;
 
 let connect686 = browser.currentScene.createNode("connect");
-connect686.nodeField = "keyValue";
-connect686.protoField = "l4_keyValue";
-IS684.connect[1] = connect686;
+connect686.nodeField = "value_changed";
+connect686.protoField = "l1_changed";
+IS683.connect[2] = connect686;
 
-let connect687 = browser.currentScene.createNode("connect");
-connect687.nodeField = "value_changed";
-connect687.protoField = "l4_changed";
-IS684.connect[2] = connect687;
+OrientationInterpolator682.iS = IS683;
 
-OrientationInterpolator683.iS = IS684;
+ProtoBody603.children[22] = OrientationInterpolator682;
 
-ProtoBody586.children[28] = OrientationInterpolator683;
+let ROUTE687 = browser.currentScene.createNode("ROUTE");
+ROUTE687.fromField = "fraction_changed";
+ROUTE687.fromNode = "BehaviorClock";
+ROUTE687.toField = "set_fraction";
+ROUTE687.toNode = "l1_OI";
+ProtoBody603.children[23] = ROUTE687;
 
-let ROUTE688 = browser.currentScene.createNode("ROUTE");
-ROUTE688.fromField = "fraction_changed";
-ROUTE688.fromNode = "BehaviorClock";
-ROUTE688.toField = "set_fraction";
-ROUTE688.toNode = "l4_OI";
-ProtoBody586.children[29] = ROUTE688;
+let OrientationInterpolator688 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator688.DEF = "l2_OI";
+let IS689 = browser.currentScene.createNode("IS");
+let connect690 = browser.currentScene.createNode("connect");
+connect690.nodeField = "key";
+connect690.protoField = "l2_key";
+IS689.connect = new MFNode();
 
-let OrientationInterpolator689 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator689.DEF = "l5_OI";
-let IS690 = browser.currentScene.createNode("IS");
+IS689.connect[0] = connect690;
+
 let connect691 = browser.currentScene.createNode("connect");
-connect691.nodeField = "key";
-connect691.protoField = "l5_key";
-IS690.connect = new MFNode();
-
-IS690.connect[0] = connect691;
+connect691.nodeField = "keyValue";
+connect691.protoField = "l2_keyValue";
+IS689.connect[1] = connect691;
 
 let connect692 = browser.currentScene.createNode("connect");
-connect692.nodeField = "keyValue";
-connect692.protoField = "l5_keyValue";
-IS690.connect[1] = connect692;
+connect692.nodeField = "value_changed";
+connect692.protoField = "l2_changed";
+IS689.connect[2] = connect692;
 
-let connect693 = browser.currentScene.createNode("connect");
-connect693.nodeField = "value_changed";
-connect693.protoField = "l5_changed";
-IS690.connect[2] = connect693;
+OrientationInterpolator688.iS = IS689;
 
-OrientationInterpolator689.iS = IS690;
+ProtoBody603.children[24] = OrientationInterpolator688;
 
-ProtoBody586.children[30] = OrientationInterpolator689;
+let ROUTE693 = browser.currentScene.createNode("ROUTE");
+ROUTE693.fromField = "fraction_changed";
+ROUTE693.fromNode = "BehaviorClock";
+ROUTE693.toField = "set_fraction";
+ROUTE693.toNode = "l2_OI";
+ProtoBody603.children[25] = ROUTE693;
 
-let ROUTE694 = browser.currentScene.createNode("ROUTE");
-ROUTE694.fromField = "fraction_changed";
-ROUTE694.fromNode = "BehaviorClock";
-ROUTE694.toField = "set_fraction";
-ROUTE694.toNode = "l5_OI";
-ProtoBody586.children[31] = ROUTE694;
+let OrientationInterpolator694 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator694.DEF = "l3_OI";
+let IS695 = browser.currentScene.createNode("IS");
+let connect696 = browser.currentScene.createNode("connect");
+connect696.nodeField = "key";
+connect696.protoField = "l3_key";
+IS695.connect = new MFNode();
 
-let OrientationInterpolator695 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator695.DEF = "l_acromioclavicular_OI";
-let IS696 = browser.currentScene.createNode("IS");
+IS695.connect[0] = connect696;
+
 let connect697 = browser.currentScene.createNode("connect");
-connect697.nodeField = "key";
-connect697.protoField = "l_acromioclavicular_key";
-IS696.connect = new MFNode();
-
-IS696.connect[0] = connect697;
+connect697.nodeField = "keyValue";
+connect697.protoField = "l3_keyValue";
+IS695.connect[1] = connect697;
 
 let connect698 = browser.currentScene.createNode("connect");
-connect698.nodeField = "keyValue";
-connect698.protoField = "l_acromioclavicular_keyValue";
-IS696.connect[1] = connect698;
+connect698.nodeField = "value_changed";
+connect698.protoField = "l3_changed";
+IS695.connect[2] = connect698;
 
-let connect699 = browser.currentScene.createNode("connect");
-connect699.nodeField = "value_changed";
-connect699.protoField = "l_acromioclavicular_changed";
-IS696.connect[2] = connect699;
+OrientationInterpolator694.iS = IS695;
 
-OrientationInterpolator695.iS = IS696;
+ProtoBody603.children[26] = OrientationInterpolator694;
 
-ProtoBody586.children[32] = OrientationInterpolator695;
+let ROUTE699 = browser.currentScene.createNode("ROUTE");
+ROUTE699.fromField = "fraction_changed";
+ROUTE699.fromNode = "BehaviorClock";
+ROUTE699.toField = "set_fraction";
+ROUTE699.toNode = "l3_OI";
+ProtoBody603.children[27] = ROUTE699;
 
-let ROUTE700 = browser.currentScene.createNode("ROUTE");
-ROUTE700.fromField = "fraction_changed";
-ROUTE700.fromNode = "BehaviorClock";
-ROUTE700.toField = "set_fraction";
-ROUTE700.toNode = "l_acromioclavicular_OI";
-ProtoBody586.children[33] = ROUTE700;
+let OrientationInterpolator700 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator700.DEF = "l4_OI";
+let IS701 = browser.currentScene.createNode("IS");
+let connect702 = browser.currentScene.createNode("connect");
+connect702.nodeField = "key";
+connect702.protoField = "l4_key";
+IS701.connect = new MFNode();
 
-let OrientationInterpolator701 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator701.DEF = "l_ankle_OI";
-let IS702 = browser.currentScene.createNode("IS");
+IS701.connect[0] = connect702;
+
 let connect703 = browser.currentScene.createNode("connect");
-connect703.nodeField = "key";
-connect703.protoField = "l_ankle_key";
-IS702.connect = new MFNode();
-
-IS702.connect[0] = connect703;
+connect703.nodeField = "keyValue";
+connect703.protoField = "l4_keyValue";
+IS701.connect[1] = connect703;
 
 let connect704 = browser.currentScene.createNode("connect");
-connect704.nodeField = "keyValue";
-connect704.protoField = "l_ankle_keyValue";
-IS702.connect[1] = connect704;
+connect704.nodeField = "value_changed";
+connect704.protoField = "l4_changed";
+IS701.connect[2] = connect704;
 
-let connect705 = browser.currentScene.createNode("connect");
-connect705.nodeField = "value_changed";
-connect705.protoField = "l_ankle_changed";
-IS702.connect[2] = connect705;
+OrientationInterpolator700.iS = IS701;
 
-OrientationInterpolator701.iS = IS702;
+ProtoBody603.children[28] = OrientationInterpolator700;
 
-ProtoBody586.children[34] = OrientationInterpolator701;
+let ROUTE705 = browser.currentScene.createNode("ROUTE");
+ROUTE705.fromField = "fraction_changed";
+ROUTE705.fromNode = "BehaviorClock";
+ROUTE705.toField = "set_fraction";
+ROUTE705.toNode = "l4_OI";
+ProtoBody603.children[29] = ROUTE705;
 
-let ROUTE706 = browser.currentScene.createNode("ROUTE");
-ROUTE706.fromField = "fraction_changed";
-ROUTE706.fromNode = "BehaviorClock";
-ROUTE706.toField = "set_fraction";
-ROUTE706.toNode = "l_ankle_OI";
-ProtoBody586.children[35] = ROUTE706;
+let OrientationInterpolator706 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator706.DEF = "l5_OI";
+let IS707 = browser.currentScene.createNode("IS");
+let connect708 = browser.currentScene.createNode("connect");
+connect708.nodeField = "key";
+connect708.protoField = "l5_key";
+IS707.connect = new MFNode();
 
-let OrientationInterpolator707 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator707.DEF = "l_calf_OI";
-let IS708 = browser.currentScene.createNode("IS");
+IS707.connect[0] = connect708;
+
 let connect709 = browser.currentScene.createNode("connect");
-connect709.nodeField = "key";
-connect709.protoField = "l_calf_key";
-IS708.connect = new MFNode();
-
-IS708.connect[0] = connect709;
+connect709.nodeField = "keyValue";
+connect709.protoField = "l5_keyValue";
+IS707.connect[1] = connect709;
 
 let connect710 = browser.currentScene.createNode("connect");
-connect710.nodeField = "keyValue";
-connect710.protoField = "l_calf_keyValue";
-IS708.connect[1] = connect710;
+connect710.nodeField = "value_changed";
+connect710.protoField = "l5_changed";
+IS707.connect[2] = connect710;
 
-let connect711 = browser.currentScene.createNode("connect");
-connect711.nodeField = "value_changed";
-connect711.protoField = "l_calf_changed";
-IS708.connect[2] = connect711;
+OrientationInterpolator706.iS = IS707;
 
-OrientationInterpolator707.iS = IS708;
+ProtoBody603.children[30] = OrientationInterpolator706;
 
-ProtoBody586.children[36] = OrientationInterpolator707;
+let ROUTE711 = browser.currentScene.createNode("ROUTE");
+ROUTE711.fromField = "fraction_changed";
+ROUTE711.fromNode = "BehaviorClock";
+ROUTE711.toField = "set_fraction";
+ROUTE711.toNode = "l5_OI";
+ProtoBody603.children[31] = ROUTE711;
 
-let ROUTE712 = browser.currentScene.createNode("ROUTE");
-ROUTE712.fromField = "fraction_changed";
-ROUTE712.fromNode = "BehaviorClock";
-ROUTE712.toField = "set_fraction";
-ROUTE712.toNode = "l_calf_OI";
-ProtoBody586.children[37] = ROUTE712;
+let OrientationInterpolator712 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator712.DEF = "l_acromioclavicular_OI";
+let IS713 = browser.currentScene.createNode("IS");
+let connect714 = browser.currentScene.createNode("connect");
+connect714.nodeField = "key";
+connect714.protoField = "l_acromioclavicular_key";
+IS713.connect = new MFNode();
 
-let OrientationInterpolator713 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator713.DEF = "l_clavicle_OI";
-let IS714 = browser.currentScene.createNode("IS");
+IS713.connect[0] = connect714;
+
 let connect715 = browser.currentScene.createNode("connect");
-connect715.nodeField = "key";
-connect715.protoField = "l_clavicle_key";
-IS714.connect = new MFNode();
-
-IS714.connect[0] = connect715;
+connect715.nodeField = "keyValue";
+connect715.protoField = "l_acromioclavicular_keyValue";
+IS713.connect[1] = connect715;
 
 let connect716 = browser.currentScene.createNode("connect");
-connect716.nodeField = "keyValue";
-connect716.protoField = "l_clavicle_keyValue";
-IS714.connect[1] = connect716;
+connect716.nodeField = "value_changed";
+connect716.protoField = "l_acromioclavicular_changed";
+IS713.connect[2] = connect716;
 
-let connect717 = browser.currentScene.createNode("connect");
-connect717.nodeField = "value_changed";
-connect717.protoField = "l_clavicle_changed";
-IS714.connect[2] = connect717;
+OrientationInterpolator712.iS = IS713;
 
-OrientationInterpolator713.iS = IS714;
+ProtoBody603.children[32] = OrientationInterpolator712;
 
-ProtoBody586.children[38] = OrientationInterpolator713;
+let ROUTE717 = browser.currentScene.createNode("ROUTE");
+ROUTE717.fromField = "fraction_changed";
+ROUTE717.fromNode = "BehaviorClock";
+ROUTE717.toField = "set_fraction";
+ROUTE717.toNode = "l_acromioclavicular_OI";
+ProtoBody603.children[33] = ROUTE717;
 
-let ROUTE718 = browser.currentScene.createNode("ROUTE");
-ROUTE718.fromField = "fraction_changed";
-ROUTE718.fromNode = "BehaviorClock";
-ROUTE718.toField = "set_fraction";
-ROUTE718.toNode = "l_clavicle_OI";
-ProtoBody586.children[39] = ROUTE718;
+let OrientationInterpolator718 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator718.DEF = "l_ankle_OI";
+let IS719 = browser.currentScene.createNode("IS");
+let connect720 = browser.currentScene.createNode("connect");
+connect720.nodeField = "key";
+connect720.protoField = "l_ankle_key";
+IS719.connect = new MFNode();
 
-let OrientationInterpolator719 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator719.DEF = "l_elbow_OI";
-let IS720 = browser.currentScene.createNode("IS");
+IS719.connect[0] = connect720;
+
 let connect721 = browser.currentScene.createNode("connect");
-connect721.nodeField = "key";
-connect721.protoField = "l_elbow_key";
-IS720.connect = new MFNode();
-
-IS720.connect[0] = connect721;
+connect721.nodeField = "keyValue";
+connect721.protoField = "l_ankle_keyValue";
+IS719.connect[1] = connect721;
 
 let connect722 = browser.currentScene.createNode("connect");
-connect722.nodeField = "keyValue";
-connect722.protoField = "l_elbow_keyValue";
-IS720.connect[1] = connect722;
+connect722.nodeField = "value_changed";
+connect722.protoField = "l_ankle_changed";
+IS719.connect[2] = connect722;
 
-let connect723 = browser.currentScene.createNode("connect");
-connect723.nodeField = "value_changed";
-connect723.protoField = "l_elbow_changed";
-IS720.connect[2] = connect723;
+OrientationInterpolator718.iS = IS719;
 
-OrientationInterpolator719.iS = IS720;
+ProtoBody603.children[34] = OrientationInterpolator718;
 
-ProtoBody586.children[40] = OrientationInterpolator719;
+let ROUTE723 = browser.currentScene.createNode("ROUTE");
+ROUTE723.fromField = "fraction_changed";
+ROUTE723.fromNode = "BehaviorClock";
+ROUTE723.toField = "set_fraction";
+ROUTE723.toNode = "l_ankle_OI";
+ProtoBody603.children[35] = ROUTE723;
 
-let ROUTE724 = browser.currentScene.createNode("ROUTE");
-ROUTE724.fromField = "fraction_changed";
-ROUTE724.fromNode = "BehaviorClock";
-ROUTE724.toField = "set_fraction";
-ROUTE724.toNode = "l_elbow_OI";
-ProtoBody586.children[41] = ROUTE724;
+let OrientationInterpolator724 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator724.DEF = "l_calf_OI";
+let IS725 = browser.currentScene.createNode("IS");
+let connect726 = browser.currentScene.createNode("connect");
+connect726.nodeField = "key";
+connect726.protoField = "l_calf_key";
+IS725.connect = new MFNode();
 
-let OrientationInterpolator725 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator725.DEF = "l_eyeball_OI";
-let IS726 = browser.currentScene.createNode("IS");
+IS725.connect[0] = connect726;
+
 let connect727 = browser.currentScene.createNode("connect");
-connect727.nodeField = "key";
-connect727.protoField = "l_eyeball_key";
-IS726.connect = new MFNode();
-
-IS726.connect[0] = connect727;
+connect727.nodeField = "keyValue";
+connect727.protoField = "l_calf_keyValue";
+IS725.connect[1] = connect727;
 
 let connect728 = browser.currentScene.createNode("connect");
-connect728.nodeField = "keyValue";
-connect728.protoField = "l_eyeball_keyValue";
-IS726.connect[1] = connect728;
+connect728.nodeField = "value_changed";
+connect728.protoField = "l_calf_changed";
+IS725.connect[2] = connect728;
 
-let connect729 = browser.currentScene.createNode("connect");
-connect729.nodeField = "value_changed";
-connect729.protoField = "l_eyeball_changed";
-IS726.connect[2] = connect729;
+OrientationInterpolator724.iS = IS725;
 
-OrientationInterpolator725.iS = IS726;
+ProtoBody603.children[36] = OrientationInterpolator724;
 
-ProtoBody586.children[42] = OrientationInterpolator725;
+let ROUTE729 = browser.currentScene.createNode("ROUTE");
+ROUTE729.fromField = "fraction_changed";
+ROUTE729.fromNode = "BehaviorClock";
+ROUTE729.toField = "set_fraction";
+ROUTE729.toNode = "l_calf_OI";
+ProtoBody603.children[37] = ROUTE729;
 
-let ROUTE730 = browser.currentScene.createNode("ROUTE");
-ROUTE730.fromField = "fraction_changed";
-ROUTE730.fromNode = "BehaviorClock";
-ROUTE730.toField = "set_fraction";
-ROUTE730.toNode = "l_eyeball_OI";
-ProtoBody586.children[43] = ROUTE730;
+let OrientationInterpolator730 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator730.DEF = "l_clavicle_OI";
+let IS731 = browser.currentScene.createNode("IS");
+let connect732 = browser.currentScene.createNode("connect");
+connect732.nodeField = "key";
+connect732.protoField = "l_clavicle_key";
+IS731.connect = new MFNode();
 
-let OrientationInterpolator731 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator731.DEF = "l_eyeball_joint_OI";
-let IS732 = browser.currentScene.createNode("IS");
+IS731.connect[0] = connect732;
+
 let connect733 = browser.currentScene.createNode("connect");
-connect733.nodeField = "key";
-connect733.protoField = "l_eyeball_joint_key";
-IS732.connect = new MFNode();
-
-IS732.connect[0] = connect733;
+connect733.nodeField = "keyValue";
+connect733.protoField = "l_clavicle_keyValue";
+IS731.connect[1] = connect733;
 
 let connect734 = browser.currentScene.createNode("connect");
-connect734.nodeField = "keyValue";
-connect734.protoField = "l_eyeball_joint_keyValue";
-IS732.connect[1] = connect734;
+connect734.nodeField = "value_changed";
+connect734.protoField = "l_clavicle_changed";
+IS731.connect[2] = connect734;
 
-let connect735 = browser.currentScene.createNode("connect");
-connect735.nodeField = "value_changed";
-connect735.protoField = "l_eyeball_joint_changed";
-IS732.connect[2] = connect735;
+OrientationInterpolator730.iS = IS731;
 
-OrientationInterpolator731.iS = IS732;
+ProtoBody603.children[38] = OrientationInterpolator730;
 
-ProtoBody586.children[44] = OrientationInterpolator731;
+let ROUTE735 = browser.currentScene.createNode("ROUTE");
+ROUTE735.fromField = "fraction_changed";
+ROUTE735.fromNode = "BehaviorClock";
+ROUTE735.toField = "set_fraction";
+ROUTE735.toNode = "l_clavicle_OI";
+ProtoBody603.children[39] = ROUTE735;
 
-let ROUTE736 = browser.currentScene.createNode("ROUTE");
-ROUTE736.fromField = "fraction_changed";
-ROUTE736.fromNode = "BehaviorClock";
-ROUTE736.toField = "set_fraction";
-ROUTE736.toNode = "l_eyeball_joint_OI";
-ProtoBody586.children[45] = ROUTE736;
+let OrientationInterpolator736 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator736.DEF = "l_elbow_OI";
+let IS737 = browser.currentScene.createNode("IS");
+let connect738 = browser.currentScene.createNode("connect");
+connect738.nodeField = "key";
+connect738.protoField = "l_elbow_key";
+IS737.connect = new MFNode();
 
-let OrientationInterpolator737 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator737.DEF = "l_eyebrow_OI";
-let IS738 = browser.currentScene.createNode("IS");
+IS737.connect[0] = connect738;
+
 let connect739 = browser.currentScene.createNode("connect");
-connect739.nodeField = "key";
-connect739.protoField = "l_eyebrow_key";
-IS738.connect = new MFNode();
-
-IS738.connect[0] = connect739;
+connect739.nodeField = "keyValue";
+connect739.protoField = "l_elbow_keyValue";
+IS737.connect[1] = connect739;
 
 let connect740 = browser.currentScene.createNode("connect");
-connect740.nodeField = "keyValue";
-connect740.protoField = "l_eyebrow_keyValue";
-IS738.connect[1] = connect740;
+connect740.nodeField = "value_changed";
+connect740.protoField = "l_elbow_changed";
+IS737.connect[2] = connect740;
 
-let connect741 = browser.currentScene.createNode("connect");
-connect741.nodeField = "value_changed";
-connect741.protoField = "l_eyebrow_changed";
-IS738.connect[2] = connect741;
+OrientationInterpolator736.iS = IS737;
 
-OrientationInterpolator737.iS = IS738;
+ProtoBody603.children[40] = OrientationInterpolator736;
 
-ProtoBody586.children[46] = OrientationInterpolator737;
+let ROUTE741 = browser.currentScene.createNode("ROUTE");
+ROUTE741.fromField = "fraction_changed";
+ROUTE741.fromNode = "BehaviorClock";
+ROUTE741.toField = "set_fraction";
+ROUTE741.toNode = "l_elbow_OI";
+ProtoBody603.children[41] = ROUTE741;
 
-let ROUTE742 = browser.currentScene.createNode("ROUTE");
-ROUTE742.fromField = "fraction_changed";
-ROUTE742.fromNode = "BehaviorClock";
-ROUTE742.toField = "set_fraction";
-ROUTE742.toNode = "l_eyebrow_OI";
-ProtoBody586.children[47] = ROUTE742;
+let OrientationInterpolator742 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator742.DEF = "l_eyeball_OI";
+let IS743 = browser.currentScene.createNode("IS");
+let connect744 = browser.currentScene.createNode("connect");
+connect744.nodeField = "key";
+connect744.protoField = "l_eyeball_key";
+IS743.connect = new MFNode();
 
-let OrientationInterpolator743 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator743.DEF = "l_eyebrow_joint_OI";
-let IS744 = browser.currentScene.createNode("IS");
+IS743.connect[0] = connect744;
+
 let connect745 = browser.currentScene.createNode("connect");
-connect745.nodeField = "key";
-connect745.protoField = "l_eyebrow_joint_key";
-IS744.connect = new MFNode();
-
-IS744.connect[0] = connect745;
+connect745.nodeField = "keyValue";
+connect745.protoField = "l_eyeball_keyValue";
+IS743.connect[1] = connect745;
 
 let connect746 = browser.currentScene.createNode("connect");
-connect746.nodeField = "keyValue";
-connect746.protoField = "l_eyebrow_joint_keyValue";
-IS744.connect[1] = connect746;
+connect746.nodeField = "value_changed";
+connect746.protoField = "l_eyeball_changed";
+IS743.connect[2] = connect746;
 
-let connect747 = browser.currentScene.createNode("connect");
-connect747.nodeField = "value_changed";
-connect747.protoField = "l_eyebrow_joint_changed";
-IS744.connect[2] = connect747;
+OrientationInterpolator742.iS = IS743;
 
-OrientationInterpolator743.iS = IS744;
+ProtoBody603.children[42] = OrientationInterpolator742;
 
-ProtoBody586.children[48] = OrientationInterpolator743;
+let ROUTE747 = browser.currentScene.createNode("ROUTE");
+ROUTE747.fromField = "fraction_changed";
+ROUTE747.fromNode = "BehaviorClock";
+ROUTE747.toField = "set_fraction";
+ROUTE747.toNode = "l_eyeball_OI";
+ProtoBody603.children[43] = ROUTE747;
 
-let ROUTE748 = browser.currentScene.createNode("ROUTE");
-ROUTE748.fromField = "fraction_changed";
-ROUTE748.fromNode = "BehaviorClock";
-ROUTE748.toField = "set_fraction";
-ROUTE748.toNode = "l_eyebrow_joint_OI";
-ProtoBody586.children[49] = ROUTE748;
+let OrientationInterpolator748 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator748.DEF = "l_eyeball_joint_OI";
+let IS749 = browser.currentScene.createNode("IS");
+let connect750 = browser.currentScene.createNode("connect");
+connect750.nodeField = "key";
+connect750.protoField = "l_eyeball_joint_key";
+IS749.connect = new MFNode();
 
-let OrientationInterpolator749 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator749.DEF = "l_eyelid_OI";
-let IS750 = browser.currentScene.createNode("IS");
+IS749.connect[0] = connect750;
+
 let connect751 = browser.currentScene.createNode("connect");
-connect751.nodeField = "key";
-connect751.protoField = "l_eyelid_key";
-IS750.connect = new MFNode();
-
-IS750.connect[0] = connect751;
+connect751.nodeField = "keyValue";
+connect751.protoField = "l_eyeball_joint_keyValue";
+IS749.connect[1] = connect751;
 
 let connect752 = browser.currentScene.createNode("connect");
-connect752.nodeField = "keyValue";
-connect752.protoField = "l_eyelid_keyValue";
-IS750.connect[1] = connect752;
+connect752.nodeField = "value_changed";
+connect752.protoField = "l_eyeball_joint_changed";
+IS749.connect[2] = connect752;
 
-let connect753 = browser.currentScene.createNode("connect");
-connect753.nodeField = "value_changed";
-connect753.protoField = "l_eyelid_changed";
-IS750.connect[2] = connect753;
+OrientationInterpolator748.iS = IS749;
 
-OrientationInterpolator749.iS = IS750;
+ProtoBody603.children[44] = OrientationInterpolator748;
 
-ProtoBody586.children[50] = OrientationInterpolator749;
+let ROUTE753 = browser.currentScene.createNode("ROUTE");
+ROUTE753.fromField = "fraction_changed";
+ROUTE753.fromNode = "BehaviorClock";
+ROUTE753.toField = "set_fraction";
+ROUTE753.toNode = "l_eyeball_joint_OI";
+ProtoBody603.children[45] = ROUTE753;
 
-let ROUTE754 = browser.currentScene.createNode("ROUTE");
-ROUTE754.fromField = "fraction_changed";
-ROUTE754.fromNode = "BehaviorClock";
-ROUTE754.toField = "set_fraction";
-ROUTE754.toNode = "l_eyelid_OI";
-ProtoBody586.children[51] = ROUTE754;
+let OrientationInterpolator754 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator754.DEF = "l_eyebrow_OI";
+let IS755 = browser.currentScene.createNode("IS");
+let connect756 = browser.currentScene.createNode("connect");
+connect756.nodeField = "key";
+connect756.protoField = "l_eyebrow_key";
+IS755.connect = new MFNode();
 
-let OrientationInterpolator755 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator755.DEF = "l_eyelid_joint_OI";
-let IS756 = browser.currentScene.createNode("IS");
+IS755.connect[0] = connect756;
+
 let connect757 = browser.currentScene.createNode("connect");
-connect757.nodeField = "key";
-connect757.protoField = "l_eyelid_joint_key";
-IS756.connect = new MFNode();
-
-IS756.connect[0] = connect757;
+connect757.nodeField = "keyValue";
+connect757.protoField = "l_eyebrow_keyValue";
+IS755.connect[1] = connect757;
 
 let connect758 = browser.currentScene.createNode("connect");
-connect758.nodeField = "keyValue";
-connect758.protoField = "l_eyelid_joint_keyValue";
-IS756.connect[1] = connect758;
+connect758.nodeField = "value_changed";
+connect758.protoField = "l_eyebrow_changed";
+IS755.connect[2] = connect758;
 
-let connect759 = browser.currentScene.createNode("connect");
-connect759.nodeField = "value_changed";
-connect759.protoField = "l_eyelid_joint_changed";
-IS756.connect[2] = connect759;
+OrientationInterpolator754.iS = IS755;
 
-OrientationInterpolator755.iS = IS756;
+ProtoBody603.children[46] = OrientationInterpolator754;
 
-ProtoBody586.children[52] = OrientationInterpolator755;
+let ROUTE759 = browser.currentScene.createNode("ROUTE");
+ROUTE759.fromField = "fraction_changed";
+ROUTE759.fromNode = "BehaviorClock";
+ROUTE759.toField = "set_fraction";
+ROUTE759.toNode = "l_eyebrow_OI";
+ProtoBody603.children[47] = ROUTE759;
 
-let ROUTE760 = browser.currentScene.createNode("ROUTE");
-ROUTE760.fromField = "fraction_changed";
-ROUTE760.fromNode = "BehaviorClock";
-ROUTE760.toField = "set_fraction";
-ROUTE760.toNode = "l_eyelid_joint_OI";
-ProtoBody586.children[53] = ROUTE760;
+let OrientationInterpolator760 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator760.DEF = "l_eyebrow_joint_OI";
+let IS761 = browser.currentScene.createNode("IS");
+let connect762 = browser.currentScene.createNode("connect");
+connect762.nodeField = "key";
+connect762.protoField = "l_eyebrow_joint_key";
+IS761.connect = new MFNode();
 
-let OrientationInterpolator761 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator761.DEF = "l_forearm_OI";
-let IS762 = browser.currentScene.createNode("IS");
+IS761.connect[0] = connect762;
+
 let connect763 = browser.currentScene.createNode("connect");
-connect763.nodeField = "key";
-connect763.protoField = "l_forearm_key";
-IS762.connect = new MFNode();
-
-IS762.connect[0] = connect763;
+connect763.nodeField = "keyValue";
+connect763.protoField = "l_eyebrow_joint_keyValue";
+IS761.connect[1] = connect763;
 
 let connect764 = browser.currentScene.createNode("connect");
-connect764.nodeField = "keyValue";
-connect764.protoField = "l_forearm_keyValue";
-IS762.connect[1] = connect764;
+connect764.nodeField = "value_changed";
+connect764.protoField = "l_eyebrow_joint_changed";
+IS761.connect[2] = connect764;
 
-let connect765 = browser.currentScene.createNode("connect");
-connect765.nodeField = "value_changed";
-connect765.protoField = "l_forearm_changed";
-IS762.connect[2] = connect765;
+OrientationInterpolator760.iS = IS761;
 
-OrientationInterpolator761.iS = IS762;
+ProtoBody603.children[48] = OrientationInterpolator760;
 
-ProtoBody586.children[54] = OrientationInterpolator761;
+let ROUTE765 = browser.currentScene.createNode("ROUTE");
+ROUTE765.fromField = "fraction_changed";
+ROUTE765.fromNode = "BehaviorClock";
+ROUTE765.toField = "set_fraction";
+ROUTE765.toNode = "l_eyebrow_joint_OI";
+ProtoBody603.children[49] = ROUTE765;
 
-let ROUTE766 = browser.currentScene.createNode("ROUTE");
-ROUTE766.fromField = "fraction_changed";
-ROUTE766.fromNode = "BehaviorClock";
-ROUTE766.toField = "set_fraction";
-ROUTE766.toNode = "l_forearm_OI";
-ProtoBody586.children[55] = ROUTE766;
+let OrientationInterpolator766 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator766.DEF = "l_eyelid_OI";
+let IS767 = browser.currentScene.createNode("IS");
+let connect768 = browser.currentScene.createNode("connect");
+connect768.nodeField = "key";
+connect768.protoField = "l_eyelid_key";
+IS767.connect = new MFNode();
 
-let OrientationInterpolator767 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator767.DEF = "l_forefoot_OI";
-let IS768 = browser.currentScene.createNode("IS");
+IS767.connect[0] = connect768;
+
 let connect769 = browser.currentScene.createNode("connect");
-connect769.nodeField = "key";
-connect769.protoField = "l_forefoot_key";
-IS768.connect = new MFNode();
-
-IS768.connect[0] = connect769;
+connect769.nodeField = "keyValue";
+connect769.protoField = "l_eyelid_keyValue";
+IS767.connect[1] = connect769;
 
 let connect770 = browser.currentScene.createNode("connect");
-connect770.nodeField = "keyValue";
-connect770.protoField = "l_forefoot_keyValue";
-IS768.connect[1] = connect770;
+connect770.nodeField = "value_changed";
+connect770.protoField = "l_eyelid_changed";
+IS767.connect[2] = connect770;
 
-let connect771 = browser.currentScene.createNode("connect");
-connect771.nodeField = "value_changed";
-connect771.protoField = "l_forefoot_changed";
-IS768.connect[2] = connect771;
+OrientationInterpolator766.iS = IS767;
 
-OrientationInterpolator767.iS = IS768;
+ProtoBody603.children[50] = OrientationInterpolator766;
 
-ProtoBody586.children[56] = OrientationInterpolator767;
+let ROUTE771 = browser.currentScene.createNode("ROUTE");
+ROUTE771.fromField = "fraction_changed";
+ROUTE771.fromNode = "BehaviorClock";
+ROUTE771.toField = "set_fraction";
+ROUTE771.toNode = "l_eyelid_OI";
+ProtoBody603.children[51] = ROUTE771;
 
-let ROUTE772 = browser.currentScene.createNode("ROUTE");
-ROUTE772.fromField = "fraction_changed";
-ROUTE772.fromNode = "BehaviorClock";
-ROUTE772.toField = "set_fraction";
-ROUTE772.toNode = "l_forefoot_OI";
-ProtoBody586.children[57] = ROUTE772;
+let OrientationInterpolator772 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator772.DEF = "l_eyelid_joint_OI";
+let IS773 = browser.currentScene.createNode("IS");
+let connect774 = browser.currentScene.createNode("connect");
+connect774.nodeField = "key";
+connect774.protoField = "l_eyelid_joint_key";
+IS773.connect = new MFNode();
 
-let OrientationInterpolator773 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator773.DEF = "l_hand_OI";
-let IS774 = browser.currentScene.createNode("IS");
+IS773.connect[0] = connect774;
+
 let connect775 = browser.currentScene.createNode("connect");
-connect775.nodeField = "key";
-connect775.protoField = "l_hand_key";
-IS774.connect = new MFNode();
-
-IS774.connect[0] = connect775;
+connect775.nodeField = "keyValue";
+connect775.protoField = "l_eyelid_joint_keyValue";
+IS773.connect[1] = connect775;
 
 let connect776 = browser.currentScene.createNode("connect");
-connect776.nodeField = "keyValue";
-connect776.protoField = "l_hand_keyValue";
-IS774.connect[1] = connect776;
+connect776.nodeField = "value_changed";
+connect776.protoField = "l_eyelid_joint_changed";
+IS773.connect[2] = connect776;
 
-let connect777 = browser.currentScene.createNode("connect");
-connect777.nodeField = "value_changed";
-connect777.protoField = "l_hand_changed";
-IS774.connect[2] = connect777;
+OrientationInterpolator772.iS = IS773;
 
-OrientationInterpolator773.iS = IS774;
+ProtoBody603.children[52] = OrientationInterpolator772;
 
-ProtoBody586.children[58] = OrientationInterpolator773;
+let ROUTE777 = browser.currentScene.createNode("ROUTE");
+ROUTE777.fromField = "fraction_changed";
+ROUTE777.fromNode = "BehaviorClock";
+ROUTE777.toField = "set_fraction";
+ROUTE777.toNode = "l_eyelid_joint_OI";
+ProtoBody603.children[53] = ROUTE777;
 
-let ROUTE778 = browser.currentScene.createNode("ROUTE");
-ROUTE778.fromField = "fraction_changed";
-ROUTE778.fromNode = "BehaviorClock";
-ROUTE778.toField = "set_fraction";
-ROUTE778.toNode = "l_hand_OI";
-ProtoBody586.children[59] = ROUTE778;
+let OrientationInterpolator778 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator778.DEF = "l_forearm_OI";
+let IS779 = browser.currentScene.createNode("IS");
+let connect780 = browser.currentScene.createNode("connect");
+connect780.nodeField = "key";
+connect780.protoField = "l_forearm_key";
+IS779.connect = new MFNode();
 
-let OrientationInterpolator779 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator779.DEF = "l_hindfoot_OI";
-let IS780 = browser.currentScene.createNode("IS");
+IS779.connect[0] = connect780;
+
 let connect781 = browser.currentScene.createNode("connect");
-connect781.nodeField = "key";
-connect781.protoField = "l_hindfoot_key";
-IS780.connect = new MFNode();
-
-IS780.connect[0] = connect781;
+connect781.nodeField = "keyValue";
+connect781.protoField = "l_forearm_keyValue";
+IS779.connect[1] = connect781;
 
 let connect782 = browser.currentScene.createNode("connect");
-connect782.nodeField = "keyValue";
-connect782.protoField = "l_hindfoot_keyValue";
-IS780.connect[1] = connect782;
+connect782.nodeField = "value_changed";
+connect782.protoField = "l_forearm_changed";
+IS779.connect[2] = connect782;
 
-let connect783 = browser.currentScene.createNode("connect");
-connect783.nodeField = "value_changed";
-connect783.protoField = "l_hindfoot_changed";
-IS780.connect[2] = connect783;
+OrientationInterpolator778.iS = IS779;
 
-OrientationInterpolator779.iS = IS780;
+ProtoBody603.children[54] = OrientationInterpolator778;
 
-ProtoBody586.children[60] = OrientationInterpolator779;
+let ROUTE783 = browser.currentScene.createNode("ROUTE");
+ROUTE783.fromField = "fraction_changed";
+ROUTE783.fromNode = "BehaviorClock";
+ROUTE783.toField = "set_fraction";
+ROUTE783.toNode = "l_forearm_OI";
+ProtoBody603.children[55] = ROUTE783;
 
-let ROUTE784 = browser.currentScene.createNode("ROUTE");
-ROUTE784.fromField = "fraction_changed";
-ROUTE784.fromNode = "BehaviorClock";
-ROUTE784.toField = "set_fraction";
-ROUTE784.toNode = "l_hindfoot_OI";
-ProtoBody586.children[61] = ROUTE784;
+let OrientationInterpolator784 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator784.DEF = "l_forefoot_OI";
+let IS785 = browser.currentScene.createNode("IS");
+let connect786 = browser.currentScene.createNode("connect");
+connect786.nodeField = "key";
+connect786.protoField = "l_forefoot_key";
+IS785.connect = new MFNode();
 
-let OrientationInterpolator785 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator785.DEF = "l_hip_OI";
-let IS786 = browser.currentScene.createNode("IS");
+IS785.connect[0] = connect786;
+
 let connect787 = browser.currentScene.createNode("connect");
-connect787.nodeField = "key";
-connect787.protoField = "l_hip_key";
-IS786.connect = new MFNode();
-
-IS786.connect[0] = connect787;
+connect787.nodeField = "keyValue";
+connect787.protoField = "l_forefoot_keyValue";
+IS785.connect[1] = connect787;
 
 let connect788 = browser.currentScene.createNode("connect");
-connect788.nodeField = "keyValue";
-connect788.protoField = "l_hip_keyValue";
-IS786.connect[1] = connect788;
+connect788.nodeField = "value_changed";
+connect788.protoField = "l_forefoot_changed";
+IS785.connect[2] = connect788;
 
-let connect789 = browser.currentScene.createNode("connect");
-connect789.nodeField = "value_changed";
-connect789.protoField = "l_hip_changed";
-IS786.connect[2] = connect789;
+OrientationInterpolator784.iS = IS785;
 
-OrientationInterpolator785.iS = IS786;
+ProtoBody603.children[56] = OrientationInterpolator784;
 
-ProtoBody586.children[62] = OrientationInterpolator785;
+let ROUTE789 = browser.currentScene.createNode("ROUTE");
+ROUTE789.fromField = "fraction_changed";
+ROUTE789.fromNode = "BehaviorClock";
+ROUTE789.toField = "set_fraction";
+ROUTE789.toNode = "l_forefoot_OI";
+ProtoBody603.children[57] = ROUTE789;
 
-let ROUTE790 = browser.currentScene.createNode("ROUTE");
-ROUTE790.fromField = "fraction_changed";
-ROUTE790.fromNode = "BehaviorClock";
-ROUTE790.toField = "set_fraction";
-ROUTE790.toNode = "l_hip_OI";
-ProtoBody586.children[63] = ROUTE790;
+let OrientationInterpolator790 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator790.DEF = "l_hand_OI";
+let IS791 = browser.currentScene.createNode("IS");
+let connect792 = browser.currentScene.createNode("connect");
+connect792.nodeField = "key";
+connect792.protoField = "l_hand_key";
+IS791.connect = new MFNode();
 
-let OrientationInterpolator791 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator791.DEF = "l_index0_OI";
-let IS792 = browser.currentScene.createNode("IS");
+IS791.connect[0] = connect792;
+
 let connect793 = browser.currentScene.createNode("connect");
-connect793.nodeField = "key";
-connect793.protoField = "l_index0_key";
-IS792.connect = new MFNode();
-
-IS792.connect[0] = connect793;
+connect793.nodeField = "keyValue";
+connect793.protoField = "l_hand_keyValue";
+IS791.connect[1] = connect793;
 
 let connect794 = browser.currentScene.createNode("connect");
-connect794.nodeField = "keyValue";
-connect794.protoField = "l_index0_keyValue";
-IS792.connect[1] = connect794;
+connect794.nodeField = "value_changed";
+connect794.protoField = "l_hand_changed";
+IS791.connect[2] = connect794;
 
-let connect795 = browser.currentScene.createNode("connect");
-connect795.nodeField = "value_changed";
-connect795.protoField = "l_index0_changed";
-IS792.connect[2] = connect795;
+OrientationInterpolator790.iS = IS791;
 
-OrientationInterpolator791.iS = IS792;
+ProtoBody603.children[58] = OrientationInterpolator790;
 
-ProtoBody586.children[64] = OrientationInterpolator791;
+let ROUTE795 = browser.currentScene.createNode("ROUTE");
+ROUTE795.fromField = "fraction_changed";
+ROUTE795.fromNode = "BehaviorClock";
+ROUTE795.toField = "set_fraction";
+ROUTE795.toNode = "l_hand_OI";
+ProtoBody603.children[59] = ROUTE795;
 
-let ROUTE796 = browser.currentScene.createNode("ROUTE");
-ROUTE796.fromField = "fraction_changed";
-ROUTE796.fromNode = "BehaviorClock";
-ROUTE796.toField = "set_fraction";
-ROUTE796.toNode = "l_index0_OI";
-ProtoBody586.children[65] = ROUTE796;
+let OrientationInterpolator796 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator796.DEF = "l_hindfoot_OI";
+let IS797 = browser.currentScene.createNode("IS");
+let connect798 = browser.currentScene.createNode("connect");
+connect798.nodeField = "key";
+connect798.protoField = "l_hindfoot_key";
+IS797.connect = new MFNode();
 
-let OrientationInterpolator797 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator797.DEF = "l_index1_OI";
-let IS798 = browser.currentScene.createNode("IS");
+IS797.connect[0] = connect798;
+
 let connect799 = browser.currentScene.createNode("connect");
-connect799.nodeField = "key";
-connect799.protoField = "l_index1_key";
-IS798.connect = new MFNode();
-
-IS798.connect[0] = connect799;
+connect799.nodeField = "keyValue";
+connect799.protoField = "l_hindfoot_keyValue";
+IS797.connect[1] = connect799;
 
 let connect800 = browser.currentScene.createNode("connect");
-connect800.nodeField = "keyValue";
-connect800.protoField = "l_index1_keyValue";
-IS798.connect[1] = connect800;
+connect800.nodeField = "value_changed";
+connect800.protoField = "l_hindfoot_changed";
+IS797.connect[2] = connect800;
 
-let connect801 = browser.currentScene.createNode("connect");
-connect801.nodeField = "value_changed";
-connect801.protoField = "l_index1_changed";
-IS798.connect[2] = connect801;
+OrientationInterpolator796.iS = IS797;
 
-OrientationInterpolator797.iS = IS798;
+ProtoBody603.children[60] = OrientationInterpolator796;
 
-ProtoBody586.children[66] = OrientationInterpolator797;
+let ROUTE801 = browser.currentScene.createNode("ROUTE");
+ROUTE801.fromField = "fraction_changed";
+ROUTE801.fromNode = "BehaviorClock";
+ROUTE801.toField = "set_fraction";
+ROUTE801.toNode = "l_hindfoot_OI";
+ProtoBody603.children[61] = ROUTE801;
 
-let ROUTE802 = browser.currentScene.createNode("ROUTE");
-ROUTE802.fromField = "fraction_changed";
-ROUTE802.fromNode = "BehaviorClock";
-ROUTE802.toField = "set_fraction";
-ROUTE802.toNode = "l_index1_OI";
-ProtoBody586.children[67] = ROUTE802;
+let OrientationInterpolator802 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator802.DEF = "l_hip_OI";
+let IS803 = browser.currentScene.createNode("IS");
+let connect804 = browser.currentScene.createNode("connect");
+connect804.nodeField = "key";
+connect804.protoField = "l_hip_key";
+IS803.connect = new MFNode();
 
-let OrientationInterpolator803 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator803.DEF = "l_index2_OI";
-let IS804 = browser.currentScene.createNode("IS");
+IS803.connect[0] = connect804;
+
 let connect805 = browser.currentScene.createNode("connect");
-connect805.nodeField = "key";
-connect805.protoField = "l_index2_key";
-IS804.connect = new MFNode();
-
-IS804.connect[0] = connect805;
+connect805.nodeField = "keyValue";
+connect805.protoField = "l_hip_keyValue";
+IS803.connect[1] = connect805;
 
 let connect806 = browser.currentScene.createNode("connect");
-connect806.nodeField = "keyValue";
-connect806.protoField = "l_index2_keyValue";
-IS804.connect[1] = connect806;
+connect806.nodeField = "value_changed";
+connect806.protoField = "l_hip_changed";
+IS803.connect[2] = connect806;
 
-let connect807 = browser.currentScene.createNode("connect");
-connect807.nodeField = "value_changed";
-connect807.protoField = "l_index2_changed";
-IS804.connect[2] = connect807;
+OrientationInterpolator802.iS = IS803;
 
-OrientationInterpolator803.iS = IS804;
+ProtoBody603.children[62] = OrientationInterpolator802;
 
-ProtoBody586.children[68] = OrientationInterpolator803;
+let ROUTE807 = browser.currentScene.createNode("ROUTE");
+ROUTE807.fromField = "fraction_changed";
+ROUTE807.fromNode = "BehaviorClock";
+ROUTE807.toField = "set_fraction";
+ROUTE807.toNode = "l_hip_OI";
+ProtoBody603.children[63] = ROUTE807;
 
-let ROUTE808 = browser.currentScene.createNode("ROUTE");
-ROUTE808.fromField = "fraction_changed";
-ROUTE808.fromNode = "BehaviorClock";
-ROUTE808.toField = "set_fraction";
-ROUTE808.toNode = "l_index2_OI";
-ProtoBody586.children[69] = ROUTE808;
+let OrientationInterpolator808 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator808.DEF = "l_index0_OI";
+let IS809 = browser.currentScene.createNode("IS");
+let connect810 = browser.currentScene.createNode("connect");
+connect810.nodeField = "key";
+connect810.protoField = "l_index0_key";
+IS809.connect = new MFNode();
 
-let OrientationInterpolator809 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator809.DEF = "l_index3_OI";
-let IS810 = browser.currentScene.createNode("IS");
+IS809.connect[0] = connect810;
+
 let connect811 = browser.currentScene.createNode("connect");
-connect811.nodeField = "key";
-connect811.protoField = "l_index3_key";
-IS810.connect = new MFNode();
-
-IS810.connect[0] = connect811;
+connect811.nodeField = "keyValue";
+connect811.protoField = "l_index0_keyValue";
+IS809.connect[1] = connect811;
 
 let connect812 = browser.currentScene.createNode("connect");
-connect812.nodeField = "keyValue";
-connect812.protoField = "l_index3_keyValue";
-IS810.connect[1] = connect812;
+connect812.nodeField = "value_changed";
+connect812.protoField = "l_index0_changed";
+IS809.connect[2] = connect812;
 
-let connect813 = browser.currentScene.createNode("connect");
-connect813.nodeField = "value_changed";
-connect813.protoField = "l_index3_changed";
-IS810.connect[2] = connect813;
+OrientationInterpolator808.iS = IS809;
 
-OrientationInterpolator809.iS = IS810;
+ProtoBody603.children[64] = OrientationInterpolator808;
 
-ProtoBody586.children[70] = OrientationInterpolator809;
+let ROUTE813 = browser.currentScene.createNode("ROUTE");
+ROUTE813.fromField = "fraction_changed";
+ROUTE813.fromNode = "BehaviorClock";
+ROUTE813.toField = "set_fraction";
+ROUTE813.toNode = "l_index0_OI";
+ProtoBody603.children[65] = ROUTE813;
 
-let ROUTE814 = browser.currentScene.createNode("ROUTE");
-ROUTE814.fromField = "fraction_changed";
-ROUTE814.fromNode = "BehaviorClock";
-ROUTE814.toField = "set_fraction";
-ROUTE814.toNode = "l_index3_OI";
-ProtoBody586.children[71] = ROUTE814;
+let OrientationInterpolator814 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator814.DEF = "l_index1_OI";
+let IS815 = browser.currentScene.createNode("IS");
+let connect816 = browser.currentScene.createNode("connect");
+connect816.nodeField = "key";
+connect816.protoField = "l_index1_key";
+IS815.connect = new MFNode();
 
-let OrientationInterpolator815 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator815.DEF = "l_index_distal_OI";
-let IS816 = browser.currentScene.createNode("IS");
+IS815.connect[0] = connect816;
+
 let connect817 = browser.currentScene.createNode("connect");
-connect817.nodeField = "key";
-connect817.protoField = "l_index_distal_key";
-IS816.connect = new MFNode();
-
-IS816.connect[0] = connect817;
+connect817.nodeField = "keyValue";
+connect817.protoField = "l_index1_keyValue";
+IS815.connect[1] = connect817;
 
 let connect818 = browser.currentScene.createNode("connect");
-connect818.nodeField = "keyValue";
-connect818.protoField = "l_index_distal_keyValue";
-IS816.connect[1] = connect818;
+connect818.nodeField = "value_changed";
+connect818.protoField = "l_index1_changed";
+IS815.connect[2] = connect818;
 
-let connect819 = browser.currentScene.createNode("connect");
-connect819.nodeField = "value_changed";
-connect819.protoField = "l_index_distal_changed";
-IS816.connect[2] = connect819;
+OrientationInterpolator814.iS = IS815;
 
-OrientationInterpolator815.iS = IS816;
+ProtoBody603.children[66] = OrientationInterpolator814;
 
-ProtoBody586.children[72] = OrientationInterpolator815;
+let ROUTE819 = browser.currentScene.createNode("ROUTE");
+ROUTE819.fromField = "fraction_changed";
+ROUTE819.fromNode = "BehaviorClock";
+ROUTE819.toField = "set_fraction";
+ROUTE819.toNode = "l_index1_OI";
+ProtoBody603.children[67] = ROUTE819;
 
-let ROUTE820 = browser.currentScene.createNode("ROUTE");
-ROUTE820.fromField = "fraction_changed";
-ROUTE820.fromNode = "BehaviorClock";
-ROUTE820.toField = "set_fraction";
-ROUTE820.toNode = "l_index_distal_OI";
-ProtoBody586.children[73] = ROUTE820;
+let OrientationInterpolator820 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator820.DEF = "l_index2_OI";
+let IS821 = browser.currentScene.createNode("IS");
+let connect822 = browser.currentScene.createNode("connect");
+connect822.nodeField = "key";
+connect822.protoField = "l_index2_key";
+IS821.connect = new MFNode();
 
-let OrientationInterpolator821 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator821.DEF = "l_index_metacarpal_OI";
-let IS822 = browser.currentScene.createNode("IS");
+IS821.connect[0] = connect822;
+
 let connect823 = browser.currentScene.createNode("connect");
-connect823.nodeField = "key";
-connect823.protoField = "l_index_metacarpal_key";
-IS822.connect = new MFNode();
-
-IS822.connect[0] = connect823;
+connect823.nodeField = "keyValue";
+connect823.protoField = "l_index2_keyValue";
+IS821.connect[1] = connect823;
 
 let connect824 = browser.currentScene.createNode("connect");
-connect824.nodeField = "keyValue";
-connect824.protoField = "l_index_metacarpal_keyValue";
-IS822.connect[1] = connect824;
+connect824.nodeField = "value_changed";
+connect824.protoField = "l_index2_changed";
+IS821.connect[2] = connect824;
 
-let connect825 = browser.currentScene.createNode("connect");
-connect825.nodeField = "value_changed";
-connect825.protoField = "l_index_metacarpal_changed";
-IS822.connect[2] = connect825;
+OrientationInterpolator820.iS = IS821;
 
-OrientationInterpolator821.iS = IS822;
+ProtoBody603.children[68] = OrientationInterpolator820;
 
-ProtoBody586.children[74] = OrientationInterpolator821;
+let ROUTE825 = browser.currentScene.createNode("ROUTE");
+ROUTE825.fromField = "fraction_changed";
+ROUTE825.fromNode = "BehaviorClock";
+ROUTE825.toField = "set_fraction";
+ROUTE825.toNode = "l_index2_OI";
+ProtoBody603.children[69] = ROUTE825;
 
-let ROUTE826 = browser.currentScene.createNode("ROUTE");
-ROUTE826.fromField = "fraction_changed";
-ROUTE826.fromNode = "BehaviorClock";
-ROUTE826.toField = "set_fraction";
-ROUTE826.toNode = "l_index_metacarpal_OI";
-ProtoBody586.children[75] = ROUTE826;
+let OrientationInterpolator826 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator826.DEF = "l_index3_OI";
+let IS827 = browser.currentScene.createNode("IS");
+let connect828 = browser.currentScene.createNode("connect");
+connect828.nodeField = "key";
+connect828.protoField = "l_index3_key";
+IS827.connect = new MFNode();
 
-let OrientationInterpolator827 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator827.DEF = "l_index_middle_OI";
-let IS828 = browser.currentScene.createNode("IS");
+IS827.connect[0] = connect828;
+
 let connect829 = browser.currentScene.createNode("connect");
-connect829.nodeField = "key";
-connect829.protoField = "l_index_middle_key";
-IS828.connect = new MFNode();
-
-IS828.connect[0] = connect829;
+connect829.nodeField = "keyValue";
+connect829.protoField = "l_index3_keyValue";
+IS827.connect[1] = connect829;
 
 let connect830 = browser.currentScene.createNode("connect");
-connect830.nodeField = "keyValue";
-connect830.protoField = "l_index_middle_keyValue";
-IS828.connect[1] = connect830;
+connect830.nodeField = "value_changed";
+connect830.protoField = "l_index3_changed";
+IS827.connect[2] = connect830;
 
-let connect831 = browser.currentScene.createNode("connect");
-connect831.nodeField = "value_changed";
-connect831.protoField = "l_index_middle_changed";
-IS828.connect[2] = connect831;
+OrientationInterpolator826.iS = IS827;
 
-OrientationInterpolator827.iS = IS828;
+ProtoBody603.children[70] = OrientationInterpolator826;
 
-ProtoBody586.children[76] = OrientationInterpolator827;
+let ROUTE831 = browser.currentScene.createNode("ROUTE");
+ROUTE831.fromField = "fraction_changed";
+ROUTE831.fromNode = "BehaviorClock";
+ROUTE831.toField = "set_fraction";
+ROUTE831.toNode = "l_index3_OI";
+ProtoBody603.children[71] = ROUTE831;
 
-let ROUTE832 = browser.currentScene.createNode("ROUTE");
-ROUTE832.fromField = "fraction_changed";
-ROUTE832.fromNode = "BehaviorClock";
-ROUTE832.toField = "set_fraction";
-ROUTE832.toNode = "l_index_middle_OI";
-ProtoBody586.children[77] = ROUTE832;
+let OrientationInterpolator832 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator832.DEF = "l_index_distal_OI";
+let IS833 = browser.currentScene.createNode("IS");
+let connect834 = browser.currentScene.createNode("connect");
+connect834.nodeField = "key";
+connect834.protoField = "l_index_distal_key";
+IS833.connect = new MFNode();
 
-let OrientationInterpolator833 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator833.DEF = "l_index_proximal_OI";
-let IS834 = browser.currentScene.createNode("IS");
+IS833.connect[0] = connect834;
+
 let connect835 = browser.currentScene.createNode("connect");
-connect835.nodeField = "key";
-connect835.protoField = "l_index_proximal_key";
-IS834.connect = new MFNode();
-
-IS834.connect[0] = connect835;
+connect835.nodeField = "keyValue";
+connect835.protoField = "l_index_distal_keyValue";
+IS833.connect[1] = connect835;
 
 let connect836 = browser.currentScene.createNode("connect");
-connect836.nodeField = "keyValue";
-connect836.protoField = "l_index_proximal_keyValue";
-IS834.connect[1] = connect836;
+connect836.nodeField = "value_changed";
+connect836.protoField = "l_index_distal_changed";
+IS833.connect[2] = connect836;
 
-let connect837 = browser.currentScene.createNode("connect");
-connect837.nodeField = "value_changed";
-connect837.protoField = "l_index_proximal_changed";
-IS834.connect[2] = connect837;
+OrientationInterpolator832.iS = IS833;
 
-OrientationInterpolator833.iS = IS834;
+ProtoBody603.children[72] = OrientationInterpolator832;
 
-ProtoBody586.children[78] = OrientationInterpolator833;
+let ROUTE837 = browser.currentScene.createNode("ROUTE");
+ROUTE837.fromField = "fraction_changed";
+ROUTE837.fromNode = "BehaviorClock";
+ROUTE837.toField = "set_fraction";
+ROUTE837.toNode = "l_index_distal_OI";
+ProtoBody603.children[73] = ROUTE837;
 
-let ROUTE838 = browser.currentScene.createNode("ROUTE");
-ROUTE838.fromField = "fraction_changed";
-ROUTE838.fromNode = "BehaviorClock";
-ROUTE838.toField = "set_fraction";
-ROUTE838.toNode = "l_index_proximal_OI";
-ProtoBody586.children[79] = ROUTE838;
+let OrientationInterpolator838 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator838.DEF = "l_index_metacarpal_OI";
+let IS839 = browser.currentScene.createNode("IS");
+let connect840 = browser.currentScene.createNode("connect");
+connect840.nodeField = "key";
+connect840.protoField = "l_index_metacarpal_key";
+IS839.connect = new MFNode();
 
-let OrientationInterpolator839 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator839.DEF = "l_knee_OI";
-let IS840 = browser.currentScene.createNode("IS");
+IS839.connect[0] = connect840;
+
 let connect841 = browser.currentScene.createNode("connect");
-connect841.nodeField = "key";
-connect841.protoField = "l_knee_key";
-IS840.connect = new MFNode();
-
-IS840.connect[0] = connect841;
+connect841.nodeField = "keyValue";
+connect841.protoField = "l_index_metacarpal_keyValue";
+IS839.connect[1] = connect841;
 
 let connect842 = browser.currentScene.createNode("connect");
-connect842.nodeField = "keyValue";
-connect842.protoField = "l_knee_keyValue";
-IS840.connect[1] = connect842;
+connect842.nodeField = "value_changed";
+connect842.protoField = "l_index_metacarpal_changed";
+IS839.connect[2] = connect842;
 
-let connect843 = browser.currentScene.createNode("connect");
-connect843.nodeField = "value_changed";
-connect843.protoField = "l_knee_changed";
-IS840.connect[2] = connect843;
+OrientationInterpolator838.iS = IS839;
 
-OrientationInterpolator839.iS = IS840;
+ProtoBody603.children[74] = OrientationInterpolator838;
 
-ProtoBody586.children[80] = OrientationInterpolator839;
+let ROUTE843 = browser.currentScene.createNode("ROUTE");
+ROUTE843.fromField = "fraction_changed";
+ROUTE843.fromNode = "BehaviorClock";
+ROUTE843.toField = "set_fraction";
+ROUTE843.toNode = "l_index_metacarpal_OI";
+ProtoBody603.children[75] = ROUTE843;
 
-let ROUTE844 = browser.currentScene.createNode("ROUTE");
-ROUTE844.fromField = "fraction_changed";
-ROUTE844.fromNode = "BehaviorClock";
-ROUTE844.toField = "set_fraction";
-ROUTE844.toNode = "l_knee_OI";
-ProtoBody586.children[81] = ROUTE844;
+let OrientationInterpolator844 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator844.DEF = "l_index_middle_OI";
+let IS845 = browser.currentScene.createNode("IS");
+let connect846 = browser.currentScene.createNode("connect");
+connect846.nodeField = "key";
+connect846.protoField = "l_index_middle_key";
+IS845.connect = new MFNode();
 
-let OrientationInterpolator845 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator845.DEF = "l_metatarsal_OI";
-let IS846 = browser.currentScene.createNode("IS");
+IS845.connect[0] = connect846;
+
 let connect847 = browser.currentScene.createNode("connect");
-connect847.nodeField = "key";
-connect847.protoField = "l_metatarsal_key";
-IS846.connect = new MFNode();
-
-IS846.connect[0] = connect847;
+connect847.nodeField = "keyValue";
+connect847.protoField = "l_index_middle_keyValue";
+IS845.connect[1] = connect847;
 
 let connect848 = browser.currentScene.createNode("connect");
-connect848.nodeField = "keyValue";
-connect848.protoField = "l_metatarsal_keyValue";
-IS846.connect[1] = connect848;
+connect848.nodeField = "value_changed";
+connect848.protoField = "l_index_middle_changed";
+IS845.connect[2] = connect848;
 
-let connect849 = browser.currentScene.createNode("connect");
-connect849.nodeField = "value_changed";
-connect849.protoField = "l_metatarsal_changed";
-IS846.connect[2] = connect849;
+OrientationInterpolator844.iS = IS845;
 
-OrientationInterpolator845.iS = IS846;
+ProtoBody603.children[76] = OrientationInterpolator844;
 
-ProtoBody586.children[82] = OrientationInterpolator845;
+let ROUTE849 = browser.currentScene.createNode("ROUTE");
+ROUTE849.fromField = "fraction_changed";
+ROUTE849.fromNode = "BehaviorClock";
+ROUTE849.toField = "set_fraction";
+ROUTE849.toNode = "l_index_middle_OI";
+ProtoBody603.children[77] = ROUTE849;
 
-let ROUTE850 = browser.currentScene.createNode("ROUTE");
-ROUTE850.fromField = "fraction_changed";
-ROUTE850.fromNode = "BehaviorClock";
-ROUTE850.toField = "set_fraction";
-ROUTE850.toNode = "l_metatarsal_OI";
-ProtoBody586.children[83] = ROUTE850;
+let OrientationInterpolator850 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator850.DEF = "l_index_proximal_OI";
+let IS851 = browser.currentScene.createNode("IS");
+let connect852 = browser.currentScene.createNode("connect");
+connect852.nodeField = "key";
+connect852.protoField = "l_index_proximal_key";
+IS851.connect = new MFNode();
 
-let OrientationInterpolator851 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator851.DEF = "l_middistal_OI";
-let IS852 = browser.currentScene.createNode("IS");
+IS851.connect[0] = connect852;
+
 let connect853 = browser.currentScene.createNode("connect");
-connect853.nodeField = "key";
-connect853.protoField = "l_middistal_key";
-IS852.connect = new MFNode();
-
-IS852.connect[0] = connect853;
+connect853.nodeField = "keyValue";
+connect853.protoField = "l_index_proximal_keyValue";
+IS851.connect[1] = connect853;
 
 let connect854 = browser.currentScene.createNode("connect");
-connect854.nodeField = "keyValue";
-connect854.protoField = "l_middistal_keyValue";
-IS852.connect[1] = connect854;
+connect854.nodeField = "value_changed";
+connect854.protoField = "l_index_proximal_changed";
+IS851.connect[2] = connect854;
 
-let connect855 = browser.currentScene.createNode("connect");
-connect855.nodeField = "value_changed";
-connect855.protoField = "l_middistal_changed";
-IS852.connect[2] = connect855;
+OrientationInterpolator850.iS = IS851;
 
-OrientationInterpolator851.iS = IS852;
+ProtoBody603.children[78] = OrientationInterpolator850;
 
-ProtoBody586.children[84] = OrientationInterpolator851;
+let ROUTE855 = browser.currentScene.createNode("ROUTE");
+ROUTE855.fromField = "fraction_changed";
+ROUTE855.fromNode = "BehaviorClock";
+ROUTE855.toField = "set_fraction";
+ROUTE855.toNode = "l_index_proximal_OI";
+ProtoBody603.children[79] = ROUTE855;
 
-let ROUTE856 = browser.currentScene.createNode("ROUTE");
-ROUTE856.fromField = "fraction_changed";
-ROUTE856.fromNode = "BehaviorClock";
-ROUTE856.toField = "set_fraction";
-ROUTE856.toNode = "l_middistal_OI";
-ProtoBody586.children[85] = ROUTE856;
+let OrientationInterpolator856 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator856.DEF = "l_knee_OI";
+let IS857 = browser.currentScene.createNode("IS");
+let connect858 = browser.currentScene.createNode("connect");
+connect858.nodeField = "key";
+connect858.protoField = "l_knee_key";
+IS857.connect = new MFNode();
 
-let OrientationInterpolator857 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator857.DEF = "l_middle0_OI";
-let IS858 = browser.currentScene.createNode("IS");
+IS857.connect[0] = connect858;
+
 let connect859 = browser.currentScene.createNode("connect");
-connect859.nodeField = "key";
-connect859.protoField = "l_middle0_key";
-IS858.connect = new MFNode();
-
-IS858.connect[0] = connect859;
+connect859.nodeField = "keyValue";
+connect859.protoField = "l_knee_keyValue";
+IS857.connect[1] = connect859;
 
 let connect860 = browser.currentScene.createNode("connect");
-connect860.nodeField = "keyValue";
-connect860.protoField = "l_middle0_keyValue";
-IS858.connect[1] = connect860;
+connect860.nodeField = "value_changed";
+connect860.protoField = "l_knee_changed";
+IS857.connect[2] = connect860;
 
-let connect861 = browser.currentScene.createNode("connect");
-connect861.nodeField = "value_changed";
-connect861.protoField = "l_middle0_changed";
-IS858.connect[2] = connect861;
+OrientationInterpolator856.iS = IS857;
 
-OrientationInterpolator857.iS = IS858;
+ProtoBody603.children[80] = OrientationInterpolator856;
 
-ProtoBody586.children[86] = OrientationInterpolator857;
+let ROUTE861 = browser.currentScene.createNode("ROUTE");
+ROUTE861.fromField = "fraction_changed";
+ROUTE861.fromNode = "BehaviorClock";
+ROUTE861.toField = "set_fraction";
+ROUTE861.toNode = "l_knee_OI";
+ProtoBody603.children[81] = ROUTE861;
 
-let ROUTE862 = browser.currentScene.createNode("ROUTE");
-ROUTE862.fromField = "fraction_changed";
-ROUTE862.fromNode = "BehaviorClock";
-ROUTE862.toField = "set_fraction";
-ROUTE862.toNode = "l_middle0_OI";
-ProtoBody586.children[87] = ROUTE862;
+let OrientationInterpolator862 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator862.DEF = "l_metatarsal_OI";
+let IS863 = browser.currentScene.createNode("IS");
+let connect864 = browser.currentScene.createNode("connect");
+connect864.nodeField = "key";
+connect864.protoField = "l_metatarsal_key";
+IS863.connect = new MFNode();
 
-let OrientationInterpolator863 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator863.DEF = "l_middle1_OI";
-let IS864 = browser.currentScene.createNode("IS");
+IS863.connect[0] = connect864;
+
 let connect865 = browser.currentScene.createNode("connect");
-connect865.nodeField = "key";
-connect865.protoField = "l_middle1_key";
-IS864.connect = new MFNode();
-
-IS864.connect[0] = connect865;
+connect865.nodeField = "keyValue";
+connect865.protoField = "l_metatarsal_keyValue";
+IS863.connect[1] = connect865;
 
 let connect866 = browser.currentScene.createNode("connect");
-connect866.nodeField = "keyValue";
-connect866.protoField = "l_middle1_keyValue";
-IS864.connect[1] = connect866;
+connect866.nodeField = "value_changed";
+connect866.protoField = "l_metatarsal_changed";
+IS863.connect[2] = connect866;
 
-let connect867 = browser.currentScene.createNode("connect");
-connect867.nodeField = "value_changed";
-connect867.protoField = "l_middle1_changed";
-IS864.connect[2] = connect867;
+OrientationInterpolator862.iS = IS863;
 
-OrientationInterpolator863.iS = IS864;
+ProtoBody603.children[82] = OrientationInterpolator862;
 
-ProtoBody586.children[88] = OrientationInterpolator863;
+let ROUTE867 = browser.currentScene.createNode("ROUTE");
+ROUTE867.fromField = "fraction_changed";
+ROUTE867.fromNode = "BehaviorClock";
+ROUTE867.toField = "set_fraction";
+ROUTE867.toNode = "l_metatarsal_OI";
+ProtoBody603.children[83] = ROUTE867;
 
-let ROUTE868 = browser.currentScene.createNode("ROUTE");
-ROUTE868.fromField = "fraction_changed";
-ROUTE868.fromNode = "BehaviorClock";
-ROUTE868.toField = "set_fraction";
-ROUTE868.toNode = "l_middle1_OI";
-ProtoBody586.children[89] = ROUTE868;
+let OrientationInterpolator868 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator868.DEF = "l_middistal_OI";
+let IS869 = browser.currentScene.createNode("IS");
+let connect870 = browser.currentScene.createNode("connect");
+connect870.nodeField = "key";
+connect870.protoField = "l_middistal_key";
+IS869.connect = new MFNode();
 
-let OrientationInterpolator869 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator869.DEF = "l_middle2_OI";
-let IS870 = browser.currentScene.createNode("IS");
+IS869.connect[0] = connect870;
+
 let connect871 = browser.currentScene.createNode("connect");
-connect871.nodeField = "key";
-connect871.protoField = "l_middle2_key";
-IS870.connect = new MFNode();
-
-IS870.connect[0] = connect871;
+connect871.nodeField = "keyValue";
+connect871.protoField = "l_middistal_keyValue";
+IS869.connect[1] = connect871;
 
 let connect872 = browser.currentScene.createNode("connect");
-connect872.nodeField = "keyValue";
-connect872.protoField = "l_middle2_keyValue";
-IS870.connect[1] = connect872;
+connect872.nodeField = "value_changed";
+connect872.protoField = "l_middistal_changed";
+IS869.connect[2] = connect872;
 
-let connect873 = browser.currentScene.createNode("connect");
-connect873.nodeField = "value_changed";
-connect873.protoField = "l_middle2_changed";
-IS870.connect[2] = connect873;
+OrientationInterpolator868.iS = IS869;
 
-OrientationInterpolator869.iS = IS870;
+ProtoBody603.children[84] = OrientationInterpolator868;
 
-ProtoBody586.children[90] = OrientationInterpolator869;
+let ROUTE873 = browser.currentScene.createNode("ROUTE");
+ROUTE873.fromField = "fraction_changed";
+ROUTE873.fromNode = "BehaviorClock";
+ROUTE873.toField = "set_fraction";
+ROUTE873.toNode = "l_middistal_OI";
+ProtoBody603.children[85] = ROUTE873;
 
-let ROUTE874 = browser.currentScene.createNode("ROUTE");
-ROUTE874.fromField = "fraction_changed";
-ROUTE874.fromNode = "BehaviorClock";
-ROUTE874.toField = "set_fraction";
-ROUTE874.toNode = "l_middle2_OI";
-ProtoBody586.children[91] = ROUTE874;
+let OrientationInterpolator874 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator874.DEF = "l_middle0_OI";
+let IS875 = browser.currentScene.createNode("IS");
+let connect876 = browser.currentScene.createNode("connect");
+connect876.nodeField = "key";
+connect876.protoField = "l_middle0_key";
+IS875.connect = new MFNode();
 
-let OrientationInterpolator875 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator875.DEF = "l_middle3_OI";
-let IS876 = browser.currentScene.createNode("IS");
+IS875.connect[0] = connect876;
+
 let connect877 = browser.currentScene.createNode("connect");
-connect877.nodeField = "key";
-connect877.protoField = "l_middle3_key";
-IS876.connect = new MFNode();
-
-IS876.connect[0] = connect877;
+connect877.nodeField = "keyValue";
+connect877.protoField = "l_middle0_keyValue";
+IS875.connect[1] = connect877;
 
 let connect878 = browser.currentScene.createNode("connect");
-connect878.nodeField = "keyValue";
-connect878.protoField = "l_middle3_keyValue";
-IS876.connect[1] = connect878;
+connect878.nodeField = "value_changed";
+connect878.protoField = "l_middle0_changed";
+IS875.connect[2] = connect878;
 
-let connect879 = browser.currentScene.createNode("connect");
-connect879.nodeField = "value_changed";
-connect879.protoField = "l_middle3_changed";
-IS876.connect[2] = connect879;
+OrientationInterpolator874.iS = IS875;
 
-OrientationInterpolator875.iS = IS876;
+ProtoBody603.children[86] = OrientationInterpolator874;
 
-ProtoBody586.children[92] = OrientationInterpolator875;
+let ROUTE879 = browser.currentScene.createNode("ROUTE");
+ROUTE879.fromField = "fraction_changed";
+ROUTE879.fromNode = "BehaviorClock";
+ROUTE879.toField = "set_fraction";
+ROUTE879.toNode = "l_middle0_OI";
+ProtoBody603.children[87] = ROUTE879;
 
-let ROUTE880 = browser.currentScene.createNode("ROUTE");
-ROUTE880.fromField = "fraction_changed";
-ROUTE880.fromNode = "BehaviorClock";
-ROUTE880.toField = "set_fraction";
-ROUTE880.toNode = "l_middle3_OI";
-ProtoBody586.children[93] = ROUTE880;
+let OrientationInterpolator880 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator880.DEF = "l_middle1_OI";
+let IS881 = browser.currentScene.createNode("IS");
+let connect882 = browser.currentScene.createNode("connect");
+connect882.nodeField = "key";
+connect882.protoField = "l_middle1_key";
+IS881.connect = new MFNode();
 
-let OrientationInterpolator881 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator881.DEF = "l_middle_distal_OI";
-let IS882 = browser.currentScene.createNode("IS");
+IS881.connect[0] = connect882;
+
 let connect883 = browser.currentScene.createNode("connect");
-connect883.nodeField = "key";
-connect883.protoField = "l_middle_distal_key";
-IS882.connect = new MFNode();
-
-IS882.connect[0] = connect883;
+connect883.nodeField = "keyValue";
+connect883.protoField = "l_middle1_keyValue";
+IS881.connect[1] = connect883;
 
 let connect884 = browser.currentScene.createNode("connect");
-connect884.nodeField = "keyValue";
-connect884.protoField = "l_middle_distal_keyValue";
-IS882.connect[1] = connect884;
+connect884.nodeField = "value_changed";
+connect884.protoField = "l_middle1_changed";
+IS881.connect[2] = connect884;
 
-let connect885 = browser.currentScene.createNode("connect");
-connect885.nodeField = "value_changed";
-connect885.protoField = "l_middle_distal_changed";
-IS882.connect[2] = connect885;
+OrientationInterpolator880.iS = IS881;
 
-OrientationInterpolator881.iS = IS882;
+ProtoBody603.children[88] = OrientationInterpolator880;
 
-ProtoBody586.children[94] = OrientationInterpolator881;
+let ROUTE885 = browser.currentScene.createNode("ROUTE");
+ROUTE885.fromField = "fraction_changed";
+ROUTE885.fromNode = "BehaviorClock";
+ROUTE885.toField = "set_fraction";
+ROUTE885.toNode = "l_middle1_OI";
+ProtoBody603.children[89] = ROUTE885;
 
-let ROUTE886 = browser.currentScene.createNode("ROUTE");
-ROUTE886.fromField = "fraction_changed";
-ROUTE886.fromNode = "BehaviorClock";
-ROUTE886.toField = "set_fraction";
-ROUTE886.toNode = "l_middle_distal_OI";
-ProtoBody586.children[95] = ROUTE886;
+let OrientationInterpolator886 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator886.DEF = "l_middle2_OI";
+let IS887 = browser.currentScene.createNode("IS");
+let connect888 = browser.currentScene.createNode("connect");
+connect888.nodeField = "key";
+connect888.protoField = "l_middle2_key";
+IS887.connect = new MFNode();
 
-let OrientationInterpolator887 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator887.DEF = "l_middle_metacarpal_OI";
-let IS888 = browser.currentScene.createNode("IS");
+IS887.connect[0] = connect888;
+
 let connect889 = browser.currentScene.createNode("connect");
-connect889.nodeField = "key";
-connect889.protoField = "l_middle_metacarpal_key";
-IS888.connect = new MFNode();
-
-IS888.connect[0] = connect889;
+connect889.nodeField = "keyValue";
+connect889.protoField = "l_middle2_keyValue";
+IS887.connect[1] = connect889;
 
 let connect890 = browser.currentScene.createNode("connect");
-connect890.nodeField = "keyValue";
-connect890.protoField = "l_middle_metacarpal_keyValue";
-IS888.connect[1] = connect890;
+connect890.nodeField = "value_changed";
+connect890.protoField = "l_middle2_changed";
+IS887.connect[2] = connect890;
 
-let connect891 = browser.currentScene.createNode("connect");
-connect891.nodeField = "value_changed";
-connect891.protoField = "l_middle_metacarpal_changed";
-IS888.connect[2] = connect891;
+OrientationInterpolator886.iS = IS887;
 
-OrientationInterpolator887.iS = IS888;
+ProtoBody603.children[90] = OrientationInterpolator886;
 
-ProtoBody586.children[96] = OrientationInterpolator887;
+let ROUTE891 = browser.currentScene.createNode("ROUTE");
+ROUTE891.fromField = "fraction_changed";
+ROUTE891.fromNode = "BehaviorClock";
+ROUTE891.toField = "set_fraction";
+ROUTE891.toNode = "l_middle2_OI";
+ProtoBody603.children[91] = ROUTE891;
 
-let ROUTE892 = browser.currentScene.createNode("ROUTE");
-ROUTE892.fromField = "fraction_changed";
-ROUTE892.fromNode = "BehaviorClock";
-ROUTE892.toField = "set_fraction";
-ROUTE892.toNode = "l_middle_metacarpal_OI";
-ProtoBody586.children[97] = ROUTE892;
+let OrientationInterpolator892 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator892.DEF = "l_middle3_OI";
+let IS893 = browser.currentScene.createNode("IS");
+let connect894 = browser.currentScene.createNode("connect");
+connect894.nodeField = "key";
+connect894.protoField = "l_middle3_key";
+IS893.connect = new MFNode();
 
-let OrientationInterpolator893 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator893.DEF = "l_middle_middle_OI";
-let IS894 = browser.currentScene.createNode("IS");
+IS893.connect[0] = connect894;
+
 let connect895 = browser.currentScene.createNode("connect");
-connect895.nodeField = "key";
-connect895.protoField = "l_middle_middle_key";
-IS894.connect = new MFNode();
-
-IS894.connect[0] = connect895;
+connect895.nodeField = "keyValue";
+connect895.protoField = "l_middle3_keyValue";
+IS893.connect[1] = connect895;
 
 let connect896 = browser.currentScene.createNode("connect");
-connect896.nodeField = "keyValue";
-connect896.protoField = "l_middle_middle_keyValue";
-IS894.connect[1] = connect896;
+connect896.nodeField = "value_changed";
+connect896.protoField = "l_middle3_changed";
+IS893.connect[2] = connect896;
 
-let connect897 = browser.currentScene.createNode("connect");
-connect897.nodeField = "value_changed";
-connect897.protoField = "l_middle_middle_changed";
-IS894.connect[2] = connect897;
+OrientationInterpolator892.iS = IS893;
 
-OrientationInterpolator893.iS = IS894;
+ProtoBody603.children[92] = OrientationInterpolator892;
 
-ProtoBody586.children[98] = OrientationInterpolator893;
+let ROUTE897 = browser.currentScene.createNode("ROUTE");
+ROUTE897.fromField = "fraction_changed";
+ROUTE897.fromNode = "BehaviorClock";
+ROUTE897.toField = "set_fraction";
+ROUTE897.toNode = "l_middle3_OI";
+ProtoBody603.children[93] = ROUTE897;
 
-let ROUTE898 = browser.currentScene.createNode("ROUTE");
-ROUTE898.fromField = "fraction_changed";
-ROUTE898.fromNode = "BehaviorClock";
-ROUTE898.toField = "set_fraction";
-ROUTE898.toNode = "l_middle_middle_OI";
-ProtoBody586.children[99] = ROUTE898;
+let OrientationInterpolator898 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator898.DEF = "l_middle_distal_OI";
+let IS899 = browser.currentScene.createNode("IS");
+let connect900 = browser.currentScene.createNode("connect");
+connect900.nodeField = "key";
+connect900.protoField = "l_middle_distal_key";
+IS899.connect = new MFNode();
 
-let OrientationInterpolator899 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator899.DEF = "l_middle_proximal_OI";
-let IS900 = browser.currentScene.createNode("IS");
+IS899.connect[0] = connect900;
+
 let connect901 = browser.currentScene.createNode("connect");
-connect901.nodeField = "key";
-connect901.protoField = "l_middle_proximal_key";
-IS900.connect = new MFNode();
-
-IS900.connect[0] = connect901;
+connect901.nodeField = "keyValue";
+connect901.protoField = "l_middle_distal_keyValue";
+IS899.connect[1] = connect901;
 
 let connect902 = browser.currentScene.createNode("connect");
-connect902.nodeField = "keyValue";
-connect902.protoField = "l_middle_proximal_keyValue";
-IS900.connect[1] = connect902;
+connect902.nodeField = "value_changed";
+connect902.protoField = "l_middle_distal_changed";
+IS899.connect[2] = connect902;
 
-let connect903 = browser.currentScene.createNode("connect");
-connect903.nodeField = "value_changed";
-connect903.protoField = "l_middle_proximal_changed";
-IS900.connect[2] = connect903;
+OrientationInterpolator898.iS = IS899;
 
-OrientationInterpolator899.iS = IS900;
+ProtoBody603.children[94] = OrientationInterpolator898;
 
-ProtoBody586.children[100] = OrientationInterpolator899;
+let ROUTE903 = browser.currentScene.createNode("ROUTE");
+ROUTE903.fromField = "fraction_changed";
+ROUTE903.fromNode = "BehaviorClock";
+ROUTE903.toField = "set_fraction";
+ROUTE903.toNode = "l_middle_distal_OI";
+ProtoBody603.children[95] = ROUTE903;
 
-let ROUTE904 = browser.currentScene.createNode("ROUTE");
-ROUTE904.fromField = "fraction_changed";
-ROUTE904.fromNode = "BehaviorClock";
-ROUTE904.toField = "set_fraction";
-ROUTE904.toNode = "l_middle_proximal_OI";
-ProtoBody586.children[101] = ROUTE904;
+let OrientationInterpolator904 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator904.DEF = "l_middle_metacarpal_OI";
+let IS905 = browser.currentScene.createNode("IS");
+let connect906 = browser.currentScene.createNode("connect");
+connect906.nodeField = "key";
+connect906.protoField = "l_middle_metacarpal_key";
+IS905.connect = new MFNode();
 
-let OrientationInterpolator905 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator905.DEF = "l_midproximal_OI";
-let IS906 = browser.currentScene.createNode("IS");
+IS905.connect[0] = connect906;
+
 let connect907 = browser.currentScene.createNode("connect");
-connect907.nodeField = "key";
-connect907.protoField = "l_midproximal_key";
-IS906.connect = new MFNode();
-
-IS906.connect[0] = connect907;
+connect907.nodeField = "keyValue";
+connect907.protoField = "l_middle_metacarpal_keyValue";
+IS905.connect[1] = connect907;
 
 let connect908 = browser.currentScene.createNode("connect");
-connect908.nodeField = "keyValue";
-connect908.protoField = "l_midproximal_keyValue";
-IS906.connect[1] = connect908;
+connect908.nodeField = "value_changed";
+connect908.protoField = "l_middle_metacarpal_changed";
+IS905.connect[2] = connect908;
 
-let connect909 = browser.currentScene.createNode("connect");
-connect909.nodeField = "value_changed";
-connect909.protoField = "l_midproximal_changed";
-IS906.connect[2] = connect909;
+OrientationInterpolator904.iS = IS905;
 
-OrientationInterpolator905.iS = IS906;
+ProtoBody603.children[96] = OrientationInterpolator904;
 
-ProtoBody586.children[102] = OrientationInterpolator905;
+let ROUTE909 = browser.currentScene.createNode("ROUTE");
+ROUTE909.fromField = "fraction_changed";
+ROUTE909.fromNode = "BehaviorClock";
+ROUTE909.toField = "set_fraction";
+ROUTE909.toNode = "l_middle_metacarpal_OI";
+ProtoBody603.children[97] = ROUTE909;
 
-let ROUTE910 = browser.currentScene.createNode("ROUTE");
-ROUTE910.fromField = "fraction_changed";
-ROUTE910.fromNode = "BehaviorClock";
-ROUTE910.toField = "set_fraction";
-ROUTE910.toNode = "l_midproximal_OI";
-ProtoBody586.children[103] = ROUTE910;
+let OrientationInterpolator910 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator910.DEF = "l_middle_middle_OI";
+let IS911 = browser.currentScene.createNode("IS");
+let connect912 = browser.currentScene.createNode("connect");
+connect912.nodeField = "key";
+connect912.protoField = "l_middle_middle_key";
+IS911.connect = new MFNode();
 
-let OrientationInterpolator911 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator911.DEF = "l_midtarsal_OI";
-let IS912 = browser.currentScene.createNode("IS");
+IS911.connect[0] = connect912;
+
 let connect913 = browser.currentScene.createNode("connect");
-connect913.nodeField = "key";
-connect913.protoField = "l_midtarsal_key";
-IS912.connect = new MFNode();
-
-IS912.connect[0] = connect913;
+connect913.nodeField = "keyValue";
+connect913.protoField = "l_middle_middle_keyValue";
+IS911.connect[1] = connect913;
 
 let connect914 = browser.currentScene.createNode("connect");
-connect914.nodeField = "keyValue";
-connect914.protoField = "l_midtarsal_keyValue";
-IS912.connect[1] = connect914;
+connect914.nodeField = "value_changed";
+connect914.protoField = "l_middle_middle_changed";
+IS911.connect[2] = connect914;
 
-let connect915 = browser.currentScene.createNode("connect");
-connect915.nodeField = "value_changed";
-connect915.protoField = "l_midtarsal_changed";
-IS912.connect[2] = connect915;
+OrientationInterpolator910.iS = IS911;
 
-OrientationInterpolator911.iS = IS912;
+ProtoBody603.children[98] = OrientationInterpolator910;
 
-ProtoBody586.children[104] = OrientationInterpolator911;
+let ROUTE915 = browser.currentScene.createNode("ROUTE");
+ROUTE915.fromField = "fraction_changed";
+ROUTE915.fromNode = "BehaviorClock";
+ROUTE915.toField = "set_fraction";
+ROUTE915.toNode = "l_middle_middle_OI";
+ProtoBody603.children[99] = ROUTE915;
 
-let ROUTE916 = browser.currentScene.createNode("ROUTE");
-ROUTE916.fromField = "fraction_changed";
-ROUTE916.fromNode = "BehaviorClock";
-ROUTE916.toField = "set_fraction";
-ROUTE916.toNode = "l_midtarsal_OI";
-ProtoBody586.children[105] = ROUTE916;
+let OrientationInterpolator916 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator916.DEF = "l_middle_proximal_OI";
+let IS917 = browser.currentScene.createNode("IS");
+let connect918 = browser.currentScene.createNode("connect");
+connect918.nodeField = "key";
+connect918.protoField = "l_middle_proximal_key";
+IS917.connect = new MFNode();
 
-let OrientationInterpolator917 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator917.DEF = "l_pinky0_OI";
-let IS918 = browser.currentScene.createNode("IS");
+IS917.connect[0] = connect918;
+
 let connect919 = browser.currentScene.createNode("connect");
-connect919.nodeField = "key";
-connect919.protoField = "l_pinky0_key";
-IS918.connect = new MFNode();
-
-IS918.connect[0] = connect919;
+connect919.nodeField = "keyValue";
+connect919.protoField = "l_middle_proximal_keyValue";
+IS917.connect[1] = connect919;
 
 let connect920 = browser.currentScene.createNode("connect");
-connect920.nodeField = "keyValue";
-connect920.protoField = "l_pinky0_keyValue";
-IS918.connect[1] = connect920;
+connect920.nodeField = "value_changed";
+connect920.protoField = "l_middle_proximal_changed";
+IS917.connect[2] = connect920;
 
-let connect921 = browser.currentScene.createNode("connect");
-connect921.nodeField = "value_changed";
-connect921.protoField = "l_pinky0_changed";
-IS918.connect[2] = connect921;
+OrientationInterpolator916.iS = IS917;
 
-OrientationInterpolator917.iS = IS918;
+ProtoBody603.children[100] = OrientationInterpolator916;
 
-ProtoBody586.children[106] = OrientationInterpolator917;
+let ROUTE921 = browser.currentScene.createNode("ROUTE");
+ROUTE921.fromField = "fraction_changed";
+ROUTE921.fromNode = "BehaviorClock";
+ROUTE921.toField = "set_fraction";
+ROUTE921.toNode = "l_middle_proximal_OI";
+ProtoBody603.children[101] = ROUTE921;
 
-let ROUTE922 = browser.currentScene.createNode("ROUTE");
-ROUTE922.fromField = "fraction_changed";
-ROUTE922.fromNode = "BehaviorClock";
-ROUTE922.toField = "set_fraction";
-ROUTE922.toNode = "l_pinky0_OI";
-ProtoBody586.children[107] = ROUTE922;
+let OrientationInterpolator922 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator922.DEF = "l_midproximal_OI";
+let IS923 = browser.currentScene.createNode("IS");
+let connect924 = browser.currentScene.createNode("connect");
+connect924.nodeField = "key";
+connect924.protoField = "l_midproximal_key";
+IS923.connect = new MFNode();
 
-let OrientationInterpolator923 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator923.DEF = "l_pinky1_OI";
-let IS924 = browser.currentScene.createNode("IS");
+IS923.connect[0] = connect924;
+
 let connect925 = browser.currentScene.createNode("connect");
-connect925.nodeField = "key";
-connect925.protoField = "l_pinky1_key";
-IS924.connect = new MFNode();
-
-IS924.connect[0] = connect925;
+connect925.nodeField = "keyValue";
+connect925.protoField = "l_midproximal_keyValue";
+IS923.connect[1] = connect925;
 
 let connect926 = browser.currentScene.createNode("connect");
-connect926.nodeField = "keyValue";
-connect926.protoField = "l_pinky1_keyValue";
-IS924.connect[1] = connect926;
+connect926.nodeField = "value_changed";
+connect926.protoField = "l_midproximal_changed";
+IS923.connect[2] = connect926;
 
-let connect927 = browser.currentScene.createNode("connect");
-connect927.nodeField = "value_changed";
-connect927.protoField = "l_pinky1_changed";
-IS924.connect[2] = connect927;
+OrientationInterpolator922.iS = IS923;
 
-OrientationInterpolator923.iS = IS924;
+ProtoBody603.children[102] = OrientationInterpolator922;
 
-ProtoBody586.children[108] = OrientationInterpolator923;
+let ROUTE927 = browser.currentScene.createNode("ROUTE");
+ROUTE927.fromField = "fraction_changed";
+ROUTE927.fromNode = "BehaviorClock";
+ROUTE927.toField = "set_fraction";
+ROUTE927.toNode = "l_midproximal_OI";
+ProtoBody603.children[103] = ROUTE927;
 
-let ROUTE928 = browser.currentScene.createNode("ROUTE");
-ROUTE928.fromField = "fraction_changed";
-ROUTE928.fromNode = "BehaviorClock";
-ROUTE928.toField = "set_fraction";
-ROUTE928.toNode = "l_pinky1_OI";
-ProtoBody586.children[109] = ROUTE928;
+let OrientationInterpolator928 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator928.DEF = "l_midtarsal_OI";
+let IS929 = browser.currentScene.createNode("IS");
+let connect930 = browser.currentScene.createNode("connect");
+connect930.nodeField = "key";
+connect930.protoField = "l_midtarsal_key";
+IS929.connect = new MFNode();
 
-let OrientationInterpolator929 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator929.DEF = "l_pinky2_OI";
-let IS930 = browser.currentScene.createNode("IS");
+IS929.connect[0] = connect930;
+
 let connect931 = browser.currentScene.createNode("connect");
-connect931.nodeField = "key";
-connect931.protoField = "l_pinky2_key";
-IS930.connect = new MFNode();
-
-IS930.connect[0] = connect931;
+connect931.nodeField = "keyValue";
+connect931.protoField = "l_midtarsal_keyValue";
+IS929.connect[1] = connect931;
 
 let connect932 = browser.currentScene.createNode("connect");
-connect932.nodeField = "keyValue";
-connect932.protoField = "l_pinky2_keyValue";
-IS930.connect[1] = connect932;
+connect932.nodeField = "value_changed";
+connect932.protoField = "l_midtarsal_changed";
+IS929.connect[2] = connect932;
 
-let connect933 = browser.currentScene.createNode("connect");
-connect933.nodeField = "value_changed";
-connect933.protoField = "l_pinky2_changed";
-IS930.connect[2] = connect933;
+OrientationInterpolator928.iS = IS929;
 
-OrientationInterpolator929.iS = IS930;
+ProtoBody603.children[104] = OrientationInterpolator928;
 
-ProtoBody586.children[110] = OrientationInterpolator929;
+let ROUTE933 = browser.currentScene.createNode("ROUTE");
+ROUTE933.fromField = "fraction_changed";
+ROUTE933.fromNode = "BehaviorClock";
+ROUTE933.toField = "set_fraction";
+ROUTE933.toNode = "l_midtarsal_OI";
+ProtoBody603.children[105] = ROUTE933;
 
-let ROUTE934 = browser.currentScene.createNode("ROUTE");
-ROUTE934.fromField = "fraction_changed";
-ROUTE934.fromNode = "BehaviorClock";
-ROUTE934.toField = "set_fraction";
-ROUTE934.toNode = "l_pinky2_OI";
-ProtoBody586.children[111] = ROUTE934;
+let OrientationInterpolator934 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator934.DEF = "l_pinky0_OI";
+let IS935 = browser.currentScene.createNode("IS");
+let connect936 = browser.currentScene.createNode("connect");
+connect936.nodeField = "key";
+connect936.protoField = "l_pinky0_key";
+IS935.connect = new MFNode();
 
-let OrientationInterpolator935 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator935.DEF = "l_pinky3_OI";
-let IS936 = browser.currentScene.createNode("IS");
+IS935.connect[0] = connect936;
+
 let connect937 = browser.currentScene.createNode("connect");
-connect937.nodeField = "key";
-connect937.protoField = "l_pinky3_key";
-IS936.connect = new MFNode();
-
-IS936.connect[0] = connect937;
+connect937.nodeField = "keyValue";
+connect937.protoField = "l_pinky0_keyValue";
+IS935.connect[1] = connect937;
 
 let connect938 = browser.currentScene.createNode("connect");
-connect938.nodeField = "keyValue";
-connect938.protoField = "l_pinky3_keyValue";
-IS936.connect[1] = connect938;
+connect938.nodeField = "value_changed";
+connect938.protoField = "l_pinky0_changed";
+IS935.connect[2] = connect938;
 
-let connect939 = browser.currentScene.createNode("connect");
-connect939.nodeField = "value_changed";
-connect939.protoField = "l_pinky3_changed";
-IS936.connect[2] = connect939;
+OrientationInterpolator934.iS = IS935;
 
-OrientationInterpolator935.iS = IS936;
+ProtoBody603.children[106] = OrientationInterpolator934;
 
-ProtoBody586.children[112] = OrientationInterpolator935;
+let ROUTE939 = browser.currentScene.createNode("ROUTE");
+ROUTE939.fromField = "fraction_changed";
+ROUTE939.fromNode = "BehaviorClock";
+ROUTE939.toField = "set_fraction";
+ROUTE939.toNode = "l_pinky0_OI";
+ProtoBody603.children[107] = ROUTE939;
 
-let ROUTE940 = browser.currentScene.createNode("ROUTE");
-ROUTE940.fromField = "fraction_changed";
-ROUTE940.fromNode = "BehaviorClock";
-ROUTE940.toField = "set_fraction";
-ROUTE940.toNode = "l_pinky3_OI";
-ProtoBody586.children[113] = ROUTE940;
+let OrientationInterpolator940 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator940.DEF = "l_pinky1_OI";
+let IS941 = browser.currentScene.createNode("IS");
+let connect942 = browser.currentScene.createNode("connect");
+connect942.nodeField = "key";
+connect942.protoField = "l_pinky1_key";
+IS941.connect = new MFNode();
 
-let OrientationInterpolator941 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator941.DEF = "l_pinky_distal_OI";
-let IS942 = browser.currentScene.createNode("IS");
+IS941.connect[0] = connect942;
+
 let connect943 = browser.currentScene.createNode("connect");
-connect943.nodeField = "key";
-connect943.protoField = "l_pinky_distal_key";
-IS942.connect = new MFNode();
-
-IS942.connect[0] = connect943;
+connect943.nodeField = "keyValue";
+connect943.protoField = "l_pinky1_keyValue";
+IS941.connect[1] = connect943;
 
 let connect944 = browser.currentScene.createNode("connect");
-connect944.nodeField = "keyValue";
-connect944.protoField = "l_pinky_distal_keyValue";
-IS942.connect[1] = connect944;
+connect944.nodeField = "value_changed";
+connect944.protoField = "l_pinky1_changed";
+IS941.connect[2] = connect944;
 
-let connect945 = browser.currentScene.createNode("connect");
-connect945.nodeField = "value_changed";
-connect945.protoField = "l_pinky_distal_changed";
-IS942.connect[2] = connect945;
+OrientationInterpolator940.iS = IS941;
 
-OrientationInterpolator941.iS = IS942;
+ProtoBody603.children[108] = OrientationInterpolator940;
 
-ProtoBody586.children[114] = OrientationInterpolator941;
+let ROUTE945 = browser.currentScene.createNode("ROUTE");
+ROUTE945.fromField = "fraction_changed";
+ROUTE945.fromNode = "BehaviorClock";
+ROUTE945.toField = "set_fraction";
+ROUTE945.toNode = "l_pinky1_OI";
+ProtoBody603.children[109] = ROUTE945;
 
-let ROUTE946 = browser.currentScene.createNode("ROUTE");
-ROUTE946.fromField = "fraction_changed";
-ROUTE946.fromNode = "BehaviorClock";
-ROUTE946.toField = "set_fraction";
-ROUTE946.toNode = "l_pinky_distal_OI";
-ProtoBody586.children[115] = ROUTE946;
+let OrientationInterpolator946 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator946.DEF = "l_pinky2_OI";
+let IS947 = browser.currentScene.createNode("IS");
+let connect948 = browser.currentScene.createNode("connect");
+connect948.nodeField = "key";
+connect948.protoField = "l_pinky2_key";
+IS947.connect = new MFNode();
 
-let OrientationInterpolator947 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator947.DEF = "l_pinky_metacarpal_OI";
-let IS948 = browser.currentScene.createNode("IS");
+IS947.connect[0] = connect948;
+
 let connect949 = browser.currentScene.createNode("connect");
-connect949.nodeField = "key";
-connect949.protoField = "l_pinky_metacarpal_key";
-IS948.connect = new MFNode();
-
-IS948.connect[0] = connect949;
+connect949.nodeField = "keyValue";
+connect949.protoField = "l_pinky2_keyValue";
+IS947.connect[1] = connect949;
 
 let connect950 = browser.currentScene.createNode("connect");
-connect950.nodeField = "keyValue";
-connect950.protoField = "l_pinky_metacarpal_keyValue";
-IS948.connect[1] = connect950;
+connect950.nodeField = "value_changed";
+connect950.protoField = "l_pinky2_changed";
+IS947.connect[2] = connect950;
 
-let connect951 = browser.currentScene.createNode("connect");
-connect951.nodeField = "value_changed";
-connect951.protoField = "l_pinky_metacarpal_changed";
-IS948.connect[2] = connect951;
+OrientationInterpolator946.iS = IS947;
 
-OrientationInterpolator947.iS = IS948;
+ProtoBody603.children[110] = OrientationInterpolator946;
 
-ProtoBody586.children[116] = OrientationInterpolator947;
+let ROUTE951 = browser.currentScene.createNode("ROUTE");
+ROUTE951.fromField = "fraction_changed";
+ROUTE951.fromNode = "BehaviorClock";
+ROUTE951.toField = "set_fraction";
+ROUTE951.toNode = "l_pinky2_OI";
+ProtoBody603.children[111] = ROUTE951;
 
-let ROUTE952 = browser.currentScene.createNode("ROUTE");
-ROUTE952.fromField = "fraction_changed";
-ROUTE952.fromNode = "BehaviorClock";
-ROUTE952.toField = "set_fraction";
-ROUTE952.toNode = "l_pinky_metacarpal_OI";
-ProtoBody586.children[117] = ROUTE952;
+let OrientationInterpolator952 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator952.DEF = "l_pinky3_OI";
+let IS953 = browser.currentScene.createNode("IS");
+let connect954 = browser.currentScene.createNode("connect");
+connect954.nodeField = "key";
+connect954.protoField = "l_pinky3_key";
+IS953.connect = new MFNode();
 
-let OrientationInterpolator953 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator953.DEF = "l_pinky_middle_OI";
-let IS954 = browser.currentScene.createNode("IS");
+IS953.connect[0] = connect954;
+
 let connect955 = browser.currentScene.createNode("connect");
-connect955.nodeField = "key";
-connect955.protoField = "l_pinky_middle_key";
-IS954.connect = new MFNode();
-
-IS954.connect[0] = connect955;
+connect955.nodeField = "keyValue";
+connect955.protoField = "l_pinky3_keyValue";
+IS953.connect[1] = connect955;
 
 let connect956 = browser.currentScene.createNode("connect");
-connect956.nodeField = "keyValue";
-connect956.protoField = "l_pinky_middle_keyValue";
-IS954.connect[1] = connect956;
+connect956.nodeField = "value_changed";
+connect956.protoField = "l_pinky3_changed";
+IS953.connect[2] = connect956;
 
-let connect957 = browser.currentScene.createNode("connect");
-connect957.nodeField = "value_changed";
-connect957.protoField = "l_pinky_middle_changed";
-IS954.connect[2] = connect957;
+OrientationInterpolator952.iS = IS953;
 
-OrientationInterpolator953.iS = IS954;
+ProtoBody603.children[112] = OrientationInterpolator952;
 
-ProtoBody586.children[118] = OrientationInterpolator953;
+let ROUTE957 = browser.currentScene.createNode("ROUTE");
+ROUTE957.fromField = "fraction_changed";
+ROUTE957.fromNode = "BehaviorClock";
+ROUTE957.toField = "set_fraction";
+ROUTE957.toNode = "l_pinky3_OI";
+ProtoBody603.children[113] = ROUTE957;
 
-let ROUTE958 = browser.currentScene.createNode("ROUTE");
-ROUTE958.fromField = "fraction_changed";
-ROUTE958.fromNode = "BehaviorClock";
-ROUTE958.toField = "set_fraction";
-ROUTE958.toNode = "l_pinky_middle_OI";
-ProtoBody586.children[119] = ROUTE958;
+let OrientationInterpolator958 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator958.DEF = "l_pinky_distal_OI";
+let IS959 = browser.currentScene.createNode("IS");
+let connect960 = browser.currentScene.createNode("connect");
+connect960.nodeField = "key";
+connect960.protoField = "l_pinky_distal_key";
+IS959.connect = new MFNode();
 
-let OrientationInterpolator959 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator959.DEF = "l_pinky_proximal_OI";
-let IS960 = browser.currentScene.createNode("IS");
+IS959.connect[0] = connect960;
+
 let connect961 = browser.currentScene.createNode("connect");
-connect961.nodeField = "key";
-connect961.protoField = "l_pinky_proximal_key";
-IS960.connect = new MFNode();
-
-IS960.connect[0] = connect961;
+connect961.nodeField = "keyValue";
+connect961.protoField = "l_pinky_distal_keyValue";
+IS959.connect[1] = connect961;
 
 let connect962 = browser.currentScene.createNode("connect");
-connect962.nodeField = "keyValue";
-connect962.protoField = "l_pinky_proximal_keyValue";
-IS960.connect[1] = connect962;
+connect962.nodeField = "value_changed";
+connect962.protoField = "l_pinky_distal_changed";
+IS959.connect[2] = connect962;
 
-let connect963 = browser.currentScene.createNode("connect");
-connect963.nodeField = "value_changed";
-connect963.protoField = "l_pinky_proximal_changed";
-IS960.connect[2] = connect963;
+OrientationInterpolator958.iS = IS959;
 
-OrientationInterpolator959.iS = IS960;
+ProtoBody603.children[114] = OrientationInterpolator958;
 
-ProtoBody586.children[120] = OrientationInterpolator959;
+let ROUTE963 = browser.currentScene.createNode("ROUTE");
+ROUTE963.fromField = "fraction_changed";
+ROUTE963.fromNode = "BehaviorClock";
+ROUTE963.toField = "set_fraction";
+ROUTE963.toNode = "l_pinky_distal_OI";
+ProtoBody603.children[115] = ROUTE963;
 
-let ROUTE964 = browser.currentScene.createNode("ROUTE");
-ROUTE964.fromField = "fraction_changed";
-ROUTE964.fromNode = "BehaviorClock";
-ROUTE964.toField = "set_fraction";
-ROUTE964.toNode = "l_pinky_proximal_OI";
-ProtoBody586.children[121] = ROUTE964;
+let OrientationInterpolator964 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator964.DEF = "l_pinky_metacarpal_OI";
+let IS965 = browser.currentScene.createNode("IS");
+let connect966 = browser.currentScene.createNode("connect");
+connect966.nodeField = "key";
+connect966.protoField = "l_pinky_metacarpal_key";
+IS965.connect = new MFNode();
 
-let OrientationInterpolator965 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator965.DEF = "l_ring0_OI";
-let IS966 = browser.currentScene.createNode("IS");
+IS965.connect[0] = connect966;
+
 let connect967 = browser.currentScene.createNode("connect");
-connect967.nodeField = "key";
-connect967.protoField = "l_ring0_key";
-IS966.connect = new MFNode();
-
-IS966.connect[0] = connect967;
+connect967.nodeField = "keyValue";
+connect967.protoField = "l_pinky_metacarpal_keyValue";
+IS965.connect[1] = connect967;
 
 let connect968 = browser.currentScene.createNode("connect");
-connect968.nodeField = "keyValue";
-connect968.protoField = "l_ring0_keyValue";
-IS966.connect[1] = connect968;
+connect968.nodeField = "value_changed";
+connect968.protoField = "l_pinky_metacarpal_changed";
+IS965.connect[2] = connect968;
 
-let connect969 = browser.currentScene.createNode("connect");
-connect969.nodeField = "value_changed";
-connect969.protoField = "l_ring0_changed";
-IS966.connect[2] = connect969;
+OrientationInterpolator964.iS = IS965;
 
-OrientationInterpolator965.iS = IS966;
+ProtoBody603.children[116] = OrientationInterpolator964;
 
-ProtoBody586.children[122] = OrientationInterpolator965;
+let ROUTE969 = browser.currentScene.createNode("ROUTE");
+ROUTE969.fromField = "fraction_changed";
+ROUTE969.fromNode = "BehaviorClock";
+ROUTE969.toField = "set_fraction";
+ROUTE969.toNode = "l_pinky_metacarpal_OI";
+ProtoBody603.children[117] = ROUTE969;
 
-let ROUTE970 = browser.currentScene.createNode("ROUTE");
-ROUTE970.fromField = "fraction_changed";
-ROUTE970.fromNode = "BehaviorClock";
-ROUTE970.toField = "set_fraction";
-ROUTE970.toNode = "l_ring0_OI";
-ProtoBody586.children[123] = ROUTE970;
+let OrientationInterpolator970 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator970.DEF = "l_pinky_middle_OI";
+let IS971 = browser.currentScene.createNode("IS");
+let connect972 = browser.currentScene.createNode("connect");
+connect972.nodeField = "key";
+connect972.protoField = "l_pinky_middle_key";
+IS971.connect = new MFNode();
 
-let OrientationInterpolator971 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator971.DEF = "l_ring1_OI";
-let IS972 = browser.currentScene.createNode("IS");
+IS971.connect[0] = connect972;
+
 let connect973 = browser.currentScene.createNode("connect");
-connect973.nodeField = "key";
-connect973.protoField = "l_ring1_key";
-IS972.connect = new MFNode();
-
-IS972.connect[0] = connect973;
+connect973.nodeField = "keyValue";
+connect973.protoField = "l_pinky_middle_keyValue";
+IS971.connect[1] = connect973;
 
 let connect974 = browser.currentScene.createNode("connect");
-connect974.nodeField = "keyValue";
-connect974.protoField = "l_ring1_keyValue";
-IS972.connect[1] = connect974;
+connect974.nodeField = "value_changed";
+connect974.protoField = "l_pinky_middle_changed";
+IS971.connect[2] = connect974;
 
-let connect975 = browser.currentScene.createNode("connect");
-connect975.nodeField = "value_changed";
-connect975.protoField = "l_ring1_changed";
-IS972.connect[2] = connect975;
+OrientationInterpolator970.iS = IS971;
 
-OrientationInterpolator971.iS = IS972;
+ProtoBody603.children[118] = OrientationInterpolator970;
 
-ProtoBody586.children[124] = OrientationInterpolator971;
+let ROUTE975 = browser.currentScene.createNode("ROUTE");
+ROUTE975.fromField = "fraction_changed";
+ROUTE975.fromNode = "BehaviorClock";
+ROUTE975.toField = "set_fraction";
+ROUTE975.toNode = "l_pinky_middle_OI";
+ProtoBody603.children[119] = ROUTE975;
 
-let ROUTE976 = browser.currentScene.createNode("ROUTE");
-ROUTE976.fromField = "fraction_changed";
-ROUTE976.fromNode = "BehaviorClock";
-ROUTE976.toField = "set_fraction";
-ROUTE976.toNode = "l_ring1_OI";
-ProtoBody586.children[125] = ROUTE976;
+let OrientationInterpolator976 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator976.DEF = "l_pinky_proximal_OI";
+let IS977 = browser.currentScene.createNode("IS");
+let connect978 = browser.currentScene.createNode("connect");
+connect978.nodeField = "key";
+connect978.protoField = "l_pinky_proximal_key";
+IS977.connect = new MFNode();
 
-let OrientationInterpolator977 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator977.DEF = "l_ring2_OI";
-let IS978 = browser.currentScene.createNode("IS");
+IS977.connect[0] = connect978;
+
 let connect979 = browser.currentScene.createNode("connect");
-connect979.nodeField = "key";
-connect979.protoField = "l_ring2_key";
-IS978.connect = new MFNode();
-
-IS978.connect[0] = connect979;
+connect979.nodeField = "keyValue";
+connect979.protoField = "l_pinky_proximal_keyValue";
+IS977.connect[1] = connect979;
 
 let connect980 = browser.currentScene.createNode("connect");
-connect980.nodeField = "keyValue";
-connect980.protoField = "l_ring2_keyValue";
-IS978.connect[1] = connect980;
+connect980.nodeField = "value_changed";
+connect980.protoField = "l_pinky_proximal_changed";
+IS977.connect[2] = connect980;
 
-let connect981 = browser.currentScene.createNode("connect");
-connect981.nodeField = "value_changed";
-connect981.protoField = "l_ring2_changed";
-IS978.connect[2] = connect981;
+OrientationInterpolator976.iS = IS977;
 
-OrientationInterpolator977.iS = IS978;
+ProtoBody603.children[120] = OrientationInterpolator976;
 
-ProtoBody586.children[126] = OrientationInterpolator977;
+let ROUTE981 = browser.currentScene.createNode("ROUTE");
+ROUTE981.fromField = "fraction_changed";
+ROUTE981.fromNode = "BehaviorClock";
+ROUTE981.toField = "set_fraction";
+ROUTE981.toNode = "l_pinky_proximal_OI";
+ProtoBody603.children[121] = ROUTE981;
 
-let ROUTE982 = browser.currentScene.createNode("ROUTE");
-ROUTE982.fromField = "fraction_changed";
-ROUTE982.fromNode = "BehaviorClock";
-ROUTE982.toField = "set_fraction";
-ROUTE982.toNode = "l_ring2_OI";
-ProtoBody586.children[127] = ROUTE982;
+let OrientationInterpolator982 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator982.DEF = "l_ring0_OI";
+let IS983 = browser.currentScene.createNode("IS");
+let connect984 = browser.currentScene.createNode("connect");
+connect984.nodeField = "key";
+connect984.protoField = "l_ring0_key";
+IS983.connect = new MFNode();
 
-let OrientationInterpolator983 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator983.DEF = "l_ring3_OI";
-let IS984 = browser.currentScene.createNode("IS");
+IS983.connect[0] = connect984;
+
 let connect985 = browser.currentScene.createNode("connect");
-connect985.nodeField = "key";
-connect985.protoField = "l_ring3_key";
-IS984.connect = new MFNode();
-
-IS984.connect[0] = connect985;
+connect985.nodeField = "keyValue";
+connect985.protoField = "l_ring0_keyValue";
+IS983.connect[1] = connect985;
 
 let connect986 = browser.currentScene.createNode("connect");
-connect986.nodeField = "keyValue";
-connect986.protoField = "l_ring3_keyValue";
-IS984.connect[1] = connect986;
+connect986.nodeField = "value_changed";
+connect986.protoField = "l_ring0_changed";
+IS983.connect[2] = connect986;
 
-let connect987 = browser.currentScene.createNode("connect");
-connect987.nodeField = "value_changed";
-connect987.protoField = "l_ring3_changed";
-IS984.connect[2] = connect987;
+OrientationInterpolator982.iS = IS983;
 
-OrientationInterpolator983.iS = IS984;
+ProtoBody603.children[122] = OrientationInterpolator982;
 
-ProtoBody586.children[128] = OrientationInterpolator983;
+let ROUTE987 = browser.currentScene.createNode("ROUTE");
+ROUTE987.fromField = "fraction_changed";
+ROUTE987.fromNode = "BehaviorClock";
+ROUTE987.toField = "set_fraction";
+ROUTE987.toNode = "l_ring0_OI";
+ProtoBody603.children[123] = ROUTE987;
 
-let ROUTE988 = browser.currentScene.createNode("ROUTE");
-ROUTE988.fromField = "fraction_changed";
-ROUTE988.fromNode = "BehaviorClock";
-ROUTE988.toField = "set_fraction";
-ROUTE988.toNode = "l_ring3_OI";
-ProtoBody586.children[129] = ROUTE988;
+let OrientationInterpolator988 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator988.DEF = "l_ring1_OI";
+let IS989 = browser.currentScene.createNode("IS");
+let connect990 = browser.currentScene.createNode("connect");
+connect990.nodeField = "key";
+connect990.protoField = "l_ring1_key";
+IS989.connect = new MFNode();
 
-let OrientationInterpolator989 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator989.DEF = "l_ring_distal_OI";
-let IS990 = browser.currentScene.createNode("IS");
+IS989.connect[0] = connect990;
+
 let connect991 = browser.currentScene.createNode("connect");
-connect991.nodeField = "key";
-connect991.protoField = "l_ring_distal_key";
-IS990.connect = new MFNode();
-
-IS990.connect[0] = connect991;
+connect991.nodeField = "keyValue";
+connect991.protoField = "l_ring1_keyValue";
+IS989.connect[1] = connect991;
 
 let connect992 = browser.currentScene.createNode("connect");
-connect992.nodeField = "keyValue";
-connect992.protoField = "l_ring_distal_keyValue";
-IS990.connect[1] = connect992;
+connect992.nodeField = "value_changed";
+connect992.protoField = "l_ring1_changed";
+IS989.connect[2] = connect992;
 
-let connect993 = browser.currentScene.createNode("connect");
-connect993.nodeField = "value_changed";
-connect993.protoField = "l_ring_distal_changed";
-IS990.connect[2] = connect993;
+OrientationInterpolator988.iS = IS989;
 
-OrientationInterpolator989.iS = IS990;
+ProtoBody603.children[124] = OrientationInterpolator988;
 
-ProtoBody586.children[130] = OrientationInterpolator989;
+let ROUTE993 = browser.currentScene.createNode("ROUTE");
+ROUTE993.fromField = "fraction_changed";
+ROUTE993.fromNode = "BehaviorClock";
+ROUTE993.toField = "set_fraction";
+ROUTE993.toNode = "l_ring1_OI";
+ProtoBody603.children[125] = ROUTE993;
 
-let ROUTE994 = browser.currentScene.createNode("ROUTE");
-ROUTE994.fromField = "fraction_changed";
-ROUTE994.fromNode = "BehaviorClock";
-ROUTE994.toField = "set_fraction";
-ROUTE994.toNode = "l_ring_distal_OI";
-ProtoBody586.children[131] = ROUTE994;
+let OrientationInterpolator994 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator994.DEF = "l_ring2_OI";
+let IS995 = browser.currentScene.createNode("IS");
+let connect996 = browser.currentScene.createNode("connect");
+connect996.nodeField = "key";
+connect996.protoField = "l_ring2_key";
+IS995.connect = new MFNode();
 
-let OrientationInterpolator995 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator995.DEF = "l_ring_metacarpal_OI";
-let IS996 = browser.currentScene.createNode("IS");
+IS995.connect[0] = connect996;
+
 let connect997 = browser.currentScene.createNode("connect");
-connect997.nodeField = "key";
-connect997.protoField = "l_ring_metacarpal_key";
-IS996.connect = new MFNode();
-
-IS996.connect[0] = connect997;
+connect997.nodeField = "keyValue";
+connect997.protoField = "l_ring2_keyValue";
+IS995.connect[1] = connect997;
 
 let connect998 = browser.currentScene.createNode("connect");
-connect998.nodeField = "keyValue";
-connect998.protoField = "l_ring_metacarpal_keyValue";
-IS996.connect[1] = connect998;
+connect998.nodeField = "value_changed";
+connect998.protoField = "l_ring2_changed";
+IS995.connect[2] = connect998;
 
-let connect999 = browser.currentScene.createNode("connect");
-connect999.nodeField = "value_changed";
-connect999.protoField = "l_ring_metacarpal_changed";
-IS996.connect[2] = connect999;
+OrientationInterpolator994.iS = IS995;
 
-OrientationInterpolator995.iS = IS996;
+ProtoBody603.children[126] = OrientationInterpolator994;
 
-ProtoBody586.children[132] = OrientationInterpolator995;
+let ROUTE999 = browser.currentScene.createNode("ROUTE");
+ROUTE999.fromField = "fraction_changed";
+ROUTE999.fromNode = "BehaviorClock";
+ROUTE999.toField = "set_fraction";
+ROUTE999.toNode = "l_ring2_OI";
+ProtoBody603.children[127] = ROUTE999;
 
-let ROUTE1000 = browser.currentScene.createNode("ROUTE");
-ROUTE1000.fromField = "fraction_changed";
-ROUTE1000.fromNode = "BehaviorClock";
-ROUTE1000.toField = "set_fraction";
-ROUTE1000.toNode = "l_ring_metacarpal_OI";
-ProtoBody586.children[133] = ROUTE1000;
+let OrientationInterpolator1000 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1000.DEF = "l_ring3_OI";
+let IS1001 = browser.currentScene.createNode("IS");
+let connect1002 = browser.currentScene.createNode("connect");
+connect1002.nodeField = "key";
+connect1002.protoField = "l_ring3_key";
+IS1001.connect = new MFNode();
 
-let OrientationInterpolator1001 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1001.DEF = "l_ring_middle_OI";
-let IS1002 = browser.currentScene.createNode("IS");
+IS1001.connect[0] = connect1002;
+
 let connect1003 = browser.currentScene.createNode("connect");
-connect1003.nodeField = "key";
-connect1003.protoField = "l_ring_middle_key";
-IS1002.connect = new MFNode();
-
-IS1002.connect[0] = connect1003;
+connect1003.nodeField = "keyValue";
+connect1003.protoField = "l_ring3_keyValue";
+IS1001.connect[1] = connect1003;
 
 let connect1004 = browser.currentScene.createNode("connect");
-connect1004.nodeField = "keyValue";
-connect1004.protoField = "l_ring_middle_keyValue";
-IS1002.connect[1] = connect1004;
+connect1004.nodeField = "value_changed";
+connect1004.protoField = "l_ring3_changed";
+IS1001.connect[2] = connect1004;
 
-let connect1005 = browser.currentScene.createNode("connect");
-connect1005.nodeField = "value_changed";
-connect1005.protoField = "l_ring_middle_changed";
-IS1002.connect[2] = connect1005;
+OrientationInterpolator1000.iS = IS1001;
 
-OrientationInterpolator1001.iS = IS1002;
+ProtoBody603.children[128] = OrientationInterpolator1000;
 
-ProtoBody586.children[134] = OrientationInterpolator1001;
+let ROUTE1005 = browser.currentScene.createNode("ROUTE");
+ROUTE1005.fromField = "fraction_changed";
+ROUTE1005.fromNode = "BehaviorClock";
+ROUTE1005.toField = "set_fraction";
+ROUTE1005.toNode = "l_ring3_OI";
+ProtoBody603.children[129] = ROUTE1005;
 
-let ROUTE1006 = browser.currentScene.createNode("ROUTE");
-ROUTE1006.fromField = "fraction_changed";
-ROUTE1006.fromNode = "BehaviorClock";
-ROUTE1006.toField = "set_fraction";
-ROUTE1006.toNode = "l_ring_middle_OI";
-ProtoBody586.children[135] = ROUTE1006;
+let OrientationInterpolator1006 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1006.DEF = "l_ring_distal_OI";
+let IS1007 = browser.currentScene.createNode("IS");
+let connect1008 = browser.currentScene.createNode("connect");
+connect1008.nodeField = "key";
+connect1008.protoField = "l_ring_distal_key";
+IS1007.connect = new MFNode();
 
-let OrientationInterpolator1007 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1007.DEF = "l_ring_proximal_OI";
-let IS1008 = browser.currentScene.createNode("IS");
+IS1007.connect[0] = connect1008;
+
 let connect1009 = browser.currentScene.createNode("connect");
-connect1009.nodeField = "key";
-connect1009.protoField = "l_ring_proximal_key";
-IS1008.connect = new MFNode();
-
-IS1008.connect[0] = connect1009;
+connect1009.nodeField = "keyValue";
+connect1009.protoField = "l_ring_distal_keyValue";
+IS1007.connect[1] = connect1009;
 
 let connect1010 = browser.currentScene.createNode("connect");
-connect1010.nodeField = "keyValue";
-connect1010.protoField = "l_ring_proximal_keyValue";
-IS1008.connect[1] = connect1010;
+connect1010.nodeField = "value_changed";
+connect1010.protoField = "l_ring_distal_changed";
+IS1007.connect[2] = connect1010;
 
-let connect1011 = browser.currentScene.createNode("connect");
-connect1011.nodeField = "value_changed";
-connect1011.protoField = "l_ring_proximal_changed";
-IS1008.connect[2] = connect1011;
+OrientationInterpolator1006.iS = IS1007;
 
-OrientationInterpolator1007.iS = IS1008;
+ProtoBody603.children[130] = OrientationInterpolator1006;
 
-ProtoBody586.children[136] = OrientationInterpolator1007;
+let ROUTE1011 = browser.currentScene.createNode("ROUTE");
+ROUTE1011.fromField = "fraction_changed";
+ROUTE1011.fromNode = "BehaviorClock";
+ROUTE1011.toField = "set_fraction";
+ROUTE1011.toNode = "l_ring_distal_OI";
+ProtoBody603.children[131] = ROUTE1011;
 
-let ROUTE1012 = browser.currentScene.createNode("ROUTE");
-ROUTE1012.fromField = "fraction_changed";
-ROUTE1012.fromNode = "BehaviorClock";
-ROUTE1012.toField = "set_fraction";
-ROUTE1012.toNode = "l_ring_proximal_OI";
-ProtoBody586.children[137] = ROUTE1012;
+let OrientationInterpolator1012 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1012.DEF = "l_ring_metacarpal_OI";
+let IS1013 = browser.currentScene.createNode("IS");
+let connect1014 = browser.currentScene.createNode("connect");
+connect1014.nodeField = "key";
+connect1014.protoField = "l_ring_metacarpal_key";
+IS1013.connect = new MFNode();
 
-let OrientationInterpolator1013 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1013.DEF = "l_scapula_OI";
-let IS1014 = browser.currentScene.createNode("IS");
+IS1013.connect[0] = connect1014;
+
 let connect1015 = browser.currentScene.createNode("connect");
-connect1015.nodeField = "key";
-connect1015.protoField = "l_scapula_key";
-IS1014.connect = new MFNode();
-
-IS1014.connect[0] = connect1015;
+connect1015.nodeField = "keyValue";
+connect1015.protoField = "l_ring_metacarpal_keyValue";
+IS1013.connect[1] = connect1015;
 
 let connect1016 = browser.currentScene.createNode("connect");
-connect1016.nodeField = "keyValue";
-connect1016.protoField = "l_scapula_keyValue";
-IS1014.connect[1] = connect1016;
+connect1016.nodeField = "value_changed";
+connect1016.protoField = "l_ring_metacarpal_changed";
+IS1013.connect[2] = connect1016;
 
-let connect1017 = browser.currentScene.createNode("connect");
-connect1017.nodeField = "value_changed";
-connect1017.protoField = "l_scapula_changed";
-IS1014.connect[2] = connect1017;
+OrientationInterpolator1012.iS = IS1013;
 
-OrientationInterpolator1013.iS = IS1014;
+ProtoBody603.children[132] = OrientationInterpolator1012;
 
-ProtoBody586.children[138] = OrientationInterpolator1013;
+let ROUTE1017 = browser.currentScene.createNode("ROUTE");
+ROUTE1017.fromField = "fraction_changed";
+ROUTE1017.fromNode = "BehaviorClock";
+ROUTE1017.toField = "set_fraction";
+ROUTE1017.toNode = "l_ring_metacarpal_OI";
+ProtoBody603.children[133] = ROUTE1017;
 
-let ROUTE1018 = browser.currentScene.createNode("ROUTE");
-ROUTE1018.fromField = "fraction_changed";
-ROUTE1018.fromNode = "BehaviorClock";
-ROUTE1018.toField = "set_fraction";
-ROUTE1018.toNode = "l_scapula_OI";
-ProtoBody586.children[139] = ROUTE1018;
+let OrientationInterpolator1018 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1018.DEF = "l_ring_middle_OI";
+let IS1019 = browser.currentScene.createNode("IS");
+let connect1020 = browser.currentScene.createNode("connect");
+connect1020.nodeField = "key";
+connect1020.protoField = "l_ring_middle_key";
+IS1019.connect = new MFNode();
 
-let OrientationInterpolator1019 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1019.DEF = "l_shoulder_OI";
-let IS1020 = browser.currentScene.createNode("IS");
+IS1019.connect[0] = connect1020;
+
 let connect1021 = browser.currentScene.createNode("connect");
-connect1021.nodeField = "key";
-connect1021.protoField = "l_shoulder_key";
-IS1020.connect = new MFNode();
-
-IS1020.connect[0] = connect1021;
+connect1021.nodeField = "keyValue";
+connect1021.protoField = "l_ring_middle_keyValue";
+IS1019.connect[1] = connect1021;
 
 let connect1022 = browser.currentScene.createNode("connect");
-connect1022.nodeField = "keyValue";
-connect1022.protoField = "l_shoulder_keyValue";
-IS1020.connect[1] = connect1022;
+connect1022.nodeField = "value_changed";
+connect1022.protoField = "l_ring_middle_changed";
+IS1019.connect[2] = connect1022;
 
-let connect1023 = browser.currentScene.createNode("connect");
-connect1023.nodeField = "value_changed";
-connect1023.protoField = "l_shoulder_changed";
-IS1020.connect[2] = connect1023;
+OrientationInterpolator1018.iS = IS1019;
 
-OrientationInterpolator1019.iS = IS1020;
+ProtoBody603.children[134] = OrientationInterpolator1018;
 
-ProtoBody586.children[140] = OrientationInterpolator1019;
+let ROUTE1023 = browser.currentScene.createNode("ROUTE");
+ROUTE1023.fromField = "fraction_changed";
+ROUTE1023.fromNode = "BehaviorClock";
+ROUTE1023.toField = "set_fraction";
+ROUTE1023.toNode = "l_ring_middle_OI";
+ProtoBody603.children[135] = ROUTE1023;
 
-let ROUTE1024 = browser.currentScene.createNode("ROUTE");
-ROUTE1024.fromField = "fraction_changed";
-ROUTE1024.fromNode = "BehaviorClock";
-ROUTE1024.toField = "set_fraction";
-ROUTE1024.toNode = "l_shoulder_OI";
-ProtoBody586.children[141] = ROUTE1024;
+let OrientationInterpolator1024 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1024.DEF = "l_ring_proximal_OI";
+let IS1025 = browser.currentScene.createNode("IS");
+let connect1026 = browser.currentScene.createNode("connect");
+connect1026.nodeField = "key";
+connect1026.protoField = "l_ring_proximal_key";
+IS1025.connect = new MFNode();
 
-let OrientationInterpolator1025 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1025.DEF = "l_sternoclavicular_OI";
-let IS1026 = browser.currentScene.createNode("IS");
+IS1025.connect[0] = connect1026;
+
 let connect1027 = browser.currentScene.createNode("connect");
-connect1027.nodeField = "key";
-connect1027.protoField = "l_sternoclavicular_key";
-IS1026.connect = new MFNode();
-
-IS1026.connect[0] = connect1027;
+connect1027.nodeField = "keyValue";
+connect1027.protoField = "l_ring_proximal_keyValue";
+IS1025.connect[1] = connect1027;
 
 let connect1028 = browser.currentScene.createNode("connect");
-connect1028.nodeField = "keyValue";
-connect1028.protoField = "l_sternoclavicular_keyValue";
-IS1026.connect[1] = connect1028;
+connect1028.nodeField = "value_changed";
+connect1028.protoField = "l_ring_proximal_changed";
+IS1025.connect[2] = connect1028;
 
-let connect1029 = browser.currentScene.createNode("connect");
-connect1029.nodeField = "value_changed";
-connect1029.protoField = "l_sternoclavicular_changed";
-IS1026.connect[2] = connect1029;
+OrientationInterpolator1024.iS = IS1025;
 
-OrientationInterpolator1025.iS = IS1026;
+ProtoBody603.children[136] = OrientationInterpolator1024;
 
-ProtoBody586.children[142] = OrientationInterpolator1025;
+let ROUTE1029 = browser.currentScene.createNode("ROUTE");
+ROUTE1029.fromField = "fraction_changed";
+ROUTE1029.fromNode = "BehaviorClock";
+ROUTE1029.toField = "set_fraction";
+ROUTE1029.toNode = "l_ring_proximal_OI";
+ProtoBody603.children[137] = ROUTE1029;
 
-let ROUTE1030 = browser.currentScene.createNode("ROUTE");
-ROUTE1030.fromField = "fraction_changed";
-ROUTE1030.fromNode = "BehaviorClock";
-ROUTE1030.toField = "set_fraction";
-ROUTE1030.toNode = "l_sternoclavicular_OI";
-ProtoBody586.children[143] = ROUTE1030;
+let OrientationInterpolator1030 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1030.DEF = "l_scapula_OI";
+let IS1031 = browser.currentScene.createNode("IS");
+let connect1032 = browser.currentScene.createNode("connect");
+connect1032.nodeField = "key";
+connect1032.protoField = "l_scapula_key";
+IS1031.connect = new MFNode();
 
-let OrientationInterpolator1031 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1031.DEF = "l_subtalar_OI";
-let IS1032 = browser.currentScene.createNode("IS");
+IS1031.connect[0] = connect1032;
+
 let connect1033 = browser.currentScene.createNode("connect");
-connect1033.nodeField = "key";
-connect1033.protoField = "l_subtalar_key";
-IS1032.connect = new MFNode();
-
-IS1032.connect[0] = connect1033;
+connect1033.nodeField = "keyValue";
+connect1033.protoField = "l_scapula_keyValue";
+IS1031.connect[1] = connect1033;
 
 let connect1034 = browser.currentScene.createNode("connect");
-connect1034.nodeField = "keyValue";
-connect1034.protoField = "l_subtalar_keyValue";
-IS1032.connect[1] = connect1034;
+connect1034.nodeField = "value_changed";
+connect1034.protoField = "l_scapula_changed";
+IS1031.connect[2] = connect1034;
 
-let connect1035 = browser.currentScene.createNode("connect");
-connect1035.nodeField = "value_changed";
-connect1035.protoField = "l_subtalar_changed";
-IS1032.connect[2] = connect1035;
+OrientationInterpolator1030.iS = IS1031;
 
-OrientationInterpolator1031.iS = IS1032;
+ProtoBody603.children[138] = OrientationInterpolator1030;
 
-ProtoBody586.children[144] = OrientationInterpolator1031;
+let ROUTE1035 = browser.currentScene.createNode("ROUTE");
+ROUTE1035.fromField = "fraction_changed";
+ROUTE1035.fromNode = "BehaviorClock";
+ROUTE1035.toField = "set_fraction";
+ROUTE1035.toNode = "l_scapula_OI";
+ProtoBody603.children[139] = ROUTE1035;
 
-let ROUTE1036 = browser.currentScene.createNode("ROUTE");
-ROUTE1036.fromField = "fraction_changed";
-ROUTE1036.fromNode = "BehaviorClock";
-ROUTE1036.toField = "set_fraction";
-ROUTE1036.toNode = "l_subtalar_OI";
-ProtoBody586.children[145] = ROUTE1036;
+let OrientationInterpolator1036 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1036.DEF = "l_shoulder_OI";
+let IS1037 = browser.currentScene.createNode("IS");
+let connect1038 = browser.currentScene.createNode("connect");
+connect1038.nodeField = "key";
+connect1038.protoField = "l_shoulder_key";
+IS1037.connect = new MFNode();
 
-let OrientationInterpolator1037 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1037.DEF = "l_thigh_OI";
-let IS1038 = browser.currentScene.createNode("IS");
+IS1037.connect[0] = connect1038;
+
 let connect1039 = browser.currentScene.createNode("connect");
-connect1039.nodeField = "key";
-connect1039.protoField = "l_thigh_key";
-IS1038.connect = new MFNode();
-
-IS1038.connect[0] = connect1039;
+connect1039.nodeField = "keyValue";
+connect1039.protoField = "l_shoulder_keyValue";
+IS1037.connect[1] = connect1039;
 
 let connect1040 = browser.currentScene.createNode("connect");
-connect1040.nodeField = "keyValue";
-connect1040.protoField = "l_thigh_keyValue";
-IS1038.connect[1] = connect1040;
+connect1040.nodeField = "value_changed";
+connect1040.protoField = "l_shoulder_changed";
+IS1037.connect[2] = connect1040;
 
-let connect1041 = browser.currentScene.createNode("connect");
-connect1041.nodeField = "value_changed";
-connect1041.protoField = "l_thigh_changed";
-IS1038.connect[2] = connect1041;
+OrientationInterpolator1036.iS = IS1037;
 
-OrientationInterpolator1037.iS = IS1038;
+ProtoBody603.children[140] = OrientationInterpolator1036;
 
-ProtoBody586.children[146] = OrientationInterpolator1037;
+let ROUTE1041 = browser.currentScene.createNode("ROUTE");
+ROUTE1041.fromField = "fraction_changed";
+ROUTE1041.fromNode = "BehaviorClock";
+ROUTE1041.toField = "set_fraction";
+ROUTE1041.toNode = "l_shoulder_OI";
+ProtoBody603.children[141] = ROUTE1041;
 
-let ROUTE1042 = browser.currentScene.createNode("ROUTE");
-ROUTE1042.fromField = "fraction_changed";
-ROUTE1042.fromNode = "BehaviorClock";
-ROUTE1042.toField = "set_fraction";
-ROUTE1042.toNode = "l_thigh_OI";
-ProtoBody586.children[147] = ROUTE1042;
+let OrientationInterpolator1042 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1042.DEF = "l_sternoclavicular_OI";
+let IS1043 = browser.currentScene.createNode("IS");
+let connect1044 = browser.currentScene.createNode("connect");
+connect1044.nodeField = "key";
+connect1044.protoField = "l_sternoclavicular_key";
+IS1043.connect = new MFNode();
 
-let OrientationInterpolator1043 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1043.DEF = "l_thumb1_OI";
-let IS1044 = browser.currentScene.createNode("IS");
+IS1043.connect[0] = connect1044;
+
 let connect1045 = browser.currentScene.createNode("connect");
-connect1045.nodeField = "key";
-connect1045.protoField = "l_thumb1_key";
-IS1044.connect = new MFNode();
-
-IS1044.connect[0] = connect1045;
+connect1045.nodeField = "keyValue";
+connect1045.protoField = "l_sternoclavicular_keyValue";
+IS1043.connect[1] = connect1045;
 
 let connect1046 = browser.currentScene.createNode("connect");
-connect1046.nodeField = "keyValue";
-connect1046.protoField = "l_thumb1_keyValue";
-IS1044.connect[1] = connect1046;
+connect1046.nodeField = "value_changed";
+connect1046.protoField = "l_sternoclavicular_changed";
+IS1043.connect[2] = connect1046;
 
-let connect1047 = browser.currentScene.createNode("connect");
-connect1047.nodeField = "value_changed";
-connect1047.protoField = "l_thumb1_changed";
-IS1044.connect[2] = connect1047;
+OrientationInterpolator1042.iS = IS1043;
 
-OrientationInterpolator1043.iS = IS1044;
+ProtoBody603.children[142] = OrientationInterpolator1042;
 
-ProtoBody586.children[148] = OrientationInterpolator1043;
+let ROUTE1047 = browser.currentScene.createNode("ROUTE");
+ROUTE1047.fromField = "fraction_changed";
+ROUTE1047.fromNode = "BehaviorClock";
+ROUTE1047.toField = "set_fraction";
+ROUTE1047.toNode = "l_sternoclavicular_OI";
+ProtoBody603.children[143] = ROUTE1047;
 
-let ROUTE1048 = browser.currentScene.createNode("ROUTE");
-ROUTE1048.fromField = "fraction_changed";
-ROUTE1048.fromNode = "BehaviorClock";
-ROUTE1048.toField = "set_fraction";
-ROUTE1048.toNode = "l_thumb1_OI";
-ProtoBody586.children[149] = ROUTE1048;
+let OrientationInterpolator1048 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1048.DEF = "l_subtalar_OI";
+let IS1049 = browser.currentScene.createNode("IS");
+let connect1050 = browser.currentScene.createNode("connect");
+connect1050.nodeField = "key";
+connect1050.protoField = "l_subtalar_key";
+IS1049.connect = new MFNode();
 
-let OrientationInterpolator1049 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1049.DEF = "l_thumb2_OI";
-let IS1050 = browser.currentScene.createNode("IS");
+IS1049.connect[0] = connect1050;
+
 let connect1051 = browser.currentScene.createNode("connect");
-connect1051.nodeField = "key";
-connect1051.protoField = "l_thumb2_key";
-IS1050.connect = new MFNode();
-
-IS1050.connect[0] = connect1051;
+connect1051.nodeField = "keyValue";
+connect1051.protoField = "l_subtalar_keyValue";
+IS1049.connect[1] = connect1051;
 
 let connect1052 = browser.currentScene.createNode("connect");
-connect1052.nodeField = "keyValue";
-connect1052.protoField = "l_thumb2_keyValue";
-IS1050.connect[1] = connect1052;
+connect1052.nodeField = "value_changed";
+connect1052.protoField = "l_subtalar_changed";
+IS1049.connect[2] = connect1052;
 
-let connect1053 = browser.currentScene.createNode("connect");
-connect1053.nodeField = "value_changed";
-connect1053.protoField = "l_thumb2_changed";
-IS1050.connect[2] = connect1053;
+OrientationInterpolator1048.iS = IS1049;
 
-OrientationInterpolator1049.iS = IS1050;
+ProtoBody603.children[144] = OrientationInterpolator1048;
 
-ProtoBody586.children[150] = OrientationInterpolator1049;
+let ROUTE1053 = browser.currentScene.createNode("ROUTE");
+ROUTE1053.fromField = "fraction_changed";
+ROUTE1053.fromNode = "BehaviorClock";
+ROUTE1053.toField = "set_fraction";
+ROUTE1053.toNode = "l_subtalar_OI";
+ProtoBody603.children[145] = ROUTE1053;
 
-let ROUTE1054 = browser.currentScene.createNode("ROUTE");
-ROUTE1054.fromField = "fraction_changed";
-ROUTE1054.fromNode = "BehaviorClock";
-ROUTE1054.toField = "set_fraction";
-ROUTE1054.toNode = "l_thumb2_OI";
-ProtoBody586.children[151] = ROUTE1054;
+let OrientationInterpolator1054 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1054.DEF = "l_thigh_OI";
+let IS1055 = browser.currentScene.createNode("IS");
+let connect1056 = browser.currentScene.createNode("connect");
+connect1056.nodeField = "key";
+connect1056.protoField = "l_thigh_key";
+IS1055.connect = new MFNode();
 
-let OrientationInterpolator1055 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1055.DEF = "l_thumb3_OI";
-let IS1056 = browser.currentScene.createNode("IS");
+IS1055.connect[0] = connect1056;
+
 let connect1057 = browser.currentScene.createNode("connect");
-connect1057.nodeField = "key";
-connect1057.protoField = "l_thumb3_key";
-IS1056.connect = new MFNode();
-
-IS1056.connect[0] = connect1057;
+connect1057.nodeField = "keyValue";
+connect1057.protoField = "l_thigh_keyValue";
+IS1055.connect[1] = connect1057;
 
 let connect1058 = browser.currentScene.createNode("connect");
-connect1058.nodeField = "keyValue";
-connect1058.protoField = "l_thumb3_keyValue";
-IS1056.connect[1] = connect1058;
+connect1058.nodeField = "value_changed";
+connect1058.protoField = "l_thigh_changed";
+IS1055.connect[2] = connect1058;
 
-let connect1059 = browser.currentScene.createNode("connect");
-connect1059.nodeField = "value_changed";
-connect1059.protoField = "l_thumb3_changed";
-IS1056.connect[2] = connect1059;
+OrientationInterpolator1054.iS = IS1055;
 
-OrientationInterpolator1055.iS = IS1056;
+ProtoBody603.children[146] = OrientationInterpolator1054;
 
-ProtoBody586.children[152] = OrientationInterpolator1055;
+let ROUTE1059 = browser.currentScene.createNode("ROUTE");
+ROUTE1059.fromField = "fraction_changed";
+ROUTE1059.fromNode = "BehaviorClock";
+ROUTE1059.toField = "set_fraction";
+ROUTE1059.toNode = "l_thigh_OI";
+ProtoBody603.children[147] = ROUTE1059;
 
-let ROUTE1060 = browser.currentScene.createNode("ROUTE");
-ROUTE1060.fromField = "fraction_changed";
-ROUTE1060.fromNode = "BehaviorClock";
-ROUTE1060.toField = "set_fraction";
-ROUTE1060.toNode = "l_thumb3_OI";
-ProtoBody586.children[153] = ROUTE1060;
+let OrientationInterpolator1060 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1060.DEF = "l_thumb1_OI";
+let IS1061 = browser.currentScene.createNode("IS");
+let connect1062 = browser.currentScene.createNode("connect");
+connect1062.nodeField = "key";
+connect1062.protoField = "l_thumb1_key";
+IS1061.connect = new MFNode();
 
-let OrientationInterpolator1061 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1061.DEF = "l_thumb_distal_OI";
-let IS1062 = browser.currentScene.createNode("IS");
+IS1061.connect[0] = connect1062;
+
 let connect1063 = browser.currentScene.createNode("connect");
-connect1063.nodeField = "key";
-connect1063.protoField = "l_thumb_distal_key";
-IS1062.connect = new MFNode();
-
-IS1062.connect[0] = connect1063;
+connect1063.nodeField = "keyValue";
+connect1063.protoField = "l_thumb1_keyValue";
+IS1061.connect[1] = connect1063;
 
 let connect1064 = browser.currentScene.createNode("connect");
-connect1064.nodeField = "keyValue";
-connect1064.protoField = "l_thumb_distal_keyValue";
-IS1062.connect[1] = connect1064;
+connect1064.nodeField = "value_changed";
+connect1064.protoField = "l_thumb1_changed";
+IS1061.connect[2] = connect1064;
 
-let connect1065 = browser.currentScene.createNode("connect");
-connect1065.nodeField = "value_changed";
-connect1065.protoField = "l_thumb_distal_changed";
-IS1062.connect[2] = connect1065;
+OrientationInterpolator1060.iS = IS1061;
 
-OrientationInterpolator1061.iS = IS1062;
+ProtoBody603.children[148] = OrientationInterpolator1060;
 
-ProtoBody586.children[154] = OrientationInterpolator1061;
+let ROUTE1065 = browser.currentScene.createNode("ROUTE");
+ROUTE1065.fromField = "fraction_changed";
+ROUTE1065.fromNode = "BehaviorClock";
+ROUTE1065.toField = "set_fraction";
+ROUTE1065.toNode = "l_thumb1_OI";
+ProtoBody603.children[149] = ROUTE1065;
 
-let ROUTE1066 = browser.currentScene.createNode("ROUTE");
-ROUTE1066.fromField = "fraction_changed";
-ROUTE1066.fromNode = "BehaviorClock";
-ROUTE1066.toField = "set_fraction";
-ROUTE1066.toNode = "l_thumb_distal_OI";
-ProtoBody586.children[155] = ROUTE1066;
+let OrientationInterpolator1066 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1066.DEF = "l_thumb2_OI";
+let IS1067 = browser.currentScene.createNode("IS");
+let connect1068 = browser.currentScene.createNode("connect");
+connect1068.nodeField = "key";
+connect1068.protoField = "l_thumb2_key";
+IS1067.connect = new MFNode();
 
-let OrientationInterpolator1067 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1067.DEF = "l_thumb_metacarpal_OI";
-let IS1068 = browser.currentScene.createNode("IS");
+IS1067.connect[0] = connect1068;
+
 let connect1069 = browser.currentScene.createNode("connect");
-connect1069.nodeField = "key";
-connect1069.protoField = "l_thumb_metacarpal_key";
-IS1068.connect = new MFNode();
-
-IS1068.connect[0] = connect1069;
+connect1069.nodeField = "keyValue";
+connect1069.protoField = "l_thumb2_keyValue";
+IS1067.connect[1] = connect1069;
 
 let connect1070 = browser.currentScene.createNode("connect");
-connect1070.nodeField = "keyValue";
-connect1070.protoField = "l_thumb_metacarpal_keyValue";
-IS1068.connect[1] = connect1070;
+connect1070.nodeField = "value_changed";
+connect1070.protoField = "l_thumb2_changed";
+IS1067.connect[2] = connect1070;
 
-let connect1071 = browser.currentScene.createNode("connect");
-connect1071.nodeField = "value_changed";
-connect1071.protoField = "l_thumb_metacarpal_changed";
-IS1068.connect[2] = connect1071;
+OrientationInterpolator1066.iS = IS1067;
 
-OrientationInterpolator1067.iS = IS1068;
+ProtoBody603.children[150] = OrientationInterpolator1066;
 
-ProtoBody586.children[156] = OrientationInterpolator1067;
+let ROUTE1071 = browser.currentScene.createNode("ROUTE");
+ROUTE1071.fromField = "fraction_changed";
+ROUTE1071.fromNode = "BehaviorClock";
+ROUTE1071.toField = "set_fraction";
+ROUTE1071.toNode = "l_thumb2_OI";
+ProtoBody603.children[151] = ROUTE1071;
 
-let ROUTE1072 = browser.currentScene.createNode("ROUTE");
-ROUTE1072.fromField = "fraction_changed";
-ROUTE1072.fromNode = "BehaviorClock";
-ROUTE1072.toField = "set_fraction";
-ROUTE1072.toNode = "l_thumb_metacarpal_OI";
-ProtoBody586.children[157] = ROUTE1072;
+let OrientationInterpolator1072 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1072.DEF = "l_thumb3_OI";
+let IS1073 = browser.currentScene.createNode("IS");
+let connect1074 = browser.currentScene.createNode("connect");
+connect1074.nodeField = "key";
+connect1074.protoField = "l_thumb3_key";
+IS1073.connect = new MFNode();
 
-let OrientationInterpolator1073 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1073.DEF = "l_thumb_proximal_OI";
-let IS1074 = browser.currentScene.createNode("IS");
+IS1073.connect[0] = connect1074;
+
 let connect1075 = browser.currentScene.createNode("connect");
-connect1075.nodeField = "key";
-connect1075.protoField = "l_thumb_proximal_key";
-IS1074.connect = new MFNode();
-
-IS1074.connect[0] = connect1075;
+connect1075.nodeField = "keyValue";
+connect1075.protoField = "l_thumb3_keyValue";
+IS1073.connect[1] = connect1075;
 
 let connect1076 = browser.currentScene.createNode("connect");
-connect1076.nodeField = "keyValue";
-connect1076.protoField = "l_thumb_proximal_keyValue";
-IS1074.connect[1] = connect1076;
+connect1076.nodeField = "value_changed";
+connect1076.protoField = "l_thumb3_changed";
+IS1073.connect[2] = connect1076;
 
-let connect1077 = browser.currentScene.createNode("connect");
-connect1077.nodeField = "value_changed";
-connect1077.protoField = "l_thumb_proximal_changed";
-IS1074.connect[2] = connect1077;
+OrientationInterpolator1072.iS = IS1073;
 
-OrientationInterpolator1073.iS = IS1074;
+ProtoBody603.children[152] = OrientationInterpolator1072;
 
-ProtoBody586.children[158] = OrientationInterpolator1073;
+let ROUTE1077 = browser.currentScene.createNode("ROUTE");
+ROUTE1077.fromField = "fraction_changed";
+ROUTE1077.fromNode = "BehaviorClock";
+ROUTE1077.toField = "set_fraction";
+ROUTE1077.toNode = "l_thumb3_OI";
+ProtoBody603.children[153] = ROUTE1077;
 
-let ROUTE1078 = browser.currentScene.createNode("ROUTE");
-ROUTE1078.fromField = "fraction_changed";
-ROUTE1078.fromNode = "BehaviorClock";
-ROUTE1078.toField = "set_fraction";
-ROUTE1078.toNode = "l_thumb_proximal_OI";
-ProtoBody586.children[159] = ROUTE1078;
+let OrientationInterpolator1078 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1078.DEF = "l_thumb_distal_OI";
+let IS1079 = browser.currentScene.createNode("IS");
+let connect1080 = browser.currentScene.createNode("connect");
+connect1080.nodeField = "key";
+connect1080.protoField = "l_thumb_distal_key";
+IS1079.connect = new MFNode();
 
-let OrientationInterpolator1079 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1079.DEF = "l_upperarm_OI";
-let IS1080 = browser.currentScene.createNode("IS");
+IS1079.connect[0] = connect1080;
+
 let connect1081 = browser.currentScene.createNode("connect");
-connect1081.nodeField = "key";
-connect1081.protoField = "l_upperarm_key";
-IS1080.connect = new MFNode();
-
-IS1080.connect[0] = connect1081;
+connect1081.nodeField = "keyValue";
+connect1081.protoField = "l_thumb_distal_keyValue";
+IS1079.connect[1] = connect1081;
 
 let connect1082 = browser.currentScene.createNode("connect");
-connect1082.nodeField = "keyValue";
-connect1082.protoField = "l_upperarm_keyValue";
-IS1080.connect[1] = connect1082;
+connect1082.nodeField = "value_changed";
+connect1082.protoField = "l_thumb_distal_changed";
+IS1079.connect[2] = connect1082;
 
-let connect1083 = browser.currentScene.createNode("connect");
-connect1083.nodeField = "value_changed";
-connect1083.protoField = "l_upperarm_changed";
-IS1080.connect[2] = connect1083;
+OrientationInterpolator1078.iS = IS1079;
 
-OrientationInterpolator1079.iS = IS1080;
+ProtoBody603.children[154] = OrientationInterpolator1078;
 
-ProtoBody586.children[160] = OrientationInterpolator1079;
+let ROUTE1083 = browser.currentScene.createNode("ROUTE");
+ROUTE1083.fromField = "fraction_changed";
+ROUTE1083.fromNode = "BehaviorClock";
+ROUTE1083.toField = "set_fraction";
+ROUTE1083.toNode = "l_thumb_distal_OI";
+ProtoBody603.children[155] = ROUTE1083;
 
-let ROUTE1084 = browser.currentScene.createNode("ROUTE");
-ROUTE1084.fromField = "fraction_changed";
-ROUTE1084.fromNode = "BehaviorClock";
-ROUTE1084.toField = "set_fraction";
-ROUTE1084.toNode = "l_upperarm_OI";
-ProtoBody586.children[161] = ROUTE1084;
+let OrientationInterpolator1084 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1084.DEF = "l_thumb_metacarpal_OI";
+let IS1085 = browser.currentScene.createNode("IS");
+let connect1086 = browser.currentScene.createNode("connect");
+connect1086.nodeField = "key";
+connect1086.protoField = "l_thumb_metacarpal_key";
+IS1085.connect = new MFNode();
 
-let OrientationInterpolator1085 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1085.DEF = "l_wrist_OI";
-let IS1086 = browser.currentScene.createNode("IS");
+IS1085.connect[0] = connect1086;
+
 let connect1087 = browser.currentScene.createNode("connect");
-connect1087.nodeField = "key";
-connect1087.protoField = "l_wrist_key";
-IS1086.connect = new MFNode();
-
-IS1086.connect[0] = connect1087;
+connect1087.nodeField = "keyValue";
+connect1087.protoField = "l_thumb_metacarpal_keyValue";
+IS1085.connect[1] = connect1087;
 
 let connect1088 = browser.currentScene.createNode("connect");
-connect1088.nodeField = "keyValue";
-connect1088.protoField = "l_wrist_keyValue";
-IS1086.connect[1] = connect1088;
+connect1088.nodeField = "value_changed";
+connect1088.protoField = "l_thumb_metacarpal_changed";
+IS1085.connect[2] = connect1088;
 
-let connect1089 = browser.currentScene.createNode("connect");
-connect1089.nodeField = "value_changed";
-connect1089.protoField = "l_wrist_changed";
-IS1086.connect[2] = connect1089;
+OrientationInterpolator1084.iS = IS1085;
 
-OrientationInterpolator1085.iS = IS1086;
+ProtoBody603.children[156] = OrientationInterpolator1084;
 
-ProtoBody586.children[162] = OrientationInterpolator1085;
+let ROUTE1089 = browser.currentScene.createNode("ROUTE");
+ROUTE1089.fromField = "fraction_changed";
+ROUTE1089.fromNode = "BehaviorClock";
+ROUTE1089.toField = "set_fraction";
+ROUTE1089.toNode = "l_thumb_metacarpal_OI";
+ProtoBody603.children[157] = ROUTE1089;
 
-let ROUTE1090 = browser.currentScene.createNode("ROUTE");
-ROUTE1090.fromField = "fraction_changed";
-ROUTE1090.fromNode = "BehaviorClock";
-ROUTE1090.toField = "set_fraction";
-ROUTE1090.toNode = "l_wrist_OI";
-ProtoBody586.children[163] = ROUTE1090;
+let OrientationInterpolator1090 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1090.DEF = "l_thumb_proximal_OI";
+let IS1091 = browser.currentScene.createNode("IS");
+let connect1092 = browser.currentScene.createNode("connect");
+connect1092.nodeField = "key";
+connect1092.protoField = "l_thumb_proximal_key";
+IS1091.connect = new MFNode();
 
-let OrientationInterpolator1091 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1091.DEF = "pelvis_OI";
-let IS1092 = browser.currentScene.createNode("IS");
+IS1091.connect[0] = connect1092;
+
 let connect1093 = browser.currentScene.createNode("connect");
-connect1093.nodeField = "key";
-connect1093.protoField = "pelvis_key";
-IS1092.connect = new MFNode();
-
-IS1092.connect[0] = connect1093;
+connect1093.nodeField = "keyValue";
+connect1093.protoField = "l_thumb_proximal_keyValue";
+IS1091.connect[1] = connect1093;
 
 let connect1094 = browser.currentScene.createNode("connect");
-connect1094.nodeField = "keyValue";
-connect1094.protoField = "pelvis_keyValue";
-IS1092.connect[1] = connect1094;
+connect1094.nodeField = "value_changed";
+connect1094.protoField = "l_thumb_proximal_changed";
+IS1091.connect[2] = connect1094;
 
-let connect1095 = browser.currentScene.createNode("connect");
-connect1095.nodeField = "value_changed";
-connect1095.protoField = "pelvis_changed";
-IS1092.connect[2] = connect1095;
+OrientationInterpolator1090.iS = IS1091;
 
-OrientationInterpolator1091.iS = IS1092;
+ProtoBody603.children[158] = OrientationInterpolator1090;
 
-ProtoBody586.children[164] = OrientationInterpolator1091;
+let ROUTE1095 = browser.currentScene.createNode("ROUTE");
+ROUTE1095.fromField = "fraction_changed";
+ROUTE1095.fromNode = "BehaviorClock";
+ROUTE1095.toField = "set_fraction";
+ROUTE1095.toNode = "l_thumb_proximal_OI";
+ProtoBody603.children[159] = ROUTE1095;
 
-let ROUTE1096 = browser.currentScene.createNode("ROUTE");
-ROUTE1096.fromField = "fraction_changed";
-ROUTE1096.fromNode = "BehaviorClock";
-ROUTE1096.toField = "set_fraction";
-ROUTE1096.toNode = "pelvis_OI";
-ProtoBody586.children[165] = ROUTE1096;
+let OrientationInterpolator1096 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1096.DEF = "l_upperarm_OI";
+let IS1097 = browser.currentScene.createNode("IS");
+let connect1098 = browser.currentScene.createNode("connect");
+connect1098.nodeField = "key";
+connect1098.protoField = "l_upperarm_key";
+IS1097.connect = new MFNode();
 
-let OrientationInterpolator1097 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1097.DEF = "r_acromioclavicular_OI";
-let IS1098 = browser.currentScene.createNode("IS");
+IS1097.connect[0] = connect1098;
+
 let connect1099 = browser.currentScene.createNode("connect");
-connect1099.nodeField = "key";
-connect1099.protoField = "r_acromioclavicular_key";
-IS1098.connect = new MFNode();
-
-IS1098.connect[0] = connect1099;
+connect1099.nodeField = "keyValue";
+connect1099.protoField = "l_upperarm_keyValue";
+IS1097.connect[1] = connect1099;
 
 let connect1100 = browser.currentScene.createNode("connect");
-connect1100.nodeField = "keyValue";
-connect1100.protoField = "r_acromioclavicular_keyValue";
-IS1098.connect[1] = connect1100;
+connect1100.nodeField = "value_changed";
+connect1100.protoField = "l_upperarm_changed";
+IS1097.connect[2] = connect1100;
 
-let connect1101 = browser.currentScene.createNode("connect");
-connect1101.nodeField = "value_changed";
-connect1101.protoField = "r_acromioclavicular_changed";
-IS1098.connect[2] = connect1101;
+OrientationInterpolator1096.iS = IS1097;
 
-OrientationInterpolator1097.iS = IS1098;
+ProtoBody603.children[160] = OrientationInterpolator1096;
 
-ProtoBody586.children[166] = OrientationInterpolator1097;
+let ROUTE1101 = browser.currentScene.createNode("ROUTE");
+ROUTE1101.fromField = "fraction_changed";
+ROUTE1101.fromNode = "BehaviorClock";
+ROUTE1101.toField = "set_fraction";
+ROUTE1101.toNode = "l_upperarm_OI";
+ProtoBody603.children[161] = ROUTE1101;
 
-let ROUTE1102 = browser.currentScene.createNode("ROUTE");
-ROUTE1102.fromField = "fraction_changed";
-ROUTE1102.fromNode = "BehaviorClock";
-ROUTE1102.toField = "set_fraction";
-ROUTE1102.toNode = "r_acromioclavicular_OI";
-ProtoBody586.children[167] = ROUTE1102;
+let OrientationInterpolator1102 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1102.DEF = "l_wrist_OI";
+let IS1103 = browser.currentScene.createNode("IS");
+let connect1104 = browser.currentScene.createNode("connect");
+connect1104.nodeField = "key";
+connect1104.protoField = "l_wrist_key";
+IS1103.connect = new MFNode();
 
-let OrientationInterpolator1103 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1103.DEF = "r_ankle_OI";
-let IS1104 = browser.currentScene.createNode("IS");
+IS1103.connect[0] = connect1104;
+
 let connect1105 = browser.currentScene.createNode("connect");
-connect1105.nodeField = "key";
-connect1105.protoField = "r_ankle_key";
-IS1104.connect = new MFNode();
-
-IS1104.connect[0] = connect1105;
+connect1105.nodeField = "keyValue";
+connect1105.protoField = "l_wrist_keyValue";
+IS1103.connect[1] = connect1105;
 
 let connect1106 = browser.currentScene.createNode("connect");
-connect1106.nodeField = "keyValue";
-connect1106.protoField = "r_ankle_keyValue";
-IS1104.connect[1] = connect1106;
+connect1106.nodeField = "value_changed";
+connect1106.protoField = "l_wrist_changed";
+IS1103.connect[2] = connect1106;
 
-let connect1107 = browser.currentScene.createNode("connect");
-connect1107.nodeField = "value_changed";
-connect1107.protoField = "r_ankle_changed";
-IS1104.connect[2] = connect1107;
+OrientationInterpolator1102.iS = IS1103;
 
-OrientationInterpolator1103.iS = IS1104;
+ProtoBody603.children[162] = OrientationInterpolator1102;
 
-ProtoBody586.children[168] = OrientationInterpolator1103;
+let ROUTE1107 = browser.currentScene.createNode("ROUTE");
+ROUTE1107.fromField = "fraction_changed";
+ROUTE1107.fromNode = "BehaviorClock";
+ROUTE1107.toField = "set_fraction";
+ROUTE1107.toNode = "l_wrist_OI";
+ProtoBody603.children[163] = ROUTE1107;
 
-let ROUTE1108 = browser.currentScene.createNode("ROUTE");
-ROUTE1108.fromField = "fraction_changed";
-ROUTE1108.fromNode = "BehaviorClock";
-ROUTE1108.toField = "set_fraction";
-ROUTE1108.toNode = "r_ankle_OI";
-ProtoBody586.children[169] = ROUTE1108;
+let OrientationInterpolator1108 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1108.DEF = "pelvis_OI";
+let IS1109 = browser.currentScene.createNode("IS");
+let connect1110 = browser.currentScene.createNode("connect");
+connect1110.nodeField = "key";
+connect1110.protoField = "pelvis_key";
+IS1109.connect = new MFNode();
 
-let OrientationInterpolator1109 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1109.DEF = "r_calf_OI";
-let IS1110 = browser.currentScene.createNode("IS");
+IS1109.connect[0] = connect1110;
+
 let connect1111 = browser.currentScene.createNode("connect");
-connect1111.nodeField = "key";
-connect1111.protoField = "r_calf_key";
-IS1110.connect = new MFNode();
-
-IS1110.connect[0] = connect1111;
+connect1111.nodeField = "keyValue";
+connect1111.protoField = "pelvis_keyValue";
+IS1109.connect[1] = connect1111;
 
 let connect1112 = browser.currentScene.createNode("connect");
-connect1112.nodeField = "keyValue";
-connect1112.protoField = "r_calf_keyValue";
-IS1110.connect[1] = connect1112;
+connect1112.nodeField = "value_changed";
+connect1112.protoField = "pelvis_changed";
+IS1109.connect[2] = connect1112;
 
-let connect1113 = browser.currentScene.createNode("connect");
-connect1113.nodeField = "value_changed";
-connect1113.protoField = "r_calf_changed";
-IS1110.connect[2] = connect1113;
+OrientationInterpolator1108.iS = IS1109;
 
-OrientationInterpolator1109.iS = IS1110;
+ProtoBody603.children[164] = OrientationInterpolator1108;
 
-ProtoBody586.children[170] = OrientationInterpolator1109;
+let ROUTE1113 = browser.currentScene.createNode("ROUTE");
+ROUTE1113.fromField = "fraction_changed";
+ROUTE1113.fromNode = "BehaviorClock";
+ROUTE1113.toField = "set_fraction";
+ROUTE1113.toNode = "pelvis_OI";
+ProtoBody603.children[165] = ROUTE1113;
 
-let ROUTE1114 = browser.currentScene.createNode("ROUTE");
-ROUTE1114.fromField = "fraction_changed";
-ROUTE1114.fromNode = "BehaviorClock";
-ROUTE1114.toField = "set_fraction";
-ROUTE1114.toNode = "r_calf_OI";
-ProtoBody586.children[171] = ROUTE1114;
+let OrientationInterpolator1114 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1114.DEF = "r_acromioclavicular_OI";
+let IS1115 = browser.currentScene.createNode("IS");
+let connect1116 = browser.currentScene.createNode("connect");
+connect1116.nodeField = "key";
+connect1116.protoField = "r_acromioclavicular_key";
+IS1115.connect = new MFNode();
 
-let OrientationInterpolator1115 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1115.DEF = "r_clavicle_OI";
-let IS1116 = browser.currentScene.createNode("IS");
+IS1115.connect[0] = connect1116;
+
 let connect1117 = browser.currentScene.createNode("connect");
-connect1117.nodeField = "key";
-connect1117.protoField = "r_clavicle_key";
-IS1116.connect = new MFNode();
-
-IS1116.connect[0] = connect1117;
+connect1117.nodeField = "keyValue";
+connect1117.protoField = "r_acromioclavicular_keyValue";
+IS1115.connect[1] = connect1117;
 
 let connect1118 = browser.currentScene.createNode("connect");
-connect1118.nodeField = "keyValue";
-connect1118.protoField = "r_clavicle_keyValue";
-IS1116.connect[1] = connect1118;
+connect1118.nodeField = "value_changed";
+connect1118.protoField = "r_acromioclavicular_changed";
+IS1115.connect[2] = connect1118;
 
-let connect1119 = browser.currentScene.createNode("connect");
-connect1119.nodeField = "value_changed";
-connect1119.protoField = "r_clavicle_changed";
-IS1116.connect[2] = connect1119;
+OrientationInterpolator1114.iS = IS1115;
 
-OrientationInterpolator1115.iS = IS1116;
+ProtoBody603.children[166] = OrientationInterpolator1114;
 
-ProtoBody586.children[172] = OrientationInterpolator1115;
+let ROUTE1119 = browser.currentScene.createNode("ROUTE");
+ROUTE1119.fromField = "fraction_changed";
+ROUTE1119.fromNode = "BehaviorClock";
+ROUTE1119.toField = "set_fraction";
+ROUTE1119.toNode = "r_acromioclavicular_OI";
+ProtoBody603.children[167] = ROUTE1119;
 
-let ROUTE1120 = browser.currentScene.createNode("ROUTE");
-ROUTE1120.fromField = "fraction_changed";
-ROUTE1120.fromNode = "BehaviorClock";
-ROUTE1120.toField = "set_fraction";
-ROUTE1120.toNode = "r_clavicle_OI";
-ProtoBody586.children[173] = ROUTE1120;
+let OrientationInterpolator1120 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1120.DEF = "r_ankle_OI";
+let IS1121 = browser.currentScene.createNode("IS");
+let connect1122 = browser.currentScene.createNode("connect");
+connect1122.nodeField = "key";
+connect1122.protoField = "r_ankle_key";
+IS1121.connect = new MFNode();
 
-let OrientationInterpolator1121 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1121.DEF = "r_elbow_OI";
-let IS1122 = browser.currentScene.createNode("IS");
+IS1121.connect[0] = connect1122;
+
 let connect1123 = browser.currentScene.createNode("connect");
-connect1123.nodeField = "key";
-connect1123.protoField = "r_elbow_key";
-IS1122.connect = new MFNode();
-
-IS1122.connect[0] = connect1123;
+connect1123.nodeField = "keyValue";
+connect1123.protoField = "r_ankle_keyValue";
+IS1121.connect[1] = connect1123;
 
 let connect1124 = browser.currentScene.createNode("connect");
-connect1124.nodeField = "keyValue";
-connect1124.protoField = "r_elbow_keyValue";
-IS1122.connect[1] = connect1124;
+connect1124.nodeField = "value_changed";
+connect1124.protoField = "r_ankle_changed";
+IS1121.connect[2] = connect1124;
 
-let connect1125 = browser.currentScene.createNode("connect");
-connect1125.nodeField = "value_changed";
-connect1125.protoField = "r_elbow_changed";
-IS1122.connect[2] = connect1125;
+OrientationInterpolator1120.iS = IS1121;
 
-OrientationInterpolator1121.iS = IS1122;
+ProtoBody603.children[168] = OrientationInterpolator1120;
 
-ProtoBody586.children[174] = OrientationInterpolator1121;
+let ROUTE1125 = browser.currentScene.createNode("ROUTE");
+ROUTE1125.fromField = "fraction_changed";
+ROUTE1125.fromNode = "BehaviorClock";
+ROUTE1125.toField = "set_fraction";
+ROUTE1125.toNode = "r_ankle_OI";
+ProtoBody603.children[169] = ROUTE1125;
 
-let ROUTE1126 = browser.currentScene.createNode("ROUTE");
-ROUTE1126.fromField = "fraction_changed";
-ROUTE1126.fromNode = "BehaviorClock";
-ROUTE1126.toField = "set_fraction";
-ROUTE1126.toNode = "r_elbow_OI";
-ProtoBody586.children[175] = ROUTE1126;
+let OrientationInterpolator1126 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1126.DEF = "r_calf_OI";
+let IS1127 = browser.currentScene.createNode("IS");
+let connect1128 = browser.currentScene.createNode("connect");
+connect1128.nodeField = "key";
+connect1128.protoField = "r_calf_key";
+IS1127.connect = new MFNode();
 
-let OrientationInterpolator1127 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1127.DEF = "r_eyeball_OI";
-let IS1128 = browser.currentScene.createNode("IS");
+IS1127.connect[0] = connect1128;
+
 let connect1129 = browser.currentScene.createNode("connect");
-connect1129.nodeField = "key";
-connect1129.protoField = "r_eyeball_key";
-IS1128.connect = new MFNode();
-
-IS1128.connect[0] = connect1129;
+connect1129.nodeField = "keyValue";
+connect1129.protoField = "r_calf_keyValue";
+IS1127.connect[1] = connect1129;
 
 let connect1130 = browser.currentScene.createNode("connect");
-connect1130.nodeField = "keyValue";
-connect1130.protoField = "r_eyeball_keyValue";
-IS1128.connect[1] = connect1130;
+connect1130.nodeField = "value_changed";
+connect1130.protoField = "r_calf_changed";
+IS1127.connect[2] = connect1130;
 
-let connect1131 = browser.currentScene.createNode("connect");
-connect1131.nodeField = "value_changed";
-connect1131.protoField = "r_eyeball_changed";
-IS1128.connect[2] = connect1131;
+OrientationInterpolator1126.iS = IS1127;
 
-OrientationInterpolator1127.iS = IS1128;
+ProtoBody603.children[170] = OrientationInterpolator1126;
 
-ProtoBody586.children[176] = OrientationInterpolator1127;
+let ROUTE1131 = browser.currentScene.createNode("ROUTE");
+ROUTE1131.fromField = "fraction_changed";
+ROUTE1131.fromNode = "BehaviorClock";
+ROUTE1131.toField = "set_fraction";
+ROUTE1131.toNode = "r_calf_OI";
+ProtoBody603.children[171] = ROUTE1131;
 
-let ROUTE1132 = browser.currentScene.createNode("ROUTE");
-ROUTE1132.fromField = "fraction_changed";
-ROUTE1132.fromNode = "BehaviorClock";
-ROUTE1132.toField = "set_fraction";
-ROUTE1132.toNode = "r_eyeball_OI";
-ProtoBody586.children[177] = ROUTE1132;
+let OrientationInterpolator1132 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1132.DEF = "r_clavicle_OI";
+let IS1133 = browser.currentScene.createNode("IS");
+let connect1134 = browser.currentScene.createNode("connect");
+connect1134.nodeField = "key";
+connect1134.protoField = "r_clavicle_key";
+IS1133.connect = new MFNode();
 
-let OrientationInterpolator1133 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1133.DEF = "r_eyeball_joint_OI";
-let IS1134 = browser.currentScene.createNode("IS");
+IS1133.connect[0] = connect1134;
+
 let connect1135 = browser.currentScene.createNode("connect");
-connect1135.nodeField = "key";
-connect1135.protoField = "r_eyeball_joint_key";
-IS1134.connect = new MFNode();
-
-IS1134.connect[0] = connect1135;
+connect1135.nodeField = "keyValue";
+connect1135.protoField = "r_clavicle_keyValue";
+IS1133.connect[1] = connect1135;
 
 let connect1136 = browser.currentScene.createNode("connect");
-connect1136.nodeField = "keyValue";
-connect1136.protoField = "r_eyeball_joint_keyValue";
-IS1134.connect[1] = connect1136;
+connect1136.nodeField = "value_changed";
+connect1136.protoField = "r_clavicle_changed";
+IS1133.connect[2] = connect1136;
 
-let connect1137 = browser.currentScene.createNode("connect");
-connect1137.nodeField = "value_changed";
-connect1137.protoField = "r_eyeball_joint_changed";
-IS1134.connect[2] = connect1137;
+OrientationInterpolator1132.iS = IS1133;
 
-OrientationInterpolator1133.iS = IS1134;
+ProtoBody603.children[172] = OrientationInterpolator1132;
 
-ProtoBody586.children[178] = OrientationInterpolator1133;
+let ROUTE1137 = browser.currentScene.createNode("ROUTE");
+ROUTE1137.fromField = "fraction_changed";
+ROUTE1137.fromNode = "BehaviorClock";
+ROUTE1137.toField = "set_fraction";
+ROUTE1137.toNode = "r_clavicle_OI";
+ProtoBody603.children[173] = ROUTE1137;
 
-let ROUTE1138 = browser.currentScene.createNode("ROUTE");
-ROUTE1138.fromField = "fraction_changed";
-ROUTE1138.fromNode = "BehaviorClock";
-ROUTE1138.toField = "set_fraction";
-ROUTE1138.toNode = "r_eyeball_joint_OI";
-ProtoBody586.children[179] = ROUTE1138;
+let OrientationInterpolator1138 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1138.DEF = "r_elbow_OI";
+let IS1139 = browser.currentScene.createNode("IS");
+let connect1140 = browser.currentScene.createNode("connect");
+connect1140.nodeField = "key";
+connect1140.protoField = "r_elbow_key";
+IS1139.connect = new MFNode();
 
-let OrientationInterpolator1139 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1139.DEF = "r_eyebrow_OI";
-let IS1140 = browser.currentScene.createNode("IS");
+IS1139.connect[0] = connect1140;
+
 let connect1141 = browser.currentScene.createNode("connect");
-connect1141.nodeField = "key";
-connect1141.protoField = "r_eyebrow_key";
-IS1140.connect = new MFNode();
-
-IS1140.connect[0] = connect1141;
+connect1141.nodeField = "keyValue";
+connect1141.protoField = "r_elbow_keyValue";
+IS1139.connect[1] = connect1141;
 
 let connect1142 = browser.currentScene.createNode("connect");
-connect1142.nodeField = "keyValue";
-connect1142.protoField = "r_eyebrow_keyValue";
-IS1140.connect[1] = connect1142;
+connect1142.nodeField = "value_changed";
+connect1142.protoField = "r_elbow_changed";
+IS1139.connect[2] = connect1142;
 
-let connect1143 = browser.currentScene.createNode("connect");
-connect1143.nodeField = "value_changed";
-connect1143.protoField = "r_eyebrow_changed";
-IS1140.connect[2] = connect1143;
+OrientationInterpolator1138.iS = IS1139;
 
-OrientationInterpolator1139.iS = IS1140;
+ProtoBody603.children[174] = OrientationInterpolator1138;
 
-ProtoBody586.children[180] = OrientationInterpolator1139;
+let ROUTE1143 = browser.currentScene.createNode("ROUTE");
+ROUTE1143.fromField = "fraction_changed";
+ROUTE1143.fromNode = "BehaviorClock";
+ROUTE1143.toField = "set_fraction";
+ROUTE1143.toNode = "r_elbow_OI";
+ProtoBody603.children[175] = ROUTE1143;
 
-let ROUTE1144 = browser.currentScene.createNode("ROUTE");
-ROUTE1144.fromField = "fraction_changed";
-ROUTE1144.fromNode = "BehaviorClock";
-ROUTE1144.toField = "set_fraction";
-ROUTE1144.toNode = "r_eyebrow_OI";
-ProtoBody586.children[181] = ROUTE1144;
+let OrientationInterpolator1144 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1144.DEF = "r_eyeball_OI";
+let IS1145 = browser.currentScene.createNode("IS");
+let connect1146 = browser.currentScene.createNode("connect");
+connect1146.nodeField = "key";
+connect1146.protoField = "r_eyeball_key";
+IS1145.connect = new MFNode();
 
-let OrientationInterpolator1145 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1145.DEF = "r_eyebrow_joint_OI";
-let IS1146 = browser.currentScene.createNode("IS");
+IS1145.connect[0] = connect1146;
+
 let connect1147 = browser.currentScene.createNode("connect");
-connect1147.nodeField = "key";
-connect1147.protoField = "r_eyebrow_joint_key";
-IS1146.connect = new MFNode();
-
-IS1146.connect[0] = connect1147;
+connect1147.nodeField = "keyValue";
+connect1147.protoField = "r_eyeball_keyValue";
+IS1145.connect[1] = connect1147;
 
 let connect1148 = browser.currentScene.createNode("connect");
-connect1148.nodeField = "keyValue";
-connect1148.protoField = "r_eyebrow_joint_keyValue";
-IS1146.connect[1] = connect1148;
+connect1148.nodeField = "value_changed";
+connect1148.protoField = "r_eyeball_changed";
+IS1145.connect[2] = connect1148;
 
-let connect1149 = browser.currentScene.createNode("connect");
-connect1149.nodeField = "value_changed";
-connect1149.protoField = "r_eyebrow_joint_changed";
-IS1146.connect[2] = connect1149;
+OrientationInterpolator1144.iS = IS1145;
 
-OrientationInterpolator1145.iS = IS1146;
+ProtoBody603.children[176] = OrientationInterpolator1144;
 
-ProtoBody586.children[182] = OrientationInterpolator1145;
+let ROUTE1149 = browser.currentScene.createNode("ROUTE");
+ROUTE1149.fromField = "fraction_changed";
+ROUTE1149.fromNode = "BehaviorClock";
+ROUTE1149.toField = "set_fraction";
+ROUTE1149.toNode = "r_eyeball_OI";
+ProtoBody603.children[177] = ROUTE1149;
 
-let ROUTE1150 = browser.currentScene.createNode("ROUTE");
-ROUTE1150.fromField = "fraction_changed";
-ROUTE1150.fromNode = "BehaviorClock";
-ROUTE1150.toField = "set_fraction";
-ROUTE1150.toNode = "r_eyebrow_joint_OI";
-ProtoBody586.children[183] = ROUTE1150;
+let OrientationInterpolator1150 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1150.DEF = "r_eyeball_joint_OI";
+let IS1151 = browser.currentScene.createNode("IS");
+let connect1152 = browser.currentScene.createNode("connect");
+connect1152.nodeField = "key";
+connect1152.protoField = "r_eyeball_joint_key";
+IS1151.connect = new MFNode();
 
-let OrientationInterpolator1151 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1151.DEF = "r_eyelid_OI";
-let IS1152 = browser.currentScene.createNode("IS");
+IS1151.connect[0] = connect1152;
+
 let connect1153 = browser.currentScene.createNode("connect");
-connect1153.nodeField = "key";
-connect1153.protoField = "r_eyelid_key";
-IS1152.connect = new MFNode();
-
-IS1152.connect[0] = connect1153;
+connect1153.nodeField = "keyValue";
+connect1153.protoField = "r_eyeball_joint_keyValue";
+IS1151.connect[1] = connect1153;
 
 let connect1154 = browser.currentScene.createNode("connect");
-connect1154.nodeField = "keyValue";
-connect1154.protoField = "r_eyelid_keyValue";
-IS1152.connect[1] = connect1154;
+connect1154.nodeField = "value_changed";
+connect1154.protoField = "r_eyeball_joint_changed";
+IS1151.connect[2] = connect1154;
 
-let connect1155 = browser.currentScene.createNode("connect");
-connect1155.nodeField = "value_changed";
-connect1155.protoField = "r_eyelid_changed";
-IS1152.connect[2] = connect1155;
+OrientationInterpolator1150.iS = IS1151;
 
-OrientationInterpolator1151.iS = IS1152;
+ProtoBody603.children[178] = OrientationInterpolator1150;
 
-ProtoBody586.children[184] = OrientationInterpolator1151;
+let ROUTE1155 = browser.currentScene.createNode("ROUTE");
+ROUTE1155.fromField = "fraction_changed";
+ROUTE1155.fromNode = "BehaviorClock";
+ROUTE1155.toField = "set_fraction";
+ROUTE1155.toNode = "r_eyeball_joint_OI";
+ProtoBody603.children[179] = ROUTE1155;
 
-let ROUTE1156 = browser.currentScene.createNode("ROUTE");
-ROUTE1156.fromField = "fraction_changed";
-ROUTE1156.fromNode = "BehaviorClock";
-ROUTE1156.toField = "set_fraction";
-ROUTE1156.toNode = "r_eyelid_OI";
-ProtoBody586.children[185] = ROUTE1156;
+let OrientationInterpolator1156 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1156.DEF = "r_eyebrow_OI";
+let IS1157 = browser.currentScene.createNode("IS");
+let connect1158 = browser.currentScene.createNode("connect");
+connect1158.nodeField = "key";
+connect1158.protoField = "r_eyebrow_key";
+IS1157.connect = new MFNode();
 
-let OrientationInterpolator1157 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1157.DEF = "r_eyelid_joint_OI";
-let IS1158 = browser.currentScene.createNode("IS");
+IS1157.connect[0] = connect1158;
+
 let connect1159 = browser.currentScene.createNode("connect");
-connect1159.nodeField = "key";
-connect1159.protoField = "r_eyelid_joint_key";
-IS1158.connect = new MFNode();
-
-IS1158.connect[0] = connect1159;
+connect1159.nodeField = "keyValue";
+connect1159.protoField = "r_eyebrow_keyValue";
+IS1157.connect[1] = connect1159;
 
 let connect1160 = browser.currentScene.createNode("connect");
-connect1160.nodeField = "keyValue";
-connect1160.protoField = "r_eyelid_joint_keyValue";
-IS1158.connect[1] = connect1160;
+connect1160.nodeField = "value_changed";
+connect1160.protoField = "r_eyebrow_changed";
+IS1157.connect[2] = connect1160;
 
-let connect1161 = browser.currentScene.createNode("connect");
-connect1161.nodeField = "value_changed";
-connect1161.protoField = "r_eyelid_joint_changed";
-IS1158.connect[2] = connect1161;
+OrientationInterpolator1156.iS = IS1157;
 
-OrientationInterpolator1157.iS = IS1158;
+ProtoBody603.children[180] = OrientationInterpolator1156;
 
-ProtoBody586.children[186] = OrientationInterpolator1157;
+let ROUTE1161 = browser.currentScene.createNode("ROUTE");
+ROUTE1161.fromField = "fraction_changed";
+ROUTE1161.fromNode = "BehaviorClock";
+ROUTE1161.toField = "set_fraction";
+ROUTE1161.toNode = "r_eyebrow_OI";
+ProtoBody603.children[181] = ROUTE1161;
 
-let ROUTE1162 = browser.currentScene.createNode("ROUTE");
-ROUTE1162.fromField = "fraction_changed";
-ROUTE1162.fromNode = "BehaviorClock";
-ROUTE1162.toField = "set_fraction";
-ROUTE1162.toNode = "r_eyelid_joint_OI";
-ProtoBody586.children[187] = ROUTE1162;
+let OrientationInterpolator1162 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1162.DEF = "r_eyebrow_joint_OI";
+let IS1163 = browser.currentScene.createNode("IS");
+let connect1164 = browser.currentScene.createNode("connect");
+connect1164.nodeField = "key";
+connect1164.protoField = "r_eyebrow_joint_key";
+IS1163.connect = new MFNode();
 
-let OrientationInterpolator1163 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1163.DEF = "r_forearm_OI";
-let IS1164 = browser.currentScene.createNode("IS");
+IS1163.connect[0] = connect1164;
+
 let connect1165 = browser.currentScene.createNode("connect");
-connect1165.nodeField = "key";
-connect1165.protoField = "r_forearm_key";
-IS1164.connect = new MFNode();
-
-IS1164.connect[0] = connect1165;
+connect1165.nodeField = "keyValue";
+connect1165.protoField = "r_eyebrow_joint_keyValue";
+IS1163.connect[1] = connect1165;
 
 let connect1166 = browser.currentScene.createNode("connect");
-connect1166.nodeField = "keyValue";
-connect1166.protoField = "r_forearm_keyValue";
-IS1164.connect[1] = connect1166;
+connect1166.nodeField = "value_changed";
+connect1166.protoField = "r_eyebrow_joint_changed";
+IS1163.connect[2] = connect1166;
 
-let connect1167 = browser.currentScene.createNode("connect");
-connect1167.nodeField = "value_changed";
-connect1167.protoField = "r_forearm_changed";
-IS1164.connect[2] = connect1167;
+OrientationInterpolator1162.iS = IS1163;
 
-OrientationInterpolator1163.iS = IS1164;
+ProtoBody603.children[182] = OrientationInterpolator1162;
 
-ProtoBody586.children[188] = OrientationInterpolator1163;
+let ROUTE1167 = browser.currentScene.createNode("ROUTE");
+ROUTE1167.fromField = "fraction_changed";
+ROUTE1167.fromNode = "BehaviorClock";
+ROUTE1167.toField = "set_fraction";
+ROUTE1167.toNode = "r_eyebrow_joint_OI";
+ProtoBody603.children[183] = ROUTE1167;
 
-let ROUTE1168 = browser.currentScene.createNode("ROUTE");
-ROUTE1168.fromField = "fraction_changed";
-ROUTE1168.fromNode = "BehaviorClock";
-ROUTE1168.toField = "set_fraction";
-ROUTE1168.toNode = "r_forearm_OI";
-ProtoBody586.children[189] = ROUTE1168;
+let OrientationInterpolator1168 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1168.DEF = "r_eyelid_OI";
+let IS1169 = browser.currentScene.createNode("IS");
+let connect1170 = browser.currentScene.createNode("connect");
+connect1170.nodeField = "key";
+connect1170.protoField = "r_eyelid_key";
+IS1169.connect = new MFNode();
 
-let OrientationInterpolator1169 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1169.DEF = "r_forefoot_OI";
-let IS1170 = browser.currentScene.createNode("IS");
+IS1169.connect[0] = connect1170;
+
 let connect1171 = browser.currentScene.createNode("connect");
-connect1171.nodeField = "key";
-connect1171.protoField = "r_forefoot_key";
-IS1170.connect = new MFNode();
-
-IS1170.connect[0] = connect1171;
+connect1171.nodeField = "keyValue";
+connect1171.protoField = "r_eyelid_keyValue";
+IS1169.connect[1] = connect1171;
 
 let connect1172 = browser.currentScene.createNode("connect");
-connect1172.nodeField = "keyValue";
-connect1172.protoField = "r_forefoot_keyValue";
-IS1170.connect[1] = connect1172;
+connect1172.nodeField = "value_changed";
+connect1172.protoField = "r_eyelid_changed";
+IS1169.connect[2] = connect1172;
 
-let connect1173 = browser.currentScene.createNode("connect");
-connect1173.nodeField = "value_changed";
-connect1173.protoField = "r_forefoot_changed";
-IS1170.connect[2] = connect1173;
+OrientationInterpolator1168.iS = IS1169;
 
-OrientationInterpolator1169.iS = IS1170;
+ProtoBody603.children[184] = OrientationInterpolator1168;
 
-ProtoBody586.children[190] = OrientationInterpolator1169;
+let ROUTE1173 = browser.currentScene.createNode("ROUTE");
+ROUTE1173.fromField = "fraction_changed";
+ROUTE1173.fromNode = "BehaviorClock";
+ROUTE1173.toField = "set_fraction";
+ROUTE1173.toNode = "r_eyelid_OI";
+ProtoBody603.children[185] = ROUTE1173;
 
-let ROUTE1174 = browser.currentScene.createNode("ROUTE");
-ROUTE1174.fromField = "fraction_changed";
-ROUTE1174.fromNode = "BehaviorClock";
-ROUTE1174.toField = "set_fraction";
-ROUTE1174.toNode = "r_forefoot_OI";
-ProtoBody586.children[191] = ROUTE1174;
+let OrientationInterpolator1174 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1174.DEF = "r_eyelid_joint_OI";
+let IS1175 = browser.currentScene.createNode("IS");
+let connect1176 = browser.currentScene.createNode("connect");
+connect1176.nodeField = "key";
+connect1176.protoField = "r_eyelid_joint_key";
+IS1175.connect = new MFNode();
 
-let OrientationInterpolator1175 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1175.DEF = "r_hand_OI";
-let IS1176 = browser.currentScene.createNode("IS");
+IS1175.connect[0] = connect1176;
+
 let connect1177 = browser.currentScene.createNode("connect");
-connect1177.nodeField = "key";
-connect1177.protoField = "r_hand_key";
-IS1176.connect = new MFNode();
-
-IS1176.connect[0] = connect1177;
+connect1177.nodeField = "keyValue";
+connect1177.protoField = "r_eyelid_joint_keyValue";
+IS1175.connect[1] = connect1177;
 
 let connect1178 = browser.currentScene.createNode("connect");
-connect1178.nodeField = "keyValue";
-connect1178.protoField = "r_hand_keyValue";
-IS1176.connect[1] = connect1178;
+connect1178.nodeField = "value_changed";
+connect1178.protoField = "r_eyelid_joint_changed";
+IS1175.connect[2] = connect1178;
 
-let connect1179 = browser.currentScene.createNode("connect");
-connect1179.nodeField = "value_changed";
-connect1179.protoField = "r_hand_changed";
-IS1176.connect[2] = connect1179;
+OrientationInterpolator1174.iS = IS1175;
 
-OrientationInterpolator1175.iS = IS1176;
+ProtoBody603.children[186] = OrientationInterpolator1174;
 
-ProtoBody586.children[192] = OrientationInterpolator1175;
+let ROUTE1179 = browser.currentScene.createNode("ROUTE");
+ROUTE1179.fromField = "fraction_changed";
+ROUTE1179.fromNode = "BehaviorClock";
+ROUTE1179.toField = "set_fraction";
+ROUTE1179.toNode = "r_eyelid_joint_OI";
+ProtoBody603.children[187] = ROUTE1179;
 
-let ROUTE1180 = browser.currentScene.createNode("ROUTE");
-ROUTE1180.fromField = "fraction_changed";
-ROUTE1180.fromNode = "BehaviorClock";
-ROUTE1180.toField = "set_fraction";
-ROUTE1180.toNode = "r_hand_OI";
-ProtoBody586.children[193] = ROUTE1180;
+let OrientationInterpolator1180 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1180.DEF = "r_forearm_OI";
+let IS1181 = browser.currentScene.createNode("IS");
+let connect1182 = browser.currentScene.createNode("connect");
+connect1182.nodeField = "key";
+connect1182.protoField = "r_forearm_key";
+IS1181.connect = new MFNode();
 
-let OrientationInterpolator1181 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1181.DEF = "r_hindfoot_OI";
-let IS1182 = browser.currentScene.createNode("IS");
+IS1181.connect[0] = connect1182;
+
 let connect1183 = browser.currentScene.createNode("connect");
-connect1183.nodeField = "key";
-connect1183.protoField = "r_hindfoot_key";
-IS1182.connect = new MFNode();
-
-IS1182.connect[0] = connect1183;
+connect1183.nodeField = "keyValue";
+connect1183.protoField = "r_forearm_keyValue";
+IS1181.connect[1] = connect1183;
 
 let connect1184 = browser.currentScene.createNode("connect");
-connect1184.nodeField = "keyValue";
-connect1184.protoField = "r_hindfoot_keyValue";
-IS1182.connect[1] = connect1184;
+connect1184.nodeField = "value_changed";
+connect1184.protoField = "r_forearm_changed";
+IS1181.connect[2] = connect1184;
 
-let connect1185 = browser.currentScene.createNode("connect");
-connect1185.nodeField = "value_changed";
-connect1185.protoField = "r_hindfoot_changed";
-IS1182.connect[2] = connect1185;
+OrientationInterpolator1180.iS = IS1181;
 
-OrientationInterpolator1181.iS = IS1182;
+ProtoBody603.children[188] = OrientationInterpolator1180;
 
-ProtoBody586.children[194] = OrientationInterpolator1181;
+let ROUTE1185 = browser.currentScene.createNode("ROUTE");
+ROUTE1185.fromField = "fraction_changed";
+ROUTE1185.fromNode = "BehaviorClock";
+ROUTE1185.toField = "set_fraction";
+ROUTE1185.toNode = "r_forearm_OI";
+ProtoBody603.children[189] = ROUTE1185;
 
-let ROUTE1186 = browser.currentScene.createNode("ROUTE");
-ROUTE1186.fromField = "fraction_changed";
-ROUTE1186.fromNode = "BehaviorClock";
-ROUTE1186.toField = "set_fraction";
-ROUTE1186.toNode = "r_hindfoot_OI";
-ProtoBody586.children[195] = ROUTE1186;
+let OrientationInterpolator1186 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1186.DEF = "r_forefoot_OI";
+let IS1187 = browser.currentScene.createNode("IS");
+let connect1188 = browser.currentScene.createNode("connect");
+connect1188.nodeField = "key";
+connect1188.protoField = "r_forefoot_key";
+IS1187.connect = new MFNode();
 
-let OrientationInterpolator1187 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1187.DEF = "r_hip_OI";
-let IS1188 = browser.currentScene.createNode("IS");
+IS1187.connect[0] = connect1188;
+
 let connect1189 = browser.currentScene.createNode("connect");
-connect1189.nodeField = "key";
-connect1189.protoField = "r_hip_key";
-IS1188.connect = new MFNode();
-
-IS1188.connect[0] = connect1189;
+connect1189.nodeField = "keyValue";
+connect1189.protoField = "r_forefoot_keyValue";
+IS1187.connect[1] = connect1189;
 
 let connect1190 = browser.currentScene.createNode("connect");
-connect1190.nodeField = "keyValue";
-connect1190.protoField = "r_hip_keyValue";
-IS1188.connect[1] = connect1190;
+connect1190.nodeField = "value_changed";
+connect1190.protoField = "r_forefoot_changed";
+IS1187.connect[2] = connect1190;
 
-let connect1191 = browser.currentScene.createNode("connect");
-connect1191.nodeField = "value_changed";
-connect1191.protoField = "r_hip_changed";
-IS1188.connect[2] = connect1191;
+OrientationInterpolator1186.iS = IS1187;
 
-OrientationInterpolator1187.iS = IS1188;
+ProtoBody603.children[190] = OrientationInterpolator1186;
 
-ProtoBody586.children[196] = OrientationInterpolator1187;
+let ROUTE1191 = browser.currentScene.createNode("ROUTE");
+ROUTE1191.fromField = "fraction_changed";
+ROUTE1191.fromNode = "BehaviorClock";
+ROUTE1191.toField = "set_fraction";
+ROUTE1191.toNode = "r_forefoot_OI";
+ProtoBody603.children[191] = ROUTE1191;
 
-let ROUTE1192 = browser.currentScene.createNode("ROUTE");
-ROUTE1192.fromField = "fraction_changed";
-ROUTE1192.fromNode = "BehaviorClock";
-ROUTE1192.toField = "set_fraction";
-ROUTE1192.toNode = "r_hip_OI";
-ProtoBody586.children[197] = ROUTE1192;
+let OrientationInterpolator1192 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1192.DEF = "r_hand_OI";
+let IS1193 = browser.currentScene.createNode("IS");
+let connect1194 = browser.currentScene.createNode("connect");
+connect1194.nodeField = "key";
+connect1194.protoField = "r_hand_key";
+IS1193.connect = new MFNode();
 
-let OrientationInterpolator1193 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1193.DEF = "r_index0_OI";
-let IS1194 = browser.currentScene.createNode("IS");
+IS1193.connect[0] = connect1194;
+
 let connect1195 = browser.currentScene.createNode("connect");
-connect1195.nodeField = "key";
-connect1195.protoField = "r_index0_key";
-IS1194.connect = new MFNode();
-
-IS1194.connect[0] = connect1195;
+connect1195.nodeField = "keyValue";
+connect1195.protoField = "r_hand_keyValue";
+IS1193.connect[1] = connect1195;
 
 let connect1196 = browser.currentScene.createNode("connect");
-connect1196.nodeField = "keyValue";
-connect1196.protoField = "r_index0_keyValue";
-IS1194.connect[1] = connect1196;
+connect1196.nodeField = "value_changed";
+connect1196.protoField = "r_hand_changed";
+IS1193.connect[2] = connect1196;
 
-let connect1197 = browser.currentScene.createNode("connect");
-connect1197.nodeField = "value_changed";
-connect1197.protoField = "r_index0_changed";
-IS1194.connect[2] = connect1197;
+OrientationInterpolator1192.iS = IS1193;
 
-OrientationInterpolator1193.iS = IS1194;
+ProtoBody603.children[192] = OrientationInterpolator1192;
 
-ProtoBody586.children[198] = OrientationInterpolator1193;
+let ROUTE1197 = browser.currentScene.createNode("ROUTE");
+ROUTE1197.fromField = "fraction_changed";
+ROUTE1197.fromNode = "BehaviorClock";
+ROUTE1197.toField = "set_fraction";
+ROUTE1197.toNode = "r_hand_OI";
+ProtoBody603.children[193] = ROUTE1197;
 
-let ROUTE1198 = browser.currentScene.createNode("ROUTE");
-ROUTE1198.fromField = "fraction_changed";
-ROUTE1198.fromNode = "BehaviorClock";
-ROUTE1198.toField = "set_fraction";
-ROUTE1198.toNode = "r_index0_OI";
-ProtoBody586.children[199] = ROUTE1198;
+let OrientationInterpolator1198 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1198.DEF = "r_hindfoot_OI";
+let IS1199 = browser.currentScene.createNode("IS");
+let connect1200 = browser.currentScene.createNode("connect");
+connect1200.nodeField = "key";
+connect1200.protoField = "r_hindfoot_key";
+IS1199.connect = new MFNode();
 
-let OrientationInterpolator1199 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1199.DEF = "r_index1_OI";
-let IS1200 = browser.currentScene.createNode("IS");
+IS1199.connect[0] = connect1200;
+
 let connect1201 = browser.currentScene.createNode("connect");
-connect1201.nodeField = "key";
-connect1201.protoField = "r_index1_key";
-IS1200.connect = new MFNode();
-
-IS1200.connect[0] = connect1201;
+connect1201.nodeField = "keyValue";
+connect1201.protoField = "r_hindfoot_keyValue";
+IS1199.connect[1] = connect1201;
 
 let connect1202 = browser.currentScene.createNode("connect");
-connect1202.nodeField = "keyValue";
-connect1202.protoField = "r_index1_keyValue";
-IS1200.connect[1] = connect1202;
+connect1202.nodeField = "value_changed";
+connect1202.protoField = "r_hindfoot_changed";
+IS1199.connect[2] = connect1202;
 
-let connect1203 = browser.currentScene.createNode("connect");
-connect1203.nodeField = "value_changed";
-connect1203.protoField = "r_index1_changed";
-IS1200.connect[2] = connect1203;
+OrientationInterpolator1198.iS = IS1199;
 
-OrientationInterpolator1199.iS = IS1200;
+ProtoBody603.children[194] = OrientationInterpolator1198;
 
-ProtoBody586.children[200] = OrientationInterpolator1199;
+let ROUTE1203 = browser.currentScene.createNode("ROUTE");
+ROUTE1203.fromField = "fraction_changed";
+ROUTE1203.fromNode = "BehaviorClock";
+ROUTE1203.toField = "set_fraction";
+ROUTE1203.toNode = "r_hindfoot_OI";
+ProtoBody603.children[195] = ROUTE1203;
 
-let ROUTE1204 = browser.currentScene.createNode("ROUTE");
-ROUTE1204.fromField = "fraction_changed";
-ROUTE1204.fromNode = "BehaviorClock";
-ROUTE1204.toField = "set_fraction";
-ROUTE1204.toNode = "r_index1_OI";
-ProtoBody586.children[201] = ROUTE1204;
+let OrientationInterpolator1204 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1204.DEF = "r_hip_OI";
+let IS1205 = browser.currentScene.createNode("IS");
+let connect1206 = browser.currentScene.createNode("connect");
+connect1206.nodeField = "key";
+connect1206.protoField = "r_hip_key";
+IS1205.connect = new MFNode();
 
-let OrientationInterpolator1205 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1205.DEF = "r_index2_OI";
-let IS1206 = browser.currentScene.createNode("IS");
+IS1205.connect[0] = connect1206;
+
 let connect1207 = browser.currentScene.createNode("connect");
-connect1207.nodeField = "key";
-connect1207.protoField = "r_index2_key";
-IS1206.connect = new MFNode();
-
-IS1206.connect[0] = connect1207;
+connect1207.nodeField = "keyValue";
+connect1207.protoField = "r_hip_keyValue";
+IS1205.connect[1] = connect1207;
 
 let connect1208 = browser.currentScene.createNode("connect");
-connect1208.nodeField = "keyValue";
-connect1208.protoField = "r_index2_keyValue";
-IS1206.connect[1] = connect1208;
+connect1208.nodeField = "value_changed";
+connect1208.protoField = "r_hip_changed";
+IS1205.connect[2] = connect1208;
 
-let connect1209 = browser.currentScene.createNode("connect");
-connect1209.nodeField = "value_changed";
-connect1209.protoField = "r_index2_changed";
-IS1206.connect[2] = connect1209;
+OrientationInterpolator1204.iS = IS1205;
 
-OrientationInterpolator1205.iS = IS1206;
+ProtoBody603.children[196] = OrientationInterpolator1204;
 
-ProtoBody586.children[202] = OrientationInterpolator1205;
+let ROUTE1209 = browser.currentScene.createNode("ROUTE");
+ROUTE1209.fromField = "fraction_changed";
+ROUTE1209.fromNode = "BehaviorClock";
+ROUTE1209.toField = "set_fraction";
+ROUTE1209.toNode = "r_hip_OI";
+ProtoBody603.children[197] = ROUTE1209;
 
-let ROUTE1210 = browser.currentScene.createNode("ROUTE");
-ROUTE1210.fromField = "fraction_changed";
-ROUTE1210.fromNode = "BehaviorClock";
-ROUTE1210.toField = "set_fraction";
-ROUTE1210.toNode = "r_index2_OI";
-ProtoBody586.children[203] = ROUTE1210;
+let OrientationInterpolator1210 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1210.DEF = "r_index0_OI";
+let IS1211 = browser.currentScene.createNode("IS");
+let connect1212 = browser.currentScene.createNode("connect");
+connect1212.nodeField = "key";
+connect1212.protoField = "r_index0_key";
+IS1211.connect = new MFNode();
 
-let OrientationInterpolator1211 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1211.DEF = "r_index3_OI";
-let IS1212 = browser.currentScene.createNode("IS");
+IS1211.connect[0] = connect1212;
+
 let connect1213 = browser.currentScene.createNode("connect");
-connect1213.nodeField = "key";
-connect1213.protoField = "r_index3_key";
-IS1212.connect = new MFNode();
-
-IS1212.connect[0] = connect1213;
+connect1213.nodeField = "keyValue";
+connect1213.protoField = "r_index0_keyValue";
+IS1211.connect[1] = connect1213;
 
 let connect1214 = browser.currentScene.createNode("connect");
-connect1214.nodeField = "keyValue";
-connect1214.protoField = "r_index3_keyValue";
-IS1212.connect[1] = connect1214;
+connect1214.nodeField = "value_changed";
+connect1214.protoField = "r_index0_changed";
+IS1211.connect[2] = connect1214;
 
-let connect1215 = browser.currentScene.createNode("connect");
-connect1215.nodeField = "value_changed";
-connect1215.protoField = "r_index3_changed";
-IS1212.connect[2] = connect1215;
+OrientationInterpolator1210.iS = IS1211;
 
-OrientationInterpolator1211.iS = IS1212;
+ProtoBody603.children[198] = OrientationInterpolator1210;
 
-ProtoBody586.children[204] = OrientationInterpolator1211;
+let ROUTE1215 = browser.currentScene.createNode("ROUTE");
+ROUTE1215.fromField = "fraction_changed";
+ROUTE1215.fromNode = "BehaviorClock";
+ROUTE1215.toField = "set_fraction";
+ROUTE1215.toNode = "r_index0_OI";
+ProtoBody603.children[199] = ROUTE1215;
 
-let ROUTE1216 = browser.currentScene.createNode("ROUTE");
-ROUTE1216.fromField = "fraction_changed";
-ROUTE1216.fromNode = "BehaviorClock";
-ROUTE1216.toField = "set_fraction";
-ROUTE1216.toNode = "r_index3_OI";
-ProtoBody586.children[205] = ROUTE1216;
+let OrientationInterpolator1216 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1216.DEF = "r_index1_OI";
+let IS1217 = browser.currentScene.createNode("IS");
+let connect1218 = browser.currentScene.createNode("connect");
+connect1218.nodeField = "key";
+connect1218.protoField = "r_index1_key";
+IS1217.connect = new MFNode();
 
-let OrientationInterpolator1217 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1217.DEF = "r_index_distal_OI";
-let IS1218 = browser.currentScene.createNode("IS");
+IS1217.connect[0] = connect1218;
+
 let connect1219 = browser.currentScene.createNode("connect");
-connect1219.nodeField = "key";
-connect1219.protoField = "r_index_distal_key";
-IS1218.connect = new MFNode();
-
-IS1218.connect[0] = connect1219;
+connect1219.nodeField = "keyValue";
+connect1219.protoField = "r_index1_keyValue";
+IS1217.connect[1] = connect1219;
 
 let connect1220 = browser.currentScene.createNode("connect");
-connect1220.nodeField = "keyValue";
-connect1220.protoField = "r_index_distal_keyValue";
-IS1218.connect[1] = connect1220;
+connect1220.nodeField = "value_changed";
+connect1220.protoField = "r_index1_changed";
+IS1217.connect[2] = connect1220;
 
-let connect1221 = browser.currentScene.createNode("connect");
-connect1221.nodeField = "value_changed";
-connect1221.protoField = "r_index_distal_changed";
-IS1218.connect[2] = connect1221;
+OrientationInterpolator1216.iS = IS1217;
 
-OrientationInterpolator1217.iS = IS1218;
+ProtoBody603.children[200] = OrientationInterpolator1216;
 
-ProtoBody586.children[206] = OrientationInterpolator1217;
+let ROUTE1221 = browser.currentScene.createNode("ROUTE");
+ROUTE1221.fromField = "fraction_changed";
+ROUTE1221.fromNode = "BehaviorClock";
+ROUTE1221.toField = "set_fraction";
+ROUTE1221.toNode = "r_index1_OI";
+ProtoBody603.children[201] = ROUTE1221;
 
-let ROUTE1222 = browser.currentScene.createNode("ROUTE");
-ROUTE1222.fromField = "fraction_changed";
-ROUTE1222.fromNode = "BehaviorClock";
-ROUTE1222.toField = "set_fraction";
-ROUTE1222.toNode = "r_index_distal_OI";
-ProtoBody586.children[207] = ROUTE1222;
+let OrientationInterpolator1222 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1222.DEF = "r_index2_OI";
+let IS1223 = browser.currentScene.createNode("IS");
+let connect1224 = browser.currentScene.createNode("connect");
+connect1224.nodeField = "key";
+connect1224.protoField = "r_index2_key";
+IS1223.connect = new MFNode();
 
-let OrientationInterpolator1223 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1223.DEF = "r_index_metacarpal_OI";
-let IS1224 = browser.currentScene.createNode("IS");
+IS1223.connect[0] = connect1224;
+
 let connect1225 = browser.currentScene.createNode("connect");
-connect1225.nodeField = "key";
-connect1225.protoField = "r_index_metacarpal_key";
-IS1224.connect = new MFNode();
-
-IS1224.connect[0] = connect1225;
+connect1225.nodeField = "keyValue";
+connect1225.protoField = "r_index2_keyValue";
+IS1223.connect[1] = connect1225;
 
 let connect1226 = browser.currentScene.createNode("connect");
-connect1226.nodeField = "keyValue";
-connect1226.protoField = "r_index_metacarpal_keyValue";
-IS1224.connect[1] = connect1226;
+connect1226.nodeField = "value_changed";
+connect1226.protoField = "r_index2_changed";
+IS1223.connect[2] = connect1226;
 
-let connect1227 = browser.currentScene.createNode("connect");
-connect1227.nodeField = "value_changed";
-connect1227.protoField = "r_index_metacarpal_changed";
-IS1224.connect[2] = connect1227;
+OrientationInterpolator1222.iS = IS1223;
 
-OrientationInterpolator1223.iS = IS1224;
+ProtoBody603.children[202] = OrientationInterpolator1222;
 
-ProtoBody586.children[208] = OrientationInterpolator1223;
+let ROUTE1227 = browser.currentScene.createNode("ROUTE");
+ROUTE1227.fromField = "fraction_changed";
+ROUTE1227.fromNode = "BehaviorClock";
+ROUTE1227.toField = "set_fraction";
+ROUTE1227.toNode = "r_index2_OI";
+ProtoBody603.children[203] = ROUTE1227;
 
-let ROUTE1228 = browser.currentScene.createNode("ROUTE");
-ROUTE1228.fromField = "fraction_changed";
-ROUTE1228.fromNode = "BehaviorClock";
-ROUTE1228.toField = "set_fraction";
-ROUTE1228.toNode = "r_index_metacarpal_OI";
-ProtoBody586.children[209] = ROUTE1228;
+let OrientationInterpolator1228 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1228.DEF = "r_index3_OI";
+let IS1229 = browser.currentScene.createNode("IS");
+let connect1230 = browser.currentScene.createNode("connect");
+connect1230.nodeField = "key";
+connect1230.protoField = "r_index3_key";
+IS1229.connect = new MFNode();
 
-let OrientationInterpolator1229 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1229.DEF = "r_index_middle_OI";
-let IS1230 = browser.currentScene.createNode("IS");
+IS1229.connect[0] = connect1230;
+
 let connect1231 = browser.currentScene.createNode("connect");
-connect1231.nodeField = "key";
-connect1231.protoField = "r_index_middle_key";
-IS1230.connect = new MFNode();
-
-IS1230.connect[0] = connect1231;
+connect1231.nodeField = "keyValue";
+connect1231.protoField = "r_index3_keyValue";
+IS1229.connect[1] = connect1231;
 
 let connect1232 = browser.currentScene.createNode("connect");
-connect1232.nodeField = "keyValue";
-connect1232.protoField = "r_index_middle_keyValue";
-IS1230.connect[1] = connect1232;
+connect1232.nodeField = "value_changed";
+connect1232.protoField = "r_index3_changed";
+IS1229.connect[2] = connect1232;
 
-let connect1233 = browser.currentScene.createNode("connect");
-connect1233.nodeField = "value_changed";
-connect1233.protoField = "r_index_middle_changed";
-IS1230.connect[2] = connect1233;
+OrientationInterpolator1228.iS = IS1229;
 
-OrientationInterpolator1229.iS = IS1230;
+ProtoBody603.children[204] = OrientationInterpolator1228;
 
-ProtoBody586.children[210] = OrientationInterpolator1229;
+let ROUTE1233 = browser.currentScene.createNode("ROUTE");
+ROUTE1233.fromField = "fraction_changed";
+ROUTE1233.fromNode = "BehaviorClock";
+ROUTE1233.toField = "set_fraction";
+ROUTE1233.toNode = "r_index3_OI";
+ProtoBody603.children[205] = ROUTE1233;
 
-let ROUTE1234 = browser.currentScene.createNode("ROUTE");
-ROUTE1234.fromField = "fraction_changed";
-ROUTE1234.fromNode = "BehaviorClock";
-ROUTE1234.toField = "set_fraction";
-ROUTE1234.toNode = "r_index_middle_OI";
-ProtoBody586.children[211] = ROUTE1234;
+let OrientationInterpolator1234 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1234.DEF = "r_index_distal_OI";
+let IS1235 = browser.currentScene.createNode("IS");
+let connect1236 = browser.currentScene.createNode("connect");
+connect1236.nodeField = "key";
+connect1236.protoField = "r_index_distal_key";
+IS1235.connect = new MFNode();
 
-let OrientationInterpolator1235 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1235.DEF = "r_index_proximal_OI";
-let IS1236 = browser.currentScene.createNode("IS");
+IS1235.connect[0] = connect1236;
+
 let connect1237 = browser.currentScene.createNode("connect");
-connect1237.nodeField = "key";
-connect1237.protoField = "r_index_proximal_key";
-IS1236.connect = new MFNode();
-
-IS1236.connect[0] = connect1237;
+connect1237.nodeField = "keyValue";
+connect1237.protoField = "r_index_distal_keyValue";
+IS1235.connect[1] = connect1237;
 
 let connect1238 = browser.currentScene.createNode("connect");
-connect1238.nodeField = "keyValue";
-connect1238.protoField = "r_index_proximal_keyValue";
-IS1236.connect[1] = connect1238;
+connect1238.nodeField = "value_changed";
+connect1238.protoField = "r_index_distal_changed";
+IS1235.connect[2] = connect1238;
 
-let connect1239 = browser.currentScene.createNode("connect");
-connect1239.nodeField = "value_changed";
-connect1239.protoField = "r_index_proximal_changed";
-IS1236.connect[2] = connect1239;
+OrientationInterpolator1234.iS = IS1235;
 
-OrientationInterpolator1235.iS = IS1236;
+ProtoBody603.children[206] = OrientationInterpolator1234;
 
-ProtoBody586.children[212] = OrientationInterpolator1235;
+let ROUTE1239 = browser.currentScene.createNode("ROUTE");
+ROUTE1239.fromField = "fraction_changed";
+ROUTE1239.fromNode = "BehaviorClock";
+ROUTE1239.toField = "set_fraction";
+ROUTE1239.toNode = "r_index_distal_OI";
+ProtoBody603.children[207] = ROUTE1239;
 
-let ROUTE1240 = browser.currentScene.createNode("ROUTE");
-ROUTE1240.fromField = "fraction_changed";
-ROUTE1240.fromNode = "BehaviorClock";
-ROUTE1240.toField = "set_fraction";
-ROUTE1240.toNode = "r_index_proximal_OI";
-ProtoBody586.children[213] = ROUTE1240;
+let OrientationInterpolator1240 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1240.DEF = "r_index_metacarpal_OI";
+let IS1241 = browser.currentScene.createNode("IS");
+let connect1242 = browser.currentScene.createNode("connect");
+connect1242.nodeField = "key";
+connect1242.protoField = "r_index_metacarpal_key";
+IS1241.connect = new MFNode();
 
-let OrientationInterpolator1241 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1241.DEF = "r_knee_OI";
-let IS1242 = browser.currentScene.createNode("IS");
+IS1241.connect[0] = connect1242;
+
 let connect1243 = browser.currentScene.createNode("connect");
-connect1243.nodeField = "key";
-connect1243.protoField = "r_knee_key";
-IS1242.connect = new MFNode();
-
-IS1242.connect[0] = connect1243;
+connect1243.nodeField = "keyValue";
+connect1243.protoField = "r_index_metacarpal_keyValue";
+IS1241.connect[1] = connect1243;
 
 let connect1244 = browser.currentScene.createNode("connect");
-connect1244.nodeField = "keyValue";
-connect1244.protoField = "r_knee_keyValue";
-IS1242.connect[1] = connect1244;
+connect1244.nodeField = "value_changed";
+connect1244.protoField = "r_index_metacarpal_changed";
+IS1241.connect[2] = connect1244;
 
-let connect1245 = browser.currentScene.createNode("connect");
-connect1245.nodeField = "value_changed";
-connect1245.protoField = "r_knee_changed";
-IS1242.connect[2] = connect1245;
+OrientationInterpolator1240.iS = IS1241;
 
-OrientationInterpolator1241.iS = IS1242;
+ProtoBody603.children[208] = OrientationInterpolator1240;
 
-ProtoBody586.children[214] = OrientationInterpolator1241;
+let ROUTE1245 = browser.currentScene.createNode("ROUTE");
+ROUTE1245.fromField = "fraction_changed";
+ROUTE1245.fromNode = "BehaviorClock";
+ROUTE1245.toField = "set_fraction";
+ROUTE1245.toNode = "r_index_metacarpal_OI";
+ProtoBody603.children[209] = ROUTE1245;
 
-let ROUTE1246 = browser.currentScene.createNode("ROUTE");
-ROUTE1246.fromField = "fraction_changed";
-ROUTE1246.fromNode = "BehaviorClock";
-ROUTE1246.toField = "set_fraction";
-ROUTE1246.toNode = "r_knee_OI";
-ProtoBody586.children[215] = ROUTE1246;
+let OrientationInterpolator1246 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1246.DEF = "r_index_middle_OI";
+let IS1247 = browser.currentScene.createNode("IS");
+let connect1248 = browser.currentScene.createNode("connect");
+connect1248.nodeField = "key";
+connect1248.protoField = "r_index_middle_key";
+IS1247.connect = new MFNode();
 
-let OrientationInterpolator1247 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1247.DEF = "r_metatarsal_OI";
-let IS1248 = browser.currentScene.createNode("IS");
+IS1247.connect[0] = connect1248;
+
 let connect1249 = browser.currentScene.createNode("connect");
-connect1249.nodeField = "key";
-connect1249.protoField = "r_metatarsal_key";
-IS1248.connect = new MFNode();
-
-IS1248.connect[0] = connect1249;
+connect1249.nodeField = "keyValue";
+connect1249.protoField = "r_index_middle_keyValue";
+IS1247.connect[1] = connect1249;
 
 let connect1250 = browser.currentScene.createNode("connect");
-connect1250.nodeField = "keyValue";
-connect1250.protoField = "r_metatarsal_keyValue";
-IS1248.connect[1] = connect1250;
+connect1250.nodeField = "value_changed";
+connect1250.protoField = "r_index_middle_changed";
+IS1247.connect[2] = connect1250;
 
-let connect1251 = browser.currentScene.createNode("connect");
-connect1251.nodeField = "value_changed";
-connect1251.protoField = "r_metatarsal_changed";
-IS1248.connect[2] = connect1251;
+OrientationInterpolator1246.iS = IS1247;
 
-OrientationInterpolator1247.iS = IS1248;
+ProtoBody603.children[210] = OrientationInterpolator1246;
 
-ProtoBody586.children[216] = OrientationInterpolator1247;
+let ROUTE1251 = browser.currentScene.createNode("ROUTE");
+ROUTE1251.fromField = "fraction_changed";
+ROUTE1251.fromNode = "BehaviorClock";
+ROUTE1251.toField = "set_fraction";
+ROUTE1251.toNode = "r_index_middle_OI";
+ProtoBody603.children[211] = ROUTE1251;
 
-let ROUTE1252 = browser.currentScene.createNode("ROUTE");
-ROUTE1252.fromField = "fraction_changed";
-ROUTE1252.fromNode = "BehaviorClock";
-ROUTE1252.toField = "set_fraction";
-ROUTE1252.toNode = "r_metatarsal_OI";
-ProtoBody586.children[217] = ROUTE1252;
+let OrientationInterpolator1252 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1252.DEF = "r_index_proximal_OI";
+let IS1253 = browser.currentScene.createNode("IS");
+let connect1254 = browser.currentScene.createNode("connect");
+connect1254.nodeField = "key";
+connect1254.protoField = "r_index_proximal_key";
+IS1253.connect = new MFNode();
 
-let OrientationInterpolator1253 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1253.DEF = "r_middistal_OI";
-let IS1254 = browser.currentScene.createNode("IS");
+IS1253.connect[0] = connect1254;
+
 let connect1255 = browser.currentScene.createNode("connect");
-connect1255.nodeField = "key";
-connect1255.protoField = "r_middistal_key";
-IS1254.connect = new MFNode();
-
-IS1254.connect[0] = connect1255;
+connect1255.nodeField = "keyValue";
+connect1255.protoField = "r_index_proximal_keyValue";
+IS1253.connect[1] = connect1255;
 
 let connect1256 = browser.currentScene.createNode("connect");
-connect1256.nodeField = "keyValue";
-connect1256.protoField = "r_middistal_keyValue";
-IS1254.connect[1] = connect1256;
+connect1256.nodeField = "value_changed";
+connect1256.protoField = "r_index_proximal_changed";
+IS1253.connect[2] = connect1256;
 
-let connect1257 = browser.currentScene.createNode("connect");
-connect1257.nodeField = "value_changed";
-connect1257.protoField = "r_middistal_changed";
-IS1254.connect[2] = connect1257;
+OrientationInterpolator1252.iS = IS1253;
 
-OrientationInterpolator1253.iS = IS1254;
+ProtoBody603.children[212] = OrientationInterpolator1252;
 
-ProtoBody586.children[218] = OrientationInterpolator1253;
+let ROUTE1257 = browser.currentScene.createNode("ROUTE");
+ROUTE1257.fromField = "fraction_changed";
+ROUTE1257.fromNode = "BehaviorClock";
+ROUTE1257.toField = "set_fraction";
+ROUTE1257.toNode = "r_index_proximal_OI";
+ProtoBody603.children[213] = ROUTE1257;
 
-let ROUTE1258 = browser.currentScene.createNode("ROUTE");
-ROUTE1258.fromField = "fraction_changed";
-ROUTE1258.fromNode = "BehaviorClock";
-ROUTE1258.toField = "set_fraction";
-ROUTE1258.toNode = "r_middistal_OI";
-ProtoBody586.children[219] = ROUTE1258;
+let OrientationInterpolator1258 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1258.DEF = "r_knee_OI";
+let IS1259 = browser.currentScene.createNode("IS");
+let connect1260 = browser.currentScene.createNode("connect");
+connect1260.nodeField = "key";
+connect1260.protoField = "r_knee_key";
+IS1259.connect = new MFNode();
 
-let OrientationInterpolator1259 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1259.DEF = "r_middle0_OI";
-let IS1260 = browser.currentScene.createNode("IS");
+IS1259.connect[0] = connect1260;
+
 let connect1261 = browser.currentScene.createNode("connect");
-connect1261.nodeField = "key";
-connect1261.protoField = "r_middle0_key";
-IS1260.connect = new MFNode();
-
-IS1260.connect[0] = connect1261;
+connect1261.nodeField = "keyValue";
+connect1261.protoField = "r_knee_keyValue";
+IS1259.connect[1] = connect1261;
 
 let connect1262 = browser.currentScene.createNode("connect");
-connect1262.nodeField = "keyValue";
-connect1262.protoField = "r_middle0_keyValue";
-IS1260.connect[1] = connect1262;
+connect1262.nodeField = "value_changed";
+connect1262.protoField = "r_knee_changed";
+IS1259.connect[2] = connect1262;
 
-let connect1263 = browser.currentScene.createNode("connect");
-connect1263.nodeField = "value_changed";
-connect1263.protoField = "r_middle0_changed";
-IS1260.connect[2] = connect1263;
+OrientationInterpolator1258.iS = IS1259;
 
-OrientationInterpolator1259.iS = IS1260;
+ProtoBody603.children[214] = OrientationInterpolator1258;
 
-ProtoBody586.children[220] = OrientationInterpolator1259;
+let ROUTE1263 = browser.currentScene.createNode("ROUTE");
+ROUTE1263.fromField = "fraction_changed";
+ROUTE1263.fromNode = "BehaviorClock";
+ROUTE1263.toField = "set_fraction";
+ROUTE1263.toNode = "r_knee_OI";
+ProtoBody603.children[215] = ROUTE1263;
 
-let ROUTE1264 = browser.currentScene.createNode("ROUTE");
-ROUTE1264.fromField = "fraction_changed";
-ROUTE1264.fromNode = "BehaviorClock";
-ROUTE1264.toField = "set_fraction";
-ROUTE1264.toNode = "r_middle0_OI";
-ProtoBody586.children[221] = ROUTE1264;
+let OrientationInterpolator1264 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1264.DEF = "r_metatarsal_OI";
+let IS1265 = browser.currentScene.createNode("IS");
+let connect1266 = browser.currentScene.createNode("connect");
+connect1266.nodeField = "key";
+connect1266.protoField = "r_metatarsal_key";
+IS1265.connect = new MFNode();
 
-let OrientationInterpolator1265 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1265.DEF = "r_middle1_OI";
-let IS1266 = browser.currentScene.createNode("IS");
+IS1265.connect[0] = connect1266;
+
 let connect1267 = browser.currentScene.createNode("connect");
-connect1267.nodeField = "key";
-connect1267.protoField = "r_middle1_key";
-IS1266.connect = new MFNode();
-
-IS1266.connect[0] = connect1267;
+connect1267.nodeField = "keyValue";
+connect1267.protoField = "r_metatarsal_keyValue";
+IS1265.connect[1] = connect1267;
 
 let connect1268 = browser.currentScene.createNode("connect");
-connect1268.nodeField = "keyValue";
-connect1268.protoField = "r_middle1_keyValue";
-IS1266.connect[1] = connect1268;
+connect1268.nodeField = "value_changed";
+connect1268.protoField = "r_metatarsal_changed";
+IS1265.connect[2] = connect1268;
 
-let connect1269 = browser.currentScene.createNode("connect");
-connect1269.nodeField = "value_changed";
-connect1269.protoField = "r_middle1_changed";
-IS1266.connect[2] = connect1269;
+OrientationInterpolator1264.iS = IS1265;
 
-OrientationInterpolator1265.iS = IS1266;
+ProtoBody603.children[216] = OrientationInterpolator1264;
 
-ProtoBody586.children[222] = OrientationInterpolator1265;
+let ROUTE1269 = browser.currentScene.createNode("ROUTE");
+ROUTE1269.fromField = "fraction_changed";
+ROUTE1269.fromNode = "BehaviorClock";
+ROUTE1269.toField = "set_fraction";
+ROUTE1269.toNode = "r_metatarsal_OI";
+ProtoBody603.children[217] = ROUTE1269;
 
-let ROUTE1270 = browser.currentScene.createNode("ROUTE");
-ROUTE1270.fromField = "fraction_changed";
-ROUTE1270.fromNode = "BehaviorClock";
-ROUTE1270.toField = "set_fraction";
-ROUTE1270.toNode = "r_middle1_OI";
-ProtoBody586.children[223] = ROUTE1270;
+let OrientationInterpolator1270 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1270.DEF = "r_middistal_OI";
+let IS1271 = browser.currentScene.createNode("IS");
+let connect1272 = browser.currentScene.createNode("connect");
+connect1272.nodeField = "key";
+connect1272.protoField = "r_middistal_key";
+IS1271.connect = new MFNode();
 
-let OrientationInterpolator1271 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1271.DEF = "r_middle2_OI";
-let IS1272 = browser.currentScene.createNode("IS");
+IS1271.connect[0] = connect1272;
+
 let connect1273 = browser.currentScene.createNode("connect");
-connect1273.nodeField = "key";
-connect1273.protoField = "r_middle2_key";
-IS1272.connect = new MFNode();
-
-IS1272.connect[0] = connect1273;
+connect1273.nodeField = "keyValue";
+connect1273.protoField = "r_middistal_keyValue";
+IS1271.connect[1] = connect1273;
 
 let connect1274 = browser.currentScene.createNode("connect");
-connect1274.nodeField = "keyValue";
-connect1274.protoField = "r_middle2_keyValue";
-IS1272.connect[1] = connect1274;
+connect1274.nodeField = "value_changed";
+connect1274.protoField = "r_middistal_changed";
+IS1271.connect[2] = connect1274;
 
-let connect1275 = browser.currentScene.createNode("connect");
-connect1275.nodeField = "value_changed";
-connect1275.protoField = "r_middle2_changed";
-IS1272.connect[2] = connect1275;
+OrientationInterpolator1270.iS = IS1271;
 
-OrientationInterpolator1271.iS = IS1272;
+ProtoBody603.children[218] = OrientationInterpolator1270;
 
-ProtoBody586.children[224] = OrientationInterpolator1271;
+let ROUTE1275 = browser.currentScene.createNode("ROUTE");
+ROUTE1275.fromField = "fraction_changed";
+ROUTE1275.fromNode = "BehaviorClock";
+ROUTE1275.toField = "set_fraction";
+ROUTE1275.toNode = "r_middistal_OI";
+ProtoBody603.children[219] = ROUTE1275;
 
-let ROUTE1276 = browser.currentScene.createNode("ROUTE");
-ROUTE1276.fromField = "fraction_changed";
-ROUTE1276.fromNode = "BehaviorClock";
-ROUTE1276.toField = "set_fraction";
-ROUTE1276.toNode = "r_middle2_OI";
-ProtoBody586.children[225] = ROUTE1276;
+let OrientationInterpolator1276 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1276.DEF = "r_middle0_OI";
+let IS1277 = browser.currentScene.createNode("IS");
+let connect1278 = browser.currentScene.createNode("connect");
+connect1278.nodeField = "key";
+connect1278.protoField = "r_middle0_key";
+IS1277.connect = new MFNode();
 
-let OrientationInterpolator1277 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1277.DEF = "r_middle3_OI";
-let IS1278 = browser.currentScene.createNode("IS");
+IS1277.connect[0] = connect1278;
+
 let connect1279 = browser.currentScene.createNode("connect");
-connect1279.nodeField = "key";
-connect1279.protoField = "r_middle3_key";
-IS1278.connect = new MFNode();
-
-IS1278.connect[0] = connect1279;
+connect1279.nodeField = "keyValue";
+connect1279.protoField = "r_middle0_keyValue";
+IS1277.connect[1] = connect1279;
 
 let connect1280 = browser.currentScene.createNode("connect");
-connect1280.nodeField = "keyValue";
-connect1280.protoField = "r_middle3_keyValue";
-IS1278.connect[1] = connect1280;
+connect1280.nodeField = "value_changed";
+connect1280.protoField = "r_middle0_changed";
+IS1277.connect[2] = connect1280;
 
-let connect1281 = browser.currentScene.createNode("connect");
-connect1281.nodeField = "value_changed";
-connect1281.protoField = "r_middle3_changed";
-IS1278.connect[2] = connect1281;
+OrientationInterpolator1276.iS = IS1277;
 
-OrientationInterpolator1277.iS = IS1278;
+ProtoBody603.children[220] = OrientationInterpolator1276;
 
-ProtoBody586.children[226] = OrientationInterpolator1277;
+let ROUTE1281 = browser.currentScene.createNode("ROUTE");
+ROUTE1281.fromField = "fraction_changed";
+ROUTE1281.fromNode = "BehaviorClock";
+ROUTE1281.toField = "set_fraction";
+ROUTE1281.toNode = "r_middle0_OI";
+ProtoBody603.children[221] = ROUTE1281;
 
-let ROUTE1282 = browser.currentScene.createNode("ROUTE");
-ROUTE1282.fromField = "fraction_changed";
-ROUTE1282.fromNode = "BehaviorClock";
-ROUTE1282.toField = "set_fraction";
-ROUTE1282.toNode = "r_middle3_OI";
-ProtoBody586.children[227] = ROUTE1282;
+let OrientationInterpolator1282 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1282.DEF = "r_middle1_OI";
+let IS1283 = browser.currentScene.createNode("IS");
+let connect1284 = browser.currentScene.createNode("connect");
+connect1284.nodeField = "key";
+connect1284.protoField = "r_middle1_key";
+IS1283.connect = new MFNode();
 
-let OrientationInterpolator1283 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1283.DEF = "r_middle_distal_OI";
-let IS1284 = browser.currentScene.createNode("IS");
+IS1283.connect[0] = connect1284;
+
 let connect1285 = browser.currentScene.createNode("connect");
-connect1285.nodeField = "key";
-connect1285.protoField = "r_middle_distal_key";
-IS1284.connect = new MFNode();
-
-IS1284.connect[0] = connect1285;
+connect1285.nodeField = "keyValue";
+connect1285.protoField = "r_middle1_keyValue";
+IS1283.connect[1] = connect1285;
 
 let connect1286 = browser.currentScene.createNode("connect");
-connect1286.nodeField = "keyValue";
-connect1286.protoField = "r_middle_distal_keyValue";
-IS1284.connect[1] = connect1286;
+connect1286.nodeField = "value_changed";
+connect1286.protoField = "r_middle1_changed";
+IS1283.connect[2] = connect1286;
 
-let connect1287 = browser.currentScene.createNode("connect");
-connect1287.nodeField = "value_changed";
-connect1287.protoField = "r_middle_distal_changed";
-IS1284.connect[2] = connect1287;
+OrientationInterpolator1282.iS = IS1283;
 
-OrientationInterpolator1283.iS = IS1284;
+ProtoBody603.children[222] = OrientationInterpolator1282;
 
-ProtoBody586.children[228] = OrientationInterpolator1283;
+let ROUTE1287 = browser.currentScene.createNode("ROUTE");
+ROUTE1287.fromField = "fraction_changed";
+ROUTE1287.fromNode = "BehaviorClock";
+ROUTE1287.toField = "set_fraction";
+ROUTE1287.toNode = "r_middle1_OI";
+ProtoBody603.children[223] = ROUTE1287;
 
-let ROUTE1288 = browser.currentScene.createNode("ROUTE");
-ROUTE1288.fromField = "fraction_changed";
-ROUTE1288.fromNode = "BehaviorClock";
-ROUTE1288.toField = "set_fraction";
-ROUTE1288.toNode = "r_middle_distal_OI";
-ProtoBody586.children[229] = ROUTE1288;
+let OrientationInterpolator1288 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1288.DEF = "r_middle2_OI";
+let IS1289 = browser.currentScene.createNode("IS");
+let connect1290 = browser.currentScene.createNode("connect");
+connect1290.nodeField = "key";
+connect1290.protoField = "r_middle2_key";
+IS1289.connect = new MFNode();
 
-let OrientationInterpolator1289 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1289.DEF = "r_middle_metacarpal_OI";
-let IS1290 = browser.currentScene.createNode("IS");
+IS1289.connect[0] = connect1290;
+
 let connect1291 = browser.currentScene.createNode("connect");
-connect1291.nodeField = "key";
-connect1291.protoField = "r_middle_metacarpal_key";
-IS1290.connect = new MFNode();
-
-IS1290.connect[0] = connect1291;
+connect1291.nodeField = "keyValue";
+connect1291.protoField = "r_middle2_keyValue";
+IS1289.connect[1] = connect1291;
 
 let connect1292 = browser.currentScene.createNode("connect");
-connect1292.nodeField = "keyValue";
-connect1292.protoField = "r_middle_metacarpal_keyValue";
-IS1290.connect[1] = connect1292;
+connect1292.nodeField = "value_changed";
+connect1292.protoField = "r_middle2_changed";
+IS1289.connect[2] = connect1292;
 
-let connect1293 = browser.currentScene.createNode("connect");
-connect1293.nodeField = "value_changed";
-connect1293.protoField = "r_middle_metacarpal_changed";
-IS1290.connect[2] = connect1293;
+OrientationInterpolator1288.iS = IS1289;
 
-OrientationInterpolator1289.iS = IS1290;
+ProtoBody603.children[224] = OrientationInterpolator1288;
 
-ProtoBody586.children[230] = OrientationInterpolator1289;
+let ROUTE1293 = browser.currentScene.createNode("ROUTE");
+ROUTE1293.fromField = "fraction_changed";
+ROUTE1293.fromNode = "BehaviorClock";
+ROUTE1293.toField = "set_fraction";
+ROUTE1293.toNode = "r_middle2_OI";
+ProtoBody603.children[225] = ROUTE1293;
 
-let ROUTE1294 = browser.currentScene.createNode("ROUTE");
-ROUTE1294.fromField = "fraction_changed";
-ROUTE1294.fromNode = "BehaviorClock";
-ROUTE1294.toField = "set_fraction";
-ROUTE1294.toNode = "r_middle_metacarpal_OI";
-ProtoBody586.children[231] = ROUTE1294;
+let OrientationInterpolator1294 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1294.DEF = "r_middle3_OI";
+let IS1295 = browser.currentScene.createNode("IS");
+let connect1296 = browser.currentScene.createNode("connect");
+connect1296.nodeField = "key";
+connect1296.protoField = "r_middle3_key";
+IS1295.connect = new MFNode();
 
-let OrientationInterpolator1295 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1295.DEF = "r_middle_middle_OI";
-let IS1296 = browser.currentScene.createNode("IS");
+IS1295.connect[0] = connect1296;
+
 let connect1297 = browser.currentScene.createNode("connect");
-connect1297.nodeField = "key";
-connect1297.protoField = "r_middle_middle_key";
-IS1296.connect = new MFNode();
-
-IS1296.connect[0] = connect1297;
+connect1297.nodeField = "keyValue";
+connect1297.protoField = "r_middle3_keyValue";
+IS1295.connect[1] = connect1297;
 
 let connect1298 = browser.currentScene.createNode("connect");
-connect1298.nodeField = "keyValue";
-connect1298.protoField = "r_middle_middle_keyValue";
-IS1296.connect[1] = connect1298;
+connect1298.nodeField = "value_changed";
+connect1298.protoField = "r_middle3_changed";
+IS1295.connect[2] = connect1298;
 
-let connect1299 = browser.currentScene.createNode("connect");
-connect1299.nodeField = "value_changed";
-connect1299.protoField = "r_middle_middle_changed";
-IS1296.connect[2] = connect1299;
+OrientationInterpolator1294.iS = IS1295;
 
-OrientationInterpolator1295.iS = IS1296;
+ProtoBody603.children[226] = OrientationInterpolator1294;
 
-ProtoBody586.children[232] = OrientationInterpolator1295;
+let ROUTE1299 = browser.currentScene.createNode("ROUTE");
+ROUTE1299.fromField = "fraction_changed";
+ROUTE1299.fromNode = "BehaviorClock";
+ROUTE1299.toField = "set_fraction";
+ROUTE1299.toNode = "r_middle3_OI";
+ProtoBody603.children[227] = ROUTE1299;
 
-let ROUTE1300 = browser.currentScene.createNode("ROUTE");
-ROUTE1300.fromField = "fraction_changed";
-ROUTE1300.fromNode = "BehaviorClock";
-ROUTE1300.toField = "set_fraction";
-ROUTE1300.toNode = "r_middle_middle_OI";
-ProtoBody586.children[233] = ROUTE1300;
+let OrientationInterpolator1300 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1300.DEF = "r_middle_distal_OI";
+let IS1301 = browser.currentScene.createNode("IS");
+let connect1302 = browser.currentScene.createNode("connect");
+connect1302.nodeField = "key";
+connect1302.protoField = "r_middle_distal_key";
+IS1301.connect = new MFNode();
 
-let OrientationInterpolator1301 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1301.DEF = "r_middle_proximal_OI";
-let IS1302 = browser.currentScene.createNode("IS");
+IS1301.connect[0] = connect1302;
+
 let connect1303 = browser.currentScene.createNode("connect");
-connect1303.nodeField = "key";
-connect1303.protoField = "r_middle_proximal_key";
-IS1302.connect = new MFNode();
-
-IS1302.connect[0] = connect1303;
+connect1303.nodeField = "keyValue";
+connect1303.protoField = "r_middle_distal_keyValue";
+IS1301.connect[1] = connect1303;
 
 let connect1304 = browser.currentScene.createNode("connect");
-connect1304.nodeField = "keyValue";
-connect1304.protoField = "r_middle_proximal_keyValue";
-IS1302.connect[1] = connect1304;
+connect1304.nodeField = "value_changed";
+connect1304.protoField = "r_middle_distal_changed";
+IS1301.connect[2] = connect1304;
 
-let connect1305 = browser.currentScene.createNode("connect");
-connect1305.nodeField = "value_changed";
-connect1305.protoField = "r_middle_proximal_changed";
-IS1302.connect[2] = connect1305;
+OrientationInterpolator1300.iS = IS1301;
 
-OrientationInterpolator1301.iS = IS1302;
+ProtoBody603.children[228] = OrientationInterpolator1300;
 
-ProtoBody586.children[234] = OrientationInterpolator1301;
+let ROUTE1305 = browser.currentScene.createNode("ROUTE");
+ROUTE1305.fromField = "fraction_changed";
+ROUTE1305.fromNode = "BehaviorClock";
+ROUTE1305.toField = "set_fraction";
+ROUTE1305.toNode = "r_middle_distal_OI";
+ProtoBody603.children[229] = ROUTE1305;
 
-let ROUTE1306 = browser.currentScene.createNode("ROUTE");
-ROUTE1306.fromField = "fraction_changed";
-ROUTE1306.fromNode = "BehaviorClock";
-ROUTE1306.toField = "set_fraction";
-ROUTE1306.toNode = "r_middle_proximal_OI";
-ProtoBody586.children[235] = ROUTE1306;
+let OrientationInterpolator1306 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1306.DEF = "r_middle_metacarpal_OI";
+let IS1307 = browser.currentScene.createNode("IS");
+let connect1308 = browser.currentScene.createNode("connect");
+connect1308.nodeField = "key";
+connect1308.protoField = "r_middle_metacarpal_key";
+IS1307.connect = new MFNode();
 
-let OrientationInterpolator1307 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1307.DEF = "r_midproximal_OI";
-let IS1308 = browser.currentScene.createNode("IS");
+IS1307.connect[0] = connect1308;
+
 let connect1309 = browser.currentScene.createNode("connect");
-connect1309.nodeField = "key";
-connect1309.protoField = "r_midproximal_key";
-IS1308.connect = new MFNode();
-
-IS1308.connect[0] = connect1309;
+connect1309.nodeField = "keyValue";
+connect1309.protoField = "r_middle_metacarpal_keyValue";
+IS1307.connect[1] = connect1309;
 
 let connect1310 = browser.currentScene.createNode("connect");
-connect1310.nodeField = "keyValue";
-connect1310.protoField = "r_midproximal_keyValue";
-IS1308.connect[1] = connect1310;
+connect1310.nodeField = "value_changed";
+connect1310.protoField = "r_middle_metacarpal_changed";
+IS1307.connect[2] = connect1310;
 
-let connect1311 = browser.currentScene.createNode("connect");
-connect1311.nodeField = "value_changed";
-connect1311.protoField = "r_midproximal_changed";
-IS1308.connect[2] = connect1311;
+OrientationInterpolator1306.iS = IS1307;
 
-OrientationInterpolator1307.iS = IS1308;
+ProtoBody603.children[230] = OrientationInterpolator1306;
 
-ProtoBody586.children[236] = OrientationInterpolator1307;
+let ROUTE1311 = browser.currentScene.createNode("ROUTE");
+ROUTE1311.fromField = "fraction_changed";
+ROUTE1311.fromNode = "BehaviorClock";
+ROUTE1311.toField = "set_fraction";
+ROUTE1311.toNode = "r_middle_metacarpal_OI";
+ProtoBody603.children[231] = ROUTE1311;
 
-let ROUTE1312 = browser.currentScene.createNode("ROUTE");
-ROUTE1312.fromField = "fraction_changed";
-ROUTE1312.fromNode = "BehaviorClock";
-ROUTE1312.toField = "set_fraction";
-ROUTE1312.toNode = "r_midproximal_OI";
-ProtoBody586.children[237] = ROUTE1312;
+let OrientationInterpolator1312 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1312.DEF = "r_middle_middle_OI";
+let IS1313 = browser.currentScene.createNode("IS");
+let connect1314 = browser.currentScene.createNode("connect");
+connect1314.nodeField = "key";
+connect1314.protoField = "r_middle_middle_key";
+IS1313.connect = new MFNode();
 
-let OrientationInterpolator1313 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1313.DEF = "r_midtarsal_OI";
-let IS1314 = browser.currentScene.createNode("IS");
+IS1313.connect[0] = connect1314;
+
 let connect1315 = browser.currentScene.createNode("connect");
-connect1315.nodeField = "key";
-connect1315.protoField = "r_midtarsal_key";
-IS1314.connect = new MFNode();
-
-IS1314.connect[0] = connect1315;
+connect1315.nodeField = "keyValue";
+connect1315.protoField = "r_middle_middle_keyValue";
+IS1313.connect[1] = connect1315;
 
 let connect1316 = browser.currentScene.createNode("connect");
-connect1316.nodeField = "keyValue";
-connect1316.protoField = "r_midtarsal_keyValue";
-IS1314.connect[1] = connect1316;
+connect1316.nodeField = "value_changed";
+connect1316.protoField = "r_middle_middle_changed";
+IS1313.connect[2] = connect1316;
 
-let connect1317 = browser.currentScene.createNode("connect");
-connect1317.nodeField = "value_changed";
-connect1317.protoField = "r_midtarsal_changed";
-IS1314.connect[2] = connect1317;
+OrientationInterpolator1312.iS = IS1313;
 
-OrientationInterpolator1313.iS = IS1314;
+ProtoBody603.children[232] = OrientationInterpolator1312;
 
-ProtoBody586.children[238] = OrientationInterpolator1313;
+let ROUTE1317 = browser.currentScene.createNode("ROUTE");
+ROUTE1317.fromField = "fraction_changed";
+ROUTE1317.fromNode = "BehaviorClock";
+ROUTE1317.toField = "set_fraction";
+ROUTE1317.toNode = "r_middle_middle_OI";
+ProtoBody603.children[233] = ROUTE1317;
 
-let ROUTE1318 = browser.currentScene.createNode("ROUTE");
-ROUTE1318.fromField = "fraction_changed";
-ROUTE1318.fromNode = "BehaviorClock";
-ROUTE1318.toField = "set_fraction";
-ROUTE1318.toNode = "r_midtarsal_OI";
-ProtoBody586.children[239] = ROUTE1318;
+let OrientationInterpolator1318 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1318.DEF = "r_middle_proximal_OI";
+let IS1319 = browser.currentScene.createNode("IS");
+let connect1320 = browser.currentScene.createNode("connect");
+connect1320.nodeField = "key";
+connect1320.protoField = "r_middle_proximal_key";
+IS1319.connect = new MFNode();
 
-let OrientationInterpolator1319 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1319.DEF = "r_pinky0_OI";
-let IS1320 = browser.currentScene.createNode("IS");
+IS1319.connect[0] = connect1320;
+
 let connect1321 = browser.currentScene.createNode("connect");
-connect1321.nodeField = "key";
-connect1321.protoField = "r_pinky0_key";
-IS1320.connect = new MFNode();
-
-IS1320.connect[0] = connect1321;
+connect1321.nodeField = "keyValue";
+connect1321.protoField = "r_middle_proximal_keyValue";
+IS1319.connect[1] = connect1321;
 
 let connect1322 = browser.currentScene.createNode("connect");
-connect1322.nodeField = "keyValue";
-connect1322.protoField = "r_pinky0_keyValue";
-IS1320.connect[1] = connect1322;
+connect1322.nodeField = "value_changed";
+connect1322.protoField = "r_middle_proximal_changed";
+IS1319.connect[2] = connect1322;
 
-let connect1323 = browser.currentScene.createNode("connect");
-connect1323.nodeField = "value_changed";
-connect1323.protoField = "r_pinky0_changed";
-IS1320.connect[2] = connect1323;
+OrientationInterpolator1318.iS = IS1319;
 
-OrientationInterpolator1319.iS = IS1320;
+ProtoBody603.children[234] = OrientationInterpolator1318;
 
-ProtoBody586.children[240] = OrientationInterpolator1319;
+let ROUTE1323 = browser.currentScene.createNode("ROUTE");
+ROUTE1323.fromField = "fraction_changed";
+ROUTE1323.fromNode = "BehaviorClock";
+ROUTE1323.toField = "set_fraction";
+ROUTE1323.toNode = "r_middle_proximal_OI";
+ProtoBody603.children[235] = ROUTE1323;
 
-let ROUTE1324 = browser.currentScene.createNode("ROUTE");
-ROUTE1324.fromField = "fraction_changed";
-ROUTE1324.fromNode = "BehaviorClock";
-ROUTE1324.toField = "set_fraction";
-ROUTE1324.toNode = "r_pinky0_OI";
-ProtoBody586.children[241] = ROUTE1324;
+let OrientationInterpolator1324 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1324.DEF = "r_midproximal_OI";
+let IS1325 = browser.currentScene.createNode("IS");
+let connect1326 = browser.currentScene.createNode("connect");
+connect1326.nodeField = "key";
+connect1326.protoField = "r_midproximal_key";
+IS1325.connect = new MFNode();
 
-let OrientationInterpolator1325 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1325.DEF = "r_pinky1_OI";
-let IS1326 = browser.currentScene.createNode("IS");
+IS1325.connect[0] = connect1326;
+
 let connect1327 = browser.currentScene.createNode("connect");
-connect1327.nodeField = "key";
-connect1327.protoField = "r_pinky1_key";
-IS1326.connect = new MFNode();
-
-IS1326.connect[0] = connect1327;
+connect1327.nodeField = "keyValue";
+connect1327.protoField = "r_midproximal_keyValue";
+IS1325.connect[1] = connect1327;
 
 let connect1328 = browser.currentScene.createNode("connect");
-connect1328.nodeField = "keyValue";
-connect1328.protoField = "r_pinky1_keyValue";
-IS1326.connect[1] = connect1328;
+connect1328.nodeField = "value_changed";
+connect1328.protoField = "r_midproximal_changed";
+IS1325.connect[2] = connect1328;
 
-let connect1329 = browser.currentScene.createNode("connect");
-connect1329.nodeField = "value_changed";
-connect1329.protoField = "r_pinky1_changed";
-IS1326.connect[2] = connect1329;
+OrientationInterpolator1324.iS = IS1325;
 
-OrientationInterpolator1325.iS = IS1326;
+ProtoBody603.children[236] = OrientationInterpolator1324;
 
-ProtoBody586.children[242] = OrientationInterpolator1325;
+let ROUTE1329 = browser.currentScene.createNode("ROUTE");
+ROUTE1329.fromField = "fraction_changed";
+ROUTE1329.fromNode = "BehaviorClock";
+ROUTE1329.toField = "set_fraction";
+ROUTE1329.toNode = "r_midproximal_OI";
+ProtoBody603.children[237] = ROUTE1329;
 
-let ROUTE1330 = browser.currentScene.createNode("ROUTE");
-ROUTE1330.fromField = "fraction_changed";
-ROUTE1330.fromNode = "BehaviorClock";
-ROUTE1330.toField = "set_fraction";
-ROUTE1330.toNode = "r_pinky1_OI";
-ProtoBody586.children[243] = ROUTE1330;
+let OrientationInterpolator1330 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1330.DEF = "r_midtarsal_OI";
+let IS1331 = browser.currentScene.createNode("IS");
+let connect1332 = browser.currentScene.createNode("connect");
+connect1332.nodeField = "key";
+connect1332.protoField = "r_midtarsal_key";
+IS1331.connect = new MFNode();
 
-let OrientationInterpolator1331 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1331.DEF = "r_pinky2_OI";
-let IS1332 = browser.currentScene.createNode("IS");
+IS1331.connect[0] = connect1332;
+
 let connect1333 = browser.currentScene.createNode("connect");
-connect1333.nodeField = "key";
-connect1333.protoField = "r_pinky2_key";
-IS1332.connect = new MFNode();
-
-IS1332.connect[0] = connect1333;
+connect1333.nodeField = "keyValue";
+connect1333.protoField = "r_midtarsal_keyValue";
+IS1331.connect[1] = connect1333;
 
 let connect1334 = browser.currentScene.createNode("connect");
-connect1334.nodeField = "keyValue";
-connect1334.protoField = "r_pinky2_keyValue";
-IS1332.connect[1] = connect1334;
+connect1334.nodeField = "value_changed";
+connect1334.protoField = "r_midtarsal_changed";
+IS1331.connect[2] = connect1334;
 
-let connect1335 = browser.currentScene.createNode("connect");
-connect1335.nodeField = "value_changed";
-connect1335.protoField = "r_pinky2_changed";
-IS1332.connect[2] = connect1335;
+OrientationInterpolator1330.iS = IS1331;
 
-OrientationInterpolator1331.iS = IS1332;
+ProtoBody603.children[238] = OrientationInterpolator1330;
 
-ProtoBody586.children[244] = OrientationInterpolator1331;
+let ROUTE1335 = browser.currentScene.createNode("ROUTE");
+ROUTE1335.fromField = "fraction_changed";
+ROUTE1335.fromNode = "BehaviorClock";
+ROUTE1335.toField = "set_fraction";
+ROUTE1335.toNode = "r_midtarsal_OI";
+ProtoBody603.children[239] = ROUTE1335;
 
-let ROUTE1336 = browser.currentScene.createNode("ROUTE");
-ROUTE1336.fromField = "fraction_changed";
-ROUTE1336.fromNode = "BehaviorClock";
-ROUTE1336.toField = "set_fraction";
-ROUTE1336.toNode = "r_pinky2_OI";
-ProtoBody586.children[245] = ROUTE1336;
+let OrientationInterpolator1336 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1336.DEF = "r_pinky0_OI";
+let IS1337 = browser.currentScene.createNode("IS");
+let connect1338 = browser.currentScene.createNode("connect");
+connect1338.nodeField = "key";
+connect1338.protoField = "r_pinky0_key";
+IS1337.connect = new MFNode();
 
-let OrientationInterpolator1337 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1337.DEF = "r_pinky3_OI";
-let IS1338 = browser.currentScene.createNode("IS");
+IS1337.connect[0] = connect1338;
+
 let connect1339 = browser.currentScene.createNode("connect");
-connect1339.nodeField = "key";
-connect1339.protoField = "r_pinky3_key";
-IS1338.connect = new MFNode();
-
-IS1338.connect[0] = connect1339;
+connect1339.nodeField = "keyValue";
+connect1339.protoField = "r_pinky0_keyValue";
+IS1337.connect[1] = connect1339;
 
 let connect1340 = browser.currentScene.createNode("connect");
-connect1340.nodeField = "keyValue";
-connect1340.protoField = "r_pinky3_keyValue";
-IS1338.connect[1] = connect1340;
+connect1340.nodeField = "value_changed";
+connect1340.protoField = "r_pinky0_changed";
+IS1337.connect[2] = connect1340;
 
-let connect1341 = browser.currentScene.createNode("connect");
-connect1341.nodeField = "value_changed";
-connect1341.protoField = "r_pinky3_changed";
-IS1338.connect[2] = connect1341;
+OrientationInterpolator1336.iS = IS1337;
 
-OrientationInterpolator1337.iS = IS1338;
+ProtoBody603.children[240] = OrientationInterpolator1336;
 
-ProtoBody586.children[246] = OrientationInterpolator1337;
+let ROUTE1341 = browser.currentScene.createNode("ROUTE");
+ROUTE1341.fromField = "fraction_changed";
+ROUTE1341.fromNode = "BehaviorClock";
+ROUTE1341.toField = "set_fraction";
+ROUTE1341.toNode = "r_pinky0_OI";
+ProtoBody603.children[241] = ROUTE1341;
 
-let ROUTE1342 = browser.currentScene.createNode("ROUTE");
-ROUTE1342.fromField = "fraction_changed";
-ROUTE1342.fromNode = "BehaviorClock";
-ROUTE1342.toField = "set_fraction";
-ROUTE1342.toNode = "r_pinky3_OI";
-ProtoBody586.children[247] = ROUTE1342;
+let OrientationInterpolator1342 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1342.DEF = "r_pinky1_OI";
+let IS1343 = browser.currentScene.createNode("IS");
+let connect1344 = browser.currentScene.createNode("connect");
+connect1344.nodeField = "key";
+connect1344.protoField = "r_pinky1_key";
+IS1343.connect = new MFNode();
 
-let OrientationInterpolator1343 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1343.DEF = "r_pinky_distal_OI";
-let IS1344 = browser.currentScene.createNode("IS");
+IS1343.connect[0] = connect1344;
+
 let connect1345 = browser.currentScene.createNode("connect");
-connect1345.nodeField = "key";
-connect1345.protoField = "r_pinky_distal_key";
-IS1344.connect = new MFNode();
-
-IS1344.connect[0] = connect1345;
+connect1345.nodeField = "keyValue";
+connect1345.protoField = "r_pinky1_keyValue";
+IS1343.connect[1] = connect1345;
 
 let connect1346 = browser.currentScene.createNode("connect");
-connect1346.nodeField = "keyValue";
-connect1346.protoField = "r_pinky_distal_keyValue";
-IS1344.connect[1] = connect1346;
+connect1346.nodeField = "value_changed";
+connect1346.protoField = "r_pinky1_changed";
+IS1343.connect[2] = connect1346;
 
-let connect1347 = browser.currentScene.createNode("connect");
-connect1347.nodeField = "value_changed";
-connect1347.protoField = "r_pinky_distal_changed";
-IS1344.connect[2] = connect1347;
+OrientationInterpolator1342.iS = IS1343;
 
-OrientationInterpolator1343.iS = IS1344;
+ProtoBody603.children[242] = OrientationInterpolator1342;
 
-ProtoBody586.children[248] = OrientationInterpolator1343;
+let ROUTE1347 = browser.currentScene.createNode("ROUTE");
+ROUTE1347.fromField = "fraction_changed";
+ROUTE1347.fromNode = "BehaviorClock";
+ROUTE1347.toField = "set_fraction";
+ROUTE1347.toNode = "r_pinky1_OI";
+ProtoBody603.children[243] = ROUTE1347;
 
-let ROUTE1348 = browser.currentScene.createNode("ROUTE");
-ROUTE1348.fromField = "fraction_changed";
-ROUTE1348.fromNode = "BehaviorClock";
-ROUTE1348.toField = "set_fraction";
-ROUTE1348.toNode = "r_pinky_distal_OI";
-ProtoBody586.children[249] = ROUTE1348;
+let OrientationInterpolator1348 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1348.DEF = "r_pinky2_OI";
+let IS1349 = browser.currentScene.createNode("IS");
+let connect1350 = browser.currentScene.createNode("connect");
+connect1350.nodeField = "key";
+connect1350.protoField = "r_pinky2_key";
+IS1349.connect = new MFNode();
 
-let OrientationInterpolator1349 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1349.DEF = "r_pinky_metacarpal_OI";
-let IS1350 = browser.currentScene.createNode("IS");
+IS1349.connect[0] = connect1350;
+
 let connect1351 = browser.currentScene.createNode("connect");
-connect1351.nodeField = "key";
-connect1351.protoField = "r_pinky_metacarpal_key";
-IS1350.connect = new MFNode();
-
-IS1350.connect[0] = connect1351;
+connect1351.nodeField = "keyValue";
+connect1351.protoField = "r_pinky2_keyValue";
+IS1349.connect[1] = connect1351;
 
 let connect1352 = browser.currentScene.createNode("connect");
-connect1352.nodeField = "keyValue";
-connect1352.protoField = "r_pinky_metacarpal_keyValue";
-IS1350.connect[1] = connect1352;
+connect1352.nodeField = "value_changed";
+connect1352.protoField = "r_pinky2_changed";
+IS1349.connect[2] = connect1352;
 
-let connect1353 = browser.currentScene.createNode("connect");
-connect1353.nodeField = "value_changed";
-connect1353.protoField = "r_pinky_metacarpal_changed";
-IS1350.connect[2] = connect1353;
+OrientationInterpolator1348.iS = IS1349;
 
-OrientationInterpolator1349.iS = IS1350;
+ProtoBody603.children[244] = OrientationInterpolator1348;
 
-ProtoBody586.children[250] = OrientationInterpolator1349;
+let ROUTE1353 = browser.currentScene.createNode("ROUTE");
+ROUTE1353.fromField = "fraction_changed";
+ROUTE1353.fromNode = "BehaviorClock";
+ROUTE1353.toField = "set_fraction";
+ROUTE1353.toNode = "r_pinky2_OI";
+ProtoBody603.children[245] = ROUTE1353;
 
-let ROUTE1354 = browser.currentScene.createNode("ROUTE");
-ROUTE1354.fromField = "fraction_changed";
-ROUTE1354.fromNode = "BehaviorClock";
-ROUTE1354.toField = "set_fraction";
-ROUTE1354.toNode = "r_pinky_metacarpal_OI";
-ProtoBody586.children[251] = ROUTE1354;
+let OrientationInterpolator1354 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1354.DEF = "r_pinky3_OI";
+let IS1355 = browser.currentScene.createNode("IS");
+let connect1356 = browser.currentScene.createNode("connect");
+connect1356.nodeField = "key";
+connect1356.protoField = "r_pinky3_key";
+IS1355.connect = new MFNode();
 
-let OrientationInterpolator1355 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1355.DEF = "r_pinky_middle_OI";
-let IS1356 = browser.currentScene.createNode("IS");
+IS1355.connect[0] = connect1356;
+
 let connect1357 = browser.currentScene.createNode("connect");
-connect1357.nodeField = "key";
-connect1357.protoField = "r_pinky_middle_key";
-IS1356.connect = new MFNode();
-
-IS1356.connect[0] = connect1357;
+connect1357.nodeField = "keyValue";
+connect1357.protoField = "r_pinky3_keyValue";
+IS1355.connect[1] = connect1357;
 
 let connect1358 = browser.currentScene.createNode("connect");
-connect1358.nodeField = "keyValue";
-connect1358.protoField = "r_pinky_middle_keyValue";
-IS1356.connect[1] = connect1358;
+connect1358.nodeField = "value_changed";
+connect1358.protoField = "r_pinky3_changed";
+IS1355.connect[2] = connect1358;
 
-let connect1359 = browser.currentScene.createNode("connect");
-connect1359.nodeField = "value_changed";
-connect1359.protoField = "r_pinky_middle_changed";
-IS1356.connect[2] = connect1359;
+OrientationInterpolator1354.iS = IS1355;
 
-OrientationInterpolator1355.iS = IS1356;
+ProtoBody603.children[246] = OrientationInterpolator1354;
 
-ProtoBody586.children[252] = OrientationInterpolator1355;
+let ROUTE1359 = browser.currentScene.createNode("ROUTE");
+ROUTE1359.fromField = "fraction_changed";
+ROUTE1359.fromNode = "BehaviorClock";
+ROUTE1359.toField = "set_fraction";
+ROUTE1359.toNode = "r_pinky3_OI";
+ProtoBody603.children[247] = ROUTE1359;
 
-let ROUTE1360 = browser.currentScene.createNode("ROUTE");
-ROUTE1360.fromField = "fraction_changed";
-ROUTE1360.fromNode = "BehaviorClock";
-ROUTE1360.toField = "set_fraction";
-ROUTE1360.toNode = "r_pinky_middle_OI";
-ProtoBody586.children[253] = ROUTE1360;
+let OrientationInterpolator1360 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1360.DEF = "r_pinky_distal_OI";
+let IS1361 = browser.currentScene.createNode("IS");
+let connect1362 = browser.currentScene.createNode("connect");
+connect1362.nodeField = "key";
+connect1362.protoField = "r_pinky_distal_key";
+IS1361.connect = new MFNode();
 
-let OrientationInterpolator1361 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1361.DEF = "r_pinky_proximal_OI";
-let IS1362 = browser.currentScene.createNode("IS");
+IS1361.connect[0] = connect1362;
+
 let connect1363 = browser.currentScene.createNode("connect");
-connect1363.nodeField = "key";
-connect1363.protoField = "r_pinky_proximal_key";
-IS1362.connect = new MFNode();
-
-IS1362.connect[0] = connect1363;
+connect1363.nodeField = "keyValue";
+connect1363.protoField = "r_pinky_distal_keyValue";
+IS1361.connect[1] = connect1363;
 
 let connect1364 = browser.currentScene.createNode("connect");
-connect1364.nodeField = "keyValue";
-connect1364.protoField = "r_pinky_proximal_keyValue";
-IS1362.connect[1] = connect1364;
+connect1364.nodeField = "value_changed";
+connect1364.protoField = "r_pinky_distal_changed";
+IS1361.connect[2] = connect1364;
 
-let connect1365 = browser.currentScene.createNode("connect");
-connect1365.nodeField = "value_changed";
-connect1365.protoField = "r_pinky_proximal_changed";
-IS1362.connect[2] = connect1365;
+OrientationInterpolator1360.iS = IS1361;
 
-OrientationInterpolator1361.iS = IS1362;
+ProtoBody603.children[248] = OrientationInterpolator1360;
 
-ProtoBody586.children[254] = OrientationInterpolator1361;
+let ROUTE1365 = browser.currentScene.createNode("ROUTE");
+ROUTE1365.fromField = "fraction_changed";
+ROUTE1365.fromNode = "BehaviorClock";
+ROUTE1365.toField = "set_fraction";
+ROUTE1365.toNode = "r_pinky_distal_OI";
+ProtoBody603.children[249] = ROUTE1365;
 
-let ROUTE1366 = browser.currentScene.createNode("ROUTE");
-ROUTE1366.fromField = "fraction_changed";
-ROUTE1366.fromNode = "BehaviorClock";
-ROUTE1366.toField = "set_fraction";
-ROUTE1366.toNode = "r_pinky_proximal_OI";
-ProtoBody586.children[255] = ROUTE1366;
+let OrientationInterpolator1366 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1366.DEF = "r_pinky_metacarpal_OI";
+let IS1367 = browser.currentScene.createNode("IS");
+let connect1368 = browser.currentScene.createNode("connect");
+connect1368.nodeField = "key";
+connect1368.protoField = "r_pinky_metacarpal_key";
+IS1367.connect = new MFNode();
 
-let OrientationInterpolator1367 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1367.DEF = "r_ring0_OI";
-let IS1368 = browser.currentScene.createNode("IS");
+IS1367.connect[0] = connect1368;
+
 let connect1369 = browser.currentScene.createNode("connect");
-connect1369.nodeField = "key";
-connect1369.protoField = "r_ring0_key";
-IS1368.connect = new MFNode();
-
-IS1368.connect[0] = connect1369;
+connect1369.nodeField = "keyValue";
+connect1369.protoField = "r_pinky_metacarpal_keyValue";
+IS1367.connect[1] = connect1369;
 
 let connect1370 = browser.currentScene.createNode("connect");
-connect1370.nodeField = "keyValue";
-connect1370.protoField = "r_ring0_keyValue";
-IS1368.connect[1] = connect1370;
+connect1370.nodeField = "value_changed";
+connect1370.protoField = "r_pinky_metacarpal_changed";
+IS1367.connect[2] = connect1370;
 
-let connect1371 = browser.currentScene.createNode("connect");
-connect1371.nodeField = "value_changed";
-connect1371.protoField = "r_ring0_changed";
-IS1368.connect[2] = connect1371;
+OrientationInterpolator1366.iS = IS1367;
 
-OrientationInterpolator1367.iS = IS1368;
+ProtoBody603.children[250] = OrientationInterpolator1366;
 
-ProtoBody586.children[256] = OrientationInterpolator1367;
+let ROUTE1371 = browser.currentScene.createNode("ROUTE");
+ROUTE1371.fromField = "fraction_changed";
+ROUTE1371.fromNode = "BehaviorClock";
+ROUTE1371.toField = "set_fraction";
+ROUTE1371.toNode = "r_pinky_metacarpal_OI";
+ProtoBody603.children[251] = ROUTE1371;
 
-let ROUTE1372 = browser.currentScene.createNode("ROUTE");
-ROUTE1372.fromField = "fraction_changed";
-ROUTE1372.fromNode = "BehaviorClock";
-ROUTE1372.toField = "set_fraction";
-ROUTE1372.toNode = "r_ring0_OI";
-ProtoBody586.children[257] = ROUTE1372;
+let OrientationInterpolator1372 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1372.DEF = "r_pinky_middle_OI";
+let IS1373 = browser.currentScene.createNode("IS");
+let connect1374 = browser.currentScene.createNode("connect");
+connect1374.nodeField = "key";
+connect1374.protoField = "r_pinky_middle_key";
+IS1373.connect = new MFNode();
 
-let OrientationInterpolator1373 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1373.DEF = "r_ring1_OI";
-let IS1374 = browser.currentScene.createNode("IS");
+IS1373.connect[0] = connect1374;
+
 let connect1375 = browser.currentScene.createNode("connect");
-connect1375.nodeField = "key";
-connect1375.protoField = "r_ring1_key";
-IS1374.connect = new MFNode();
-
-IS1374.connect[0] = connect1375;
+connect1375.nodeField = "keyValue";
+connect1375.protoField = "r_pinky_middle_keyValue";
+IS1373.connect[1] = connect1375;
 
 let connect1376 = browser.currentScene.createNode("connect");
-connect1376.nodeField = "keyValue";
-connect1376.protoField = "r_ring1_keyValue";
-IS1374.connect[1] = connect1376;
+connect1376.nodeField = "value_changed";
+connect1376.protoField = "r_pinky_middle_changed";
+IS1373.connect[2] = connect1376;
 
-let connect1377 = browser.currentScene.createNode("connect");
-connect1377.nodeField = "value_changed";
-connect1377.protoField = "r_ring1_changed";
-IS1374.connect[2] = connect1377;
+OrientationInterpolator1372.iS = IS1373;
 
-OrientationInterpolator1373.iS = IS1374;
+ProtoBody603.children[252] = OrientationInterpolator1372;
 
-ProtoBody586.children[258] = OrientationInterpolator1373;
+let ROUTE1377 = browser.currentScene.createNode("ROUTE");
+ROUTE1377.fromField = "fraction_changed";
+ROUTE1377.fromNode = "BehaviorClock";
+ROUTE1377.toField = "set_fraction";
+ROUTE1377.toNode = "r_pinky_middle_OI";
+ProtoBody603.children[253] = ROUTE1377;
 
-let ROUTE1378 = browser.currentScene.createNode("ROUTE");
-ROUTE1378.fromField = "fraction_changed";
-ROUTE1378.fromNode = "BehaviorClock";
-ROUTE1378.toField = "set_fraction";
-ROUTE1378.toNode = "r_ring1_OI";
-ProtoBody586.children[259] = ROUTE1378;
+let OrientationInterpolator1378 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1378.DEF = "r_pinky_proximal_OI";
+let IS1379 = browser.currentScene.createNode("IS");
+let connect1380 = browser.currentScene.createNode("connect");
+connect1380.nodeField = "key";
+connect1380.protoField = "r_pinky_proximal_key";
+IS1379.connect = new MFNode();
 
-let OrientationInterpolator1379 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1379.DEF = "r_ring2_OI";
-let IS1380 = browser.currentScene.createNode("IS");
+IS1379.connect[0] = connect1380;
+
 let connect1381 = browser.currentScene.createNode("connect");
-connect1381.nodeField = "key";
-connect1381.protoField = "r_ring2_key";
-IS1380.connect = new MFNode();
-
-IS1380.connect[0] = connect1381;
+connect1381.nodeField = "keyValue";
+connect1381.protoField = "r_pinky_proximal_keyValue";
+IS1379.connect[1] = connect1381;
 
 let connect1382 = browser.currentScene.createNode("connect");
-connect1382.nodeField = "keyValue";
-connect1382.protoField = "r_ring2_keyValue";
-IS1380.connect[1] = connect1382;
+connect1382.nodeField = "value_changed";
+connect1382.protoField = "r_pinky_proximal_changed";
+IS1379.connect[2] = connect1382;
 
-let connect1383 = browser.currentScene.createNode("connect");
-connect1383.nodeField = "value_changed";
-connect1383.protoField = "r_ring2_changed";
-IS1380.connect[2] = connect1383;
+OrientationInterpolator1378.iS = IS1379;
 
-OrientationInterpolator1379.iS = IS1380;
+ProtoBody603.children[254] = OrientationInterpolator1378;
 
-ProtoBody586.children[260] = OrientationInterpolator1379;
+let ROUTE1383 = browser.currentScene.createNode("ROUTE");
+ROUTE1383.fromField = "fraction_changed";
+ROUTE1383.fromNode = "BehaviorClock";
+ROUTE1383.toField = "set_fraction";
+ROUTE1383.toNode = "r_pinky_proximal_OI";
+ProtoBody603.children[255] = ROUTE1383;
 
-let ROUTE1384 = browser.currentScene.createNode("ROUTE");
-ROUTE1384.fromField = "fraction_changed";
-ROUTE1384.fromNode = "BehaviorClock";
-ROUTE1384.toField = "set_fraction";
-ROUTE1384.toNode = "r_ring2_OI";
-ProtoBody586.children[261] = ROUTE1384;
+let OrientationInterpolator1384 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1384.DEF = "r_ring0_OI";
+let IS1385 = browser.currentScene.createNode("IS");
+let connect1386 = browser.currentScene.createNode("connect");
+connect1386.nodeField = "key";
+connect1386.protoField = "r_ring0_key";
+IS1385.connect = new MFNode();
 
-let OrientationInterpolator1385 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1385.DEF = "r_ring3_OI";
-let IS1386 = browser.currentScene.createNode("IS");
+IS1385.connect[0] = connect1386;
+
 let connect1387 = browser.currentScene.createNode("connect");
-connect1387.nodeField = "key";
-connect1387.protoField = "r_ring3_key";
-IS1386.connect = new MFNode();
-
-IS1386.connect[0] = connect1387;
+connect1387.nodeField = "keyValue";
+connect1387.protoField = "r_ring0_keyValue";
+IS1385.connect[1] = connect1387;
 
 let connect1388 = browser.currentScene.createNode("connect");
-connect1388.nodeField = "keyValue";
-connect1388.protoField = "r_ring3_keyValue";
-IS1386.connect[1] = connect1388;
+connect1388.nodeField = "value_changed";
+connect1388.protoField = "r_ring0_changed";
+IS1385.connect[2] = connect1388;
 
-let connect1389 = browser.currentScene.createNode("connect");
-connect1389.nodeField = "value_changed";
-connect1389.protoField = "r_ring3_changed";
-IS1386.connect[2] = connect1389;
+OrientationInterpolator1384.iS = IS1385;
 
-OrientationInterpolator1385.iS = IS1386;
+ProtoBody603.children[256] = OrientationInterpolator1384;
 
-ProtoBody586.children[262] = OrientationInterpolator1385;
+let ROUTE1389 = browser.currentScene.createNode("ROUTE");
+ROUTE1389.fromField = "fraction_changed";
+ROUTE1389.fromNode = "BehaviorClock";
+ROUTE1389.toField = "set_fraction";
+ROUTE1389.toNode = "r_ring0_OI";
+ProtoBody603.children[257] = ROUTE1389;
 
-let ROUTE1390 = browser.currentScene.createNode("ROUTE");
-ROUTE1390.fromField = "fraction_changed";
-ROUTE1390.fromNode = "BehaviorClock";
-ROUTE1390.toField = "set_fraction";
-ROUTE1390.toNode = "r_ring3_OI";
-ProtoBody586.children[263] = ROUTE1390;
+let OrientationInterpolator1390 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1390.DEF = "r_ring1_OI";
+let IS1391 = browser.currentScene.createNode("IS");
+let connect1392 = browser.currentScene.createNode("connect");
+connect1392.nodeField = "key";
+connect1392.protoField = "r_ring1_key";
+IS1391.connect = new MFNode();
 
-let OrientationInterpolator1391 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1391.DEF = "r_ring_distal_OI";
-let IS1392 = browser.currentScene.createNode("IS");
+IS1391.connect[0] = connect1392;
+
 let connect1393 = browser.currentScene.createNode("connect");
-connect1393.nodeField = "key";
-connect1393.protoField = "r_ring_distal_key";
-IS1392.connect = new MFNode();
-
-IS1392.connect[0] = connect1393;
+connect1393.nodeField = "keyValue";
+connect1393.protoField = "r_ring1_keyValue";
+IS1391.connect[1] = connect1393;
 
 let connect1394 = browser.currentScene.createNode("connect");
-connect1394.nodeField = "keyValue";
-connect1394.protoField = "r_ring_distal_keyValue";
-IS1392.connect[1] = connect1394;
+connect1394.nodeField = "value_changed";
+connect1394.protoField = "r_ring1_changed";
+IS1391.connect[2] = connect1394;
 
-let connect1395 = browser.currentScene.createNode("connect");
-connect1395.nodeField = "value_changed";
-connect1395.protoField = "r_ring_distal_changed";
-IS1392.connect[2] = connect1395;
+OrientationInterpolator1390.iS = IS1391;
 
-OrientationInterpolator1391.iS = IS1392;
+ProtoBody603.children[258] = OrientationInterpolator1390;
 
-ProtoBody586.children[264] = OrientationInterpolator1391;
+let ROUTE1395 = browser.currentScene.createNode("ROUTE");
+ROUTE1395.fromField = "fraction_changed";
+ROUTE1395.fromNode = "BehaviorClock";
+ROUTE1395.toField = "set_fraction";
+ROUTE1395.toNode = "r_ring1_OI";
+ProtoBody603.children[259] = ROUTE1395;
 
-let ROUTE1396 = browser.currentScene.createNode("ROUTE");
-ROUTE1396.fromField = "fraction_changed";
-ROUTE1396.fromNode = "BehaviorClock";
-ROUTE1396.toField = "set_fraction";
-ROUTE1396.toNode = "r_ring_distal_OI";
-ProtoBody586.children[265] = ROUTE1396;
+let OrientationInterpolator1396 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1396.DEF = "r_ring2_OI";
+let IS1397 = browser.currentScene.createNode("IS");
+let connect1398 = browser.currentScene.createNode("connect");
+connect1398.nodeField = "key";
+connect1398.protoField = "r_ring2_key";
+IS1397.connect = new MFNode();
 
-let OrientationInterpolator1397 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1397.DEF = "r_ring_metacarpal_OI";
-let IS1398 = browser.currentScene.createNode("IS");
+IS1397.connect[0] = connect1398;
+
 let connect1399 = browser.currentScene.createNode("connect");
-connect1399.nodeField = "key";
-connect1399.protoField = "r_ring_metacarpal_key";
-IS1398.connect = new MFNode();
-
-IS1398.connect[0] = connect1399;
+connect1399.nodeField = "keyValue";
+connect1399.protoField = "r_ring2_keyValue";
+IS1397.connect[1] = connect1399;
 
 let connect1400 = browser.currentScene.createNode("connect");
-connect1400.nodeField = "keyValue";
-connect1400.protoField = "r_ring_metacarpal_keyValue";
-IS1398.connect[1] = connect1400;
+connect1400.nodeField = "value_changed";
+connect1400.protoField = "r_ring2_changed";
+IS1397.connect[2] = connect1400;
 
-let connect1401 = browser.currentScene.createNode("connect");
-connect1401.nodeField = "value_changed";
-connect1401.protoField = "r_ring_metacarpal_changed";
-IS1398.connect[2] = connect1401;
+OrientationInterpolator1396.iS = IS1397;
 
-OrientationInterpolator1397.iS = IS1398;
+ProtoBody603.children[260] = OrientationInterpolator1396;
 
-ProtoBody586.children[266] = OrientationInterpolator1397;
+let ROUTE1401 = browser.currentScene.createNode("ROUTE");
+ROUTE1401.fromField = "fraction_changed";
+ROUTE1401.fromNode = "BehaviorClock";
+ROUTE1401.toField = "set_fraction";
+ROUTE1401.toNode = "r_ring2_OI";
+ProtoBody603.children[261] = ROUTE1401;
 
-let ROUTE1402 = browser.currentScene.createNode("ROUTE");
-ROUTE1402.fromField = "fraction_changed";
-ROUTE1402.fromNode = "BehaviorClock";
-ROUTE1402.toField = "set_fraction";
-ROUTE1402.toNode = "r_ring_metacarpal_OI";
-ProtoBody586.children[267] = ROUTE1402;
+let OrientationInterpolator1402 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1402.DEF = "r_ring3_OI";
+let IS1403 = browser.currentScene.createNode("IS");
+let connect1404 = browser.currentScene.createNode("connect");
+connect1404.nodeField = "key";
+connect1404.protoField = "r_ring3_key";
+IS1403.connect = new MFNode();
 
-let OrientationInterpolator1403 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1403.DEF = "r_ring_middle_OI";
-let IS1404 = browser.currentScene.createNode("IS");
+IS1403.connect[0] = connect1404;
+
 let connect1405 = browser.currentScene.createNode("connect");
-connect1405.nodeField = "key";
-connect1405.protoField = "r_ring_middle_key";
-IS1404.connect = new MFNode();
-
-IS1404.connect[0] = connect1405;
+connect1405.nodeField = "keyValue";
+connect1405.protoField = "r_ring3_keyValue";
+IS1403.connect[1] = connect1405;
 
 let connect1406 = browser.currentScene.createNode("connect");
-connect1406.nodeField = "keyValue";
-connect1406.protoField = "r_ring_middle_keyValue";
-IS1404.connect[1] = connect1406;
+connect1406.nodeField = "value_changed";
+connect1406.protoField = "r_ring3_changed";
+IS1403.connect[2] = connect1406;
 
-let connect1407 = browser.currentScene.createNode("connect");
-connect1407.nodeField = "value_changed";
-connect1407.protoField = "r_ring_middle_changed";
-IS1404.connect[2] = connect1407;
+OrientationInterpolator1402.iS = IS1403;
 
-OrientationInterpolator1403.iS = IS1404;
+ProtoBody603.children[262] = OrientationInterpolator1402;
 
-ProtoBody586.children[268] = OrientationInterpolator1403;
+let ROUTE1407 = browser.currentScene.createNode("ROUTE");
+ROUTE1407.fromField = "fraction_changed";
+ROUTE1407.fromNode = "BehaviorClock";
+ROUTE1407.toField = "set_fraction";
+ROUTE1407.toNode = "r_ring3_OI";
+ProtoBody603.children[263] = ROUTE1407;
 
-let ROUTE1408 = browser.currentScene.createNode("ROUTE");
-ROUTE1408.fromField = "fraction_changed";
-ROUTE1408.fromNode = "BehaviorClock";
-ROUTE1408.toField = "set_fraction";
-ROUTE1408.toNode = "r_ring_middle_OI";
-ProtoBody586.children[269] = ROUTE1408;
+let OrientationInterpolator1408 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1408.DEF = "r_ring_distal_OI";
+let IS1409 = browser.currentScene.createNode("IS");
+let connect1410 = browser.currentScene.createNode("connect");
+connect1410.nodeField = "key";
+connect1410.protoField = "r_ring_distal_key";
+IS1409.connect = new MFNode();
 
-let OrientationInterpolator1409 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1409.DEF = "r_ring_proximal_OI";
-let IS1410 = browser.currentScene.createNode("IS");
+IS1409.connect[0] = connect1410;
+
 let connect1411 = browser.currentScene.createNode("connect");
-connect1411.nodeField = "key";
-connect1411.protoField = "r_ring_proximal_key";
-IS1410.connect = new MFNode();
-
-IS1410.connect[0] = connect1411;
+connect1411.nodeField = "keyValue";
+connect1411.protoField = "r_ring_distal_keyValue";
+IS1409.connect[1] = connect1411;
 
 let connect1412 = browser.currentScene.createNode("connect");
-connect1412.nodeField = "keyValue";
-connect1412.protoField = "r_ring_proximal_keyValue";
-IS1410.connect[1] = connect1412;
+connect1412.nodeField = "value_changed";
+connect1412.protoField = "r_ring_distal_changed";
+IS1409.connect[2] = connect1412;
 
-let connect1413 = browser.currentScene.createNode("connect");
-connect1413.nodeField = "value_changed";
-connect1413.protoField = "r_ring_proximal_changed";
-IS1410.connect[2] = connect1413;
+OrientationInterpolator1408.iS = IS1409;
 
-OrientationInterpolator1409.iS = IS1410;
+ProtoBody603.children[264] = OrientationInterpolator1408;
 
-ProtoBody586.children[270] = OrientationInterpolator1409;
+let ROUTE1413 = browser.currentScene.createNode("ROUTE");
+ROUTE1413.fromField = "fraction_changed";
+ROUTE1413.fromNode = "BehaviorClock";
+ROUTE1413.toField = "set_fraction";
+ROUTE1413.toNode = "r_ring_distal_OI";
+ProtoBody603.children[265] = ROUTE1413;
 
-let ROUTE1414 = browser.currentScene.createNode("ROUTE");
-ROUTE1414.fromField = "fraction_changed";
-ROUTE1414.fromNode = "BehaviorClock";
-ROUTE1414.toField = "set_fraction";
-ROUTE1414.toNode = "r_ring_proximal_OI";
-ProtoBody586.children[271] = ROUTE1414;
+let OrientationInterpolator1414 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1414.DEF = "r_ring_metacarpal_OI";
+let IS1415 = browser.currentScene.createNode("IS");
+let connect1416 = browser.currentScene.createNode("connect");
+connect1416.nodeField = "key";
+connect1416.protoField = "r_ring_metacarpal_key";
+IS1415.connect = new MFNode();
 
-let OrientationInterpolator1415 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1415.DEF = "r_scapula_OI";
-let IS1416 = browser.currentScene.createNode("IS");
+IS1415.connect[0] = connect1416;
+
 let connect1417 = browser.currentScene.createNode("connect");
-connect1417.nodeField = "key";
-connect1417.protoField = "r_scapula_key";
-IS1416.connect = new MFNode();
-
-IS1416.connect[0] = connect1417;
+connect1417.nodeField = "keyValue";
+connect1417.protoField = "r_ring_metacarpal_keyValue";
+IS1415.connect[1] = connect1417;
 
 let connect1418 = browser.currentScene.createNode("connect");
-connect1418.nodeField = "keyValue";
-connect1418.protoField = "r_scapula_keyValue";
-IS1416.connect[1] = connect1418;
+connect1418.nodeField = "value_changed";
+connect1418.protoField = "r_ring_metacarpal_changed";
+IS1415.connect[2] = connect1418;
 
-let connect1419 = browser.currentScene.createNode("connect");
-connect1419.nodeField = "value_changed";
-connect1419.protoField = "r_scapula_changed";
-IS1416.connect[2] = connect1419;
+OrientationInterpolator1414.iS = IS1415;
 
-OrientationInterpolator1415.iS = IS1416;
+ProtoBody603.children[266] = OrientationInterpolator1414;
 
-ProtoBody586.children[272] = OrientationInterpolator1415;
+let ROUTE1419 = browser.currentScene.createNode("ROUTE");
+ROUTE1419.fromField = "fraction_changed";
+ROUTE1419.fromNode = "BehaviorClock";
+ROUTE1419.toField = "set_fraction";
+ROUTE1419.toNode = "r_ring_metacarpal_OI";
+ProtoBody603.children[267] = ROUTE1419;
 
-let ROUTE1420 = browser.currentScene.createNode("ROUTE");
-ROUTE1420.fromField = "fraction_changed";
-ROUTE1420.fromNode = "BehaviorClock";
-ROUTE1420.toField = "set_fraction";
-ROUTE1420.toNode = "r_scapula_OI";
-ProtoBody586.children[273] = ROUTE1420;
+let OrientationInterpolator1420 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1420.DEF = "r_ring_middle_OI";
+let IS1421 = browser.currentScene.createNode("IS");
+let connect1422 = browser.currentScene.createNode("connect");
+connect1422.nodeField = "key";
+connect1422.protoField = "r_ring_middle_key";
+IS1421.connect = new MFNode();
 
-let OrientationInterpolator1421 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1421.DEF = "r_shoulder_OI";
-let IS1422 = browser.currentScene.createNode("IS");
+IS1421.connect[0] = connect1422;
+
 let connect1423 = browser.currentScene.createNode("connect");
-connect1423.nodeField = "key";
-connect1423.protoField = "r_shoulder_key";
-IS1422.connect = new MFNode();
-
-IS1422.connect[0] = connect1423;
+connect1423.nodeField = "keyValue";
+connect1423.protoField = "r_ring_middle_keyValue";
+IS1421.connect[1] = connect1423;
 
 let connect1424 = browser.currentScene.createNode("connect");
-connect1424.nodeField = "keyValue";
-connect1424.protoField = "r_shoulder_keyValue";
-IS1422.connect[1] = connect1424;
+connect1424.nodeField = "value_changed";
+connect1424.protoField = "r_ring_middle_changed";
+IS1421.connect[2] = connect1424;
 
-let connect1425 = browser.currentScene.createNode("connect");
-connect1425.nodeField = "value_changed";
-connect1425.protoField = "r_shoulder_changed";
-IS1422.connect[2] = connect1425;
+OrientationInterpolator1420.iS = IS1421;
 
-OrientationInterpolator1421.iS = IS1422;
+ProtoBody603.children[268] = OrientationInterpolator1420;
 
-ProtoBody586.children[274] = OrientationInterpolator1421;
+let ROUTE1425 = browser.currentScene.createNode("ROUTE");
+ROUTE1425.fromField = "fraction_changed";
+ROUTE1425.fromNode = "BehaviorClock";
+ROUTE1425.toField = "set_fraction";
+ROUTE1425.toNode = "r_ring_middle_OI";
+ProtoBody603.children[269] = ROUTE1425;
 
-let ROUTE1426 = browser.currentScene.createNode("ROUTE");
-ROUTE1426.fromField = "fraction_changed";
-ROUTE1426.fromNode = "BehaviorClock";
-ROUTE1426.toField = "set_fraction";
-ROUTE1426.toNode = "r_shoulder_OI";
-ProtoBody586.children[275] = ROUTE1426;
+let OrientationInterpolator1426 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1426.DEF = "r_ring_proximal_OI";
+let IS1427 = browser.currentScene.createNode("IS");
+let connect1428 = browser.currentScene.createNode("connect");
+connect1428.nodeField = "key";
+connect1428.protoField = "r_ring_proximal_key";
+IS1427.connect = new MFNode();
 
-let OrientationInterpolator1427 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1427.DEF = "r_sternoclavicular_OI";
-let IS1428 = browser.currentScene.createNode("IS");
+IS1427.connect[0] = connect1428;
+
 let connect1429 = browser.currentScene.createNode("connect");
-connect1429.nodeField = "key";
-connect1429.protoField = "r_sternoclavicular_key";
-IS1428.connect = new MFNode();
-
-IS1428.connect[0] = connect1429;
+connect1429.nodeField = "keyValue";
+connect1429.protoField = "r_ring_proximal_keyValue";
+IS1427.connect[1] = connect1429;
 
 let connect1430 = browser.currentScene.createNode("connect");
-connect1430.nodeField = "keyValue";
-connect1430.protoField = "r_sternoclavicular_keyValue";
-IS1428.connect[1] = connect1430;
+connect1430.nodeField = "value_changed";
+connect1430.protoField = "r_ring_proximal_changed";
+IS1427.connect[2] = connect1430;
 
-let connect1431 = browser.currentScene.createNode("connect");
-connect1431.nodeField = "value_changed";
-connect1431.protoField = "r_sternoclavicular_changed";
-IS1428.connect[2] = connect1431;
+OrientationInterpolator1426.iS = IS1427;
 
-OrientationInterpolator1427.iS = IS1428;
+ProtoBody603.children[270] = OrientationInterpolator1426;
 
-ProtoBody586.children[276] = OrientationInterpolator1427;
+let ROUTE1431 = browser.currentScene.createNode("ROUTE");
+ROUTE1431.fromField = "fraction_changed";
+ROUTE1431.fromNode = "BehaviorClock";
+ROUTE1431.toField = "set_fraction";
+ROUTE1431.toNode = "r_ring_proximal_OI";
+ProtoBody603.children[271] = ROUTE1431;
 
-let ROUTE1432 = browser.currentScene.createNode("ROUTE");
-ROUTE1432.fromField = "fraction_changed";
-ROUTE1432.fromNode = "BehaviorClock";
-ROUTE1432.toField = "set_fraction";
-ROUTE1432.toNode = "r_sternoclavicular_OI";
-ProtoBody586.children[277] = ROUTE1432;
+let OrientationInterpolator1432 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1432.DEF = "r_scapula_OI";
+let IS1433 = browser.currentScene.createNode("IS");
+let connect1434 = browser.currentScene.createNode("connect");
+connect1434.nodeField = "key";
+connect1434.protoField = "r_scapula_key";
+IS1433.connect = new MFNode();
 
-let OrientationInterpolator1433 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1433.DEF = "r_subtalar_OI";
-let IS1434 = browser.currentScene.createNode("IS");
+IS1433.connect[0] = connect1434;
+
 let connect1435 = browser.currentScene.createNode("connect");
-connect1435.nodeField = "key";
-connect1435.protoField = "r_subtalar_key";
-IS1434.connect = new MFNode();
-
-IS1434.connect[0] = connect1435;
+connect1435.nodeField = "keyValue";
+connect1435.protoField = "r_scapula_keyValue";
+IS1433.connect[1] = connect1435;
 
 let connect1436 = browser.currentScene.createNode("connect");
-connect1436.nodeField = "keyValue";
-connect1436.protoField = "r_subtalar_keyValue";
-IS1434.connect[1] = connect1436;
+connect1436.nodeField = "value_changed";
+connect1436.protoField = "r_scapula_changed";
+IS1433.connect[2] = connect1436;
 
-let connect1437 = browser.currentScene.createNode("connect");
-connect1437.nodeField = "value_changed";
-connect1437.protoField = "r_subtalar_changed";
-IS1434.connect[2] = connect1437;
+OrientationInterpolator1432.iS = IS1433;
 
-OrientationInterpolator1433.iS = IS1434;
+ProtoBody603.children[272] = OrientationInterpolator1432;
 
-ProtoBody586.children[278] = OrientationInterpolator1433;
+let ROUTE1437 = browser.currentScene.createNode("ROUTE");
+ROUTE1437.fromField = "fraction_changed";
+ROUTE1437.fromNode = "BehaviorClock";
+ROUTE1437.toField = "set_fraction";
+ROUTE1437.toNode = "r_scapula_OI";
+ProtoBody603.children[273] = ROUTE1437;
 
-let ROUTE1438 = browser.currentScene.createNode("ROUTE");
-ROUTE1438.fromField = "fraction_changed";
-ROUTE1438.fromNode = "BehaviorClock";
-ROUTE1438.toField = "set_fraction";
-ROUTE1438.toNode = "r_subtalar_OI";
-ProtoBody586.children[279] = ROUTE1438;
+let OrientationInterpolator1438 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1438.DEF = "r_shoulder_OI";
+let IS1439 = browser.currentScene.createNode("IS");
+let connect1440 = browser.currentScene.createNode("connect");
+connect1440.nodeField = "key";
+connect1440.protoField = "r_shoulder_key";
+IS1439.connect = new MFNode();
 
-let OrientationInterpolator1439 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1439.DEF = "r_thigh_OI";
-let IS1440 = browser.currentScene.createNode("IS");
+IS1439.connect[0] = connect1440;
+
 let connect1441 = browser.currentScene.createNode("connect");
-connect1441.nodeField = "key";
-connect1441.protoField = "r_thigh_key";
-IS1440.connect = new MFNode();
-
-IS1440.connect[0] = connect1441;
+connect1441.nodeField = "keyValue";
+connect1441.protoField = "r_shoulder_keyValue";
+IS1439.connect[1] = connect1441;
 
 let connect1442 = browser.currentScene.createNode("connect");
-connect1442.nodeField = "keyValue";
-connect1442.protoField = "r_thigh_keyValue";
-IS1440.connect[1] = connect1442;
+connect1442.nodeField = "value_changed";
+connect1442.protoField = "r_shoulder_changed";
+IS1439.connect[2] = connect1442;
 
-let connect1443 = browser.currentScene.createNode("connect");
-connect1443.nodeField = "value_changed";
-connect1443.protoField = "r_thigh_changed";
-IS1440.connect[2] = connect1443;
+OrientationInterpolator1438.iS = IS1439;
 
-OrientationInterpolator1439.iS = IS1440;
+ProtoBody603.children[274] = OrientationInterpolator1438;
 
-ProtoBody586.children[280] = OrientationInterpolator1439;
+let ROUTE1443 = browser.currentScene.createNode("ROUTE");
+ROUTE1443.fromField = "fraction_changed";
+ROUTE1443.fromNode = "BehaviorClock";
+ROUTE1443.toField = "set_fraction";
+ROUTE1443.toNode = "r_shoulder_OI";
+ProtoBody603.children[275] = ROUTE1443;
 
-let ROUTE1444 = browser.currentScene.createNode("ROUTE");
-ROUTE1444.fromField = "fraction_changed";
-ROUTE1444.fromNode = "BehaviorClock";
-ROUTE1444.toField = "set_fraction";
-ROUTE1444.toNode = "r_thigh_OI";
-ProtoBody586.children[281] = ROUTE1444;
+let OrientationInterpolator1444 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1444.DEF = "r_sternoclavicular_OI";
+let IS1445 = browser.currentScene.createNode("IS");
+let connect1446 = browser.currentScene.createNode("connect");
+connect1446.nodeField = "key";
+connect1446.protoField = "r_sternoclavicular_key";
+IS1445.connect = new MFNode();
 
-let OrientationInterpolator1445 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1445.DEF = "r_thumb1_OI";
-let IS1446 = browser.currentScene.createNode("IS");
+IS1445.connect[0] = connect1446;
+
 let connect1447 = browser.currentScene.createNode("connect");
-connect1447.nodeField = "key";
-connect1447.protoField = "r_thumb1_key";
-IS1446.connect = new MFNode();
-
-IS1446.connect[0] = connect1447;
+connect1447.nodeField = "keyValue";
+connect1447.protoField = "r_sternoclavicular_keyValue";
+IS1445.connect[1] = connect1447;
 
 let connect1448 = browser.currentScene.createNode("connect");
-connect1448.nodeField = "keyValue";
-connect1448.protoField = "r_thumb1_keyValue";
-IS1446.connect[1] = connect1448;
+connect1448.nodeField = "value_changed";
+connect1448.protoField = "r_sternoclavicular_changed";
+IS1445.connect[2] = connect1448;
 
-let connect1449 = browser.currentScene.createNode("connect");
-connect1449.nodeField = "value_changed";
-connect1449.protoField = "r_thumb1_changed";
-IS1446.connect[2] = connect1449;
+OrientationInterpolator1444.iS = IS1445;
 
-OrientationInterpolator1445.iS = IS1446;
+ProtoBody603.children[276] = OrientationInterpolator1444;
 
-ProtoBody586.children[282] = OrientationInterpolator1445;
+let ROUTE1449 = browser.currentScene.createNode("ROUTE");
+ROUTE1449.fromField = "fraction_changed";
+ROUTE1449.fromNode = "BehaviorClock";
+ROUTE1449.toField = "set_fraction";
+ROUTE1449.toNode = "r_sternoclavicular_OI";
+ProtoBody603.children[277] = ROUTE1449;
 
-let ROUTE1450 = browser.currentScene.createNode("ROUTE");
-ROUTE1450.fromField = "fraction_changed";
-ROUTE1450.fromNode = "BehaviorClock";
-ROUTE1450.toField = "set_fraction";
-ROUTE1450.toNode = "r_thumb1_OI";
-ProtoBody586.children[283] = ROUTE1450;
+let OrientationInterpolator1450 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1450.DEF = "r_subtalar_OI";
+let IS1451 = browser.currentScene.createNode("IS");
+let connect1452 = browser.currentScene.createNode("connect");
+connect1452.nodeField = "key";
+connect1452.protoField = "r_subtalar_key";
+IS1451.connect = new MFNode();
 
-let OrientationInterpolator1451 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1451.DEF = "r_thumb2_OI";
-let IS1452 = browser.currentScene.createNode("IS");
+IS1451.connect[0] = connect1452;
+
 let connect1453 = browser.currentScene.createNode("connect");
-connect1453.nodeField = "key";
-connect1453.protoField = "r_thumb2_key";
-IS1452.connect = new MFNode();
-
-IS1452.connect[0] = connect1453;
+connect1453.nodeField = "keyValue";
+connect1453.protoField = "r_subtalar_keyValue";
+IS1451.connect[1] = connect1453;
 
 let connect1454 = browser.currentScene.createNode("connect");
-connect1454.nodeField = "keyValue";
-connect1454.protoField = "r_thumb2_keyValue";
-IS1452.connect[1] = connect1454;
+connect1454.nodeField = "value_changed";
+connect1454.protoField = "r_subtalar_changed";
+IS1451.connect[2] = connect1454;
 
-let connect1455 = browser.currentScene.createNode("connect");
-connect1455.nodeField = "value_changed";
-connect1455.protoField = "r_thumb2_changed";
-IS1452.connect[2] = connect1455;
+OrientationInterpolator1450.iS = IS1451;
 
-OrientationInterpolator1451.iS = IS1452;
+ProtoBody603.children[278] = OrientationInterpolator1450;
 
-ProtoBody586.children[284] = OrientationInterpolator1451;
+let ROUTE1455 = browser.currentScene.createNode("ROUTE");
+ROUTE1455.fromField = "fraction_changed";
+ROUTE1455.fromNode = "BehaviorClock";
+ROUTE1455.toField = "set_fraction";
+ROUTE1455.toNode = "r_subtalar_OI";
+ProtoBody603.children[279] = ROUTE1455;
 
-let ROUTE1456 = browser.currentScene.createNode("ROUTE");
-ROUTE1456.fromField = "fraction_changed";
-ROUTE1456.fromNode = "BehaviorClock";
-ROUTE1456.toField = "set_fraction";
-ROUTE1456.toNode = "r_thumb2_OI";
-ProtoBody586.children[285] = ROUTE1456;
+let OrientationInterpolator1456 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1456.DEF = "r_thigh_OI";
+let IS1457 = browser.currentScene.createNode("IS");
+let connect1458 = browser.currentScene.createNode("connect");
+connect1458.nodeField = "key";
+connect1458.protoField = "r_thigh_key";
+IS1457.connect = new MFNode();
 
-let OrientationInterpolator1457 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1457.DEF = "r_thumb3_OI";
-let IS1458 = browser.currentScene.createNode("IS");
+IS1457.connect[0] = connect1458;
+
 let connect1459 = browser.currentScene.createNode("connect");
-connect1459.nodeField = "key";
-connect1459.protoField = "r_thumb3_key";
-IS1458.connect = new MFNode();
-
-IS1458.connect[0] = connect1459;
+connect1459.nodeField = "keyValue";
+connect1459.protoField = "r_thigh_keyValue";
+IS1457.connect[1] = connect1459;
 
 let connect1460 = browser.currentScene.createNode("connect");
-connect1460.nodeField = "keyValue";
-connect1460.protoField = "r_thumb3_keyValue";
-IS1458.connect[1] = connect1460;
+connect1460.nodeField = "value_changed";
+connect1460.protoField = "r_thigh_changed";
+IS1457.connect[2] = connect1460;
 
-let connect1461 = browser.currentScene.createNode("connect");
-connect1461.nodeField = "value_changed";
-connect1461.protoField = "r_thumb3_changed";
-IS1458.connect[2] = connect1461;
+OrientationInterpolator1456.iS = IS1457;
 
-OrientationInterpolator1457.iS = IS1458;
+ProtoBody603.children[280] = OrientationInterpolator1456;
 
-ProtoBody586.children[286] = OrientationInterpolator1457;
+let ROUTE1461 = browser.currentScene.createNode("ROUTE");
+ROUTE1461.fromField = "fraction_changed";
+ROUTE1461.fromNode = "BehaviorClock";
+ROUTE1461.toField = "set_fraction";
+ROUTE1461.toNode = "r_thigh_OI";
+ProtoBody603.children[281] = ROUTE1461;
 
-let ROUTE1462 = browser.currentScene.createNode("ROUTE");
-ROUTE1462.fromField = "fraction_changed";
-ROUTE1462.fromNode = "BehaviorClock";
-ROUTE1462.toField = "set_fraction";
-ROUTE1462.toNode = "r_thumb3_OI";
-ProtoBody586.children[287] = ROUTE1462;
+let OrientationInterpolator1462 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1462.DEF = "r_thumb1_OI";
+let IS1463 = browser.currentScene.createNode("IS");
+let connect1464 = browser.currentScene.createNode("connect");
+connect1464.nodeField = "key";
+connect1464.protoField = "r_thumb1_key";
+IS1463.connect = new MFNode();
 
-let OrientationInterpolator1463 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1463.DEF = "r_thumb_distal_OI";
-let IS1464 = browser.currentScene.createNode("IS");
+IS1463.connect[0] = connect1464;
+
 let connect1465 = browser.currentScene.createNode("connect");
-connect1465.nodeField = "key";
-connect1465.protoField = "r_thumb_distal_key";
-IS1464.connect = new MFNode();
-
-IS1464.connect[0] = connect1465;
+connect1465.nodeField = "keyValue";
+connect1465.protoField = "r_thumb1_keyValue";
+IS1463.connect[1] = connect1465;
 
 let connect1466 = browser.currentScene.createNode("connect");
-connect1466.nodeField = "keyValue";
-connect1466.protoField = "r_thumb_distal_keyValue";
-IS1464.connect[1] = connect1466;
+connect1466.nodeField = "value_changed";
+connect1466.protoField = "r_thumb1_changed";
+IS1463.connect[2] = connect1466;
 
-let connect1467 = browser.currentScene.createNode("connect");
-connect1467.nodeField = "value_changed";
-connect1467.protoField = "r_thumb_distal_changed";
-IS1464.connect[2] = connect1467;
+OrientationInterpolator1462.iS = IS1463;
 
-OrientationInterpolator1463.iS = IS1464;
+ProtoBody603.children[282] = OrientationInterpolator1462;
 
-ProtoBody586.children[288] = OrientationInterpolator1463;
+let ROUTE1467 = browser.currentScene.createNode("ROUTE");
+ROUTE1467.fromField = "fraction_changed";
+ROUTE1467.fromNode = "BehaviorClock";
+ROUTE1467.toField = "set_fraction";
+ROUTE1467.toNode = "r_thumb1_OI";
+ProtoBody603.children[283] = ROUTE1467;
 
-let ROUTE1468 = browser.currentScene.createNode("ROUTE");
-ROUTE1468.fromField = "fraction_changed";
-ROUTE1468.fromNode = "BehaviorClock";
-ROUTE1468.toField = "set_fraction";
-ROUTE1468.toNode = "r_thumb_distal_OI";
-ProtoBody586.children[289] = ROUTE1468;
+let OrientationInterpolator1468 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1468.DEF = "r_thumb2_OI";
+let IS1469 = browser.currentScene.createNode("IS");
+let connect1470 = browser.currentScene.createNode("connect");
+connect1470.nodeField = "key";
+connect1470.protoField = "r_thumb2_key";
+IS1469.connect = new MFNode();
 
-let OrientationInterpolator1469 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1469.DEF = "r_thumb_metacarpal_OI";
-let IS1470 = browser.currentScene.createNode("IS");
+IS1469.connect[0] = connect1470;
+
 let connect1471 = browser.currentScene.createNode("connect");
-connect1471.nodeField = "key";
-connect1471.protoField = "r_thumb_metacarpal_key";
-IS1470.connect = new MFNode();
-
-IS1470.connect[0] = connect1471;
+connect1471.nodeField = "keyValue";
+connect1471.protoField = "r_thumb2_keyValue";
+IS1469.connect[1] = connect1471;
 
 let connect1472 = browser.currentScene.createNode("connect");
-connect1472.nodeField = "keyValue";
-connect1472.protoField = "r_thumb_metacarpal_keyValue";
-IS1470.connect[1] = connect1472;
+connect1472.nodeField = "value_changed";
+connect1472.protoField = "r_thumb2_changed";
+IS1469.connect[2] = connect1472;
 
-let connect1473 = browser.currentScene.createNode("connect");
-connect1473.nodeField = "value_changed";
-connect1473.protoField = "r_thumb_metacarpal_changed";
-IS1470.connect[2] = connect1473;
+OrientationInterpolator1468.iS = IS1469;
 
-OrientationInterpolator1469.iS = IS1470;
+ProtoBody603.children[284] = OrientationInterpolator1468;
 
-ProtoBody586.children[290] = OrientationInterpolator1469;
+let ROUTE1473 = browser.currentScene.createNode("ROUTE");
+ROUTE1473.fromField = "fraction_changed";
+ROUTE1473.fromNode = "BehaviorClock";
+ROUTE1473.toField = "set_fraction";
+ROUTE1473.toNode = "r_thumb2_OI";
+ProtoBody603.children[285] = ROUTE1473;
 
-let ROUTE1474 = browser.currentScene.createNode("ROUTE");
-ROUTE1474.fromField = "fraction_changed";
-ROUTE1474.fromNode = "BehaviorClock";
-ROUTE1474.toField = "set_fraction";
-ROUTE1474.toNode = "r_thumb_metacarpal_OI";
-ProtoBody586.children[291] = ROUTE1474;
+let OrientationInterpolator1474 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1474.DEF = "r_thumb3_OI";
+let IS1475 = browser.currentScene.createNode("IS");
+let connect1476 = browser.currentScene.createNode("connect");
+connect1476.nodeField = "key";
+connect1476.protoField = "r_thumb3_key";
+IS1475.connect = new MFNode();
 
-let OrientationInterpolator1475 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1475.DEF = "r_thumb_proximal_OI";
-let IS1476 = browser.currentScene.createNode("IS");
+IS1475.connect[0] = connect1476;
+
 let connect1477 = browser.currentScene.createNode("connect");
-connect1477.nodeField = "key";
-connect1477.protoField = "r_thumb_proximal_key";
-IS1476.connect = new MFNode();
-
-IS1476.connect[0] = connect1477;
+connect1477.nodeField = "keyValue";
+connect1477.protoField = "r_thumb3_keyValue";
+IS1475.connect[1] = connect1477;
 
 let connect1478 = browser.currentScene.createNode("connect");
-connect1478.nodeField = "keyValue";
-connect1478.protoField = "r_thumb_proximal_keyValue";
-IS1476.connect[1] = connect1478;
+connect1478.nodeField = "value_changed";
+connect1478.protoField = "r_thumb3_changed";
+IS1475.connect[2] = connect1478;
 
-let connect1479 = browser.currentScene.createNode("connect");
-connect1479.nodeField = "value_changed";
-connect1479.protoField = "r_thumb_proximal_changed";
-IS1476.connect[2] = connect1479;
+OrientationInterpolator1474.iS = IS1475;
 
-OrientationInterpolator1475.iS = IS1476;
+ProtoBody603.children[286] = OrientationInterpolator1474;
 
-ProtoBody586.children[292] = OrientationInterpolator1475;
+let ROUTE1479 = browser.currentScene.createNode("ROUTE");
+ROUTE1479.fromField = "fraction_changed";
+ROUTE1479.fromNode = "BehaviorClock";
+ROUTE1479.toField = "set_fraction";
+ROUTE1479.toNode = "r_thumb3_OI";
+ProtoBody603.children[287] = ROUTE1479;
 
-let ROUTE1480 = browser.currentScene.createNode("ROUTE");
-ROUTE1480.fromField = "fraction_changed";
-ROUTE1480.fromNode = "BehaviorClock";
-ROUTE1480.toField = "set_fraction";
-ROUTE1480.toNode = "r_thumb_proximal_OI";
-ProtoBody586.children[293] = ROUTE1480;
+let OrientationInterpolator1480 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1480.DEF = "r_thumb_distal_OI";
+let IS1481 = browser.currentScene.createNode("IS");
+let connect1482 = browser.currentScene.createNode("connect");
+connect1482.nodeField = "key";
+connect1482.protoField = "r_thumb_distal_key";
+IS1481.connect = new MFNode();
 
-let OrientationInterpolator1481 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1481.DEF = "r_upperarm_OI";
-let IS1482 = browser.currentScene.createNode("IS");
+IS1481.connect[0] = connect1482;
+
 let connect1483 = browser.currentScene.createNode("connect");
-connect1483.nodeField = "key";
-connect1483.protoField = "r_upperarm_key";
-IS1482.connect = new MFNode();
-
-IS1482.connect[0] = connect1483;
+connect1483.nodeField = "keyValue";
+connect1483.protoField = "r_thumb_distal_keyValue";
+IS1481.connect[1] = connect1483;
 
 let connect1484 = browser.currentScene.createNode("connect");
-connect1484.nodeField = "keyValue";
-connect1484.protoField = "r_upperarm_keyValue";
-IS1482.connect[1] = connect1484;
+connect1484.nodeField = "value_changed";
+connect1484.protoField = "r_thumb_distal_changed";
+IS1481.connect[2] = connect1484;
 
-let connect1485 = browser.currentScene.createNode("connect");
-connect1485.nodeField = "value_changed";
-connect1485.protoField = "r_upperarm_changed";
-IS1482.connect[2] = connect1485;
+OrientationInterpolator1480.iS = IS1481;
 
-OrientationInterpolator1481.iS = IS1482;
+ProtoBody603.children[288] = OrientationInterpolator1480;
 
-ProtoBody586.children[294] = OrientationInterpolator1481;
+let ROUTE1485 = browser.currentScene.createNode("ROUTE");
+ROUTE1485.fromField = "fraction_changed";
+ROUTE1485.fromNode = "BehaviorClock";
+ROUTE1485.toField = "set_fraction";
+ROUTE1485.toNode = "r_thumb_distal_OI";
+ProtoBody603.children[289] = ROUTE1485;
 
-let ROUTE1486 = browser.currentScene.createNode("ROUTE");
-ROUTE1486.fromField = "fraction_changed";
-ROUTE1486.fromNode = "BehaviorClock";
-ROUTE1486.toField = "set_fraction";
-ROUTE1486.toNode = "r_upperarm_OI";
-ProtoBody586.children[295] = ROUTE1486;
+let OrientationInterpolator1486 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1486.DEF = "r_thumb_metacarpal_OI";
+let IS1487 = browser.currentScene.createNode("IS");
+let connect1488 = browser.currentScene.createNode("connect");
+connect1488.nodeField = "key";
+connect1488.protoField = "r_thumb_metacarpal_key";
+IS1487.connect = new MFNode();
 
-let OrientationInterpolator1487 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1487.DEF = "r_wrist_OI";
-let IS1488 = browser.currentScene.createNode("IS");
+IS1487.connect[0] = connect1488;
+
 let connect1489 = browser.currentScene.createNode("connect");
-connect1489.nodeField = "key";
-connect1489.protoField = "r_wrist_key";
-IS1488.connect = new MFNode();
-
-IS1488.connect[0] = connect1489;
+connect1489.nodeField = "keyValue";
+connect1489.protoField = "r_thumb_metacarpal_keyValue";
+IS1487.connect[1] = connect1489;
 
 let connect1490 = browser.currentScene.createNode("connect");
-connect1490.nodeField = "keyValue";
-connect1490.protoField = "r_wrist_keyValue";
-IS1488.connect[1] = connect1490;
+connect1490.nodeField = "value_changed";
+connect1490.protoField = "r_thumb_metacarpal_changed";
+IS1487.connect[2] = connect1490;
 
-let connect1491 = browser.currentScene.createNode("connect");
-connect1491.nodeField = "value_changed";
-connect1491.protoField = "r_wrist_changed";
-IS1488.connect[2] = connect1491;
+OrientationInterpolator1486.iS = IS1487;
 
-OrientationInterpolator1487.iS = IS1488;
+ProtoBody603.children[290] = OrientationInterpolator1486;
 
-ProtoBody586.children[296] = OrientationInterpolator1487;
+let ROUTE1491 = browser.currentScene.createNode("ROUTE");
+ROUTE1491.fromField = "fraction_changed";
+ROUTE1491.fromNode = "BehaviorClock";
+ROUTE1491.toField = "set_fraction";
+ROUTE1491.toNode = "r_thumb_metacarpal_OI";
+ProtoBody603.children[291] = ROUTE1491;
 
-let ROUTE1492 = browser.currentScene.createNode("ROUTE");
-ROUTE1492.fromField = "fraction_changed";
-ROUTE1492.fromNode = "BehaviorClock";
-ROUTE1492.toField = "set_fraction";
-ROUTE1492.toNode = "r_wrist_OI";
-ProtoBody586.children[297] = ROUTE1492;
+let OrientationInterpolator1492 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1492.DEF = "r_thumb_proximal_OI";
+let IS1493 = browser.currentScene.createNode("IS");
+let connect1494 = browser.currentScene.createNode("connect");
+connect1494.nodeField = "key";
+connect1494.protoField = "r_thumb_proximal_key";
+IS1493.connect = new MFNode();
 
-let OrientationInterpolator1493 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1493.DEF = "sacroiliac_OI";
-let IS1494 = browser.currentScene.createNode("IS");
+IS1493.connect[0] = connect1494;
+
 let connect1495 = browser.currentScene.createNode("connect");
-connect1495.nodeField = "key";
-connect1495.protoField = "sacroiliac_key";
-IS1494.connect = new MFNode();
-
-IS1494.connect[0] = connect1495;
+connect1495.nodeField = "keyValue";
+connect1495.protoField = "r_thumb_proximal_keyValue";
+IS1493.connect[1] = connect1495;
 
 let connect1496 = browser.currentScene.createNode("connect");
-connect1496.nodeField = "keyValue";
-connect1496.protoField = "sacroiliac_keyValue";
-IS1494.connect[1] = connect1496;
+connect1496.nodeField = "value_changed";
+connect1496.protoField = "r_thumb_proximal_changed";
+IS1493.connect[2] = connect1496;
 
-let connect1497 = browser.currentScene.createNode("connect");
-connect1497.nodeField = "value_changed";
-connect1497.protoField = "sacroiliac_changed";
-IS1494.connect[2] = connect1497;
+OrientationInterpolator1492.iS = IS1493;
 
-OrientationInterpolator1493.iS = IS1494;
+ProtoBody603.children[292] = OrientationInterpolator1492;
 
-ProtoBody586.children[298] = OrientationInterpolator1493;
+let ROUTE1497 = browser.currentScene.createNode("ROUTE");
+ROUTE1497.fromField = "fraction_changed";
+ROUTE1497.fromNode = "BehaviorClock";
+ROUTE1497.toField = "set_fraction";
+ROUTE1497.toNode = "r_thumb_proximal_OI";
+ProtoBody603.children[293] = ROUTE1497;
 
-let ROUTE1498 = browser.currentScene.createNode("ROUTE");
-ROUTE1498.fromField = "fraction_changed";
-ROUTE1498.fromNode = "BehaviorClock";
-ROUTE1498.toField = "set_fraction";
-ROUTE1498.toNode = "sacroiliac_OI";
-ProtoBody586.children[299] = ROUTE1498;
+let OrientationInterpolator1498 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1498.DEF = "r_upperarm_OI";
+let IS1499 = browser.currentScene.createNode("IS");
+let connect1500 = browser.currentScene.createNode("connect");
+connect1500.nodeField = "key";
+connect1500.protoField = "r_upperarm_key";
+IS1499.connect = new MFNode();
 
-let OrientationInterpolator1499 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1499.DEF = "sacrum_OI";
-let IS1500 = browser.currentScene.createNode("IS");
+IS1499.connect[0] = connect1500;
+
 let connect1501 = browser.currentScene.createNode("connect");
-connect1501.nodeField = "key";
-connect1501.protoField = "sacrum_key";
-IS1500.connect = new MFNode();
-
-IS1500.connect[0] = connect1501;
+connect1501.nodeField = "keyValue";
+connect1501.protoField = "r_upperarm_keyValue";
+IS1499.connect[1] = connect1501;
 
 let connect1502 = browser.currentScene.createNode("connect");
-connect1502.nodeField = "keyValue";
-connect1502.protoField = "sacrum_keyValue";
-IS1500.connect[1] = connect1502;
+connect1502.nodeField = "value_changed";
+connect1502.protoField = "r_upperarm_changed";
+IS1499.connect[2] = connect1502;
 
-let connect1503 = browser.currentScene.createNode("connect");
-connect1503.nodeField = "value_changed";
-connect1503.protoField = "sacrum_changed";
-IS1500.connect[2] = connect1503;
+OrientationInterpolator1498.iS = IS1499;
 
-OrientationInterpolator1499.iS = IS1500;
+ProtoBody603.children[294] = OrientationInterpolator1498;
 
-ProtoBody586.children[300] = OrientationInterpolator1499;
+let ROUTE1503 = browser.currentScene.createNode("ROUTE");
+ROUTE1503.fromField = "fraction_changed";
+ROUTE1503.fromNode = "BehaviorClock";
+ROUTE1503.toField = "set_fraction";
+ROUTE1503.toNode = "r_upperarm_OI";
+ProtoBody603.children[295] = ROUTE1503;
 
-let ROUTE1504 = browser.currentScene.createNode("ROUTE");
-ROUTE1504.fromField = "fraction_changed";
-ROUTE1504.fromNode = "BehaviorClock";
-ROUTE1504.toField = "set_fraction";
-ROUTE1504.toNode = "sacrum_OI";
-ProtoBody586.children[301] = ROUTE1504;
+let OrientationInterpolator1504 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1504.DEF = "r_wrist_OI";
+let IS1505 = browser.currentScene.createNode("IS");
+let connect1506 = browser.currentScene.createNode("connect");
+connect1506.nodeField = "key";
+connect1506.protoField = "r_wrist_key";
+IS1505.connect = new MFNode();
 
-let OrientationInterpolator1505 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1505.DEF = "skull_OI";
-let IS1506 = browser.currentScene.createNode("IS");
+IS1505.connect[0] = connect1506;
+
 let connect1507 = browser.currentScene.createNode("connect");
-connect1507.nodeField = "key";
-connect1507.protoField = "skull_key";
-IS1506.connect = new MFNode();
-
-IS1506.connect[0] = connect1507;
+connect1507.nodeField = "keyValue";
+connect1507.protoField = "r_wrist_keyValue";
+IS1505.connect[1] = connect1507;
 
 let connect1508 = browser.currentScene.createNode("connect");
-connect1508.nodeField = "keyValue";
-connect1508.protoField = "skull_keyValue";
-IS1506.connect[1] = connect1508;
+connect1508.nodeField = "value_changed";
+connect1508.protoField = "r_wrist_changed";
+IS1505.connect[2] = connect1508;
 
-let connect1509 = browser.currentScene.createNode("connect");
-connect1509.nodeField = "value_changed";
-connect1509.protoField = "skull_changed";
-IS1506.connect[2] = connect1509;
+OrientationInterpolator1504.iS = IS1505;
 
-OrientationInterpolator1505.iS = IS1506;
+ProtoBody603.children[296] = OrientationInterpolator1504;
 
-ProtoBody586.children[302] = OrientationInterpolator1505;
+let ROUTE1509 = browser.currentScene.createNode("ROUTE");
+ROUTE1509.fromField = "fraction_changed";
+ROUTE1509.fromNode = "BehaviorClock";
+ROUTE1509.toField = "set_fraction";
+ROUTE1509.toNode = "r_wrist_OI";
+ProtoBody603.children[297] = ROUTE1509;
 
-let ROUTE1510 = browser.currentScene.createNode("ROUTE");
-ROUTE1510.fromField = "fraction_changed";
-ROUTE1510.fromNode = "BehaviorClock";
-ROUTE1510.toField = "set_fraction";
-ROUTE1510.toNode = "skull_OI";
-ProtoBody586.children[303] = ROUTE1510;
+let OrientationInterpolator1510 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1510.DEF = "sacroiliac_OI";
+let IS1511 = browser.currentScene.createNode("IS");
+let connect1512 = browser.currentScene.createNode("connect");
+connect1512.nodeField = "key";
+connect1512.protoField = "sacroiliac_key";
+IS1511.connect = new MFNode();
 
-let OrientationInterpolator1511 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1511.DEF = "skullbase_OI";
-let IS1512 = browser.currentScene.createNode("IS");
+IS1511.connect[0] = connect1512;
+
 let connect1513 = browser.currentScene.createNode("connect");
-connect1513.nodeField = "key";
-connect1513.protoField = "skullbase_key";
-IS1512.connect = new MFNode();
-
-IS1512.connect[0] = connect1513;
+connect1513.nodeField = "keyValue";
+connect1513.protoField = "sacroiliac_keyValue";
+IS1511.connect[1] = connect1513;
 
 let connect1514 = browser.currentScene.createNode("connect");
-connect1514.nodeField = "keyValue";
-connect1514.protoField = "skullbase_keyValue";
-IS1512.connect[1] = connect1514;
+connect1514.nodeField = "value_changed";
+connect1514.protoField = "sacroiliac_changed";
+IS1511.connect[2] = connect1514;
 
-let connect1515 = browser.currentScene.createNode("connect");
-connect1515.nodeField = "value_changed";
-connect1515.protoField = "skullbase_changed";
-IS1512.connect[2] = connect1515;
+OrientationInterpolator1510.iS = IS1511;
 
-OrientationInterpolator1511.iS = IS1512;
+ProtoBody603.children[298] = OrientationInterpolator1510;
 
-ProtoBody586.children[304] = OrientationInterpolator1511;
+let ROUTE1515 = browser.currentScene.createNode("ROUTE");
+ROUTE1515.fromField = "fraction_changed";
+ROUTE1515.fromNode = "BehaviorClock";
+ROUTE1515.toField = "set_fraction";
+ROUTE1515.toNode = "sacroiliac_OI";
+ProtoBody603.children[299] = ROUTE1515;
 
-let ROUTE1516 = browser.currentScene.createNode("ROUTE");
-ROUTE1516.fromField = "fraction_changed";
-ROUTE1516.fromNode = "BehaviorClock";
-ROUTE1516.toField = "set_fraction";
-ROUTE1516.toNode = "skullbase_OI";
-ProtoBody586.children[305] = ROUTE1516;
+let OrientationInterpolator1516 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1516.DEF = "sacrum_OI";
+let IS1517 = browser.currentScene.createNode("IS");
+let connect1518 = browser.currentScene.createNode("connect");
+connect1518.nodeField = "key";
+connect1518.protoField = "sacrum_key";
+IS1517.connect = new MFNode();
 
-let OrientationInterpolator1517 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1517.DEF = "t1_OI";
-let IS1518 = browser.currentScene.createNode("IS");
+IS1517.connect[0] = connect1518;
+
 let connect1519 = browser.currentScene.createNode("connect");
-connect1519.nodeField = "key";
-connect1519.protoField = "t1_key";
-IS1518.connect = new MFNode();
-
-IS1518.connect[0] = connect1519;
+connect1519.nodeField = "keyValue";
+connect1519.protoField = "sacrum_keyValue";
+IS1517.connect[1] = connect1519;
 
 let connect1520 = browser.currentScene.createNode("connect");
-connect1520.nodeField = "keyValue";
-connect1520.protoField = "t1_keyValue";
-IS1518.connect[1] = connect1520;
+connect1520.nodeField = "value_changed";
+connect1520.protoField = "sacrum_changed";
+IS1517.connect[2] = connect1520;
 
-let connect1521 = browser.currentScene.createNode("connect");
-connect1521.nodeField = "value_changed";
-connect1521.protoField = "t1_changed";
-IS1518.connect[2] = connect1521;
+OrientationInterpolator1516.iS = IS1517;
 
-OrientationInterpolator1517.iS = IS1518;
+ProtoBody603.children[300] = OrientationInterpolator1516;
 
-ProtoBody586.children[306] = OrientationInterpolator1517;
+let ROUTE1521 = browser.currentScene.createNode("ROUTE");
+ROUTE1521.fromField = "fraction_changed";
+ROUTE1521.fromNode = "BehaviorClock";
+ROUTE1521.toField = "set_fraction";
+ROUTE1521.toNode = "sacrum_OI";
+ProtoBody603.children[301] = ROUTE1521;
 
-let ROUTE1522 = browser.currentScene.createNode("ROUTE");
-ROUTE1522.fromField = "fraction_changed";
-ROUTE1522.fromNode = "BehaviorClock";
-ROUTE1522.toField = "set_fraction";
-ROUTE1522.toNode = "t1_OI";
-ProtoBody586.children[307] = ROUTE1522;
+let OrientationInterpolator1522 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1522.DEF = "skull_OI";
+let IS1523 = browser.currentScene.createNode("IS");
+let connect1524 = browser.currentScene.createNode("connect");
+connect1524.nodeField = "key";
+connect1524.protoField = "skull_key";
+IS1523.connect = new MFNode();
 
-let OrientationInterpolator1523 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1523.DEF = "t2_OI";
-let IS1524 = browser.currentScene.createNode("IS");
+IS1523.connect[0] = connect1524;
+
 let connect1525 = browser.currentScene.createNode("connect");
-connect1525.nodeField = "key";
-connect1525.protoField = "t2_key";
-IS1524.connect = new MFNode();
-
-IS1524.connect[0] = connect1525;
+connect1525.nodeField = "keyValue";
+connect1525.protoField = "skull_keyValue";
+IS1523.connect[1] = connect1525;
 
 let connect1526 = browser.currentScene.createNode("connect");
-connect1526.nodeField = "keyValue";
-connect1526.protoField = "t2_keyValue";
-IS1524.connect[1] = connect1526;
+connect1526.nodeField = "value_changed";
+connect1526.protoField = "skull_changed";
+IS1523.connect[2] = connect1526;
 
-let connect1527 = browser.currentScene.createNode("connect");
-connect1527.nodeField = "value_changed";
-connect1527.protoField = "t2_changed";
-IS1524.connect[2] = connect1527;
+OrientationInterpolator1522.iS = IS1523;
 
-OrientationInterpolator1523.iS = IS1524;
+ProtoBody603.children[302] = OrientationInterpolator1522;
 
-ProtoBody586.children[308] = OrientationInterpolator1523;
+let ROUTE1527 = browser.currentScene.createNode("ROUTE");
+ROUTE1527.fromField = "fraction_changed";
+ROUTE1527.fromNode = "BehaviorClock";
+ROUTE1527.toField = "set_fraction";
+ROUTE1527.toNode = "skull_OI";
+ProtoBody603.children[303] = ROUTE1527;
 
-let ROUTE1528 = browser.currentScene.createNode("ROUTE");
-ROUTE1528.fromField = "fraction_changed";
-ROUTE1528.fromNode = "BehaviorClock";
-ROUTE1528.toField = "set_fraction";
-ROUTE1528.toNode = "t2_OI";
-ProtoBody586.children[309] = ROUTE1528;
+let OrientationInterpolator1528 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1528.DEF = "skullbase_OI";
+let IS1529 = browser.currentScene.createNode("IS");
+let connect1530 = browser.currentScene.createNode("connect");
+connect1530.nodeField = "key";
+connect1530.protoField = "skullbase_key";
+IS1529.connect = new MFNode();
 
-let OrientationInterpolator1529 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1529.DEF = "t3_OI";
-let IS1530 = browser.currentScene.createNode("IS");
+IS1529.connect[0] = connect1530;
+
 let connect1531 = browser.currentScene.createNode("connect");
-connect1531.nodeField = "key";
-connect1531.protoField = "t3_key";
-IS1530.connect = new MFNode();
-
-IS1530.connect[0] = connect1531;
+connect1531.nodeField = "keyValue";
+connect1531.protoField = "skullbase_keyValue";
+IS1529.connect[1] = connect1531;
 
 let connect1532 = browser.currentScene.createNode("connect");
-connect1532.nodeField = "keyValue";
-connect1532.protoField = "t3_keyValue";
-IS1530.connect[1] = connect1532;
+connect1532.nodeField = "value_changed";
+connect1532.protoField = "skullbase_changed";
+IS1529.connect[2] = connect1532;
 
-let connect1533 = browser.currentScene.createNode("connect");
-connect1533.nodeField = "value_changed";
-connect1533.protoField = "t3_changed";
-IS1530.connect[2] = connect1533;
+OrientationInterpolator1528.iS = IS1529;
 
-OrientationInterpolator1529.iS = IS1530;
+ProtoBody603.children[304] = OrientationInterpolator1528;
 
-ProtoBody586.children[310] = OrientationInterpolator1529;
+let ROUTE1533 = browser.currentScene.createNode("ROUTE");
+ROUTE1533.fromField = "fraction_changed";
+ROUTE1533.fromNode = "BehaviorClock";
+ROUTE1533.toField = "set_fraction";
+ROUTE1533.toNode = "skullbase_OI";
+ProtoBody603.children[305] = ROUTE1533;
 
-let ROUTE1534 = browser.currentScene.createNode("ROUTE");
-ROUTE1534.fromField = "fraction_changed";
-ROUTE1534.fromNode = "BehaviorClock";
-ROUTE1534.toField = "set_fraction";
-ROUTE1534.toNode = "t3_OI";
-ProtoBody586.children[311] = ROUTE1534;
+let OrientationInterpolator1534 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1534.DEF = "t1_OI";
+let IS1535 = browser.currentScene.createNode("IS");
+let connect1536 = browser.currentScene.createNode("connect");
+connect1536.nodeField = "key";
+connect1536.protoField = "t1_key";
+IS1535.connect = new MFNode();
 
-let OrientationInterpolator1535 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1535.DEF = "t4_OI";
-let IS1536 = browser.currentScene.createNode("IS");
+IS1535.connect[0] = connect1536;
+
 let connect1537 = browser.currentScene.createNode("connect");
-connect1537.nodeField = "key";
-connect1537.protoField = "t4_key";
-IS1536.connect = new MFNode();
-
-IS1536.connect[0] = connect1537;
+connect1537.nodeField = "keyValue";
+connect1537.protoField = "t1_keyValue";
+IS1535.connect[1] = connect1537;
 
 let connect1538 = browser.currentScene.createNode("connect");
-connect1538.nodeField = "keyValue";
-connect1538.protoField = "t4_keyValue";
-IS1536.connect[1] = connect1538;
+connect1538.nodeField = "value_changed";
+connect1538.protoField = "t1_changed";
+IS1535.connect[2] = connect1538;
 
-let connect1539 = browser.currentScene.createNode("connect");
-connect1539.nodeField = "value_changed";
-connect1539.protoField = "t4_changed";
-IS1536.connect[2] = connect1539;
+OrientationInterpolator1534.iS = IS1535;
 
-OrientationInterpolator1535.iS = IS1536;
+ProtoBody603.children[306] = OrientationInterpolator1534;
 
-ProtoBody586.children[312] = OrientationInterpolator1535;
+let ROUTE1539 = browser.currentScene.createNode("ROUTE");
+ROUTE1539.fromField = "fraction_changed";
+ROUTE1539.fromNode = "BehaviorClock";
+ROUTE1539.toField = "set_fraction";
+ROUTE1539.toNode = "t1_OI";
+ProtoBody603.children[307] = ROUTE1539;
 
-let ROUTE1540 = browser.currentScene.createNode("ROUTE");
-ROUTE1540.fromField = "fraction_changed";
-ROUTE1540.fromNode = "BehaviorClock";
-ROUTE1540.toField = "set_fraction";
-ROUTE1540.toNode = "t4_OI";
-ProtoBody586.children[313] = ROUTE1540;
+let OrientationInterpolator1540 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1540.DEF = "t2_OI";
+let IS1541 = browser.currentScene.createNode("IS");
+let connect1542 = browser.currentScene.createNode("connect");
+connect1542.nodeField = "key";
+connect1542.protoField = "t2_key";
+IS1541.connect = new MFNode();
 
-let OrientationInterpolator1541 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1541.DEF = "t5_OI";
-let IS1542 = browser.currentScene.createNode("IS");
+IS1541.connect[0] = connect1542;
+
 let connect1543 = browser.currentScene.createNode("connect");
-connect1543.nodeField = "key";
-connect1543.protoField = "t5_key";
-IS1542.connect = new MFNode();
-
-IS1542.connect[0] = connect1543;
+connect1543.nodeField = "keyValue";
+connect1543.protoField = "t2_keyValue";
+IS1541.connect[1] = connect1543;
 
 let connect1544 = browser.currentScene.createNode("connect");
-connect1544.nodeField = "keyValue";
-connect1544.protoField = "t5_keyValue";
-IS1542.connect[1] = connect1544;
+connect1544.nodeField = "value_changed";
+connect1544.protoField = "t2_changed";
+IS1541.connect[2] = connect1544;
 
-let connect1545 = browser.currentScene.createNode("connect");
-connect1545.nodeField = "value_changed";
-connect1545.protoField = "t5_changed";
-IS1542.connect[2] = connect1545;
+OrientationInterpolator1540.iS = IS1541;
 
-OrientationInterpolator1541.iS = IS1542;
+ProtoBody603.children[308] = OrientationInterpolator1540;
 
-ProtoBody586.children[314] = OrientationInterpolator1541;
+let ROUTE1545 = browser.currentScene.createNode("ROUTE");
+ROUTE1545.fromField = "fraction_changed";
+ROUTE1545.fromNode = "BehaviorClock";
+ROUTE1545.toField = "set_fraction";
+ROUTE1545.toNode = "t2_OI";
+ProtoBody603.children[309] = ROUTE1545;
 
-let ROUTE1546 = browser.currentScene.createNode("ROUTE");
-ROUTE1546.fromField = "fraction_changed";
-ROUTE1546.fromNode = "BehaviorClock";
-ROUTE1546.toField = "set_fraction";
-ROUTE1546.toNode = "t5_OI";
-ProtoBody586.children[315] = ROUTE1546;
+let OrientationInterpolator1546 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1546.DEF = "t3_OI";
+let IS1547 = browser.currentScene.createNode("IS");
+let connect1548 = browser.currentScene.createNode("connect");
+connect1548.nodeField = "key";
+connect1548.protoField = "t3_key";
+IS1547.connect = new MFNode();
 
-let OrientationInterpolator1547 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1547.DEF = "t6_OI";
-let IS1548 = browser.currentScene.createNode("IS");
+IS1547.connect[0] = connect1548;
+
 let connect1549 = browser.currentScene.createNode("connect");
-connect1549.nodeField = "key";
-connect1549.protoField = "t6_key";
-IS1548.connect = new MFNode();
-
-IS1548.connect[0] = connect1549;
+connect1549.nodeField = "keyValue";
+connect1549.protoField = "t3_keyValue";
+IS1547.connect[1] = connect1549;
 
 let connect1550 = browser.currentScene.createNode("connect");
-connect1550.nodeField = "keyValue";
-connect1550.protoField = "t6_keyValue";
-IS1548.connect[1] = connect1550;
+connect1550.nodeField = "value_changed";
+connect1550.protoField = "t3_changed";
+IS1547.connect[2] = connect1550;
 
-let connect1551 = browser.currentScene.createNode("connect");
-connect1551.nodeField = "value_changed";
-connect1551.protoField = "t6_changed";
-IS1548.connect[2] = connect1551;
+OrientationInterpolator1546.iS = IS1547;
 
-OrientationInterpolator1547.iS = IS1548;
+ProtoBody603.children[310] = OrientationInterpolator1546;
 
-ProtoBody586.children[316] = OrientationInterpolator1547;
+let ROUTE1551 = browser.currentScene.createNode("ROUTE");
+ROUTE1551.fromField = "fraction_changed";
+ROUTE1551.fromNode = "BehaviorClock";
+ROUTE1551.toField = "set_fraction";
+ROUTE1551.toNode = "t3_OI";
+ProtoBody603.children[311] = ROUTE1551;
 
-let ROUTE1552 = browser.currentScene.createNode("ROUTE");
-ROUTE1552.fromField = "fraction_changed";
-ROUTE1552.fromNode = "BehaviorClock";
-ROUTE1552.toField = "set_fraction";
-ROUTE1552.toNode = "t6_OI";
-ProtoBody586.children[317] = ROUTE1552;
+let OrientationInterpolator1552 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1552.DEF = "t4_OI";
+let IS1553 = browser.currentScene.createNode("IS");
+let connect1554 = browser.currentScene.createNode("connect");
+connect1554.nodeField = "key";
+connect1554.protoField = "t4_key";
+IS1553.connect = new MFNode();
 
-let OrientationInterpolator1553 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1553.DEF = "t7_OI";
-let IS1554 = browser.currentScene.createNode("IS");
+IS1553.connect[0] = connect1554;
+
 let connect1555 = browser.currentScene.createNode("connect");
-connect1555.nodeField = "key";
-connect1555.protoField = "t7_key";
-IS1554.connect = new MFNode();
-
-IS1554.connect[0] = connect1555;
+connect1555.nodeField = "keyValue";
+connect1555.protoField = "t4_keyValue";
+IS1553.connect[1] = connect1555;
 
 let connect1556 = browser.currentScene.createNode("connect");
-connect1556.nodeField = "keyValue";
-connect1556.protoField = "t7_keyValue";
-IS1554.connect[1] = connect1556;
+connect1556.nodeField = "value_changed";
+connect1556.protoField = "t4_changed";
+IS1553.connect[2] = connect1556;
 
-let connect1557 = browser.currentScene.createNode("connect");
-connect1557.nodeField = "value_changed";
-connect1557.protoField = "t7_changed";
-IS1554.connect[2] = connect1557;
+OrientationInterpolator1552.iS = IS1553;
 
-OrientationInterpolator1553.iS = IS1554;
+ProtoBody603.children[312] = OrientationInterpolator1552;
 
-ProtoBody586.children[318] = OrientationInterpolator1553;
+let ROUTE1557 = browser.currentScene.createNode("ROUTE");
+ROUTE1557.fromField = "fraction_changed";
+ROUTE1557.fromNode = "BehaviorClock";
+ROUTE1557.toField = "set_fraction";
+ROUTE1557.toNode = "t4_OI";
+ProtoBody603.children[313] = ROUTE1557;
 
-let ROUTE1558 = browser.currentScene.createNode("ROUTE");
-ROUTE1558.fromField = "fraction_changed";
-ROUTE1558.fromNode = "BehaviorClock";
-ROUTE1558.toField = "set_fraction";
-ROUTE1558.toNode = "t7_OI";
-ProtoBody586.children[319] = ROUTE1558;
+let OrientationInterpolator1558 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1558.DEF = "t5_OI";
+let IS1559 = browser.currentScene.createNode("IS");
+let connect1560 = browser.currentScene.createNode("connect");
+connect1560.nodeField = "key";
+connect1560.protoField = "t5_key";
+IS1559.connect = new MFNode();
 
-let OrientationInterpolator1559 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1559.DEF = "t8_OI";
-let IS1560 = browser.currentScene.createNode("IS");
+IS1559.connect[0] = connect1560;
+
 let connect1561 = browser.currentScene.createNode("connect");
-connect1561.nodeField = "key";
-connect1561.protoField = "t8_key";
-IS1560.connect = new MFNode();
-
-IS1560.connect[0] = connect1561;
+connect1561.nodeField = "keyValue";
+connect1561.protoField = "t5_keyValue";
+IS1559.connect[1] = connect1561;
 
 let connect1562 = browser.currentScene.createNode("connect");
-connect1562.nodeField = "keyValue";
-connect1562.protoField = "t8_keyValue";
-IS1560.connect[1] = connect1562;
+connect1562.nodeField = "value_changed";
+connect1562.protoField = "t5_changed";
+IS1559.connect[2] = connect1562;
 
-let connect1563 = browser.currentScene.createNode("connect");
-connect1563.nodeField = "value_changed";
-connect1563.protoField = "t8_changed";
-IS1560.connect[2] = connect1563;
+OrientationInterpolator1558.iS = IS1559;
 
-OrientationInterpolator1559.iS = IS1560;
+ProtoBody603.children[314] = OrientationInterpolator1558;
 
-ProtoBody586.children[320] = OrientationInterpolator1559;
+let ROUTE1563 = browser.currentScene.createNode("ROUTE");
+ROUTE1563.fromField = "fraction_changed";
+ROUTE1563.fromNode = "BehaviorClock";
+ROUTE1563.toField = "set_fraction";
+ROUTE1563.toNode = "t5_OI";
+ProtoBody603.children[315] = ROUTE1563;
 
-let ROUTE1564 = browser.currentScene.createNode("ROUTE");
-ROUTE1564.fromField = "fraction_changed";
-ROUTE1564.fromNode = "BehaviorClock";
-ROUTE1564.toField = "set_fraction";
-ROUTE1564.toNode = "t8_OI";
-ProtoBody586.children[321] = ROUTE1564;
+let OrientationInterpolator1564 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1564.DEF = "t6_OI";
+let IS1565 = browser.currentScene.createNode("IS");
+let connect1566 = browser.currentScene.createNode("connect");
+connect1566.nodeField = "key";
+connect1566.protoField = "t6_key";
+IS1565.connect = new MFNode();
 
-let OrientationInterpolator1565 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1565.DEF = "t9_OI";
-let IS1566 = browser.currentScene.createNode("IS");
+IS1565.connect[0] = connect1566;
+
 let connect1567 = browser.currentScene.createNode("connect");
-connect1567.nodeField = "key";
-connect1567.protoField = "t9_key";
-IS1566.connect = new MFNode();
-
-IS1566.connect[0] = connect1567;
+connect1567.nodeField = "keyValue";
+connect1567.protoField = "t6_keyValue";
+IS1565.connect[1] = connect1567;
 
 let connect1568 = browser.currentScene.createNode("connect");
-connect1568.nodeField = "keyValue";
-connect1568.protoField = "t9_keyValue";
-IS1566.connect[1] = connect1568;
+connect1568.nodeField = "value_changed";
+connect1568.protoField = "t6_changed";
+IS1565.connect[2] = connect1568;
 
-let connect1569 = browser.currentScene.createNode("connect");
-connect1569.nodeField = "value_changed";
-connect1569.protoField = "t9_changed";
-IS1566.connect[2] = connect1569;
+OrientationInterpolator1564.iS = IS1565;
 
-OrientationInterpolator1565.iS = IS1566;
+ProtoBody603.children[316] = OrientationInterpolator1564;
 
-ProtoBody586.children[322] = OrientationInterpolator1565;
+let ROUTE1569 = browser.currentScene.createNode("ROUTE");
+ROUTE1569.fromField = "fraction_changed";
+ROUTE1569.fromNode = "BehaviorClock";
+ROUTE1569.toField = "set_fraction";
+ROUTE1569.toNode = "t6_OI";
+ProtoBody603.children[317] = ROUTE1569;
 
-let ROUTE1570 = browser.currentScene.createNode("ROUTE");
-ROUTE1570.fromField = "fraction_changed";
-ROUTE1570.fromNode = "BehaviorClock";
-ROUTE1570.toField = "set_fraction";
-ROUTE1570.toNode = "t9_OI";
-ProtoBody586.children[323] = ROUTE1570;
+let OrientationInterpolator1570 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1570.DEF = "t7_OI";
+let IS1571 = browser.currentScene.createNode("IS");
+let connect1572 = browser.currentScene.createNode("connect");
+connect1572.nodeField = "key";
+connect1572.protoField = "t7_key";
+IS1571.connect = new MFNode();
 
-let OrientationInterpolator1571 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1571.DEF = "t10_OI";
-let IS1572 = browser.currentScene.createNode("IS");
+IS1571.connect[0] = connect1572;
+
 let connect1573 = browser.currentScene.createNode("connect");
-connect1573.nodeField = "key";
-connect1573.protoField = "t10_key";
-IS1572.connect = new MFNode();
-
-IS1572.connect[0] = connect1573;
+connect1573.nodeField = "keyValue";
+connect1573.protoField = "t7_keyValue";
+IS1571.connect[1] = connect1573;
 
 let connect1574 = browser.currentScene.createNode("connect");
-connect1574.nodeField = "keyValue";
-connect1574.protoField = "t10_keyValue";
-IS1572.connect[1] = connect1574;
+connect1574.nodeField = "value_changed";
+connect1574.protoField = "t7_changed";
+IS1571.connect[2] = connect1574;
 
-let connect1575 = browser.currentScene.createNode("connect");
-connect1575.nodeField = "value_changed";
-connect1575.protoField = "t10_changed";
-IS1572.connect[2] = connect1575;
+OrientationInterpolator1570.iS = IS1571;
 
-OrientationInterpolator1571.iS = IS1572;
+ProtoBody603.children[318] = OrientationInterpolator1570;
 
-ProtoBody586.children[324] = OrientationInterpolator1571;
+let ROUTE1575 = browser.currentScene.createNode("ROUTE");
+ROUTE1575.fromField = "fraction_changed";
+ROUTE1575.fromNode = "BehaviorClock";
+ROUTE1575.toField = "set_fraction";
+ROUTE1575.toNode = "t7_OI";
+ProtoBody603.children[319] = ROUTE1575;
 
-let ROUTE1576 = browser.currentScene.createNode("ROUTE");
-ROUTE1576.fromField = "fraction_changed";
-ROUTE1576.fromNode = "BehaviorClock";
-ROUTE1576.toField = "set_fraction";
-ROUTE1576.toNode = "t10_OI";
-ProtoBody586.children[325] = ROUTE1576;
+let OrientationInterpolator1576 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1576.DEF = "t8_OI";
+let IS1577 = browser.currentScene.createNode("IS");
+let connect1578 = browser.currentScene.createNode("connect");
+connect1578.nodeField = "key";
+connect1578.protoField = "t8_key";
+IS1577.connect = new MFNode();
 
-let OrientationInterpolator1577 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1577.DEF = "t11_OI";
-let IS1578 = browser.currentScene.createNode("IS");
+IS1577.connect[0] = connect1578;
+
 let connect1579 = browser.currentScene.createNode("connect");
-connect1579.nodeField = "key";
-connect1579.protoField = "t11_key";
-IS1578.connect = new MFNode();
-
-IS1578.connect[0] = connect1579;
+connect1579.nodeField = "keyValue";
+connect1579.protoField = "t8_keyValue";
+IS1577.connect[1] = connect1579;
 
 let connect1580 = browser.currentScene.createNode("connect");
-connect1580.nodeField = "keyValue";
-connect1580.protoField = "t11_keyValue";
-IS1578.connect[1] = connect1580;
+connect1580.nodeField = "value_changed";
+connect1580.protoField = "t8_changed";
+IS1577.connect[2] = connect1580;
 
-let connect1581 = browser.currentScene.createNode("connect");
-connect1581.nodeField = "value_changed";
-connect1581.protoField = "t11_changed";
-IS1578.connect[2] = connect1581;
+OrientationInterpolator1576.iS = IS1577;
 
-OrientationInterpolator1577.iS = IS1578;
+ProtoBody603.children[320] = OrientationInterpolator1576;
 
-ProtoBody586.children[326] = OrientationInterpolator1577;
+let ROUTE1581 = browser.currentScene.createNode("ROUTE");
+ROUTE1581.fromField = "fraction_changed";
+ROUTE1581.fromNode = "BehaviorClock";
+ROUTE1581.toField = "set_fraction";
+ROUTE1581.toNode = "t8_OI";
+ProtoBody603.children[321] = ROUTE1581;
 
-let ROUTE1582 = browser.currentScene.createNode("ROUTE");
-ROUTE1582.fromField = "fraction_changed";
-ROUTE1582.fromNode = "BehaviorClock";
-ROUTE1582.toField = "set_fraction";
-ROUTE1582.toNode = "t11_OI";
-ProtoBody586.children[327] = ROUTE1582;
+let OrientationInterpolator1582 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1582.DEF = "t9_OI";
+let IS1583 = browser.currentScene.createNode("IS");
+let connect1584 = browser.currentScene.createNode("connect");
+connect1584.nodeField = "key";
+connect1584.protoField = "t9_key";
+IS1583.connect = new MFNode();
 
-let OrientationInterpolator1583 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1583.DEF = "t12_OI";
-let IS1584 = browser.currentScene.createNode("IS");
+IS1583.connect[0] = connect1584;
+
 let connect1585 = browser.currentScene.createNode("connect");
-connect1585.nodeField = "key";
-connect1585.protoField = "t12_key";
-IS1584.connect = new MFNode();
-
-IS1584.connect[0] = connect1585;
+connect1585.nodeField = "keyValue";
+connect1585.protoField = "t9_keyValue";
+IS1583.connect[1] = connect1585;
 
 let connect1586 = browser.currentScene.createNode("connect");
-connect1586.nodeField = "keyValue";
-connect1586.protoField = "t12_keyValue";
-IS1584.connect[1] = connect1586;
+connect1586.nodeField = "value_changed";
+connect1586.protoField = "t9_changed";
+IS1583.connect[2] = connect1586;
 
-let connect1587 = browser.currentScene.createNode("connect");
-connect1587.nodeField = "value_changed";
-connect1587.protoField = "t12_changed";
-IS1584.connect[2] = connect1587;
+OrientationInterpolator1582.iS = IS1583;
 
-OrientationInterpolator1583.iS = IS1584;
+ProtoBody603.children[322] = OrientationInterpolator1582;
 
-ProtoBody586.children[328] = OrientationInterpolator1583;
+let ROUTE1587 = browser.currentScene.createNode("ROUTE");
+ROUTE1587.fromField = "fraction_changed";
+ROUTE1587.fromNode = "BehaviorClock";
+ROUTE1587.toField = "set_fraction";
+ROUTE1587.toNode = "t9_OI";
+ProtoBody603.children[323] = ROUTE1587;
 
-let ROUTE1588 = browser.currentScene.createNode("ROUTE");
-ROUTE1588.fromField = "fraction_changed";
-ROUTE1588.fromNode = "BehaviorClock";
-ROUTE1588.toField = "set_fraction";
-ROUTE1588.toNode = "t12_OI";
-ProtoBody586.children[329] = ROUTE1588;
+let OrientationInterpolator1588 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1588.DEF = "t10_OI";
+let IS1589 = browser.currentScene.createNode("IS");
+let connect1590 = browser.currentScene.createNode("connect");
+connect1590.nodeField = "key";
+connect1590.protoField = "t10_key";
+IS1589.connect = new MFNode();
 
-let OrientationInterpolator1589 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1589.DEF = "temporomandibular_OI";
-let IS1590 = browser.currentScene.createNode("IS");
+IS1589.connect[0] = connect1590;
+
 let connect1591 = browser.currentScene.createNode("connect");
-connect1591.nodeField = "key";
-connect1591.protoField = "temporomandibular_key";
-IS1590.connect = new MFNode();
-
-IS1590.connect[0] = connect1591;
+connect1591.nodeField = "keyValue";
+connect1591.protoField = "t10_keyValue";
+IS1589.connect[1] = connect1591;
 
 let connect1592 = browser.currentScene.createNode("connect");
-connect1592.nodeField = "keyValue";
-connect1592.protoField = "temporomandibular_keyValue";
-IS1590.connect[1] = connect1592;
+connect1592.nodeField = "value_changed";
+connect1592.protoField = "t10_changed";
+IS1589.connect[2] = connect1592;
 
-let connect1593 = browser.currentScene.createNode("connect");
-connect1593.nodeField = "value_changed";
-connect1593.protoField = "temporomandibular_changed";
-IS1590.connect[2] = connect1593;
+OrientationInterpolator1588.iS = IS1589;
 
-OrientationInterpolator1589.iS = IS1590;
+ProtoBody603.children[324] = OrientationInterpolator1588;
 
-ProtoBody586.children[330] = OrientationInterpolator1589;
+let ROUTE1593 = browser.currentScene.createNode("ROUTE");
+ROUTE1593.fromField = "fraction_changed";
+ROUTE1593.fromNode = "BehaviorClock";
+ROUTE1593.toField = "set_fraction";
+ROUTE1593.toNode = "t10_OI";
+ProtoBody603.children[325] = ROUTE1593;
 
-let ROUTE1594 = browser.currentScene.createNode("ROUTE");
-ROUTE1594.fromField = "fraction_changed";
-ROUTE1594.fromNode = "BehaviorClock";
-ROUTE1594.toField = "set_fraction";
-ROUTE1594.toNode = "temporomandibular_OI";
-ProtoBody586.children[331] = ROUTE1594;
+let OrientationInterpolator1594 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1594.DEF = "t11_OI";
+let IS1595 = browser.currentScene.createNode("IS");
+let connect1596 = browser.currentScene.createNode("connect");
+connect1596.nodeField = "key";
+connect1596.protoField = "t11_key";
+IS1595.connect = new MFNode();
 
-let OrientationInterpolator1595 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1595.DEF = "vc1_OI";
-let IS1596 = browser.currentScene.createNode("IS");
+IS1595.connect[0] = connect1596;
+
 let connect1597 = browser.currentScene.createNode("connect");
-connect1597.nodeField = "key";
-connect1597.protoField = "vc1_key";
-IS1596.connect = new MFNode();
-
-IS1596.connect[0] = connect1597;
+connect1597.nodeField = "keyValue";
+connect1597.protoField = "t11_keyValue";
+IS1595.connect[1] = connect1597;
 
 let connect1598 = browser.currentScene.createNode("connect");
-connect1598.nodeField = "keyValue";
-connect1598.protoField = "vc1_keyValue";
-IS1596.connect[1] = connect1598;
+connect1598.nodeField = "value_changed";
+connect1598.protoField = "t11_changed";
+IS1595.connect[2] = connect1598;
 
-let connect1599 = browser.currentScene.createNode("connect");
-connect1599.nodeField = "value_changed";
-connect1599.protoField = "vc1_changed";
-IS1596.connect[2] = connect1599;
+OrientationInterpolator1594.iS = IS1595;
 
-OrientationInterpolator1595.iS = IS1596;
+ProtoBody603.children[326] = OrientationInterpolator1594;
 
-ProtoBody586.children[332] = OrientationInterpolator1595;
+let ROUTE1599 = browser.currentScene.createNode("ROUTE");
+ROUTE1599.fromField = "fraction_changed";
+ROUTE1599.fromNode = "BehaviorClock";
+ROUTE1599.toField = "set_fraction";
+ROUTE1599.toNode = "t11_OI";
+ProtoBody603.children[327] = ROUTE1599;
 
-let ROUTE1600 = browser.currentScene.createNode("ROUTE");
-ROUTE1600.fromField = "fraction_changed";
-ROUTE1600.fromNode = "BehaviorClock";
-ROUTE1600.toField = "set_fraction";
-ROUTE1600.toNode = "vc1_OI";
-ProtoBody586.children[333] = ROUTE1600;
+let OrientationInterpolator1600 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1600.DEF = "t12_OI";
+let IS1601 = browser.currentScene.createNode("IS");
+let connect1602 = browser.currentScene.createNode("connect");
+connect1602.nodeField = "key";
+connect1602.protoField = "t12_key";
+IS1601.connect = new MFNode();
 
-let OrientationInterpolator1601 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1601.DEF = "vc2_OI";
-let IS1602 = browser.currentScene.createNode("IS");
+IS1601.connect[0] = connect1602;
+
 let connect1603 = browser.currentScene.createNode("connect");
-connect1603.nodeField = "key";
-connect1603.protoField = "vc2_key";
-IS1602.connect = new MFNode();
-
-IS1602.connect[0] = connect1603;
+connect1603.nodeField = "keyValue";
+connect1603.protoField = "t12_keyValue";
+IS1601.connect[1] = connect1603;
 
 let connect1604 = browser.currentScene.createNode("connect");
-connect1604.nodeField = "keyValue";
-connect1604.protoField = "vc2_keyValue";
-IS1602.connect[1] = connect1604;
+connect1604.nodeField = "value_changed";
+connect1604.protoField = "t12_changed";
+IS1601.connect[2] = connect1604;
 
-let connect1605 = browser.currentScene.createNode("connect");
-connect1605.nodeField = "value_changed";
-connect1605.protoField = "vc2_changed";
-IS1602.connect[2] = connect1605;
+OrientationInterpolator1600.iS = IS1601;
 
-OrientationInterpolator1601.iS = IS1602;
+ProtoBody603.children[328] = OrientationInterpolator1600;
 
-ProtoBody586.children[334] = OrientationInterpolator1601;
+let ROUTE1605 = browser.currentScene.createNode("ROUTE");
+ROUTE1605.fromField = "fraction_changed";
+ROUTE1605.fromNode = "BehaviorClock";
+ROUTE1605.toField = "set_fraction";
+ROUTE1605.toNode = "t12_OI";
+ProtoBody603.children[329] = ROUTE1605;
 
-let ROUTE1606 = browser.currentScene.createNode("ROUTE");
-ROUTE1606.fromField = "fraction_changed";
-ROUTE1606.fromNode = "BehaviorClock";
-ROUTE1606.toField = "set_fraction";
-ROUTE1606.toNode = "vc2_OI";
-ProtoBody586.children[335] = ROUTE1606;
+let OrientationInterpolator1606 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1606.DEF = "temporomandibular_OI";
+let IS1607 = browser.currentScene.createNode("IS");
+let connect1608 = browser.currentScene.createNode("connect");
+connect1608.nodeField = "key";
+connect1608.protoField = "temporomandibular_key";
+IS1607.connect = new MFNode();
 
-let OrientationInterpolator1607 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1607.DEF = "vc3_OI";
-let IS1608 = browser.currentScene.createNode("IS");
+IS1607.connect[0] = connect1608;
+
 let connect1609 = browser.currentScene.createNode("connect");
-connect1609.nodeField = "key";
-connect1609.protoField = "vc3_key";
-IS1608.connect = new MFNode();
-
-IS1608.connect[0] = connect1609;
+connect1609.nodeField = "keyValue";
+connect1609.protoField = "temporomandibular_keyValue";
+IS1607.connect[1] = connect1609;
 
 let connect1610 = browser.currentScene.createNode("connect");
-connect1610.nodeField = "keyValue";
-connect1610.protoField = "vc3_keyValue";
-IS1608.connect[1] = connect1610;
+connect1610.nodeField = "value_changed";
+connect1610.protoField = "temporomandibular_changed";
+IS1607.connect[2] = connect1610;
 
-let connect1611 = browser.currentScene.createNode("connect");
-connect1611.nodeField = "value_changed";
-connect1611.protoField = "vc3_changed";
-IS1608.connect[2] = connect1611;
+OrientationInterpolator1606.iS = IS1607;
 
-OrientationInterpolator1607.iS = IS1608;
+ProtoBody603.children[330] = OrientationInterpolator1606;
 
-ProtoBody586.children[336] = OrientationInterpolator1607;
+let ROUTE1611 = browser.currentScene.createNode("ROUTE");
+ROUTE1611.fromField = "fraction_changed";
+ROUTE1611.fromNode = "BehaviorClock";
+ROUTE1611.toField = "set_fraction";
+ROUTE1611.toNode = "temporomandibular_OI";
+ProtoBody603.children[331] = ROUTE1611;
 
-let ROUTE1612 = browser.currentScene.createNode("ROUTE");
-ROUTE1612.fromField = "fraction_changed";
-ROUTE1612.fromNode = "BehaviorClock";
-ROUTE1612.toField = "set_fraction";
-ROUTE1612.toNode = "vc3_OI";
-ProtoBody586.children[337] = ROUTE1612;
+let OrientationInterpolator1612 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1612.DEF = "vc1_OI";
+let IS1613 = browser.currentScene.createNode("IS");
+let connect1614 = browser.currentScene.createNode("connect");
+connect1614.nodeField = "key";
+connect1614.protoField = "vc1_key";
+IS1613.connect = new MFNode();
 
-let OrientationInterpolator1613 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1613.DEF = "vc4_OI";
-let IS1614 = browser.currentScene.createNode("IS");
+IS1613.connect[0] = connect1614;
+
 let connect1615 = browser.currentScene.createNode("connect");
-connect1615.nodeField = "key";
-connect1615.protoField = "vc4_key";
-IS1614.connect = new MFNode();
-
-IS1614.connect[0] = connect1615;
+connect1615.nodeField = "keyValue";
+connect1615.protoField = "vc1_keyValue";
+IS1613.connect[1] = connect1615;
 
 let connect1616 = browser.currentScene.createNode("connect");
-connect1616.nodeField = "keyValue";
-connect1616.protoField = "vc4_keyValue";
-IS1614.connect[1] = connect1616;
+connect1616.nodeField = "value_changed";
+connect1616.protoField = "vc1_changed";
+IS1613.connect[2] = connect1616;
 
-let connect1617 = browser.currentScene.createNode("connect");
-connect1617.nodeField = "value_changed";
-connect1617.protoField = "vc4_changed";
-IS1614.connect[2] = connect1617;
+OrientationInterpolator1612.iS = IS1613;
 
-OrientationInterpolator1613.iS = IS1614;
+ProtoBody603.children[332] = OrientationInterpolator1612;
 
-ProtoBody586.children[338] = OrientationInterpolator1613;
+let ROUTE1617 = browser.currentScene.createNode("ROUTE");
+ROUTE1617.fromField = "fraction_changed";
+ROUTE1617.fromNode = "BehaviorClock";
+ROUTE1617.toField = "set_fraction";
+ROUTE1617.toNode = "vc1_OI";
+ProtoBody603.children[333] = ROUTE1617;
 
-let ROUTE1618 = browser.currentScene.createNode("ROUTE");
-ROUTE1618.fromField = "fraction_changed";
-ROUTE1618.fromNode = "BehaviorClock";
-ROUTE1618.toField = "set_fraction";
-ROUTE1618.toNode = "vc4_OI";
-ProtoBody586.children[339] = ROUTE1618;
+let OrientationInterpolator1618 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1618.DEF = "vc2_OI";
+let IS1619 = browser.currentScene.createNode("IS");
+let connect1620 = browser.currentScene.createNode("connect");
+connect1620.nodeField = "key";
+connect1620.protoField = "vc2_key";
+IS1619.connect = new MFNode();
 
-let OrientationInterpolator1619 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1619.DEF = "vc5_OI";
-let IS1620 = browser.currentScene.createNode("IS");
+IS1619.connect[0] = connect1620;
+
 let connect1621 = browser.currentScene.createNode("connect");
-connect1621.nodeField = "key";
-connect1621.protoField = "vc5_key";
-IS1620.connect = new MFNode();
-
-IS1620.connect[0] = connect1621;
+connect1621.nodeField = "keyValue";
+connect1621.protoField = "vc2_keyValue";
+IS1619.connect[1] = connect1621;
 
 let connect1622 = browser.currentScene.createNode("connect");
-connect1622.nodeField = "keyValue";
-connect1622.protoField = "vc5_keyValue";
-IS1620.connect[1] = connect1622;
+connect1622.nodeField = "value_changed";
+connect1622.protoField = "vc2_changed";
+IS1619.connect[2] = connect1622;
 
-let connect1623 = browser.currentScene.createNode("connect");
-connect1623.nodeField = "value_changed";
-connect1623.protoField = "vc5_changed";
-IS1620.connect[2] = connect1623;
+OrientationInterpolator1618.iS = IS1619;
 
-OrientationInterpolator1619.iS = IS1620;
+ProtoBody603.children[334] = OrientationInterpolator1618;
 
-ProtoBody586.children[340] = OrientationInterpolator1619;
+let ROUTE1623 = browser.currentScene.createNode("ROUTE");
+ROUTE1623.fromField = "fraction_changed";
+ROUTE1623.fromNode = "BehaviorClock";
+ROUTE1623.toField = "set_fraction";
+ROUTE1623.toNode = "vc2_OI";
+ProtoBody603.children[335] = ROUTE1623;
 
-let ROUTE1624 = browser.currentScene.createNode("ROUTE");
-ROUTE1624.fromField = "fraction_changed";
-ROUTE1624.fromNode = "BehaviorClock";
-ROUTE1624.toField = "set_fraction";
-ROUTE1624.toNode = "vc5_OI";
-ProtoBody586.children[341] = ROUTE1624;
+let OrientationInterpolator1624 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1624.DEF = "vc3_OI";
+let IS1625 = browser.currentScene.createNode("IS");
+let connect1626 = browser.currentScene.createNode("connect");
+connect1626.nodeField = "key";
+connect1626.protoField = "vc3_key";
+IS1625.connect = new MFNode();
 
-let OrientationInterpolator1625 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1625.DEF = "vc6_OI";
-let IS1626 = browser.currentScene.createNode("IS");
+IS1625.connect[0] = connect1626;
+
 let connect1627 = browser.currentScene.createNode("connect");
-connect1627.nodeField = "key";
-connect1627.protoField = "vc6_key";
-IS1626.connect = new MFNode();
-
-IS1626.connect[0] = connect1627;
+connect1627.nodeField = "keyValue";
+connect1627.protoField = "vc3_keyValue";
+IS1625.connect[1] = connect1627;
 
 let connect1628 = browser.currentScene.createNode("connect");
-connect1628.nodeField = "keyValue";
-connect1628.protoField = "vc6_keyValue";
-IS1626.connect[1] = connect1628;
+connect1628.nodeField = "value_changed";
+connect1628.protoField = "vc3_changed";
+IS1625.connect[2] = connect1628;
 
-let connect1629 = browser.currentScene.createNode("connect");
-connect1629.nodeField = "value_changed";
-connect1629.protoField = "vc6_changed";
-IS1626.connect[2] = connect1629;
+OrientationInterpolator1624.iS = IS1625;
 
-OrientationInterpolator1625.iS = IS1626;
+ProtoBody603.children[336] = OrientationInterpolator1624;
 
-ProtoBody586.children[342] = OrientationInterpolator1625;
+let ROUTE1629 = browser.currentScene.createNode("ROUTE");
+ROUTE1629.fromField = "fraction_changed";
+ROUTE1629.fromNode = "BehaviorClock";
+ROUTE1629.toField = "set_fraction";
+ROUTE1629.toNode = "vc3_OI";
+ProtoBody603.children[337] = ROUTE1629;
 
-let ROUTE1630 = browser.currentScene.createNode("ROUTE");
-ROUTE1630.fromField = "fraction_changed";
-ROUTE1630.fromNode = "BehaviorClock";
-ROUTE1630.toField = "set_fraction";
-ROUTE1630.toNode = "vc6_OI";
-ProtoBody586.children[343] = ROUTE1630;
+let OrientationInterpolator1630 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1630.DEF = "vc4_OI";
+let IS1631 = browser.currentScene.createNode("IS");
+let connect1632 = browser.currentScene.createNode("connect");
+connect1632.nodeField = "key";
+connect1632.protoField = "vc4_key";
+IS1631.connect = new MFNode();
 
-let OrientationInterpolator1631 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1631.DEF = "vc7_OI";
-let IS1632 = browser.currentScene.createNode("IS");
+IS1631.connect[0] = connect1632;
+
 let connect1633 = browser.currentScene.createNode("connect");
-connect1633.nodeField = "key";
-connect1633.protoField = "vc7_key";
-IS1632.connect = new MFNode();
-
-IS1632.connect[0] = connect1633;
+connect1633.nodeField = "keyValue";
+connect1633.protoField = "vc4_keyValue";
+IS1631.connect[1] = connect1633;
 
 let connect1634 = browser.currentScene.createNode("connect");
-connect1634.nodeField = "keyValue";
-connect1634.protoField = "vc7_keyValue";
-IS1632.connect[1] = connect1634;
+connect1634.nodeField = "value_changed";
+connect1634.protoField = "vc4_changed";
+IS1631.connect[2] = connect1634;
 
-let connect1635 = browser.currentScene.createNode("connect");
-connect1635.nodeField = "value_changed";
-connect1635.protoField = "vc7_changed";
-IS1632.connect[2] = connect1635;
+OrientationInterpolator1630.iS = IS1631;
 
-OrientationInterpolator1631.iS = IS1632;
+ProtoBody603.children[338] = OrientationInterpolator1630;
 
-ProtoBody586.children[344] = OrientationInterpolator1631;
+let ROUTE1635 = browser.currentScene.createNode("ROUTE");
+ROUTE1635.fromField = "fraction_changed";
+ROUTE1635.fromNode = "BehaviorClock";
+ROUTE1635.toField = "set_fraction";
+ROUTE1635.toNode = "vc4_OI";
+ProtoBody603.children[339] = ROUTE1635;
 
-let ROUTE1636 = browser.currentScene.createNode("ROUTE");
-ROUTE1636.fromField = "fraction_changed";
-ROUTE1636.fromNode = "BehaviorClock";
-ROUTE1636.toField = "set_fraction";
-ROUTE1636.toNode = "vc7_OI";
-ProtoBody586.children[345] = ROUTE1636;
+let OrientationInterpolator1636 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1636.DEF = "vc5_OI";
+let IS1637 = browser.currentScene.createNode("IS");
+let connect1638 = browser.currentScene.createNode("connect");
+connect1638.nodeField = "key";
+connect1638.protoField = "vc5_key";
+IS1637.connect = new MFNode();
 
-let OrientationInterpolator1637 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1637.DEF = "vl1_OI";
-let IS1638 = browser.currentScene.createNode("IS");
+IS1637.connect[0] = connect1638;
+
 let connect1639 = browser.currentScene.createNode("connect");
-connect1639.nodeField = "key";
-connect1639.protoField = "vl1_key";
-IS1638.connect = new MFNode();
-
-IS1638.connect[0] = connect1639;
+connect1639.nodeField = "keyValue";
+connect1639.protoField = "vc5_keyValue";
+IS1637.connect[1] = connect1639;
 
 let connect1640 = browser.currentScene.createNode("connect");
-connect1640.nodeField = "keyValue";
-connect1640.protoField = "vl1_keyValue";
-IS1638.connect[1] = connect1640;
+connect1640.nodeField = "value_changed";
+connect1640.protoField = "vc5_changed";
+IS1637.connect[2] = connect1640;
 
-let connect1641 = browser.currentScene.createNode("connect");
-connect1641.nodeField = "value_changed";
-connect1641.protoField = "vl1_changed";
-IS1638.connect[2] = connect1641;
+OrientationInterpolator1636.iS = IS1637;
 
-OrientationInterpolator1637.iS = IS1638;
+ProtoBody603.children[340] = OrientationInterpolator1636;
 
-ProtoBody586.children[346] = OrientationInterpolator1637;
+let ROUTE1641 = browser.currentScene.createNode("ROUTE");
+ROUTE1641.fromField = "fraction_changed";
+ROUTE1641.fromNode = "BehaviorClock";
+ROUTE1641.toField = "set_fraction";
+ROUTE1641.toNode = "vc5_OI";
+ProtoBody603.children[341] = ROUTE1641;
 
-let ROUTE1642 = browser.currentScene.createNode("ROUTE");
-ROUTE1642.fromField = "fraction_changed";
-ROUTE1642.fromNode = "BehaviorClock";
-ROUTE1642.toField = "set_fraction";
-ROUTE1642.toNode = "vl1_OI";
-ProtoBody586.children[347] = ROUTE1642;
+let OrientationInterpolator1642 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1642.DEF = "vc6_OI";
+let IS1643 = browser.currentScene.createNode("IS");
+let connect1644 = browser.currentScene.createNode("connect");
+connect1644.nodeField = "key";
+connect1644.protoField = "vc6_key";
+IS1643.connect = new MFNode();
 
-let OrientationInterpolator1643 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1643.DEF = "vl2_OI";
-let IS1644 = browser.currentScene.createNode("IS");
+IS1643.connect[0] = connect1644;
+
 let connect1645 = browser.currentScene.createNode("connect");
-connect1645.nodeField = "key";
-connect1645.protoField = "vl2_key";
-IS1644.connect = new MFNode();
-
-IS1644.connect[0] = connect1645;
+connect1645.nodeField = "keyValue";
+connect1645.protoField = "vc6_keyValue";
+IS1643.connect[1] = connect1645;
 
 let connect1646 = browser.currentScene.createNode("connect");
-connect1646.nodeField = "keyValue";
-connect1646.protoField = "vl2_keyValue";
-IS1644.connect[1] = connect1646;
+connect1646.nodeField = "value_changed";
+connect1646.protoField = "vc6_changed";
+IS1643.connect[2] = connect1646;
 
-let connect1647 = browser.currentScene.createNode("connect");
-connect1647.nodeField = "value_changed";
-connect1647.protoField = "vl2_changed";
-IS1644.connect[2] = connect1647;
+OrientationInterpolator1642.iS = IS1643;
 
-OrientationInterpolator1643.iS = IS1644;
+ProtoBody603.children[342] = OrientationInterpolator1642;
 
-ProtoBody586.children[348] = OrientationInterpolator1643;
+let ROUTE1647 = browser.currentScene.createNode("ROUTE");
+ROUTE1647.fromField = "fraction_changed";
+ROUTE1647.fromNode = "BehaviorClock";
+ROUTE1647.toField = "set_fraction";
+ROUTE1647.toNode = "vc6_OI";
+ProtoBody603.children[343] = ROUTE1647;
 
-let ROUTE1648 = browser.currentScene.createNode("ROUTE");
-ROUTE1648.fromField = "fraction_changed";
-ROUTE1648.fromNode = "BehaviorClock";
-ROUTE1648.toField = "set_fraction";
-ROUTE1648.toNode = "vl2_OI";
-ProtoBody586.children[349] = ROUTE1648;
+let OrientationInterpolator1648 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1648.DEF = "vc7_OI";
+let IS1649 = browser.currentScene.createNode("IS");
+let connect1650 = browser.currentScene.createNode("connect");
+connect1650.nodeField = "key";
+connect1650.protoField = "vc7_key";
+IS1649.connect = new MFNode();
 
-let OrientationInterpolator1649 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1649.DEF = "vl3_OI";
-let IS1650 = browser.currentScene.createNode("IS");
+IS1649.connect[0] = connect1650;
+
 let connect1651 = browser.currentScene.createNode("connect");
-connect1651.nodeField = "key";
-connect1651.protoField = "vl3_key";
-IS1650.connect = new MFNode();
-
-IS1650.connect[0] = connect1651;
+connect1651.nodeField = "keyValue";
+connect1651.protoField = "vc7_keyValue";
+IS1649.connect[1] = connect1651;
 
 let connect1652 = browser.currentScene.createNode("connect");
-connect1652.nodeField = "keyValue";
-connect1652.protoField = "vl3_keyValue";
-IS1650.connect[1] = connect1652;
+connect1652.nodeField = "value_changed";
+connect1652.protoField = "vc7_changed";
+IS1649.connect[2] = connect1652;
 
-let connect1653 = browser.currentScene.createNode("connect");
-connect1653.nodeField = "value_changed";
-connect1653.protoField = "vl3_changed";
-IS1650.connect[2] = connect1653;
+OrientationInterpolator1648.iS = IS1649;
 
-OrientationInterpolator1649.iS = IS1650;
+ProtoBody603.children[344] = OrientationInterpolator1648;
 
-ProtoBody586.children[350] = OrientationInterpolator1649;
+let ROUTE1653 = browser.currentScene.createNode("ROUTE");
+ROUTE1653.fromField = "fraction_changed";
+ROUTE1653.fromNode = "BehaviorClock";
+ROUTE1653.toField = "set_fraction";
+ROUTE1653.toNode = "vc7_OI";
+ProtoBody603.children[345] = ROUTE1653;
 
-let ROUTE1654 = browser.currentScene.createNode("ROUTE");
-ROUTE1654.fromField = "fraction_changed";
-ROUTE1654.fromNode = "BehaviorClock";
-ROUTE1654.toField = "set_fraction";
-ROUTE1654.toNode = "vl3_OI";
-ProtoBody586.children[351] = ROUTE1654;
+let OrientationInterpolator1654 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1654.DEF = "vl1_OI";
+let IS1655 = browser.currentScene.createNode("IS");
+let connect1656 = browser.currentScene.createNode("connect");
+connect1656.nodeField = "key";
+connect1656.protoField = "vl1_key";
+IS1655.connect = new MFNode();
 
-let OrientationInterpolator1655 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1655.DEF = "vl4_OI";
-let IS1656 = browser.currentScene.createNode("IS");
+IS1655.connect[0] = connect1656;
+
 let connect1657 = browser.currentScene.createNode("connect");
-connect1657.nodeField = "key";
-connect1657.protoField = "vl4_key";
-IS1656.connect = new MFNode();
-
-IS1656.connect[0] = connect1657;
+connect1657.nodeField = "keyValue";
+connect1657.protoField = "vl1_keyValue";
+IS1655.connect[1] = connect1657;
 
 let connect1658 = browser.currentScene.createNode("connect");
-connect1658.nodeField = "keyValue";
-connect1658.protoField = "vl4_keyValue";
-IS1656.connect[1] = connect1658;
+connect1658.nodeField = "value_changed";
+connect1658.protoField = "vl1_changed";
+IS1655.connect[2] = connect1658;
 
-let connect1659 = browser.currentScene.createNode("connect");
-connect1659.nodeField = "value_changed";
-connect1659.protoField = "vl4_changed";
-IS1656.connect[2] = connect1659;
+OrientationInterpolator1654.iS = IS1655;
 
-OrientationInterpolator1655.iS = IS1656;
+ProtoBody603.children[346] = OrientationInterpolator1654;
 
-ProtoBody586.children[352] = OrientationInterpolator1655;
+let ROUTE1659 = browser.currentScene.createNode("ROUTE");
+ROUTE1659.fromField = "fraction_changed";
+ROUTE1659.fromNode = "BehaviorClock";
+ROUTE1659.toField = "set_fraction";
+ROUTE1659.toNode = "vl1_OI";
+ProtoBody603.children[347] = ROUTE1659;
 
-let ROUTE1660 = browser.currentScene.createNode("ROUTE");
-ROUTE1660.fromField = "fraction_changed";
-ROUTE1660.fromNode = "BehaviorClock";
-ROUTE1660.toField = "set_fraction";
-ROUTE1660.toNode = "vl4_OI";
-ProtoBody586.children[353] = ROUTE1660;
+let OrientationInterpolator1660 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1660.DEF = "vl2_OI";
+let IS1661 = browser.currentScene.createNode("IS");
+let connect1662 = browser.currentScene.createNode("connect");
+connect1662.nodeField = "key";
+connect1662.protoField = "vl2_key";
+IS1661.connect = new MFNode();
 
-let OrientationInterpolator1661 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1661.DEF = "vl5_OI";
-let IS1662 = browser.currentScene.createNode("IS");
+IS1661.connect[0] = connect1662;
+
 let connect1663 = browser.currentScene.createNode("connect");
-connect1663.nodeField = "key";
-connect1663.protoField = "vl5_key";
-IS1662.connect = new MFNode();
-
-IS1662.connect[0] = connect1663;
+connect1663.nodeField = "keyValue";
+connect1663.protoField = "vl2_keyValue";
+IS1661.connect[1] = connect1663;
 
 let connect1664 = browser.currentScene.createNode("connect");
-connect1664.nodeField = "keyValue";
-connect1664.protoField = "vl5_keyValue";
-IS1662.connect[1] = connect1664;
+connect1664.nodeField = "value_changed";
+connect1664.protoField = "vl2_changed";
+IS1661.connect[2] = connect1664;
 
-let connect1665 = browser.currentScene.createNode("connect");
-connect1665.nodeField = "value_changed";
-connect1665.protoField = "vl5_changed";
-IS1662.connect[2] = connect1665;
+OrientationInterpolator1660.iS = IS1661;
 
-OrientationInterpolator1661.iS = IS1662;
+ProtoBody603.children[348] = OrientationInterpolator1660;
 
-ProtoBody586.children[354] = OrientationInterpolator1661;
+let ROUTE1665 = browser.currentScene.createNode("ROUTE");
+ROUTE1665.fromField = "fraction_changed";
+ROUTE1665.fromNode = "BehaviorClock";
+ROUTE1665.toField = "set_fraction";
+ROUTE1665.toNode = "vl2_OI";
+ProtoBody603.children[349] = ROUTE1665;
 
-let ROUTE1666 = browser.currentScene.createNode("ROUTE");
-ROUTE1666.fromField = "fraction_changed";
-ROUTE1666.fromNode = "BehaviorClock";
-ROUTE1666.toField = "set_fraction";
-ROUTE1666.toNode = "vl5_OI";
-ProtoBody586.children[355] = ROUTE1666;
+let OrientationInterpolator1666 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1666.DEF = "vl3_OI";
+let IS1667 = browser.currentScene.createNode("IS");
+let connect1668 = browser.currentScene.createNode("connect");
+connect1668.nodeField = "key";
+connect1668.protoField = "vl3_key";
+IS1667.connect = new MFNode();
 
-let OrientationInterpolator1667 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1667.DEF = "vt1_OI";
-let IS1668 = browser.currentScene.createNode("IS");
+IS1667.connect[0] = connect1668;
+
 let connect1669 = browser.currentScene.createNode("connect");
-connect1669.nodeField = "key";
-connect1669.protoField = "vt1_key";
-IS1668.connect = new MFNode();
-
-IS1668.connect[0] = connect1669;
+connect1669.nodeField = "keyValue";
+connect1669.protoField = "vl3_keyValue";
+IS1667.connect[1] = connect1669;
 
 let connect1670 = browser.currentScene.createNode("connect");
-connect1670.nodeField = "keyValue";
-connect1670.protoField = "vt1_keyValue";
-IS1668.connect[1] = connect1670;
+connect1670.nodeField = "value_changed";
+connect1670.protoField = "vl3_changed";
+IS1667.connect[2] = connect1670;
 
-let connect1671 = browser.currentScene.createNode("connect");
-connect1671.nodeField = "value_changed";
-connect1671.protoField = "vt1_changed";
-IS1668.connect[2] = connect1671;
+OrientationInterpolator1666.iS = IS1667;
 
-OrientationInterpolator1667.iS = IS1668;
+ProtoBody603.children[350] = OrientationInterpolator1666;
 
-ProtoBody586.children[356] = OrientationInterpolator1667;
+let ROUTE1671 = browser.currentScene.createNode("ROUTE");
+ROUTE1671.fromField = "fraction_changed";
+ROUTE1671.fromNode = "BehaviorClock";
+ROUTE1671.toField = "set_fraction";
+ROUTE1671.toNode = "vl3_OI";
+ProtoBody603.children[351] = ROUTE1671;
 
-let ROUTE1672 = browser.currentScene.createNode("ROUTE");
-ROUTE1672.fromField = "fraction_changed";
-ROUTE1672.fromNode = "BehaviorClock";
-ROUTE1672.toField = "set_fraction";
-ROUTE1672.toNode = "vt1_OI";
-ProtoBody586.children[357] = ROUTE1672;
+let OrientationInterpolator1672 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1672.DEF = "vl4_OI";
+let IS1673 = browser.currentScene.createNode("IS");
+let connect1674 = browser.currentScene.createNode("connect");
+connect1674.nodeField = "key";
+connect1674.protoField = "vl4_key";
+IS1673.connect = new MFNode();
 
-let OrientationInterpolator1673 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1673.DEF = "vt2_OI";
-let IS1674 = browser.currentScene.createNode("IS");
+IS1673.connect[0] = connect1674;
+
 let connect1675 = browser.currentScene.createNode("connect");
-connect1675.nodeField = "key";
-connect1675.protoField = "vt2_key";
-IS1674.connect = new MFNode();
-
-IS1674.connect[0] = connect1675;
+connect1675.nodeField = "keyValue";
+connect1675.protoField = "vl4_keyValue";
+IS1673.connect[1] = connect1675;
 
 let connect1676 = browser.currentScene.createNode("connect");
-connect1676.nodeField = "keyValue";
-connect1676.protoField = "vt2_keyValue";
-IS1674.connect[1] = connect1676;
+connect1676.nodeField = "value_changed";
+connect1676.protoField = "vl4_changed";
+IS1673.connect[2] = connect1676;
 
-let connect1677 = browser.currentScene.createNode("connect");
-connect1677.nodeField = "value_changed";
-connect1677.protoField = "vt2_changed";
-IS1674.connect[2] = connect1677;
+OrientationInterpolator1672.iS = IS1673;
 
-OrientationInterpolator1673.iS = IS1674;
+ProtoBody603.children[352] = OrientationInterpolator1672;
 
-ProtoBody586.children[358] = OrientationInterpolator1673;
+let ROUTE1677 = browser.currentScene.createNode("ROUTE");
+ROUTE1677.fromField = "fraction_changed";
+ROUTE1677.fromNode = "BehaviorClock";
+ROUTE1677.toField = "set_fraction";
+ROUTE1677.toNode = "vl4_OI";
+ProtoBody603.children[353] = ROUTE1677;
 
-let ROUTE1678 = browser.currentScene.createNode("ROUTE");
-ROUTE1678.fromField = "fraction_changed";
-ROUTE1678.fromNode = "BehaviorClock";
-ROUTE1678.toField = "set_fraction";
-ROUTE1678.toNode = "vt2_OI";
-ProtoBody586.children[359] = ROUTE1678;
+let OrientationInterpolator1678 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1678.DEF = "vl5_OI";
+let IS1679 = browser.currentScene.createNode("IS");
+let connect1680 = browser.currentScene.createNode("connect");
+connect1680.nodeField = "key";
+connect1680.protoField = "vl5_key";
+IS1679.connect = new MFNode();
 
-let OrientationInterpolator1679 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1679.DEF = "vt3_OI";
-let IS1680 = browser.currentScene.createNode("IS");
+IS1679.connect[0] = connect1680;
+
 let connect1681 = browser.currentScene.createNode("connect");
-connect1681.nodeField = "key";
-connect1681.protoField = "vt3_key";
-IS1680.connect = new MFNode();
-
-IS1680.connect[0] = connect1681;
+connect1681.nodeField = "keyValue";
+connect1681.protoField = "vl5_keyValue";
+IS1679.connect[1] = connect1681;
 
 let connect1682 = browser.currentScene.createNode("connect");
-connect1682.nodeField = "keyValue";
-connect1682.protoField = "vt3_keyValue";
-IS1680.connect[1] = connect1682;
+connect1682.nodeField = "value_changed";
+connect1682.protoField = "vl5_changed";
+IS1679.connect[2] = connect1682;
 
-let connect1683 = browser.currentScene.createNode("connect");
-connect1683.nodeField = "value_changed";
-connect1683.protoField = "vt3_changed";
-IS1680.connect[2] = connect1683;
+OrientationInterpolator1678.iS = IS1679;
 
-OrientationInterpolator1679.iS = IS1680;
+ProtoBody603.children[354] = OrientationInterpolator1678;
 
-ProtoBody586.children[360] = OrientationInterpolator1679;
+let ROUTE1683 = browser.currentScene.createNode("ROUTE");
+ROUTE1683.fromField = "fraction_changed";
+ROUTE1683.fromNode = "BehaviorClock";
+ROUTE1683.toField = "set_fraction";
+ROUTE1683.toNode = "vl5_OI";
+ProtoBody603.children[355] = ROUTE1683;
 
-let ROUTE1684 = browser.currentScene.createNode("ROUTE");
-ROUTE1684.fromField = "fraction_changed";
-ROUTE1684.fromNode = "BehaviorClock";
-ROUTE1684.toField = "set_fraction";
-ROUTE1684.toNode = "vt3_OI";
-ProtoBody586.children[361] = ROUTE1684;
+let OrientationInterpolator1684 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1684.DEF = "vt1_OI";
+let IS1685 = browser.currentScene.createNode("IS");
+let connect1686 = browser.currentScene.createNode("connect");
+connect1686.nodeField = "key";
+connect1686.protoField = "vt1_key";
+IS1685.connect = new MFNode();
 
-let OrientationInterpolator1685 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1685.DEF = "vt4_OI";
-let IS1686 = browser.currentScene.createNode("IS");
+IS1685.connect[0] = connect1686;
+
 let connect1687 = browser.currentScene.createNode("connect");
-connect1687.nodeField = "key";
-connect1687.protoField = "vt4_key";
-IS1686.connect = new MFNode();
-
-IS1686.connect[0] = connect1687;
+connect1687.nodeField = "keyValue";
+connect1687.protoField = "vt1_keyValue";
+IS1685.connect[1] = connect1687;
 
 let connect1688 = browser.currentScene.createNode("connect");
-connect1688.nodeField = "keyValue";
-connect1688.protoField = "vt4_keyValue";
-IS1686.connect[1] = connect1688;
+connect1688.nodeField = "value_changed";
+connect1688.protoField = "vt1_changed";
+IS1685.connect[2] = connect1688;
 
-let connect1689 = browser.currentScene.createNode("connect");
-connect1689.nodeField = "value_changed";
-connect1689.protoField = "vt4_changed";
-IS1686.connect[2] = connect1689;
+OrientationInterpolator1684.iS = IS1685;
 
-OrientationInterpolator1685.iS = IS1686;
+ProtoBody603.children[356] = OrientationInterpolator1684;
 
-ProtoBody586.children[362] = OrientationInterpolator1685;
+let ROUTE1689 = browser.currentScene.createNode("ROUTE");
+ROUTE1689.fromField = "fraction_changed";
+ROUTE1689.fromNode = "BehaviorClock";
+ROUTE1689.toField = "set_fraction";
+ROUTE1689.toNode = "vt1_OI";
+ProtoBody603.children[357] = ROUTE1689;
 
-let ROUTE1690 = browser.currentScene.createNode("ROUTE");
-ROUTE1690.fromField = "fraction_changed";
-ROUTE1690.fromNode = "BehaviorClock";
-ROUTE1690.toField = "set_fraction";
-ROUTE1690.toNode = "vt4_OI";
-ProtoBody586.children[363] = ROUTE1690;
+let OrientationInterpolator1690 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1690.DEF = "vt2_OI";
+let IS1691 = browser.currentScene.createNode("IS");
+let connect1692 = browser.currentScene.createNode("connect");
+connect1692.nodeField = "key";
+connect1692.protoField = "vt2_key";
+IS1691.connect = new MFNode();
 
-let OrientationInterpolator1691 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1691.DEF = "vt5_OI";
-let IS1692 = browser.currentScene.createNode("IS");
+IS1691.connect[0] = connect1692;
+
 let connect1693 = browser.currentScene.createNode("connect");
-connect1693.nodeField = "key";
-connect1693.protoField = "vt5_key";
-IS1692.connect = new MFNode();
-
-IS1692.connect[0] = connect1693;
+connect1693.nodeField = "keyValue";
+connect1693.protoField = "vt2_keyValue";
+IS1691.connect[1] = connect1693;
 
 let connect1694 = browser.currentScene.createNode("connect");
-connect1694.nodeField = "keyValue";
-connect1694.protoField = "vt5_keyValue";
-IS1692.connect[1] = connect1694;
+connect1694.nodeField = "value_changed";
+connect1694.protoField = "vt2_changed";
+IS1691.connect[2] = connect1694;
 
-let connect1695 = browser.currentScene.createNode("connect");
-connect1695.nodeField = "value_changed";
-connect1695.protoField = "vt5_changed";
-IS1692.connect[2] = connect1695;
+OrientationInterpolator1690.iS = IS1691;
 
-OrientationInterpolator1691.iS = IS1692;
+ProtoBody603.children[358] = OrientationInterpolator1690;
 
-ProtoBody586.children[364] = OrientationInterpolator1691;
+let ROUTE1695 = browser.currentScene.createNode("ROUTE");
+ROUTE1695.fromField = "fraction_changed";
+ROUTE1695.fromNode = "BehaviorClock";
+ROUTE1695.toField = "set_fraction";
+ROUTE1695.toNode = "vt2_OI";
+ProtoBody603.children[359] = ROUTE1695;
 
-let ROUTE1696 = browser.currentScene.createNode("ROUTE");
-ROUTE1696.fromField = "fraction_changed";
-ROUTE1696.fromNode = "BehaviorClock";
-ROUTE1696.toField = "set_fraction";
-ROUTE1696.toNode = "vt5_OI";
-ProtoBody586.children[365] = ROUTE1696;
+let OrientationInterpolator1696 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1696.DEF = "vt3_OI";
+let IS1697 = browser.currentScene.createNode("IS");
+let connect1698 = browser.currentScene.createNode("connect");
+connect1698.nodeField = "key";
+connect1698.protoField = "vt3_key";
+IS1697.connect = new MFNode();
 
-let OrientationInterpolator1697 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1697.DEF = "vt6_OI";
-let IS1698 = browser.currentScene.createNode("IS");
+IS1697.connect[0] = connect1698;
+
 let connect1699 = browser.currentScene.createNode("connect");
-connect1699.nodeField = "key";
-connect1699.protoField = "vt6_key";
-IS1698.connect = new MFNode();
-
-IS1698.connect[0] = connect1699;
+connect1699.nodeField = "keyValue";
+connect1699.protoField = "vt3_keyValue";
+IS1697.connect[1] = connect1699;
 
 let connect1700 = browser.currentScene.createNode("connect");
-connect1700.nodeField = "keyValue";
-connect1700.protoField = "vt6_keyValue";
-IS1698.connect[1] = connect1700;
+connect1700.nodeField = "value_changed";
+connect1700.protoField = "vt3_changed";
+IS1697.connect[2] = connect1700;
 
-let connect1701 = browser.currentScene.createNode("connect");
-connect1701.nodeField = "value_changed";
-connect1701.protoField = "vt6_changed";
-IS1698.connect[2] = connect1701;
+OrientationInterpolator1696.iS = IS1697;
 
-OrientationInterpolator1697.iS = IS1698;
+ProtoBody603.children[360] = OrientationInterpolator1696;
 
-ProtoBody586.children[366] = OrientationInterpolator1697;
+let ROUTE1701 = browser.currentScene.createNode("ROUTE");
+ROUTE1701.fromField = "fraction_changed";
+ROUTE1701.fromNode = "BehaviorClock";
+ROUTE1701.toField = "set_fraction";
+ROUTE1701.toNode = "vt3_OI";
+ProtoBody603.children[361] = ROUTE1701;
 
-let ROUTE1702 = browser.currentScene.createNode("ROUTE");
-ROUTE1702.fromField = "fraction_changed";
-ROUTE1702.fromNode = "BehaviorClock";
-ROUTE1702.toField = "set_fraction";
-ROUTE1702.toNode = "vt6_OI";
-ProtoBody586.children[367] = ROUTE1702;
+let OrientationInterpolator1702 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1702.DEF = "vt4_OI";
+let IS1703 = browser.currentScene.createNode("IS");
+let connect1704 = browser.currentScene.createNode("connect");
+connect1704.nodeField = "key";
+connect1704.protoField = "vt4_key";
+IS1703.connect = new MFNode();
 
-let OrientationInterpolator1703 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1703.DEF = "vt7_OI";
-let IS1704 = browser.currentScene.createNode("IS");
+IS1703.connect[0] = connect1704;
+
 let connect1705 = browser.currentScene.createNode("connect");
-connect1705.nodeField = "key";
-connect1705.protoField = "vt7_key";
-IS1704.connect = new MFNode();
-
-IS1704.connect[0] = connect1705;
+connect1705.nodeField = "keyValue";
+connect1705.protoField = "vt4_keyValue";
+IS1703.connect[1] = connect1705;
 
 let connect1706 = browser.currentScene.createNode("connect");
-connect1706.nodeField = "keyValue";
-connect1706.protoField = "vt7_keyValue";
-IS1704.connect[1] = connect1706;
+connect1706.nodeField = "value_changed";
+connect1706.protoField = "vt4_changed";
+IS1703.connect[2] = connect1706;
 
-let connect1707 = browser.currentScene.createNode("connect");
-connect1707.nodeField = "value_changed";
-connect1707.protoField = "vt7_changed";
-IS1704.connect[2] = connect1707;
+OrientationInterpolator1702.iS = IS1703;
 
-OrientationInterpolator1703.iS = IS1704;
+ProtoBody603.children[362] = OrientationInterpolator1702;
 
-ProtoBody586.children[368] = OrientationInterpolator1703;
+let ROUTE1707 = browser.currentScene.createNode("ROUTE");
+ROUTE1707.fromField = "fraction_changed";
+ROUTE1707.fromNode = "BehaviorClock";
+ROUTE1707.toField = "set_fraction";
+ROUTE1707.toNode = "vt4_OI";
+ProtoBody603.children[363] = ROUTE1707;
 
-let ROUTE1708 = browser.currentScene.createNode("ROUTE");
-ROUTE1708.fromField = "fraction_changed";
-ROUTE1708.fromNode = "BehaviorClock";
-ROUTE1708.toField = "set_fraction";
-ROUTE1708.toNode = "vt7_OI";
-ProtoBody586.children[369] = ROUTE1708;
+let OrientationInterpolator1708 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1708.DEF = "vt5_OI";
+let IS1709 = browser.currentScene.createNode("IS");
+let connect1710 = browser.currentScene.createNode("connect");
+connect1710.nodeField = "key";
+connect1710.protoField = "vt5_key";
+IS1709.connect = new MFNode();
 
-let OrientationInterpolator1709 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1709.DEF = "vt8_OI";
-let IS1710 = browser.currentScene.createNode("IS");
+IS1709.connect[0] = connect1710;
+
 let connect1711 = browser.currentScene.createNode("connect");
-connect1711.nodeField = "key";
-connect1711.protoField = "vt8_key";
-IS1710.connect = new MFNode();
-
-IS1710.connect[0] = connect1711;
+connect1711.nodeField = "keyValue";
+connect1711.protoField = "vt5_keyValue";
+IS1709.connect[1] = connect1711;
 
 let connect1712 = browser.currentScene.createNode("connect");
-connect1712.nodeField = "keyValue";
-connect1712.protoField = "vt8_keyValue";
-IS1710.connect[1] = connect1712;
+connect1712.nodeField = "value_changed";
+connect1712.protoField = "vt5_changed";
+IS1709.connect[2] = connect1712;
 
-let connect1713 = browser.currentScene.createNode("connect");
-connect1713.nodeField = "value_changed";
-connect1713.protoField = "vt8_changed";
-IS1710.connect[2] = connect1713;
+OrientationInterpolator1708.iS = IS1709;
 
-OrientationInterpolator1709.iS = IS1710;
+ProtoBody603.children[364] = OrientationInterpolator1708;
 
-ProtoBody586.children[370] = OrientationInterpolator1709;
+let ROUTE1713 = browser.currentScene.createNode("ROUTE");
+ROUTE1713.fromField = "fraction_changed";
+ROUTE1713.fromNode = "BehaviorClock";
+ROUTE1713.toField = "set_fraction";
+ROUTE1713.toNode = "vt5_OI";
+ProtoBody603.children[365] = ROUTE1713;
 
-let ROUTE1714 = browser.currentScene.createNode("ROUTE");
-ROUTE1714.fromField = "fraction_changed";
-ROUTE1714.fromNode = "BehaviorClock";
-ROUTE1714.toField = "set_fraction";
-ROUTE1714.toNode = "vt8_OI";
-ProtoBody586.children[371] = ROUTE1714;
+let OrientationInterpolator1714 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1714.DEF = "vt6_OI";
+let IS1715 = browser.currentScene.createNode("IS");
+let connect1716 = browser.currentScene.createNode("connect");
+connect1716.nodeField = "key";
+connect1716.protoField = "vt6_key";
+IS1715.connect = new MFNode();
 
-let OrientationInterpolator1715 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1715.DEF = "vt9_OI";
-let IS1716 = browser.currentScene.createNode("IS");
+IS1715.connect[0] = connect1716;
+
 let connect1717 = browser.currentScene.createNode("connect");
-connect1717.nodeField = "key";
-connect1717.protoField = "vt9_key";
-IS1716.connect = new MFNode();
-
-IS1716.connect[0] = connect1717;
+connect1717.nodeField = "keyValue";
+connect1717.protoField = "vt6_keyValue";
+IS1715.connect[1] = connect1717;
 
 let connect1718 = browser.currentScene.createNode("connect");
-connect1718.nodeField = "keyValue";
-connect1718.protoField = "vt9_keyValue";
-IS1716.connect[1] = connect1718;
+connect1718.nodeField = "value_changed";
+connect1718.protoField = "vt6_changed";
+IS1715.connect[2] = connect1718;
 
-let connect1719 = browser.currentScene.createNode("connect");
-connect1719.nodeField = "value_changed";
-connect1719.protoField = "vt9_changed";
-IS1716.connect[2] = connect1719;
+OrientationInterpolator1714.iS = IS1715;
 
-OrientationInterpolator1715.iS = IS1716;
+ProtoBody603.children[366] = OrientationInterpolator1714;
 
-ProtoBody586.children[372] = OrientationInterpolator1715;
+let ROUTE1719 = browser.currentScene.createNode("ROUTE");
+ROUTE1719.fromField = "fraction_changed";
+ROUTE1719.fromNode = "BehaviorClock";
+ROUTE1719.toField = "set_fraction";
+ROUTE1719.toNode = "vt6_OI";
+ProtoBody603.children[367] = ROUTE1719;
 
-let ROUTE1720 = browser.currentScene.createNode("ROUTE");
-ROUTE1720.fromField = "fraction_changed";
-ROUTE1720.fromNode = "BehaviorClock";
-ROUTE1720.toField = "set_fraction";
-ROUTE1720.toNode = "vt9_OI";
-ProtoBody586.children[373] = ROUTE1720;
+let OrientationInterpolator1720 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1720.DEF = "vt7_OI";
+let IS1721 = browser.currentScene.createNode("IS");
+let connect1722 = browser.currentScene.createNode("connect");
+connect1722.nodeField = "key";
+connect1722.protoField = "vt7_key";
+IS1721.connect = new MFNode();
 
-let OrientationInterpolator1721 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1721.DEF = "vt10_OI";
-let IS1722 = browser.currentScene.createNode("IS");
+IS1721.connect[0] = connect1722;
+
 let connect1723 = browser.currentScene.createNode("connect");
-connect1723.nodeField = "key";
-connect1723.protoField = "vt10_key";
-IS1722.connect = new MFNode();
-
-IS1722.connect[0] = connect1723;
+connect1723.nodeField = "keyValue";
+connect1723.protoField = "vt7_keyValue";
+IS1721.connect[1] = connect1723;
 
 let connect1724 = browser.currentScene.createNode("connect");
-connect1724.nodeField = "keyValue";
-connect1724.protoField = "vt10_keyValue";
-IS1722.connect[1] = connect1724;
+connect1724.nodeField = "value_changed";
+connect1724.protoField = "vt7_changed";
+IS1721.connect[2] = connect1724;
 
-let connect1725 = browser.currentScene.createNode("connect");
-connect1725.nodeField = "value_changed";
-connect1725.protoField = "vt10_changed";
-IS1722.connect[2] = connect1725;
+OrientationInterpolator1720.iS = IS1721;
 
-OrientationInterpolator1721.iS = IS1722;
+ProtoBody603.children[368] = OrientationInterpolator1720;
 
-ProtoBody586.children[374] = OrientationInterpolator1721;
+let ROUTE1725 = browser.currentScene.createNode("ROUTE");
+ROUTE1725.fromField = "fraction_changed";
+ROUTE1725.fromNode = "BehaviorClock";
+ROUTE1725.toField = "set_fraction";
+ROUTE1725.toNode = "vt7_OI";
+ProtoBody603.children[369] = ROUTE1725;
 
-let ROUTE1726 = browser.currentScene.createNode("ROUTE");
-ROUTE1726.fromField = "fraction_changed";
-ROUTE1726.fromNode = "BehaviorClock";
-ROUTE1726.toField = "set_fraction";
-ROUTE1726.toNode = "vt10_OI";
-ProtoBody586.children[375] = ROUTE1726;
+let OrientationInterpolator1726 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1726.DEF = "vt8_OI";
+let IS1727 = browser.currentScene.createNode("IS");
+let connect1728 = browser.currentScene.createNode("connect");
+connect1728.nodeField = "key";
+connect1728.protoField = "vt8_key";
+IS1727.connect = new MFNode();
 
-let OrientationInterpolator1727 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1727.DEF = "vt11_OI";
-let IS1728 = browser.currentScene.createNode("IS");
+IS1727.connect[0] = connect1728;
+
 let connect1729 = browser.currentScene.createNode("connect");
-connect1729.nodeField = "key";
-connect1729.protoField = "vt11_key";
-IS1728.connect = new MFNode();
-
-IS1728.connect[0] = connect1729;
+connect1729.nodeField = "keyValue";
+connect1729.protoField = "vt8_keyValue";
+IS1727.connect[1] = connect1729;
 
 let connect1730 = browser.currentScene.createNode("connect");
-connect1730.nodeField = "keyValue";
-connect1730.protoField = "vt11_keyValue";
-IS1728.connect[1] = connect1730;
+connect1730.nodeField = "value_changed";
+connect1730.protoField = "vt8_changed";
+IS1727.connect[2] = connect1730;
 
-let connect1731 = browser.currentScene.createNode("connect");
-connect1731.nodeField = "value_changed";
-connect1731.protoField = "vt11_changed";
-IS1728.connect[2] = connect1731;
+OrientationInterpolator1726.iS = IS1727;
 
-OrientationInterpolator1727.iS = IS1728;
+ProtoBody603.children[370] = OrientationInterpolator1726;
 
-ProtoBody586.children[376] = OrientationInterpolator1727;
+let ROUTE1731 = browser.currentScene.createNode("ROUTE");
+ROUTE1731.fromField = "fraction_changed";
+ROUTE1731.fromNode = "BehaviorClock";
+ROUTE1731.toField = "set_fraction";
+ROUTE1731.toNode = "vt8_OI";
+ProtoBody603.children[371] = ROUTE1731;
 
-let ROUTE1732 = browser.currentScene.createNode("ROUTE");
-ROUTE1732.fromField = "fraction_changed";
-ROUTE1732.fromNode = "BehaviorClock";
-ROUTE1732.toField = "set_fraction";
-ROUTE1732.toNode = "vt11_OI";
-ProtoBody586.children[377] = ROUTE1732;
+let OrientationInterpolator1732 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1732.DEF = "vt9_OI";
+let IS1733 = browser.currentScene.createNode("IS");
+let connect1734 = browser.currentScene.createNode("connect");
+connect1734.nodeField = "key";
+connect1734.protoField = "vt9_key";
+IS1733.connect = new MFNode();
 
-let OrientationInterpolator1733 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator1733.DEF = "vt12_OI";
-let IS1734 = browser.currentScene.createNode("IS");
+IS1733.connect[0] = connect1734;
+
 let connect1735 = browser.currentScene.createNode("connect");
-connect1735.nodeField = "key";
-connect1735.protoField = "vt12_key";
-IS1734.connect = new MFNode();
-
-IS1734.connect[0] = connect1735;
+connect1735.nodeField = "keyValue";
+connect1735.protoField = "vt9_keyValue";
+IS1733.connect[1] = connect1735;
 
 let connect1736 = browser.currentScene.createNode("connect");
-connect1736.nodeField = "keyValue";
-connect1736.protoField = "vt12_keyValue";
-IS1734.connect[1] = connect1736;
+connect1736.nodeField = "value_changed";
+connect1736.protoField = "vt9_changed";
+IS1733.connect[2] = connect1736;
 
-let connect1737 = browser.currentScene.createNode("connect");
-connect1737.nodeField = "value_changed";
-connect1737.protoField = "vt12_changed";
-IS1734.connect[2] = connect1737;
+OrientationInterpolator1732.iS = IS1733;
 
-OrientationInterpolator1733.iS = IS1734;
+ProtoBody603.children[372] = OrientationInterpolator1732;
 
-ProtoBody586.children[378] = OrientationInterpolator1733;
+let ROUTE1737 = browser.currentScene.createNode("ROUTE");
+ROUTE1737.fromField = "fraction_changed";
+ROUTE1737.fromNode = "BehaviorClock";
+ROUTE1737.toField = "set_fraction";
+ROUTE1737.toNode = "vt9_OI";
+ProtoBody603.children[373] = ROUTE1737;
 
-let ROUTE1738 = browser.currentScene.createNode("ROUTE");
-ROUTE1738.fromField = "fraction_changed";
-ROUTE1738.fromNode = "BehaviorClock";
-ROUTE1738.toField = "set_fraction";
-ROUTE1738.toNode = "vt12_OI";
-ProtoBody586.children[379] = ROUTE1738;
+let OrientationInterpolator1738 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1738.DEF = "vt10_OI";
+let IS1739 = browser.currentScene.createNode("IS");
+let connect1740 = browser.currentScene.createNode("connect");
+connect1740.nodeField = "key";
+connect1740.protoField = "vt10_key";
+IS1739.connect = new MFNode();
 
-ProtoDeclare3.protoBody = ProtoBody586;
+IS1739.connect[0] = connect1740;
 
-browser.currentScene.children[1] = ProtoDeclare3;
+let connect1741 = browser.currentScene.createNode("connect");
+connect1741.nodeField = "keyValue";
+connect1741.protoField = "vt10_keyValue";
+IS1739.connect[1] = connect1741;
 
-let ProtoDeclare1739 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let connect1742 = browser.currentScene.createNode("connect");
+connect1742.nodeField = "value_changed";
+connect1742.protoField = "vt10_changed";
+IS1739.connect[2] = connect1742;
+
+OrientationInterpolator1738.iS = IS1739;
+
+ProtoBody603.children[374] = OrientationInterpolator1738;
+
+let ROUTE1743 = browser.currentScene.createNode("ROUTE");
+ROUTE1743.fromField = "fraction_changed";
+ROUTE1743.fromNode = "BehaviorClock";
+ROUTE1743.toField = "set_fraction";
+ROUTE1743.toNode = "vt10_OI";
+ProtoBody603.children[375] = ROUTE1743;
+
+let OrientationInterpolator1744 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1744.DEF = "vt11_OI";
+let IS1745 = browser.currentScene.createNode("IS");
+let connect1746 = browser.currentScene.createNode("connect");
+connect1746.nodeField = "key";
+connect1746.protoField = "vt11_key";
+IS1745.connect = new MFNode();
+
+IS1745.connect[0] = connect1746;
+
+let connect1747 = browser.currentScene.createNode("connect");
+connect1747.nodeField = "keyValue";
+connect1747.protoField = "vt11_keyValue";
+IS1745.connect[1] = connect1747;
+
+let connect1748 = browser.currentScene.createNode("connect");
+connect1748.nodeField = "value_changed";
+connect1748.protoField = "vt11_changed";
+IS1745.connect[2] = connect1748;
+
+OrientationInterpolator1744.iS = IS1745;
+
+ProtoBody603.children[376] = OrientationInterpolator1744;
+
+let ROUTE1749 = browser.currentScene.createNode("ROUTE");
+ROUTE1749.fromField = "fraction_changed";
+ROUTE1749.fromNode = "BehaviorClock";
+ROUTE1749.toField = "set_fraction";
+ROUTE1749.toNode = "vt11_OI";
+ProtoBody603.children[377] = ROUTE1749;
+
+let OrientationInterpolator1750 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator1750.DEF = "vt12_OI";
+let IS1751 = browser.currentScene.createNode("IS");
+let connect1752 = browser.currentScene.createNode("connect");
+connect1752.nodeField = "key";
+connect1752.protoField = "vt12_key";
+IS1751.connect = new MFNode();
+
+IS1751.connect[0] = connect1752;
+
+let connect1753 = browser.currentScene.createNode("connect");
+connect1753.nodeField = "keyValue";
+connect1753.protoField = "vt12_keyValue";
+IS1751.connect[1] = connect1753;
+
+let connect1754 = browser.currentScene.createNode("connect");
+connect1754.nodeField = "value_changed";
+connect1754.protoField = "vt12_changed";
+IS1751.connect[2] = connect1754;
+
+OrientationInterpolator1750.iS = IS1751;
+
+ProtoBody603.children[378] = OrientationInterpolator1750;
+
+let ROUTE1755 = browser.currentScene.createNode("ROUTE");
+ROUTE1755.fromField = "fraction_changed";
+ROUTE1755.fromNode = "BehaviorClock";
+ROUTE1755.toField = "set_fraction";
+ROUTE1755.toNode = "vt12_OI";
+ProtoBody603.children[379] = ROUTE1755;
+
+ProtoDeclare20.protoBody = ProtoBody603;
+
+browser.currentScene.children[1] = ProtoDeclare20;
+
+let ProtoDeclare1756 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="HAnimBodyBehaviorChooser" appinfo="The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time." ><ProtoInterface><!--TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs--><!--accessType="inputOutput" avoided to maintain backwards compatilibility with VRML97 scripting constraints--><!--shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs--><!--TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName--><!--TODO: consider addBody, removeBody, addBehavior, removeBehavior--><!--TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName--><field name="supportedLOA" accessType="inputOutput" appinfo="Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3." type="SFInt32" value="-1"></field>
 <field name="HumanoidArray" accessType="initializeOnly" appinfo="[HAnimHumanoid] nodes only" type="MFNode"><!--default NULL--></field>
@@ -11655,379 +11740,379 @@ let ProtoDeclare1739 = browser.createX3DFromString(`<?xml version="1.0" encoding
 </Script>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare1739.name = "HAnimBodyBehaviorChooser";
-ProtoDeclare1739.appinfo = "The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.";
-let ProtoInterface1740 = browser.currentScene.createNode("ProtoInterface");
+ProtoDeclare1756.name = "HAnimBodyBehaviorChooser";
+ProtoDeclare1756.appinfo = "The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.";
+let ProtoInterface1757 = browser.currentScene.createNode("ProtoInterface");
 //TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs
 //accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints
 //shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs
 //TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName
 //TODO: consider addBody, removeBody, addBehavior, removeBehavior
 //TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName
-let field1741 = browser.currentScene.createNode("field");
-field1741.name = "supportedLOA";
-field1741.accessType = "inputOutput";
-field1741.appinfo = "Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.";
-field1741.type = "SFInt32";
-field1741.value = "-1";
-ProtoInterface1740.field = new MFNode();
+let field1758 = browser.currentScene.createNode("field");
+field1758.name = "supportedLOA";
+field1758.accessType = "inputOutput";
+field1758.appinfo = "Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.";
+field1758.type = "SFInt32";
+field1758.value = "-1";
+ProtoInterface1757.field = new MFNode();
 
-ProtoInterface1740.field[0] = field1741;
+ProtoInterface1757.field[0] = field1758;
 
-let field1742 = browser.currentScene.createNode("field");
-field1742.name = "HumanoidArray";
-field1742.accessType = "initializeOnly";
-field1742.appinfo = "[HAnimHumanoid] nodes only";
-field1742.type = "MFNode";
+let field1759 = browser.currentScene.createNode("field");
+field1759.name = "HumanoidArray";
+field1759.accessType = "initializeOnly";
+field1759.appinfo = "[HAnimHumanoid] nodes only";
+field1759.type = "MFNode";
 //default NULL
-ProtoInterface1740.field[1] = field1742;
+ProtoInterface1757.field[1] = field1759;
 
-let field1743 = browser.currentScene.createNode("field");
-field1743.name = "whichBody";
-field1743.accessType = "initializeOnly";
-field1743.appinfo = "whichBody is selected default is initial member of HumanoidArray";
-field1743.type = "SFInt32";
-field1743.value = "-1";
-ProtoInterface1740.field[2] = field1743;
+let field1760 = browser.currentScene.createNode("field");
+field1760.name = "whichBody";
+field1760.accessType = "initializeOnly";
+field1760.appinfo = "whichBody is selected default is initial member of HumanoidArray";
+field1760.type = "SFInt32";
+field1760.value = "-1";
+ProtoInterface1757.field[2] = field1760;
 
-let field1744 = browser.currentScene.createNode("field");
-field1744.name = "set_whichBody";
-field1744.accessType = "inputOnly";
-field1744.appinfo = "whichBody is selected default is none";
-field1744.type = "SFInt32";
-ProtoInterface1740.field[3] = field1744;
+let field1761 = browser.currentScene.createNode("field");
+field1761.name = "set_whichBody";
+field1761.accessType = "inputOnly";
+field1761.appinfo = "whichBody is selected default is none";
+field1761.type = "SFInt32";
+ProtoInterface1757.field[3] = field1761;
 
-let field1745 = browser.currentScene.createNode("field");
-field1745.name = "whichBody_changed";
-field1745.accessType = "outputOnly";
-field1745.appinfo = "whichBody is selected default is none";
-field1745.type = "SFInt32";
-ProtoInterface1740.field[4] = field1745;
+let field1762 = browser.currentScene.createNode("field");
+field1762.name = "whichBody_changed";
+field1762.accessType = "outputOnly";
+field1762.appinfo = "whichBody is selected default is none";
+field1762.type = "SFInt32";
+ProtoInterface1757.field[4] = field1762;
 
-let field1746 = browser.currentScene.createNode("field");
-field1746.name = "hAnimBehaviorNodes";
-field1746.accessType = "initializeOnly";
-field1746.appinfo = "[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.";
-field1746.type = "MFNode";
+let field1763 = browser.currentScene.createNode("field");
+field1763.name = "hAnimBehaviorNodes";
+field1763.accessType = "initializeOnly";
+field1763.appinfo = "[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.";
+field1763.type = "MFNode";
 //default NULL
-ProtoInterface1740.field[5] = field1746;
+ProtoInterface1757.field[5] = field1763;
 
-let field1747 = browser.currentScene.createNode("field");
-field1747.name = "enabledBehaviorsArray";
-field1747.accessType = "initializeOnly";
-field1747.appinfo = "indicate which HAnimBehavior nodes are activated, empty indicates all enabled true";
-field1747.type = "MFBool";
+let field1764 = browser.currentScene.createNode("field");
+field1764.name = "enabledBehaviorsArray";
+field1764.accessType = "initializeOnly";
+field1764.appinfo = "indicate which HAnimBehavior nodes are activated, empty indicates all enabled true";
+field1764.type = "MFBool";
 //no default values
-ProtoInterface1740.field[6] = field1747;
+ProtoInterface1757.field[6] = field1764;
 
-let field1748 = browser.currentScene.createNode("field");
-field1748.name = "enableBehavior";
-field1748.accessType = "inputOnly";
-field1748.appinfo = "enable corresponding behavior identified by index number";
-field1748.type = "SFInt32";
-ProtoInterface1740.field[7] = field1748;
+let field1765 = browser.currentScene.createNode("field");
+field1765.name = "enableBehavior";
+field1765.accessType = "inputOnly";
+field1765.appinfo = "enable corresponding behavior identified by index number";
+field1765.type = "SFInt32";
+ProtoInterface1757.field[7] = field1765;
 
-let field1749 = browser.currentScene.createNode("field");
-field1749.name = "disableBehavior";
-field1749.accessType = "inputOnly";
-field1749.appinfo = "disable corresponding behavior identified by index number";
-field1749.type = "SFInt32";
-ProtoInterface1740.field[8] = field1749;
+let field1766 = browser.currentScene.createNode("field");
+field1766.name = "disableBehavior";
+field1766.accessType = "inputOnly";
+field1766.appinfo = "disable corresponding behavior identified by index number";
+field1766.type = "SFInt32";
+ProtoInterface1757.field[8] = field1766;
 
-let field1750 = browser.currentScene.createNode("field");
-field1750.name = "startTime";
-field1750.accessType = "inputOutput";
-field1750.type = "SFTime";
-field1750.value = "0";
-ProtoInterface1740.field[9] = field1750;
+let field1767 = browser.currentScene.createNode("field");
+field1767.name = "startTime";
+field1767.accessType = "inputOutput";
+field1767.type = "SFTime";
+field1767.value = "0";
+ProtoInterface1757.field[9] = field1767;
 
-let field1751 = browser.currentScene.createNode("field");
-field1751.name = "stopTime";
-field1751.accessType = "inputOutput";
-field1751.type = "SFTime";
-field1751.value = "0";
-ProtoInterface1740.field[10] = field1751;
+let field1768 = browser.currentScene.createNode("field");
+field1768.name = "stopTime";
+field1768.accessType = "inputOutput";
+field1768.type = "SFTime";
+field1768.value = "0";
+ProtoInterface1757.field[10] = field1768;
 
-ProtoDeclare1739.protoInterface = ProtoInterface1740;
+ProtoDeclare1756.protoInterface = ProtoInterface1757;
 
-let ProtoBody1752 = browser.currentScene.createNode("ProtoBody");
-let Switch1753 = browser.currentScene.createNode("Switch");
-Switch1753.DEF = "BodySwitch";
-Switch1753.whichChoice = -1;
-let IS1754 = browser.currentScene.createNode("IS");
-let connect1755 = browser.currentScene.createNode("connect");
-connect1755.nodeField = "whichChoice";
-connect1755.protoField = "whichBody";
-IS1754.connect = new MFNode();
+let ProtoBody1769 = browser.currentScene.createNode("ProtoBody");
+let Switch1770 = browser.currentScene.createNode("Switch");
+Switch1770.DEF = "BodySwitch";
+Switch1770.whichChoice = -1;
+let IS1771 = browser.currentScene.createNode("IS");
+let connect1772 = browser.currentScene.createNode("connect");
+connect1772.nodeField = "whichChoice";
+connect1772.protoField = "whichBody";
+IS1771.connect = new MFNode();
 
-IS1754.connect[0] = connect1755;
+IS1771.connect[0] = connect1772;
 
-let connect1756 = browser.currentScene.createNode("connect");
-connect1756.nodeField = "children";
-connect1756.protoField = "HumanoidArray";
-IS1754.connect[1] = connect1756;
+let connect1773 = browser.currentScene.createNode("connect");
+connect1773.nodeField = "children";
+connect1773.protoField = "HumanoidArray";
+IS1771.connect[1] = connect1773;
 
-Switch1753.iS = IS1754;
+Switch1770.iS = IS1771;
 
-ProtoBody1752.children = new MFNode();
+ProtoBody1769.children = new MFNode();
 
-ProtoBody1752.children[0] = Switch1753;
+ProtoBody1769.children[0] = Switch1770;
 
 //note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
-let Group1757 = browser.currentScene.createNode("Group");
-Group1757.DEF = "BehaviorArrayHolder";
-let IS1758 = browser.currentScene.createNode("IS");
-let connect1759 = browser.currentScene.createNode("connect");
-connect1759.nodeField = "children";
-connect1759.protoField = "hAnimBehaviorNodes";
-IS1758.connect = new MFNode();
+let Group1774 = browser.currentScene.createNode("Group");
+Group1774.DEF = "BehaviorArrayHolder";
+let IS1775 = browser.currentScene.createNode("IS");
+let connect1776 = browser.currentScene.createNode("connect");
+connect1776.nodeField = "children";
+connect1776.protoField = "hAnimBehaviorNodes";
+IS1775.connect = new MFNode();
 
-IS1758.connect[0] = connect1759;
+IS1775.connect[0] = connect1776;
 
-Group1757.iS = IS1758;
+Group1774.iS = IS1775;
 
-ProtoBody1752.children[1] = Group1757;
+ProtoBody1769.children[1] = Group1774;
 
-let TimeSensor1760 = browser.currentScene.createNode("TimeSensor");
-TimeSensor1760.DEF = "TimeSensorHolderStartStopTimes";
-let IS1761 = browser.currentScene.createNode("IS");
-let connect1762 = browser.currentScene.createNode("connect");
-connect1762.nodeField = "startTime";
-connect1762.protoField = "startTime";
-IS1761.connect = new MFNode();
-
-IS1761.connect[0] = connect1762;
-
-let connect1763 = browser.currentScene.createNode("connect");
-connect1763.nodeField = "stopTime";
-connect1763.protoField = "stopTime";
-IS1761.connect[1] = connect1763;
-
-TimeSensor1760.iS = IS1761;
-
-ProtoBody1752.children[2] = TimeSensor1760;
-
-let Switch1764 = browser.currentScene.createNode("Switch");
-Switch1764.DEF = "SupportedLoaHolder2";
-Switch1764.whichChoice = -1;
-let IS1765 = browser.currentScene.createNode("IS");
-let connect1766 = browser.currentScene.createNode("connect");
-connect1766.nodeField = "whichChoice";
-connect1766.protoField = "supportedLOA";
-IS1765.connect = new MFNode();
-
-IS1765.connect[0] = connect1766;
-
-Switch1764.iS = IS1765;
-
-ProtoBody1752.children[3] = Switch1764;
-
-let Script1767 = browser.currentScene.createNode("Script");
-Script1767.DEF = "BehaviorSelectionScript";
-Script1767.directOutput = True;
-Script1767.url = new MFString(new java.lang.String["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"]);
-let field1768 = browser.currentScene.createNode("field");
-field1768.name = "HumanoidArray";
-field1768.accessType = "initializeOnly";
-field1768.appinfo = "[HAnimHumanoid] nodes only";
-field1768.type = "MFNode";
-Script1767.field = new MFNode();
-
-Script1767.field[0] = field1768;
-
-let field1769 = browser.currentScene.createNode("field");
-field1769.name = "whichBody";
-field1769.accessType = "initializeOnly";
-field1769.appinfo = "whichBody is selected default is none";
-field1769.type = "SFInt32";
-Script1767.field[1] = field1769;
-
-let field1770 = browser.currentScene.createNode("field");
-field1770.name = "set_whichBody";
-field1770.accessType = "inputOnly";
-field1770.appinfo = "whichBody is selected default is none";
-field1770.type = "SFInt32";
-Script1767.field[2] = field1770;
-
-let field1771 = browser.currentScene.createNode("field");
-field1771.name = "whichBody_changed";
-field1771.accessType = "outputOnly";
-field1771.appinfo = "whichBody is selected default is none";
-field1771.type = "SFInt32";
-Script1767.field[3] = field1771;
-
-let field1772 = browser.currentScene.createNode("field");
-field1772.name = "hAnimBehaviorNodes";
-field1772.accessType = "initializeOnly";
-field1772.appinfo = "[HAnimBehavior] nodes only";
-field1772.type = "MFNode";
-//TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed
-Script1767.field[4] = field1772;
-
-let field1773 = browser.currentScene.createNode("field");
-field1773.name = "enabledBehaviorsArray";
-field1773.accessType = "initializeOnly";
-field1773.type = "MFBool";
-Script1767.field[5] = field1773;
-
-let field1774 = browser.currentScene.createNode("field");
-field1774.name = "enableBehavior";
-field1774.accessType = "inputOnly";
-field1774.appinfo = "enable corresponding behavior";
-field1774.type = "SFInt32";
-Script1767.field[6] = field1774;
-
-let field1775 = browser.currentScene.createNode("field");
-field1775.name = "disableBehavior";
-field1775.accessType = "inputOnly";
-field1775.appinfo = "enable corresponding behavior";
-field1775.type = "SFInt32";
-Script1767.field[7] = field1775;
-
-let field1776 = browser.currentScene.createNode("field");
-field1776.name = "timeSensorNode";
-field1776.accessType = "initializeOnly";
-field1776.type = "SFNode";
 let TimeSensor1777 = browser.currentScene.createNode("TimeSensor");
-TimeSensor1777.USE = "TimeSensorHolderStartStopTimes";
-field1776.children = new MFNode();
+TimeSensor1777.DEF = "TimeSensorHolderStartStopTimes";
+let IS1778 = browser.currentScene.createNode("IS");
+let connect1779 = browser.currentScene.createNode("connect");
+connect1779.nodeField = "startTime";
+connect1779.protoField = "startTime";
+IS1778.connect = new MFNode();
 
-field1776.children[0] = TimeSensor1777;
+IS1778.connect[0] = connect1779;
 
-Script1767.field[8] = field1776;
+let connect1780 = browser.currentScene.createNode("connect");
+connect1780.nodeField = "stopTime";
+connect1780.protoField = "stopTime";
+IS1778.connect[1] = connect1780;
 
-let field1778 = browser.currentScene.createNode("field");
-field1778.name = "previousBodyIndex";
-field1778.accessType = "initializeOnly";
-field1778.appinfo = "remember prior body index to avoid unnecessary ROUTE teardown and creation";
-field1778.type = "SFInt32";
-field1778.value = "-1";
-Script1767.field[9] = field1778;
+TimeSensor1777.iS = IS1778;
 
-let field1779 = browser.currentScene.createNode("field");
-field1779.name = "traceEnabled";
-field1779.accessType = "initializeOnly";
-field1779.type = "SFBool";
-field1779.value = "true";
-Script1767.field[10] = field1779;
+ProtoBody1769.children[2] = TimeSensor1777;
 
-let IS1780 = browser.currentScene.createNode("IS");
-let connect1781 = browser.currentScene.createNode("connect");
-connect1781.nodeField = "HumanoidArray";
-connect1781.protoField = "HumanoidArray";
-IS1780.connect = new MFNode();
-
-IS1780.connect[0] = connect1781;
-
-let connect1782 = browser.currentScene.createNode("connect");
-connect1782.nodeField = "whichBody";
-connect1782.protoField = "whichBody";
-IS1780.connect[1] = connect1782;
-
+let Switch1781 = browser.currentScene.createNode("Switch");
+Switch1781.DEF = "SupportedLoaHolder2";
+Switch1781.whichChoice = -1;
+let IS1782 = browser.currentScene.createNode("IS");
 let connect1783 = browser.currentScene.createNode("connect");
-connect1783.nodeField = "set_whichBody";
-connect1783.protoField = "set_whichBody";
-IS1780.connect[2] = connect1783;
+connect1783.nodeField = "whichChoice";
+connect1783.protoField = "supportedLOA";
+IS1782.connect = new MFNode();
 
-let connect1784 = browser.currentScene.createNode("connect");
-connect1784.nodeField = "whichBody_changed";
-connect1784.protoField = "whichBody_changed";
-IS1780.connect[3] = connect1784;
+IS1782.connect[0] = connect1783;
 
-let connect1785 = browser.currentScene.createNode("connect");
-connect1785.nodeField = "hAnimBehaviorNodes";
-connect1785.protoField = "hAnimBehaviorNodes";
-IS1780.connect[4] = connect1785;
+Switch1781.iS = IS1782;
 
-let connect1786 = browser.currentScene.createNode("connect");
-connect1786.nodeField = "enabledBehaviorsArray";
-connect1786.protoField = "enabledBehaviorsArray";
-IS1780.connect[5] = connect1786;
+ProtoBody1769.children[3] = Switch1781;
 
-let connect1787 = browser.currentScene.createNode("connect");
-connect1787.nodeField = "enableBehavior";
-connect1787.protoField = "enableBehavior";
-IS1780.connect[6] = connect1787;
+let Script1784 = browser.currentScene.createNode("Script");
+Script1784.DEF = "BehaviorSelectionScript";
+Script1784.directOutput = True;
+Script1784.url = new MFString(new java.lang.String["HAnimBehaviorPrototypesScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"]);
+let field1785 = browser.currentScene.createNode("field");
+field1785.name = "HumanoidArray";
+field1785.accessType = "initializeOnly";
+field1785.appinfo = "[HAnimHumanoid] nodes only";
+field1785.type = "MFNode";
+Script1784.field = new MFNode();
 
-let connect1788 = browser.currentScene.createNode("connect");
-connect1788.nodeField = "disableBehavior";
-connect1788.protoField = "disableBehavior";
-IS1780.connect[7] = connect1788;
+Script1784.field[0] = field1785;
 
-Script1767.iS = IS1780;
+let field1786 = browser.currentScene.createNode("field");
+field1786.name = "whichBody";
+field1786.accessType = "initializeOnly";
+field1786.appinfo = "whichBody is selected default is none";
+field1786.type = "SFInt32";
+Script1784.field[1] = field1786;
 
-ProtoBody1752.children[4] = Script1767;
+let field1787 = browser.currentScene.createNode("field");
+field1787.name = "set_whichBody";
+field1787.accessType = "inputOnly";
+field1787.appinfo = "whichBody is selected default is none";
+field1787.type = "SFInt32";
+Script1784.field[2] = field1787;
 
-ProtoDeclare1739.protoBody = ProtoBody1752;
+let field1788 = browser.currentScene.createNode("field");
+field1788.name = "whichBody_changed";
+field1788.accessType = "outputOnly";
+field1788.appinfo = "whichBody is selected default is none";
+field1788.type = "SFInt32";
+Script1784.field[3] = field1788;
 
-browser.currentScene.children[2] = ProtoDeclare1739;
+let field1789 = browser.currentScene.createNode("field");
+field1789.name = "hAnimBehaviorNodes";
+field1789.accessType = "initializeOnly";
+field1789.appinfo = "[HAnimBehavior] nodes only";
+field1789.type = "MFNode";
+//TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed
+Script1784.field[4] = field1789;
+
+let field1790 = browser.currentScene.createNode("field");
+field1790.name = "enabledBehaviorsArray";
+field1790.accessType = "initializeOnly";
+field1790.type = "MFBool";
+Script1784.field[5] = field1790;
+
+let field1791 = browser.currentScene.createNode("field");
+field1791.name = "enableBehavior";
+field1791.accessType = "inputOnly";
+field1791.appinfo = "enable corresponding behavior";
+field1791.type = "SFInt32";
+Script1784.field[6] = field1791;
+
+let field1792 = browser.currentScene.createNode("field");
+field1792.name = "disableBehavior";
+field1792.accessType = "inputOnly";
+field1792.appinfo = "enable corresponding behavior";
+field1792.type = "SFInt32";
+Script1784.field[7] = field1792;
+
+let field1793 = browser.currentScene.createNode("field");
+field1793.name = "timeSensorNode";
+field1793.accessType = "initializeOnly";
+field1793.type = "SFNode";
+let TimeSensor1794 = browser.currentScene.createNode("TimeSensor");
+TimeSensor1794.USE = "TimeSensorHolderStartStopTimes";
+field1793.children = new MFNode();
+
+field1793.children[0] = TimeSensor1794;
+
+Script1784.field[8] = field1793;
+
+let field1795 = browser.currentScene.createNode("field");
+field1795.name = "previousBodyIndex";
+field1795.accessType = "initializeOnly";
+field1795.appinfo = "remember prior body index to avoid unnecessary ROUTE teardown and creation";
+field1795.type = "SFInt32";
+field1795.value = "-1";
+Script1784.field[9] = field1795;
+
+let field1796 = browser.currentScene.createNode("field");
+field1796.name = "traceEnabled";
+field1796.accessType = "initializeOnly";
+field1796.type = "SFBool";
+field1796.value = "true";
+Script1784.field[10] = field1796;
+
+let IS1797 = browser.currentScene.createNode("IS");
+let connect1798 = browser.currentScene.createNode("connect");
+connect1798.nodeField = "HumanoidArray";
+connect1798.protoField = "HumanoidArray";
+IS1797.connect = new MFNode();
+
+IS1797.connect[0] = connect1798;
+
+let connect1799 = browser.currentScene.createNode("connect");
+connect1799.nodeField = "whichBody";
+connect1799.protoField = "whichBody";
+IS1797.connect[1] = connect1799;
+
+let connect1800 = browser.currentScene.createNode("connect");
+connect1800.nodeField = "set_whichBody";
+connect1800.protoField = "set_whichBody";
+IS1797.connect[2] = connect1800;
+
+let connect1801 = browser.currentScene.createNode("connect");
+connect1801.nodeField = "whichBody_changed";
+connect1801.protoField = "whichBody_changed";
+IS1797.connect[3] = connect1801;
+
+let connect1802 = browser.currentScene.createNode("connect");
+connect1802.nodeField = "hAnimBehaviorNodes";
+connect1802.protoField = "hAnimBehaviorNodes";
+IS1797.connect[4] = connect1802;
+
+let connect1803 = browser.currentScene.createNode("connect");
+connect1803.nodeField = "enabledBehaviorsArray";
+connect1803.protoField = "enabledBehaviorsArray";
+IS1797.connect[5] = connect1803;
+
+let connect1804 = browser.currentScene.createNode("connect");
+connect1804.nodeField = "enableBehavior";
+connect1804.protoField = "enableBehavior";
+IS1797.connect[6] = connect1804;
+
+let connect1805 = browser.currentScene.createNode("connect");
+connect1805.nodeField = "disableBehavior";
+connect1805.protoField = "disableBehavior";
+IS1797.connect[7] = connect1805;
+
+Script1784.iS = IS1797;
+
+ProtoBody1769.children[4] = Script1784;
+
+ProtoDeclare1756.protoBody = ProtoBody1769;
+
+browser.currentScene.children[2] = ProtoDeclare1756;
 
 //TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.
-let ProtoInstance1789 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1789.name = "HAnimBehavior";
-ProtoInstance1789.DEF = "BehaviorTest1";
+let ProtoInstance1806 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1806.name = "HAnimBehavior";
+ProtoInstance1806.DEF = "BehaviorTest1";
 //only one PositionInterpolator key/keyValue definition for entire humanoid - optional
 //must have paired overrides of each key/keyValue array being defined
-let fieldValue1790 = browser.currentScene.createNode("fieldValue");
-fieldValue1790.name = "HumanoidRoot_translation_key";
-fieldValue1790.value = "0 0.25 0.5 0.75 1";
-ProtoInstance1789.fieldValue = new MFNode();
+let fieldValue1807 = browser.currentScene.createNode("fieldValue");
+fieldValue1807.name = "HumanoidRoot_translation_key";
+fieldValue1807.value = "0 0.25 0.5 0.75 1";
+ProtoInstance1806.fieldValue = new MFNode();
 
-ProtoInstance1789.fieldValue[0] = fieldValue1790;
+ProtoInstance1806.fieldValue[0] = fieldValue1807;
 
-let fieldValue1791 = browser.currentScene.createNode("fieldValue");
-fieldValue1791.name = "HumanoidRoot_translation_keyValue";
-fieldValue1791.value = "0 0 0 0 0 10 0 0 20 0 0 30 0 0 40 0 0 50";
-ProtoInstance1789.fieldValue[1] = fieldValue1791;
+let fieldValue1808 = browser.currentScene.createNode("fieldValue");
+fieldValue1808.name = "HumanoidRoot_translation_keyValue";
+fieldValue1808.value = "0 0 0 0 0 10 0 0 20 0 0 30 0 0 40 0 0 50";
+ProtoInstance1806.fieldValue[1] = fieldValue1808;
 
-let fieldValue1792 = browser.currentScene.createNode("fieldValue");
-fieldValue1792.name = "r_ankle_key";
-fieldValue1792.value = "0 0.5 1";
-ProtoInstance1789.fieldValue[2] = fieldValue1792;
+let fieldValue1809 = browser.currentScene.createNode("fieldValue");
+fieldValue1809.name = "r_ankle_key";
+fieldValue1809.value = "0 0.5 1";
+ProtoInstance1806.fieldValue[2] = fieldValue1809;
 
-let fieldValue1793 = browser.currentScene.createNode("fieldValue");
-fieldValue1793.name = "r_ankle_keyValue";
-fieldValue1793.value = "0 1 0 0 0 1 0 0.2 0 1 0 0.4";
-ProtoInstance1789.fieldValue[3] = fieldValue1793;
+let fieldValue1810 = browser.currentScene.createNode("fieldValue");
+fieldValue1810.name = "r_ankle_keyValue";
+fieldValue1810.value = "0 1 0 0 0 1 0 0.2 0 1 0 0.4";
+ProtoInstance1806.fieldValue[3] = fieldValue1810;
 
-browser.currentScene.children[3] = ProtoInstance1789;
+browser.currentScene.children[3] = ProtoInstance1806;
 
-let ProtoInstance1794 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1794.name = "HAnimBodyBehaviorChooser";
-ProtoInstance1794.DEF = "ChooserTest";
-let fieldValue1795 = browser.currentScene.createNode("fieldValue");
-fieldValue1795.name = "HumanoidArray";
-let HAnimHumanoid1796 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid1796.name = "DiamondManLOA-1";
-HAnimHumanoid1796.DEF = "hanim_DiamondManLOA-1";
-HAnimHumanoid1796.version = "1.0";
-fieldValue1795.children = new MFNode();
+let ProtoInstance1811 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1811.name = "HAnimBodyBehaviorChooser";
+ProtoInstance1811.DEF = "ChooserTest";
+let fieldValue1812 = browser.currentScene.createNode("fieldValue");
+fieldValue1812.name = "HumanoidArray";
+let HAnimHumanoid1813 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid1813.name = "DiamondManLOA-1";
+HAnimHumanoid1813.DEF = "hanim_DiamondManLOA-1";
+HAnimHumanoid1813.version = "1.0";
+fieldValue1812.children = new MFNode();
 
-fieldValue1795.children[0] = HAnimHumanoid1796;
+fieldValue1812.children[0] = HAnimHumanoid1813;
 
-ProtoInstance1794.fieldValue = new MFNode();
+ProtoInstance1811.fieldValue = new MFNode();
 
-ProtoInstance1794.fieldValue[0] = fieldValue1795;
+ProtoInstance1811.fieldValue[0] = fieldValue1812;
 
-let fieldValue1797 = browser.currentScene.createNode("fieldValue");
-fieldValue1797.name = "whichBody";
-fieldValue1797.value = "0";
-ProtoInstance1794.fieldValue[1] = fieldValue1797;
+let fieldValue1814 = browser.currentScene.createNode("fieldValue");
+fieldValue1814.name = "whichBody";
+fieldValue1814.value = "0";
+ProtoInstance1811.fieldValue[1] = fieldValue1814;
 
-let fieldValue1798 = browser.currentScene.createNode("fieldValue");
-fieldValue1798.name = "hAnimBehaviorNodes";
-let ProtoInstance1799 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1799.USE = "BehaviorTest1";
-fieldValue1798.children = new MFNode();
+let fieldValue1815 = browser.currentScene.createNode("fieldValue");
+fieldValue1815.name = "hAnimBehaviorNodes";
+let ProtoInstance1816 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1816.USE = "BehaviorTest1";
+fieldValue1815.children = new MFNode();
 
-fieldValue1798.children[0] = ProtoInstance1799;
+fieldValue1815.children[0] = ProtoInstance1816;
 
-ProtoInstance1794.fieldValue[2] = fieldValue1798;
+ProtoInstance1811.fieldValue[2] = fieldValue1815;
 
-let fieldValue1800 = browser.currentScene.createNode("fieldValue");
-fieldValue1800.name = "enabledBehaviorsArray";
-fieldValue1800.value = "true";
-ProtoInstance1794.fieldValue[3] = fieldValue1800;
+let fieldValue1817 = browser.currentScene.createNode("fieldValue");
+fieldValue1817.name = "enabledBehaviorsArray";
+fieldValue1817.value = "true";
+ProtoInstance1811.fieldValue[3] = fieldValue1817;
 
-browser.currentScene.children[4] = ProtoInstance1794;
+browser.currentScene.children[4] = ProtoInstance1811;
 

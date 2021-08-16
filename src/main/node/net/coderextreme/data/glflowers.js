@@ -48,3 +48,4 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/common.fs\""));
     X3D0.toFileX3D("../data/glflowers.new.x3d");
+    process.exit(0);

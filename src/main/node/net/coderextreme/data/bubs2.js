@@ -102,3 +102,4 @@ var ProtoInstance3 = null;
         .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleC"))
         .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleD")))      ;
     X3D0.toFileX3D("../data/bubs2.new.x3d");
+    process.exit(0);

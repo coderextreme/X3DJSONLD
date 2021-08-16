@@ -2,18 +2,48 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE"]);
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "BoxEm.x3d";
+head1.meta = new MFNode();
+
+head1.meta[0] = meta2;
+
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "creator";
+meta3.content = "John Carlson";
+head1.meta[1] = meta3;
+
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "generator";
+meta4.content = "manual";
+head1.meta[2] = meta4;
+
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "identifier";
+meta5.content = "https://coderextreme.net/X3DJSONLD/box.x3d";
+head1.meta[3] = meta5;
+
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "description";
+meta6.content = "3 boxes";
+head1.meta[4] = meta6;
+
+head = head1;
+
+let NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo8.type = new MFString(new java.lang.String["EXAMINE"]);
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = NavigationInfo2;
+browser.currentScene.children[0] = NavigationInfo8;
 
-let Viewpoint3 = browser.currentScene.createNode("Viewpoint");
-Viewpoint3.description = "Cubes on Fire";
-Viewpoint3.position = new SFVec3f(new float[0,0,12]);
-browser.currentScene.children[1] = Viewpoint3;
+let Viewpoint9 = browser.currentScene.createNode("Viewpoint");
+Viewpoint9.description = "Cubes on Fire";
+Viewpoint9.position = new SFVec3f(new float[0,0,12]);
+browser.currentScene.children[1] = Viewpoint9;
 
-let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
@@ -28,66 +58,66 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare4.name = "anyShape";
-let ProtoInterface5 = browser.currentScene.createNode("ProtoInterface");
-let field6 = browser.currentScene.createNode("field");
-field6.name = "xtranslation";
-field6.accessType = "inputOutput";
-field6.type = "SFVec3f";
-field6.value = "0 0 0";
-ProtoInterface5.field = new MFNode();
+ProtoDeclare10.name = "anyShape";
+let ProtoInterface11 = browser.currentScene.createNode("ProtoInterface");
+let field12 = browser.currentScene.createNode("field");
+field12.name = "xtranslation";
+field12.accessType = "inputOutput";
+field12.type = "SFVec3f";
+field12.value = "0 0 0";
+ProtoInterface11.field = new MFNode();
 
-ProtoInterface5.field[0] = field6;
+ProtoInterface11.field[0] = field12;
 
-let field7 = browser.currentScene.createNode("field");
-field7.name = "myShape";
-field7.accessType = "inputOutput";
-field7.type = "MFNode";
-let Shape8 = browser.currentScene.createNode("Shape");
-let Sphere9 = browser.currentScene.createNode("Sphere");
-Shape8.geometry = Sphere9;
+let field13 = browser.currentScene.createNode("field");
+field13.name = "myShape";
+field13.accessType = "inputOutput";
+field13.type = "MFNode";
+let Shape14 = browser.currentScene.createNode("Shape");
+let Sphere15 = browser.currentScene.createNode("Sphere");
+Shape14.geometry = Sphere15;
 
-let Appearance10 = browser.currentScene.createNode("Appearance");
-let Material11 = browser.currentScene.createNode("Material");
-Material11.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance10.material = Material11;
+let Appearance16 = browser.currentScene.createNode("Appearance");
+let Material17 = browser.currentScene.createNode("Material");
+Material17.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance16.material = Material17;
 
-Shape8.appearance = Appearance10;
+Shape14.appearance = Appearance16;
 
-field7.children = new MFNode();
+field13.children = new MFNode();
 
-field7.children[0] = Shape8;
+field13.children[0] = Shape14;
 
-ProtoInterface5.field[1] = field7;
+ProtoInterface11.field[1] = field13;
 
-ProtoDeclare4.protoInterface = ProtoInterface5;
+ProtoDeclare10.protoInterface = ProtoInterface11;
 
-let ProtoBody12 = browser.currentScene.createNode("ProtoBody");
-let Transform13 = browser.currentScene.createNode("Transform");
-let IS14 = browser.currentScene.createNode("IS");
-let connect15 = browser.currentScene.createNode("connect");
-connect15.nodeField = "translation";
-connect15.protoField = "xtranslation";
-IS14.connect = new MFNode();
+let ProtoBody18 = browser.currentScene.createNode("ProtoBody");
+let Transform19 = browser.currentScene.createNode("Transform");
+let IS20 = browser.currentScene.createNode("IS");
+let connect21 = browser.currentScene.createNode("connect");
+connect21.nodeField = "translation";
+connect21.protoField = "xtranslation";
+IS20.connect = new MFNode();
 
-IS14.connect[0] = connect15;
+IS20.connect[0] = connect21;
 
-let connect16 = browser.currentScene.createNode("connect");
-connect16.nodeField = "children";
-connect16.protoField = "myShape";
-IS14.connect[1] = connect16;
+let connect22 = browser.currentScene.createNode("connect");
+connect22.nodeField = "children";
+connect22.protoField = "myShape";
+IS20.connect[1] = connect22;
 
-Transform13.iS = IS14;
+Transform19.iS = IS20;
 
-ProtoBody12.children = new MFNode();
+ProtoBody18.children = new MFNode();
 
-ProtoBody12.children[0] = Transform13;
+ProtoBody18.children[0] = Transform19;
 
-ProtoDeclare4.protoBody = ProtoBody12;
+ProtoDeclare10.protoBody = ProtoBody18;
 
-browser.currentScene.children[2] = ProtoDeclare4;
+browser.currentScene.children[2] = ProtoDeclare10;
 
-let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
@@ -113,165 +143,165 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare17.name = "three";
-let ProtoInterface18 = browser.currentScene.createNode("ProtoInterface");
-let field19 = browser.currentScene.createNode("field");
-field19.name = "ytranslation";
-field19.accessType = "inputOutput";
-field19.type = "SFVec3f";
-field19.value = "0 0 0";
-ProtoInterface18.field = new MFNode();
+ProtoDeclare23.name = "three";
+let ProtoInterface24 = browser.currentScene.createNode("ProtoInterface");
+let field25 = browser.currentScene.createNode("field");
+field25.name = "ytranslation";
+field25.accessType = "inputOutput";
+field25.type = "SFVec3f";
+field25.value = "0 0 0";
+ProtoInterface24.field = new MFNode();
 
-ProtoInterface18.field[0] = field19;
+ProtoInterface24.field[0] = field25;
 
-let field20 = browser.currentScene.createNode("field");
-field20.name = "myShape";
-field20.accessType = "inputOutput";
-field20.type = "MFNode";
-let Shape21 = browser.currentScene.createNode("Shape");
-let Cylinder22 = browser.currentScene.createNode("Cylinder");
-Shape21.geometry = Cylinder22;
+let field26 = browser.currentScene.createNode("field");
+field26.name = "myShape";
+field26.accessType = "inputOutput";
+field26.type = "MFNode";
+let Shape27 = browser.currentScene.createNode("Shape");
+let Cylinder28 = browser.currentScene.createNode("Cylinder");
+Shape27.geometry = Cylinder28;
 
-let Appearance23 = browser.currentScene.createNode("Appearance");
-let Material24 = browser.currentScene.createNode("Material");
-Material24.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance23.material = Material24;
+let Appearance29 = browser.currentScene.createNode("Appearance");
+let Material30 = browser.currentScene.createNode("Material");
+Material30.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance29.material = Material30;
 
-Shape21.appearance = Appearance23;
+Shape27.appearance = Appearance29;
 
-field20.children = new MFNode();
+field26.children = new MFNode();
 
-field20.children[0] = Shape21;
+field26.children[0] = Shape27;
 
-ProtoInterface18.field[1] = field20;
+ProtoInterface24.field[1] = field26;
 
-ProtoDeclare17.protoInterface = ProtoInterface18;
+ProtoDeclare23.protoInterface = ProtoInterface24;
 
-let ProtoBody25 = browser.currentScene.createNode("ProtoBody");
-let Transform26 = browser.currentScene.createNode("Transform");
-let IS27 = browser.currentScene.createNode("IS");
-let connect28 = browser.currentScene.createNode("connect");
-connect28.nodeField = "translation";
-connect28.protoField = "ytranslation";
-IS27.connect = new MFNode();
+let ProtoBody31 = browser.currentScene.createNode("ProtoBody");
+let Transform32 = browser.currentScene.createNode("Transform");
+let IS33 = browser.currentScene.createNode("IS");
+let connect34 = browser.currentScene.createNode("connect");
+connect34.nodeField = "translation";
+connect34.protoField = "ytranslation";
+IS33.connect = new MFNode();
 
-IS27.connect[0] = connect28;
+IS33.connect[0] = connect34;
 
-Transform26.iS = IS27;
+Transform32.iS = IS33;
 
-let ProtoInstance29 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance29.name = "anyShape";
-let fieldValue30 = browser.currentScene.createNode("fieldValue");
-fieldValue30.name = "xtranslation";
-fieldValue30.value = "0 0 0";
-ProtoInstance29.fieldValue = new MFNode();
+let ProtoInstance35 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance35.name = "anyShape";
+let fieldValue36 = browser.currentScene.createNode("fieldValue");
+fieldValue36.name = "xtranslation";
+fieldValue36.value = "0 0 0";
+ProtoInstance35.fieldValue = new MFNode();
 
-ProtoInstance29.fieldValue[0] = fieldValue30;
+ProtoInstance35.fieldValue[0] = fieldValue36;
 
-let IS31 = browser.currentScene.createNode("IS");
-let connect32 = browser.currentScene.createNode("connect");
-connect32.nodeField = "myShape";
-connect32.protoField = "myShape";
-IS31.connect = new MFNode();
+let IS37 = browser.currentScene.createNode("IS");
+let connect38 = browser.currentScene.createNode("connect");
+connect38.nodeField = "myShape";
+connect38.protoField = "myShape";
+IS37.connect = new MFNode();
 
-IS31.connect[0] = connect32;
+IS37.connect[0] = connect38;
 
-ProtoInstance29.iS = IS31;
+ProtoInstance35.iS = IS37;
 
-Transform26.children = new MFNode();
+Transform32.children = new MFNode();
 
-Transform26.children[0] = ProtoInstance29;
+Transform32.children[0] = ProtoInstance35;
 
-let ProtoInstance33 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance33.name = "anyShape";
-let fieldValue34 = browser.currentScene.createNode("fieldValue");
-fieldValue34.name = "xtranslation";
-fieldValue34.value = "2 0 0";
-ProtoInstance33.fieldValue = new MFNode();
+let ProtoInstance39 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance39.name = "anyShape";
+let fieldValue40 = browser.currentScene.createNode("fieldValue");
+fieldValue40.name = "xtranslation";
+fieldValue40.value = "2 0 0";
+ProtoInstance39.fieldValue = new MFNode();
 
-ProtoInstance33.fieldValue[0] = fieldValue34;
+ProtoInstance39.fieldValue[0] = fieldValue40;
 
-let IS35 = browser.currentScene.createNode("IS");
-let connect36 = browser.currentScene.createNode("connect");
-connect36.nodeField = "myShape";
-connect36.protoField = "myShape";
-IS35.connect = new MFNode();
+let IS41 = browser.currentScene.createNode("IS");
+let connect42 = browser.currentScene.createNode("connect");
+connect42.nodeField = "myShape";
+connect42.protoField = "myShape";
+IS41.connect = new MFNode();
 
-IS35.connect[0] = connect36;
+IS41.connect[0] = connect42;
 
-ProtoInstance33.iS = IS35;
+ProtoInstance39.iS = IS41;
 
-Transform26.children[1] = ProtoInstance33;
+Transform32.children[1] = ProtoInstance39;
 
-let ProtoInstance37 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance37.name = "anyShape";
-let fieldValue38 = browser.currentScene.createNode("fieldValue");
-fieldValue38.name = "xtranslation";
-fieldValue38.value = "-2 0 0";
-ProtoInstance37.fieldValue = new MFNode();
+let ProtoInstance43 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance43.name = "anyShape";
+let fieldValue44 = browser.currentScene.createNode("fieldValue");
+fieldValue44.name = "xtranslation";
+fieldValue44.value = "-2 0 0";
+ProtoInstance43.fieldValue = new MFNode();
 
-ProtoInstance37.fieldValue[0] = fieldValue38;
+ProtoInstance43.fieldValue[0] = fieldValue44;
 
-let IS39 = browser.currentScene.createNode("IS");
-let connect40 = browser.currentScene.createNode("connect");
-connect40.nodeField = "myShape";
-connect40.protoField = "myShape";
-IS39.connect = new MFNode();
+let IS45 = browser.currentScene.createNode("IS");
+let connect46 = browser.currentScene.createNode("connect");
+connect46.nodeField = "myShape";
+connect46.protoField = "myShape";
+IS45.connect = new MFNode();
 
-IS39.connect[0] = connect40;
+IS45.connect[0] = connect46;
 
-ProtoInstance37.iS = IS39;
+ProtoInstance43.iS = IS45;
 
-Transform26.children[2] = ProtoInstance37;
+Transform32.children[2] = ProtoInstance43;
 
-ProtoBody25.children = new MFNode();
+ProtoBody31.children = new MFNode();
 
-ProtoBody25.children[0] = Transform26;
+ProtoBody31.children[0] = Transform32;
 
-ProtoDeclare17.protoBody = ProtoBody25;
+ProtoDeclare23.protoBody = ProtoBody31;
 
-browser.currentScene.children[3] = ProtoDeclare17;
+browser.currentScene.children[3] = ProtoDeclare23;
 
-let ProtoInstance41 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance41.name = "three";
-ProtoInstance41.DEF = "threepi";
-let fieldValue42 = browser.currentScene.createNode("fieldValue");
-fieldValue42.name = "ytranslation";
-fieldValue42.value = "0 0 0";
-ProtoInstance41.fieldValue = new MFNode();
+let ProtoInstance47 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance47.name = "three";
+ProtoInstance47.DEF = "threepi";
+let fieldValue48 = browser.currentScene.createNode("fieldValue");
+fieldValue48.name = "ytranslation";
+fieldValue48.value = "0 0 0";
+ProtoInstance47.fieldValue = new MFNode();
 
-ProtoInstance41.fieldValue[0] = fieldValue42;
+ProtoInstance47.fieldValue[0] = fieldValue48;
 
-let fieldValue43 = browser.currentScene.createNode("fieldValue");
-fieldValue43.name = "myShape";
-let Shape44 = browser.currentScene.createNode("Shape");
-Shape44.DEF = "box";
-let Box45 = browser.currentScene.createNode("Box");
-Box45.size = new SFVec3f(new float[1,1,1]);
-Shape44.geometry = Box45;
+let fieldValue49 = browser.currentScene.createNode("fieldValue");
+fieldValue49.name = "myShape";
+let Shape50 = browser.currentScene.createNode("Shape");
+Shape50.DEF = "box";
+let Box51 = browser.currentScene.createNode("Box");
+Box51.size = new SFVec3f(new float[1,1,1]);
+Shape50.geometry = Box51;
 
-let Appearance46 = browser.currentScene.createNode("Appearance");
-let Material47 = browser.currentScene.createNode("Material");
-Material47.diffuseColor = new SFColor(new float[0,1,0]);
-Appearance46.material = Material47;
+let Appearance52 = browser.currentScene.createNode("Appearance");
+let Material53 = browser.currentScene.createNode("Material");
+Material53.diffuseColor = new SFColor(new float[0,1,0]);
+Appearance52.material = Material53;
 
-Shape44.appearance = Appearance46;
+Shape50.appearance = Appearance52;
 
-fieldValue43.children = new MFNode();
+fieldValue49.children = new MFNode();
 
-fieldValue43.children[0] = Shape44;
+fieldValue49.children[0] = Shape50;
 
-ProtoInstance41.fieldValue[1] = fieldValue43;
+ProtoInstance47.fieldValue[1] = fieldValue49;
 
-browser.currentScene.children[4] = ProtoInstance41;
+browser.currentScene.children[4] = ProtoInstance47;
 
-let Transform48 = browser.currentScene.createNode("Transform");
-Transform48.translation = new SFVec3f(new float[0,2,0]);
-let Shape49 = browser.currentScene.createNode("Shape");
-Shape49.USE = "box";
-Transform48.children = new MFNode();
+let Transform54 = browser.currentScene.createNode("Transform");
+Transform54.translation = new SFVec3f(new float[0,2,0]);
+let Shape55 = browser.currentScene.createNode("Shape");
+Shape55.USE = "box";
+Transform54.children = new MFNode();
 
-Transform48.children[0] = Shape49;
+Transform54.children[0] = Shape55;
 
-browser.currentScene.children[5] = Transform48;
+browser.currentScene.children[5] = Transform54;
 

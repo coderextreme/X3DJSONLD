@@ -2,50 +2,85 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let Group2 = browser.currentScene.createNode("Group");
-let Shape3 = browser.currentScene.createNode("Shape");
-let Extrusion4 = browser.currentScene.createNode("Extrusion");
-Extrusion4.DEF = "extrusion";
-Extrusion4.spine = new MFVec3f(new float[-50,-50,0,50,50,0]);
-Extrusion4.creaseAngle = 0.785;
-Extrusion4.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
-Shape3.geometry = Extrusion4;
+let head1 = browser.currentScene.createNode("head");
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "creator";
+meta2.content = "John W Carlson";
+head1.meta = new MFNode();
 
-let Appearance5 = browser.currentScene.createNode("Appearance");
-let Material6 = browser.currentScene.createNode("Material");
-Material6.diffuseColor = new SFColor(new float[0,1,0]);
-Appearance5.material = Material6;
+head1.meta[0] = meta2;
 
-Shape3.appearance = Appearance5;
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "created";
+meta3.content = "December 13 2015";
+head1.meta[1] = meta3;
 
-Group2.children = new MFNode();
+let meta4 = browser.currentScene.createNode("meta");
+meta4.name = "title";
+meta4.content = "extrusion.x3d";
+head1.meta[2] = meta4;
 
-Group2.children[0] = Shape3;
+let meta5 = browser.currentScene.createNode("meta");
+meta5.name = "identifier";
+meta5.content = "https://coderextreme.net/X3DJSONLD/force.x3d";
+head1.meta[3] = meta5;
 
-let TimeSensor7 = browser.currentScene.createNode("TimeSensor");
-TimeSensor7.DEF = "TourTime";
-TimeSensor7.loop = True;
-Group2.children[1] = TimeSensor7;
+let meta6 = browser.currentScene.createNode("meta");
+meta6.name = "description";
+meta6.content = "beginnings of a force directed graph in 3D";
+head1.meta[4] = meta6;
 
-let Script8 = browser.currentScene.createNode("Script");
-Script8.DEF = "MoveCylinder";
-let field9 = browser.currentScene.createNode("field");
-field9.name = "set_cycle";
-field9.accessType = "inputOnly";
-field9.type = "SFTime";
-Script8.field = new MFNode();
+let meta7 = browser.currentScene.createNode("meta");
+meta7.name = "generator";
+meta7.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[5] = meta7;
 
-Script8.field[0] = field9;
+head = head1;
 
-let field10 = browser.currentScene.createNode("field");
-field10.name = "spine";
-field10.accessType = "inputOutput";
-field10.type = "MFVec3f";
-field10.value = "-50 -50 0 50 50 0";
-Script8.field[1] = field10;
+let Group9 = browser.currentScene.createNode("Group");
+let Shape10 = browser.currentScene.createNode("Shape");
+let Extrusion11 = browser.currentScene.createNode("Extrusion");
+Extrusion11.DEF = "extrusion";
+Extrusion11.spine = new MFVec3f(new float[-50,-50,0,50,50,0]);
+Extrusion11.creaseAngle = 0.785;
+Extrusion11.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Shape10.geometry = Extrusion11;
+
+let Appearance12 = browser.currentScene.createNode("Appearance");
+let Material13 = browser.currentScene.createNode("Material");
+Material13.diffuseColor = new SFColor(new float[0,1,0]);
+Appearance12.material = Material13;
+
+Shape10.appearance = Appearance12;
+
+Group9.children = new MFNode();
+
+Group9.children[0] = Shape10;
+
+let TimeSensor14 = browser.currentScene.createNode("TimeSensor");
+TimeSensor14.DEF = "TourTime";
+TimeSensor14.loop = True;
+Group9.children[1] = TimeSensor14;
+
+let Script15 = browser.currentScene.createNode("Script");
+Script15.DEF = "MoveCylinder";
+let field16 = browser.currentScene.createNode("field");
+field16.name = "set_cycle";
+field16.accessType = "inputOnly";
+field16.type = "SFTime";
+Script15.field = new MFNode();
+
+Script15.field[0] = field16;
+
+let field17 = browser.currentScene.createNode("field");
+field17.name = "spine";
+field17.accessType = "inputOutput";
+field17.type = "MFVec3f";
+field17.value = "-50 -50 0 50 50 0";
+Script15.field[1] = field17;
 
 
-Script8.setSourceCode(`ecmascript:\n"+
+Script15.setSourceCode(`ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+
@@ -53,23 +88,23 @@ Script8.setSourceCode(`ecmascript:\n"+
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
 "		        spine = new MFVec3f([endA, endB]);\n"+
 "                }`)
-Group2.children[2] = Script8;
+Group9.children[2] = Script15;
 
-let ROUTE11 = browser.currentScene.createNode("ROUTE");
-ROUTE11.fromNode = "TourTime";
-ROUTE11.fromField = "cycleTime";
-ROUTE11.toNode = "MoveCylinder";
-ROUTE11.toField = "set_cycle";
-Group2.children[3] = ROUTE11;
+let ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "TourTime";
+ROUTE18.fromField = "cycleTime";
+ROUTE18.toNode = "MoveCylinder";
+ROUTE18.toField = "set_cycle";
+Group9.children[3] = ROUTE18;
 
-let ROUTE12 = browser.currentScene.createNode("ROUTE");
-ROUTE12.fromNode = "MoveCylinder";
-ROUTE12.fromField = "spine_changed";
-ROUTE12.toNode = "extrusion";
-ROUTE12.toField = "set_spine";
-Group2.children[4] = ROUTE12;
+let ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "MoveCylinder";
+ROUTE19.fromField = "spine_changed";
+ROUTE19.toNode = "extrusion";
+ROUTE19.toField = "set_spine";
+Group9.children[4] = ROUTE19;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Group2;
+browser.currentScene.children[0] = Group9;
 

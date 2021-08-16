@@ -175,3 +175,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setMaterial((new autoclass.Material()).setAmbientIntensity(java.newFloat(0.25)).setDiffuseColor(java.newArray("float", [java.newFloat(0.795918), java.newFloat(0.505869), java.newFloat(0.093315)])).setShininess(java.newFloat(0.39)).setSpecularColor(java.newArray("float", [java.newFloat(0.923469), java.newFloat(0.428866), java.newFloat(0.006369)]))
               .addComments((new autoclass.CommentsBlock("Universal Media Library: Autumn 9")))))))      ;
     X3D0.toFileX3D("../data/HAnimPrototypes.new.x3d");
+    process.exit(0);

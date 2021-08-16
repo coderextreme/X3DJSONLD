@@ -25,3 +25,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry((new autoclass.Box()))))
         .addChild((new autoclass.Transform()).setRotation(java.newArray("float", [java.newFloat(7), java.newFloat(8), java.newFloat(9), java.newFloat(3.14)])).setScale(java.newArray("float", [java.newFloat(4), java.newFloat(5), java.newFloat(6)])).setTranslation(java.newArray("float", [java.newFloat(1), java.newFloat(2), java.newFloat(3)]))))      ;
     X3D0.toFileX3D("../data/app.new.x3d");
+    process.exit(0);

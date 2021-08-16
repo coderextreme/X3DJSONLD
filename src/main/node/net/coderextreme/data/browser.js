@@ -37,3 +37,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "\n"+
 "}")))      ;
     X3D0.toFileX3D("../data/browser.new.x3d");
+    process.exit(0);

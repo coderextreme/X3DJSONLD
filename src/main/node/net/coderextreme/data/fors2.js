@@ -113,3 +113,4 @@ ProtoInstance2
 ProtoInstance2
             .addFieldValue((new autoclass.fieldValue()).setName("positionB").setValue("50 50 50"));
     X3D0.toFileX3D("../data/fors2.new.x3d");
+    process.exit(0);

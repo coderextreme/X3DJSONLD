@@ -90,3 +90,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204]))))
             .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(16), java.newFloat(16), java.newFloat(0.1)]))))))      ;
     X3D0.toFileX3D("../data/PixelTextureComponentExamples.new.x3d");
+    process.exit(0);

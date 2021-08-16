@@ -2138,15 +2138,15 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='bboxDisplay' and .='false') and
-                      not( local-name()='castShadow' and .='true') and
+                      not( local-name()='bboxDisplay' and .=false()) and
+                      not( local-name()='castShadow' and .=true()) and
                       not( local-name()='channelCountMode' and .='max') and
                       not( local-name()='channelInterpretation' and .='speakers') and
                       not( local-name()='detune' and (.='0' or .='0.0')) and
-                      not( local-name()='enabled' and .='true') and
+                      not( local-name()='enabled' and .=true()) and
                       not( local-name()='gain' and (.='1' or .='1.0')) and
-                      not( local-name()='load' and .='true') and
-                      not( local-name()='loop' and .='false') and
+                      not( local-name()='load' and .=true()) and
+                      not( local-name()='loop' and .=false()) and
                       not( local-name()='farDistance'  and (string(.)='-1' or string(.)='-1.0')) and
                       not( local-name()='nearDistance' and (string(.)='-1' or string(.)='-1.0')) and
                       not( local-name()='pitch' and (.='1' or .='1.0')) and
@@ -2158,11 +2158,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name()='autoRefresh' and (.='0' or .='0.0')) and
                       not( local-name()='autoRefreshTimeLimit' and (.='3600' or .='3600.0')) and
                       not( local-name()='tailTime' and (.='0' or .='0.0')) and
-                      not( local-name()='shadows' and .='false') and
+                      not( local-name()='shadows' and .=false()) and
                       not( local-name()='shadowIntensity' and (.='1' or .='1.0')) and
-                      not( local-name()='visible' and .='true') and
+                      not( local-name()='visible' and .=true()) and
                       not( local-name(..)='AudioClip'	and
-                      ((local-name()='loop' and .='false') or
+                      ((local-name()='loop' and .=false()) or
                       (local-name()='pitch' and (.='1' or .='1.0')) or
                       (local-name()='startTime' and (.='0' or .='0.0')) or
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
@@ -2171,27 +2171,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
                       not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
                       not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
-                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
-                      not( local-name(..)='Box'	and ((local-name()='size' and (.='2 2 2' or .='2.0 2.0 2.0')) or (local-name()='solid' and .='true'))) and
-                      not( local-name(..)='Collision'	and local-name()='enabled' and .='true') and
+                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and .=false()) and
+                      not( local-name(..)='Box'	and ((local-name()='size' and (.='2 2 2' or .='2.0 2.0 2.0')) or (local-name()='solid' and .=true()))) and
+                      not( local-name(..)='Collision'	and local-name()='enabled' and .=true()) and
                       not( local-name(..)='Cone' and	
                       ((local-name()='bottomRadius' and (.='1' or .='1.0')) or
                       (local-name()='height' and (.='2' or .='2.0')) or
-                      (local-name()='side' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='bottom' and .='true')))"/>
+                      (local-name()='side' and .=true()) or
+                      (local-name()='solid' and .=true()) or
+                      (local-name()='bottom' and .=true())))"/>
         <xsl:variable name="notDefaultFieldValue1a"
                       select="not( local-name(..)='Cylinder' and
                       ((local-name()='height' and (.='2' or .='2.0')) or
                       (local-name()='radius' and (.='1' or .='1.0')) or
-                      (local-name()='bottom' and .='true') or
-                      (local-name()='side' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='top' and .='true'))) and
+                      (local-name()='bottom' and .=true()) or
+                      (local-name()='side' and .=true()) or
+                      (local-name()='solid' and .=true()) or
+                      (local-name()='top' and .=true()))) and
                       not( local-name(..)='CylinderSensor' and
-                      ((local-name()='autoOffset' and .='true') or
+                      ((local-name()='autoOffset' and .=true()) or
                       (local-name()='axisRotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='enabled' and .='true') or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='diskAngle' and .='0.26179167') or
                       (local-name()='offset' and (.='0' or .='0.0')) or
                       (local-name()='maxAngle' and (.='-1' or .='-1.0')) or
@@ -2201,14 +2201,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='ambientIntensity' and (.='0' or .='0.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                       (local-name()='direction' and (.='0 0 -1' or .='0.0 0.0 -1.0')) or
-                      (local-name()='global' and .='false') or
+                      (local-name()='global' and .=false()) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='on' and .='true'))) and
+                      (local-name()='on' and .=true()))) and
                       not((local-name(..)='ElevationGrid' or local-name(..)='GeoElevationGrid') and
-                      ((local-name()='ccw' and .='true') or
-                      (local-name()='colorPerVertex' and .='true') or
-                      (local-name()='normalPerVertex' and .='true') or
-                      (local-name()='solid' and .='true') or
+                      ((local-name()='ccw' and .=true()) or
+                      (local-name()='colorPerVertex' and .=true()) or
+                      (local-name()='normalPerVertex' and .=true()) or
+                      (local-name()='solid' and .=true()) or
                       (local-name()='xDimension' and (.='2')) or
                       (local-name()='xSpacing' and (.='1' or .='1.0')) or
                       (local-name()='zDimension' and (.='2')) or
@@ -2218,11 +2218,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='geoGridOrigin' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
                       not( local-name(..)='Extrusion'	and
-                      ((local-name()='beginCap' and .='true') or
-                      (local-name()='ccw' and .='true') or
-                      (local-name()='convex' and .='true') or
-                      (local-name()='endCap' and .='true') or
-                      (local-name()='solid' and .='true') or
+                      ((local-name()='beginCap' and .=true()) or
+                      (local-name()='ccw' and .=true()) or
+                      (local-name()='convex' and .=true()) or
+                      (local-name()='endCap' and .=true()) or
+                      (local-name()='solid' and .=true()) or
                       (local-name()='creaseAngle' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='scale' and (.='1 1' or .='1.0 1.0')) or
@@ -2233,12 +2233,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultFieldValue3"
                       select="not(contains(local-name(..),'Fog') and 	((local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                       (local-name()='visibilityRange' and (.='0' or .='0.0')) or
-                      (local-name()='enabled' and .='true') or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='fogType' and .='LINEAR'))) and
                       not(contains(local-name(..),'FontStyle')	and
-                      ((local-name()='horizontal' and .='true') or
-                      (local-name()='leftToRight' and .='true') or
-                      (local-name()='topToBottom' and .='true') or
+                      ((local-name()='horizontal' and .=true()) or
+                      (local-name()='leftToRight' and .=true()) or
+                      (local-name()='topToBottom' and .=true()) or
                       (local-name()='size' and (.='1' or .='1.0')) or
                       (local-name()='spacing' and (.='1' or .='1.0')) or
                       (local-name()='pointSize' and (.='12' or .='12.0')) or
@@ -2246,21 +2246,21 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='justify' and .='&quot;BEGIN&quot;') or
                       (local-name()='style' and .='PLAIN'))) and
                       not( local-name(..)='ImageTexture' and
-                      ((local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true'))) and
+                      ((local-name()='repeatS' and .=true()) or
+                      (local-name()='repeatT' and .=true()))) and
                       not( local-name(..)='IndexedFaceSet' and
-                      ((local-name()='ccw' and .='true') or
-                      (local-name()='colorPerVertex' and .='true') or
-                      (local-name()='convex' and .='true') or
-                      (local-name()='normalPerVertex' and .='true') or
-                      (local-name()='solid' and .='true') or
+                      ((local-name()='ccw' and .=true()) or
+                      (local-name()='colorPerVertex' and .=true()) or
+                      (local-name()='convex' and .=true()) or
+                      (local-name()='normalPerVertex' and .=true()) or
+                      (local-name()='solid' and .=true()) or
                       (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and .='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
+                      not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and .=true()) and
+                      not( local-name(..)='Inline' and ((local-name()='load' and .=true()) or (local-name()='global' and .=false()))) and
                       not( local-name(..)='LoadSensor' and
-                      ((local-name()='enabled' and .='true') or
+                      ((local-name()='enabled' and .=true()) or
                       (local-name()='timeOut' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='LOD'	and	((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='forceTransitions' and .='false'))) and
+                      not( local-name(..)='LOD'	and	((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='forceTransitions' and .=false()))) and
                       not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and .='0.2') or
                       (local-name()='diffuseColor' and .='0.8 0.8 0.8') or
@@ -2277,7 +2277,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='backDiffuseColor' and .='0.8 0.8 0.8') or
                       (local-name()='backEmissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='backShininess' and .='0.2') or
-                      (local-name()='separateBackColor' and .='false') or
+                      (local-name()='separateBackColor' and .=false()) or
                       (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='backTransparency' and (.='0' or .='0.0')))) and
                       not((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')	and
@@ -2292,30 +2292,30 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
-                      ((local-name()='loop' and .='false') or
+                      ((local-name()='loop' and .=false()) or
                       (local-name()='speed' and (.='1' or .='1.0')) or
                       (local-name()='startTime' and (.='0' or .='0.0')) or
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
                       (local-name()='pauseTime' and (.='0' or .='0.0')) or
                       (local-name()='resumeTime'  and (.='0' or .='0.0')) or
-                      (local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true'))) and
+                      (local-name()='repeatS' and .=true()) or
+                      (local-name()='repeatT' and .=true()))) and
                       not( local-name(..)='NavigationInfo' and
                       ((local-name()='avatarSize' and .='0.25 1.6 0.75') or
-                      (local-name()='headlight' and .='true') or
+                      (local-name()='headlight' and .=true()) or
                       (local-name()='speed' and (.='1' or .='1.0')) or
                       (local-name()='transitionTime' and (.='1' or .='1.0')) or
                       (local-name()='transitionType' and (.='&quot;LINEAR&quot;')) or
 					  (local-name()='type' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
                       (local-name()='visibilityLimit' and (.='0' or .='0.0')))) and
                       not( local-name(..)='PixelTexture' and
-                      ((local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true') or
+                      ((local-name()='repeatS' and .=true()) or
+                      (local-name()='repeatT' and .=true()) or
                       (local-name()='image' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='PlaneSensor' and
-                      ((local-name()='autoOffset' and .='true') or
+                      ((local-name()='autoOffset' and .=true()) or
 					  (local-name()='axisRotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='enabled' and .='true') or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='maxPosition' and (.='-1 -1' or .='-1.0 -1.0')) or
                       (local-name()='minPosition' and (.='0 0' or .='0.0 0.0')) or
                       (local-name()='offset' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
@@ -2323,18 +2323,18 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='ambientIntensity' and (.='0' or .='0.0'))or
                       (local-name()='attenuation' and (.='1 0 0' or .='1.0 0.0 0.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='global' and .='true') or
+                      (local-name()='global' and .=true()) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='on' and .='true') or
+                      (local-name()='on' and .=true()) or
                       (local-name()='radius' and (.='100' or .='100.0'))))" />
         <xsl:variable name="notDefaultFieldValue5"
                       select="not(contains(local-name(..),'ProximitySensor') and
                       ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='enabled' and .='true'))) and
-                      not( local-name(..)='Script' and ((local-name()='directOutput' and .='false') or
-                      (local-name()='mustEvaluate' and .='false'))) and
+                      (local-name()='enabled' and .=true()))) and
+                      not( local-name(..)='Script' and ((local-name()='directOutput' and .=false()) or
+                      (local-name()='mustEvaluate' and .=false()))) and
                       not( local-name(..)='Sound' and ((local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -2343,11 +2343,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='maxFront' and (.='10' or .='10.0')) or
                       (local-name()='minBack' and (.='1' or .='1.0'))  or
                       (local-name()='minFront' and (.='1' or .='1.0')) or
-                      (local-name()='spatialize' and .='true'))) and
-                      not( local-name(..)='Sphere' and ((local-name()='radius' and (.='1' or .='1.0')) or (local-name()='solid' and .='true'))) and
+                      (local-name()='spatialize' and .=true()))) and
+                      not( local-name(..)='Sphere' and ((local-name()='radius' and (.='1' or .='1.0')) or (local-name()='solid' and .=true()))) and
                       not( local-name(..)='SphereSensor' and
-                      ((local-name()='autoOffset' and .='true') or
-                      (local-name()='enabled' and .='true') or
+                      ((local-name()='autoOffset' and .=true()) or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='offset' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')) and
                       not( local-name(..)='Switch' and ../IS/connect[@nodeField='whichChoice'])))" />
         <!-- Switch whichChoice='-1' is very significant and somewhat counterintuitive/nonobvious, so otherwise show it. -->
@@ -2360,12 +2360,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                       (local-name()='cutOffAngle' and (.='1.5708' or .='1.570796')) or
                       (local-name()='direction' and (.='0 0 -1' or .='0.0 0.0 -1.0')) or
-                      (local-name()='global' and .='true') or
+                      (local-name()='global' and .=true()) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='on' and .='true') or
+                      (local-name()='on' and .=true()) or
                       (local-name()='radius' and (.='100' or .='100.0')))) and
-                      not( local-name(..)='Text'   and ((local-name()='maxExtent' and (.='0' or .='0.0')) or (local-name()='solid' and (.='false')))) and
+                      not( local-name(..)='Text'   and ((local-name()='maxExtent' and (.='0' or .='0.0')) or (local-name()='solid' and (.=false())))) and
                       not( local-name(..)='TextureTransform' and
                       ((local-name()='center' and (.='0 0' or .='0.0 0.0')) or
                       (local-name()='rotation' and (.='0' or .='0.0')) or
@@ -2381,14 +2381,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultFieldValue7"
                       select="not( local-name(..)='TimeSensor' and
                       ((local-name()='cycleInterval' and (.='1' or .='1.0')) or
-                      (local-name()='enabled' and .='true') or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='startTime' and (.='0' or .='0.0')) or
                       (local-name()='stopTime' and (.='0' or .='0.0')) or
                       (local-name()='pauseTime' and (.='0' or .='0.0')) or
                       (local-name()='resumeTime'  and (.='0' or .='0.0')) or
-                      (local-name()='loop' and .='false'))) and
+                      (local-name()='loop' and .=false()))) and
                       not( contains(local-name(..),'TouchSensor') and
-                      local-name()='enabled' and .='true') and
+                      local-name()='enabled' and .=true()) and
                       not( ((local-name(..)='Transform') or (local-name(..)='EspduTransform') or (local-name(..)='GeoTransform')) and
                       ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
 					  (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -2402,39 +2402,39 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( contains(local-name(..),'Viewpoint') and
                       ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
-                      (local-name()='jump' and .='true') or
-                      (local-name()='viewAll' and .='false') or
+                      (local-name()='jump' and .=true()) or
+                      (local-name()='viewAll' and .=false()) or
                       ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='retainUserOffsets' and (.='false')) or
+                      (local-name()='retainUserOffsets' and (.=false())) or
                       (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
                       not( local-name(..)='VisibilitySensor' and
                       ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='enabled' and .='true') or
+                      (local-name()='enabled' and .=true()) or
                       (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='enterTime' and (.='0' or .='0.0')) or
                       (local-name()='exitTime'  and (.='0' or .='0.0')) or
-                      (local-name()='isActive' and .='false')))" />
+                      (local-name()='isActive' and .=false())))" />
         <xsl:variable name="notDefaultFieldValue8"
                       select="not( local-name(..)='FillProperties' and
-                      ((local-name()='filled' and .='true') or
-                      (local-name()='hatched' and .='true') or
+                      ((local-name()='filled' and .=true()) or
+                      (local-name()='hatched' and .=true()) or
                       (local-name()='hatchStyle' and (.='1' or .='1.0')) or
                       (local-name()='hatchColor' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
                       not( local-name(..)='LineProperties' and
-                      ((local-name()='applied' and .='true') or
+                      ((local-name()='applied' and .=true()) or
                       (local-name()='linetype' and (.='1')) or
                       (local-name()='linewidthScaleFactor' and (.='0' or .='0.0')))) and
                       not( local-name(..)='PointProperties' and
                       ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
                       (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
-                      ((local-name()='enabled' and .='true') or
+                      ((local-name()='enabled' and .=true()) or
                       (local-name()='plane' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')))) and
                       not( local-name(..)='ViewpointGroup' and
                       ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='displayed' and .='true') or
-                      (local-name()='retainUserOffsets' and .='false') or
+                      (local-name()='displayed' and .=true()) or
+                      (local-name()='retainUserOffsets' and .=false()) or
                       (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultFieldValue9"
                       select="not( local-name(..)='MultiTexture' and
@@ -2445,7 +2445,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and .='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
-                      ((local-name()='repeatS' or local-name()='repeatT' or local-name()='repeatR') and .='false')) and
+                      ((local-name()='repeatS' or local-name()='repeatT' or local-name()='repeatR') and .=false())) and
                       not( local-name(..)='PixelTexture3D' and
                       (local-name()='image' and (.='0 0 0 0'))) and
                       not( local-name(..)='IntegerTrigger' and
@@ -2454,14 +2454,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='activeLayer' and .='0') or
                        (local-name()='order' and .='0'))) and
                       not(contains(local-name(..),'PickSensor') and
-                      ((local-name()='enabled' and .='true') or
+                      ((local-name()='enabled' and .=true()) or
                        (local-name()='intersectionType' and .='BOUNDS') or
                        (local-name()='matchCriterion' and .='MATCH_ANY') or
                        (local-name()='objectType' and .='&quot;ALL&quot;') or
                        (local-name()='sortOrder' and .='CLOSEST'))) and
                       not( local-name(..)='ParticleSystem' and
-                      ((local-name()='createParticles' and .='true') or
-                       (local-name()='enabled' and .='true') or
+                      ((local-name()='createParticles' and .=true()) or
+                       (local-name()='enabled' and .=true()) or
                        (local-name()='geometryType' and .='QUAD') or
                        (local-name()='lifetimeVariation' and .='0.25') or
                        (local-name()='maxParticles' and .='200') or
@@ -2469,11 +2469,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='particleSize' and .='0.02 0.02'))) and
                       not( local-name(..)='PickableGroup' and
                       ((local-name()='objectType' and .='&quot;ALL&quot;') or
-                       (local-name()='pickable' and .='true'))) and
+                       (local-name()='pickable' and .=true()))) and
                       not(local-name(..)='StringSensor' and
-                      ((local-name()='deletionAllowed' or local-name()='enabled') and (.='true'))) and
+                      ((local-name()='deletionAllowed' or local-name()='enabled') and (.=true()))) and
                       not( local-name(..)='TransformSensor' and
-                      ((local-name()='enabled' and .='true') or
+                      ((local-name()='enabled' and .=true()) or
                        (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='GeneratedCubeMapTexture' and
@@ -2489,12 +2489,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='speed' and (.='0' or .='0.0')) or
                        (local-name()='surfaceArea' and (.='0' or .='0.0')) or
                        (local-name()='variation' and .='0.25') or
-                       (local-name()='internal' and .='true') or
+                       (local-name()='internal' and .=true()) or
                        (local-name()='coordIndex' or local-name()='-1'))) and
                       not(local-name(..)='Contact' and
                       ((local-name()='minBounceSpeed' and (.='0' or .='0.0')))) and
                       not(contains(local-name(..),'Layer') and
-                      ((local-name()='isPickable' and .='true'))) and
+                      ((local-name()='isPickable' and .=true()))) and
                       not(contains(local-name(..),'Layout') and
                       ((local-name()='offset' and (.='0 0' or .='0.0 0.0')) or
                        (local-name()='size'   and (.='1 1' or .='1.0 1.0')) or
@@ -2507,7 +2507,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='borderColor' and (.='0 0 0 0' or .='0.0 0.0 0.0 0.0')) or
                        (local-name()='borderWidth' and (.='0' or .='0.0')) or
                        (starts-with(local-name(),'boundaryMode') and .='REPEAT') or
-                       (local-name()='generateMipMaps' and .='false') or
+                       (local-name()='generateMipMaps' and .=false()) or
                        (local-name()='magnificationFilter' and .='FASTEST') or
                        (local-name()='minificationFilter'  and .='FASTEST') or
                        (local-name()='textureCompression'  and .='FASTEST') or
@@ -2515,7 +2515,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not(local-name(..)='Viewport' and
                       ((local-name()='clipBoundary' and (.='0 1 0 1' or .='0.0 1.0 0.0 1.0')))) and
                       not( local-name(..)='KeySensor' and
-                      ((local-name()='enabled' and .='true'))) and
+                      ((local-name()='enabled' and .=true()))) and
                       not(starts-with(local-name(..),'TextureProjector') and
                        ((local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
                         (local-name()='location'  and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -2569,7 +2569,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='Convolver' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='normalize' and (.='false')))) and
+                      (local-name()='normalize' and (.=false())))) and
                       not( local-name(..)='Delay' and
                       ((local-name()='containerField' and .='children') or
                       (local-name()='delayTime' and (.='0' or .='0.0')) or
@@ -2586,11 +2586,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='ListenerPointSource' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='enableDoppler' and (.=false())) or
                       (local-name()='interauralDistance' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='trackCurrentView' and (.='false')))) and
+                      (local-name()='trackCurrentView' and (.=false())))) and
                       not( local-name(..)='MicrophoneSource' and
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='OscillatorSource' and
@@ -2606,15 +2606,15 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
                       (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='enableDoppler' and (.='false')) or
-                      (local-name()='enableHRTF' and (.='false')) or
+                      (local-name()='enableDoppler' and (.=false())) or
+                      (local-name()='enableHRTF' and (.=false())) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='maxDistance' and (.='10000' or .='10000.0')) or
                       (local-name()='priority' and (.='0' or .='0.0')) or
                       (local-name()='referenceDistance' and (.='1' or .='1.0')) or
                       (local-name()='rolloffFactor' and (.='1' or .='1.0')) or
-                      (local-name()='spatialize' and (.='true')))) and
+                      (local-name()='spatialize' and (.=true())))) and
                       not( local-name(..)='StreamAudioDestination' and
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='StreamAudioSource' and
@@ -2695,9 +2695,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       select="not((local-name(..)='EspduTransform' or contains(local-name(..),'Pdu')) and
                       ((starts-with(local-name(),'is')) or
                       (local-name()='address' and (.='localhost')) or
-                      (local-name()='enabled' and (.='true')) or
+                      (local-name()='enabled' and (.=true())) or
                       (local-name()='networkMode' and (.='standAlone')) or
-                      (local-name()='rtpHeaderExpected' and (.='false')) or
+                      (local-name()='rtpHeaderExpected' and (.=false())) or
                       (local-name()='readInterval'  and (.='.1' or .='0.1')) or
                       (local-name()='writeInterval'  and (.='1' or .='1.0')) or
                       (((local-name()='applicationID') or (local-name()='munitionApplicationID') or (local-name()='whichGeometry')) and (.='1')) or
@@ -2710,7 +2710,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (((local-name()='detonationLocation') or (local-name()='detonationRelativeLocation'))  and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='eventApplicationID'  and (.='1')) or
                       (((local-name()='eventEntityID') or (local-name()='eventNumber') or (local-name()='eventSiteID'))  and (.='0')) or
-                      ((local-name()='fired1' or local-name()='fired2') and (.='false')) or
+                      ((local-name()='fired1' or local-name()='fired2') and (.=false())) or
                       (local-name()='deadReckoning'  and (.='0')) or
                       ((local-name()='articulationParameterCount' or local-name()='entityCategory' or local-name()='entitySubcategory' or local-name()='entityCountry' or local-name()='entityDomain' or local-name()='entityExtra' or local-name()='entityKind' or local-name()='entitySpecific' or local-name()='eventApplicationID' or local-name()='firingRange' or local-name()='firingRate' or local-name()='fuse' or local-name()='warhead' or local-name()='forceID' or local-name()='munitionQuantity' or local-name()='munitionApplicationID') and (.='0')) or
                       ((local-name()='linearVelocity' or local-name()='linearAcceleration' or local-name()='munitionStartPoint' or local-name()='munitionEndPoint') and (.='0 0 0'))))" />
@@ -2743,9 +2743,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not(local-name(..)='GeoViewpoint' and
                       ((local-name()='speedFactor' and (.='1' or .='1.0')) or
-						(local-name()='headlight' and (.='true')) or
-						(local-name()='jump' and (.='true')) or
-                        (local-name()='viewAll' and .='false') or
+						(local-name()='headlight' and (.=true())) or
+						(local-name()='jump' and (.=true())) or
+                        (local-name()='viewAll' and .=false()) or
                         ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -2753,7 +2753,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         (local-name()='fieldOfView' and (.='0.785398' or .='.785398' or .='0.7854' or .='.7854')) or
                         (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not((local-name(..)='GeoCoordinate' or local-name(..)='GeoOrigin') and
-                      ((local-name()='rotateYUp' and (.='false')) or
+                      ((local-name()='rotateYUp' and (.=false())) or
                       (local-name()='containerField' and (.='geoOrigin')) or
                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
         <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
@@ -2811,7 +2811,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
                       ((local-name()='tessellation' and (.='0')) or
-                      (local-name()='closed' and (.='false')) or
+                      (local-name()='closed' and (.=false())) or
                       (local-name()='order' and (.='3')))) and
                       not(local-name(..)='NurbsSet' and
                       ((local-name()='tessellationScale' and (.='1' or .='1.0')) or 
@@ -2826,35 +2826,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='vDimension' and (.='0')) or
                       (local-name()='uOrder' and (.='3')) or
                       (local-name()='vOrder' and (.='3')) or
-                      (local-name()='ccw' and (.='true')) or
-                      (local-name()='solid' and (.='true')) or
-                      ((local-name()='uClosed' or local-name()='vClosed') and (.='false')))) and
+                      (local-name()='ccw' and (.=true())) or
+                      (local-name()='solid' and (.=true())) or
+                      ((local-name()='uClosed' or local-name()='vClosed') and (.=false())))) and
                       not((local-name(..)='NurbsSurfaceInterpolator' or local-name(..)='NurbsTextureCoordinate') and
                       ((local-name()='uDimension' and (.='0')) or
                       (local-name()='vDimension' and (.='0')) or
                       (local-name()='uOrder' and (.='3')) or
                       (local-name()='vOrder' and (.='3')))) and
                       not((local-name(..)='NurbsCurve' or local-name(..)='NurbsSwungSurface') and
-                      ((local-name()='ccw' or local-name()='solid') and (.='true'))) and
+                      ((local-name()='ccw' or local-name()='solid') and (.=true()))) and
                       not((contains(local-name(..),'SplinePositionInterpolator') or local-name(..)='SplineScalarInterpolator' or local-name(..)='SquadOrientationInterpolator') and
-                      ((local-name()='closed' or local-name()='normalizeVelocity') and (.='false')))" />
+                      ((local-name()='closed' or local-name()='normalizeVelocity') and (.=false())))" />
         <xsl:variable name="notDefaultGeometry2D"
                       select="not((local-name(..)='Arc2D' or local-name(..)='ArcClose2D') and
                       ((local-name()='startAngle' and (.='0' or .='0.0')) or
                        (local-name()='endAngle' and (.='1.5708' or .='1.570796')) or
                        (local-name()='radius' and (.='1' or .='1.0')) or
-                       (local-name()='solid' and (.='false')))) and
+                       (local-name()='solid' and (.=false())))) and
                       not(local-name(..)='Circle2D' and
                       ((local-name()='radius' and (.='1' or .='1.0')))) and
                       not(local-name(..)='Disk2D' and
                       ((local-name()='innerRadius' and (.='0' or .='0.0')) or
                        (local-name()='outerRadius' and (.='1' or .='1.0')) or
-                       (local-name()='solid' and (.='false')))) and
+                       (local-name()='solid' and (.=false())))) and
                       not((local-name(..)='Rectangle2D') and
                       ((local-name()='size' and ((.='2 2') or (.='2.0 2.0'))) or
-                       (local-name()='solid' and (.='false')))) and
+                       (local-name()='solid' and (.=false())))) and
                       not((local-name(..)='TriangleSet2D') and
-                      ((local-name()='solid' and (.='false')) or
+                      ((local-name()='solid' and (.=false())) or
                        (local-name()='closureType' and (.='PIE'))))" />
         <xsl:variable name="notDefaultVolume"
                       select="not(((local-name(..)='IsoSurfaceVolumeData') or (local-name(..)='SegmentedVolumeData') or (local-name(..)='VolumeData'))	and
@@ -2864,7 +2864,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name(..)='IsoSurfaceVolumeData')	and
                       ((local-name()='contourStepSize' or local-name()='surfaceTolerance') and (.='0' or .='0.0'))) and
                       not(((local-name(..)='BlendedVolumeStyle') or (local-name(..)='BoundaryEnhancementVolumeStyle') or (local-name(..)='CartoonVolumeStyle') or (local-name(..)='ComposedVolumeStyle') or (local-name(..)='EdgeEnhancementVolumeStyle') or (local-name(..)='OpacityMapVolumeStyle') or (local-name(..)='ProjectionVolumeStyle') or (local-name(..)='ShadedVolumeStyle') or (local-name(..)='SilhouetteEnhancementVolumeStyle') or (local-name(..)='ToneMappedVolumeStyle')) and
-                      (local-name()='enabled' and .='true')) and
+                      (local-name()='enabled' and .=true())) and
                       not((local-name(..)='BlendedVolumeStyle')	and
                       (((local-name()='weightConstant1' or local-name()='weightConstant2') and (.='.5' or .='0.5')) or
                        ((local-name()='weightFunction1' or local-name()='weightFunction2') and (.='CONSTANT')))) and
@@ -2885,7 +2885,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (((local-name()='intensityThreshold') and (.='0' or .='0.0')) or
                        ((local-name()='type') and (.='MAX')))) and
                       not((local-name(..)='ShadedVolumeStyle')	and
-                      (((local-name()='lighting' or local-name()='shadows') and (.='false')) or
+                      (((local-name()='lighting' or local-name()='shadows') and (.=false())) or
                        ((local-name()='phaseFunction') and (.='Henyey-Greenstein')))) and
                       not((local-name(..)='SilhouetteEnhancementVolumeStyle')	and
                       (((local-name()='silhouetteBoundaryOpacity') and (.='0' or .='0.0')) or
@@ -2926,14 +2926,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name(..)='ShaderPart' or local-name(..)='ShaderProgram') and ((local-name()='type' and (.='VERTEX')))) -->
         <xsl:variable name="notDefaultRigidBodyPhysics"
                       select="not((local-name(..)='CollidableOffset' or local-name(..)='CollidableShape') and
-                      (((local-name()='enabled') and (.='true')) or
+                      (((local-name()='enabled') and (.=true())) or
                       ((local-name()='rotation') and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0.0 0.0 1.0 0.0')) or
                       ((local-name()='translation') and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       ((local-name()='bboxCenter')	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
                       ((local-name()='bboxSize')	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='CollisionSpace') and
-                      ((local-name()='enabled' and (.='true')) or
-                      (local-name()='useGeometry' and (.='false')) or
+                      ((local-name()='enabled' and (.=true())) or
+                      (local-name()='useGeometry' and (.=false())) or
                       (local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='BallJoint' or local-name(..)='DoubleAxisHingeJoint' or local-name(..)='MotorJoint' or local-name(..)='SingleAxisHingeJoint' or local-name(..)='SliderJoint' or local-name(..)='UniversalJoint') and
@@ -2941,12 +2941,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name(..)='BallJoint') and
                       ((local-name()='anchorPoint')	and	(.='0 0 0' or .='0.0 0.0 0.0'))) and
                       not((local-name(..)='BoundedPhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true'))) and
+                      ((local-name()='enabled')	and	(.=true()))) and
                       not((local-name(..)='ForcePhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true')) or
+                      ((local-name()='enabled')	and	(.=true())) or
                       (local-name()='force'	and	(.='0 -9.8 0' or .='0.0 -9.8 0.0'))) and
                       not((local-name(..)='WindPhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true')) or
+                      ((local-name()='enabled')	and	(.=true())) or
                       (local-name()='gustiness'	and	(.='0.1')) or
                       (local-name()='speed'	and	(.='0.1')) or
                       (local-name()='turbulence'	and	(.='0' or .='0.0')) or
@@ -2954,13 +2954,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name(..)='CollisionCollection') and
                       (((local-name()='appliedParameters') and (.='&quot;BOUNCE&quot;')) or
                       ((local-name()='bounce') and (.='0' or .='0.0')) or
-                      ((local-name()='enabled') and (.='true')) or
+                      ((local-name()='enabled') and (.=true())) or
                       ((local-name()='frictionCoefficients' or local-name()='slipFactors' or local-name()='surfaceSpeed') and (.='0 0' or .='0.0 0.0')) or
                       ((local-name()='minBounceSpeed') and (.='.1' or .='0.1')) or
                       ((local-name()='softnessConstantForceMix') and (.='.0001' or .='0.0001')) or
                       ((local-name()='softnessErrorCorrection') and (.='.8' or .='0.8')))) and
                       not((local-name(..)='CollisionSensor') and
-                      (local-name()='enabled' and .='true')) and
+                      (local-name()='enabled' and .=true())) and
                       not((local-name(..)='Contact') and
                       (((local-name()='appliedParameters') and (.='&quot;BOUNCE&quot;')) or
                       ((local-name()='bounce' or local-name()='depth' or local-name()='minbounceSpeed') and (.='0' or .='0.0')) or
@@ -2983,21 +2983,21 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='stop1ErrorCorrection' or local-name()='stop2ErrorCorrection' or local-name()='stop3ErrorCorrection') and (.='.8' or .='0.8')) or
                       ((local-name()='motor1Axis' or local-name()='motor2Axis' or local-name()='motor3Axis') and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       ((local-name()='enabledAxes') and (.='1')) or
-                      ((local-name()='autoCalc') and (.='false')))) and
+                      ((local-name()='autoCalc') and (.=false())))) and
                       not((local-name(..)='RigidBody') and
                       (((local-name()='angularDampingFactor') and (.='.001' or .='0.001')) or
                       ((local-name()='angularVelocity' or local-name()='centerOfMass' or local-name()='finiteRotationAxis' or local-name()='linearVelocity' or local-name()='position') and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       ((local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (.='0' or .='0.0')) or
                       ((local-name()='finiteRotationAxis') and (.='0 1 0' or .='0.0 1.0 0.0')) or
                       ((local-name()='mass') and (.='1' or .='1.0')) or
-                      ((local-name()='enabled' or local-name()='useGlobalGravity') and (.='true')) or
-                      ((local-name()='autoDamp' or local-name()='autoDisable' or local-name()='fixed' or local-name()='useFiniteRotation') and (.='false')) or
+                      ((local-name()='enabled' or local-name()='useGlobalGravity') and (.=true())) or
+                      ((local-name()='autoDamp' or local-name()='autoDisable' or local-name()='fixed' or local-name()='useFiniteRotation') and (.=false())) or
                       ((local-name()='inertia') and (.='1 0 0 0 1 0 0 0 1' or .='1.0 0 0 0 1.0 0 0 0 1.0' or .='1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0')) or
                       ((local-name()='linearDampingFactor') and (.='.001' or .='0.001')) or
                       ((local-name()='orientation') and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')))) and
                       not((local-name(..)='RigidBodyCollection') and
-                      (((local-name()='autoDisable' or local-name()='preferAccuracy') and (.='false')) or
-                      ((local-name()='enabled') and (.='true')) or
+                      (((local-name()='autoDisable' or local-name()='preferAccuracy') and (.=false())) or
+                      ((local-name()='enabled') and (.=true())) or
                       ((local-name()='constantForceMix') and (.='.0001' or .='0.0001')) or
                       ((local-name()='contactSurfaceThickness' or local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (.='0' or .='0.0')) or
                       ((local-name()='errorCorrection') and (.='.8' or .='0.8')) or

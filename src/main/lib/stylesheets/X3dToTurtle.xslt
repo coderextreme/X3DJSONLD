@@ -1396,8 +1396,8 @@
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:if test="(string-length($dcterm) > 0)">
-                    <!-- TODO attach to :head or :X3D? -->
-                    <xsl:text>:head </xsl:text>
+                    <!-- TODO attach meta to :head or :X3D? write an ontology correspondence instead? -->
+                    <xsl:text>:meta </xsl:text>
                     <xsl:text>dcterms:</xsl:text>
                     <xsl:value-of select="$dcterm"/>
                     <xsl:text> "</xsl:text>

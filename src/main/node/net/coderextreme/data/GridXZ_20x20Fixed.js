@@ -66,3 +66,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
                   .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance"))))))))      ;
     X3D0.toFileX3D("../data/GridXZ_20x20Fixed.new.x3d");
+    process.exit(0);
