@@ -665,3 +665,4 @@ CameraExamples.prototype = {
 	}
 }
 new CameraExamples().main();
+process.exit(0);

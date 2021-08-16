@@ -3861,3 +3861,4 @@ HAnim1SpecificationLOA3Animation.prototype = {
 	}
 }
 new HAnim1SpecificationLOA3Animation().main();
+process.exit(0);

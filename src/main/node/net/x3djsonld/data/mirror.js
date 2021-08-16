@@ -242,3 +242,4 @@ mirror.prototype = {
 	}
 }
 new mirror().main();
+process.exit(0);

@@ -233,3 +233,4 @@ flower.prototype = {
 	}
 }
 new flower().main();
+process.exit(0);

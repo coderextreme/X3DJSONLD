@@ -5139,3 +5139,4 @@ JinLOA4.prototype = {
 	}
 }
 new JinLOA4().main();
+process.exit(0);

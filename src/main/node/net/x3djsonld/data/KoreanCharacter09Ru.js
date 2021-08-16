@@ -1004,3 +1004,4 @@ KoreanCharacter09Ru.prototype = {
 	}
 }
 new KoreanCharacter09Ru().main();
+process.exit(0);

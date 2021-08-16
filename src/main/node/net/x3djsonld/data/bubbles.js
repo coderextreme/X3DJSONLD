@@ -216,3 +216,4 @@ bubbles.prototype = {
 	}
 }
 new bubbles().main();
+process.exit(0);

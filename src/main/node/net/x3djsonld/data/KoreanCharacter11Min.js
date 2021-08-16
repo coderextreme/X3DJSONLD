@@ -1002,3 +1002,4 @@ KoreanCharacter11Min.prototype = {
 	}
 }
 new KoreanCharacter11Min().main();
+process.exit(0);

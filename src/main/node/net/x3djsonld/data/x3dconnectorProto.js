@@ -290,3 +290,4 @@ x3dconnectorProto.prototype = {
 	}
 }
 new x3dconnectorProto().main();
+process.exit(0);

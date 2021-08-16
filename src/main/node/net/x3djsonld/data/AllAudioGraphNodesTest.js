@@ -182,3 +182,4 @@ AllAudioGraphNodesTest.prototype = {
 	}
 }
 new AllAudioGraphNodesTest().main();
+process.exit(0);

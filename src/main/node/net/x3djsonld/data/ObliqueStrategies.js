@@ -347,3 +347,4 @@ ObliqueStrategies.prototype = {
 	}
 }
 new ObliqueStrategies().main();
+process.exit(0);

@@ -245,3 +245,4 @@ flowers4.prototype = {
 	}
 }
 new flowers4().main();
+process.exit(0);

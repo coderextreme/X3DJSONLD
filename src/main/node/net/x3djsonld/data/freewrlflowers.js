@@ -151,3 +151,4 @@ freewrlflowers.prototype = {
 	}
 }
 new freewrlflowers().main();
+process.exit(0);

@@ -150,3 +150,4 @@ browser.prototype = {
 	}
 }
 new browser().main();
+process.exit(0);
