@@ -3379,3 +3379,4 @@ JinLOA3.prototype = {
 	}
 }
 new JinLOA3().main();
+process.exit(0);

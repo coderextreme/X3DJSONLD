@@ -356,3 +356,4 @@ LOA1_WalkAnimation.prototype = {
 	}
 }
 new LOA1_WalkAnimation().main();
+process.exit(0);

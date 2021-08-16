@@ -290,3 +290,4 @@ LOA1_KneelAnimation.prototype = {
 	}
 }
 new LOA1_KneelAnimation().main();
+process.exit(0);

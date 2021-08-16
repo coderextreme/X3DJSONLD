@@ -270,3 +270,4 @@ Teapot.prototype = {
 	}
 }
 new Teapot().main();
+process.exit(0);

@@ -240,3 +240,4 @@ bub.prototype = {
 	}
 }
 new bub().main();
+process.exit(0);

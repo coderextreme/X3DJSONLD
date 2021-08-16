@@ -59,7 +59,7 @@ for version in versions:
     print(f"{version}")
     schemacodeversion = version.replace(".", "")
     # generate the version-based X3D JSON schema
-    os.system(f'python3 ../python/etgenerateJSONschema.py {version} < /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
+    os.system(f'python3 ../python/etgenerateJSONschema.py {version} < ../../specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
     # generate the python code for version-based validation of X3D JSON
     os.system(f'python3 -m fastjsonschema > schemaparser{schemacodeversion}.py < ../schema/x3d-{version}-JSONSchema.json')
     # validate an X3D JSON schema version against draft07.py

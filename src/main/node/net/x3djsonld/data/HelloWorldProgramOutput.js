@@ -492,3 +492,4 @@ HelloWorldProgramOutput.prototype = {
 	}
 }
 new HelloWorldProgramOutput().main();
+process.exit(0);

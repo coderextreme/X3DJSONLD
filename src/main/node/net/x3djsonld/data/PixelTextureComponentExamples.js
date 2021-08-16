@@ -237,3 +237,4 @@ PixelTextureComponentExamples.prototype = {
 	}
 }
 new PixelTextureComponentExamples().main();
+process.exit(0);

@@ -299,7 +299,8 @@ POSSIBILITY OF SUCH DAMAGE.
 	}
 }
 </xsl:text><!-- class complete -->
-<xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();</xsl:text>
+<xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();
+process.exit(0);</xsl:text>
 
 
     </xsl:template>

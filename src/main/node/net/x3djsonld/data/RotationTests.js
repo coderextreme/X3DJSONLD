@@ -336,3 +336,4 @@ RotationTests.prototype = {
 	}
 }
 new RotationTests().main();
+process.exit(0);

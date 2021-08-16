@@ -260,3 +260,4 @@ arc4.prototype = {
 	}
 }
 new arc4().main();
+process.exit(0);

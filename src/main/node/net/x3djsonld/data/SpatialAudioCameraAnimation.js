@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 April 2021 </td>
+			<td> 4 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -52,7 +52,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://www.medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://www.medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -96,6 +96,9 @@ SpatialAudioCameraAnimation.prototype = {
   initialize : function ()
   {
 
+	/** Large attribute array: Viewpoint DEF='Camera001' description field, scene-graph level=3, element #16, 40 total values */
+	this.Camera001_3_16_description = new autoclass.SFString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
+
 	/** Large attribute array: OrientationInterpolator DEF='Camera001-ROT-INTERP' keyValue field, scene-graph level=3, element #19, 20 total numbers made up of 5 4-tuple values */
 	this.Camera001_ROT_INTERP_3_19_keyValue = new autoclass.MFRotation(java.newArray("float", [1.000000,0.000000,-0.000000,-0.523599,0.999990,0.003554,0.002727,-1.309007,0.000000,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.608760,-3.135645,1.000000,-0.000001,-0.000000,-0.523599]));
   this.x3dModel = (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
@@ -105,8 +108,4 @@ SpatialAudioCameraAnimation.prototype = {
     .addMeta((new autoclass.meta()).setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("28 October 2020"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 April 2021"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("CHANGELOG.txt"))
-    .addMeta((new autoclass.meta()).setName("TODO").setContent("credit for audio files"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphi
+    .addMeta((new autocla

@@ -252,3 +252,4 @@ arc1.prototype = {
 	}
 }
 new arc1().main();
+process.exit(0);

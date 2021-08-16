@@ -1017,3 +1017,4 @@ KoreanCharacter06Ga.prototype = {
 	}
 }
 new KoreanCharacter06Ga().main();
+process.exit(0);

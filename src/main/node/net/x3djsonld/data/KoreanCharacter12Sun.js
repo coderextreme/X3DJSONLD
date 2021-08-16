@@ -997,3 +997,4 @@ KoreanCharacter12Sun.prototype = {
 	}
 }
 new KoreanCharacter12Sun().main();
+process.exit(0);
