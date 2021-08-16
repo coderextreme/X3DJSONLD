@@ -1,0 +1,1436 @@
+abox.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "abox.py", line 35, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+AllAudioGraphNodesTest.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: Developmental test, no actual 3D model expected
+check  newModel.XML() serialization...
+python x3d.py load successful for AllAudioGraphNodesTest.py
+AllenDuttonProtoInstances.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "AllenDuttonProtoInstances.py", line 46, in <module>
+    ProtoDeclare(appinfo='The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.',documentation='http://HAnim.org/Specifications/HAnim2001/part1/Joint.html',name='Joint',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+AllenDutton.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: X3D Validator reports numerous warnings are present
+check  newModel.XML() serialization...
+python x3d.py load successful for AllenDutton.py
+AllenStandShootRifleM24.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "AllenStandShootRifleM24.py", line 44, in <module>
+    ProtoDeclare(name='LOA1_ShootAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+app.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful
+arc1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "arc1.py", line 37, in <module>
+    ProtoDeclare(name='point',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+arc2.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for arc2.py
+arc3.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for arc3.py
+arc4.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for arc4.py
+ArchHalf.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ArchHalf.py
+ArchPrototype.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "ArchPrototype.py", line 41, in <module>
+    ProtoDeclare(appinfo='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.',name='ArchPrototype',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+arcold.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "arcold.py", line 61, in <module>
+    ProtoDeclare(name='point',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+arc.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "arc.py", line 37, in <module>
+    ProtoDeclare(name='point',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+ArtDecoExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ArtDecoExamples.py
+ArtDecoPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "ArtDecoPrototypes.py", line 42, in <module>
+    ProtoDeclare(appinfo='UniversalMediaMaterials prototype',documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials',name='ArtDeco00',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+asmallbox.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "asmallbox.py", line 35, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+asteroids.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "asteroids.py", line 35, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+ball.py
+  File "ball.py", line 63
+    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>
+    ^
+SyntaxError: invalid syntax
+BindingOperations.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for BindingOperations.py
+BoxEm.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "BoxEm.py", line 37, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+BoxManAnimationPanel.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org
+check  newModel.XML() serialization...
+python x3d.py load successful for BoxManAnimationPanel.py
+BoxMan.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: Skin mesh is split across multiple shapes within a Group, should that be allowed?, TODO: What does the original animation script accomplish? It is not hooked up, script source contains errors... TODO: InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org
+check  newModel.XML() serialization...
+python x3d.py load successful for BoxMan.py
+browser.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for browser.py
+bubble.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "bubble.py", line 37, in <module>
+    ProtoDeclare(name='Bubble',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+bubbles.py
+  File "bubbles.py", line 68
+    ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT')),
+    ^
+SyntaxError: positional argument follows keyword argument
+Bubbles.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for Bubbles.py
+bub.py
+  File "bub.py", line 60
+    <ComposedShader DEF='gl' language="GLSL">
+    ^
+SyntaxError: invalid syntax
+bubs2.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "bubs2.py", line 40, in <module>
+    ProtoDeclare(name='Bubble',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+bubs3.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for bubs3.py
+bubs.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "bubs.py", line 39, in <module>
+    ProtoDeclare(name='Bubble',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+BvhConversion1Illustrated.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "BvhConversion1Illustrated.py", line 206, in <module>
+    HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+BvhConversion1Invisible.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "BvhConversion1Invisible.py", line 135, in <module>
+    HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+BvhConversion1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "BvhConversion1.py", line 200, in <module>
+    HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+BvhSeamless3dExport1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "BvhSeamless3dExport1.py", line 48, in <module>
+    ProtoDeclare(name='PAnim',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+CameraExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: Schematron rules, backed up by initialize() checks
+check  newModel.XML() serialization...
+python x3d.py load successful for CameraExamples.py
+CameraPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "CameraPrototypes.py", line 45, in <module>
+    ProtoDeclare(appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.',name='Camera',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+CameraShape.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for CameraShape.py
+CloudsProcedural4.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: fix links
+check  newModel.XML() serialization...
+python x3d.py load successful for CloudsProcedural4.py
+CoordinateAxes.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for CoordinateAxes.py
+cube.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for cube.py
+DiamondManLOA_0.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for DiamondManLOA_0.py
+DiamondManLOA0.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "DiamondManLOA0.py", line 69, in <module>
+    HAnimJoint(DEF='hanim_sacroiliac',center=(0.0,0.9149,0.0016),name='sacroiliac',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+DiamondManLOA_1.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: Still needs comments on CAESAR feature points inserted
+check  newModel.XML() serialization...
+python x3d.py load successful for DiamondManLOA_1.py
+DiamondManLOA1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "DiamondManLOA1.py", line 107, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.1086,0.0001,0.0368),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+DiamondManLOA_2.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for DiamondManLOA_2.py
+DiamondManLOA2.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "DiamondManLOA2.py", line 357, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.1086,0.0,0.0762),name='l_tarsal_distal_interphalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+ExtrusionHeart.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ExtrusionHeart.py
+extrusion.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for extrusion.py
+F16.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for F16.py
+Figure31_9SpinGroupPrototype.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "Figure31_9SpinGroupPrototype.py", line 41, in <module>
+    ProtoDeclare(name='SpinGroup',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+Filters.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "Filters.py", line 42, in <module>
+    NavigationInfo(id='NAV'),
+TypeError: __init__() got an unexpected keyword argument 'id'
+flipp.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for flipp.py
+flower3.py
+  File "flower3.py", line 52
+    <field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
+           ^
+SyntaxError: invalid syntax
+flowerproto.py
+  File "flowerproto.py", line 64
+    <field name='cube' type='SFNode' accessType="inputOutput">
+    ^
+SyntaxError: invalid syntax
+flower.py
+  File "flower.py", line 52
+    <field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
+           ^
+SyntaxError: invalid syntax
+flowers2.py
+  File "flowers2.py", line 72
+    <IndexedFaceSet DEF="Orbit" creaseAngle="0">
+    ^
+SyntaxError: invalid syntax
+flowers4.py
+  File "flowers4.py", line 65
+    <Sphere>
+    ^
+SyntaxError: invalid syntax
+flowers7.py
+  File "flowers7.py", line 61
+    <field name='cube' type='SFNode' accessType="inputOutput">
+    ^
+SyntaxError: invalid syntax
+flowers.py
+  File "flowers.py", line 64
+    <field name='cube' type='SFNode' accessType="inputOutput">
+    ^
+SyntaxError: invalid syntax
+foo.py
+  File "foo.py", line 1415
+    fieldValue(name='info',value=["authorName=Matthew T. Beitler","authorEmail=beitler@graphics.cis.upenn.edu or beitler@acm.org","creationDate=05/12/99","copyright=Copyright 1999-2003, Matthew T. Beitler","humanoidVersion=JointCenters 200x, LOA0","usageRestrictions=
+                                                                                                                                                                                                                                                                          ^
+SyntaxError: EOL while scanning string literal
+forcenode.py
+  File "forcenode.py", line 128
+    <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
+           ^
+SyntaxError: invalid syntax
+force.py
+  File "force.py", line 129
+    <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
+           ^
+SyntaxError: invalid syntax
+fors2.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "fors2.py", line 37, in <module>
+    ProtoDeclare(name='node',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+fors.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "fors.py", line 36, in <module>
+    ProtoDeclare(name='node',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+freewrlflowers.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "freewrlflowers.py", line 43, in <module>
+    ProtoDeclare(name='flower',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+gears.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for gears.py
+geobubbles.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for geobubbles.py
+geo.py
+  File "geo.py", line 68
+    ShaderPart(DEF='common',url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')),
+    ^
+SyntaxError: positional argument follows keyword argument
+glflowers.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "glflowers.py", line 43, in <module>
+    ProtoDeclare(name='flower',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+gridBack.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for gridBack.py
+GridXZ_20x20Fixed.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for GridXZ_20x20Fixed.py
+HAnim1SpecificationLOA3Animation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnim1SpecificationLOA3Animation.py", line 362, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsal',center=(0.1086,0,0.0762),name='l_metatarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnim1SpecificationLOA3Illustrated.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnim1SpecificationLOA3Illustrated.py", line 364, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsal',center=(0.1086,0,0.0762),name='l_metatarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnim1SpecificationLOA3Invisible.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnim1SpecificationLOA3Invisible.py", line 118, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsal',center=(0.1086,0,0.0762),name='l_metatarsal',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnim2SpecificationLOA3Illustrated.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnim2SpecificationLOA3Illustrated.py", line 369, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.1086,0,0.0762),name='l_tarsal_distal_interphalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnim2SpecificationLOA3Ilustrated.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, TODO: insert MetadataInteger nodes indicating LOA for each Joint and Segment
+check  newModel.XML() serialization...
+python x3d.py load successful for HAnim2SpecificationLOA3Illustrated.py
+HAnim2SpecificationLOA3Invisible.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnim2SpecificationLOA3Invisible.py", line 126, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.1086,0,0.0762),name='l_tarsal_distal_interphalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnimBehaviorPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimBehaviorPrototypes.py", line 47, in <module>
+    ProtoDeclare(appinfo='The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.',documentation='https://www.web3d.org/files/specifications/19774/V1.0/',name='HAnimBehavior',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+HAnimModelFootLeft.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimModelFootLeft.py", line 139, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',center=(-0.1,-1.05,0),name='l_tarsal_interphalangeal_1',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnimModelFootRight.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimModelFootRight.py", line 142, in <module>
+    HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',center=(0.1,-1.05,0),name='r_tarsal_interphalangeal_1',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnimModelHandLeft.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimModelHandLeft.py", line 132, in <module>
+    HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',center=(0.35,0.4,0),name='l_carpal_interphalangeal_1',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnimModelHandRight.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimModelHandRight.py", line 127, in <module>
+    HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',center=(-0.35,0.4,0),name='r_carpal_interphalangeal_1',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+HAnimModelsHandsFeet.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: not yet to scale, warning: TODO will X3D HAnim component add a new level to support LOA-4 functionality?, TODO: how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?
+check  newModel.XML() serialization...
+python x3d.py load successful for HAnimModelsHandsFeet.py
+HAnimPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HAnimPrototypes.py", line 53, in <module>
+    ProtoDeclare(appinfo='The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.',documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html',name='Humanoid1_1',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+HAnimSpecificationLOA3Illustrated.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: Convert to X3D4 HAnim2, TODO: move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, warning: BS Contact and H3DViewer have polygon-culling problems at close range (possibly related to avatarSize), other players look OK, TODO: insert MetadataInteger nodes indicating LOA for each Joint and Segment
+check  newModel.XML() serialization...
+python x3d.py load successful for HAnimSpecificationLOA3Illustrated.py
+HAnimSpecificationLOA3Invisible.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: Convert to X3D4 HAnim2, TODO: move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, TODO: insert MetadataInteger nodes indicating LOA for each Joint and Segment
+check  newModel.XML() serialization...
+python x3d.py load successful for HAnimSpecificationLOA3Invisible.py
+HAnimSpecificationLOA3Motion.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: Convert to X3D4 HAnim2
+check  newModel.XML() serialization...
+python x3d.py load successful for HAnimSpecificationLOA3Motion.py
+HeadsUpDisplayExample.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for HeadsUpDisplayExample.py
+HeadsUpDisplayPrototype.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "HeadsUpDisplayPrototype.py", line 39, in <module>
+    ProtoDeclare(appinfo='HeadsUpDisplay positions child geometry in screen space, movable by the user',name='HeadsUpDisplay',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+HelloWorldCommented.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental.
+check  newModel.XML() serialization...
+python x3d.py load successful for HelloWorldCommented.py
+HelloWorldMinimal.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for HelloWorldMinimal.py
+HelloWorldProgramOutputCanonical.py
+  File "HelloWorldProgramOutputCanonical.py", line 291
+    ProtoInstance(DEF='TestShader3',name='ShaderProto'),
+    ^
+SyntaxError: positional argument follows keyword argument
+HelloWorldProgramOutput.py
+  File "HelloWorldProgramOutput.py", line 298
+    ProtoInstance(DEF='TestShader3',name='ShaderProto'),
+    ^
+SyntaxError: positional argument follows keyword argument
+HelloWorld.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for HelloWorld.py
+IcosahedronSubdivisionLevel5.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for IcosahedronSubdivisionLevel5.py
+ifscube.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ifscube.py
+ifscubeworks.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ifscubeworks.py
+indexedfaceset_pixeltexture_entire.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d
+check  newModel.XML() serialization...
+python x3d.py load successful for indexedfaceset_pixeltexture_entire.py
+indexedfaceset_pixeltexture_part.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d
+check  newModel.XML() serialization...
+python x3d.py load successful for indexedfaceset_pixeltexture_part.py
+indexedfaceset_pixeltexture_plus.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d
+check  newModel.XML() serialization...
+python x3d.py load successful for indexedfaceset_pixeltexture_plus.py
+indexedfaceset_pixeltexture_whole.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: file did not transform to vrml97, info: Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d
+check  newModel.XML() serialization...
+python x3d.py load successful for indexedfaceset_pixeltexture_whole.py
+InlineSoundSource.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API. TODO: credit for audio files
+check  newModel.XML() serialization...
+python x3d.py load successful for InlineSoundSource.py
+InterchangableActorsViaDynamicRoutingPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "InterchangableActorsViaDynamicRoutingPrototypes.py", line 194, in <module>
+    ProtoDeclare(appinfo='The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.',documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html',name='Humanoid1_1',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+Java.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "Java.py", line 130, in <module>
+    ProtoDeclare(name='ArtDeco01Material',appinfo='tooltip: ArtDeco01Material prototype is a Material node',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+JinLOA1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JinLOA1.py", line 127, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.854,3.640,0.740200),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+JinLOA2.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JinLOA2.py", line 151, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(3.854,1.956,1.682),name='l_tarsal_distal_interphalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+JinLOA3.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JinLOA3.py", line 151, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(3.854,1.956,1.682),name='l_tarsal_distal_interphalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+JinLOA4.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JinLOA4.py", line 177, in <module>
+    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_1',center=(2.761,0.539400,5.125),name='l_tarsal_distal_interphalangeal_1',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+JoeKick.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JoeKick.py", line 88, in <module>
+    HAnimJoint(DEF='Joe_l_tarsal_distal_interphalangeal_2',center=(0.115,0.02,0.122),name='l_tarsal_distal_interphalangeal_2',skinCoordIndex=[353,354,355,356,357,358,359,360,361],skinCoordWeight=[1,1,1,1,1,1,1,1,1],stiffness=[0,0,0])])])])])]),
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+JoeProcessedKick.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JoeProcessedKick.py", line 148, in <module>
+    HAnimJoint(name='skullbase',DEF='Joe_skullbase',center=(0,1.63,-0.01),skinCoordIndex=[0,1,2,3,4,5,6,7,8,9],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35940, in __init__
+    self.displacers = displacers
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36135, in displacers
+    assertValidMFNode(displacers)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3184, in assertValidMFNode
+    value = [value.value] # dereference value from this SF type, convert to list #2
+AttributeError: 'HAnimDisplacer' object has no attribute 'value'
+JoeProcessed.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JoeProcessed.py", line 151, in <module>
+    HAnimJoint(name='skullbase',DEF='Joe_skullbase',center=(0,1.63,-0.01),skinCoordIndex=[0,1,2,3,4,5,6,7,8,9],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35940, in __init__
+    self.displacers = displacers
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36135, in displacers
+    assertValidMFNode(displacers)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3184, in assertValidMFNode
+    value = [value.value] # dereference value from this SF type, convert to list #2
+AttributeError: 'HAnimDisplacer' object has no attribute 'value'
+JoeProcessedSkin.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JoeProcessedSkin.py", line 152, in <module>
+    HAnimJoint(name='skullbase',DEF='Joe_skullbase',center=(0,1.63,-0.01),skinCoordIndex=[0,1,2,3,4,5,6,7,8,9],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35940, in __init__
+    self.displacers = displacers
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36135, in displacers
+    assertValidMFNode(displacers)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3184, in assertValidMFNode
+    value = [value.value] # dereference value from this SF type, convert to list #2
+AttributeError: 'HAnimDisplacer' object has no attribute 'value'
+JoeSkinTexcoordDisplacerKick.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "JoeSkinTexcoordDisplacerKick.py", line 152, in <module>
+    HAnimJoint(DEF='Joe_skullbase',center=(0,1.63,-0.01),name='skullbase',skinCoordIndex=[0,1,2,3,4,5,6,7,8,9],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35940, in __init__
+    self.displacers = displacers
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36135, in displacers
+    assertValidMFNode(displacers)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3184, in assertValidMFNode
+    value = [value.value] # dereference value from this SF type, convert to list #2
+AttributeError: 'HAnimDisplacer' object has no attribute 'value'
+Json.py
+  File "Json.py", line 296
+    ProtoInstance(DEF='TestShader3',name='ShaderProto'),
+    ^
+SyntaxError: positional argument follows keyword argument
+KoreanCharacter01Jin.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter01Jin.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.854000,3.640000,0.740200),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter02Chul.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter02Chul.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(4.809000,5.583000,1.492000),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter03Hyun.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter03Hyun.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.388000,2.908000,0.744100),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter04Young.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter04Young.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.180000,3.189000,0.972400),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter05Ju.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter05Ju.py", line 113, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.467000,3.251000,1.465000),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter06Ga.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter06Ga.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.280000,3.095000,0.830000),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter07No.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter07No.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.826000,3.118000,-0.286700),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter08Da.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter08Da.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.631000,3.792000,0.054790),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter09Ru.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter09Ru.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(4.077000,3.104000,-0.923900),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter10Mi.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter10Mi.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.602000,3.020000,0.070170),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter11Min.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter11Min.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.701000,3.418000,-0.400900),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacter12Sun.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacter12Sun.py", line 112, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(2.839000,3.312000,1.078000),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacterMotionAnnexC01Jin.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacterMotionAnnexC01Jin.py", line 120, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.854,3.64,0.7402),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+KoreanCharacterMotionAnnexD01Jin.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "KoreanCharacterMotionAnnexD01Jin.py", line 120, in <module>
+    HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(3.854,3.64,0.7402),name='l_metatarsophalangeal_2',stiffness=[0,0,0],
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 35935, in __init__
+    self.stiffness = stiffness
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 36084, in stiffness
+    assertValidSFVec3f(stiffness)
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 3929, in assertValidSFVec3f
+    raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid Python tuple for SFVec3f')
+x3d.X3DTypeError: [0, 0, 0], type=<class 'list'> is not a valid Python tuple for SFVec3f
+LOA1_JumpAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_JumpAnimation.py", line 46, in <module>
+    ProtoDeclare(name='LOA1_JumpAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_KneelAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_KneelAnimation.py", line 46, in <module>
+    ProtoDeclare(name='LOA1_KneelAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_RunAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_RunAnimation.py", line 46, in <module>
+    ProtoDeclare(name='LOA1_RunAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_StandAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_StandAnimation.py", line 47, in <module>
+    ProtoDeclare(name='LOA1_StandAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_StopAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_StopAnimation.py", line 46, in <module>
+    ProtoDeclare(name='LOA1_StopAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_SwimmingFlutterKickAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_SwimmingFlutterKickAnimation.py", line 44, in <module>
+    ProtoDeclare(name='LOA1_DivingAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+LOA1_WalkAnimation.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "LOA1_WalkAnimation.py", line 46, in <module>
+    ProtoDeclare(name='LOA1_WalkAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+Marine.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: Not HAnim compliant
+check  newModel.XML() serialization...
+python x3d.py load successful for Marine.py
+MaskAndSnorkel.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for MaskAndSnorkel.py
+mirror2.py
+  File "mirror2.py", line 64
+    ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"],type='FRAGMENT')),
+    ^
+SyntaxError: positional argument follows keyword argument
+mirror.py
+  File "mirror.py", line 70
+    ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"],type='FRAGMENT')),
+    ^
+SyntaxError: positional argument follows keyword argument
+MyBounce.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for MyBounce.py
+NancyDivingProtoInstances.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: This is a developmental example, use HAnim native tags as shown in other examples instead of the prototypes and ProtoInstances shown here. TODO: left arm motion still has a problem
+check  newModel.XML() serialization...
+python x3d.py load successful for NancyDivingProtoInstances.py
+NancyDiving.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta hint: Default orientation along X axis (vice HAnim required Y axis) since diving posture is typically prone. warning: problem with left arm animation, warning: Viewpoint nodes need to be made child nodes under HAnimHumanoid with containerField='viewpoints'.
+check  newModel.XML() serialization...
+python x3d.py load successful for NancyDiving.py
+NancyNativeTags.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: need height, weight. not sure if we should ask a lady her age.
+check  newModel.XML() serialization...
+python x3d.py load successful for NancyNativeTags.py
+NancyPrototypes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "NancyPrototypes.py", line 42, in <module>
+    ProtoDeclare(appinfo='A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.',documentation='http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html',name='Displacer',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+NancyStandShootRifleM24.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "NancyStandShootRifleM24.py", line 47, in <module>
+    ProtoDeclare(name='LOA1_ShootAnimation',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+ObliqueStrategies.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta TODO: multiliingual translation parameter, warning: under development, scene Sound/AudioClip triggering (or retrieved file format) not working, warning: TODO resolve potential error in Script node TextScript: parse problem line 15 " var strategy = [];
+check  newModel.XML() serialization...
+python x3d.py load successful for ObliqueStrategies.py
+PixelTextureComponentExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for PixelTextureComponentExamples.py
+plainflowers.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "plainflowers.py", line 43, in <module>
+    ProtoDeclare(name='flower',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+pp3.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "pp3.py", line 38, in <module>
+    ProtoDeclare(name='Process',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+qq3.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "qq3.py", line 38, in <module>
+    ProtoDeclare(name='Process',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+Quotes.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "Quotes.py", line 133, in <module>
+    ProtoDeclare(appinfo='tooltip: ArtDeco01Material prototype is a Material node',name='ArtDeco01Material',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+rgb_alpha.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta info: Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d
+check  newModel.XML() serialization...
+python x3d.py load successful for rgb_alpha.py
+RotationTests.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth.
+check  newModel.XML() serialization...
+python x3d.py load successful for RotationTests.py
+rubikFurnace.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "rubikFurnace.py", line 37, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+rubikOnFire.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "rubikOnFire.py", line 37, in <module>
+    ProtoDeclare(name='anyShape',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+rubik.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "rubik.py", line 37, in <module>
+    ProtoDeclare(name='sphereproto',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+ScubaTank.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ScubaTank.py
+SimpleShader.py
+  File "SimpleShader.py", line 69
+    ShaderPart(type='FRAGMENT')),
+    ^
+SyntaxError: positional argument follows keyword argument
+SingleAudio.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "SingleAudio.py", line 71, in <module>
+    AudioSound(
+NameError: name 'AudioSound' is not defined
+skeleton10.py
+  File "skeleton10.py", line 2620
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeleton11.py
+  File "skeleton11.py", line 2387
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeleton12.py
+  File "skeleton12.py", line 2387
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeleton13.py
+  File "skeleton13.py", line 2381
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeleton5.py
+  File "skeleton5.py", line 2387
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeleton7.py
+  File "skeleton7.py", line 2387
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeletonJoe.py
+  File "skeletonJoe.py", line 1169
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeletonLOA1.py
+  File "skeletonLOA1.py", line 421
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeletonLOA2.py
+  File "skeletonLOA2.py", line 699
+    segments=[
+            ^
+SyntaxError: invalid syntax
+skeletonLOA3.py
+  File "skeletonLOA3.py", line 821
+    segments=[
+            ^
+SyntaxError: invalid syntax
+SpatialAudioCameraAnimation.py
+  File "SpatialAudioCameraAnimation.py", line 58
+    box(size=2000,1,2000)])]),
+                  ^
+SyntaxError: positional argument follows keyword argument
+sphereflowers.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "sphereflowers.py", line 43, in <module>
+    ProtoDeclare(name='flower',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+sphere.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for sphere.py
+SplitChannels.py
+  File "SplitChannels.py", line 65
+    Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
+    ^
+SyntaxError: positional argument follows keyword argument
+StringArrayEncodingExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for StringArrayEncodingExamples.py
+t1.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "t1.py", line 37, in <module>
+    ProtoDeclare(name='school',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+t2.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "t2.py", line 38, in <module>
+    ProtoDeclare(name='org',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+t3.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for t4.py
+t4.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "t4.py", line 42, in <module>
+    ProtoDeclare(name='org',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+Table5_18PixelTexture.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for .py
+Teapot.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "Teapot.py", line 28, in <module>
+    meta(name='title',content='Teapot.x3d',dir='',http_equiv='',lang='',scheme=''),
+TypeError: __init__() got an unexpected keyword argument 'http_equiv'
+TextExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+meta warning: Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control. warning: Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations.
+check  newModel.XML() serialization...
+python x3d.py load successful for TextExamples.py
+text.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for text.py
+TextSpecialCharacters.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for TextSpecialCharacters.py
+ViewFrustumExample.py
+x3d.py package loaded, have fun with X3D Graphics!
+check  newModel.XML() serialization...
+python x3d.py load successful for ViewFrustumExample.py
+ViewFrustumPrototype.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "ViewFrustumPrototype.py", line 44, in <module>
+    ProtoDeclare(appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes',name='ViewFrustum',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+x3dconnectorProto.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "x3dconnectorProto.py", line 95, in <module>
+    ProtoDeclare(name='x3dconnector',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+x3dconnector.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "x3dconnector.py", line 61, in <module>
+    ProtoDeclare(name='x3dconnector',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+X3dHeaderPrototypeSyntaxExamples.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "X3dHeaderPrototypeSyntaxExamples.py", line 53, in <module>
+    ProtoDeclare(name='NewWorldInfoNode',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+x3domflowers.py
+x3d.py package loaded, have fun with X3D Graphics!
+Traceback (most recent call last):
+  File "x3domflowers.py", line 44, in <module>
+    ProtoDeclare(name='flower',
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10239, in __init__
+    self.ProtoBody = ProtoBody
+  File "/home/coderextreme/X3DJSONLD/src/main/python/net/x3djsonld/data/x3d.py", line 10282, in ProtoBody
+    if not ProtoBody is None and not isinstance(ProtoBody,(ProtoBody,ProtoInstance)):
+TypeError: isinstance() arg 2 must be a type or tuple of types
+x3d.py
+x3d.py package loaded, have fun with X3D Graphics!
