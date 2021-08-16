@@ -532,3 +532,4 @@ HAnimModelFootLeft.prototype = {
 	}
 }
 new HAnimModelFootLeft().main();
+process.exit(0);

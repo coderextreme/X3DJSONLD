@@ -192,3 +192,4 @@ StringArrayEncodingExamples.prototype = {
 	}
 }
 new StringArrayEncodingExamples().main();
+process.exit(0);

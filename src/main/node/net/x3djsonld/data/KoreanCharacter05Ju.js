@@ -858,3 +858,4 @@ KoreanCharacter05Ju.prototype = {
 	}
 }
 new KoreanCharacter05Ju().main();
+process.exit(0);

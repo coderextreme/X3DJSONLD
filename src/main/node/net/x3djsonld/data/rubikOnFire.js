@@ -216,3 +216,4 @@ rubikOnFire.prototype = {
 	}
 }
 new rubikOnFire().main();
+process.exit(0);

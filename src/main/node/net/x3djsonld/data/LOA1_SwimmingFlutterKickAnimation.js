@@ -343,3 +343,4 @@ LOA1_SwimmingFlutterKickAnimation.prototype = {
 	}
 }
 new LOA1_SwimmingFlutterKickAnimation().main();
+process.exit(0);

@@ -480,3 +480,4 @@ Json.prototype = {
 	}
 }
 new Json().main();
+process.exit(0);

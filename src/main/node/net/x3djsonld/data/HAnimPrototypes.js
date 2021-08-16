@@ -366,3 +366,4 @@ HAnimPrototypes.prototype = {
 	}
 }
 new HAnimPrototypes().main();
+process.exit(0);

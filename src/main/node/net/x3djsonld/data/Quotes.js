@@ -440,3 +440,4 @@ Quotes.prototype = {
 	}
 }
 new Quotes().main();
+process.exit(0);

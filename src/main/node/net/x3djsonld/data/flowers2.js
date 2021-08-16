@@ -283,3 +283,4 @@ flowers2.prototype = {
 	}
 }
 new flowers2().main();
+process.exit(0);

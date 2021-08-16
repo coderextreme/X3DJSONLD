@@ -1025,3 +1025,4 @@ KoreanCharacter10Mi.prototype = {
 	}
 }
 new KoreanCharacter10Mi().main();
+process.exit(0);

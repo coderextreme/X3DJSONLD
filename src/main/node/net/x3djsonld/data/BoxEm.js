@@ -181,3 +181,4 @@ BoxEm.prototype = {
 	}
 }
 new BoxEm().main();
+process.exit(0);

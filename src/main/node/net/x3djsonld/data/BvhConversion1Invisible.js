@@ -1393,3 +1393,4 @@ BvhConversion1Invisible.prototype = {
 	}
 }
 new BvhConversion1Invisible().main();
+process.exit(0);

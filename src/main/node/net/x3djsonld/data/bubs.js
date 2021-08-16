@@ -197,3 +197,4 @@ bubs.prototype = {
 	}
 }
 new bubs().main();
+process.exit(0);

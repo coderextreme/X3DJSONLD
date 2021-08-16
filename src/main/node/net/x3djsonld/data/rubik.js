@@ -187,3 +187,4 @@ rubik.prototype = {
 	}
 }
 new rubik().main();
+process.exit(0);
