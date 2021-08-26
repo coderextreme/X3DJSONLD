@@ -195,4 +195,5 @@ group->addChildren(*Shape31);
 X3D0->setScene(*Scene23);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

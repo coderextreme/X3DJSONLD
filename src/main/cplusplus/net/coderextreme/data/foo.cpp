@@ -5386,11 +5386,12 @@ Group1051->addChildren(*WorldInfo1052);
 group->addChildren(*Group1051);
 
 CNavigationInfo* NavigationInfo1053 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo1053->setAvatarSize(new float[3]{0.25,1.600000023841858,0.75});
+NavigationInfo1053->setAvatarSize(new float[3]{0.25,1.600000023841858,0.75}, 3);
 NavigationInfo1053->setSpeed(1.5);
 group->addChildren(*NavigationInfo1053);
 
 X3D0->setScene(*Scene4);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

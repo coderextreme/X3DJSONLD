@@ -480,7 +480,7 @@ Transform102->setScale(new float[3]{0.06,0.06,0.06});
 Transform102->setTranslation(new float[3]{-0.65,1.35,-10});
 CShape* Shape103 = (CShape *)(m_pScene.createNode("Shape"));
 CText* Text104 = (CText *)(m_pScene.createNode("Text"));
-Text104->setLength(new float[1]{5.5});
+Text104->setLength(new float[1]{5.5}, 1);
 Text104->setString(new CString[2]{"YELLOW Button","Gear Down"}, 2);
 Shape103->setGeometry(Text104);
 
@@ -612,7 +612,7 @@ group->addChildren(*TimeSensor129);
 
 COrientationInterpolator* OrientationInterpolator130 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator130->setDEF("GearUpInterpolator");
-OrientationInterpolator130->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator130->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator130->setKeyValue(new float[12]{1,0,0,0,1,0,0,-0.79,1,0,0,-1.92});
 group->addChildren(*OrientationInterpolator130);
 
@@ -644,7 +644,7 @@ group->addChildren(*TimeSensor134);
 
 COrientationInterpolator* OrientationInterpolator135 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator135->setDEF("GearDownInterpolator");
-OrientationInterpolator135->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator135->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator135->setKeyValue(new float[12]{1,0,0,-1.92,1,0,0,-0.79,1,0,0,0});
 group->addChildren(*OrientationInterpolator135);
 
@@ -682,13 +682,13 @@ group->addChildren(*TimeSensor140);
 
 COrientationInterpolator* OrientationInterpolator141 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator141->setDEF("RRearInterUp1");
-OrientationInterpolator141->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator141->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator141->setKeyValue(new float[12]{-1,0,-1,0,-1,0,-1,0.44,-1,0,-1,1.92});
 group->addChildren(*OrientationInterpolator141);
 
 COrientationInterpolator* OrientationInterpolator142 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator142->setDEF("RRearInterDown1");
-OrientationInterpolator142->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator142->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator142->setKeyValue(new float[12]{-1,0,-1,1.92,-1,0,-1,0.44,-1,0,-1,0});
 group->addChildren(*OrientationInterpolator142);
 
@@ -747,13 +747,13 @@ group->addChildren(*TimeSensor150);
 
 COrientationInterpolator* OrientationInterpolator151 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator151->setDEF("LRearInterUp1");
-OrientationInterpolator151->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator151->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator151->setKeyValue(new float[12]{1,0,1,0,1,0,1,0.44,1,0,1,1.92});
 group->addChildren(*OrientationInterpolator151);
 
 COrientationInterpolator* OrientationInterpolator152 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator152->setDEF("LRearInterDown1");
-OrientationInterpolator152->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator152->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator152->setKeyValue(new float[12]{1,0,1,1.92,1,0,1,0.44,1,0,1,0});
 group->addChildren(*OrientationInterpolator152);
 
@@ -800,9 +800,9 @@ ROUTE158->setToNode("RearLeftWheelTransform");
 group->addChildren(*ROUTE158);
 
 CBackground* Background159 = (CBackground *)(m_pScene.createNode("Background"));
-Background159->setGroundAngle(new float[2]{1.309,1.570796});
+Background159->setGroundAngle(new float[2]{1.309,1.570796}, 2);
 Background159->setGroundColor(new float[9]{0,0.3,0.7,0,0.35,0.75,0,0.4,0.8});
-Background159->setSkyAngle(new float[2]{1.309,1.571});
+Background159->setSkyAngle(new float[2]{1.309,1.571}, 2);
 Background159->setSkyColor(new float[9]{0,0.3,0.8,0,0.5,1,1,1,1});
 group->addChildren(*Background159);
 
@@ -1018,7 +1018,7 @@ group->addChildren(*TimeSensor199);
 
 CPositionInterpolator* PositionInterpolator200 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator200->setDEF("MissilePath");
-PositionInterpolator200->setKey(new float[3]{0,0.1,1});
+PositionInterpolator200->setKey(new float[3]{0,0.1,1}, 3);
 PositionInterpolator200->setKeyValue(new float[9]{-15.65,0,4.5,-15.65,-2,4.5,16,-50,-500});
 group->addChildren(*PositionInterpolator200);
 
@@ -1061,4 +1061,5 @@ group->addChildren(*ROUTE205);
 X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

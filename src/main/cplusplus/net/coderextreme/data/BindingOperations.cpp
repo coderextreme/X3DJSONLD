@@ -278,7 +278,7 @@ Transform47->addChildren(*ROUTE60);
 
 CIntegerSequencer* IntegerSequencer61 = (CIntegerSequencer *)(m_pScene.createNode("IntegerSequencer"));
 IntegerSequencer61->setDEF("TimingSequencer");
-IntegerSequencer61->setKey(new float[10]{0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1});
+IntegerSequencer61->setKey(new float[10]{0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1}, 10);
 IntegerSequencer61->setKeyValue(new int[10]{0,1,2,3,4,5,6,7,8,10});
 Transform47->addChildren(*IntegerSequencer61);
 
@@ -527,4 +527,5 @@ group->addChildren(*Transform47);
 X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

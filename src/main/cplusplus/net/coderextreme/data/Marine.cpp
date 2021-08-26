@@ -82,7 +82,7 @@ CGroup* Group17 = (CGroup *)(m_pScene.createNode("Group"));
 Group17->setDEF("Import_Base");
 CNavigationInfo* NavigationInfo18 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
 NavigationInfo18->setDEF("NavInfo1");
-NavigationInfo18->setAvatarSize(new float[3]{0.25,1.6,0.75});
+NavigationInfo18->setAvatarSize(new float[3]{0.25,1.6,0.75}, 3);
 Group17->addChildren(*NavigationInfo18);
 
 CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -241,4 +241,5 @@ group->addChildren(*Transform14);
 X3D0->setScene(*Scene12);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

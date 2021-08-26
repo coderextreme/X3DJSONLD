@@ -2019,7 +2019,7 @@ CTransform* Transform392 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform392->setDEF("MovingBoxTransform");
 CPositionInterpolator* PositionInterpolator393 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator393->setDEF("BoxPath");
-PositionInterpolator393->setKey(new float[5]{0,0.25,0.5,0.75,1});
+PositionInterpolator393->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
 PositionInterpolator393->setKeyValue(new float[15]{-5,1,5,45,1,5,45,1,-45,-5,1,-45,-5,1,5});
 Transform392->addChildren(*PositionInterpolator393);
 
@@ -2198,4 +2198,5 @@ group->addChildren(*Anchor418);
 X3D0->setScene(*Scene21);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }
