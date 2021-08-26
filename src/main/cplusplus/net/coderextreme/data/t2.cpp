@@ -35,7 +35,7 @@ CScene* Scene5 = new CScene();
 CNavigationInfo* NavigationInfo6 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
 NavigationInfo6->setType(new CString[3]{"EXAMINE","FLY","WALK"}, 3);
 NavigationInfo6->setSpeed(3);
-NavigationInfo6->setAvatarSize(new float[3]{200,200,120});
+NavigationInfo6->setAvatarSize(new float[3]{200,200,120}, 3);
 group->addChildren(*NavigationInfo6);
 
 CWorldInfo* WorldInfo7 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
@@ -200,4 +200,5 @@ group->addChildren(*Anchor34);
 X3D0->setScene(*Scene5);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

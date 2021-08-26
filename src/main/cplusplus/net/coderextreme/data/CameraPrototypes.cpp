@@ -821,7 +821,7 @@ ProtoBody42->addChildren(*DirectionalLight57);
 
 CPositionInterpolator* PositionInterpolator62 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator62->setDEF("CameraPositionInterpolator");
-PositionInterpolator62->setKey(new float[2]{0,1});
+PositionInterpolator62->setKey(new float[2]{0,1}, 2);
 PositionInterpolator62->setKeyValue(new float[6]{0,0,0,0,0,0});
 CIS* IS63 = new CIS();
 Cconnect* connect64 = new Cconnect();
@@ -835,7 +835,7 @@ ProtoBody42->addChildren(*PositionInterpolator62);
 
 COrientationInterpolator* OrientationInterpolator65 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator65->setDEF("CameraOrientationInterpolator");
-OrientationInterpolator65->setKey(new float[2]{0,1});
+OrientationInterpolator65->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator65->setKeyValue(new float[8]{0,1,0,0,0,1,0,0});
 CIS* IS66 = new CIS();
 Cconnect* connect67 = new Cconnect();
@@ -3008,4 +3008,5 @@ group->addChildren(*Anchor255);
 X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

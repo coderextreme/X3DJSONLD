@@ -233,7 +233,7 @@ Group24->addChildren(*TimeSensor25);
 
 COrientationInterpolator* OrientationInterpolator26 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator26->setDEF("OrbitPath");
-OrientationInterpolator26->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator26->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator26->setKeyValue(new float[12]{1,0,0,0,1,0,0,3.14,1,0,0,6.28});
 Group24->addChildren(*OrientationInterpolator26);
 
@@ -515,4 +515,5 @@ group->addChildren(*Group15);
 X3D0->setScene(*Scene12);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

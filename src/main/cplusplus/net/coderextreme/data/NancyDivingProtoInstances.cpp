@@ -475,7 +475,7 @@ Background77->setSkyColor(new float[3]{0,0.4,1});
 group->addChildren(*Background77);
 
 CNavigationInfo* NavigationInfo78 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo78->setAvatarSize(new float[3]{0.15,1.53,0.75});
+NavigationInfo78->setAvatarSize(new float[3]{0.15,1.53,0.75}, 3);
 NavigationInfo78->setSpeed(0.5);
 NavigationInfo78->setType(new CString[1]{"EXAMINE"}, 1);
 group->addChildren(*NavigationInfo78);
@@ -2541,61 +2541,61 @@ Group528->addChildren(*TimeSensor529);
 
 CPositionInterpolator* PositionInterpolator530 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator530->setDEF("BubblePath1");
-PositionInterpolator530->setKey(new float[5]{0,0.5,0.8,0.9,1});
+PositionInterpolator530->setKey(new float[5]{0,0.5,0.8,0.9,1}, 5);
 PositionInterpolator530->setKeyValue(new float[15]{0,0,0,0.75,0.75,0.75,0.86,0.86,0.86,0.99,0.998,0.9876,1.272,1.9044,0.9509});
 Group528->addChildren(*PositionInterpolator530);
 
 CPositionInterpolator* PositionInterpolator531 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator531->setDEF("BubblePath2");
-PositionInterpolator531->setKey(new float[5]{0,0.3,0.64,0.85,1});
+PositionInterpolator531->setKey(new float[5]{0,0.3,0.64,0.85,1}, 5);
 PositionInterpolator531->setKeyValue(new float[15]{0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.038483478,1.989,1.098373});
 Group528->addChildren(*PositionInterpolator531);
 
 CPositionInterpolator* PositionInterpolator532 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator532->setDEF("BubblePath3");
-PositionInterpolator532->setKey(new float[5]{0,0.1,0.45,0.7,1});
+PositionInterpolator532->setKey(new float[5]{0,0.1,0.45,0.7,1}, 5);
 PositionInterpolator532->setKeyValue(new float[15]{0.01,0.01,0.01,0.25,0.35,0.0045,0.55,0.6,0.0055,0.66,0.665,0.00655,1.555,1.09043,0.005734});
 Group528->addChildren(*PositionInterpolator532);
 
 CPositionInterpolator* PositionInterpolator533 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator533->setDEF("BubblePath4");
-PositionInterpolator533->setKey(new float[5]{0,0.5,0.6,0.8,1});
+PositionInterpolator533->setKey(new float[5]{0,0.5,0.6,0.8,1}, 5);
 PositionInterpolator533->setKeyValue(new float[15]{0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.948594,1.3983,0.009009349});
 Group528->addChildren(*PositionInterpolator533);
 
 CPositionInterpolator* PositionInterpolator534 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator534->setDEF("BubblePath5");
-PositionInterpolator534->setKey(new float[5]{0,0.25,0.35,0.65,1});
+PositionInterpolator534->setKey(new float[5]{0,0.25,0.35,0.65,1}, 5);
 PositionInterpolator534->setKeyValue(new float[15]{0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.84444,1.22222,0.1});
 Group528->addChildren(*PositionInterpolator534);
 
 CPositionInterpolator* PositionInterpolator535 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator535->setDEF("BubblePath6");
-PositionInterpolator535->setKey(new float[5]{0,0.15,0.22235,0.55565,1});
+PositionInterpolator535->setKey(new float[5]{0,0.15,0.22235,0.55565,1}, 5);
 PositionInterpolator535->setKeyValue(new float[15]{0,0,0,0.235,0.3455,0.0055,0.356,0.676,0.00456,0.5675,0.75,0.0074565,1.098,1.0343,0.14});
 Group528->addChildren(*PositionInterpolator535);
 
 CPositionInterpolator* PositionInterpolator536 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator536->setDEF("BubblePath7");
-PositionInterpolator536->setKey(new float[5]{0,0.2425,0.4535,0.6775,1});
+PositionInterpolator536->setKey(new float[5]{0,0.2425,0.4535,0.6775,1}, 5);
 PositionInterpolator536->setKeyValue(new float[15]{0,0,0,0.12345,0.2225,0.00335,0.786,0.456,0.00666,0.74555,0.7335,0.00234575,0.08787,1.022,0.12});
 Group528->addChildren(*PositionInterpolator536);
 
 CPositionInterpolator* PositionInterpolator537 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator537->setDEF("BubblePath8");
-PositionInterpolator537->setKey(new float[5]{0,0.1125,0.5535,0.97865,1});
+PositionInterpolator537->setKey(new float[5]{0,0.1125,0.5535,0.97865,1}, 5);
 PositionInterpolator537->setKeyValue(new float[15]{0,0,0,0.1235,0.05,0.00125,0.5666,0.4346,0.005556,0.8975,0.34575,0.0098775,1.8787,1.686,0.86});
 Group528->addChildren(*PositionInterpolator537);
 
 CPositionInterpolator* PositionInterpolator538 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator538->setDEF("BubblePath9");
-PositionInterpolator538->setKey(new float[5]{0,0.0025,0.035,0.65,1});
+PositionInterpolator538->setKey(new float[5]{0,0.0025,0.035,0.65,1}, 5);
 PositionInterpolator538->setKeyValue(new float[15]{0,0,0,0.522,0.5445,0.0057,0.6543,0.226,0.0055,0.45575,0.4375,0.0067,1.8787,2,0.1545});
 Group528->addChildren(*PositionInterpolator538);
 
 CPositionInterpolator* PositionInterpolator539 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator539->setDEF("BubblePath10");
-PositionInterpolator539->setKey(new float[5]{0,0.00025,0.035,0.6895,1});
+PositionInterpolator539->setKey(new float[5]{0,0.00025,0.035,0.6895,1}, 5);
 PositionInterpolator539->setKeyValue(new float[15]{0,0,0,0.8765,0.445,0.00335,0.3336,0.4446,0.005556,0.765,0.75,0.0075,1,1,0.1});
 Group528->addChildren(*PositionInterpolator539);
 
@@ -3017,111 +3017,111 @@ CGroup* Group608 = (CGroup *)(m_pScene.createNode("Group"));
 Group608->setDEF("Dive_Animation");
 COrientationInterpolator* OrientationInterpolator609 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator609->setDEF("r_ankle_RotationInterpolator_BasicDive");
-OrientationInterpolator609->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1});
+OrientationInterpolator609->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
 OrientationInterpolator609->setKeyValue(new float[44]{1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.86001});
 Group608->addChildren(*OrientationInterpolator609);
 
 COrientationInterpolator* OrientationInterpolator610 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator610->setDEF("r_knee_RotationInterpolator_BasicDive");
-OrientationInterpolator610->setKey(new float[8]{0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1});
+OrientationInterpolator610->setKey(new float[8]{0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1}, 8);
 OrientationInterpolator610->setKeyValue(new float[32]{1,0,0,0.8573,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.8573});
 Group608->addChildren(*OrientationInterpolator610);
 
 COrientationInterpolator* OrientationInterpolator611 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator611->setDEF("r_hip_RotationInterpolator_BasicDive");
-OrientationInterpolator611->setKey(new float[8]{0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1});
+OrientationInterpolator611->setKey(new float[8]{0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1}, 8);
 OrientationInterpolator611->setKeyValue(new float[32]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9131,-0.06243,-0.403,0.3361,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481});
 Group608->addChildren(*OrientationInterpolator611);
 
 COrientationInterpolator* OrientationInterpolator612 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator612->setDEF("l_ankle_RotationInterpolator_BasicDive");
-OrientationInterpolator612->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1});
+OrientationInterpolator612->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
 OrientationInterpolator612->setKeyValue(new float[44]{1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001});
 Group608->addChildren(*OrientationInterpolator612);
 
 COrientationInterpolator* OrientationInterpolator613 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator613->setDEF("l_knee_RotationInterpolator_BasicDive");
-OrientationInterpolator613->setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1});
+OrientationInterpolator613->setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
 OrientationInterpolator613->setKeyValue(new float[32]{1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226});
 Group608->addChildren(*OrientationInterpolator613);
 
 COrientationInterpolator* OrientationInterpolator614 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator614->setDEF("l_hip_RotationInterpolator_BasicDive");
-OrientationInterpolator614->setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1});
+OrientationInterpolator614->setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1}, 7);
 OrientationInterpolator614->setKeyValue(new float[28]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865});
 Group608->addChildren(*OrientationInterpolator614);
 
 COrientationInterpolator* OrientationInterpolator615 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator615->setDEF("lower_body_RotationInterpolator_BasicDive");
-OrientationInterpolator615->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator615->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator615->setKeyValue(new float[12]{0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056});
 Group608->addChildren(*OrientationInterpolator615);
 
 //
 COrientationInterpolator* OrientationInterpolator616 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator616->setDEF("r_wrist_RotationInterpolator_BasicDive");
-OrientationInterpolator616->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1});
+OrientationInterpolator616->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
 OrientationInterpolator616->setKeyValue(new float[24]{0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator616);
 
 COrientationInterpolator* OrientationInterpolator617 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator617->setDEF("r_elbow_RotationInterpolator_BasicDive");
-OrientationInterpolator617->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1});
+OrientationInterpolator617->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
 OrientationInterpolator617->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator617);
 
 COrientationInterpolator* OrientationInterpolator618 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator618->setDEF("r_shoulder_RotationInterpolator_BasicDive");
-OrientationInterpolator618->setKey(new float[6]{0,0.45,0.64,0.76,0.88,1});
+OrientationInterpolator618->setKey(new float[6]{0,0.45,0.64,0.76,0.88,1}, 6);
 OrientationInterpolator618->setKeyValue(new float[24]{0,0,1,0,0.9992,0.02042,0.03558,7.2,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator618);
 
 COrientationInterpolator* OrientationInterpolator619 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator619->setDEF("l_wrist_RotationInterpolator_BasicDive");
-OrientationInterpolator619->setKey(new float[5]{0,0.32,0.64,0.88,1});
+OrientationInterpolator619->setKey(new float[5]{0,0.32,0.64,0.88,1}, 5);
 OrientationInterpolator619->setKeyValue(new float[20]{0,0,1,0,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator619);
 
 COrientationInterpolator* OrientationInterpolator620 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator620->setDEF("l_elbow_RotationInterpolator_BasicDive");
-OrientationInterpolator620->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1});
+OrientationInterpolator620->setKey(new float[6]{0,0.28,0.32,0.64,0.76,1}, 6);
 OrientationInterpolator620->setKeyValue(new float[24]{0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator620);
 
 COrientationInterpolator* OrientationInterpolator621 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator621->setDEF("l_shoulder_RotationInterpolator_BasicDive");
-OrientationInterpolator621->setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1});
+OrientationInterpolator621->setKey(new float[7]{0,0.25,0.375,0.6667,0.7917,0.9167,1}, 7);
 OrientationInterpolator621->setKeyValue(new float[28]{0,0,1,0.1,0,0,1,0.2,0,0,1,0.2,0.86,0.25,0.42,0.5,0.86,0.25,0.42,0.8,0.86,0.25,0.42,0.4,0.86,0.25,0.42,0.2});
 Group608->addChildren(*OrientationInterpolator621);
 
 //
 COrientationInterpolator* OrientationInterpolator622 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator622->setDEF("head_RotationInterpolator_BasicDive");
-OrientationInterpolator622->setKey(new float[14]{0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1});
+OrientationInterpolator622->setKey(new float[14]{0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1}, 14);
 OrientationInterpolator622->setKeyValue(new float[56]{-1,0,0,1,-1,0,0,1,-1,0,0,0.999,-1,0,0,0.99,-1,0,0,0.99,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,1});
 Group608->addChildren(*OrientationInterpolator622);
 
 COrientationInterpolator* OrientationInterpolator623 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator623->setDEF("neck_RotationInterpolator_BasicDive");
-OrientationInterpolator623->setKey(new float[2]{0,1});
+OrientationInterpolator623->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator623->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator623);
 
 COrientationInterpolator* OrientationInterpolator624 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator624->setDEF("upper_body_RotationInterpolator_BasicDive");
-OrientationInterpolator624->setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1});
+OrientationInterpolator624->setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1}, 6);
 OrientationInterpolator624->setKeyValue(new float[24]{0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826});
 Group608->addChildren(*OrientationInterpolator624);
 
 COrientationInterpolator* OrientationInterpolator625 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator625->setDEF("whole_body_RotationInterpolator_BasicDive");
-OrientationInterpolator625->setKey(new float[2]{0,1});
+OrientationInterpolator625->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator625->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group608->addChildren(*OrientationInterpolator625);
 
 CPositionInterpolator* PositionInterpolator626 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator626->setDEF("whole_body_TranslationInterpolator_BasicDive");
-PositionInterpolator626->setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1});
+PositionInterpolator626->setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1}, 19);
 PositionInterpolator626->setKeyValue(new float[57]{0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0});
 Group608->addChildren(*PositionInterpolator626);
 
@@ -3431,4 +3431,5 @@ group->addChildren(*ROUTE669);
 X3D0->setScene(*Scene15);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

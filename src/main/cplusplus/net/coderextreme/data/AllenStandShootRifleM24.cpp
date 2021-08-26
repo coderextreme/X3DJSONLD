@@ -304,7 +304,7 @@ Viewpoint47->setPosition(new float[3]{0.1,0.9,2.4});
 group->addChildren(*Viewpoint47);
 
 CLOD* LOD48 = (CLOD *)(m_pScene.createNode("LOD"));
-LOD48->setRange(new float[2]{50,100});
+LOD48->setRange(new float[2]{50,100}, 2);
 CGroup* Group49 = (CGroup *)(m_pScene.createNode("Group"));
 Group49->setDEF("Viewpoint");
 //High Resolution
@@ -1242,7 +1242,7 @@ LOD48->addChildren(*WorldInfo247);
 group->addChildren(*LOD48);
 
 CNavigationInfo* NavigationInfo248 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo248->setAvatarSize(new float[3]{0.15,1.53,0.75});
+NavigationInfo248->setAvatarSize(new float[3]{0.15,1.53,0.75}, 3);
 NavigationInfo248->setSpeed(0.5);
 NavigationInfo248->setType(new CString[1]{"EXAMINE"}, 1);
 group->addChildren(*NavigationInfo248);
@@ -1265,116 +1265,116 @@ Group250->addChildren(*ProximitySensor252);
 
 CPositionInterpolator* PositionInterpolator253 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator253->setDEF("HUMANOIDROOT_POSITION_ANIMATOR");
-PositionInterpolator253->setKey(new float[2]{0,1});
+PositionInterpolator253->setKey(new float[2]{0,1}, 2);
 PositionInterpolator253->setKeyValue(new float[6]{0,0,0,0,0,0});
 Group250->addChildren(*PositionInterpolator253);
 
 COrientationInterpolator* OrientationInterpolator254 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator254->setDEF("HUMANOIDROOT_ANIMATOR");
-OrientationInterpolator254->setKey(new float[2]{0,1});
+OrientationInterpolator254->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator254->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator254);
 
 COrientationInterpolator* OrientationInterpolator255 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator255->setDEF("SACROILIAC_ANIMATOR");
-OrientationInterpolator255->setKey(new float[2]{0,1});
+OrientationInterpolator255->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator255->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator255);
 
 COrientationInterpolator* OrientationInterpolator256 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator256->setDEF("L_HIP_ANIMATOR");
-OrientationInterpolator256->setKey(new float[2]{0,1});
+OrientationInterpolator256->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator256->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator256);
 
 COrientationInterpolator* OrientationInterpolator257 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator257->setDEF("L_KNEE_ANIMATOR");
-OrientationInterpolator257->setKey(new float[2]{0,1});
+OrientationInterpolator257->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator257->setKeyValue(new float[8]{0,0,1,0,0,1,0,1.05});
 Group250->addChildren(*OrientationInterpolator257);
 
 COrientationInterpolator* OrientationInterpolator258 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator258->setDEF("L_ANKLE_ANIMATOR");
-OrientationInterpolator258->setKey(new float[2]{0,1});
+OrientationInterpolator258->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator258->setKeyValue(new float[8]{0,0,1,0,0,1,0,0.2});
 Group250->addChildren(*OrientationInterpolator258);
 
 COrientationInterpolator* OrientationInterpolator259 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator259->setDEF("L_MIDTARSAL_ANIMATOR");
-OrientationInterpolator259->setKey(new float[2]{0,1});
+OrientationInterpolator259->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator259->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
 Group250->addChildren(*OrientationInterpolator259);
 
 COrientationInterpolator* OrientationInterpolator260 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator260->setDEF("R_HIP_ANIMATOR");
-OrientationInterpolator260->setKey(new float[2]{0,1});
+OrientationInterpolator260->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator260->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator260);
 
 COrientationInterpolator* OrientationInterpolator261 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator261->setDEF("R_KNEE_ANIMATOR");
-OrientationInterpolator261->setKey(new float[2]{0,1});
+OrientationInterpolator261->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator261->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator261);
 
 COrientationInterpolator* OrientationInterpolator262 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator262->setDEF("R_ANKLE_ANIMATOR");
-OrientationInterpolator262->setKey(new float[2]{0,1});
+OrientationInterpolator262->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator262->setKeyValue(new float[8]{0,0,1,0,0,0,1,0});
 Group250->addChildren(*OrientationInterpolator262);
 
 COrientationInterpolator* OrientationInterpolator263 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator263->setDEF("R_MIDTARSAL_ANIMATOR");
-OrientationInterpolator263->setKey(new float[2]{0,1});
+OrientationInterpolator263->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator263->setKeyValue(new float[8]{1,0,0,0,1,0,0,0});
 Group250->addChildren(*OrientationInterpolator263);
 
 COrientationInterpolator* OrientationInterpolator264 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator264->setDEF("VL5_ANIMATOR");
-OrientationInterpolator264->setKey(new float[2]{0,1});
+OrientationInterpolator264->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator264->setKeyValue(new float[8]{0,1,0,0,0,1,0,0});
 Group250->addChildren(*OrientationInterpolator264);
 
 COrientationInterpolator* OrientationInterpolator265 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator265->setDEF("SKULLBASE_ANIMATOR");
-OrientationInterpolator265->setKey(new float[5]{0,0.1,0.5,0.7,1});
+OrientationInterpolator265->setKey(new float[5]{0,0.1,0.5,0.7,1}, 5);
 OrientationInterpolator265->setKeyValue(new float[20]{0,1,0,0.2,0,1,0,0.3,0,1,0,0.4,0,1,0,0.9,0.47,0.85,0.23,1.04});
 Group250->addChildren(*OrientationInterpolator265);
 
 COrientationInterpolator* OrientationInterpolator266 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator266->setDEF("L_SHOULDER_ANIMATOR");
-OrientationInterpolator266->setKey(new float[2]{0,1});
+OrientationInterpolator266->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator266->setKeyValue(new float[8]{0,1,0,0,0,0,1,0.3});
 Group250->addChildren(*OrientationInterpolator266);
 
 //L_ELBOW rotation: x= -155, y=0, z=45 -0.92 0.38 0.08 2.74
 COrientationInterpolator* OrientationInterpolator267 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator267->setDEF("L_ELBOW_ANIMATOR");
-OrientationInterpolator267->setKey(new float[5]{0,0.3,0.44,0.51,1});
+OrientationInterpolator267->setKey(new float[5]{0,0.3,0.44,0.51,1}, 5);
 OrientationInterpolator267->setKeyValue(new float[20]{0,0,1,-0.25,0,0,1,-0.25,0,0,1,-0.3,0,0,1,-0.4,-0.92,0.38,0.08,2.74});
 Group250->addChildren(*OrientationInterpolator267);
 
 COrientationInterpolator* OrientationInterpolator268 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator268->setDEF("L_WRIST_ANIMATOR");
-OrientationInterpolator268->setKey(new float[2]{0,1});
+OrientationInterpolator268->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator268->setKeyValue(new float[8]{0,1,0,0,0,1,0,1.5});
 Group250->addChildren(*OrientationInterpolator268);
 
 COrientationInterpolator* OrientationInterpolator269 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator269->setDEF("R_SHOULDER_ANIMATOR");
-OrientationInterpolator269->setKey(new float[11]{0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1});
+OrientationInterpolator269->setKey(new float[11]{0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1}, 11);
 OrientationInterpolator269->setKeyValue(new float[44]{1,0,0,-0.3,1,0,0,-0.45,1,0,0,-0.5,1,0,0,-0.55,1,0,0,-0.6,1,0,0,-0.65,1,0,0,-0.9,1,0,0,-1,1,0,0,-1,1,0,0,-1.2,1,0,0,-1.3});
 Group250->addChildren(*OrientationInterpolator269);
 
 COrientationInterpolator* OrientationInterpolator270 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator270->setDEF("R_ELBOW_ANIMATOR");
-OrientationInterpolator270->setKey(new float[8]{0,0.1,0.2,0.5,0.6,0.7,0.8,1});
+OrientationInterpolator270->setKey(new float[8]{0,0.1,0.2,0.5,0.6,0.7,0.8,1}, 8);
 OrientationInterpolator270->setKeyValue(new float[32]{0,0,1,0.5,0,0,1,0.55,0,0,1,0.75,0,0,1,0.8,0,0,1,1,0,0,1,1.15,0,0,1,1.3,0,0,1,2.27});
 Group250->addChildren(*OrientationInterpolator270);
 
 COrientationInterpolator* OrientationInterpolator271 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator271->setDEF("R_WRIST_ANIMATOR");
-OrientationInterpolator271->setKey(new float[2]{0,1});
+OrientationInterpolator271->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator271->setKeyValue(new float[8]{1,0,0,3.14,1,0,0,3.14});
 Group250->addChildren(*OrientationInterpolator271);
 
@@ -1615,4 +1615,5 @@ group->addChildren(*ROUTE304);
 X3D0->setScene(*Scene11);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

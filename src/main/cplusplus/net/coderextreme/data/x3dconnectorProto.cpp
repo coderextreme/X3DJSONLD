@@ -666,4 +666,5 @@ group->addChildren(*ROUTE119);
 X3D0->setScene(*Scene8);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

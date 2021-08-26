@@ -71,7 +71,7 @@ Transform11->addChildren(*Shape12);
 
 CPositionInterpolator* PositionInterpolator16 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator16->setDEF("DECLpoint_INSTANCE_PI1");
-PositionInterpolator16->setKey(new float[2]{0,1});
+PositionInterpolator16->setKey(new float[2]{0,1}, 2);
 PositionInterpolator16->setKeyValue(new float[6]{0,0,0,0,5,0});
 Transform11->addChildren(*PositionInterpolator16);
 
@@ -178,7 +178,7 @@ Transform29->addChildren(*Shape30);
 
 CPositionInterpolator* PositionInterpolator34 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator34->setDEF("DECLpoint_INSTANCE1000_PI1");
-PositionInterpolator34->setKey(new float[2]{0,1});
+PositionInterpolator34->setKey(new float[2]{0,1}, 2);
 PositionInterpolator34->setKeyValue(new float[6]{0,0,0,0,5,0});
 Transform29->addChildren(*PositionInterpolator34);
 
@@ -401,4 +401,5 @@ group->addChildren(*ROUTE64);
 X3D0->setScene(*Scene7);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

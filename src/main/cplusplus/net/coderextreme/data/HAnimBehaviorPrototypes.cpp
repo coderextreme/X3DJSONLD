@@ -11715,4 +11715,5 @@ group->addChildren(*ProtoInstance1811);
 X3D0->setScene(*Scene18);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

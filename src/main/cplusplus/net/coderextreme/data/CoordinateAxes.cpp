@@ -299,4 +299,5 @@ group->addChildren(*Collision16);
 X3D0->setScene(*Scene14);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }
