@@ -152,7 +152,7 @@ Group14->addChildren(*Transform15);
 
 CPositionInterpolator* PositionInterpolator28 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator28->setDEF("NodePosition");
-PositionInterpolator28->setKey(new float[2]{0,1});
+PositionInterpolator28->setKey(new float[2]{0,1}, 2);
 PositionInterpolator28->setKeyValue(new float[6]{0,0,0,0,5,0});
 Group14->addChildren(*PositionInterpolator28);
 
@@ -573,4 +573,5 @@ group->addChildren(*ROUTE86);
 X3D0->setScene(*Scene9);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

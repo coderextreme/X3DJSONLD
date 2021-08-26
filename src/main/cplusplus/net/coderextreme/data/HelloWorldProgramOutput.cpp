@@ -274,7 +274,7 @@ group->addChildren(*Shape49);
 
 CPositionInterpolator* PositionInterpolator54 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator54->setDEF("BoxPathAnimator");
-PositionInterpolator54->setKey(new float[6]{0,0.125,0.375,0.625,0.875,1});
+PositionInterpolator54->setKey(new float[6]{0,0.125,0.375,0.625,0.875,1}, 6);
 PositionInterpolator54->setKeyValue(new float[18]{0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0});
 group->addChildren(*PositionInterpolator54);
 
@@ -359,7 +359,7 @@ group->addChildren(*Transform58);
 //repeatedly spin 180 degrees as a readable special effect
 COrientationInterpolator* OrientationInterpolator70 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator70->setDEF("SpinInterpolator");
-OrientationInterpolator70->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator70->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator70->setKeyValue(new float[12]{0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964});
 group->addChildren(*OrientationInterpolator70);
 
@@ -415,7 +415,7 @@ Group74->addChildren(*Script76);
 
 CColorInterpolator* ColorInterpolator79 = (CColorInterpolator *)(m_pScene.createNode("ColorInterpolator"));
 ColorInterpolator79->setDEF("ColorAnimator");
-ColorInterpolator79->setKey(new float[3]{0,0.5,1});
+ColorInterpolator79->setKey(new float[3]{0,0.5,1}, 3);
 ColorInterpolator79->setKeyValue(new float[9]{0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1});
 //AZURE to INDIGO and back again
 Group74->addChildren(*ColorInterpolator79);
@@ -1125,4 +1125,5 @@ group->addChildren(*LoadSensor193);
 X3D0->setScene(*Scene32);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

@@ -90,7 +90,7 @@ group->addChildren(*TimeSensor16);
 
 CGeoPositionInterpolator* GeoPositionInterpolator17 = (CGeoPositionInterpolator *)(m_pScene.createNode("GeoPositionInterpolator"));
 GeoPositionInterpolator17->setDEF("TourPosition");
-GeoPositionInterpolator17->setKey(new float[2]{0,1});
+GeoPositionInterpolator17->setKey(new float[2]{0,1}, 2);
 GeoPositionInterpolator17->setKeyValue(new double[6]{0.0015708,0,4,0,0.0015708,4});
 group->addChildren(*GeoPositionInterpolator17);
 
@@ -174,4 +174,5 @@ group->addChildren(*ROUTE26);
 X3D0->setScene(*Scene8);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

@@ -265,7 +265,7 @@ MetadataSet44->addValue(*MetadataString48);
 
 CMetadataFloat* MetadataFloat49 = (CMetadataFloat *)(m_pScene.createNode("MetadataFloat"));
 MetadataFloat49->setName("height");
-MetadataFloat49->setValue(new float[1]{1.7504});
+MetadataFloat49->setValue(new float[1]{1.7504}, 1);
 MetadataSet44->addValue(*MetadataFloat49);
 
 CMetadataString* MetadataString50 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
@@ -3331,4 +3331,5 @@ group->addChildren(*HAnimHumanoid43);
 X3D0->setScene(*Scene29);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

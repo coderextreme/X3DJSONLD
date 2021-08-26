@@ -119,9 +119,9 @@ group->addChildren(*ExternProtoDeclare16);
 
 CBackground* Background21 = (CBackground *)(m_pScene.createNode("Background"));
 Background21->setDEF("SandyShallowBottom");
-Background21->setGroundAngle(new float[4]{0.05,1.52,1.56,1.5707});
+Background21->setGroundAngle(new float[4]{0.05,1.52,1.56,1.5707}, 4);
 Background21->setGroundColor(new float[15]{0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4});
-Background21->setSkyAngle(new float[5]{0.04,0.05,0.1,1.309,1.57});
+Background21->setSkyAngle(new float[5]{0.04,0.05,0.1,1.309,1.57}, 5);
 Background21->setSkyColor(new float[18]{0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9});
 group->addChildren(*Background21);
 
@@ -171,4 +171,5 @@ group->addChildren(*Inline31);
 X3D0->setScene(*Scene15);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

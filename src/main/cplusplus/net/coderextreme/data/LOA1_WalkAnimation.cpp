@@ -424,7 +424,7 @@ Group48->addChildren(*TimeSensor49);
 
 CPositionInterpolator* PositionInterpolator58 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator58->setDEF("HUMANOIDROOT_POSITION_ANIMATOR");
-PositionInterpolator58->setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1});
+PositionInterpolator58->setKey(new float[19]{0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1}, 19);
 PositionInterpolator58->setKeyValue(new float[57]{0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0});
 CIS* IS59 = new CIS();
 Cconnect* connect60 = new Cconnect();
@@ -438,7 +438,7 @@ Group48->addChildren(*PositionInterpolator58);
 
 COrientationInterpolator* OrientationInterpolator61 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator61->setDEF("HUMANOIDROOT_ANIMATOR");
-OrientationInterpolator61->setKey(new float[2]{0,1});
+OrientationInterpolator61->setKey(new float[2]{0,1}, 2);
 OrientationInterpolator61->setKeyValue(new float[8]{0,1,0,0,0,1,0,0});
 CIS* IS62 = new CIS();
 Cconnect* connect63 = new Cconnect();
@@ -452,7 +452,7 @@ Group48->addChildren(*OrientationInterpolator61);
 
 COrientationInterpolator* OrientationInterpolator64 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator64->setDEF("SACROILIAC_ANIMATOR");
-OrientationInterpolator64->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator64->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator64->setKeyValue(new float[12]{0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056});
 CIS* IS65 = new CIS();
 Cconnect* connect66 = new Cconnect();
@@ -466,7 +466,7 @@ Group48->addChildren(*OrientationInterpolator64);
 
 COrientationInterpolator* OrientationInterpolator67 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator67->setDEF("L_HIP_ANIMATOR");
-OrientationInterpolator67->setKey(new float[8]{0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1});
+OrientationInterpolator67->setKey(new float[8]{0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
 OrientationInterpolator67->setKeyValue(new float[32]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865});
 CIS* IS68 = new CIS();
 Cconnect* connect69 = new Cconnect();
@@ -480,7 +480,7 @@ Group48->addChildren(*OrientationInterpolator67);
 
 COrientationInterpolator* OrientationInterpolator70 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator70->setDEF("L_KNEE_ANIMATOR");
-OrientationInterpolator70->setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1});
+OrientationInterpolator70->setKey(new float[8]{0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1}, 8);
 OrientationInterpolator70->setKeyValue(new float[32]{1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226});
 CIS* IS71 = new CIS();
 Cconnect* connect72 = new Cconnect();
@@ -494,7 +494,7 @@ Group48->addChildren(*OrientationInterpolator70);
 
 COrientationInterpolator* OrientationInterpolator73 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator73->setDEF("L_ANKLE_ANIMATOR");
-OrientationInterpolator73->setKey(new float[7]{0,0.125,0.2083,0.375,0.6667,0.9167,1});
+OrientationInterpolator73->setKey(new float[7]{0,0.125,0.2083,0.375,0.6667,0.9167,1}, 7);
 OrientationInterpolator73->setKeyValue(new float[28]{-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714});
 CIS* IS74 = new CIS();
 Cconnect* connect75 = new Cconnect();
@@ -508,7 +508,7 @@ Group48->addChildren(*OrientationInterpolator73);
 
 COrientationInterpolator* OrientationInterpolator76 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator76->setDEF("L_MIDTARSAL_ANIMATOR");
-OrientationInterpolator76->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator76->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator76->setKeyValue(new float[12]{1,0,0,0,1,0,0,-0.2,1,0,0,0});
 CIS* IS77 = new CIS();
 Cconnect* connect78 = new Cconnect();
@@ -522,7 +522,7 @@ Group48->addChildren(*OrientationInterpolator76);
 
 COrientationInterpolator* OrientationInterpolator79 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator79->setDEF("R_HIP_ANIMATOR");
-OrientationInterpolator79->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1});
+OrientationInterpolator79->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1}, 10);
 OrientationInterpolator79->setKeyValue(new float[40]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481});
 CIS* IS80 = new CIS();
 Cconnect* connect81 = new Cconnect();
@@ -536,7 +536,7 @@ Group48->addChildren(*OrientationInterpolator79);
 
 COrientationInterpolator* OrientationInterpolator82 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator82->setDEF("R_KNEE_ANIMATOR");
-OrientationInterpolator82->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1});
+OrientationInterpolator82->setKey(new float[10]{0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1}, 10);
 OrientationInterpolator82->setKeyValue(new float[40]{1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,-1.176e-8,-4.971e-9,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573});
 CIS* IS83 = new CIS();
 Cconnect* connect84 = new Cconnect();
@@ -550,7 +550,7 @@ Group48->addChildren(*OrientationInterpolator82);
 
 COrientationInterpolator* OrientationInterpolator85 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator85->setDEF("R_ANKLE_ANIMATOR");
-OrientationInterpolator85->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1});
+OrientationInterpolator85->setKey(new float[11]{0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1}, 11);
 OrientationInterpolator85->setKeyValue(new float[44]{0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,-1.641e-7,1.827e-8,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0});
 CIS* IS86 = new CIS();
 Cconnect* connect87 = new Cconnect();
@@ -564,7 +564,7 @@ Group48->addChildren(*OrientationInterpolator85);
 
 COrientationInterpolator* OrientationInterpolator88 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator88->setDEF("R_MIDTARSAL_ANIMATOR");
-OrientationInterpolator88->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator88->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator88->setKeyValue(new float[12]{1,0,0,-0.2,1,0,0,0,1,0,0,-0.2});
 CIS* IS89 = new CIS();
 Cconnect* connect90 = new Cconnect();
@@ -578,7 +578,7 @@ Group48->addChildren(*OrientationInterpolator88);
 
 COrientationInterpolator* OrientationInterpolator91 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator91->setDEF("VL5_ANIMATOR");
-OrientationInterpolator91->setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1});
+OrientationInterpolator91->setKey(new float[6]{0,0.2083,0.375,0.75,0.8333,1}, 6);
 OrientationInterpolator91->setKeyValue(new float[24]{0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826});
 CIS* IS92 = new CIS();
 Cconnect* connect93 = new Cconnect();
@@ -592,7 +592,7 @@ Group48->addChildren(*OrientationInterpolator91);
 
 COrientationInterpolator* OrientationInterpolator94 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator94->setDEF("SKULLBASE_ANIMATOR");
-OrientationInterpolator94->setKey(new float[10]{0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1});
+OrientationInterpolator94->setKey(new float[10]{0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1}, 10);
 OrientationInterpolator94->setKeyValue(new float[40]{0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642});
 CIS* IS95 = new CIS();
 Cconnect* connect96 = new Cconnect();
@@ -606,7 +606,7 @@ Group48->addChildren(*OrientationInterpolator94);
 
 COrientationInterpolator* OrientationInterpolator97 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator97->setDEF("L_SHOULDER_ANIMATOR");
-OrientationInterpolator97->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator97->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator97->setKeyValue(new float[16]{1,0,0,0.1189,-1,-5.928e-7,1.525e-7,0.1861,1,-2.038e-7,-1.257e-7,0.3357,1,0,0,0.1189});
 CIS* IS98 = new CIS();
 Cconnect* connect99 = new Cconnect();
@@ -620,7 +620,7 @@ Group48->addChildren(*OrientationInterpolator97);
 
 COrientationInterpolator* OrientationInterpolator100 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator100->setDEF("L_ELBOW_ANIMATOR");
-OrientationInterpolator100->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator100->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator100->setKeyValue(new float[16]{-1,-1.58298e-7,8.15967e-8,0.0659878,-1,-3.28826e-8,-2.31665e-8,0.488383,-1,0.00000306462,-0.00000311947,0.0177536,-1,-1.58298e-7,8.15967e-8,0.0659878});
 CIS* IS101 = new CIS();
 Cconnect* connect102 = new Cconnect();
@@ -634,7 +634,7 @@ Group48->addChildren(*OrientationInterpolator100);
 
 COrientationInterpolator* OrientationInterpolator103 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator103->setDEF("L_WRIST_ANIMATOR");
-OrientationInterpolator103->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator103->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator103->setKeyValue(new float[16]{0.00000151276,-1,0.0000017724,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.00000151276,-1,0.0000017724,0.461076});
 CIS* IS104 = new CIS();
 Cconnect* connect105 = new Cconnect();
@@ -648,7 +648,7 @@ Group48->addChildren(*OrientationInterpolator103);
 
 COrientationInterpolator* OrientationInterpolator106 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator106->setDEF("R_SHOULDER_ANIMATOR");
-OrientationInterpolator106->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator106->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator106->setKeyValue(new float[16]{-1,-7.689e-7,-1.48e-7,0.09346,1,5.004e-8,2.254e-8,0.3197,-1,-1.104e-7,5.267e-10,0.1564,-1,-7.689e-7,-1.48e-7,0.09346});
 CIS* IS107 = new CIS();
 Cconnect* connect108 = new Cconnect();
@@ -662,7 +662,7 @@ Group48->addChildren(*OrientationInterpolator106);
 
 COrientationInterpolator* OrientationInterpolator109 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator109->setDEF("R_ELBOW_ANIMATOR");
-OrientationInterpolator109->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator109->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator109->setKeyValue(new float[16]{-1,-4.45619e-8,2.70318e-8,0.411508,-1,8.16742e-7,-1.09556e-7,0.0925011,-1,-2.47628e-8,-7.02862e-9,0.572568,-1,-4.45619e-8,2.70318e-8,0.411508});
 CIS* IS110 = new CIS();
 Cconnect* connect111 = new Cconnect();
@@ -676,7 +676,7 @@ Group48->addChildren(*OrientationInterpolator109);
 
 COrientationInterpolator* OrientationInterpolator112 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator112->setDEF("R_WRIST_ANIMATOR");
-OrientationInterpolator112->setKey(new float[4]{0,0.375,0.9167,1});
+OrientationInterpolator112->setKey(new float[4]{0,0.375,0.9167,1}, 4);
 OrientationInterpolator112->setKeyValue(new float[16]{-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346});
 CIS* IS113 = new CIS();
 Cconnect* connect114 = new Cconnect();
@@ -857,4 +857,5 @@ group->addChildren(*Anchor134);
 X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

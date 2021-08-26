@@ -340,7 +340,7 @@ group->addChildren(*TimeSensor69);
 
 COrientationInterpolator* OrientationInterpolator70 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator70->setDEF("Spinner");
-OrientationInterpolator70->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator70->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator70->setKeyValue(new float[12]{0,1,0,0,0,1,0,3.14159,0,1,0,6.28318});
 group->addChildren(*OrientationInterpolator70);
 
@@ -371,7 +371,7 @@ group->addChildren(*IMPORT74);
 
 CPositionInterpolator* PositionInterpolator75 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator75->setDEF("StayInPlace");
-PositionInterpolator75->setKey(new float[2]{0,1});
+PositionInterpolator75->setKey(new float[2]{0,1}, 2);
 PositionInterpolator75->setKeyValue(new float[6]{0,0,0,0,0,0});
 group->addChildren(*PositionInterpolator75);
 
@@ -392,4 +392,5 @@ group->addChildren(*ROUTE77);
 X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

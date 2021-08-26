@@ -357,7 +357,7 @@ CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform56->setDEF("Close_travel");
 CPositionInterpolator* PositionInterpolator57 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator57->setDEF("Close_Mover");
-PositionInterpolator57->setKey(new float[5]{0,0.25,0.5,0.75,1});
+PositionInterpolator57->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
 PositionInterpolator57->setKeyValue(new float[15]{0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0});
 Transform56->addChildren(*PositionInterpolator57);
 
@@ -2417,4 +2417,5 @@ group->addChildren(*ROUTE556);
 X3D0->setScene(*Scene13);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

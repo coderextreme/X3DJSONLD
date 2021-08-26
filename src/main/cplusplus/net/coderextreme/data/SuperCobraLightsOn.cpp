@@ -132,13 +132,13 @@ CGroup* Group25 = (CGroup *)(m_pScene.createNode("Group"));
 Group25->setDEF("AircraftComponentInterpolatorGroup");
 COrientationInterpolator* OrientationInterpolator26 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator26->setDEF("MRBOrientationInterpolator");
-OrientationInterpolator26->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator26->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator26->setKeyValue(new float[12]{0,1,0,0,0,1,0,3.14,0,1,0,6.28});
 Group25->addChildren(*OrientationInterpolator26);
 
 COrientationInterpolator* OrientationInterpolator27 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator27->setDEF("TRBOrientationInterpolator");
-OrientationInterpolator27->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator27->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator27->setKeyValue(new float[12]{1,0,0,0,1,0,0,-3.14,1,0,0,-6.28});
 Group25->addChildren(*OrientationInterpolator27);
 
@@ -2280,8 +2280,8 @@ Group550->addChildren(*SpotLight551);
 
 CScalarInterpolator* ScalarInterpolator552 = (CScalarInterpolator *)(m_pScene.createNode("ScalarInterpolator"));
 ScalarInterpolator552->setDEF("SmackLightIntensityScalarInterpolator");
-ScalarInterpolator552->setKey(new float[2]{0,0.5});
-ScalarInterpolator552->setKeyValue(new float[2]{1,0});
+ScalarInterpolator552->setKey(new float[2]{0,0.5}, 2);
+ScalarInterpolator552->setKeyValue(new float[2]{1,0}, 2);
 Group550->addChildren(*ScalarInterpolator552);
 
 CROUTE* ROUTE553 = new CROUTE();
@@ -2300,7 +2300,7 @@ Group550->addChildren(*ROUTE554);
 
 CColorInterpolator* ColorInterpolator555 = (CColorInterpolator *)(m_pScene.createNode("ColorInterpolator"));
 ColorInterpolator555->setDEF("SmackLightEmmissiveColorIntensityColorInterpolator");
-ColorInterpolator555->setKey(new float[2]{0,0.5});
+ColorInterpolator555->setKey(new float[2]{0,0.5}, 2);
 ColorInterpolator555->setKeyValue(new float[6]{1,0,0,0,0,0});
 Group550->addChildren(*ColorInterpolator555);
 
@@ -2530,4 +2530,5 @@ group->addChildren(*Transform19);
 X3D0->setScene(*Scene17);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }

@@ -175,7 +175,7 @@ ProtoBody21->addChildren(*TimeSensor25);
 
 COrientationInterpolator* OrientationInterpolator31 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
 OrientationInterpolator31->setDEF("Spinner");
-OrientationInterpolator31->setKey(new float[3]{0,0.5,1});
+OrientationInterpolator31->setKey(new float[3]{0,0.5,1}, 3);
 OrientationInterpolator31->setKeyValue(new float[12]{0,1,0,0,0,1,0,3.14,0,1,0,6.28});
 ProtoBody21->addChildren(*OrientationInterpolator31);
 
@@ -303,4 +303,5 @@ group->addChildren(*ROUTE56);
 X3D0->setScene(*Scene12);
 
 m_pScene.addRootNode(group);
+X3D0->toXMLString();
 }
