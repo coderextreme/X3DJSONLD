@@ -3644,4 +3644,3 @@ AllenStandShootRifleM24.prototype = {
 	}
 }
 new AllenStandShootRifleM24().main();
-process.exit(0);

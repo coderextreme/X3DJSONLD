@@ -206,4 +206,3 @@ Table5_18PixelTexture.prototype = {
 	}
 }
 new Table5_18PixelTexture().main();
-process.exit(0);

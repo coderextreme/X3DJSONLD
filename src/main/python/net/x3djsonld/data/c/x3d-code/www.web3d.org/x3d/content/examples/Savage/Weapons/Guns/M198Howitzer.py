@@ -1,0 +1,651 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='M198Howitzer.x3d',name='title'),
+    meta(content='M198 Howitzer to scale',name='description'),
+    meta(content='J.P. McDonough',name='creator'),
+    meta(content='7 January 2004',name='created'),
+    meta(content='2 January 2019',name='modified'),
+    meta(content='M198-dvic502.jpg',name='reference'),
+    meta(content='Impact.avi',name='reference'),
+    meta(content='http://www.army.mil/fact_files_site/m198',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/land/m198.htm',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/Weapons/Guns/M198Howitzer.x3d',name='identifier'),
+    meta(content='X3D-Edit, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    ExternProtoDeclare(appinfo='ViewPositionOrientation provides provides console output of local position and orientation as user navigates',name='ViewPositionOrientation',url=["../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
+      field=[
+      field(accessType='inputOutput',appinfo='Whether or not ViewPositionOrientation sends output to console.',name='enabled',type='SFBool'),
+      field(accessType='initializeOnly',appinfo='Output internal trace messages for debugging this node - developer use only can be ignored.',name='traceEnabled',type='SFBool'),
+      field(accessType='inputOnly',appinfo='Ability to turn output tracing on/off at runtime.',name='set_traceEnabled',type='SFBool'),
+      field(accessType='outputOnly',appinfo='Output local position.',name='position_changed',type='SFVec3f'),
+      field(accessType='outputOnly',appinfo='Output local orientation.',name='orientation_changed',type='SFRotation'),
+      field(accessType='outputOnly',appinfo='MFString value of new Viewpoint',name='outputViewpointString',type='MFString')]),
+    ProtoInstance(DEF='ExampleViewPositionOrientation',name='ViewPositionOrientation',
+      fieldValue=[
+      fieldValue(name='enabled',value=False)]),
+    Sound(maxBack=100,maxFront=100,minBack=0.01,minFront=0.01,
+      source=AudioClip(DEF='CannonFireSound',description='Cannon fire sound',url=["../../GroundVehicles/T72M/CannonFire.wav","https://savage.nps.edu/Savage/GroundVehicles/T72M/CannonFire.wav"])),
+    Viewpoint(DEF='betweenTrails',description='between Trails',orientation=(-1,0,0,0),position=(0,1.4,10)),
+    Viewpoint(DEF='sideViewClose',description='Side View Close',orientation=(0.007,0.997,0.076,1.7635),position=(9.8,2.2,-1.8)),
+    Viewpoint(DEF='sideView',description='from Side',orientation=(0,1,0,1.57),position=(320,10,-160)),
+    Viewpoint(DEF='underTube',description='under Tube',orientation=(-0.02,-0.982,-0.19,3.1266),position=(0,5.7,-7.4)),
+    Viewpoint(DEF='downBarrel',description='down Barrel',orientation=(0.012,-0.925,-0.381,3.138),position=(-0.1,7.6,-6.7)),
+    #  Roughly to scale. 
+    Group(DEF='M198_Howitzer',
+      children=[
+      Group(DEF='LowerCar',
+        children=[
+        Shape(
+          geometry=Cylinder(DEF='LowerCarriage1',height=.5),
+          appearance=Appearance(DEF='camiPaint',
+            material=Material(DEF='cami',ambientIntensity=0.25,diffuseColor=(0.054,0.233,0.39),shininess=0),
+            texture=ImageTexture(DEF='camo',repeatS=False,repeatT=False,url=["greenCamo.jpg","https://savage.nps.edu/Savage/Weapons/Guns/greenCamo.jpg"]))),
+        Transform(DEF='rightTrailMover',translation=(.1,0,0),
+          children=[
+          Transform(DEF='RightTrail',rotation=(0,1,0,-1.1),translation=(0,-.3,0),
+            children=[
+            Transform(DEF='brakeResevoir',rotation=(0,1,0,1.57),translation=(2,.27,0),
+              children=[
+              Transform(rotation=(1,0,0,1.57),scale=(1.6,1,1.2),
+                children=[
+                Shape(
+                  geometry=Cylinder(height=1.2,radius=.15),
+                  appearance=Appearance(USE='camiPaint'))])]),
+            Transform(DEF='basePlateClamp',rotation=(0,1,0,1.7),scale=(.05,.05,.05),translation=(2.7,.6,-.2),
+              children=[
+              Shape(DEF='clamp',
+                geometry=Extrusion(crossSection=[(0,0),(1,0),(1,2),(3,2),(3,3),(0,3),(0,0)],solid=False,spine=[(0,0,0),(2,0,0)]),
+                appearance=Appearance(USE='camiPaint'))]),
+            Transform(rotation=(0,1,0,-1.7),scale=(.05,.05,.05),translation=(1.7,.6,-.2),
+              children=[
+              Shape(USE='clamp')]),
+            Transform(rotation=(1,0,0,-1.57),
+              children=[
+              Transform(scale=(.22,.3,.19),
+                children=[
+                Shape(DEF='trail',
+                  geometry=Extrusion(crossSection=[(0,0),(0,3),(16,2.2),(20,1),(20,-1),(18.5,-1),(18,0),(0,0)],spine=[(0,0,0),(0,1.5,0)]),
+                  appearance=Appearance(USE='camiPaint'))])])]),
+          Transform(DEF='RightSpade',rotation=(0,1,0,.5),scale=(.07,.1,.1),translation=(2.9,-0.45,3.45),
+            children=[
+            Transform(rotation=(0,1,0,3.14),
+              children=[
+              Transform(rotation=(1,0,0,-1.57),
+                children=[
+                Shape(DEF='spade',
+                  appearance=Appearance(USE='camiPaint'),
+                  geometry=Extrusion(crossSection=[(0,0),(5,0),(4,-5),(4,-4),(3.85,-3.5),(3.75,-3),(3.5,-2),(3,-1),(0,-.5),(0,0)],spine=[(0,0,0),(20,0,0)]))])])]),
+          CylinderSensor(DEF='trailSpreader',description='Used to spread the trails',maxAngle=0,minAngle=-.5),
+          ROUTE(fromField='rotation_changed',fromNode='trailSpreader',toField='set_rotation',toNode='rightTrailMover')]),
+        Transform(DEF='leftTrailMover',translation=(-.1,0,0),
+          children=[
+          Transform(DEF='leftTrail',rotation=(0,1,0,-2.1),translation=(-.5,-.3,-.25),
+            children=[
+            Transform(DEF='lbasePlateClamp',rotation=(0,1,0,1.7),scale=(.05,.05,.05),translation=(2.7,.6,-.2),
+              children=[
+              Shape(USE='clamp')]),
+            Transform(rotation=(0,1,0,-1.7),scale=(.05,.05,.05),translation=(1.7,.6,-.2),
+              children=[
+              Shape(USE='clamp')]),
+            Transform(rotation=(1,0,0,-1.57),
+              children=[
+              Transform(scale=(.22,.3,.19),
+                children=[
+                Shape(USE='trail')])])]),
+          Transform(DEF='leftSpade',rotation=(0,1,0,-.523),scale=(.07,.1,.1),translation=(-1.9,-0.45,3.9),
+            children=[
+            Transform(center=(.5,0,.5),rotation=(0,1,0,3.14),
+              children=[
+              Transform(rotation=(1,0,0,-1.57),
+                children=[
+                Shape(USE='spade')])])]),
+          CylinderSensor(DEF='lTrailSpreader',description='Used to spread the trails',maxAngle=.5),
+          ROUTE(fromField='rotation_changed',fromNode='lTrailSpreader',toField='set_rotation',toNode='leftTrailMover')]),
+        Transform(translation=(0,-.25,-.75),
+          children=[
+          Shape(DEF='basePlate',
+            geometry=Cone(bottomRadius=.75,height=.25),
+            appearance=Appearance(USE='camiPaint'))]),
+        Group(DEF='wheelRaiser',
+          children=[
+          Transform(DEF='AnimationTransform',rotation=(1,0,0,.1),
+            children=[
+            Switch(DEF='ButtonChoice',whichChoice=0,
+              children=[
+              Group(
+                children=[
+                Transform(scale=(4,1,1),translation=(0,-.3,-.3),
+                  children=[
+                  Shape(DEF='ClearSphere',
+                    appearance=Appearance(
+                      material=Material(DEF='Transparent',emissiveColor=(1,1,1),transparency=1.0)),
+                    geometry=Sphere(radius=.5))]),
+                TouchSensor(DEF='ClearSphere1',description='used to raise and lower the wheels'),
+                OrientationInterpolator(DEF='wheelUp',key=[0,.25,.5,.75,.85,1],keyValue=[(1,0,0,0),(1,0,0,.5),(1,0,0,.75),(1,0,0,1.25),(1,0,0,1.7),(1,0,0,2)]),
+                PositionInterpolator(DEF='MoveBoxUp',key=[0,.5,1],keyValue=[(0,-3,0),(0,0,0),(0,3,0)]),
+                TimeSensor(DEF='BoxUpTimer',cycleInterval=3),
+                ROUTE(fromField='fraction_changed',fromNode='BoxUpTimer',toField='set_fraction',toNode='wheelUp'),
+                ROUTE(fromField='value_changed',fromNode='wheelUp',toField='set_rotation',toNode='AnimationTransform'),
+                ROUTE(fromField='touchTime',fromNode='ClearSphere1',toField='startTime',toNode='BoxUpTimer')]),
+              Group(
+                children=[
+                Transform(scale=(4,1,1),translation=(0,-.3,-.3),
+                  children=[
+                  Shape(USE='ClearSphere')]),
+                TouchSensor(DEF='ClearSphere2',description='used to raise and lower the wheels'),
+                OrientationInterpolator(DEF='wheelDown',key=[0,.25,.5,.75,.85,1],keyValue=[(1,0,0,2),(1,0,0,1.7),(1,0,0,1.25),(1,0,0,.75),(1,0,0,.5),(1,0,0,0)]),
+                PositionInterpolator(DEF='MoveBoxDown',key=[0,0.5,1],keyValue=[(0,3,0),(0,0,0),(0,-3,0)]),
+                TimeSensor(DEF='BoxDownTimer',cycleInterval=3),
+                ROUTE(fromField='fraction_changed',fromNode='BoxDownTimer',toField='set_fraction',toNode='wheelDown'),
+                ROUTE(fromField='value_changed',fromNode='wheelDown',toField='set_rotation',toNode='AnimationTransform'),
+                ROUTE(fromField='touchTime',fromNode='ClearSphere2',toField='startTime',toNode='BoxDownTimer')])]),
+            Group(DEF='rightWheel',
+              children=[
+              Transform(DEF='rightWheel1',translation=(.2,-.8,-.3),
+                children=[
+                Transform(DEF='rightTire',rotation=(0,0,1,-1.57),translation=(1.0,.4,0),
+                  children=[
+                  Shape(DEF='tire',
+                    geometry=Cylinder(height=.2,radius=.4),
+                    appearance=Appearance(
+                      material=Material(DEF='black',diffuseColor=(0.1,0.1,0.1),shininess=0)))]),
+                Transform(DEF='rightRim',rotation=(0,0,1,-1.57),translation=(1.0,.4,0),
+                  children=[
+                  Shape(DEF='rim',
+                    geometry=Cylinder(height=.22,radius=.25),
+                    appearance=Appearance(USE='camiPaint'))])]),
+              Transform(rotation=(1,0,0,-1.75),
+                children=[
+                Transform(DEF='rWheelLift',rotation=(0,1,0,1.57),scale=(.25,.25,.25),translation=(1,0,0),
+                  children=[
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=Extrusion(crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],spine=[(0,0,0),(0,0,.3)]),
+                      appearance=Appearance(USE='camiPaint'))]),
+                  Transform(translation=(1.5,1.5,.45),
+                    children=[
+                    Shape(
+                      geometry=Extrusion(crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],spine=[(0,0,0),(0,0,.3)]),
+                      appearance=Appearance(USE='camiPaint'))]),
+                  Transform(rotation=(0,0,1,1),translation=(1,1,0.3),
+                    children=[
+                    Shape(
+                      geometry=Box(size=(2,1,.3)),
+                      appearance=Appearance(USE='camiPaint'))])])])]),
+            Group(DEF='leftWheel',
+              children=[
+              Transform(DEF='leftWheel1',translation=(-1.2,-.35,-.35),
+                children=[
+                Transform(DEF='leftTire',rotation=(0,0,1,-1.57),
+                  children=[
+                  Shape(USE='tire')]),
+                Transform(DEF='leftRim',rotation=(0,0,1,-1.57),
+                  children=[
+                  Shape(USE='rim')])]),
+              TouchSensor(DEF='wheelSensor',description='Point at box to spin it'),
+              TimeSensor(DEF='CLOCK',cycleInterval=4,enabled=False,loop=True),
+              OrientationInterpolator(DEF='wheelInterpolator',key=[0.0,0.25,0.50,0.75,1.0],keyValue=[(1,0.0,0,-1.57),(1,0.0,0,0),(1,0.0,0,1.57),(1,0,0,3.14),(1,0,0,-1.57)]),
+              Transform(rotation=(1,0,0,-3.1),
+                children=[
+                Transform(DEF='wheelLift',rotation=(0,1,0,-1.57),scale=(.25,.25,.25),translation=(-1,0,0),
+                  children=[
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=Extrusion(crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],spine=[(0,0,0),(0,0,.3)]),
+                      appearance=Appearance(USE='camiPaint'))]),
+                  Transform(translation=(1.5,1.5,.45),
+                    children=[
+                    Shape(
+                      geometry=Extrusion(crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],spine=[(0,0,0),(0,0,.3)]),
+                      appearance=Appearance(USE='camiPaint'))]),
+                  Transform(rotation=(0,0,1,1),translation=(1,1,0.3),
+                    children=[
+                    Shape(
+                      geometry=Box(size=(2,1,.3)),
+                      appearance=Appearance(USE='camiPaint'))])])])])])]),
+        Group(DEF='AnimationControl',
+          children=[
+          IntegerTrigger(DEF='SetBoxDown',integerKey=0),
+          IntegerTrigger(DEF='SetBoxUp',integerKey=1),
+          ROUTE(fromField='isActive',fromNode='ClearSphere1',toField='set_boolean',toNode='SetBoxUp'),
+          ROUTE(fromField='isActive',fromNode='ClearSphere2',toField='set_boolean',toNode='SetBoxDown'),
+          ROUTE(fromField='triggerValue',fromNode='SetBoxUp',toField='whichChoice',toNode='ButtonChoice'),
+          ROUTE(fromField='triggerValue',fromNode='SetBoxDown',toField='whichChoice',toNode='ButtonChoice')])]),
+      Group(DEF='upperCarriagePiece',
+        children=[
+        Transform(DEF='rotateUpperCarriage',center=(0,-2.5,0),
+          children=[
+          Group(DEF='upperCarriage',
+            children=[
+            Transform(DEF='rightTrunion',rotation=(1,0,0,1.57),translation=(.6,1.2,.65),
+              children=[
+              Transform(rotation=(0,1,0,3.14),
+                children=[
+                Shape(DEF='left_stantion',
+                  geometry=Extrusion(crossSection=[(0,4),(2,43),(-4,5),(-7,10),(-712,-9),(2,-9),(0,-4),(0,4)],scale=[(.1,.1)],spine=[(0,0,0),(.2,0,0)]),
+                  appearance=Appearance(USE='camiPaint'))])]),
+            Transform(rotation=(1,0,0,1.57),translation=(-.4,1.2,.65),
+              children=[
+              Transform(rotation=(0,1,0,3.14),
+                children=[
+                Shape(USE='left_stantion')])]),
+            Transform(DEF='leftHandwheel',rotation=(0,1,0,-1.57),scale=(.8,.8,.8),translation=(-.75,1,.5),
+              #  This handwheel was copied from the Savage library from the LW155 howitzer 
+              children=[
+              LOD(DEF='Crank',range=[25],
+                children=[
+                Group(DEF='handwheelGroup',
+                  children=[
+                  Transform(DEF='CircularHandle',
+                    children=[
+                    Shape(
+                      geometry=Extrusion(beginCap=False,creaseAngle=1.57,crossSection=[(0.1,0),(0.092,-0.038),(0.071,-0.071),(0.038,-0.092),(0,-0.1),(-0.038,-0.092),(-0.071,-0.071),(-0.092,-0.038),(-0.1,0),(-0.092,0.038),(-0.071,0.071),(-0.038,0.092),(0,0.1),(0.038,0.092),(0.071,0.071),(0.092,0.038),(0.1,0)],endCap=False,scale=[(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6),(0.6,0.6)],spine=[(0.3,0,0),(0.276,-0.114,0),(0.213,-0.213,0),(0.114,-0.276,0),(0,-0.3,0),(-0.114,-0.276,0),(-0.213,-0.213,0),(-0.276,-0.114,0),(-0.3,0,0),(-0.276,0.114,0),(-0.213,0.213,0),(-0.114,0.276,0),(0,0.3,0),(0.114,0.276,0),(0.213,0.213,0),(0.276,0.114,0),(0.3,0,0)]),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(.1,.10,.1))))]),
+                  Transform(DEF='CrankShaft',translation=(0,0,-0.05),
+                    children=[
+                    Transform(DEF='Shaft',rotation=(1,0,0,1.57),
+                      children=[
+                      Shape(
+                        geometry=Cylinder(height=0.02,radius=0.08),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(.1,.1,.1))))]),
+                    Transform(DEF='Top',rotation=(1,0,0,1.57),translation=(0,0,-0.1),
+                      children=[
+                      Shape(
+                        geometry=Cylinder(height=0.2,radius=0.05),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(.1,.1,.1))))]),
+                    Transform(DEF='TopBall',translation=(0,0,-0.01),
+                      children=[
+                      Shape(
+                        geometry=Sphere(radius=0.05),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(.1,.1,.1))))])]),
+                  Transform(DEF='Struts',
+                    children=[
+                    Transform(DEF='StrutOne',rotation=(1,0,0,0.21),translation=(0,0.04,-0.05725),
+                      children=[
+                      Shape(
+                        geometry=Extrusion(creaseAngle=3.14,crossSection=[(0.01,0),(0.0092,-0.0038),(0.0071,-0.0071),(0.0038,-0.0092),(0,-0.01),(-0.0038,-0.0092),(-0.0071,-0.0071),(-0.0092,-0.0038),(-0.01,0),(-0.0092,0.0038),(-0.0071,0.0071),(-0.0038,0.0092),(0,0.01),(0.0038,0.0092),(0.0071,0.0071),(0.0092,0.0038),(0.01,0)],scale=[(4,2),(2,2),(2,2),(2,2),(2,4)],spine=[(0,0,0),(0,0.125,0),(0,0.25,0),(0,0.255,0),(0,0.275,0)]),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(.1,.1,.1))))]),
+                    Transform(DEF='StrutTwo',rotation=(0,0,1,2.09),
+                      children=[
+                      Transform(USE='StrutOne')]),
+                    Transform(DEF='StrutThree',rotation=(0,0,-1,2.09),
+                      children=[
+                      Transform(USE='StrutOne')])])]),
+                WorldInfo(info=["null node"])])]),
+            Transform(DEF='rightHandwheel',rotation=(0,1,0,1.57),scale=(.8,.8,.8),translation=(.75,1,.5),
+              children=[
+              LOD(USE='Crank')]),
+            Transform(DEF='traversingWheel',rotation=(0,1,0,-.85),scale=(.5,.5,.5),translation=(-.68,.5,.6),
+              children=[
+              LOD(USE='Crank')]),
+            Transform(translation=(0,.25,0),
+              children=[
+              Shape(DEF='traversingPlatform',
+                geometry=Cylinder(height=.35,radius=.8),
+                appearance=Appearance(USE='camiPaint'))]),
+            Transform(DEF='rightUpperCylinder',rotation=(0,0,1,1.57),translation=(0,1.5,.2),
+              children=[
+              Transform(center=(0,0,1),rotation=(0,0,1,-3.14),
+                children=[
+                Transform(
+                  children=[
+                  Transform(DEF='ruc',center=(0,0,.3),
+                    children=[
+                    Transform(DEF='rucL',rotation=(1,0,0,-1.57),translation=(0,-.48,0),
+                      children=[
+                      Transform(translation=(0,.050,0),
+                        children=[
+                        Shape(DEF='upperCylinder1',
+                          geometry=Cylinder(height=.45,radius=.075),
+                          appearance=Appearance(USE='camiPaint'))]),
+                      Transform(translation=(0,-.22,0),
+                        children=[
+                        Shape(DEF='linkBolt',
+                          geometry=Sphere(radius=.05),
+                          appearance=Appearance(
+                            material=Material(USE='black')))]),
+                      Transform(DEF='shrinkCylinder',translation=(0,.22,0),
+                        children=[
+                        Shape(DEF='upperExtender',
+                          geometry=Cylinder(height=.55,radius=.060),
+                          appearance=Appearance(
+                            texture=ImageTexture(url=["baffle.jpg","https://savage.nps.edu/Savage/Weapons/Guns/baffle.jpg"])))])]),
+                    Transform(DEF='rucR',rotation=(1,0,0,-1.57),translation=(0,.48,0),
+                      children=[
+                      Transform(translation=(0,.050,0),
+                        children=[
+                        Shape(USE='upperCylinder1')]),
+                      Transform(translation=(0,-.22,0),
+                        children=[
+                        Shape(USE='linkBolt')]),
+                      Transform(DEF='shrinkCylinderR',translation=(0,.22,0),
+                        children=[
+                        Shape(USE='upperExtender')])])])])])])]),
+          Transform(DEF='barrelGroup',rotation=(0,0,1,-1.57),
+            children=[
+            Transform(DEF='barrelMover1',center=(-1.,0,.45),rotation=(0,0,1,.01),translation=(.2,0,0),
+              children=[
+              CylinderSensor(DEF='tubeSensor',description='sensor for tube elevation',maxAngle=0,minAngle=-.65),
+              ROUTE(fromField='rotation_changed',fromNode='tubeSensor',toField='set_rotation',toNode='barrelMover1'),
+              Transform(DEF='theBarrel',
+                children=[
+                Group(DEF='barrel',
+                  children=[
+                  Transform(DEF='recoilTransform',rotation=(0,0,1,1.57),translation=(-.20,0,-.2),
+                    children=[
+                    Transform(DEF='recoilMover',
+                      children=[
+                      Transform(DEF='tube1',rotation=(1,0,0,-.84),translation=(0,2.45,-1),
+                        children=[
+                        Transform(translation=(0,-2.5,0),
+                          children=[
+                          Shape(
+                            geometry=Extrusion(DEF='tube',crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],scale=[(.2,.2),(.2,.2),(.18,.18),(.18,.18),(.2,.2)],spine=[(0,0,0),(0,3.5,0),(0,3.6,0),(0,4.7,0),(0,5.2,0)]),
+                            appearance=Appearance(USE='camiPaint')),
+                          Transform(DEF='shinyPiece',translation=(0,3,0),
+                            children=[
+                            Shape(
+                              geometry=Cylinder(height=1.1,radius=.205),
+                              appearance=Appearance(DEF='shiny',
+                                material=Material(diffuseColor=(.7,.7,.7))))])]),
+                        Transform(DEF='breech',translation=(0,-2.5,0),
+                          children=[
+                          Shape(
+                            geometry=Cylinder(height=.1,radius=.2),
+                            appearance=Appearance(USE='shiny'))])]),
+                      Transform(DEF='muzzle_break',translation=(0,.05,0),
+                        children=[
+                        Transform(rotation=(1,0,0,.75),translation=(.25,4.48,-3.6),
+                          children=[
+                          Transform(rotation=(0,0,1,1.57),
+                            children=[
+                            Transform(rotation=(1,0,0,3.14),scale=(1.6,.7,.85),
+                              children=[
+                              Shape(DEF='muzzleBreak',
+                                geometry=Extrusion(crossSection=[(0,0),(3,0),(3,-3),(2.8,-3.2),(2.3,-3.7),(2,-4),(1,-4),(.8,-3.8),(.3,-3.3),(0,-3),(0,0)],scale=[(.25,.25)],spine=[(0,0,0),(.25,0,0)]),
+                                appearance=Appearance(USE='camiPaint'))])])]),
+                        Transform(rotation=(1,0,0,.75),translation=(.25,4.4,-3.2),
+                          children=[
+                          Shape(
+                            geometry=Box(size=(.01,.3,.4)),
+                            appearance=Appearance(
+                              material=Material(diffuseColor=(.1,.1,.1))))]),
+                        Transform(rotation=(1,0,0,.75),translation=(-.225,4.4,-3.2),
+                          children=[
+                          Shape(
+                            geometry=Box(size=(.01,.3,.4)),
+                            appearance=Appearance(
+                              material=Material(diffuseColor=(.1,.1,.1))))]),
+                        Transform(rotation=(1,0,0,-.84),translation=(0,4.64,-3.45),
+                          children=[
+                          Shape(
+                            geometry=Cylinder(height=.02,radius=.17),
+                            appearance=Appearance(
+                              material=Material(diffuseColor=(.1,.1,.1))))])])]),
+                    Transform(DEF='sideBars',translation=(0,-.2,0),
+                      children=[
+                      Transform(DEF='rightSideBar',rotation=(1,0,0,.75),translation=(.45,1.9,-.250),
+                        children=[
+                        Shape(DEF='sideBar',
+                          geometry=Box(size=(.2,.2,2.2)),
+                          appearance=Appearance(USE='camiPaint'))]),
+                      Transform(DEF='leftSideBar1',rotation=(1,0,0,.75),translation=(-.45,1.9,-.250),
+                        children=[
+                        Shape(USE='sideBar')]),
+                      Transform(DEF='lTravelLockAnchor',rotation=(1,0,0,-2.3),translation=(-.55,1.7,-.2),
+                        children=[
+                        Shape(
+                          geometry=Extrusion(crossSection=[(0,0),(0,.15),(.15,.15),(.15,0),(0,0)],scale=[(1,.85),(.75,.75),(.5,.5)],spine=[(0,0,0),(0,.1,0),(0,.2,0)]),
+                          appearance=Appearance(USE='camiPaint'))]),
+                      Transform(DEF='travelLockAnchor',rotation=(1,0,0,-2.3),translation=(.4,1.7,-.2),
+                        children=[
+                        Shape(
+                          geometry=Extrusion(crossSection=[(0,0),(0,.15),(.15,.15),(.15,0),(0,0)],scale=[(1,.85),(.75,.75),(.5,.5)],spine=[(0,0,0),(0,.1,0),(0,.2,0)]),
+                          appearance=Appearance(USE='camiPaint'))]),
+                      Transform(rotation=(1,0,0,.65),translation=(.48,2.4,-1.),
+                        children=[
+                        Shape(DEF='upperTravelLocker',
+                          geometry=Box(size=(.07,.2,.04)),
+                          appearance=Appearance(USE='camiPaint'))]),
+                      Transform(rotation=(1,0,0,.65),translation=(-.48,2.4,-1),
+                        children=[
+                        Shape(USE='upperTravelLocker')])]),
+                    Transform(rotation=(1,0,0,-.84),translation=(0,1.65,-.1),
+                      children=[
+                      Shape(DEF='barrelCover',
+                        geometry=Cylinder(height=2.5,radius=.4),
+                        appearance=Appearance(USE='camiPaint'))]),
+                    Transform(DEF='travelLockPiece',rotation=(1,0,0,-.76),translation=(-.5,1.72,-.75),
+                      children=[
+                      Transform(DEF='travelLockOrient',center=(0,-.5,0),rotation=(1,0,0,-2.25),
+                        children=[
+                        Transform(
+                          children=[
+                          Shape(DEF='travelLock',
+                            geometry=Cylinder(height=1,radius=.05),
+                            appearance=Appearance(USE='camiPaint'))]),
+                        Transform(translation=(1,0,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(rotation=(0,0,1,.78),scale=(1,1.38,1),translation=(.5,0,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(center=(0,0,-.705),rotation=(0,0,1,-.78),scale=(1,1.38,1),translation=(.5,0,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(DEF='connectingCylinder',rotation=(0,0,1,1.57),scale=(1,.1,1),translation=(0,.5,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(rotation=(0,0,1,1.57),scale=(1,.1,1),translation=(0,-.5,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(rotation=(0,0,1,1.57),scale=(1,.1,1),translation=(1,.5,0),
+                          children=[
+                          Shape(USE='travelLock')]),
+                        Transform(rotation=(0,0,1,1.57),scale=(1,.1,1),translation=(1,-.5,0),
+                          children=[
+                          Shape(USE='travelLock')])]),
+                      OrientationInterpolator(DEF='travelLockOrientor',key=[0,.25,.5,.75,.85,1],keyValue=[(1,0,0,-2.25),(1,0,0,-1.7),(1,0,0,-1.25),(1,0,0,-.75),(1,0,0,-.5),(1,0,0,0)]),
+                      TouchSensor(DEF='travelLockSensor',description='rasies and lowers travel lock'),
+                      TimeSensor(DEF='travelLockClock',cycleInterval=5),
+                      ROUTE(fromField='touchTime',fromNode='travelLockSensor',toField='set_startTime',toNode='travelLockClock'),
+                      ROUTE(fromField='fraction_changed',fromNode='travelLockClock',toField='set_fraction',toNode='travelLockOrientor'),
+                      ROUTE(fromField='value_changed',fromNode='travelLockOrientor',toField='set_rotation',toNode='travelLockOrient')]),
+                    Transform(DEF='theRound',rotation=(1,0,0,-.77),translation=(0,3.7,-2.5),
+                      children=[
+                      Transform(DEF='theRoundSpinner',
+                        children=[
+                        Transform(
+                          children=[
+                          Transform(scale=(.2,1,.2),
+                            children=[
+                            Shape(DEF='artyRound',
+                              appearance=Appearance(USE='camiPaint'),
+                              geometry=Extrusion(crossSection=[(-1,0),(-0.9,0.435889894354067),(-0.8,0.6),(-0.7,0.714142842854285),(-0.6,0.8),(-0.5,0.866025403784439),(-0.4,0.916515138991168),(-0.3,0.953939201416946),(-0.2,0.979795897113271),(-0.1,0.99498743710662),(0,1),(0.1,0.99498743710662),(0.2,0.979795897113271),(0.3,0.953939201416946),(0.4,0.916515138991168),(0.5,0.866025403784439),(0.6,0.8),(0.7,0.714142842854285),(0.8,0.6),(0.9,0.435889894354067),(1,0),(0.9,-0.435889894354067),(0.8,-0.6),(0.7,-0.714142842854285),(0.6,-0.8),(0.5,-0.866025403784439),(0.4,-0.916515138991168),(0.3,-0.953939201416946),(0.2,-0.979795897113271),(0.1,-0.99498743710662),(0,-1),(-0.1,-0.99498743710662),(-0.2,-0.979795897113271),(-0.3,-0.953939201416946),(-0.4,-0.916515138991168),(-0.5,-0.866025403784439),(-0.6,-0.8),(-0.7,-0.714142842854285),(-0.8,-0.6),(-0.9,-0.435889894354067),(-1,0)],scale=[(.35,.35),(.5,.5),(.5,.5),(.3,.3),(.01,.01)],spine=[(0,0,0),(0,.15,0),(0,.8,0),(0,.9,0),(0,1,0)]))])]),
+                        TimeSensor(DEF='spinTimer',cycleInterval=3,loop=True),
+                        OrientationInterpolator(DEF='roundSpinner',key=[0.0,0.25,0.50,0.75,1.0],keyValue=[(0,1,0,-1.57),(0,1,0,0),(0,1,0,1.57),(0,1,0,3.14),(0,1,0,-1.57)])]),
+                      PositionInterpolator(DEF='roundPathInterpolator',key=[0.057,0.0858823529,0.088235294,0.117647059,0.147058824,0.176470588,0.205882353,0.235294118,0.264705882,0.294117647,0.323529412,0.352941176,0.382352941,0.411764706,0.441176471,0.470588235,0.5,0.529411765,0.558823529,0.588235294,0.617647059,0.647058824,0.676470588,0.705882353,0.735294118,0.764705882,0.794117647,0.823529412,0.852941176,0.882352941,0.911764706,0.941176471,0.970588235],keyValue=[(0,3.8,-2.6),(0,30.6227766,-10),(0,59.2455532,-20),(0,85.86832981,-30),(0,110.4911064,-40),(0,133.113883,-50),(0,153.7366596,-60),(0,172.3594362,-70),(0,188.9822128,-80),(0,203.6049894,-90),(0,216.227766,-100),(0,226.8505426,-110),(0,235.4733192,-120),(0,242.0960958,-130),(0,246.7188724,-140),(0,249.341649,-150),(0,249.9644256,-160),(0,248.5872022,-170),(0,245.2099788,-180),(0,239.8327554,-190),(0,232.455532,-200),(0,223.0783086,-210),(0,211.7010852,-220),(0,198.3238618,-230),(0,182.9466384,-240),(0,165.569415,-250),(0,146.1921916,-260),(0,124.8149682,-270),(0,101.4377448,-280),(0,76.06052145,-290),(0,48.68329805,-300),(0,19.30607465,-310),(0,-1,-320)]),
+                      OrientationInterpolator(DEF='roundOrientationInterpolator',key=[0.029411765,0.058823529,0.088235294,0.117647059,0.147058824,0.176470588,0.205882353,0.235294118,0.264705882,0.294117647,0.323529412,0.352941176,0.382352941,0.411764706,0.441176471,0.470588235,0.5,0.529411765,0.558823529,0.588235294,0.617647059,0.647058824,0.676470588,0.705882353,0.735294118,0.764705882,0.794117647,0.823529412,0.852941176,0.882352941,0.911764706,0.941176471,0.970588235],keyValue=[(1,0,0,-1.03580267483729),(1,0,0,-1.07069156372618),(1,0,0,-1.10558045261507),(1,0,0,-1.14046934150396),(1,0,0,-1.17535823039285),(1,0,0,-1.21024711928174),(1,0,0,-1.24513600817063),(1,0,0,-1.28002489705952),(1,0,0,-1.31491378594841),(1,0,0,-1.34980267483729),(1,0,0,-1.38469156372618),(1,0,0,-1.41958045261507),(1,0,0,-1.45446934150396),(1,0,0,-1.48935823039285),(1,0,0,-1.52424711928174),(1,0,0,-1.55913600817063),(1,0,0,-1.59402489705952),(1,0,0,-1.6289137859484),(1,0,0,-1.66380267483729),(1,0,0,-1.69869156372618),(1,0,0,-1.73358045261507),(1,0,0,-1.76846934150396),(1,0,0,-1.80335823039285),(1,0,0,-1.83824711928174),(1,0,0,-1.87313600817063),(1,0,0,-1.90802489705952),(1,0,0,-1.9429137859484),(1,0,0,-1.97780267483729),(1,0,0,-2.01269156372618),(1,0,0,-2.04758045261507),(1,0,0,-2.08246934150396),(1,0,0,-2.11735823039285),(1,0,0,-2.15224711928174)]),
+                      Viewpoint(DEF='rideTheRound',description='ride the round',orientation=(1,0,0,.45),position=(0,-5,10))]),
+                    TimeSensor(DEF='RECOILTIMER',cycleInterval=5),
+                    PositionInterpolator(DEF='recoil',key=[0,.2,.4,.6,.8,1],keyValue=[(0,0,0),(0,-.20,.25),(0,-.40,.5),(0,-.20,.25),(0,-.10,.15),(0,0,0)]),
+                    ROUTE(fromField='fraction_changed',fromNode='RECOILTIMER',toField='set_fraction',toNode='recoil'),
+                    ROUTE(fromField='value_changed',fromNode='recoil',toField='set_translation',toNode='recoilMover')]),
+                  Transform(DEF='shotEffects',rotation=(1,0,0,1.57),translation=(-4.7,0,-3.5),
+                    children=[
+                    Transform(DEF='hotGas',rotation=(0,0,1,-.76),translation=(-.3,-.3,0),
+                      children=[
+                      Group(
+                        children=[
+                        Transform(DEF='BallTransform',scale=(.000001,.0000001,.0000001),
+                          children=[
+                          Shape(
+                            geometry=Sphere(DEF='EXPSHAPE',radius=25),
+                            appearance=Appearance(
+                              #  explosion.png is from the Pearl Harbor scene from www.planetnine.com. 
+                              texture=ImageTexture(DEF='explosion',url=["explosion.png","https://savage.nps.edu/Savage/GroundVehicles/T72M/explosion.png","https://savage.nps.edu/Savage/Weapons/Missiles/explosion.png"])))]),
+                        PositionInterpolator(DEF='BALLSIZE',key=[0.0,0.1,0.2,.3,.4,.5,.6,.7,.8,.9,1.0],keyValue=[(0,0,0),(.003,.001,.003),(.006,.002,.006),(.01,.003,.01),(.015,.006,.015),(.02,.02,.02),(.01,.01,.01),(.006,.006,.006),(.003,.003,.003),(0,0,0),(0,0,0)]),
+                        TimeSensor(DEF='BOOMCLOCK',cycleInterval=.85)])]),
+                    Transform(rotation=(0,0,1,-.76),
+                      children=[
+                      Transform(DEF='BoomTransform',scale=(0.0001,0.00001,0.00001),translation=(0.0,0,0.0),
+                        children=[
+                        Shape(
+                          geometry=Extrusion(beginCap=False,creaseAngle=1.57,crossSection=[(1.0,0.0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.0,-1.0),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.0,-0.0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.0,1.0),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.0,0.0)],endCap=False,spine=[(2.0,0.0,0.0),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.0,0.0,2.0),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.0,0.0,0.0),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.0,0.0,-2.0),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.0,0.0,0.0)]),
+                          appearance=Appearance(
+                            material=Material(DEF='BoomMaterial'),
+                            texture=ImageTexture(url=["Boom1.jpg","https://savage.nps.edu/Savage/GroundVehicles/T72M/Boom1.jpg","https://savage.nps.edu/Savage/ShipsMilitary/FrigateYavuzTurkey/Boom1.jpg"]))),
+                        ScalarInterpolator(DEF='TransparencyInterp',key=[0,0.04,0.1,0.7,1.0],keyValue=[1.0,0.2,0.3,1.0,1.0]),
+                        PositionInterpolator(DEF='ScaleInterp',key=[0,0.04,0.1,0.7,1.0],keyValue=[(0.00001,0.00001,0.00001),(0.05,0.4,0.05),(0.4,0.6,0.4),(0.5,0.9,0.5),(0.00001,0.0001,0.00001)]),
+                        TimeSensor(DEF='BoomTimer',cycleInterval=5.0)]),
+                      ROUTE(fromField='fraction_changed',fromNode='BOOMCLOCK',toField='set_fraction',toNode='BALLSIZE'),
+                      ROUTE(fromField='value_changed',fromNode='BALLSIZE',toField='set_scale',toNode='BallTransform'),
+                      ROUTE(fromField='fraction_changed',fromNode='BoomTimer',toField='set_fraction',toNode='ScaleInterp'),
+                      ROUTE(fromField='value_changed',fromNode='ScaleInterp',toField='set_scale',toNode='BoomTransform'),
+                      ROUTE(fromField='fraction_changed',fromNode='BoomTimer',toField='set_fraction',toNode='TransparencyInterp'),
+                      ROUTE(fromField='value_changed',fromNode='TransparencyInterp',toField='set_transparency',toNode='BoomMaterial')])])])]),
+              Transform(DEF='elevMechMover1',
+                children=[
+                Transform(
+                  children=[
+                  Transform(rotation=(0,0,1,1.57),
+                    children=[
+                    Transform(rotation=(1,0,0,-.25),translation=(.45,1.7,-.3),
+                      children=[
+                      Shape(DEF='elevatingMech1',
+                        geometry=Cylinder(height=1.3,radius=.08),
+                        appearance=Appearance(USE='camiPaint')),
+                      Transform(translation=(0,-1,0),
+                        children=[
+                        Shape(DEF='lowerElevMechExtender',
+                          geometry=Cylinder(height=1,radius=.070),
+                          appearance=Appearance(
+                            material=Material(diffuseColor=(.7,.7,.7))))])]),
+                    Transform(rotation=(1,0,0,-.25),translation=(-.45,1.7,-0.3),
+                      children=[
+                      Shape(USE='elevatingMech1'),
+                      Transform(translation=(0,-1,0),
+                        children=[
+                        Shape(USE='lowerElevMechExtender')])])])])])]),
+            Script(DEF='upperCylinderMover',
+              field=[
+              field(accessType='inputOnly',name='barrelRotation',type='SFRotation'),
+              field(accessType='outputOnly',name='upperRotation',type='SFRotation'),
+              field(accessType='outputOnly',name='shrinkCylinder',type='SFVec3f'),
+              field(accessType='outputOnly',name='extendCylinder',type='SFVec3f')]),
+            ROUTE(fromField='rotation_changed',fromNode='tubeSensor',toField='barrelRotation',toNode='upperCylinderMover'),
+            ROUTE(fromField='upperRotation',fromNode='upperCylinderMover',toField='set_rotation',toNode='ruc'),
+            ROUTE(fromField='extendCylinder',fromNode='upperCylinderMover',toField='set_translation',toNode='shrinkCylinder'),
+            ROUTE(fromField='shrinkCylinder',fromNode='upperCylinderMover',toField='set_scale',toNode='shrinkCylinder'),
+            ROUTE(fromField='extendCylinder',fromNode='upperCylinderMover',toField='set_translation',toNode='shrinkCylinderR'),
+            ROUTE(fromField='shrinkCylinder',fromNode='upperCylinderMover',toField='set_scale',toNode='shrinkCylinderR')]),
+          CylinderSensor(DEF='carriage_sensor',description='sensor for upper carriage deflection',maxAngle=.90,minAngle=-.90),
+          ROUTE(fromField='rotation_changed',fromNode='carriage_sensor',toField='set_rotation',toNode='rotateUpperCarriage')])])]),
+    Background(backUrl=["sky2.jpg","https://savage.nps.edu/Savage/Weapons/Guns/sky2.jpg"],frontUrl=["sky2.jpg","https://savage.nps.edu/Savage/Weapons/Guns/sky2.jpg"],leftUrl=["sky2.jpg","https://savage.nps.edu/Savage/Weapons/Guns/sky2.jpg"],rightUrl=["sky2.jpg","https://savage.nps.edu/Savage/Weapons/Guns/sky2.jpg"],topUrl=["sky2.jpg","https://savage.nps.edu/Savage/Weapons/Guns/sky2.jpg"]),
+    Viewpoint(DEF='target',description='as seen from target',orientation=(0,0.995,-0.097,3.14),position=(0,10,-372)),
+    Transform(DEF='theGround',translation=(0,-1.5,0),
+      children=[
+      Transform(scale=(100,.3,100),
+        children=[
+        Inline(url=["../../../Vrml2Sourcebook/Chapter14-ElevationGrid/Figure14.5ElevationGridTerrain.x3d","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter14-ElevationGrid/Figure14.5ElevationGridTerrain.x3d","../../../Vrml2Sourcebook/Chapter14-ElevationGrid/Figure14.5ElevationGridTerrain.wrl","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter14-ElevationGrid/Figure14.5ElevationGridTerrain.wrl"])])]),
+    ROUTE(fromField='isOver',fromNode='wheelSensor',toField='set_enabled',toNode='CLOCK'),
+    ROUTE(fromField='fraction_changed',fromNode='CLOCK',toField='set_fraction',toNode='wheelInterpolator'),
+    ROUTE(fromField='value_changed',fromNode='wheelInterpolator',toField='set_rotation',toNode='leftWheel1'),
+    Transform(DEF='fireTheRound',translation=(5,3,-5),
+      children=[
+      Billboard(DEF='fireMe',
+        children=[
+        Transform(translation=(-1,-.35,0),
+          children=[
+          Shape(
+            geometry=Text(string=["FIRE!"],
+              fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"])),
+            appearance=Appearance(
+              material=Material(emissiveColor=(.9,.9,.9))))]),
+        Shape(
+          geometry=Box(DEF='sign',size=(4,2,.2)),
+          appearance=Appearance(
+            material=Material(transparency=.6),
+            texture=ImageTexture(USE='camo')))]),
+      TouchSensor(DEF='shootRound',description='touch muzzlebreak to shoot round'),
+      TimeSensor(DEF='clock3',cycleInterval=15)]),
+    Transform(DEF='targetSphere',translation=(0,0,-320),
+      children=[
+      Transform(
+        children=[
+        Shape(
+          geometry=Box(size=(10,1,10)),
+          appearance=Appearance(USE='camiPaint')),
+        ProximitySensor(DEF='explosionsoundsensor',size=(200,400,300))]),
+      Sound(DEF='explosionSounds',maxBack=100,maxFront=100,minBack=.01,minFront=.01,
+        source=AudioClip(DEF='explosionSound',description='explosion sound',url=["ShellExplode.au","https://savage.nps.edu/Savage/Weapons/Guns/ShellExplode.au"])),
+      ROUTE(fromField='enterTime',fromNode='explosionsoundsensor',toField='startTime',toNode='explosionSound')]),
+    Transform(scale=(.2,1,.2),translation=(5,0,0),
+      children=[
+      Shape(USE='artyRound')]),
+    Transform(scale=(.2,1,.2),translation=(5.2,0,0),
+      children=[
+      Shape(USE='artyRound')]),
+    Transform(scale=(.2,1,.2),translation=(5.4,0,0),
+      children=[
+      Shape(USE='artyRound')]),
+    Transform(),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='set_startTime',toNode='BoomTimer'),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='set_startTime',toNode='RECOILTIMER'),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='set_startTime',toNode='BOOMCLOCK'),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='set_startTime',toNode='clock3'),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='startTime',toNode='CannonFireSound'),
+    ROUTE(fromField='fraction_changed',fromNode='clock3',toField='set_fraction',toNode='roundPathInterpolator'),
+    ROUTE(fromField='fraction_changed',fromNode='clock3',toField='set_fraction',toNode='roundOrientationInterpolator'),
+    ROUTE(fromField='value_changed',fromNode='roundPathInterpolator',toField='set_translation',toNode='theRound'),
+    ROUTE(fromField='value_changed',fromNode='roundOrientationInterpolator',toField='set_rotation',toNode='theRound'),
+    ROUTE(fromField='touchTime',fromNode='shootRound',toField='set_startTime',toNode='spinTimer'),
+    ROUTE(fromField='fraction_changed',fromNode='spinTimer',toField='set_fraction',toNode='roundSpinner'),
+    ROUTE(fromField='value_changed',fromNode='roundSpinner',toField='set_rotation',toNode='theRoundSpinner')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for M198Howitzer.py")

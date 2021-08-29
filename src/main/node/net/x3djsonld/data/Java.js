@@ -434,4 +434,3 @@ Java.prototype = {
 	}
 }
 new Java().main();
-process.exit(0);

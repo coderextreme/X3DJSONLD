@@ -175,4 +175,3 @@ MyBounce.prototype = {
 	}
 }
 new MyBounce().main();
-process.exit(0);

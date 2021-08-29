@@ -250,4 +250,3 @@ cube.prototype = {
 	}
 }
 new cube().main();
-process.exit(0);

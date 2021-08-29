@@ -1,0 +1,85 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='TailRotor.x3d',name='title'),
+    meta(content='Michael Collins',name='creator'),
+    meta(content='LT Terry D. Norbraten, USN',name='contributor'),
+    meta(content='18 March 2001',name='created'),
+    meta(content='1 January 2019',name='modified'),
+    meta(content='A SH60F tailrotor. Contains four tail blades, capping unit and central drive shaft.',name='description'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ac/sh-60.htm',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/AircraftHelicopters/SH60SeahawkUnitedStates/TailRotor.x3d',name='identifier'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    NavigationInfo(speed=300),
+    #  lower-resolution rotor transitions at 1 km 
+    LOD(range=[3048],
+      children=[
+      Transform(DEF='TailRotor',
+        children=[
+        Transform(rotation=(1,0,0,1.6),translation=(-.1,-.5,.2),
+          children=[
+          Inline(DEF='TailBlade',url=["TailBlade.x3d","https://savage.nps.edu/Savage/AircraftHelicopters/SH60SeahawkUnitedStates/TailBlade.x3d","TailBlade.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/SH60SeahawkUnitedStates/TailBlade.wrl"]),
+          Transform(rotation=(0,0,1,-1.57),translation=(.2,0,0),
+            children=[
+            Inline(USE='TailBlade'),
+            Transform(rotation=(0,0,1,-1.57),translation=(.2,0,0),
+              children=[
+              Inline(USE='TailBlade'),
+              Transform(rotation=(0,0,1,-1.57),translation=(.2,0,0),
+                children=[
+                Inline(USE='TailBlade')])])])]),
+        Transform(scale=(.5,.5,.5),translation=(0,-.8,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=1,radius=.2),
+            appearance=Appearance(
+              material=Material(),))]),
+        Transform(scale=(.3,.3,.3),translation=(-.6,-.5,-.6),
+          children=[
+          Inline(url=["Head.x3d","https://savage.nps.edu/Savage/AircraftHelicopters/SH60SeahawkUnitedStates/Head.x3d","Head.wrl","https://savage.nps.edu/Savage/AircraftHelicopters/SH60SeahawkUnitedStates/Head.wrl"])])]),
+      WorldInfo(info=["null node"])]),
+    Background(groundAngle=[1.309,1.570796],groundColor=[(0.1,0.1,0),(0.4,0.25,0.2),(0.6,0.6,0.6)],skyAngle=[1.309,1.571],skyColor=[(0,0.2,0.7),(0,0.5,1),(1,1,1)]),
+    OrientationInterpolator(DEF='RotorPath',key=[0,0.5,1],keyValue=[(0,1,0,0),(0,1,0,3.14),(0,1,0,6.28)]),
+    TimeSensor(DEF='Clock',cycleInterval=.3,loop=True),
+    ROUTE(fromField='fraction_changed',fromNode='Clock',toField='set_fraction',toNode='RotorPath'),
+    ROUTE(fromField='value_changed',fromNode='RotorPath',toField='set_rotation',toNode='TailRotor')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for TailRotor.py")

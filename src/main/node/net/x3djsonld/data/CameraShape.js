@@ -281,4 +281,3 @@ CameraShape.prototype = {
 	}
 }
 new CameraShape().main();
-process.exit(0);

@@ -262,4 +262,3 @@ DiamondManLOA0.prototype = {
 	}
 }
 new DiamondManLOA0().main();
-process.exit(0);

@@ -208,4 +208,3 @@ HelloWorldCommented.prototype = {
 	}
 }
 new HelloWorldCommented().main();
-process.exit(0);

@@ -156,4 +156,3 @@ asmallbox.prototype = {
 	}
 }
 new asmallbox().main();
-process.exit(0);

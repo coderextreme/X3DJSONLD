@@ -151,4 +151,3 @@ plainflowers.prototype = {
 	}
 }
 new plainflowers().main();
-process.exit(0);

@@ -935,23 +935,6 @@
         }
       ]
     },
-    "SceneGraphStructureStatement": {
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/definitions/-childStatements"
-        },
-        "IS": {
-          "$ref": "#/definitions/IS"
-        },
-        "@class": {
-          "pattern": "^(\\s|\\S)*$",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
     "Anchor": {
       "type": "object",
       "oneOf": [

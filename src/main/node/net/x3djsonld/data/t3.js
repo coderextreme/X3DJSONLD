@@ -254,4 +254,3 @@ t3.prototype = {
 	}
 }
 new t3().main();
-process.exit(0);

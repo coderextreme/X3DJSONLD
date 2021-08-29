@@ -240,4 +240,3 @@ HelloWorld.prototype = {
 	}
 }
 new HelloWorld().main();
-process.exit(0);

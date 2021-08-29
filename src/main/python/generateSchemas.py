@@ -71,8 +71,8 @@ for version in versions:
 print(f"3.3, HelloWorld.json")
 os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.json')
 
-print(f"4.0, AllAudioGraphNodesTest.json")
-os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.json')
+print(f"3.3, KelpForestExhibit.json")
+os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json')
 
 print(f"3.3, CADPartChildTransformationAlternativeB.json")
 os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeB.json')

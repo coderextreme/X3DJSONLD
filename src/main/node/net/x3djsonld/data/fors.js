@@ -229,4 +229,3 @@ fors.prototype = {
 	}
 }
 new fors().main();
-process.exit(0);

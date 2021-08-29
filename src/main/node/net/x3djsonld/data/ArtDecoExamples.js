@@ -706,4 +706,3 @@ ArtDecoExamples.prototype = {
 	}
 }
 new ArtDecoExamples().main();
-process.exit(0);

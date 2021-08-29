@@ -3,6 +3,7 @@ package net.x3djsonld.data;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
+import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Navigation.*;
@@ -44,7 +45,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 August 2021 </td>
+			<td> 7 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -104,7 +105,7 @@ public class SpatialAudioCameraAnimation
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 August 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("7 August 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
@@ -112,14 +113,11 @@ public class SpatialAudioCameraAnimation
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("SpatialAudioCameraAnimation.x3d"))
     .addChild(new NavigationInfo().setHtmlID("NAV"))
-    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png"}))
-    .addChild(new Viewpoint("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setJump(TRUE).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000).setZFar("0"
-// [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint zFar: $isNumeric=true, $attributeType=, value='0']
-).setZNear("1.000000"
-// [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint zNear: $isNumeric=true, $attributeType=, value='1.000000']
-))
-    .addChild(new TimeSensor("TIMER").setCycleInterval(33.333332).setLoop(TRUE))
+    .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}))
+    .addChild(new Viewpoint("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setFarDistance(0).setNearDistance(1.000000).setOrientation(1.000000,0.000000,-0.000000,-0.523599).setPosition(0.000000,2000.000000,3500.000000))
+    .addChild(new TimeSensor("TIMER").setCycleInterval(33.333332).setLoop(true))
     .addChild(new PositionInterpolator("Camera001-POS-INTERP").setKey(new double[] {0.0,0.25,0.5,0.75,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,2000.0,3500.0,0.0,2000.0,0.0,0.0,2000.0,-3500.0,0.0,2000.0,0.0,0.0,2000.0,3500.0})))
     .addChild(new OrientationInterpolator("Camera001-ROT-INTERP").setKey(new double[] {0.0,0.25,0.5,0.75,1.0}).setKeyValue(new MFRotation(new double[] {1.000000,0.000000,-0.000000,-0.523599,0.999990,0.003554,0.002727,-1.309007,0.000000,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.608760,-3.135645,1.000000,-0.000001,-0.000000,-0.523599})))
     .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("Camera001-POS-INTERP").setToField("set_fraction"))
@@ -130,73 +128,39 @@ public class SpatialAudioCameraAnimation
       .addChild(new Shape()
         .setAppearance(new Appearance("WireColor")
           .setMaterial(new Material().setDiffuseColor(0.122,0.114,0.125)))
-        .setBox(new box().setSize("2000 1 2000"
-// [*** X3dToJava.xslt error: encountered incorrect type, box size: $isNumeric=true, $attributeType=, value='2000 1 2000']
-))))
-    .addChild(new Transform("Audio1").setTranslation(-933.123474,0.000000,-926.253235)
+        .setGeometry(new Box().setSize(2000.0,1.0,2000.0))))
+    .addChild(new Transform("Audio1Transform").setTranslation(-933.123474,0.000000,-926.253235)
       .addChild(new Shape()
         .setAppearance(new Appearance("WireColor_1")
           .setMaterial(new Material().setDiffuseColor(0.690196,0.101961,0.101961)))
-        .setSphere(new sphere().setRadius(100)))
+        .setGeometry(new Sphere().setRadius(100)))
       .addChild(new Billboard()
         .addChild(new Transform("violin").setRotation(1.0,0.0,0.0,-0.5).setScale(100.0,100.0,100.0).setTranslation(0.0,100.0,0.0)
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setAmbientintensity("0.0933"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
-).setDiffusecolor("1 1 1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
-).setEmissivecolor("0 0 0"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
-).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
-)))
-            .setGeometry(new Text().setCcw(true).setLit("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
-).setString(new String[] {"Violin"}).setUsegeocache("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
-)
-              .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
-)))))))
+              .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
+            .setGeometry(new Text().setCcw(true).setString(new String[] {"Violin"})
+              .setFontStyle(new FontStyle().setCssStyle("BOLD")))))))
     .addChild(new Transform("Audio2").setTranslation(933.475586,0.000000,924.423218)
       .addChild(new Shape()
         .setAppearance(new Appearance("WireColor_2")
           .setMaterial(new Material().setDiffuseColor(0.105882,0.694118,0.580392)))
-        .setSphere(new sphere().setRadius(100)))
+        .setGeometry(new Sphere().setRadius(100)))
       .addChild(new Billboard()
         .addChild(new Transform("saxophone").setRotation(1.0,0.0,0.0,-0.5).setScale(100.0,100.0,100.0).setTranslation(0.0,100.0,0.0)
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setAmbientintensity("0.0933"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
-).setDiffusecolor("1 1 1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
-).setEmissivecolor("0 0 0"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
-).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
-)))
-            .setGeometry(new Text().setCcw(true).setLit("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
-).setString(new String[] {"Saxophone"}).setUsegeocache("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
-)
-              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
-)))))))
+              .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
+            .setGeometry(new Text().setCcw(true).setString(new String[] {"Saxophone"})
+              .setFontStyle(new FontStyle().setFamily(new String[] {"Times"}).setCssStyle("BOLD")))))))
     .addChild(new ListenerPointSource().setHtmlID("ListenerPointSource").setTrackCurrentView(true))
-    .addChild(new AudioDestination().setHtmlID("AudioDestination")
-      .addChild(new SpatialSound().setUSE("Audio1").setConeInnerAngle(6.28319).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound1").setMaxDistance(3500)
+    .addChild(new StreamAudioDestination().setHtmlID("AudioDestination")
+      .addChild(new SpatialSound("Audio1").setHtmlID("SpatialSound1")
         .addChild(new Gain().setHtmlID("Gain1")
-          .setSource(new AudioClip().setHtmlID("AudioClip1").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3"}))))
-      .addChild(new SpatialSound().setUSE("Audio2").setConeInnerAngle(6.28319).setConeOuterAngle(0).setDistanceModel("linear").setEnableHRTF(true).setHtmlID("SpatialSound2").setMaxDistance(3500)
+          .setSource(new AudioClip().setHtmlID("AudioClip1").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}))))
+      .addChild(new SpatialSound("Audio2").setHtmlID("SpatialSound2")
         .addChild(new Gain().setHtmlID("Gain2")
-          .setSource(new AudioClip().setHtmlID("AudioClip2").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/saxophone.mp3"}))))));
+          .setSource(new AudioClip().setHtmlID("AudioClip2").setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(new String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}))))));
     }
 	// end of initialize() method
 

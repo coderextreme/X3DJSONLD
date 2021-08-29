@@ -886,4 +886,3 @@ KoreanCharacter04Young.prototype = {
 	}
 }
 new KoreanCharacter04Young().main();
-process.exit(0);

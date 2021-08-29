@@ -192,4 +192,3 @@ HeadsUpDisplayExample.prototype = {
 	}
 }
 new HeadsUpDisplayExample().main();
-process.exit(0);

@@ -151,4 +151,3 @@ glflowers.prototype = {
 	}
 }
 new glflowers().main();
-process.exit(0);

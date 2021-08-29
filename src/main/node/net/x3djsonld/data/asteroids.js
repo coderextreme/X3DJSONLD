@@ -143,4 +143,3 @@ asteroids.prototype = {
 	}
 }
 new asteroids().main();
-process.exit(0);

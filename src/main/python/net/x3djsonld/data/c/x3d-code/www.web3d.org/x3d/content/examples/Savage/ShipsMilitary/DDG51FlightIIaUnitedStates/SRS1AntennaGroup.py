@@ -1,0 +1,354 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='SRS1AntennaGroup.x3d',name='title'),
+    meta(content='DDG-51 Flight IIA SRS-1 Antenna Group',name='description'),
+    meta(content='LT Joe Sears, USN',name='creator'),
+    meta(content='5 September 2003',name='created'),
+    meta(content='22 August 2018',name='modified'),
+    meta(content='http://combatindex.com/store/3d',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/ddg-51.htm',name='drawing'),
+    meta(content='https://savage.nps.edu/Savage/ShipsMilitary/DDG51FlightIIaUnitedStates/SRS1AntennaGroup.x3d',name='identifier'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    Group(DEF='AntennaGroup',
+      children=[
+      Transform(DEF='FWDWhip',rotation=(1,0,0,.2),translation=(0,9.5,-46),
+        children=[
+        Transform(
+          children=[
+          Shape(DEF='Base',
+            geometry=Extrusion(crossSection=[(-.2,0),(-.2,.25),(.2,.25),(.2,0),(-.2,0)],orientation=[(1,0,0,0),(1,0,0,0)],scale=[(1,1),(1,1)],spine=[(0,0,0),(0,.5,0)]),
+            appearance=Appearance(DEF='HazeGray',
+              material=Material(specularColor=(.4,.4,.4)))),
+          Transform(translation=(0,1.25,.1),
+            children=[
+            Shape(DEF='WhipPole',
+              appearance=Appearance(
+                material=Material(diffuseColor=(.2,.2,.2))),
+              geometry=Cylinder(radius=.02))])])]),
+      Transform(DEF='AftWhip',rotation=(1,0,0,.2),translation=(0,9.5,-24.5),
+        children=[
+        Transform(
+          children=[
+          Shape(USE='Base'),
+          Transform(translation=(0,1.25,.1),
+            children=[
+            Shape(USE='WhipPole')])])]),
+      Transform(DEF='STBD8',rotation=(0,1,0,-1.57),translation=(4,1,-.55),
+        children=[
+        Transform(rotation=(1,0,0,1.57),
+          children=[
+          Transform(rotation=(0,0,1,-1.57),
+            children=[
+            Shape(DEF='Antenna',
+              geometry=Extrusion(creaseAngle=3.14,crossSection=[(-.2,0),(-.19,.03),(-.18,.05),(-.16,.06),(.16,.06),(.18,.05),(.19,.03),(.2,0),(.19,-.03),(.18,-.05),(.16,-.06),(-.16,-.06),(-.18,-.05),(-.19,-.03),(-.2,0)],orientation=[(1,0,0,0),(1,0,0,0)],scale=[(1,1),(1,1)],spine=[(0,0,0),(0,.12,0)]),
+              appearance=Appearance(USE='HazeGray')),
+            Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+              children=[
+              Shape(DEF='AntennaSupport',
+                appearance=Appearance(USE='HazeGray'),
+                geometry=Box(size=(.1,.19,.02))),
+              Transform(translation=(0,0,-.2),
+                children=[
+                Shape(USE='AntennaSupport')])])])]),
+        Transform(translation=(0,.3,0),
+          children=[
+          Shape(DEF='AntennaGuard',
+            appearance=Appearance(USE='HazeGray'),
+            geometry=Extrusion(crossSection=[(-.05,0),(0,.05),(.05,0),(0,-.05),(-.05,0)],scale=[(1,1),(1,1),(1,1),(1,1)],spine=[(-.2,0,.6),(.4,0,.3),(.4,0,-.3),(-.2,0,-.6)]))]),
+        Transform(translation=(0,-.3,0),
+          children=[
+          Shape(USE='AntennaGuard')])]),
+      Transform(DEF='Port8',rotation=(0,1,0,-1.57),translation=(-4,1,-.55),
+        children=[
+        Transform(rotation=(1,0,0,1.57),
+          children=[
+          Transform(rotation=(0,0,1,-1.57),
+            children=[
+            Shape(USE='Antenna'),
+            Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+              children=[
+              Shape(USE='AntennaSupport'),
+              Transform(translation=(0,0,-.2),
+                children=[
+                Shape(USE='AntennaSupport')])])])]),
+        Transform(translation=(0,.3,0),
+          children=[
+          Shape(USE='AntennaGuard')]),
+        Transform(translation=(0,-.3,0),
+          children=[
+          Shape(USE='AntennaGuard')])]),
+      Transform(DEF='STBD7',translation=(7.23,1,-8),
+        children=[
+        Transform(rotation=(0,1,0,-.12),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])]),
+          Transform(translation=(0,.3,0),
+            children=[
+            Shape(USE='AntennaGuard')]),
+          Transform(translation=(0,-.3,0),
+            children=[
+            Shape(USE='AntennaGuard')])])]),
+      Transform(DEF='Port7',translation=(-7.21,1,-8),
+        children=[
+        Transform(rotation=(0,1,0,-3.02),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])]),
+          Transform(translation=(0,.3,0),
+            children=[
+            Shape(USE='AntennaGuard')]),
+          Transform(translation=(0,-.3,0),
+            children=[
+            Shape(USE='AntennaGuard')])])]),
+      Transform(DEF='STBD6',translation=(9.08,1,-22),
+        children=[
+        Transform(rotation=(0,1,0,-.12),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])]),
+          Transform(translation=(0,.3,0),
+            children=[
+            Shape(USE='AntennaGuard')]),
+          Transform(translation=(0,-.3,0),
+            children=[
+            Shape(USE='AntennaGuard')])])]),
+      Transform(DEF='Port6',translation=(-9.06,1,-22),
+        children=[
+        Transform(rotation=(0,1,0,-3.02),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])]),
+          Transform(translation=(0,.3,0),
+            children=[
+            Shape(USE='AntennaGuard')]),
+          Transform(translation=(0,-.3,0),
+            children=[
+            Shape(USE='AntennaGuard')])])]),
+      Transform(DEF='STBD5',translation=(9.75,8,-32),
+        children=[
+        Transform(
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='Port5',translation=(-9.715,8,-32),
+        children=[
+        Transform(rotation=(0,1,0,-3.14),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='STBD4',translation=(9.78,7,-84),
+        children=[
+        Transform(
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='Port4',translation=(-9.745,7,-84),
+        children=[
+        Transform(rotation=(0,1,0,-3.14),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='STBD3',translation=(9.78,7,-100),
+        children=[
+        Transform(
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='Port3',translation=(-9.745,7,-100),
+        children=[
+        Transform(rotation=(0,1,0,-3.14),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='STBD2',rotation=(0,1,0,.8),translation=(3.9,12,-104.5),
+        children=[
+        Transform(
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='Port2',rotation=(0,1,0,-.8),translation=(-3.9,12,-104.5),
+        children=[
+        Transform(rotation=(0,1,0,-3.14),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='STBD1',rotation=(0,0,1,1.45),translation=(7.9,7.6,-134),
+        children=[
+        Transform(rotation=(1,0,0,.3),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])]),
+      Transform(DEF='Port1',rotation=(0,0,1,1.45),translation=(-7.8,7.6,-134),
+        children=[
+        Transform(rotation=(1,0,0,-.3),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Transform(rotation=(0,0,1,-1.57),
+              children=[
+              Shape(USE='Antenna'),
+              Transform(rotation=(0,1,0,1.57),translation=(.1,0,0),
+                children=[
+                Shape(USE='AntennaSupport'),
+                Transform(translation=(0,0,-.2),
+                  children=[
+                  Shape(USE='AntennaSupport')])])])])])])])])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for SRS1AntennaGroup.py")

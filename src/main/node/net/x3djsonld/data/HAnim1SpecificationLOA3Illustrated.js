@@ -2630,4 +2630,3 @@ HAnim1SpecificationLOA3Illustrated.prototype = {
 	}
 }
 new HAnim1SpecificationLOA3Illustrated().main();
-process.exit(0);

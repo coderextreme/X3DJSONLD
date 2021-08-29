@@ -926,4 +926,3 @@ KoreanCharacter01Jin.prototype = {
 	}
 }
 new KoreanCharacter01Jin().main();
-process.exit(0);

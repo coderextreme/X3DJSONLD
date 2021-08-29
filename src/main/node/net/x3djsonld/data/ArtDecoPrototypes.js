@@ -280,4 +280,3 @@ ArtDecoPrototypes.prototype = {
 	}
 }
 new ArtDecoPrototypes().main();
-process.exit(0);

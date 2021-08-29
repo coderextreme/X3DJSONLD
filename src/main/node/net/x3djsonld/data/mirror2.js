@@ -235,4 +235,3 @@ mirror2.prototype = {
 	}
 }
 new mirror2().main();
-process.exit(0);

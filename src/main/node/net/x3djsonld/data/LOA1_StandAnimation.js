@@ -315,4 +315,3 @@ LOA1_StandAnimation.prototype = {
 	}
 }
 new LOA1_StandAnimation().main();
-process.exit(0);
