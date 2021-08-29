@@ -191,4 +191,3 @@ indexedfaceset_pixeltexture_entire.prototype = {
 	}
 }
 new indexedfaceset_pixeltexture_entire().main();
-process.exit(0);

@@ -9,7 +9,7 @@
     "axios": ">=0.21.1",
     "express": "*",
     "glob": "*",
-    "java": "^0.12.2",
+    "java": "^0.12.1",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",

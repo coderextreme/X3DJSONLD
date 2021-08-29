@@ -228,4 +228,3 @@ indexedfaceset_pixeltexture_whole.prototype = {
 	}
 }
 new indexedfaceset_pixeltexture_whole().main();
-process.exit(0);

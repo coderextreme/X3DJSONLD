@@ -277,4 +277,3 @@ pp3.prototype = {
 	}
 }
 new pp3().main();
-process.exit(0);

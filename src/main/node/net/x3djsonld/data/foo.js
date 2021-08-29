@@ -1198,4 +1198,3 @@ foo.prototype = {
 	}
 }
 new foo().main();
-process.exit(0);

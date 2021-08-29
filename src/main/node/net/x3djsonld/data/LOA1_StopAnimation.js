@@ -310,4 +310,3 @@ LOA1_StopAnimation.prototype = {
 	}
 }
 new LOA1_StopAnimation().main();
-process.exit(0);

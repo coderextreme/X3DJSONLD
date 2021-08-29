@@ -223,4 +223,3 @@ indexedfaceset_pixeltexture_plus.prototype = {
 	}
 }
 new indexedfaceset_pixeltexture_plus().main();
-process.exit(0);

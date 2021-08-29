@@ -222,4 +222,3 @@ ball.prototype = {
 	}
 }
 new ball().main();
-process.exit(0);

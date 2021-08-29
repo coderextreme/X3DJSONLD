@@ -173,4 +173,3 @@ geo.prototype = {
 	}
 }
 new geo().main();
-process.exit(0);

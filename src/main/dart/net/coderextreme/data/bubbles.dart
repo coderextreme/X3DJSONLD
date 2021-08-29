@@ -7,10 +7,7 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('EnvironmentalEffects'),
-              level_ : 1),
+          /*component name='EnvironmentalEffects' level='1'/*/
           component_ : 
             component(
               name_ : SFString('EnvironmentalEffects'),

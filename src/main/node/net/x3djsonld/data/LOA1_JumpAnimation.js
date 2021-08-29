@@ -370,4 +370,3 @@ LOA1_JumpAnimation.prototype = {
 	}
 }
 new LOA1_JumpAnimation().main();
-process.exit(0);

@@ -1310,4 +1310,3 @@ NancyPrototypes.prototype = {
 	}
 }
 new NancyPrototypes().main();
-process.exit(0);

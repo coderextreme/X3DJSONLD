@@ -5,11 +5,12 @@
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-        "component": [
+        "-children":[
           {
-            "@name":"EnvironmentalEffects",
-            "@level":1
-          },
+            "#comment":"component name='EnvironmentalEffects' level='1'/"
+          }
+        ],
+        "component": [
           {
             "@name":"EnvironmentalEffects",
             "@level":3
@@ -62,7 +63,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 August 2021"
+            "@content":"28 August 2021"
           },
           {
             "@name":"generator",

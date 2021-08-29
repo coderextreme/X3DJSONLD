@@ -1,0 +1,94 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='ViewPositionOrientationHUD.x3d',name='title'),
+    meta(content='ViewPositionOrientation Heads-Up Display (HUD) to show position and orientation on screen. Drag to move, click text to toggle console trace. Used as an Inline node, assumes local coordinate system where invoked.',name='description'),
+    meta(content='Don Brutzman',name='creator'),
+    meta(content='13 June 2004',name='created'),
+    meta(content='14 January 2014',name='modified'),
+    meta(content='https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/ViewPositionOrientationHUD.x3d',name='identifier'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    ExternProtoDeclare(name='HeadsUpDisplay',url=["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"],
+      field=[
+      field(accessType='inputOutput',appinfo='Displayed subscene positioned as a HUD.',name='children',type='MFNode'),
+      field(accessType='inputOutput',appinfo='Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.',name='dragChildren',type='MFNode'),
+      field(accessType='initializeOnly',appinfo='Modified screen location and distance (for size).',name='locationOffset',type='SFVec3f'),
+      field(accessType='initializeOnly',appinfo='Enable/disable console output for troubleshooting.',name='traceEnabled',type='SFBool')]),
+    ExternProtoDeclare(appinfo='ViewPositionOrientation prototype provides local position and orientation as user navigates with optional console output',name='ViewPositionOrientation',url=["../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
+      field=[
+      field(accessType='inputOutput',appinfo='Whether or not ViewPositionOrientation sends output to console.',name='enabled',type='SFBool'),
+      field(accessType='initializeOnly',appinfo='Output internal trace messages for debugging this node - developer use only can be ignored.',name='traceEnabled',type='SFBool'),
+      field(accessType='inputOnly',appinfo='Ability to turn output tracing on/off at runtime.',name='set_traceEnabled',type='SFBool'),
+      field(accessType='outputOnly',appinfo='Output local position.',name='position_changed',type='SFVec3f'),
+      field(accessType='outputOnly',appinfo='Output local orientation.',name='orientation_changed',type='SFRotation'),
+      field(accessType='outputOnly',appinfo='MFString value of new Viewpoint for example: <Viewpoint position="20 15 20" orientation="-0.516 0.83 0.212 0.9195"/>',name='outputViewpointString',type='MFString')]),
+    #  ==================== 
+    ProtoInstance(name='HeadsUpDisplay',
+      fieldValue=[
+      fieldValue(name='children',
+        children=[
+        Group(
+          children=[
+          Shape(
+            appearance=Appearance(
+              material=Material(diffuseColor=(0,1,1),emissiveColor=(0,0.1,0.1))),
+            geometry=Text(DEF='DisplayText',string=["ViewPositionOrientationHUD"],
+              fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.4))),
+          TouchSensor(DEF='TraceToggleTouchSensor',description='toggle console trace'),
+          BooleanToggle(DEF='TraceToggle')])]),
+      fieldValue(name='dragChildren',
+        children=[
+        Transform(translation=(0,-0.1,-0.1),
+          children=[
+          Shape(
+            geometry=Box(size=(11,0.45,0.001)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(1,1,1),transparency=0.95)))])]),
+      fieldValue(name='locationOffset',value=(0,-3,0))]),
+    ProtoInstance(DEF='VPO',name='ViewPositionOrientation',
+      fieldValue=[
+      fieldValue(name='enabled',value=True),
+      fieldValue(name='traceEnabled',value=False)]),
+    ROUTE(fromField='outputViewpointString',fromNode='VPO',toField='string',toNode='DisplayText'),
+    ROUTE(fromField='isActive',fromNode='TraceToggleTouchSensor',toField='set_boolean',toNode='TraceToggle'),
+    ROUTE(fromField='toggle_changed',fromNode='TraceToggle',toField='set_traceEnabled',toNode='VPO')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for ViewPositionOrientationHUD.py")

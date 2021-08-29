@@ -41,10 +41,7 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
-          component : new SFNode(
-            new component({
-              name : new SFString("EnvironmentalEffects"),
-              level : new SFInt32(1)})),
+          /*component name='EnvironmentalEffects' level='1'/*/
           component : new SFNode(
             new component({
               name : new SFString("EnvironmentalEffects"),

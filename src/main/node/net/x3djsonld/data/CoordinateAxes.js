@@ -230,4 +230,3 @@ CoordinateAxes.prototype = {
 	}
 }
 new CoordinateAxes().main();
-process.exit(0);

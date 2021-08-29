@@ -186,4 +186,3 @@ qq3.prototype = {
 	}
 }
 new qq3().main();
-process.exit(0);

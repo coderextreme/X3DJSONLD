@@ -139,4 +139,3 @@ ifscube.prototype = {
 	}
 }
 new ifscube().main();
-process.exit(0);

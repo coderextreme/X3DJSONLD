@@ -155,4 +155,3 @@ sphereflowers.prototype = {
 	}
 }
 new sphereflowers().main();
-process.exit(0);

@@ -1,12 +1,9 @@
-VERSION = "2.15.0"
-import re
+VERSION = "2.15.1"
+import re, pickle
 from fastjsonschema import JsonSchemaValueException
 
 
-REGEX_PATTERNS = {
-    "uri-reference_re_pattern": re.compile(r"^(\w+:(\/?\/?))?[^#\\\s]*(#[^\\\s]*)?\Z"),
-    "uri_re_pattern": re.compile(r"^\w+:(\/?\/?)[^\s]+\Z")
-}
+REGEX_PATTERNS = pickle.loads(b"\x80\x04\x95\x93\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\x18uri-reference_re_pattern\x94\x8c\x02re\x94\x8c\x08_compile\x94\x93\x94\x8c'^(\\w+:(\\/?\\/?))?[^#\\\\\\s]*(#[^\\\\\\s]*)?\\Z\x94K \x86\x94R\x94\x8c\x0euri_re_pattern\x94h\x04\x8c\x15^\\w+:(\\/?\\/?)[^\\s]+\\Z\x94K \x86\x94R\x94u.")
 
 NoneType = type(None)
 

@@ -1,0 +1,416 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='DD963Spruance.x3d',name='title'),
+    meta(content='Complete Spruance Class Destroyer',name='description'),
+    meta(content='LT Josh Hansen',name='creator'),
+    meta(content='17 September 2001',name='created'),
+    meta(content='14 January 2014',name='modified'),
+    meta(content='https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/DD963Spruance.x3d',name='identifier'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/dd-963.htm',name='reference'),
+    meta(content='http://www.inetworld.net/txo/evolution.htm',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/dd-963_i.htm',name='reference'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    Viewpoint(description='DD963 Spruance',orientation=(0,1,0,-1.78),position=(-120,0,20)),
+    Viewpoint(description='Aft',orientation=(0,1,0,3.14),position=(0,0,-75)),
+    Viewpoint(description='Forward',position=(0,0,160)),
+    Viewpoint(description='Above',orientation=(1,0,0,-1.57),position=(0,175,50)),
+    Viewpoint(description='Starboard Quarter',orientation=(0,1,0,3.89),position=(-50,0,-50)),
+    Viewpoint(description='Port Quarter',orientation=(0,1,0,-3.89),position=(50,0,-50)),
+    Viewpoint(description='Bridge',orientation=(0,1,0,3.14),position=(0,7,80)),
+    Transform(scale=(1,1,.82),
+      children=[
+      Group(DEF='DD963_Hull',
+        children=[
+        Transform(rotation=(0,0,1,3.14),scale=(1,1.25,1),translation=(.1,0,20),
+          children=[
+          Shape(
+            geometry=Extrusion(creaseAngle=.9,crossSection=[(0,0),(8.5,0),(8.5,-5),(7.5,-8),(5.7,-10),(-5.7,-10),(-7.5,-8),(-8.5,-5),(-8.5,0),(0,0)],spine=[(0,5,25),(0,5,50),(0,5,75),(0,5,90)]),
+            appearance=Appearance(
+              material=Material(DEF='Haze_Grey',diffuseColor=(.62,.639,.612))))]),
+        Transform(rotation=(0,1,0,3.14),scale=(1,1.25,1),translation=(.1,-12.5,100),
+          children=[
+          Shape(
+            geometry=Extrusion(creaseAngle=.9,crossSection=[(0,0),(8.5,0),(8.5,-5),(7.5,-8),(5.7,-10),(-5.7,-10),(-7.5,-8),(-8.5,-5),(-8.5,0),(0,0)],scale=[(1,1),(.80,1),(.62,1),(.48,1),(.30,1),(.15,1)],spine=[(0,5,-10),(0,5,-20),(0,5,-30),(0,5,-40),(0,5,-50),(0,5,-60)]),
+            appearance=Appearance(
+              material=Material(USE='Haze_Grey')))]),
+        Transform(rotation=(0,0,0,3.14),scale=(1,1.25,1),translation=(0,-2.5,100),
+          children=[
+          Transform(rotation=(1,0,0,3.14),translation=(0,-.25,0),
+            children=[
+            Shape(
+              geometry=Extrusion(creaseAngle=.9,crossSection=[(0,0),(8.5,0),(8.5,-5),(-8.5,-5),(-8.5,0),(0,0)],scale=[(1,0.01),(0.8,0.1),(0.62,0.2),(0.45,0.27),(0.3,0.37),(0.15,0.5),(0.06,0.55),(0.01,0.6)],spine=[(0,5,-10),(0,5,-20),(0,5,-30),(0,5,-40),(0,5,-50),(0,5,-60),(0,5,-63),(0,5,-66)]),
+              appearance=Appearance(
+                material=Material(USE='Haze_Grey')))])]),
+        Transform(scale=(1,1.25,1),translation=(0,-8.85,160),
+          children=[
+          Transform(rotation=(0,1,0,3.14),
+            children=[
+            Shape(
+              geometry=Extrusion(creaseAngle=.9,crossSection=[(0,0),(8.5,0),(8.5,-5),(7.5,-8),(5.7,-10),(-5.7,-10),(-7.5,-8),(-8.5,-5),(-8.5,0),(0,0)],scale=[(0.15,1),(0.10,0.6),(0.08,0.4),(0.06,0.3),(0.04,0.2),(0.03,0.1),(0.01,0.01)],spine=[(0,0,0),(0,0,-1),(0,0,-2),(0,0,-3),(0,0,-4),(0,0,-5),(0,0,-6)]),
+              appearance=Appearance(
+                material=Material(USE='Haze_Grey')))]),
+          Transform(translation=(0,-10,-2.5),
+            children=[
+            Shape(
+              geometry=Sphere(radius=3.5),
+              appearance=Appearance(
+                material=Material(diffuseColor=(.1,.1,.1)))),
+            Transform(rotation=(1,0,0,-.78),translation=(0,1.,-1.),
+              children=[
+              Shape(
+                geometry=Cylinder(height=2.5,radius=3.3),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(.1,.1,.1))))]),
+            Transform(rotation=(1,0,0,-.78),translation=(0,3.6,-3.6),
+              children=[
+              Shape(
+                geometry=Cone(bottomRadius=3.3,height=5),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(.1,.1,.1))))])])]),
+        Transform(rotation=(0,0,1,3.14),scale=(1,1.25,1),translation=(0,-12.5,-55),
+          children=[
+          Transform(rotation=(1,0,0,.05),
+            children=[
+            Shape(
+              geometry=Extrusion(creaseAngle=.9,crossSection=[(8.5,-5),(7.5,-8),(5.7,-10),(-5.7,-10),(-7.5,-8),(-8.5,-5)],scale=[(1,.2),(1,.4),(1,.6),(1,.8),(1,1)],spine=[(0,0,20),(0,0,40),(0,0,60),(0,0,80),(0,0,100)]),
+              appearance=Appearance(
+                material=Material(USE='Haze_Grey')))])]),
+        Transform(scale=(1,1.25,1),translation=(0,0,65),
+          children=[
+          Shape(
+            geometry=Extrusion(crossSection=[(0,0),(8.5,0),(8.5,-5),(-8.5,-5),(-8.5,0),(0,0)],spine=[(0,-5,-20),(0,-5,-40),(0,-5,-60),(0,-5,-75)]),
+            appearance=Appearance(
+              material=Material(USE='Haze_Grey')))]),
+        Transform(scale=(1,1.25,1),translation=(0,0,45),
+          children=[
+          Shape(
+            geometry=Extrusion(crossSection=[(8.5,-2.5),(8.5,-5),(-8.5,-5),(-8.5,-2.5),(8.5,-2.5)],spine=[(0,-5,-20),(0,-5,-40),(0,-5,-60),(0,-5,-80)]),
+            appearance=Appearance(
+              material=Material(USE='Haze_Grey')))])]),
+      Transform(DEF='Forward_5in',rotation=(0,1,0,-1.57),scale=(.8,.8,.8),translation=(-2,-3.75,130),
+        children=[
+        Inline(DEF='FiveInchGun',url=["FiveInchGun.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/FiveInchGun.wrl","FiveInchGun.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/FiveInchGun.x3d"])]),
+      Transform(DEF='AFT_5in',rotation=(0,1,0,1.57),scale=(.8,.8,.8),translation=(2,-7,-22),
+        children=[
+        Inline(USE='FiveInchGun')]),
+      Transform(DEF='Props',rotation=(0,1,0,3.14),scale=(1.5,1.5,1.5),translation=(-2.5,-18,-28),
+        children=[
+        Transform(rotation=(1,0,0,.17),
+          children=[
+          Inline(url=["../DDGArleighBurkeUnitedStates/Propellers.wrl","https://savage.nps.edu/Savage/ShipsMilitary//DDGArleighBurkeUnitedStates/Propellers.wrl","../DDGArleighBurkeUnitedStates/Propellers.x3d","https://savage.nps.edu/Savage/ShipsMilitary//DDGArleighBurkeUnitedStates/Propellers.x3d"])])]),
+      Transform(DEF='Bridge',rotation=(0,1,0,3.14),scale=(1.1,1,1.2),translation=(0,-6.7,108),
+        children=[
+        Inline(url=["Bridge.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/Bridge.wrl","Bridge.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/Bridge.x3d"])]),
+      Transform(DEF='VLS',rotation=(1,0,0,3.14),scale=(1.5,1.5,1.5),translation=(0,-2.25,117),
+        children=[
+        Inline(url=["VerticalLaunchSystem.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/VerticalLaunchSystem.wrl","VerticalLaunchSystem.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/VerticalLaunchSystem.x3d"])]),
+      Transform(DEF='Sea_Sparrow',rotation=(0,1,0,3.14),scale=(1.5,1.5,1.5),translation=(0,-5.3,0),
+        children=[
+        Inline(url=["SeaSparrowBox.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/SeaSparrowBox.wrl","SeaSparrowBox.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/SeaSparrowBox.x3d"])]),
+      Transform(DEF='Helo_Deck',rotation=(0,1,0,3.14),scale=(1.2,1.5,1.50),translation=(0,-4.25,2.5),
+        children=[
+        Inline(url=["HeloDeck.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/HeloDeck.wrl","HeloDeck.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/HeloDeck.x3d"])]),
+      Transform(DEF='Helo_Hanger',scale=(1.2,1.5,2),translation=(0,-4.25,55),
+        children=[
+        Inline(url=["HeloHanger.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963-SpruanceHeloHanger-UnitedStates/HeloHanger.wrl","HeloHanger.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/HeloHanger.x3d"]),
+        Transform(translation=(-5.25,11,-6.65),
+          children=[
+          Shape(
+            geometry=Box(size=(4.5,3,3.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6))))]),
+        Transform(translation=(3,11,-11),
+          children=[
+          Shape(
+            geometry=Box(size=(3,3,5)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6)))),
+          Transform(translation=(1.1,2.5,0),
+            children=[
+            Shape(
+              geometry=Box(size=(5,2,5)),
+              appearance=Appearance(
+                material=Material(diffuseColor=(.6,.6,.6))))])]),
+        Transform(translation=(-5.8,10.5,-13.75),
+          children=[
+          Shape(
+            geometry=Box(size=(3,2,2)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6)))),
+          Transform(scale=(.75,.75,.75),translation=(0,1,0),
+            children=[
+            Inline(url=["../DestroyerSovremennyRussia/YBaseRaydome.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/YBaseRaydome.wrl","../DestroyerSovremennyRussia/YBaseRaydome.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/YBaseRaydome.x3d"])])])]),
+      Transform(DEF='Harpoon_Deck',scale=(1,1.5,2),translation=(0,-3.5,47),
+        children=[
+        Inline(url=["HarpoonDeck.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/HarpoonDeck.wrl","HarpoonDeck.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/HarpoonDeck.x3d"]),
+        Transform(translation=(0,7.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(6,3,2)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6))))])]),
+      Transform(DEF='Mid_Ships',scale=(1,1.9,2.5),translation=(0,0,80),
+        children=[
+        Inline(url=["MidShips.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/MidShips.wrl","MidShips.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/MidShips.x3d"])]),
+      Transform(DEF='Harpoon_Canisters',scale=(.6,.75,1),translation=(-5,4,107),
+        children=[
+        Inline(url=["DD963Harpoon.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/DD963Harpoon.wrl","DD963Harpoon.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/DD963Harpoon.x3d"])]),
+      Transform(DEF='Forward_Stacks',scale=(1.25,1,1.5),translation=(1.75,14,80),
+        children=[
+        Inline(DEF='Stacks',url=["Stacks.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/Stacks.wrl","Stacks.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/Stacks.x3d"])]),
+      Transform(DEF='Aft_Stacks',scale=(1.25,1,1.25),translation=(-4.6,13.5,34),
+        children=[
+        Inline(USE='Stacks')]),
+      Transform(DEF='GIG',rotation=(0,1,0,-1.57),translation=(6,2,51),
+        children=[
+        Inline(url=["../DestroyerSovremennyRussia/CaptainsBarge.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/CaptainsBarge.wrl","../DestroyerSovremennyRussia/CaptainsBarge.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/CaptainsBarge.x3d"])]),
+      Transform(DEF='Forward_Mast',scale=(1,1.25,1),translation=(0,10.5,100),
+        children=[
+        Inline(url=["ForwardMast.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/ForwardMast.wrl","ForwardMast.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/ForwardMast.x3d"])]),
+      Transform(DEF='Aft_Mast',scale=(1,1.5,1),translation=(0,5,56),
+        children=[
+        Inline(url=["AftMast.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/AftMast.wrl","AftMast.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/AftMast.x3d"])]),
+      Transform(DEF='Chaff_Locker1',rotation=(0,1,0,1.57),translation=(2.5,11.75,105),
+        children=[
+        Shape(DEF='Chaff_locker',
+          geometry=Box(size=(1.5,2.5,2)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.9,.9,.9))))]),
+      Transform(DEF='Chaff_Locker2',rotation=(0,1,0,1.57),translation=(-.5,11.75,105),
+        children=[
+        Shape(USE='Chaff_locker')]),
+      Transform(DEF='Chaff_Locker3',rotation=(0,1,0,1.57),translation=(-1.5,11.75,69),
+        children=[
+        Shape(USE='Chaff_locker')]),
+      Transform(DEF='Chaff_Locker4',rotation=(0,1,0,1.57),translation=(-4,11.75,69),
+        children=[
+        Shape(USE='Chaff_locker')]),
+      Transform(DEF='Chaff_Locker5',translation=(2,11,47),
+        children=[
+        Shape(USE='Chaff_locker')]),
+      Transform(rotation=(0,1,0,1.57),scale=(1,1.5,1),translation=(-6,10.25,80),
+        children=[
+        Shape(
+          geometry=Extrusion(crossSection=[(0,0),(10,0),(9.5,-2.5),(-2.5,-2.5),(-10,0),(0,0)],spine=[(0,0,0),(0,.25,0)]),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.6,.6,.6))))]),
+      Transform(DEF='signal_Shack',translation=(0,12,97),
+        children=[
+        Shape(DEF='Signal_Shack',
+          geometry=Box(size=(4,3,5)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.6,.6,.6))))]),
+      Transform(translation=(3,12,89),
+        children=[
+        Shape(
+          geometry=Box(size=(4,3,6)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.6,.6,.6))))]),
+      Transform(DEF='slq32Ant',translation=(-11,10,35),
+        children=[
+        Transform(
+          children=[
+          Shape(
+            geometry=Box(size=(4,.25,6)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))]),
+        Transform(rotation=(1,0,0,1.57),translation=(0,.5,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=1,radius=.5),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))]),
+        Transform(rotation=(0,1,0,1.57),translation=(1.5,1,0),
+          children=[
+          Shape(DEF='SLQ-32_ant',
+            geometry=Extrusion(crossSection=[(0,0),(2,0),(2,-2),(1.25,-2.5),(-1.25,-2.5),(-2,-2),(-2,0),(0,0)],spine=[(0,0,0),(0,2.5,0)]),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))])]),
+      Transform(DEF='slq32Ant2',translation=(8,10,35),
+        children=[
+        Transform(
+          children=[
+          Shape(
+            geometry=Box(size=(4,.25,6)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))]),
+        Transform(rotation=(1,0,0,1.57),translation=(0,.5,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=1,radius=.5),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))]),
+        Transform(rotation=(0,1,0,1.57),translation=(1.5,1,0),
+          children=[
+          Shape(
+            geometry=Extrusion(crossSection=[(0,0),(2,0),(2,-2),(1.25,-2.5),(-1.25,-2.5),(-2,-2),(-2,0),(0,0)],spine=[(0,0,0),(0,2.5,0)]),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.85,.85,.85))))])]),
+      Transform(DEF='Whip_ANT1',translation=(8,-6,-10),
+        children=[
+        Shape(
+          geometry=Box(size=(1,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.8,.6,.6)))),
+        Transform(translation=(0,4,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=8,radius=.1),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.2,.2,.2))))])]),
+      Transform(DEF='Whip_ANT2',translation=(-8,-6,-10),
+        children=[
+        Shape(
+          geometry=Box(size=(1,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.8,.6,.6)))),
+        Transform(translation=(0,4,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=8,radius=.1),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.2,.2,.2))))])]),
+      Transform(scale=(1.5,.75,1.5),translation=(6,-5.6,-8),
+        children=[
+        Shape(
+          appearance=Appearance(
+            material=Material(diffuseColor=(0.1,0.1,.1))),
+          geometry=Extrusion(creaseAngle=0.785,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,scale=[(1,1),(1,1),(1.2,1.2)],solid=False,spine=[(0,-1,0),(0,1,0),(0,1.5,0)]))]),
+      Transform(DEF='Goal_Post1',translation=(6,-9,-34),
+        children=[
+        Shape(
+          geometry=Box(size=(3,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.6,.6,.6)))),
+        Transform(translation=(1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6))))]),
+        Transform(translation=(-1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.6,.6,.6))))])]),
+      Transform(DEF='Goal_Post2',rotation=(0,1,0,1),translation=(-4.5,6,60),
+        children=[
+        Shape(
+          geometry=Box(size=(3,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.8,.8,.8)))),
+        Transform(translation=(1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.8,.8,.8))))]),
+        Transform(translation=(-1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.8,.8,.8))))])]),
+      Transform(DEF='Goal_Post3',rotation=(0,1,0,-1),translation=(4.5,6,60),
+        children=[
+        Shape(
+          geometry=Box(size=(3,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.8,.8,.8)))),
+        Transform(translation=(1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.8,.8,.8))))]),
+        Transform(translation=(-1.45,2.5,0),
+          children=[
+          Shape(
+            geometry=Box(size=(.25,5,.25)),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.8,.8,.8))))])]),
+      Transform(DEF='Whip_ANT3',translation=(3,11,68),
+        children=[
+        Shape(
+          geometry=Box(size=(1,1,1)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.8,.6,.6)))),
+        Transform(translation=(0,6,0),
+          children=[
+          Shape(
+            geometry=Cylinder(height=12,radius=.1),
+            appearance=Appearance(
+              material=Material(diffuseColor=(.2,.2,.2))))])]),
+      Transform(DEF='Ant_For_Mast',translation=(0,24.5,103),
+        children=[
+        Shape(
+          geometry=Sphere(radius=1.5),
+          appearance=Appearance(
+            material=Material(diffuseColor=(.95,.95,.95))))]),
+      Transform(DEF='SPS_60',rotation=(0,1,0,-1.57),translation=(0,29,100),
+        children=[
+        Inline(url=["../DestroyerSovremennyRussia/MR114Radar.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/MR114Radar.wrl","../DestroyerSovremennyRussia/MR114Radar.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DestroyerSovremennyRussia/MR114Radar.x3d"])]),
+      Transform(DEF='Hawk',translation=(0,38.5,97),
+        children=[
+        Inline(url=["../FrigateGreece/RadomeFireControlWm25.wrl","https://savage.nps.edu/Savage/ShipsMilitary/FrigateGreece/RadomeFireControlWm25.wrl","../FrigateGreece/RadomeFireControlWm25.x3d","https://savage.nps.edu/Savage/ShipsMilitary/FrigateGreece/RadomeFireControlWm25.x3d"])]),
+      Transform(DEF='Chaff_Tubes1',rotation=(0,1,0,-.95),translation=(-7,11.5,75),
+        children=[
+        Inline(DEF='ChaffTubes',url=["ChaffTubes.wrl","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/ChaffTubes.wrl","ChaffTubes.x3d","https://savage.nps.edu/Savage/ShipsMilitary/DD963SpruanceUnitedStates/ChaffTubes.x3d"])]),
+      Transform(DEF='Chaff_Tubes2',rotation=(0,1,0,-2.15),translation=(-7,11.5,72),
+        children=[
+        Inline(USE='ChaffTubes')]),
+      Transform(DEF='Chaff_Tubes3',rotation=(0,1,0,1.05),translation=(4.75,11.5,107),
+        children=[
+        Inline(USE='ChaffTubes')]),
+      Transform(DEF='Chaff_Tubes4',rotation=(0,1,0,1.15),translation=(4.75,11.5,105),
+        children=[
+        Inline(USE='ChaffTubes')]),
+      Transform(DEF='Chaff_Tubes5',rotation=(0,1,0,-2.05),translation=(-7,15.5,41),
+        children=[
+        Inline(USE='ChaffTubes')]),
+      Transform(DEF='Chaff_Tubes6',rotation=(0,1,0,-1.85),translation=(-7,15.5,42.5),
+        children=[
+        Inline(USE='ChaffTubes')])]),
+    Background(backUrl=["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],frontUrl=["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],groundAngle=[1.309,1.570796],groundColor=[(1,1,1),(0.1,0.1,0.5),(0.4,0.25,0.2),(0.1,0.6,0.1)],leftUrl=["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],rightUrl=["mountns.png","http://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/mountns.png"],skyAngle=[1.309,1.571],skyColor=[(0,0.2,0.7),(0,0.5,1),(1,1,1)])])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for DD963Spruance.py")

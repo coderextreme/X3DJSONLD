@@ -451,4 +451,3 @@ gears.prototype = {
 	}
 }
 new gears().main();
-process.exit(0);

@@ -265,4 +265,3 @@ flowerproto.prototype = {
 	}
 }
 new flowerproto().main();
-process.exit(0);

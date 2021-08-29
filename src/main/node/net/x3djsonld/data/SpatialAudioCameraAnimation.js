@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 August 2021 </td>
+			<td> 7 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -96,11 +96,11 @@ SpatialAudioCameraAnimation.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: Viewpoint DEF='Camera001' description field, scene-graph level=3, element #16, 40 total values */
-	this.Camera001_3_16_description = new autoclass.SFString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
+	/** Large attribute array: Viewpoint DEF='Camera001' description field, scene-graph level=3, element #17, 40 total values */
+	this.Camera001_3_17_description = new autoclass.SFString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
 
-	/** Large attribute array: OrientationInterpolator DEF='Camera001-ROT-INTERP' keyValue field, scene-graph level=3, element #19, 20 total numbers made up of 5 4-tuple values */
-	this.Camera001_ROT_INTERP_3_19_keyValue = new autoclass.MFRotation(java.newArray("float", [1.000000,0.000000,-0.000000,-0.523599,0.999990,0.003554,0.002727,-1.309007,0.000000,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.608760,-3.135645,1.000000,-0.000001,-0.000000,-0.523599]));
+	/** Large attribute array: OrientationInterpolator DEF='Camera001-ROT-INTERP' keyValue field, scene-graph level=3, element #20, 20 total numbers made up of 5 4-tuple values */
+	this.Camera001_ROT_INTERP_3_20_keyValue = new autoclass.MFRotation(java.newArray("float", [1.000000,0.000000,-0.000000,-0.523599,0.999990,0.003554,0.002727,-1.309007,0.000000,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.608760,-3.135645,1.000000,-0.000001,-0.000000,-0.523599]));
   this.x3dModel = (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("SpatialAudioCameraAnimation.x3d"))

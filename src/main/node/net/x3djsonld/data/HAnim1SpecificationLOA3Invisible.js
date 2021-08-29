@@ -871,4 +871,3 @@ HAnim1SpecificationLOA3Invisible.prototype = {
 	}
 }
 new HAnim1SpecificationLOA3Invisible().main();
-process.exit(0);

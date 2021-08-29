@@ -1,0 +1,380 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='Emma2.x3d',name='title'),
+    meta(content='Shane Nicklaus',name='creator'),
+    meta(content='29 September 2000',name='created'),
+    meta(content='2 March 2001',name='modified'),
+    meta(content='Fishing trawler prototype taken from a for sale web page. Ship may be French in origin. Named Emma 2 when advertised in 1999.',name='description'),
+    meta(content='Emma.jpg',name='Image'),
+    meta(content='FishingTrawlerReport.doc',name='reference'),
+    meta(content='fishing_trawler.htm',name='reference'),
+    meta(content='http://www.ships-for-sale.com/fishing_trawler.htm',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/ShipsCivilian/Trawlers/Emma2.x3d',name='identifier'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    Viewpoint(description='Starboard View',position=(0,7,40)),
+    Viewpoint(description='Port View',orientation=(0,1,0,3.142),position=(0,7,-40)),
+    Viewpoint(description='Forward View',orientation=(0,1,0,1.571),position=(40,7,0)),
+    Viewpoint(description='Aft View',orientation=(0,1,0,-1.571),position=(-40,7,0)),
+    Background(groundColor=[(0,0,.7)],skyColor=[(0,0,.7)]),
+    Transform(
+      children=[
+      Shape(DEF='BottomHull',
+        appearance=Appearance(DEF='RED',
+          material=Material(diffuseColor=(1,0,0))),
+        geometry=Extrusion(crossSection=[(0,4),(.65,3.5),(.65,-3.5),(0,-4),(0,4)],orientation=[(0,0,1,.30),(0,0,1,0),(0,0,1,0),(0,0,1,0)],scale=[(1,1),(1,1),(1,1),(1,.02)],spine=[(-18.3,0,0),(0,0,0),(3.5,0,0),(18,0,0)])),
+      Shape(DEF='CenterHull',
+        appearance=Appearance(DEF='BLACK',
+          material=Material(diffuseColor=(0,0,0))),
+        geometry=Extrusion(crossSection=[(-2.464,4),(0,4),(0,-4),(-2.464,-4),(-2.464,4)],orientation=[(0,0,1,.30),(0,0,1,0),(0,0,1,0),(0,0,1,-.5)],scale=[(1,1),(1,1),(1,1),(1.9,.02)],spine=[(-18.3,0,0),(0,0,0),(3.5,0,0),(18,0,0)])),
+      Shape(DEF='UpperHullAftStarBrd',
+        appearance=Appearance(USE='RED'),
+        geometry=Extrusion(crossSection=[(-3.514,4),(-2.464,4)],orientation=[(0,0,1,.30),(0,0,1,0),(0,0,1,.20)],scale=[(1,1),(1,1),(1,1)],solid=False,spine=[(-18.3,0,0),(0,0,0),(1.5,0,0)])),
+      Shape(DEF='UpperHullAftPort',
+        appearance=Appearance(USE='RED'),
+        geometry=Extrusion(crossSection=[(-3.514,-4),(-2.464,-4)],orientation=[(0,0,1,.30),(0,0,1,0),(0,0,1,.20)],scale=[(1,1),(1,1),(1,1)],solid=False,spine=[(-18.3,0,0),(0,0,0),(1.5,0,0)])),
+      Transform(rotation=(0,0,1,1.571),translation=(-2,0,0),
+        children=[
+        Shape(DEF='PilotHouse',
+          appearance=Appearance(DEF='WHITE',
+            material=Material(diffuseColor=(1,1,1))),
+          geometry=Extrusion(creaseAngle=70,crossSection=[(0,3),(2.5,2.8),(4,2.4),(5.2,2),(6.1,1),(6.1,-1),(5.2,-2),(4,-2.4),(2.5,-2.8),(0,-3),(0,3)],solid=False,spine=[(0,0,0),(3,0,0),(6.6,0,0)]))]),
+      Transform(translation=(-13.8,4.11,3.5),
+        children=[
+        Shape(DEF='LowerArm',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(1,3.65,.5)))]),
+      Transform(translation=(-13.8,4.11,-3.5),
+        children=[
+        Shape(USE='LowerArm')]),
+      Transform(rotation=(1,0,0,-.349),translation=(-13.8,7.82,2.798),
+        children=[
+        Shape(DEF='MidArm',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(1,4.2,.5)))]),
+      Transform(rotation=(1,0,0,.349),translation=(-13.8,7.82,-2.798),
+        children=[
+        Shape(USE='MidArm')]),
+      Transform(translation=(-13.8,9.8,0),
+        children=[
+        Shape(DEF='CrossBeam',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(.8,.2,6)))]),
+      Transform(translation=(-17,2.71,3.5),
+        children=[
+        Shape(USE='LowerArm')]),
+      Transform(translation=(-17,2.71,-3.5),
+        children=[
+        Shape(USE='LowerArm')]),
+      Transform(translation=(-17,4.5,0),
+        children=[
+        Shape(DEF='LowerCrossBeam',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(.8,.2,9)))]),
+      Transform(rotation=(0,0,1,-.471),translation=(-15.5,7.1,2.2),
+        children=[
+        Shape(DEF='Boom',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cylinder(height=5.9,radius=.06))]),
+      Transform(rotation=(0,0,1,-.471),translation=(-15.5,7.1,-2.2),
+        children=[
+        Shape(USE='Boom')]),
+      Transform(translation=(-1,5.5,2.88),
+        children=[
+        Shape(DEF='Window',
+          appearance=Appearance(DEF='Transparent',
+            material=Material(ambientIntensity=.2,emissiveColor=(0,0,1),shininess=.2,transparency=.25)),
+          geometry=Box(size=(.25,.5,.1)))]),
+      Transform(rotation=(0,1,0,.035),translation=(.3,5.5,2.77),
+        children=[
+        Shape(USE='Window')]),
+      Transform(rotation=(0,1,0,.1),translation=(1.1,5.5,2.6),
+        children=[
+        Shape(USE='Window')]),
+      Transform(translation=(-1,5.5,-2.88),
+        children=[
+        Shape(USE='Window')]),
+      Transform(rotation=(0,1,0,-.035),translation=(.3,5.5,-2.77),
+        children=[
+        Shape(USE='Window')]),
+      Transform(rotation=(0,1,0,-.1),translation=(1.1,5.5,-2.6),
+        children=[
+        Shape(USE='Window')]),
+      Transform(rotation=(0,1,0,.19),translation=(1.7,5.5,2.44),
+        children=[
+        Shape(DEF='Window2',
+          appearance=Appearance(USE='Transparent'),
+          geometry=Box(size=(.4,.5,.1)))]),
+      Transform(rotation=(0,1,0,-.19),translation=(1.7,5.5,-2.44),
+        children=[
+        Shape(USE='Window2')]),
+      Transform(rotation=(0,1,0,.27),translation=(2.4,5.5,2.25),
+        children=[
+        Shape(DEF='Window3',
+          appearance=Appearance(USE='Transparent'),
+          geometry=Box(size=(.5,.5,.05)))]),
+      Transform(rotation=(0,1,0,-.27),translation=(2.4,5.5,-2.25),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,.4),scale=(.5,1,1),translation=(3.1,5.5,2.02),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,.7),scale=(.5,1,1),translation=(3.3,5.5,1.89),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,-.4),scale=(.5,1,1),translation=(3.1,5.5,-2.02),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,-.7),scale=(.5,1,1),translation=(3.3,5.5,-1.89),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,.85),translation=(3.8,5.5,1.34),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,-.85),translation=(3.8,5.5,-1.34),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,1.571),translation=(4.08,5.5,.75),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,-1.571),translation=(4.08,5.5,-.75),
+        children=[
+        Shape(USE='Window3')]),
+      Transform(rotation=(0,1,0,1.571),translation=(4.08,5.5,0),
+        children=[
+        Shape(USE='Window3')]),
+      Group(DEF='GUARDRAIL',
+        children=[
+        Transform(translation=(-16.65,5.25,4.45),
+          children=[
+          Shape(DEF='GuardRail',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=1.5,radius=.01))]),
+        Transform(translation=(-17.35,5.25,4.45),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-16.65,5.25,-4.45),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-17.35,5.25,-4.45),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-17.35,5.25,1.5),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-17.35,5.25,-1.5),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-16.65,5.25,1.5),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(translation=(-16.65,5.25,-1.5),
+          children=[
+          Shape(USE='GuardRail')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-17.35,5,0),
+          children=[
+          Shape(DEF='LengthwiseGR',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=8.9,radius=.01))]),
+        Transform(rotation=(1,0,0,1.571),translation=(-17.35,5.991,0),
+          children=[
+          Shape(USE='LengthwiseGR')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-16.65,5,0),
+          children=[
+          Shape(USE='LengthwiseGR')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-16.65,5.991,0),
+          children=[
+          Shape(USE='LengthwiseGR')]),
+        Transform(rotation=(0,0,1,1.571),translation=(-17,5,-4.45),
+          children=[
+          Shape(DEF='EndGR',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=.7,radius=.01))]),
+        Transform(rotation=(0,0,1,1.571),translation=(-17,5.991,-4.45),
+          children=[
+          Shape(USE='EndGR')])]),
+      Transform(rotation=(1,0,0,1.571),translation=(-19.25,3.2,2.249),
+        children=[
+        Shape(DEF='RearGRLong',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cylinder(height=3.5,radius=.02))]),
+      Transform(rotation=(1,0,0,1.571),translation=(-19.25,3.2,-2.249),
+        children=[
+        Shape(USE='RearGRLong')]),
+      Transform(rotation=(0,0,1,.3),translation=(-19.095,2.7,.52),
+        children=[
+        Shape(DEF='RearGRTall',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cylinder(height=1.03,radius=.017))]),
+      Transform(rotation=(0,0,1,.3),translation=(-19.095,2.7,-.52),
+        children=[
+        Shape(USE='RearGRTall')]),
+      Transform(rotation=(1,0,0,1.571),translation=(-19.095,2.7,-2.249),
+        children=[
+        Shape(USE='RearGRLong')]),
+      Transform(rotation=(1,0,0,1.571),translation=(-19.095,2.7,2.249),
+        children=[
+        Shape(USE='RearGRLong')]),
+      Transform(rotation=(0,0,1,.3),translation=(-19.095,2.7,2.26),
+        children=[
+        Shape(USE='RearGRTall')]),
+      Transform(rotation=(0,0,1,.3),translation=(-19.095,2.7,-2.26),
+        children=[
+        Shape(USE='RearGRTall')]),
+      Group(DEF='TOPMOSTGUARDRAIL',
+        children=[
+        Transform(translation=(-14.19,10.5,2.99),
+          children=[
+          Shape(DEF='UpperGR',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=1.5,radius=.01))]),
+        Transform(translation=(-14.19,10.5,-2.99),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-13.41,10.5,-2.99),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-13.41,10.5,2.99),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-14.19,10.5,1),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-14.19,10.5,-1),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-13.41,10.5,-1),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(translation=(-13.41,10.5,1),
+          children=[
+          Shape(USE='UpperGR')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-14.19,10.5,0),
+          children=[
+          Shape(DEF='UpGRLengthWise',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=5.979,radius=.01))]),
+        Transform(rotation=(1,0,0,1.571),translation=(-13.41,10.5,0),
+          children=[
+          Shape(USE='UpGRLengthWise')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-14.19,11.24,0),
+          children=[
+          Shape(USE='UpGRLengthWise')]),
+        Transform(rotation=(1,0,0,1.571),translation=(-13.41,11.24,0),
+          children=[
+          Shape(USE='UpGRLengthWise')]),
+        Transform(rotation=(0,0,1,1.571),translation=(-13.8,10.5,-2.99),
+          children=[
+          Shape(DEF='UpEndGr',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=.78,radius=.01))]),
+        Transform(rotation=(0,0,1,1.571),translation=(-13.8,11.24,-2.99),
+          children=[
+          Shape(USE='UpEndGr')])]),
+      Transform(translation=(-14,11.2,0),
+        children=[
+        Shape(DEF='AntennaMast',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cylinder(height=2.8,radius=.1))]),
+      Transform(rotation=(0,1,0,.785),translation=(-14.25,12.9,.3),
+        children=[
+        Transform(rotation=(0,0,1,.785),
+          children=[
+          Shape(DEF='AntExtension',
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=1.1,radius=.06))])]),
+      Transform(translation=(17,5.2,0),
+        children=[
+        Shape(USE='AntennaMast')]),
+      Transform(translation=(-8.1,3,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(12.4,1.5,7.5)))]),
+      Transform(rotation=(0,0,1,.175),translation=(0,8,2.4),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(.3,4,.4)))]),
+      Transform(translation=(0,8,2.4),
+        children=[
+        Shape(DEF='PilotHouseAnt',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Box(size=(.2,.1,2)))]),
+      Transform(scale=(1,1,2),translation=(-.19,9,2.4),
+        children=[
+        Shape(USE='PilotHouseAnt')]),
+      Transform(translation=(0,7.5,-2.4),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cone(bottomRadius=.1))]),
+      Transform(rotation=(0,1,0,-.785),translation=(-14.25,12.9,-.3),
+        children=[
+        Transform(rotation=(0,0,1,.785),
+          children=[
+          Shape(
+            appearance=Appearance(USE='WHITE'),
+            geometry=Cylinder(height=1.1,radius=.06))])]),
+      Transform(rotation=(0,1,0,.23),translation=(2.66,2.18,.08),
+        children=[
+        Transform(rotation=(0,0,1,.15),
+          children=[
+          Shape(DEF='UpperHullFwdStarBrd',
+            appearance=Appearance(USE='RED'),
+            geometry=Extrusion(crossSection=[(0,4),(1.05,4)],orientation=[(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,-.53)],scale=[(.2,1),(.2,1),(.4,1),(.73,1)],solid=False,spine=[(5.8,0,0),(8,0,0),(13,0,0),(17.6,0,0)]))])]),
+      Transform(rotation=(0,1,0,-.23),translation=(2.66,2.18,-.08),
+        children=[
+        Transform(rotation=(0,0,1,.15),
+          children=[
+          Shape(DEF='UpperHullFwdPort',
+            appearance=Appearance(USE='RED'),
+            geometry=Extrusion(crossSection=[(0,-4),(1.05,-4)],orientation=[(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,-.53)],scale=[(.08,1),(.15,1),(.4,1),(.73,1)],solid=False,spine=[(5.8,0,0),(8,0,0),(13,0,0),(17.6,0,0)]))])]),
+      Transform(translation=(3.5,2.8,3.9),
+        children=[
+        Shape(DEF='HullRail',
+          appearance=Appearance(USE='WHITE'),
+          geometry=Cylinder(height=1,radius=.02))]),
+      Transform(translation=(3.5,2.8,-3.9),
+        children=[
+        Shape(USE='HullRail')])])])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for Emma2.py")

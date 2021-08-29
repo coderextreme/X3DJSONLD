@@ -269,4 +269,3 @@ ArchPrototype.prototype = {
 	}
 }
 new ArchPrototype().main();
-process.exit(0);

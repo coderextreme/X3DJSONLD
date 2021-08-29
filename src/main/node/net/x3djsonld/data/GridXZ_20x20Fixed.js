@@ -209,4 +209,3 @@ GridXZ_20x20Fixed.prototype = {
 	}
 }
 new GridXZ_20x20Fixed().main();
-process.exit(0);

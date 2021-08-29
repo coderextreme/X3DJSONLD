@@ -2664,4 +2664,3 @@ BvhSeamless3dExport1.prototype = {
 	}
 }
 new BvhSeamless3dExport1().main();
-process.exit(0);
