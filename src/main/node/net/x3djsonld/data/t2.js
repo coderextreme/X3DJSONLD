@@ -149,4 +149,3 @@ t2.prototype = {
 	}
 }
 new t2().main();
-process.exit(0);

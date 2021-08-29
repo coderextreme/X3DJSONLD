@@ -273,4 +273,3 @@ forcenode.prototype = {
 	}
 }
 new forcenode().main();
-process.exit(0);

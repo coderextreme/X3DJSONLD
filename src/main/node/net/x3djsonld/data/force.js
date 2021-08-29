@@ -274,4 +274,3 @@ force.prototype = {
 	}
 }
 new force().main();
-process.exit(0);

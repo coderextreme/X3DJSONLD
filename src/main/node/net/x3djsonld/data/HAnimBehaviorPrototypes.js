@@ -2401,4 +2401,3 @@ HAnimBehaviorPrototypes.prototype = {
 	}
 }
 new HAnimBehaviorPrototypes().main();
-process.exit(0);

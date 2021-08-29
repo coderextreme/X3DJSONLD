@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 August 2021"
+            "@content":"7 August 2021"
           },
           {
             "@name":"reference",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 August 2021"
+            "@content":"28 August 2021"
           },
           {
             "@name":"generator",
@@ -70,36 +70,40 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"SpatialAudioCameraAnimation.x3d"
+            }
+          },
           { "NavigationInfo":
             {
             }
           },
           { "Background":
             {
-              "@backUrl":["images/generic/BK1.png"],
-              "@bottomUrl":["images/generic/DN1.png"],
-              "@frontUrl":["images/generic/FR1.png"],
-              "@leftUrl":["images/generic/LF1.png"],
-              "@rightUrl":["images/generic/RT1.png"],
-              "@topUrl":["images/generic/UP1.png"]
+              "@backUrl":["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"],
+              "@bottomUrl":["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"],
+              "@frontUrl":["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"],
+              "@leftUrl":["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"],
+              "@rightUrl":["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"],
+              "@topUrl":["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]
             }
           },
           { "Viewpoint":
             {
               "@DEF":"Camera001",
               "@description":"Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view",
-              "@jump":TRUE,
+              "@farDistance":0,
+              "@nearDistance":1.000000,
               "@orientation":[1.000000,0.000000,-0.000000,-0.523599],
-              "@position":[0.000000,2000.000000,3500.000000],
-              "@zFar":0,
-              "@zNear":1.000000
+              "@position":[0.000000,2000.000000,3500.000000]
             }
           },
           { "TimeSensor":
             {
               "@DEF":"TIMER",
               "@cycleInterval":33.333332,
-              "@loop":TRUE
+              "@loop":true
             }
           },
           { "PositionInterpolator":
@@ -167,13 +171,12 @@
                             }
                         }
                       },
-                    "-IllegalChildNodeFieldNameNotFound":[
-                      { "box":
+                    "-geometry":
+                      { "Box":
                         {
                           "@size":[2000,1,2000]
                         }
                       }
-                    ]
                   }
                 }
               ]
@@ -181,7 +184,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio1",
+              "@DEF":"Audio1Transform",
               "@translation":[-933.123474,0.000000,-926.253235],
               "-children":[
                 { "Shape":
@@ -198,13 +201,12 @@
                             }
                         }
                       },
-                    "-IllegalChildNodeFieldNameNotFound":[
-                      { "sphere":
+                    "-geometry":
+                      { "Sphere":
                         {
                           "@radius":100
                         }
                       }
-                    ]
                   }
                 },
                 { "Billboard":
@@ -225,11 +227,10 @@
                                       "-material":
                                         { "Material":
                                           {
-                                            "@ambientintensity":0.0933,
-                                            "@diffusecolor":[1,1,1],
-                                            "@emissivecolor":[0,0,0],
+                                            "@ambientIntensity":0.0933,
+                                            "@diffuseColor":[1,1,1],
                                             "@shininess":0.51,
-                                            "@specularcolor":[0.46,0.46,0.46]
+                                            "@specularColor":[0.46,0.46,0.46]
                                           }
                                         }
                                     }
@@ -238,16 +239,11 @@
                                   { "Text":
                                     {
                                       "@ccw":true,
-                                      "@lit":true,
                                       "@string":["Violin"],
-                                      "@usegeocache":true,
                                       "-fontStyle":
                                         { "FontStyle":
                                           {
-                                            "@justify":["BEGIN"],
-                                            "@lefttoright":true,
-                                            "@style":"BOLD",
-                                            "@toptobottom":true
+                                            "@style":"BOLD"
                                           }
                                         }
                                     }
@@ -282,13 +278,12 @@
                             }
                         }
                       },
-                    "-IllegalChildNodeFieldNameNotFound":[
-                      { "sphere":
+                    "-geometry":
+                      { "Sphere":
                         {
                           "@radius":100
                         }
                       }
-                    ]
                   }
                 },
                 { "Billboard":
@@ -309,11 +304,10 @@
                                       "-material":
                                         { "Material":
                                           {
-                                            "@ambientintensity":0.0933,
-                                            "@diffusecolor":[1,1,1],
-                                            "@emissivecolor":[0,0,0],
+                                            "@ambientIntensity":0.0933,
+                                            "@diffuseColor":[1,1,1],
                                             "@shininess":0.51,
-                                            "@specularcolor":[0.46,0.46,0.46]
+                                            "@specularColor":[0.46,0.46,0.46]
                                           }
                                         }
                                     }
@@ -322,17 +316,12 @@
                                   { "Text":
                                     {
                                       "@ccw":true,
-                                      "@lit":true,
                                       "@string":["Saxophone"],
-                                      "@usegeocache":true,
                                       "-fontStyle":
                                         { "FontStyle":
                                           {
                                             "@family":["Times"],
-                                            "@justify":["BEGIN"],
-                                            "@lefttoright":true,
-                                            "@style":"BOLD",
-                                            "@toptobottom":true
+                                            "@style":"BOLD"
                                           }
                                         }
                                     }
@@ -353,12 +342,12 @@
               "@trackCurrentView":true
             }
           },
-          { "AudioDestination":
+          { "StreamAudioDestination":
             {
               "-children":[
                 { "SpatialSound":
                   {
-                    "@USE":"Audio1",
+                    "@DEF":"Audio1",
                     "-children":[
                       { "Gain":
                         {
@@ -369,7 +358,7 @@
                                 "@pauseTime":-1,
                                 "@resumeTime":-1,
                                 "@stopTime":-1,
-                                "@url":["sound/violin.mp3"]
+                                "@url":["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]
                               }
                             }
                           ]
@@ -380,7 +369,7 @@
                 },
                 { "SpatialSound":
                   {
-                    "@USE":"Audio2",
+                    "@DEF":"Audio2",
                     "-children":[
                       { "Gain":
                         {
@@ -391,7 +380,7 @@
                                 "@pauseTime":-1,
                                 "@resumeTime":-1,
                                 "@stopTime":-1,
-                                "@url":["sound/saxophone.mp3"]
+                                "@url":["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]
                               }
                             }
                           ]

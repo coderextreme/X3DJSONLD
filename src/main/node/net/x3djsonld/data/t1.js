@@ -401,4 +401,3 @@ t1.prototype = {
 	}
 }
 new t1().main();
-process.exit(0);

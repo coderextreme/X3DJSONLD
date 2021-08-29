@@ -933,4 +933,3 @@ JinLOA1.prototype = {
 	}
 }
 new JinLOA1().main();
-process.exit(0);

@@ -4237,4 +4237,3 @@ AllenDuttonProtoInstances.prototype = {
 	}
 }
 new AllenDuttonProtoInstances().main();
-process.exit(0);

@@ -227,4 +227,3 @@ rubikFurnace.prototype = {
 	}
 }
 new rubikFurnace().main();
-process.exit(0);

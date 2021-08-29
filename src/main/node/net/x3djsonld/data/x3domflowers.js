@@ -152,4 +152,3 @@ x3domflowers.prototype = {
 	}
 }
 new x3domflowers().main();
-process.exit(0);

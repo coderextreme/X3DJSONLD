@@ -938,4 +938,3 @@ KoreanCharacter02Chul.prototype = {
 	}
 }
 new KoreanCharacter02Chul().main();
-process.exit(0);

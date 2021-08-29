@@ -2025,4 +2025,3 @@ KoreanCharacterMotionAnnexC01Jin.prototype = {
 	}
 }
 new KoreanCharacterMotionAnnexC01Jin().main();
-process.exit(0);

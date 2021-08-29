@@ -315,4 +315,3 @@ flowers7.prototype = {
 	}
 }
 new flowers7().main();
-process.exit(0);

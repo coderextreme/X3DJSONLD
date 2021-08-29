@@ -182,4 +182,3 @@ gridBack.prototype = {
 	}
 }
 new gridBack().main();
-process.exit(0);

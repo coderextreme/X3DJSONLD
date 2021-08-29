@@ -2,7 +2,6 @@
 <!--
     title       : AllX3dElementsAttributesTextTemplate.xslt
     created     : 28 November 2015
-    revised     : 28 November 2015
     creator     : Don Brutzman
     description : Example template stylesheet to process AllX3dElementsAttributes.xml and convert it to text
     reference   : AllX3dElementsAttributes.xml

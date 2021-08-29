@@ -170,4 +170,3 @@ geobubbles.prototype = {
 	}
 }
 new geobubbles().main();
-process.exit(0);

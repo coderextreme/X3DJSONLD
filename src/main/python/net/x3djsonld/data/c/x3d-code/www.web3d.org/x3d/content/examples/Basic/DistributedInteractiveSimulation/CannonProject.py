@@ -1,0 +1,648 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    component(level=1,name='DIS'),
+    meta(content='CannonProject.x3d',name='title'),
+    meta(content='Physically Based Modeling project for MV-4472, showing a projectile motion model that takes into account drag, changing air densities with altitude, and wind.',name='description'),
+    meta(content='Included is the model "Lightweight 155mm Howitzer" created by Jeffrey Weekley',name='recognition'),
+    meta(content='The Dunes.jpg texture was found on the web at http://www.ecn.net.au/~iain/htextures',name='recognition'),
+    meta(content='http://www.ecn.net.au/~iain/htextures',name='reference'),
+    meta(content='Ernesto Salles',name='creator'),
+    meta(content='10 December 2001',name='created'),
+    meta(content='20 October 2019',name='modified'),
+    meta(content='prerequisite: Java3D classes must be installed in CLASSPATH',name='warning'),
+    meta(content='CannonProject/run.bat',name='reference'),
+    meta(content='CannonProject/compile.bat',name='reference'),
+    meta(content='CannonProject/compile.out',name='reference'),
+    meta(content='projectile, physically based model',name='subject'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/CannonProject.x3d',name='identifier'),
+    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../license.html',name='license')]),
+  Scene=Scene(
+    #  There was no size given for this weapon, it is built to similar dimensions as its precedessor, the M198 Howitzer. It is 5m total length. 
+    children=[
+    WorldInfo(title='CannonProject.x3d'),
+    ExternProtoDeclare(appinfo='Modified CylinderSensor with children nodes oriented about an arbitrary axis. Warning: ArbitraryAxisCylinderSensor affects children, not peers.',name='ArbitraryAxisCylinderSensor',url=["../../Savage/Tools/Animation/ArbitraryAxisCylinderSensorPrototype.x3d#ArbitraryAxisCylinderSensor","https://savage.nps.edu/Savage/Tools/Animation/ArbitraryAxisCylinderSensorPrototype.x3d#ArbitraryAxisCylinderSensor","../../Savage/Tools/Animation/ArbitraryAxisCylinderSensorPrototype.wrl#ArbitraryAxisCylinderSensor","https://savage.nps.edu/Savage/Tools/Animation/ArbitraryAxisCylinderSensorPrototype.wrl#ArbitraryAxisCylinderSensor"],
+      field=[
+      field(accessType='initializeOnly',appinfo='shifted axis of rotation from local vertical, default 1 0 0 0',name='shiftRotationAxis',type='SFRotation'),
+      field(accessType='initializeOnly',appinfo='local center for axis of rotation, default 0 0 0',name='center',type='SFVec3f'),
+      field(accessType='initializeOnly',appinfo='whether to show visualization shape to show orientation and cylindrical mapping of mouse movements by sensor, default true',name='showCylinderSensorShape',type='SFBool'),
+      field(accessType='inputOutput',appinfo='scale for visualization shape, default 1 1 1',name='scaleCylinderSensorShape',type='SFVec3f'),
+      field(accessType='inputOutput',appinfo='color for visualization shape, default 0.9 0.9 0.4',name='colorCylinderSensorShape',type='SFColor'),
+      field(accessType='inputOutput',appinfo='transparency for visualization shape',name='transparencyCylinderSensorShape',type='SFFloat'),
+      field(accessType='inputOutput',appinfo='children nodes affected by ArbitraryAxisCylinderSensor',name='children',type='MFNode'),
+      field(accessType='inputOutput',appinfo='determines whether previous offset values are remembered/accumulated, default true',name='autoOffset',type='SFBool'),
+      field(accessType='inputOutput',appinfo='Text tooltip displayed for user interaction',name='description',type='SFString'),
+      field(accessType='inputOutput',appinfo='diskAngle 0 forces disk-like behavior, diskAngle 1.57 (90 degrees) forces cylinder-like behavior, default 0.262, range [0,pi/2]',name='diskAngle',type='SFFloat'),
+      field(accessType='inputOutput',appinfo='enables/disables node operation, default true',name='enabled',type='SFBool'),
+      field(accessType='inputOutput',appinfo='clamps rotation_changed events, default 0, range [-2pi,2pi]',name='minAngle',type='SFFloat'),
+      field(accessType='inputOutput',appinfo='clamps rotation_changed events, default -1, range [-2pi,2pi]',name='maxAngle',type='SFFloat'),
+      field(accessType='initializeOnly',appinfo='sends event and remembers last value sensed, default 0, range (-infinity,infinity)',name='offset',type='SFFloat'),
+      field(accessType='outputOnly',appinfo='output event isActive=true when primary mouse button is pressed, output event isActive=false when released.',name='isActive',type='SFBool'),
+      field(accessType='outputOnly',appinfo='rotation_changed events equal sum of relative bearing changes plus offset value about Y-axis in local coordinate system',name='rotation_changed',type='SFRotation'),
+      field(accessType='outputOnly',appinfo="trackPoint_changed events give intersection point of bearing with sensor's virtual geometry",name='trackPoint_changed',type='SFVec3f')]),
+    Viewpoint(description='Lightweight 155mm Howitzer',orientation=(0,1,0,-1.57),position=(-5,0.7,0)),
+    Viewpoint(description='FarView',position=(200,75,300)),
+    Viewpoint(description='AboveView',orientation=(0,1,0,-1.57),position=(-75.0,40.0,0.0)),
+    Background(skyColor=[(0.4,0.1,0.2)]),
+    #  Default gun orientation points along X axis (typically North) 
+    TimeSensor(DEF='TheClock',cycleInterval=10),
+    Transform(rotation=(1,0,0,-1.57),
+      children=[
+      ProtoInstance(DEF='BarrelHeading',name='ArbitraryAxisCylinderSensor',
+        fieldValue=[
+        fieldValue(name='shiftRotationAxis',value=(1,0,0,1.57)),
+        fieldValue(name='maxAngle',value=0.6),
+        fieldValue(name='minAngle',value=-0.6),
+        fieldValue(name='showCylinderSensorShape',value=False),
+        fieldValue(name='children',
+          children=[
+          Group(DEF='Saddle',
+            children=[
+            Transform(rotation=(0.58,0.58,-0.58,2.09),scale=(0.75,0.75,0.75),translation=(0.667,0,0),
+              children=[
+              Transform(DEF='SaddleBase',rotation=(0,1,0,1.57),scale=(0.7,0.7,0.7),translation=(0.1,-0.6,0),
+                children=[
+                Transform(rotation=(-1,0,0,1.57),
+                  children=[
+                  Shape(
+                    geometry=Extrusion(crossSection=[(0,0.7),(-0.4,0.6),(-0.9,0),(-0.8,-0.5),(0,-0.6),(0.8,-0.5),(0.9,0),(0.4,0.6),(0,0.7),(-0.4,0.6)],solid=False,spine=[(0,0,0),(0,0.2,0),(0,0.29,0)]),
+                    appearance=Appearance(
+                      material=Material(DEF='grey',diffuseColor=(0.5,0.5,0.5),specularColor=(1,1,1))))])]),
+              Transform(DEF='ElevationGear',translation=(-0.25,-0.4,0.45),
+                children=[
+                Transform(rotation=(0,0,1,1.57),
+                  children=[
+                  Shape(
+                    geometry=Box(size=(0.25,0.325,0.125)),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.25,0.66,0.8)))),
+                  Transform(translation=(-0.2,0,0.06),
+                    children=[
+                    Shape(
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(1,0.25,1))),
+                      geometry=Box(size=(0.1625,0.165,0.1))),
+                    Transform(translation=(0.075,-0.05,-0.01),
+                      children=[
+                      Shape(
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(0.15,0.25,0.1))),
+                        geometry=Cylinder(height=0.325,radius=0.075))])]),
+                  Transform(rotation=(1,0,0,1.57),translation=(0,0,-0.1),
+                    children=[
+                    Shape(
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,0.66))),
+                      geometry=Cylinder(height=0.25,radius=0.08))])]),
+                Transform(scale=(0.33,0.33,0.33),translation=(-0.08,-0.15,0.175),
+                  children=[
+                  Inline(DEF='Crank',url=["../../Savage/Weapons/Guns/Lightweight155mmHowitzerCrank.x3d","https://savage.nps.edu/Savage/Weapons/Guns/Lightweight155mmHowitzerCrank.x3d","../../Savage/Weapons/Guns/Lightweight155mmHowitzerCrank.wrl","https://savage.nps.edu/Savage/Weapons/Guns/Lightweight155mmHowitzerCrank.wrl"])])]),
+              Transform(rotation=(1,0,0,3.14),
+                children=[
+                Transform(translation=(0,0.8,0),
+                  children=[
+                  Transform(USE='ElevationGear')])]),
+              Transform(rotation=(0,0,1,1.57),translation=(-0.25,-1.1,-0.15),
+                children=[
+                Transform(translation=(0.15,-0.1,0),
+                  children=[
+                  Shape(
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.25,0.2,0.4))),
+                    geometry=Box(size=(0.425,0.17,0.125)))]),
+                Transform(translation=(0,0.1,0),
+                  children=[
+                  Shape(
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.25,0.2,0.4))),
+                    geometry=Cylinder(height=0.35,radius=0.0625))]),
+                Transform(rotation=(-1,0,0,1.57),scale=(0.33,0.33,0.33),translation=(0,0.33,0),
+                  children=[
+                  Inline(USE='Crank')])]),
+              Transform(rotation=(-0.58,-0.58,0.58,2.09),translation=(-0.25,-0.4,0),
+                children=[
+                ProtoInstance(DEF='BarrelElevation',name='ArbitraryAxisCylinderSensor',
+                  fieldValue=[
+                  fieldValue(name='minAngle',value=-1.125),
+                  fieldValue(name='maxAngle',value=0),
+                  fieldValue(name='offset',value=-0.52),
+                  fieldValue(name='showCylinderSensorShape',value=False),
+                  fieldValue(name='children',
+                    children=[
+                    Transform(rotation=(1,0,0,1.57),translation=(0.5,0,-0.1),
+                      children=[
+                      Group(DEF='CannonAssembly',
+                        children=[
+                        Transform(rotation=(0,0,-1,0.79),
+                          children=[
+                          Transform(DEF='Cannon',rotation=(0,0,-1,0.79),scale=(0.033,2,0.033),translation=(1.2,1.2,0),
+                            children=[
+                            Shape(
+                              appearance=Appearance(
+                                material=Material(diffuseColor=(0.15,0.2,0.25))),
+                              geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]))]),
+                          Transform(DEF='MuzzleBrake',translation=(2.75,2.63,0),
+                            children=[
+                            Transform(DEF='BottomPlate',rotation=(0,0,1,0.79),
+                              children=[
+                              Shape(
+                                geometry=Box(size=(0.5,0.07,0.34)),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(0.15,0.2,0.15)))),
+                              Transform(DEF='TopPlate',translation=(0,0.175,0),
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.3,0.07,0.24)),
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.15,0.2,0.15))))]),
+                              Transform(DEF='SuppressionRingOne',rotation=(0,0,1,1.57),scale=(0.0375,0.0375,0.06),translation=(0.12,0.0875,0),
+                                children=[
+                                Shape(
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.15,0.2,0.25))),
+                                  geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]))]),
+                              Transform(DEF='SuppressionRingTwo',rotation=(0,0,1,1.57),scale=(0.0375,0.0375,0.06),translation=(-0.12,0.0875,0),
+                                children=[
+                                Shape(
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.15,0.2,0.225))),
+                                  geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]))]),
+                              Transform(DEF='SuppressionRingThree',rotation=(0,0,1,1.57),scale=(0.0375,0.0375,0.06),translation=(0,0.0875,0),
+                                children=[
+                                Shape(
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.15,0.2,0.25))),
+                                  geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]))]),
+                              Group(DEF='TowRing',
+                                children=[
+                                Transform(rotation=(1,0,0,1.57),scale=(1.1,1.1,1.1),translation=(0.31,0,0),
+                                  children=[
+                                  Shape(
+                                    appearance=Appearance(
+                                      material=Material(diffuseColor=(0.5,0.5,0.5),specularColor=(1,1,1))),
+                                    geometry=Extrusion(beginCap=False,creaseAngle=1.57,crossSection=[(0.01,0),(0.0092,-0.0038),(0.0071,-0.0071),(0.0038,-0.0092),(0,-0.01),(-0.0038,-0.0092),(-0.0071,-0.0071),(-0.0092,-0.0038),(-0.01,0),(-0.0092,0.0038),(-0.0071,0.0071),(-0.0038,0.0092),(0,0.01),(0.0038,0.0092),(0.0071,0.0071),(0.0092,0.0038),(0.01,0)],endCap=False,spine=[(0.03,0,0),(0.0276,-0.0114,0),(0.0213,-0.0213,0),(0.0114,-0.0276,0),(0,-0.03,0),(-0.0114,-0.0276,0),(-0.0213,-0.0213,0),(-0.0276,-0.0114,0),(-0.03,0,0),(-0.0276,0.0114,0),(-0.0213,0.0213,0),(-0.0114,0.0276,0),(0,0.03,0),(0.0114,0.0276,0),(0.0213,0.0213,0),(0.0276,0.0114,0),(0.03,0,0)])),
+                                  Transform(rotation=(0,-1,0,1.57),scale=(0.5,1,1),translation=(-0.027,0,0),
+                                    children=[
+                                    Shape(
+                                      appearance=Appearance(
+                                        material=Material(diffuseColor=(0.5,0.5,0.5),specularColor=(1,1,1))),
+                                      geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(0,0),(0.007,0),(0.018,0.025),(0.032,0.035),(0.04,0.036),(0.04,0.04),(0,0.04),(0,0)],endCap=False,spine=[(0.001,0,0),(0.00092,-0.00038,0),(0.00071,-0.00071,0),(0.00038,-0.00092,0),(0,-0.001,0),(-0.00038,-0.00092,0),(-0.00071,-0.00071,0),(-0.00092,-0.00038,0),(-0.001,0,0),(-0.00092,0.00038,0),(-0.00071,0.00071,0),(-0.00038,0.00092,0),(0,0.001,0),(0.00038,0.00092,0),(0.00071,0.00071,0),(0.00092,0.00038,0),(0.001,0,0)]))])])]),
+                              Transform(DEF='MuzzleBase',rotation=(0,0,1,1.57),scale=(0.035,0.166,0.035),translation=(-0.25,0.0875,0),
+                                children=[
+                                Shape(
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.15,0.2,0.25))),
+                                  geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]))])])])])]),
+                      Group(DEF='RecoilCradle',
+                        children=[
+                        Transform(DEF='Cradle',rotation=(0,0,-1,1.57),
+                          children=[
+                          Transform(DEF='RightSidewall',rotation=(0,1,0,1.57),translation=(-0.08,0,0.25),
+                            children=[
+                            Shape(
+                              geometry=Box(size=(0.0625,1.125,0.25)),
+                              appearance=Appearance(
+                                material=Material(),)),
+                            Transform(translation=(-0.06,0,0),
+                              children=[
+                              Shape(
+                                geometry=Box(size=(0.06,0.75,0.15)),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(0.1,0.2,0.1))))]),
+                            Transform(DEF='ForwardRightWall',translation=(0,0.975,0),
+                              children=[
+                              Shape(
+                                geometry=Box(size=(0.0625,0.775,0.25)),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(0.2,0.8,0.2)))),
+                              Transform(translation=(-0.06,0,0),
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.06,0.5,0.15)),
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.1,0.2,0.1))))]),
+                              Transform(DEF='FrontCradleBar',
+                                children=[
+                                Transform(DEF='ForwardCoil',scale=(0.4,0.4,0.4),translation=(0.25,0.15,0.05),
+                                  children=[
+                                  Shape(
+                                    geometry=Extrusion(beginCap=False,crossSection=[(-0.3,0.3),(-0.6,0.1),(-0.6,-0.1),(-0.3,-0.3),(0.3,-0.3),(0.6,-0.1),(0.6,0.1),(0.3,0.3),(-0.3,0.3)],endCap=False,solid=False,spine=[(0,0,0),(0,0.6,0)]),
+                                    appearance=Appearance(
+                                      material=Material(USE='grey')))])])])]),
+                          Transform(DEF='LeftSideWall',rotation=(0,1,0,1.57),translation=(-0.08,0,-0.25),
+                            children=[
+                            Shape(
+                              geometry=Box(size=(0.0625,1.125,0.25)),
+                              appearance=Appearance(
+                                material=Material(),)),
+                            Transform(translation=(0.06,0,0),
+                              children=[
+                              Shape(
+                                geometry=Box(size=(0.06,0.75,0.15)),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(0.1,0.2,0.1))))]),
+                            Transform(DEF='ForwardLeftWall',translation=(0,0.975,0),
+                              children=[
+                              Shape(
+                                geometry=Box(size=(0.0625,0.775,0.25)),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(0.2,0.8,0.2)))),
+                              Transform(translation=(0.06,0,0),
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.06,0.5,0.15)),
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(0.1,0.2,0.1))))])])]),
+                          Transform(DEF='Accumulator',translation=(-0.325,0.2,0),
+                            children=[
+                            Shape(
+                              geometry=Cylinder(height=0.75,radius=0.08),
+                              appearance=Appearance(
+                                material=Material(diffuseColor=(0,0.25,1))))]),
+                          Transform(DEF='RecoilCylinders',translation=(-0.25,0.4,0.25),
+                            children=[
+                            Shape(
+                              geometry=Cylinder(height=0.36,radius=0.04),
+                              appearance=Appearance(
+                                material=Material(diffuseColor=(1,1,0)))),
+                            Transform(translation=(0,-0.3,0),
+                              children=[
+                              Shape(
+                                geometry=Cylinder(height=0.3,radius=0.025),
+                                appearance=Appearance(
+                                  material=Material(USE='grey'))),
+                              Transform(translation=(0,-0.15,0),
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.1,0.2,0.1)),
+                                  appearance=Appearance(
+                                    material=Material(USE='grey')))])]),
+                            Transform(rotation=(1,0,0,1.57),translation=(0,0.25,0),
+                              children=[
+                              Shape(
+                                geometry=Cylinder(height=0.05,radius=0.075),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(1,1,0)))),
+                              Transform(
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.05,0.1,0.05)),
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(1,0,1))))])])]),
+                          Transform(DEF='Coils',
+                            children=[
+                            Transform(DEF='Coil',rotation=(1,0,0,1.57),translation=(-0.1,-0.25,0),
+                              children=[
+                              Shape(
+                                geometry=Cylinder(height=0.5,radius=0.075),
+                                appearance=Appearance(
+                                  material=Material(USE='grey')))]),
+                            Transform(translation=(0,0.1667,0),
+                              children=[
+                              Transform(USE='Coil')]),
+                            Transform(translation=(-0.1,0.66,0),
+                              children=[
+                              Transform(USE='Coil')])]),
+                          Transform(DEF='LeftRecoilCylinders',translation=(-0.25,0.4,-0.25),
+                            children=[
+                            Shape(
+                              geometry=Cylinder(height=0.36,radius=0.04),
+                              appearance=Appearance(
+                                material=Material(diffuseColor=(1,1,0)))),
+                            Transform(translation=(0,-0.3,0),
+                              children=[
+                              Shape(
+                                geometry=Cylinder(height=0.3,radius=0.025),
+                                appearance=Appearance(
+                                  material=Material(USE='grey'))),
+                              Transform(translation=(0,-0.15,0),
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.1,0.2,0.1)),
+                                  appearance=Appearance(
+                                    material=Material(USE='grey')))])]),
+                            Transform(rotation=(1,0,0,1.57),translation=(0,0.25,0),
+                              children=[
+                              Shape(
+                                geometry=Cylinder(height=0.05,radius=0.075),
+                                appearance=Appearance(
+                                  material=Material(diffuseColor=(1,1,0)))),
+                              Transform(
+                                children=[
+                                Shape(
+                                  geometry=Box(size=(0.05,0.1,0.05)),
+                                  appearance=Appearance(
+                                    material=Material(diffuseColor=(1,0,1))))])])]),
+                          Transform(DEF='Transfer',scale=(0.75,1,0.75),translation=(0.1,0,0),
+                            children=[
+                            Shape(
+                              appearance=Appearance(
+                                material=Material(),),
+                              geometry=Extrusion(creaseAngle=0.785,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],scale=[(0.1,0.35),(0.1,0.125),(0.0625,0.0625),(0.0625,0.0625),(0.0425,0.0425),(0.0425,0.0425),(0.06,0.06),(0.06,0.06),(0.025,0.025),(0.025,0.025),(0.0125,0.0125),(0.0125,0.0125),(0.0125,0.0125),(0.0125,0.0125)],spine=[(0,-0.25,0),(0,0.1,0),(0,0.2,0),(0,0.25,0),(0,0.45,0),(0,0.5,0),(0,0.52,0),(0,0.575,0),(0,0.6,0),(0,0.65,0),(0,0.675,0),(0,0.675,0),(0,0.75,0),(0,0.825,0)]),
+                              #  original scale had 3-tuples instead of 2-tuples 0.1 0.35 0.1, 0.1 0.125 0.1, 0.0625 0.0625 0.0625, 0.0625 0.0625 0.0625, 0.0425 0.0425 0.0425, 0.0425 0.0425 0.0425, 0.06 0.06 0.06, 0.06 0.06 0.06, 0.025 0.025 0.025, 0.025 0.025 0.025, 0.0125 0.0125 0.0125, 0.0125 0.0125 0.0125 
+                              )])]),
+                        Transform(DEF='Breach',translation=(0.75,0,0),
+                          children=[
+                          Shape(
+                            geometry=Box(size=(0.25,0.25,0.25)),
+                            appearance=Appearance(
+                              material=Material(diffuseColor=(0,0,1))))])])])])])])])])])]),
+      Group(DEF='TrailerBody',
+        children=[
+        Transform(DEF='TrailerBodyMain',rotation=(0,0,1,1.57),scale=(0.375,0.375,0.375),translation=(-0.11,0,-0.2),
+          children=[
+          Transform(rotation=(1,0,0,1.57),
+            children=[
+            Shape(
+              geometry=Extrusion(convex=False,crossSection=[(0,0.2),(-0.3,0.2),(-1,0.5),(-1.2,0.7),(-1.5,0.4),(-0.8,-0.3),(-0.8,-0.6),(-2.1,-2.55),(-1.9,-2.7),(-0.6,-1.3),(-0.4,-1.4),(-0.1,-1.5),(0.1,-1.5),(0.4,-1.4),(0.6,-1.3),(1.9,-2.7),(2.1,-2.55),(0.8,-0.6),(0.8,-0.3),(1.5,0.4),(1.2,0.7),(1,0.5),(0.3,0.2),(0,0.2)],solid=False,spine=[(0,0,0),(0,0.1667,0),(0,0.33,0)]),
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.15,0.25,0.1))))]),
+          Transform(DEF='RightSpadeHub',rotation=(0,0,-1,0.66),translation=(-2,2.6,0.1),
+            children=[
+            Shape(
+              geometry=Cylinder(height=0.1667,radius=0.1667),
+              appearance=Appearance(
+                material=Material(diffuseColor=(0,1,0.66)))),
+            Group(DEF='RightSpade',
+              children=[
+              Transform(rotation=(0,0,-1,1.57),scale=(0.5,0.5,0.5),translation=(-0.1667,0.25,-0.25),
+                children=[
+                Transform(rotation=(1,0,0,1.57),
+                  children=[
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0,0),(1,0,0),(1,1,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(0,0,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1,0.9,0.2),(1,0,0),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(1,0.9,0.2),(1,1,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(-0.3,0.3,0.2),(0,0,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1.3,0.3,0.2),(1,0,0),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1,0.9,0.2),(1.3,0.3,0.2),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(-0.3,0.3,0.2),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))])])])])]),
+          Transform(DEF='LeftSpadeHub',rotation=(0,0,1,0.66),translation=(2,2.6,0.1),
+            children=[
+            Shape(
+              geometry=Cylinder(height=0.1667,radius=0.1667),
+              appearance=Appearance(
+                material=Material(diffuseColor=(0,1,0.66)))),
+            Group(DEF='LeftSpade',
+              children=[
+              Transform(rotation=(0,0,1,1.57),scale=(0.5,0.5,0.5),translation=(0.1667,-0.25,-0.25),
+                children=[
+                Transform(rotation=(1,0,0,1.57),
+                  children=[
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0,0),(1,0,0),(1,1,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(0,0,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1,0.9,0.2),(1,0,0),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(1,0.9,0.2),(1,1,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(-0.3,0.3,0.2),(0,0,0),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1.3,0.3,0.2),(1,0,0),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(1,1,0),(1,0.9,0.2),(1.3,0.3,0.2),(1,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                        coord=Coordinate(point=[(0,1,0),(0,0.9,0.2),(-0.3,0.3,0.2),(0,1,0)])),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0,1,1))))])])])])])]),
+        Transform(DEF='LeftFrontStabilizer',rotation=(0,1,0,0.25),translation=(0.25,0.66,-0.175),
+          children=[
+          Transform(rotation=(0,0,1,0.79),
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0,0.15,0.8))),
+              geometry=Box(size=(0.5,0.125,0.1))),
+            Transform(DEF='LeftWheel',rotation=(0,0,-1,0.79),
+              children=[
+              Transform(scale=(0.05,0.05,0.05),translation=(0.2,-0.1,0.15),
+                children=[
+                Shape(
+                  geometry=Extrusion(DEF='Tire',beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)]),
+                  appearance=Appearance(
+                    material=Material(diffuseColor=(0.1,0.1,0.1)))),
+                Transform(
+                  children=[
+                  Shape(
+                    geometry=Cylinder(height=1,radius=1.5),
+                    appearance=Appearance(
+                      material=Material(USE='grey')))]),
+                Transform(DEF='WheelHub',translation=(0,0.66,0),
+                  children=[
+                  Shape(
+                    geometry=Cylinder(height=3,radius=0.5),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.1,0.1,0.1)))),
+                  Transform(DEF='LeftStrut',rotation=(0,1,0,0.79),
+                    children=[
+                    Transform(translation=(0,0.9,-1.75),
+                      children=[
+                      Shape(
+                        geometry=Box(size=(1,1,5)),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(0.2,0.2,0.2))))])])])])])])]),
+        Transform(DEF='RightFrontStabilizer',rotation=(0,1,0,0.25),translation=(0.25,-0.66,-0.175),
+          children=[
+          Transform(rotation=(0,0,-1,0.79),
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0,0.15,0.8))),
+              geometry=Box(size=(0.5,0.125,0.1))),
+            Transform(DEF='RightWheel',rotation=(0,0,1,0.79),
+              children=[
+              Transform(scale=(0.05,0.05,0.05),translation=(0.2,0.1,0.15),
+                children=[
+                Shape(
+                  geometry=Extrusion(USE='Tire'),
+                  appearance=Appearance(
+                    material=Material(diffuseColor=(0.1,0.1,0.1)))),
+                Transform(
+                  children=[
+                  Shape(
+                    geometry=Cylinder(height=1,radius=1.5),
+                    appearance=Appearance(
+                      material=Material(USE='grey')))]),
+                Transform(DEF='RightWheelHub',translation=(0,-0.33,0),
+                  children=[
+                  Shape(
+                    geometry=Cylinder(height=3,radius=0.5),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.1,0.1,0.1)))),
+                  Transform(DEF='RightStrut',rotation=(0,-1,0,2.09),
+                    children=[
+                    Transform(translation=(0,-1.25,1.75),
+                      children=[
+                      Shape(
+                        geometry=Box(size=(1,1,5)),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(0.2,0.2,0.2))))])])])])])])])])]),
+    Group(DEF='ProjectileScene',
+      children=[
+      Transform(translation=(200,-0.35,0.0),
+        children=[
+        Shape(DEF='Ground',
+          geometry=Box(size=(410.0,0.2,150.0)),
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(url=["dunes.jpg","https://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/dunes.jpg"])))]),
+      Transform(translation=(200,100,-75),
+        children=[
+        Shape(DEF='BackDrop',
+          geometry=Box(size=(410.0,200.0,.2)),
+          appearance=Appearance(
+            texture=ImageTexture(url=["horizon.jpg","https://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/horizon.jpg"])))]),
+      Transform(translation=(200,-0.25,0.0),
+        children=[
+        Shape(DEF='CenterLine',
+          geometry=Box(size=(410.0,0.1,2)),
+          appearance=Appearance(
+            material=Material(diffuseColor=(0.6,0.4,1),emissiveColor=(0.6,0.4,1))))]),
+      EspduTransform(DEF='projectileTransform',address='224.0.0.3',marking='Projectile',port=64200,siteID=3,writeInterval=0,
+        children=[
+        Transform(DEF='projectile2',rotation=(0,0,1,-1.57),scale=(1.5,3,1.5),
+          children=[
+          Shape(
+            geometry=Cylinder(radius=.5),
+            appearance=Appearance(
+              material=Material(diffuseColor=(0.887,0.027,0.910),specularColor=(0.887,0.027,0.910)))),
+          Transform(translation=(0,1.5,0),
+            children=[
+            Shape(
+              geometry=Cone(bottomRadius=0.5,height=1),
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.35,0.35,0.35),specularColor=(0.35,0.35,0.35))))])]),
+        Viewpoint(description='Projectile Rear',orientation=(0,1,0,-1.57),position=(-25,0,0)),
+        Viewpoint(description='Projectile Side',position=(0,0,50)),
+        Viewpoint(description='Projectile Front',orientation=(0,1,0,1.57),position=(25,0,0))]),
+      Transform(DEF='projectileViewTransform',
+        children=[
+        Viewpoint(description='Projectile Side-II',position=(0,0,50)),
+        Viewpoint(description='Projectile Front-II',orientation=(0,1,0,1.57),position=(25,0,0))])]),
+    ROUTE(fromField='translation',fromNode='projectileTransform',toField='set_translation',toNode='projectileViewTransform')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for CannonProject.py")

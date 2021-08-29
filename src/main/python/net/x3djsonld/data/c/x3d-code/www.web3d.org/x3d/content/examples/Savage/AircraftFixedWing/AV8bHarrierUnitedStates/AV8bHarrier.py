@@ -1,0 +1,577 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    #  Almost the entire model was done using extrusions. Something that helped a lot was the usage of a spread sheet for plotting the points of the extrusion and the spine. In that way I was able to visualize in some way the product before putting it to work in X3D-Edit. A plastic model was used and the contuor of it was plot in graph paper. A relative dimensions were taken and when the final product was assembled, a scale was applied in conformance with the real dimensions. The combination of the spreadsheet and graph paper really made the difference. 
+    meta(content='AV8bHarrier.x3d',name='title'),
+    meta(content='Model of the AV8B Harrier vertical short take off and landing aircraft. Used by the United States Marines, United Kingdom Royal Air Force, Spanish Navy and the Italian Navy. The pictures used in this model were taken by the author while deployed aboard USS Saipan and can be reproduced freely for reference.',name='description'),
+    meta(content='Miguel A. Ayala',name='creator'),
+    meta(content='Duane Davis',name='creator'),
+    meta(content='none',name='translator'),
+    meta(content='19 August 2001',name='created'),
+    meta(content='21 October 2018',name='modified'),
+    meta(content='http://www.boeing.com/defense-space/military/av8b/av8bphotos.htm http://www.boeing.com/defense-space/military/av8b/av8bspec.htm http://www.av8b.org/',name='reference'),
+    meta(content='"Plastic_model_air_intake.jpg" "Plastic_model_front.jpg" "Plastic_model_left_side.jpg" "Plastic_model_nozzles.jpg" "Plastic_model_top.jpg" "harrier_contours.jpg" "Harrier_Specs.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Plastic_model_air_intake.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Plastic_model_front.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Plastic_model_left_side.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Plastic_model_nozzles.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Plastic_model_top.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/harrier_contours.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Harrier_Specs.jpg"',name='reference'),
+    meta(content='"AV8B_side_fuselage_drawing_aid.jpg" "AV8B_top_fuselage_drawing_aid.jpg" "AV8B_wings_drawing_aid.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_side_fuselage_drawing_aid.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_top_fuselage_drawing_aid.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_wings_drawing_aid.jpg"',name='drawing'),
+    meta(content='"AV8B_back_of_flight_deck2.jpg" "AV8B_back_of_flight_deck.jpg" "AV8B.jpg" "AV8B_ready_to_takeoff.jpg" "Group_AV8B_back_of_flight_deck.jpg" "AV8B_landing_deck2.jpg" "Acraft51.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_back_of_flight_deck2.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_back_of_flight_deck.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_ready_to_takeoff.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Group_AV8B_back_of_flight_deck.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8B_landing_deck2.jpg" "https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/Acraft51.jpg"',name='photo'),
+    meta(content='https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/AV8bHarrier.x3d',name='identifier'),
+    meta(content='X3D-Edit, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    Viewpoint(description='Harrier AV8B',orientation=(0,1,0,0.4),position=(5,2,7)),
+    #  Put most Viewpoints under an LOD so they are only visible on the Viewpoint list when close. This keeps Viewpoints manageable in very large scenes that might use this model. 
+    Group(
+      children=[
+      Viewpoint(description='Harrier front, level',position=(0,0,7)),
+      Viewpoint(description='Harrier front, angle down',orientation=(1,0,0,-0.78),position=(0,10,5)),
+      Viewpoint(description='Harrier right wing, level',orientation=(0,1,0,1.57),position=(10,0,-6.5)),
+      Viewpoint(description='Harrier rear, level',orientation=(0,1,0,3.14),position=(0,1,-18)),
+      Viewpoint(description='Harrier left wing, level',orientation=(0,1,0,-1.57),position=(-10,0,-6.5)),
+      Viewpoint(description='Harrier bottom, up',orientation=(1,0,0,1.57),position=(0,-21,-6)),
+      Viewpoint(description='Harrier top, down',orientation=(1,0,0,-1.57),position=(0,21,-6))]),
+    Background(backUrl=["urn:web3d:media:textures/panoramas/ocean_3_back.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_back.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_back.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_back.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_back.jpg"],bottomUrl=["urn:web3d:media:textures/panoramas/ocean_3_bottom.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_bottom.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_bottom.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_bottom.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg"],frontUrl=["urn:web3d:media:textures/panoramas/ocean_3_front.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_front.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_front.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_front.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_front.jpg"],groundAngle=[0.1,1.309,1.570796],groundColor=[(0,0,0),(0,0.1,0.3),(0,0.2,0.5),(0,0.3,0.8)],leftUrl=["urn:web3d:media:textures/panoramas/ocean_3_left.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_left.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_left.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_left.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_left.jpg"],rightUrl=["urn:web3d:media:textures/panoramas/ocean_3_right.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_right.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_right.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_right.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_right.jpg"],skyAngle=[0.1,0.15,1.309,1.57079],skyColor=[(0.4,0.4,0.1),(0.4,0.4,0.1),(0,0.1,0.3),(0,0.2,0.6),(0.8,0.8,0.8)],topUrl=["urn:web3d:media:textures/panoramas/ocean_3_top.jpg","../../../Basic/UniversalMediaPanoramas/ocean_3_top.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_top.jpg","http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_top.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_top.jpg"]),
+    Transform(DEF='AV8B_transform',rotation=(-0.5775,0.577,0.5775,2.0935),scale=(.48,.5,.5),
+      children=[
+      Transform(DEF='Lower_Fuselage_transf',
+        children=[
+        Shape(DEF='Lower_fuselage',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(DEF='cammie1',url=["cammie1.jpg","https://savage.nps.edu/Savage/AircraftFixedWing/AV8bHarrierUnitedStates/cammie1.jpg"])),
+          geometry=Extrusion(creaseAngle=.785,crossSection=[(1,0),(0.92,-0.38),(0.82,-0.55),(0.71,-0.71),(0.58,-0.81),(0.38,-0.92),(0.2,-0.98),(0,-1),(-0.2,-0.98),(-0.38,-0.92),(-0.58,-0.81),(-0.71,-0.71),(-0.82,-0.55),(-0.92,-0.38),(-1,0),(1,0)],scale=[(0.02,0.02),(0.1,0.1),(0.11,0.11),(0.12,0.12),(0.13,0.13),(0.14,0.14),(0.15,0.15),(0.16,0.16),(0.17,0.17),(0.18,0.18),(0.19,0.19),(0.2,0.2),(0.21,0.21),(0.22,0.22),(0.23,0.23),(0.24,0.24),(0.99,0.5),(0.99,0.8),(0.99,0.95),(0.94,0.97),(0.81,1),(0.7,1.001),(0.7,1),(0.7,0.99),(0.7,0.95),(0.7,0.95),(0.7,0.95),(0.7,0.95)],spine=[(0.5,0,0),(0.56,0,0),(0.57,0,0),(0.58,0,0),(0.59,0,0),(0.6,0,0),(0.61,0,0),(0.62,0,0),(0.63,0,0),(0.64,0,0),(0.65,0,0),(0.66,0,0),(0.67,0,0),(0.68,0,0),(0.69,0,0),(0.7,0,0),(2.7,0,0),(6,0,0),(7.3,0,0),(8,0,0),(9,0,0),(9.25,0,0),(9.35,0,0),(9.5,0,0),(9.75,0,0),(9.85,0,0),(9.95,0,0),(10.1,0,0)]))]),
+      Transform(DEF='Upper_nose_transf',rotation=(1,0,0,3.1416),
+        children=[
+        Shape(DEF='Upper',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=.785,crossSection=[(1,0),(0.92,-0.38),(0.82,-0.55),(0.71,-0.71),(0.58,-0.81),(0.38,-0.92),(0.2,-0.98),(0,-1),(-0.2,-0.98),(-0.38,-0.92),(-0.58,-0.81),(-0.71,-0.71),(-0.82,-0.55),(-0.92,-0.38),(-1,0),(1,0)],scale=[(0.02,0.02),(0.1,0.1),(0.11,0.11),(0.12,0.12),(0.13,0.13),(0.14,0.14),(0.15,0.15),(0.16,0.16),(0.17,0.17),(0.18,0.18),(0.19,0.19),(0.2,0.2),(0.21,0.21),(0.22,0.22),(0.23,0.23),(0.24,0.24),(.901,.95),(.99,.99),(.99,1)],spine=[(0.5,0,0),(0.56,0,0),(0.57,0,0),(0.58,0,0),(0.59,0,0),(0.6,0,0),(0.61,0,0),(0.62,0,0),(0.63,0,0),(0.64,0,0),(0.65,0,0),(0.66,0,0),(0.67,0,0),(0.68,0,0),(0.69,0,0),(0.7,0,0),(2.45,0,0),(2.7,0,0),(3.25,0,0)]))]),
+      Transform(DEF='Cockpit_left_wall_transf',translation=(0,0.01,0),
+        children=[
+        Shape(DEF='Cockpit__left_wall',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=.785,crossSection=[(1,0),(0.92,0.38),(0.82,0.55),(0.71,0.71),(0.58,0.81),(0.58,0.78),(0.71,0.68),(0.82,0.52),(0.92,0.35),(0.97,0),(1,0)],scale=[(1,1),(1,1),(1,1.58),(1,1.78)],solid=False,spine=[(3.25,0,0),(5.25,0,0),(7.3,0,0),(9.95,.3,0)]))]),
+      Transform(DEF='Back_fuselage_turbine_transform',translation=(0,0,.2),
+        children=[
+        Shape(DEF='Back_Fuselage_top',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=5,crossSection=[(2.5,0),(2.45,0.3),(2.31,0.6),(2.06,0.9),(1.65,1.2),(0.86,1.5),(0,1.6),(-.86,1.5),(-1.45,1.3),(-1.95,1),(-2.24,0.7),(-2.42,0.4),(-2.49,0)],scale=[(.82,.855),(.8,.95),(.79,.9),(.78,.9),(.55,.85),(.55,.66),(.45,.66),(.02,.3)],solid=False,spine=[(9.2,0,0),(10,0,0),(10.5,0,0),(11,0,0),(12,0,0),(15.5,0,0),(21.5,0,0),(28,0,0)])),
+        Shape(DEF='Back_Fuselage_bottom',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=2,crossSection=[(-2.5,0),(-2.5,0),(-2.45,-0.3),(-2.31,-0.6),(-2.06,-0.9),(-1.65,-1.2),(-0.86,-1.5),(0,-1.6),(0.3,-1.58),(0.6,-1.55),(0.9,-1.49),(1.2,-1.403),(1.5,-1.28),(1.8,-1.11),(2.1,-0.86),(2.4,-0.44),(2.5,0)],scale=[(.82,.75),(.8,.74),(.79,.74),(.78,.74),(.55,.70),(.55,.66),(.45,.66),(.02,.3)],solid=False,spine=[(9.2,0,0),(10,0,0),(10.5,0,0),(11,0,0),(12,0,0),(15.5,0,0),(21.5,0,0),(28,0,0)])),
+        Shape(DEF='Back_Fuselage_bottom_fin',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=2,crossSection=[(-2.5,0),(-2.5,0),(-2.45,-0.3),(-2.31,-0.6),(-2.06,-0.9),(-1.65,-1.2),(-0.86,-1.5),(0,-1.6),(0.3,-1.58),(0.6,-1.55),(0.9,-1.49),(1.2,-1.403),(1.5,-1.28),(1.8,-1.11),(2.1,-0.86),(2.4,-0.44),(2.5,0)],scale=[(.07,.55),(0.02,.66),(0.02,.65),(.02,.64),(.02,.63),(.02,.61),(.02,.45)],solid=False,spine=[(23.5,0,0),(27.5,0,0),(27.6,0,0),(27.7,0,0),(27.8,0,0),(27.9,0,0),(28,0,0)]))]),
+      Transform(DEF='Intakes_transform',rotation=(0.5774,-0.5773,-0.5773,2.0944),scale=(.55,.505,1),translation=(7.25,0,-.7),
+        children=[
+        Group(DEF='Air_intakes',
+          children=[
+          Transform(DEF='Left_Intake_Transform',rotation=(0,1,0,-1.57079),scale=(1,1.1,.9),translation=(-1,-.38,-2),
+            children=[
+            Transform(rotation=(1,0,0,1.57079),translation=(0,4,0),
+              children=[
+              Shape(DEF='Left_Intake_Lower',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(0.5,0),(0.45,0.8),(0.42,1.4),(0.415,1.45),(0.41,1.5),(0.4,1.55),(0.39,1.6),(0.38,1.65),(0.37,1.7),(0.355,1.75),(0.34,1.8),(0.3,1.88),(0.25,1.95),(0.22,1.99),(0.2,1.99),(0.18,1.95),(0.17,1.9),(0.165,1.85),(0,0.8),(0,0),(0.5,0)],solid=False,spine=[(0,2.5,2.01),(0,2.45,2.28),(0,2.31,2.55),(0,2.06,2.8),(0,1.65,3.1),(0,0.86,3.45),(0,0,3.6),(0,-1,3.7)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1'))),
+              Transform(translation=(1,0,0),
+                children=[
+                Shape(DEF='Left_Intake_Top',
+                  geometry=Extrusion(creaseAngle=.78,crossSection=[(0.25,0.1),(0.42,0.4),(0.415,0.45),(0.41,0.5),(0.4,0.55),(0.39,0.6),(0.38,0.65),(0.37,0.7),(0.355,0.75),(0.34,0.8),(0.3,0.88),(0.25,0.95),(0.22,0.99),(0.2,0.99),(0.18,0.95),(0.17,0.9),(0.165,0.85),(0.05,0.25)],solid=False,spine=[(0,0,0.5),(0,0.3,0.5),(0,0.6,0.5),(0,0.9,0.51),(0,1.2,0.597),(0,1.5,0.8),(0,1.8,0.97),(0,2.1,1.22),(0,2.4,1.56),(0,2.5,2),(0,2.495,2.05)]),
+                  appearance=Appearance(
+                    material=Material(),
+                    texture=ImageTexture(USE='cammie1')))]),
+              Transform(translation=(-1.1,-.05,0),
+                children=[
+                Shape(DEF='Left_Intake_Top_Cover',
+                  geometry=Extrusion(creaseAngle=.78,crossSection=[(0.5,2),(0.55,1.1)],solid=False,spine=[(0,0,0.39),(0,0.3,0.41),(0,0.6,0.44),(0,0.9,0.5),(0,1.2,0.587),(0,1.5,0.71),(0,1.8,0.88),(0,2.1,1.13),(0,2.4,1.56),(0,2.5,2),(0,2.495,2.05)]),
+                  appearance=Appearance(
+                    material=Material(),
+                    texture=ImageTexture(USE='cammie1')))])])]),
+          Transform(DEF='Right_Intake_Transform',rotation=(0,1,0,1.57079),scale=(1,1.1,.9),translation=(1,-.38,0),
+            children=[
+            Transform(rotation=(1,0,0,1.57079),translation=(0,4,0),
+              children=[
+              Shape(DEF='Right_Intake_Top',
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(0.25,0.9),(0.42,0.6),(0.415,0.55),(0.41,0.5),(0.4,0.45),(0.39,0.4),(0.38,0.35),(0.37,0.3),(0.355,0.25),(0.34,0.2),(0.3,0.12),(0.25,0.05),(0.22,0.01),(0.2,0.01),(0.18,0.05),(0.17,0.1),(0.165,0.15),(0.05,0.75)],solid=False,spine=[(0,0,0.4),(0,0.3,0.42),(0,0.6,0.45),(0,0.9,0.51),(0,1.2,0.597),(0,1.5,0.72),(0,1.8,0.89),(0,2.1,1.14),(0,2.4,1.56),(0,2.5,2),(0,2.495,2.05)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1'))),
+              Shape(DEF='Right_Intake_Lower',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(0.5,2),(0.45,1.2),(0.42,0.6),(0.415,0.55),(0.41,0.5),(0.4,0.45),(0.39,0.4),(0.38,0.35),(0.37,0.3),(0.355,0.25),(0.34,0.2),(0.3,0.12),(0.25,0.05),(0.22,0.01),(0.2,0.01),(0.18,0.05),(0.17,0.1),(0.165,0.15),(0,1.2),(0,2),(0.5,2)],solid=False,spine=[(0,2.5,2),(0,2.45,2.28),(0,2.31,2.55),(0,2.06,2.8),(0,1.65,3.1),(0,0.86,3.45),(0,0,3.6),(0,-1,3.7)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1'))),
+              Shape(DEF='Right_Intake_Top_Cover',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(0.5,2),(0.45,1.1)],solid=False,spine=[(0,0,0.3),(0,0.3,0.32),(0,0.6,0.4),(0,0.9,0.51),(0,1.2,0.597),(0,1.5,0.72),(0,1.8,0.89),(0,2.1,1.14),(0,2.4,1.56),(0,2.5,2),(0,2.495,2.05)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')))])]),
+          Transform(DEF='Intakes_back_union_transf',scale=(.43,.5,1),translation=(0,4,-9.26),
+            children=[
+            Shape(DEF='Intake_back_union',
+              appearance=Appearance(
+                material=Material(),
+                texture=ImageTexture(USE='cammie1')),
+              geometry=Extrusion(creaseAngle=2,crossSection=[(2.5,0),(2.45,-0.3),(2.31,-0.6),(2.06,-0.9),(1.65,-1.2),(0.86,-1.5),(0,-1.6),(-0.86,-1.5),(-1.45,-1.3),(-1.95,-1),(-2.24,-0.7),(-2.42,-0.4),(-2.49,0)],scale=[(1.65,.59),(1,.59),(1,.01)],solid=False,spine=[(0,0,7.3),(0,0,7.35),(0,0,8.5)]))])])]),
+      Transform(DEF='Wings_Transform',translation=(12,0,.9),
+        children=[
+        Group(DEF='Wing_Group',
+          children=[
+          Transform(DEF='Left_Wing_Transform',rotation=(1,0,0,.1309),scale=(1.2,1,1),translation=(8.4,-10.2,-1.5),
+            children=[
+            Shape(DEF='Left_Wing',
+              geometry=Extrusion(creaseAngle=.78,crossSection=[(4,1),(3.8,0.99),(3.6,0.98),(3.4,0.96),(3.2,0.93),(3,0.9),(2.8,0.85),(2.6,0.8),(2.4,0.77),(2.2,0.72),(2,0.68),(1.8,0.62),(1.6,0.6),(1.4,0.55),(1.2,0.52),(1,0.5),(0.8,0.48),(0.6,0.44),(0.4,0.42),(0.2,0.4),(0.4,0.38),(0.6,0.37),(0.8,0.36),(1,0.35),(1.2,0.32),(1.4,0.28),(1.6,0.23),(1.8,0.18),(2,0.15),(2.2,0.12),(2.4,0.1),(2.6,0.09),(2.8,0.07),(3,0.06),(3.2,0.05),(3.4,0.04),(3.6,0.05),(3.8,0.06),(4,0.07),(4.2,0.08),(4.4,0.09),(4.6,0.1),(4.8,0.11),(5,0.12),(5.2,0.14),(5.4,0.15),(5.6,0.18),(5.8,0.2),(6,0.21),(6.2,0.23),(6.4,0.26),(6.6,0.29),(6.8,0.33),(6.9,0.35),(6.95,0.36),(7,0.4),(6.95,0.5),(6.9,0.6),(6.8,0.7),(6.6,0.82),(6.4,0.9),(6.2,0.95),(6,0.97),(5.8,0.99),(5.6,1),(5.4,1.01),(5.2,1.02),(5,1.02),(4.8,1.02),(4.6,1.02),(4.4,1.02),(4.2,1.01),(4,1)],scale=[(1,1),(.3,.2)],solid=False,spine=[(0,9.6,0),(0,0,0)]),
+              appearance=Appearance(
+                material=Material(),
+                texture=ImageTexture(USE='cammie1'))),
+            Transform(DEF='Right_Wing_arc_transf',rotation=(1,0,0,3.141519),translation=(-9.9,10.6,.75),
+              children=[
+              Shape(DEF='Right_wing_arc',
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')),
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(1,10.6),(1.2,10.2),(1.4,10),(1.6,9.8),(1.8,9.7),(2,9.6),(2.2,9.5),(2.4,9.45),(2.6,9.4),(2.8,9.35),(3,9.3),(3.2,9.27),(3.4,9.26),(3.6,9.25),(3.8,9.22),(4,9.2),(3,10.6),(1,10.6)],scale=[(1,1),(1,1)],solid=False,spine=[(0,11.6,.2),(0,11.6,.25)]))])]),
+          Transform(DEF='Right_Wing_Transform',rotation=(0,0.0654,0.9979,3.1415),translation=(6.5,11.4,.7),
+            children=[
+            Transform(rotation=(0,1,0,3.141519),translation=(1,0,0),
+              children=[
+              Transform(center=(6,13,.7),rotation=(1,0,0,-.0835),scale=(1.2,1,1),translation=(4.1,.8,1),
+                children=[
+                Shape(DEF='Right_Wing',
+                  geometry=Extrusion(creaseAngle=.78,crossSection=[(4,0.1),(3.8,0.11),(3.6,0.12),(3.4,0.14),(3.2,0.17),(3,0.2),(2.8,0.25),(2.6,0.3),(2.4,0.33),(2.2,0.38),(2,0.42),(1.8,0.48),(1.6,0.5),(1.4,0.55),(1.2,0.58),(1,0.6),(0.8,0.62),(0.6,0.66),(0.4,0.68),(0.2,0.7),(0.4,0.72),(0.6,0.73),(0.8,0.74),(1,0.75),(1.2,0.78),(1.4,0.82),(1.6,0.87),(1.8,0.92),(2,0.95),(2.2,0.98),(2.4,1),(2.6,1.01),(2.8,1.03),(3,1.04),(3.2,1.05),(3.4,1.06),(3.6,1.05),(3.8,1.04),(4,1.03),(4.2,1.02),(4.4,1.01),(4.6,1),(4.8,0.99),(5,0.98),(5.2,0.96),(5.4,0.95),(5.6,0.92),(5.8,0.9),(6,0.89),(6.2,0.87),(6.4,0.84),(6.6,0.81),(6.8,0.77),(6.9,0.75),(6.95,0.74),(7,0.7),(6.95,0.6),(6.9,0.5),(6.8,0.4),(6.6,0.28),(6.4,0.2),(6.2,0.15),(6,0.13),(5.8,0.11),(5.6,0.1),(5.4,0.09),(5.2,0.08),(5,0.08),(4.8,0.08),(4.6,0.08),(4.4,0.08),(4.2,0.09),(4,0.1)],scale=[(1,1),(.3,.2)],solid=False,spine=[(0,9.6,0),(0,0,0)]),
+                  appearance=Appearance(
+                    material=Material(),
+                    texture=ImageTexture(USE='cammie1')))])]),
+            Transform(DEF='Left_arc_Transform',rotation=(0,1,0,3.141519),scale=(1.2,1,1),translation=(9.95,-1.2,-1.6),
+              children=[
+              Shape(DEF='Left_wing_arc',
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')),
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(1,0),(1.2,0.4),(1.4,0.6),(1.6,0.8),(1.8,0.9),(2,1),(2.2,1.1),(2.4,1.15),(2.6,1.2),(2.8,1.25),(3,1.3),(3.2,1.33),(3.4,1.34),(3.6,1.35),(3.8,1.38),(4,1.4),(3,0),(1,0)],scale=[(1,1),(1,1)],solid=False,spine=[(0,11.6,.2),(0,11.6,.25)]))])]),
+          Transform(DEF='Text_Transform',rotation=(0,0,1,1.309),translation=(5.5,3.5,.105),
+            children=[
+            Transform(DEF='Text_Alignment_Wing_Transform',rotation=(0,1,0,.19),
+              children=[
+              Shape(
+                geometry=Text(string=["MARINES"],
+                  fontStyle=FontStyle(family=["SANS"],size=1.3,style_='BOLD')),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0,0,0))))])])])]),
+      Transform(DEF='Back_cockpit_cover_plate_transf',center=(7.3,0,1.2),rotation=(0,1,0,-.065),
+        children=[
+        Shape(DEF='Back_cockpit_cover_plate',
+          geometry=Extrusion(crossSection=[(-0.5,0),(-0.5,0.05),(0.5,0.05),(0.5,0),(-0.5,0)],scale=[(1.18,.8),(1.18,1)],solid=False,spine=[(7.3,0,1.24),(10,0,1.24)]),
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')))]),
+      Transform(DEF='cockpit_seat_cover_plate_transf',rotation=(0,0,1,1.57079),
+        children=[
+        Shape(DEF='cockpit_seat_cover_plate',
+          geometry=Extrusion(crossSection=[(-0.5,0),(-0.5,0.05),(0.5,0.05),(0.5,0),(-0.5,0)],scale=[(1.95,1),(1.93,1),(1.8,1),(1.75,1),(1.7,1),(1.6,1),(1.5,1),(1.2,1),(1.19,1)],solid=False,spine=[(0,-7.25,0),(0,-7.25,0.1594),(0,-7.25,0.3188),(0,-7.25,0.4782),(0,-7.25,0.6375),(0,-7.25,0.7819),(0,-7.25,0.9263),(0,-7.25,1.1156),(0,-7.25,1.275)]),
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')))]),
+      Transform(DEF='cockpit_right_wall_transf',rotation=(1,0,0,3.142),translation=(0,-.01,0),
+        children=[
+        Shape(DEF='Cockpit_right_wall',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=.785,crossSection=[(-1,0),(-0.92,0.38),(-0.82,0.55),(-0.71,0.71),(-0.58,0.81),(-0.58,0.78),(-0.71,0.68),(-0.82,0.52),(-0.92,0.35),(-0.97,0.00)],scale=[(1,1),(1,1),(1,1.58),(1,1.78)],spine=[(3.2,0,0),(5.25,0,0),(7.3,0,0),(9.95,-.3,0)]))]),
+      Transform(DEF='Tail_transform',translation=(23,-.6,1.5),
+        children=[
+        Group(DEF='Tail',
+          children=[
+          Transform(DEF='Stabilizer_group_transf',
+            children=[
+            Group(DEF='Rudder_group',
+              children=[
+              Transform(DEF='Rudder_transform',translation=(4.25,.735,0),
+                children=[
+                Shape(DEF='Tail3_Rudder',
+                  appearance=Appearance(
+                    material=Material(),
+                    texture=ImageTexture(USE='cammie1')),
+                  geometry=Extrusion(creaseAngle=.78,crossSection=[(0,0),(0,0.24),(0.2,0.24),(0.7,0.12),(0.2,0),(0,0)],solid=False,spine=[(0,0,0),(0,0,3.78)]))]),
+              Transform(DEF='Tail_curved_top_transform',translation=(-8.1,.11,-13.45),
+                children=[
+                Shape(DEF='Tail_top_curved2',
+                  appearance=Appearance(
+                    material=Material(),
+                    texture=ImageTexture(USE='cammie1')),
+                  geometry=Extrusion(creaseAngle=.785,crossSection=[(0,0.25),(-0.03,0.245),(-0.06,0.231),(-0.09,0.206),(-0.12,0.165),(-0.15,0.086),(-0.16,0),(-0.158,-0.03),(-0.155,-0.06),(-0.149,-0.09),(-0.1403,-0.12),(-0.128,-0.15),(-0.111,-0.18),(-0.086,-0.21),(-0.044,-0.24),(0,-0.25)],scale=[(2,.6),(2,.6),(2.1,.6),(2.5,.6),(3,.6),(3.5,.6),(4,.6),(4,.6),(4,.6),(4,.6),(4,.6),(4,.58),(4,.3),(4,.28),(4,.25),(4,.15),(4,.05),(4,.001)],solid=False,spine=[(7.25,.5,13.4),(7.75,.5,13.4),(8,.5,13.45),(8.25,.5,13.55),(8.5,.5,13.65),(9,.5,13.95),(9.35,.5,14.2),(9.6,.5,14.4),(10,.5,14.75),(12,.5,16.5),(12.25,.5,16.75),(12.55,.5,17),(12.8,.5,17.2),(12.81,0.5,17.21),(12.85,0.5,17.214),(12.91,0.5,17.218),(13,0.5,17.22),(13.05,.5,17.22)]))]),
+              Shape(DEF='Tail2_triangle_extrusion',
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')),
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(0,0),(4.25,3.9),(4.25,0),(0,0)],solid=False,spine=[(0,.5,0),(0,.725,0)])),
+              Transform(rotation=(1,0,0,1.57079),translation=(1.2,.45,.5),
+                children=[
+                Shape(DEF='MARINES-Text_',
+                  geometry=Text(string=["MARINES"],
+                    fontStyle=FontStyle(family=["SANS"],size=.5,style_='BOLD')),
+                  appearance=Appearance(
+                    material=Material(diffuseColor=(0,0,0))))]),
+              Transform(rotation=(1,0,0,1.57079),translation=(1.2,.45,1),
+                children=[
+                Shape(DEF='BUNO-TEXT',
+                  geometry=Text(string=["162072"],
+                    fontStyle=FontStyle(family=["SANS"],size=.25,style_='BOLD')),
+                  appearance=Appearance(
+                    material=Material(diffuseColor=(0,0,0))))]),
+              Transform(rotation=(-0,0.7071,0.7071,3.1416),translation=(3.15,.765,.5),
+                children=[
+                Shape(USE='MARINES-Text_')]),
+              Transform(rotation=(-0,0.7071,0.7071,3.1416),translation=(1.95,.78,1),
+                children=[
+                Shape(USE='BUNO-TEXT')])])])]),
+        Transform(DEF='Stabilizer_Group_transf',rotation=(0,0,1,1.57079),scale=(1.75,1.75,1),translation=(5,.62,-.5),
+          children=[
+          Group(DEF='Stabilizer_Group',
+            children=[
+            Transform(DEF='Left_stabilizer_transf',rotation=(0,1,0,-.1222),translation=(-.2,0,0),
+              children=[
+              Shape(DEF='Left_Stabilizer',
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(4,1),(3.8,0.99),(3.6,0.98),(3.4,0.96),(3.2,0.93),(3,0.9),(2.8,0.85),(2.6,0.8),(2.4,0.77),(2.2,0.72),(2,0.68),(1.8,0.62),(1.6,0.6),(1.4,0.55),(1.2,0.52),(1,0.5),(0.8,0.48),(0.6,0.44),(0.4,0.42),(0.2,0.4),(0.4,0.38),(0.6,0.37),(0.8,0.36),(1,0.35),(1.2,0.32),(1.4,0.28),(1.6,0.23),(1.8,0.18),(2,0.15),(2.2,0.12),(2.4,0.1),(2.6,0.09),(2.8,0.07),(3,0.06),(3.2,0.05),(3.4,0.04),(3.6,0.05),(3.8,0.06),(4,0.07),(4.2,0.08),(4.4,0.09),(4.6,0.1),(4.8,0.11),(5,0.12),(5.2,0.14),(5.4,0.15),(5.6,0.18),(5.8,0.2),(6,0.21),(6.2,0.23),(6.4,0.26),(6.6,0.29),(6.8,0.33),(6.9,0.35),(6.95,0.36),(7,0.4),(6.95,0.5),(6.9,0.6),(6.8,0.7),(6.6,0.82),(6.4,0.9),(6.2,0.95),(6,0.97),(5.8,0.99),(5.6,1),(5.4,1.01),(5.2,1.02),(5,1.02),(4.8,1.02),(4.6,1.02),(4.4,1.02),(4.2,1.01),(4,1)],scale=[(.3,.2),(.1,.1)],solid=False,spine=[(0,0,0),(-2.75,0,0)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')))]),
+            Transform(DEF='Right_stabilizaer_transf',rotation=(0,1,0,.1222),translation=(.2,0,0),
+              children=[
+              Shape(DEF='Right_Stabilizer',
+                geometry=Extrusion(creaseAngle=.78,crossSection=[(4,1),(3.8,0.99),(3.6,0.98),(3.4,0.96),(3.2,0.93),(3,0.9),(2.8,0.85),(2.6,0.8),(2.4,0.77),(2.2,0.72),(2,0.68),(1.8,0.62),(1.6,0.6),(1.4,0.55),(1.2,0.52),(1,0.5),(0.8,0.48),(0.6,0.44),(0.4,0.42),(0.2,0.4),(0.4,0.38),(0.6,0.37),(0.8,0.36),(1,0.35),(1.2,0.32),(1.4,0.28),(1.6,0.23),(1.8,0.18),(2,0.15),(2.2,0.12),(2.4,0.1),(2.6,0.09),(2.8,0.07),(3,0.06),(3.2,0.05),(3.4,0.04),(3.6,0.05),(3.8,0.06),(4,0.07),(4.2,0.08),(4.4,0.09),(4.6,0.1),(4.8,0.11),(5,0.12),(5.2,0.14),(5.4,0.15),(5.6,0.18),(5.8,0.2),(6,0.21),(6.2,0.23),(6.4,0.26),(6.6,0.29),(6.8,0.33),(6.9,0.35),(6.95,0.36),(7,0.4),(6.95,0.5),(6.9,0.6),(6.8,0.7),(6.6,0.82),(6.4,0.9),(6.2,0.95),(6,0.97),(5.8,0.99),(5.6,1),(5.4,1.01),(5.2,1.02),(5,1.02),(4.8,1.02),(4.6,1.02),(4.4,1.02),(4.2,1.01),(4,1)],scale=[(.1,.1),(.3,.2)],solid=False,spine=[(2.75,0,0),(0,0,0)]),
+                appearance=Appearance(
+                  material=Material(),
+                  texture=ImageTexture(USE='cammie1')))])])])]),
+      Transform(DEF='Top_Back_fuselage_spine',rotation=(1,0,0,3.1416),translation=(0,0,1),
+        children=[
+        Shape(DEF='Top_back_fuselage_spine',
+          appearance=Appearance(
+            material=Material(),
+            texture=ImageTexture(USE='cammie1')),
+          geometry=Extrusion(creaseAngle=2,crossSection=[(2.5,0),(2.45,-0.3),(2.31,-0.6),(2.06,-0.9),(1.65,-1.2),(0.86,-1.5),(0,-1.6),(-0.86,-1.5),(-1.45,-1.3),(-1.95,-1),(-2.24,-0.7),(-2.42,-0.4),(-2.49,0)],scale=[(.3,.2),(.22,.32),(.6,.32),(.6,.5),(.55,.65),(.55,.7),(.5,.6),(.4,.5),(.1,.2)],solid=False,spine=[(7.3,0,0),(9.0,0,0),(9.2,0,0),(9.9,0,0),(11,0,0),(12,0,0),(16,0,0),(19,0,0),(26,0,0)])),
+        Transform(DEF='Jamming_pod_transf',translation=(0,0,-.15),
+          children=[
+          Shape(DEF='Jamming_pod',
+            appearance=Appearance(
+              material=Material(),
+              texture=ImageTexture(USE='cammie1')),
+            geometry=Extrusion(creaseAngle=2,crossSection=[(2.5,0),(2.45,-0.3),(2.31,-0.6),(2.06,-0.9),(1.65,-1.2),(0.86,-1.5),(0,-1.6),(-0.86,-1.5),(-1.45,-1.3),(-1.95,-1),(-2.24,-0.7),(-2.42,-0.4),(-2.49,0),(-2.49,0),(-2.42,0.3),(-2.24,0.6),(-1.95,0.9),(-1.45,1.2),(-0.86,1.5),(0,1.6),(0.86,1.5),(1.65,1.3),(2.06,1),(2.31,0.7),(2.45,0.4),(2.5,0)],scale=[(.17,.29),(.17,.3),(.15,.27),(.12,.25),(.1,.2),(.05,.05)],solid=False,spine=[(20,0,0),(29.1,0,0),(29.2,0,0),(29.3,0,0),(29.4,0,0),(29.5,0,0)]))])]),
+      Transform(DEF='Canopy_transf',center=(3,0,0),rotation=(0,1,0,-.1),translation=(0,0,.8),
+        children=[
+        Shape(DEF='Canopy-glass',
+          appearance=Appearance(
+            material=Material(diffuseColor=(.86,.94,.97),transparency=.8)),
+          geometry=Extrusion(creaseAngle=2,crossSection=[(0.95,-1),(1,0),(1.01,0.1),(1.02,0.2),(1.03,0.3),(1.04,0.4),(1.05,0.5),(1.04,0.6),(1.03,0.7),(1.02,0.8),(1.01,0.9),(1,0.925),(0.985,0.95),(0.96,1),(0.9,1.1),(0.8,1.2),(0.7,1.3),(0.6,1.4),(0.5,1.45),(0.4,1.48),(0.3,1.5),(0.2,1.53),(0.1,1.54),(0,1.55),(-0.1,1.54),(-0.2,1.53),(-0.3,1.5),(-0.4,1.48),(-0.5,1.45),(-0.6,1.4),(-0.7,1.3),(-0.8,1.2),(-0.9,1.1),(-0.96,1),(-0.985,0.95),(-1,0.925),(-1.01,0.9),(-1.02,0.8),(-1.03,0.7),(-1.04,0.6),(-1.05,0.5),(-1.04,0.4),(-1.03,0.3),(-1.02,0.2),(-1.01,0.1),(-1,0),(-0.95,-1)],scale=[(.48,.355),(.6,.43),(.6,.9),(.6,.95),(.6,1),(.6,.95),(.5,.6)],solid=False,spine=[(3.1,0,0),(3.3,0,0),(5,0,0),(5.2,0,0),(6,0,0),(6.5,0,0),(8.5,0,0)])),
+        Shape(DEF='Canopy-back',
+          appearance=Appearance(
+            material=Material(),),
+          geometry=Extrusion(creaseAngle=2,crossSection=[(1,0),(1.01,0.1),(1.02,0.2),(1.03,0.3),(1.04,0.4),(1.05,0.5),(1.04,0.6),(1.03,0.7),(1.02,0.8),(1.01,0.9),(1,0.925),(0.985,0.95),(0.96,1),(0.9,1.1),(0.8,1.2),(0.7,1.3),(0.6,1.4),(0.5,1.45),(0.4,1.48),(0.3,1.5),(0.2,1.53),(0.1,1.54),(0,1.55),(-0.1,1.54),(-0.2,1.53),(-0.3,1.5),(-0.4,1.48),(-0.5,1.45),(-0.6,1.4),(-0.7,1.3),(-0.8,1.2),(-0.9,1.1),(-0.96,1),(-0.985,0.95),(-1,0.925),(-1.01,0.9),(-1.02,0.8),(-1.03,0.7),(-1.04,0.6),(-1.05,0.5),(-1.04,0.4),(-1.03,0.3),(-1.02,0.2),(-1.01,0.1),(-1,0)],scale=[(.5,.6),(.1,.05)],solid=False,spine=[(8.5,0,0),(12.2,0,0)]))]),
+      Group(DEF='Instrumentations',
+        children=[
+        Transform(DEF='Instruments_transform',rotation=(1,0,0,3.1416),translation=(-.77,0,.8),
+          children=[
+          Shape(DEF='Instruments_panel',
+            appearance=Appearance(
+              material=Material(diffuseColor=(0,0,0))),
+            geometry=Extrusion(creaseAngle=1,crossSection=[(1,0),(0.92,-0.38),(0.82,-0.55),(0.71,-0.71),(0.58,-0.81),(0.38,-0.92),(0.2,-0.98),(0,-1),(-0.2,-0.98),(-0.38,-0.92),(-0.58,-0.81),(-0.71,-0.71),(-0.82,-0.55),(-0.92,-0.38),(-1,0),(1,0)],scale=[(.57,.9),(.51,.50),(.20,.2),(.1,.05)],spine=[(5.5,0,0),(4,0,0),(3.5,0,0),(3.0,0,0)])),
+          Shape(DEF='Instruments',
+            appearance=Appearance(
+              material=Material(),),
+            geometry=Extrusion(creaseAngle=1,crossSection=[(1,0),(0.92,-0.38),(0.82,-0.55),(0.71,-0.71),(0.58,-0.81),(0.38,-0.92),(0.2,-0.98),(0,-1),(-0.2,-0.98),(-0.38,-0.92),(-0.58,-0.81),(-0.71,-0.71),(-0.82,-0.55),(-0.92,-0.38),(-1,0),(1,0)],scale=[(.52,.85),(.52,.85)],spine=[(5.52,0,0),(5.4,0,0)])),
+          Transform(DEF='Canopy_front_trabsf',center=(4.0,0,0),rotation=(0,1,0,.2618),translation=(0,0,-.08),
+            children=[
+            Shape(DEF='Canopy_front',
+              appearance=Appearance(
+                material=Material(),
+                texture=ImageTexture(USE='cammie1')),
+              geometry=Extrusion(creaseAngle=1,crossSection=[(1,0),(0.92,-0.38),(0.82,-0.55),(0.71,-0.71),(0.58,-0.81),(0.38,-0.92),(0.2,-0.98),(0,-1),(-0.2,-0.98),(-0.38,-0.92),(-0.58,-0.81),(-0.71,-0.71),(-0.82,-0.55),(-0.92,-0.38),(-1,0),(1,0)],scale=[(.58,.50),(.1,.05)],spine=[(4.0,0,0),(2.5,0,0)]))])]),
+        Transform(translation=(4.69,-.35,.4),
+          children=[
+          Shape(
+            geometry=Box(size=(.1,.3,1)),
+            appearance=Appearance(
+              material=Material(),))]),
+        Transform(translation=(4.69,.35,.4),
+          children=[
+          Shape(
+            geometry=Box(size=(.1,.3,1)),
+            appearance=Appearance(
+              material=Material(),))])]),
+      Group(DEF='Left_nozzle_group',
+        children=[
+        Transform(DEF='Left_front_nozzle_cover_transf',translation=(10,1.74,-.2),
+          children=[
+          Shape(DEF='Left_front_nozzle_cover',
+            geometry=Extrusion(creaseAngle=2,crossSection=[(0.1,0),(-0.1,0.01),(-0.3,0.2),(-0.25,0.4),(-0.18,0.6),(-0.1,0.8),(0.6,0.8),(0.6,0.75),(-0.1,0.75),(-0.15,0.6),(-0.22,0.4),(-0.27,0.2),(-0.1,0.05),(0.4,0.05),(0.4,0)],scale=[(.0001,1),(1,1)],solid=False,spine=[(0,0,0),(2.1,0,0)]),
+            appearance=Appearance(
+              material=Material(),
+              texture=ImageTexture(USE='cammie1')))]),
+        Transform(DEF='Left_back_nozzle_cover_transf',rotation=(0,1,0,.05),scale=(1,.7,1),translation=(14,1.3,-.25),
+          children=[
+          Shape(DEF='Left_back_nozzle_cover',
+            geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0),(-0.7,0.01),(-0.9,0.2),(-0.85,0.4),(-0.78,0.6),(-0.7,0.8),(0.2,0.8),(0.2,0.75),(-0.7,0.75),(-0.75,0.6),(-0.82,0.4),(-0.87,0.2),(-0.7,0.05),(0.2,0.05),(0.2,0)],scale=[(0.001,1),(.9,1)],solid=False,spine=[(-1.1,0,0),(2.1,0,0)]),
+            appearance=Appearance(
+              material=Material(),
+              texture=ImageTexture(USE='cammie1')))]),
+        Transform(DEF='Left_front_nozzle',rotation=(0.5774,0.5773,0.5774,2.0943),scale=(.7,.7,.7),translation=(12.75,.7,.2),
+          children=[
+          Group(DEF='Front_nozzle',
+            children=[
+            Transform(rotation=(1,0,0,1.5707),scale=(1.76,1.5,1.5),
+              children=[
+              Shape(DEF='Circular_pivot_base2',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(0.375,0.375),(0.425,0.371651719),(0.475,0.361420807),(0.525,0.343693177),(0.575,0.317214439),(0.625,0.279508497),(0.675,0.225),(0.725,0.13462912),(0.75,0),(0.725,-0.13462912),(0.675,-0.225),(0.625,-0.279508497),(0.575,-0.317214439),(0.525,-0.343693177),(0.475,-0.361420807),(0.425,-0.371651719),(0.375,-0.375),(0.325,-0.371651719),(0.275,-0.361420807),(0.225,-0.343693177),(0.175,-0.317214439),(0.125,-0.279508497),(0.075,-0.225),(0.025,-0.13462912),(0,0),(0.05,0.13462912),(0.1,0.225),(0.15,0.279508497),(0.2,0.317214439),(0.25,0.343693177),(0.3,0.361420807),(0.35,0.371651719),(0.375,0.375)],endCap=False,scale=[(1,1),(1,1),(.95,1),(.9,1),(.87,1),(.77,1),(.55,1),(.3,1)],solid=False,spine=[(0,0,0),(.5,0,0),(.6,0,0),(.7,0,0),(.8,0,0),(.9,0,0),(.99,0,0),(1,0,0)]),
+                appearance=Appearance(
+                  material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))]),
+            Transform(center=(1,0,0),rotation=(0,1,0,1.5707),
+              children=[
+              Shape(DEF='Rectangle_base2',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(-0.45,0),(0.5,0),(0.5,0.75),(-0.5,0.75),(-0.5,0),(-0.45,0),(-0.45,0.7),(0.45,0.7),(0.45,0.05),(-0.45,0.05),(-0.45,0)],endCap=False,scale=[(1.1,1.05),(1.1,1.05),(1.1,1.05),(1.1,1.05),(1.1,1.03),(1.1,1),(1.0,.9),(.5,.3)],solid=False,spine=[(.5,0,0),(1,0,0),(1.1,0,0),(1.2,0,0),(1.3,0,0),(1.4,0,0),(1.5,0,0),(1.6,0,0)]),
+                appearance=Appearance(
+                  material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])])]),
+        Transform(DEF='Left_back_nozzle_transf',rotation=(0.5774,0.5773,0.5774,2.0943),scale=(.9,.8,.8),translation=(16.8,.25,.04),
+          children=[
+          Group(DEF='back_nozzle',
+            children=[
+            Transform(center=(1,0,0),rotation=(0,1,0,1.5707),translation=(.26,0,-.22),
+              children=[
+              Shape(DEF='circluar_base2',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0.25),(-0.375,0.125),(-0.25,0.0625),(-0.125,0.02),(0,0),(0.125,0.02),(0.25,0.0625),(0.375,0.125),(0.5,0.25),(0.45,0.25),(0.325,0.125),(0.2,0.0625),(0.075,0.028),(0,0.015),(-0.075,0.028),(-0.2,0.0625),(-0.325,0.125),(-0.45,0.25),(-0.5,0.25)],endCap=False,scale=[(1,1),(1.18,2),(1,1.4)],solid=False,spine=[(-.1,0,0),(.80,0,0),(1,0,0)]),
+                appearance=Appearance(
+                  material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116)))),
+              Transform(center=(1,0,0),rotation=(0,1,0,-.28),translation=(.55,0,.71),
+                children=[
+                Shape(DEF='Left_nozzle_vane',
+                  geometry=Box(size=(.4,1,.01)),
+                  appearance=Appearance(
+                    material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))]),
+              Transform(center=(1,0,0),rotation=(0,1,0,-.28),translation=(.15,0,.50),
+                children=[
+                Shape(DEF='Left_nozzle_vane2',
+                  geometry=Box(size=(.4,.8,.01)),
+                  appearance=Appearance(
+                    material=Material(),))])]),
+            Transform(rotation=(1,0,0,1.5707),scale=(1.76,1.5,1.5),
+              children=[
+              Shape(DEF='Left_Circular_pivot_base',
+                geometry=Extrusion(creaseAngle=2,crossSection=[(0.375,0.375),(0.425,0.371651719),(0.475,0.361420807),(0.525,0.343693177),(0.575,0.317214439),(0.625,0.279508497),(0.675,0.225),(0.725,0.13462912),(0.75,0),(0.725,-0.13462912),(0.675,-0.225),(0.625,-0.279508497),(0.575,-0.317214439),(0.525,-0.343693177),(0.475,-0.361420807),(0.425,-0.371651719),(0.375,-0.375),(0.325,-0.371651719),(0.275,-0.361420807),(0.225,-0.343693177),(0.175,-0.317214439),(0.125,-0.279508497),(0.075,-0.225),(0.025,-0.13462912),(0,0),(0.05,0.13462912),(0.1,0.225),(0.15,0.279508497),(0.2,0.317214439),(0.25,0.343693177),(0.3,0.361420807),(0.35,0.371651719),(0.375,0.375)],endCap=False,scale=[(1,1),(1,1),(.97,1),(.95,1),(.9,1),(.75,1),(.6,1),(.45,1),(0.001,1)],solid=False,spine=[(0,0,0),(.5,0,0),(.6,0,0),(.7,0,0),(.8,0,0),(.9,0,0),(.95,0,0),(.975,0,0),(1,0,0)]),
+                appearance=Appearance(
+                  material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])])]),
+        Transform(DEF='back_nozzle_protector_transf',rotation=(1,0,0,-1.5707),scale=(1,.9,.3),translation=(17,1.28,.04),
+          children=[
+          Shape(DEF='protector',
+            geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0.25),(-0.375,0.125),(-0.25,0.0625),(-0.125,0.02),(0,0),(0.125,0.02),(0.25,0.0625),(0.375,0.125),(0.5,0.25),(0.4,0.27),(0.4,0.25),(0.43,0.23),(0.325,0.125),(0.25,0.137),(0.25,0.12),(0.3,0.105),(0.2,0.0625),(0.075,0.028),(0.05,0.02),(0.05,0.03),(-0.05,0.03),(-0.05,0.02),(0,0.015),(-0.075,0.028),(-0.2,0.0625),(-0.3,0.105),(-0.25,0.12),(-0.25,0.137),(-0.325,0.125),(-0.45,0.23),(-0.4,0.25),(-0.4,0.27),(-0.5,0.25)],endCap=False,scale=[(1,1),(1.18,2),(1,1.4)],solid=False,spine=[(0,0,0),(1,0,0),(2,0,0)]),
+            appearance=Appearance(
+              material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])]),
+      Transform(DEF='Right_nozzle_group_tranf',rotation=(0.1,-0,-0.0017,3.1416),translation=(0,0,.8),
+        children=[
+        Group(DEF='Right_nozzle_group',
+          children=[
+          Transform(DEF='Right_front_nozzle_cover_transf',translation=(10,1.74,-.2),
+            children=[
+            Shape(DEF='Right_front_nozzle_cover',
+              geometry=Extrusion(creaseAngle=2,crossSection=[(0.1,0),(-0.1,0.01),(-0.3,0.2),(-0.25,0.4),(-0.18,0.6),(-0.1,0.8),(0.6,0.8),(0.6,0.75),(-0.1,0.75),(-0.15,0.6),(-0.22,0.4),(-0.27,0.2),(-0.1,0.05),(0.4,0.05),(0.4,0)],scale=[(0.001,1),(1,1)],solid=False,spine=[(0,0,0),(2.1,0,0)]),
+              appearance=Appearance(
+                material=Material(),
+                texture=ImageTexture(USE='cammie1')))]),
+          Transform(DEF='Right_back_nozzle_cover_transf',scale=(1,.7,1),translation=(14,1.3,-.25),
+            children=[
+            Shape(DEF='Right_back_nozzle_cover',
+              geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0),(-0.7,0.01),(-0.9,0.2),(-0.85,0.4),(-0.78,0.6),(-0.7,0.8),(0.2,0.8),(0.2,0.75),(-0.7,0.75),(-0.75,0.6),(-0.82,0.4),(-0.87,0.2),(-0.7,0.05),(0.2,0.05),(0.2,0)],scale=[(0.001,1),(.9,1)],solid=False,spine=[(-1.1,0,0),(2.1,0,0)]),
+              appearance=Appearance(
+                material=Material(),
+                texture=ImageTexture(USE='cammie1')))]),
+          Transform(DEF='Right_front_nozzle',rotation=(0.5774,0.5773,0.5774,2.0943),scale=(.7,.7,.7),translation=(12.75,.7,.2),
+            children=[
+            Group(DEF='Right_Front_nozzle',
+              children=[
+              Transform(rotation=(1,0,0,1.5707),scale=(1.76,1.5,1.5),
+                children=[
+                Shape(DEF='Right_Circular_pivot_base',
+                  geometry=Extrusion(creaseAngle=2,crossSection=[(0.375,0.375),(0.425,0.371651719),(0.475,0.361420807),(0.525,0.343693177),(0.575,0.317214439),(0.625,0.279508497),(0.675,0.225),(0.725,0.13462912),(0.75,0),(0.725,-0.13462912),(0.675,-0.225),(0.625,-0.279508497),(0.575,-0.317214439),(0.525,-0.343693177),(0.475,-0.361420807),(0.425,-0.371651719),(0.375,-0.375),(0.325,-0.371651719),(0.275,-0.361420807),(0.225,-0.343693177),(0.175,-0.317214439),(0.125,-0.279508497),(0.075,-0.225),(0.025,-0.13462912),(0,0),(0.05,0.13462912),(0.1,0.225),(0.15,0.279508497),(0.2,0.317214439),(0.25,0.343693177),(0.3,0.361420807),(0.35,0.371651719),(0.375,0.375)],endCap=False,scale=[(1,1),(1,1),(.95,1),(.9,1),(.87,1),(.77,1),(.55,1),(.3,1)],solid=False,spine=[(0,0,0),(.5,0,0),(.6,0,0),(.7,0,0),(.8,0,0),(.9,0,0),(.99,0,0),(1,0,0)]),
+                  appearance=Appearance(
+                    material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))]),
+              Transform(center=(1,0,0),rotation=(0,1,0,1.5707),
+                children=[
+                Shape(DEF='Rectangle_base',
+                  geometry=Extrusion(creaseAngle=2,crossSection=[(-0.45,0),(0.5,0),(0.5,0.75),(-0.5,0.75),(-0.5,0),(-0.45,0),(-0.45,0.7),(0.45,0.7),(0.45,0.05),(-0.45,0.05),(-0.45,0)],endCap=False,scale=[(1.1,1.05),(1.1,1.05),(1.1,1.05),(1.1,1.05),(1.1,1.03),(1.1,1),(1.0,.9),(.5,.3)],solid=False,spine=[(.5,0,0),(1,0,0),(1.1,0,0),(1.2,0,0),(1.3,0,0),(1.4,0,0),(1.5,0,0),(1.6,0,0)]),
+                  appearance=Appearance(
+                    material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])])]),
+          Transform(DEF='Right_back_nozzle_transf',rotation=(0.5774,0.5773,0.5774,2.0943),scale=(.9,.8,.8),translation=(16.8,.25,.18),
+            children=[
+            Group(DEF='Right_back_nozzle',
+              children=[
+              Transform(center=(1,0,0),rotation=(0,1,0,1.5707),translation=(.26,0,-.22),
+                children=[
+                Shape(DEF='circluar_base',
+                  geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0.25),(-0.375,0.125),(-0.25,0.0625),(-0.125,0.02),(0,0),(0.125,0.02),(0.25,0.0625),(0.375,0.125),(0.5,0.25),(0.45,0.25),(0.325,0.125),(0.2,0.0625),(0.075,0.028),(0,0.015),(-0.075,0.028),(-0.2,0.0625),(-0.325,0.125),(-0.45,0.25),(-0.5,0.25)],endCap=False,scale=[(1,1),(1.18,2),(1,1.4)],solid=False,spine=[(-.1,0,0),(.80,0,0),(1,0,0)]),
+                  appearance=Appearance(
+                    material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116)))),
+                Transform(center=(1,0,0),rotation=(0,1,0,-.28),translation=(.55,0,.71),
+                  children=[
+                  Shape(DEF='nozzle_vane',
+                    geometry=Box(size=(.4,1,.01)),
+                    appearance=Appearance(
+                      material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))]),
+                Transform(center=(1,0,0),rotation=(0,1,0,-.28),translation=(.15,0,.50),
+                  children=[
+                  Shape(DEF='nozzle_vane2',
+                    geometry=Box(size=(.4,.8,.01)),
+                    appearance=Appearance(
+                      material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])]),
+              Transform(rotation=(1,0,0,1.5707),scale=(1.76,1.5,1.5),
+                children=[
+                Shape(DEF='Circular_pivot_base',
+                  geometry=Extrusion(creaseAngle=2,crossSection=[(0.375,0.375),(0.425,0.371651719),(0.475,0.361420807),(0.525,0.343693177),(0.575,0.317214439),(0.625,0.279508497),(0.675,0.225),(0.725,0.13462912),(0.75,0),(0.725,-0.13462912),(0.675,-0.225),(0.625,-0.279508497),(0.575,-0.317214439),(0.525,-0.343693177),(0.475,-0.361420807),(0.425,-0.371651719),(0.375,-0.375),(0.325,-0.371651719),(0.275,-0.361420807),(0.225,-0.343693177),(0.175,-0.317214439),(0.125,-0.279508497),(0.075,-0.225),(0.025,-0.13462912),(0,0),(0.05,0.13462912),(0.1,0.225),(0.15,0.279508497),(0.2,0.317214439),(0.25,0.343693177),(0.3,0.361420807),(0.35,0.371651719),(0.375,0.375)],endCap=False,scale=[(1,1),(1,1),(.97,1),(.95,1),(.9,1),(.75,1),(.6,1),(.45,1),(0.001,1)],solid=False,spine=[(0,0,0),(.5,0,0),(.6,0,0),(.7,0,0),(.8,0,0),(.9,0,0),(.95,0,0),(.975,0,0),(1,0,0)]),
+                  appearance=Appearance(
+                    material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])])]),
+          Transform(DEF='Right_back_nozzle_protector_transf',rotation=(1,0,0,-1.5707),scale=(1,.9,.3),translation=(17,1.28,.19),
+            children=[
+            Shape(DEF='Right_protector',
+              geometry=Extrusion(creaseAngle=2,crossSection=[(-0.5,0.25),(-0.375,0.125),(-0.25,0.0625),(-0.125,0.02),(0,0),(0.125,0.02),(0.25,0.0625),(0.375,0.125),(0.5,0.25),(0.4,0.27),(0.4,0.25),(0.43,0.23),(0.325,0.125),(0.25,0.137),(0.25,0.12),(0.3,0.105),(0.2,0.0625),(0.075,0.028),(0.05,0.02),(0.05,0.03),(-0.05,0.03),(-0.05,0.02),(0,0.015),(-0.075,0.028),(-0.2,0.0625),(-0.3,0.105),(-0.25,0.12),(-0.25,0.137),(-0.325,0.125),(-0.45,0.23),(-0.4,0.25),(-0.4,0.27),(-0.5,0.25)],endCap=False,scale=[(1,1),(1.18,2),(1,1.4)],solid=False,spine=[(0,0,0),(1,0,0),(2,0,0)]),
+              appearance=Appearance(
+                material=Material(ambientIntensity=0,diffuseColor=(0,0,0),shininess=.0561222,specularColor=(.918362,.910614,.885116))))])]),
+        Group(DEF='Landing_gear',
+          children=[
+          Transform(DEF='Left_landing_gear_transf',translation=(19,6,0.55),
+            children=[
+            Group(DEF='Wing_landing_gear_group',
+              children=[
+              Group(DEF='Landing_gear_group',
+                children=[
+                Transform(rotation=(0,0,1,1.5707),translation=(1,0,0),
+                  children=[
+                  Shape(DEF='Landing_rod',
+                    geometry=Cylinder(height=1.5,radius=.125),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(1,1,1))))]),
+                Transform(
+                  children=[
+                  Shape(DEF='Landing_box',
+                    geometry=Box(size=(.5,.25,.25)),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(1,1,1))))]),
+                Transform(rotation=(0,0,1,1.5707),translation=(2,0,0),
+                  children=[
+                  Shape(DEF='Shock_abs',
+                    geometry=Cylinder(height=.5,radius=.09),
+                    appearance=Appearance(
+                      material=Material(ambientIntensity=0.113208,diffuseColor=(0.697737,0.696336,0.699331),emissiveColor=(0.000000,0.000000,0.000000),shininess=1.000000,specularColor=(0.227785,0.227345,0.227393))))]),
+                Transform(rotation=(0,0,1,1.5707),translation=(3,-.2,-.1),
+                  children=[
+                  Shape(DEF='Tire_support_arc',
+                    geometry=Extrusion(crossSection=[(0,0),(0,0.2),(0.1,0.2),(0.1,0),(0,0)],spine=[(0.3,0.5,0),(0.25,0.5,0),(0.125,0.46875,0),(0.075,0.4375,0),(0.055,0.40625,0),(0.0375,0.375,0),(0.0225,0.34375,0),(0.0125,0.3125,0),(0,0.25,0),(0,0,0)]),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(1,1,1))))]),
+                Transform(rotation=(0,0,1,1.5707),translation=(2.35,0,0),
+                  children=[
+                  Shape(DEF='Landing_gear_base',
+                    geometry=Cylinder(height=.25,radius=.125),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(1,1,1))))]),
+                Transform(rotation=(0.7071,-0.7071,-0,3.1415),translation=(3,.2,.1),
+                  children=[
+                  Shape(USE='Tire_support_arc')]),
+                Transform(rotation=(1,0,0,1.5707),scale=(.55,.55,.55),translation=(2.95,0,0),
+                  children=[
+                  Shape(DEF='Tire',
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0,0,0))),
+                    geometry=Extrusion(creaseAngle=4,crossSection=[(0.25,0),(0.23,-0.095),(0.1775,-0.1775),(0.095,-0.23),(0,-0.25),(-0.095,-0.23),(-0.1775,-0.1775),(-0.23,-0.095),(-0.25,0),(-0.23,0.095),(-0.1775,0.1775),(-0.095,0.23),(0,0.25),(0.095,0.23),(0.1775,0.1775),(0.23,0.095),(0.25,0)],solid=False,spine=[(0.5,0,0),(0.46,-0.19,0),(0.355,-0.355,0),(0.19,-0.46,0),(0,-0.5,0),(-0.19,-0.46,0),(-0.355,-0.355,0),(-0.46,-0.19,0),(-0.5,0,0),(-0.46,0.19,0),(-0.355,0.355,0),(-0.19,0.46,0),(0,0.5,0),(0.19,0.46,0),(0.355,0.355,0),(0.46,0.19,0),(0.5,0,0)])),
+                  Transform(rotation=(1,0,0,1.5707),
+                    children=[
+                    Shape(DEF='Rim',
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(1,1,1))),
+                      geometry=Cylinder(height=.35,radius=.4))])]),
+                Transform(translation=(2.95,0,0),
+                  children=[
+                  Shape(DEF='Gear_rod',
+                    geometry=Cylinder(height=.4,radius=.05),
+                    appearance=Appearance(
+                      material=Material(ambientIntensity=0.113208,diffuseColor=(0.697737,0.696336,0.699331),emissiveColor=(0.000000,0.000000,0.000000),shininess=1.000000,specularColor=(0.227785,0.227345,0.227393))))])]),
+              Transform(DEF='Landing_gear_cover_transf',rotation=(0,0,1,3.1415),translation=(5.4,0,-.5),
+                children=[
+                Group(DEF='Landing_gear_cover',
+                  children=[
+                  Shape(DEF='Wing_landing_gear_cover_front',
+                    geometry=Extrusion(crossSection=[(-0.15,0.9),(-0.15,0.5),(-0.15,0),(0,0),(0.15,0),(0.15,0.5),(0.15,0.9),(-0.15,0.9)],scale=[(1,1),(.9,.05)],solid=False,spine=[(6,0,0),(9,0,0)]),
+                    appearance=Appearance(
+                      material=Material(),
+                      texture=ImageTexture(USE='cammie1'))),
+                  Shape(DEF='Wing_landing_gear_cover_back',
+                    geometry=Extrusion(crossSection=[(-0.25,1),(-0.15,0.9),(-0.15,0.5),(-0.15,0),(0,0),(0.15,0),(0.15,0.5),(0.15,0.9),(0.25,1),(0.25,1.05),(0.15,1.05),(0.1,0.9),(0.1,0.5),(0.1,0.1),(-0.1,0.1),(-0.1,0.5),(-0.1,0.9),(-0.15,1.05),(-0.25,1.05),(-0.25,1)],solid=False,spine=[(3,0,0),(6,0,0)]),
+                    appearance=Appearance(
+                      material=Material(),
+                      texture=ImageTexture(USE='cammie1')))])])])]),
+          Transform(DEF='Right_landing_gear_transf',translation=(19,-6,0.55),
+            children=[
+            Group(USE='Wing_landing_gear_group')])])]),
+      Transform(DEF='Pilot_Left_name_transf',rotation=(1,0,0,1),translation=(3.45,-.785,.6),
+        children=[
+        Shape(DEF='Pilot_Name_Text_',
+          geometry=Text(string=["Capt. Miguel A. \'Old Yeller\' Ayala"],
+            fontStyle=FontStyle(family=["SANS"],size=.12,style_='BOLD')),
+          appearance=Appearance(
+            material=Material(diffuseColor=(0,0,0))))]),
+      Transform(DEF='Pilot_Rigth_name_transf',rotation=(-0,0.4625,0.8866,3.1415),translation=(5.3,.785,.6),
+        children=[
+        Shape(USE='Pilot_Name_Text_')])]),
+    Group(
+      children=[
+      Viewpoint(description='Harrier front, level',position=(0,0,7)),
+      Viewpoint(description='Harrier front, angle down',orientation=(1,0,0,-0.78),position=(0,10,5)),
+      Viewpoint(description='Harrier right wing, level',orientation=(0,1,0,1.57),position=(10,0,-6.5)),
+      Viewpoint(description='Harrier rear, level',orientation=(0,1,0,3.14),position=(0,1,-18)),
+      Viewpoint(description='Harrier left wing, level',orientation=(0,1,0,-1.57),position=(-10,0,-6.5)),
+      Viewpoint(description='Harrier bottom, up',orientation=(1,0,0,1.57),position=(0,-21,-6)),
+      Viewpoint(description='Harrier top, down',orientation=(1,0,0,-1.57),position=(0,21,-6))])])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for AV8bHarrier.py")

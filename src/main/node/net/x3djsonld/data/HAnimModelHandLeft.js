@@ -524,4 +524,3 @@ HAnimModelHandLeft.prototype = {
 	}
 }
 new HAnimModelHandLeft().main();
-process.exit(0);

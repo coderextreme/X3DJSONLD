@@ -920,4 +920,3 @@ KoreanCharacter03Hyun.prototype = {
 	}
 }
 new KoreanCharacter03Hyun().main();
-process.exit(0);

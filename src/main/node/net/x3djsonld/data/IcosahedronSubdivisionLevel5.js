@@ -1221,4 +1221,3 @@ IcosahedronSubdivisionLevel5.prototype = {
 	}
 }
 new IcosahedronSubdivisionLevel5().main();
-process.exit(0);

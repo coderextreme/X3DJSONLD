@@ -1,0 +1,400 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='test_beamWidthsim1.x3d',name='title'),
+    meta(content='test-beamWidthsim1-movie.mpg',name='MovingImage'),
+    meta(content='http://www.nist.gov/vrml.html',name='reference'),
+    meta(content='http://www.itl.nist.gov/div897/ctg/vrml/vrml.html',name='reference'),
+    meta(content='http://www.itl.nist.gov/div897/ctg/vrml/members.html',name='creator'),
+    meta(content='This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.',name='disclaimer'),
+    meta(content='Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d',name='info'),
+    meta(content='Michael Kass NIST, Don Brutzman NPS',name='translator'),
+    meta(content='21 January 2001',name='translated'),
+    meta(content='20 October 2019',name='modified'),
+    meta(content='Test browser to set the beamWidth field to a range of values on a set of a simple geometry (sphere) Seven rows of spheres are drawn in the local coordinate system and a single SpotLight is defined at the center. The lights beamWidth is increased as the animation progesses. The animation is started by clicking on the text above the geometry. The cutOffAngle is set to 1.570796 for the light and is never changed. This should cause the whole area illuminated by the light to be lighted at full intensity gradually as the beamWidth is increased. The area of illumination shall be no larger than the maximum value for the cutOffAngle (1.570796). A browser may choose to ignore the beamWidth field.',name='description'),
+    meta(content='https://www.web3d.org/x3d/content/examples/ConformanceNist/Lights/SpotLight/test_beamWidthsim1.x3d',name='identifier'),
+    meta(content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html',name='generator'),
+    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    WorldInfo(title='test_beamWidthsim1.x3d'),
+    Group(
+      children=[
+      Viewpoint(description='Front View',position=(0,0,15))]),
+    Background(groundColor=[(0,0,0)],skyColor=[(1,0,0)]),
+    NavigationInfo(headlight=False,type=["EXAMINE","WALK","FLY","ANY"]),
+    PointLight(on=False),
+    DirectionalLight(on=False),
+    Transform(scale=(0.02,0.02,0.02),translation=(-3.4,4,0),
+      children=[
+      Shape(
+        appearance=Appearance(
+          material=Material(DEF='the-click',ambientIntensity=1,emissiveColor=(0,0,1))),
+        geometry=Text(string=["CLICK HERE TO START"],
+          fontStyle=FontStyle(size=32,style_='BOLD'))),
+      TouchSensor(DEF='the-touch',description='touch to activate')]),
+    SpotLight(DEF='the-light',beamWidth=0.01,cutOffAngle=1.57079,location=(0,0,7),radius=7),
+    TimeSensor(DEF='text-time'),
+    TimeSensor(DEF='the-time',cycleInterval=8),
+    ScalarInterpolator(DEF='the-width',key=[0,0.2,0.4,0.6,0.8,1],keyValue=[0.1,0.15,0.18,0.2,0.25,0.3]),
+    ColorInterpolator(DEF='text-color',key=[0,0.5,1],keyValue=[(0,0,1),(1,1,1),(0,0,1)]),
+    Transform(translation=(-4,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(DEF='the-appearance',
+          material=Material(),),
+        geometry=Sphere(DEF='the-sphere',radius=0.4))]),
+    Transform(translation=(-3,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,0,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,-1,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,-2,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-4,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-3,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-2,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(-1,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(0,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(1,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(2,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(3,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    Transform(translation=(4,-3,0),
+      children=[
+      Shape(
+        appearance=Appearance(USE='the-appearance'),
+        geometry=Sphere(USE='the-sphere'))]),
+    ROUTE(fromField='touchTime',fromNode='the-touch',toField='startTime',toNode='text-time'),
+    ROUTE(fromField='fraction_changed',fromNode='text-time',toField='set_fraction',toNode='text-color'),
+    ROUTE(fromField='value_changed',fromNode='text-color',toField='emissiveColor',toNode='the-click'),
+    ROUTE(fromField='touchTime',fromNode='the-touch',toField='startTime',toNode='the-time'),
+    ROUTE(fromField='fraction_changed',fromNode='the-time',toField='set_fraction',toNode='the-width'),
+    ROUTE(fromField='value_changed',fromNode='the-width',toField='beamWidth',toNode='the-light')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for test_beamWidthsim1.py")

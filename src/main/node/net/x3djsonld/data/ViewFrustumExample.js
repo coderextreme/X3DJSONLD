@@ -214,4 +214,3 @@ ViewFrustumExample.prototype = {
 	}
 }
 new ViewFrustumExample().main();
-process.exit(0);

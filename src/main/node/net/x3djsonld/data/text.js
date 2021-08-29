@@ -158,4 +158,3 @@ text.prototype = {
 	}
 }
 new text().main();
-process.exit(0);

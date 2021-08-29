@@ -1002,4 +1002,3 @@ KoreanCharacter07No.prototype = {
 	}
 }
 new KoreanCharacter07No().main();
-process.exit(0);

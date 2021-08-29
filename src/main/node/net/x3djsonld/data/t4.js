@@ -232,4 +232,3 @@ t4.prototype = {
 	}
 }
 new t4().main();
-process.exit(0);

@@ -1,0 +1,361 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='PilotHouse.x3d',name='title'),
+    meta(content='Starboard Pilot House for the LCAC',name='description'),
+    meta(content='Jeffrey Weekley',name='creator'),
+    meta(content='19 June 2001',name='created'),
+    meta(content='22 December 2014',name='modified'),
+    meta(content='http://www.hazegray.org/features/nato/us/lcac',name='reference'),
+    meta(content='lcac.pdf',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/lcac.htm',name='reference'),
+    meta(content='lsd-44_990829-N-9593R-002.jpg',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/lsd-44_990829-N-9593R-002.jpg',name='reference'),
+    meta(content='lcac-kb97_8.jpg',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/lcac-kb97_8.jpg',name='reference'),
+    meta(content='lcac-dvic076.jpg',name='reference'),
+    meta(content='http://www.fas.org/man/dod-101/sys/ship/lcac-dvic076.jpg',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/PilotHouse.x3d',name='identifier'),
+    meta(content='LCAC Pilot House',name='subject'),
+    meta(content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    Background(skyColor=[(0.125,0.125,0.875)]),
+    Transform(DEF='PilotHouse',
+      children=[
+      Transform(DEF='Bulkhead',
+        children=[
+        Shape(
+          geometry=Extrusion(convex=False,crossSection=[(1.1,-1.05),(1,-1.05),(1,-1.55),(-1,-1.55),(-1,1.55),(1,1.55),(1,-0.45),(1.1,-0.45),(1.1,1.65),(-1.1,1.65),(-1.1,-1.65),(1.1,-1.65),(1.1,-1.05)],solid=False,spine=[(0,0.2,0),(0,1,0),(0,2,0)]),
+          appearance=Appearance(
+            material=Material(DEF='HazeGrey',diffuseColor=(0.8,0.75,0.8)))),
+        Transform(DEF='FrontBulkheadSlope',
+          children=[
+          Shape(
+            appearance=Appearance(
+              material=Material(USE='HazeGrey')),
+            geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+              coord=Coordinate(point=[(-1.1,2.5,1.65),(-1.1,0,2.15),(1.1,0,2.15),(1.1,2.5,1.65),(-1.1,2.5,1.65)]))),
+          Transform(DEF='PortSlopeTriangle',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(USE='HazeGrey')),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                coord=Coordinate(point=[(1.1,2.5,1.65),(1.1,0,2.15),(1.1,0,1.65),(1.1,2.5,1.65)])))]),
+          Transform(DEF='StarboardSlopeTriangle',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(USE='HazeGrey')),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                coord=Coordinate(point=[(-1.1,2.5,1.65),(-1.1,0,2.15),(-1.1,0,1.65),(-1.1,2.5,1.65)])))])])]),
+      Transform(DEF='BottomBulkhead',
+        children=[
+        Shape(
+          geometry=Extrusion(convex=False,crossSection=[(1.1,0.35),(1,0.35),(1,-1.55),(-1,-1.55),(-1,1.55),(1,1.55),(1,0.35),(1.1,0.35),(1.1,1.65),(-1.1,1.65),(-1.1,-1.65),(1.1,-1.65),(1.1,0.35)],solid=False,spine=[(0,0,0),(0,0.1,0),(0,0.2,0)]),
+          appearance=Appearance(
+            material=Material(diffuseColor=(0.8,0.75,0.8))))]),
+      Transform(DEF='TopBulkhead',
+        children=[
+        Shape(
+          geometry=Extrusion(convex=False,crossSection=[(1.1,0.35),(1,0.35),(1,-1.55),(-1,-1.55),(-1,1.55),(1,1.55),(1,0.35),(1.1,0.35),(1.1,1.65),(-1.1,1.65),(-1.1,-1.65),(1.1,-1.65),(1.1,0.35)],solid=False,spine=[(0,2,0),(0,2.2,0),(0,2.25,0),(0,2.3,0),(0,2.5,0)]),
+          appearance=Appearance(
+            material=Material(diffuseColor=(0.8,0.75,0.8)))),
+        Transform(DEF='WiperHousing',translation=(0,-0.0625,0),
+          children=[
+          Transform(DEF='Top',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.25,0.6,1))),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-1,2.5,1.65),(-1,2.45,1.85),(1,2.45,1.85),(1,2.5,1.65),(-1,2.5,1.65)])))]),
+          Transform(DEF='RainTriangle',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.25,0.6,1))),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
+                coord=Coordinate(point=[(1,2.5,1.65),(1,2.45,1.85),(1,2.25,1.65),(1,2.5,1.65)])))]),
+          Transform(translation=(-0.4,0,0),
+            children=[
+            Transform(USE='RainTriangle')]),
+          Transform(translation=(-0.8,0,0),
+            children=[
+            Transform(USE='RainTriangle')]),
+          Transform(translation=(-1.2,0,0),
+            children=[
+            Transform(USE='RainTriangle')]),
+          Transform(translation=(-1.6,0,0),
+            children=[
+            Transform(USE='RainTriangle')]),
+          Transform(translation=(-2,0,0),
+            children=[
+            Transform(USE='RainTriangle')])])]),
+      Transform(DEF='Corners',translation=(0.5,0,-2.35),
+        children=[
+        Transform(DEF='URDoorCorner',rotation=(0,0,1,1.57),translation=(0.6,2,1.3),
+          children=[
+          Transform(scale=(0.025,1,0.025),
+            children=[
+            Shape(DEF='CornerExtrusion',
+              geometry=Extrusion(convex=False,crossSection=[(0,0),(0,4),(-0.2,3),(-0.3,2.6),(-0.45,2.2),(-0.6,1.9),(-0.8,1.6),(-1,1.35),(-1.35,1),(-1.6,0.8),(-1.9,0.6),(-2.2,0.45),(-2.6,0.3),(-3,0.2),(-4,0),(0,0)],solid=False,spine=[(0,0,0),(0,0.1,0)]),
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.8,0.75,0.8))))])]),
+        Transform(DEF='ULDoorCorner',rotation=(0,0,-1,1.57),translation=(0.5,2,1.9),
+          children=[
+          Transform(rotation=(0,1,0,3.14),scale=(0.025,1,0.025),
+            children=[
+            Shape(USE='CornerExtrusion')])]),
+        Transform(DEF='LLDoorCorner',rotation=(0,0,1,1.57),translation=(0.6,0.2,1.9),
+          children=[
+          Transform(rotation=(0,1,0,3.14),scale=(0.025,1,0.025),
+            children=[
+            Shape(USE='CornerExtrusion')])]),
+        Transform(DEF='LRDoorCorner',rotation=(0,0,1,1.57),translation=(0.6,0.2,1.3),
+          children=[
+          Transform(rotation=(0,1,0,1.57),scale=(0.025,1,0.025),
+            children=[
+            Shape(USE='CornerExtrusion')])])]),
+      Transform(DEF='Roof',
+        children=[
+        Transform(DEF='Front',
+          children=[
+          Transform(DEF='FrontWindowFrames',translation=(0,2.50625,1.65),
+            children=[
+            Transform(DEF='Lower',translation=(0,0,-0.05),
+              children=[
+              Shape(
+                geometry=Box(size=(2.195,0.125,0.2)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0,0,1))))]),
+            Transform(DEF='Upper',translation=(0,1,-1.95),
+              children=[
+              Shape(
+                geometry=Box(size=(1.5,0.125,2.69)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.75,0.75,0.75)))),
+              Transform(DEF='Mast',rotation=(-1,0,0,0.79),translation=(0.5,0.485,-0.2425),
+                children=[
+                Shape(
+                  geometry=Cylinder(height=1,radius=0.0225),
+                  appearance=Appearance(
+                    material=Material(),))]),
+              Transform(DEF='Base',translation=(0.5,0.0625,0.25),
+                children=[
+                Shape(
+                  geometry=Cylinder(height=0.1,radius=0.15),
+                  appearance=Appearance(
+                    material=Material(diffuseColor=(0.1,0.1,0.1)))),
+                Transform(DEF='TopDiskBase',
+                  children=[
+                  Shape(
+                    geometry=Cylinder(height=0.01,radius=0.125),
+                    appearance=Appearance(
+                      material=Material(diffuseColor=(0.2,0.225,0.2)))),
+                  Transform(translation=(0,0.02,0),
+                    children=[
+                    Shape(
+                      geometry=Sphere(radius=0.1),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0.2,0.225,0.2))))]),
+                  Transform(DEF='TopBolt',translation=(0.07,0.01,0.07),
+                    children=[
+                    Shape(
+                      geometry=Cylinder(height=0.01,radius=0.02),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(0.15,0.15,0.3))))]),
+                  Transform(rotation=(0,1,0,1.57),
+                    children=[
+                    Transform(USE='TopBolt')]),
+                  Transform(rotation=(0,1,0,3.14),
+                    children=[
+                    Transform(USE='TopBolt')]),
+                  Transform(rotation=(0,1,0,4.71),
+                    children=[
+                    Transform(USE='TopBolt')])])])])]),
+          Transform(DEF='FrontCenterWindow',
+            children=[
+            Shape(
+              appearance=Appearance(DEF='Window',
+                material=Material(diffuseColor=(0.65,0.75,0.85),shininess=1,specularColor=(0.9,0.9,1),transparency=0.33)),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-0.3,2.5,1.7),(0.3,2.5,1.7),(0.3,3.5,1),(-0.3,3.5,1),(-0.3,2.5,1.7)]))),
+            Transform(DEF='CenterLeftFrame',rotation=(-1,0,0,0.62),translation=(-0.29,3.05,1.325),
+              children=[
+              Shape(
+                geometry=Box(size=(0.0623,1.225,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))]),
+            Transform(DEF='CenterRightFrame',rotation=(-1,0,0,0.62),translation=(0.31,3.05,1.325),
+              children=[
+              Shape(
+                geometry=Box(size=(0.0623,1.225,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))])]),
+          Transform(DEF='FrontStarboardWindow',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.65,0.75,0.85),shininess=1,specularColor=(0.9,0.9,1),transparency=0.33)),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-1.1,2.5,1.55),(-0.3,2.5,1.7),(-0.3,3.5,1),(-0.7,3.5,1),(-1.1,2.5,1.55)]))),
+            Transform(DEF='StarboardRightFrame',center=(-0.03115,-0.6125,-0.03115),rotation=(-0.84,-0.13,-0.52,0.59),translation=(-1.09,3.1,1.55),
+              children=[
+              Shape(
+                geometry=Box(size=(0.04,1.25,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(1,0.85,0.75))))])]),
+          Transform(DEF='FrontPortWindow',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.65,0.75,0.85),shininess=1,specularColor=(0.9,0.9,1),transparency=0.33)),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(0.3,2.5,1.7),(1.1,2.5,1.55),(0.7,3.5,1),(0.3,3.5,1),(0.3,2.5,1.7)]))),
+            Transform(DEF='PortLeftFrame',center=(-0.03115,-0.6125,-0.03115),rotation=(-0.84,0.13,0.52,0.59),translation=(1.09,3.1,1.55),
+              children=[
+              Shape(
+                geometry=Box(size=(0.04,1.25,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(1,0.85,0.75))))])])]),
+        Transform(DEF='Starboard',
+          children=[
+          Transform(DEF='StarboardForwardWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(1.1,2.5,1.55),(0.7,3.5,1),(0.7,3.5,0.4),(1.1,2.5,0.4),(1.1,2.5,1.55)]))),
+            Transform(DEF='StarboardFirstFrame',rotation=(0,0,1,0.38),translation=(0.9,3,0.4),
+              children=[
+              Shape(
+                geometry=Box(size=(0.05,1.1,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))])]),
+          Transform(DEF='StarboardCenterWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(0.7,3.5,0.4),(1.1,2.5,0.4),(1.1,2.5,-0.4),(0.7,3.5,-0.4),(0.7,3.5,0.4)]))),
+            Transform(DEF='StarboardSecondFrame',rotation=(0,0,1,0.38),translation=(0.9,3,-0.4),
+              children=[
+              Shape(
+                geometry=Box(size=(0.05,1.1,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))])]),
+          Transform(DEF='StarboardAftWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(1.1,2.5,-0.4),(0.7,3.5,-0.4),(0.7,3.5,-1.6),(1.1,2.5,-1.6),(1.1,2.5,-0.4)])))]),
+          Transform(DEF='StarboardTransom',translation=(1.05,2.5,0),
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.1,0.15,1))),
+              geometry=Box(size=(0.2,0.125,3.4)))])]),
+        Transform(DEF='Port',
+          children=[
+          Transform(DEF='PortForwardWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-1.1,2.5,1.55),(-0.7,3.5,1),(-0.7,3.5,0.4),(-1.1,2.5,0.4),(-1.1,2.5,1.55)]))),
+            Transform(DEF='PortFirstFrame',rotation=(0,0,-1,0.38),translation=(-0.9,3,0.4),
+              children=[
+              Shape(
+                geometry=Box(size=(0.05,1.1,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))])]),
+          Transform(DEF='PortCenterWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-0.7,3.5,0.4),(-1.1,2.5,0.4),(-1.1,2.5,-0.4),(-0.7,3.5,-0.4),(-0.7,3.5,0.4)]))),
+            Transform(DEF='PortSecondFrame',rotation=(0,0,-1,0.38),translation=(-0.9,3,-0.4),
+              children=[
+              Shape(
+                geometry=Box(size=(0.05,1.1,0.0625)),
+                appearance=Appearance(
+                  material=Material(diffuseColor=(0.7,0.85,0.75))))])]),
+          Transform(DEF='PortAftWindow',
+            children=[
+            Shape(
+              appearance=Appearance(USE='Window'),
+              geometry=IndexedFaceSet(coordIndex=[0,1,2,3,4,-1],solid=False,
+                coord=Coordinate(point=[(-1.1,2.5,-0.4),(-0.7,3.5,-0.4),(-0.7,3.5,-1.6),(-1.1,2.5,-1.6),(-1.1,2.5,-0.4)])))]),
+          Transform(DEF='PortTransom',translation=(-1.05,2.5,0),
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.1,0.15,1))),
+              geometry=Box(size=(0.2,0.125,3.4)))])]),
+        Transform(DEF='Rear',
+          children=[
+          Transform(DEF='Wall',
+            children=[
+            Shape(
+              appearance=Appearance(
+                material=Material(diffuseColor=(0.7,0.85,0.8))),
+              geometry=Extrusion(crossSection=[(-1.1,-1.65),(-1.1,-1.55),(1.1,-1.55),(1.1,-1.65),(-1.1,-1.65)],scale=[(1,1),(0.64,1)],spine=[(0,2.5,0),(0,3.5,0)]))])])]),
+      Group(DEF='Hatch',
+        children=[
+        Transform(rotation=(0,1,0,1.57),translation=(1.11,1.1,-0.3),
+          children=[
+          Inline(url=["PilotHouseHatch.x3d","https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/PilotHouseHatch.x3d","PilotHouseHatch.wrl","https://savage.nps.edu/Savage/AmphibiousVehicles/LCAC/PilotHouseHatch.wrl"])])]),
+      Transform(DEF='LifeBuoy',rotation=(1,0,0,1.45),scale=(0.125,0.08,0.125),translation=(-0.4,1.75,1.91),
+        children=[
+        Shape(
+          appearance=Appearance(
+            material=Material(diffuseColor=(0.95,0.1,0.1))),
+          geometry=Extrusion(beginCap=False,convex=False,creaseAngle=1.57,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],endCap=False,spine=[(2.00,0.0,0.00),(1.85,0.0,0.77),(1.41,0.0,1.41),(0.77,0.0,1.85),(0.00,0.0,2.00),(-0.77,0.0,1.85),(-1.41,0.0,1.41),(-1.85,0.0,0.77),(-2.00,0.0,0.00),(-1.85,0.0,-0.77),(-1.41,0.0,-1.41),(-0.77,0.0,-1.85),(0.00,0.0,-2.00),(0.77,0.0,-1.85),(1.41,0.0,-1.41),(1.85,0.0,-0.77),(2.00,0.0,0.00)])),
+        Transform(translation=(0,-1,-0.9),
+          children=[
+          Shape(
+            geometry=Extrusion(crossSection=[(0.1,0.00),(0.092,-0.038),(0.071,-0.071),(0.038,-0.092),(0.00,-0.10),(-0.038,-0.092),(-0.071,-0.071),(-0.092,-0.038),(-0.10,-0.00),(-0.092,0.038),(-0.071,0.071),(-0.038,0.092),(0.00,0.10),(0.038,0.092),(0.071,0.071),(0.092,0.038),(0.10,0.00)],spine=[(0,-1.5,0),(0,1,0),(0,1.9,-0.5),(0,2,-0.75)]),
+            appearance=Appearance(
+              material=Material(diffuseColor=(0.7,0.75,0.85))))])])])])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for PilotHouse.py")

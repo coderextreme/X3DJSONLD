@@ -236,4 +236,3 @@ SimpleShader.prototype = {
 	}
 }
 new SimpleShader().main();
-process.exit(0);

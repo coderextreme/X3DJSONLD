@@ -1030,4 +1030,3 @@ KoreanCharacter08Da.prototype = {
 	}
 }
 new KoreanCharacter08Da().main();
-process.exit(0);

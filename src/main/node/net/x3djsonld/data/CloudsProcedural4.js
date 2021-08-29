@@ -563,4 +563,3 @@ CloudsProcedural4.prototype = {
 	}
 }
 new CloudsProcedural4().main();
-process.exit(0);
