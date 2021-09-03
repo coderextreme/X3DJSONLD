@@ -41490,6 +41490,12 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DNode"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
