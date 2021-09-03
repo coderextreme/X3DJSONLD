@@ -109,25 +109,25 @@ ProtoInstance0
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("diffuseColor")
-                  .addChild(new IS()
+                  .setIS(new IS()
                     .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))));
 ProtoInstance1
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("2 0 0"));
 ProtoInstance1
                 .addFieldValue(new fieldValue().setName("diffuseColor")
-                  .addChild(new IS()
+                  .setIS(new IS()
                     .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))));
 ProtoInstance2
                 .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance2
                 .addFieldValue(new fieldValue().setName("diffuseColor")
-                  .addChild(new IS()
+                  .setIS(new IS()
                     .addConnect(new connect().setNodeField("diffuseColor").setProtoField("x1diffuseColor"))));
 ProtoInstance3
                 .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 2 0"));
 ProtoInstance3
                 .addFieldValue(new fieldValue().setName("diffuseColor")
-                  .addChild(new IS()
+                  .setIS(new IS()
                     .addConnect(new connect().setNodeField("diffuseColor").setProtoField("x2diffuseColor"))));
 ProtoInstance4
                 .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 0"));

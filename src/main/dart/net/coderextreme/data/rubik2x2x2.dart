@@ -115,7 +115,7 @@ var X3D0 =  X3D(
 
                             fieldValue(
                               name_ : SFString('diffuseColor'),
-                              child_ : 
+                              IS_ : 
                                 IS(
                                   connect_ : [
                                     connect(
@@ -131,7 +131,7 @@ var X3D0 =  X3D(
 
                             fieldValue(
                               name_ : SFString('diffuseColor'),
-                              child_ : 
+                              IS_ : 
                                 IS(
                                   connect_ : [
                                     connect(
@@ -180,7 +180,7 @@ var X3D0 =  X3D(
 
                             fieldValue(
                               name_ : SFString('diffuseColor'),
-                              child_ : 
+                              IS_ : 
                                 IS(
                                   connect_ : [
                                     connect(
@@ -196,7 +196,7 @@ var X3D0 =  X3D(
 
                             fieldValue(
                               name_ : SFString('diffuseColor'),
-                              child_ : 
+                              IS_ : 
                                 IS(
                                   connect_ : [
                                     connect(
