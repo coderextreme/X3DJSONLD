@@ -144,7 +144,7 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              child : new SFNode(
+                              IS : new SFNode(
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
@@ -161,7 +161,7 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              child : new SFNode(
+                              IS : new SFNode(
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
@@ -211,7 +211,7 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              child : new SFNode(
+                              IS : new SFNode(
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
@@ -228,7 +228,7 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("0 1 0"),
-                              child : new SFNode(
+                              IS : new SFNode(
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
