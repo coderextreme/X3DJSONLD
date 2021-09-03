@@ -37051,6 +37051,9 @@
           "-children": {
             "$ref": "#/definitions/-X3DNodeMFNode"
           },
+          "IS": {
+            "$ref": "#/definitions/IS"
+          },
           "@class": {
             "pattern": "^(\\s|\\S)*$",
             "$comment": "SFString inputOutput",
