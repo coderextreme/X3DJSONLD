@@ -2,4 +2,4 @@
 
 . ./classpath
 
-find ../Library -name '*.x3d'| grep -v new  | xargs bash several.sh
+find ../Library -type f -name '*.x3d' -print0 | grep -zv new  | xargs -0 bash several.sh
