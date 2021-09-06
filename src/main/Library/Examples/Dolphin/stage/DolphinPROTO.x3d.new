@@ -26,6 +26,6 @@
 <ROUTE fromNode="CI" fromField="value_changed" toNode="CO" toField="set_point"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<WorldInfo title="Dolphin PROTO" info="&quot;This dolphin started out as a set of models from Viewpoint's Avalon archive (<URI:http://avalon1.viewpoint.com>). Bob Crispen (crispen@hiwaay.net) identified them as animation keyframes and reassembled the animation. Braden McDaniel (braden@endoframe.com) wrapped the fish in a PROTO (and scaled the dolphin to a sensible size).&quot;"/>
+<WorldInfo title="Dolphin PROTO" info="&quot;This dolphin started out as a set of models from Viewpoint's Avalon archive (&lt;URI:http://avalon1.viewpoint.com>). Bob Crispen (crispen@hiwaay.net) identified them as animation keyframes and reassembled the animation. Braden McDaniel (braden@endoframe.com) wrapped the fish in a PROTO (and scaled the dolphin to a sensible size).&quot;"/>
 </Scene>
 </X3D>
