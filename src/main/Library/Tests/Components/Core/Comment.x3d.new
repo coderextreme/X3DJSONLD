@@ -11,11 +11,11 @@
 <field name="loop" accessType="inputOutput" type="SFBool"></field>
 <field name="fraction_changed" accessType="outputOnly" type="SFFloat"></field>
 </ExternProtoDeclare>
-<ProtoDeclare name="Test-utf8-<&#228;&#246;&#252;&amp;>"><ProtoInterface><field name="set_bind" accessType="inputOnly" type="SFBool"></field>
+<ProtoDeclare name="Test-utf8-&lt;&#228;&#246;&#252;&amp;>"><ProtoInterface><field name="set_bind" accessType="inputOnly" type="SFBool"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool"></field>
 <field name="isBound" accessType="outputOnly" type="SFBool"></field>
-<field name="test" accessType="inputOutput" type="SFString" value="\\&quot;&#228;&#246;&#252;&#225;&#243;&#250;&#226;&#244;&#251;&amp;<'\\r\\n"></field>
-<field name="string" accessType="inputOutput" type="SFString" value="A string that's single quoted with special characters &quot;< >&quot;"/>
+<field name="test" accessType="inputOutput" type="SFString" value="\\&quot;&#228;&#246;&#252;&#225;&#243;&#250;&#226;&#244;&#251;&amp;&lt;'\\r\\n"></field>
+<field name="string" accessType="inputOutput" type="SFString" value="A string that's single quoted with special characters &quot;&lt; >&quot;"/>
 <field name="children" accessType="inputOutput" type="MFNode"><WorldInfo DEF="Default"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
 <MetadataSet name="children" DEF="children" reference="http://titania.create3000.de"><!--NULL--></MetadataSet>
 </MetadataSet>
@@ -73,16 +73,16 @@ function initialize ()
 <Viewpoint USE="Reference"></Viewpoint>
 <ProtoInstance name="Rotor"><fieldValue name="cycleInterval" value="10"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="Test-utf8-<&#228;&#246;&#252;&amp;>"/>
-<ProtoInstance name="Test-utf8-<&#228;&#246;&#252;&amp;>"><fieldValue name="children"></fieldValue>
+<ProtoInstance name="Test-utf8-&lt;&#228;&#246;&#252;&amp;>"/>
+<ProtoInstance name="Test-utf8-&lt;&#228;&#246;&#252;&amp;>"><fieldValue name="children"></fieldValue>
 <fieldValue name="node" value="NULL"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="Test-utf8-<&#228;&#246;&#252;&amp;>" DEF="ProtoRef"><fieldValue name="children"><Group DEF="_1"></Group>
+<ProtoInstance name="Test-utf8-&lt;&#228;&#246;&#252;&amp;>" DEF="ProtoRef"><fieldValue name="children"><Group DEF="_1"></Group>
 </fieldValue>
 <fieldValue name="node"><Group></Group>
 </fieldValue>
 </ProtoInstance>
-<ProtoInstance name="Test-utf8-<&#228;&#246;&#252;&amp;>" USE="ProtoRef"/>
+<ProtoInstance name="Test-utf8-&lt;&#228;&#246;&#252;&amp;>" USE="ProtoRef"/>
 <Viewpoint USE="Reference"></Viewpoint>
 <Viewpoint USE="Reference"></Viewpoint>
 <Transform><Viewpoint USE="Reference"></Viewpoint>
