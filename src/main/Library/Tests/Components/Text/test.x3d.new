@@ -9,7 +9,7 @@
 </head>
 <Scene><WorldInfo title="test"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet name="children" DEF="children" reference="http://titania.create3000.de" containerField="value"><Transform DEF="Text" translation="1.21115 0.0405512 0" rotation="0 0 0 0.000488281254850638" scale="5.11948 5.11948 5.11948" containerField="value"><Shape><Appearance><Material></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;\\\&quot;'<> &amp;#&quot; &quot;, &quot; &quot;3D Text3D Text&quot;" solid="true"/>
+<Text containerField="geometry" string="&quot;\\\&quot;'&lt;> &amp;#&quot; &quot;, &quot; &quot;3D Text3D Text&quot;" solid="true"/>
 </Shape>
 </Transform>
 </MetadataSet>
