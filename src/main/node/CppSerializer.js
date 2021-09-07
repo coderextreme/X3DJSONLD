@@ -46,6 +46,7 @@ CppScriptSerializer.prototype = {
         	bodystr += "group->addChildren("+element.nodeName+stack[0]+");\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
         	bodystr += "m_pScene.addRootNode(group);\n";
+        	bodystr += element.nodeName+stack[0]+"->toXMLString();\n";
 		bodystr += "}\n";
 
 		str += bodystr;
@@ -83,7 +84,7 @@ CppScriptSerializer.prototype = {
 			values.pop();
 		}
 
-		return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType === "MFString" ? ', '+values.length : '');
+		return 'new '+type+'['+values.length+']{'+lead+values.join(j)+trail+'}'+(attrType === "MFString" || attrType === "MFFloat" ? ', '+values.length : '');
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
