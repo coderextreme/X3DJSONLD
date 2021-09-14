@@ -218,3 +218,4 @@ bubs2.prototype = {
 	}
 }
 new bubs2().main();
+process.exit(0);

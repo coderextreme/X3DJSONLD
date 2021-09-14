@@ -356,3 +356,4 @@ bubs3.prototype = {
 	}
 }
 new bubs3().main();
+process.exit(0);

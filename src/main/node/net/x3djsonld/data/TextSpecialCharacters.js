@@ -181,3 +181,4 @@ TextSpecialCharacters.prototype = {
 	}
 }
 new TextSpecialCharacters().main();
+process.exit(0);

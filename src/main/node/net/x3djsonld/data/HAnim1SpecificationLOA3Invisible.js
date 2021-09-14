@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d">HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d">HAnim1SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -36,11 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 July 2020 </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
-			<td> Convert to X3D4 HAnim2 </td>
+			<td> 19 February 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -48,11 +44,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d">HAnimSpecificationLOA3Illustrated.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d">HAnim1SpecificationLOA3Illustrated.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d">HAnimSpecificationLOA3Animation.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d">HAnim1SpecificationLOA3Animation.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -60,15 +56,15 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA1.png">images/BonesAllSkeletonFrontViewLOA1.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA2.png">images/BonesAllSkeletonFrontViewLOA2.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/BonesAllSkeletonFrontViewLOA3.png">images/BonesAllSkeletonFrontViewLOA3.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
@@ -88,7 +84,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf">tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> translator </i> </td>
@@ -104,11 +100,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d">originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d">originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -120,11 +116,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -156,23 +152,22 @@ HAnim1SpecificationLOA3Invisible.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #32, 93 total values */
-	this.WorldInfo_4_32_info = new autoclass.MFString(new autoclass.MFString("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
+	/** Large attribute array: WorldInfo info field, scene-graph level=4, element #31, 93 total values */
+	this.WorldInfo_4_31_info = new autoclass.MFString(new autoclass.MFString("\" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps \""));
 
-	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #43, 16 total values */
-	this.hanim_humanoid_3_43_info = new autoclass.MFString(new autoclass.MFString("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=2.0\" \"height=1.7504\""));
+	/** Large attribute array: HAnimHumanoid DEF='hanim_humanoid' info field, scene-graph level=3, element #42, 16 total values */
+	this.hanim_humanoid_3_42_info = new autoclass.MFString(new autoclass.MFString("\"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman\" \"authorEmail=HAnim@web3D.org\" \"copyright=none\" \"creationDate=12 May 1999\" \"usageRestrictions=none\" \"humanoidVersion=1.0\" \"height=1.7504\""));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("HAnimSpecificationLOA3Invisible.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("HAnim1SpecificationLOA3Invisible.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"))
     .addMeta((new autoclass.meta()).setName("created").setContent("24 April 2013"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("4 July 2020"))
-    .addMeta((new autoclass.meta()).setName("TODO").setContent("Convert to X3D4 HAnim2"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("19 February 2021"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Matthew T. Beitler, Joe D. Williams, Don Brutzman"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationLOA3Illustrated.x3d"))
-    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationLOA3Animation.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim1SpecificationLOA3Illustrated.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim1SpecificationLOA3Animation.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnimSpecificationExampleChangeLog.txt"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA1.png"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("images/BonesAllSkeletonFrontViewLOA2.png"))
@@ -189,13 +184,13 @@ HAnim1SpecificationLOA3Invisible.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.3,0.3,0.3]))))
     .addChild((new autoclass.NavigationInfo()))
     .addChild((new autoclass.Group("Original_WorldInfo"))
-      .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_4_32_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
+      .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_4_31_info).setTitle("HANIM 200x Default Joint Centers, LOA3")))
     .addComments(" TODO move viewpoints to be internal to HAnimHumanoid ")
     .addComments(" Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human. ")
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Front").setPosition(0.0,0.4,4.0).setCenterOfRotation(0.0,0.9149,0.0016))
@@ -207,7 +202,7 @@ HAnim1SpecificationLOA3Invisible.prototype = {
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Left Side Close").setPosition(-1.0,0.8,0.5).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.2))
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Left Side").setPosition(-2.6,0.8,0.0).setCenterOfRotation(0.0,0.9149,0.0016).setOrientation(0.0,1.0,0.0,-1.5708))
     .addChild((new autoclass.Viewpoint()).setDescription("Humanoid LOA 3 Top").setCenterOfRotation(0.0,0.9149,0.0016).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
-    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setInfo(this.hanim_humanoid_3_43_info).setVersion("1.0")
+    .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setInfo(this.hanim_humanoid_3_42_info).setVersion("1.0")
       .addComments(" Only one root HAnimJoint is expected ")
       .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,0.824,0.0277)
         .addChild((new autoclass.HAnimSegment("hanim_sacrum")).setName("sacrum"))
@@ -871,3 +866,4 @@ HAnim1SpecificationLOA3Invisible.prototype = {
 	}
 }
 new HAnim1SpecificationLOA3Invisible().main();
+process.exit(0);

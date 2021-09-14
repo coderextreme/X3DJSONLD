@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 April 2021 </td>
+			<td> 4 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -56,7 +56,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="http://www.medialab.hmu.gr/minipages/x3domAudio" target="_blank">http://www.medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -104,10 +104,10 @@ public class SplitChannels
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 April 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 August 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.hmu.gr/minipages/x3domAudio"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
@@ -115,7 +115,7 @@ public class SplitChannels
     .addChild(new NavigationInfo().setHtmlID("NAV").setType("NONE"))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.200,0.200,0.210})))
     .addChild(new Viewpoint().setBind("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint bind: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Viewpoint bind: $isNumeric=false, $attributeType=, value='true']
 ).setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
     .addChild(new Transform("PowerR").setTranslation(100.0,400.0,400.0)
       .addChild(new Transform().setHtmlID("pR").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
@@ -134,33 +134,33 @@ public class SplitChannels
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
             .setMaterial(new Material().setAmbientintensity("0.0933"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
 ).setDiffusecolor("1 1 1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
 ).setEmissivecolor("0 0 0"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
 ).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
 )))
           .setGeometry(new Text().setCcw(true).setLit("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text lit: $isNumeric=false, $attributeType=, value='true']
 ).setString(new String[] {"Right Channel Volume"}).setUsegeocache("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
             .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
 ).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
 ).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
 ).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 ))))))
     .addChild(new Transform("PowerL").setTranslation(-100.0,400.0,400.0)
       .addChild(new Transform().setHtmlID("pL").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
@@ -179,33 +179,33 @@ public class SplitChannels
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.345,0.345,0.882))
             .setMaterial(new Material().setAmbientintensity("0.0933"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material ambientintensity: $isNumeric=true, $attributeType=, value='0.0933']
 ).setDiffusecolor("1 1 1"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material diffusecolor: $isNumeric=true, $attributeType=, value='1 1 1']
 ).setEmissivecolor("0 0 0"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material emissivecolor: $isNumeric=true, $attributeType=, value='0 0 0']
 ).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
-// [*** X3dToJava.xslt error: encountered incorrect type, Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
 )))
           .setGeometry(new Text().setCcw(true).setLit("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text lit: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text lit: $isNumeric=false, $attributeType=, value='true']
 ).setString(new String[] {"Left Channel Volume"}).setUsegeocache("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Text usegeocache: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
             .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
 ).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
 ).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
 ).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle size: $isNumeric=true, $attributeType=, value='1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle size: $isNumeric=true, $attributeType=, value='1']
 ).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 ))))))
     .addChild(new Transform()
       .addChild(new Shape()

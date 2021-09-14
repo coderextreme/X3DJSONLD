@@ -224,3 +224,4 @@ rgb_alpha.prototype = {
 	}
 }
 new rgb_alpha().main();
+process.exit(0);

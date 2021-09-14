@@ -187,3 +187,4 @@ function 3dTexture
 	}
 }
 new 3dTexture().main();
+process.exit(0);

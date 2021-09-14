@@ -1618,3 +1618,4 @@ BvhConversion1Illustrated.prototype = {
 	}
 }
 new BvhConversion1Illustrated().main();
+process.exit(0);

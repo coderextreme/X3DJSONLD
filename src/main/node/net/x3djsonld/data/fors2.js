@@ -231,3 +231,4 @@ fors2.prototype = {
 	}
 }
 new fors2().main();
+process.exit(0);

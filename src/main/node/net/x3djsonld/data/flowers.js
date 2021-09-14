@@ -286,3 +286,4 @@ flowers.prototype = {
 	}
 }
 new flowers().main();
+process.exit(0);

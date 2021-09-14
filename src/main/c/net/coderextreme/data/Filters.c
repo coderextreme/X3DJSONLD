@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "modified";
-meta7.content = "20 April 2021";
+meta7.content = "4 August 2021";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -49,7 +49,7 @@ head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
 meta10.name = "reference";
-meta10.content = "http://www.medialab.teicrete.gr/minipages/x3domAudio";
+meta10.content = "https://www.medialab.hmu.gr/minipages/x3domAudio";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
@@ -79,7 +79,6 @@ Background16.skyColor = new MFColor(new float[0.2,0.2,0.2]);
 children[1] = Background16;
 
 Viewpoint Viewpoint17 = createNode("Viewpoint");
-Viewpoint17.bind = "true";
 Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.5]);
 Viewpoint17.position = new SFVec3f(new float[0,500,600]);
 Viewpoint17.retainUserOffsets = True;

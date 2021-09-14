@@ -285,3 +285,4 @@ flipp.prototype = {
 	}
 }
 new flipp().main();
+process.exit(0);

@@ -174,3 +174,4 @@ TextExamples.prototype = {
 	}
 }
 new TextExamples().main();
+process.exit(0);

@@ -203,3 +203,4 @@ rubik2x2x2.prototype = {
 	}
 }
 new rubik2x2x2().main();
+process.exit(0);

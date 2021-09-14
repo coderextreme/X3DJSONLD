@@ -156,3 +156,4 @@ ExtrusionHeart.prototype = {
 	}
 }
 new ExtrusionHeart().main();
+process.exit(0);

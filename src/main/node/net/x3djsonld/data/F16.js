@@ -452,3 +452,4 @@ F16.prototype = {
 	}
 }
 new F16().main();
+process.exit(0);

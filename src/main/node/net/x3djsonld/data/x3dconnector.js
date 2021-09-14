@@ -232,3 +232,4 @@ x3dconnector.prototype = {
 	}
 }
 new x3dconnector().main();
+process.exit(0);

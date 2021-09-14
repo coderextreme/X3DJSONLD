@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('10 April 2021')),
+              content_ : SFString('4 August 2021')),
 
             meta(
               name_ : SFString('warning'),

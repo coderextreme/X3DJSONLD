@@ -2630,89 +2630,89 @@ POSSIBILITY OF SUCH DAMAGE.
                 .)" >
 			
 			<xsl:variable name="attributeType">
-				<xsl:call-template name="attribute-type"/>
+                            <xsl:call-template name="attribute-type"/>
 			</xsl:variable>
 			<xsl:variable name="tupleSize">
-				<xsl:call-template name="tuple-size">
-					<xsl:with-param name="type">
-						<xsl:value-of select="$attributeType"/>
-					</xsl:with-param>
-				</xsl:call-template>
+                            <xsl:call-template name="tuple-size">
+                                <xsl:with-param name="type">
+                                    <xsl:value-of select="$attributeType"/>
+                                </xsl:with-param>
+                            </xsl:call-template>
 			</xsl:variable>
 			<xsl:variable name="numbersPerGroup">
-				<xsl:choose>
-					<xsl:when test="contains($attributeType,'Int32') or contains($attributeType,'Image')">
-						<xsl:text>1000</xsl:text>
-					</xsl:when>
-					<xsl:when test="contains($attributeType,'Float')">
-						<xsl:text>1000</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="($tupleSize * $tupleSplitSize)"/>
-					</xsl:otherwise>
-				</xsl:choose>
+                            <xsl:choose>
+                                <xsl:when test="contains($attributeType,'Int32') or contains($attributeType,'Image')">
+                                    <xsl:text>1000</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="contains($attributeType,'Float')">
+                                    <xsl:text>1000</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="($tupleSize * $tupleSplitSize)"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
 			</xsl:variable>
 			<xsl:variable name="stringValue" select="string(.)"/><!-- confirm string type to avoid mysterious run-time errors -->
 			<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space($stringValue)) - string-length(translate($stringValue,' ',''))"/>
 			<xsl:variable name="isNumeric" select="(string-length(translate($stringValue,'0123456789+-Ee. ','')) = 0)"/>
                 
 			<xsl:variable name="attributeTypeHeuristic"> <!-- replaced, no longer in use -->
-				<xsl:choose>
-					<!-- TODO need strict rules; heuristics follow -->
-					<xsl:when test="not(contains(string(.),' ')) and (string-length(translate(string(.),'truefalse','')) = 0)">
-						<xsl:text>SFBool</xsl:text>
-					</xsl:when>
-					<xsl:when test="(string-length(translate(string(.),'truefalse ','')) = 0)">
-						<xsl:text>MFBool</xsl:text>
-					</xsl:when>
-					<xsl:when test="(name() = 'content') or (name() = 'description') or (name() = 'name') or (name() = 'version')">
-						<xsl:text>SFString</xsl:text>
-					</xsl:when>
-					<xsl:when test="(name() = 'string') or (name() = 'justify')">
-						<xsl:text>MFString</xsl:text>
-					</xsl:when>
-					<!-- TODO
-					<xsl:when test="(starts-with(normalize-space(.),'&quot;') and ends-with(normalize-space(.),'&quot;'))">
-						<xsl:text>MFString</xsl:text>
-					</xsl:when>
-					-->
-					<xsl:when test="($embeddedSpaceCount = 0) and $isNumeric">
-						<xsl:text>SFnumber</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 1) and starts-with(name(),'Geo')">
-						<xsl:text>SFVec2d</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 1)">
-						<xsl:text>SFVec2f</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 2) and starts-with(name(),'Geo')">
-						<xsl:text>SFVec3d</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 2) and contains(name(),'olor')">
-						<xsl:text>SFColor</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 3) and contains(name(),'olor')">
-						<xsl:text>SFColorRGBA</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 2)">
-						<xsl:text>SFVec3f</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 3) and contains(name(),'otation')">
-						<xsl:text>SFRotation</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 3) and starts-with(name(),'Geo')">
-						<xsl:text>SFVec4d</xsl:text>
-					</xsl:when>
-					<xsl:when test="($embeddedSpaceCount = 3)">
-						<xsl:text>SFVec4f</xsl:text>
-					</xsl:when>
-					<xsl:when test="$isNumeric">
-						<xsl:text>MFnumberTypeError</xsl:text><!-- not a legal X3D type, this is an error sentinel -->
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text>SFString</xsl:text>
-					</xsl:otherwise>
-				</xsl:choose>
+                            <xsl:choose>
+                                <!-- TODO need strict rules; heuristics follow -->
+                                <xsl:when test="not(contains(string(.),' ')) and (string-length(translate(string(.),'truefalse','')) = 0)">
+                                        <xsl:text>SFBool</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(string-length(translate(string(.),'truefalse ','')) = 0)">
+                                        <xsl:text>MFBool</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(name() = 'content') or (name() = 'description') or (name() = 'name') or (name() = 'version')">
+                                        <xsl:text>SFString</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(name() = 'string') or (name() = 'justify')">
+                                        <xsl:text>MFString</xsl:text>
+                                </xsl:when>
+                                <!-- TODO
+                                <xsl:when test="(starts-with(normalize-space(.),'&quot;') and ends-with(normalize-space(.),'&quot;'))">
+                                        <xsl:text>MFString</xsl:text>
+                                </xsl:when>
+                                -->
+                                <xsl:when test="($embeddedSpaceCount = 0) and $isNumeric">
+                                        <xsl:text>SFnumber</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 1) and starts-with(name(),'Geo')">
+                                        <xsl:text>SFVec2d</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 1)">
+                                        <xsl:text>SFVec2f</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 2) and starts-with(name(),'Geo')">
+                                        <xsl:text>SFVec3d</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 2) and contains(name(),'olor')">
+                                        <xsl:text>SFColor</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 3) and contains(name(),'olor')">
+                                        <xsl:text>SFColorRGBA</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 2)">
+                                        <xsl:text>SFVec3f</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 3) and contains(name(),'otation')">
+                                        <xsl:text>SFRotation</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 3) and starts-with(name(),'Geo')">
+                                        <xsl:text>SFVec4d</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($embeddedSpaceCount = 3)">
+                                        <xsl:text>SFVec4f</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="$isNumeric">
+                                        <xsl:text>MFnumberTypeError</xsl:text><!-- not a legal X3D type, this is an error sentinel -->
+                                </xsl:when>
+                                <xsl:otherwise>
+                                        <xsl:text>SFString</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
 			</xsl:variable>
 				
 			<xsl:variable name="normalizedAttribute" select="normalize-space(translate($stringValue,',',' '))"/>
@@ -3701,52 +3701,107 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:template>
 	
     <xsl:template name="tuple-size">
-		<xsl:param name="type"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
-		
-		<xsl:choose>
-			<xsl:when test="contains($type,'FBool')   or contains($type,'FInt32') or contains($type,'FFloat') or
-							contains($type,'FDouble') or contains($type,'FTime')  or contains($type,'FString') or
-							contains($type,'FImage')  or contains($type,'FNode')  or ($type = 'xs:string')">
-				<xsl:text>1</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'FVec2')">
-				<xsl:text>2</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'FVec3') or 
-							($type = 'SFColor') or ($type = 'MFColor')">
-				<xsl:text>3</xsl:text>
-			</xsl:when>
-			<xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
-							($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
-				<xsl:text>4</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'Matrix3')">
-				<xsl:text>9</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'Matrix4')">
-				<xsl:text>16</xsl:text>
-			</xsl:when>
+        <xsl:param name="type"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+
+        <xsl:variable name="lowerCaseType" select="lower-case($type)"/>
+        <!-- debug diagnostic
+        <xsl:message>
+            <xsl:text>$lowerCaseType=</xsl:text>
+            <xsl:value-of select="$lowerCaseType"/>
+        </xsl:message> -->
+
+        <xsl:choose>
+            <xsl:when test="contains($type,'FBool')   or contains($type,'FInt32') or contains($type,'FFloat') or
+                                            contains($type,'FDouble') or contains($type,'FTime')  or contains($type,'FString') or
+                                            contains($type,'FImage')  or contains($type,'FNode')  or ($type = 'xs:string')">
+                    <xsl:text>1</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($type,'FVec2')">
+                    <xsl:text>2</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($type,'FVec3') or 
+                                            ($type = 'SFColor') or ($type = 'MFColor')">
+                    <xsl:text>3</xsl:text>
+            </xsl:when>
+            <xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
+                                            ($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
+                    <xsl:text>4</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($type,'Matrix3')">
+                    <xsl:text>9</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains($type,'Matrix4')">
+                    <xsl:text>16</xsl:text>
+            </xsl:when>
+            <!-- now test and report incorrect-case variants -->
+            <xsl:when test="contains($lowerCaseType,'fbool')   or contains($lowerCaseType,'fint32') or contains($lowerCaseType,'ffloat') or
+                            contains($lowerCaseType,'fdouble') or contains($lowerCaseType,'ftime')  or contains($lowerCaseType,'fstring') or
+                            contains($lowerCaseType,'fimage')  or contains($lowerCaseType,'fnode')">
+                    <xsl:text>1</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
+                    </xsl:message>
+            </xsl:when>
+            <xsl:when test="contains($lowerCaseType,'fvec2')">
+                    <xsl:text>2</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
+                    </xsl:message>
+            </xsl:when>
+            <xsl:when test="contains($lowerCaseType,'fvec3') or 
+                                            ($type = 'sfcolor') or ($type = 'mfcolor')">
+                    <xsl:text>3</xsl:text>
+            </xsl:when>
+            <xsl:when test=" contains($lowerCaseType,'fvec4') or contains($lowerCaseType,'frotation') or
+                                            ($type = 'sfcolorrgba')  or ($type = 'mfcolorrgba')">
+                    <xsl:text>4</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
+                    </xsl:message>
+            </xsl:when>
+            <xsl:when test="contains($lowerCaseType,'matrix3')">
+                    <xsl:text>9</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
+                    </xsl:message>
+            </xsl:when>
+            <xsl:when test="contains($lowerCaseType,'matrix4')">
+                    <xsl:text>16</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
+                    </xsl:message>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:text>1</xsl:text>
                 <xsl:message>
                     <xsl:text>*** Error: tuple-size not found for type </xsl:text>
                     <xsl:value-of select="$type"/>
                     <xsl:if test="(string-length($type) = 0)">
-                        <xsl:text>(type value missing)</xsl:text>
+                        <xsl:text> (type name incorrect or not found)</xsl:text>
                     </xsl:if>
+                    <xsl:text>, using tuple-size=1</xsl:text>
                 </xsl:message>
             </xsl:otherwise>
-		</xsl:choose>
+	</xsl:choose>
+        <xsl:variable name="firstTwoLettersType" select="substring(@type,0,2)"/>
+        <xsl:if test="(string-length($firstTwoLettersType) > 0) and not($firstTwoLettersType = 'SF') and not($firstTwoLettersType = 'MF')">
+            <xsl:message>
+                <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text>
+                <xsl:value-of select="$firstTwoLettersType"/>
+                <xsl:text>' which can only be 'SF' (single-field) or 'MF' (multi-field)</xsl:text>
+            </xsl:message>
+        </xsl:if>
     </xsl:template>
 	
     <xsl:template name="attribute-type"> <!-- rule to determine attribute type -->
 	
-		<!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
+        <!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
 
-		<xsl:variable name="attributeName"       select="local-name()"/>
-		<xsl:variable name="parentElementName"   select="local-name(..)"/>
-		<xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
-		<xsl:variable name="localFieldType"> <!-- locally defined field -->
+        <!-- TODO check for incorrect case -->
+        <xsl:variable name="attributeName"       select="local-name()"/>
+        <xsl:variable name="parentElementName"   select="local-name(..)"/>
+        <xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
+        <xsl:variable name="localFieldType"> <!-- locally defined field -->
             <xsl:choose>
                 <xsl:when test="(string-length(normalize-space(../@type)) > 0)"><!-- field -->
                     <xsl:value-of select="normalize-space(../@type)"/>
@@ -3802,7 +3857,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:choose>
         </xsl:variable>
 
-		<xsl:choose>
+        <xsl:choose>
 		  <!-- SFString -->
           <!-- omitted SFString test: field/fieldValue contents of value field are determined by 
                local (Extern)ProtoDeclare/field type definition, not X3D Schema:
@@ -4478,11 +4533,11 @@ POSSIBILITY OF SUCH DAMAGE.
 
 		<xsl:variable name="processingPassFound" select="(string-length(normalize-space($processingPass)) > 0)"/>
 		<xsl:variable name="tupleSize">
-			<xsl:call-template name="tuple-size">
-				<xsl:with-param name="type">
-					<xsl:value-of select="$attributeType"/>
-				</xsl:with-param>
-			</xsl:call-template>
+                    <xsl:call-template name="tuple-size">
+                        <xsl:with-param name="type">
+                            <xsl:value-of select="$attributeType"/>
+                        </xsl:with-param>
+                    </xsl:call-template>
 		</xsl:variable>
 		<xsl:variable name="numbersPerGroup">
 			<xsl:choose>
@@ -5070,7 +5125,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:value-of select="."/><!-- might include quote marks but error exists anyway -->
 				<xsl:text>"</xsl:text>
 				<xsl:variable name="warningMessage">
-					<xsl:text>[*** X3dToJava.xslt error: encountered incorrect type, </xsl:text>
+					<xsl:text>[*** X3dToJava.xslt error: encountered incorrect type</xsl:text>
+                                        <xsl:if test="($attributeType = lower-case($attributeType))">
+                                            <xsl:text> (check incorrect capitalization)</xsl:text>
+                                        </xsl:if>
+					<xsl:text>, </xsl:text>
 					<xsl:value-of select="local-name(..)"/>
                     <xsl:if test="(local-name(.) = 'value')">
                         <xsl:text> </xsl:text>
@@ -5089,6 +5148,12 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$isNumeric"/>
 					<xsl:text>, $attributeType=</xsl:text>
 					<xsl:value-of select="$attributeType"/>
+                                        <!-- check for warning if improper type
+                                        <xsl:call-template name="tuple-size">
+                                            <xsl:with-param name="type">
+                                                <xsl:value-of select="$attributeType"/>
+                                            </xsl:with-param>
+                                        </xsl:call-template> -->
 					<xsl:text>, value='</xsl:text>
 					<xsl:value-of select="."/>
 					<xsl:text>'</xsl:text>
@@ -5192,11 +5257,11 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:if>
 			<xsl:if test="$isLargeAttribute and ($processingPassFound)">
 				<xsl:variable name="tupleSize">
-					<xsl:call-template name="tuple-size">
-						<xsl:with-param name="type">
-							<xsl:value-of select="$attributeType"/>
-						</xsl:with-param>
-					</xsl:call-template>
+                                    <xsl:call-template name="tuple-size">
+                                        <xsl:with-param name="type">
+                                            <xsl:value-of select="$attributeType"/>
+                                        </xsl:with-param>
+                                    </xsl:call-template>
 				</xsl:variable>
 				<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(string(.))) - string-length(translate(string(.),' ',''))"/>
 				<xsl:variable name="numberOfValues"     select="($embeddedSpaceCount + 1)"/>

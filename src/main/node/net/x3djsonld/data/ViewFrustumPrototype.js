@@ -248,3 +248,4 @@ ViewFrustumPrototype.prototype = {
 	}
 }
 new ViewFrustumPrototype().main();
+process.exit(0);

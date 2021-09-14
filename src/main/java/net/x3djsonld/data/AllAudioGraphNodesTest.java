@@ -36,7 +36,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 10 April 2021 </td>
+			<td> 4 August 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -87,7 +87,7 @@ public class AllAudioGraphNodesTest
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("25 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("10 April 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 August 2021"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Developmental test, no actual 3D model expected"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))

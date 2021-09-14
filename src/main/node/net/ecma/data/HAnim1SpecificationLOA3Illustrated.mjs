@@ -54,11 +54,11 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("HAnimSpecificationLOA3Illustrated.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Illustrated.x3d")}),
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.")}),
+              content : new SFString("HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.")}),
 
             new meta({
               name : new SFString("reference"),
@@ -70,11 +70,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2020")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("Convert to X3D4 HAnim2")}),
+              content : new SFString("19 February 2021")}),
 
             new meta({
               name : new SFString("creator"),
@@ -82,19 +78,19 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("Image"),
-              content : new SFString("HAnimSpecificationLOA3Illustrated.png")}),
+              content : new SFString("HAnim1SpecificationLOA3Illustrated.png")}),
 
             new meta({
               name : new SFString("Image"),
-              content : new SFString("HAnimSpecificationLOA3IllustratedLeftSide.png")}),
+              content : new SFString("HAnim1SpecificationLOA3IllustratedLeftSide.png")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HAnimSpecificationLOA3Invisible.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Invisible.x3d")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HAnimSpecificationLOA3Animation.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Animation.x3d")}),
 
             new meta({
               name : new SFString("reference"),
@@ -166,7 +162,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d")}),
 
             new meta({
               name : new SFString("license"),

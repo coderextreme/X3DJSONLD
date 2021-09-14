@@ -15,11 +15,7 @@ import { SFFloat } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
-import { MetadataSet } from './x3d.mjs';
-import { MetadataString } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MetadataFloat } from './x3d.mjs';
-import { MFFloat } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -37,12 +33,12 @@ import { MFVec2f } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("HAnim"),
+              name : new SFString("H-Anim"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
@@ -67,7 +63,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("13 March 2021")}),
+              content : new SFString("3 July 2020")}),
 
             new meta({
               name : new SFString("description"),
@@ -87,7 +83,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter09Ru.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/KoreanCharacter09Ru.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -125,37 +121,9 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("Ru"),
               DEF : new SFString("hanim_Ru"),
+              info : new MFString(["authorName=Chul Hee Jung and Myeong Won Lee","authorEmail=myeongwonlee@gmail.com","creationDate=31 March 2011","humanoidVersion=1.0","gender=male","height=1.5"]),
               scale : new SFVec3f([0.0225,0.0225,0.0225]),
-              version : new SFString("2.0"),
-              /*HAnimHumanoid original info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=male\" \"height=1.5\"'*/
-              metadata : new MFNode([
-                new MetadataSet({
-                  name : new SFString("HAnimHumanoid.info"),
-                  reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("authorName"),
-                      value : new MFString(["Chul Hee Jung and Myeong Won Lee"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("authorEmail"),
-                      value : new MFString(["myeongwonlee@gmail.com"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("creationDate"),
-                      value : new MFString(["31 March 2011"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("gender"),
-                      value : new MFString(["male"])})),
-                  value : new SFNode(
-                    new MetadataFloat({
-                      name : new SFString("height"),
-                      value : new MFFloat([1.5])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("humanoidVersion"),
-                      value : new MFString(["2.0"])}))}),
+              version : new SFString("1.0"),
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),
@@ -179,7 +147,7 @@ var X3D0 =  new X3D({
                                   texture : new SFNode(
                                     new ImageTexture({
                                       DEF : new SFString("RuTextureAtlas"),
-                                      url : new MFString(["images/Ru.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Ru.png"])}))})),
+                                      url : new MFString(["images/Ru.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/Ru.png"])}))})),
                               geometry : new SFNode(
                                 new IndexedFaceSet({
                                   coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,1,-1,10,2,1,-1,1,9,10,-1,11,3,2,-1,2,10,11,-1,12,4,3,-1,3,11,12,-1,13,5,4,-1,4,12,13,-1,14,6,5,-1,5,13,14,-1,15,7,6,-1,6,14,15,-1,16,8,7,-1,7,15,16,-1,9,1,8,-1,8,16,9,-1,18,10,9,-1,9,17,18,-1,19,11,10,-1,10,18,19,-1,20,12,11,-1,11,19,20,-1,21,13,12,-1,12,20,21,-1,22,14,13,-1,13,21,22,-1,23,15,14,-1,14,22,23,-1,24,16,15,-1,15,23,24,-1,17,9,16,-1,16,24,17,-1,25,18,17,-1,25,19,18,-1,25,20,19,-1,25,21,20,-1,25,22,21,-1,25,23,22,-1,25,24,23,-1,25,17,24,-1]),
@@ -261,14 +229,14 @@ var X3D0 =  new X3D({
                                               point : new MFVec2f([0.6463,0.046,0.6495,0.0509,0.6387,0.0526,0.6389,0.0477,0.6574,0.0396,0.6629,0.0479,0.6737,0.0226,0.6912,0.036,0.6786,0.0436,0.6681,0.033,0.6077,0.0348,0.5971,0.0443,0.617,0.0409,0.6118,0.0489,0.6293,0.0459,0.6272,0.0516,0.6536,0.2562,0.6522,0.265,0.6412,0.2644,0.6406,0.2561,0.6708,0.2596,0.6649,0.2701,0.687,0.2926,0.6797,0.28,0.6919,0.2662,0.7071,0.2736,0.5893,0.2674,0.6011,0.2817,0.6093,0.2616,0.616,0.2723,0.6268,0.257,0.6285,0.2656,0.6804,0.1534,0.7038,0.1483,0.6596,0.1586,0.6418,0.1619,0.72,0.1456,0.5782,0.1504,0.6015,0.1548,0.6244,0.1586,0.6394,0.2899,0.6382,0.0267,0.6022,0.024,0.5845,0.0373,0.5928,0.2944,0.5718,0.2758,0.5583,0.1475])}))}))})])})])}),
 
                             new HAnimJoint({
-                              name : new SFString("l_talocrural"),
-                              DEF : new SFString("hanim_l_talocrural"),
+                              name : new SFString("l_ankle"),
+                              DEF : new SFString("hanim_l_ankle"),
                               center : new SFVec3f([4.077,4.031,-1.998]),
                               stiffness : new SFVec3f([0,0,0]),
                               children : new MFNode([
                                 new HAnimSegment({
-                                  name : new SFString("l_talus"),
-                                  DEF : new SFString("hanim_l_talus"),
+                                  name : new SFString("l_hindfoot"),
+                                  DEF : new SFString("hanim_l_hindfoot"),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([4.077,4.031,-1.998]),
@@ -295,14 +263,14 @@ var X3D0 =  new X3D({
                                                   point : new MFVec2f([0.8159,0.2271,0.781,0.2271,0.7858,0.2412,0.8159,0.2408,0.7734,0.2271,0.7785,0.2421,0.7808,0.2271,0.7858,0.2412,0.8159,0.2271,0.8159,0.2408,0.8362,0.2274,0.84,0.2422,0.8363,0.2002,0.8159,0.2002,0.7804,0.2002,0.8159,0.2002,0.7714,0.2002,0.7805,0.2002,0.8299,0.1039,0.8095,0.1039,0.7742,0.1039,0.8095,0.1039,0.7656,0.1039,0.7744,0.1039,0.7972,0.2571,0.8159,0.2571,0.7893,0.2571,0.7968,0.2571,0.8159,0.2571,0.8399,0.2422,0.8323,0.2571,0.8321,0.2571,0.8428,0.2571,0.8551,0.2481,0.8079,0.0874,0.8299,0.1039,0.8275,0.2712,0.8343,0.2712,0.8271,0.2712,0.8157,0.2712,0.8019,0.2712,0.796,0.2712,0.8015,0.2712,0.8157,0.2712,0.8299,0.1039,0.8363,0.2274,0.8363,0.2002,0.8589,0.2435,0.8527,0.2337,0.8505,0.2254,0.8508,0.1997,0.8515,0.1961,0.8515,0.1961,0.8515,0.1961,0.8508,0.1997,0.8505,0.2254,0.8525,0.2337,0.8284,0.0874,0.8079,0.0874,0.7726,0.0874,0.8079,0.0874,0.764,0.0874,0.7728,0.0874,0.8284,0.0874,0.8284,0.0874,0.8299,0.1114,0.8095,0.1114,0.7741,0.1114,0.8095,0.1114,0.765,0.1114,0.7741,0.1114,0.8299,0.1114,0.8445,0.1108,0.8451,0.1072,0.8451,0.1072,0.8451,0.1072,0.8444,0.1108])}))}))})])})])}),
 
                                 new HAnimJoint({
-                                  name : new SFString("l_metatarsophalangeal_2"),
-                                  DEF : new SFString("hanim_l_metatarsophalangeal_2"),
+                                  name : new SFString("l_midtarsal"),
+                                  DEF : new SFString("hanim_l_midtarsal"),
                                   center : new SFVec3f([4.077,3.104,-0.9239]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("l_tarsal_proximal_phalanx_2"),
-                                      DEF : new SFString("hanim_l_tarsal_proximal_phalanx_2"),
+                                      name : new SFString("l_middistal"),
+                                      DEF : new SFString("hanim_l_middistal"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([4.077,3.104,-0.9239]),
@@ -397,14 +365,14 @@ var X3D0 =  new X3D({
                                               point : new MFVec2f([0.6463,0.046,0.6495,0.0509,0.6387,0.0526,0.6389,0.0477,0.6574,0.0396,0.6629,0.0479,0.6737,0.0226,0.6912,0.036,0.6786,0.0436,0.6681,0.033,0.6077,0.0348,0.5971,0.0443,0.617,0.0409,0.6118,0.0489,0.6293,0.0459,0.6272,0.0516,0.6536,0.2562,0.6522,0.265,0.6412,0.2644,0.6406,0.2561,0.6708,0.2596,0.6649,0.2701,0.687,0.2926,0.6797,0.28,0.6919,0.2662,0.7071,0.2736,0.5893,0.2674,0.6011,0.2817,0.6093,0.2616,0.616,0.2723,0.6268,0.257,0.6285,0.2656,0.6804,0.1534,0.7038,0.1483,0.6596,0.1586,0.6418,0.1619,0.72,0.1456,0.5782,0.1504,0.6015,0.1548,0.6244,0.1586,0.6394,0.2899,0.6382,0.0267,0.6022,0.024,0.5845,0.0373,0.5928,0.2944,0.5718,0.2758,0.5583,0.1475])}))}))})])})])}),
 
                             new HAnimJoint({
-                              name : new SFString("r_talocrural"),
-                              DEF : new SFString("hanim_r_talocrural"),
+                              name : new SFString("r_ankle"),
+                              DEF : new SFString("hanim_r_ankle"),
                               center : new SFVec3f([-4.077,4.031,-1.998]),
                               stiffness : new SFVec3f([0,0,0]),
                               children : new MFNode([
                                 new HAnimSegment({
-                                  name : new SFString("r_talus"),
-                                  DEF : new SFString("hanim_r_talus"),
+                                  name : new SFString("r_hindfoot"),
+                                  DEF : new SFString("hanim_r_hindfoot"),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-4.077,4.031,-1.998]),
@@ -431,14 +399,14 @@ var X3D0 =  new X3D({
                                                   point : new MFVec2f([0.8159,0.2271,0.781,0.2271,0.7858,0.2412,0.8159,0.2408,0.7734,0.2271,0.7785,0.2421,0.7808,0.2271,0.7858,0.2412,0.8159,0.2271,0.8159,0.2408,0.8362,0.2274,0.84,0.2422,0.8363,0.2002,0.8159,0.2002,0.7804,0.2002,0.8159,0.2002,0.7714,0.2002,0.7805,0.2002,0.8299,0.1039,0.8095,0.1039,0.7742,0.1039,0.8095,0.1039,0.7656,0.1039,0.7744,0.1039,0.7972,0.2571,0.8159,0.2571,0.7893,0.2571,0.7968,0.2571,0.8159,0.2571,0.8399,0.2422,0.8323,0.2571,0.8321,0.2571,0.8428,0.2571,0.8551,0.2481,0.8079,0.0874,0.8299,0.1039,0.8275,0.2712,0.8343,0.2712,0.8271,0.2712,0.8157,0.2712,0.8019,0.2712,0.796,0.2712,0.8015,0.2712,0.8157,0.2712,0.8299,0.1039,0.8363,0.2274,0.8363,0.2002,0.8589,0.2435,0.8527,0.2337,0.8505,0.2254,0.8508,0.1997,0.8515,0.1961,0.8515,0.1961,0.8515,0.1961,0.8508,0.1997,0.8505,0.2254,0.8525,0.2337,0.8284,0.0874,0.8079,0.0874,0.7726,0.0874,0.8079,0.0874,0.764,0.0874,0.7728,0.0874,0.8284,0.0874,0.8284,0.0874,0.8299,0.1114,0.8095,0.1114,0.7741,0.1114,0.8095,0.1114,0.765,0.1114,0.7741,0.1114,0.8299,0.1114,0.8445,0.1108,0.8451,0.1072,0.8451,0.1072,0.8451,0.1072,0.8444,0.1108])}))}))})])})])}),
 
                                 new HAnimJoint({
-                                  name : new SFString("r_metatarsophalangeal_2"),
-                                  DEF : new SFString("hanim_r_metatarsophalangeal_2"),
+                                  name : new SFString("r_midtarsal"),
+                                  DEF : new SFString("hanim_r_midtarsal"),
                                   center : new SFVec3f([-4.077,3.104,-0.9239]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("r_tarsal_proximal_phalanx_2"),
-                                      DEF : new SFString("hanim_r_tarsal_proximal_phalanx_2"),
+                                      name : new SFString("r_middistal"),
+                                      DEF : new SFString("hanim_r_middistal"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-4.077,3.104,-0.9239]),
@@ -567,14 +535,14 @@ var X3D0 =  new X3D({
                                                   point : new MFVec2f([0.9157,0.7044,0.9151,0.6926,0.928,0.6893,0.9222,0.7043,0.898,0.7025,0.8979,0.6938,0.8797,0.7052,0.8796,0.6945,0.8694,0.7049,0.8649,0.694,0.862,0.7093,0.8506,0.6957,0.8505,0.7262,0.8313,0.701,0.9288,0.705,0.9387,0.6908,0.9028,0.5513,0.9105,0.5495,0.8894,0.5563,0.882,0.5554,0.872,0.555,0.8586,0.5534,0.8467,0.5497,0.9198,0.5512,0.8991,0.5423,0.9041,0.5398,0.8883,0.5471,0.8822,0.5465,0.8615,0.5326,0.8677,0.5402,0.9108,0.5387,0.8748,0.5458,0.8877,0.531,0.8968,0.7248,0.9428,0.721,0.9616,0.6952,0.9315,0.546,0.9149,0.5301,0.909,0.6219,0.9193,0.6194,0.8937,0.6251,0.8808,0.6249,0.8684,0.6245,0.8546,0.6246,0.839,0.6253,0.9466,0.6206,0.9292,0.621])}))}))})])})])}),
 
                                 new HAnimJoint({
-                                  name : new SFString("l_radiocarpal"),
-                                  DEF : new SFString("hanim_l_radiocarpal"),
+                                  name : new SFString("l_wrist"),
+                                  DEF : new SFString("hanim_l_wrist"),
                                   center : new SFVec3f([7.938,35.98,-1.856]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("l_carpal"),
-                                      DEF : new SFString("hanim_l_carpal"),
+                                      name : new SFString("l_hand"),
+                                      DEF : new SFString("hanim_l_hand"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([7.938,35.98,-1.856]),
@@ -669,14 +637,14 @@ var X3D0 =  new X3D({
                                                   point : new MFVec2f([0.9157,0.7044,0.9151,0.6926,0.928,0.6893,0.9222,0.7043,0.898,0.7025,0.8979,0.6938,0.8797,0.7052,0.8796,0.6945,0.8694,0.7049,0.8649,0.694,0.862,0.7093,0.8506,0.6957,0.8505,0.7262,0.8313,0.701,0.9288,0.705,0.9387,0.6908,0.9028,0.5513,0.9105,0.5495,0.8894,0.5563,0.882,0.5554,0.872,0.555,0.8586,0.5534,0.8467,0.5497,0.9198,0.5512,0.8991,0.5423,0.9041,0.5398,0.8883,0.5471,0.8822,0.5465,0.8615,0.5326,0.8677,0.5402,0.9108,0.5387,0.8748,0.5458,0.8877,0.531,0.8968,0.7248,0.9428,0.721,0.9616,0.6952,0.9315,0.546,0.9149,0.5301,0.909,0.6219,0.9193,0.6194,0.8937,0.6251,0.8808,0.6249,0.8684,0.6245,0.8546,0.6246,0.839,0.6253,0.9466,0.6206,0.9292,0.621])}))}))})])})])}),
 
                                 new HAnimJoint({
-                                  name : new SFString("r_radiocarpal"),
-                                  DEF : new SFString("hanim_r_radiocarpal"),
+                                  name : new SFString("r_wrist"),
+                                  DEF : new SFString("hanim_r_wrist"),
                                   center : new SFVec3f([-7.938,35.98,-1.856]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("r_carpal"),
-                                      DEF : new SFString("hanim_r_carpal"),
+                                      name : new SFString("r_hand"),
+                                      DEF : new SFString("hanim_r_hand"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-7.938,35.98,-1.856]),
@@ -777,10 +745,16 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_sacroiliac")}),
 
                 new HAnimJoint({
+                  USE : new SFString("hanim_vl5")}),
+
+                new HAnimJoint({
                   USE : new SFString("hanim_skullbase")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_vl5")}),
+                  USE : new SFString("hanim_l_ankle")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_ankle")}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_elbow")}),
@@ -801,16 +775,10 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_knee")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_metatarsophalangeal_2")}),
+                  USE : new SFString("hanim_l_midtarsal")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_r_metatarsophalangeal_2")}),
-
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_radiocarpal")}),
-
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_radiocarpal")}),
+                  USE : new SFString("hanim_r_midtarsal")}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_shoulder")}),
@@ -819,19 +787,19 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_shoulder")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_talocrural")}),
+                  USE : new SFString("hanim_l_wrist")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_r_talocrural")}),
+                  USE : new SFString("hanim_r_wrist")}),
               segments : new MFNode([
                 new HAnimSegment({
-                  USE : new SFString("hanim_l5")}),
+                  USE : new SFString("hanim_sacrum")}),
 
                 new HAnimSegment({
                   USE : new SFString("hanim_pelvis")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_sacrum")}),
+                  USE : new SFString("hanim_l5")}),
 
                 new HAnimSegment({
                   USE : new SFString("hanim_skull")}),
@@ -843,28 +811,28 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_calf")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_carpal")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_carpal")}),
-
-                new HAnimSegment({
                   USE : new SFString("hanim_l_forearm")}),
 
                 new HAnimSegment({
                   USE : new SFString("hanim_r_forearm")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_talus")}),
+                  USE : new SFString("hanim_l_hand")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_r_talus")}),
+                  USE : new SFString("hanim_r_hand")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_2")}),
+                  USE : new SFString("hanim_l_hindfoot")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_2")}),
+                  USE : new SFString("hanim_r_hindfoot")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_middistal")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_middistal")}),
 
                 new HAnimSegment({
                   USE : new SFString("hanim_l_thigh")}),

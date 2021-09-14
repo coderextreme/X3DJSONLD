@@ -1613,3 +1613,4 @@ BvhConversion1.prototype = {
 	}
 }
 new BvhConversion1().main();
+process.exit(0);

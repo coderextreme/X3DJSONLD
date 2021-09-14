@@ -252,3 +252,4 @@ HeadsUpDisplayPrototype.prototype = {
 	}
 }
 new HeadsUpDisplayPrototype().main();
+process.exit(0);

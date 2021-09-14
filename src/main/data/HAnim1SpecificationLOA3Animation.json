@@ -14,11 +14,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HAnimSpecificationLOA3Animation.x3d"
+            "@content":"HAnim1SpecificationLOA3Animation.x3d"
           },
           {
             "@name":"description",
-            "@content":"HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."
+            "@content":"HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."
           },
           {
             "@name":"reference",
@@ -30,35 +30,31 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
-          },
-          {
-            "@name":"TODO",
-            "@content":"Convert to X3D4 HAnim2"
+            "@content":"19 February 2021"
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3MotionH3DViewer.png"
+            "@content":"HAnim1SpecificationLOA3MotionH3DViewer.png"
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3MotionInstantReality.png"
+            "@content":"HAnim1SpecificationLOA3MotionInstantReality.png"
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3MotionOctagaVS.png"
+            "@content":"HAnim1SpecificationLOA3MotionOctagaVS.png"
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3MotionView3dscene.png"
+            "@content":"HAnim1SpecificationLOA3MotionView3dscene.png"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"HAnim1SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"HAnim1SpecificationLOA3Invisible.x3d"
           },
           {
             "@name":"reference",
@@ -118,7 +114,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d"
           },
           {
             "@name":"license",
@@ -126,7 +122,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 September 2021"
+            "@content":"13 September 2021"
           },
           {
             "@name":"generator",
@@ -240,7 +236,7 @@
             {
               "@name":"humanoid",
               "@DEF":"hanim_humanoid",
-              "@info":["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"],
+              "@info":["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"],
               "@version":"1.0",
               "-skeleton":[
                 { "HAnimJoint":
@@ -12876,14 +12872,14 @@
                 },
                 { "PositionInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRoot_TranslationInterpolator",
+                    "@DEF":"Stop_humanoid_root_TranslationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,0,0,0,0,0,0,0]
                   }
                 },
                 { "OrientationInterpolator":
                   {
-                    "@DEF":"Stop_HumanoidRoot_RotationInterpolator",
+                    "@DEF":"Stop_humanoid_root_RotationInterpolator",
                     "@key":[0,0.5,1],
                     "@keyValue":[0,0,1,0,0,0,1,0,0,0,1,0]
                   }
@@ -13509,7 +13505,7 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"StopTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"Stop_HumanoidRoot_TranslationInterpolator"
+                    "@toNode":"Stop_humanoid_root_TranslationInterpolator"
                   }
                 },
                 { "ROUTE":
@@ -13517,7 +13513,7 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"StopTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"Stop_HumanoidRoot_RotationInterpolator"
+                    "@toNode":"Stop_humanoid_root_RotationInterpolator"
                   }
                 },
                 { "ROUTE":
@@ -14227,7 +14223,7 @@
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"Stop_HumanoidRoot_TranslationInterpolator",
+                    "@fromNode":"Stop_humanoid_root_TranslationInterpolator",
                     "@toField":"translation",
                     "@toNode":"hanim_humanoid_root"
                   }
@@ -14235,7 +14231,7 @@
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"Stop_HumanoidRoot_RotationInterpolator",
+                    "@fromNode":"Stop_humanoid_root_RotationInterpolator",
                     "@toField":"rotation",
                     "@toNode":"hanim_humanoid_root"
                   }
@@ -20439,7 +20435,7 @@
                       { "Inline":
                         {
                           "@DEF":"CoordinateAxes",
-                          "@url":["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"]
+                          "@url":["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"]
                         }
                       }
                     ]

@@ -213,3 +213,4 @@ HAnimModelsHandsFeet.prototype = {
 	}
 }
 new HAnimModelsHandsFeet().main();
+process.exit(0);
