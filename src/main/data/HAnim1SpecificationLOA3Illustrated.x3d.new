@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="H-Anim" level="1"></component>
-<meta name="title" content="HAnimSpecificationLOA3Illustrated.x3d"></meta>
-<meta name="description" content="HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."></meta>
+<meta name="title" content="HAnim1SpecificationLOA3Illustrated.x3d"></meta>
+<meta name="description" content="HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."></meta>
 <meta name="reference" content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"></meta>
 <meta name="created" content="24 April 2013"></meta>
-<meta name="modified" content="4 July 2020"></meta>
-<meta name="TODO" content="Convert to X3D4 HAnim2"></meta>
+<meta name="modified" content="19 February 2021"></meta>
 <meta name="creator" content="Matthew T. Beitler, Joe D. Williams, Don Brutzman"></meta>
-<meta name="Image" content="HAnimSpecificationLOA3Illustrated.png"></meta>
-<meta name="Image" content="HAnimSpecificationLOA3IllustratedLeftSide.png"></meta>
-<meta name="reference" content="HAnimSpecificationLOA3Invisible.x3d"></meta>
-<meta name="reference" content="HAnimSpecificationLOA3Animation.x3d"></meta>
+<meta name="Image" content="HAnim1SpecificationLOA3Illustrated.png"></meta>
+<meta name="Image" content="HAnim1SpecificationLOA3IllustratedLeftSide.png"></meta>
+<meta name="reference" content="HAnim1SpecificationLOA3Invisible.x3d"></meta>
+<meta name="reference" content="HAnim1SpecificationLOA3Animation.x3d"></meta>
 <meta name="reference" content="HAnimSpecificationExampleChangeLog.txt"></meta>
 <meta name="Image" content="images/BonesAllSkeletonFrontViewLOA1.png"></meta>
 <meta name="Image" content="images/BonesAllSkeletonFrontViewLOA2.png"></meta>
@@ -29,7 +28,7 @@
 <meta name="reference" content="originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"></meta>
 <meta name="reference" content="HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Background skyColor="0.3 0.3 0.3"></Background>

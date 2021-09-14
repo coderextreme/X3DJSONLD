@@ -1048,3 +1048,4 @@ CameraPrototypes.prototype = {
 	}
 }
 new CameraPrototypes().main();
+process.exit(0);

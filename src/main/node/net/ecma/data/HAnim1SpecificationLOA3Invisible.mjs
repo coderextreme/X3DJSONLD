@@ -35,7 +35,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("HAnimSpecificationLOA3Invisible.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Invisible.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -51,11 +51,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2020")}),
-
-            new meta({
-              name : new SFString("TODO"),
-              content : new SFString("Convert to X3D4 HAnim2")}),
+              content : new SFString("19 February 2021")}),
 
             new meta({
               name : new SFString("creator"),
@@ -63,11 +59,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HAnimSpecificationLOA3Illustrated.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Illustrated.x3d")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HAnimSpecificationLOA3Animation.x3d")}),
+              content : new SFString("HAnim1SpecificationLOA3Animation.x3d")}),
 
             new meta({
               name : new SFString("reference"),
@@ -135,7 +131,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d")}),
 
             new meta({
               name : new SFString("license"),
@@ -210,7 +206,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("humanoid"),
               DEF : new SFString("hanim_humanoid"),
-              info : new MFString(["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]),
+              info : new MFString(["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"]),
               version : new SFString("1.0"),
               /*Only one root HAnimJoint is expected*/
               /*USE nodes go here for access by inverse kinematics (IK) engines and other tools*/

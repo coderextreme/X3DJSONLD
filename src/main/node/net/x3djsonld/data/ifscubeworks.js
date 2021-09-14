@@ -150,3 +150,4 @@ ifscubeworks.prototype = {
 	}
 }
 new ifscubeworks().main();
+process.exit(0);

@@ -340,3 +340,4 @@ LOA1_RunAnimation.prototype = {
 	}
 }
 new LOA1_RunAnimation().main();
+process.exit(0);

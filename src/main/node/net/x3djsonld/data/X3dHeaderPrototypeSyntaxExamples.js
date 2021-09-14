@@ -228,3 +228,4 @@ X3dHeaderPrototypeSyntaxExamples.prototype = {
 	}
 }
 new X3dHeaderPrototypeSyntaxExamples().main();
+process.exit(0);

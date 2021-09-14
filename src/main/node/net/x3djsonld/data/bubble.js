@@ -198,3 +198,4 @@ bubble.prototype = {
 	}
 }
 new bubble().main();
+process.exit(0);

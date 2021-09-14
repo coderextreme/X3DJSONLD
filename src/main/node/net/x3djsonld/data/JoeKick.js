@@ -809,3 +809,4 @@ JoeKick.prototype = {
 	}
 }
 new JoeKick().main();
+process.exit(0);

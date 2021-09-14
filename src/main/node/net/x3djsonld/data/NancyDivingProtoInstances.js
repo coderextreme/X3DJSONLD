@@ -1411,3 +1411,4 @@ NancyDivingProtoInstances.prototype = {
 	}
 }
 new NancyDivingProtoInstances().main();
+process.exit(0);

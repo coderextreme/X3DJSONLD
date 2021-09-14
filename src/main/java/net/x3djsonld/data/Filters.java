@@ -42,7 +42,7 @@ import org.web3d.x3d.jsail.Sound.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 April 2021 </td>
+			<td> 4 August 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -54,7 +54,7 @@ import org.web3d.x3d.jsail.Sound.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.medialab.teicrete.gr/minipages/x3domAudio" target="_blank">http://www.medialab.teicrete.gr/minipages/x3domAudio</a> </td>
+			<td> <a href="https://www.medialab.hmu.gr/minipages/x3domAudio" target="_blank">https://www.medialab.hmu.gr/minipages/x3domAudio</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -102,19 +102,17 @@ public class Filters
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 April 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 August 2021"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CHANGELOG.txt"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("credit for audio files"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setHtmlID("NAV"))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.200,0.200,0.200})))
-    .addChild(new Viewpoint().setBind("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, Viewpoint bind: $isNumeric=false, $attributeType=, value='true']
-).setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
+    .addChild(new Viewpoint().setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
     .addChild(new Transform("Audio1").setTranslation(-200.0,50.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance("audio_emit")

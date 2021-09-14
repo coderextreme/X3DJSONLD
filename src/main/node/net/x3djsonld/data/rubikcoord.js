@@ -289,3 +289,4 @@ rubikcoord.prototype = {
 	}
 }
 new rubikcoord().main();
+process.exit(0);

@@ -18536,8 +18536,7 @@ shall not include the underlying field's values at that point in time.
      * application querying a node or a script querying another node it has a
      * reference to) it shall return true for eventOuts, exposedFields and
      * false for eventIn or field.
-     *
-     * @return true if the values of this field are readable
+     * @return whether field is readable
      */
     boolean isReadable();
 
@@ -26330,6 +26329,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 		return validationResult.toString();
 	}
 	/** WARNING not implemented
+         * @return null
 	 */
 	public X3DConcreteFieldDefinition getDefinition()
 	{
@@ -26339,6 +26339,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	/** Check whether field is readable, default /true/
 	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
+         * @return whether field is readable
 	 */
 	/* @Override */
 	public boolean isReadable()
@@ -26376,18 +26377,20 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 		writable = newValue;
 	}
 
-	/** WARNING not tested */
+	/** WARNING not tested
+         * @param newListener the listener to add */
 	/* @Override */
 	public void addX3DEventListener(X3DFieldEventListener newListener)
 	{
 		eventListenerList.add(newListener);
 	}
 
-	/** WARNING not tested */
+	/** WARNING not tested
+         * @param oldListener the listener to remove */
 	/* @Override */
-	public void removeX3DEventListener(X3DFieldEventListener listener)
+	public void removeX3DEventListener(X3DFieldEventListener oldListener)
 	{
-		eventListenerList.remove(listener);
+		eventListenerList.remove(oldListener);
 	}
 						
 	/**
@@ -30998,7 +31001,7 @@ browser instance or there is some other problem.]]></xsl:text>
  * <p> The Scene Access Interface Library (sai) package provides abstract interface classes for each X3D node and statement,
  * in accordance witht the X3D SAI Specification.
  * </p>
- * <p> <i>Warning:</a> these interfaces are primarily for internal use to ensure consistency.
+ * <p> <i>Warning:</i> these interfaces are primarily for internal use to ensure consistency.
  * Java programmers need only use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
  *</p>
  * <p> Online:
