@@ -1,4 +1,4 @@
-_package net.x3djsonld.data;
+package net.x3djsonld.data;
 
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -10,12 +10,12 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> a kind of rubik cube with spheres. </p>
- <p> Related links: 3dTexture.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: rubik.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.3dTexture&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.rubik&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -54,10 +54,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author John Carlson
  */
 
-public class 3dTexture
+public class rubik
 {
 	/** Default constructor to create this object. */
-	public 3dTexture ()
+	public rubik ()
 	{
 	  initialize();
 	}
@@ -138,7 +138,7 @@ public class 3dTexture
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return 3dTexture model
+	 * @return rubik model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -156,7 +156,7 @@ public class 3dTexture
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new 3dTexture().getX3dModel();
+        X3D thisExampleX3dModel = new rubik().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -187,13 +187,13 @@ public class 3dTexture
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.3dTexture\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"net.x3djsonld.data.rubik\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"net.x3djsonld.data.3dTexture\" self-validation test results: ");
+			System.out.print("Java program \"net.x3djsonld.data.rubik\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();
