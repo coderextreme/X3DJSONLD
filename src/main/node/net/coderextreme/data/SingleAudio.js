@@ -19,7 +19,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("created").setContent("28 October 2020"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("18 April 2021"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("4 August 2021"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("CHANGELOG.txt"))
         .addMeta((new autoclass.meta()).setName("TODO").setContent("credit for audio files"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://medialab.hmu.gr/minipages/x3domAudio"))

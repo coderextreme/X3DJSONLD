@@ -2606,3 +2606,4 @@ JinLOA2.prototype = {
 	}
 }
 new JinLOA2().main();
+process.exit(0);

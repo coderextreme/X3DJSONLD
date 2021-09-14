@@ -50,7 +50,7 @@ public class InlineSoundSource {
         .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
-        .addMeta(new meta().setName("modified").setContent("20 April 2021"))
+        .addMeta(new meta().setName("modified").setContent("4 August 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
         .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("https://medialab.hmu.gr/minipages/x3domAudio"))

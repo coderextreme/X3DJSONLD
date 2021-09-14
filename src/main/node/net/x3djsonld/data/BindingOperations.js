@@ -345,3 +345,4 @@ BindingOperations.prototype = {
 	}
 }
 new BindingOperations().main();
+process.exit(0);

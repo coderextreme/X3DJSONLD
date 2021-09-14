@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('HAnimSpecificationLOA3Animation.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Animation.x3d')),
 
             meta(
               name_ : SFString('description'),
-              content_ : SFString('HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.')),
+              content_ : SFString('HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, plus motion animations. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.')),
 
             meta(
               name_ : SFString('reference'),
@@ -30,35 +30,31 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 July 2020')),
-
-            meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('Convert to X3D4 HAnim2')),
+              content_ : SFString('19 February 2021')),
 
             meta(
               name_ : SFString('Image'),
-              content_ : SFString('HAnimSpecificationLOA3MotionH3DViewer.png')),
+              content_ : SFString('HAnim1SpecificationLOA3MotionH3DViewer.png')),
 
             meta(
               name_ : SFString('Image'),
-              content_ : SFString('HAnimSpecificationLOA3MotionInstantReality.png')),
+              content_ : SFString('HAnim1SpecificationLOA3MotionInstantReality.png')),
 
             meta(
               name_ : SFString('Image'),
-              content_ : SFString('HAnimSpecificationLOA3MotionOctagaVS.png')),
+              content_ : SFString('HAnim1SpecificationLOA3MotionOctagaVS.png')),
 
             meta(
               name_ : SFString('Image'),
-              content_ : SFString('HAnimSpecificationLOA3MotionView3dscene.png')),
+              content_ : SFString('HAnim1SpecificationLOA3MotionView3dscene.png')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('HAnimSpecificationLOA3Illustrated.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Illustrated.x3d')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('HAnimSpecificationLOA3Invisible.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Invisible.x3d')),
 
             meta(
               name_ : SFString('reference'),
@@ -118,7 +114,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Animation.x3d')),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Animation.x3d')),
 
             meta(
               name_ : SFString('license'),
@@ -193,7 +189,7 @@ var X3D0 =  X3D(
             HAnimHumanoid(
               name_ : SFString('humanoid'),
               DEF_ : SFString('hanim_humanoid'),
-              info_ : MFString([SFString("authorName=Matthew T. Beitler Joe D. Williams Don Brutzman"), SFString("authorEmail=HAnim@web3D.org"), SFString("copyright=none"), SFString("creationDate=12 May 1999"), SFString("usageRestrictions=none"), SFString("humanoidVersion=2.0"), SFString("height=1.7504")]),
+              info_ : MFString([SFString("authorName=Matthew T. Beitler Joe D. Williams Don Brutzman"), SFString("authorEmail=HAnim@web3D.org"), SFString("copyright=none"), SFString("creationDate=12 May 1999"), SFString("usageRestrictions=none"), SFString("humanoidVersion=1.0"), SFString("height=1.7504")]),
               version_ : SFString('1.0'),
               joints_ : [
                 HAnimJoint(
@@ -6799,12 +6795,12 @@ var X3D0 =  X3D(
                   loop_ : true),
 
                 PositionInterpolator(
-                  DEF_ : SFString('Stop_HumanoidRoot_TranslationInterpolator'),
+                  DEF_ : SFString('Stop_humanoid_root_TranslationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0,0,0]),SFVec3f([0,0,0])])),
 
                 OrientationInterpolator(
-                  DEF_ : SFString('Stop_HumanoidRoot_RotationInterpolator'),
+                  DEF_ : SFString('Stop_humanoid_root_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
 
@@ -7252,13 +7248,13 @@ var X3D0 =  X3D(
                   fromField_ : SFString('fraction_changed'),
                   fromNode_ : SFString('StopTimer'),
                   toField_ : SFString('set_fraction'),
-                  toNode_ : SFString('Stop_HumanoidRoot_TranslationInterpolator')),
+                  toNode_ : SFString('Stop_humanoid_root_TranslationInterpolator')),
 
                 ROUTE(
                   fromField_ : SFString('fraction_changed'),
                   fromNode_ : SFString('StopTimer'),
                   toField_ : SFString('set_fraction'),
-                  toNode_ : SFString('Stop_HumanoidRoot_RotationInterpolator')),
+                  toNode_ : SFString('Stop_humanoid_root_RotationInterpolator')),
 
                 ROUTE(
                   fromField_ : SFString('fraction_changed'),
@@ -7790,13 +7786,13 @@ var X3D0 =  X3D(
 
                 ROUTE(
                   fromField_ : SFString('value_changed'),
-                  fromNode_ : SFString('Stop_HumanoidRoot_TranslationInterpolator'),
+                  fromNode_ : SFString('Stop_humanoid_root_TranslationInterpolator'),
                   toField_ : SFString('translation'),
                   toNode_ : SFString('hanim_humanoid_root')),
 
                 ROUTE(
                   fromField_ : SFString('value_changed'),
-                  fromNode_ : SFString('Stop_HumanoidRoot_RotationInterpolator'),
+                  fromNode_ : SFString('Stop_humanoid_root_RotationInterpolator'),
                   toField_ : SFString('rotation'),
                   toNode_ : SFString('hanim_humanoid_root')),
 
@@ -12369,7 +12365,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Inline(
                       DEF_ : SFString('CoordinateAxes'),
-                      url_ : MFString([SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl")]))]),
+                      url_ : MFString([SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl")]))]),
 
                 Transform(
                   DEF_ : SFString('cordsys'),

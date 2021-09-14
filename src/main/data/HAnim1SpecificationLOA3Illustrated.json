@@ -14,11 +14,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"HAnim1SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"description",
-            "@content":"HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."
+            "@content":"HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships."
           },
           {
             "@name":"reference",
@@ -30,11 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 July 2020"
-          },
-          {
-            "@name":"TODO",
-            "@content":"Convert to X3D4 HAnim2"
+            "@content":"19 February 2021"
           },
           {
             "@name":"creator",
@@ -42,19 +38,19 @@
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3Illustrated.png"
+            "@content":"HAnim1SpecificationLOA3Illustrated.png"
           },
           {
             "@name":"Image",
-            "@content":"HAnimSpecificationLOA3IllustratedLeftSide.png"
+            "@content":"HAnim1SpecificationLOA3IllustratedLeftSide.png"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Invisible.x3d"
+            "@content":"HAnim1SpecificationLOA3Invisible.x3d"
           },
           {
             "@name":"reference",
-            "@content":"HAnimSpecificationLOA3Animation.x3d"
+            "@content":"HAnim1SpecificationLOA3Animation.x3d"
           },
           {
             "@name":"reference",
@@ -126,7 +122,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d"
           },
           {
             "@name":"license",
@@ -134,7 +130,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 September 2021"
+            "@content":"13 September 2021"
           },
           {
             "@name":"generator",

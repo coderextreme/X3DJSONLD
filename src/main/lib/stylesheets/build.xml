@@ -179,16 +179,16 @@ POSSIBILITY OF SUCH DAMAGE.
         <dtd    publicId="ISO//Web3D//DTD X3D 3.2//EN"                                  location="../../../../specifications/x3d-3.2.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 3.3//EN"                                  location="../../../../specifications/x3d-3.3.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 4.0//EN"                                  location="../../../../specifications/x3d-4.0.dtd"/>
-        <dtd    publicId="http://www.web3d.org/specifications/x3d-3.0.dtd"              location="../../../../specifications/x3d-3.0.dtd"/>
-        <dtd    publicId="http://www.web3d.org/specifications/x3d-3.1.dtd"              location="../../../../specifications/x3d-3.1.dtd"/>
-        <dtd    publicId="http://www.web3d.org/specifications/x3d-3.2.dtd"              location="../../../../specifications/x3d-3.2.dtd"/>
-        <dtd    publicId="http://www.web3d.org/specifications/x3d-3.3.dtd"              location="../../../../specifications/x3d-3.3.dtd"/>
-        <dtd    publicId="http://www.web3d.org/specifications/x3d-4.0.dtd"              location="../../../../specifications/x3d-4.0.dtd"/>
-        <entity publicId="http://www.web3d.org/specifications/x3d-3.0.xsd"              location="../../../../specifications/x3d-3.0.xsd"/>
-        <entity publicId="http://www.web3d.org/specifications/x3d-3.1.xsd"              location="../../../../specifications/x3d-3.1.xsd"/>
-        <entity publicId="http://www.web3d.org/specifications/x3d-3.2.xsd"              location="../../../../specifications/x3d-3.2.xsd"/>
-        <entity publicId="http://www.web3d.org/specifications/x3d-3.3.xsd"              location="../../../../specifications/x3d-3.3.xsd"/>
-        <entity publicId="http://www.web3d.org/specifications/x3d-4.0.xsd"              location="../../../../specifications/x3d-4.0.xsd"/>
+        <dtd    publicId="https://www.web3D.org/specifications/x3d-3.0.dtd"              location="../../../../specifications/x3d-3.0.dtd"/>
+        <dtd    publicId="https://www.web3D.org/specifications/x3d-3.1.dtd"              location="../../../../specifications/x3d-3.1.dtd"/>
+        <dtd    publicId="https://www.web3D.org/specifications/x3d-3.2.dtd"              location="../../../../specifications/x3d-3.2.dtd"/>
+        <dtd    publicId="https://www.web3D.org/specifications/x3d-3.3.dtd"              location="../../../../specifications/x3d-3.3.dtd"/>
+        <dtd    publicId="https://www.web3D.org/specifications/x3d-4.0.dtd"              location="../../../../specifications/x3d-4.0.dtd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-3.0.xsd"              location="../../../../specifications/x3d-3.0.xsd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-3.1.xsd"              location="../../../../specifications/x3d-3.1.xsd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-3.2.xsd"              location="../../../../specifications/x3d-3.2.xsd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-3.3.xsd"              location="../../../../specifications/x3d-3.3.xsd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-4.0.xsd"              location="../../../../specifications/x3d-4.0.xsd"/>
         <!-- Transitional DTD, versions 3.1 and 3.1 only -->
         <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd" location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd" location="../../../../specifications/x3d-3.1.dtd"/>
@@ -266,9 +266,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <property name="src.org.web3d.x3d.jsail"       value="${X3DJSAIL.src.dir}/org/web3d/x3d/jsail"/>      <!-- concretes  -->
     <property name="src.org.web3d.x3d.sai"         value="${X3DJSAIL.src.dir}/org/web3d/x3d/sai"/>        <!-- interfaces -->
-    <property name="src.org.web3d.x3d.util"        value="${X3DJSAIL.src.dir}/org/web3d/x3d/util"/>       <!-- utilities -->
+    <property name="src.org.web3d.x3d.util"        value="${X3DJSAIL.src.dir}/org/web3d/x3d/util"/>       <!-- utilities  -->
     <property name="src.org.web3d.x3d.util.exi"    value="${X3DJSAIL.src.dir}/org/web3d/x3d/util/exi"/>   <!-- utilities EXI -->
     <property name="src.org.web3d.x3d.util.x3duom" value="${X3DJSAIL.src.dir}/org/web3d/x3d/util/x3duom"/><!-- JAXB-generated classes and X3DUOM classes -->
+    <property name="src.org.web3d.x3d.tests"       value="${X3DJSAIL.src.dir}/org/web3d/x3d/tests"/>      <!-- tests -->
     <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.4.0.classes.jar"/>
     <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.4.0.full.jar"/>
 	
@@ -276,7 +277,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${X3DJSAIL.relative.dir}/javadoc"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;2005-2019 &lt;a href='http://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../../../../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Java%20SAI%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;2005-2021 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Java%20SAI%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -571,7 +572,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete dir="${javadoc.dir}" failonerror="false"/>
         <mkdir  dir="${javadoc.dir}"/>
         <copy file="${X3DJSAIL.relative.dir}/X3DJSAIL.html" tofile="${src.org.web3d.x3d.sai}/overview.html" verbose="true" failonerror="true"/>
-        <!-- javadoc options http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html -->
+        <!-- javadoc options https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html 
+                             https://docs.oracle.com/en/java/javase/16/docs/specs/javadoc/doc-comment-spec.html -->
         <javadoc     destdir="${javadoc.dir}"
                       author="${javadoc.author}"
                       bottom="${javadoc.copyright}"
@@ -781,9 +783,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- Who is building this jar? -->
                 <attribute name="Built-By" value="${user.name.build}"/>
                 <!-- Information about the program itself -->
-                <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+                <attribute name="Implementation-Vendor" value="Web3D Consortium https://www.web3D.org"/>
                 <attribute name="Implementation-Title" value="X3DJSAIL X3D Java Scene Access Interface Library"/>
-                <attribute name="Implementation-Version" value="1.0"/>
+                <attribute name="Implementation-Version" value="4.0"/>
                 <!-- Sealing Packages within a JAR File https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
                 <attribute name="Sealed" value="true"/>
             </manifest>
@@ -795,8 +797,8 @@ POSSIBILITY OF SUCH DAMAGE.
             <fileset dir="${X3DJSAIL.classes.dir}">
                 <include name="**/*.class"/>
                 <include name="X3DJSAIL.properties"/>
-                <!-- might need to avoid test cases to facilitate test debugging -->
-                <exclude name="**/tests/**"/>
+                <!-- might need to avoid test cases to facilitate test debugging
+                <exclude name="**/tests/**"/> -->
             </fileset>
             <!-- lib, stylesheets -->
             <fileset dir="${X3DJSAIL.lib.dir}">
@@ -908,9 +910,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- Who is building this jar? -->
                 <attribute name="Built-By" value="${user.name.build}"/>
                 <!-- Information about the program itself -->
-                <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+                <attribute name="Implementation-Vendor" value="Web3D Consortium https://www.web3D.org"/>
                 <attribute name="Implementation-Title" value="X3DJSAIL X3D Java Scene Access Interface Library"/>
-                <attribute name="Implementation-Version" value="1.0"/>
+                <attribute name="Implementation-Version" value="4.0"/>
                 <!-- Sealing Packages within a JAR File https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
                 <!-- Sealing Packages in Extensions     https://docs.oracle.com/javase/tutorial/ext/security/sealing.html -->
                 <!-- Ant manifest examples              https://ant.apache.org/manual/Tasks/manifest.html -->
@@ -1001,7 +1003,14 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
         </copy>
     </target>
-
+    
+    <target name="view.javadoc.local" description="view X3DJSAIL javadoc local">
+        <ant dir="java" antfile="build.xml" target="view.javadoc.local"/>
+    </target>
+    <target name="view.javadoc.online" description="view X3DJSAIL javadoc online">
+        <ant dir="java" antfile="build.xml" target="view.javadoc.online"/>
+    </target>
+    
     <target name="view.BuildSpecificationLanguageBindingJava.local" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
         <property name="javadocPath" location="${X3DJSAIL.relative.dir}/javadoc/index.html"/>
         <nbbrowse url="file:///${javadocPath}" />
@@ -1013,8 +1022,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="view.BuildSpecificationLanguageBindingJava.online" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
-        <nbbrowse url="http://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/nodeTypeInterfaces.html" />
-        <nbbrowse url="http://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeTypeInterfaces.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html" />
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
@@ -1224,7 +1233,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="images/cube.gif"           todir="../../specifications/XmlEncoding/images"  verbose="true"/>
         <copy file="images/x3dbar.png"         todir="../../specifications/XmlEncoding/images"  verbose="true"/>
     </target>
-    
+
     <target name="BuildAllX3dElementsAttributes.txt" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
@@ -1285,7 +1294,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="view.BuildSpecificationXmlEncodingFromSchema.online" description="view online BuildSpecificationXmlEncodingFromSchema in web browser (Netbeans only)">
-        <nbbrowse url="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfNodes.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfNodes.html" />
         <!-- TODO implementation-independent approach to browser viewing if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
@@ -1348,6 +1357,11 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="*.py"/>
                 <include name="*.wrl"/>
                 <exclude name="HelloWorldProgram.java"/>
+            </fileset>
+            <fileset dir="${X3DJSAIL.classes.dir}">
+                <include name="**/*"/>
+                <exclude name="README.classes.txt"/>
+                <exclude name="index.html"/>
             </fileset>
             <fileset dir="${src.org.web3d.x3d.util.exi}">
                 <exclude name="SerializeEXISchema.java"/>
@@ -1460,6 +1474,14 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo   message="org.web3d.x3d.jsail.CommandLine ${X3DJSAIL.examples.dir}/Staircase.x3d -validate"/>
         <java jar="${X3DJSAIL.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="${X3DJSAIL.examples.dir}/Staircase.x3d" description="input model"/>
+            <arg value="-validate" description="output model"/>
+        </java>
+    </target>
+        
+    <target name="test.X3DJSAIL.HelloWorldX3D4.draft">
+        <echo   message="org.web3d.x3d.jsail.CommandLine ${X3DJSAIL.examples.dir}/HelloWorldX3D4.x3d -validate"/>
+        <java jar="${X3DJSAIL.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+            <arg value="${X3DJSAIL.examples.dir}/HelloWorldX3D4.x3d" description="input model"/>
             <arg value="-validate" description="output model"/>
         </java>
     </target>
@@ -2022,7 +2044,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="view.X3DJSAIL.online" description="view X3DJSAIL in web browser (Netbeans only)">
-        <nbbrowse url="http://www.web3d.org/specifications/java/X3DJSAIL.html" />
+        <nbbrowse url="https://www.web3D.org/specifications/java/X3DJSAIL.html" />
         <!-- TODO implementation-independent approach to browser viewing if possible.  other Ant approachs have to be customized for each OS -->
     </target>
     
@@ -2796,7 +2818,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="VrmlEncodingOfNodes.html"/>
             </fileset>
         </scp>
-        <echo  message="results online at ${sftpServer.web3d}/x3d/stylesheets"/><!-- http://www.web3d.org/x3d/stylesheets -->
+        <echo  message="results online at ${sftpServer.web3d}/x3d/stylesheets"/><!-- https://www.web3D.org/x3d/stylesheets -->
         <echo  message="scp.upload.stylesheets.web3d ssh-sftp task complete"/>
     </target>
 
@@ -2804,7 +2826,7 @@ POSSIBILITY OF SUCH DAMAGE.
             description="scp sftp upload of autogenerated X3D Java Scene Authoring Interface Library (X3DJSAIL)">
 
         <echo  message="scp (sftp) upload CreateX3dSceneAccessInterfaceJava.xslt stylesheets to ${sftpServer.web3d}${sftpDirectory.web3d.stylesheets}"/>
-        <echo  message="  http://www.web3d.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt"/>
+        <echo  message="  https://www.web3D.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt"/>
         <!-- upload stylesheets -->
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}" verbose="true">
             <fileset dir=".">
@@ -2842,7 +2864,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <exclude name="${X3DJSAIL.jars.dir}/*.jar"/>
             </fileset>
         </scp>
-        <echo  message="results online at http://www.web3d.org/specifications/java"/>
+        <echo  message="results online at https://www.web3D.org/specifications/java"/>
 		
         <echo  message="scp.upload.X3DJSAIL.web3d ssh-sftp task complete"/>
     </target>
@@ -2983,16 +3005,16 @@ POSSIBILITY OF SUCH DAMAGE.
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.specifications}/stylesheets" password="${password.web3d}" verbose="true">
             <fileset refid="stylesheetGenerationProducts"/>
         </scp>
-        <echo  message="results online at http://www.web3d.org/specifications/stylesheets/EncodingOfNodes.html"/>
-        <echo  message="           and at http://www.web3d.org/specifications/stylesheets/VrmlEncodingOfNodes.html"/>
-        <echo  message="           and at http://www.web3d.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
-        <echo  message="           and at http://www.web3d.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
+        <echo  message="results online at https://www.web3D.org/specifications/stylesheets/EncodingOfNodes.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/VrmlEncodingOfNodes.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}" verbose="true">
             <fileset refid="stylesheetGenerationProducts"/>
         </scp>
-        <echo  message="results online at http://www.web3d.org/x3d/stylesheets/EncodingOfNodes.html"/>
-        <echo  message="               at http://www.web3d.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
-        <echo  message="           and at http://www.web3d.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
+        <echo  message="results online at https://www.web3D.org/x3d/stylesheets/EncodingOfNodes.html"/>
+        <echo  message="               at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
+        <echo  message="           and at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
         <echo  message="scp.upload.stylesheets.web3d ssh-sftp task complete"/>
     </target>
 
@@ -3022,7 +3044,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="hudson" description="nightly build" depends="hudson.prepare,build">
         <!-- hudson project description
     <p>
-    Build and test <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Stylesheets" target="_blank">X3D Stylesheets</a> that convert X3D scenes to produce corresponding encodings in ClassicVRML .x3dv, VRML97 .wrl, and also pretty-print documentation .html versions.
+    Build and test <a href="https://www.web3D.org/x3d/content/examples/X3dResources.html#Stylesheets" target="_blank">X3D Stylesheets</a> that convert X3D scenes to produce corresponding encodings in ClassicVRML .x3dv, VRML97 .wrl, and also pretty-print documentation .html versions.
     </p>
     
     <p>
@@ -3137,5 +3159,21 @@ POSSIBILITY OF SUCH DAMAGE.
             <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
         </javac>
     </target>
+
+    <target name="BuildConfigurationNotepad++" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
+        <!-- TODO add other X3D versions -->
+        <!-- ========================================= -->
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <arg value="-t" description="timing information"/>
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-s:AllX3dElementsAttributes4.0.xml"          description="source-doc"/><!-- produced from X3DUOM  -->
+            <arg value="-xsl:ConfigurationFilesNotepadPlusPlus.xslt" description="style-doc"/> <!-- conversion stylesheet -->
+            <arg value="-o:X3DV.xml"                                 description="output-doc"/>
+            <!-- <arg value="outputFilePrefix=ConfigurationFileNotepad"/> parameter -->
+        </java>
+        <copy file="X3DV.xml"         todir="../tools/Npp/Syntax/"  verbose="true"/>
+        <!-- three more file outputs to follow... -->
+        <!-- ========================================= -->
+      </target>
 
 </project>

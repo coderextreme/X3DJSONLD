@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("description").setContent("List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("created").setContent("25 October 2020"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("10 April 2021"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("4 August 2021"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("Developmental test, no actual 3D model expected"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))

@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('20 April 2021')),
+              content_ : SFString('4 August 2021')),
 
             meta(
               name_ : SFString('reference'),
@@ -42,7 +42,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://www.medialab.teicrete.gr/minipages/x3domAudio')),
+              content_ : SFString('https://www.medialab.hmu.gr/minipages/x3domAudio')),
 
             meta(
               name_ : SFString('identifier'),
@@ -64,7 +64,6 @@ var X3D0 =  X3D(
               skyColor_ : MFColor([SFColor(0.2), SFColor(0.2), SFColor(0.2)])),
 
             Viewpoint(
-              bind_ : "true",
               orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               position_ : SFVec3f([SFDouble(0), SFDouble(500), SFDouble(600)]),
               retainUserOffsets_ : true),

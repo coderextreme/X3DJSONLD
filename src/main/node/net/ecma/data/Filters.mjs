@@ -11,7 +11,6 @@ import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -61,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 April 2021")}),
+              content : new SFString("4 August 2021")}),
 
             new meta({
               name : new SFString("reference"),
@@ -73,7 +72,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.medialab.teicrete.gr/minipages/x3domAudio")}),
+              content : new SFString("https://www.medialab.hmu.gr/minipages/x3domAudio")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -95,7 +94,6 @@ var X3D0 =  new X3D({
               skyColor : new MFColor([0.2,0.2,0.2])}),
 
             new Viewpoint({
-              bind : new undefined("true"),
               orientation : new SFRotation([1,0,0,-0.5]),
               position : new SFVec3f([0,500,600]),
               retainUserOffsets : new SFBool(true)}),

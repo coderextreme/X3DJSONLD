@@ -14,7 +14,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('HAnimSpecificationLOA3Invisible.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Invisible.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -30,11 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 July 2020')),
-
-            meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('Convert to X3D4 HAnim2')),
+              content_ : SFString('19 February 2021')),
 
             meta(
               name_ : SFString('creator'),
@@ -42,11 +38,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('HAnimSpecificationLOA3Illustrated.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Illustrated.x3d')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('HAnimSpecificationLOA3Animation.x3d')),
+              content_ : SFString('HAnim1SpecificationLOA3Animation.x3d')),
 
             meta(
               name_ : SFString('reference'),
@@ -114,7 +110,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Invisible.x3d')),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d')),
 
             meta(
               name_ : SFString('license'),
@@ -189,7 +185,7 @@ var X3D0 =  X3D(
             HAnimHumanoid(
               name_ : SFString('humanoid'),
               DEF_ : SFString('hanim_humanoid'),
-              info_ : MFString([SFString("authorName=Matthew T. Beitler Joe D. Williams Don Brutzman"), SFString("authorEmail=HAnim@web3D.org"), SFString("copyright=none"), SFString("creationDate=12 May 1999"), SFString("usageRestrictions=none"), SFString("humanoidVersion=2.0"), SFString("height=1.7504")]),
+              info_ : MFString([SFString("authorName=Matthew T. Beitler Joe D. Williams Don Brutzman"), SFString("authorEmail=HAnim@web3D.org"), SFString("copyright=none"), SFString("creationDate=12 May 1999"), SFString("usageRestrictions=none"), SFString("humanoidVersion=1.0"), SFString("height=1.7504")]),
               version_ : SFString('1.0'),
               /*Only one root HAnimJoint is expected*/
               /*USE nodes go here for access by inverse kinematics (IK) engines and other tools*/

@@ -12,12 +12,12 @@ head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
 meta3.name = "title";
-meta3.content = "HAnimSpecificationLOA3Illustrated.x3d";
+meta3.content = "HAnim1SpecificationLOA3Illustrated.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
 meta4.name = "description";
-meta4.content = "HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnimSpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.";
+meta4.content = "HAnim Specification reference example providing full coverage and visibility of all specified HAnim constructs, also suitable for re-use as an authoring template. Geometry visualizations are derived from HAnim1SpecificationLOA3Invisible.x3d visualization report. Resusable exemplar animations also added via heads-up display (HUD) interface to confirm proper parent-child relationships.";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
@@ -32,9733 +32,9728 @@ head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
 meta7.name = "modified";
-meta7.content = "4 July 2020";
+meta7.content = "19 February 2021";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "TODO";
-meta8.content = "Convert to X3D4 HAnim2";
+meta8.name = "creator";
+meta8.content = "Matthew T. Beitler, Joe D. Williams, Don Brutzman";
 head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "creator";
-meta9.content = "Matthew T. Beitler, Joe D. Williams, Don Brutzman";
+meta9.name = "Image";
+meta9.content = "HAnim1SpecificationLOA3Illustrated.png";
 head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
 meta10.name = "Image";
-meta10.content = "HAnimSpecificationLOA3Illustrated.png";
+meta10.content = "HAnim1SpecificationLOA3IllustratedLeftSide.png";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "Image";
-meta11.content = "HAnimSpecificationLOA3IllustratedLeftSide.png";
+meta11.name = "reference";
+meta11.content = "HAnim1SpecificationLOA3Invisible.x3d";
 head1.meta[9] = meta11;
 
 let meta12 = browser.currentScene.createNode("meta");
 meta12.name = "reference";
-meta12.content = "HAnimSpecificationLOA3Invisible.x3d";
+meta12.content = "HAnim1SpecificationLOA3Animation.x3d";
 head1.meta[10] = meta12;
 
 let meta13 = browser.currentScene.createNode("meta");
 meta13.name = "reference";
-meta13.content = "HAnimSpecificationLOA3Animation.x3d";
+meta13.content = "HAnimSpecificationExampleChangeLog.txt";
 head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "reference";
-meta14.content = "HAnimSpecificationExampleChangeLog.txt";
+meta14.name = "Image";
+meta14.content = "images/BonesAllSkeletonFrontViewLOA1.png";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");
 meta15.name = "Image";
-meta15.content = "images/BonesAllSkeletonFrontViewLOA1.png";
+meta15.content = "images/BonesAllSkeletonFrontViewLOA2.png";
 head1.meta[13] = meta15;
 
 let meta16 = browser.currentScene.createNode("meta");
 meta16.name = "Image";
-meta16.content = "images/BonesAllSkeletonFrontViewLOA2.png";
+meta16.content = "images/BonesAllSkeletonFrontViewLOA3.png";
 head1.meta[14] = meta16;
 
 let meta17 = browser.currentScene.createNode("meta");
-meta17.name = "Image";
-meta17.content = "images/BonesAllSkeletonFrontViewLOA3.png";
+meta17.name = "TODO";
+meta17.content = "move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations";
 head1.meta[15] = meta17;
 
 let meta18 = browser.currentScene.createNode("meta");
-meta18.name = "TODO";
-meta18.content = "move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations";
+meta18.name = "warning";
+meta18.content = "BS Contact and H3DViewer have polygon-culling problems at close range (possibly related to avatarSize), other players look OK";
 head1.meta[16] = meta18;
 
 let meta19 = browser.currentScene.createNode("meta");
-meta19.name = "warning";
-meta19.content = "BS Contact and H3DViewer have polygon-culling problems at close range (possibly related to avatarSize), other players look OK";
+meta19.name = "TODO";
+meta19.content = "insert MetadataInteger nodes indicating LOA for each Joint and Segment";
 head1.meta[17] = meta19;
 
 let meta20 = browser.currentScene.createNode("meta");
-meta20.name = "TODO";
-meta20.content = "insert MetadataInteger nodes indicating LOA for each Joint and Segment";
+meta20.name = "reference";
+meta20.content = "Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989.";
 head1.meta[18] = meta20;
 
 let meta21 = browser.currentScene.createNode("meta");
 meta21.name = "reference";
-meta21.content = "Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989.";
+meta21.content = "http://www.cis.upenn.edu/~badler/anthro/89-71.ps";
 head1.meta[19] = meta21;
 
 let meta22 = browser.currentScene.createNode("meta");
 meta22.name = "reference";
-meta22.content = "http://www.cis.upenn.edu/~badler/anthro/89-71.ps";
+meta22.content = "tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf";
 head1.meta[20] = meta22;
 
 let meta23 = browser.currentScene.createNode("meta");
-meta23.name = "reference";
-meta23.content = "tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf";
+meta23.name = "translator";
+meta23.content = "Don Brutzman and Joe Williams";
 head1.meta[21] = meta23;
 
 let meta24 = browser.currentScene.createNode("meta");
-meta24.name = "translator";
-meta24.content = "Don Brutzman and Joe Williams";
+meta24.name = "generator";
+meta24.content = "BS Contact Geo 8.001, http://www.bitmanagement.de/en/products/interactive-3d-clients/bs-contact-geo";
 head1.meta[22] = meta24;
 
 let meta25 = browser.currentScene.createNode("meta");
-meta25.name = "generator";
-meta25.content = "BS Contact Geo 8.001, http://www.bitmanagement.de/en/products/interactive-3d-clients/bs-contact-geo";
+meta25.name = "reference";
+meta25.content = "originals/LOA3ExampleSourceWithDiamondsOriginal.wrl";
 head1.meta[23] = meta25;
 
 let meta26 = browser.currentScene.createNode("meta");
 meta26.name = "reference";
-meta26.content = "originals/LOA3ExampleSourceWithDiamondsOriginal.wrl";
+meta26.content = "originals/LOA3ExampleSourceWithDiamondsOriginal.x3d";
 head1.meta[24] = meta26;
 
 let meta27 = browser.currentScene.createNode("meta");
 meta27.name = "reference";
-meta27.content = "originals/LOA3ExampleSourceWithDiamondsOriginal.x3d";
+meta27.content = "originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d";
 head1.meta[25] = meta27;
 
 let meta28 = browser.currentScene.createNode("meta");
 meta28.name = "reference";
-meta28.content = "originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d";
+meta28.content = "HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames";
 head1.meta[26] = meta28;
 
 let meta29 = browser.currentScene.createNode("meta");
-meta29.name = "reference";
-meta29.content = "HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames";
+meta29.name = "generator";
+meta29.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[27] = meta29;
 
 let meta30 = browser.currentScene.createNode("meta");
-meta30.name = "generator";
-meta30.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta30.name = "identifier";
+meta30.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Illustrated.x3d";
 head1.meta[28] = meta30;
 
 let meta31 = browser.currentScene.createNode("meta");
-meta31.name = "identifier";
-meta31.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnimSpecificationLOA3Illustrated.x3d";
+meta31.name = "license";
+meta31.content = "../license.html";
 head1.meta[29] = meta31;
-
-let meta32 = browser.currentScene.createNode("meta");
-meta32.name = "license";
-meta32.content = "../license.html";
-head1.meta[30] = meta32;
 
 head = head1;
 
-let Background34 = browser.currentScene.createNode("Background");
-Background34.skyColor = new MFColor(new float[0.3,0.3,0.3]);
+let Background33 = browser.currentScene.createNode("Background");
+Background33.skyColor = new MFColor(new float[0.3,0.3,0.3]);
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Background34;
+browser.currentScene.children[0] = Background33;
 
-let NavigationInfo35 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children[1] = NavigationInfo35;
+let NavigationInfo34 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children[1] = NavigationInfo34;
 
-let Group36 = browser.currentScene.createNode("Group");
-Group36.DEF = "Original_WorldInfo";
-let WorldInfo37 = browser.currentScene.createNode("WorldInfo");
-WorldInfo37.info = new MFString(new java.lang.String[" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "]);
-WorldInfo37.title = "HANIM 200x Default Joint Centers, LOA3";
-Group36.children = new MFNode();
+let Group35 = browser.currentScene.createNode("Group");
+Group35.DEF = "Original_WorldInfo";
+let WorldInfo36 = browser.currentScene.createNode("WorldInfo");
+WorldInfo36.info = new MFString(new java.lang.String[" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "]);
+WorldInfo36.title = "HANIM 200x Default Joint Centers, LOA3";
+Group35.children = new MFNode();
 
-Group36.children[0] = WorldInfo37;
+Group35.children[0] = WorldInfo36;
 
-browser.currentScene.children[2] = Group36;
+browser.currentScene.children[2] = Group35;
 
 //TODO move viewpoints to be internal to HAnimHumanoid
 //Viewpoint centerOfRotation=\"0 0.9149 0.0016\" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human.
+let Viewpoint37 = browser.currentScene.createNode("Viewpoint");
+Viewpoint37.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
+Viewpoint37.description = "Humanoid LOA 3 Front";
+Viewpoint37.position = new SFVec3f(new float[0,0.4,4]);
+browser.currentScene.children[3] = Viewpoint37;
+
 let Viewpoint38 = browser.currentScene.createNode("Viewpoint");
 Viewpoint38.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint38.description = "Humanoid LOA 3 Front";
-Viewpoint38.position = new SFVec3f(new float[0,0.4,4]);
-browser.currentScene.children[3] = Viewpoint38;
+Viewpoint38.description = "Humanoid LOA 3 Front Close";
+Viewpoint38.position = new SFVec3f(new float[0,0.8,2]);
+browser.currentScene.children[4] = Viewpoint38;
 
 let Viewpoint39 = browser.currentScene.createNode("Viewpoint");
 Viewpoint39.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint39.description = "Humanoid LOA 3 Front Close";
-Viewpoint39.position = new SFVec3f(new float[0,0.8,2]);
-browser.currentScene.children[4] = Viewpoint39;
+Viewpoint39.description = "Humanoid LOA 3 Front Closer";
+Viewpoint39.position = new SFVec3f(new float[0,1.2,1]);
+browser.currentScene.children[5] = Viewpoint39;
 
 let Viewpoint40 = browser.currentScene.createNode("Viewpoint");
-Viewpoint40.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint40.description = "Humanoid LOA 3 Front Closer";
-Viewpoint40.position = new SFVec3f(new float[0,1.2,1]);
-browser.currentScene.children[5] = Viewpoint40;
+Viewpoint40.centerOfRotation = new SFVec3f(new float[0,1.5,0.0016]);
+Viewpoint40.description = "Humanoid LOA 3 Front Face";
+Viewpoint40.position = new SFVec3f(new float[0,1.63,1]);
+browser.currentScene.children[6] = Viewpoint40;
 
 let Viewpoint41 = browser.currentScene.createNode("Viewpoint");
-Viewpoint41.centerOfRotation = new SFVec3f(new float[0,1.5,0.0016]);
-Viewpoint41.description = "Humanoid LOA 3 Front Face";
-Viewpoint41.position = new SFVec3f(new float[0,1.63,1]);
-browser.currentScene.children[6] = Viewpoint41;
+Viewpoint41.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
+Viewpoint41.description = "Humanoid LOA 3 Right Side";
+Viewpoint41.orientation = new SFRotation(new float[0,1,0,1.5708]);
+Viewpoint41.position = new SFVec3f(new float[2.6,0.8,0]);
+browser.currentScene.children[7] = Viewpoint41;
 
 let Viewpoint42 = browser.currentScene.createNode("Viewpoint");
 Viewpoint42.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint42.description = "Humanoid LOA 3 Right Side";
-Viewpoint42.orientation = new SFRotation(new float[0,1,0,1.5708]);
-Viewpoint42.position = new SFVec3f(new float[2.6,0.8,0]);
-browser.currentScene.children[7] = Viewpoint42;
+Viewpoint42.description = "Humanoid LOA 3 Right Side Close";
+Viewpoint42.orientation = new SFRotation(new float[0,1,0,1.2]);
+Viewpoint42.position = new SFVec3f(new float[1,0.8,0.5]);
+browser.currentScene.children[8] = Viewpoint42;
 
 let Viewpoint43 = browser.currentScene.createNode("Viewpoint");
 Viewpoint43.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint43.description = "Humanoid LOA 3 Right Side Close";
-Viewpoint43.orientation = new SFRotation(new float[0,1,0,1.2]);
-Viewpoint43.position = new SFVec3f(new float[1,0.8,0.5]);
-browser.currentScene.children[8] = Viewpoint43;
+Viewpoint43.description = "Humanoid LOA 3 Left Side Close";
+Viewpoint43.orientation = new SFRotation(new float[0,1,0,-1.2]);
+Viewpoint43.position = new SFVec3f(new float[-1,0.8,0.5]);
+browser.currentScene.children[9] = Viewpoint43;
 
 let Viewpoint44 = browser.currentScene.createNode("Viewpoint");
 Viewpoint44.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint44.description = "Humanoid LOA 3 Left Side Close";
-Viewpoint44.orientation = new SFRotation(new float[0,1,0,-1.2]);
-Viewpoint44.position = new SFVec3f(new float[-1,0.8,0.5]);
-browser.currentScene.children[9] = Viewpoint44;
+Viewpoint44.description = "Humanoid LOA 3 Left Side";
+Viewpoint44.orientation = new SFRotation(new float[0,1,0,-1.5708]);
+Viewpoint44.position = new SFVec3f(new float[-2.6,0.8,0]);
+browser.currentScene.children[10] = Viewpoint44;
 
 let Viewpoint45 = browser.currentScene.createNode("Viewpoint");
 Viewpoint45.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint45.description = "Humanoid LOA 3 Left Side";
-Viewpoint45.orientation = new SFRotation(new float[0,1,0,-1.5708]);
-Viewpoint45.position = new SFVec3f(new float[-2.6,0.8,0]);
-browser.currentScene.children[10] = Viewpoint45;
+Viewpoint45.description = "Humanoid LOA 3 Top";
+Viewpoint45.orientation = new SFRotation(new float[1,0,0,-1.5708]);
+Viewpoint45.position = new SFVec3f(new float[0,3.5,0]);
+browser.currentScene.children[11] = Viewpoint45;
 
-let Viewpoint46 = browser.currentScene.createNode("Viewpoint");
-Viewpoint46.centerOfRotation = new SFVec3f(new float[0,0.9149,0.0016]);
-Viewpoint46.description = "Humanoid LOA 3 Top";
-Viewpoint46.orientation = new SFRotation(new float[1,0,0,-1.5708]);
-Viewpoint46.position = new SFVec3f(new float[0,3.5,0]);
-browser.currentScene.children[11] = Viewpoint46;
-
-let HAnimHumanoid47 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid47.name = "humanoid";
-HAnimHumanoid47.DEF = "hanim_humanoid";
-HAnimHumanoid47.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]);
-HAnimHumanoid47.version = "1.0";
+let HAnimHumanoid46 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid46.name = "humanoid";
+HAnimHumanoid46.DEF = "hanim_humanoid";
+HAnimHumanoid46.info = new MFString(new java.lang.String["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=2.0","height=1.7504"]);
+HAnimHumanoid46.version = "1.0";
 //Only one root HAnimJoint is expected
 //USE nodes go here for access by inverse kinematics (IK) engines and other tools
 //Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
 //TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
 //right between the eyes, stationary position not animating except with body itself
-let HAnimJoint48 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint48.name = "humanoid_root";
-HAnimJoint48.DEF = "hanim_humanoid_root";
-HAnimJoint48.center = new SFVec3f(new float[0,0.824,0.0277]);
-HAnimJoint48.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment49 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment49.name = "sacrum";
-HAnimSegment49.DEF = "hanim_sacrum";
+let HAnimJoint47 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint47.name = "humanoid_root";
+HAnimJoint47.DEF = "hanim_humanoid_root";
+HAnimJoint47.center = new SFVec3f(new float[0,0.824,0.0277]);
+HAnimJoint47.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment48 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment48.name = "sacrum";
+HAnimSegment48.DEF = "hanim_sacrum";
 //<HAnimJoint name='humanoid_root'/> visualization sphere is placed within <HAnimSegment name='sacrum'/>
-let TouchSensor50 = browser.currentScene.createNode("TouchSensor");
-TouchSensor50.description = "HAnimJoint HumanoidRoot, HAnimSegment sacrum";
-HAnimSegment49.children = new MFNode();
+let TouchSensor49 = browser.currentScene.createNode("TouchSensor");
+TouchSensor49.description = "HAnimJoint HumanoidRoot, HAnimSegment sacrum";
+HAnimSegment48.children = new MFNode();
 
-HAnimSegment49.children[0] = TouchSensor50;
+HAnimSegment48.children[0] = TouchSensor49;
 
-let Transform51 = browser.currentScene.createNode("Transform");
-Transform51.translation = new SFVec3f(new float[0,0.824,0.0277]);
-let Shape52 = browser.currentScene.createNode("Shape");
-Shape52.DEF = "HAnimJointShape";
-let Sphere53 = browser.currentScene.createNode("Sphere");
-Sphere53.radius = 0.006;
-Shape52.geometry = Sphere53;
+let Transform50 = browser.currentScene.createNode("Transform");
+Transform50.translation = new SFVec3f(new float[0,0.824,0.0277]);
+let Shape51 = browser.currentScene.createNode("Shape");
+Shape51.DEF = "HAnimJointShape";
+let Sphere52 = browser.currentScene.createNode("Sphere");
+Sphere52.radius = 0.006;
+Shape51.geometry = Sphere52;
 
-let Appearance54 = browser.currentScene.createNode("Appearance");
-Appearance54.DEF = "HAnimJointAppearance";
-let Material55 = browser.currentScene.createNode("Material");
-Material55.diffuseColor = new SFColor(new float[1,0.5,0]);
-Material55.transparency = 0.5;
-Appearance54.material = Material55;
+let Appearance53 = browser.currentScene.createNode("Appearance");
+Appearance53.DEF = "HAnimJointAppearance";
+let Material54 = browser.currentScene.createNode("Material");
+Material54.diffuseColor = new SFColor(new float[1,0.5,0]);
+Material54.transparency = 0.5;
+Appearance53.material = Material54;
 
-Shape52.appearance = Appearance54;
+Shape51.appearance = Appearance53;
 
-Transform51.children = new MFNode();
+Transform50.children = new MFNode();
 
-Transform51.children[0] = Shape52;
+Transform50.children[0] = Shape51;
 
-HAnimSegment49.children[1] = Transform51;
+HAnimSegment48.children[1] = Transform50;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='humanoid_root'/> to <HAnimJoint name='sacroiliac'/>
-let Shape56 = browser.currentScene.createNode("Shape");
-let LineSet57 = browser.currentScene.createNode("LineSet");
-LineSet57.vertexCount = new MFInt32(new int[2]);
-let Coordinate58 = browser.currentScene.createNode("Coordinate");
-Coordinate58.point = new MFVec3f(new float[0,0.824,0.0277,0,0.9149,0.0016]);
-LineSet57.coord = Coordinate58;
+let Shape55 = browser.currentScene.createNode("Shape");
+let LineSet56 = browser.currentScene.createNode("LineSet");
+LineSet56.vertexCount = new MFInt32(new int[2]);
+let Coordinate57 = browser.currentScene.createNode("Coordinate");
+Coordinate57.point = new MFVec3f(new float[0,0.824,0.0277,0,0.9149,0.0016]);
+LineSet56.coord = Coordinate57;
 
-let ColorRGBA59 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA59.DEF = "HAnimSegmentLineColorRGBA";
-ColorRGBA59.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1]);
-LineSet57.color = ColorRGBA59;
+let ColorRGBA58 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA58.DEF = "HAnimSegmentLineColorRGBA";
+ColorRGBA58.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1]);
+LineSet56.color = ColorRGBA58;
 
-Shape56.geometry = LineSet57;
+Shape55.geometry = LineSet56;
 
-HAnimSegment49.children[2] = Shape56;
+HAnimSegment48.children[2] = Shape55;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='humanoid_root'/> to <HAnimJoint name='vl5'/>
-let Shape60 = browser.currentScene.createNode("Shape");
-let LineSet61 = browser.currentScene.createNode("LineSet");
-LineSet61.vertexCount = new MFInt32(new int[2]);
-let Coordinate62 = browser.currentScene.createNode("Coordinate");
-Coordinate62.point = new MFVec3f(new float[0,0.824,0.0277,0.0028,1.0568,-0.0776]);
-LineSet61.coord = Coordinate62;
+let Shape59 = browser.currentScene.createNode("Shape");
+let LineSet60 = browser.currentScene.createNode("LineSet");
+LineSet60.vertexCount = new MFInt32(new int[2]);
+let Coordinate61 = browser.currentScene.createNode("Coordinate");
+Coordinate61.point = new MFVec3f(new float[0,0.824,0.0277,0.0028,1.0568,-0.0776]);
+LineSet60.coord = Coordinate61;
 
-let ColorRGBA63 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA63.USE = "HAnimSegmentLineColorRGBA";
-LineSet61.color = ColorRGBA63;
+let ColorRGBA62 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA62.USE = "HAnimSegmentLineColorRGBA";
+LineSet60.color = ColorRGBA62;
 
-Shape60.geometry = LineSet61;
+Shape59.geometry = LineSet60;
 
-HAnimSegment49.children[3] = Shape60;
+HAnimSegment48.children[3] = Shape59;
 
-HAnimJoint48.children = new MFNode();
+HAnimJoint47.children = new MFNode();
 
-HAnimJoint48.children[0] = HAnimSegment49;
+HAnimJoint47.children[0] = HAnimSegment48;
 
-let HAnimJoint64 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint64.name = "sacroiliac";
-HAnimJoint64.DEF = "hanim_sacroiliac";
-HAnimJoint64.center = new SFVec3f(new float[0,0.9149,0.0016]);
-HAnimJoint64.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment65 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment65.name = "pelvis";
-HAnimSegment65.DEF = "hanim_pelvis";
+let HAnimJoint63 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint63.name = "sacroiliac";
+HAnimJoint63.DEF = "hanim_sacroiliac";
+HAnimJoint63.center = new SFVec3f(new float[0,0.9149,0.0016]);
+HAnimJoint63.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment64 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment64.name = "pelvis";
+HAnimSegment64.DEF = "hanim_pelvis";
 //<HAnimJoint name='sacroiliac'/> visualization sphere is placed within <HAnimSegment name='pelvis'/>
-let TouchSensor66 = browser.currentScene.createNode("TouchSensor");
-TouchSensor66.description = "HAnimJoint sacroiliac, HAnimSegment pelvis";
-HAnimSegment65.children = new MFNode();
+let TouchSensor65 = browser.currentScene.createNode("TouchSensor");
+TouchSensor65.description = "HAnimJoint sacroiliac, HAnimSegment pelvis";
+HAnimSegment64.children = new MFNode();
 
-HAnimSegment65.children[0] = TouchSensor66;
+HAnimSegment64.children[0] = TouchSensor65;
 
-let Transform67 = browser.currentScene.createNode("Transform");
-Transform67.translation = new SFVec3f(new float[0,0.9149,0.0016]);
-let Shape68 = browser.currentScene.createNode("Shape");
-Shape68.USE = "HAnimJointShape";
-Transform67.children = new MFNode();
+let Transform66 = browser.currentScene.createNode("Transform");
+Transform66.translation = new SFVec3f(new float[0,0.9149,0.0016]);
+let Shape67 = browser.currentScene.createNode("Shape");
+Shape67.USE = "HAnimJointShape";
+Transform66.children = new MFNode();
 
-Transform67.children[0] = Shape68;
+Transform66.children[0] = Shape67;
 
-HAnimSegment65.children[1] = Transform67;
+HAnimSegment64.children[1] = Transform66;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='sacroiliac'/> to <HAnimJoint name='l_hip'/>
-let Shape69 = browser.currentScene.createNode("Shape");
-let LineSet70 = browser.currentScene.createNode("LineSet");
-LineSet70.vertexCount = new MFInt32(new int[2]);
-let Coordinate71 = browser.currentScene.createNode("Coordinate");
-Coordinate71.point = new MFVec3f(new float[0,0.9149,0.0016,0.0961,0.9124,-0.0001]);
-LineSet70.coord = Coordinate71;
+let Shape68 = browser.currentScene.createNode("Shape");
+let LineSet69 = browser.currentScene.createNode("LineSet");
+LineSet69.vertexCount = new MFInt32(new int[2]);
+let Coordinate70 = browser.currentScene.createNode("Coordinate");
+Coordinate70.point = new MFVec3f(new float[0,0.9149,0.0016,0.0961,0.9124,-0.0001]);
+LineSet69.coord = Coordinate70;
 
-let ColorRGBA72 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA72.USE = "HAnimSegmentLineColorRGBA";
-LineSet70.color = ColorRGBA72;
+let ColorRGBA71 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA71.USE = "HAnimSegmentLineColorRGBA";
+LineSet69.color = ColorRGBA71;
 
-Shape69.geometry = LineSet70;
+Shape68.geometry = LineSet69;
 
-HAnimSegment65.children[2] = Shape69;
+HAnimSegment64.children[2] = Shape68;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='sacroiliac'/> to <HAnimJoint name='r_hip'/>
-let Shape73 = browser.currentScene.createNode("Shape");
-let LineSet74 = browser.currentScene.createNode("LineSet");
-LineSet74.vertexCount = new MFInt32(new int[2]);
-let Coordinate75 = browser.currentScene.createNode("Coordinate");
-Coordinate75.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0961,0.9124,-0.0001]);
-LineSet74.coord = Coordinate75;
+let Shape72 = browser.currentScene.createNode("Shape");
+let LineSet73 = browser.currentScene.createNode("LineSet");
+LineSet73.vertexCount = new MFInt32(new int[2]);
+let Coordinate74 = browser.currentScene.createNode("Coordinate");
+Coordinate74.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0961,0.9124,-0.0001]);
+LineSet73.coord = Coordinate74;
 
-let ColorRGBA76 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA76.USE = "HAnimSegmentLineColorRGBA";
-LineSet74.color = ColorRGBA76;
+let ColorRGBA75 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA75.USE = "HAnimSegmentLineColorRGBA";
+LineSet73.color = ColorRGBA75;
 
-Shape73.geometry = LineSet74;
+Shape72.geometry = LineSet73;
 
-HAnimSegment65.children[3] = Shape73;
+HAnimSegment64.children[3] = Shape72;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_iliocristale'/>
-let Shape77 = browser.currentScene.createNode("Shape");
-let LineSet78 = browser.currentScene.createNode("LineSet");
-LineSet78.vertexCount = new MFInt32(new int[2]);
-let Coordinate79 = browser.currentScene.createNode("Coordinate");
-Coordinate79.point = new MFVec3f(new float[0,0.9149,0.0016,-0.1525,1.0628,0.0035]);
-LineSet78.coord = Coordinate79;
+let Shape76 = browser.currentScene.createNode("Shape");
+let LineSet77 = browser.currentScene.createNode("LineSet");
+LineSet77.vertexCount = new MFInt32(new int[2]);
+let Coordinate78 = browser.currentScene.createNode("Coordinate");
+Coordinate78.point = new MFVec3f(new float[0,0.9149,0.0016,-0.1525,1.0628,0.0035]);
+LineSet77.coord = Coordinate78;
 
-let ColorRGBA80 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA80.DEF = "HAnimSiteLineColorRGBA";
-ColorRGBA80.color = new MFColorRGBA(new float[1,0,0,1,1,0,0,0.1]);
-LineSet78.color = ColorRGBA80;
+let ColorRGBA79 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA79.DEF = "HAnimSiteLineColorRGBA";
+ColorRGBA79.color = new MFColorRGBA(new float[1,0,0,1,1,0,0,0.1]);
+LineSet77.color = ColorRGBA79;
 
-Shape77.geometry = LineSet78;
+Shape76.geometry = LineSet77;
 
-HAnimSegment65.children[4] = Shape77;
+HAnimSegment64.children[4] = Shape76;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_trochanterion'/>
-let Shape81 = browser.currentScene.createNode("Shape");
-let LineSet82 = browser.currentScene.createNode("LineSet");
-LineSet82.vertexCount = new MFInt32(new int[2]);
-let Coordinate83 = browser.currentScene.createNode("Coordinate");
-Coordinate83.point = new MFVec3f(new float[0,0.9149,0.0016,-0.1689,0.8419,0.0352]);
-LineSet82.coord = Coordinate83;
+let Shape80 = browser.currentScene.createNode("Shape");
+let LineSet81 = browser.currentScene.createNode("LineSet");
+LineSet81.vertexCount = new MFInt32(new int[2]);
+let Coordinate82 = browser.currentScene.createNode("Coordinate");
+Coordinate82.point = new MFVec3f(new float[0,0.9149,0.0016,-0.1689,0.8419,0.0352]);
+LineSet81.coord = Coordinate82;
 
-let ColorRGBA84 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA84.USE = "HAnimSiteLineColorRGBA";
-LineSet82.color = ColorRGBA84;
+let ColorRGBA83 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA83.USE = "HAnimSiteLineColorRGBA";
+LineSet81.color = ColorRGBA83;
 
-Shape81.geometry = LineSet82;
+Shape80.geometry = LineSet81;
 
-HAnimSegment65.children[5] = Shape81;
+HAnimSegment64.children[5] = Shape80;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_iliocristale'/>
-let Shape85 = browser.currentScene.createNode("Shape");
-let LineSet86 = browser.currentScene.createNode("LineSet");
-LineSet86.vertexCount = new MFInt32(new int[2]);
-let Coordinate87 = browser.currentScene.createNode("Coordinate");
-Coordinate87.point = new MFVec3f(new float[0,0.9149,0.0016,0.1612,1.0537,0.0008]);
-LineSet86.coord = Coordinate87;
+let Shape84 = browser.currentScene.createNode("Shape");
+let LineSet85 = browser.currentScene.createNode("LineSet");
+LineSet85.vertexCount = new MFInt32(new int[2]);
+let Coordinate86 = browser.currentScene.createNode("Coordinate");
+Coordinate86.point = new MFVec3f(new float[0,0.9149,0.0016,0.1612,1.0537,0.0008]);
+LineSet85.coord = Coordinate86;
 
-let ColorRGBA88 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA88.USE = "HAnimSiteLineColorRGBA";
-LineSet86.color = ColorRGBA88;
+let ColorRGBA87 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA87.USE = "HAnimSiteLineColorRGBA";
+LineSet85.color = ColorRGBA87;
 
-Shape85.geometry = LineSet86;
+Shape84.geometry = LineSet85;
 
-HAnimSegment65.children[6] = Shape85;
+HAnimSegment64.children[6] = Shape84;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_trochanterion'/>
-let Shape89 = browser.currentScene.createNode("Shape");
-let LineSet90 = browser.currentScene.createNode("LineSet");
-LineSet90.vertexCount = new MFInt32(new int[2]);
-let Coordinate91 = browser.currentScene.createNode("Coordinate");
-Coordinate91.point = new MFVec3f(new float[0,0.9149,0.0016,0.1677,0.8336,0.0303]);
-LineSet90.coord = Coordinate91;
+let Shape88 = browser.currentScene.createNode("Shape");
+let LineSet89 = browser.currentScene.createNode("LineSet");
+LineSet89.vertexCount = new MFInt32(new int[2]);
+let Coordinate90 = browser.currentScene.createNode("Coordinate");
+Coordinate90.point = new MFVec3f(new float[0,0.9149,0.0016,0.1677,0.8336,0.0303]);
+LineSet89.coord = Coordinate90;
 
-let ColorRGBA92 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA92.USE = "HAnimSiteLineColorRGBA";
-LineSet90.color = ColorRGBA92;
+let ColorRGBA91 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA91.USE = "HAnimSiteLineColorRGBA";
+LineSet89.color = ColorRGBA91;
 
-Shape89.geometry = LineSet90;
+Shape88.geometry = LineSet89;
 
-HAnimSegment65.children[7] = Shape89;
+HAnimSegment64.children[7] = Shape88;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_asis'/>
-let Shape93 = browser.currentScene.createNode("Shape");
-let LineSet94 = browser.currentScene.createNode("LineSet");
-LineSet94.vertexCount = new MFInt32(new int[2]);
-let Coordinate95 = browser.currentScene.createNode("Coordinate");
-Coordinate95.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0887,1.0021,0.1112]);
-LineSet94.coord = Coordinate95;
+let Shape92 = browser.currentScene.createNode("Shape");
+let LineSet93 = browser.currentScene.createNode("LineSet");
+LineSet93.vertexCount = new MFInt32(new int[2]);
+let Coordinate94 = browser.currentScene.createNode("Coordinate");
+Coordinate94.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0887,1.0021,0.1112]);
+LineSet93.coord = Coordinate94;
 
-let ColorRGBA96 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA96.USE = "HAnimSiteLineColorRGBA";
-LineSet94.color = ColorRGBA96;
+let ColorRGBA95 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA95.USE = "HAnimSiteLineColorRGBA";
+LineSet93.color = ColorRGBA95;
 
-Shape93.geometry = LineSet94;
+Shape92.geometry = LineSet93;
 
-HAnimSegment65.children[8] = Shape93;
+HAnimSegment64.children[8] = Shape92;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_asis'/>
-let Shape97 = browser.currentScene.createNode("Shape");
-let LineSet98 = browser.currentScene.createNode("LineSet");
-LineSet98.vertexCount = new MFInt32(new int[2]);
-let Coordinate99 = browser.currentScene.createNode("Coordinate");
-Coordinate99.point = new MFVec3f(new float[0,0.9149,0.0016,0.0925,0.9983,0.1052]);
-LineSet98.coord = Coordinate99;
+let Shape96 = browser.currentScene.createNode("Shape");
+let LineSet97 = browser.currentScene.createNode("LineSet");
+LineSet97.vertexCount = new MFInt32(new int[2]);
+let Coordinate98 = browser.currentScene.createNode("Coordinate");
+Coordinate98.point = new MFVec3f(new float[0,0.9149,0.0016,0.0925,0.9983,0.1052]);
+LineSet97.coord = Coordinate98;
 
-let ColorRGBA100 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA100.USE = "HAnimSiteLineColorRGBA";
-LineSet98.color = ColorRGBA100;
+let ColorRGBA99 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA99.USE = "HAnimSiteLineColorRGBA";
+LineSet97.color = ColorRGBA99;
 
-Shape97.geometry = LineSet98;
+Shape96.geometry = LineSet97;
 
-HAnimSegment65.children[9] = Shape97;
+HAnimSegment64.children[9] = Shape96;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_psis'/>
-let Shape101 = browser.currentScene.createNode("Shape");
-let LineSet102 = browser.currentScene.createNode("LineSet");
-LineSet102.vertexCount = new MFInt32(new int[2]);
-let Coordinate103 = browser.currentScene.createNode("Coordinate");
-Coordinate103.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0716,1.019,-0.1138]);
-LineSet102.coord = Coordinate103;
+let Shape100 = browser.currentScene.createNode("Shape");
+let LineSet101 = browser.currentScene.createNode("LineSet");
+LineSet101.vertexCount = new MFInt32(new int[2]);
+let Coordinate102 = browser.currentScene.createNode("Coordinate");
+Coordinate102.point = new MFVec3f(new float[0,0.9149,0.0016,-0.0716,1.019,-0.1138]);
+LineSet101.coord = Coordinate102;
 
-let ColorRGBA104 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA104.USE = "HAnimSiteLineColorRGBA";
-LineSet102.color = ColorRGBA104;
+let ColorRGBA103 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA103.USE = "HAnimSiteLineColorRGBA";
+LineSet101.color = ColorRGBA103;
 
-Shape101.geometry = LineSet102;
+Shape100.geometry = LineSet101;
 
-HAnimSegment65.children[10] = Shape101;
+HAnimSegment64.children[10] = Shape100;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_psis'/>
-let Shape105 = browser.currentScene.createNode("Shape");
-let LineSet106 = browser.currentScene.createNode("LineSet");
-LineSet106.vertexCount = new MFInt32(new int[2]);
-let Coordinate107 = browser.currentScene.createNode("Coordinate");
-Coordinate107.point = new MFVec3f(new float[0,0.9149,0.0016,0.0774,1.019,-0.1151]);
-LineSet106.coord = Coordinate107;
+let Shape104 = browser.currentScene.createNode("Shape");
+let LineSet105 = browser.currentScene.createNode("LineSet");
+LineSet105.vertexCount = new MFInt32(new int[2]);
+let Coordinate106 = browser.currentScene.createNode("Coordinate");
+Coordinate106.point = new MFVec3f(new float[0,0.9149,0.0016,0.0774,1.019,-0.1151]);
+LineSet105.coord = Coordinate106;
 
-let ColorRGBA108 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA108.USE = "HAnimSiteLineColorRGBA";
-LineSet106.color = ColorRGBA108;
+let ColorRGBA107 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA107.USE = "HAnimSiteLineColorRGBA";
+LineSet105.color = ColorRGBA107;
 
-Shape105.geometry = LineSet106;
+Shape104.geometry = LineSet105;
 
-HAnimSegment65.children[11] = Shape105;
+HAnimSegment64.children[11] = Shape104;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='crotch'/>
-let Shape109 = browser.currentScene.createNode("Shape");
-let LineSet110 = browser.currentScene.createNode("LineSet");
-LineSet110.vertexCount = new MFInt32(new int[2]);
-let Coordinate111 = browser.currentScene.createNode("Coordinate");
-Coordinate111.point = new MFVec3f(new float[0,0.9149,0.0016,0.0034,0.8266,0.0257]);
-LineSet110.coord = Coordinate111;
+let Shape108 = browser.currentScene.createNode("Shape");
+let LineSet109 = browser.currentScene.createNode("LineSet");
+LineSet109.vertexCount = new MFInt32(new int[2]);
+let Coordinate110 = browser.currentScene.createNode("Coordinate");
+Coordinate110.point = new MFVec3f(new float[0,0.9149,0.0016,0.0034,0.8266,0.0257]);
+LineSet109.coord = Coordinate110;
 
-let ColorRGBA112 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA112.USE = "HAnimSiteLineColorRGBA";
-LineSet110.color = ColorRGBA112;
+let ColorRGBA111 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA111.USE = "HAnimSiteLineColorRGBA";
+LineSet109.color = ColorRGBA111;
 
-Shape109.geometry = LineSet110;
+Shape108.geometry = LineSet109;
 
-HAnimSegment65.children[12] = Shape109;
+HAnimSegment64.children[12] = Shape108;
 
-let HAnimSite113 = browser.currentScene.createNode("HAnimSite");
-HAnimSite113.name = "r_iliocristale_pt";
-HAnimSite113.DEF = "hanim_r_iliocristale_pt";
-HAnimSite113.translation = new SFVec3f(new float[-0.1525,1.0628,0.0035]);
+let HAnimSite112 = browser.currentScene.createNode("HAnimSite");
+HAnimSite112.name = "r_iliocristale_pt";
+HAnimSite112.DEF = "hanim_r_iliocristale_pt";
+HAnimSite112.translation = new SFVec3f(new float[-0.1525,1.0628,0.0035]);
 //HAnimSite visualization shape
-let TouchSensor114 = browser.currentScene.createNode("TouchSensor");
-TouchSensor114.description = "HAnimSite r_iliocristale";
-HAnimSite113.children = new MFNode();
+let TouchSensor113 = browser.currentScene.createNode("TouchSensor");
+TouchSensor113.description = "HAnimSite r_iliocristale";
+HAnimSite112.children = new MFNode();
 
-HAnimSite113.children[0] = TouchSensor114;
+HAnimSite112.children[0] = TouchSensor113;
 
-let Shape115 = browser.currentScene.createNode("Shape");
-Shape115.DEF = "HAnimSiteShape";
-let IndexedFaceSet116 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet116.DEF = "DiamondIFS";
-IndexedFaceSet116.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
-IndexedFaceSet116.creaseAngle = 0.5;
-IndexedFaceSet116.solid = False;
-let Coordinate117 = browser.currentScene.createNode("Coordinate");
-Coordinate117.point = new MFVec3f(new float[0,0.008,0,-0.008,0,0,0,0,0.008,0.008,0,0,0,0,-0.008,0,-0.008,0]);
-IndexedFaceSet116.coord = Coordinate117;
+let Shape114 = browser.currentScene.createNode("Shape");
+Shape114.DEF = "HAnimSiteShape";
+let IndexedFaceSet115 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet115.DEF = "DiamondIFS";
+IndexedFaceSet115.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
+IndexedFaceSet115.creaseAngle = 0.5;
+IndexedFaceSet115.solid = False;
+let Coordinate116 = browser.currentScene.createNode("Coordinate");
+Coordinate116.point = new MFVec3f(new float[0,0.008,0,-0.008,0,0,0,0,0.008,0.008,0,0,0,0,-0.008,0,-0.008,0]);
+IndexedFaceSet115.coord = Coordinate116;
 
-Shape115.geometry = IndexedFaceSet116;
+Shape114.geometry = IndexedFaceSet115;
 
-let Appearance118 = browser.currentScene.createNode("Appearance");
-let Material119 = browser.currentScene.createNode("Material");
-Material119.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance118.material = Material119;
+let Appearance117 = browser.currentScene.createNode("Appearance");
+let Material118 = browser.currentScene.createNode("Material");
+Material118.diffuseColor = new SFColor(new float[1,0,0]);
+Appearance117.material = Material118;
 
-Shape115.appearance = Appearance118;
+Shape114.appearance = Appearance117;
 
-HAnimSite113.children[1] = Shape115;
+HAnimSite112.children[1] = Shape114;
 
-HAnimSegment65.children[13] = HAnimSite113;
+HAnimSegment64.children[13] = HAnimSite112;
 
-let HAnimSite120 = browser.currentScene.createNode("HAnimSite");
-HAnimSite120.name = "r_trochanterion_pt";
-HAnimSite120.DEF = "hanim_r_trochanterion_pt";
-HAnimSite120.translation = new SFVec3f(new float[-0.1689,0.8419,0.0352]);
+let HAnimSite119 = browser.currentScene.createNode("HAnimSite");
+HAnimSite119.name = "r_trochanterion_pt";
+HAnimSite119.DEF = "hanim_r_trochanterion_pt";
+HAnimSite119.translation = new SFVec3f(new float[-0.1689,0.8419,0.0352]);
 //HAnimSite visualization shape
-let TouchSensor121 = browser.currentScene.createNode("TouchSensor");
-TouchSensor121.description = "HAnimSite r_trochanterion";
-HAnimSite120.children = new MFNode();
+let TouchSensor120 = browser.currentScene.createNode("TouchSensor");
+TouchSensor120.description = "HAnimSite r_trochanterion";
+HAnimSite119.children = new MFNode();
 
-HAnimSite120.children[0] = TouchSensor121;
+HAnimSite119.children[0] = TouchSensor120;
 
-let Shape122 = browser.currentScene.createNode("Shape");
-Shape122.USE = "HAnimSiteShape";
-HAnimSite120.children[1] = Shape122;
+let Shape121 = browser.currentScene.createNode("Shape");
+Shape121.USE = "HAnimSiteShape";
+HAnimSite119.children[1] = Shape121;
 
-HAnimSegment65.children[14] = HAnimSite120;
+HAnimSegment64.children[14] = HAnimSite119;
 
-let HAnimSite123 = browser.currentScene.createNode("HAnimSite");
-HAnimSite123.name = "l_iliocristale_pt";
-HAnimSite123.DEF = "hanim_l_iliocristale_pt";
-HAnimSite123.translation = new SFVec3f(new float[0.1612,1.0537,0.0008]);
+let HAnimSite122 = browser.currentScene.createNode("HAnimSite");
+HAnimSite122.name = "l_iliocristale_pt";
+HAnimSite122.DEF = "hanim_l_iliocristale_pt";
+HAnimSite122.translation = new SFVec3f(new float[0.1612,1.0537,0.0008]);
 //HAnimSite visualization shape
-let TouchSensor124 = browser.currentScene.createNode("TouchSensor");
-TouchSensor124.description = "HAnimSite l_iliocristale";
-HAnimSite123.children = new MFNode();
+let TouchSensor123 = browser.currentScene.createNode("TouchSensor");
+TouchSensor123.description = "HAnimSite l_iliocristale";
+HAnimSite122.children = new MFNode();
 
-HAnimSite123.children[0] = TouchSensor124;
+HAnimSite122.children[0] = TouchSensor123;
 
-let Shape125 = browser.currentScene.createNode("Shape");
-Shape125.USE = "HAnimSiteShape";
-HAnimSite123.children[1] = Shape125;
+let Shape124 = browser.currentScene.createNode("Shape");
+Shape124.USE = "HAnimSiteShape";
+HAnimSite122.children[1] = Shape124;
 
-HAnimSegment65.children[15] = HAnimSite123;
+HAnimSegment64.children[15] = HAnimSite122;
 
-let HAnimSite126 = browser.currentScene.createNode("HAnimSite");
-HAnimSite126.name = "l_trochanterion_pt";
-HAnimSite126.DEF = "hanim_l_trochanterion_pt";
-HAnimSite126.translation = new SFVec3f(new float[0.1677,0.8336,0.0303]);
+let HAnimSite125 = browser.currentScene.createNode("HAnimSite");
+HAnimSite125.name = "l_trochanterion_pt";
+HAnimSite125.DEF = "hanim_l_trochanterion_pt";
+HAnimSite125.translation = new SFVec3f(new float[0.1677,0.8336,0.0303]);
 //HAnimSite visualization shape
-let TouchSensor127 = browser.currentScene.createNode("TouchSensor");
-TouchSensor127.description = "HAnimSite l_trochanterion";
-HAnimSite126.children = new MFNode();
+let TouchSensor126 = browser.currentScene.createNode("TouchSensor");
+TouchSensor126.description = "HAnimSite l_trochanterion";
+HAnimSite125.children = new MFNode();
 
-HAnimSite126.children[0] = TouchSensor127;
+HAnimSite125.children[0] = TouchSensor126;
 
-let Shape128 = browser.currentScene.createNode("Shape");
-Shape128.USE = "HAnimSiteShape";
-HAnimSite126.children[1] = Shape128;
+let Shape127 = browser.currentScene.createNode("Shape");
+Shape127.USE = "HAnimSiteShape";
+HAnimSite125.children[1] = Shape127;
 
-HAnimSegment65.children[16] = HAnimSite126;
+HAnimSegment64.children[16] = HAnimSite125;
 
-let HAnimSite129 = browser.currentScene.createNode("HAnimSite");
-HAnimSite129.name = "r_asis_pt";
-HAnimSite129.DEF = "hanim_r_asis_pt";
-HAnimSite129.translation = new SFVec3f(new float[-0.0887,1.0021,0.1112]);
+let HAnimSite128 = browser.currentScene.createNode("HAnimSite");
+HAnimSite128.name = "r_asis_pt";
+HAnimSite128.DEF = "hanim_r_asis_pt";
+HAnimSite128.translation = new SFVec3f(new float[-0.0887,1.0021,0.1112]);
 //HAnimSite visualization shape
-let TouchSensor130 = browser.currentScene.createNode("TouchSensor");
-TouchSensor130.description = "HAnimSite r_asis";
-HAnimSite129.children = new MFNode();
+let TouchSensor129 = browser.currentScene.createNode("TouchSensor");
+TouchSensor129.description = "HAnimSite r_asis";
+HAnimSite128.children = new MFNode();
 
-HAnimSite129.children[0] = TouchSensor130;
+HAnimSite128.children[0] = TouchSensor129;
 
-let Shape131 = browser.currentScene.createNode("Shape");
-Shape131.USE = "HAnimSiteShape";
-HAnimSite129.children[1] = Shape131;
+let Shape130 = browser.currentScene.createNode("Shape");
+Shape130.USE = "HAnimSiteShape";
+HAnimSite128.children[1] = Shape130;
 
-HAnimSegment65.children[17] = HAnimSite129;
+HAnimSegment64.children[17] = HAnimSite128;
 
-let HAnimSite132 = browser.currentScene.createNode("HAnimSite");
-HAnimSite132.name = "l_asis_pt";
-HAnimSite132.DEF = "hanim_l_asis_pt";
-HAnimSite132.translation = new SFVec3f(new float[0.0925,0.9983,0.1052]);
+let HAnimSite131 = browser.currentScene.createNode("HAnimSite");
+HAnimSite131.name = "l_asis_pt";
+HAnimSite131.DEF = "hanim_l_asis_pt";
+HAnimSite131.translation = new SFVec3f(new float[0.0925,0.9983,0.1052]);
 //HAnimSite visualization shape
-let TouchSensor133 = browser.currentScene.createNode("TouchSensor");
-TouchSensor133.description = "HAnimSite l_asis";
-HAnimSite132.children = new MFNode();
+let TouchSensor132 = browser.currentScene.createNode("TouchSensor");
+TouchSensor132.description = "HAnimSite l_asis";
+HAnimSite131.children = new MFNode();
 
-HAnimSite132.children[0] = TouchSensor133;
+HAnimSite131.children[0] = TouchSensor132;
 
-let Shape134 = browser.currentScene.createNode("Shape");
-Shape134.USE = "HAnimSiteShape";
-HAnimSite132.children[1] = Shape134;
+let Shape133 = browser.currentScene.createNode("Shape");
+Shape133.USE = "HAnimSiteShape";
+HAnimSite131.children[1] = Shape133;
 
-HAnimSegment65.children[18] = HAnimSite132;
+HAnimSegment64.children[18] = HAnimSite131;
 
-let HAnimSite135 = browser.currentScene.createNode("HAnimSite");
-HAnimSite135.name = "r_psis_pt";
-HAnimSite135.DEF = "hanim_r_psis_pt";
-HAnimSite135.translation = new SFVec3f(new float[-0.0716,1.019,-0.1138]);
+let HAnimSite134 = browser.currentScene.createNode("HAnimSite");
+HAnimSite134.name = "r_psis_pt";
+HAnimSite134.DEF = "hanim_r_psis_pt";
+HAnimSite134.translation = new SFVec3f(new float[-0.0716,1.019,-0.1138]);
 //HAnimSite visualization shape
-let TouchSensor136 = browser.currentScene.createNode("TouchSensor");
-TouchSensor136.description = "HAnimSite r_psis";
-HAnimSite135.children = new MFNode();
+let TouchSensor135 = browser.currentScene.createNode("TouchSensor");
+TouchSensor135.description = "HAnimSite r_psis";
+HAnimSite134.children = new MFNode();
 
-HAnimSite135.children[0] = TouchSensor136;
+HAnimSite134.children[0] = TouchSensor135;
 
-let Shape137 = browser.currentScene.createNode("Shape");
-Shape137.USE = "HAnimSiteShape";
-HAnimSite135.children[1] = Shape137;
+let Shape136 = browser.currentScene.createNode("Shape");
+Shape136.USE = "HAnimSiteShape";
+HAnimSite134.children[1] = Shape136;
 
-HAnimSegment65.children[19] = HAnimSite135;
+HAnimSegment64.children[19] = HAnimSite134;
 
-let HAnimSite138 = browser.currentScene.createNode("HAnimSite");
-HAnimSite138.name = "l_psis_pt";
-HAnimSite138.DEF = "hanim_l_psis_pt";
-HAnimSite138.translation = new SFVec3f(new float[0.0774,1.019,-0.1151]);
+let HAnimSite137 = browser.currentScene.createNode("HAnimSite");
+HAnimSite137.name = "l_psis_pt";
+HAnimSite137.DEF = "hanim_l_psis_pt";
+HAnimSite137.translation = new SFVec3f(new float[0.0774,1.019,-0.1151]);
 //HAnimSite visualization shape
-let TouchSensor139 = browser.currentScene.createNode("TouchSensor");
-TouchSensor139.description = "HAnimSite l_psis";
-HAnimSite138.children = new MFNode();
+let TouchSensor138 = browser.currentScene.createNode("TouchSensor");
+TouchSensor138.description = "HAnimSite l_psis";
+HAnimSite137.children = new MFNode();
 
-HAnimSite138.children[0] = TouchSensor139;
+HAnimSite137.children[0] = TouchSensor138;
 
-let Shape140 = browser.currentScene.createNode("Shape");
-Shape140.USE = "HAnimSiteShape";
-HAnimSite138.children[1] = Shape140;
+let Shape139 = browser.currentScene.createNode("Shape");
+Shape139.USE = "HAnimSiteShape";
+HAnimSite137.children[1] = Shape139;
 
-HAnimSegment65.children[20] = HAnimSite138;
+HAnimSegment64.children[20] = HAnimSite137;
 
-let HAnimSite141 = browser.currentScene.createNode("HAnimSite");
-HAnimSite141.name = "crotch_pt";
-HAnimSite141.DEF = "hanim_crotch_pt";
-HAnimSite141.translation = new SFVec3f(new float[0.0034,0.8266,0.0257]);
+let HAnimSite140 = browser.currentScene.createNode("HAnimSite");
+HAnimSite140.name = "crotch_pt";
+HAnimSite140.DEF = "hanim_crotch_pt";
+HAnimSite140.translation = new SFVec3f(new float[0.0034,0.8266,0.0257]);
 //HAnimSite visualization shape
-let TouchSensor142 = browser.currentScene.createNode("TouchSensor");
-TouchSensor142.description = "HAnimSite crotch";
-HAnimSite141.children = new MFNode();
+let TouchSensor141 = browser.currentScene.createNode("TouchSensor");
+TouchSensor141.description = "HAnimSite crotch";
+HAnimSite140.children = new MFNode();
 
-HAnimSite141.children[0] = TouchSensor142;
+HAnimSite140.children[0] = TouchSensor141;
 
-let Shape143 = browser.currentScene.createNode("Shape");
-Shape143.USE = "HAnimSiteShape";
-HAnimSite141.children[1] = Shape143;
+let Shape142 = browser.currentScene.createNode("Shape");
+Shape142.USE = "HAnimSiteShape";
+HAnimSite140.children[1] = Shape142;
 
-HAnimSegment65.children[21] = HAnimSite141;
+HAnimSegment64.children[21] = HAnimSite140;
 
-HAnimJoint64.children = new MFNode();
+HAnimJoint63.children = new MFNode();
 
-HAnimJoint64.children[0] = HAnimSegment65;
+HAnimJoint63.children[0] = HAnimSegment64;
 
-let HAnimJoint144 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint144.name = "l_hip";
-HAnimJoint144.DEF = "hanim_l_hip";
-HAnimJoint144.center = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
-HAnimJoint144.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment145 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment145.name = "l_thigh";
-HAnimSegment145.DEF = "hanim_l_thigh";
+let HAnimJoint143 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint143.name = "l_hip";
+HAnimJoint143.DEF = "hanim_l_hip";
+HAnimJoint143.center = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
+HAnimJoint143.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment144 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment144.name = "l_thigh";
+HAnimSegment144.DEF = "hanim_l_thigh";
 //<HAnimJoint name='l_hip'/> visualization sphere is placed within <HAnimSegment name='l_thigh'/>
-let TouchSensor146 = browser.currentScene.createNode("TouchSensor");
-TouchSensor146.description = "HAnimJoint l_hip, HAnimSegment l_thigh";
-HAnimSegment145.children = new MFNode();
+let TouchSensor145 = browser.currentScene.createNode("TouchSensor");
+TouchSensor145.description = "HAnimJoint l_hip, HAnimSegment l_thigh";
+HAnimSegment144.children = new MFNode();
 
-HAnimSegment145.children[0] = TouchSensor146;
+HAnimSegment144.children[0] = TouchSensor145;
 
-let Transform147 = browser.currentScene.createNode("Transform");
-Transform147.translation = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
-let Shape148 = browser.currentScene.createNode("Shape");
-Shape148.USE = "HAnimJointShape";
-Transform147.children = new MFNode();
+let Transform146 = browser.currentScene.createNode("Transform");
+Transform146.translation = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
+let Shape147 = browser.currentScene.createNode("Shape");
+Shape147.USE = "HAnimJointShape";
+Transform146.children = new MFNode();
 
-Transform147.children[0] = Shape148;
+Transform146.children[0] = Shape147;
 
-HAnimSegment145.children[1] = Transform147;
+HAnimSegment144.children[1] = Transform146;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_hip'/> to <HAnimJoint name='l_knee'/>
-let Shape149 = browser.currentScene.createNode("Shape");
-let LineSet150 = browser.currentScene.createNode("LineSet");
-LineSet150.vertexCount = new MFInt32(new int[2]);
-let Coordinate151 = browser.currentScene.createNode("Coordinate");
-Coordinate151.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.104,0.4867,0.0308]);
-LineSet150.coord = Coordinate151;
+let Shape148 = browser.currentScene.createNode("Shape");
+let LineSet149 = browser.currentScene.createNode("LineSet");
+LineSet149.vertexCount = new MFInt32(new int[2]);
+let Coordinate150 = browser.currentScene.createNode("Coordinate");
+Coordinate150.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.104,0.4867,0.0308]);
+LineSet149.coord = Coordinate150;
 
-let ColorRGBA152 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA152.USE = "HAnimSegmentLineColorRGBA";
-LineSet150.color = ColorRGBA152;
+let ColorRGBA151 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA151.USE = "HAnimSegmentLineColorRGBA";
+LineSet149.color = ColorRGBA151;
 
-Shape149.geometry = LineSet150;
+Shape148.geometry = LineSet149;
 
-HAnimSegment145.children[2] = Shape149;
+HAnimSegment144.children[2] = Shape148;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_knee_crease'/>
-let Shape153 = browser.currentScene.createNode("Shape");
-let LineSet154 = browser.currentScene.createNode("LineSet");
-LineSet154.vertexCount = new MFInt32(new int[2]);
-let Coordinate155 = browser.currentScene.createNode("Coordinate");
-Coordinate155.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.0993,0.4881,-0.0309]);
-LineSet154.coord = Coordinate155;
+let Shape152 = browser.currentScene.createNode("Shape");
+let LineSet153 = browser.currentScene.createNode("LineSet");
+LineSet153.vertexCount = new MFInt32(new int[2]);
+let Coordinate154 = browser.currentScene.createNode("Coordinate");
+Coordinate154.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.0993,0.4881,-0.0309]);
+LineSet153.coord = Coordinate154;
 
-let ColorRGBA156 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA156.USE = "HAnimSiteLineColorRGBA";
-LineSet154.color = ColorRGBA156;
+let ColorRGBA155 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA155.USE = "HAnimSiteLineColorRGBA";
+LineSet153.color = ColorRGBA155;
 
-Shape153.geometry = LineSet154;
+Shape152.geometry = LineSet153;
 
-HAnimSegment145.children[3] = Shape153;
+HAnimSegment144.children[3] = Shape152;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_lateral_epicn'/>
-let Shape157 = browser.currentScene.createNode("Shape");
-let LineSet158 = browser.currentScene.createNode("LineSet");
-LineSet158.vertexCount = new MFInt32(new int[2]);
-let Coordinate159 = browser.currentScene.createNode("Coordinate");
-Coordinate159.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.1598,0.4967,0.0297]);
-LineSet158.coord = Coordinate159;
+let Shape156 = browser.currentScene.createNode("Shape");
+let LineSet157 = browser.currentScene.createNode("LineSet");
+LineSet157.vertexCount = new MFInt32(new int[2]);
+let Coordinate158 = browser.currentScene.createNode("Coordinate");
+Coordinate158.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.1598,0.4967,0.0297]);
+LineSet157.coord = Coordinate158;
 
-let ColorRGBA160 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA160.USE = "HAnimSiteLineColorRGBA";
-LineSet158.color = ColorRGBA160;
+let ColorRGBA159 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA159.USE = "HAnimSiteLineColorRGBA";
+LineSet157.color = ColorRGBA159;
 
-Shape157.geometry = LineSet158;
+Shape156.geometry = LineSet157;
 
-HAnimSegment145.children[4] = Shape157;
+HAnimSegment144.children[4] = Shape156;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_medial_epicn'/>
-let Shape161 = browser.currentScene.createNode("Shape");
-let LineSet162 = browser.currentScene.createNode("LineSet");
-LineSet162.vertexCount = new MFInt32(new int[2]);
-let Coordinate163 = browser.currentScene.createNode("Coordinate");
-Coordinate163.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.0398,0.4946,0.0303]);
-LineSet162.coord = Coordinate163;
+let Shape160 = browser.currentScene.createNode("Shape");
+let LineSet161 = browser.currentScene.createNode("LineSet");
+LineSet161.vertexCount = new MFInt32(new int[2]);
+let Coordinate162 = browser.currentScene.createNode("Coordinate");
+Coordinate162.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.0398,0.4946,0.0303]);
+LineSet161.coord = Coordinate162;
 
-let ColorRGBA164 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA164.USE = "HAnimSiteLineColorRGBA";
-LineSet162.color = ColorRGBA164;
+let ColorRGBA163 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA163.USE = "HAnimSiteLineColorRGBA";
+LineSet161.color = ColorRGBA163;
 
-Shape161.geometry = LineSet162;
+Shape160.geometry = LineSet161;
 
-HAnimSegment145.children[5] = Shape161;
+HAnimSegment144.children[5] = Shape160;
 
-let HAnimSite165 = browser.currentScene.createNode("HAnimSite");
-HAnimSite165.name = "l_knee_crease_pt";
-HAnimSite165.DEF = "hanim_l_knee_crease_pt";
-HAnimSite165.translation = new SFVec3f(new float[0.0993,0.4881,-0.0309]);
+let HAnimSite164 = browser.currentScene.createNode("HAnimSite");
+HAnimSite164.name = "l_knee_crease_pt";
+HAnimSite164.DEF = "hanim_l_knee_crease_pt";
+HAnimSite164.translation = new SFVec3f(new float[0.0993,0.4881,-0.0309]);
 //HAnimSite visualization shape
-let TouchSensor166 = browser.currentScene.createNode("TouchSensor");
-TouchSensor166.description = "HAnimSite l_knee_crease";
-HAnimSite165.children = new MFNode();
+let TouchSensor165 = browser.currentScene.createNode("TouchSensor");
+TouchSensor165.description = "HAnimSite l_knee_crease";
+HAnimSite164.children = new MFNode();
 
-HAnimSite165.children[0] = TouchSensor166;
+HAnimSite164.children[0] = TouchSensor165;
 
-let Shape167 = browser.currentScene.createNode("Shape");
-Shape167.USE = "HAnimSiteShape";
-HAnimSite165.children[1] = Shape167;
+let Shape166 = browser.currentScene.createNode("Shape");
+Shape166.USE = "HAnimSiteShape";
+HAnimSite164.children[1] = Shape166;
 
-HAnimSegment145.children[6] = HAnimSite165;
+HAnimSegment144.children[6] = HAnimSite164;
 
-let HAnimSite168 = browser.currentScene.createNode("HAnimSite");
-HAnimSite168.name = "l_femoral_lateral_epicn_pt";
-HAnimSite168.DEF = "hanim_l_femoral_lateral_epicn_pt";
-HAnimSite168.translation = new SFVec3f(new float[0.1598,0.4967,0.0297]);
+let HAnimSite167 = browser.currentScene.createNode("HAnimSite");
+HAnimSite167.name = "l_femoral_lateral_epicn_pt";
+HAnimSite167.DEF = "hanim_l_femoral_lateral_epicn_pt";
+HAnimSite167.translation = new SFVec3f(new float[0.1598,0.4967,0.0297]);
 //HAnimSite visualization shape
-let TouchSensor169 = browser.currentScene.createNode("TouchSensor");
-TouchSensor169.description = "HAnimSite l_femoral_lateral_epicn";
-HAnimSite168.children = new MFNode();
+let TouchSensor168 = browser.currentScene.createNode("TouchSensor");
+TouchSensor168.description = "HAnimSite l_femoral_lateral_epicn";
+HAnimSite167.children = new MFNode();
 
-HAnimSite168.children[0] = TouchSensor169;
+HAnimSite167.children[0] = TouchSensor168;
 
-let Shape170 = browser.currentScene.createNode("Shape");
-Shape170.USE = "HAnimSiteShape";
-HAnimSite168.children[1] = Shape170;
+let Shape169 = browser.currentScene.createNode("Shape");
+Shape169.USE = "HAnimSiteShape";
+HAnimSite167.children[1] = Shape169;
 
-HAnimSegment145.children[7] = HAnimSite168;
+HAnimSegment144.children[7] = HAnimSite167;
 
-let HAnimSite171 = browser.currentScene.createNode("HAnimSite");
-HAnimSite171.name = "l_femoral_medial_epicn_pt";
-HAnimSite171.DEF = "hanim_l_femoral_medial_epicn_pt";
-HAnimSite171.translation = new SFVec3f(new float[0.0398,0.4946,0.0303]);
+let HAnimSite170 = browser.currentScene.createNode("HAnimSite");
+HAnimSite170.name = "l_femoral_medial_epicn_pt";
+HAnimSite170.DEF = "hanim_l_femoral_medial_epicn_pt";
+HAnimSite170.translation = new SFVec3f(new float[0.0398,0.4946,0.0303]);
 //HAnimSite visualization shape
-let TouchSensor172 = browser.currentScene.createNode("TouchSensor");
-TouchSensor172.description = "HAnimSite l_femoral_medial_epicn";
-HAnimSite171.children = new MFNode();
+let TouchSensor171 = browser.currentScene.createNode("TouchSensor");
+TouchSensor171.description = "HAnimSite l_femoral_medial_epicn";
+HAnimSite170.children = new MFNode();
 
-HAnimSite171.children[0] = TouchSensor172;
+HAnimSite170.children[0] = TouchSensor171;
 
-let Shape173 = browser.currentScene.createNode("Shape");
-Shape173.USE = "HAnimSiteShape";
-HAnimSite171.children[1] = Shape173;
+let Shape172 = browser.currentScene.createNode("Shape");
+Shape172.USE = "HAnimSiteShape";
+HAnimSite170.children[1] = Shape172;
 
-HAnimSegment145.children[8] = HAnimSite171;
+HAnimSegment144.children[8] = HAnimSite170;
 
-HAnimJoint144.children = new MFNode();
+HAnimJoint143.children = new MFNode();
 
-HAnimJoint144.children[0] = HAnimSegment145;
+HAnimJoint143.children[0] = HAnimSegment144;
 
-let HAnimJoint174 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint174.name = "l_knee";
-HAnimJoint174.DEF = "hanim_l_knee";
-HAnimJoint174.center = new SFVec3f(new float[0.104,0.4867,0.0308]);
-HAnimJoint174.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment175 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment175.name = "l_calf";
-HAnimSegment175.DEF = "hanim_l_calf";
+let HAnimJoint173 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint173.name = "l_knee";
+HAnimJoint173.DEF = "hanim_l_knee";
+HAnimJoint173.center = new SFVec3f(new float[0.104,0.4867,0.0308]);
+HAnimJoint173.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment174 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment174.name = "l_calf";
+HAnimSegment174.DEF = "hanim_l_calf";
 //<HAnimJoint name='l_knee'/> visualization sphere is placed within <HAnimSegment name='l_calf'/>
-let TouchSensor176 = browser.currentScene.createNode("TouchSensor");
-TouchSensor176.description = "HAnimJoint l_knee, HAnimSegment l_calf";
-HAnimSegment175.children = new MFNode();
+let TouchSensor175 = browser.currentScene.createNode("TouchSensor");
+TouchSensor175.description = "HAnimJoint l_knee, HAnimSegment l_calf";
+HAnimSegment174.children = new MFNode();
 
-HAnimSegment175.children[0] = TouchSensor176;
+HAnimSegment174.children[0] = TouchSensor175;
 
-let Transform177 = browser.currentScene.createNode("Transform");
-Transform177.translation = new SFVec3f(new float[0.104,0.4867,0.0308]);
-let Shape178 = browser.currentScene.createNode("Shape");
-Shape178.USE = "HAnimJointShape";
-Transform177.children = new MFNode();
+let Transform176 = browser.currentScene.createNode("Transform");
+Transform176.translation = new SFVec3f(new float[0.104,0.4867,0.0308]);
+let Shape177 = browser.currentScene.createNode("Shape");
+Shape177.USE = "HAnimJointShape";
+Transform176.children = new MFNode();
 
-Transform177.children[0] = Shape178;
+Transform176.children[0] = Shape177;
 
-HAnimSegment175.children[1] = Transform177;
+HAnimSegment174.children[1] = Transform176;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_knee'/> to <HAnimJoint name='l_ankle'/>
-let Shape179 = browser.currentScene.createNode("Shape");
-let LineSet180 = browser.currentScene.createNode("LineSet");
-LineSet180.vertexCount = new MFInt32(new int[2]);
-let Coordinate181 = browser.currentScene.createNode("Coordinate");
-Coordinate181.point = new MFVec3f(new float[0.104,0.4867,0.0308,0.1101,0.0656,-0.0736]);
-LineSet180.coord = Coordinate181;
+let Shape178 = browser.currentScene.createNode("Shape");
+let LineSet179 = browser.currentScene.createNode("LineSet");
+LineSet179.vertexCount = new MFInt32(new int[2]);
+let Coordinate180 = browser.currentScene.createNode("Coordinate");
+Coordinate180.point = new MFVec3f(new float[0.104,0.4867,0.0308,0.1101,0.0656,-0.0736]);
+LineSet179.coord = Coordinate180;
 
-let ColorRGBA182 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA182.USE = "HAnimSegmentLineColorRGBA";
-LineSet180.color = ColorRGBA182;
+let ColorRGBA181 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA181.USE = "HAnimSegmentLineColorRGBA";
+LineSet179.color = ColorRGBA181;
 
-Shape179.geometry = LineSet180;
+Shape178.geometry = LineSet179;
 
-HAnimSegment175.children[2] = Shape179;
+HAnimSegment174.children[2] = Shape178;
 
-HAnimJoint174.children = new MFNode();
+HAnimJoint173.children = new MFNode();
 
-HAnimJoint174.children[0] = HAnimSegment175;
+HAnimJoint173.children[0] = HAnimSegment174;
 
-let HAnimJoint183 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint183.name = "l_ankle";
-HAnimJoint183.DEF = "hanim_l_ankle";
-HAnimJoint183.center = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
-HAnimJoint183.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment184 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment184.name = "l_hindfoot";
-HAnimSegment184.DEF = "hanim_l_hindfoot";
+let HAnimJoint182 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint182.name = "l_ankle";
+HAnimJoint182.DEF = "hanim_l_ankle";
+HAnimJoint182.center = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+HAnimJoint182.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment183 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment183.name = "l_hindfoot";
+HAnimSegment183.DEF = "hanim_l_hindfoot";
 //<HAnimJoint name='l_ankle'/> visualization sphere is placed within <HAnimSegment name='l_hindfoot'/>
-let TouchSensor185 = browser.currentScene.createNode("TouchSensor");
-TouchSensor185.description = "HAnimJoint l_ankle, HAnimSegment l_hindfoot";
-HAnimSegment184.children = new MFNode();
+let TouchSensor184 = browser.currentScene.createNode("TouchSensor");
+TouchSensor184.description = "HAnimJoint l_ankle, HAnimSegment l_hindfoot";
+HAnimSegment183.children = new MFNode();
 
-HAnimSegment184.children[0] = TouchSensor185;
+HAnimSegment183.children[0] = TouchSensor184;
 
-let Transform186 = browser.currentScene.createNode("Transform");
-Transform186.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
-let Shape187 = browser.currentScene.createNode("Shape");
-Shape187.USE = "HAnimJointShape";
-Transform186.children = new MFNode();
+let Transform185 = browser.currentScene.createNode("Transform");
+Transform185.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+let Shape186 = browser.currentScene.createNode("Shape");
+Shape186.USE = "HAnimJointShape";
+Transform185.children = new MFNode();
 
-Transform186.children[0] = Shape187;
+Transform185.children[0] = Shape186;
 
-HAnimSegment184.children[1] = Transform186;
+HAnimSegment183.children[1] = Transform185;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_ankle'/> to <HAnimJoint name='l_subtalar'/>
-let Shape188 = browser.currentScene.createNode("Shape");
-let LineSet189 = browser.currentScene.createNode("LineSet");
-LineSet189.vertexCount = new MFInt32(new int[2]);
-let Coordinate190 = browser.currentScene.createNode("Coordinate");
-Coordinate190.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1086,0.0001,-0.0368]);
-LineSet189.coord = Coordinate190;
+let Shape187 = browser.currentScene.createNode("Shape");
+let LineSet188 = browser.currentScene.createNode("LineSet");
+LineSet188.vertexCount = new MFInt32(new int[2]);
+let Coordinate189 = browser.currentScene.createNode("Coordinate");
+Coordinate189.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1086,0.0001,-0.0368]);
+LineSet188.coord = Coordinate189;
 
-let ColorRGBA191 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA191.USE = "HAnimSegmentLineColorRGBA";
-LineSet189.color = ColorRGBA191;
+let ColorRGBA190 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA190.USE = "HAnimSegmentLineColorRGBA";
+LineSet188.color = ColorRGBA190;
 
-Shape188.geometry = LineSet189;
+Shape187.geometry = LineSet188;
 
-HAnimSegment184.children[2] = Shape188;
+HAnimSegment183.children[2] = Shape187;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ankle'/> to <HAnimSite name='l_lateral_malleolus'/>
-let Shape192 = browser.currentScene.createNode("Shape");
-let LineSet193 = browser.currentScene.createNode("LineSet");
-LineSet193.vertexCount = new MFInt32(new int[2]);
-let Coordinate194 = browser.currentScene.createNode("Coordinate");
-Coordinate194.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1308,0.0597,-0.1032]);
-LineSet193.coord = Coordinate194;
+let Shape191 = browser.currentScene.createNode("Shape");
+let LineSet192 = browser.currentScene.createNode("LineSet");
+LineSet192.vertexCount = new MFInt32(new int[2]);
+let Coordinate193 = browser.currentScene.createNode("Coordinate");
+Coordinate193.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1308,0.0597,-0.1032]);
+LineSet192.coord = Coordinate193;
 
-let ColorRGBA195 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA195.USE = "HAnimSiteLineColorRGBA";
-LineSet193.color = ColorRGBA195;
+let ColorRGBA194 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA194.USE = "HAnimSiteLineColorRGBA";
+LineSet192.color = ColorRGBA194;
 
-Shape192.geometry = LineSet193;
+Shape191.geometry = LineSet192;
 
-HAnimSegment184.children[3] = Shape192;
+HAnimSegment183.children[3] = Shape191;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ankle'/> to <HAnimSite name='l_medial_malleolus'/>
-let Shape196 = browser.currentScene.createNode("Shape");
-let LineSet197 = browser.currentScene.createNode("LineSet");
-LineSet197.vertexCount = new MFInt32(new int[2]);
-let Coordinate198 = browser.currentScene.createNode("Coordinate");
-Coordinate198.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.089,0.0716,-0.0881]);
-LineSet197.coord = Coordinate198;
+let Shape195 = browser.currentScene.createNode("Shape");
+let LineSet196 = browser.currentScene.createNode("LineSet");
+LineSet196.vertexCount = new MFInt32(new int[2]);
+let Coordinate197 = browser.currentScene.createNode("Coordinate");
+Coordinate197.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.089,0.0716,-0.0881]);
+LineSet196.coord = Coordinate197;
 
-let ColorRGBA199 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA199.USE = "HAnimSiteLineColorRGBA";
-LineSet197.color = ColorRGBA199;
+let ColorRGBA198 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA198.USE = "HAnimSiteLineColorRGBA";
+LineSet196.color = ColorRGBA198;
 
-Shape196.geometry = LineSet197;
+Shape195.geometry = LineSet196;
 
-HAnimSegment184.children[4] = Shape196;
+HAnimSegment183.children[4] = Shape195;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ankle'/> to <HAnimSite name='l_sphyrion'/>
-let Shape200 = browser.currentScene.createNode("Shape");
-let LineSet201 = browser.currentScene.createNode("LineSet");
-LineSet201.vertexCount = new MFInt32(new int[2]);
-let Coordinate202 = browser.currentScene.createNode("Coordinate");
-Coordinate202.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.089,0.0575,-0.0943]);
-LineSet201.coord = Coordinate202;
+let Shape199 = browser.currentScene.createNode("Shape");
+let LineSet200 = browser.currentScene.createNode("LineSet");
+LineSet200.vertexCount = new MFInt32(new int[2]);
+let Coordinate201 = browser.currentScene.createNode("Coordinate");
+Coordinate201.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.089,0.0575,-0.0943]);
+LineSet200.coord = Coordinate201;
 
-let ColorRGBA203 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA203.USE = "HAnimSiteLineColorRGBA";
-LineSet201.color = ColorRGBA203;
+let ColorRGBA202 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA202.USE = "HAnimSiteLineColorRGBA";
+LineSet200.color = ColorRGBA202;
 
-Shape200.geometry = LineSet201;
+Shape199.geometry = LineSet200;
 
-HAnimSegment184.children[5] = Shape200;
+HAnimSegment183.children[5] = Shape199;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ankle'/> to <HAnimSite name='l_calcaneous_post'/>
-let Shape204 = browser.currentScene.createNode("Shape");
-let LineSet205 = browser.currentScene.createNode("LineSet");
-LineSet205.vertexCount = new MFInt32(new int[2]);
-let Coordinate206 = browser.currentScene.createNode("Coordinate");
-Coordinate206.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.0974,0.0259,-0.1171]);
-LineSet205.coord = Coordinate206;
+let Shape203 = browser.currentScene.createNode("Shape");
+let LineSet204 = browser.currentScene.createNode("LineSet");
+LineSet204.vertexCount = new MFInt32(new int[2]);
+let Coordinate205 = browser.currentScene.createNode("Coordinate");
+Coordinate205.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.0974,0.0259,-0.1171]);
+LineSet204.coord = Coordinate205;
 
-let ColorRGBA207 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA207.USE = "HAnimSiteLineColorRGBA";
-LineSet205.color = ColorRGBA207;
+let ColorRGBA206 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA206.USE = "HAnimSiteLineColorRGBA";
+LineSet204.color = ColorRGBA206;
 
-Shape204.geometry = LineSet205;
+Shape203.geometry = LineSet204;
 
-HAnimSegment184.children[6] = Shape204;
+HAnimSegment183.children[6] = Shape203;
 
-let HAnimSite208 = browser.currentScene.createNode("HAnimSite");
-HAnimSite208.name = "l_lateral_malleolus_pt";
-HAnimSite208.DEF = "hanim_l_lateral_malleolus_pt";
-HAnimSite208.translation = new SFVec3f(new float[0.1308,0.0597,-0.1032]);
+let HAnimSite207 = browser.currentScene.createNode("HAnimSite");
+HAnimSite207.name = "l_lateral_malleolus_pt";
+HAnimSite207.DEF = "hanim_l_lateral_malleolus_pt";
+HAnimSite207.translation = new SFVec3f(new float[0.1308,0.0597,-0.1032]);
 //HAnimSite visualization shape
-let TouchSensor209 = browser.currentScene.createNode("TouchSensor");
-TouchSensor209.description = "HAnimSite l_lateral_malleolus";
-HAnimSite208.children = new MFNode();
+let TouchSensor208 = browser.currentScene.createNode("TouchSensor");
+TouchSensor208.description = "HAnimSite l_lateral_malleolus";
+HAnimSite207.children = new MFNode();
 
-HAnimSite208.children[0] = TouchSensor209;
+HAnimSite207.children[0] = TouchSensor208;
 
-let Shape210 = browser.currentScene.createNode("Shape");
-Shape210.USE = "HAnimSiteShape";
-HAnimSite208.children[1] = Shape210;
+let Shape209 = browser.currentScene.createNode("Shape");
+Shape209.USE = "HAnimSiteShape";
+HAnimSite207.children[1] = Shape209;
 
-HAnimSegment184.children[7] = HAnimSite208;
+HAnimSegment183.children[7] = HAnimSite207;
 
-let HAnimSite211 = browser.currentScene.createNode("HAnimSite");
-HAnimSite211.name = "l_medial_malleolus_pt";
-HAnimSite211.DEF = "hanim_l_medial_malleolus_pt";
-HAnimSite211.translation = new SFVec3f(new float[0.089,0.0716,-0.0881]);
+let HAnimSite210 = browser.currentScene.createNode("HAnimSite");
+HAnimSite210.name = "l_medial_malleolus_pt";
+HAnimSite210.DEF = "hanim_l_medial_malleolus_pt";
+HAnimSite210.translation = new SFVec3f(new float[0.089,0.0716,-0.0881]);
 //HAnimSite visualization shape
-let TouchSensor212 = browser.currentScene.createNode("TouchSensor");
-TouchSensor212.description = "HAnimSite l_medial_malleolus";
-HAnimSite211.children = new MFNode();
+let TouchSensor211 = browser.currentScene.createNode("TouchSensor");
+TouchSensor211.description = "HAnimSite l_medial_malleolus";
+HAnimSite210.children = new MFNode();
 
-HAnimSite211.children[0] = TouchSensor212;
+HAnimSite210.children[0] = TouchSensor211;
 
-let Shape213 = browser.currentScene.createNode("Shape");
-Shape213.USE = "HAnimSiteShape";
-HAnimSite211.children[1] = Shape213;
+let Shape212 = browser.currentScene.createNode("Shape");
+Shape212.USE = "HAnimSiteShape";
+HAnimSite210.children[1] = Shape212;
 
-HAnimSegment184.children[8] = HAnimSite211;
+HAnimSegment183.children[8] = HAnimSite210;
 
-let HAnimSite214 = browser.currentScene.createNode("HAnimSite");
-HAnimSite214.name = "l_sphyrion_pt";
-HAnimSite214.DEF = "hanim_l_sphyrion_pt";
-HAnimSite214.translation = new SFVec3f(new float[0.089,0.0575,-0.0943]);
+let HAnimSite213 = browser.currentScene.createNode("HAnimSite");
+HAnimSite213.name = "l_sphyrion_pt";
+HAnimSite213.DEF = "hanim_l_sphyrion_pt";
+HAnimSite213.translation = new SFVec3f(new float[0.089,0.0575,-0.0943]);
 //HAnimSite visualization shape
-let TouchSensor215 = browser.currentScene.createNode("TouchSensor");
-TouchSensor215.description = "HAnimSite l_sphyrion";
-HAnimSite214.children = new MFNode();
+let TouchSensor214 = browser.currentScene.createNode("TouchSensor");
+TouchSensor214.description = "HAnimSite l_sphyrion";
+HAnimSite213.children = new MFNode();
 
-HAnimSite214.children[0] = TouchSensor215;
+HAnimSite213.children[0] = TouchSensor214;
 
-let Shape216 = browser.currentScene.createNode("Shape");
-Shape216.USE = "HAnimSiteShape";
-HAnimSite214.children[1] = Shape216;
+let Shape215 = browser.currentScene.createNode("Shape");
+Shape215.USE = "HAnimSiteShape";
+HAnimSite213.children[1] = Shape215;
 
-HAnimSegment184.children[9] = HAnimSite214;
+HAnimSegment183.children[9] = HAnimSite213;
 
-let HAnimSite217 = browser.currentScene.createNode("HAnimSite");
-HAnimSite217.name = "l_calcaneous_post_pt";
-HAnimSite217.DEF = "hanim_l_calcaneous_post_pt";
-HAnimSite217.translation = new SFVec3f(new float[0.0974,0.0259,-0.1171]);
+let HAnimSite216 = browser.currentScene.createNode("HAnimSite");
+HAnimSite216.name = "l_calcaneous_post_pt";
+HAnimSite216.DEF = "hanim_l_calcaneous_post_pt";
+HAnimSite216.translation = new SFVec3f(new float[0.0974,0.0259,-0.1171]);
 //HAnimSite visualization shape
-let TouchSensor218 = browser.currentScene.createNode("TouchSensor");
-TouchSensor218.description = "HAnimSite l_calcaneous_post";
-HAnimSite217.children = new MFNode();
+let TouchSensor217 = browser.currentScene.createNode("TouchSensor");
+TouchSensor217.description = "HAnimSite l_calcaneous_post";
+HAnimSite216.children = new MFNode();
 
-HAnimSite217.children[0] = TouchSensor218;
+HAnimSite216.children[0] = TouchSensor217;
 
-let Shape219 = browser.currentScene.createNode("Shape");
-Shape219.USE = "HAnimSiteShape";
-HAnimSite217.children[1] = Shape219;
+let Shape218 = browser.currentScene.createNode("Shape");
+Shape218.USE = "HAnimSiteShape";
+HAnimSite216.children[1] = Shape218;
 
-HAnimSegment184.children[10] = HAnimSite217;
+HAnimSegment183.children[10] = HAnimSite216;
 
-HAnimJoint183.children = new MFNode();
+HAnimJoint182.children = new MFNode();
 
-HAnimJoint183.children[0] = HAnimSegment184;
+HAnimJoint182.children[0] = HAnimSegment183;
 
-let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint220.name = "l_subtalar";
-HAnimJoint220.DEF = "hanim_l_subtalar";
-HAnimJoint220.center = new SFVec3f(new float[0.1086,0.0001,-0.0368]);
-HAnimJoint220.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment221 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment221.name = "l_midproximal";
-HAnimSegment221.DEF = "hanim_l_midproximal";
+let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint219.name = "l_subtalar";
+HAnimJoint219.DEF = "hanim_l_subtalar";
+HAnimJoint219.center = new SFVec3f(new float[0.1086,0.0001,-0.0368]);
+HAnimJoint219.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment220 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment220.name = "l_midproximal";
+HAnimSegment220.DEF = "hanim_l_midproximal";
 //<HAnimJoint name='l_subtalar'/> visualization sphere is placed within <HAnimSegment name='l_midproximal'/>
-let TouchSensor222 = browser.currentScene.createNode("TouchSensor");
-TouchSensor222.description = "HAnimJoint l_subtalar, HAnimSegment l_midproximal";
-HAnimSegment221.children = new MFNode();
+let TouchSensor221 = browser.currentScene.createNode("TouchSensor");
+TouchSensor221.description = "HAnimJoint l_subtalar, HAnimSegment l_midproximal";
+HAnimSegment220.children = new MFNode();
 
-HAnimSegment221.children[0] = TouchSensor222;
+HAnimSegment220.children[0] = TouchSensor221;
 
-let Transform223 = browser.currentScene.createNode("Transform");
-Transform223.translation = new SFVec3f(new float[0.1086,0.0001,-0.0368]);
-let Shape224 = browser.currentScene.createNode("Shape");
-Shape224.USE = "HAnimJointShape";
-Transform223.children = new MFNode();
+let Transform222 = browser.currentScene.createNode("Transform");
+Transform222.translation = new SFVec3f(new float[0.1086,0.0001,-0.0368]);
+let Shape223 = browser.currentScene.createNode("Shape");
+Shape223.USE = "HAnimJointShape";
+Transform222.children = new MFNode();
 
-Transform223.children[0] = Shape224;
+Transform222.children[0] = Shape223;
 
-HAnimSegment221.children[1] = Transform223;
+HAnimSegment220.children[1] = Transform222;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_subtalar'/> to <HAnimJoint name='l_midtarsal'/>
-let Shape225 = browser.currentScene.createNode("Shape");
-let LineSet226 = browser.currentScene.createNode("LineSet");
-LineSet226.vertexCount = new MFInt32(new int[2]);
-let Coordinate227 = browser.currentScene.createNode("Coordinate");
-Coordinate227.point = new MFVec3f(new float[0.1086,0.0001,-0.0368,0.1086,0.0001,0.0368]);
-LineSet226.coord = Coordinate227;
+let Shape224 = browser.currentScene.createNode("Shape");
+let LineSet225 = browser.currentScene.createNode("LineSet");
+LineSet225.vertexCount = new MFInt32(new int[2]);
+let Coordinate226 = browser.currentScene.createNode("Coordinate");
+Coordinate226.point = new MFVec3f(new float[0.1086,0.0001,-0.0368,0.1086,0.0001,0.0368]);
+LineSet225.coord = Coordinate226;
 
-let ColorRGBA228 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA228.USE = "HAnimSegmentLineColorRGBA";
-LineSet226.color = ColorRGBA228;
+let ColorRGBA227 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA227.USE = "HAnimSegmentLineColorRGBA";
+LineSet225.color = ColorRGBA227;
 
-Shape225.geometry = LineSet226;
+Shape224.geometry = LineSet225;
 
-HAnimSegment221.children[2] = Shape225;
+HAnimSegment220.children[2] = Shape224;
 
-HAnimJoint220.children = new MFNode();
+HAnimJoint219.children = new MFNode();
 
-HAnimJoint220.children[0] = HAnimSegment221;
+HAnimJoint219.children[0] = HAnimSegment220;
 
-let HAnimJoint229 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint229.name = "l_midtarsal";
-HAnimJoint229.DEF = "hanim_l_midtarsal";
-HAnimJoint229.center = new SFVec3f(new float[0.1086,0.0001,0.0368]);
-HAnimJoint229.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment230 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment230.name = "l_middistal";
-HAnimSegment230.DEF = "hanim_l_middistal";
+let HAnimJoint228 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint228.name = "l_midtarsal";
+HAnimJoint228.DEF = "hanim_l_midtarsal";
+HAnimJoint228.center = new SFVec3f(new float[0.1086,0.0001,0.0368]);
+HAnimJoint228.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment229 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment229.name = "l_middistal";
+HAnimSegment229.DEF = "hanim_l_middistal";
 //<HAnimJoint name='l_midtarsal'/> visualization sphere is placed within <HAnimSegment name='l_middistal'/>
-let TouchSensor231 = browser.currentScene.createNode("TouchSensor");
-TouchSensor231.description = "HAnimJoint l_midtarsal, HAnimSegment l_middistal";
-HAnimSegment230.children = new MFNode();
+let TouchSensor230 = browser.currentScene.createNode("TouchSensor");
+TouchSensor230.description = "HAnimJoint l_midtarsal, HAnimSegment l_middistal";
+HAnimSegment229.children = new MFNode();
 
-HAnimSegment230.children[0] = TouchSensor231;
+HAnimSegment229.children[0] = TouchSensor230;
 
-let Transform232 = browser.currentScene.createNode("Transform");
-Transform232.translation = new SFVec3f(new float[0.1086,0.0001,0.0368]);
-let Shape233 = browser.currentScene.createNode("Shape");
-Shape233.USE = "HAnimJointShape";
-Transform232.children = new MFNode();
+let Transform231 = browser.currentScene.createNode("Transform");
+Transform231.translation = new SFVec3f(new float[0.1086,0.0001,0.0368]);
+let Shape232 = browser.currentScene.createNode("Shape");
+Shape232.USE = "HAnimJointShape";
+Transform231.children = new MFNode();
 
-Transform232.children[0] = Shape233;
+Transform231.children[0] = Shape232;
 
-HAnimSegment230.children[1] = Transform232;
+HAnimSegment229.children[1] = Transform231;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_midtarsal'/> to <HAnimJoint name='l_metatarsal'/>
-let Shape234 = browser.currentScene.createNode("Shape");
-let LineSet235 = browser.currentScene.createNode("LineSet");
-LineSet235.vertexCount = new MFInt32(new int[2]);
-let Coordinate236 = browser.currentScene.createNode("Coordinate");
-Coordinate236.point = new MFVec3f(new float[0.1086,0.0001,0.0368,0.1086,0,0.0762]);
-LineSet235.coord = Coordinate236;
+let Shape233 = browser.currentScene.createNode("Shape");
+let LineSet234 = browser.currentScene.createNode("LineSet");
+LineSet234.vertexCount = new MFInt32(new int[2]);
+let Coordinate235 = browser.currentScene.createNode("Coordinate");
+Coordinate235.point = new MFVec3f(new float[0.1086,0.0001,0.0368,0.1086,0,0.0762]);
+LineSet234.coord = Coordinate235;
 
-let ColorRGBA237 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA237.USE = "HAnimSegmentLineColorRGBA";
-LineSet235.color = ColorRGBA237;
+let ColorRGBA236 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA236.USE = "HAnimSegmentLineColorRGBA";
+LineSet234.color = ColorRGBA236;
 
-Shape234.geometry = LineSet235;
+Shape233.geometry = LineSet234;
 
-HAnimSegment230.children[2] = Shape234;
+HAnimSegment229.children[2] = Shape233;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_midtarsal'/> to <HAnimSite name='l_metatarsal_pha1'/>
-let Shape238 = browser.currentScene.createNode("Shape");
-let LineSet239 = browser.currentScene.createNode("LineSet");
-LineSet239.vertexCount = new MFInt32(new int[2]);
-let Coordinate240 = browser.currentScene.createNode("Coordinate");
-Coordinate240.point = new MFVec3f(new float[0.1086,0.0001,0.0368,0.0816,0.0232,0.0106]);
-LineSet239.coord = Coordinate240;
+let Shape237 = browser.currentScene.createNode("Shape");
+let LineSet238 = browser.currentScene.createNode("LineSet");
+LineSet238.vertexCount = new MFInt32(new int[2]);
+let Coordinate239 = browser.currentScene.createNode("Coordinate");
+Coordinate239.point = new MFVec3f(new float[0.1086,0.0001,0.0368,0.0816,0.0232,0.0106]);
+LineSet238.coord = Coordinate239;
 
-let ColorRGBA241 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA241.USE = "HAnimSiteLineColorRGBA";
-LineSet239.color = ColorRGBA241;
+let ColorRGBA240 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA240.USE = "HAnimSiteLineColorRGBA";
+LineSet238.color = ColorRGBA240;
 
-Shape238.geometry = LineSet239;
+Shape237.geometry = LineSet238;
 
-HAnimSegment230.children[3] = Shape238;
+HAnimSegment229.children[3] = Shape237;
 
-let HAnimSite242 = browser.currentScene.createNode("HAnimSite");
-HAnimSite242.name = "l_metatarsal_pha1_pt";
-HAnimSite242.DEF = "hanim_l_metatarsal_pha1_pt";
-HAnimSite242.translation = new SFVec3f(new float[0.0816,0.0232,0.0106]);
+let HAnimSite241 = browser.currentScene.createNode("HAnimSite");
+HAnimSite241.name = "l_metatarsal_pha1_pt";
+HAnimSite241.DEF = "hanim_l_metatarsal_pha1_pt";
+HAnimSite241.translation = new SFVec3f(new float[0.0816,0.0232,0.0106]);
 //HAnimSite visualization shape
-let TouchSensor243 = browser.currentScene.createNode("TouchSensor");
-TouchSensor243.description = "HAnimSite l_metatarsal_pha1";
-HAnimSite242.children = new MFNode();
+let TouchSensor242 = browser.currentScene.createNode("TouchSensor");
+TouchSensor242.description = "HAnimSite l_metatarsal_pha1";
+HAnimSite241.children = new MFNode();
 
-HAnimSite242.children[0] = TouchSensor243;
+HAnimSite241.children[0] = TouchSensor242;
 
-let Shape244 = browser.currentScene.createNode("Shape");
-Shape244.USE = "HAnimSiteShape";
-HAnimSite242.children[1] = Shape244;
+let Shape243 = browser.currentScene.createNode("Shape");
+Shape243.USE = "HAnimSiteShape";
+HAnimSite241.children[1] = Shape243;
 
-HAnimSegment230.children[4] = HAnimSite242;
+HAnimSegment229.children[4] = HAnimSite241;
 
-HAnimJoint229.children = new MFNode();
+HAnimJoint228.children = new MFNode();
 
-HAnimJoint229.children[0] = HAnimSegment230;
+HAnimJoint228.children[0] = HAnimSegment229;
 
-let HAnimJoint245 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint245.name = "l_metatarsal";
-HAnimJoint245.DEF = "hanim_l_metatarsal";
-HAnimJoint245.center = new SFVec3f(new float[0.1086,0,0.0762]);
-HAnimJoint245.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment246 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment246.name = "l_forefoot";
-HAnimSegment246.DEF = "hanim_l_forefoot";
+let HAnimJoint244 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint244.name = "l_metatarsal";
+HAnimJoint244.DEF = "hanim_l_metatarsal";
+HAnimJoint244.center = new SFVec3f(new float[0.1086,0,0.0762]);
+HAnimJoint244.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment245 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment245.name = "l_forefoot";
+HAnimSegment245.DEF = "hanim_l_forefoot";
 //<HAnimJoint name='l_metatarsal'/> visualization sphere is placed within <HAnimSegment name='l_forefoot'/>
-let TouchSensor247 = browser.currentScene.createNode("TouchSensor");
-TouchSensor247.description = "HAnimJoint l_metatarsal, HAnimSegment l_forefoot";
-HAnimSegment246.children = new MFNode();
+let TouchSensor246 = browser.currentScene.createNode("TouchSensor");
+TouchSensor246.description = "HAnimJoint l_metatarsal, HAnimSegment l_forefoot";
+HAnimSegment245.children = new MFNode();
 
-HAnimSegment246.children[0] = TouchSensor247;
+HAnimSegment245.children[0] = TouchSensor246;
 
-let Transform248 = browser.currentScene.createNode("Transform");
-Transform248.translation = new SFVec3f(new float[0.1086,0,0.0762]);
-let Shape249 = browser.currentScene.createNode("Shape");
-Shape249.USE = "HAnimJointShape";
-Transform248.children = new MFNode();
+let Transform247 = browser.currentScene.createNode("Transform");
+Transform247.translation = new SFVec3f(new float[0.1086,0,0.0762]);
+let Shape248 = browser.currentScene.createNode("Shape");
+Shape248.USE = "HAnimJointShape";
+Transform247.children = new MFNode();
 
-Transform248.children[0] = Shape249;
+Transform247.children[0] = Shape248;
 
-HAnimSegment246.children[1] = Transform248;
+HAnimSegment245.children[1] = Transform247;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsal'/> to <HAnimSite name='l_forefoot_tip'/>
-let Shape250 = browser.currentScene.createNode("Shape");
-let LineSet251 = browser.currentScene.createNode("LineSet");
-LineSet251.vertexCount = new MFInt32(new int[2]);
-let Coordinate252 = browser.currentScene.createNode("Coordinate");
-Coordinate252.point = new MFVec3f(new float[0.1086,0,0.0762,0.1354,0.0016,0.1476]);
-LineSet251.coord = Coordinate252;
+let Shape249 = browser.currentScene.createNode("Shape");
+let LineSet250 = browser.currentScene.createNode("LineSet");
+LineSet250.vertexCount = new MFInt32(new int[2]);
+let Coordinate251 = browser.currentScene.createNode("Coordinate");
+Coordinate251.point = new MFVec3f(new float[0.1086,0,0.0762,0.1354,0.0016,0.1476]);
+LineSet250.coord = Coordinate251;
 
-let ColorRGBA253 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA253.USE = "HAnimSiteLineColorRGBA";
-LineSet251.color = ColorRGBA253;
+let ColorRGBA252 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA252.USE = "HAnimSiteLineColorRGBA";
+LineSet250.color = ColorRGBA252;
 
-Shape250.geometry = LineSet251;
+Shape249.geometry = LineSet250;
 
-HAnimSegment246.children[2] = Shape250;
+HAnimSegment245.children[2] = Shape249;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsal'/> to <HAnimSite name='l_metatarsal_pha5'/>
-let Shape254 = browser.currentScene.createNode("Shape");
-let LineSet255 = browser.currentScene.createNode("LineSet");
-LineSet255.vertexCount = new MFInt32(new int[2]);
-let Coordinate256 = browser.currentScene.createNode("Coordinate");
-Coordinate256.point = new MFVec3f(new float[0.1086,0,0.0762,0.1825,0.007,0.0928]);
-LineSet255.coord = Coordinate256;
+let Shape253 = browser.currentScene.createNode("Shape");
+let LineSet254 = browser.currentScene.createNode("LineSet");
+LineSet254.vertexCount = new MFInt32(new int[2]);
+let Coordinate255 = browser.currentScene.createNode("Coordinate");
+Coordinate255.point = new MFVec3f(new float[0.1086,0,0.0762,0.1825,0.007,0.0928]);
+LineSet254.coord = Coordinate255;
 
-let ColorRGBA257 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA257.USE = "HAnimSiteLineColorRGBA";
-LineSet255.color = ColorRGBA257;
+let ColorRGBA256 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA256.USE = "HAnimSiteLineColorRGBA";
+LineSet254.color = ColorRGBA256;
 
-Shape254.geometry = LineSet255;
+Shape253.geometry = LineSet254;
 
-HAnimSegment246.children[3] = Shape254;
+HAnimSegment245.children[3] = Shape253;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsal'/> to <HAnimSite name='l_digit2'/>
-let Shape258 = browser.currentScene.createNode("Shape");
-let LineSet259 = browser.currentScene.createNode("LineSet");
-LineSet259.vertexCount = new MFInt32(new int[2]);
-let Coordinate260 = browser.currentScene.createNode("Coordinate");
-Coordinate260.point = new MFVec3f(new float[0.1086,0,0.0762,0.1195,0.0079,0.1433]);
-LineSet259.coord = Coordinate260;
+let Shape257 = browser.currentScene.createNode("Shape");
+let LineSet258 = browser.currentScene.createNode("LineSet");
+LineSet258.vertexCount = new MFInt32(new int[2]);
+let Coordinate259 = browser.currentScene.createNode("Coordinate");
+Coordinate259.point = new MFVec3f(new float[0.1086,0,0.0762,0.1195,0.0079,0.1433]);
+LineSet258.coord = Coordinate259;
 
-let ColorRGBA261 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA261.USE = "HAnimSiteLineColorRGBA";
-LineSet259.color = ColorRGBA261;
+let ColorRGBA260 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA260.USE = "HAnimSiteLineColorRGBA";
+LineSet258.color = ColorRGBA260;
 
-Shape258.geometry = LineSet259;
+Shape257.geometry = LineSet258;
 
-HAnimSegment246.children[4] = Shape258;
+HAnimSegment245.children[4] = Shape257;
 
-let HAnimSite262 = browser.currentScene.createNode("HAnimSite");
-HAnimSite262.name = "l_forefoot_tip";
-HAnimSite262.DEF = "hanim_l_forefoot_tip";
-HAnimSite262.translation = new SFVec3f(new float[0.1354,0.0016,0.1476]);
+let HAnimSite261 = browser.currentScene.createNode("HAnimSite");
+HAnimSite261.name = "l_forefoot_tip";
+HAnimSite261.DEF = "hanim_l_forefoot_tip";
+HAnimSite261.translation = new SFVec3f(new float[0.1354,0.0016,0.1476]);
 //HAnimSite visualization shape
-let TouchSensor263 = browser.currentScene.createNode("TouchSensor");
-TouchSensor263.description = "HAnimSite l_forefoot_tip";
-HAnimSite262.children = new MFNode();
+let TouchSensor262 = browser.currentScene.createNode("TouchSensor");
+TouchSensor262.description = "HAnimSite l_forefoot_tip";
+HAnimSite261.children = new MFNode();
 
-HAnimSite262.children[0] = TouchSensor263;
+HAnimSite261.children[0] = TouchSensor262;
 
-let Shape264 = browser.currentScene.createNode("Shape");
-Shape264.USE = "HAnimSiteShape";
-HAnimSite262.children[1] = Shape264;
+let Shape263 = browser.currentScene.createNode("Shape");
+Shape263.USE = "HAnimSiteShape";
+HAnimSite261.children[1] = Shape263;
 
-HAnimSegment246.children[5] = HAnimSite262;
+HAnimSegment245.children[5] = HAnimSite261;
 
-let HAnimSite265 = browser.currentScene.createNode("HAnimSite");
-HAnimSite265.name = "l_metatarsal_pha5_pt";
-HAnimSite265.DEF = "hanim_l_metatarsal_pha5_pt";
-HAnimSite265.translation = new SFVec3f(new float[0.1825,0.007,0.0928]);
+let HAnimSite264 = browser.currentScene.createNode("HAnimSite");
+HAnimSite264.name = "l_metatarsal_pha5_pt";
+HAnimSite264.DEF = "hanim_l_metatarsal_pha5_pt";
+HAnimSite264.translation = new SFVec3f(new float[0.1825,0.007,0.0928]);
 //HAnimSite visualization shape
-let TouchSensor266 = browser.currentScene.createNode("TouchSensor");
-TouchSensor266.description = "HAnimSite l_metatarsal_pha5";
-HAnimSite265.children = new MFNode();
+let TouchSensor265 = browser.currentScene.createNode("TouchSensor");
+TouchSensor265.description = "HAnimSite l_metatarsal_pha5";
+HAnimSite264.children = new MFNode();
 
-HAnimSite265.children[0] = TouchSensor266;
+HAnimSite264.children[0] = TouchSensor265;
 
-let Shape267 = browser.currentScene.createNode("Shape");
-Shape267.USE = "HAnimSiteShape";
-HAnimSite265.children[1] = Shape267;
+let Shape266 = browser.currentScene.createNode("Shape");
+Shape266.USE = "HAnimSiteShape";
+HAnimSite264.children[1] = Shape266;
 
-HAnimSegment246.children[6] = HAnimSite265;
+HAnimSegment245.children[6] = HAnimSite264;
 
-let HAnimSite268 = browser.currentScene.createNode("HAnimSite");
-HAnimSite268.name = "l_digit2_pt";
-HAnimSite268.DEF = "hanim_l_digit2_pt";
-HAnimSite268.translation = new SFVec3f(new float[0.1195,0.0079,0.1433]);
+let HAnimSite267 = browser.currentScene.createNode("HAnimSite");
+HAnimSite267.name = "l_digit2_pt";
+HAnimSite267.DEF = "hanim_l_digit2_pt";
+HAnimSite267.translation = new SFVec3f(new float[0.1195,0.0079,0.1433]);
 //HAnimSite visualization shape
-let TouchSensor269 = browser.currentScene.createNode("TouchSensor");
-TouchSensor269.description = "HAnimSite l_digit2";
-HAnimSite268.children = new MFNode();
+let TouchSensor268 = browser.currentScene.createNode("TouchSensor");
+TouchSensor268.description = "HAnimSite l_digit2";
+HAnimSite267.children = new MFNode();
 
-HAnimSite268.children[0] = TouchSensor269;
+HAnimSite267.children[0] = TouchSensor268;
 
-let Shape270 = browser.currentScene.createNode("Shape");
-Shape270.USE = "HAnimSiteShape";
-HAnimSite268.children[1] = Shape270;
+let Shape269 = browser.currentScene.createNode("Shape");
+Shape269.USE = "HAnimSiteShape";
+HAnimSite267.children[1] = Shape269;
 
-HAnimSegment246.children[7] = HAnimSite268;
+HAnimSegment245.children[7] = HAnimSite267;
 
-HAnimJoint245.children = new MFNode();
+HAnimJoint244.children = new MFNode();
 
-HAnimJoint245.children[0] = HAnimSegment246;
+HAnimJoint244.children[0] = HAnimSegment245;
 
-HAnimJoint229.children[1] = HAnimJoint245;
+HAnimJoint228.children[1] = HAnimJoint244;
 
-HAnimJoint220.children[1] = HAnimJoint229;
+HAnimJoint219.children[1] = HAnimJoint228;
 
-HAnimJoint183.children[1] = HAnimJoint220;
+HAnimJoint182.children[1] = HAnimJoint219;
 
-HAnimJoint174.children[1] = HAnimJoint183;
+HAnimJoint173.children[1] = HAnimJoint182;
 
-HAnimJoint144.children[1] = HAnimJoint174;
+HAnimJoint143.children[1] = HAnimJoint173;
 
-HAnimJoint64.children[1] = HAnimJoint144;
+HAnimJoint63.children[1] = HAnimJoint143;
 
-let HAnimJoint271 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint271.name = "r_hip";
-HAnimJoint271.DEF = "hanim_r_hip";
-HAnimJoint271.center = new SFVec3f(new float[-0.0961,0.9124,-0.0001]);
-HAnimJoint271.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment272 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment272.name = "r_thigh";
-HAnimSegment272.DEF = "hanim_r_thigh";
+let HAnimJoint270 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint270.name = "r_hip";
+HAnimJoint270.DEF = "hanim_r_hip";
+HAnimJoint270.center = new SFVec3f(new float[-0.0961,0.9124,-0.0001]);
+HAnimJoint270.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment271 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment271.name = "r_thigh";
+HAnimSegment271.DEF = "hanim_r_thigh";
 //<HAnimJoint name='r_hip'/> visualization sphere is placed within <HAnimSegment name='r_thigh'/>
-let TouchSensor273 = browser.currentScene.createNode("TouchSensor");
-TouchSensor273.description = "HAnimJoint r_hip, HAnimSegment r_thigh";
-HAnimSegment272.children = new MFNode();
+let TouchSensor272 = browser.currentScene.createNode("TouchSensor");
+TouchSensor272.description = "HAnimJoint r_hip, HAnimSegment r_thigh";
+HAnimSegment271.children = new MFNode();
 
-HAnimSegment272.children[0] = TouchSensor273;
+HAnimSegment271.children[0] = TouchSensor272;
 
-let Transform274 = browser.currentScene.createNode("Transform");
-Transform274.translation = new SFVec3f(new float[-0.0961,0.9124,-0.0001]);
-let Shape275 = browser.currentScene.createNode("Shape");
-Shape275.USE = "HAnimJointShape";
-Transform274.children = new MFNode();
+let Transform273 = browser.currentScene.createNode("Transform");
+Transform273.translation = new SFVec3f(new float[-0.0961,0.9124,-0.0001]);
+let Shape274 = browser.currentScene.createNode("Shape");
+Shape274.USE = "HAnimJointShape";
+Transform273.children = new MFNode();
 
-Transform274.children[0] = Shape275;
+Transform273.children[0] = Shape274;
 
-HAnimSegment272.children[1] = Transform274;
+HAnimSegment271.children[1] = Transform273;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_hip'/> to <HAnimJoint name='r_knee'/>
-let Shape276 = browser.currentScene.createNode("Shape");
-let LineSet277 = browser.currentScene.createNode("LineSet");
-LineSet277.vertexCount = new MFInt32(new int[2]);
-let Coordinate278 = browser.currentScene.createNode("Coordinate");
-Coordinate278.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.104,0.4867,0.0308]);
-LineSet277.coord = Coordinate278;
+let Shape275 = browser.currentScene.createNode("Shape");
+let LineSet276 = browser.currentScene.createNode("LineSet");
+LineSet276.vertexCount = new MFInt32(new int[2]);
+let Coordinate277 = browser.currentScene.createNode("Coordinate");
+Coordinate277.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.104,0.4867,0.0308]);
+LineSet276.coord = Coordinate277;
 
-let ColorRGBA279 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA279.USE = "HAnimSegmentLineColorRGBA";
-LineSet277.color = ColorRGBA279;
+let ColorRGBA278 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA278.USE = "HAnimSegmentLineColorRGBA";
+LineSet276.color = ColorRGBA278;
 
-Shape276.geometry = LineSet277;
+Shape275.geometry = LineSet276;
 
-HAnimSegment272.children[2] = Shape276;
+HAnimSegment271.children[2] = Shape275;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_knee_crease'/>
-let Shape280 = browser.currentScene.createNode("Shape");
-let LineSet281 = browser.currentScene.createNode("LineSet");
-LineSet281.vertexCount = new MFInt32(new int[2]);
-let Coordinate282 = browser.currentScene.createNode("Coordinate");
-Coordinate282.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.0825,0.4932,-0.0326]);
-LineSet281.coord = Coordinate282;
+let Shape279 = browser.currentScene.createNode("Shape");
+let LineSet280 = browser.currentScene.createNode("LineSet");
+LineSet280.vertexCount = new MFInt32(new int[2]);
+let Coordinate281 = browser.currentScene.createNode("Coordinate");
+Coordinate281.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.0825,0.4932,-0.0326]);
+LineSet280.coord = Coordinate281;
 
-let ColorRGBA283 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA283.USE = "HAnimSiteLineColorRGBA";
-LineSet281.color = ColorRGBA283;
+let ColorRGBA282 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA282.USE = "HAnimSiteLineColorRGBA";
+LineSet280.color = ColorRGBA282;
 
-Shape280.geometry = LineSet281;
+Shape279.geometry = LineSet280;
 
-HAnimSegment272.children[3] = Shape280;
+HAnimSegment271.children[3] = Shape279;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_lateral_epicn'/>
-let Shape284 = browser.currentScene.createNode("Shape");
-let LineSet285 = browser.currentScene.createNode("LineSet");
-LineSet285.vertexCount = new MFInt32(new int[2]);
-let Coordinate286 = browser.currentScene.createNode("Coordinate");
-Coordinate286.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.1421,0.4992,0.031]);
-LineSet285.coord = Coordinate286;
+let Shape283 = browser.currentScene.createNode("Shape");
+let LineSet284 = browser.currentScene.createNode("LineSet");
+LineSet284.vertexCount = new MFInt32(new int[2]);
+let Coordinate285 = browser.currentScene.createNode("Coordinate");
+Coordinate285.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.1421,0.4992,0.031]);
+LineSet284.coord = Coordinate285;
 
-let ColorRGBA287 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA287.USE = "HAnimSiteLineColorRGBA";
-LineSet285.color = ColorRGBA287;
+let ColorRGBA286 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA286.USE = "HAnimSiteLineColorRGBA";
+LineSet284.color = ColorRGBA286;
 
-Shape284.geometry = LineSet285;
+Shape283.geometry = LineSet284;
 
-HAnimSegment272.children[4] = Shape284;
+HAnimSegment271.children[4] = Shape283;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_medial_epicn'/>
-let Shape288 = browser.currentScene.createNode("Shape");
-let LineSet289 = browser.currentScene.createNode("LineSet");
-LineSet289.vertexCount = new MFInt32(new int[2]);
-let Coordinate290 = browser.currentScene.createNode("Coordinate");
-Coordinate290.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.0221,0.5014,0.0289]);
-LineSet289.coord = Coordinate290;
+let Shape287 = browser.currentScene.createNode("Shape");
+let LineSet288 = browser.currentScene.createNode("LineSet");
+LineSet288.vertexCount = new MFInt32(new int[2]);
+let Coordinate289 = browser.currentScene.createNode("Coordinate");
+Coordinate289.point = new MFVec3f(new float[-0.0961,0.9124,-0.0001,-0.0221,0.5014,0.0289]);
+LineSet288.coord = Coordinate289;
 
-let ColorRGBA291 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA291.USE = "HAnimSiteLineColorRGBA";
-LineSet289.color = ColorRGBA291;
+let ColorRGBA290 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA290.USE = "HAnimSiteLineColorRGBA";
+LineSet288.color = ColorRGBA290;
 
-Shape288.geometry = LineSet289;
+Shape287.geometry = LineSet288;
 
-HAnimSegment272.children[5] = Shape288;
+HAnimSegment271.children[5] = Shape287;
 
-let HAnimSite292 = browser.currentScene.createNode("HAnimSite");
-HAnimSite292.name = "r_knee_crease_pt";
-HAnimSite292.DEF = "hanim_r_knee_crease_pt";
-HAnimSite292.translation = new SFVec3f(new float[-0.0825,0.4932,-0.0326]);
+let HAnimSite291 = browser.currentScene.createNode("HAnimSite");
+HAnimSite291.name = "r_knee_crease_pt";
+HAnimSite291.DEF = "hanim_r_knee_crease_pt";
+HAnimSite291.translation = new SFVec3f(new float[-0.0825,0.4932,-0.0326]);
 //HAnimSite visualization shape
-let TouchSensor293 = browser.currentScene.createNode("TouchSensor");
-TouchSensor293.description = "HAnimSite r_knee_crease";
-HAnimSite292.children = new MFNode();
+let TouchSensor292 = browser.currentScene.createNode("TouchSensor");
+TouchSensor292.description = "HAnimSite r_knee_crease";
+HAnimSite291.children = new MFNode();
 
-HAnimSite292.children[0] = TouchSensor293;
+HAnimSite291.children[0] = TouchSensor292;
 
-let Shape294 = browser.currentScene.createNode("Shape");
-Shape294.USE = "HAnimSiteShape";
-HAnimSite292.children[1] = Shape294;
+let Shape293 = browser.currentScene.createNode("Shape");
+Shape293.USE = "HAnimSiteShape";
+HAnimSite291.children[1] = Shape293;
 
-HAnimSegment272.children[6] = HAnimSite292;
+HAnimSegment271.children[6] = HAnimSite291;
 
-let HAnimSite295 = browser.currentScene.createNode("HAnimSite");
-HAnimSite295.name = "r_femoral_lateral_epicn_pt";
-HAnimSite295.DEF = "hanim_r_femoral_lateral_epicn_pt";
-HAnimSite295.translation = new SFVec3f(new float[-0.1421,0.4992,0.031]);
+let HAnimSite294 = browser.currentScene.createNode("HAnimSite");
+HAnimSite294.name = "r_femoral_lateral_epicn_pt";
+HAnimSite294.DEF = "hanim_r_femoral_lateral_epicn_pt";
+HAnimSite294.translation = new SFVec3f(new float[-0.1421,0.4992,0.031]);
 //HAnimSite visualization shape
-let TouchSensor296 = browser.currentScene.createNode("TouchSensor");
-TouchSensor296.description = "HAnimSite r_femoral_lateral_epicn";
-HAnimSite295.children = new MFNode();
+let TouchSensor295 = browser.currentScene.createNode("TouchSensor");
+TouchSensor295.description = "HAnimSite r_femoral_lateral_epicn";
+HAnimSite294.children = new MFNode();
 
-HAnimSite295.children[0] = TouchSensor296;
+HAnimSite294.children[0] = TouchSensor295;
 
-let Shape297 = browser.currentScene.createNode("Shape");
-Shape297.USE = "HAnimSiteShape";
-HAnimSite295.children[1] = Shape297;
+let Shape296 = browser.currentScene.createNode("Shape");
+Shape296.USE = "HAnimSiteShape";
+HAnimSite294.children[1] = Shape296;
 
-HAnimSegment272.children[7] = HAnimSite295;
+HAnimSegment271.children[7] = HAnimSite294;
 
-let HAnimSite298 = browser.currentScene.createNode("HAnimSite");
-HAnimSite298.name = "r_femoral_medial_epicn_pt";
-HAnimSite298.DEF = "hanim_r_femoral_medial_epicn_pt";
-HAnimSite298.translation = new SFVec3f(new float[-0.0221,0.5014,0.0289]);
+let HAnimSite297 = browser.currentScene.createNode("HAnimSite");
+HAnimSite297.name = "r_femoral_medial_epicn_pt";
+HAnimSite297.DEF = "hanim_r_femoral_medial_epicn_pt";
+HAnimSite297.translation = new SFVec3f(new float[-0.0221,0.5014,0.0289]);
 //HAnimSite visualization shape
-let TouchSensor299 = browser.currentScene.createNode("TouchSensor");
-TouchSensor299.description = "HAnimSite r_femoral_medial_epicn";
-HAnimSite298.children = new MFNode();
+let TouchSensor298 = browser.currentScene.createNode("TouchSensor");
+TouchSensor298.description = "HAnimSite r_femoral_medial_epicn";
+HAnimSite297.children = new MFNode();
 
-HAnimSite298.children[0] = TouchSensor299;
+HAnimSite297.children[0] = TouchSensor298;
 
-let Shape300 = browser.currentScene.createNode("Shape");
-Shape300.USE = "HAnimSiteShape";
-HAnimSite298.children[1] = Shape300;
+let Shape299 = browser.currentScene.createNode("Shape");
+Shape299.USE = "HAnimSiteShape";
+HAnimSite297.children[1] = Shape299;
 
-HAnimSegment272.children[8] = HAnimSite298;
+HAnimSegment271.children[8] = HAnimSite297;
 
-HAnimJoint271.children = new MFNode();
+HAnimJoint270.children = new MFNode();
 
-HAnimJoint271.children[0] = HAnimSegment272;
+HAnimJoint270.children[0] = HAnimSegment271;
 
-let HAnimJoint301 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint301.name = "r_knee";
-HAnimJoint301.DEF = "hanim_r_knee";
-HAnimJoint301.center = new SFVec3f(new float[-0.104,0.4867,0.0308]);
-HAnimJoint301.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment302 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment302.name = "r_calf";
-HAnimSegment302.DEF = "hanim_r_calf";
+let HAnimJoint300 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint300.name = "r_knee";
+HAnimJoint300.DEF = "hanim_r_knee";
+HAnimJoint300.center = new SFVec3f(new float[-0.104,0.4867,0.0308]);
+HAnimJoint300.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment301 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment301.name = "r_calf";
+HAnimSegment301.DEF = "hanim_r_calf";
 //<HAnimJoint name='r_knee'/> visualization sphere is placed within <HAnimSegment name='r_calf'/>
-let TouchSensor303 = browser.currentScene.createNode("TouchSensor");
-TouchSensor303.description = "HAnimJoint r_knee, HAnimSegment r_calf";
-HAnimSegment302.children = new MFNode();
+let TouchSensor302 = browser.currentScene.createNode("TouchSensor");
+TouchSensor302.description = "HAnimJoint r_knee, HAnimSegment r_calf";
+HAnimSegment301.children = new MFNode();
 
-HAnimSegment302.children[0] = TouchSensor303;
+HAnimSegment301.children[0] = TouchSensor302;
 
-let Transform304 = browser.currentScene.createNode("Transform");
-Transform304.translation = new SFVec3f(new float[-0.104,0.4867,0.0308]);
-let Shape305 = browser.currentScene.createNode("Shape");
-Shape305.USE = "HAnimJointShape";
-Transform304.children = new MFNode();
+let Transform303 = browser.currentScene.createNode("Transform");
+Transform303.translation = new SFVec3f(new float[-0.104,0.4867,0.0308]);
+let Shape304 = browser.currentScene.createNode("Shape");
+Shape304.USE = "HAnimJointShape";
+Transform303.children = new MFNode();
 
-Transform304.children[0] = Shape305;
+Transform303.children[0] = Shape304;
 
-HAnimSegment302.children[1] = Transform304;
+HAnimSegment301.children[1] = Transform303;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_knee'/> to <HAnimJoint name='r_ankle'/>
-let Shape306 = browser.currentScene.createNode("Shape");
-let LineSet307 = browser.currentScene.createNode("LineSet");
-LineSet307.vertexCount = new MFInt32(new int[2]);
-let Coordinate308 = browser.currentScene.createNode("Coordinate");
-Coordinate308.point = new MFVec3f(new float[-0.104,0.4867,0.0308,-0.1101,0.0656,-0.0736]);
-LineSet307.coord = Coordinate308;
+let Shape305 = browser.currentScene.createNode("Shape");
+let LineSet306 = browser.currentScene.createNode("LineSet");
+LineSet306.vertexCount = new MFInt32(new int[2]);
+let Coordinate307 = browser.currentScene.createNode("Coordinate");
+Coordinate307.point = new MFVec3f(new float[-0.104,0.4867,0.0308,-0.1101,0.0656,-0.0736]);
+LineSet306.coord = Coordinate307;
 
-let ColorRGBA309 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA309.USE = "HAnimSegmentLineColorRGBA";
-LineSet307.color = ColorRGBA309;
+let ColorRGBA308 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA308.USE = "HAnimSegmentLineColorRGBA";
+LineSet306.color = ColorRGBA308;
 
-Shape306.geometry = LineSet307;
+Shape305.geometry = LineSet306;
 
-HAnimSegment302.children[2] = Shape306;
+HAnimSegment301.children[2] = Shape305;
 
-HAnimJoint301.children = new MFNode();
+HAnimJoint300.children = new MFNode();
 
-HAnimJoint301.children[0] = HAnimSegment302;
+HAnimJoint300.children[0] = HAnimSegment301;
 
-let HAnimJoint310 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint310.name = "r_ankle";
-HAnimJoint310.DEF = "hanim_r_ankle";
-HAnimJoint310.center = new SFVec3f(new float[-0.1101,0.0656,-0.0736]);
-HAnimJoint310.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment311 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment311.name = "r_hindfoot";
-HAnimSegment311.DEF = "hanim_r_hindfoot";
+let HAnimJoint309 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint309.name = "r_ankle";
+HAnimJoint309.DEF = "hanim_r_ankle";
+HAnimJoint309.center = new SFVec3f(new float[-0.1101,0.0656,-0.0736]);
+HAnimJoint309.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment310 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment310.name = "r_hindfoot";
+HAnimSegment310.DEF = "hanim_r_hindfoot";
 //<HAnimJoint name='r_ankle'/> visualization sphere is placed within <HAnimSegment name='r_hindfoot'/>
-let TouchSensor312 = browser.currentScene.createNode("TouchSensor");
-TouchSensor312.description = "HAnimJoint r_ankle, HAnimSegment r_hindfoot";
-HAnimSegment311.children = new MFNode();
+let TouchSensor311 = browser.currentScene.createNode("TouchSensor");
+TouchSensor311.description = "HAnimJoint r_ankle, HAnimSegment r_hindfoot";
+HAnimSegment310.children = new MFNode();
 
-HAnimSegment311.children[0] = TouchSensor312;
+HAnimSegment310.children[0] = TouchSensor311;
 
-let Transform313 = browser.currentScene.createNode("Transform");
-Transform313.translation = new SFVec3f(new float[-0.1101,0.0656,-0.0736]);
-let Shape314 = browser.currentScene.createNode("Shape");
-Shape314.USE = "HAnimJointShape";
-Transform313.children = new MFNode();
+let Transform312 = browser.currentScene.createNode("Transform");
+Transform312.translation = new SFVec3f(new float[-0.1101,0.0656,-0.0736]);
+let Shape313 = browser.currentScene.createNode("Shape");
+Shape313.USE = "HAnimJointShape";
+Transform312.children = new MFNode();
 
-Transform313.children[0] = Shape314;
+Transform312.children[0] = Shape313;
 
-HAnimSegment311.children[1] = Transform313;
+HAnimSegment310.children[1] = Transform312;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_ankle'/> to <HAnimJoint name='r_subtalar'/>
-let Shape315 = browser.currentScene.createNode("Shape");
-let LineSet316 = browser.currentScene.createNode("LineSet");
-LineSet316.vertexCount = new MFInt32(new int[2]);
-let Coordinate317 = browser.currentScene.createNode("Coordinate");
-Coordinate317.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.1086,0.0001,-0.0368]);
-LineSet316.coord = Coordinate317;
+let Shape314 = browser.currentScene.createNode("Shape");
+let LineSet315 = browser.currentScene.createNode("LineSet");
+LineSet315.vertexCount = new MFInt32(new int[2]);
+let Coordinate316 = browser.currentScene.createNode("Coordinate");
+Coordinate316.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.1086,0.0001,-0.0368]);
+LineSet315.coord = Coordinate316;
 
-let ColorRGBA318 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA318.USE = "HAnimSegmentLineColorRGBA";
-LineSet316.color = ColorRGBA318;
+let ColorRGBA317 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA317.USE = "HAnimSegmentLineColorRGBA";
+LineSet315.color = ColorRGBA317;
 
-Shape315.geometry = LineSet316;
+Shape314.geometry = LineSet315;
 
-HAnimSegment311.children[2] = Shape315;
+HAnimSegment310.children[2] = Shape314;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ankle'/> to <HAnimSite name='r_lateral_malleolus'/>
-let Shape319 = browser.currentScene.createNode("Shape");
-let LineSet320 = browser.currentScene.createNode("LineSet");
-LineSet320.vertexCount = new MFInt32(new int[2]);
-let Coordinate321 = browser.currentScene.createNode("Coordinate");
-Coordinate321.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.1006,0.0658,-0.1075]);
-LineSet320.coord = Coordinate321;
+let Shape318 = browser.currentScene.createNode("Shape");
+let LineSet319 = browser.currentScene.createNode("LineSet");
+LineSet319.vertexCount = new MFInt32(new int[2]);
+let Coordinate320 = browser.currentScene.createNode("Coordinate");
+Coordinate320.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.1006,0.0658,-0.1075]);
+LineSet319.coord = Coordinate320;
 
-let ColorRGBA322 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA322.USE = "HAnimSiteLineColorRGBA";
-LineSet320.color = ColorRGBA322;
+let ColorRGBA321 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA321.USE = "HAnimSiteLineColorRGBA";
+LineSet319.color = ColorRGBA321;
 
-Shape319.geometry = LineSet320;
+Shape318.geometry = LineSet319;
 
-HAnimSegment311.children[3] = Shape319;
+HAnimSegment310.children[3] = Shape318;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ankle'/> to <HAnimSite name='r_medial_malleolus'/>
-let Shape323 = browser.currentScene.createNode("Shape");
-let LineSet324 = browser.currentScene.createNode("LineSet");
-LineSet324.vertexCount = new MFInt32(new int[2]);
-let Coordinate325 = browser.currentScene.createNode("Coordinate");
-Coordinate325.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0591,0.076,-0.0928]);
-LineSet324.coord = Coordinate325;
+let Shape322 = browser.currentScene.createNode("Shape");
+let LineSet323 = browser.currentScene.createNode("LineSet");
+LineSet323.vertexCount = new MFInt32(new int[2]);
+let Coordinate324 = browser.currentScene.createNode("Coordinate");
+Coordinate324.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0591,0.076,-0.0928]);
+LineSet323.coord = Coordinate324;
 
-let ColorRGBA326 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA326.USE = "HAnimSiteLineColorRGBA";
-LineSet324.color = ColorRGBA326;
+let ColorRGBA325 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA325.USE = "HAnimSiteLineColorRGBA";
+LineSet323.color = ColorRGBA325;
 
-Shape323.geometry = LineSet324;
+Shape322.geometry = LineSet323;
 
-HAnimSegment311.children[4] = Shape323;
+HAnimSegment310.children[4] = Shape322;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ankle'/> to <HAnimSite name='r_sphyrion'/>
-let Shape327 = browser.currentScene.createNode("Shape");
-let LineSet328 = browser.currentScene.createNode("LineSet");
-LineSet328.vertexCount = new MFInt32(new int[2]);
-let Coordinate329 = browser.currentScene.createNode("Coordinate");
-Coordinate329.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0603,0.061,-0.1002]);
-LineSet328.coord = Coordinate329;
+let Shape326 = browser.currentScene.createNode("Shape");
+let LineSet327 = browser.currentScene.createNode("LineSet");
+LineSet327.vertexCount = new MFInt32(new int[2]);
+let Coordinate328 = browser.currentScene.createNode("Coordinate");
+Coordinate328.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0603,0.061,-0.1002]);
+LineSet327.coord = Coordinate328;
 
-let ColorRGBA330 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA330.USE = "HAnimSiteLineColorRGBA";
-LineSet328.color = ColorRGBA330;
+let ColorRGBA329 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA329.USE = "HAnimSiteLineColorRGBA";
+LineSet327.color = ColorRGBA329;
 
-Shape327.geometry = LineSet328;
+Shape326.geometry = LineSet327;
 
-HAnimSegment311.children[5] = Shape327;
+HAnimSegment310.children[5] = Shape326;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ankle'/> to <HAnimSite name='r_calcaneous_post'/>
-let Shape331 = browser.currentScene.createNode("Shape");
-let LineSet332 = browser.currentScene.createNode("LineSet");
-LineSet332.vertexCount = new MFInt32(new int[2]);
-let Coordinate333 = browser.currentScene.createNode("Coordinate");
-Coordinate333.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0692,0.0297,-0.1221]);
-LineSet332.coord = Coordinate333;
+let Shape330 = browser.currentScene.createNode("Shape");
+let LineSet331 = browser.currentScene.createNode("LineSet");
+LineSet331.vertexCount = new MFInt32(new int[2]);
+let Coordinate332 = browser.currentScene.createNode("Coordinate");
+Coordinate332.point = new MFVec3f(new float[-0.1101,0.0656,-0.0736,-0.0692,0.0297,-0.1221]);
+LineSet331.coord = Coordinate332;
 
-let ColorRGBA334 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA334.USE = "HAnimSiteLineColorRGBA";
-LineSet332.color = ColorRGBA334;
+let ColorRGBA333 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA333.USE = "HAnimSiteLineColorRGBA";
+LineSet331.color = ColorRGBA333;
 
-Shape331.geometry = LineSet332;
+Shape330.geometry = LineSet331;
 
-HAnimSegment311.children[6] = Shape331;
+HAnimSegment310.children[6] = Shape330;
 
-let HAnimSite335 = browser.currentScene.createNode("HAnimSite");
-HAnimSite335.name = "r_lateral_malleolus_pt";
-HAnimSite335.DEF = "hanim_r_lateral_malleolus_pt";
-HAnimSite335.translation = new SFVec3f(new float[-0.1006,0.0658,-0.1075]);
+let HAnimSite334 = browser.currentScene.createNode("HAnimSite");
+HAnimSite334.name = "r_lateral_malleolus_pt";
+HAnimSite334.DEF = "hanim_r_lateral_malleolus_pt";
+HAnimSite334.translation = new SFVec3f(new float[-0.1006,0.0658,-0.1075]);
 //HAnimSite visualization shape
-let TouchSensor336 = browser.currentScene.createNode("TouchSensor");
-TouchSensor336.description = "HAnimSite r_lateral_malleolus";
-HAnimSite335.children = new MFNode();
+let TouchSensor335 = browser.currentScene.createNode("TouchSensor");
+TouchSensor335.description = "HAnimSite r_lateral_malleolus";
+HAnimSite334.children = new MFNode();
 
-HAnimSite335.children[0] = TouchSensor336;
+HAnimSite334.children[0] = TouchSensor335;
 
-let Shape337 = browser.currentScene.createNode("Shape");
-Shape337.USE = "HAnimSiteShape";
-HAnimSite335.children[1] = Shape337;
+let Shape336 = browser.currentScene.createNode("Shape");
+Shape336.USE = "HAnimSiteShape";
+HAnimSite334.children[1] = Shape336;
 
-HAnimSegment311.children[7] = HAnimSite335;
+HAnimSegment310.children[7] = HAnimSite334;
 
-let HAnimSite338 = browser.currentScene.createNode("HAnimSite");
-HAnimSite338.name = "r_medial_malleolus_pt";
-HAnimSite338.DEF = "hanim_r_medial_malleolus_pt";
-HAnimSite338.translation = new SFVec3f(new float[-0.0591,0.076,-0.0928]);
+let HAnimSite337 = browser.currentScene.createNode("HAnimSite");
+HAnimSite337.name = "r_medial_malleolus_pt";
+HAnimSite337.DEF = "hanim_r_medial_malleolus_pt";
+HAnimSite337.translation = new SFVec3f(new float[-0.0591,0.076,-0.0928]);
 //HAnimSite visualization shape
-let TouchSensor339 = browser.currentScene.createNode("TouchSensor");
-TouchSensor339.description = "HAnimSite r_medial_malleolus";
-HAnimSite338.children = new MFNode();
+let TouchSensor338 = browser.currentScene.createNode("TouchSensor");
+TouchSensor338.description = "HAnimSite r_medial_malleolus";
+HAnimSite337.children = new MFNode();
 
-HAnimSite338.children[0] = TouchSensor339;
+HAnimSite337.children[0] = TouchSensor338;
 
-let Shape340 = browser.currentScene.createNode("Shape");
-Shape340.USE = "HAnimSiteShape";
-HAnimSite338.children[1] = Shape340;
+let Shape339 = browser.currentScene.createNode("Shape");
+Shape339.USE = "HAnimSiteShape";
+HAnimSite337.children[1] = Shape339;
 
-HAnimSegment311.children[8] = HAnimSite338;
+HAnimSegment310.children[8] = HAnimSite337;
 
-let HAnimSite341 = browser.currentScene.createNode("HAnimSite");
-HAnimSite341.name = "r_sphyrion_pt";
-HAnimSite341.DEF = "hanim_r_sphyrion_pt";
-HAnimSite341.translation = new SFVec3f(new float[-0.0603,0.061,-0.1002]);
+let HAnimSite340 = browser.currentScene.createNode("HAnimSite");
+HAnimSite340.name = "r_sphyrion_pt";
+HAnimSite340.DEF = "hanim_r_sphyrion_pt";
+HAnimSite340.translation = new SFVec3f(new float[-0.0603,0.061,-0.1002]);
 //HAnimSite visualization shape
-let TouchSensor342 = browser.currentScene.createNode("TouchSensor");
-TouchSensor342.description = "HAnimSite r_sphyrion";
-HAnimSite341.children = new MFNode();
+let TouchSensor341 = browser.currentScene.createNode("TouchSensor");
+TouchSensor341.description = "HAnimSite r_sphyrion";
+HAnimSite340.children = new MFNode();
 
-HAnimSite341.children[0] = TouchSensor342;
+HAnimSite340.children[0] = TouchSensor341;
 
-let Shape343 = browser.currentScene.createNode("Shape");
-Shape343.USE = "HAnimSiteShape";
-HAnimSite341.children[1] = Shape343;
+let Shape342 = browser.currentScene.createNode("Shape");
+Shape342.USE = "HAnimSiteShape";
+HAnimSite340.children[1] = Shape342;
 
-HAnimSegment311.children[9] = HAnimSite341;
+HAnimSegment310.children[9] = HAnimSite340;
 
-let HAnimSite344 = browser.currentScene.createNode("HAnimSite");
-HAnimSite344.name = "r_calcaneous_post_pt";
-HAnimSite344.DEF = "hanim_r_calcaneous_post_pt";
-HAnimSite344.translation = new SFVec3f(new float[-0.0692,0.0297,-0.1221]);
+let HAnimSite343 = browser.currentScene.createNode("HAnimSite");
+HAnimSite343.name = "r_calcaneous_post_pt";
+HAnimSite343.DEF = "hanim_r_calcaneous_post_pt";
+HAnimSite343.translation = new SFVec3f(new float[-0.0692,0.0297,-0.1221]);
 //HAnimSite visualization shape
-let TouchSensor345 = browser.currentScene.createNode("TouchSensor");
-TouchSensor345.description = "HAnimSite r_calcaneous_post";
-HAnimSite344.children = new MFNode();
+let TouchSensor344 = browser.currentScene.createNode("TouchSensor");
+TouchSensor344.description = "HAnimSite r_calcaneous_post";
+HAnimSite343.children = new MFNode();
 
-HAnimSite344.children[0] = TouchSensor345;
+HAnimSite343.children[0] = TouchSensor344;
 
-let Shape346 = browser.currentScene.createNode("Shape");
-Shape346.USE = "HAnimSiteShape";
-HAnimSite344.children[1] = Shape346;
+let Shape345 = browser.currentScene.createNode("Shape");
+Shape345.USE = "HAnimSiteShape";
+HAnimSite343.children[1] = Shape345;
 
-HAnimSegment311.children[10] = HAnimSite344;
+HAnimSegment310.children[10] = HAnimSite343;
 
-HAnimJoint310.children = new MFNode();
+HAnimJoint309.children = new MFNode();
 
-HAnimJoint310.children[0] = HAnimSegment311;
+HAnimJoint309.children[0] = HAnimSegment310;
 
-let HAnimJoint347 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint347.name = "r_subtalar";
-HAnimJoint347.DEF = "hanim_r_subtalar";
-HAnimJoint347.center = new SFVec3f(new float[-0.1086,0.0001,-0.0368]);
-HAnimJoint347.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment348 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment348.name = "r_midproximal";
-HAnimSegment348.DEF = "hanim_r_midproximal";
+let HAnimJoint346 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint346.name = "r_subtalar";
+HAnimJoint346.DEF = "hanim_r_subtalar";
+HAnimJoint346.center = new SFVec3f(new float[-0.1086,0.0001,-0.0368]);
+HAnimJoint346.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment347 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment347.name = "r_midproximal";
+HAnimSegment347.DEF = "hanim_r_midproximal";
 //<HAnimJoint name='r_subtalar'/> visualization sphere is placed within <HAnimSegment name='r_midproximal'/>
-let TouchSensor349 = browser.currentScene.createNode("TouchSensor");
-TouchSensor349.description = "HAnimJoint r_subtalar, HAnimSegment r_midproximal";
-HAnimSegment348.children = new MFNode();
+let TouchSensor348 = browser.currentScene.createNode("TouchSensor");
+TouchSensor348.description = "HAnimJoint r_subtalar, HAnimSegment r_midproximal";
+HAnimSegment347.children = new MFNode();
 
-HAnimSegment348.children[0] = TouchSensor349;
+HAnimSegment347.children[0] = TouchSensor348;
 
-let Transform350 = browser.currentScene.createNode("Transform");
-Transform350.translation = new SFVec3f(new float[-0.1086,0.0001,-0.0368]);
-let Shape351 = browser.currentScene.createNode("Shape");
-Shape351.USE = "HAnimJointShape";
-Transform350.children = new MFNode();
+let Transform349 = browser.currentScene.createNode("Transform");
+Transform349.translation = new SFVec3f(new float[-0.1086,0.0001,-0.0368]);
+let Shape350 = browser.currentScene.createNode("Shape");
+Shape350.USE = "HAnimJointShape";
+Transform349.children = new MFNode();
 
-Transform350.children[0] = Shape351;
+Transform349.children[0] = Shape350;
 
-HAnimSegment348.children[1] = Transform350;
+HAnimSegment347.children[1] = Transform349;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_subtalar'/> to <HAnimJoint name='r_midtarsal'/>
-let Shape352 = browser.currentScene.createNode("Shape");
-let LineSet353 = browser.currentScene.createNode("LineSet");
-LineSet353.vertexCount = new MFInt32(new int[2]);
-let Coordinate354 = browser.currentScene.createNode("Coordinate");
-Coordinate354.point = new MFVec3f(new float[-0.1086,0.0001,-0.0368,-0.1086,0.0001,0.0368]);
-LineSet353.coord = Coordinate354;
+let Shape351 = browser.currentScene.createNode("Shape");
+let LineSet352 = browser.currentScene.createNode("LineSet");
+LineSet352.vertexCount = new MFInt32(new int[2]);
+let Coordinate353 = browser.currentScene.createNode("Coordinate");
+Coordinate353.point = new MFVec3f(new float[-0.1086,0.0001,-0.0368,-0.1086,0.0001,0.0368]);
+LineSet352.coord = Coordinate353;
 
-let ColorRGBA355 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA355.USE = "HAnimSegmentLineColorRGBA";
-LineSet353.color = ColorRGBA355;
+let ColorRGBA354 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA354.USE = "HAnimSegmentLineColorRGBA";
+LineSet352.color = ColorRGBA354;
 
-Shape352.geometry = LineSet353;
+Shape351.geometry = LineSet352;
 
-HAnimSegment348.children[2] = Shape352;
+HAnimSegment347.children[2] = Shape351;
 
-HAnimJoint347.children = new MFNode();
+HAnimJoint346.children = new MFNode();
 
-HAnimJoint347.children[0] = HAnimSegment348;
+HAnimJoint346.children[0] = HAnimSegment347;
 
-let HAnimJoint356 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint356.name = "r_midtarsal";
-HAnimJoint356.DEF = "hanim_r_midtarsal";
-HAnimJoint356.center = new SFVec3f(new float[-0.1086,0.0001,0.0368]);
-HAnimJoint356.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment357 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment357.name = "r_middistal";
-HAnimSegment357.DEF = "hanim_r_middistal";
+let HAnimJoint355 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint355.name = "r_midtarsal";
+HAnimJoint355.DEF = "hanim_r_midtarsal";
+HAnimJoint355.center = new SFVec3f(new float[-0.1086,0.0001,0.0368]);
+HAnimJoint355.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment356 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment356.name = "r_middistal";
+HAnimSegment356.DEF = "hanim_r_middistal";
 //<HAnimJoint name='r_midtarsal'/> visualization sphere is placed within <HAnimSegment name='r_middistal'/>
-let TouchSensor358 = browser.currentScene.createNode("TouchSensor");
-TouchSensor358.description = "HAnimJoint r_midtarsal, HAnimSegment r_middistal";
-HAnimSegment357.children = new MFNode();
+let TouchSensor357 = browser.currentScene.createNode("TouchSensor");
+TouchSensor357.description = "HAnimJoint r_midtarsal, HAnimSegment r_middistal";
+HAnimSegment356.children = new MFNode();
 
-HAnimSegment357.children[0] = TouchSensor358;
+HAnimSegment356.children[0] = TouchSensor357;
 
-let Transform359 = browser.currentScene.createNode("Transform");
-Transform359.translation = new SFVec3f(new float[-0.1086,0.0001,0.0368]);
-let Shape360 = browser.currentScene.createNode("Shape");
-Shape360.USE = "HAnimJointShape";
-Transform359.children = new MFNode();
+let Transform358 = browser.currentScene.createNode("Transform");
+Transform358.translation = new SFVec3f(new float[-0.1086,0.0001,0.0368]);
+let Shape359 = browser.currentScene.createNode("Shape");
+Shape359.USE = "HAnimJointShape";
+Transform358.children = new MFNode();
 
-Transform359.children[0] = Shape360;
+Transform358.children[0] = Shape359;
 
-HAnimSegment357.children[1] = Transform359;
+HAnimSegment356.children[1] = Transform358;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_midtarsal'/> to <HAnimJoint name='r_metatarsal'/>
-let Shape361 = browser.currentScene.createNode("Shape");
-let LineSet362 = browser.currentScene.createNode("LineSet");
-LineSet362.vertexCount = new MFInt32(new int[2]);
-let Coordinate363 = browser.currentScene.createNode("Coordinate");
-Coordinate363.point = new MFVec3f(new float[-0.1086,0.0001,0.0368,-0.1086,0,0.0762]);
-LineSet362.coord = Coordinate363;
+let Shape360 = browser.currentScene.createNode("Shape");
+let LineSet361 = browser.currentScene.createNode("LineSet");
+LineSet361.vertexCount = new MFInt32(new int[2]);
+let Coordinate362 = browser.currentScene.createNode("Coordinate");
+Coordinate362.point = new MFVec3f(new float[-0.1086,0.0001,0.0368,-0.1086,0,0.0762]);
+LineSet361.coord = Coordinate362;
 
-let ColorRGBA364 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA364.USE = "HAnimSegmentLineColorRGBA";
-LineSet362.color = ColorRGBA364;
+let ColorRGBA363 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA363.USE = "HAnimSegmentLineColorRGBA";
+LineSet361.color = ColorRGBA363;
 
-Shape361.geometry = LineSet362;
+Shape360.geometry = LineSet361;
 
-HAnimSegment357.children[2] = Shape361;
+HAnimSegment356.children[2] = Shape360;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_midtarsal'/> to <HAnimSite name='r_metatarsal_pha1'/>
-let Shape365 = browser.currentScene.createNode("Shape");
-let LineSet366 = browser.currentScene.createNode("LineSet");
-LineSet366.vertexCount = new MFInt32(new int[2]);
-let Coordinate367 = browser.currentScene.createNode("Coordinate");
-Coordinate367.point = new MFVec3f(new float[-0.1086,0.0001,0.0368,-0.0521,0.026,0.0127]);
-LineSet366.coord = Coordinate367;
+let Shape364 = browser.currentScene.createNode("Shape");
+let LineSet365 = browser.currentScene.createNode("LineSet");
+LineSet365.vertexCount = new MFInt32(new int[2]);
+let Coordinate366 = browser.currentScene.createNode("Coordinate");
+Coordinate366.point = new MFVec3f(new float[-0.1086,0.0001,0.0368,-0.0521,0.026,0.0127]);
+LineSet365.coord = Coordinate366;
 
-let ColorRGBA368 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA368.USE = "HAnimSiteLineColorRGBA";
-LineSet366.color = ColorRGBA368;
+let ColorRGBA367 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA367.USE = "HAnimSiteLineColorRGBA";
+LineSet365.color = ColorRGBA367;
 
-Shape365.geometry = LineSet366;
+Shape364.geometry = LineSet365;
 
-HAnimSegment357.children[3] = Shape365;
+HAnimSegment356.children[3] = Shape364;
 
-let HAnimSite369 = browser.currentScene.createNode("HAnimSite");
-HAnimSite369.name = "r_metatarsal_pha1_pt";
-HAnimSite369.DEF = "hanim_r_metatarsal_pha1_pt";
-HAnimSite369.translation = new SFVec3f(new float[-0.0521,0.026,0.0127]);
+let HAnimSite368 = browser.currentScene.createNode("HAnimSite");
+HAnimSite368.name = "r_metatarsal_pha1_pt";
+HAnimSite368.DEF = "hanim_r_metatarsal_pha1_pt";
+HAnimSite368.translation = new SFVec3f(new float[-0.0521,0.026,0.0127]);
 //HAnimSite visualization shape
-let TouchSensor370 = browser.currentScene.createNode("TouchSensor");
-TouchSensor370.description = "HAnimSite r_metatarsal_pha1";
-HAnimSite369.children = new MFNode();
+let TouchSensor369 = browser.currentScene.createNode("TouchSensor");
+TouchSensor369.description = "HAnimSite r_metatarsal_pha1";
+HAnimSite368.children = new MFNode();
 
-HAnimSite369.children[0] = TouchSensor370;
+HAnimSite368.children[0] = TouchSensor369;
 
-let Shape371 = browser.currentScene.createNode("Shape");
-Shape371.USE = "HAnimSiteShape";
-HAnimSite369.children[1] = Shape371;
+let Shape370 = browser.currentScene.createNode("Shape");
+Shape370.USE = "HAnimSiteShape";
+HAnimSite368.children[1] = Shape370;
 
-HAnimSegment357.children[4] = HAnimSite369;
+HAnimSegment356.children[4] = HAnimSite368;
 
-HAnimJoint356.children = new MFNode();
+HAnimJoint355.children = new MFNode();
 
-HAnimJoint356.children[0] = HAnimSegment357;
+HAnimJoint355.children[0] = HAnimSegment356;
 
-let HAnimJoint372 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint372.name = "r_metatarsal";
-HAnimJoint372.DEF = "hanim_r_metatarsal";
-HAnimJoint372.center = new SFVec3f(new float[-0.1086,0,0.0762]);
-HAnimJoint372.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment373 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment373.name = "r_forefoot";
-HAnimSegment373.DEF = "hanim_r_forefoot";
+let HAnimJoint371 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint371.name = "r_metatarsal";
+HAnimJoint371.DEF = "hanim_r_metatarsal";
+HAnimJoint371.center = new SFVec3f(new float[-0.1086,0,0.0762]);
+HAnimJoint371.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment372 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment372.name = "r_forefoot";
+HAnimSegment372.DEF = "hanim_r_forefoot";
 //<HAnimJoint name='r_metatarsal'/> visualization sphere is placed within <HAnimSegment name='r_forefoot'/>
-let TouchSensor374 = browser.currentScene.createNode("TouchSensor");
-TouchSensor374.description = "HAnimJoint r_metatarsal, HAnimSegment r_forefoot";
-HAnimSegment373.children = new MFNode();
+let TouchSensor373 = browser.currentScene.createNode("TouchSensor");
+TouchSensor373.description = "HAnimJoint r_metatarsal, HAnimSegment r_forefoot";
+HAnimSegment372.children = new MFNode();
 
-HAnimSegment373.children[0] = TouchSensor374;
+HAnimSegment372.children[0] = TouchSensor373;
 
-let Transform375 = browser.currentScene.createNode("Transform");
-Transform375.translation = new SFVec3f(new float[-0.1086,0,0.0762]);
-let Shape376 = browser.currentScene.createNode("Shape");
-Shape376.USE = "HAnimJointShape";
-Transform375.children = new MFNode();
+let Transform374 = browser.currentScene.createNode("Transform");
+Transform374.translation = new SFVec3f(new float[-0.1086,0,0.0762]);
+let Shape375 = browser.currentScene.createNode("Shape");
+Shape375.USE = "HAnimJointShape";
+Transform374.children = new MFNode();
 
-Transform375.children[0] = Shape376;
+Transform374.children[0] = Shape375;
 
-HAnimSegment373.children[1] = Transform375;
+HAnimSegment372.children[1] = Transform374;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsal'/> to <HAnimSite name='r_forefoot_tip'/>
-let Shape377 = browser.currentScene.createNode("Shape");
-let LineSet378 = browser.currentScene.createNode("LineSet");
-LineSet378.vertexCount = new MFInt32(new int[2]);
-let Coordinate379 = browser.currentScene.createNode("Coordinate");
-Coordinate379.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.1043,0.0227,0.145]);
-LineSet378.coord = Coordinate379;
+let Shape376 = browser.currentScene.createNode("Shape");
+let LineSet377 = browser.currentScene.createNode("LineSet");
+LineSet377.vertexCount = new MFInt32(new int[2]);
+let Coordinate378 = browser.currentScene.createNode("Coordinate");
+Coordinate378.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.1043,0.0227,0.145]);
+LineSet377.coord = Coordinate378;
 
-let ColorRGBA380 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA380.USE = "HAnimSiteLineColorRGBA";
-LineSet378.color = ColorRGBA380;
+let ColorRGBA379 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA379.USE = "HAnimSiteLineColorRGBA";
+LineSet377.color = ColorRGBA379;
 
-Shape377.geometry = LineSet378;
+Shape376.geometry = LineSet377;
 
-HAnimSegment373.children[2] = Shape377;
+HAnimSegment372.children[2] = Shape376;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsal'/> to <HAnimSite name='r_metatarsal_pha5'/>
-let Shape381 = browser.currentScene.createNode("Shape");
-let LineSet382 = browser.currentScene.createNode("LineSet");
-LineSet382.vertexCount = new MFInt32(new int[2]);
-let Coordinate383 = browser.currentScene.createNode("Coordinate");
-Coordinate383.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.1523,0.0166,0.0895]);
-LineSet382.coord = Coordinate383;
+let Shape380 = browser.currentScene.createNode("Shape");
+let LineSet381 = browser.currentScene.createNode("LineSet");
+LineSet381.vertexCount = new MFInt32(new int[2]);
+let Coordinate382 = browser.currentScene.createNode("Coordinate");
+Coordinate382.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.1523,0.0166,0.0895]);
+LineSet381.coord = Coordinate382;
 
-let ColorRGBA384 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA384.USE = "HAnimSiteLineColorRGBA";
-LineSet382.color = ColorRGBA384;
+let ColorRGBA383 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA383.USE = "HAnimSiteLineColorRGBA";
+LineSet381.color = ColorRGBA383;
 
-Shape381.geometry = LineSet382;
+Shape380.geometry = LineSet381;
 
-HAnimSegment373.children[3] = Shape381;
+HAnimSegment372.children[3] = Shape380;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsal'/> to <HAnimSite name='r_digit2'/>
-let Shape385 = browser.currentScene.createNode("Shape");
-let LineSet386 = browser.currentScene.createNode("LineSet");
-LineSet386.vertexCount = new MFInt32(new int[2]);
-let Coordinate387 = browser.currentScene.createNode("Coordinate");
-Coordinate387.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.0883,0.0134,0.1383]);
-LineSet386.coord = Coordinate387;
+let Shape384 = browser.currentScene.createNode("Shape");
+let LineSet385 = browser.currentScene.createNode("LineSet");
+LineSet385.vertexCount = new MFInt32(new int[2]);
+let Coordinate386 = browser.currentScene.createNode("Coordinate");
+Coordinate386.point = new MFVec3f(new float[-0.1086,0,0.0762,-0.0883,0.0134,0.1383]);
+LineSet385.coord = Coordinate386;
 
-let ColorRGBA388 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA388.USE = "HAnimSiteLineColorRGBA";
-LineSet386.color = ColorRGBA388;
+let ColorRGBA387 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA387.USE = "HAnimSiteLineColorRGBA";
+LineSet385.color = ColorRGBA387;
 
-Shape385.geometry = LineSet386;
+Shape384.geometry = LineSet385;
 
-HAnimSegment373.children[4] = Shape385;
+HAnimSegment372.children[4] = Shape384;
 
-let HAnimSite389 = browser.currentScene.createNode("HAnimSite");
-HAnimSite389.name = "r_forefoot_tip";
-HAnimSite389.DEF = "hanim_r_forefoot_tip";
-HAnimSite389.translation = new SFVec3f(new float[-0.1043,0.0227,0.145]);
+let HAnimSite388 = browser.currentScene.createNode("HAnimSite");
+HAnimSite388.name = "r_forefoot_tip";
+HAnimSite388.DEF = "hanim_r_forefoot_tip";
+HAnimSite388.translation = new SFVec3f(new float[-0.1043,0.0227,0.145]);
 //HAnimSite visualization shape
-let TouchSensor390 = browser.currentScene.createNode("TouchSensor");
-TouchSensor390.description = "HAnimSite r_forefoot_tip";
-HAnimSite389.children = new MFNode();
+let TouchSensor389 = browser.currentScene.createNode("TouchSensor");
+TouchSensor389.description = "HAnimSite r_forefoot_tip";
+HAnimSite388.children = new MFNode();
 
-HAnimSite389.children[0] = TouchSensor390;
+HAnimSite388.children[0] = TouchSensor389;
 
-let Shape391 = browser.currentScene.createNode("Shape");
-Shape391.USE = "HAnimSiteShape";
-HAnimSite389.children[1] = Shape391;
+let Shape390 = browser.currentScene.createNode("Shape");
+Shape390.USE = "HAnimSiteShape";
+HAnimSite388.children[1] = Shape390;
 
-HAnimSegment373.children[5] = HAnimSite389;
+HAnimSegment372.children[5] = HAnimSite388;
 
-let HAnimSite392 = browser.currentScene.createNode("HAnimSite");
-HAnimSite392.name = "r_metatarsal_pha5_pt";
-HAnimSite392.DEF = "hanim_r_metatarsal_pha5_pt";
-HAnimSite392.translation = new SFVec3f(new float[-0.1523,0.0166,0.0895]);
+let HAnimSite391 = browser.currentScene.createNode("HAnimSite");
+HAnimSite391.name = "r_metatarsal_pha5_pt";
+HAnimSite391.DEF = "hanim_r_metatarsal_pha5_pt";
+HAnimSite391.translation = new SFVec3f(new float[-0.1523,0.0166,0.0895]);
 //HAnimSite visualization shape
-let TouchSensor393 = browser.currentScene.createNode("TouchSensor");
-TouchSensor393.description = "HAnimSite r_metatarsal_pha5";
-HAnimSite392.children = new MFNode();
+let TouchSensor392 = browser.currentScene.createNode("TouchSensor");
+TouchSensor392.description = "HAnimSite r_metatarsal_pha5";
+HAnimSite391.children = new MFNode();
 
-HAnimSite392.children[0] = TouchSensor393;
+HAnimSite391.children[0] = TouchSensor392;
 
-let Shape394 = browser.currentScene.createNode("Shape");
-Shape394.USE = "HAnimSiteShape";
-HAnimSite392.children[1] = Shape394;
+let Shape393 = browser.currentScene.createNode("Shape");
+Shape393.USE = "HAnimSiteShape";
+HAnimSite391.children[1] = Shape393;
 
-HAnimSegment373.children[6] = HAnimSite392;
+HAnimSegment372.children[6] = HAnimSite391;
 
-let HAnimSite395 = browser.currentScene.createNode("HAnimSite");
-HAnimSite395.name = "r_digit2_pt";
-HAnimSite395.DEF = "hanim_r_digit2_pt";
-HAnimSite395.translation = new SFVec3f(new float[-0.0883,0.0134,0.1383]);
+let HAnimSite394 = browser.currentScene.createNode("HAnimSite");
+HAnimSite394.name = "r_digit2_pt";
+HAnimSite394.DEF = "hanim_r_digit2_pt";
+HAnimSite394.translation = new SFVec3f(new float[-0.0883,0.0134,0.1383]);
 //HAnimSite visualization shape
-let TouchSensor396 = browser.currentScene.createNode("TouchSensor");
-TouchSensor396.description = "HAnimSite r_digit2";
-HAnimSite395.children = new MFNode();
+let TouchSensor395 = browser.currentScene.createNode("TouchSensor");
+TouchSensor395.description = "HAnimSite r_digit2";
+HAnimSite394.children = new MFNode();
 
-HAnimSite395.children[0] = TouchSensor396;
+HAnimSite394.children[0] = TouchSensor395;
 
-let Shape397 = browser.currentScene.createNode("Shape");
-Shape397.USE = "HAnimSiteShape";
-HAnimSite395.children[1] = Shape397;
+let Shape396 = browser.currentScene.createNode("Shape");
+Shape396.USE = "HAnimSiteShape";
+HAnimSite394.children[1] = Shape396;
 
-HAnimSegment373.children[7] = HAnimSite395;
+HAnimSegment372.children[7] = HAnimSite394;
 
-HAnimJoint372.children = new MFNode();
+HAnimJoint371.children = new MFNode();
 
-HAnimJoint372.children[0] = HAnimSegment373;
+HAnimJoint371.children[0] = HAnimSegment372;
 
-HAnimJoint356.children[1] = HAnimJoint372;
+HAnimJoint355.children[1] = HAnimJoint371;
 
-HAnimJoint347.children[1] = HAnimJoint356;
+HAnimJoint346.children[1] = HAnimJoint355;
 
-HAnimJoint310.children[1] = HAnimJoint347;
+HAnimJoint309.children[1] = HAnimJoint346;
 
-HAnimJoint301.children[1] = HAnimJoint310;
+HAnimJoint300.children[1] = HAnimJoint309;
 
-HAnimJoint271.children[1] = HAnimJoint301;
+HAnimJoint270.children[1] = HAnimJoint300;
 
-HAnimJoint64.children[2] = HAnimJoint271;
+HAnimJoint63.children[2] = HAnimJoint270;
 
-HAnimJoint48.children[1] = HAnimJoint64;
+HAnimJoint47.children[1] = HAnimJoint63;
 
-let HAnimJoint398 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint398.name = "vl5";
-HAnimJoint398.DEF = "hanim_vl5";
-HAnimJoint398.center = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
-HAnimJoint398.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment399 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment399.name = "l5";
-HAnimSegment399.DEF = "hanim_l5";
+let HAnimJoint397 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint397.name = "vl5";
+HAnimJoint397.DEF = "hanim_vl5";
+HAnimJoint397.center = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
+HAnimJoint397.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment398 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment398.name = "l5";
+HAnimSegment398.DEF = "hanim_l5";
 //<HAnimJoint name='vl5'/> visualization sphere is placed within <HAnimSegment name='l5'/>
-let TouchSensor400 = browser.currentScene.createNode("TouchSensor");
-TouchSensor400.description = "HAnimJoint vl5, HAnimSegment l5";
-HAnimSegment399.children = new MFNode();
+let TouchSensor399 = browser.currentScene.createNode("TouchSensor");
+TouchSensor399.description = "HAnimJoint vl5, HAnimSegment l5";
+HAnimSegment398.children = new MFNode();
 
-HAnimSegment399.children[0] = TouchSensor400;
+HAnimSegment398.children[0] = TouchSensor399;
 
-let Transform401 = browser.currentScene.createNode("Transform");
-Transform401.translation = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
-let Shape402 = browser.currentScene.createNode("Shape");
-Shape402.USE = "HAnimJointShape";
-Transform401.children = new MFNode();
+let Transform400 = browser.currentScene.createNode("Transform");
+Transform400.translation = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
+let Shape401 = browser.currentScene.createNode("Shape");
+Shape401.USE = "HAnimJointShape";
+Transform400.children = new MFNode();
 
-Transform401.children[0] = Shape402;
+Transform400.children[0] = Shape401;
 
-HAnimSegment399.children[1] = Transform401;
+HAnimSegment398.children[1] = Transform400;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vl5'/> to <HAnimJoint name='vl4'/>
-let Shape403 = browser.currentScene.createNode("Shape");
-let LineSet404 = browser.currentScene.createNode("LineSet");
-LineSet404.vertexCount = new MFInt32(new int[2]);
-let Coordinate405 = browser.currentScene.createNode("Coordinate");
-Coordinate405.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787]);
-LineSet404.coord = Coordinate405;
+let Shape402 = browser.currentScene.createNode("Shape");
+let LineSet403 = browser.currentScene.createNode("LineSet");
+LineSet403.vertexCount = new MFInt32(new int[2]);
+let Coordinate404 = browser.currentScene.createNode("Coordinate");
+Coordinate404.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787]);
+LineSet403.coord = Coordinate404;
 
-let ColorRGBA406 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA406.USE = "HAnimSegmentLineColorRGBA";
-LineSet404.color = ColorRGBA406;
+let ColorRGBA405 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA405.USE = "HAnimSegmentLineColorRGBA";
+LineSet403.color = ColorRGBA405;
 
-Shape403.geometry = LineSet404;
+Shape402.geometry = LineSet403;
 
-HAnimSegment399.children[2] = Shape403;
+HAnimSegment398.children[2] = Shape402;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='waist_preferred_post'/>
-let Shape407 = browser.currentScene.createNode("Shape");
-let LineSet408 = browser.currentScene.createNode("LineSet");
-LineSet408.vertexCount = new MFInt32(new int[2]);
-let Coordinate409 = browser.currentScene.createNode("Coordinate");
-Coordinate409.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0,1.0915,-0.1091]);
-LineSet408.coord = Coordinate409;
+let Shape406 = browser.currentScene.createNode("Shape");
+let LineSet407 = browser.currentScene.createNode("LineSet");
+LineSet407.vertexCount = new MFInt32(new int[2]);
+let Coordinate408 = browser.currentScene.createNode("Coordinate");
+Coordinate408.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0,1.0915,-0.1091]);
+LineSet407.coord = Coordinate408;
 
-let ColorRGBA410 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA410.USE = "HAnimSiteLineColorRGBA";
-LineSet408.color = ColorRGBA410;
+let ColorRGBA409 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA409.USE = "HAnimSiteLineColorRGBA";
+LineSet407.color = ColorRGBA409;
 
-Shape407.geometry = LineSet408;
+Shape406.geometry = LineSet407;
 
-HAnimSegment399.children[3] = Shape407;
+HAnimSegment398.children[3] = Shape406;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='navel'/>
-let Shape411 = browser.currentScene.createNode("Shape");
-let LineSet412 = browser.currentScene.createNode("LineSet");
-LineSet412.vertexCount = new MFInt32(new int[2]);
-let Coordinate413 = browser.currentScene.createNode("Coordinate");
-Coordinate413.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0069,1.0966,0.1017]);
-LineSet412.coord = Coordinate413;
+let Shape410 = browser.currentScene.createNode("Shape");
+let LineSet411 = browser.currentScene.createNode("LineSet");
+LineSet411.vertexCount = new MFInt32(new int[2]);
+let Coordinate412 = browser.currentScene.createNode("Coordinate");
+Coordinate412.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0069,1.0966,0.1017]);
+LineSet411.coord = Coordinate412;
 
-let ColorRGBA414 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA414.USE = "HAnimSiteLineColorRGBA";
-LineSet412.color = ColorRGBA414;
+let ColorRGBA413 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA413.USE = "HAnimSiteLineColorRGBA";
+LineSet411.color = ColorRGBA413;
 
-Shape411.geometry = LineSet412;
+Shape410.geometry = LineSet411;
 
-HAnimSegment399.children[4] = Shape411;
+HAnimSegment398.children[4] = Shape410;
 
-let HAnimSite415 = browser.currentScene.createNode("HAnimSite");
-HAnimSite415.name = "waist_preferred_post_pt";
-HAnimSite415.DEF = "hanim_waist_preferred_post_pt";
-HAnimSite415.translation = new SFVec3f(new float[0,1.0915,-0.1091]);
+let HAnimSite414 = browser.currentScene.createNode("HAnimSite");
+HAnimSite414.name = "waist_preferred_post_pt";
+HAnimSite414.DEF = "hanim_waist_preferred_post_pt";
+HAnimSite414.translation = new SFVec3f(new float[0,1.0915,-0.1091]);
 //HAnimSite visualization shape
-let TouchSensor416 = browser.currentScene.createNode("TouchSensor");
-TouchSensor416.description = "HAnimSite waist_preferred_post";
-HAnimSite415.children = new MFNode();
+let TouchSensor415 = browser.currentScene.createNode("TouchSensor");
+TouchSensor415.description = "HAnimSite waist_preferred_post";
+HAnimSite414.children = new MFNode();
 
-HAnimSite415.children[0] = TouchSensor416;
+HAnimSite414.children[0] = TouchSensor415;
 
-let Shape417 = browser.currentScene.createNode("Shape");
-Shape417.USE = "HAnimSiteShape";
-HAnimSite415.children[1] = Shape417;
+let Shape416 = browser.currentScene.createNode("Shape");
+Shape416.USE = "HAnimSiteShape";
+HAnimSite414.children[1] = Shape416;
 
-HAnimSegment399.children[5] = HAnimSite415;
+HAnimSegment398.children[5] = HAnimSite414;
 
-let HAnimSite418 = browser.currentScene.createNode("HAnimSite");
-HAnimSite418.name = "navel_pt";
-HAnimSite418.DEF = "hanim_navel_pt";
-HAnimSite418.translation = new SFVec3f(new float[0.0069,1.0966,0.1017]);
+let HAnimSite417 = browser.currentScene.createNode("HAnimSite");
+HAnimSite417.name = "navel_pt";
+HAnimSite417.DEF = "hanim_navel_pt";
+HAnimSite417.translation = new SFVec3f(new float[0.0069,1.0966,0.1017]);
 //HAnimSite visualization shape
-let TouchSensor419 = browser.currentScene.createNode("TouchSensor");
-TouchSensor419.description = "HAnimSite navel";
-HAnimSite418.children = new MFNode();
+let TouchSensor418 = browser.currentScene.createNode("TouchSensor");
+TouchSensor418.description = "HAnimSite navel";
+HAnimSite417.children = new MFNode();
 
-HAnimSite418.children[0] = TouchSensor419;
+HAnimSite417.children[0] = TouchSensor418;
 
-let Shape420 = browser.currentScene.createNode("Shape");
-Shape420.USE = "HAnimSiteShape";
-HAnimSite418.children[1] = Shape420;
+let Shape419 = browser.currentScene.createNode("Shape");
+Shape419.USE = "HAnimSiteShape";
+HAnimSite417.children[1] = Shape419;
 
-HAnimSegment399.children[6] = HAnimSite418;
+HAnimSegment398.children[6] = HAnimSite417;
 
-HAnimJoint398.children = new MFNode();
+HAnimJoint397.children = new MFNode();
 
-HAnimJoint398.children[0] = HAnimSegment399;
+HAnimJoint397.children[0] = HAnimSegment398;
 
-let HAnimJoint421 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint421.name = "vl4";
-HAnimJoint421.DEF = "hanim_vl4";
-HAnimJoint421.center = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
-HAnimJoint421.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment422 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment422.name = "l4";
-HAnimSegment422.DEF = "hanim_l4";
+let HAnimJoint420 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint420.name = "vl4";
+HAnimJoint420.DEF = "hanim_vl4";
+HAnimJoint420.center = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
+HAnimJoint420.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment421 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment421.name = "l4";
+HAnimSegment421.DEF = "hanim_l4";
 //<HAnimJoint name='vl4'/> visualization sphere is placed within <HAnimSegment name='l4'/>
-let TouchSensor423 = browser.currentScene.createNode("TouchSensor");
-TouchSensor423.description = "HAnimJoint vl4, HAnimSegment l4";
-HAnimSegment422.children = new MFNode();
+let TouchSensor422 = browser.currentScene.createNode("TouchSensor");
+TouchSensor422.description = "HAnimJoint vl4, HAnimSegment l4";
+HAnimSegment421.children = new MFNode();
 
-HAnimSegment422.children[0] = TouchSensor423;
+HAnimSegment421.children[0] = TouchSensor422;
 
-let Transform424 = browser.currentScene.createNode("Transform");
-Transform424.translation = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
-let Shape425 = browser.currentScene.createNode("Shape");
-Shape425.USE = "HAnimJointShape";
-Transform424.children = new MFNode();
+let Transform423 = browser.currentScene.createNode("Transform");
+Transform423.translation = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
+let Shape424 = browser.currentScene.createNode("Shape");
+Shape424.USE = "HAnimJointShape";
+Transform423.children = new MFNode();
 
-Transform424.children[0] = Shape425;
+Transform423.children[0] = Shape424;
 
-HAnimSegment422.children[1] = Transform424;
+HAnimSegment421.children[1] = Transform423;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vl4'/> to <HAnimJoint name='vl3'/>
-let Shape426 = browser.currentScene.createNode("Shape");
-let LineSet427 = browser.currentScene.createNode("LineSet");
-LineSet427.vertexCount = new MFInt32(new int[2]);
-let Coordinate428 = browser.currentScene.createNode("Coordinate");
-Coordinate428.point = new MFVec3f(new float[0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796]);
-LineSet427.coord = Coordinate428;
+let Shape425 = browser.currentScene.createNode("Shape");
+let LineSet426 = browser.currentScene.createNode("LineSet");
+LineSet426.vertexCount = new MFInt32(new int[2]);
+let Coordinate427 = browser.currentScene.createNode("Coordinate");
+Coordinate427.point = new MFVec3f(new float[0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796]);
+LineSet426.coord = Coordinate427;
 
-let ColorRGBA429 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA429.USE = "HAnimSegmentLineColorRGBA";
-LineSet427.color = ColorRGBA429;
+let ColorRGBA428 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA428.USE = "HAnimSegmentLineColorRGBA";
+LineSet426.color = ColorRGBA428;
 
-Shape426.geometry = LineSet427;
+Shape425.geometry = LineSet426;
 
-HAnimSegment422.children[2] = Shape426;
+HAnimSegment421.children[2] = Shape425;
 
-HAnimJoint421.children = new MFNode();
+HAnimJoint420.children = new MFNode();
 
-HAnimJoint421.children[0] = HAnimSegment422;
+HAnimJoint420.children[0] = HAnimSegment421;
 
-let HAnimJoint430 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint430.name = "vl3";
-HAnimJoint430.DEF = "hanim_vl3";
-HAnimJoint430.center = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
-HAnimJoint430.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment431 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment431.name = "l3";
-HAnimSegment431.DEF = "hanim_l3";
+let HAnimJoint429 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint429.name = "vl3";
+HAnimJoint429.DEF = "hanim_vl3";
+HAnimJoint429.center = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
+HAnimJoint429.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment430 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment430.name = "l3";
+HAnimSegment430.DEF = "hanim_l3";
 //<HAnimJoint name='vl3'/> visualization sphere is placed within <HAnimSegment name='l3'/>
-let TouchSensor432 = browser.currentScene.createNode("TouchSensor");
-TouchSensor432.description = "HAnimJoint vl3, HAnimSegment l3";
-HAnimSegment431.children = new MFNode();
+let TouchSensor431 = browser.currentScene.createNode("TouchSensor");
+TouchSensor431.description = "HAnimJoint vl3, HAnimSegment l3";
+HAnimSegment430.children = new MFNode();
 
-HAnimSegment431.children[0] = TouchSensor432;
+HAnimSegment430.children[0] = TouchSensor431;
 
-let Transform433 = browser.currentScene.createNode("Transform");
-Transform433.translation = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
-let Shape434 = browser.currentScene.createNode("Shape");
-Shape434.USE = "HAnimJointShape";
-Transform433.children = new MFNode();
+let Transform432 = browser.currentScene.createNode("Transform");
+Transform432.translation = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
+let Shape433 = browser.currentScene.createNode("Shape");
+Shape433.USE = "HAnimJointShape";
+Transform432.children = new MFNode();
 
-Transform433.children[0] = Shape434;
+Transform432.children[0] = Shape433;
 
-HAnimSegment431.children[1] = Transform433;
+HAnimSegment430.children[1] = Transform432;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vl3'/> to <HAnimJoint name='vl2'/>
-let Shape435 = browser.currentScene.createNode("Shape");
-let LineSet436 = browser.currentScene.createNode("LineSet");
-LineSet436.vertexCount = new MFInt32(new int[2]);
-let Coordinate437 = browser.currentScene.createNode("Coordinate");
-Coordinate437.point = new MFVec3f(new float[0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08]);
-LineSet436.coord = Coordinate437;
+let Shape434 = browser.currentScene.createNode("Shape");
+let LineSet435 = browser.currentScene.createNode("LineSet");
+LineSet435.vertexCount = new MFInt32(new int[2]);
+let Coordinate436 = browser.currentScene.createNode("Coordinate");
+Coordinate436.point = new MFVec3f(new float[0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08]);
+LineSet435.coord = Coordinate436;
 
-let ColorRGBA438 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA438.USE = "HAnimSegmentLineColorRGBA";
-LineSet436.color = ColorRGBA438;
+let ColorRGBA437 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA437.USE = "HAnimSegmentLineColorRGBA";
+LineSet435.color = ColorRGBA437;
 
-Shape435.geometry = LineSet436;
+Shape434.geometry = LineSet435;
 
-HAnimSegment431.children[2] = Shape435;
+HAnimSegment430.children[2] = Shape434;
 
-HAnimJoint430.children = new MFNode();
+HAnimJoint429.children = new MFNode();
 
-HAnimJoint430.children[0] = HAnimSegment431;
+HAnimJoint429.children[0] = HAnimSegment430;
 
-let HAnimJoint439 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint439.name = "vl2";
-HAnimJoint439.DEF = "hanim_vl2";
-HAnimJoint439.center = new SFVec3f(new float[0.0045,1.1546,-0.08]);
-HAnimJoint439.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment440 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment440.name = "l2";
-HAnimSegment440.DEF = "hanim_l2";
+let HAnimJoint438 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint438.name = "vl2";
+HAnimJoint438.DEF = "hanim_vl2";
+HAnimJoint438.center = new SFVec3f(new float[0.0045,1.1546,-0.08]);
+HAnimJoint438.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment439 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment439.name = "l2";
+HAnimSegment439.DEF = "hanim_l2";
 //<HAnimJoint name='vl2'/> visualization sphere is placed within <HAnimSegment name='l2'/>
-let TouchSensor441 = browser.currentScene.createNode("TouchSensor");
-TouchSensor441.description = "HAnimJoint vl2, HAnimSegment l2";
-HAnimSegment440.children = new MFNode();
+let TouchSensor440 = browser.currentScene.createNode("TouchSensor");
+TouchSensor440.description = "HAnimJoint vl2, HAnimSegment l2";
+HAnimSegment439.children = new MFNode();
 
-HAnimSegment440.children[0] = TouchSensor441;
+HAnimSegment439.children[0] = TouchSensor440;
 
-let Transform442 = browser.currentScene.createNode("Transform");
-Transform442.translation = new SFVec3f(new float[0.0045,1.1546,-0.08]);
-let Shape443 = browser.currentScene.createNode("Shape");
-Shape443.USE = "HAnimJointShape";
-Transform442.children = new MFNode();
+let Transform441 = browser.currentScene.createNode("Transform");
+Transform441.translation = new SFVec3f(new float[0.0045,1.1546,-0.08]);
+let Shape442 = browser.currentScene.createNode("Shape");
+Shape442.USE = "HAnimJointShape";
+Transform441.children = new MFNode();
 
-Transform442.children[0] = Shape443;
+Transform441.children[0] = Shape442;
 
-HAnimSegment440.children[1] = Transform442;
+HAnimSegment439.children[1] = Transform441;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vl2'/> to <HAnimJoint name='vl1'/>
-let Shape444 = browser.currentScene.createNode("Shape");
-let LineSet445 = browser.currentScene.createNode("LineSet");
-LineSet445.vertexCount = new MFInt32(new int[2]);
-let Coordinate446 = browser.currentScene.createNode("Coordinate");
-Coordinate446.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805]);
-LineSet445.coord = Coordinate446;
+let Shape443 = browser.currentScene.createNode("Shape");
+let LineSet444 = browser.currentScene.createNode("LineSet");
+LineSet444.vertexCount = new MFInt32(new int[2]);
+let Coordinate445 = browser.currentScene.createNode("Coordinate");
+Coordinate445.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805]);
+LineSet444.coord = Coordinate445;
 
-let ColorRGBA447 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA447.USE = "HAnimSegmentLineColorRGBA";
-LineSet445.color = ColorRGBA447;
+let ColorRGBA446 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA446.USE = "HAnimSegmentLineColorRGBA";
+LineSet444.color = ColorRGBA446;
 
-Shape444.geometry = LineSet445;
+Shape443.geometry = LineSet444;
 
-HAnimSegment440.children[2] = Shape444;
+HAnimSegment439.children[2] = Shape443;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='r_rib10'/>
-let Shape448 = browser.currentScene.createNode("Shape");
-let LineSet449 = browser.currentScene.createNode("LineSet");
-LineSet449.vertexCount = new MFInt32(new int[2]);
-let Coordinate450 = browser.currentScene.createNode("Coordinate");
-Coordinate450.point = new MFVec3f(new float[0.0045,1.1546,-0.08,-0.0711,1.1941,0.1016]);
-LineSet449.coord = Coordinate450;
+let Shape447 = browser.currentScene.createNode("Shape");
+let LineSet448 = browser.currentScene.createNode("LineSet");
+LineSet448.vertexCount = new MFInt32(new int[2]);
+let Coordinate449 = browser.currentScene.createNode("Coordinate");
+Coordinate449.point = new MFVec3f(new float[0.0045,1.1546,-0.08,-0.0711,1.1941,0.1016]);
+LineSet448.coord = Coordinate449;
 
-let ColorRGBA451 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA451.USE = "HAnimSiteLineColorRGBA";
-LineSet449.color = ColorRGBA451;
+let ColorRGBA450 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA450.USE = "HAnimSiteLineColorRGBA";
+LineSet448.color = ColorRGBA450;
 
-Shape448.geometry = LineSet449;
+Shape447.geometry = LineSet448;
 
-HAnimSegment440.children[3] = Shape448;
+HAnimSegment439.children[3] = Shape447;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='l_rib10'/>
-let Shape452 = browser.currentScene.createNode("Shape");
-let LineSet453 = browser.currentScene.createNode("LineSet");
-LineSet453.vertexCount = new MFInt32(new int[2]);
-let Coordinate454 = browser.currentScene.createNode("Coordinate");
-Coordinate454.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0871,1.1925,0.0992]);
-LineSet453.coord = Coordinate454;
+let Shape451 = browser.currentScene.createNode("Shape");
+let LineSet452 = browser.currentScene.createNode("LineSet");
+LineSet452.vertexCount = new MFInt32(new int[2]);
+let Coordinate453 = browser.currentScene.createNode("Coordinate");
+Coordinate453.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0871,1.1925,0.0992]);
+LineSet452.coord = Coordinate453;
 
-let ColorRGBA455 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA455.USE = "HAnimSiteLineColorRGBA";
-LineSet453.color = ColorRGBA455;
+let ColorRGBA454 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA454.USE = "HAnimSiteLineColorRGBA";
+LineSet452.color = ColorRGBA454;
 
-Shape452.geometry = LineSet453;
+Shape451.geometry = LineSet452;
 
-HAnimSegment440.children[4] = Shape452;
+HAnimSegment439.children[4] = Shape451;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='rib10_midspine'/>
-let Shape456 = browser.currentScene.createNode("Shape");
-let LineSet457 = browser.currentScene.createNode("LineSet");
-LineSet457.vertexCount = new MFInt32(new int[2]);
-let Coordinate458 = browser.currentScene.createNode("Coordinate");
-Coordinate458.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0049,1.1908,-0.1113]);
-LineSet457.coord = Coordinate458;
+let Shape455 = browser.currentScene.createNode("Shape");
+let LineSet456 = browser.currentScene.createNode("LineSet");
+LineSet456.vertexCount = new MFInt32(new int[2]);
+let Coordinate457 = browser.currentScene.createNode("Coordinate");
+Coordinate457.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0049,1.1908,-0.1113]);
+LineSet456.coord = Coordinate457;
 
-let ColorRGBA459 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA459.USE = "HAnimSiteLineColorRGBA";
-LineSet457.color = ColorRGBA459;
+let ColorRGBA458 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA458.USE = "HAnimSiteLineColorRGBA";
+LineSet456.color = ColorRGBA458;
 
-Shape456.geometry = LineSet457;
+Shape455.geometry = LineSet456;
 
-HAnimSegment440.children[5] = Shape456;
+HAnimSegment439.children[5] = Shape455;
 
-let HAnimSite460 = browser.currentScene.createNode("HAnimSite");
-HAnimSite460.name = "r_rib10_pt";
-HAnimSite460.DEF = "hanim_r_rib10_pt";
-HAnimSite460.translation = new SFVec3f(new float[-0.0711,1.1941,0.1016]);
+let HAnimSite459 = browser.currentScene.createNode("HAnimSite");
+HAnimSite459.name = "r_rib10_pt";
+HAnimSite459.DEF = "hanim_r_rib10_pt";
+HAnimSite459.translation = new SFVec3f(new float[-0.0711,1.1941,0.1016]);
 //HAnimSite visualization shape
-let TouchSensor461 = browser.currentScene.createNode("TouchSensor");
-TouchSensor461.description = "HAnimSite r_rib10";
-HAnimSite460.children = new MFNode();
+let TouchSensor460 = browser.currentScene.createNode("TouchSensor");
+TouchSensor460.description = "HAnimSite r_rib10";
+HAnimSite459.children = new MFNode();
 
-HAnimSite460.children[0] = TouchSensor461;
+HAnimSite459.children[0] = TouchSensor460;
 
-let Shape462 = browser.currentScene.createNode("Shape");
-Shape462.USE = "HAnimSiteShape";
-HAnimSite460.children[1] = Shape462;
+let Shape461 = browser.currentScene.createNode("Shape");
+Shape461.USE = "HAnimSiteShape";
+HAnimSite459.children[1] = Shape461;
 
-HAnimSegment440.children[6] = HAnimSite460;
+HAnimSegment439.children[6] = HAnimSite459;
 
-let HAnimSite463 = browser.currentScene.createNode("HAnimSite");
-HAnimSite463.name = "l_rib10_pt";
-HAnimSite463.DEF = "hanim_l_rib10_pt";
-HAnimSite463.translation = new SFVec3f(new float[0.0871,1.1925,0.0992]);
+let HAnimSite462 = browser.currentScene.createNode("HAnimSite");
+HAnimSite462.name = "l_rib10_pt";
+HAnimSite462.DEF = "hanim_l_rib10_pt";
+HAnimSite462.translation = new SFVec3f(new float[0.0871,1.1925,0.0992]);
 //HAnimSite visualization shape
-let TouchSensor464 = browser.currentScene.createNode("TouchSensor");
-TouchSensor464.description = "HAnimSite l_rib10";
-HAnimSite463.children = new MFNode();
+let TouchSensor463 = browser.currentScene.createNode("TouchSensor");
+TouchSensor463.description = "HAnimSite l_rib10";
+HAnimSite462.children = new MFNode();
 
-HAnimSite463.children[0] = TouchSensor464;
+HAnimSite462.children[0] = TouchSensor463;
 
-let Shape465 = browser.currentScene.createNode("Shape");
-Shape465.USE = "HAnimSiteShape";
-HAnimSite463.children[1] = Shape465;
+let Shape464 = browser.currentScene.createNode("Shape");
+Shape464.USE = "HAnimSiteShape";
+HAnimSite462.children[1] = Shape464;
 
-HAnimSegment440.children[7] = HAnimSite463;
+HAnimSegment439.children[7] = HAnimSite462;
 
-let HAnimSite466 = browser.currentScene.createNode("HAnimSite");
-HAnimSite466.name = "rib10_midspine_pt";
-HAnimSite466.DEF = "hanim_rib10_midspine_pt";
-HAnimSite466.translation = new SFVec3f(new float[0.0049,1.1908,-0.1113]);
+let HAnimSite465 = browser.currentScene.createNode("HAnimSite");
+HAnimSite465.name = "rib10_midspine_pt";
+HAnimSite465.DEF = "hanim_rib10_midspine_pt";
+HAnimSite465.translation = new SFVec3f(new float[0.0049,1.1908,-0.1113]);
 //HAnimSite visualization shape
-let TouchSensor467 = browser.currentScene.createNode("TouchSensor");
-TouchSensor467.description = "HAnimSite rib10_midspine";
-HAnimSite466.children = new MFNode();
+let TouchSensor466 = browser.currentScene.createNode("TouchSensor");
+TouchSensor466.description = "HAnimSite rib10_midspine";
+HAnimSite465.children = new MFNode();
 
-HAnimSite466.children[0] = TouchSensor467;
+HAnimSite465.children[0] = TouchSensor466;
 
-let Shape468 = browser.currentScene.createNode("Shape");
-Shape468.USE = "HAnimSiteShape";
-HAnimSite466.children[1] = Shape468;
+let Shape467 = browser.currentScene.createNode("Shape");
+Shape467.USE = "HAnimSiteShape";
+HAnimSite465.children[1] = Shape467;
 
-HAnimSegment440.children[8] = HAnimSite466;
+HAnimSegment439.children[8] = HAnimSite465;
 
-HAnimJoint439.children = new MFNode();
+HAnimJoint438.children = new MFNode();
 
-HAnimJoint439.children[0] = HAnimSegment440;
+HAnimJoint438.children[0] = HAnimSegment439;
 
-let HAnimJoint469 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint469.name = "vl1";
-HAnimJoint469.DEF = "hanim_vl1";
-HAnimJoint469.center = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
-HAnimJoint469.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment470 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment470.name = "l1";
-HAnimSegment470.DEF = "hanim_l1";
+let HAnimJoint468 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint468.name = "vl1";
+HAnimJoint468.DEF = "hanim_vl1";
+HAnimJoint468.center = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
+HAnimJoint468.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment469 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment469.name = "l1";
+HAnimSegment469.DEF = "hanim_l1";
 //<HAnimJoint name='vl1'/> visualization sphere is placed within <HAnimSegment name='l1'/>
-let TouchSensor471 = browser.currentScene.createNode("TouchSensor");
-TouchSensor471.description = "HAnimJoint vl1, HAnimSegment l1";
-HAnimSegment470.children = new MFNode();
+let TouchSensor470 = browser.currentScene.createNode("TouchSensor");
+TouchSensor470.description = "HAnimJoint vl1, HAnimSegment l1";
+HAnimSegment469.children = new MFNode();
 
-HAnimSegment470.children[0] = TouchSensor471;
+HAnimSegment469.children[0] = TouchSensor470;
 
-let Transform472 = browser.currentScene.createNode("Transform");
-Transform472.translation = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
-let Shape473 = browser.currentScene.createNode("Shape");
-Shape473.USE = "HAnimJointShape";
-Transform472.children = new MFNode();
+let Transform471 = browser.currentScene.createNode("Transform");
+Transform471.translation = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
+let Shape472 = browser.currentScene.createNode("Shape");
+Shape472.USE = "HAnimJointShape";
+Transform471.children = new MFNode();
 
-Transform472.children[0] = Shape473;
+Transform471.children[0] = Shape472;
 
-HAnimSegment470.children[1] = Transform472;
+HAnimSegment469.children[1] = Transform471;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vl1'/> to <HAnimJoint name='vt12'/>
-let Shape474 = browser.currentScene.createNode("Shape");
-let LineSet475 = browser.currentScene.createNode("LineSet");
-LineSet475.vertexCount = new MFInt32(new int[2]);
-let Coordinate476 = browser.currentScene.createNode("Coordinate");
-Coordinate476.point = new MFVec3f(new float[0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808]);
-LineSet475.coord = Coordinate476;
+let Shape473 = browser.currentScene.createNode("Shape");
+let LineSet474 = browser.currentScene.createNode("LineSet");
+LineSet474.vertexCount = new MFInt32(new int[2]);
+let Coordinate475 = browser.currentScene.createNode("Coordinate");
+Coordinate475.point = new MFVec3f(new float[0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808]);
+LineSet474.coord = Coordinate475;
 
-let ColorRGBA477 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA477.USE = "HAnimSegmentLineColorRGBA";
-LineSet475.color = ColorRGBA477;
+let ColorRGBA476 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA476.USE = "HAnimSegmentLineColorRGBA";
+LineSet474.color = ColorRGBA476;
 
-Shape474.geometry = LineSet475;
+Shape473.geometry = LineSet474;
 
-HAnimSegment470.children[2] = Shape474;
+HAnimSegment469.children[2] = Shape473;
 
-HAnimJoint469.children = new MFNode();
+HAnimJoint468.children = new MFNode();
 
-HAnimJoint469.children[0] = HAnimSegment470;
+HAnimJoint468.children[0] = HAnimSegment469;
 
-let HAnimJoint478 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint478.name = "vt12";
-HAnimJoint478.DEF = "hanim_vt12";
-HAnimJoint478.center = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
-HAnimJoint478.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment479 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment479.name = "t12";
-HAnimSegment479.DEF = "hanim_t12";
+let HAnimJoint477 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint477.name = "vt12";
+HAnimJoint477.DEF = "hanim_vt12";
+HAnimJoint477.center = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
+HAnimJoint477.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment478 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment478.name = "t12";
+HAnimSegment478.DEF = "hanim_t12";
 //<HAnimJoint name='vt12'/> visualization sphere is placed within <HAnimSegment name='t12'/>
-let TouchSensor480 = browser.currentScene.createNode("TouchSensor");
-TouchSensor480.description = "HAnimJoint vt12, HAnimSegment t12";
-HAnimSegment479.children = new MFNode();
+let TouchSensor479 = browser.currentScene.createNode("TouchSensor");
+TouchSensor479.description = "HAnimJoint vt12, HAnimSegment t12";
+HAnimSegment478.children = new MFNode();
 
-HAnimSegment479.children[0] = TouchSensor480;
+HAnimSegment478.children[0] = TouchSensor479;
 
-let Transform481 = browser.currentScene.createNode("Transform");
-Transform481.translation = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
-let Shape482 = browser.currentScene.createNode("Shape");
-Shape482.USE = "HAnimJointShape";
-Transform481.children = new MFNode();
+let Transform480 = browser.currentScene.createNode("Transform");
+Transform480.translation = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
+let Shape481 = browser.currentScene.createNode("Shape");
+Shape481.USE = "HAnimJointShape";
+Transform480.children = new MFNode();
 
-Transform481.children[0] = Shape482;
+Transform480.children[0] = Shape481;
 
-HAnimSegment479.children[1] = Transform481;
+HAnimSegment478.children[1] = Transform480;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt12'/> to <HAnimJoint name='vt11'/>
-let Shape483 = browser.currentScene.createNode("Shape");
-let LineSet484 = browser.currentScene.createNode("LineSet");
-LineSet484.vertexCount = new MFInt32(new int[2]);
-let Coordinate485 = browser.currentScene.createNode("Coordinate");
-Coordinate485.point = new MFVec3f(new float[0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081]);
-LineSet484.coord = Coordinate485;
+let Shape482 = browser.currentScene.createNode("Shape");
+let LineSet483 = browser.currentScene.createNode("LineSet");
+LineSet483.vertexCount = new MFInt32(new int[2]);
+let Coordinate484 = browser.currentScene.createNode("Coordinate");
+Coordinate484.point = new MFVec3f(new float[0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081]);
+LineSet483.coord = Coordinate484;
 
-let ColorRGBA486 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA486.USE = "HAnimSegmentLineColorRGBA";
-LineSet484.color = ColorRGBA486;
+let ColorRGBA485 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA485.USE = "HAnimSegmentLineColorRGBA";
+LineSet483.color = ColorRGBA485;
 
-Shape483.geometry = LineSet484;
+Shape482.geometry = LineSet483;
 
-HAnimSegment479.children[2] = Shape483;
+HAnimSegment478.children[2] = Shape482;
 
-HAnimJoint478.children = new MFNode();
+HAnimJoint477.children = new MFNode();
 
-HAnimJoint478.children[0] = HAnimSegment479;
+HAnimJoint477.children[0] = HAnimSegment478;
 
-let HAnimJoint487 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint487.name = "vt11";
-HAnimJoint487.DEF = "hanim_vt11";
-HAnimJoint487.center = new SFVec3f(new float[0.0053,1.2679,-0.081]);
-HAnimJoint487.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment488 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment488.name = "t11";
-HAnimSegment488.DEF = "hanim_t11";
+let HAnimJoint486 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint486.name = "vt11";
+HAnimJoint486.DEF = "hanim_vt11";
+HAnimJoint486.center = new SFVec3f(new float[0.0053,1.2679,-0.081]);
+HAnimJoint486.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment487 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment487.name = "t11";
+HAnimSegment487.DEF = "hanim_t11";
 //<HAnimJoint name='vt11'/> visualization sphere is placed within <HAnimSegment name='t11'/>
-let TouchSensor489 = browser.currentScene.createNode("TouchSensor");
-TouchSensor489.description = "HAnimJoint vt11, HAnimSegment t11";
-HAnimSegment488.children = new MFNode();
+let TouchSensor488 = browser.currentScene.createNode("TouchSensor");
+TouchSensor488.description = "HAnimJoint vt11, HAnimSegment t11";
+HAnimSegment487.children = new MFNode();
 
-HAnimSegment488.children[0] = TouchSensor489;
+HAnimSegment487.children[0] = TouchSensor488;
 
-let Transform490 = browser.currentScene.createNode("Transform");
-Transform490.translation = new SFVec3f(new float[0.0053,1.2679,-0.081]);
-let Shape491 = browser.currentScene.createNode("Shape");
-Shape491.USE = "HAnimJointShape";
-Transform490.children = new MFNode();
+let Transform489 = browser.currentScene.createNode("Transform");
+Transform489.translation = new SFVec3f(new float[0.0053,1.2679,-0.081]);
+let Shape490 = browser.currentScene.createNode("Shape");
+Shape490.USE = "HAnimJointShape";
+Transform489.children = new MFNode();
 
-Transform490.children[0] = Shape491;
+Transform489.children[0] = Shape490;
 
-HAnimSegment488.children[1] = Transform490;
+HAnimSegment487.children[1] = Transform489;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt11'/> to <HAnimJoint name='vt10'/>
-let Shape492 = browser.currentScene.createNode("Shape");
-let LineSet493 = browser.currentScene.createNode("LineSet");
-LineSet493.vertexCount = new MFInt32(new int[2]);
-let Coordinate494 = browser.currentScene.createNode("Coordinate");
-Coordinate494.point = new MFVec3f(new float[0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822]);
-LineSet493.coord = Coordinate494;
+let Shape491 = browser.currentScene.createNode("Shape");
+let LineSet492 = browser.currentScene.createNode("LineSet");
+LineSet492.vertexCount = new MFInt32(new int[2]);
+let Coordinate493 = browser.currentScene.createNode("Coordinate");
+Coordinate493.point = new MFVec3f(new float[0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822]);
+LineSet492.coord = Coordinate493;
 
-let ColorRGBA495 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA495.USE = "HAnimSegmentLineColorRGBA";
-LineSet493.color = ColorRGBA495;
+let ColorRGBA494 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA494.USE = "HAnimSegmentLineColorRGBA";
+LineSet492.color = ColorRGBA494;
 
-Shape492.geometry = LineSet493;
+Shape491.geometry = LineSet492;
 
-HAnimSegment488.children[2] = Shape492;
+HAnimSegment487.children[2] = Shape491;
 
-HAnimJoint487.children = new MFNode();
+HAnimJoint486.children = new MFNode();
 
-HAnimJoint487.children[0] = HAnimSegment488;
+HAnimJoint486.children[0] = HAnimSegment487;
 
-let HAnimJoint496 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint496.name = "vt10";
-HAnimJoint496.DEF = "hanim_vt10";
-HAnimJoint496.center = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
-HAnimJoint496.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment497 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment497.name = "t10";
-HAnimSegment497.DEF = "hanim_t10";
+let HAnimJoint495 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint495.name = "vt10";
+HAnimJoint495.DEF = "hanim_vt10";
+HAnimJoint495.center = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
+HAnimJoint495.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment496 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment496.name = "t10";
+HAnimSegment496.DEF = "hanim_t10";
 //<HAnimJoint name='vt10'/> visualization sphere is placed within <HAnimSegment name='t10'/>
-let TouchSensor498 = browser.currentScene.createNode("TouchSensor");
-TouchSensor498.description = "HAnimJoint vt10, HAnimSegment t10";
-HAnimSegment497.children = new MFNode();
+let TouchSensor497 = browser.currentScene.createNode("TouchSensor");
+TouchSensor497.description = "HAnimJoint vt10, HAnimSegment t10";
+HAnimSegment496.children = new MFNode();
 
-HAnimSegment497.children[0] = TouchSensor498;
+HAnimSegment496.children[0] = TouchSensor497;
 
-let Transform499 = browser.currentScene.createNode("Transform");
-Transform499.translation = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
-let Shape500 = browser.currentScene.createNode("Shape");
-Shape500.USE = "HAnimJointShape";
-Transform499.children = new MFNode();
+let Transform498 = browser.currentScene.createNode("Transform");
+Transform498.translation = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
+let Shape499 = browser.currentScene.createNode("Shape");
+Shape499.USE = "HAnimJointShape";
+Transform498.children = new MFNode();
 
-Transform499.children[0] = Shape500;
+Transform498.children[0] = Shape499;
 
-HAnimSegment497.children[1] = Transform499;
+HAnimSegment496.children[1] = Transform498;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt10'/> to <HAnimJoint name='vt9'/>
-let Shape501 = browser.currentScene.createNode("Shape");
-let LineSet502 = browser.currentScene.createNode("LineSet");
-LineSet502.vertexCount = new MFInt32(new int[2]);
-let Coordinate503 = browser.currentScene.createNode("Coordinate");
-Coordinate503.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838]);
-LineSet502.coord = Coordinate503;
+let Shape500 = browser.currentScene.createNode("Shape");
+let LineSet501 = browser.currentScene.createNode("LineSet");
+LineSet501.vertexCount = new MFInt32(new int[2]);
+let Coordinate502 = browser.currentScene.createNode("Coordinate");
+Coordinate502.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838]);
+LineSet501.coord = Coordinate502;
 
-let ColorRGBA504 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA504.USE = "HAnimSegmentLineColorRGBA";
-LineSet502.color = ColorRGBA504;
+let ColorRGBA503 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA503.USE = "HAnimSegmentLineColorRGBA";
+LineSet501.color = ColorRGBA503;
 
-Shape501.geometry = LineSet502;
+Shape500.geometry = LineSet501;
 
-HAnimSegment497.children[2] = Shape501;
+HAnimSegment496.children[2] = Shape500;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vt10'/> to <HAnimSite name='substernale'/>
-let Shape505 = browser.currentScene.createNode("Shape");
-let LineSet506 = browser.currentScene.createNode("LineSet");
-LineSet506.vertexCount = new MFInt32(new int[2]);
-let Coordinate507 = browser.currentScene.createNode("Coordinate");
-Coordinate507.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0085,1.2995,0.1147]);
-LineSet506.coord = Coordinate507;
+let Shape504 = browser.currentScene.createNode("Shape");
+let LineSet505 = browser.currentScene.createNode("LineSet");
+LineSet505.vertexCount = new MFInt32(new int[2]);
+let Coordinate506 = browser.currentScene.createNode("Coordinate");
+Coordinate506.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0085,1.2995,0.1147]);
+LineSet505.coord = Coordinate506;
 
-let ColorRGBA508 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA508.USE = "HAnimSiteLineColorRGBA";
-LineSet506.color = ColorRGBA508;
+let ColorRGBA507 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA507.USE = "HAnimSiteLineColorRGBA";
+LineSet505.color = ColorRGBA507;
 
-Shape505.geometry = LineSet506;
+Shape504.geometry = LineSet505;
 
-HAnimSegment497.children[3] = Shape505;
+HAnimSegment496.children[3] = Shape504;
 
-let HAnimSite509 = browser.currentScene.createNode("HAnimSite");
-HAnimSite509.name = "substernale_pt";
-HAnimSite509.DEF = "hanim_substernale_pt";
-HAnimSite509.translation = new SFVec3f(new float[0.0085,1.2995,0.1147]);
+let HAnimSite508 = browser.currentScene.createNode("HAnimSite");
+HAnimSite508.name = "substernale_pt";
+HAnimSite508.DEF = "hanim_substernale_pt";
+HAnimSite508.translation = new SFVec3f(new float[0.0085,1.2995,0.1147]);
 //HAnimSite visualization shape
-let TouchSensor510 = browser.currentScene.createNode("TouchSensor");
-TouchSensor510.description = "HAnimSite substernale";
-HAnimSite509.children = new MFNode();
+let TouchSensor509 = browser.currentScene.createNode("TouchSensor");
+TouchSensor509.description = "HAnimSite substernale";
+HAnimSite508.children = new MFNode();
 
-HAnimSite509.children[0] = TouchSensor510;
+HAnimSite508.children[0] = TouchSensor509;
 
-let Shape511 = browser.currentScene.createNode("Shape");
-Shape511.USE = "HAnimSiteShape";
-HAnimSite509.children[1] = Shape511;
+let Shape510 = browser.currentScene.createNode("Shape");
+Shape510.USE = "HAnimSiteShape";
+HAnimSite508.children[1] = Shape510;
 
-HAnimSegment497.children[4] = HAnimSite509;
+HAnimSegment496.children[4] = HAnimSite508;
 
-HAnimJoint496.children = new MFNode();
+HAnimJoint495.children = new MFNode();
 
-HAnimJoint496.children[0] = HAnimSegment497;
+HAnimJoint495.children[0] = HAnimSegment496;
 
-let HAnimJoint512 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint512.name = "vt9";
-HAnimJoint512.DEF = "hanim_vt9";
-HAnimJoint512.center = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
-HAnimJoint512.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment513 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment513.name = "t9";
-HAnimSegment513.DEF = "hanim_t9";
+let HAnimJoint511 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint511.name = "vt9";
+HAnimJoint511.DEF = "hanim_vt9";
+HAnimJoint511.center = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
+HAnimJoint511.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment512 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment512.name = "t9";
+HAnimSegment512.DEF = "hanim_t9";
 //<HAnimJoint name='vt9'/> visualization sphere is placed within <HAnimSegment name='t9'/>
-let TouchSensor514 = browser.currentScene.createNode("TouchSensor");
-TouchSensor514.description = "HAnimJoint vt9, HAnimSegment t9";
-HAnimSegment513.children = new MFNode();
+let TouchSensor513 = browser.currentScene.createNode("TouchSensor");
+TouchSensor513.description = "HAnimJoint vt9, HAnimSegment t9";
+HAnimSegment512.children = new MFNode();
 
-HAnimSegment513.children[0] = TouchSensor514;
+HAnimSegment512.children[0] = TouchSensor513;
 
-let Transform515 = browser.currentScene.createNode("Transform");
-Transform515.translation = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
-let Shape516 = browser.currentScene.createNode("Shape");
-Shape516.USE = "HAnimJointShape";
-Transform515.children = new MFNode();
+let Transform514 = browser.currentScene.createNode("Transform");
+Transform514.translation = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
+let Shape515 = browser.currentScene.createNode("Shape");
+Shape515.USE = "HAnimJointShape";
+Transform514.children = new MFNode();
 
-Transform515.children[0] = Shape516;
+Transform514.children[0] = Shape515;
 
-HAnimSegment513.children[1] = Transform515;
+HAnimSegment512.children[1] = Transform514;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt9'/> to <HAnimJoint name='vt8'/>
-let Shape517 = browser.currentScene.createNode("Shape");
-let LineSet518 = browser.currentScene.createNode("LineSet");
-LineSet518.vertexCount = new MFInt32(new int[2]);
-let Coordinate519 = browser.currentScene.createNode("Coordinate");
-Coordinate519.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845]);
-LineSet518.coord = Coordinate519;
+let Shape516 = browser.currentScene.createNode("Shape");
+let LineSet517 = browser.currentScene.createNode("LineSet");
+LineSet517.vertexCount = new MFInt32(new int[2]);
+let Coordinate518 = browser.currentScene.createNode("Coordinate");
+Coordinate518.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845]);
+LineSet517.coord = Coordinate518;
 
-let ColorRGBA520 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA520.USE = "HAnimSegmentLineColorRGBA";
-LineSet518.color = ColorRGBA520;
+let ColorRGBA519 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA519.USE = "HAnimSegmentLineColorRGBA";
+LineSet517.color = ColorRGBA519;
 
-Shape517.geometry = LineSet518;
+Shape516.geometry = LineSet517;
 
-HAnimSegment513.children[2] = Shape517;
+HAnimSegment512.children[2] = Shape516;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='r_thelion'/>
-let Shape521 = browser.currentScene.createNode("Shape");
-let LineSet522 = browser.currentScene.createNode("LineSet");
-LineSet522.vertexCount = new MFInt32(new int[2]);
-let Coordinate523 = browser.currentScene.createNode("Coordinate");
-Coordinate523.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,-0.0736,1.3385,0.1217]);
-LineSet522.coord = Coordinate523;
+let Shape520 = browser.currentScene.createNode("Shape");
+let LineSet521 = browser.currentScene.createNode("LineSet");
+LineSet521.vertexCount = new MFInt32(new int[2]);
+let Coordinate522 = browser.currentScene.createNode("Coordinate");
+Coordinate522.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,-0.0736,1.3385,0.1217]);
+LineSet521.coord = Coordinate522;
 
-let ColorRGBA524 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA524.USE = "HAnimSiteLineColorRGBA";
-LineSet522.color = ColorRGBA524;
+let ColorRGBA523 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA523.USE = "HAnimSiteLineColorRGBA";
+LineSet521.color = ColorRGBA523;
 
-Shape521.geometry = LineSet522;
+Shape520.geometry = LineSet521;
 
-HAnimSegment513.children[3] = Shape521;
+HAnimSegment512.children[3] = Shape520;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='l_thelion'/>
-let Shape525 = browser.currentScene.createNode("Shape");
-let LineSet526 = browser.currentScene.createNode("LineSet");
-LineSet526.vertexCount = new MFInt32(new int[2]);
-let Coordinate527 = browser.currentScene.createNode("Coordinate");
-Coordinate527.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0918,1.3382,0.1192]);
-LineSet526.coord = Coordinate527;
+let Shape524 = browser.currentScene.createNode("Shape");
+let LineSet525 = browser.currentScene.createNode("LineSet");
+LineSet525.vertexCount = new MFInt32(new int[2]);
+let Coordinate526 = browser.currentScene.createNode("Coordinate");
+Coordinate526.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0918,1.3382,0.1192]);
+LineSet525.coord = Coordinate526;
 
-let ColorRGBA528 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA528.USE = "HAnimSiteLineColorRGBA";
-LineSet526.color = ColorRGBA528;
+let ColorRGBA527 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA527.USE = "HAnimSiteLineColorRGBA";
+LineSet525.color = ColorRGBA527;
 
-Shape525.geometry = LineSet526;
+Shape524.geometry = LineSet525;
 
-HAnimSegment513.children[4] = Shape525;
+HAnimSegment512.children[4] = Shape524;
 
-let HAnimSite529 = browser.currentScene.createNode("HAnimSite");
-HAnimSite529.name = "r_thelion_pt";
-HAnimSite529.DEF = "hanim_r_thelion_pt";
-HAnimSite529.translation = new SFVec3f(new float[-0.0736,1.3385,0.1217]);
+let HAnimSite528 = browser.currentScene.createNode("HAnimSite");
+HAnimSite528.name = "r_thelion_pt";
+HAnimSite528.DEF = "hanim_r_thelion_pt";
+HAnimSite528.translation = new SFVec3f(new float[-0.0736,1.3385,0.1217]);
 //HAnimSite visualization shape
-let TouchSensor530 = browser.currentScene.createNode("TouchSensor");
-TouchSensor530.description = "HAnimSite r_thelion";
-HAnimSite529.children = new MFNode();
+let TouchSensor529 = browser.currentScene.createNode("TouchSensor");
+TouchSensor529.description = "HAnimSite r_thelion";
+HAnimSite528.children = new MFNode();
 
-HAnimSite529.children[0] = TouchSensor530;
+HAnimSite528.children[0] = TouchSensor529;
 
-let Shape531 = browser.currentScene.createNode("Shape");
-Shape531.USE = "HAnimSiteShape";
-HAnimSite529.children[1] = Shape531;
+let Shape530 = browser.currentScene.createNode("Shape");
+Shape530.USE = "HAnimSiteShape";
+HAnimSite528.children[1] = Shape530;
 
-HAnimSegment513.children[5] = HAnimSite529;
+HAnimSegment512.children[5] = HAnimSite528;
 
-let HAnimSite532 = browser.currentScene.createNode("HAnimSite");
-HAnimSite532.name = "l_thelion_pt";
-HAnimSite532.DEF = "hanim_l_thelion_pt";
-HAnimSite532.translation = new SFVec3f(new float[0.0918,1.3382,0.1192]);
+let HAnimSite531 = browser.currentScene.createNode("HAnimSite");
+HAnimSite531.name = "l_thelion_pt";
+HAnimSite531.DEF = "hanim_l_thelion_pt";
+HAnimSite531.translation = new SFVec3f(new float[0.0918,1.3382,0.1192]);
 //HAnimSite visualization shape
-let TouchSensor533 = browser.currentScene.createNode("TouchSensor");
-TouchSensor533.description = "HAnimSite l_thelion";
-HAnimSite532.children = new MFNode();
+let TouchSensor532 = browser.currentScene.createNode("TouchSensor");
+TouchSensor532.description = "HAnimSite l_thelion";
+HAnimSite531.children = new MFNode();
 
-HAnimSite532.children[0] = TouchSensor533;
+HAnimSite531.children[0] = TouchSensor532;
 
-let Shape534 = browser.currentScene.createNode("Shape");
-Shape534.USE = "HAnimSiteShape";
-HAnimSite532.children[1] = Shape534;
+let Shape533 = browser.currentScene.createNode("Shape");
+Shape533.USE = "HAnimSiteShape";
+HAnimSite531.children[1] = Shape533;
 
-HAnimSegment513.children[6] = HAnimSite532;
+HAnimSegment512.children[6] = HAnimSite531;
 
-HAnimJoint512.children = new MFNode();
+HAnimJoint511.children = new MFNode();
 
-HAnimJoint512.children[0] = HAnimSegment513;
+HAnimJoint511.children[0] = HAnimSegment512;
 
-let HAnimJoint535 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint535.name = "vt8";
-HAnimJoint535.DEF = "hanim_vt8";
-HAnimJoint535.center = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
-HAnimJoint535.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment536 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment536.name = "t8";
-HAnimSegment536.DEF = "hanim_t8";
+let HAnimJoint534 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint534.name = "vt8";
+HAnimJoint534.DEF = "hanim_vt8";
+HAnimJoint534.center = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
+HAnimJoint534.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment535 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment535.name = "t8";
+HAnimSegment535.DEF = "hanim_t8";
 //<HAnimJoint name='vt8'/> visualization sphere is placed within <HAnimSegment name='t8'/>
-let TouchSensor537 = browser.currentScene.createNode("TouchSensor");
-TouchSensor537.description = "HAnimJoint vt8, HAnimSegment t8";
-HAnimSegment536.children = new MFNode();
+let TouchSensor536 = browser.currentScene.createNode("TouchSensor");
+TouchSensor536.description = "HAnimJoint vt8, HAnimSegment t8";
+HAnimSegment535.children = new MFNode();
 
-HAnimSegment536.children[0] = TouchSensor537;
+HAnimSegment535.children[0] = TouchSensor536;
 
-let Transform538 = browser.currentScene.createNode("Transform");
-Transform538.translation = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
-let Shape539 = browser.currentScene.createNode("Shape");
-Shape539.USE = "HAnimJointShape";
-Transform538.children = new MFNode();
+let Transform537 = browser.currentScene.createNode("Transform");
+Transform537.translation = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
+let Shape538 = browser.currentScene.createNode("Shape");
+Shape538.USE = "HAnimJointShape";
+Transform537.children = new MFNode();
 
-Transform538.children[0] = Shape539;
+Transform537.children[0] = Shape538;
 
-HAnimSegment536.children[1] = Transform538;
+HAnimSegment535.children[1] = Transform537;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt8'/> to <HAnimJoint name='vt7'/>
-let Shape540 = browser.currentScene.createNode("Shape");
-let LineSet541 = browser.currentScene.createNode("LineSet");
-LineSet541.vertexCount = new MFInt32(new int[2]);
-let Coordinate542 = browser.currentScene.createNode("Coordinate");
-Coordinate542.point = new MFVec3f(new float[0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833]);
-LineSet541.coord = Coordinate542;
+let Shape539 = browser.currentScene.createNode("Shape");
+let LineSet540 = browser.currentScene.createNode("LineSet");
+LineSet540.vertexCount = new MFInt32(new int[2]);
+let Coordinate541 = browser.currentScene.createNode("Coordinate");
+Coordinate541.point = new MFVec3f(new float[0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833]);
+LineSet540.coord = Coordinate541;
 
-let ColorRGBA543 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA543.USE = "HAnimSegmentLineColorRGBA";
-LineSet541.color = ColorRGBA543;
+let ColorRGBA542 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA542.USE = "HAnimSegmentLineColorRGBA";
+LineSet540.color = ColorRGBA542;
 
-Shape540.geometry = LineSet541;
+Shape539.geometry = LineSet540;
 
-HAnimSegment536.children[2] = Shape540;
+HAnimSegment535.children[2] = Shape539;
 
-HAnimJoint535.children = new MFNode();
+HAnimJoint534.children = new MFNode();
 
-HAnimJoint535.children[0] = HAnimSegment536;
+HAnimJoint534.children[0] = HAnimSegment535;
 
-let HAnimJoint544 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint544.name = "vt7";
-HAnimJoint544.DEF = "hanim_vt7";
-HAnimJoint544.center = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
-HAnimJoint544.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment545 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment545.name = "t7";
-HAnimSegment545.DEF = "hanim_t7";
+let HAnimJoint543 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint543.name = "vt7";
+HAnimJoint543.DEF = "hanim_vt7";
+HAnimJoint543.center = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
+HAnimJoint543.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment544 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment544.name = "t7";
+HAnimSegment544.DEF = "hanim_t7";
 //<HAnimJoint name='vt7'/> visualization sphere is placed within <HAnimSegment name='t7'/>
-let TouchSensor546 = browser.currentScene.createNode("TouchSensor");
-TouchSensor546.description = "HAnimJoint vt7, HAnimSegment t7";
-HAnimSegment545.children = new MFNode();
+let TouchSensor545 = browser.currentScene.createNode("TouchSensor");
+TouchSensor545.description = "HAnimJoint vt7, HAnimSegment t7";
+HAnimSegment544.children = new MFNode();
 
-HAnimSegment545.children[0] = TouchSensor546;
+HAnimSegment544.children[0] = TouchSensor545;
 
-let Transform547 = browser.currentScene.createNode("Transform");
-Transform547.translation = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
-let Shape548 = browser.currentScene.createNode("Shape");
-Shape548.USE = "HAnimJointShape";
-Transform547.children = new MFNode();
+let Transform546 = browser.currentScene.createNode("Transform");
+Transform546.translation = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
+let Shape547 = browser.currentScene.createNode("Shape");
+Shape547.USE = "HAnimJointShape";
+Transform546.children = new MFNode();
 
-Transform547.children[0] = Shape548;
+Transform546.children[0] = Shape547;
 
-HAnimSegment545.children[1] = Transform547;
+HAnimSegment544.children[1] = Transform546;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt7'/> to <HAnimJoint name='vt6'/>
-let Shape549 = browser.currentScene.createNode("Shape");
-let LineSet550 = browser.currentScene.createNode("LineSet");
-LineSet550.vertexCount = new MFInt32(new int[2]);
-let Coordinate551 = browser.currentScene.createNode("Coordinate");
-Coordinate551.point = new MFVec3f(new float[0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08]);
-LineSet550.coord = Coordinate551;
+let Shape548 = browser.currentScene.createNode("Shape");
+let LineSet549 = browser.currentScene.createNode("LineSet");
+LineSet549.vertexCount = new MFInt32(new int[2]);
+let Coordinate550 = browser.currentScene.createNode("Coordinate");
+Coordinate550.point = new MFVec3f(new float[0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08]);
+LineSet549.coord = Coordinate550;
 
-let ColorRGBA552 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA552.USE = "HAnimSegmentLineColorRGBA";
-LineSet550.color = ColorRGBA552;
+let ColorRGBA551 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA551.USE = "HAnimSegmentLineColorRGBA";
+LineSet549.color = ColorRGBA551;
 
-Shape549.geometry = LineSet550;
+Shape548.geometry = LineSet549;
 
-HAnimSegment545.children[2] = Shape549;
+HAnimSegment544.children[2] = Shape548;
 
-HAnimJoint544.children = new MFNode();
+HAnimJoint543.children = new MFNode();
 
-HAnimJoint544.children[0] = HAnimSegment545;
+HAnimJoint543.children[0] = HAnimSegment544;
 
-let HAnimJoint553 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint553.name = "vt6";
-HAnimJoint553.DEF = "hanim_vt6";
-HAnimJoint553.center = new SFVec3f(new float[0.0059,1.3866,-0.08]);
-HAnimJoint553.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment554 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment554.name = "t6";
-HAnimSegment554.DEF = "hanim_t6";
+let HAnimJoint552 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint552.name = "vt6";
+HAnimJoint552.DEF = "hanim_vt6";
+HAnimJoint552.center = new SFVec3f(new float[0.0059,1.3866,-0.08]);
+HAnimJoint552.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment553 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment553.name = "t6";
+HAnimSegment553.DEF = "hanim_t6";
 //<HAnimJoint name='vt6'/> visualization sphere is placed within <HAnimSegment name='t6'/>
-let TouchSensor555 = browser.currentScene.createNode("TouchSensor");
-TouchSensor555.description = "HAnimJoint vt6, HAnimSegment t6";
-HAnimSegment554.children = new MFNode();
+let TouchSensor554 = browser.currentScene.createNode("TouchSensor");
+TouchSensor554.description = "HAnimJoint vt6, HAnimSegment t6";
+HAnimSegment553.children = new MFNode();
 
-HAnimSegment554.children[0] = TouchSensor555;
+HAnimSegment553.children[0] = TouchSensor554;
 
-let Transform556 = browser.currentScene.createNode("Transform");
-Transform556.translation = new SFVec3f(new float[0.0059,1.3866,-0.08]);
-let Shape557 = browser.currentScene.createNode("Shape");
-Shape557.USE = "HAnimJointShape";
-Transform556.children = new MFNode();
+let Transform555 = browser.currentScene.createNode("Transform");
+Transform555.translation = new SFVec3f(new float[0.0059,1.3866,-0.08]);
+let Shape556 = browser.currentScene.createNode("Shape");
+Shape556.USE = "HAnimJointShape";
+Transform555.children = new MFNode();
 
-Transform556.children[0] = Shape557;
+Transform555.children[0] = Shape556;
 
-HAnimSegment554.children[1] = Transform556;
+HAnimSegment553.children[1] = Transform555;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt6'/> to <HAnimJoint name='vt5'/>
-let Shape558 = browser.currentScene.createNode("Shape");
-let LineSet559 = browser.currentScene.createNode("LineSet");
-LineSet559.vertexCount = new MFInt32(new int[2]);
-let Coordinate560 = browser.currentScene.createNode("Coordinate");
-Coordinate560.point = new MFVec3f(new float[0.0059,1.3866,-0.08,0.006,1.4102,-0.0745]);
-LineSet559.coord = Coordinate560;
+let Shape557 = browser.currentScene.createNode("Shape");
+let LineSet558 = browser.currentScene.createNode("LineSet");
+LineSet558.vertexCount = new MFInt32(new int[2]);
+let Coordinate559 = browser.currentScene.createNode("Coordinate");
+Coordinate559.point = new MFVec3f(new float[0.0059,1.3866,-0.08,0.006,1.4102,-0.0745]);
+LineSet558.coord = Coordinate559;
 
-let ColorRGBA561 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA561.USE = "HAnimSegmentLineColorRGBA";
-LineSet559.color = ColorRGBA561;
+let ColorRGBA560 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA560.USE = "HAnimSegmentLineColorRGBA";
+LineSet558.color = ColorRGBA560;
 
-Shape558.geometry = LineSet559;
+Shape557.geometry = LineSet558;
 
-HAnimSegment554.children[2] = Shape558;
+HAnimSegment553.children[2] = Shape557;
 
-HAnimJoint553.children = new MFNode();
+HAnimJoint552.children = new MFNode();
 
-HAnimJoint553.children[0] = HAnimSegment554;
+HAnimJoint552.children[0] = HAnimSegment553;
 
-let HAnimJoint562 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint562.name = "vt5";
-HAnimJoint562.DEF = "hanim_vt5";
-HAnimJoint562.center = new SFVec3f(new float[0.006,1.4102,-0.0745]);
-HAnimJoint562.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment563 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment563.name = "t5";
-HAnimSegment563.DEF = "hanim_t5";
+let HAnimJoint561 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint561.name = "vt5";
+HAnimJoint561.DEF = "hanim_vt5";
+HAnimJoint561.center = new SFVec3f(new float[0.006,1.4102,-0.0745]);
+HAnimJoint561.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment562 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment562.name = "t5";
+HAnimSegment562.DEF = "hanim_t5";
 //<HAnimJoint name='vt5'/> visualization sphere is placed within <HAnimSegment name='t5'/>
-let TouchSensor564 = browser.currentScene.createNode("TouchSensor");
-TouchSensor564.description = "HAnimJoint vt5, HAnimSegment t5";
-HAnimSegment563.children = new MFNode();
+let TouchSensor563 = browser.currentScene.createNode("TouchSensor");
+TouchSensor563.description = "HAnimJoint vt5, HAnimSegment t5";
+HAnimSegment562.children = new MFNode();
 
-HAnimSegment563.children[0] = TouchSensor564;
+HAnimSegment562.children[0] = TouchSensor563;
 
-let Transform565 = browser.currentScene.createNode("Transform");
-Transform565.translation = new SFVec3f(new float[0.006,1.4102,-0.0745]);
-let Shape566 = browser.currentScene.createNode("Shape");
-Shape566.USE = "HAnimJointShape";
-Transform565.children = new MFNode();
+let Transform564 = browser.currentScene.createNode("Transform");
+Transform564.translation = new SFVec3f(new float[0.006,1.4102,-0.0745]);
+let Shape565 = browser.currentScene.createNode("Shape");
+Shape565.USE = "HAnimJointShape";
+Transform564.children = new MFNode();
 
-Transform565.children[0] = Shape566;
+Transform564.children[0] = Shape565;
 
-HAnimSegment563.children[1] = Transform565;
+HAnimSegment562.children[1] = Transform564;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt5'/> to <HAnimJoint name='vt4'/>
-let Shape567 = browser.currentScene.createNode("Shape");
-let LineSet568 = browser.currentScene.createNode("LineSet");
-LineSet568.vertexCount = new MFInt32(new int[2]);
-let Coordinate569 = browser.currentScene.createNode("Coordinate");
-Coordinate569.point = new MFVec3f(new float[0.006,1.4102,-0.0745,0.0061,1.432,-0.0675]);
-LineSet568.coord = Coordinate569;
+let Shape566 = browser.currentScene.createNode("Shape");
+let LineSet567 = browser.currentScene.createNode("LineSet");
+LineSet567.vertexCount = new MFInt32(new int[2]);
+let Coordinate568 = browser.currentScene.createNode("Coordinate");
+Coordinate568.point = new MFVec3f(new float[0.006,1.4102,-0.0745,0.0061,1.432,-0.0675]);
+LineSet567.coord = Coordinate568;
 
-let ColorRGBA570 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA570.USE = "HAnimSegmentLineColorRGBA";
-LineSet568.color = ColorRGBA570;
+let ColorRGBA569 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA569.USE = "HAnimSegmentLineColorRGBA";
+LineSet567.color = ColorRGBA569;
 
-Shape567.geometry = LineSet568;
+Shape566.geometry = LineSet567;
 
-HAnimSegment563.children[2] = Shape567;
+HAnimSegment562.children[2] = Shape566;
 
-HAnimJoint562.children = new MFNode();
+HAnimJoint561.children = new MFNode();
 
-HAnimJoint562.children[0] = HAnimSegment563;
+HAnimJoint561.children[0] = HAnimSegment562;
 
-let HAnimJoint571 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint571.name = "vt4";
-HAnimJoint571.DEF = "hanim_vt4";
-HAnimJoint571.center = new SFVec3f(new float[0.0061,1.432,-0.0675]);
-HAnimJoint571.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment572 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment572.name = "t4";
-HAnimSegment572.DEF = "hanim_t4";
+let HAnimJoint570 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint570.name = "vt4";
+HAnimJoint570.DEF = "hanim_vt4";
+HAnimJoint570.center = new SFVec3f(new float[0.0061,1.432,-0.0675]);
+HAnimJoint570.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment571 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment571.name = "t4";
+HAnimSegment571.DEF = "hanim_t4";
 //<HAnimJoint name='vt4'/> visualization sphere is placed within <HAnimSegment name='t4'/>
-let TouchSensor573 = browser.currentScene.createNode("TouchSensor");
-TouchSensor573.description = "HAnimJoint vt4, HAnimSegment t4";
-HAnimSegment572.children = new MFNode();
+let TouchSensor572 = browser.currentScene.createNode("TouchSensor");
+TouchSensor572.description = "HAnimJoint vt4, HAnimSegment t4";
+HAnimSegment571.children = new MFNode();
 
-HAnimSegment572.children[0] = TouchSensor573;
+HAnimSegment571.children[0] = TouchSensor572;
 
-let Transform574 = browser.currentScene.createNode("Transform");
-Transform574.translation = new SFVec3f(new float[0.0061,1.432,-0.0675]);
-let Shape575 = browser.currentScene.createNode("Shape");
-Shape575.USE = "HAnimJointShape";
-Transform574.children = new MFNode();
+let Transform573 = browser.currentScene.createNode("Transform");
+Transform573.translation = new SFVec3f(new float[0.0061,1.432,-0.0675]);
+let Shape574 = browser.currentScene.createNode("Shape");
+Shape574.USE = "HAnimJointShape";
+Transform573.children = new MFNode();
 
-Transform574.children[0] = Shape575;
+Transform573.children[0] = Shape574;
 
-HAnimSegment572.children[1] = Transform574;
+HAnimSegment571.children[1] = Transform573;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt4'/> to <HAnimJoint name='vt3'/>
-let Shape576 = browser.currentScene.createNode("Shape");
-let LineSet577 = browser.currentScene.createNode("LineSet");
-LineSet577.vertexCount = new MFInt32(new int[2]);
-let Coordinate578 = browser.currentScene.createNode("Coordinate");
-Coordinate578.point = new MFVec3f(new float[0.0061,1.432,-0.0675,0.0062,1.4583,-0.057]);
-LineSet577.coord = Coordinate578;
+let Shape575 = browser.currentScene.createNode("Shape");
+let LineSet576 = browser.currentScene.createNode("LineSet");
+LineSet576.vertexCount = new MFInt32(new int[2]);
+let Coordinate577 = browser.currentScene.createNode("Coordinate");
+Coordinate577.point = new MFVec3f(new float[0.0061,1.432,-0.0675,0.0062,1.4583,-0.057]);
+LineSet576.coord = Coordinate577;
 
-let ColorRGBA579 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA579.USE = "HAnimSegmentLineColorRGBA";
-LineSet577.color = ColorRGBA579;
+let ColorRGBA578 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA578.USE = "HAnimSegmentLineColorRGBA";
+LineSet576.color = ColorRGBA578;
 
-Shape576.geometry = LineSet577;
+Shape575.geometry = LineSet576;
 
-HAnimSegment572.children[2] = Shape576;
+HAnimSegment571.children[2] = Shape575;
 
-HAnimJoint571.children = new MFNode();
+HAnimJoint570.children = new MFNode();
 
-HAnimJoint571.children[0] = HAnimSegment572;
+HAnimJoint570.children[0] = HAnimSegment571;
 
-let HAnimJoint580 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint580.name = "vt3";
-HAnimJoint580.DEF = "hanim_vt3";
-HAnimJoint580.center = new SFVec3f(new float[0.0062,1.4583,-0.057]);
-HAnimJoint580.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment581 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment581.name = "t3";
-HAnimSegment581.DEF = "hanim_t3";
+let HAnimJoint579 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint579.name = "vt3";
+HAnimJoint579.DEF = "hanim_vt3";
+HAnimJoint579.center = new SFVec3f(new float[0.0062,1.4583,-0.057]);
+HAnimJoint579.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment580 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment580.name = "t3";
+HAnimSegment580.DEF = "hanim_t3";
 //<HAnimJoint name='vt3'/> visualization sphere is placed within <HAnimSegment name='t3'/>
-let TouchSensor582 = browser.currentScene.createNode("TouchSensor");
-TouchSensor582.description = "HAnimJoint vt3, HAnimSegment t3";
-HAnimSegment581.children = new MFNode();
+let TouchSensor581 = browser.currentScene.createNode("TouchSensor");
+TouchSensor581.description = "HAnimJoint vt3, HAnimSegment t3";
+HAnimSegment580.children = new MFNode();
 
-HAnimSegment581.children[0] = TouchSensor582;
+HAnimSegment580.children[0] = TouchSensor581;
 
-let Transform583 = browser.currentScene.createNode("Transform");
-Transform583.translation = new SFVec3f(new float[0.0062,1.4583,-0.057]);
-let Shape584 = browser.currentScene.createNode("Shape");
-Shape584.USE = "HAnimJointShape";
-Transform583.children = new MFNode();
+let Transform582 = browser.currentScene.createNode("Transform");
+Transform582.translation = new SFVec3f(new float[0.0062,1.4583,-0.057]);
+let Shape583 = browser.currentScene.createNode("Shape");
+Shape583.USE = "HAnimJointShape";
+Transform582.children = new MFNode();
 
-Transform583.children[0] = Shape584;
+Transform582.children[0] = Shape583;
 
-HAnimSegment581.children[1] = Transform583;
+HAnimSegment580.children[1] = Transform582;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt3'/> to <HAnimJoint name='vt2'/>
-let Shape585 = browser.currentScene.createNode("Shape");
-let LineSet586 = browser.currentScene.createNode("LineSet");
-LineSet586.vertexCount = new MFInt32(new int[2]);
-let Coordinate587 = browser.currentScene.createNode("Coordinate");
-Coordinate587.point = new MFVec3f(new float[0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484]);
-LineSet586.coord = Coordinate587;
+let Shape584 = browser.currentScene.createNode("Shape");
+let LineSet585 = browser.currentScene.createNode("LineSet");
+LineSet585.vertexCount = new MFInt32(new int[2]);
+let Coordinate586 = browser.currentScene.createNode("Coordinate");
+Coordinate586.point = new MFVec3f(new float[0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484]);
+LineSet585.coord = Coordinate586;
 
-let ColorRGBA588 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA588.USE = "HAnimSegmentLineColorRGBA";
-LineSet586.color = ColorRGBA588;
+let ColorRGBA587 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA587.USE = "HAnimSegmentLineColorRGBA";
+LineSet585.color = ColorRGBA587;
 
-Shape585.geometry = LineSet586;
+Shape584.geometry = LineSet585;
 
-HAnimSegment581.children[2] = Shape585;
+HAnimSegment580.children[2] = Shape584;
 
-HAnimJoint580.children = new MFNode();
+HAnimJoint579.children = new MFNode();
 
-HAnimJoint580.children[0] = HAnimSegment581;
+HAnimJoint579.children[0] = HAnimSegment580;
 
-let HAnimJoint589 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint589.name = "vt2";
-HAnimJoint589.DEF = "hanim_vt2";
-HAnimJoint589.center = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
-HAnimJoint589.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment590 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment590.name = "t2";
-HAnimSegment590.DEF = "hanim_t2";
+let HAnimJoint588 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint588.name = "vt2";
+HAnimJoint588.DEF = "hanim_vt2";
+HAnimJoint588.center = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
+HAnimJoint588.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment589 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment589.name = "t2";
+HAnimSegment589.DEF = "hanim_t2";
 //<HAnimJoint name='vt2'/> visualization sphere is placed within <HAnimSegment name='t2'/>
-let TouchSensor591 = browser.currentScene.createNode("TouchSensor");
-TouchSensor591.description = "HAnimJoint vt2, HAnimSegment t2";
-HAnimSegment590.children = new MFNode();
+let TouchSensor590 = browser.currentScene.createNode("TouchSensor");
+TouchSensor590.description = "HAnimJoint vt2, HAnimSegment t2";
+HAnimSegment589.children = new MFNode();
 
-HAnimSegment590.children[0] = TouchSensor591;
+HAnimSegment589.children[0] = TouchSensor590;
 
-let Transform592 = browser.currentScene.createNode("Transform");
-Transform592.translation = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
-let Shape593 = browser.currentScene.createNode("Shape");
-Shape593.USE = "HAnimJointShape";
-Transform592.children = new MFNode();
+let Transform591 = browser.currentScene.createNode("Transform");
+Transform591.translation = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
+let Shape592 = browser.currentScene.createNode("Shape");
+Shape592.USE = "HAnimJointShape";
+Transform591.children = new MFNode();
 
-Transform592.children[0] = Shape593;
+Transform591.children[0] = Shape592;
 
-HAnimSegment590.children[1] = Transform592;
+HAnimSegment589.children[1] = Transform591;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt2'/> to <HAnimJoint name='vt1'/>
-let Shape594 = browser.currentScene.createNode("Shape");
-let LineSet595 = browser.currentScene.createNode("LineSet");
-LineSet595.vertexCount = new MFInt32(new int[2]);
-let Coordinate596 = browser.currentScene.createNode("Coordinate");
-Coordinate596.point = new MFVec3f(new float[0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387]);
-LineSet595.coord = Coordinate596;
+let Shape593 = browser.currentScene.createNode("Shape");
+let LineSet594 = browser.currentScene.createNode("LineSet");
+LineSet594.vertexCount = new MFInt32(new int[2]);
+let Coordinate595 = browser.currentScene.createNode("Coordinate");
+Coordinate595.point = new MFVec3f(new float[0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387]);
+LineSet594.coord = Coordinate595;
 
-let ColorRGBA597 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA597.USE = "HAnimSegmentLineColorRGBA";
-LineSet595.color = ColorRGBA597;
+let ColorRGBA596 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA596.USE = "HAnimSegmentLineColorRGBA";
+LineSet594.color = ColorRGBA596;
 
-Shape594.geometry = LineSet595;
+Shape593.geometry = LineSet594;
 
-HAnimSegment590.children[2] = Shape594;
+HAnimSegment589.children[2] = Shape593;
 
-HAnimJoint589.children = new MFNode();
+HAnimJoint588.children = new MFNode();
 
-HAnimJoint589.children[0] = HAnimSegment590;
+HAnimJoint588.children[0] = HAnimSegment589;
 
-let HAnimJoint598 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint598.name = "vt1";
-HAnimJoint598.DEF = "hanim_vt1";
-HAnimJoint598.center = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
-HAnimJoint598.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment599 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment599.name = "t1";
-HAnimSegment599.DEF = "hanim_t1";
+let HAnimJoint597 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint597.name = "vt1";
+HAnimJoint597.DEF = "hanim_vt1";
+HAnimJoint597.center = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
+HAnimJoint597.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment598 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment598.name = "t1";
+HAnimSegment598.DEF = "hanim_t1";
 //<HAnimJoint name='vt1'/> visualization sphere is placed within <HAnimSegment name='t1'/>
-let TouchSensor600 = browser.currentScene.createNode("TouchSensor");
-TouchSensor600.description = "HAnimJoint vt1, HAnimSegment t1";
-HAnimSegment599.children = new MFNode();
+let TouchSensor599 = browser.currentScene.createNode("TouchSensor");
+TouchSensor599.description = "HAnimJoint vt1, HAnimSegment t1";
+HAnimSegment598.children = new MFNode();
 
-HAnimSegment599.children[0] = TouchSensor600;
+HAnimSegment598.children[0] = TouchSensor599;
 
-let Transform601 = browser.currentScene.createNode("Transform");
-Transform601.translation = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
-let Shape602 = browser.currentScene.createNode("Shape");
-Shape602.USE = "HAnimJointShape";
-Transform601.children = new MFNode();
+let Transform600 = browser.currentScene.createNode("Transform");
+Transform600.translation = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
+let Shape601 = browser.currentScene.createNode("Shape");
+Shape601.USE = "HAnimJointShape";
+Transform600.children = new MFNode();
 
-Transform601.children[0] = Shape602;
+Transform600.children[0] = Shape601;
 
-HAnimSegment599.children[1] = Transform601;
+HAnimSegment598.children[1] = Transform600;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt1'/> to <HAnimJoint name='vc7'/>
-let Shape603 = browser.currentScene.createNode("Shape");
-let LineSet604 = browser.currentScene.createNode("LineSet");
-LineSet604.vertexCount = new MFInt32(new int[2]);
-let Coordinate605 = browser.currentScene.createNode("Coordinate");
-Coordinate605.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301]);
-LineSet604.coord = Coordinate605;
+let Shape602 = browser.currentScene.createNode("Shape");
+let LineSet603 = browser.currentScene.createNode("LineSet");
+LineSet603.vertexCount = new MFInt32(new int[2]);
+let Coordinate604 = browser.currentScene.createNode("Coordinate");
+Coordinate604.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301]);
+LineSet603.coord = Coordinate604;
 
-let ColorRGBA606 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA606.USE = "HAnimSegmentLineColorRGBA";
-LineSet604.color = ColorRGBA606;
+let ColorRGBA605 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA605.USE = "HAnimSegmentLineColorRGBA";
+LineSet603.color = ColorRGBA605;
 
-Shape603.geometry = LineSet604;
+Shape602.geometry = LineSet603;
 
-HAnimSegment599.children[2] = Shape603;
+HAnimSegment598.children[2] = Shape602;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt1'/> to <HAnimJoint name='l_sternoclavicular'/>
-let Shape607 = browser.currentScene.createNode("Shape");
-let LineSet608 = browser.currentScene.createNode("LineSet");
-LineSet608.vertexCount = new MFInt32(new int[2]);
-let Coordinate609 = browser.currentScene.createNode("Coordinate");
-Coordinate609.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353]);
-LineSet608.coord = Coordinate609;
+let Shape606 = browser.currentScene.createNode("Shape");
+let LineSet607 = browser.currentScene.createNode("LineSet");
+LineSet607.vertexCount = new MFInt32(new int[2]);
+let Coordinate608 = browser.currentScene.createNode("Coordinate");
+Coordinate608.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353]);
+LineSet607.coord = Coordinate608;
 
-let ColorRGBA610 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA610.USE = "HAnimSegmentLineColorRGBA";
-LineSet608.color = ColorRGBA610;
+let ColorRGBA609 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA609.USE = "HAnimSegmentLineColorRGBA";
+LineSet607.color = ColorRGBA609;
 
-Shape607.geometry = LineSet608;
+Shape606.geometry = LineSet607;
 
-HAnimSegment599.children[3] = Shape607;
+HAnimSegment598.children[3] = Shape606;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vt1'/> to <HAnimJoint name='r_sternoclavicular'/>
-let Shape611 = browser.currentScene.createNode("Shape");
-let LineSet612 = browser.currentScene.createNode("LineSet");
-LineSet612.vertexCount = new MFInt32(new int[2]);
-let Coordinate613 = browser.currentScene.createNode("Coordinate");
-Coordinate613.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,-0.082,1.4488,-0.0353]);
-LineSet612.coord = Coordinate613;
+let Shape610 = browser.currentScene.createNode("Shape");
+let LineSet611 = browser.currentScene.createNode("LineSet");
+LineSet611.vertexCount = new MFInt32(new int[2]);
+let Coordinate612 = browser.currentScene.createNode("Coordinate");
+Coordinate612.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,-0.082,1.4488,-0.0353]);
+LineSet611.coord = Coordinate612;
 
-let ColorRGBA614 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA614.USE = "HAnimSegmentLineColorRGBA";
-LineSet612.color = ColorRGBA614;
+let ColorRGBA613 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA613.USE = "HAnimSegmentLineColorRGBA";
+LineSet611.color = ColorRGBA613;
 
-Shape611.geometry = LineSet612;
+Shape610.geometry = LineSet611;
 
-HAnimSegment599.children[4] = Shape611;
+HAnimSegment598.children[4] = Shape610;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='suprasternale'/>
-let Shape615 = browser.currentScene.createNode("Shape");
-let LineSet616 = browser.currentScene.createNode("LineSet");
-LineSet616.vertexCount = new MFInt32(new int[2]);
-let Coordinate617 = browser.currentScene.createNode("Coordinate");
-Coordinate617.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0084,1.4714,0.0551]);
-LineSet616.coord = Coordinate617;
+let Shape614 = browser.currentScene.createNode("Shape");
+let LineSet615 = browser.currentScene.createNode("LineSet");
+LineSet615.vertexCount = new MFInt32(new int[2]);
+let Coordinate616 = browser.currentScene.createNode("Coordinate");
+Coordinate616.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0084,1.4714,0.0551]);
+LineSet615.coord = Coordinate616;
 
-let ColorRGBA618 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA618.USE = "HAnimSiteLineColorRGBA";
-LineSet616.color = ColorRGBA618;
+let ColorRGBA617 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA617.USE = "HAnimSiteLineColorRGBA";
+LineSet615.color = ColorRGBA617;
 
-Shape615.geometry = LineSet616;
+Shape614.geometry = LineSet615;
 
-HAnimSegment599.children[5] = Shape615;
+HAnimSegment598.children[5] = Shape614;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='cervicale'/>
-let Shape619 = browser.currentScene.createNode("Shape");
-let LineSet620 = browser.currentScene.createNode("LineSet");
-LineSet620.vertexCount = new MFInt32(new int[2]);
-let Coordinate621 = browser.currentScene.createNode("Coordinate");
-Coordinate621.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0064,1.52,-0.0815]);
-LineSet620.coord = Coordinate621;
+let Shape618 = browser.currentScene.createNode("Shape");
+let LineSet619 = browser.currentScene.createNode("LineSet");
+LineSet619.vertexCount = new MFInt32(new int[2]);
+let Coordinate620 = browser.currentScene.createNode("Coordinate");
+Coordinate620.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0064,1.52,-0.0815]);
+LineSet619.coord = Coordinate620;
 
-let ColorRGBA622 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA622.USE = "HAnimSiteLineColorRGBA";
-LineSet620.color = ColorRGBA622;
+let ColorRGBA621 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA621.USE = "HAnimSiteLineColorRGBA";
+LineSet619.color = ColorRGBA621;
 
-Shape619.geometry = LineSet620;
+Shape618.geometry = LineSet619;
 
-HAnimSegment599.children[6] = Shape619;
+HAnimSegment598.children[6] = Shape618;
 
-let HAnimSite623 = browser.currentScene.createNode("HAnimSite");
-HAnimSite623.name = "suprasternale_pt";
-HAnimSite623.DEF = "hanim_suprasternale_pt";
-HAnimSite623.translation = new SFVec3f(new float[0.0084,1.4714,0.0551]);
+let HAnimSite622 = browser.currentScene.createNode("HAnimSite");
+HAnimSite622.name = "suprasternale_pt";
+HAnimSite622.DEF = "hanim_suprasternale_pt";
+HAnimSite622.translation = new SFVec3f(new float[0.0084,1.4714,0.0551]);
 //HAnimSite visualization shape
-let TouchSensor624 = browser.currentScene.createNode("TouchSensor");
-TouchSensor624.description = "HAnimSite suprasternale";
-HAnimSite623.children = new MFNode();
+let TouchSensor623 = browser.currentScene.createNode("TouchSensor");
+TouchSensor623.description = "HAnimSite suprasternale";
+HAnimSite622.children = new MFNode();
 
-HAnimSite623.children[0] = TouchSensor624;
+HAnimSite622.children[0] = TouchSensor623;
 
-let Shape625 = browser.currentScene.createNode("Shape");
-Shape625.USE = "HAnimSiteShape";
-HAnimSite623.children[1] = Shape625;
+let Shape624 = browser.currentScene.createNode("Shape");
+Shape624.USE = "HAnimSiteShape";
+HAnimSite622.children[1] = Shape624;
 
-HAnimSegment599.children[7] = HAnimSite623;
+HAnimSegment598.children[7] = HAnimSite622;
 
-let HAnimSite626 = browser.currentScene.createNode("HAnimSite");
-HAnimSite626.name = "cervicale_pt";
-HAnimSite626.DEF = "hanim_cervicale_pt";
-HAnimSite626.translation = new SFVec3f(new float[0.0064,1.52,-0.0815]);
+let HAnimSite625 = browser.currentScene.createNode("HAnimSite");
+HAnimSite625.name = "cervicale_pt";
+HAnimSite625.DEF = "hanim_cervicale_pt";
+HAnimSite625.translation = new SFVec3f(new float[0.0064,1.52,-0.0815]);
 //HAnimSite visualization shape
-let TouchSensor627 = browser.currentScene.createNode("TouchSensor");
-TouchSensor627.description = "HAnimSite cervicale";
-HAnimSite626.children = new MFNode();
+let TouchSensor626 = browser.currentScene.createNode("TouchSensor");
+TouchSensor626.description = "HAnimSite cervicale";
+HAnimSite625.children = new MFNode();
 
-HAnimSite626.children[0] = TouchSensor627;
+HAnimSite625.children[0] = TouchSensor626;
 
-let Shape628 = browser.currentScene.createNode("Shape");
-Shape628.USE = "HAnimSiteShape";
-HAnimSite626.children[1] = Shape628;
+let Shape627 = browser.currentScene.createNode("Shape");
+Shape627.USE = "HAnimSiteShape";
+HAnimSite625.children[1] = Shape627;
 
-HAnimSegment599.children[8] = HAnimSite626;
+HAnimSegment598.children[8] = HAnimSite625;
 
-HAnimJoint598.children = new MFNode();
+HAnimJoint597.children = new MFNode();
 
-HAnimJoint598.children[0] = HAnimSegment599;
+HAnimJoint597.children[0] = HAnimSegment598;
 
-let HAnimJoint629 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint629.name = "vc7";
-HAnimJoint629.DEF = "hanim_vc7";
-HAnimJoint629.center = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
-HAnimJoint629.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment630 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment630.name = "c7";
-HAnimSegment630.DEF = "hanim_c7";
+let HAnimJoint628 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint628.name = "vc7";
+HAnimJoint628.DEF = "hanim_vc7";
+HAnimJoint628.center = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
+HAnimJoint628.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment629 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment629.name = "c7";
+HAnimSegment629.DEF = "hanim_c7";
 //<HAnimJoint name='vc7'/> visualization sphere is placed within <HAnimSegment name='c7'/>
-let TouchSensor631 = browser.currentScene.createNode("TouchSensor");
-TouchSensor631.description = "HAnimJoint vc7, HAnimSegment c7";
-HAnimSegment630.children = new MFNode();
+let TouchSensor630 = browser.currentScene.createNode("TouchSensor");
+TouchSensor630.description = "HAnimJoint vc7, HAnimSegment c7";
+HAnimSegment629.children = new MFNode();
 
-HAnimSegment630.children[0] = TouchSensor631;
+HAnimSegment629.children[0] = TouchSensor630;
 
-let Transform632 = browser.currentScene.createNode("Transform");
-Transform632.translation = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
-let Shape633 = browser.currentScene.createNode("Shape");
-Shape633.USE = "HAnimJointShape";
-Transform632.children = new MFNode();
+let Transform631 = browser.currentScene.createNode("Transform");
+Transform631.translation = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
+let Shape632 = browser.currentScene.createNode("Shape");
+Shape632.USE = "HAnimJointShape";
+Transform631.children = new MFNode();
 
-Transform632.children[0] = Shape633;
+Transform631.children[0] = Shape632;
 
-HAnimSegment630.children[1] = Transform632;
+HAnimSegment629.children[1] = Transform631;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc7'/> to <HAnimJoint name='vc6'/>
-let Shape634 = browser.currentScene.createNode("Shape");
-let LineSet635 = browser.currentScene.createNode("LineSet");
-LineSet635.vertexCount = new MFInt32(new int[2]);
-let Coordinate636 = browser.currentScene.createNode("Coordinate");
-Coordinate636.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143]);
-LineSet635.coord = Coordinate636;
+let Shape633 = browser.currentScene.createNode("Shape");
+let LineSet634 = browser.currentScene.createNode("LineSet");
+LineSet634.vertexCount = new MFInt32(new int[2]);
+let Coordinate635 = browser.currentScene.createNode("Coordinate");
+Coordinate635.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143]);
+LineSet634.coord = Coordinate635;
 
-let ColorRGBA637 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA637.USE = "HAnimSegmentLineColorRGBA";
-LineSet635.color = ColorRGBA637;
+let ColorRGBA636 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA636.USE = "HAnimSegmentLineColorRGBA";
+LineSet634.color = ColorRGBA636;
 
-Shape634.geometry = LineSet635;
+Shape633.geometry = LineSet634;
 
-HAnimSegment630.children[2] = Shape634;
+HAnimSegment629.children[2] = Shape633;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='r_neck_base'/>
-let Shape638 = browser.currentScene.createNode("Shape");
-let LineSet639 = browser.currentScene.createNode("LineSet");
-LineSet639.vertexCount = new MFInt32(new int[2]);
-let Coordinate640 = browser.currentScene.createNode("Coordinate");
-Coordinate640.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,-0.0419,1.5149,-0.022]);
-LineSet639.coord = Coordinate640;
+let Shape637 = browser.currentScene.createNode("Shape");
+let LineSet638 = browser.currentScene.createNode("LineSet");
+LineSet638.vertexCount = new MFInt32(new int[2]);
+let Coordinate639 = browser.currentScene.createNode("Coordinate");
+Coordinate639.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,-0.0419,1.5149,-0.022]);
+LineSet638.coord = Coordinate639;
 
-let ColorRGBA641 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA641.USE = "HAnimSiteLineColorRGBA";
-LineSet639.color = ColorRGBA641;
+let ColorRGBA640 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA640.USE = "HAnimSiteLineColorRGBA";
+LineSet638.color = ColorRGBA640;
 
-Shape638.geometry = LineSet639;
+Shape637.geometry = LineSet638;
 
-HAnimSegment630.children[3] = Shape638;
+HAnimSegment629.children[3] = Shape637;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='l_neck_base'/>
-let Shape642 = browser.currentScene.createNode("Shape");
-let LineSet643 = browser.currentScene.createNode("LineSet");
-LineSet643.vertexCount = new MFInt32(new int[2]);
-let Coordinate644 = browser.currentScene.createNode("Coordinate");
-Coordinate644.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0646,1.5141,-0.038]);
-LineSet643.coord = Coordinate644;
+let Shape641 = browser.currentScene.createNode("Shape");
+let LineSet642 = browser.currentScene.createNode("LineSet");
+LineSet642.vertexCount = new MFInt32(new int[2]);
+let Coordinate643 = browser.currentScene.createNode("Coordinate");
+Coordinate643.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0646,1.5141,-0.038]);
+LineSet642.coord = Coordinate643;
 
-let ColorRGBA645 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA645.USE = "HAnimSiteLineColorRGBA";
-LineSet643.color = ColorRGBA645;
+let ColorRGBA644 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA644.USE = "HAnimSiteLineColorRGBA";
+LineSet642.color = ColorRGBA644;
 
-Shape642.geometry = LineSet643;
+Shape641.geometry = LineSet642;
 
-HAnimSegment630.children[4] = Shape642;
+HAnimSegment629.children[4] = Shape641;
 
-let HAnimSite646 = browser.currentScene.createNode("HAnimSite");
-HAnimSite646.name = "r_neck_base_pt";
-HAnimSite646.DEF = "hanim_r_neck_base_pt";
-HAnimSite646.translation = new SFVec3f(new float[-0.0419,1.5149,-0.022]);
+let HAnimSite645 = browser.currentScene.createNode("HAnimSite");
+HAnimSite645.name = "r_neck_base_pt";
+HAnimSite645.DEF = "hanim_r_neck_base_pt";
+HAnimSite645.translation = new SFVec3f(new float[-0.0419,1.5149,-0.022]);
 //HAnimSite visualization shape
-let TouchSensor647 = browser.currentScene.createNode("TouchSensor");
-TouchSensor647.description = "HAnimSite r_neck_base";
-HAnimSite646.children = new MFNode();
+let TouchSensor646 = browser.currentScene.createNode("TouchSensor");
+TouchSensor646.description = "HAnimSite r_neck_base";
+HAnimSite645.children = new MFNode();
 
-HAnimSite646.children[0] = TouchSensor647;
+HAnimSite645.children[0] = TouchSensor646;
 
-let Shape648 = browser.currentScene.createNode("Shape");
-Shape648.USE = "HAnimSiteShape";
-HAnimSite646.children[1] = Shape648;
+let Shape647 = browser.currentScene.createNode("Shape");
+Shape647.USE = "HAnimSiteShape";
+HAnimSite645.children[1] = Shape647;
 
-HAnimSegment630.children[5] = HAnimSite646;
+HAnimSegment629.children[5] = HAnimSite645;
 
-let HAnimSite649 = browser.currentScene.createNode("HAnimSite");
-HAnimSite649.name = "l_neck_base_pt";
-HAnimSite649.DEF = "hanim_l_neck_base_pt";
-HAnimSite649.translation = new SFVec3f(new float[0.0646,1.5141,-0.038]);
+let HAnimSite648 = browser.currentScene.createNode("HAnimSite");
+HAnimSite648.name = "l_neck_base_pt";
+HAnimSite648.DEF = "hanim_l_neck_base_pt";
+HAnimSite648.translation = new SFVec3f(new float[0.0646,1.5141,-0.038]);
 //HAnimSite visualization shape
-let TouchSensor650 = browser.currentScene.createNode("TouchSensor");
-TouchSensor650.description = "HAnimSite l_neck_base";
-HAnimSite649.children = new MFNode();
+let TouchSensor649 = browser.currentScene.createNode("TouchSensor");
+TouchSensor649.description = "HAnimSite l_neck_base";
+HAnimSite648.children = new MFNode();
 
-HAnimSite649.children[0] = TouchSensor650;
+HAnimSite648.children[0] = TouchSensor649;
 
-let Shape651 = browser.currentScene.createNode("Shape");
-Shape651.USE = "HAnimSiteShape";
-HAnimSite649.children[1] = Shape651;
+let Shape650 = browser.currentScene.createNode("Shape");
+Shape650.USE = "HAnimSiteShape";
+HAnimSite648.children[1] = Shape650;
 
-HAnimSegment630.children[6] = HAnimSite649;
+HAnimSegment629.children[6] = HAnimSite648;
 
-HAnimJoint629.children = new MFNode();
+HAnimJoint628.children = new MFNode();
 
-HAnimJoint629.children[0] = HAnimSegment630;
+HAnimJoint628.children[0] = HAnimSegment629;
 
-let HAnimJoint652 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint652.name = "vc6";
-HAnimJoint652.DEF = "hanim_vc6";
-HAnimJoint652.center = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
-HAnimJoint652.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment653 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment653.name = "c6";
-HAnimSegment653.DEF = "hanim_c6";
+let HAnimJoint651 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint651.name = "vc6";
+HAnimJoint651.DEF = "hanim_vc6";
+HAnimJoint651.center = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
+HAnimJoint651.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment652 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment652.name = "c6";
+HAnimSegment652.DEF = "hanim_c6";
 //<HAnimJoint name='vc6'/> visualization sphere is placed within <HAnimSegment name='c6'/>
-let TouchSensor654 = browser.currentScene.createNode("TouchSensor");
-TouchSensor654.description = "HAnimJoint vc6, HAnimSegment c6";
-HAnimSegment653.children = new MFNode();
+let TouchSensor653 = browser.currentScene.createNode("TouchSensor");
+TouchSensor653.description = "HAnimJoint vc6, HAnimSegment c6";
+HAnimSegment652.children = new MFNode();
 
-HAnimSegment653.children[0] = TouchSensor654;
+HAnimSegment652.children[0] = TouchSensor653;
 
-let Transform655 = browser.currentScene.createNode("Transform");
-Transform655.translation = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
-let Shape656 = browser.currentScene.createNode("Shape");
-Shape656.USE = "HAnimJointShape";
-Transform655.children = new MFNode();
+let Transform654 = browser.currentScene.createNode("Transform");
+Transform654.translation = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
+let Shape655 = browser.currentScene.createNode("Shape");
+Shape655.USE = "HAnimJointShape";
+Transform654.children = new MFNode();
 
-Transform655.children[0] = Shape656;
+Transform654.children[0] = Shape655;
 
-HAnimSegment653.children[1] = Transform655;
+HAnimSegment652.children[1] = Transform654;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc6'/> to <HAnimJoint name='vc5'/>
-let Shape657 = browser.currentScene.createNode("Shape");
-let LineSet658 = browser.currentScene.createNode("LineSet");
-LineSet658.vertexCount = new MFInt32(new int[2]);
-let Coordinate659 = browser.currentScene.createNode("Coordinate");
-Coordinate659.point = new MFVec3f(new float[0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082]);
-LineSet658.coord = Coordinate659;
+let Shape656 = browser.currentScene.createNode("Shape");
+let LineSet657 = browser.currentScene.createNode("LineSet");
+LineSet657.vertexCount = new MFInt32(new int[2]);
+let Coordinate658 = browser.currentScene.createNode("Coordinate");
+Coordinate658.point = new MFVec3f(new float[0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082]);
+LineSet657.coord = Coordinate658;
 
-let ColorRGBA660 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA660.USE = "HAnimSegmentLineColorRGBA";
-LineSet658.color = ColorRGBA660;
+let ColorRGBA659 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA659.USE = "HAnimSegmentLineColorRGBA";
+LineSet657.color = ColorRGBA659;
 
-Shape657.geometry = LineSet658;
+Shape656.geometry = LineSet657;
 
-HAnimSegment653.children[2] = Shape657;
+HAnimSegment652.children[2] = Shape656;
 
-HAnimJoint652.children = new MFNode();
+HAnimJoint651.children = new MFNode();
 
-HAnimJoint652.children[0] = HAnimSegment653;
+HAnimJoint651.children[0] = HAnimSegment652;
 
-let HAnimJoint661 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint661.name = "vc5";
-HAnimJoint661.DEF = "hanim_vc5";
-HAnimJoint661.center = new SFVec3f(new float[0.0066,1.552,-0.0082]);
-HAnimJoint661.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment662 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment662.name = "c5";
-HAnimSegment662.DEF = "hanim_c5";
+let HAnimJoint660 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint660.name = "vc5";
+HAnimJoint660.DEF = "hanim_vc5";
+HAnimJoint660.center = new SFVec3f(new float[0.0066,1.552,-0.0082]);
+HAnimJoint660.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment661 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment661.name = "c5";
+HAnimSegment661.DEF = "hanim_c5";
 //<HAnimJoint name='vc5'/> visualization sphere is placed within <HAnimSegment name='c5'/>
-let TouchSensor663 = browser.currentScene.createNode("TouchSensor");
-TouchSensor663.description = "HAnimJoint vc5, HAnimSegment c5";
-HAnimSegment662.children = new MFNode();
+let TouchSensor662 = browser.currentScene.createNode("TouchSensor");
+TouchSensor662.description = "HAnimJoint vc5, HAnimSegment c5";
+HAnimSegment661.children = new MFNode();
 
-HAnimSegment662.children[0] = TouchSensor663;
+HAnimSegment661.children[0] = TouchSensor662;
 
-let Transform664 = browser.currentScene.createNode("Transform");
-Transform664.translation = new SFVec3f(new float[0.0066,1.552,-0.0082]);
-let Shape665 = browser.currentScene.createNode("Shape");
-Shape665.USE = "HAnimJointShape";
-Transform664.children = new MFNode();
+let Transform663 = browser.currentScene.createNode("Transform");
+Transform663.translation = new SFVec3f(new float[0.0066,1.552,-0.0082]);
+let Shape664 = browser.currentScene.createNode("Shape");
+Shape664.USE = "HAnimJointShape";
+Transform663.children = new MFNode();
 
-Transform664.children[0] = Shape665;
+Transform663.children[0] = Shape664;
 
-HAnimSegment662.children[1] = Transform664;
+HAnimSegment661.children[1] = Transform663;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc5'/> to <HAnimJoint name='vc4'/>
-let Shape666 = browser.currentScene.createNode("Shape");
-let LineSet667 = browser.currentScene.createNode("LineSet");
-LineSet667.vertexCount = new MFInt32(new int[2]);
-let Coordinate668 = browser.currentScene.createNode("Coordinate");
-Coordinate668.point = new MFVec3f(new float[0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084]);
-LineSet667.coord = Coordinate668;
+let Shape665 = browser.currentScene.createNode("Shape");
+let LineSet666 = browser.currentScene.createNode("LineSet");
+LineSet666.vertexCount = new MFInt32(new int[2]);
+let Coordinate667 = browser.currentScene.createNode("Coordinate");
+Coordinate667.point = new MFVec3f(new float[0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084]);
+LineSet666.coord = Coordinate667;
 
-let ColorRGBA669 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA669.USE = "HAnimSegmentLineColorRGBA";
-LineSet667.color = ColorRGBA669;
+let ColorRGBA668 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA668.USE = "HAnimSegmentLineColorRGBA";
+LineSet666.color = ColorRGBA668;
 
-Shape666.geometry = LineSet667;
+Shape665.geometry = LineSet666;
 
-HAnimSegment662.children[2] = Shape666;
+HAnimSegment661.children[2] = Shape665;
 
-HAnimJoint661.children = new MFNode();
+HAnimJoint660.children = new MFNode();
 
-HAnimJoint661.children[0] = HAnimSegment662;
+HAnimJoint660.children[0] = HAnimSegment661;
 
-let HAnimJoint670 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint670.name = "vc4";
-HAnimJoint670.DEF = "hanim_vc4";
-HAnimJoint670.center = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
-HAnimJoint670.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment671 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment671.name = "c4";
-HAnimSegment671.DEF = "hanim_c4";
+let HAnimJoint669 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint669.name = "vc4";
+HAnimJoint669.DEF = "hanim_vc4";
+HAnimJoint669.center = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
+HAnimJoint669.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment670 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment670.name = "c4";
+HAnimSegment670.DEF = "hanim_c4";
 //<HAnimJoint name='vc4'/> visualization sphere is placed within <HAnimSegment name='c4'/>
-let TouchSensor672 = browser.currentScene.createNode("TouchSensor");
-TouchSensor672.description = "HAnimJoint vc4, HAnimSegment c4";
-HAnimSegment671.children = new MFNode();
+let TouchSensor671 = browser.currentScene.createNode("TouchSensor");
+TouchSensor671.description = "HAnimJoint vc4, HAnimSegment c4";
+HAnimSegment670.children = new MFNode();
 
-HAnimSegment671.children[0] = TouchSensor672;
+HAnimSegment670.children[0] = TouchSensor671;
 
-let Transform673 = browser.currentScene.createNode("Transform");
-Transform673.translation = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
-let Shape674 = browser.currentScene.createNode("Shape");
-Shape674.USE = "HAnimJointShape";
-Transform673.children = new MFNode();
+let Transform672 = browser.currentScene.createNode("Transform");
+Transform672.translation = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
+let Shape673 = browser.currentScene.createNode("Shape");
+Shape673.USE = "HAnimJointShape";
+Transform672.children = new MFNode();
 
-Transform673.children[0] = Shape674;
+Transform672.children[0] = Shape673;
 
-HAnimSegment671.children[1] = Transform673;
+HAnimSegment670.children[1] = Transform672;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc4'/> to <HAnimJoint name='vc3'/>
-let Shape675 = browser.currentScene.createNode("Shape");
-let LineSet676 = browser.currentScene.createNode("LineSet");
-LineSet676.vertexCount = new MFInt32(new int[2]);
-let Coordinate677 = browser.currentScene.createNode("Coordinate");
-Coordinate677.point = new MFVec3f(new float[0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103]);
-LineSet676.coord = Coordinate677;
+let Shape674 = browser.currentScene.createNode("Shape");
+let LineSet675 = browser.currentScene.createNode("LineSet");
+LineSet675.vertexCount = new MFInt32(new int[2]);
+let Coordinate676 = browser.currentScene.createNode("Coordinate");
+Coordinate676.point = new MFVec3f(new float[0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103]);
+LineSet675.coord = Coordinate676;
 
-let ColorRGBA678 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA678.USE = "HAnimSegmentLineColorRGBA";
-LineSet676.color = ColorRGBA678;
+let ColorRGBA677 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA677.USE = "HAnimSegmentLineColorRGBA";
+LineSet675.color = ColorRGBA677;
 
-Shape675.geometry = LineSet676;
+Shape674.geometry = LineSet675;
 
-HAnimSegment671.children[2] = Shape675;
+HAnimSegment670.children[2] = Shape674;
 
-HAnimJoint670.children = new MFNode();
+HAnimJoint669.children = new MFNode();
 
-HAnimJoint670.children[0] = HAnimSegment671;
+HAnimJoint669.children[0] = HAnimSegment670;
 
-let HAnimJoint679 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint679.name = "vc3";
-HAnimJoint679.DEF = "hanim_vc3";
-HAnimJoint679.center = new SFVec3f(new float[0.0066,1.58,-0.0103]);
-HAnimJoint679.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment680 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment680.name = "c3";
-HAnimSegment680.DEF = "hanim_c3";
+let HAnimJoint678 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint678.name = "vc3";
+HAnimJoint678.DEF = "hanim_vc3";
+HAnimJoint678.center = new SFVec3f(new float[0.0066,1.58,-0.0103]);
+HAnimJoint678.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment679 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment679.name = "c3";
+HAnimSegment679.DEF = "hanim_c3";
 //<HAnimJoint name='vc3'/> visualization sphere is placed within <HAnimSegment name='c3'/>
-let TouchSensor681 = browser.currentScene.createNode("TouchSensor");
-TouchSensor681.description = "HAnimJoint vc3, HAnimSegment c3";
-HAnimSegment680.children = new MFNode();
+let TouchSensor680 = browser.currentScene.createNode("TouchSensor");
+TouchSensor680.description = "HAnimJoint vc3, HAnimSegment c3";
+HAnimSegment679.children = new MFNode();
 
-HAnimSegment680.children[0] = TouchSensor681;
+HAnimSegment679.children[0] = TouchSensor680;
 
-let Transform682 = browser.currentScene.createNode("Transform");
-Transform682.translation = new SFVec3f(new float[0.0066,1.58,-0.0103]);
-let Shape683 = browser.currentScene.createNode("Shape");
-Shape683.USE = "HAnimJointShape";
-Transform682.children = new MFNode();
+let Transform681 = browser.currentScene.createNode("Transform");
+Transform681.translation = new SFVec3f(new float[0.0066,1.58,-0.0103]);
+let Shape682 = browser.currentScene.createNode("Shape");
+Shape682.USE = "HAnimJointShape";
+Transform681.children = new MFNode();
 
-Transform682.children[0] = Shape683;
+Transform681.children[0] = Shape682;
 
-HAnimSegment680.children[1] = Transform682;
+HAnimSegment679.children[1] = Transform681;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc3'/> to <HAnimJoint name='vc2'/>
-let Shape684 = browser.currentScene.createNode("Shape");
-let LineSet685 = browser.currentScene.createNode("LineSet");
-LineSet685.vertexCount = new MFInt32(new int[2]);
-let Coordinate686 = browser.currentScene.createNode("Coordinate");
-Coordinate686.point = new MFVec3f(new float[0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103]);
-LineSet685.coord = Coordinate686;
+let Shape683 = browser.currentScene.createNode("Shape");
+let LineSet684 = browser.currentScene.createNode("LineSet");
+LineSet684.vertexCount = new MFInt32(new int[2]);
+let Coordinate685 = browser.currentScene.createNode("Coordinate");
+Coordinate685.point = new MFVec3f(new float[0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103]);
+LineSet684.coord = Coordinate685;
 
-let ColorRGBA687 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA687.USE = "HAnimSegmentLineColorRGBA";
-LineSet685.color = ColorRGBA687;
+let ColorRGBA686 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA686.USE = "HAnimSegmentLineColorRGBA";
+LineSet684.color = ColorRGBA686;
 
-Shape684.geometry = LineSet685;
+Shape683.geometry = LineSet684;
 
-HAnimSegment680.children[2] = Shape684;
+HAnimSegment679.children[2] = Shape683;
 
-HAnimJoint679.children = new MFNode();
+HAnimJoint678.children = new MFNode();
 
-HAnimJoint679.children[0] = HAnimSegment680;
+HAnimJoint678.children[0] = HAnimSegment679;
 
-let HAnimJoint688 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint688.name = "vc2";
-HAnimJoint688.DEF = "hanim_vc2";
-HAnimJoint688.center = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
-HAnimJoint688.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment689 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment689.name = "c2";
-HAnimSegment689.DEF = "hanim_c2";
+let HAnimJoint687 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint687.name = "vc2";
+HAnimJoint687.DEF = "hanim_vc2";
+HAnimJoint687.center = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
+HAnimJoint687.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment688 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment688.name = "c2";
+HAnimSegment688.DEF = "hanim_c2";
 //<HAnimJoint name='vc2'/> visualization sphere is placed within <HAnimSegment name='c2'/>
-let TouchSensor690 = browser.currentScene.createNode("TouchSensor");
-TouchSensor690.description = "HAnimJoint vc2, HAnimSegment c2";
-HAnimSegment689.children = new MFNode();
+let TouchSensor689 = browser.currentScene.createNode("TouchSensor");
+TouchSensor689.description = "HAnimJoint vc2, HAnimSegment c2";
+HAnimSegment688.children = new MFNode();
 
-HAnimSegment689.children[0] = TouchSensor690;
+HAnimSegment688.children[0] = TouchSensor689;
 
-let Transform691 = browser.currentScene.createNode("Transform");
-Transform691.translation = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
-let Shape692 = browser.currentScene.createNode("Shape");
-Shape692.USE = "HAnimJointShape";
-Transform691.children = new MFNode();
+let Transform690 = browser.currentScene.createNode("Transform");
+Transform690.translation = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
+let Shape691 = browser.currentScene.createNode("Shape");
+Shape691.USE = "HAnimJointShape";
+Transform690.children = new MFNode();
 
-Transform691.children[0] = Shape692;
+Transform690.children[0] = Shape691;
 
-HAnimSegment689.children[1] = Transform691;
+HAnimSegment688.children[1] = Transform690;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc2'/> to <HAnimJoint name='vc1'/>
-let Shape693 = browser.currentScene.createNode("Shape");
-let LineSet694 = browser.currentScene.createNode("LineSet");
-LineSet694.vertexCount = new MFInt32(new int[2]);
-let Coordinate695 = browser.currentScene.createNode("Coordinate");
-Coordinate695.point = new MFVec3f(new float[0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034]);
-LineSet694.coord = Coordinate695;
+let Shape692 = browser.currentScene.createNode("Shape");
+let LineSet693 = browser.currentScene.createNode("LineSet");
+LineSet693.vertexCount = new MFInt32(new int[2]);
+let Coordinate694 = browser.currentScene.createNode("Coordinate");
+Coordinate694.point = new MFVec3f(new float[0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034]);
+LineSet693.coord = Coordinate694;
 
-let ColorRGBA696 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA696.USE = "HAnimSegmentLineColorRGBA";
-LineSet694.color = ColorRGBA696;
+let ColorRGBA695 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA695.USE = "HAnimSegmentLineColorRGBA";
+LineSet693.color = ColorRGBA695;
 
-Shape693.geometry = LineSet694;
+Shape692.geometry = LineSet693;
 
-HAnimSegment689.children[2] = Shape693;
+HAnimSegment688.children[2] = Shape692;
 
-HAnimJoint688.children = new MFNode();
+HAnimJoint687.children = new MFNode();
 
-HAnimJoint688.children[0] = HAnimSegment689;
+HAnimJoint687.children[0] = HAnimSegment688;
 
-let HAnimJoint697 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint697.name = "vc1";
-HAnimJoint697.DEF = "hanim_vc1";
-HAnimJoint697.center = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
-HAnimJoint697.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment698 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment698.name = "c1";
-HAnimSegment698.DEF = "hanim_c1";
+let HAnimJoint696 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint696.name = "vc1";
+HAnimJoint696.DEF = "hanim_vc1";
+HAnimJoint696.center = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
+HAnimJoint696.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment697 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment697.name = "c1";
+HAnimSegment697.DEF = "hanim_c1";
 //<HAnimJoint name='vc1'/> visualization sphere is placed within <HAnimSegment name='c1'/>
-let TouchSensor699 = browser.currentScene.createNode("TouchSensor");
-TouchSensor699.description = "HAnimJoint vc1, HAnimSegment c1";
-HAnimSegment698.children = new MFNode();
+let TouchSensor698 = browser.currentScene.createNode("TouchSensor");
+TouchSensor698.description = "HAnimJoint vc1, HAnimSegment c1";
+HAnimSegment697.children = new MFNode();
 
-HAnimSegment698.children[0] = TouchSensor699;
+HAnimSegment697.children[0] = TouchSensor698;
 
-let Transform700 = browser.currentScene.createNode("Transform");
-Transform700.translation = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
-let Shape701 = browser.currentScene.createNode("Shape");
-Shape701.USE = "HAnimJointShape";
-Transform700.children = new MFNode();
+let Transform699 = browser.currentScene.createNode("Transform");
+Transform699.translation = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
+let Shape700 = browser.currentScene.createNode("Shape");
+Shape700.USE = "HAnimJointShape";
+Transform699.children = new MFNode();
 
-Transform700.children[0] = Shape701;
+Transform699.children[0] = Shape700;
 
-HAnimSegment698.children[1] = Transform700;
+HAnimSegment697.children[1] = Transform699;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='vc1'/> to <HAnimJoint name='skullbase'/>
-let Shape702 = browser.currentScene.createNode("Shape");
-let LineSet703 = browser.currentScene.createNode("LineSet");
-LineSet703.vertexCount = new MFInt32(new int[2]);
-let Coordinate704 = browser.currentScene.createNode("Coordinate");
-Coordinate704.point = new MFVec3f(new float[0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236]);
-LineSet703.coord = Coordinate704;
+let Shape701 = browser.currentScene.createNode("Shape");
+let LineSet702 = browser.currentScene.createNode("LineSet");
+LineSet702.vertexCount = new MFInt32(new int[2]);
+let Coordinate703 = browser.currentScene.createNode("Coordinate");
+Coordinate703.point = new MFVec3f(new float[0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236]);
+LineSet702.coord = Coordinate703;
 
-let ColorRGBA705 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA705.USE = "HAnimSegmentLineColorRGBA";
-LineSet703.color = ColorRGBA705;
+let ColorRGBA704 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA704.USE = "HAnimSegmentLineColorRGBA";
+LineSet702.color = ColorRGBA704;
 
-Shape702.geometry = LineSet703;
+Shape701.geometry = LineSet702;
 
-HAnimSegment698.children[2] = Shape702;
+HAnimSegment697.children[2] = Shape701;
 
-HAnimJoint697.children = new MFNode();
+HAnimJoint696.children = new MFNode();
 
-HAnimJoint697.children[0] = HAnimSegment698;
+HAnimJoint696.children[0] = HAnimSegment697;
 
-let HAnimJoint706 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint706.name = "skullbase";
-HAnimJoint706.DEF = "hanim_skullbase";
-HAnimJoint706.center = new SFVec3f(new float[0.0044,1.6209,0.0236]);
-HAnimJoint706.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment707 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment707.name = "skull";
-HAnimSegment707.DEF = "hanim_skull";
+let HAnimJoint705 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint705.name = "skullbase";
+HAnimJoint705.DEF = "hanim_skullbase";
+HAnimJoint705.center = new SFVec3f(new float[0.0044,1.6209,0.0236]);
+HAnimJoint705.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment706 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment706.name = "skull";
+HAnimSegment706.DEF = "hanim_skull";
 //<HAnimJoint name='skullbase'/> visualization sphere is placed within <HAnimSegment name='skull'/>
-let TouchSensor708 = browser.currentScene.createNode("TouchSensor");
-TouchSensor708.description = "HAnimJoint skullbase, HAnimSegment skull";
-HAnimSegment707.children = new MFNode();
+let TouchSensor707 = browser.currentScene.createNode("TouchSensor");
+TouchSensor707.description = "HAnimJoint skullbase, HAnimSegment skull";
+HAnimSegment706.children = new MFNode();
 
-HAnimSegment707.children[0] = TouchSensor708;
+HAnimSegment706.children[0] = TouchSensor707;
 
-let Transform709 = browser.currentScene.createNode("Transform");
-Transform709.translation = new SFVec3f(new float[0.0044,1.6209,0.0236]);
-let Shape710 = browser.currentScene.createNode("Shape");
-Shape710.USE = "HAnimJointShape";
-Transform709.children = new MFNode();
+let Transform708 = browser.currentScene.createNode("Transform");
+Transform708.translation = new SFVec3f(new float[0.0044,1.6209,0.0236]);
+let Shape709 = browser.currentScene.createNode("Shape");
+Shape709.USE = "HAnimJointShape";
+Transform708.children = new MFNode();
 
-Transform709.children[0] = Shape710;
+Transform708.children[0] = Shape709;
 
-HAnimSegment707.children[1] = Transform709;
+HAnimSegment706.children[1] = Transform708;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='l_eyeball_joint'/>
-let Shape711 = browser.currentScene.createNode("Shape");
-let LineSet712 = browser.currentScene.createNode("LineSet");
-LineSet712.vertexCount = new MFInt32(new int[2]);
-let Coordinate713 = browser.currentScene.createNode("Coordinate");
-Coordinate713.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.6332,0.0502]);
-LineSet712.coord = Coordinate713;
+let Shape710 = browser.currentScene.createNode("Shape");
+let LineSet711 = browser.currentScene.createNode("LineSet");
+LineSet711.vertexCount = new MFInt32(new int[2]);
+let Coordinate712 = browser.currentScene.createNode("Coordinate");
+Coordinate712.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.6332,0.0502]);
+LineSet711.coord = Coordinate712;
 
-let ColorRGBA714 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA714.USE = "HAnimSegmentLineColorRGBA";
-LineSet712.color = ColorRGBA714;
+let ColorRGBA713 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA713.USE = "HAnimSegmentLineColorRGBA";
+LineSet711.color = ColorRGBA713;
 
-Shape711.geometry = LineSet712;
+Shape710.geometry = LineSet711;
 
-HAnimSegment707.children[2] = Shape711;
+HAnimSegment706.children[2] = Shape710;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='l_eyelid_joint'/>
-let Shape715 = browser.currentScene.createNode("Shape");
-let LineSet716 = browser.currentScene.createNode("LineSet");
-LineSet716.vertexCount = new MFInt32(new int[2]);
-let Coordinate717 = browser.currentScene.createNode("Coordinate");
-Coordinate717.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.6332,0.0502]);
-LineSet716.coord = Coordinate717;
+let Shape714 = browser.currentScene.createNode("Shape");
+let LineSet715 = browser.currentScene.createNode("LineSet");
+LineSet715.vertexCount = new MFInt32(new int[2]);
+let Coordinate716 = browser.currentScene.createNode("Coordinate");
+Coordinate716.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.6332,0.0502]);
+LineSet715.coord = Coordinate716;
 
-let ColorRGBA718 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA718.USE = "HAnimSegmentLineColorRGBA";
-LineSet716.color = ColorRGBA718;
+let ColorRGBA717 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA717.USE = "HAnimSegmentLineColorRGBA";
+LineSet715.color = ColorRGBA717;
 
-Shape715.geometry = LineSet716;
+Shape714.geometry = LineSet715;
 
-HAnimSegment707.children[3] = Shape715;
+HAnimSegment706.children[3] = Shape714;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='l_eyebrow_joint'/>
-let Shape719 = browser.currentScene.createNode("Shape");
-let LineSet720 = browser.currentScene.createNode("LineSet");
-LineSet720.vertexCount = new MFInt32(new int[2]);
-let Coordinate721 = browser.currentScene.createNode("Coordinate");
-Coordinate721.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.635,0.0506]);
-LineSet720.coord = Coordinate721;
+let Shape718 = browser.currentScene.createNode("Shape");
+let LineSet719 = browser.currentScene.createNode("LineSet");
+LineSet719.vertexCount = new MFInt32(new int[2]);
+let Coordinate720 = browser.currentScene.createNode("Coordinate");
+Coordinate720.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0336,1.635,0.0506]);
+LineSet719.coord = Coordinate720;
 
-let ColorRGBA722 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA722.USE = "HAnimSegmentLineColorRGBA";
-LineSet720.color = ColorRGBA722;
+let ColorRGBA721 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA721.USE = "HAnimSegmentLineColorRGBA";
+LineSet719.color = ColorRGBA721;
 
-Shape719.geometry = LineSet720;
+Shape718.geometry = LineSet719;
 
-HAnimSegment707.children[4] = Shape719;
+HAnimSegment706.children[4] = Shape718;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='r_eyeball_joint'/>
-let Shape723 = browser.currentScene.createNode("Shape");
-let LineSet724 = browser.currentScene.createNode("LineSet");
-LineSet724.vertexCount = new MFInt32(new int[2]);
-let Coordinate725 = browser.currentScene.createNode("Coordinate");
-Coordinate725.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502]);
-LineSet724.coord = Coordinate725;
+let Shape722 = browser.currentScene.createNode("Shape");
+let LineSet723 = browser.currentScene.createNode("LineSet");
+LineSet723.vertexCount = new MFInt32(new int[2]);
+let Coordinate724 = browser.currentScene.createNode("Coordinate");
+Coordinate724.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502]);
+LineSet723.coord = Coordinate724;
 
-let ColorRGBA726 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA726.USE = "HAnimSegmentLineColorRGBA";
-LineSet724.color = ColorRGBA726;
+let ColorRGBA725 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA725.USE = "HAnimSegmentLineColorRGBA";
+LineSet723.color = ColorRGBA725;
 
-Shape723.geometry = LineSet724;
+Shape722.geometry = LineSet723;
 
-HAnimSegment707.children[5] = Shape723;
+HAnimSegment706.children[5] = Shape722;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='r_eyelid_joint'/>
-let Shape727 = browser.currentScene.createNode("Shape");
-let LineSet728 = browser.currentScene.createNode("LineSet");
-LineSet728.vertexCount = new MFInt32(new int[2]);
-let Coordinate729 = browser.currentScene.createNode("Coordinate");
-Coordinate729.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502]);
-LineSet728.coord = Coordinate729;
+let Shape726 = browser.currentScene.createNode("Shape");
+let LineSet727 = browser.currentScene.createNode("LineSet");
+LineSet727.vertexCount = new MFInt32(new int[2]);
+let Coordinate728 = browser.currentScene.createNode("Coordinate");
+Coordinate728.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502]);
+LineSet727.coord = Coordinate728;
 
-let ColorRGBA730 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA730.USE = "HAnimSegmentLineColorRGBA";
-LineSet728.color = ColorRGBA730;
+let ColorRGBA729 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA729.USE = "HAnimSegmentLineColorRGBA";
+LineSet727.color = ColorRGBA729;
 
-Shape727.geometry = LineSet728;
+Shape726.geometry = LineSet727;
 
-HAnimSegment707.children[6] = Shape727;
+HAnimSegment706.children[6] = Shape726;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='r_eyebrow_joint'/>
-let Shape731 = browser.currentScene.createNode("Shape");
-let LineSet732 = browser.currentScene.createNode("LineSet");
-LineSet732.vertexCount = new MFInt32(new int[2]);
-let Coordinate733 = browser.currentScene.createNode("Coordinate");
-Coordinate733.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.635,0.0506]);
-LineSet732.coord = Coordinate733;
+let Shape730 = browser.currentScene.createNode("Shape");
+let LineSet731 = browser.currentScene.createNode("LineSet");
+LineSet731.vertexCount = new MFInt32(new int[2]);
+let Coordinate732 = browser.currentScene.createNode("Coordinate");
+Coordinate732.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0336,1.635,0.0506]);
+LineSet731.coord = Coordinate732;
 
-let ColorRGBA734 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA734.USE = "HAnimSegmentLineColorRGBA";
-LineSet732.color = ColorRGBA734;
+let ColorRGBA733 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA733.USE = "HAnimSegmentLineColorRGBA";
+LineSet731.color = ColorRGBA733;
 
-Shape731.geometry = LineSet732;
+Shape730.geometry = LineSet731;
 
-HAnimSegment707.children[7] = Shape731;
+HAnimSegment706.children[7] = Shape730;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'/> to <HAnimJoint name='temporomandibular'/>
-let Shape735 = browser.currentScene.createNode("Shape");
-let LineSet736 = browser.currentScene.createNode("LineSet");
-LineSet736.vertexCount = new MFInt32(new int[2]);
-let Coordinate737 = browser.currentScene.createNode("Coordinate");
-Coordinate737.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0,1.63,0.015]);
-LineSet736.coord = Coordinate737;
+let Shape734 = browser.currentScene.createNode("Shape");
+let LineSet735 = browser.currentScene.createNode("LineSet");
+LineSet735.vertexCount = new MFInt32(new int[2]);
+let Coordinate736 = browser.currentScene.createNode("Coordinate");
+Coordinate736.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0,1.63,0.015]);
+LineSet735.coord = Coordinate736;
 
-let ColorRGBA738 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA738.USE = "HAnimSegmentLineColorRGBA";
-LineSet736.color = ColorRGBA738;
+let ColorRGBA737 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA737.USE = "HAnimSegmentLineColorRGBA";
+LineSet735.color = ColorRGBA737;
 
-Shape735.geometry = LineSet736;
+Shape734.geometry = LineSet735;
 
-HAnimSegment707.children[8] = Shape735;
+HAnimSegment706.children[8] = Shape734;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='skull_tip'/>
-let Shape739 = browser.currentScene.createNode("Shape");
-let LineSet740 = browser.currentScene.createNode("LineSet");
-LineSet740.vertexCount = new MFInt32(new int[2]);
-let Coordinate741 = browser.currentScene.createNode("Coordinate");
-Coordinate741.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.005,1.7504,0.0055]);
-LineSet740.coord = Coordinate741;
+let Shape738 = browser.currentScene.createNode("Shape");
+let LineSet739 = browser.currentScene.createNode("LineSet");
+LineSet739.vertexCount = new MFInt32(new int[2]);
+let Coordinate740 = browser.currentScene.createNode("Coordinate");
+Coordinate740.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.005,1.7504,0.0055]);
+LineSet739.coord = Coordinate740;
 
-let ColorRGBA742 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA742.USE = "HAnimSiteLineColorRGBA";
-LineSet740.color = ColorRGBA742;
+let ColorRGBA741 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA741.USE = "HAnimSiteLineColorRGBA";
+LineSet739.color = ColorRGBA741;
 
-Shape739.geometry = LineSet740;
+Shape738.geometry = LineSet739;
 
-HAnimSegment707.children[9] = Shape739;
+HAnimSegment706.children[9] = Shape738;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='sellion'/>
-let Shape743 = browser.currentScene.createNode("Shape");
-let LineSet744 = browser.currentScene.createNode("LineSet");
-LineSet744.vertexCount = new MFInt32(new int[2]);
-let Coordinate745 = browser.currentScene.createNode("Coordinate");
-Coordinate745.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0058,1.6316,0.0852]);
-LineSet744.coord = Coordinate745;
+let Shape742 = browser.currentScene.createNode("Shape");
+let LineSet743 = browser.currentScene.createNode("LineSet");
+LineSet743.vertexCount = new MFInt32(new int[2]);
+let Coordinate744 = browser.currentScene.createNode("Coordinate");
+Coordinate744.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0058,1.6316,0.0852]);
+LineSet743.coord = Coordinate744;
 
-let ColorRGBA746 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA746.USE = "HAnimSiteLineColorRGBA";
-LineSet744.color = ColorRGBA746;
+let ColorRGBA745 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA745.USE = "HAnimSiteLineColorRGBA";
+LineSet743.color = ColorRGBA745;
 
-Shape743.geometry = LineSet744;
+Shape742.geometry = LineSet743;
 
-HAnimSegment707.children[10] = Shape743;
+HAnimSegment706.children[10] = Shape742;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_infraorbitale'/>
-let Shape747 = browser.currentScene.createNode("Shape");
-let LineSet748 = browser.currentScene.createNode("LineSet");
-LineSet748.vertexCount = new MFInt32(new int[2]);
-let Coordinate749 = browser.currentScene.createNode("Coordinate");
-Coordinate749.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0237,1.6171,0.0752]);
-LineSet748.coord = Coordinate749;
+let Shape746 = browser.currentScene.createNode("Shape");
+let LineSet747 = browser.currentScene.createNode("LineSet");
+LineSet747.vertexCount = new MFInt32(new int[2]);
+let Coordinate748 = browser.currentScene.createNode("Coordinate");
+Coordinate748.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0237,1.6171,0.0752]);
+LineSet747.coord = Coordinate748;
 
-let ColorRGBA750 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA750.USE = "HAnimSiteLineColorRGBA";
-LineSet748.color = ColorRGBA750;
+let ColorRGBA749 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA749.USE = "HAnimSiteLineColorRGBA";
+LineSet747.color = ColorRGBA749;
 
-Shape747.geometry = LineSet748;
+Shape746.geometry = LineSet747;
 
-HAnimSegment707.children[11] = Shape747;
+HAnimSegment706.children[11] = Shape746;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_infraorbitale'/>
-let Shape751 = browser.currentScene.createNode("Shape");
-let LineSet752 = browser.currentScene.createNode("LineSet");
-LineSet752.vertexCount = new MFInt32(new int[2]);
-let Coordinate753 = browser.currentScene.createNode("Coordinate");
-Coordinate753.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0341,1.6171,0.0752]);
-LineSet752.coord = Coordinate753;
+let Shape750 = browser.currentScene.createNode("Shape");
+let LineSet751 = browser.currentScene.createNode("LineSet");
+LineSet751.vertexCount = new MFInt32(new int[2]);
+let Coordinate752 = browser.currentScene.createNode("Coordinate");
+Coordinate752.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0341,1.6171,0.0752]);
+LineSet751.coord = Coordinate752;
 
-let ColorRGBA754 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA754.USE = "HAnimSiteLineColorRGBA";
-LineSet752.color = ColorRGBA754;
+let ColorRGBA753 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA753.USE = "HAnimSiteLineColorRGBA";
+LineSet751.color = ColorRGBA753;
 
-Shape751.geometry = LineSet752;
+Shape750.geometry = LineSet751;
 
-HAnimSegment707.children[12] = Shape751;
+HAnimSegment706.children[12] = Shape750;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='supramenton'/>
-let Shape755 = browser.currentScene.createNode("Shape");
-let LineSet756 = browser.currentScene.createNode("LineSet");
-LineSet756.vertexCount = new MFInt32(new int[2]);
-let Coordinate757 = browser.currentScene.createNode("Coordinate");
-Coordinate757.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0061,1.541,0.0805]);
-LineSet756.coord = Coordinate757;
+let Shape754 = browser.currentScene.createNode("Shape");
+let LineSet755 = browser.currentScene.createNode("LineSet");
+LineSet755.vertexCount = new MFInt32(new int[2]);
+let Coordinate756 = browser.currentScene.createNode("Coordinate");
+Coordinate756.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0061,1.541,0.0805]);
+LineSet755.coord = Coordinate756;
 
-let ColorRGBA758 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA758.USE = "HAnimSiteLineColorRGBA";
-LineSet756.color = ColorRGBA758;
+let ColorRGBA757 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA757.USE = "HAnimSiteLineColorRGBA";
+LineSet755.color = ColorRGBA757;
 
-Shape755.geometry = LineSet756;
+Shape754.geometry = LineSet755;
 
-HAnimSegment707.children[13] = Shape755;
+HAnimSegment706.children[13] = Shape754;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_tragion'/>
-let Shape759 = browser.currentScene.createNode("Shape");
-let LineSet760 = browser.currentScene.createNode("LineSet");
-LineSet760.vertexCount = new MFInt32(new int[2]);
-let Coordinate761 = browser.currentScene.createNode("Coordinate");
-Coordinate761.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0646,1.6347,0.0302]);
-LineSet760.coord = Coordinate761;
+let Shape758 = browser.currentScene.createNode("Shape");
+let LineSet759 = browser.currentScene.createNode("LineSet");
+LineSet759.vertexCount = new MFInt32(new int[2]);
+let Coordinate760 = browser.currentScene.createNode("Coordinate");
+Coordinate760.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0646,1.6347,0.0302]);
+LineSet759.coord = Coordinate760;
 
-let ColorRGBA762 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA762.USE = "HAnimSiteLineColorRGBA";
-LineSet760.color = ColorRGBA762;
+let ColorRGBA761 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA761.USE = "HAnimSiteLineColorRGBA";
+LineSet759.color = ColorRGBA761;
 
-Shape759.geometry = LineSet760;
+Shape758.geometry = LineSet759;
 
-HAnimSegment707.children[14] = Shape759;
+HAnimSegment706.children[14] = Shape758;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_gonion'/>
-let Shape763 = browser.currentScene.createNode("Shape");
-let LineSet764 = browser.currentScene.createNode("LineSet");
-LineSet764.vertexCount = new MFInt32(new int[2]);
-let Coordinate765 = browser.currentScene.createNode("Coordinate");
-Coordinate765.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.052,1.5529,0.0347]);
-LineSet764.coord = Coordinate765;
+let Shape762 = browser.currentScene.createNode("Shape");
+let LineSet763 = browser.currentScene.createNode("LineSet");
+LineSet763.vertexCount = new MFInt32(new int[2]);
+let Coordinate764 = browser.currentScene.createNode("Coordinate");
+Coordinate764.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.052,1.5529,0.0347]);
+LineSet763.coord = Coordinate764;
 
-let ColorRGBA766 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA766.USE = "HAnimSiteLineColorRGBA";
-LineSet764.color = ColorRGBA766;
+let ColorRGBA765 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA765.USE = "HAnimSiteLineColorRGBA";
+LineSet763.color = ColorRGBA765;
 
-Shape763.geometry = LineSet764;
+Shape762.geometry = LineSet763;
 
-HAnimSegment707.children[15] = Shape763;
+HAnimSegment706.children[15] = Shape762;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_tragion'/>
-let Shape767 = browser.currentScene.createNode("Shape");
-let LineSet768 = browser.currentScene.createNode("LineSet");
-LineSet768.vertexCount = new MFInt32(new int[2]);
-let Coordinate769 = browser.currentScene.createNode("Coordinate");
-Coordinate769.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0739,1.6348,0.0282]);
-LineSet768.coord = Coordinate769;
+let Shape766 = browser.currentScene.createNode("Shape");
+let LineSet767 = browser.currentScene.createNode("LineSet");
+LineSet767.vertexCount = new MFInt32(new int[2]);
+let Coordinate768 = browser.currentScene.createNode("Coordinate");
+Coordinate768.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0739,1.6348,0.0282]);
+LineSet767.coord = Coordinate768;
 
-let ColorRGBA770 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA770.USE = "HAnimSiteLineColorRGBA";
-LineSet768.color = ColorRGBA770;
+let ColorRGBA769 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA769.USE = "HAnimSiteLineColorRGBA";
+LineSet767.color = ColorRGBA769;
 
-Shape767.geometry = LineSet768;
+Shape766.geometry = LineSet767;
 
-HAnimSegment707.children[16] = Shape767;
+HAnimSegment706.children[16] = Shape766;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_gonion'/>
-let Shape771 = browser.currentScene.createNode("Shape");
-let LineSet772 = browser.currentScene.createNode("LineSet");
-LineSet772.vertexCount = new MFInt32(new int[2]);
-let Coordinate773 = browser.currentScene.createNode("Coordinate");
-Coordinate773.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0631,1.553,0.033]);
-LineSet772.coord = Coordinate773;
+let Shape770 = browser.currentScene.createNode("Shape");
+let LineSet771 = browser.currentScene.createNode("LineSet");
+LineSet771.vertexCount = new MFInt32(new int[2]);
+let Coordinate772 = browser.currentScene.createNode("Coordinate");
+Coordinate772.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0631,1.553,0.033]);
+LineSet771.coord = Coordinate772;
 
-let ColorRGBA774 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA774.USE = "HAnimSiteLineColorRGBA";
-LineSet772.color = ColorRGBA774;
+let ColorRGBA773 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA773.USE = "HAnimSiteLineColorRGBA";
+LineSet771.color = ColorRGBA773;
 
-Shape771.geometry = LineSet772;
+Shape770.geometry = LineSet771;
 
-HAnimSegment707.children[17] = Shape771;
+HAnimSegment706.children[17] = Shape770;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='nuchale'/>
-let Shape775 = browser.currentScene.createNode("Shape");
-let LineSet776 = browser.currentScene.createNode("LineSet");
-LineSet776.vertexCount = new MFInt32(new int[2]);
-let Coordinate777 = browser.currentScene.createNode("Coordinate");
-Coordinate777.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0039,1.5972,-0.0796]);
-LineSet776.coord = Coordinate777;
+let Shape774 = browser.currentScene.createNode("Shape");
+let LineSet775 = browser.currentScene.createNode("LineSet");
+LineSet775.vertexCount = new MFInt32(new int[2]);
+let Coordinate776 = browser.currentScene.createNode("Coordinate");
+Coordinate776.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0039,1.5972,-0.0796]);
+LineSet775.coord = Coordinate776;
 
-let ColorRGBA778 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA778.USE = "HAnimSiteLineColorRGBA";
-LineSet776.color = ColorRGBA778;
+let ColorRGBA777 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA777.USE = "HAnimSiteLineColorRGBA";
+LineSet775.color = ColorRGBA777;
 
-Shape775.geometry = LineSet776;
+Shape774.geometry = LineSet775;
 
-HAnimSegment707.children[18] = Shape775;
+HAnimSegment706.children[18] = Shape774;
 
-let HAnimSite779 = browser.currentScene.createNode("HAnimSite");
-HAnimSite779.name = "skull_tip";
-HAnimSite779.DEF = "hanim_skull_tip";
-HAnimSite779.translation = new SFVec3f(new float[0.005,1.7504,0.0055]);
+let HAnimSite778 = browser.currentScene.createNode("HAnimSite");
+HAnimSite778.name = "skull_tip";
+HAnimSite778.DEF = "hanim_skull_tip";
+HAnimSite778.translation = new SFVec3f(new float[0.005,1.7504,0.0055]);
 //TODO move skull_tip x to zero, check others for symmetry
 //HAnimSite visualization shape
-let TouchSensor780 = browser.currentScene.createNode("TouchSensor");
-TouchSensor780.description = "HAnimSite skull_tip";
-HAnimSite779.children = new MFNode();
+let TouchSensor779 = browser.currentScene.createNode("TouchSensor");
+TouchSensor779.description = "HAnimSite skull_tip";
+HAnimSite778.children = new MFNode();
 
-HAnimSite779.children[0] = TouchSensor780;
+HAnimSite778.children[0] = TouchSensor779;
 
-let Shape781 = browser.currentScene.createNode("Shape");
-Shape781.USE = "HAnimSiteShape";
-HAnimSite779.children[1] = Shape781;
+let Shape780 = browser.currentScene.createNode("Shape");
+Shape780.USE = "HAnimSiteShape";
+HAnimSite778.children[1] = Shape780;
 
-HAnimSegment707.children[19] = HAnimSite779;
+HAnimSegment706.children[19] = HAnimSite778;
 
-let HAnimSite782 = browser.currentScene.createNode("HAnimSite");
-HAnimSite782.name = "sellion_pt";
-HAnimSite782.DEF = "hanim_sellion_pt";
-HAnimSite782.translation = new SFVec3f(new float[0.0058,1.6316,0.0852]);
+let HAnimSite781 = browser.currentScene.createNode("HAnimSite");
+HAnimSite781.name = "sellion_pt";
+HAnimSite781.DEF = "hanim_sellion_pt";
+HAnimSite781.translation = new SFVec3f(new float[0.0058,1.6316,0.0852]);
 //HAnimSite visualization shape
-let TouchSensor783 = browser.currentScene.createNode("TouchSensor");
-TouchSensor783.description = "HAnimSite sellion";
-HAnimSite782.children = new MFNode();
+let TouchSensor782 = browser.currentScene.createNode("TouchSensor");
+TouchSensor782.description = "HAnimSite sellion";
+HAnimSite781.children = new MFNode();
 
-HAnimSite782.children[0] = TouchSensor783;
+HAnimSite781.children[0] = TouchSensor782;
 
-let Shape784 = browser.currentScene.createNode("Shape");
-Shape784.USE = "HAnimSiteShape";
-HAnimSite782.children[1] = Shape784;
+let Shape783 = browser.currentScene.createNode("Shape");
+Shape783.USE = "HAnimSiteShape";
+HAnimSite781.children[1] = Shape783;
 
-HAnimSegment707.children[20] = HAnimSite782;
+HAnimSegment706.children[20] = HAnimSite781;
 
-let HAnimSite785 = browser.currentScene.createNode("HAnimSite");
-HAnimSite785.name = "r_infraorbitale_pt";
-HAnimSite785.DEF = "hanim_r_infraorbitale_pt";
-HAnimSite785.translation = new SFVec3f(new float[-0.0237,1.6171,0.0752]);
+let HAnimSite784 = browser.currentScene.createNode("HAnimSite");
+HAnimSite784.name = "r_infraorbitale_pt";
+HAnimSite784.DEF = "hanim_r_infraorbitale_pt";
+HAnimSite784.translation = new SFVec3f(new float[-0.0237,1.6171,0.0752]);
 //HAnimSite visualization shape
-let TouchSensor786 = browser.currentScene.createNode("TouchSensor");
-TouchSensor786.description = "HAnimSite r_infraorbitale";
-HAnimSite785.children = new MFNode();
+let TouchSensor785 = browser.currentScene.createNode("TouchSensor");
+TouchSensor785.description = "HAnimSite r_infraorbitale";
+HAnimSite784.children = new MFNode();
 
-HAnimSite785.children[0] = TouchSensor786;
+HAnimSite784.children[0] = TouchSensor785;
 
-let Shape787 = browser.currentScene.createNode("Shape");
-Shape787.USE = "HAnimSiteShape";
-HAnimSite785.children[1] = Shape787;
+let Shape786 = browser.currentScene.createNode("Shape");
+Shape786.USE = "HAnimSiteShape";
+HAnimSite784.children[1] = Shape786;
 
-HAnimSegment707.children[21] = HAnimSite785;
+HAnimSegment706.children[21] = HAnimSite784;
 
-let HAnimSite788 = browser.currentScene.createNode("HAnimSite");
-HAnimSite788.name = "l_infraorbitale_pt";
-HAnimSite788.DEF = "hanim_l_infraorbitale_pt";
-HAnimSite788.translation = new SFVec3f(new float[0.0341,1.6171,0.0752]);
+let HAnimSite787 = browser.currentScene.createNode("HAnimSite");
+HAnimSite787.name = "l_infraorbitale_pt";
+HAnimSite787.DEF = "hanim_l_infraorbitale_pt";
+HAnimSite787.translation = new SFVec3f(new float[0.0341,1.6171,0.0752]);
 //HAnimSite visualization shape
-let TouchSensor789 = browser.currentScene.createNode("TouchSensor");
-TouchSensor789.description = "HAnimSite l_infraorbitale";
-HAnimSite788.children = new MFNode();
+let TouchSensor788 = browser.currentScene.createNode("TouchSensor");
+TouchSensor788.description = "HAnimSite l_infraorbitale";
+HAnimSite787.children = new MFNode();
 
-HAnimSite788.children[0] = TouchSensor789;
+HAnimSite787.children[0] = TouchSensor788;
 
-let Shape790 = browser.currentScene.createNode("Shape");
-Shape790.USE = "HAnimSiteShape";
-HAnimSite788.children[1] = Shape790;
+let Shape789 = browser.currentScene.createNode("Shape");
+Shape789.USE = "HAnimSiteShape";
+HAnimSite787.children[1] = Shape789;
 
-HAnimSegment707.children[22] = HAnimSite788;
+HAnimSegment706.children[22] = HAnimSite787;
 
-let HAnimSite791 = browser.currentScene.createNode("HAnimSite");
-HAnimSite791.name = "supramenton_pt";
-HAnimSite791.DEF = "hanim_supramenton_pt";
-HAnimSite791.translation = new SFVec3f(new float[0.0061,1.541,0.0805]);
+let HAnimSite790 = browser.currentScene.createNode("HAnimSite");
+HAnimSite790.name = "supramenton_pt";
+HAnimSite790.DEF = "hanim_supramenton_pt";
+HAnimSite790.translation = new SFVec3f(new float[0.0061,1.541,0.0805]);
 //HAnimSite visualization shape
-let TouchSensor792 = browser.currentScene.createNode("TouchSensor");
-TouchSensor792.description = "HAnimSite supramenton";
-HAnimSite791.children = new MFNode();
+let TouchSensor791 = browser.currentScene.createNode("TouchSensor");
+TouchSensor791.description = "HAnimSite supramenton";
+HAnimSite790.children = new MFNode();
 
-HAnimSite791.children[0] = TouchSensor792;
+HAnimSite790.children[0] = TouchSensor791;
 
-let Shape793 = browser.currentScene.createNode("Shape");
-Shape793.USE = "HAnimSiteShape";
-HAnimSite791.children[1] = Shape793;
+let Shape792 = browser.currentScene.createNode("Shape");
+Shape792.USE = "HAnimSiteShape";
+HAnimSite790.children[1] = Shape792;
 
-HAnimSegment707.children[23] = HAnimSite791;
+HAnimSegment706.children[23] = HAnimSite790;
 
-let HAnimSite794 = browser.currentScene.createNode("HAnimSite");
-HAnimSite794.name = "r_tragion_pt";
-HAnimSite794.DEF = "hanim_r_tragion_pt";
-HAnimSite794.translation = new SFVec3f(new float[-0.0646,1.6347,0.0302]);
+let HAnimSite793 = browser.currentScene.createNode("HAnimSite");
+HAnimSite793.name = "r_tragion_pt";
+HAnimSite793.DEF = "hanim_r_tragion_pt";
+HAnimSite793.translation = new SFVec3f(new float[-0.0646,1.6347,0.0302]);
 //HAnimSite visualization shape
-let TouchSensor795 = browser.currentScene.createNode("TouchSensor");
-TouchSensor795.description = "HAnimSite r_tragion";
-HAnimSite794.children = new MFNode();
+let TouchSensor794 = browser.currentScene.createNode("TouchSensor");
+TouchSensor794.description = "HAnimSite r_tragion";
+HAnimSite793.children = new MFNode();
 
-HAnimSite794.children[0] = TouchSensor795;
+HAnimSite793.children[0] = TouchSensor794;
 
-let Shape796 = browser.currentScene.createNode("Shape");
-Shape796.USE = "HAnimSiteShape";
-HAnimSite794.children[1] = Shape796;
+let Shape795 = browser.currentScene.createNode("Shape");
+Shape795.USE = "HAnimSiteShape";
+HAnimSite793.children[1] = Shape795;
 
-HAnimSegment707.children[24] = HAnimSite794;
+HAnimSegment706.children[24] = HAnimSite793;
 
-let HAnimSite797 = browser.currentScene.createNode("HAnimSite");
-HAnimSite797.name = "r_gonion_pt";
-HAnimSite797.DEF = "hanim_r_gonion_pt";
-HAnimSite797.translation = new SFVec3f(new float[-0.052,1.5529,0.0347]);
+let HAnimSite796 = browser.currentScene.createNode("HAnimSite");
+HAnimSite796.name = "r_gonion_pt";
+HAnimSite796.DEF = "hanim_r_gonion_pt";
+HAnimSite796.translation = new SFVec3f(new float[-0.052,1.5529,0.0347]);
 //HAnimSite visualization shape
-let TouchSensor798 = browser.currentScene.createNode("TouchSensor");
-TouchSensor798.description = "HAnimSite r_gonion";
-HAnimSite797.children = new MFNode();
+let TouchSensor797 = browser.currentScene.createNode("TouchSensor");
+TouchSensor797.description = "HAnimSite r_gonion";
+HAnimSite796.children = new MFNode();
 
-HAnimSite797.children[0] = TouchSensor798;
+HAnimSite796.children[0] = TouchSensor797;
 
-let Shape799 = browser.currentScene.createNode("Shape");
-Shape799.USE = "HAnimSiteShape";
-HAnimSite797.children[1] = Shape799;
+let Shape798 = browser.currentScene.createNode("Shape");
+Shape798.USE = "HAnimSiteShape";
+HAnimSite796.children[1] = Shape798;
 
-HAnimSegment707.children[25] = HAnimSite797;
+HAnimSegment706.children[25] = HAnimSite796;
 
-let HAnimSite800 = browser.currentScene.createNode("HAnimSite");
-HAnimSite800.name = "l_tragion_pt";
-HAnimSite800.DEF = "hanim_l_tragion_pt";
-HAnimSite800.translation = new SFVec3f(new float[0.0739,1.6348,0.0282]);
+let HAnimSite799 = browser.currentScene.createNode("HAnimSite");
+HAnimSite799.name = "l_tragion_pt";
+HAnimSite799.DEF = "hanim_l_tragion_pt";
+HAnimSite799.translation = new SFVec3f(new float[0.0739,1.6348,0.0282]);
 //HAnimSite visualization shape
-let TouchSensor801 = browser.currentScene.createNode("TouchSensor");
-TouchSensor801.description = "HAnimSite l_tragion";
-HAnimSite800.children = new MFNode();
+let TouchSensor800 = browser.currentScene.createNode("TouchSensor");
+TouchSensor800.description = "HAnimSite l_tragion";
+HAnimSite799.children = new MFNode();
 
-HAnimSite800.children[0] = TouchSensor801;
+HAnimSite799.children[0] = TouchSensor800;
 
-let Shape802 = browser.currentScene.createNode("Shape");
-Shape802.USE = "HAnimSiteShape";
-HAnimSite800.children[1] = Shape802;
+let Shape801 = browser.currentScene.createNode("Shape");
+Shape801.USE = "HAnimSiteShape";
+HAnimSite799.children[1] = Shape801;
 
-HAnimSegment707.children[26] = HAnimSite800;
+HAnimSegment706.children[26] = HAnimSite799;
 
-let HAnimSite803 = browser.currentScene.createNode("HAnimSite");
-HAnimSite803.name = "l_gonion_pt";
-HAnimSite803.DEF = "hanim_l_gonion_pt";
-HAnimSite803.translation = new SFVec3f(new float[0.0631,1.553,0.033]);
+let HAnimSite802 = browser.currentScene.createNode("HAnimSite");
+HAnimSite802.name = "l_gonion_pt";
+HAnimSite802.DEF = "hanim_l_gonion_pt";
+HAnimSite802.translation = new SFVec3f(new float[0.0631,1.553,0.033]);
 //HAnimSite visualization shape
-let TouchSensor804 = browser.currentScene.createNode("TouchSensor");
-TouchSensor804.description = "HAnimSite l_gonion";
-HAnimSite803.children = new MFNode();
+let TouchSensor803 = browser.currentScene.createNode("TouchSensor");
+TouchSensor803.description = "HAnimSite l_gonion";
+HAnimSite802.children = new MFNode();
 
-HAnimSite803.children[0] = TouchSensor804;
+HAnimSite802.children[0] = TouchSensor803;
 
-let Shape805 = browser.currentScene.createNode("Shape");
-Shape805.USE = "HAnimSiteShape";
-HAnimSite803.children[1] = Shape805;
+let Shape804 = browser.currentScene.createNode("Shape");
+Shape804.USE = "HAnimSiteShape";
+HAnimSite802.children[1] = Shape804;
 
-HAnimSegment707.children[27] = HAnimSite803;
+HAnimSegment706.children[27] = HAnimSite802;
 
-let HAnimSite806 = browser.currentScene.createNode("HAnimSite");
-HAnimSite806.name = "nuchale_pt";
-HAnimSite806.DEF = "hanim_nuchale_pt";
-HAnimSite806.translation = new SFVec3f(new float[0.0039,1.5972,-0.0796]);
+let HAnimSite805 = browser.currentScene.createNode("HAnimSite");
+HAnimSite805.name = "nuchale_pt";
+HAnimSite805.DEF = "hanim_nuchale_pt";
+HAnimSite805.translation = new SFVec3f(new float[0.0039,1.5972,-0.0796]);
 //HAnimSite visualization shape
-let TouchSensor807 = browser.currentScene.createNode("TouchSensor");
-TouchSensor807.description = "HAnimSite nuchale";
-HAnimSite806.children = new MFNode();
+let TouchSensor806 = browser.currentScene.createNode("TouchSensor");
+TouchSensor806.description = "HAnimSite nuchale";
+HAnimSite805.children = new MFNode();
 
-HAnimSite806.children[0] = TouchSensor807;
+HAnimSite805.children[0] = TouchSensor806;
 
-let Shape808 = browser.currentScene.createNode("Shape");
-Shape808.USE = "HAnimSiteShape";
-HAnimSite806.children[1] = Shape808;
+let Shape807 = browser.currentScene.createNode("Shape");
+Shape807.USE = "HAnimSiteShape";
+HAnimSite805.children[1] = Shape807;
 
-HAnimSegment707.children[28] = HAnimSite806;
+HAnimSegment706.children[28] = HAnimSite805;
 
-HAnimJoint706.children = new MFNode();
+HAnimJoint705.children = new MFNode();
 
-HAnimJoint706.children[0] = HAnimSegment707;
+HAnimJoint705.children[0] = HAnimSegment706;
 
-let HAnimJoint809 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint809.name = "l_eyeball_joint";
-HAnimJoint809.DEF = "hanim_l_eyeball_joint";
-HAnimJoint809.center = new SFVec3f(new float[0.0336,1.6332,0.0502]);
-HAnimJoint809.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment810 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment810.name = "l_eyeball";
-HAnimSegment810.DEF = "hanim_l_eyeball";
+let HAnimJoint808 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint808.name = "l_eyeball_joint";
+HAnimJoint808.DEF = "hanim_l_eyeball_joint";
+HAnimJoint808.center = new SFVec3f(new float[0.0336,1.6332,0.0502]);
+HAnimJoint808.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment809 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment809.name = "l_eyeball";
+HAnimSegment809.DEF = "hanim_l_eyeball";
 //<HAnimJoint name='l_eyeball_joint'/> visualization sphere is placed within <HAnimSegment name='l_eyeball'/>
-let TouchSensor811 = browser.currentScene.createNode("TouchSensor");
-TouchSensor811.description = "HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball";
-HAnimSegment810.children = new MFNode();
+let TouchSensor810 = browser.currentScene.createNode("TouchSensor");
+TouchSensor810.description = "HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball";
+HAnimSegment809.children = new MFNode();
 
-HAnimSegment810.children[0] = TouchSensor811;
+HAnimSegment809.children[0] = TouchSensor810;
 
-let Transform812 = browser.currentScene.createNode("Transform");
-Transform812.translation = new SFVec3f(new float[0.0336,1.6332,0.0502]);
-let Shape813 = browser.currentScene.createNode("Shape");
-Shape813.USE = "HAnimJointShape";
-Transform812.children = new MFNode();
+let Transform811 = browser.currentScene.createNode("Transform");
+Transform811.translation = new SFVec3f(new float[0.0336,1.6332,0.0502]);
+let Shape812 = browser.currentScene.createNode("Shape");
+Shape812.USE = "HAnimJointShape";
+Transform811.children = new MFNode();
 
-Transform812.children[0] = Shape813;
+Transform811.children[0] = Shape812;
 
-HAnimSegment810.children[1] = Transform812;
+HAnimSegment809.children[1] = Transform811;
 
 //HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_eyeball_joint'/> to <HAnimSite name='l_eyeball_site_view'/>
-let Shape814 = browser.currentScene.createNode("Shape");
-let LineSet815 = browser.currentScene.createNode("LineSet");
-LineSet815.vertexCount = new MFInt32(new int[2]);
-let Coordinate816 = browser.currentScene.createNode("Coordinate");
-Coordinate816.point = new MFVec3f(new float[0.0336,1.6332,0.0502,0.034,1.64,0.05]);
-LineSet815.coord = Coordinate816;
+let Shape813 = browser.currentScene.createNode("Shape");
+let LineSet814 = browser.currentScene.createNode("LineSet");
+LineSet814.vertexCount = new MFInt32(new int[2]);
+let Coordinate815 = browser.currentScene.createNode("Coordinate");
+Coordinate815.point = new MFVec3f(new float[0.0336,1.6332,0.0502,0.034,1.64,0.05]);
+LineSet814.coord = Coordinate815;
 
-let ColorRGBA817 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA817.DEF = "HAnimSiteViewpointLineColorRGBA";
-ColorRGBA817.color = new MFColorRGBA(new float[0,0,1,1,0,0,1,0.1]);
-LineSet815.color = ColorRGBA817;
+let ColorRGBA816 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA816.DEF = "HAnimSiteViewpointLineColorRGBA";
+ColorRGBA816.color = new MFColorRGBA(new float[0,0,1,1,0,0,1,0.1]);
+LineSet814.color = ColorRGBA816;
 
-Shape814.geometry = LineSet815;
+Shape813.geometry = LineSet814;
 
-HAnimSegment810.children[2] = Shape814;
+HAnimSegment809.children[2] = Shape813;
 
-let HAnimSite818 = browser.currentScene.createNode("HAnimSite");
-HAnimSite818.name = "l_eyeball_site_view";
-HAnimSite818.DEF = "hanim_l_eyeball_site_view";
-HAnimSite818.translation = new SFVec3f(new float[0.034,1.64,0.05]);
+let HAnimSite817 = browser.currentScene.createNode("HAnimSite");
+HAnimSite817.name = "l_eyeball_site_view";
+HAnimSite817.DEF = "hanim_l_eyeball_site_view";
+HAnimSite817.translation = new SFVec3f(new float[0.034,1.64,0.05]);
 //HAnimSite visualization shape
-let TouchSensor819 = browser.currentScene.createNode("TouchSensor");
-TouchSensor819.description = "HAnimSite l_eyeball_site_view";
-HAnimSite818.children = new MFNode();
+let TouchSensor818 = browser.currentScene.createNode("TouchSensor");
+TouchSensor818.description = "HAnimSite l_eyeball_site_view";
+HAnimSite817.children = new MFNode();
 
-HAnimSite818.children[0] = TouchSensor819;
+HAnimSite817.children[0] = TouchSensor818;
 
-let Shape820 = browser.currentScene.createNode("Shape");
-Shape820.USE = "HAnimSiteShape";
-HAnimSite818.children[1] = Shape820;
+let Shape819 = browser.currentScene.createNode("Shape");
+Shape819.USE = "HAnimSiteShape";
+HAnimSite817.children[1] = Shape819;
 
-let Viewpoint821 = browser.currentScene.createNode("Viewpoint");
-Viewpoint821.DEF = "hanim_l_eyeball_site_viewpoint";
-Viewpoint821.description = "l_eyeball_site_viewpoint looking forward";
-Viewpoint821.orientation = new SFRotation(new float[0,1,0,3.141593]);
-Viewpoint821.position = new SFVec3f(new float[0,0,0]);
-HAnimSite818.children[2] = Viewpoint821;
+let Viewpoint820 = browser.currentScene.createNode("Viewpoint");
+Viewpoint820.DEF = "hanim_l_eyeball_site_viewpoint";
+Viewpoint820.description = "l_eyeball_site_viewpoint looking forward";
+Viewpoint820.orientation = new SFRotation(new float[0,1,0,3.141593]);
+Viewpoint820.position = new SFVec3f(new float[0,0,0]);
+HAnimSite817.children[2] = Viewpoint820;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor822 = browser.currentScene.createNode("Anchor");
-Anchor822.description = "HAnimSite hanim_l_eyeball_site_view Viewpoint";
-Anchor822.url = new MFString(new java.lang.String["#hanim_l_eyeball_site_viewpoint"]);
-let LOD823 = browser.currentScene.createNode("LOD");
-LOD823.forceTransitions = True;
-LOD823.range = new MFFloat(new float[0.04]);
-let WorldInfo824 = browser.currentScene.createNode("WorldInfo");
-WorldInfo824.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD823.children = new MFNode();
+let Anchor821 = browser.currentScene.createNode("Anchor");
+Anchor821.description = "HAnimSite hanim_l_eyeball_site_view Viewpoint";
+Anchor821.url = new MFString(new java.lang.String["#hanim_l_eyeball_site_viewpoint"]);
+let LOD822 = browser.currentScene.createNode("LOD");
+LOD822.forceTransitions = True;
+LOD822.range = new MFFloat(new float[0.04]);
+let WorldInfo823 = browser.currentScene.createNode("WorldInfo");
+WorldInfo823.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD822.children = new MFNode();
 
-LOD823.children[0] = WorldInfo824;
+LOD822.children[0] = WorldInfo823;
 
-let Shape825 = browser.currentScene.createNode("Shape");
-Shape825.DEF = "HAnimSiteViewpointShape";
-let IndexedFaceSet826 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet826.DEF = "SiteViewpointDiamondIFS";
-IndexedFaceSet826.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
-IndexedFaceSet826.creaseAngle = 0.5;
-let Coordinate827 = browser.currentScene.createNode("Coordinate");
-Coordinate827.point = new MFVec3f(new float[0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]);
-IndexedFaceSet826.coord = Coordinate827;
+let Shape824 = browser.currentScene.createNode("Shape");
+Shape824.DEF = "HAnimSiteViewpointShape";
+let IndexedFaceSet825 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet825.DEF = "SiteViewpointDiamondIFS";
+IndexedFaceSet825.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
+IndexedFaceSet825.creaseAngle = 0.5;
+let Coordinate826 = browser.currentScene.createNode("Coordinate");
+Coordinate826.point = new MFVec3f(new float[0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]);
+IndexedFaceSet825.coord = Coordinate826;
 
-Shape825.geometry = IndexedFaceSet826;
+Shape824.geometry = IndexedFaceSet825;
 
-let Appearance828 = browser.currentScene.createNode("Appearance");
-let Material829 = browser.currentScene.createNode("Material");
-Material829.diffuseColor = new SFColor(new float[0,0,1]);
-Material829.transparency = 0.6;
-Appearance828.material = Material829;
+let Appearance827 = browser.currentScene.createNode("Appearance");
+let Material828 = browser.currentScene.createNode("Material");
+Material828.diffuseColor = new SFColor(new float[0,0,1]);
+Material828.transparency = 0.6;
+Appearance827.material = Material828;
 
-Shape825.appearance = Appearance828;
+Shape824.appearance = Appearance827;
 
-LOD823.children[1] = Shape825;
+LOD822.children[1] = Shape824;
 
-Anchor822.children = new MFNode();
+Anchor821.children = new MFNode();
 
-Anchor822.children[0] = LOD823;
+Anchor821.children[0] = LOD822;
 
-HAnimSite818.children[3] = Anchor822;
+HAnimSite817.children[3] = Anchor821;
 
-HAnimSegment810.children[3] = HAnimSite818;
+HAnimSegment809.children[3] = HAnimSite817;
 
-HAnimJoint809.children = new MFNode();
+HAnimJoint808.children = new MFNode();
 
-HAnimJoint809.children[0] = HAnimSegment810;
+HAnimJoint808.children[0] = HAnimSegment809;
 
-HAnimJoint706.children[1] = HAnimJoint809;
+HAnimJoint705.children[1] = HAnimJoint808;
 
-let HAnimJoint830 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint830.name = "l_eyelid_joint";
-HAnimJoint830.DEF = "hanim_l_eyelid_joint";
-HAnimJoint830.center = new SFVec3f(new float[0.0336,1.6332,0.0502]);
-HAnimJoint830.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment831 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment831.name = "l_eyelid";
-HAnimSegment831.DEF = "hanim_l_eyelid";
+let HAnimJoint829 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint829.name = "l_eyelid_joint";
+HAnimJoint829.DEF = "hanim_l_eyelid_joint";
+HAnimJoint829.center = new SFVec3f(new float[0.0336,1.6332,0.0502]);
+HAnimJoint829.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment830 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment830.name = "l_eyelid";
+HAnimSegment830.DEF = "hanim_l_eyelid";
 //<HAnimJoint name='l_eyelid_joint'/> visualization sphere is placed within <HAnimSegment name='l_eyelid'/>
-let TouchSensor832 = browser.currentScene.createNode("TouchSensor");
-TouchSensor832.description = "HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid";
-HAnimSegment831.children = new MFNode();
+let TouchSensor831 = browser.currentScene.createNode("TouchSensor");
+TouchSensor831.description = "HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid";
+HAnimSegment830.children = new MFNode();
 
-HAnimSegment831.children[0] = TouchSensor832;
+HAnimSegment830.children[0] = TouchSensor831;
 
-let Transform833 = browser.currentScene.createNode("Transform");
-Transform833.translation = new SFVec3f(new float[0.0336,1.6332,0.0502]);
-let Shape834 = browser.currentScene.createNode("Shape");
-Shape834.USE = "HAnimJointShape";
-Transform833.children = new MFNode();
+let Transform832 = browser.currentScene.createNode("Transform");
+Transform832.translation = new SFVec3f(new float[0.0336,1.6332,0.0502]);
+let Shape833 = browser.currentScene.createNode("Shape");
+Shape833.USE = "HAnimJointShape";
+Transform832.children = new MFNode();
 
-Transform833.children[0] = Shape834;
+Transform832.children[0] = Shape833;
 
-HAnimSegment831.children[1] = Transform833;
+HAnimSegment830.children[1] = Transform832;
 
-HAnimJoint830.children = new MFNode();
+HAnimJoint829.children = new MFNode();
 
-HAnimJoint830.children[0] = HAnimSegment831;
+HAnimJoint829.children[0] = HAnimSegment830;
 
-HAnimJoint706.children[2] = HAnimJoint830;
+HAnimJoint705.children[2] = HAnimJoint829;
 
-let HAnimJoint835 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint835.name = "l_eyebrow_joint";
-HAnimJoint835.DEF = "hanim_l_eyebrow_joint";
-HAnimJoint835.center = new SFVec3f(new float[0.0336,1.635,0.0506]);
-HAnimJoint835.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment836 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment836.name = "l_eyebrow";
-HAnimSegment836.DEF = "hanim_l_eyebrow";
+let HAnimJoint834 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint834.name = "l_eyebrow_joint";
+HAnimJoint834.DEF = "hanim_l_eyebrow_joint";
+HAnimJoint834.center = new SFVec3f(new float[0.0336,1.635,0.0506]);
+HAnimJoint834.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment835 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment835.name = "l_eyebrow";
+HAnimSegment835.DEF = "hanim_l_eyebrow";
 //<HAnimJoint name='l_eyebrow_joint'/> visualization sphere is placed within <HAnimSegment name='l_eyebrow'/>
-let TouchSensor837 = browser.currentScene.createNode("TouchSensor");
-TouchSensor837.description = "HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow";
-HAnimSegment836.children = new MFNode();
+let TouchSensor836 = browser.currentScene.createNode("TouchSensor");
+TouchSensor836.description = "HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow";
+HAnimSegment835.children = new MFNode();
 
-HAnimSegment836.children[0] = TouchSensor837;
+HAnimSegment835.children[0] = TouchSensor836;
 
-let Transform838 = browser.currentScene.createNode("Transform");
-Transform838.translation = new SFVec3f(new float[0.0336,1.635,0.0506]);
-let Shape839 = browser.currentScene.createNode("Shape");
-Shape839.USE = "HAnimJointShape";
-Transform838.children = new MFNode();
+let Transform837 = browser.currentScene.createNode("Transform");
+Transform837.translation = new SFVec3f(new float[0.0336,1.635,0.0506]);
+let Shape838 = browser.currentScene.createNode("Shape");
+Shape838.USE = "HAnimJointShape";
+Transform837.children = new MFNode();
 
-Transform838.children[0] = Shape839;
+Transform837.children[0] = Shape838;
 
-HAnimSegment836.children[1] = Transform838;
+HAnimSegment835.children[1] = Transform837;
 
-HAnimJoint835.children = new MFNode();
+HAnimJoint834.children = new MFNode();
 
-HAnimJoint835.children[0] = HAnimSegment836;
+HAnimJoint834.children[0] = HAnimSegment835;
 
-HAnimJoint706.children[3] = HAnimJoint835;
+HAnimJoint705.children[3] = HAnimJoint834;
 
-let HAnimJoint840 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint840.name = "r_eyeball_joint";
-HAnimJoint840.DEF = "hanim_r_eyeball_joint";
-HAnimJoint840.center = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
-HAnimJoint840.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment841 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment841.name = "r_eyeball";
-HAnimSegment841.DEF = "hanim_r_eyeball";
+let HAnimJoint839 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint839.name = "r_eyeball_joint";
+HAnimJoint839.DEF = "hanim_r_eyeball_joint";
+HAnimJoint839.center = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
+HAnimJoint839.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment840 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment840.name = "r_eyeball";
+HAnimSegment840.DEF = "hanim_r_eyeball";
 //<HAnimJoint name='r_eyeball_joint'/> visualization sphere is placed within <HAnimSegment name='r_eyeball'/>
-let TouchSensor842 = browser.currentScene.createNode("TouchSensor");
-TouchSensor842.description = "HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball";
-HAnimSegment841.children = new MFNode();
+let TouchSensor841 = browser.currentScene.createNode("TouchSensor");
+TouchSensor841.description = "HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball";
+HAnimSegment840.children = new MFNode();
 
-HAnimSegment841.children[0] = TouchSensor842;
+HAnimSegment840.children[0] = TouchSensor841;
 
-let Transform843 = browser.currentScene.createNode("Transform");
-Transform843.translation = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
-let Shape844 = browser.currentScene.createNode("Shape");
-Shape844.USE = "HAnimJointShape";
-Transform843.children = new MFNode();
+let Transform842 = browser.currentScene.createNode("Transform");
+Transform842.translation = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
+let Shape843 = browser.currentScene.createNode("Shape");
+Shape843.USE = "HAnimJointShape";
+Transform842.children = new MFNode();
 
-Transform843.children[0] = Shape844;
+Transform842.children[0] = Shape843;
 
-HAnimSegment841.children[1] = Transform843;
+HAnimSegment840.children[1] = Transform842;
 
 //HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_eyeball_joint'/> to <HAnimSite name='r_eyeball_site_view'/>
-let Shape845 = browser.currentScene.createNode("Shape");
-let LineSet846 = browser.currentScene.createNode("LineSet");
-LineSet846.vertexCount = new MFInt32(new int[2]);
-let Coordinate847 = browser.currentScene.createNode("Coordinate");
-Coordinate847.point = new MFVec3f(new float[-0.0336,1.6332,0.0502,-0.034,1.64,0.05]);
-LineSet846.coord = Coordinate847;
+let Shape844 = browser.currentScene.createNode("Shape");
+let LineSet845 = browser.currentScene.createNode("LineSet");
+LineSet845.vertexCount = new MFInt32(new int[2]);
+let Coordinate846 = browser.currentScene.createNode("Coordinate");
+Coordinate846.point = new MFVec3f(new float[-0.0336,1.6332,0.0502,-0.034,1.64,0.05]);
+LineSet845.coord = Coordinate846;
 
-let ColorRGBA848 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA848.USE = "HAnimSiteViewpointLineColorRGBA";
-LineSet846.color = ColorRGBA848;
+let ColorRGBA847 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA847.USE = "HAnimSiteViewpointLineColorRGBA";
+LineSet845.color = ColorRGBA847;
 
-Shape845.geometry = LineSet846;
+Shape844.geometry = LineSet845;
 
-HAnimSegment841.children[2] = Shape845;
+HAnimSegment840.children[2] = Shape844;
 
-let HAnimSite849 = browser.currentScene.createNode("HAnimSite");
-HAnimSite849.name = "r_eyeball_site_view";
-HAnimSite849.DEF = "hanim_r_eyeball_site_view";
-HAnimSite849.translation = new SFVec3f(new float[-0.034,1.64,0.05]);
+let HAnimSite848 = browser.currentScene.createNode("HAnimSite");
+HAnimSite848.name = "r_eyeball_site_view";
+HAnimSite848.DEF = "hanim_r_eyeball_site_view";
+HAnimSite848.translation = new SFVec3f(new float[-0.034,1.64,0.05]);
 //HAnimSite visualization shape
-let TouchSensor850 = browser.currentScene.createNode("TouchSensor");
-TouchSensor850.description = "HAnimSite r_eyeball_site_view";
-HAnimSite849.children = new MFNode();
+let TouchSensor849 = browser.currentScene.createNode("TouchSensor");
+TouchSensor849.description = "HAnimSite r_eyeball_site_view";
+HAnimSite848.children = new MFNode();
 
-HAnimSite849.children[0] = TouchSensor850;
+HAnimSite848.children[0] = TouchSensor849;
 
-let Shape851 = browser.currentScene.createNode("Shape");
-Shape851.USE = "HAnimSiteShape";
-HAnimSite849.children[1] = Shape851;
+let Shape850 = browser.currentScene.createNode("Shape");
+Shape850.USE = "HAnimSiteShape";
+HAnimSite848.children[1] = Shape850;
 
-let Viewpoint852 = browser.currentScene.createNode("Viewpoint");
-Viewpoint852.DEF = "hanim_r_eyeball_site_viewpoint";
-Viewpoint852.description = "r_eyeball_site_viewpoint looking forward";
-Viewpoint852.orientation = new SFRotation(new float[0,1,0,3.141593]);
-Viewpoint852.position = new SFVec3f(new float[0,0,0]);
-HAnimSite849.children[2] = Viewpoint852;
+let Viewpoint851 = browser.currentScene.createNode("Viewpoint");
+Viewpoint851.DEF = "hanim_r_eyeball_site_viewpoint";
+Viewpoint851.description = "r_eyeball_site_viewpoint looking forward";
+Viewpoint851.orientation = new SFRotation(new float[0,1,0,3.141593]);
+Viewpoint851.position = new SFVec3f(new float[0,0,0]);
+HAnimSite848.children[2] = Viewpoint851;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor853 = browser.currentScene.createNode("Anchor");
-Anchor853.description = "HAnimSite hanim_r_eyeball_site_view Viewpoint";
-Anchor853.url = new MFString(new java.lang.String["#hanim_r_eyeball_site_viewpoint"]);
-let LOD854 = browser.currentScene.createNode("LOD");
-LOD854.forceTransitions = True;
-LOD854.range = new MFFloat(new float[0.04]);
-let WorldInfo855 = browser.currentScene.createNode("WorldInfo");
-WorldInfo855.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD854.children = new MFNode();
+let Anchor852 = browser.currentScene.createNode("Anchor");
+Anchor852.description = "HAnimSite hanim_r_eyeball_site_view Viewpoint";
+Anchor852.url = new MFString(new java.lang.String["#hanim_r_eyeball_site_viewpoint"]);
+let LOD853 = browser.currentScene.createNode("LOD");
+LOD853.forceTransitions = True;
+LOD853.range = new MFFloat(new float[0.04]);
+let WorldInfo854 = browser.currentScene.createNode("WorldInfo");
+WorldInfo854.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD853.children = new MFNode();
 
-LOD854.children[0] = WorldInfo855;
+LOD853.children[0] = WorldInfo854;
 
-let Shape856 = browser.currentScene.createNode("Shape");
-Shape856.USE = "HAnimSiteViewpointShape";
-LOD854.children[1] = Shape856;
+let Shape855 = browser.currentScene.createNode("Shape");
+Shape855.USE = "HAnimSiteViewpointShape";
+LOD853.children[1] = Shape855;
 
-Anchor853.children = new MFNode();
+Anchor852.children = new MFNode();
 
-Anchor853.children[0] = LOD854;
+Anchor852.children[0] = LOD853;
 
-HAnimSite849.children[3] = Anchor853;
+HAnimSite848.children[3] = Anchor852;
 
-HAnimSegment841.children[3] = HAnimSite849;
+HAnimSegment840.children[3] = HAnimSite848;
 
-HAnimJoint840.children = new MFNode();
+HAnimJoint839.children = new MFNode();
 
-HAnimJoint840.children[0] = HAnimSegment841;
+HAnimJoint839.children[0] = HAnimSegment840;
 
-HAnimJoint706.children[4] = HAnimJoint840;
+HAnimJoint705.children[4] = HAnimJoint839;
 
-let HAnimJoint857 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint857.name = "r_eyelid_joint";
-HAnimJoint857.DEF = "hanim_r_eyelid_joint";
-HAnimJoint857.center = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
-HAnimJoint857.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment858 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment858.name = "r_eyelid";
-HAnimSegment858.DEF = "hanim_r_eyelid";
+let HAnimJoint856 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint856.name = "r_eyelid_joint";
+HAnimJoint856.DEF = "hanim_r_eyelid_joint";
+HAnimJoint856.center = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
+HAnimJoint856.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment857 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment857.name = "r_eyelid";
+HAnimSegment857.DEF = "hanim_r_eyelid";
 //<HAnimJoint name='r_eyelid_joint'/> visualization sphere is placed within <HAnimSegment name='r_eyelid'/>
-let TouchSensor859 = browser.currentScene.createNode("TouchSensor");
-TouchSensor859.description = "HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid";
-HAnimSegment858.children = new MFNode();
+let TouchSensor858 = browser.currentScene.createNode("TouchSensor");
+TouchSensor858.description = "HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid";
+HAnimSegment857.children = new MFNode();
 
-HAnimSegment858.children[0] = TouchSensor859;
+HAnimSegment857.children[0] = TouchSensor858;
 
-let Transform860 = browser.currentScene.createNode("Transform");
-Transform860.translation = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
-let Shape861 = browser.currentScene.createNode("Shape");
-Shape861.USE = "HAnimJointShape";
-Transform860.children = new MFNode();
+let Transform859 = browser.currentScene.createNode("Transform");
+Transform859.translation = new SFVec3f(new float[-0.0336,1.6332,0.0502]);
+let Shape860 = browser.currentScene.createNode("Shape");
+Shape860.USE = "HAnimJointShape";
+Transform859.children = new MFNode();
 
-Transform860.children[0] = Shape861;
+Transform859.children[0] = Shape860;
 
-HAnimSegment858.children[1] = Transform860;
+HAnimSegment857.children[1] = Transform859;
 
-HAnimJoint857.children = new MFNode();
+HAnimJoint856.children = new MFNode();
 
-HAnimJoint857.children[0] = HAnimSegment858;
+HAnimJoint856.children[0] = HAnimSegment857;
 
-HAnimJoint706.children[5] = HAnimJoint857;
+HAnimJoint705.children[5] = HAnimJoint856;
 
-let HAnimJoint862 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint862.name = "r_eyebrow_joint";
-HAnimJoint862.DEF = "hanim_r_eyebrow_joint";
-HAnimJoint862.center = new SFVec3f(new float[-0.0336,1.635,0.0506]);
-HAnimJoint862.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment863 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment863.name = "r_eyebrow";
-HAnimSegment863.DEF = "hanim_r_eyebrow";
+let HAnimJoint861 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint861.name = "r_eyebrow_joint";
+HAnimJoint861.DEF = "hanim_r_eyebrow_joint";
+HAnimJoint861.center = new SFVec3f(new float[-0.0336,1.635,0.0506]);
+HAnimJoint861.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment862 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment862.name = "r_eyebrow";
+HAnimSegment862.DEF = "hanim_r_eyebrow";
 //<HAnimJoint name='r_eyebrow_joint'/> visualization sphere is placed within <HAnimSegment name='r_eyebrow'/>
-let TouchSensor864 = browser.currentScene.createNode("TouchSensor");
-TouchSensor864.description = "HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow";
-HAnimSegment863.children = new MFNode();
+let TouchSensor863 = browser.currentScene.createNode("TouchSensor");
+TouchSensor863.description = "HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow";
+HAnimSegment862.children = new MFNode();
 
-HAnimSegment863.children[0] = TouchSensor864;
+HAnimSegment862.children[0] = TouchSensor863;
 
-let Transform865 = browser.currentScene.createNode("Transform");
-Transform865.translation = new SFVec3f(new float[-0.0336,1.635,0.0506]);
-let Shape866 = browser.currentScene.createNode("Shape");
-Shape866.USE = "HAnimJointShape";
-Transform865.children = new MFNode();
+let Transform864 = browser.currentScene.createNode("Transform");
+Transform864.translation = new SFVec3f(new float[-0.0336,1.635,0.0506]);
+let Shape865 = browser.currentScene.createNode("Shape");
+Shape865.USE = "HAnimJointShape";
+Transform864.children = new MFNode();
 
-Transform865.children[0] = Shape866;
+Transform864.children[0] = Shape865;
 
-HAnimSegment863.children[1] = Transform865;
+HAnimSegment862.children[1] = Transform864;
 
-HAnimJoint862.children = new MFNode();
+HAnimJoint861.children = new MFNode();
 
-HAnimJoint862.children[0] = HAnimSegment863;
+HAnimJoint861.children[0] = HAnimSegment862;
 
-HAnimJoint706.children[6] = HAnimJoint862;
+HAnimJoint705.children[6] = HAnimJoint861;
 
-let HAnimJoint867 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint867.name = "temporomandibular";
-HAnimJoint867.DEF = "hanim_temporomandibular";
-HAnimJoint867.center = new SFVec3f(new float[0,1.63,0.015]);
-HAnimJoint867.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimJoint866 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint866.name = "temporomandibular";
+HAnimJoint866.DEF = "hanim_temporomandibular";
+HAnimJoint866.center = new SFVec3f(new float[0,1.63,0.015]);
+HAnimJoint866.stiffness = new SFVec3f(new float[0,0,0]);
 //Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint
-let HAnimSegment868 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment868.name = "jaw";
-HAnimSegment868.DEF = "hanim_jaw";
+let HAnimSegment867 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment867.name = "jaw";
+HAnimSegment867.DEF = "hanim_jaw";
 //<HAnimJoint name='temporomandibular'/> visualization sphere is placed within <HAnimSegment name='jaw'/>
-let TouchSensor869 = browser.currentScene.createNode("TouchSensor");
-TouchSensor869.description = "HAnimJoint temporomandibular, HAnimSegment jaw";
-HAnimSegment868.children = new MFNode();
+let TouchSensor868 = browser.currentScene.createNode("TouchSensor");
+TouchSensor868.description = "HAnimJoint temporomandibular, HAnimSegment jaw";
+HAnimSegment867.children = new MFNode();
 
-HAnimSegment868.children[0] = TouchSensor869;
+HAnimSegment867.children[0] = TouchSensor868;
 
-let Transform870 = browser.currentScene.createNode("Transform");
-Transform870.translation = new SFVec3f(new float[0,1.63,0.015]);
-let Shape871 = browser.currentScene.createNode("Shape");
-Shape871.USE = "HAnimJointShape";
-Transform870.children = new MFNode();
+let Transform869 = browser.currentScene.createNode("Transform");
+Transform869.translation = new SFVec3f(new float[0,1.63,0.015]);
+let Shape870 = browser.currentScene.createNode("Shape");
+Shape870.USE = "HAnimJointShape";
+Transform869.children = new MFNode();
 
-Transform870.children[0] = Shape871;
+Transform869.children[0] = Shape870;
 
-HAnimSegment868.children[1] = Transform870;
+HAnimSegment867.children[1] = Transform869;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_l_site'/>
-let Shape872 = browser.currentScene.createNode("Shape");
-let LineSet873 = browser.currentScene.createNode("LineSet");
-LineSet873.vertexCount = new MFInt32(new int[2]);
-let Coordinate874 = browser.currentScene.createNode("Coordinate");
-Coordinate874.point = new MFVec3f(new float[0,1.63,0.015,0.045,1.63,0]);
-LineSet873.coord = Coordinate874;
+let Shape871 = browser.currentScene.createNode("Shape");
+let LineSet872 = browser.currentScene.createNode("LineSet");
+LineSet872.vertexCount = new MFInt32(new int[2]);
+let Coordinate873 = browser.currentScene.createNode("Coordinate");
+Coordinate873.point = new MFVec3f(new float[0,1.63,0.015,0.045,1.63,0]);
+LineSet872.coord = Coordinate873;
 
-let ColorRGBA875 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA875.USE = "HAnimSiteLineColorRGBA";
-LineSet873.color = ColorRGBA875;
+let ColorRGBA874 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA874.USE = "HAnimSiteLineColorRGBA";
+LineSet872.color = ColorRGBA874;
 
-Shape872.geometry = LineSet873;
+Shape871.geometry = LineSet872;
 
-HAnimSegment868.children[2] = Shape872;
+HAnimSegment867.children[2] = Shape871;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_r_site'/>
-let Shape876 = browser.currentScene.createNode("Shape");
-let LineSet877 = browser.currentScene.createNode("LineSet");
-LineSet877.vertexCount = new MFInt32(new int[2]);
-let Coordinate878 = browser.currentScene.createNode("Coordinate");
-Coordinate878.point = new MFVec3f(new float[0,1.63,0.015,-0.045,1.63,0]);
-LineSet877.coord = Coordinate878;
+let Shape875 = browser.currentScene.createNode("Shape");
+let LineSet876 = browser.currentScene.createNode("LineSet");
+LineSet876.vertexCount = new MFInt32(new int[2]);
+let Coordinate877 = browser.currentScene.createNode("Coordinate");
+Coordinate877.point = new MFVec3f(new float[0,1.63,0.015,-0.045,1.63,0]);
+LineSet876.coord = Coordinate877;
 
-let ColorRGBA879 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA879.USE = "HAnimSiteLineColorRGBA";
-LineSet877.color = ColorRGBA879;
+let ColorRGBA878 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA878.USE = "HAnimSiteLineColorRGBA";
+LineSet876.color = ColorRGBA878;
 
-Shape876.geometry = LineSet877;
+Shape875.geometry = LineSet876;
 
-HAnimSegment868.children[3] = Shape876;
+HAnimSegment867.children[3] = Shape875;
 
-let HAnimSite880 = browser.currentScene.createNode("HAnimSite");
-HAnimSite880.name = "temporomandibular_l_site_pt";
-HAnimSite880.DEF = "hanim_temporomandibular_l_site_pt";
-HAnimSite880.translation = new SFVec3f(new float[0.045,1.63,0]);
+let HAnimSite879 = browser.currentScene.createNode("HAnimSite");
+HAnimSite879.name = "temporomandibular_l_site_pt";
+HAnimSite879.DEF = "hanim_temporomandibular_l_site_pt";
+HAnimSite879.translation = new SFVec3f(new float[0.045,1.63,0]);
 //HAnimSite visualization shape
-let TouchSensor881 = browser.currentScene.createNode("TouchSensor");
-TouchSensor881.description = "HAnimSite temporomandibular_l_site";
-HAnimSite880.children = new MFNode();
+let TouchSensor880 = browser.currentScene.createNode("TouchSensor");
+TouchSensor880.description = "HAnimSite temporomandibular_l_site";
+HAnimSite879.children = new MFNode();
 
-HAnimSite880.children[0] = TouchSensor881;
+HAnimSite879.children[0] = TouchSensor880;
 
-let Shape882 = browser.currentScene.createNode("Shape");
-Shape882.USE = "HAnimSiteShape";
-HAnimSite880.children[1] = Shape882;
+let Shape881 = browser.currentScene.createNode("Shape");
+Shape881.USE = "HAnimSiteShape";
+HAnimSite879.children[1] = Shape881;
 
-HAnimSegment868.children[4] = HAnimSite880;
+HAnimSegment867.children[4] = HAnimSite879;
 
-let HAnimSite883 = browser.currentScene.createNode("HAnimSite");
-HAnimSite883.name = "temporomandibular_r_site_pt";
-HAnimSite883.DEF = "hanim_temporomandibular_r_site_pt";
-HAnimSite883.translation = new SFVec3f(new float[-0.045,1.63,0]);
+let HAnimSite882 = browser.currentScene.createNode("HAnimSite");
+HAnimSite882.name = "temporomandibular_r_site_pt";
+HAnimSite882.DEF = "hanim_temporomandibular_r_site_pt";
+HAnimSite882.translation = new SFVec3f(new float[-0.045,1.63,0]);
 //HAnimSite visualization shape
-let TouchSensor884 = browser.currentScene.createNode("TouchSensor");
-TouchSensor884.description = "HAnimSite temporomandibular_r_site";
-HAnimSite883.children = new MFNode();
+let TouchSensor883 = browser.currentScene.createNode("TouchSensor");
+TouchSensor883.description = "HAnimSite temporomandibular_r_site";
+HAnimSite882.children = new MFNode();
 
-HAnimSite883.children[0] = TouchSensor884;
+HAnimSite882.children[0] = TouchSensor883;
 
-let Shape885 = browser.currentScene.createNode("Shape");
-Shape885.USE = "HAnimSiteShape";
-HAnimSite883.children[1] = Shape885;
+let Shape884 = browser.currentScene.createNode("Shape");
+Shape884.USE = "HAnimSiteShape";
+HAnimSite882.children[1] = Shape884;
 
-HAnimSegment868.children[5] = HAnimSite883;
+HAnimSegment867.children[5] = HAnimSite882;
 
-HAnimJoint867.children = new MFNode();
+HAnimJoint866.children = new MFNode();
 
-HAnimJoint867.children[0] = HAnimSegment868;
+HAnimJoint866.children[0] = HAnimSegment867;
 
-HAnimJoint706.children[7] = HAnimJoint867;
+HAnimJoint705.children[7] = HAnimJoint866;
 
-HAnimJoint697.children[1] = HAnimJoint706;
+HAnimJoint696.children[1] = HAnimJoint705;
 
-HAnimJoint688.children[1] = HAnimJoint697;
+HAnimJoint687.children[1] = HAnimJoint696;
 
-HAnimJoint679.children[1] = HAnimJoint688;
+HAnimJoint678.children[1] = HAnimJoint687;
 
-HAnimJoint670.children[1] = HAnimJoint679;
+HAnimJoint669.children[1] = HAnimJoint678;
 
-HAnimJoint661.children[1] = HAnimJoint670;
+HAnimJoint660.children[1] = HAnimJoint669;
 
-HAnimJoint652.children[1] = HAnimJoint661;
+HAnimJoint651.children[1] = HAnimJoint660;
 
-HAnimJoint629.children[1] = HAnimJoint652;
+HAnimJoint628.children[1] = HAnimJoint651;
 
-HAnimJoint598.children[1] = HAnimJoint629;
+HAnimJoint597.children[1] = HAnimJoint628;
 
-let HAnimJoint886 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint886.name = "l_sternoclavicular";
-HAnimJoint886.DEF = "hanim_l_sternoclavicular";
-HAnimJoint886.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-HAnimJoint886.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment887 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment887.name = "l_clavicle";
-HAnimSegment887.DEF = "hanim_l_clavicle";
+let HAnimJoint885 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint885.name = "l_sternoclavicular";
+HAnimJoint885.DEF = "hanim_l_sternoclavicular";
+HAnimJoint885.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
+HAnimJoint885.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment886 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment886.name = "l_clavicle";
+HAnimSegment886.DEF = "hanim_l_clavicle";
 //<HAnimJoint name='l_sternoclavicular'/> visualization sphere is placed within <HAnimSegment name='l_clavicle'/>
-let TouchSensor888 = browser.currentScene.createNode("TouchSensor");
-TouchSensor888.description = "HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle";
-HAnimSegment887.children = new MFNode();
+let TouchSensor887 = browser.currentScene.createNode("TouchSensor");
+TouchSensor887.description = "HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle";
+HAnimSegment886.children = new MFNode();
 
-HAnimSegment887.children[0] = TouchSensor888;
+HAnimSegment886.children[0] = TouchSensor887;
 
-let Transform889 = browser.currentScene.createNode("Transform");
-Transform889.translation = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-let Shape890 = browser.currentScene.createNode("Shape");
-Shape890.USE = "HAnimJointShape";
-Transform889.children = new MFNode();
+let Transform888 = browser.currentScene.createNode("Transform");
+Transform888.translation = new SFVec3f(new float[0.082,1.4488,-0.0353]);
+let Shape889 = browser.currentScene.createNode("Shape");
+Shape889.USE = "HAnimJointShape";
+Transform888.children = new MFNode();
 
-Transform889.children[0] = Shape890;
+Transform888.children[0] = Shape889;
 
-HAnimSegment887.children[1] = Transform889;
+HAnimSegment886.children[1] = Transform888;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_sternoclavicular'/> to <HAnimJoint name='l_acromioclavicular'/>
-let Shape891 = browser.currentScene.createNode("Shape");
-let LineSet892 = browser.currentScene.createNode("LineSet");
-LineSet892.vertexCount = new MFInt32(new int[2]);
-let Coordinate893 = browser.currentScene.createNode("Coordinate");
-Coordinate893.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424]);
-LineSet892.coord = Coordinate893;
+let Shape890 = browser.currentScene.createNode("Shape");
+let LineSet891 = browser.currentScene.createNode("LineSet");
+LineSet891.vertexCount = new MFInt32(new int[2]);
+let Coordinate892 = browser.currentScene.createNode("Coordinate");
+Coordinate892.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424]);
+LineSet891.coord = Coordinate892;
 
-let ColorRGBA894 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA894.USE = "HAnimSegmentLineColorRGBA";
-LineSet892.color = ColorRGBA894;
+let ColorRGBA893 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA893.USE = "HAnimSegmentLineColorRGBA";
+LineSet891.color = ColorRGBA893;
 
-Shape891.geometry = LineSet892;
+Shape890.geometry = LineSet891;
 
-HAnimSegment887.children[2] = Shape891;
+HAnimSegment886.children[2] = Shape890;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_clavicale'/>
-let Shape895 = browser.currentScene.createNode("Shape");
-let LineSet896 = browser.currentScene.createNode("LineSet");
-LineSet896.vertexCount = new MFInt32(new int[2]);
-let Coordinate897 = browser.currentScene.createNode("Coordinate");
-Coordinate897.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0271,1.4943,0.0394]);
-LineSet896.coord = Coordinate897;
+let Shape894 = browser.currentScene.createNode("Shape");
+let LineSet895 = browser.currentScene.createNode("LineSet");
+LineSet895.vertexCount = new MFInt32(new int[2]);
+let Coordinate896 = browser.currentScene.createNode("Coordinate");
+Coordinate896.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0271,1.4943,0.0394]);
+LineSet895.coord = Coordinate896;
 
-let ColorRGBA898 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA898.USE = "HAnimSiteLineColorRGBA";
-LineSet896.color = ColorRGBA898;
+let ColorRGBA897 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA897.USE = "HAnimSiteLineColorRGBA";
+LineSet895.color = ColorRGBA897;
 
-Shape895.geometry = LineSet896;
+Shape894.geometry = LineSet895;
 
-HAnimSegment887.children[3] = Shape895;
+HAnimSegment886.children[3] = Shape894;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_acromion'/>
-let Shape899 = browser.currentScene.createNode("Shape");
-let LineSet900 = browser.currentScene.createNode("LineSet");
-LineSet900.vertexCount = new MFInt32(new int[2]);
-let Coordinate901 = browser.currentScene.createNode("Coordinate");
-Coordinate901.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.2032,1.476,-0.049]);
-LineSet900.coord = Coordinate901;
+let Shape898 = browser.currentScene.createNode("Shape");
+let LineSet899 = browser.currentScene.createNode("LineSet");
+LineSet899.vertexCount = new MFInt32(new int[2]);
+let Coordinate900 = browser.currentScene.createNode("Coordinate");
+Coordinate900.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.2032,1.476,-0.049]);
+LineSet899.coord = Coordinate900;
 
-let ColorRGBA902 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA902.USE = "HAnimSiteLineColorRGBA";
-LineSet900.color = ColorRGBA902;
+let ColorRGBA901 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA901.USE = "HAnimSiteLineColorRGBA";
+LineSet899.color = ColorRGBA901;
 
-Shape899.geometry = LineSet900;
+Shape898.geometry = LineSet899;
 
-HAnimSegment887.children[4] = Shape899;
+HAnimSegment886.children[4] = Shape898;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_ant'/>
-let Shape903 = browser.currentScene.createNode("Shape");
-let LineSet904 = browser.currentScene.createNode("LineSet");
-LineSet904.vertexCount = new MFInt32(new int[2]);
-let Coordinate905 = browser.currentScene.createNode("Coordinate");
-Coordinate905.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.1777,1.4065,-0.0075]);
-LineSet904.coord = Coordinate905;
+let Shape902 = browser.currentScene.createNode("Shape");
+let LineSet903 = browser.currentScene.createNode("LineSet");
+LineSet903.vertexCount = new MFInt32(new int[2]);
+let Coordinate904 = browser.currentScene.createNode("Coordinate");
+Coordinate904.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.1777,1.4065,-0.0075]);
+LineSet903.coord = Coordinate904;
 
-let ColorRGBA906 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA906.USE = "HAnimSiteLineColorRGBA";
-LineSet904.color = ColorRGBA906;
+let ColorRGBA905 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA905.USE = "HAnimSiteLineColorRGBA";
+LineSet903.color = ColorRGBA905;
 
-Shape903.geometry = LineSet904;
+Shape902.geometry = LineSet903;
 
-HAnimSegment887.children[5] = Shape903;
+HAnimSegment886.children[5] = Shape902;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_post'/>
-let Shape907 = browser.currentScene.createNode("Shape");
-let LineSet908 = browser.currentScene.createNode("LineSet");
-LineSet908.vertexCount = new MFInt32(new int[2]);
-let Coordinate909 = browser.currentScene.createNode("Coordinate");
-Coordinate909.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.1706,1.4072,-0.0875]);
-LineSet908.coord = Coordinate909;
+let Shape906 = browser.currentScene.createNode("Shape");
+let LineSet907 = browser.currentScene.createNode("LineSet");
+LineSet907.vertexCount = new MFInt32(new int[2]);
+let Coordinate908 = browser.currentScene.createNode("Coordinate");
+Coordinate908.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.1706,1.4072,-0.0875]);
+LineSet907.coord = Coordinate908;
 
-let ColorRGBA910 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA910.USE = "HAnimSiteLineColorRGBA";
-LineSet908.color = ColorRGBA910;
+let ColorRGBA909 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA909.USE = "HAnimSiteLineColorRGBA";
+LineSet907.color = ColorRGBA909;
 
-Shape907.geometry = LineSet908;
+Shape906.geometry = LineSet907;
 
-HAnimSegment887.children[6] = Shape907;
+HAnimSegment886.children[6] = Shape906;
 
-let HAnimSite911 = browser.currentScene.createNode("HAnimSite");
-HAnimSite911.name = "l_clavicale_pt";
-HAnimSite911.DEF = "hanim_l_clavicale_pt";
-HAnimSite911.translation = new SFVec3f(new float[0.0271,1.4943,0.0394]);
+let HAnimSite910 = browser.currentScene.createNode("HAnimSite");
+HAnimSite910.name = "l_clavicale_pt";
+HAnimSite910.DEF = "hanim_l_clavicale_pt";
+HAnimSite910.translation = new SFVec3f(new float[0.0271,1.4943,0.0394]);
 //HAnimSite visualization shape
-let TouchSensor912 = browser.currentScene.createNode("TouchSensor");
-TouchSensor912.description = "HAnimSite l_clavicale";
-HAnimSite911.children = new MFNode();
+let TouchSensor911 = browser.currentScene.createNode("TouchSensor");
+TouchSensor911.description = "HAnimSite l_clavicale";
+HAnimSite910.children = new MFNode();
 
-HAnimSite911.children[0] = TouchSensor912;
+HAnimSite910.children[0] = TouchSensor911;
 
-let Shape913 = browser.currentScene.createNode("Shape");
-Shape913.USE = "HAnimSiteShape";
-HAnimSite911.children[1] = Shape913;
+let Shape912 = browser.currentScene.createNode("Shape");
+Shape912.USE = "HAnimSiteShape";
+HAnimSite910.children[1] = Shape912;
 
-HAnimSegment887.children[7] = HAnimSite911;
+HAnimSegment886.children[7] = HAnimSite910;
 
-let HAnimSite914 = browser.currentScene.createNode("HAnimSite");
-HAnimSite914.name = "l_acromion_pt";
-HAnimSite914.DEF = "hanim_l_acromion_pt";
-HAnimSite914.translation = new SFVec3f(new float[0.2032,1.476,-0.049]);
+let HAnimSite913 = browser.currentScene.createNode("HAnimSite");
+HAnimSite913.name = "l_acromion_pt";
+HAnimSite913.DEF = "hanim_l_acromion_pt";
+HAnimSite913.translation = new SFVec3f(new float[0.2032,1.476,-0.049]);
 //HAnimSite visualization shape
-let TouchSensor915 = browser.currentScene.createNode("TouchSensor");
-TouchSensor915.description = "HAnimSite l_acromion";
-HAnimSite914.children = new MFNode();
+let TouchSensor914 = browser.currentScene.createNode("TouchSensor");
+TouchSensor914.description = "HAnimSite l_acromion";
+HAnimSite913.children = new MFNode();
 
-HAnimSite914.children[0] = TouchSensor915;
+HAnimSite913.children[0] = TouchSensor914;
 
-let Shape916 = browser.currentScene.createNode("Shape");
-Shape916.USE = "HAnimSiteShape";
-HAnimSite914.children[1] = Shape916;
+let Shape915 = browser.currentScene.createNode("Shape");
+Shape915.USE = "HAnimSiteShape";
+HAnimSite913.children[1] = Shape915;
 
-HAnimSegment887.children[8] = HAnimSite914;
+HAnimSegment886.children[8] = HAnimSite913;
 
-let HAnimSite917 = browser.currentScene.createNode("HAnimSite");
-HAnimSite917.name = "l_axilla_ant_pt";
-HAnimSite917.DEF = "hanim_l_axilla_ant_pt";
-HAnimSite917.translation = new SFVec3f(new float[0.1777,1.4065,-0.0075]);
+let HAnimSite916 = browser.currentScene.createNode("HAnimSite");
+HAnimSite916.name = "l_axilla_ant_pt";
+HAnimSite916.DEF = "hanim_l_axilla_ant_pt";
+HAnimSite916.translation = new SFVec3f(new float[0.1777,1.4065,-0.0075]);
 //HAnimSite visualization shape
-let TouchSensor918 = browser.currentScene.createNode("TouchSensor");
-TouchSensor918.description = "HAnimSite l_axilla_ant";
-HAnimSite917.children = new MFNode();
+let TouchSensor917 = browser.currentScene.createNode("TouchSensor");
+TouchSensor917.description = "HAnimSite l_axilla_ant";
+HAnimSite916.children = new MFNode();
 
-HAnimSite917.children[0] = TouchSensor918;
+HAnimSite916.children[0] = TouchSensor917;
 
-let Shape919 = browser.currentScene.createNode("Shape");
-Shape919.USE = "HAnimSiteShape";
-HAnimSite917.children[1] = Shape919;
+let Shape918 = browser.currentScene.createNode("Shape");
+Shape918.USE = "HAnimSiteShape";
+HAnimSite916.children[1] = Shape918;
 
-HAnimSegment887.children[9] = HAnimSite917;
+HAnimSegment886.children[9] = HAnimSite916;
 
-let HAnimSite920 = browser.currentScene.createNode("HAnimSite");
-HAnimSite920.name = "l_axilla_post_pt";
-HAnimSite920.DEF = "hanim_l_axilla_post_pt";
-HAnimSite920.translation = new SFVec3f(new float[0.1706,1.4072,-0.0875]);
+let HAnimSite919 = browser.currentScene.createNode("HAnimSite");
+HAnimSite919.name = "l_axilla_post_pt";
+HAnimSite919.DEF = "hanim_l_axilla_post_pt";
+HAnimSite919.translation = new SFVec3f(new float[0.1706,1.4072,-0.0875]);
 //HAnimSite visualization shape
-let TouchSensor921 = browser.currentScene.createNode("TouchSensor");
-TouchSensor921.description = "HAnimSite l_axilla_post";
-HAnimSite920.children = new MFNode();
+let TouchSensor920 = browser.currentScene.createNode("TouchSensor");
+TouchSensor920.description = "HAnimSite l_axilla_post";
+HAnimSite919.children = new MFNode();
 
-HAnimSite920.children[0] = TouchSensor921;
+HAnimSite919.children[0] = TouchSensor920;
 
-let Shape922 = browser.currentScene.createNode("Shape");
-Shape922.USE = "HAnimSiteShape";
-HAnimSite920.children[1] = Shape922;
+let Shape921 = browser.currentScene.createNode("Shape");
+Shape921.USE = "HAnimSiteShape";
+HAnimSite919.children[1] = Shape921;
 
-HAnimSegment887.children[10] = HAnimSite920;
+HAnimSegment886.children[10] = HAnimSite919;
 
-HAnimJoint886.children = new MFNode();
+HAnimJoint885.children = new MFNode();
 
-HAnimJoint886.children[0] = HAnimSegment887;
+HAnimJoint885.children[0] = HAnimSegment886;
 
-let HAnimJoint923 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint923.name = "l_acromioclavicular";
-HAnimJoint923.DEF = "hanim_l_acromioclavicular";
-HAnimJoint923.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-HAnimJoint923.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment924 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment924.name = "l_scapula";
-HAnimSegment924.DEF = "hanim_l_scapula";
+let HAnimJoint922 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint922.name = "l_acromioclavicular";
+HAnimJoint922.DEF = "hanim_l_acromioclavicular";
+HAnimJoint922.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
+HAnimJoint922.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment923 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment923.name = "l_scapula";
+HAnimSegment923.DEF = "hanim_l_scapula";
 //<HAnimJoint name='l_acromioclavicular'/> visualization sphere is placed within <HAnimSegment name='l_scapula'/>
-let TouchSensor925 = browser.currentScene.createNode("TouchSensor");
-TouchSensor925.description = "HAnimJoint l_acromioclavicular, HAnimSegment l_scapula";
-HAnimSegment924.children = new MFNode();
+let TouchSensor924 = browser.currentScene.createNode("TouchSensor");
+TouchSensor924.description = "HAnimJoint l_acromioclavicular, HAnimSegment l_scapula";
+HAnimSegment923.children = new MFNode();
 
-HAnimSegment924.children[0] = TouchSensor925;
+HAnimSegment923.children[0] = TouchSensor924;
 
-let Transform926 = browser.currentScene.createNode("Transform");
-Transform926.translation = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-let Shape927 = browser.currentScene.createNode("Shape");
-Shape927.USE = "HAnimJointShape";
-Transform926.children = new MFNode();
+let Transform925 = browser.currentScene.createNode("Transform");
+Transform925.translation = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
+let Shape926 = browser.currentScene.createNode("Shape");
+Shape926.USE = "HAnimJointShape";
+Transform925.children = new MFNode();
 
-Transform926.children[0] = Shape927;
+Transform925.children[0] = Shape926;
 
-HAnimSegment924.children[1] = Transform926;
+HAnimSegment923.children[1] = Transform925;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_acromioclavicular'/> to <HAnimJoint name='l_shoulder'/>
-let Shape928 = browser.currentScene.createNode("Shape");
-let LineSet929 = browser.currentScene.createNode("LineSet");
-LineSet929.vertexCount = new MFInt32(new int[2]);
-let Coordinate930 = browser.currentScene.createNode("Coordinate");
-Coordinate930.point = new MFVec3f(new float[0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387]);
-LineSet929.coord = Coordinate930;
+let Shape927 = browser.currentScene.createNode("Shape");
+let LineSet928 = browser.currentScene.createNode("LineSet");
+LineSet928.vertexCount = new MFInt32(new int[2]);
+let Coordinate929 = browser.currentScene.createNode("Coordinate");
+Coordinate929.point = new MFVec3f(new float[0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387]);
+LineSet928.coord = Coordinate929;
 
-let ColorRGBA931 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA931.USE = "HAnimSegmentLineColorRGBA";
-LineSet929.color = ColorRGBA931;
+let ColorRGBA930 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA930.USE = "HAnimSegmentLineColorRGBA";
+LineSet928.color = ColorRGBA930;
 
-Shape928.geometry = LineSet929;
+Shape927.geometry = LineSet928;
 
-HAnimSegment924.children[2] = Shape928;
+HAnimSegment923.children[2] = Shape927;
 
-HAnimJoint923.children = new MFNode();
+HAnimJoint922.children = new MFNode();
 
-HAnimJoint923.children[0] = HAnimSegment924;
+HAnimJoint922.children[0] = HAnimSegment923;
 
-let HAnimJoint932 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint932.name = "l_shoulder";
-HAnimJoint932.DEF = "hanim_l_shoulder";
-HAnimJoint932.center = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
-HAnimJoint932.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment933 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment933.name = "l_upperarm";
-HAnimSegment933.DEF = "hanim_l_upperarm";
+let HAnimJoint931 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint931.name = "l_shoulder";
+HAnimJoint931.DEF = "hanim_l_shoulder";
+HAnimJoint931.center = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
+HAnimJoint931.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment932 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment932.name = "l_upperarm";
+HAnimSegment932.DEF = "hanim_l_upperarm";
 //<HAnimJoint name='l_shoulder'/> visualization sphere is placed within <HAnimSegment name='l_upperarm'/>
-let TouchSensor934 = browser.currentScene.createNode("TouchSensor");
-TouchSensor934.description = "HAnimJoint l_shoulder, HAnimSegment l_upperarm";
-HAnimSegment933.children = new MFNode();
+let TouchSensor933 = browser.currentScene.createNode("TouchSensor");
+TouchSensor933.description = "HAnimJoint l_shoulder, HAnimSegment l_upperarm";
+HAnimSegment932.children = new MFNode();
 
-HAnimSegment933.children[0] = TouchSensor934;
+HAnimSegment932.children[0] = TouchSensor933;
 
-let Transform935 = browser.currentScene.createNode("Transform");
-Transform935.translation = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
-let Shape936 = browser.currentScene.createNode("Shape");
-Shape936.USE = "HAnimJointShape";
-Transform935.children = new MFNode();
+let Transform934 = browser.currentScene.createNode("Transform");
+Transform934.translation = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
+let Shape935 = browser.currentScene.createNode("Shape");
+Shape935.USE = "HAnimJointShape";
+Transform934.children = new MFNode();
 
-Transform935.children[0] = Shape936;
+Transform934.children[0] = Shape935;
 
-HAnimSegment933.children[1] = Transform935;
+HAnimSegment932.children[1] = Transform934;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_shoulder'/> to <HAnimJoint name='l_elbow'/>
-let Shape937 = browser.currentScene.createNode("Shape");
-let LineSet938 = browser.currentScene.createNode("LineSet");
-LineSet938.vertexCount = new MFInt32(new int[2]);
-let Coordinate939 = browser.currentScene.createNode("Coordinate");
-Coordinate939.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682]);
-LineSet938.coord = Coordinate939;
+let Shape936 = browser.currentScene.createNode("Shape");
+let LineSet937 = browser.currentScene.createNode("LineSet");
+LineSet937.vertexCount = new MFInt32(new int[2]);
+let Coordinate938 = browser.currentScene.createNode("Coordinate");
+Coordinate938.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682]);
+LineSet937.coord = Coordinate938;
 
-let ColorRGBA940 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA940.USE = "HAnimSegmentLineColorRGBA";
-LineSet938.color = ColorRGBA940;
+let ColorRGBA939 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA939.USE = "HAnimSegmentLineColorRGBA";
+LineSet937.color = ColorRGBA939;
 
-Shape937.geometry = LineSet938;
+Shape936.geometry = LineSet937;
 
-HAnimSegment933.children[2] = Shape937;
+HAnimSegment932.children[2] = Shape936;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_shoulder'/> to <HAnimSite name='l_humeral_lateral_epicn'/>
-let Shape941 = browser.currentScene.createNode("Shape");
-let LineSet942 = browser.currentScene.createNode("LineSet");
-LineSet942.vertexCount = new MFInt32(new int[2]);
-let Coordinate943 = browser.currentScene.createNode("Coordinate");
-Coordinate943.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.228,1.1482,-0.11]);
-LineSet942.coord = Coordinate943;
+let Shape940 = browser.currentScene.createNode("Shape");
+let LineSet941 = browser.currentScene.createNode("LineSet");
+LineSet941.vertexCount = new MFInt32(new int[2]);
+let Coordinate942 = browser.currentScene.createNode("Coordinate");
+Coordinate942.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.228,1.1482,-0.11]);
+LineSet941.coord = Coordinate942;
 
-let ColorRGBA944 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA944.USE = "HAnimSiteLineColorRGBA";
-LineSet942.color = ColorRGBA944;
+let ColorRGBA943 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA943.USE = "HAnimSiteLineColorRGBA";
+LineSet941.color = ColorRGBA943;
 
-Shape941.geometry = LineSet942;
+Shape940.geometry = LineSet941;
 
-HAnimSegment933.children[3] = Shape941;
+HAnimSegment932.children[3] = Shape940;
 
-let HAnimSite945 = browser.currentScene.createNode("HAnimSite");
-HAnimSite945.name = "l_humeral_lateral_epicn_pt";
-HAnimSite945.DEF = "hanim_l_humeral_lateral_epicn_pt";
-HAnimSite945.translation = new SFVec3f(new float[0.228,1.1482,-0.11]);
+let HAnimSite944 = browser.currentScene.createNode("HAnimSite");
+HAnimSite944.name = "l_humeral_lateral_epicn_pt";
+HAnimSite944.DEF = "hanim_l_humeral_lateral_epicn_pt";
+HAnimSite944.translation = new SFVec3f(new float[0.228,1.1482,-0.11]);
 //HAnimSite visualization shape
-let TouchSensor946 = browser.currentScene.createNode("TouchSensor");
-TouchSensor946.description = "HAnimSite l_humeral_lateral_epicn";
-HAnimSite945.children = new MFNode();
+let TouchSensor945 = browser.currentScene.createNode("TouchSensor");
+TouchSensor945.description = "HAnimSite l_humeral_lateral_epicn";
+HAnimSite944.children = new MFNode();
 
-HAnimSite945.children[0] = TouchSensor946;
+HAnimSite944.children[0] = TouchSensor945;
 
-let Shape947 = browser.currentScene.createNode("Shape");
-Shape947.USE = "HAnimSiteShape";
-HAnimSite945.children[1] = Shape947;
+let Shape946 = browser.currentScene.createNode("Shape");
+Shape946.USE = "HAnimSiteShape";
+HAnimSite944.children[1] = Shape946;
 
-HAnimSegment933.children[4] = HAnimSite945;
+HAnimSegment932.children[4] = HAnimSite944;
 
-HAnimJoint932.children = new MFNode();
+HAnimJoint931.children = new MFNode();
 
-HAnimJoint932.children[0] = HAnimSegment933;
+HAnimJoint931.children[0] = HAnimSegment932;
 
-let HAnimJoint948 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint948.name = "l_elbow";
-HAnimJoint948.DEF = "hanim_l_elbow";
-HAnimJoint948.center = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
-HAnimJoint948.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment949 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment949.name = "l_forearm";
-HAnimSegment949.DEF = "hanim_l_forearm";
+let HAnimJoint947 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint947.name = "l_elbow";
+HAnimJoint947.DEF = "hanim_l_elbow";
+HAnimJoint947.center = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
+HAnimJoint947.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment948 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment948.name = "l_forearm";
+HAnimSegment948.DEF = "hanim_l_forearm";
 //<HAnimJoint name='l_elbow'/> visualization sphere is placed within <HAnimSegment name='l_forearm'/>
-let TouchSensor950 = browser.currentScene.createNode("TouchSensor");
-TouchSensor950.description = "HAnimJoint l_elbow, HAnimSegment l_forearm";
-HAnimSegment949.children = new MFNode();
+let TouchSensor949 = browser.currentScene.createNode("TouchSensor");
+TouchSensor949.description = "HAnimJoint l_elbow, HAnimSegment l_forearm";
+HAnimSegment948.children = new MFNode();
 
-HAnimSegment949.children[0] = TouchSensor950;
+HAnimSegment948.children[0] = TouchSensor949;
 
-let Transform951 = browser.currentScene.createNode("Transform");
-Transform951.translation = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
-let Shape952 = browser.currentScene.createNode("Shape");
-Shape952.USE = "HAnimJointShape";
-Transform951.children = new MFNode();
+let Transform950 = browser.currentScene.createNode("Transform");
+Transform950.translation = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
+let Shape951 = browser.currentScene.createNode("Shape");
+Shape951.USE = "HAnimJointShape";
+Transform950.children = new MFNode();
 
-Transform951.children[0] = Shape952;
+Transform950.children[0] = Shape951;
 
-HAnimSegment949.children[1] = Transform951;
+HAnimSegment948.children[1] = Transform950;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_elbow'/> to <HAnimJoint name='l_wrist'/>
-let Shape953 = browser.currentScene.createNode("Shape");
-let LineSet954 = browser.currentScene.createNode("LineSet");
-LineSet954.vertexCount = new MFInt32(new int[2]);
-let Coordinate955 = browser.currentScene.createNode("Coordinate");
-Coordinate955.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583]);
-LineSet954.coord = Coordinate955;
+let Shape952 = browser.currentScene.createNode("Shape");
+let LineSet953 = browser.currentScene.createNode("LineSet");
+LineSet953.vertexCount = new MFInt32(new int[2]);
+let Coordinate954 = browser.currentScene.createNode("Coordinate");
+Coordinate954.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583]);
+LineSet953.coord = Coordinate954;
 
-let ColorRGBA956 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA956.USE = "HAnimSegmentLineColorRGBA";
-LineSet954.color = ColorRGBA956;
+let ColorRGBA955 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA955.USE = "HAnimSegmentLineColorRGBA";
+LineSet953.color = ColorRGBA955;
 
-Shape953.geometry = LineSet954;
+Shape952.geometry = LineSet953;
 
-HAnimSegment949.children[2] = Shape953;
+HAnimSegment948.children[2] = Shape952;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radial_styloid'/>
-let Shape957 = browser.currentScene.createNode("Shape");
-let LineSet958 = browser.currentScene.createNode("LineSet");
-LineSet958.vertexCount = new MFInt32(new int[2]);
-let Coordinate959 = browser.currentScene.createNode("Coordinate");
-Coordinate959.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1901,0.8645,-0.0415]);
-LineSet958.coord = Coordinate959;
+let Shape956 = browser.currentScene.createNode("Shape");
+let LineSet957 = browser.currentScene.createNode("LineSet");
+LineSet957.vertexCount = new MFInt32(new int[2]);
+let Coordinate958 = browser.currentScene.createNode("Coordinate");
+Coordinate958.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1901,0.8645,-0.0415]);
+LineSet957.coord = Coordinate958;
 
-let ColorRGBA960 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA960.USE = "HAnimSiteLineColorRGBA";
-LineSet958.color = ColorRGBA960;
+let ColorRGBA959 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA959.USE = "HAnimSiteLineColorRGBA";
+LineSet957.color = ColorRGBA959;
 
-Shape957.geometry = LineSet958;
+Shape956.geometry = LineSet957;
 
-HAnimSegment949.children[3] = Shape957;
+HAnimSegment948.children[3] = Shape956;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_olecranon'/>
-let Shape961 = browser.currentScene.createNode("Shape");
-let LineSet962 = browser.currentScene.createNode("LineSet");
-LineSet962.vertexCount = new MFInt32(new int[2]);
-let Coordinate963 = browser.currentScene.createNode("Coordinate");
-Coordinate963.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1962,1.1375,-0.1123]);
-LineSet962.coord = Coordinate963;
+let Shape960 = browser.currentScene.createNode("Shape");
+let LineSet961 = browser.currentScene.createNode("LineSet");
+LineSet961.vertexCount = new MFInt32(new int[2]);
+let Coordinate962 = browser.currentScene.createNode("Coordinate");
+Coordinate962.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1962,1.1375,-0.1123]);
+LineSet961.coord = Coordinate962;
 
-let ColorRGBA964 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA964.USE = "HAnimSiteLineColorRGBA";
-LineSet962.color = ColorRGBA964;
+let ColorRGBA963 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA963.USE = "HAnimSiteLineColorRGBA";
+LineSet961.color = ColorRGBA963;
 
-Shape961.geometry = LineSet962;
+Shape960.geometry = LineSet961;
 
-HAnimSegment949.children[4] = Shape961;
+HAnimSegment948.children[4] = Shape960;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_humeral_medial_epicn'/>
-let Shape965 = browser.currentScene.createNode("Shape");
-let LineSet966 = browser.currentScene.createNode("LineSet");
-LineSet966.vertexCount = new MFInt32(new int[2]);
-let Coordinate967 = browser.currentScene.createNode("Coordinate");
-Coordinate967.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1735,1.1272,-0.1113]);
-LineSet966.coord = Coordinate967;
+let Shape964 = browser.currentScene.createNode("Shape");
+let LineSet965 = browser.currentScene.createNode("LineSet");
+LineSet965.vertexCount = new MFInt32(new int[2]);
+let Coordinate966 = browser.currentScene.createNode("Coordinate");
+Coordinate966.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1735,1.1272,-0.1113]);
+LineSet965.coord = Coordinate966;
 
-let ColorRGBA968 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA968.USE = "HAnimSiteLineColorRGBA";
-LineSet966.color = ColorRGBA968;
+let ColorRGBA967 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA967.USE = "HAnimSiteLineColorRGBA";
+LineSet965.color = ColorRGBA967;
 
-Shape965.geometry = LineSet966;
+Shape964.geometry = LineSet965;
 
-HAnimSegment949.children[5] = Shape965;
+HAnimSegment948.children[5] = Shape964;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radiale'/>
-let Shape969 = browser.currentScene.createNode("Shape");
-let LineSet970 = browser.currentScene.createNode("LineSet");
-LineSet970.vertexCount = new MFInt32(new int[2]);
-let Coordinate971 = browser.currentScene.createNode("Coordinate");
-Coordinate971.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.2182,1.1212,-0.1167]);
-LineSet970.coord = Coordinate971;
+let Shape968 = browser.currentScene.createNode("Shape");
+let LineSet969 = browser.currentScene.createNode("LineSet");
+LineSet969.vertexCount = new MFInt32(new int[2]);
+let Coordinate970 = browser.currentScene.createNode("Coordinate");
+Coordinate970.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.2182,1.1212,-0.1167]);
+LineSet969.coord = Coordinate970;
 
-let ColorRGBA972 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA972.USE = "HAnimSiteLineColorRGBA";
-LineSet970.color = ColorRGBA972;
+let ColorRGBA971 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA971.USE = "HAnimSiteLineColorRGBA";
+LineSet969.color = ColorRGBA971;
 
-Shape969.geometry = LineSet970;
+Shape968.geometry = LineSet969;
 
-HAnimSegment949.children[6] = Shape969;
+HAnimSegment948.children[6] = Shape968;
 
-let HAnimSite973 = browser.currentScene.createNode("HAnimSite");
-HAnimSite973.name = "l_radial_styloid_pt";
-HAnimSite973.DEF = "hanim_l_radial_styloid_pt";
-HAnimSite973.translation = new SFVec3f(new float[0.1901,0.8645,-0.0415]);
+let HAnimSite972 = browser.currentScene.createNode("HAnimSite");
+HAnimSite972.name = "l_radial_styloid_pt";
+HAnimSite972.DEF = "hanim_l_radial_styloid_pt";
+HAnimSite972.translation = new SFVec3f(new float[0.1901,0.8645,-0.0415]);
 //HAnimSite visualization shape
-let TouchSensor974 = browser.currentScene.createNode("TouchSensor");
-TouchSensor974.description = "HAnimSite l_radial_styloid";
-HAnimSite973.children = new MFNode();
+let TouchSensor973 = browser.currentScene.createNode("TouchSensor");
+TouchSensor973.description = "HAnimSite l_radial_styloid";
+HAnimSite972.children = new MFNode();
 
-HAnimSite973.children[0] = TouchSensor974;
+HAnimSite972.children[0] = TouchSensor973;
 
-let Shape975 = browser.currentScene.createNode("Shape");
-Shape975.USE = "HAnimSiteShape";
-HAnimSite973.children[1] = Shape975;
+let Shape974 = browser.currentScene.createNode("Shape");
+Shape974.USE = "HAnimSiteShape";
+HAnimSite972.children[1] = Shape974;
 
-HAnimSegment949.children[7] = HAnimSite973;
+HAnimSegment948.children[7] = HAnimSite972;
 
-let HAnimSite976 = browser.currentScene.createNode("HAnimSite");
-HAnimSite976.name = "l_olecranon_pt";
-HAnimSite976.DEF = "hanim_l_olecranon_pt";
-HAnimSite976.translation = new SFVec3f(new float[0.1962,1.1375,-0.1123]);
+let HAnimSite975 = browser.currentScene.createNode("HAnimSite");
+HAnimSite975.name = "l_olecranon_pt";
+HAnimSite975.DEF = "hanim_l_olecranon_pt";
+HAnimSite975.translation = new SFVec3f(new float[0.1962,1.1375,-0.1123]);
 //HAnimSite visualization shape
-let TouchSensor977 = browser.currentScene.createNode("TouchSensor");
-TouchSensor977.description = "HAnimSite l_olecranon";
-HAnimSite976.children = new MFNode();
+let TouchSensor976 = browser.currentScene.createNode("TouchSensor");
+TouchSensor976.description = "HAnimSite l_olecranon";
+HAnimSite975.children = new MFNode();
 
-HAnimSite976.children[0] = TouchSensor977;
+HAnimSite975.children[0] = TouchSensor976;
 
-let Shape978 = browser.currentScene.createNode("Shape");
-Shape978.USE = "HAnimSiteShape";
-HAnimSite976.children[1] = Shape978;
+let Shape977 = browser.currentScene.createNode("Shape");
+Shape977.USE = "HAnimSiteShape";
+HAnimSite975.children[1] = Shape977;
 
-HAnimSegment949.children[8] = HAnimSite976;
+HAnimSegment948.children[8] = HAnimSite975;
 
-let HAnimSite979 = browser.currentScene.createNode("HAnimSite");
-HAnimSite979.name = "l_humeral_medial_epicn_pt";
-HAnimSite979.DEF = "hanim_l_humeral_medial_epicn_pt";
-HAnimSite979.translation = new SFVec3f(new float[0.1735,1.1272,-0.1113]);
+let HAnimSite978 = browser.currentScene.createNode("HAnimSite");
+HAnimSite978.name = "l_humeral_medial_epicn_pt";
+HAnimSite978.DEF = "hanim_l_humeral_medial_epicn_pt";
+HAnimSite978.translation = new SFVec3f(new float[0.1735,1.1272,-0.1113]);
 //HAnimSite visualization shape
-let TouchSensor980 = browser.currentScene.createNode("TouchSensor");
-TouchSensor980.description = "HAnimSite l_humeral_medial_epicn";
-HAnimSite979.children = new MFNode();
+let TouchSensor979 = browser.currentScene.createNode("TouchSensor");
+TouchSensor979.description = "HAnimSite l_humeral_medial_epicn";
+HAnimSite978.children = new MFNode();
 
-HAnimSite979.children[0] = TouchSensor980;
+HAnimSite978.children[0] = TouchSensor979;
 
-let Shape981 = browser.currentScene.createNode("Shape");
-Shape981.USE = "HAnimSiteShape";
-HAnimSite979.children[1] = Shape981;
+let Shape980 = browser.currentScene.createNode("Shape");
+Shape980.USE = "HAnimSiteShape";
+HAnimSite978.children[1] = Shape980;
 
-HAnimSegment949.children[9] = HAnimSite979;
+HAnimSegment948.children[9] = HAnimSite978;
 
-let HAnimSite982 = browser.currentScene.createNode("HAnimSite");
-HAnimSite982.name = "l_radiale_pt";
-HAnimSite982.DEF = "hanim_l_radiale_pt";
-HAnimSite982.translation = new SFVec3f(new float[0.2182,1.1212,-0.1167]);
+let HAnimSite981 = browser.currentScene.createNode("HAnimSite");
+HAnimSite981.name = "l_radiale_pt";
+HAnimSite981.DEF = "hanim_l_radiale_pt";
+HAnimSite981.translation = new SFVec3f(new float[0.2182,1.1212,-0.1167]);
 //HAnimSite visualization shape
-let TouchSensor983 = browser.currentScene.createNode("TouchSensor");
-TouchSensor983.description = "HAnimSite l_radiale";
-HAnimSite982.children = new MFNode();
+let TouchSensor982 = browser.currentScene.createNode("TouchSensor");
+TouchSensor982.description = "HAnimSite l_radiale";
+HAnimSite981.children = new MFNode();
 
-HAnimSite982.children[0] = TouchSensor983;
+HAnimSite981.children[0] = TouchSensor982;
 
-let Shape984 = browser.currentScene.createNode("Shape");
-Shape984.USE = "HAnimSiteShape";
-HAnimSite982.children[1] = Shape984;
+let Shape983 = browser.currentScene.createNode("Shape");
+Shape983.USE = "HAnimSiteShape";
+HAnimSite981.children[1] = Shape983;
 
-HAnimSegment949.children[10] = HAnimSite982;
+HAnimSegment948.children[10] = HAnimSite981;
 
-HAnimJoint948.children = new MFNode();
+HAnimJoint947.children = new MFNode();
 
-HAnimJoint948.children[0] = HAnimSegment949;
+HAnimJoint947.children[0] = HAnimSegment948;
 
-let HAnimJoint985 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint985.name = "l_wrist";
-HAnimJoint985.DEF = "hanim_l_wrist";
-HAnimJoint985.center = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
-HAnimJoint985.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment986 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment986.name = "l_hand";
-HAnimSegment986.DEF = "hanim_l_hand";
+let HAnimJoint984 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint984.name = "l_wrist";
+HAnimJoint984.DEF = "hanim_l_wrist";
+HAnimJoint984.center = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
+HAnimJoint984.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment985 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment985.name = "l_hand";
+HAnimSegment985.DEF = "hanim_l_hand";
 //<HAnimJoint name='l_wrist'/> visualization sphere is placed within <HAnimSegment name='l_hand'/>
-let TouchSensor987 = browser.currentScene.createNode("TouchSensor");
-TouchSensor987.description = "HAnimJoint l_wrist, HAnimSegment l_hand";
-HAnimSegment986.children = new MFNode();
+let TouchSensor986 = browser.currentScene.createNode("TouchSensor");
+TouchSensor986.description = "HAnimJoint l_wrist, HAnimSegment l_hand";
+HAnimSegment985.children = new MFNode();
 
-HAnimSegment986.children[0] = TouchSensor987;
+HAnimSegment985.children[0] = TouchSensor986;
 
-let Transform988 = browser.currentScene.createNode("Transform");
-Transform988.translation = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
-let Shape989 = browser.currentScene.createNode("Shape");
-Shape989.USE = "HAnimJointShape";
-Transform988.children = new MFNode();
+let Transform987 = browser.currentScene.createNode("Transform");
+Transform987.translation = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
+let Shape988 = browser.currentScene.createNode("Shape");
+Shape988.USE = "HAnimJointShape";
+Transform987.children = new MFNode();
 
-Transform988.children[0] = Shape989;
+Transform987.children[0] = Shape988;
 
-HAnimSegment986.children[1] = Transform988;
+HAnimSegment985.children[1] = Transform987;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'/> to <HAnimJoint name='l_thumb1'/>
-let Shape990 = browser.currentScene.createNode("Shape");
-let LineSet991 = browser.currentScene.createNode("LineSet");
-LineSet991.vertexCount = new MFInt32(new int[2]);
-let Coordinate992 = browser.currentScene.createNode("Coordinate");
-Coordinate992.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1924,0.8472,-0.0534]);
-LineSet991.coord = Coordinate992;
+let Shape989 = browser.currentScene.createNode("Shape");
+let LineSet990 = browser.currentScene.createNode("LineSet");
+LineSet990.vertexCount = new MFInt32(new int[2]);
+let Coordinate991 = browser.currentScene.createNode("Coordinate");
+Coordinate991.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1924,0.8472,-0.0534]);
+LineSet990.coord = Coordinate991;
 
-let ColorRGBA993 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA993.USE = "HAnimSegmentLineColorRGBA";
-LineSet991.color = ColorRGBA993;
+let ColorRGBA992 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA992.USE = "HAnimSegmentLineColorRGBA";
+LineSet990.color = ColorRGBA992;
 
-Shape990.geometry = LineSet991;
+Shape989.geometry = LineSet990;
 
-HAnimSegment986.children[2] = Shape990;
+HAnimSegment985.children[2] = Shape989;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'/> to <HAnimJoint name='l_index0'/>
-let Shape994 = browser.currentScene.createNode("Shape");
-let LineSet995 = browser.currentScene.createNode("LineSet");
-LineSet995.vertexCount = new MFInt32(new int[2]);
-let Coordinate996 = browser.currentScene.createNode("Coordinate");
-Coordinate996.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1983,0.8024,-0.028]);
-LineSet995.coord = Coordinate996;
+let Shape993 = browser.currentScene.createNode("Shape");
+let LineSet994 = browser.currentScene.createNode("LineSet");
+LineSet994.vertexCount = new MFInt32(new int[2]);
+let Coordinate995 = browser.currentScene.createNode("Coordinate");
+Coordinate995.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1983,0.8024,-0.028]);
+LineSet994.coord = Coordinate995;
 
-let ColorRGBA997 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA997.USE = "HAnimSegmentLineColorRGBA";
-LineSet995.color = ColorRGBA997;
+let ColorRGBA996 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA996.USE = "HAnimSegmentLineColorRGBA";
+LineSet994.color = ColorRGBA996;
 
-Shape994.geometry = LineSet995;
+Shape993.geometry = LineSet994;
 
-HAnimSegment986.children[3] = Shape994;
+HAnimSegment985.children[3] = Shape993;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'/> to <HAnimJoint name='l_middle0'/>
-let Shape998 = browser.currentScene.createNode("Shape");
-let LineSet999 = browser.currentScene.createNode("LineSet");
-LineSet999.vertexCount = new MFInt32(new int[2]);
-let Coordinate1000 = browser.currentScene.createNode("Coordinate");
-Coordinate1000.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1987,0.8029,-0.053]);
-LineSet999.coord = Coordinate1000;
+let Shape997 = browser.currentScene.createNode("Shape");
+let LineSet998 = browser.currentScene.createNode("LineSet");
+LineSet998.vertexCount = new MFInt32(new int[2]);
+let Coordinate999 = browser.currentScene.createNode("Coordinate");
+Coordinate999.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1987,0.8029,-0.053]);
+LineSet998.coord = Coordinate999;
 
-let ColorRGBA1001 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1001.USE = "HAnimSegmentLineColorRGBA";
-LineSet999.color = ColorRGBA1001;
+let ColorRGBA1000 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1000.USE = "HAnimSegmentLineColorRGBA";
+LineSet998.color = ColorRGBA1000;
 
-Shape998.geometry = LineSet999;
+Shape997.geometry = LineSet998;
 
-HAnimSegment986.children[4] = Shape998;
+HAnimSegment985.children[4] = Shape997;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'/> to <HAnimJoint name='l_ring0'/>
-let Shape1002 = browser.currentScene.createNode("Shape");
-let LineSet1003 = browser.currentScene.createNode("LineSet");
-LineSet1003.vertexCount = new MFInt32(new int[2]);
-let Coordinate1004 = browser.currentScene.createNode("Coordinate");
-Coordinate1004.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1956,0.8019,-0.0794]);
-LineSet1003.coord = Coordinate1004;
+let Shape1001 = browser.currentScene.createNode("Shape");
+let LineSet1002 = browser.currentScene.createNode("LineSet");
+LineSet1002.vertexCount = new MFInt32(new int[2]);
+let Coordinate1003 = browser.currentScene.createNode("Coordinate");
+Coordinate1003.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1956,0.8019,-0.0794]);
+LineSet1002.coord = Coordinate1003;
 
-let ColorRGBA1005 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1005.USE = "HAnimSegmentLineColorRGBA";
-LineSet1003.color = ColorRGBA1005;
+let ColorRGBA1004 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1004.USE = "HAnimSegmentLineColorRGBA";
+LineSet1002.color = ColorRGBA1004;
 
-Shape1002.geometry = LineSet1003;
+Shape1001.geometry = LineSet1002;
 
-HAnimSegment986.children[5] = Shape1002;
+HAnimSegment985.children[5] = Shape1001;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'/> to <HAnimJoint name='l_pinky0'/>
-let Shape1006 = browser.currentScene.createNode("Shape");
-let LineSet1007 = browser.currentScene.createNode("LineSet");
-LineSet1007.vertexCount = new MFInt32(new int[2]);
-let Coordinate1008 = browser.currentScene.createNode("Coordinate");
-Coordinate1008.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1925,0.8066,-0.1036]);
-LineSet1007.coord = Coordinate1008;
+let Shape1005 = browser.currentScene.createNode("Shape");
+let LineSet1006 = browser.currentScene.createNode("LineSet");
+LineSet1006.vertexCount = new MFInt32(new int[2]);
+let Coordinate1007 = browser.currentScene.createNode("Coordinate");
+Coordinate1007.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1925,0.8066,-0.1036]);
+LineSet1006.coord = Coordinate1007;
 
-let ColorRGBA1009 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1009.USE = "HAnimSegmentLineColorRGBA";
-LineSet1007.color = ColorRGBA1009;
+let ColorRGBA1008 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1008.USE = "HAnimSegmentLineColorRGBA";
+LineSet1006.color = ColorRGBA1008;
 
-Shape1006.geometry = LineSet1007;
+Shape1005.geometry = LineSet1006;
 
-HAnimSegment986.children[6] = Shape1006;
+HAnimSegment985.children[6] = Shape1005;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_wrist'/> to <HAnimSite name='l_metacarpal_pha2'/>
-let Shape1010 = browser.currentScene.createNode("Shape");
-let LineSet1011 = browser.currentScene.createNode("LineSet");
-LineSet1011.vertexCount = new MFInt32(new int[2]);
-let Coordinate1012 = browser.currentScene.createNode("Coordinate");
-Coordinate1012.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.2009,0.8139,-0.0237]);
-LineSet1011.coord = Coordinate1012;
+let Shape1009 = browser.currentScene.createNode("Shape");
+let LineSet1010 = browser.currentScene.createNode("LineSet");
+LineSet1010.vertexCount = new MFInt32(new int[2]);
+let Coordinate1011 = browser.currentScene.createNode("Coordinate");
+Coordinate1011.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.2009,0.8139,-0.0237]);
+LineSet1010.coord = Coordinate1011;
 
-let ColorRGBA1013 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1013.USE = "HAnimSiteLineColorRGBA";
-LineSet1011.color = ColorRGBA1013;
+let ColorRGBA1012 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1012.USE = "HAnimSiteLineColorRGBA";
+LineSet1010.color = ColorRGBA1012;
 
-Shape1010.geometry = LineSet1011;
+Shape1009.geometry = LineSet1010;
 
-HAnimSegment986.children[7] = Shape1010;
+HAnimSegment985.children[7] = Shape1009;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_wrist'/> to <HAnimSite name='l_ulnar_styloid'/>
-let Shape1014 = browser.currentScene.createNode("Shape");
-let LineSet1015 = browser.currentScene.createNode("LineSet");
-LineSet1015.vertexCount = new MFInt32(new int[2]);
-let Coordinate1016 = browser.currentScene.createNode("Coordinate");
-Coordinate1016.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.2142,0.8529,-0.0648]);
-LineSet1015.coord = Coordinate1016;
+let Shape1013 = browser.currentScene.createNode("Shape");
+let LineSet1014 = browser.currentScene.createNode("LineSet");
+LineSet1014.vertexCount = new MFInt32(new int[2]);
+let Coordinate1015 = browser.currentScene.createNode("Coordinate");
+Coordinate1015.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.2142,0.8529,-0.0648]);
+LineSet1014.coord = Coordinate1015;
 
-let ColorRGBA1017 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1017.USE = "HAnimSiteLineColorRGBA";
-LineSet1015.color = ColorRGBA1017;
+let ColorRGBA1016 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1016.USE = "HAnimSiteLineColorRGBA";
+LineSet1014.color = ColorRGBA1016;
 
-Shape1014.geometry = LineSet1015;
+Shape1013.geometry = LineSet1014;
 
-HAnimSegment986.children[8] = Shape1014;
+HAnimSegment985.children[8] = Shape1013;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_wrist'/> to <HAnimSite name='l_metacarpal_pha5'/>
-let Shape1018 = browser.currentScene.createNode("Shape");
-let LineSet1019 = browser.currentScene.createNode("LineSet");
-LineSet1019.vertexCount = new MFInt32(new int[2]);
-let Coordinate1020 = browser.currentScene.createNode("Coordinate");
-Coordinate1020.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1929,0.786,-0.1122]);
-LineSet1019.coord = Coordinate1020;
+let Shape1017 = browser.currentScene.createNode("Shape");
+let LineSet1018 = browser.currentScene.createNode("LineSet");
+LineSet1018.vertexCount = new MFInt32(new int[2]);
+let Coordinate1019 = browser.currentScene.createNode("Coordinate");
+Coordinate1019.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1929,0.786,-0.1122]);
+LineSet1018.coord = Coordinate1019;
 
-let ColorRGBA1021 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1021.USE = "HAnimSiteLineColorRGBA";
-LineSet1019.color = ColorRGBA1021;
+let ColorRGBA1020 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1020.USE = "HAnimSiteLineColorRGBA";
+LineSet1018.color = ColorRGBA1020;
 
-Shape1018.geometry = LineSet1019;
+Shape1017.geometry = LineSet1018;
 
-HAnimSegment986.children[9] = Shape1018;
+HAnimSegment985.children[9] = Shape1017;
 
 //HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_wrist'/> to <HAnimSite name='l_hand_front_view'/>
-let Shape1022 = browser.currentScene.createNode("Shape");
-let LineSet1023 = browser.currentScene.createNode("LineSet");
-LineSet1023.vertexCount = new MFInt32(new int[2]);
-let Coordinate1024 = browser.currentScene.createNode("Coordinate");
-Coordinate1024.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.3,0.75,0.45]);
-LineSet1023.coord = Coordinate1024;
+let Shape1021 = browser.currentScene.createNode("Shape");
+let LineSet1022 = browser.currentScene.createNode("LineSet");
+LineSet1022.vertexCount = new MFInt32(new int[2]);
+let Coordinate1023 = browser.currentScene.createNode("Coordinate");
+Coordinate1023.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.3,0.75,0.45]);
+LineSet1022.coord = Coordinate1023;
 
-let ColorRGBA1025 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1025.USE = "HAnimSiteViewpointLineColorRGBA";
-LineSet1023.color = ColorRGBA1025;
+let ColorRGBA1024 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1024.USE = "HAnimSiteViewpointLineColorRGBA";
+LineSet1022.color = ColorRGBA1024;
 
-Shape1022.geometry = LineSet1023;
+Shape1021.geometry = LineSet1022;
 
-HAnimSegment986.children[10] = Shape1022;
+HAnimSegment985.children[10] = Shape1021;
 
-let HAnimSite1026 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1026.name = "l_metacarpal_pha2_pt";
-HAnimSite1026.DEF = "hanim_l_metacarpal_pha2_pt";
-HAnimSite1026.translation = new SFVec3f(new float[0.2009,0.8139,-0.0237]);
+let HAnimSite1025 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1025.name = "l_metacarpal_pha2_pt";
+HAnimSite1025.DEF = "hanim_l_metacarpal_pha2_pt";
+HAnimSite1025.translation = new SFVec3f(new float[0.2009,0.8139,-0.0237]);
 //HAnimSite visualization shape
-let TouchSensor1027 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1027.description = "HAnimSite l_metacarpal_pha2";
-HAnimSite1026.children = new MFNode();
+let TouchSensor1026 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1026.description = "HAnimSite l_metacarpal_pha2";
+HAnimSite1025.children = new MFNode();
 
-HAnimSite1026.children[0] = TouchSensor1027;
+HAnimSite1025.children[0] = TouchSensor1026;
 
-let Shape1028 = browser.currentScene.createNode("Shape");
-Shape1028.USE = "HAnimSiteShape";
-HAnimSite1026.children[1] = Shape1028;
+let Shape1027 = browser.currentScene.createNode("Shape");
+Shape1027.USE = "HAnimSiteShape";
+HAnimSite1025.children[1] = Shape1027;
 
-HAnimSegment986.children[11] = HAnimSite1026;
+HAnimSegment985.children[11] = HAnimSite1025;
 
-let HAnimSite1029 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1029.name = "l_ulnar_styloid_pt";
-HAnimSite1029.DEF = "hanim_l_ulnar_styloid_pt";
-HAnimSite1029.translation = new SFVec3f(new float[0.2142,0.8529,-0.0648]);
+let HAnimSite1028 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1028.name = "l_ulnar_styloid_pt";
+HAnimSite1028.DEF = "hanim_l_ulnar_styloid_pt";
+HAnimSite1028.translation = new SFVec3f(new float[0.2142,0.8529,-0.0648]);
 //HAnimSite visualization shape
-let TouchSensor1030 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1030.description = "HAnimSite l_ulnar_styloid";
-HAnimSite1029.children = new MFNode();
+let TouchSensor1029 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1029.description = "HAnimSite l_ulnar_styloid";
+HAnimSite1028.children = new MFNode();
 
-HAnimSite1029.children[0] = TouchSensor1030;
+HAnimSite1028.children[0] = TouchSensor1029;
 
-let Shape1031 = browser.currentScene.createNode("Shape");
-Shape1031.USE = "HAnimSiteShape";
-HAnimSite1029.children[1] = Shape1031;
+let Shape1030 = browser.currentScene.createNode("Shape");
+Shape1030.USE = "HAnimSiteShape";
+HAnimSite1028.children[1] = Shape1030;
 
-HAnimSegment986.children[12] = HAnimSite1029;
+HAnimSegment985.children[12] = HAnimSite1028;
 
-let HAnimSite1032 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1032.name = "l_metacarpal_pha5_pt";
-HAnimSite1032.DEF = "hanim_l_metacarpal_pha5_pt";
-HAnimSite1032.translation = new SFVec3f(new float[0.1929,0.786,-0.1122]);
+let HAnimSite1031 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1031.name = "l_metacarpal_pha5_pt";
+HAnimSite1031.DEF = "hanim_l_metacarpal_pha5_pt";
+HAnimSite1031.translation = new SFVec3f(new float[0.1929,0.786,-0.1122]);
 //HAnimSite visualization shape
-let TouchSensor1033 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1033.description = "HAnimSite l_metacarpal_pha5";
-HAnimSite1032.children = new MFNode();
+let TouchSensor1032 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1032.description = "HAnimSite l_metacarpal_pha5";
+HAnimSite1031.children = new MFNode();
 
-HAnimSite1032.children[0] = TouchSensor1033;
+HAnimSite1031.children[0] = TouchSensor1032;
 
-let Shape1034 = browser.currentScene.createNode("Shape");
-Shape1034.USE = "HAnimSiteShape";
-HAnimSite1032.children[1] = Shape1034;
+let Shape1033 = browser.currentScene.createNode("Shape");
+Shape1033.USE = "HAnimSiteShape";
+HAnimSite1031.children[1] = Shape1033;
 
-HAnimSegment986.children[13] = HAnimSite1032;
+HAnimSegment985.children[13] = HAnimSite1031;
 
-let HAnimSite1035 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1035.name = "l_hand_front_view";
-HAnimSite1035.DEF = "hanim_l_hand_front_view";
-HAnimSite1035.translation = new SFVec3f(new float[0.3,0.75,0.45]);
+let HAnimSite1034 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1034.name = "l_hand_front_view";
+HAnimSite1034.DEF = "hanim_l_hand_front_view";
+HAnimSite1034.translation = new SFVec3f(new float[0.3,0.75,0.45]);
 //HAnimSite visualization shape
-let TouchSensor1036 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1036.description = "HAnimSite l_hand_front_view";
-HAnimSite1035.children = new MFNode();
+let TouchSensor1035 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1035.description = "HAnimSite l_hand_front_view";
+HAnimSite1034.children = new MFNode();
 
-HAnimSite1035.children[0] = TouchSensor1036;
+HAnimSite1034.children[0] = TouchSensor1035;
 
-let Shape1037 = browser.currentScene.createNode("Shape");
-Shape1037.USE = "HAnimSiteShape";
-HAnimSite1035.children[1] = Shape1037;
+let Shape1036 = browser.currentScene.createNode("Shape");
+Shape1036.USE = "HAnimSiteShape";
+HAnimSite1034.children[1] = Shape1036;
 
-let Viewpoint1038 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1038.DEF = "hanim_l_hand_front_viewpoint";
-Viewpoint1038.centerOfRotation = new SFVec3f(new float[0,0.7,0]);
-Viewpoint1038.description = "left hand front";
-Viewpoint1038.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1035.children[2] = Viewpoint1038;
+let Viewpoint1037 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1037.DEF = "hanim_l_hand_front_viewpoint";
+Viewpoint1037.centerOfRotation = new SFVec3f(new float[0,0.7,0]);
+Viewpoint1037.description = "left hand front";
+Viewpoint1037.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1034.children[2] = Viewpoint1037;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1039 = browser.currentScene.createNode("Anchor");
-Anchor1039.description = "HAnimSite hanim_l_hand_front_view Viewpoint";
-Anchor1039.url = new MFString(new java.lang.String["#hanim_l_hand_front_viewpoint"]);
-let LOD1040 = browser.currentScene.createNode("LOD");
-LOD1040.forceTransitions = True;
-LOD1040.range = new MFFloat(new float[0.04]);
-let WorldInfo1041 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1041.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1040.children = new MFNode();
+let Anchor1038 = browser.currentScene.createNode("Anchor");
+Anchor1038.description = "HAnimSite hanim_l_hand_front_view Viewpoint";
+Anchor1038.url = new MFString(new java.lang.String["#hanim_l_hand_front_viewpoint"]);
+let LOD1039 = browser.currentScene.createNode("LOD");
+LOD1039.forceTransitions = True;
+LOD1039.range = new MFFloat(new float[0.04]);
+let WorldInfo1040 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1040.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1039.children = new MFNode();
 
-LOD1040.children[0] = WorldInfo1041;
+LOD1039.children[0] = WorldInfo1040;
 
-let Shape1042 = browser.currentScene.createNode("Shape");
-Shape1042.USE = "HAnimSiteViewpointShape";
-LOD1040.children[1] = Shape1042;
+let Shape1041 = browser.currentScene.createNode("Shape");
+Shape1041.USE = "HAnimSiteViewpointShape";
+LOD1039.children[1] = Shape1041;
 
-Anchor1039.children = new MFNode();
+Anchor1038.children = new MFNode();
 
-Anchor1039.children[0] = LOD1040;
+Anchor1038.children[0] = LOD1039;
 
-HAnimSite1035.children[3] = Anchor1039;
+HAnimSite1034.children[3] = Anchor1038;
 
-HAnimSegment986.children[14] = HAnimSite1035;
+HAnimSegment985.children[14] = HAnimSite1034;
 
-HAnimJoint985.children = new MFNode();
+HAnimJoint984.children = new MFNode();
 
-HAnimJoint985.children[0] = HAnimSegment986;
+HAnimJoint984.children[0] = HAnimSegment985;
 
-let HAnimJoint1043 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1043.name = "l_thumb1";
-HAnimJoint1043.DEF = "hanim_l_thumb1";
-HAnimJoint1043.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-HAnimJoint1043.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1044 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1044.name = "l_thumb_metacarpal";
-HAnimSegment1044.DEF = "hanim_l_thumb_metacarpal";
+let HAnimJoint1042 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1042.name = "l_thumb1";
+HAnimJoint1042.DEF = "hanim_l_thumb1";
+HAnimJoint1042.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
+HAnimJoint1042.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1043 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1043.name = "l_thumb_metacarpal";
+HAnimSegment1043.DEF = "hanim_l_thumb_metacarpal";
 //<HAnimJoint name='l_thumb1'/> visualization sphere is placed within <HAnimSegment name='l_thumb_metacarpal'/>
-let TouchSensor1045 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1045.description = "HAnimJoint l_thumb1, HAnimSegment l_thumb_metacarpal";
-HAnimSegment1044.children = new MFNode();
+let TouchSensor1044 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1044.description = "HAnimJoint l_thumb1, HAnimSegment l_thumb_metacarpal";
+HAnimSegment1043.children = new MFNode();
 
-HAnimSegment1044.children[0] = TouchSensor1045;
+HAnimSegment1043.children[0] = TouchSensor1044;
 
-let Transform1046 = browser.currentScene.createNode("Transform");
-Transform1046.translation = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-let Shape1047 = browser.currentScene.createNode("Shape");
-Shape1047.USE = "HAnimJointShape";
-Transform1046.children = new MFNode();
+let Transform1045 = browser.currentScene.createNode("Transform");
+Transform1045.translation = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
+let Shape1046 = browser.currentScene.createNode("Shape");
+Shape1046.USE = "HAnimJointShape";
+Transform1045.children = new MFNode();
 
-Transform1046.children[0] = Shape1047;
+Transform1045.children[0] = Shape1046;
 
-HAnimSegment1044.children[1] = Transform1046;
+HAnimSegment1043.children[1] = Transform1045;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_thumb1'/> to <HAnimJoint name='l_thumb2'/>
-let Shape1048 = browser.currentScene.createNode("Shape");
-let LineSet1049 = browser.currentScene.createNode("LineSet");
-LineSet1049.vertexCount = new MFInt32(new int[2]);
-let Coordinate1050 = browser.currentScene.createNode("Coordinate");
-Coordinate1050.point = new MFVec3f(new float[0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246]);
-LineSet1049.coord = Coordinate1050;
+let Shape1047 = browser.currentScene.createNode("Shape");
+let LineSet1048 = browser.currentScene.createNode("LineSet");
+LineSet1048.vertexCount = new MFInt32(new int[2]);
+let Coordinate1049 = browser.currentScene.createNode("Coordinate");
+Coordinate1049.point = new MFVec3f(new float[0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246]);
+LineSet1048.coord = Coordinate1049;
 
-let ColorRGBA1051 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1051.USE = "HAnimSegmentLineColorRGBA";
-LineSet1049.color = ColorRGBA1051;
+let ColorRGBA1050 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1050.USE = "HAnimSegmentLineColorRGBA";
+LineSet1048.color = ColorRGBA1050;
 
-Shape1048.geometry = LineSet1049;
+Shape1047.geometry = LineSet1048;
 
-HAnimSegment1044.children[2] = Shape1048;
+HAnimSegment1043.children[2] = Shape1047;
 
-HAnimJoint1043.children = new MFNode();
+HAnimJoint1042.children = new MFNode();
 
-HAnimJoint1043.children[0] = HAnimSegment1044;
+HAnimJoint1042.children[0] = HAnimSegment1043;
 
-let HAnimJoint1052 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1052.name = "l_thumb2";
-HAnimJoint1052.DEF = "hanim_l_thumb2";
-HAnimJoint1052.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-HAnimJoint1052.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1053 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1053.name = "l_thumb_proximal";
-HAnimSegment1053.DEF = "hanim_l_thumb_proximal";
+let HAnimJoint1051 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1051.name = "l_thumb2";
+HAnimJoint1051.DEF = "hanim_l_thumb2";
+HAnimJoint1051.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
+HAnimJoint1051.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1052 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1052.name = "l_thumb_proximal";
+HAnimSegment1052.DEF = "hanim_l_thumb_proximal";
 //<HAnimJoint name='l_thumb2'/> visualization sphere is placed within <HAnimSegment name='l_thumb_proximal'/>
-let TouchSensor1054 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1054.description = "HAnimJoint l_thumb2, HAnimSegment l_thumb_proximal";
-HAnimSegment1053.children = new MFNode();
+let TouchSensor1053 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1053.description = "HAnimJoint l_thumb2, HAnimSegment l_thumb_proximal";
+HAnimSegment1052.children = new MFNode();
 
-HAnimSegment1053.children[0] = TouchSensor1054;
+HAnimSegment1052.children[0] = TouchSensor1053;
 
-let Transform1055 = browser.currentScene.createNode("Transform");
-Transform1055.translation = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-let Shape1056 = browser.currentScene.createNode("Shape");
-Shape1056.USE = "HAnimJointShape";
-Transform1055.children = new MFNode();
+let Transform1054 = browser.currentScene.createNode("Transform");
+Transform1054.translation = new SFVec3f(new float[0.1951,0.8226,0.0246]);
+let Shape1055 = browser.currentScene.createNode("Shape");
+Shape1055.USE = "HAnimJointShape";
+Transform1054.children = new MFNode();
 
-Transform1055.children[0] = Shape1056;
+Transform1054.children[0] = Shape1055;
 
-HAnimSegment1053.children[1] = Transform1055;
+HAnimSegment1052.children[1] = Transform1054;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_thumb2'/> to <HAnimJoint name='l_thumb3'/>
-let Shape1057 = browser.currentScene.createNode("Shape");
-let LineSet1058 = browser.currentScene.createNode("LineSet");
-LineSet1058.vertexCount = new MFInt32(new int[2]);
-let Coordinate1059 = browser.currentScene.createNode("Coordinate");
-Coordinate1059.point = new MFVec3f(new float[0.1951,0.8226,0.0246,0.1955,0.8159,0.0464]);
-LineSet1058.coord = Coordinate1059;
+let Shape1056 = browser.currentScene.createNode("Shape");
+let LineSet1057 = browser.currentScene.createNode("LineSet");
+LineSet1057.vertexCount = new MFInt32(new int[2]);
+let Coordinate1058 = browser.currentScene.createNode("Coordinate");
+Coordinate1058.point = new MFVec3f(new float[0.1951,0.8226,0.0246,0.1955,0.8159,0.0464]);
+LineSet1057.coord = Coordinate1058;
 
-let ColorRGBA1060 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1060.USE = "HAnimSegmentLineColorRGBA";
-LineSet1058.color = ColorRGBA1060;
+let ColorRGBA1059 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1059.USE = "HAnimSegmentLineColorRGBA";
+LineSet1057.color = ColorRGBA1059;
 
-Shape1057.geometry = LineSet1058;
+Shape1056.geometry = LineSet1057;
 
-HAnimSegment1053.children[2] = Shape1057;
+HAnimSegment1052.children[2] = Shape1056;
 
-HAnimJoint1052.children = new MFNode();
+HAnimJoint1051.children = new MFNode();
 
-HAnimJoint1052.children[0] = HAnimSegment1053;
+HAnimJoint1051.children[0] = HAnimSegment1052;
 
-let HAnimJoint1061 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1061.name = "l_thumb3";
-HAnimJoint1061.DEF = "hanim_l_thumb3";
-HAnimJoint1061.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
-HAnimJoint1061.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1062 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1062.name = "l_thumb_distal";
-HAnimSegment1062.DEF = "hanim_l_thumb_distal";
+let HAnimJoint1060 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1060.name = "l_thumb3";
+HAnimJoint1060.DEF = "hanim_l_thumb3";
+HAnimJoint1060.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
+HAnimJoint1060.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1061 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1061.name = "l_thumb_distal";
+HAnimSegment1061.DEF = "hanim_l_thumb_distal";
 //<HAnimJoint name='l_thumb3'/> visualization sphere is placed within <HAnimSegment name='l_thumb_distal'/>
-let TouchSensor1063 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1063.description = "HAnimJoint l_thumb3, HAnimSegment l_thumb_distal";
-HAnimSegment1062.children = new MFNode();
+let TouchSensor1062 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1062.description = "HAnimJoint l_thumb3, HAnimSegment l_thumb_distal";
+HAnimSegment1061.children = new MFNode();
 
-HAnimSegment1062.children[0] = TouchSensor1063;
+HAnimSegment1061.children[0] = TouchSensor1062;
 
-let Transform1064 = browser.currentScene.createNode("Transform");
-Transform1064.translation = new SFVec3f(new float[0.1955,0.8159,0.0464]);
-let Shape1065 = browser.currentScene.createNode("Shape");
-Shape1065.USE = "HAnimJointShape";
-Transform1064.children = new MFNode();
+let Transform1063 = browser.currentScene.createNode("Transform");
+Transform1063.translation = new SFVec3f(new float[0.1955,0.8159,0.0464]);
+let Shape1064 = browser.currentScene.createNode("Shape");
+Shape1064.USE = "HAnimJointShape";
+Transform1063.children = new MFNode();
 
-Transform1064.children[0] = Shape1065;
+Transform1063.children[0] = Shape1064;
 
-HAnimSegment1062.children[1] = Transform1064;
+HAnimSegment1061.children[1] = Transform1063;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_thumb3'/> to <HAnimSite name='l_thumb_distal_tip'/>
-let Shape1066 = browser.currentScene.createNode("Shape");
-let LineSet1067 = browser.currentScene.createNode("LineSet");
-LineSet1067.vertexCount = new MFInt32(new int[2]);
-let Coordinate1068 = browser.currentScene.createNode("Coordinate");
-Coordinate1068.point = new MFVec3f(new float[0.1955,0.8159,0.0464,0.1982,0.8061,0.0759]);
-LineSet1067.coord = Coordinate1068;
+let Shape1065 = browser.currentScene.createNode("Shape");
+let LineSet1066 = browser.currentScene.createNode("LineSet");
+LineSet1066.vertexCount = new MFInt32(new int[2]);
+let Coordinate1067 = browser.currentScene.createNode("Coordinate");
+Coordinate1067.point = new MFVec3f(new float[0.1955,0.8159,0.0464,0.1982,0.8061,0.0759]);
+LineSet1066.coord = Coordinate1067;
 
-let ColorRGBA1069 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1069.USE = "HAnimSiteLineColorRGBA";
-LineSet1067.color = ColorRGBA1069;
+let ColorRGBA1068 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1068.USE = "HAnimSiteLineColorRGBA";
+LineSet1066.color = ColorRGBA1068;
 
-Shape1066.geometry = LineSet1067;
+Shape1065.geometry = LineSet1066;
 
-HAnimSegment1062.children[2] = Shape1066;
+HAnimSegment1061.children[2] = Shape1065;
 
-let HAnimSite1070 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1070.name = "l_thumb_distal_tip";
-HAnimSite1070.DEF = "hanim_l_thumb_distal_tip";
-HAnimSite1070.translation = new SFVec3f(new float[0.1982,0.8061,0.0759]);
+let HAnimSite1069 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1069.name = "l_thumb_distal_tip";
+HAnimSite1069.DEF = "hanim_l_thumb_distal_tip";
+HAnimSite1069.translation = new SFVec3f(new float[0.1982,0.8061,0.0759]);
 //HAnimSite visualization shape
-let TouchSensor1071 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1071.description = "HAnimSite l_thumb_distal_tip";
-HAnimSite1070.children = new MFNode();
+let TouchSensor1070 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1070.description = "HAnimSite l_thumb_distal_tip";
+HAnimSite1069.children = new MFNode();
 
-HAnimSite1070.children[0] = TouchSensor1071;
+HAnimSite1069.children[0] = TouchSensor1070;
 
-let Shape1072 = browser.currentScene.createNode("Shape");
-Shape1072.USE = "HAnimSiteShape";
-HAnimSite1070.children[1] = Shape1072;
+let Shape1071 = browser.currentScene.createNode("Shape");
+Shape1071.USE = "HAnimSiteShape";
+HAnimSite1069.children[1] = Shape1071;
 
-HAnimSegment1062.children[3] = HAnimSite1070;
+HAnimSegment1061.children[3] = HAnimSite1069;
 
-HAnimJoint1061.children = new MFNode();
+HAnimJoint1060.children = new MFNode();
 
-HAnimJoint1061.children[0] = HAnimSegment1062;
+HAnimJoint1060.children[0] = HAnimSegment1061;
 
-HAnimJoint1052.children[1] = HAnimJoint1061;
+HAnimJoint1051.children[1] = HAnimJoint1060;
 
-HAnimJoint1043.children[1] = HAnimJoint1052;
+HAnimJoint1042.children[1] = HAnimJoint1051;
 
-HAnimJoint985.children[1] = HAnimJoint1043;
+HAnimJoint984.children[1] = HAnimJoint1042;
 
-let HAnimJoint1073 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1073.name = "l_index0";
-HAnimJoint1073.DEF = "hanim_l_index0";
-HAnimJoint1073.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-HAnimJoint1073.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1074 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1074.name = "l_index_metacarpal";
-HAnimSegment1074.DEF = "hanim_l_index_metacarpal";
+let HAnimJoint1072 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1072.name = "l_index0";
+HAnimJoint1072.DEF = "hanim_l_index0";
+HAnimJoint1072.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
+HAnimJoint1072.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1073 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1073.name = "l_index_metacarpal";
+HAnimSegment1073.DEF = "hanim_l_index_metacarpal";
 //<HAnimJoint name='l_index0'/> visualization sphere is placed within <HAnimSegment name='l_index_metacarpal'/>
-let TouchSensor1075 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1075.description = "HAnimJoint l_index0, HAnimSegment l_index_metacarpal";
-HAnimSegment1074.children = new MFNode();
+let TouchSensor1074 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1074.description = "HAnimJoint l_index0, HAnimSegment l_index_metacarpal";
+HAnimSegment1073.children = new MFNode();
 
-HAnimSegment1074.children[0] = TouchSensor1075;
+HAnimSegment1073.children[0] = TouchSensor1074;
 
-let Transform1076 = browser.currentScene.createNode("Transform");
-Transform1076.translation = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-let Shape1077 = browser.currentScene.createNode("Shape");
-Shape1077.USE = "HAnimJointShape";
-Transform1076.children = new MFNode();
+let Transform1075 = browser.currentScene.createNode("Transform");
+Transform1075.translation = new SFVec3f(new float[0.1983,0.8024,-0.028]);
+let Shape1076 = browser.currentScene.createNode("Shape");
+Shape1076.USE = "HAnimJointShape";
+Transform1075.children = new MFNode();
 
-Transform1076.children[0] = Shape1077;
+Transform1075.children[0] = Shape1076;
 
-HAnimSegment1074.children[1] = Transform1076;
+HAnimSegment1073.children[1] = Transform1075;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_index0'/> to <HAnimJoint name='l_index1'/>
-let Shape1078 = browser.currentScene.createNode("Shape");
-let LineSet1079 = browser.currentScene.createNode("LineSet");
-LineSet1079.vertexCount = new MFInt32(new int[2]);
-let Coordinate1080 = browser.currentScene.createNode("Coordinate");
-Coordinate1080.point = new MFVec3f(new float[0.1983,0.8024,-0.028,0.1983,0.7815,-0.028]);
-LineSet1079.coord = Coordinate1080;
+let Shape1077 = browser.currentScene.createNode("Shape");
+let LineSet1078 = browser.currentScene.createNode("LineSet");
+LineSet1078.vertexCount = new MFInt32(new int[2]);
+let Coordinate1079 = browser.currentScene.createNode("Coordinate");
+Coordinate1079.point = new MFVec3f(new float[0.1983,0.8024,-0.028,0.1983,0.7815,-0.028]);
+LineSet1078.coord = Coordinate1079;
 
-let ColorRGBA1081 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1081.USE = "HAnimSegmentLineColorRGBA";
-LineSet1079.color = ColorRGBA1081;
+let ColorRGBA1080 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1080.USE = "HAnimSegmentLineColorRGBA";
+LineSet1078.color = ColorRGBA1080;
 
-Shape1078.geometry = LineSet1079;
+Shape1077.geometry = LineSet1078;
 
-HAnimSegment1074.children[2] = Shape1078;
+HAnimSegment1073.children[2] = Shape1077;
 
-HAnimJoint1073.children = new MFNode();
+HAnimJoint1072.children = new MFNode();
 
-HAnimJoint1073.children[0] = HAnimSegment1074;
+HAnimJoint1072.children[0] = HAnimSegment1073;
 
-let HAnimJoint1082 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1082.name = "l_index1";
-HAnimJoint1082.DEF = "hanim_l_index1";
-HAnimJoint1082.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-HAnimJoint1082.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1083 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1083.name = "l_index_proximal";
-HAnimSegment1083.DEF = "hanim_l_index_proximal";
+let HAnimJoint1081 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1081.name = "l_index1";
+HAnimJoint1081.DEF = "hanim_l_index1";
+HAnimJoint1081.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
+HAnimJoint1081.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1082 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1082.name = "l_index_proximal";
+HAnimSegment1082.DEF = "hanim_l_index_proximal";
 //<HAnimJoint name='l_index1'/> visualization sphere is placed within <HAnimSegment name='l_index_proximal'/>
-let TouchSensor1084 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1084.description = "HAnimJoint l_index1, HAnimSegment l_index_proximal";
-HAnimSegment1083.children = new MFNode();
+let TouchSensor1083 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1083.description = "HAnimJoint l_index1, HAnimSegment l_index_proximal";
+HAnimSegment1082.children = new MFNode();
 
-HAnimSegment1083.children[0] = TouchSensor1084;
+HAnimSegment1082.children[0] = TouchSensor1083;
 
-let Transform1085 = browser.currentScene.createNode("Transform");
-Transform1085.translation = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-let Shape1086 = browser.currentScene.createNode("Shape");
-Shape1086.USE = "HAnimJointShape";
-Transform1085.children = new MFNode();
+let Transform1084 = browser.currentScene.createNode("Transform");
+Transform1084.translation = new SFVec3f(new float[0.1983,0.7815,-0.028]);
+let Shape1085 = browser.currentScene.createNode("Shape");
+Shape1085.USE = "HAnimJointShape";
+Transform1084.children = new MFNode();
 
-Transform1085.children[0] = Shape1086;
+Transform1084.children[0] = Shape1085;
 
-HAnimSegment1083.children[1] = Transform1085;
+HAnimSegment1082.children[1] = Transform1084;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_index1'/> to <HAnimJoint name='l_index2'/>
-let Shape1087 = browser.currentScene.createNode("Shape");
-let LineSet1088 = browser.currentScene.createNode("LineSet");
-LineSet1088.vertexCount = new MFInt32(new int[2]);
-let Coordinate1089 = browser.currentScene.createNode("Coordinate");
-Coordinate1089.point = new MFVec3f(new float[0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248]);
-LineSet1088.coord = Coordinate1089;
+let Shape1086 = browser.currentScene.createNode("Shape");
+let LineSet1087 = browser.currentScene.createNode("LineSet");
+LineSet1087.vertexCount = new MFInt32(new int[2]);
+let Coordinate1088 = browser.currentScene.createNode("Coordinate");
+Coordinate1088.point = new MFVec3f(new float[0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248]);
+LineSet1087.coord = Coordinate1088;
 
-let ColorRGBA1090 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1090.USE = "HAnimSegmentLineColorRGBA";
-LineSet1088.color = ColorRGBA1090;
+let ColorRGBA1089 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1089.USE = "HAnimSegmentLineColorRGBA";
+LineSet1087.color = ColorRGBA1089;
 
-Shape1087.geometry = LineSet1088;
+Shape1086.geometry = LineSet1087;
 
-HAnimSegment1083.children[2] = Shape1087;
+HAnimSegment1082.children[2] = Shape1086;
 
-HAnimJoint1082.children = new MFNode();
+HAnimJoint1081.children = new MFNode();
 
-HAnimJoint1082.children[0] = HAnimSegment1083;
+HAnimJoint1081.children[0] = HAnimSegment1082;
 
-let HAnimJoint1091 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1091.name = "l_index2";
-HAnimJoint1091.DEF = "hanim_l_index2";
-HAnimJoint1091.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-HAnimJoint1091.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1092 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1092.name = "l_index_middle";
-HAnimSegment1092.DEF = "hanim_l_index_middle";
+let HAnimJoint1090 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1090.name = "l_index2";
+HAnimJoint1090.DEF = "hanim_l_index2";
+HAnimJoint1090.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
+HAnimJoint1090.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1091 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1091.name = "l_index_middle";
+HAnimSegment1091.DEF = "hanim_l_index_middle";
 //<HAnimJoint name='l_index2'/> visualization sphere is placed within <HAnimSegment name='l_index_middle'/>
-let TouchSensor1093 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1093.description = "HAnimJoint l_index2, HAnimSegment l_index_middle";
-HAnimSegment1092.children = new MFNode();
+let TouchSensor1092 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1092.description = "HAnimJoint l_index2, HAnimSegment l_index_middle";
+HAnimSegment1091.children = new MFNode();
 
-HAnimSegment1092.children[0] = TouchSensor1093;
+HAnimSegment1091.children[0] = TouchSensor1092;
 
-let Transform1094 = browser.currentScene.createNode("Transform");
-Transform1094.translation = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-let Shape1095 = browser.currentScene.createNode("Shape");
-Shape1095.USE = "HAnimJointShape";
-Transform1094.children = new MFNode();
+let Transform1093 = browser.currentScene.createNode("Transform");
+Transform1093.translation = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
+let Shape1094 = browser.currentScene.createNode("Shape");
+Shape1094.USE = "HAnimJointShape";
+Transform1093.children = new MFNode();
 
-Transform1094.children[0] = Shape1095;
+Transform1093.children[0] = Shape1094;
 
-HAnimSegment1092.children[1] = Transform1094;
+HAnimSegment1091.children[1] = Transform1093;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_index2'/> to <HAnimJoint name='l_index3'/>
-let Shape1096 = browser.currentScene.createNode("Shape");
-let LineSet1097 = browser.currentScene.createNode("LineSet");
-LineSet1097.vertexCount = new MFInt32(new int[2]);
-let Coordinate1098 = browser.currentScene.createNode("Coordinate");
-Coordinate1098.point = new MFVec3f(new float[0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236]);
-LineSet1097.coord = Coordinate1098;
+let Shape1095 = browser.currentScene.createNode("Shape");
+let LineSet1096 = browser.currentScene.createNode("LineSet");
+LineSet1096.vertexCount = new MFInt32(new int[2]);
+let Coordinate1097 = browser.currentScene.createNode("Coordinate");
+Coordinate1097.point = new MFVec3f(new float[0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236]);
+LineSet1096.coord = Coordinate1097;
 
-let ColorRGBA1099 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1099.USE = "HAnimSegmentLineColorRGBA";
-LineSet1097.color = ColorRGBA1099;
+let ColorRGBA1098 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1098.USE = "HAnimSegmentLineColorRGBA";
+LineSet1096.color = ColorRGBA1098;
 
-Shape1096.geometry = LineSet1097;
+Shape1095.geometry = LineSet1096;
 
-HAnimSegment1092.children[2] = Shape1096;
+HAnimSegment1091.children[2] = Shape1095;
 
-HAnimJoint1091.children = new MFNode();
+HAnimJoint1090.children = new MFNode();
 
-HAnimJoint1091.children[0] = HAnimSegment1092;
+HAnimJoint1090.children[0] = HAnimSegment1091;
 
-let HAnimJoint1100 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1100.name = "l_index3";
-HAnimJoint1100.DEF = "hanim_l_index3";
-HAnimJoint1100.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
-HAnimJoint1100.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1101 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1101.name = "l_index_distal";
-HAnimSegment1101.DEF = "hanim_l_index_distal";
+let HAnimJoint1099 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1099.name = "l_index3";
+HAnimJoint1099.DEF = "hanim_l_index3";
+HAnimJoint1099.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
+HAnimJoint1099.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1100 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1100.name = "l_index_distal";
+HAnimSegment1100.DEF = "hanim_l_index_distal";
 //<HAnimJoint name='l_index3'/> visualization sphere is placed within <HAnimSegment name='l_index_distal'/>
-let TouchSensor1102 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1102.description = "HAnimJoint l_index3, HAnimSegment l_index_distal";
-HAnimSegment1101.children = new MFNode();
+let TouchSensor1101 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1101.description = "HAnimJoint l_index3, HAnimSegment l_index_distal";
+HAnimSegment1100.children = new MFNode();
 
-HAnimSegment1101.children[0] = TouchSensor1102;
+HAnimSegment1100.children[0] = TouchSensor1101;
 
-let Transform1103 = browser.currentScene.createNode("Transform");
-Transform1103.translation = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
-let Shape1104 = browser.currentScene.createNode("Shape");
-Shape1104.USE = "HAnimJointShape";
-Transform1103.children = new MFNode();
+let Transform1102 = browser.currentScene.createNode("Transform");
+Transform1102.translation = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
+let Shape1103 = browser.currentScene.createNode("Shape");
+Shape1103.USE = "HAnimJointShape";
+Transform1102.children = new MFNode();
 
-Transform1103.children[0] = Shape1104;
+Transform1102.children[0] = Shape1103;
 
-HAnimSegment1101.children[1] = Transform1103;
+HAnimSegment1100.children[1] = Transform1102;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_index_distal_tip'/>
-let Shape1105 = browser.currentScene.createNode("Shape");
-let LineSet1106 = browser.currentScene.createNode("LineSet");
-LineSet1106.vertexCount = new MFInt32(new int[2]);
-let Coordinate1107 = browser.currentScene.createNode("Coordinate");
-Coordinate1107.point = new MFVec3f(new float[0.2028,0.7139,-0.0236,0.2089,0.6858,-0.0245]);
-LineSet1106.coord = Coordinate1107;
+let Shape1104 = browser.currentScene.createNode("Shape");
+let LineSet1105 = browser.currentScene.createNode("LineSet");
+LineSet1105.vertexCount = new MFInt32(new int[2]);
+let Coordinate1106 = browser.currentScene.createNode("Coordinate");
+Coordinate1106.point = new MFVec3f(new float[0.2028,0.7139,-0.0236,0.2089,0.6858,-0.0245]);
+LineSet1105.coord = Coordinate1106;
 
-let ColorRGBA1108 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1108.USE = "HAnimSiteLineColorRGBA";
-LineSet1106.color = ColorRGBA1108;
+let ColorRGBA1107 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1107.USE = "HAnimSiteLineColorRGBA";
+LineSet1105.color = ColorRGBA1107;
 
-Shape1105.geometry = LineSet1106;
+Shape1104.geometry = LineSet1105;
 
-HAnimSegment1101.children[2] = Shape1105;
+HAnimSegment1100.children[2] = Shape1104;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_dactylion'/>
-let Shape1109 = browser.currentScene.createNode("Shape");
-let LineSet1110 = browser.currentScene.createNode("LineSet");
-LineSet1110.vertexCount = new MFInt32(new int[2]);
-let Coordinate1111 = browser.currentScene.createNode("Coordinate");
-Coordinate1111.point = new MFVec3f(new float[0.2028,0.7139,-0.0236,0.2056,0.6743,-0.0482]);
-LineSet1110.coord = Coordinate1111;
+let Shape1108 = browser.currentScene.createNode("Shape");
+let LineSet1109 = browser.currentScene.createNode("LineSet");
+LineSet1109.vertexCount = new MFInt32(new int[2]);
+let Coordinate1110 = browser.currentScene.createNode("Coordinate");
+Coordinate1110.point = new MFVec3f(new float[0.2028,0.7139,-0.0236,0.2056,0.6743,-0.0482]);
+LineSet1109.coord = Coordinate1110;
 
-let ColorRGBA1112 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1112.USE = "HAnimSiteLineColorRGBA";
-LineSet1110.color = ColorRGBA1112;
+let ColorRGBA1111 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1111.USE = "HAnimSiteLineColorRGBA";
+LineSet1109.color = ColorRGBA1111;
 
-Shape1109.geometry = LineSet1110;
+Shape1108.geometry = LineSet1109;
 
-HAnimSegment1101.children[3] = Shape1109;
+HAnimSegment1100.children[3] = Shape1108;
 
-let HAnimSite1113 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1113.name = "l_index_distal_tip";
-HAnimSite1113.DEF = "hanim_l_index_distal_tip";
-HAnimSite1113.translation = new SFVec3f(new float[0.2089,0.6858,-0.0245]);
+let HAnimSite1112 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1112.name = "l_index_distal_tip";
+HAnimSite1112.DEF = "hanim_l_index_distal_tip";
+HAnimSite1112.translation = new SFVec3f(new float[0.2089,0.6858,-0.0245]);
 //HAnimSite visualization shape
-let TouchSensor1114 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1114.description = "HAnimSite l_index_distal_tip";
-HAnimSite1113.children = new MFNode();
+let TouchSensor1113 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1113.description = "HAnimSite l_index_distal_tip";
+HAnimSite1112.children = new MFNode();
 
-HAnimSite1113.children[0] = TouchSensor1114;
+HAnimSite1112.children[0] = TouchSensor1113;
 
-let Shape1115 = browser.currentScene.createNode("Shape");
-Shape1115.USE = "HAnimSiteShape";
-HAnimSite1113.children[1] = Shape1115;
+let Shape1114 = browser.currentScene.createNode("Shape");
+Shape1114.USE = "HAnimSiteShape";
+HAnimSite1112.children[1] = Shape1114;
 
-HAnimSegment1101.children[4] = HAnimSite1113;
+HAnimSegment1100.children[4] = HAnimSite1112;
 
-let HAnimSite1116 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1116.name = "l_dactylion_pt";
-HAnimSite1116.DEF = "hanim_l_dactylion_pt";
-HAnimSite1116.translation = new SFVec3f(new float[0.2056,0.6743,-0.0482]);
+let HAnimSite1115 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1115.name = "l_dactylion_pt";
+HAnimSite1115.DEF = "hanim_l_dactylion_pt";
+HAnimSite1115.translation = new SFVec3f(new float[0.2056,0.6743,-0.0482]);
 //HAnimSite visualization shape
-let TouchSensor1117 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1117.description = "HAnimSite l_dactylion";
-HAnimSite1116.children = new MFNode();
+let TouchSensor1116 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1116.description = "HAnimSite l_dactylion";
+HAnimSite1115.children = new MFNode();
 
-HAnimSite1116.children[0] = TouchSensor1117;
+HAnimSite1115.children[0] = TouchSensor1116;
 
-let Shape1118 = browser.currentScene.createNode("Shape");
-Shape1118.USE = "HAnimSiteShape";
-HAnimSite1116.children[1] = Shape1118;
+let Shape1117 = browser.currentScene.createNode("Shape");
+Shape1117.USE = "HAnimSiteShape";
+HAnimSite1115.children[1] = Shape1117;
 
-HAnimSegment1101.children[5] = HAnimSite1116;
+HAnimSegment1100.children[5] = HAnimSite1115;
 
-HAnimJoint1100.children = new MFNode();
+HAnimJoint1099.children = new MFNode();
 
-HAnimJoint1100.children[0] = HAnimSegment1101;
+HAnimJoint1099.children[0] = HAnimSegment1100;
 
-HAnimJoint1091.children[1] = HAnimJoint1100;
+HAnimJoint1090.children[1] = HAnimJoint1099;
 
-HAnimJoint1082.children[1] = HAnimJoint1091;
+HAnimJoint1081.children[1] = HAnimJoint1090;
 
-HAnimJoint1073.children[1] = HAnimJoint1082;
+HAnimJoint1072.children[1] = HAnimJoint1081;
 
-HAnimJoint985.children[2] = HAnimJoint1073;
+HAnimJoint984.children[2] = HAnimJoint1072;
 
-let HAnimJoint1119 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1119.name = "l_middle0";
-HAnimJoint1119.DEF = "hanim_l_middle0";
-HAnimJoint1119.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-HAnimJoint1119.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1120 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1120.name = "l_middle_metacarpal";
-HAnimSegment1120.DEF = "hanim_l_middle_metacarpal";
+let HAnimJoint1118 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1118.name = "l_middle0";
+HAnimJoint1118.DEF = "hanim_l_middle0";
+HAnimJoint1118.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
+HAnimJoint1118.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1119 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1119.name = "l_middle_metacarpal";
+HAnimSegment1119.DEF = "hanim_l_middle_metacarpal";
 //<HAnimJoint name='l_middle0'/> visualization sphere is placed within <HAnimSegment name='l_middle_metacarpal'/>
-let TouchSensor1121 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1121.description = "HAnimJoint l_middle0, HAnimSegment l_middle_metacarpal";
-HAnimSegment1120.children = new MFNode();
+let TouchSensor1120 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1120.description = "HAnimJoint l_middle0, HAnimSegment l_middle_metacarpal";
+HAnimSegment1119.children = new MFNode();
 
-HAnimSegment1120.children[0] = TouchSensor1121;
+HAnimSegment1119.children[0] = TouchSensor1120;
 
-let Transform1122 = browser.currentScene.createNode("Transform");
-Transform1122.translation = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-let Shape1123 = browser.currentScene.createNode("Shape");
-Shape1123.USE = "HAnimJointShape";
-Transform1122.children = new MFNode();
+let Transform1121 = browser.currentScene.createNode("Transform");
+Transform1121.translation = new SFVec3f(new float[0.1987,0.8029,-0.053]);
+let Shape1122 = browser.currentScene.createNode("Shape");
+Shape1122.USE = "HAnimJointShape";
+Transform1121.children = new MFNode();
 
-Transform1122.children[0] = Shape1123;
+Transform1121.children[0] = Shape1122;
 
-HAnimSegment1120.children[1] = Transform1122;
+HAnimSegment1119.children[1] = Transform1121;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle0'/> to <HAnimJoint name='l_middle1'/>
-let Shape1124 = browser.currentScene.createNode("Shape");
-let LineSet1125 = browser.currentScene.createNode("LineSet");
-LineSet1125.vertexCount = new MFInt32(new int[2]);
-let Coordinate1126 = browser.currentScene.createNode("Coordinate");
-Coordinate1126.point = new MFVec3f(new float[0.1987,0.8029,-0.053,0.1987,0.7818,-0.053]);
-LineSet1125.coord = Coordinate1126;
+let Shape1123 = browser.currentScene.createNode("Shape");
+let LineSet1124 = browser.currentScene.createNode("LineSet");
+LineSet1124.vertexCount = new MFInt32(new int[2]);
+let Coordinate1125 = browser.currentScene.createNode("Coordinate");
+Coordinate1125.point = new MFVec3f(new float[0.1987,0.8029,-0.053,0.1987,0.7818,-0.053]);
+LineSet1124.coord = Coordinate1125;
 
-let ColorRGBA1127 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1127.USE = "HAnimSegmentLineColorRGBA";
-LineSet1125.color = ColorRGBA1127;
+let ColorRGBA1126 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1126.USE = "HAnimSegmentLineColorRGBA";
+LineSet1124.color = ColorRGBA1126;
 
-Shape1124.geometry = LineSet1125;
+Shape1123.geometry = LineSet1124;
 
-HAnimSegment1120.children[2] = Shape1124;
+HAnimSegment1119.children[2] = Shape1123;
 
-HAnimJoint1119.children = new MFNode();
+HAnimJoint1118.children = new MFNode();
 
-HAnimJoint1119.children[0] = HAnimSegment1120;
+HAnimJoint1118.children[0] = HAnimSegment1119;
 
-let HAnimJoint1128 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1128.name = "l_middle1";
-HAnimJoint1128.DEF = "hanim_l_middle1";
-HAnimJoint1128.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-HAnimJoint1128.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1129 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1129.name = "l_middle_proximal";
-HAnimSegment1129.DEF = "hanim_l_middle_proximal";
+let HAnimJoint1127 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1127.name = "l_middle1";
+HAnimJoint1127.DEF = "hanim_l_middle1";
+HAnimJoint1127.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
+HAnimJoint1127.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1128 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1128.name = "l_middle_proximal";
+HAnimSegment1128.DEF = "hanim_l_middle_proximal";
 //<HAnimJoint name='l_middle1'/> visualization sphere is placed within <HAnimSegment name='l_middle_proximal'/>
-let TouchSensor1130 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1130.description = "HAnimJoint l_middle1, HAnimSegment l_middle_proximal";
-HAnimSegment1129.children = new MFNode();
+let TouchSensor1129 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1129.description = "HAnimJoint l_middle1, HAnimSegment l_middle_proximal";
+HAnimSegment1128.children = new MFNode();
 
-HAnimSegment1129.children[0] = TouchSensor1130;
+HAnimSegment1128.children[0] = TouchSensor1129;
 
-let Transform1131 = browser.currentScene.createNode("Transform");
-Transform1131.translation = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-let Shape1132 = browser.currentScene.createNode("Shape");
-Shape1132.USE = "HAnimJointShape";
-Transform1131.children = new MFNode();
+let Transform1130 = browser.currentScene.createNode("Transform");
+Transform1130.translation = new SFVec3f(new float[0.1987,0.7818,-0.053]);
+let Shape1131 = browser.currentScene.createNode("Shape");
+Shape1131.USE = "HAnimJointShape";
+Transform1130.children = new MFNode();
 
-Transform1131.children[0] = Shape1132;
+Transform1130.children[0] = Shape1131;
 
-HAnimSegment1129.children[1] = Transform1131;
+HAnimSegment1128.children[1] = Transform1130;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle1'/> to <HAnimJoint name='l_middle2'/>
-let Shape1133 = browser.currentScene.createNode("Shape");
-let LineSet1134 = browser.currentScene.createNode("LineSet");
-LineSet1134.vertexCount = new MFInt32(new int[2]);
-let Coordinate1135 = browser.currentScene.createNode("Coordinate");
-Coordinate1135.point = new MFVec3f(new float[0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503]);
-LineSet1134.coord = Coordinate1135;
+let Shape1132 = browser.currentScene.createNode("Shape");
+let LineSet1133 = browser.currentScene.createNode("LineSet");
+LineSet1133.vertexCount = new MFInt32(new int[2]);
+let Coordinate1134 = browser.currentScene.createNode("Coordinate");
+Coordinate1134.point = new MFVec3f(new float[0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503]);
+LineSet1133.coord = Coordinate1134;
 
-let ColorRGBA1136 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1136.USE = "HAnimSegmentLineColorRGBA";
-LineSet1134.color = ColorRGBA1136;
+let ColorRGBA1135 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1135.USE = "HAnimSegmentLineColorRGBA";
+LineSet1133.color = ColorRGBA1135;
 
-Shape1133.geometry = LineSet1134;
+Shape1132.geometry = LineSet1133;
 
-HAnimSegment1129.children[2] = Shape1133;
+HAnimSegment1128.children[2] = Shape1132;
 
-HAnimJoint1128.children = new MFNode();
+HAnimJoint1127.children = new MFNode();
 
-HAnimJoint1128.children[0] = HAnimSegment1129;
+HAnimJoint1127.children[0] = HAnimSegment1128;
 
-let HAnimJoint1137 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1137.name = "l_middle2";
-HAnimJoint1137.DEF = "hanim_l_middle2";
-HAnimJoint1137.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-HAnimJoint1137.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1138 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1138.name = "l_middle_middle";
-HAnimSegment1138.DEF = "hanim_l_middle_middle";
+let HAnimJoint1136 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1136.name = "l_middle2";
+HAnimJoint1136.DEF = "hanim_l_middle2";
+HAnimJoint1136.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
+HAnimJoint1136.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1137 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1137.name = "l_middle_middle";
+HAnimSegment1137.DEF = "hanim_l_middle_middle";
 //<HAnimJoint name='l_middle2'/> visualization sphere is placed within <HAnimSegment name='l_middle_middle'/>
-let TouchSensor1139 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1139.description = "HAnimJoint l_middle2, HAnimSegment l_middle_middle";
-HAnimSegment1138.children = new MFNode();
+let TouchSensor1138 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1138.description = "HAnimJoint l_middle2, HAnimSegment l_middle_middle";
+HAnimSegment1137.children = new MFNode();
 
-HAnimSegment1138.children[0] = TouchSensor1139;
+HAnimSegment1137.children[0] = TouchSensor1138;
 
-let Transform1140 = browser.currentScene.createNode("Transform");
-Transform1140.translation = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-let Shape1141 = browser.currentScene.createNode("Shape");
-Shape1141.USE = "HAnimJointShape";
-Transform1140.children = new MFNode();
+let Transform1139 = browser.currentScene.createNode("Transform");
+Transform1139.translation = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
+let Shape1140 = browser.currentScene.createNode("Shape");
+Shape1140.USE = "HAnimJointShape";
+Transform1139.children = new MFNode();
 
-Transform1140.children[0] = Shape1141;
+Transform1139.children[0] = Shape1140;
 
-HAnimSegment1138.children[1] = Transform1140;
+HAnimSegment1137.children[1] = Transform1139;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle2'/> to <HAnimJoint name='l_middle3'/>
-let Shape1142 = browser.currentScene.createNode("Shape");
-let LineSet1143 = browser.currentScene.createNode("LineSet");
-LineSet1143.vertexCount = new MFInt32(new int[2]);
-let Coordinate1144 = browser.currentScene.createNode("Coordinate");
-Coordinate1144.point = new MFVec3f(new float[0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494]);
-LineSet1143.coord = Coordinate1144;
+let Shape1141 = browser.currentScene.createNode("Shape");
+let LineSet1142 = browser.currentScene.createNode("LineSet");
+LineSet1142.vertexCount = new MFInt32(new int[2]);
+let Coordinate1143 = browser.currentScene.createNode("Coordinate");
+Coordinate1143.point = new MFVec3f(new float[0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494]);
+LineSet1142.coord = Coordinate1143;
 
-let ColorRGBA1145 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1145.USE = "HAnimSegmentLineColorRGBA";
-LineSet1143.color = ColorRGBA1145;
+let ColorRGBA1144 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1144.USE = "HAnimSegmentLineColorRGBA";
+LineSet1142.color = ColorRGBA1144;
 
-Shape1142.geometry = LineSet1143;
+Shape1141.geometry = LineSet1142;
 
-HAnimSegment1138.children[2] = Shape1142;
+HAnimSegment1137.children[2] = Shape1141;
 
-HAnimJoint1137.children = new MFNode();
+HAnimJoint1136.children = new MFNode();
 
-HAnimJoint1137.children[0] = HAnimSegment1138;
+HAnimJoint1136.children[0] = HAnimSegment1137;
 
-let HAnimJoint1146 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1146.name = "l_middle3";
-HAnimJoint1146.DEF = "hanim_l_middle3";
-HAnimJoint1146.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
-HAnimJoint1146.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1147 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1147.name = "l_middle_distal";
-HAnimSegment1147.DEF = "hanim_l_middle_distal";
+let HAnimJoint1145 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1145.name = "l_middle3";
+HAnimJoint1145.DEF = "hanim_l_middle3";
+HAnimJoint1145.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
+HAnimJoint1145.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1146 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1146.name = "l_middle_distal";
+HAnimSegment1146.DEF = "hanim_l_middle_distal";
 //<HAnimJoint name='l_middle3'/> visualization sphere is placed within <HAnimSegment name='l_middle_distal'/>
-let TouchSensor1148 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1148.description = "HAnimJoint l_middle3, HAnimSegment l_middle_distal";
-HAnimSegment1147.children = new MFNode();
+let TouchSensor1147 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1147.description = "HAnimJoint l_middle3, HAnimSegment l_middle_distal";
+HAnimSegment1146.children = new MFNode();
 
-HAnimSegment1147.children[0] = TouchSensor1148;
+HAnimSegment1146.children[0] = TouchSensor1147;
 
-let Transform1149 = browser.currentScene.createNode("Transform");
-Transform1149.translation = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
-let Shape1150 = browser.currentScene.createNode("Shape");
-Shape1150.USE = "HAnimJointShape";
-Transform1149.children = new MFNode();
+let Transform1148 = browser.currentScene.createNode("Transform");
+Transform1148.translation = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
+let Shape1149 = browser.currentScene.createNode("Shape");
+Shape1149.USE = "HAnimJointShape";
+Transform1148.children = new MFNode();
 
-Transform1149.children[0] = Shape1150;
+Transform1148.children[0] = Shape1149;
 
-HAnimSegment1147.children[1] = Transform1149;
+HAnimSegment1146.children[1] = Transform1148;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_middle3'/> to <HAnimSite name='l_middle_distal_tip'/>
-let Shape1151 = browser.currentScene.createNode("Shape");
-let LineSet1152 = browser.currentScene.createNode("LineSet");
-LineSet1152.vertexCount = new MFInt32(new int[2]);
-let Coordinate1153 = browser.currentScene.createNode("Coordinate");
-Coordinate1153.point = new MFVec3f(new float[0.2026,0.7011,-0.0494,0.208,0.6731,-0.0491]);
-LineSet1152.coord = Coordinate1153;
+let Shape1150 = browser.currentScene.createNode("Shape");
+let LineSet1151 = browser.currentScene.createNode("LineSet");
+LineSet1151.vertexCount = new MFInt32(new int[2]);
+let Coordinate1152 = browser.currentScene.createNode("Coordinate");
+Coordinate1152.point = new MFVec3f(new float[0.2026,0.7011,-0.0494,0.208,0.6731,-0.0491]);
+LineSet1151.coord = Coordinate1152;
 
-let ColorRGBA1154 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1154.USE = "HAnimSiteLineColorRGBA";
-LineSet1152.color = ColorRGBA1154;
+let ColorRGBA1153 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1153.USE = "HAnimSiteLineColorRGBA";
+LineSet1151.color = ColorRGBA1153;
 
-Shape1151.geometry = LineSet1152;
+Shape1150.geometry = LineSet1151;
 
-HAnimSegment1147.children[2] = Shape1151;
+HAnimSegment1146.children[2] = Shape1150;
 
-let HAnimSite1155 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1155.name = "l_middle_distal_tip";
-HAnimSite1155.DEF = "hanim_l_middle_distal_tip";
-HAnimSite1155.translation = new SFVec3f(new float[0.208,0.6731,-0.0491]);
+let HAnimSite1154 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1154.name = "l_middle_distal_tip";
+HAnimSite1154.DEF = "hanim_l_middle_distal_tip";
+HAnimSite1154.translation = new SFVec3f(new float[0.208,0.6731,-0.0491]);
 //HAnimSite visualization shape
-let TouchSensor1156 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1156.description = "HAnimSite l_middle_distal_tip";
-HAnimSite1155.children = new MFNode();
+let TouchSensor1155 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1155.description = "HAnimSite l_middle_distal_tip";
+HAnimSite1154.children = new MFNode();
 
-HAnimSite1155.children[0] = TouchSensor1156;
+HAnimSite1154.children[0] = TouchSensor1155;
 
-let Shape1157 = browser.currentScene.createNode("Shape");
-Shape1157.USE = "HAnimSiteShape";
-HAnimSite1155.children[1] = Shape1157;
+let Shape1156 = browser.currentScene.createNode("Shape");
+Shape1156.USE = "HAnimSiteShape";
+HAnimSite1154.children[1] = Shape1156;
 
-HAnimSegment1147.children[3] = HAnimSite1155;
+HAnimSegment1146.children[3] = HAnimSite1154;
 
-HAnimJoint1146.children = new MFNode();
+HAnimJoint1145.children = new MFNode();
 
-HAnimJoint1146.children[0] = HAnimSegment1147;
+HAnimJoint1145.children[0] = HAnimSegment1146;
 
-HAnimJoint1137.children[1] = HAnimJoint1146;
+HAnimJoint1136.children[1] = HAnimJoint1145;
 
-HAnimJoint1128.children[1] = HAnimJoint1137;
+HAnimJoint1127.children[1] = HAnimJoint1136;
 
-HAnimJoint1119.children[1] = HAnimJoint1128;
+HAnimJoint1118.children[1] = HAnimJoint1127;
 
-HAnimJoint985.children[3] = HAnimJoint1119;
+HAnimJoint984.children[3] = HAnimJoint1118;
 
-let HAnimJoint1158 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1158.name = "l_ring0";
-HAnimJoint1158.DEF = "hanim_l_ring0";
-HAnimJoint1158.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-HAnimJoint1158.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1159 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1159.name = "l_ring_metacarpal";
-HAnimSegment1159.DEF = "hanim_l_ring_metacarpal";
+let HAnimJoint1157 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1157.name = "l_ring0";
+HAnimJoint1157.DEF = "hanim_l_ring0";
+HAnimJoint1157.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
+HAnimJoint1157.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1158 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1158.name = "l_ring_metacarpal";
+HAnimSegment1158.DEF = "hanim_l_ring_metacarpal";
 //<HAnimJoint name='l_ring0'/> visualization sphere is placed within <HAnimSegment name='l_ring_metacarpal'/>
-let TouchSensor1160 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1160.description = "HAnimJoint l_ring0, HAnimSegment l_ring_metacarpal";
-HAnimSegment1159.children = new MFNode();
+let TouchSensor1159 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1159.description = "HAnimJoint l_ring0, HAnimSegment l_ring_metacarpal";
+HAnimSegment1158.children = new MFNode();
 
-HAnimSegment1159.children[0] = TouchSensor1160;
+HAnimSegment1158.children[0] = TouchSensor1159;
 
-let Transform1161 = browser.currentScene.createNode("Transform");
-Transform1161.translation = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-let Shape1162 = browser.currentScene.createNode("Shape");
-Shape1162.USE = "HAnimJointShape";
-Transform1161.children = new MFNode();
+let Transform1160 = browser.currentScene.createNode("Transform");
+Transform1160.translation = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
+let Shape1161 = browser.currentScene.createNode("Shape");
+Shape1161.USE = "HAnimJointShape";
+Transform1160.children = new MFNode();
 
-Transform1161.children[0] = Shape1162;
+Transform1160.children[0] = Shape1161;
 
-HAnimSegment1159.children[1] = Transform1161;
+HAnimSegment1158.children[1] = Transform1160;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring0'/> to <HAnimJoint name='l_ring1'/>
-let Shape1163 = browser.currentScene.createNode("Shape");
-let LineSet1164 = browser.currentScene.createNode("LineSet");
-LineSet1164.vertexCount = new MFInt32(new int[2]);
-let Coordinate1165 = browser.currentScene.createNode("Coordinate");
-Coordinate1165.point = new MFVec3f(new float[0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794]);
-LineSet1164.coord = Coordinate1165;
+let Shape1162 = browser.currentScene.createNode("Shape");
+let LineSet1163 = browser.currentScene.createNode("LineSet");
+LineSet1163.vertexCount = new MFInt32(new int[2]);
+let Coordinate1164 = browser.currentScene.createNode("Coordinate");
+Coordinate1164.point = new MFVec3f(new float[0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794]);
+LineSet1163.coord = Coordinate1164;
 
-let ColorRGBA1166 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1166.USE = "HAnimSegmentLineColorRGBA";
-LineSet1164.color = ColorRGBA1166;
+let ColorRGBA1165 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1165.USE = "HAnimSegmentLineColorRGBA";
+LineSet1163.color = ColorRGBA1165;
 
-Shape1163.geometry = LineSet1164;
+Shape1162.geometry = LineSet1163;
 
-HAnimSegment1159.children[2] = Shape1163;
+HAnimSegment1158.children[2] = Shape1162;
 
-HAnimJoint1158.children = new MFNode();
+HAnimJoint1157.children = new MFNode();
 
-HAnimJoint1158.children[0] = HAnimSegment1159;
+HAnimJoint1157.children[0] = HAnimSegment1158;
 
-let HAnimJoint1167 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1167.name = "l_ring1";
-HAnimJoint1167.DEF = "hanim_l_ring1";
-HAnimJoint1167.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-HAnimJoint1167.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1168 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1168.name = "l_ring_proximal";
-HAnimSegment1168.DEF = "hanim_l_ring_proximal";
+let HAnimJoint1166 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1166.name = "l_ring1";
+HAnimJoint1166.DEF = "hanim_l_ring1";
+HAnimJoint1166.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
+HAnimJoint1166.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1167 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1167.name = "l_ring_proximal";
+HAnimSegment1167.DEF = "hanim_l_ring_proximal";
 //<HAnimJoint name='l_ring1'/> visualization sphere is placed within <HAnimSegment name='l_ring_proximal'/>
-let TouchSensor1169 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1169.description = "HAnimJoint l_ring1, HAnimSegment l_ring_proximal";
-HAnimSegment1168.children = new MFNode();
+let TouchSensor1168 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1168.description = "HAnimJoint l_ring1, HAnimSegment l_ring_proximal";
+HAnimSegment1167.children = new MFNode();
 
-HAnimSegment1168.children[0] = TouchSensor1169;
+HAnimSegment1167.children[0] = TouchSensor1168;
 
-let Transform1170 = browser.currentScene.createNode("Transform");
-Transform1170.translation = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-let Shape1171 = browser.currentScene.createNode("Shape");
-Shape1171.USE = "HAnimJointShape";
-Transform1170.children = new MFNode();
+let Transform1169 = browser.currentScene.createNode("Transform");
+Transform1169.translation = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
+let Shape1170 = browser.currentScene.createNode("Shape");
+Shape1170.USE = "HAnimJointShape";
+Transform1169.children = new MFNode();
 
-Transform1170.children[0] = Shape1171;
+Transform1169.children[0] = Shape1170;
 
-HAnimSegment1168.children[1] = Transform1170;
+HAnimSegment1167.children[1] = Transform1169;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring1'/> to <HAnimJoint name='l_ring2'/>
-let Shape1172 = browser.currentScene.createNode("Shape");
-let LineSet1173 = browser.currentScene.createNode("LineSet");
-LineSet1173.vertexCount = new MFInt32(new int[2]);
-let Coordinate1174 = browser.currentScene.createNode("Coordinate");
-Coordinate1174.point = new MFVec3f(new float[0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777]);
-LineSet1173.coord = Coordinate1174;
+let Shape1171 = browser.currentScene.createNode("Shape");
+let LineSet1172 = browser.currentScene.createNode("LineSet");
+LineSet1172.vertexCount = new MFInt32(new int[2]);
+let Coordinate1173 = browser.currentScene.createNode("Coordinate");
+Coordinate1173.point = new MFVec3f(new float[0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777]);
+LineSet1172.coord = Coordinate1173;
 
-let ColorRGBA1175 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1175.USE = "HAnimSegmentLineColorRGBA";
-LineSet1173.color = ColorRGBA1175;
+let ColorRGBA1174 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1174.USE = "HAnimSegmentLineColorRGBA";
+LineSet1172.color = ColorRGBA1174;
 
-Shape1172.geometry = LineSet1173;
+Shape1171.geometry = LineSet1172;
 
-HAnimSegment1168.children[2] = Shape1172;
+HAnimSegment1167.children[2] = Shape1171;
 
-HAnimJoint1167.children = new MFNode();
+HAnimJoint1166.children = new MFNode();
 
-HAnimJoint1167.children[0] = HAnimSegment1168;
+HAnimJoint1166.children[0] = HAnimSegment1167;
 
-let HAnimJoint1176 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1176.name = "l_ring2";
-HAnimJoint1176.DEF = "hanim_l_ring2";
-HAnimJoint1176.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-HAnimJoint1176.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1177 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1177.name = "l_ring_middle";
-HAnimSegment1177.DEF = "hanim_l_ring_middle";
+let HAnimJoint1175 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1175.name = "l_ring2";
+HAnimJoint1175.DEF = "hanim_l_ring2";
+HAnimJoint1175.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
+HAnimJoint1175.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1176 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1176.name = "l_ring_middle";
+HAnimSegment1176.DEF = "hanim_l_ring_middle";
 //<HAnimJoint name='l_ring2'/> visualization sphere is placed within <HAnimSegment name='l_ring_middle'/>
-let TouchSensor1178 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1178.description = "HAnimJoint l_ring2, HAnimSegment l_ring_middle";
-HAnimSegment1177.children = new MFNode();
+let TouchSensor1177 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1177.description = "HAnimJoint l_ring2, HAnimSegment l_ring_middle";
+HAnimSegment1176.children = new MFNode();
 
-HAnimSegment1177.children[0] = TouchSensor1178;
+HAnimSegment1176.children[0] = TouchSensor1177;
 
-let Transform1179 = browser.currentScene.createNode("Transform");
-Transform1179.translation = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-let Shape1180 = browser.currentScene.createNode("Shape");
-Shape1180.USE = "HAnimJointShape";
-Transform1179.children = new MFNode();
+let Transform1178 = browser.currentScene.createNode("Transform");
+Transform1178.translation = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
+let Shape1179 = browser.currentScene.createNode("Shape");
+Shape1179.USE = "HAnimJointShape";
+Transform1178.children = new MFNode();
 
-Transform1179.children[0] = Shape1180;
+Transform1178.children[0] = Shape1179;
 
-HAnimSegment1177.children[1] = Transform1179;
+HAnimSegment1176.children[1] = Transform1178;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring2'/> to <HAnimJoint name='l_ring3'/>
-let Shape1181 = browser.currentScene.createNode("Shape");
-let LineSet1182 = browser.currentScene.createNode("LineSet");
-LineSet1182.vertexCount = new MFInt32(new int[2]);
-let Coordinate1183 = browser.currentScene.createNode("Coordinate");
-Coordinate1183.point = new MFVec3f(new float[0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767]);
-LineSet1182.coord = Coordinate1183;
+let Shape1180 = browser.currentScene.createNode("Shape");
+let LineSet1181 = browser.currentScene.createNode("LineSet");
+LineSet1181.vertexCount = new MFInt32(new int[2]);
+let Coordinate1182 = browser.currentScene.createNode("Coordinate");
+Coordinate1182.point = new MFVec3f(new float[0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767]);
+LineSet1181.coord = Coordinate1182;
 
-let ColorRGBA1184 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1184.USE = "HAnimSegmentLineColorRGBA";
-LineSet1182.color = ColorRGBA1184;
+let ColorRGBA1183 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1183.USE = "HAnimSegmentLineColorRGBA";
+LineSet1181.color = ColorRGBA1183;
 
-Shape1181.geometry = LineSet1182;
+Shape1180.geometry = LineSet1181;
 
-HAnimSegment1177.children[2] = Shape1181;
+HAnimSegment1176.children[2] = Shape1180;
 
-HAnimJoint1176.children = new MFNode();
+HAnimJoint1175.children = new MFNode();
 
-HAnimJoint1176.children[0] = HAnimSegment1177;
+HAnimJoint1175.children[0] = HAnimSegment1176;
 
-let HAnimJoint1185 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1185.name = "l_ring3";
-HAnimJoint1185.DEF = "hanim_l_ring3";
-HAnimJoint1185.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
-HAnimJoint1185.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1186 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1186.name = "l_ring_distal";
-HAnimSegment1186.DEF = "hanim_l_ring_distal";
+let HAnimJoint1184 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1184.name = "l_ring3";
+HAnimJoint1184.DEF = "hanim_l_ring3";
+HAnimJoint1184.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
+HAnimJoint1184.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1185 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1185.name = "l_ring_distal";
+HAnimSegment1185.DEF = "hanim_l_ring_distal";
 //<HAnimJoint name='l_ring3'/> visualization sphere is placed within <HAnimSegment name='l_ring_distal'/>
-let TouchSensor1187 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1187.description = "HAnimJoint l_ring3, HAnimSegment l_ring_distal";
-HAnimSegment1186.children = new MFNode();
+let TouchSensor1186 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1186.description = "HAnimJoint l_ring3, HAnimSegment l_ring_distal";
+HAnimSegment1185.children = new MFNode();
 
-HAnimSegment1186.children[0] = TouchSensor1187;
+HAnimSegment1185.children[0] = TouchSensor1186;
 
-let Transform1188 = browser.currentScene.createNode("Transform");
-Transform1188.translation = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
-let Shape1189 = browser.currentScene.createNode("Shape");
-Shape1189.USE = "HAnimJointShape";
-Transform1188.children = new MFNode();
+let Transform1187 = browser.currentScene.createNode("Transform");
+Transform1187.translation = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
+let Shape1188 = browser.currentScene.createNode("Shape");
+Shape1188.USE = "HAnimJointShape";
+Transform1187.children = new MFNode();
 
-Transform1188.children[0] = Shape1189;
+Transform1187.children[0] = Shape1188;
 
-HAnimSegment1186.children[1] = Transform1188;
+HAnimSegment1185.children[1] = Transform1187;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ring3'/> to <HAnimSite name='l_ring_distal_tip'/>
-let Shape1190 = browser.currentScene.createNode("Shape");
-let LineSet1191 = browser.currentScene.createNode("LineSet");
-LineSet1191.vertexCount = new MFInt32(new int[2]);
-let Coordinate1192 = browser.currentScene.createNode("Coordinate");
-Coordinate1192.point = new MFVec3f(new float[0.1983,0.7045,-0.0767,0.2035,0.675,-0.0756]);
-LineSet1191.coord = Coordinate1192;
+let Shape1189 = browser.currentScene.createNode("Shape");
+let LineSet1190 = browser.currentScene.createNode("LineSet");
+LineSet1190.vertexCount = new MFInt32(new int[2]);
+let Coordinate1191 = browser.currentScene.createNode("Coordinate");
+Coordinate1191.point = new MFVec3f(new float[0.1983,0.7045,-0.0767,0.2035,0.675,-0.0756]);
+LineSet1190.coord = Coordinate1191;
 
-let ColorRGBA1193 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1193.USE = "HAnimSiteLineColorRGBA";
-LineSet1191.color = ColorRGBA1193;
+let ColorRGBA1192 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1192.USE = "HAnimSiteLineColorRGBA";
+LineSet1190.color = ColorRGBA1192;
 
-Shape1190.geometry = LineSet1191;
+Shape1189.geometry = LineSet1190;
 
-HAnimSegment1186.children[2] = Shape1190;
+HAnimSegment1185.children[2] = Shape1189;
 
-let HAnimSite1194 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1194.name = "l_ring_distal_tip";
-HAnimSite1194.DEF = "hanim_l_ring_distal_tip";
-HAnimSite1194.translation = new SFVec3f(new float[0.2035,0.675,-0.0756]);
+let HAnimSite1193 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1193.name = "l_ring_distal_tip";
+HAnimSite1193.DEF = "hanim_l_ring_distal_tip";
+HAnimSite1193.translation = new SFVec3f(new float[0.2035,0.675,-0.0756]);
 //HAnimSite visualization shape
-let TouchSensor1195 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1195.description = "HAnimSite l_ring_distal_tip";
-HAnimSite1194.children = new MFNode();
+let TouchSensor1194 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1194.description = "HAnimSite l_ring_distal_tip";
+HAnimSite1193.children = new MFNode();
 
-HAnimSite1194.children[0] = TouchSensor1195;
+HAnimSite1193.children[0] = TouchSensor1194;
 
-let Shape1196 = browser.currentScene.createNode("Shape");
-Shape1196.USE = "HAnimSiteShape";
-HAnimSite1194.children[1] = Shape1196;
+let Shape1195 = browser.currentScene.createNode("Shape");
+Shape1195.USE = "HAnimSiteShape";
+HAnimSite1193.children[1] = Shape1195;
 
-HAnimSegment1186.children[3] = HAnimSite1194;
+HAnimSegment1185.children[3] = HAnimSite1193;
 
-HAnimJoint1185.children = new MFNode();
+HAnimJoint1184.children = new MFNode();
 
-HAnimJoint1185.children[0] = HAnimSegment1186;
+HAnimJoint1184.children[0] = HAnimSegment1185;
 
-HAnimJoint1176.children[1] = HAnimJoint1185;
+HAnimJoint1175.children[1] = HAnimJoint1184;
 
-HAnimJoint1167.children[1] = HAnimJoint1176;
+HAnimJoint1166.children[1] = HAnimJoint1175;
 
-HAnimJoint1158.children[1] = HAnimJoint1167;
+HAnimJoint1157.children[1] = HAnimJoint1166;
 
-HAnimJoint985.children[4] = HAnimJoint1158;
+HAnimJoint984.children[4] = HAnimJoint1157;
 
-let HAnimJoint1197 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1197.name = "l_pinky0";
-HAnimJoint1197.DEF = "hanim_l_pinky0";
-HAnimJoint1197.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-HAnimJoint1197.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1198 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1198.name = "l_pinky_metacarpal";
-HAnimSegment1198.DEF = "hanim_l_pinky_metacarpal";
+let HAnimJoint1196 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1196.name = "l_pinky0";
+HAnimJoint1196.DEF = "hanim_l_pinky0";
+HAnimJoint1196.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
+HAnimJoint1196.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1197 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1197.name = "l_pinky_metacarpal";
+HAnimSegment1197.DEF = "hanim_l_pinky_metacarpal";
 //<HAnimJoint name='l_pinky0'/> visualization sphere is placed within <HAnimSegment name='l_pinky_metacarpal'/>
-let TouchSensor1199 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1199.description = "HAnimJoint l_pinky0, HAnimSegment l_pinky_metacarpal";
-HAnimSegment1198.children = new MFNode();
+let TouchSensor1198 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1198.description = "HAnimJoint l_pinky0, HAnimSegment l_pinky_metacarpal";
+HAnimSegment1197.children = new MFNode();
 
-HAnimSegment1198.children[0] = TouchSensor1199;
+HAnimSegment1197.children[0] = TouchSensor1198;
 
-let Transform1200 = browser.currentScene.createNode("Transform");
-Transform1200.translation = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-let Shape1201 = browser.currentScene.createNode("Shape");
-Shape1201.USE = "HAnimJointShape";
-Transform1200.children = new MFNode();
+let Transform1199 = browser.currentScene.createNode("Transform");
+Transform1199.translation = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
+let Shape1200 = browser.currentScene.createNode("Shape");
+Shape1200.USE = "HAnimJointShape";
+Transform1199.children = new MFNode();
 
-Transform1200.children[0] = Shape1201;
+Transform1199.children[0] = Shape1200;
 
-HAnimSegment1198.children[1] = Transform1200;
+HAnimSegment1197.children[1] = Transform1199;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky0'/> to <HAnimJoint name='l_pinky1'/>
-let Shape1202 = browser.currentScene.createNode("Shape");
-let LineSet1203 = browser.currentScene.createNode("LineSet");
-LineSet1203.vertexCount = new MFInt32(new int[2]);
-let Coordinate1204 = browser.currentScene.createNode("Coordinate");
-Coordinate1204.point = new MFVec3f(new float[0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036]);
-LineSet1203.coord = Coordinate1204;
+let Shape1201 = browser.currentScene.createNode("Shape");
+let LineSet1202 = browser.currentScene.createNode("LineSet");
+LineSet1202.vertexCount = new MFInt32(new int[2]);
+let Coordinate1203 = browser.currentScene.createNode("Coordinate");
+Coordinate1203.point = new MFVec3f(new float[0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036]);
+LineSet1202.coord = Coordinate1203;
 
-let ColorRGBA1205 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1205.USE = "HAnimSegmentLineColorRGBA";
-LineSet1203.color = ColorRGBA1205;
+let ColorRGBA1204 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1204.USE = "HAnimSegmentLineColorRGBA";
+LineSet1202.color = ColorRGBA1204;
 
-Shape1202.geometry = LineSet1203;
+Shape1201.geometry = LineSet1202;
 
-HAnimSegment1198.children[2] = Shape1202;
+HAnimSegment1197.children[2] = Shape1201;
 
-HAnimJoint1197.children = new MFNode();
+HAnimJoint1196.children = new MFNode();
 
-HAnimJoint1197.children[0] = HAnimSegment1198;
+HAnimJoint1196.children[0] = HAnimSegment1197;
 
-let HAnimJoint1206 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1206.name = "l_pinky1";
-HAnimJoint1206.DEF = "hanim_l_pinky1";
-HAnimJoint1206.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-HAnimJoint1206.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1207 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1207.name = "l_pinky_proximal";
-HAnimSegment1207.DEF = "hanim_l_pinky_proximal";
+let HAnimJoint1205 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1205.name = "l_pinky1";
+HAnimJoint1205.DEF = "hanim_l_pinky1";
+HAnimJoint1205.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
+HAnimJoint1205.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1206 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1206.name = "l_pinky_proximal";
+HAnimSegment1206.DEF = "hanim_l_pinky_proximal";
 //<HAnimJoint name='l_pinky1'/> visualization sphere is placed within <HAnimSegment name='l_pinky_proximal'/>
-let TouchSensor1208 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1208.description = "HAnimJoint l_pinky1, HAnimSegment l_pinky_proximal";
-HAnimSegment1207.children = new MFNode();
+let TouchSensor1207 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1207.description = "HAnimJoint l_pinky1, HAnimSegment l_pinky_proximal";
+HAnimSegment1206.children = new MFNode();
 
-HAnimSegment1207.children[0] = TouchSensor1208;
+HAnimSegment1206.children[0] = TouchSensor1207;
 
-let Transform1209 = browser.currentScene.createNode("Transform");
-Transform1209.translation = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-let Shape1210 = browser.currentScene.createNode("Shape");
-Shape1210.USE = "HAnimJointShape";
-Transform1209.children = new MFNode();
+let Transform1208 = browser.currentScene.createNode("Transform");
+Transform1208.translation = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
+let Shape1209 = browser.currentScene.createNode("Shape");
+Shape1209.USE = "HAnimJointShape";
+Transform1208.children = new MFNode();
 
-Transform1209.children[0] = Shape1210;
+Transform1208.children[0] = Shape1209;
 
-HAnimSegment1207.children[1] = Transform1209;
+HAnimSegment1206.children[1] = Transform1208;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky1'/> to <HAnimJoint name='l_pinky2'/>
-let Shape1211 = browser.currentScene.createNode("Shape");
-let LineSet1212 = browser.currentScene.createNode("LineSet");
-LineSet1212.vertexCount = new MFInt32(new int[2]);
-let Coordinate1213 = browser.currentScene.createNode("Coordinate");
-Coordinate1213.point = new MFVec3f(new float[0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024]);
-LineSet1212.coord = Coordinate1213;
+let Shape1210 = browser.currentScene.createNode("Shape");
+let LineSet1211 = browser.currentScene.createNode("LineSet");
+LineSet1211.vertexCount = new MFInt32(new int[2]);
+let Coordinate1212 = browser.currentScene.createNode("Coordinate");
+Coordinate1212.point = new MFVec3f(new float[0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024]);
+LineSet1211.coord = Coordinate1212;
 
-let ColorRGBA1214 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1214.USE = "HAnimSegmentLineColorRGBA";
-LineSet1212.color = ColorRGBA1214;
+let ColorRGBA1213 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1213.USE = "HAnimSegmentLineColorRGBA";
+LineSet1211.color = ColorRGBA1213;
 
-Shape1211.geometry = LineSet1212;
+Shape1210.geometry = LineSet1211;
 
-HAnimSegment1207.children[2] = Shape1211;
+HAnimSegment1206.children[2] = Shape1210;
 
-HAnimJoint1206.children = new MFNode();
+HAnimJoint1205.children = new MFNode();
 
-HAnimJoint1206.children[0] = HAnimSegment1207;
+HAnimJoint1205.children[0] = HAnimSegment1206;
 
-let HAnimJoint1215 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1215.name = "l_pinky2";
-HAnimJoint1215.DEF = "hanim_l_pinky2";
-HAnimJoint1215.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-HAnimJoint1215.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1216 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1216.name = "l_pinky_middle";
-HAnimSegment1216.DEF = "hanim_l_pinky_middle";
+let HAnimJoint1214 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1214.name = "l_pinky2";
+HAnimJoint1214.DEF = "hanim_l_pinky2";
+HAnimJoint1214.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
+HAnimJoint1214.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1215 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1215.name = "l_pinky_middle";
+HAnimSegment1215.DEF = "hanim_l_pinky_middle";
 //<HAnimJoint name='l_pinky2'/> visualization sphere is placed within <HAnimSegment name='l_pinky_middle'/>
-let TouchSensor1217 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1217.description = "HAnimJoint l_pinky2, HAnimSegment l_pinky_middle";
-HAnimSegment1216.children = new MFNode();
+let TouchSensor1216 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1216.description = "HAnimJoint l_pinky2, HAnimSegment l_pinky_middle";
+HAnimSegment1215.children = new MFNode();
 
-HAnimSegment1216.children[0] = TouchSensor1217;
+HAnimSegment1215.children[0] = TouchSensor1216;
 
-let Transform1218 = browser.currentScene.createNode("Transform");
-Transform1218.translation = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-let Shape1219 = browser.currentScene.createNode("Shape");
-Shape1219.USE = "HAnimJointShape";
-Transform1218.children = new MFNode();
+let Transform1217 = browser.currentScene.createNode("Transform");
+Transform1217.translation = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
+let Shape1218 = browser.currentScene.createNode("Shape");
+Shape1218.USE = "HAnimJointShape";
+Transform1217.children = new MFNode();
 
-Transform1218.children[0] = Shape1219;
+Transform1217.children[0] = Shape1218;
 
-HAnimSegment1216.children[1] = Transform1218;
+HAnimSegment1215.children[1] = Transform1217;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky2'/> to <HAnimJoint name='l_pinky3'/>
-let Shape1220 = browser.currentScene.createNode("Shape");
-let LineSet1221 = browser.currentScene.createNode("LineSet");
-LineSet1221.vertexCount = new MFInt32(new int[2]);
-let Coordinate1222 = browser.currentScene.createNode("Coordinate");
-Coordinate1222.point = new MFVec3f(new float[0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017]);
-LineSet1221.coord = Coordinate1222;
+let Shape1219 = browser.currentScene.createNode("Shape");
+let LineSet1220 = browser.currentScene.createNode("LineSet");
+LineSet1220.vertexCount = new MFInt32(new int[2]);
+let Coordinate1221 = browser.currentScene.createNode("Coordinate");
+Coordinate1221.point = new MFVec3f(new float[0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017]);
+LineSet1220.coord = Coordinate1221;
 
-let ColorRGBA1223 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1223.USE = "HAnimSegmentLineColorRGBA";
-LineSet1221.color = ColorRGBA1223;
+let ColorRGBA1222 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1222.USE = "HAnimSegmentLineColorRGBA";
+LineSet1220.color = ColorRGBA1222;
 
-Shape1220.geometry = LineSet1221;
+Shape1219.geometry = LineSet1220;
 
-HAnimSegment1216.children[2] = Shape1220;
+HAnimSegment1215.children[2] = Shape1219;
 
-HAnimJoint1215.children = new MFNode();
+HAnimJoint1214.children = new MFNode();
 
-HAnimJoint1215.children[0] = HAnimSegment1216;
+HAnimJoint1214.children[0] = HAnimSegment1215;
 
-let HAnimJoint1224 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1224.name = "l_pinky3";
-HAnimJoint1224.DEF = "hanim_l_pinky3";
-HAnimJoint1224.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
-HAnimJoint1224.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1225 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1225.name = "l_pinky_distal";
-HAnimSegment1225.DEF = "hanim_l_pinky_distal";
+let HAnimJoint1223 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1223.name = "l_pinky3";
+HAnimJoint1223.DEF = "hanim_l_pinky3";
+HAnimJoint1223.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
+HAnimJoint1223.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1224 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1224.name = "l_pinky_distal";
+HAnimSegment1224.DEF = "hanim_l_pinky_distal";
 //<HAnimJoint name='l_pinky3'/> visualization sphere is placed within <HAnimSegment name='l_pinky_distal'/>
-let TouchSensor1226 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1226.description = "HAnimJoint l_pinky3, HAnimSegment l_pinky_distal";
-HAnimSegment1225.children = new MFNode();
+let TouchSensor1225 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1225.description = "HAnimJoint l_pinky3, HAnimSegment l_pinky_distal";
+HAnimSegment1224.children = new MFNode();
 
-HAnimSegment1225.children[0] = TouchSensor1226;
+HAnimSegment1224.children[0] = TouchSensor1225;
 
-let Transform1227 = browser.currentScene.createNode("Transform");
-Transform1227.translation = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
-let Shape1228 = browser.currentScene.createNode("Shape");
-Shape1228.USE = "HAnimJointShape";
-Transform1227.children = new MFNode();
+let Transform1226 = browser.currentScene.createNode("Transform");
+Transform1226.translation = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
+let Shape1227 = browser.currentScene.createNode("Shape");
+Shape1227.USE = "HAnimJointShape";
+Transform1226.children = new MFNode();
 
-Transform1227.children[0] = Shape1228;
+Transform1226.children[0] = Shape1227;
 
-HAnimSegment1225.children[1] = Transform1227;
+HAnimSegment1224.children[1] = Transform1226;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='l_pinky3'/> to <HAnimSite name='l_pinky_distal_tip'/>
-let Shape1229 = browser.currentScene.createNode("Shape");
-let LineSet1230 = browser.currentScene.createNode("LineSet");
-LineSet1230.vertexCount = new MFInt32(new int[2]);
-let Coordinate1231 = browser.currentScene.createNode("Coordinate");
-Coordinate1231.point = new MFVec3f(new float[0.1948,0.7277,-0.1017,0.2014,0.7009,-0.1012]);
-LineSet1230.coord = Coordinate1231;
+let Shape1228 = browser.currentScene.createNode("Shape");
+let LineSet1229 = browser.currentScene.createNode("LineSet");
+LineSet1229.vertexCount = new MFInt32(new int[2]);
+let Coordinate1230 = browser.currentScene.createNode("Coordinate");
+Coordinate1230.point = new MFVec3f(new float[0.1948,0.7277,-0.1017,0.2014,0.7009,-0.1012]);
+LineSet1229.coord = Coordinate1230;
 
-let ColorRGBA1232 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1232.USE = "HAnimSiteLineColorRGBA";
-LineSet1230.color = ColorRGBA1232;
+let ColorRGBA1231 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1231.USE = "HAnimSiteLineColorRGBA";
+LineSet1229.color = ColorRGBA1231;
 
-Shape1229.geometry = LineSet1230;
+Shape1228.geometry = LineSet1229;
 
-HAnimSegment1225.children[2] = Shape1229;
+HAnimSegment1224.children[2] = Shape1228;
 
-let HAnimSite1233 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1233.name = "l_pinky_distal_tip";
-HAnimSite1233.DEF = "hanim_l_pinky_distal_tip";
-HAnimSite1233.translation = new SFVec3f(new float[0.2014,0.7009,-0.1012]);
+let HAnimSite1232 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1232.name = "l_pinky_distal_tip";
+HAnimSite1232.DEF = "hanim_l_pinky_distal_tip";
+HAnimSite1232.translation = new SFVec3f(new float[0.2014,0.7009,-0.1012]);
 //HAnimSite visualization shape
-let TouchSensor1234 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1234.description = "HAnimSite l_pinky_distal_tip";
-HAnimSite1233.children = new MFNode();
+let TouchSensor1233 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1233.description = "HAnimSite l_pinky_distal_tip";
+HAnimSite1232.children = new MFNode();
 
-HAnimSite1233.children[0] = TouchSensor1234;
+HAnimSite1232.children[0] = TouchSensor1233;
 
-let Shape1235 = browser.currentScene.createNode("Shape");
-Shape1235.USE = "HAnimSiteShape";
-HAnimSite1233.children[1] = Shape1235;
+let Shape1234 = browser.currentScene.createNode("Shape");
+Shape1234.USE = "HAnimSiteShape";
+HAnimSite1232.children[1] = Shape1234;
 
-HAnimSegment1225.children[3] = HAnimSite1233;
+HAnimSegment1224.children[3] = HAnimSite1232;
 
-HAnimJoint1224.children = new MFNode();
+HAnimJoint1223.children = new MFNode();
 
-HAnimJoint1224.children[0] = HAnimSegment1225;
+HAnimJoint1223.children[0] = HAnimSegment1224;
 
-HAnimJoint1215.children[1] = HAnimJoint1224;
+HAnimJoint1214.children[1] = HAnimJoint1223;
 
-HAnimJoint1206.children[1] = HAnimJoint1215;
+HAnimJoint1205.children[1] = HAnimJoint1214;
 
-HAnimJoint1197.children[1] = HAnimJoint1206;
+HAnimJoint1196.children[1] = HAnimJoint1205;
 
-HAnimJoint985.children[5] = HAnimJoint1197;
+HAnimJoint984.children[5] = HAnimJoint1196;
 
-HAnimJoint948.children[1] = HAnimJoint985;
+HAnimJoint947.children[1] = HAnimJoint984;
 
-HAnimJoint932.children[1] = HAnimJoint948;
+HAnimJoint931.children[1] = HAnimJoint947;
 
-HAnimJoint923.children[1] = HAnimJoint932;
+HAnimJoint922.children[1] = HAnimJoint931;
 
-HAnimJoint886.children[1] = HAnimJoint923;
+HAnimJoint885.children[1] = HAnimJoint922;
 
-HAnimJoint598.children[2] = HAnimJoint886;
+HAnimJoint597.children[2] = HAnimJoint885;
 
-let HAnimJoint1236 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1236.name = "r_sternoclavicular";
-HAnimJoint1236.DEF = "hanim_r_sternoclavicular";
-HAnimJoint1236.center = new SFVec3f(new float[-0.082,1.4488,-0.0353]);
-HAnimJoint1236.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1237 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1237.name = "r_clavicle";
-HAnimSegment1237.DEF = "hanim_r_clavicle";
+let HAnimJoint1235 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1235.name = "r_sternoclavicular";
+HAnimJoint1235.DEF = "hanim_r_sternoclavicular";
+HAnimJoint1235.center = new SFVec3f(new float[-0.082,1.4488,-0.0353]);
+HAnimJoint1235.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1236 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1236.name = "r_clavicle";
+HAnimSegment1236.DEF = "hanim_r_clavicle";
 //<HAnimJoint name='r_sternoclavicular'/> visualization sphere is placed within <HAnimSegment name='r_clavicle'/>
-let TouchSensor1238 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1238.description = "HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle";
-HAnimSegment1237.children = new MFNode();
+let TouchSensor1237 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1237.description = "HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle";
+HAnimSegment1236.children = new MFNode();
 
-HAnimSegment1237.children[0] = TouchSensor1238;
+HAnimSegment1236.children[0] = TouchSensor1237;
 
-let Transform1239 = browser.currentScene.createNode("Transform");
-Transform1239.translation = new SFVec3f(new float[-0.082,1.4488,-0.0353]);
-let Shape1240 = browser.currentScene.createNode("Shape");
-Shape1240.USE = "HAnimJointShape";
-Transform1239.children = new MFNode();
+let Transform1238 = browser.currentScene.createNode("Transform");
+Transform1238.translation = new SFVec3f(new float[-0.082,1.4488,-0.0353]);
+let Shape1239 = browser.currentScene.createNode("Shape");
+Shape1239.USE = "HAnimJointShape";
+Transform1238.children = new MFNode();
 
-Transform1239.children[0] = Shape1240;
+Transform1238.children[0] = Shape1239;
 
-HAnimSegment1237.children[1] = Transform1239;
+HAnimSegment1236.children[1] = Transform1238;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_sternoclavicular'/> to <HAnimJoint name='r_acromioclavicular'/>
-let Shape1241 = browser.currentScene.createNode("Shape");
-let LineSet1242 = browser.currentScene.createNode("LineSet");
-LineSet1242.vertexCount = new MFInt32(new int[2]);
-let Coordinate1243 = browser.currentScene.createNode("Coordinate");
-Coordinate1243.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.0962,1.4269,-0.0424]);
-LineSet1242.coord = Coordinate1243;
+let Shape1240 = browser.currentScene.createNode("Shape");
+let LineSet1241 = browser.currentScene.createNode("LineSet");
+LineSet1241.vertexCount = new MFInt32(new int[2]);
+let Coordinate1242 = browser.currentScene.createNode("Coordinate");
+Coordinate1242.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.0962,1.4269,-0.0424]);
+LineSet1241.coord = Coordinate1242;
 
-let ColorRGBA1244 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1244.USE = "HAnimSegmentLineColorRGBA";
-LineSet1242.color = ColorRGBA1244;
+let ColorRGBA1243 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1243.USE = "HAnimSegmentLineColorRGBA";
+LineSet1241.color = ColorRGBA1243;
 
-Shape1241.geometry = LineSet1242;
+Shape1240.geometry = LineSet1241;
 
-HAnimSegment1237.children[2] = Shape1241;
+HAnimSegment1236.children[2] = Shape1240;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_clavicale'/>
-let Shape1245 = browser.currentScene.createNode("Shape");
-let LineSet1246 = browser.currentScene.createNode("LineSet");
-LineSet1246.vertexCount = new MFInt32(new int[2]);
-let Coordinate1247 = browser.currentScene.createNode("Coordinate");
-Coordinate1247.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.0115,1.4943,0.04]);
-LineSet1246.coord = Coordinate1247;
+let Shape1244 = browser.currentScene.createNode("Shape");
+let LineSet1245 = browser.currentScene.createNode("LineSet");
+LineSet1245.vertexCount = new MFInt32(new int[2]);
+let Coordinate1246 = browser.currentScene.createNode("Coordinate");
+Coordinate1246.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.0115,1.4943,0.04]);
+LineSet1245.coord = Coordinate1246;
 
-let ColorRGBA1248 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1248.USE = "HAnimSiteLineColorRGBA";
-LineSet1246.color = ColorRGBA1248;
+let ColorRGBA1247 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1247.USE = "HAnimSiteLineColorRGBA";
+LineSet1245.color = ColorRGBA1247;
 
-Shape1245.geometry = LineSet1246;
+Shape1244.geometry = LineSet1245;
 
-HAnimSegment1237.children[3] = Shape1245;
+HAnimSegment1236.children[3] = Shape1244;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_acromion'/>
-let Shape1249 = browser.currentScene.createNode("Shape");
-let LineSet1250 = browser.currentScene.createNode("LineSet");
-LineSet1250.vertexCount = new MFInt32(new int[2]);
-let Coordinate1251 = browser.currentScene.createNode("Coordinate");
-Coordinate1251.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1905,1.4791,-0.0431]);
-LineSet1250.coord = Coordinate1251;
+let Shape1248 = browser.currentScene.createNode("Shape");
+let LineSet1249 = browser.currentScene.createNode("LineSet");
+LineSet1249.vertexCount = new MFInt32(new int[2]);
+let Coordinate1250 = browser.currentScene.createNode("Coordinate");
+Coordinate1250.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1905,1.4791,-0.0431]);
+LineSet1249.coord = Coordinate1250;
 
-let ColorRGBA1252 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1252.USE = "HAnimSiteLineColorRGBA";
-LineSet1250.color = ColorRGBA1252;
+let ColorRGBA1251 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1251.USE = "HAnimSiteLineColorRGBA";
+LineSet1249.color = ColorRGBA1251;
 
-Shape1249.geometry = LineSet1250;
+Shape1248.geometry = LineSet1249;
 
-HAnimSegment1237.children[4] = Shape1249;
+HAnimSegment1236.children[4] = Shape1248;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_ant'/>
-let Shape1253 = browser.currentScene.createNode("Shape");
-let LineSet1254 = browser.currentScene.createNode("LineSet");
-LineSet1254.vertexCount = new MFInt32(new int[2]);
-let Coordinate1255 = browser.currentScene.createNode("Coordinate");
-Coordinate1255.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1626,1.4072,-0.0031]);
-LineSet1254.coord = Coordinate1255;
+let Shape1252 = browser.currentScene.createNode("Shape");
+let LineSet1253 = browser.currentScene.createNode("LineSet");
+LineSet1253.vertexCount = new MFInt32(new int[2]);
+let Coordinate1254 = browser.currentScene.createNode("Coordinate");
+Coordinate1254.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1626,1.4072,-0.0031]);
+LineSet1253.coord = Coordinate1254;
 
-let ColorRGBA1256 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1256.USE = "HAnimSiteLineColorRGBA";
-LineSet1254.color = ColorRGBA1256;
+let ColorRGBA1255 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1255.USE = "HAnimSiteLineColorRGBA";
+LineSet1253.color = ColorRGBA1255;
 
-Shape1253.geometry = LineSet1254;
+Shape1252.geometry = LineSet1253;
 
-HAnimSegment1237.children[5] = Shape1253;
+HAnimSegment1236.children[5] = Shape1252;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_post'/>
-let Shape1257 = browser.currentScene.createNode("Shape");
-let LineSet1258 = browser.currentScene.createNode("LineSet");
-LineSet1258.vertexCount = new MFInt32(new int[2]);
-let Coordinate1259 = browser.currentScene.createNode("Coordinate");
-Coordinate1259.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1603,1.4098,-0.0826]);
-LineSet1258.coord = Coordinate1259;
+let Shape1256 = browser.currentScene.createNode("Shape");
+let LineSet1257 = browser.currentScene.createNode("LineSet");
+LineSet1257.vertexCount = new MFInt32(new int[2]);
+let Coordinate1258 = browser.currentScene.createNode("Coordinate");
+Coordinate1258.point = new MFVec3f(new float[-0.082,1.4488,-0.0353,-0.1603,1.4098,-0.0826]);
+LineSet1257.coord = Coordinate1258;
 
-let ColorRGBA1260 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1260.USE = "HAnimSiteLineColorRGBA";
-LineSet1258.color = ColorRGBA1260;
+let ColorRGBA1259 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1259.USE = "HAnimSiteLineColorRGBA";
+LineSet1257.color = ColorRGBA1259;
 
-Shape1257.geometry = LineSet1258;
+Shape1256.geometry = LineSet1257;
 
-HAnimSegment1237.children[6] = Shape1257;
+HAnimSegment1236.children[6] = Shape1256;
 
-let HAnimSite1261 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1261.name = "r_clavicale_pt";
-HAnimSite1261.DEF = "hanim_r_clavicale_pt";
-HAnimSite1261.translation = new SFVec3f(new float[-0.0115,1.4943,0.04]);
+let HAnimSite1260 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1260.name = "r_clavicale_pt";
+HAnimSite1260.DEF = "hanim_r_clavicale_pt";
+HAnimSite1260.translation = new SFVec3f(new float[-0.0115,1.4943,0.04]);
 //HAnimSite visualization shape
-let TouchSensor1262 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1262.description = "HAnimSite r_clavicale";
-HAnimSite1261.children = new MFNode();
+let TouchSensor1261 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1261.description = "HAnimSite r_clavicale";
+HAnimSite1260.children = new MFNode();
 
-HAnimSite1261.children[0] = TouchSensor1262;
+HAnimSite1260.children[0] = TouchSensor1261;
 
-let Shape1263 = browser.currentScene.createNode("Shape");
-Shape1263.USE = "HAnimSiteShape";
-HAnimSite1261.children[1] = Shape1263;
+let Shape1262 = browser.currentScene.createNode("Shape");
+Shape1262.USE = "HAnimSiteShape";
+HAnimSite1260.children[1] = Shape1262;
 
-HAnimSegment1237.children[7] = HAnimSite1261;
+HAnimSegment1236.children[7] = HAnimSite1260;
 
-let HAnimSite1264 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1264.name = "r_acromion_pt";
-HAnimSite1264.DEF = "hanim_r_acromion_pt";
-HAnimSite1264.translation = new SFVec3f(new float[-0.1905,1.4791,-0.0431]);
+let HAnimSite1263 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1263.name = "r_acromion_pt";
+HAnimSite1263.DEF = "hanim_r_acromion_pt";
+HAnimSite1263.translation = new SFVec3f(new float[-0.1905,1.4791,-0.0431]);
 //HAnimSite visualization shape
-let TouchSensor1265 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1265.description = "HAnimSite r_acromion";
-HAnimSite1264.children = new MFNode();
+let TouchSensor1264 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1264.description = "HAnimSite r_acromion";
+HAnimSite1263.children = new MFNode();
 
-HAnimSite1264.children[0] = TouchSensor1265;
+HAnimSite1263.children[0] = TouchSensor1264;
 
-let Shape1266 = browser.currentScene.createNode("Shape");
-Shape1266.USE = "HAnimSiteShape";
-HAnimSite1264.children[1] = Shape1266;
+let Shape1265 = browser.currentScene.createNode("Shape");
+Shape1265.USE = "HAnimSiteShape";
+HAnimSite1263.children[1] = Shape1265;
 
-HAnimSegment1237.children[8] = HAnimSite1264;
+HAnimSegment1236.children[8] = HAnimSite1263;
 
-let HAnimSite1267 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1267.name = "r_axilla_ant_pt";
-HAnimSite1267.DEF = "hanim_r_axilla_ant_pt";
-HAnimSite1267.translation = new SFVec3f(new float[-0.1626,1.4072,-0.0031]);
+let HAnimSite1266 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1266.name = "r_axilla_ant_pt";
+HAnimSite1266.DEF = "hanim_r_axilla_ant_pt";
+HAnimSite1266.translation = new SFVec3f(new float[-0.1626,1.4072,-0.0031]);
 //HAnimSite visualization shape
-let TouchSensor1268 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1268.description = "HAnimSite r_axilla_ant";
-HAnimSite1267.children = new MFNode();
+let TouchSensor1267 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1267.description = "HAnimSite r_axilla_ant";
+HAnimSite1266.children = new MFNode();
 
-HAnimSite1267.children[0] = TouchSensor1268;
+HAnimSite1266.children[0] = TouchSensor1267;
 
-let Shape1269 = browser.currentScene.createNode("Shape");
-Shape1269.USE = "HAnimSiteShape";
-HAnimSite1267.children[1] = Shape1269;
+let Shape1268 = browser.currentScene.createNode("Shape");
+Shape1268.USE = "HAnimSiteShape";
+HAnimSite1266.children[1] = Shape1268;
 
-HAnimSegment1237.children[9] = HAnimSite1267;
+HAnimSegment1236.children[9] = HAnimSite1266;
 
-let HAnimSite1270 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1270.name = "r_axilla_post_pt";
-HAnimSite1270.DEF = "hanim_r_axilla_post_pt";
-HAnimSite1270.translation = new SFVec3f(new float[-0.1603,1.4098,-0.0826]);
+let HAnimSite1269 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1269.name = "r_axilla_post_pt";
+HAnimSite1269.DEF = "hanim_r_axilla_post_pt";
+HAnimSite1269.translation = new SFVec3f(new float[-0.1603,1.4098,-0.0826]);
 //HAnimSite visualization shape
-let TouchSensor1271 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1271.description = "HAnimSite r_axilla_post";
-HAnimSite1270.children = new MFNode();
+let TouchSensor1270 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1270.description = "HAnimSite r_axilla_post";
+HAnimSite1269.children = new MFNode();
 
-HAnimSite1270.children[0] = TouchSensor1271;
+HAnimSite1269.children[0] = TouchSensor1270;
 
-let Shape1272 = browser.currentScene.createNode("Shape");
-Shape1272.USE = "HAnimSiteShape";
-HAnimSite1270.children[1] = Shape1272;
+let Shape1271 = browser.currentScene.createNode("Shape");
+Shape1271.USE = "HAnimSiteShape";
+HAnimSite1269.children[1] = Shape1271;
 
-HAnimSegment1237.children[10] = HAnimSite1270;
+HAnimSegment1236.children[10] = HAnimSite1269;
 
-HAnimJoint1236.children = new MFNode();
+HAnimJoint1235.children = new MFNode();
 
-HAnimJoint1236.children[0] = HAnimSegment1237;
+HAnimJoint1235.children[0] = HAnimSegment1236;
 
-let HAnimJoint1273 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1273.name = "r_acromioclavicular";
-HAnimJoint1273.DEF = "hanim_r_acromioclavicular";
-HAnimJoint1273.center = new SFVec3f(new float[-0.0962,1.4269,-0.0424]);
-HAnimJoint1273.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1274 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1274.name = "r_scapula";
-HAnimSegment1274.DEF = "hanim_r_scapula";
+let HAnimJoint1272 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1272.name = "r_acromioclavicular";
+HAnimJoint1272.DEF = "hanim_r_acromioclavicular";
+HAnimJoint1272.center = new SFVec3f(new float[-0.0962,1.4269,-0.0424]);
+HAnimJoint1272.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1273 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1273.name = "r_scapula";
+HAnimSegment1273.DEF = "hanim_r_scapula";
 //<HAnimJoint name='r_acromioclavicular'/> visualization sphere is placed within <HAnimSegment name='r_scapula'/>
-let TouchSensor1275 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1275.description = "HAnimJoint r_acromioclavicular, HAnimSegment r_scapula";
-HAnimSegment1274.children = new MFNode();
+let TouchSensor1274 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1274.description = "HAnimJoint r_acromioclavicular, HAnimSegment r_scapula";
+HAnimSegment1273.children = new MFNode();
 
-HAnimSegment1274.children[0] = TouchSensor1275;
+HAnimSegment1273.children[0] = TouchSensor1274;
 
-let Transform1276 = browser.currentScene.createNode("Transform");
-Transform1276.translation = new SFVec3f(new float[-0.0962,1.4269,-0.0424]);
-let Shape1277 = browser.currentScene.createNode("Shape");
-Shape1277.USE = "HAnimJointShape";
-Transform1276.children = new MFNode();
+let Transform1275 = browser.currentScene.createNode("Transform");
+Transform1275.translation = new SFVec3f(new float[-0.0962,1.4269,-0.0424]);
+let Shape1276 = browser.currentScene.createNode("Shape");
+Shape1276.USE = "HAnimJointShape";
+Transform1275.children = new MFNode();
 
-Transform1276.children[0] = Shape1277;
+Transform1275.children[0] = Shape1276;
 
-HAnimSegment1274.children[1] = Transform1276;
+HAnimSegment1273.children[1] = Transform1275;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_acromioclavicular'/> to <HAnimJoint name='r_shoulder'/>
-let Shape1278 = browser.currentScene.createNode("Shape");
-let LineSet1279 = browser.currentScene.createNode("LineSet");
-LineSet1279.vertexCount = new MFInt32(new int[2]);
-let Coordinate1280 = browser.currentScene.createNode("Coordinate");
-Coordinate1280.point = new MFVec3f(new float[-0.0962,1.4269,-0.0424,-0.2029,1.4376,-0.0387]);
-LineSet1279.coord = Coordinate1280;
+let Shape1277 = browser.currentScene.createNode("Shape");
+let LineSet1278 = browser.currentScene.createNode("LineSet");
+LineSet1278.vertexCount = new MFInt32(new int[2]);
+let Coordinate1279 = browser.currentScene.createNode("Coordinate");
+Coordinate1279.point = new MFVec3f(new float[-0.0962,1.4269,-0.0424,-0.2029,1.4376,-0.0387]);
+LineSet1278.coord = Coordinate1279;
 
-let ColorRGBA1281 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1281.USE = "HAnimSegmentLineColorRGBA";
-LineSet1279.color = ColorRGBA1281;
+let ColorRGBA1280 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1280.USE = "HAnimSegmentLineColorRGBA";
+LineSet1278.color = ColorRGBA1280;
 
-Shape1278.geometry = LineSet1279;
+Shape1277.geometry = LineSet1278;
 
-HAnimSegment1274.children[2] = Shape1278;
+HAnimSegment1273.children[2] = Shape1277;
 
-HAnimJoint1273.children = new MFNode();
+HAnimJoint1272.children = new MFNode();
 
-HAnimJoint1273.children[0] = HAnimSegment1274;
+HAnimJoint1272.children[0] = HAnimSegment1273;
 
-let HAnimJoint1282 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1282.name = "r_shoulder";
-HAnimJoint1282.DEF = "hanim_r_shoulder";
-HAnimJoint1282.center = new SFVec3f(new float[-0.2029,1.4376,-0.0387]);
-HAnimJoint1282.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1283 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1283.name = "r_upperarm";
-HAnimSegment1283.DEF = "hanim_r_upperarm";
+let HAnimJoint1281 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1281.name = "r_shoulder";
+HAnimJoint1281.DEF = "hanim_r_shoulder";
+HAnimJoint1281.center = new SFVec3f(new float[-0.2029,1.4376,-0.0387]);
+HAnimJoint1281.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1282 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1282.name = "r_upperarm";
+HAnimSegment1282.DEF = "hanim_r_upperarm";
 //<HAnimJoint name='r_shoulder'/> visualization sphere is placed within <HAnimSegment name='r_upperarm'/>
-let TouchSensor1284 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1284.description = "HAnimJoint r_shoulder, HAnimSegment r_upperarm";
-HAnimSegment1283.children = new MFNode();
+let TouchSensor1283 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1283.description = "HAnimJoint r_shoulder, HAnimSegment r_upperarm";
+HAnimSegment1282.children = new MFNode();
 
-HAnimSegment1283.children[0] = TouchSensor1284;
+HAnimSegment1282.children[0] = TouchSensor1283;
 
-let Transform1285 = browser.currentScene.createNode("Transform");
-Transform1285.translation = new SFVec3f(new float[-0.2029,1.4376,-0.0387]);
-let Shape1286 = browser.currentScene.createNode("Shape");
-Shape1286.USE = "HAnimJointShape";
-Transform1285.children = new MFNode();
+let Transform1284 = browser.currentScene.createNode("Transform");
+Transform1284.translation = new SFVec3f(new float[-0.2029,1.4376,-0.0387]);
+let Shape1285 = browser.currentScene.createNode("Shape");
+Shape1285.USE = "HAnimJointShape";
+Transform1284.children = new MFNode();
 
-Transform1285.children[0] = Shape1286;
+Transform1284.children[0] = Shape1285;
 
-HAnimSegment1283.children[1] = Transform1285;
+HAnimSegment1282.children[1] = Transform1284;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_shoulder'/> to <HAnimJoint name='r_elbow'/>
-let Shape1287 = browser.currentScene.createNode("Shape");
-let LineSet1288 = browser.currentScene.createNode("LineSet");
-LineSet1288.vertexCount = new MFInt32(new int[2]);
-let Coordinate1289 = browser.currentScene.createNode("Coordinate");
-Coordinate1289.point = new MFVec3f(new float[-0.2029,1.4376,-0.0387,-0.2014,1.1357,-0.0682]);
-LineSet1288.coord = Coordinate1289;
+let Shape1286 = browser.currentScene.createNode("Shape");
+let LineSet1287 = browser.currentScene.createNode("LineSet");
+LineSet1287.vertexCount = new MFInt32(new int[2]);
+let Coordinate1288 = browser.currentScene.createNode("Coordinate");
+Coordinate1288.point = new MFVec3f(new float[-0.2029,1.4376,-0.0387,-0.2014,1.1357,-0.0682]);
+LineSet1287.coord = Coordinate1288;
 
-let ColorRGBA1290 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1290.USE = "HAnimSegmentLineColorRGBA";
-LineSet1288.color = ColorRGBA1290;
+let ColorRGBA1289 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1289.USE = "HAnimSegmentLineColorRGBA";
+LineSet1287.color = ColorRGBA1289;
 
-Shape1287.geometry = LineSet1288;
+Shape1286.geometry = LineSet1287;
 
-HAnimSegment1283.children[2] = Shape1287;
+HAnimSegment1282.children[2] = Shape1286;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_shoulder'/> to <HAnimSite name='r_humeral_lateral_epicn'/>
-let Shape1291 = browser.currentScene.createNode("Shape");
-let LineSet1292 = browser.currentScene.createNode("LineSet");
-LineSet1292.vertexCount = new MFInt32(new int[2]);
-let Coordinate1293 = browser.currentScene.createNode("Coordinate");
-Coordinate1293.point = new MFVec3f(new float[-0.2029,1.4376,-0.0387,-0.2224,1.1517,-0.1033]);
-LineSet1292.coord = Coordinate1293;
+let Shape1290 = browser.currentScene.createNode("Shape");
+let LineSet1291 = browser.currentScene.createNode("LineSet");
+LineSet1291.vertexCount = new MFInt32(new int[2]);
+let Coordinate1292 = browser.currentScene.createNode("Coordinate");
+Coordinate1292.point = new MFVec3f(new float[-0.2029,1.4376,-0.0387,-0.2224,1.1517,-0.1033]);
+LineSet1291.coord = Coordinate1292;
 
-let ColorRGBA1294 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1294.USE = "HAnimSiteLineColorRGBA";
-LineSet1292.color = ColorRGBA1294;
+let ColorRGBA1293 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1293.USE = "HAnimSiteLineColorRGBA";
+LineSet1291.color = ColorRGBA1293;
 
-Shape1291.geometry = LineSet1292;
+Shape1290.geometry = LineSet1291;
 
-HAnimSegment1283.children[3] = Shape1291;
+HAnimSegment1282.children[3] = Shape1290;
 
-let HAnimSite1295 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1295.name = "r_humeral_lateral_epicn_pt";
-HAnimSite1295.DEF = "hanim_r_humeral_lateral_epicn_pt";
-HAnimSite1295.translation = new SFVec3f(new float[-0.2224,1.1517,-0.1033]);
+let HAnimSite1294 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1294.name = "r_humeral_lateral_epicn_pt";
+HAnimSite1294.DEF = "hanim_r_humeral_lateral_epicn_pt";
+HAnimSite1294.translation = new SFVec3f(new float[-0.2224,1.1517,-0.1033]);
 //HAnimSite visualization shape
-let TouchSensor1296 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1296.description = "HAnimSite r_humeral_lateral_epicn";
-HAnimSite1295.children = new MFNode();
+let TouchSensor1295 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1295.description = "HAnimSite r_humeral_lateral_epicn";
+HAnimSite1294.children = new MFNode();
 
-HAnimSite1295.children[0] = TouchSensor1296;
+HAnimSite1294.children[0] = TouchSensor1295;
 
-let Shape1297 = browser.currentScene.createNode("Shape");
-Shape1297.USE = "HAnimSiteShape";
-HAnimSite1295.children[1] = Shape1297;
+let Shape1296 = browser.currentScene.createNode("Shape");
+Shape1296.USE = "HAnimSiteShape";
+HAnimSite1294.children[1] = Shape1296;
 
-HAnimSegment1283.children[4] = HAnimSite1295;
+HAnimSegment1282.children[4] = HAnimSite1294;
 
-HAnimJoint1282.children = new MFNode();
+HAnimJoint1281.children = new MFNode();
 
-HAnimJoint1282.children[0] = HAnimSegment1283;
+HAnimJoint1281.children[0] = HAnimSegment1282;
 
-let HAnimJoint1298 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1298.name = "r_elbow";
-HAnimJoint1298.DEF = "hanim_r_elbow";
-HAnimJoint1298.center = new SFVec3f(new float[-0.2014,1.1357,-0.0682]);
-HAnimJoint1298.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1299 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1299.name = "r_forearm";
-HAnimSegment1299.DEF = "hanim_r_forearm";
+let HAnimJoint1297 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1297.name = "r_elbow";
+HAnimJoint1297.DEF = "hanim_r_elbow";
+HAnimJoint1297.center = new SFVec3f(new float[-0.2014,1.1357,-0.0682]);
+HAnimJoint1297.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1298 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1298.name = "r_forearm";
+HAnimSegment1298.DEF = "hanim_r_forearm";
 //<HAnimJoint name='r_elbow'/> visualization sphere is placed within <HAnimSegment name='r_forearm'/>
-let TouchSensor1300 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1300.description = "HAnimJoint r_elbow, HAnimSegment r_forearm";
-HAnimSegment1299.children = new MFNode();
+let TouchSensor1299 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1299.description = "HAnimJoint r_elbow, HAnimSegment r_forearm";
+HAnimSegment1298.children = new MFNode();
 
-HAnimSegment1299.children[0] = TouchSensor1300;
+HAnimSegment1298.children[0] = TouchSensor1299;
 
-let Transform1301 = browser.currentScene.createNode("Transform");
-Transform1301.translation = new SFVec3f(new float[-0.2014,1.1357,-0.0682]);
-let Shape1302 = browser.currentScene.createNode("Shape");
-Shape1302.USE = "HAnimJointShape";
-Transform1301.children = new MFNode();
+let Transform1300 = browser.currentScene.createNode("Transform");
+Transform1300.translation = new SFVec3f(new float[-0.2014,1.1357,-0.0682]);
+let Shape1301 = browser.currentScene.createNode("Shape");
+Shape1301.USE = "HAnimJointShape";
+Transform1300.children = new MFNode();
 
-Transform1301.children[0] = Shape1302;
+Transform1300.children[0] = Shape1301;
 
-HAnimSegment1299.children[1] = Transform1301;
+HAnimSegment1298.children[1] = Transform1300;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_elbow'/> to <HAnimJoint name='r_wrist'/>
-let Shape1303 = browser.currentScene.createNode("Shape");
-let LineSet1304 = browser.currentScene.createNode("LineSet");
-LineSet1304.vertexCount = new MFInt32(new int[2]);
-let Coordinate1305 = browser.currentScene.createNode("Coordinate");
-Coordinate1305.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1984,0.8663,-0.0583]);
-LineSet1304.coord = Coordinate1305;
+let Shape1302 = browser.currentScene.createNode("Shape");
+let LineSet1303 = browser.currentScene.createNode("LineSet");
+LineSet1303.vertexCount = new MFInt32(new int[2]);
+let Coordinate1304 = browser.currentScene.createNode("Coordinate");
+Coordinate1304.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1984,0.8663,-0.0583]);
+LineSet1303.coord = Coordinate1304;
 
-let ColorRGBA1306 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1306.USE = "HAnimSegmentLineColorRGBA";
-LineSet1304.color = ColorRGBA1306;
+let ColorRGBA1305 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1305.USE = "HAnimSegmentLineColorRGBA";
+LineSet1303.color = ColorRGBA1305;
 
-Shape1303.geometry = LineSet1304;
+Shape1302.geometry = LineSet1303;
 
-HAnimSegment1299.children[2] = Shape1303;
+HAnimSegment1298.children[2] = Shape1302;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radial_styloid'/>
-let Shape1307 = browser.currentScene.createNode("Shape");
-let LineSet1308 = browser.currentScene.createNode("LineSet");
-LineSet1308.vertexCount = new MFInt32(new int[2]);
-let Coordinate1309 = browser.currentScene.createNode("Coordinate");
-Coordinate1309.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1884,0.8676,-0.036]);
-LineSet1308.coord = Coordinate1309;
+let Shape1306 = browser.currentScene.createNode("Shape");
+let LineSet1307 = browser.currentScene.createNode("LineSet");
+LineSet1307.vertexCount = new MFInt32(new int[2]);
+let Coordinate1308 = browser.currentScene.createNode("Coordinate");
+Coordinate1308.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1884,0.8676,-0.036]);
+LineSet1307.coord = Coordinate1308;
 
-let ColorRGBA1310 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1310.USE = "HAnimSiteLineColorRGBA";
-LineSet1308.color = ColorRGBA1310;
+let ColorRGBA1309 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1309.USE = "HAnimSiteLineColorRGBA";
+LineSet1307.color = ColorRGBA1309;
 
-Shape1307.geometry = LineSet1308;
+Shape1306.geometry = LineSet1307;
 
-HAnimSegment1299.children[3] = Shape1307;
+HAnimSegment1298.children[3] = Shape1306;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_olecranon'/>
-let Shape1311 = browser.currentScene.createNode("Shape");
-let LineSet1312 = browser.currentScene.createNode("LineSet");
-LineSet1312.vertexCount = new MFInt32(new int[2]);
-let Coordinate1313 = browser.currentScene.createNode("Coordinate");
-Coordinate1313.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1907,1.1405,-0.1065]);
-LineSet1312.coord = Coordinate1313;
+let Shape1310 = browser.currentScene.createNode("Shape");
+let LineSet1311 = browser.currentScene.createNode("LineSet");
+LineSet1311.vertexCount = new MFInt32(new int[2]);
+let Coordinate1312 = browser.currentScene.createNode("Coordinate");
+Coordinate1312.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.1907,1.1405,-0.1065]);
+LineSet1311.coord = Coordinate1312;
 
-let ColorRGBA1314 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1314.USE = "HAnimSiteLineColorRGBA";
-LineSet1312.color = ColorRGBA1314;
+let ColorRGBA1313 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1313.USE = "HAnimSiteLineColorRGBA";
+LineSet1311.color = ColorRGBA1313;
 
-Shape1311.geometry = LineSet1312;
+Shape1310.geometry = LineSet1311;
 
-HAnimSegment1299.children[4] = Shape1311;
+HAnimSegment1298.children[4] = Shape1310;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_humeral_medial_epicn'/>
-let Shape1315 = browser.currentScene.createNode("Shape");
-let LineSet1316 = browser.currentScene.createNode("LineSet");
-LineSet1316.vertexCount = new MFInt32(new int[2]);
-let Coordinate1317 = browser.currentScene.createNode("Coordinate");
-Coordinate1317.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.168,1.1298,-0.1062]);
-LineSet1316.coord = Coordinate1317;
+let Shape1314 = browser.currentScene.createNode("Shape");
+let LineSet1315 = browser.currentScene.createNode("LineSet");
+LineSet1315.vertexCount = new MFInt32(new int[2]);
+let Coordinate1316 = browser.currentScene.createNode("Coordinate");
+Coordinate1316.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.168,1.1298,-0.1062]);
+LineSet1315.coord = Coordinate1316;
 
-let ColorRGBA1318 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1318.USE = "HAnimSiteLineColorRGBA";
-LineSet1316.color = ColorRGBA1318;
+let ColorRGBA1317 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1317.USE = "HAnimSiteLineColorRGBA";
+LineSet1315.color = ColorRGBA1317;
 
-Shape1315.geometry = LineSet1316;
+Shape1314.geometry = LineSet1315;
 
-HAnimSegment1299.children[5] = Shape1315;
+HAnimSegment1298.children[5] = Shape1314;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radiale'/>
-let Shape1319 = browser.currentScene.createNode("Shape");
-let LineSet1320 = browser.currentScene.createNode("LineSet");
-LineSet1320.vertexCount = new MFInt32(new int[2]);
-let Coordinate1321 = browser.currentScene.createNode("Coordinate");
-Coordinate1321.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.213,1.1305,-0.1091]);
-LineSet1320.coord = Coordinate1321;
+let Shape1318 = browser.currentScene.createNode("Shape");
+let LineSet1319 = browser.currentScene.createNode("LineSet");
+LineSet1319.vertexCount = new MFInt32(new int[2]);
+let Coordinate1320 = browser.currentScene.createNode("Coordinate");
+Coordinate1320.point = new MFVec3f(new float[-0.2014,1.1357,-0.0682,-0.213,1.1305,-0.1091]);
+LineSet1319.coord = Coordinate1320;
 
-let ColorRGBA1322 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1322.USE = "HAnimSiteLineColorRGBA";
-LineSet1320.color = ColorRGBA1322;
+let ColorRGBA1321 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1321.USE = "HAnimSiteLineColorRGBA";
+LineSet1319.color = ColorRGBA1321;
 
-Shape1319.geometry = LineSet1320;
+Shape1318.geometry = LineSet1319;
 
-HAnimSegment1299.children[6] = Shape1319;
+HAnimSegment1298.children[6] = Shape1318;
 
-let HAnimSite1323 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1323.name = "r_radial_styloid_pt";
-HAnimSite1323.DEF = "hanim_r_radial_styloid_pt";
-HAnimSite1323.translation = new SFVec3f(new float[-0.1884,0.8676,-0.036]);
+let HAnimSite1322 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1322.name = "r_radial_styloid_pt";
+HAnimSite1322.DEF = "hanim_r_radial_styloid_pt";
+HAnimSite1322.translation = new SFVec3f(new float[-0.1884,0.8676,-0.036]);
 //HAnimSite visualization shape
-let TouchSensor1324 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1324.description = "HAnimSite r_radial_styloid";
-HAnimSite1323.children = new MFNode();
+let TouchSensor1323 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1323.description = "HAnimSite r_radial_styloid";
+HAnimSite1322.children = new MFNode();
 
-HAnimSite1323.children[0] = TouchSensor1324;
+HAnimSite1322.children[0] = TouchSensor1323;
 
-let Shape1325 = browser.currentScene.createNode("Shape");
-Shape1325.USE = "HAnimSiteShape";
-HAnimSite1323.children[1] = Shape1325;
+let Shape1324 = browser.currentScene.createNode("Shape");
+Shape1324.USE = "HAnimSiteShape";
+HAnimSite1322.children[1] = Shape1324;
 
-HAnimSegment1299.children[7] = HAnimSite1323;
+HAnimSegment1298.children[7] = HAnimSite1322;
 
-let HAnimSite1326 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1326.name = "r_olecranon_pt";
-HAnimSite1326.DEF = "hanim_r_olecranon_pt";
-HAnimSite1326.translation = new SFVec3f(new float[-0.1907,1.1405,-0.1065]);
+let HAnimSite1325 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1325.name = "r_olecranon_pt";
+HAnimSite1325.DEF = "hanim_r_olecranon_pt";
+HAnimSite1325.translation = new SFVec3f(new float[-0.1907,1.1405,-0.1065]);
 //HAnimSite visualization shape
-let TouchSensor1327 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1327.description = "HAnimSite r_olecranon";
-HAnimSite1326.children = new MFNode();
+let TouchSensor1326 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1326.description = "HAnimSite r_olecranon";
+HAnimSite1325.children = new MFNode();
 
-HAnimSite1326.children[0] = TouchSensor1327;
+HAnimSite1325.children[0] = TouchSensor1326;
 
-let Shape1328 = browser.currentScene.createNode("Shape");
-Shape1328.USE = "HAnimSiteShape";
-HAnimSite1326.children[1] = Shape1328;
+let Shape1327 = browser.currentScene.createNode("Shape");
+Shape1327.USE = "HAnimSiteShape";
+HAnimSite1325.children[1] = Shape1327;
 
-HAnimSegment1299.children[8] = HAnimSite1326;
+HAnimSegment1298.children[8] = HAnimSite1325;
 
-let HAnimSite1329 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1329.name = "r_humeral_medial_epicn_pt";
-HAnimSite1329.DEF = "hanim_r_humeral_medial_epicn_pt";
-HAnimSite1329.translation = new SFVec3f(new float[-0.168,1.1298,-0.1062]);
+let HAnimSite1328 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1328.name = "r_humeral_medial_epicn_pt";
+HAnimSite1328.DEF = "hanim_r_humeral_medial_epicn_pt";
+HAnimSite1328.translation = new SFVec3f(new float[-0.168,1.1298,-0.1062]);
 //HAnimSite visualization shape
-let TouchSensor1330 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1330.description = "HAnimSite r_humeral_medial_epicn";
-HAnimSite1329.children = new MFNode();
+let TouchSensor1329 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1329.description = "HAnimSite r_humeral_medial_epicn";
+HAnimSite1328.children = new MFNode();
 
-HAnimSite1329.children[0] = TouchSensor1330;
+HAnimSite1328.children[0] = TouchSensor1329;
 
-let Shape1331 = browser.currentScene.createNode("Shape");
-Shape1331.USE = "HAnimSiteShape";
-HAnimSite1329.children[1] = Shape1331;
+let Shape1330 = browser.currentScene.createNode("Shape");
+Shape1330.USE = "HAnimSiteShape";
+HAnimSite1328.children[1] = Shape1330;
 
-HAnimSegment1299.children[9] = HAnimSite1329;
+HAnimSegment1298.children[9] = HAnimSite1328;
 
-let HAnimSite1332 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1332.name = "r_radiale_pt";
-HAnimSite1332.DEF = "hanim_r_radiale_pt";
-HAnimSite1332.translation = new SFVec3f(new float[-0.213,1.1305,-0.1091]);
+let HAnimSite1331 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1331.name = "r_radiale_pt";
+HAnimSite1331.DEF = "hanim_r_radiale_pt";
+HAnimSite1331.translation = new SFVec3f(new float[-0.213,1.1305,-0.1091]);
 //HAnimSite visualization shape
-let TouchSensor1333 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1333.description = "HAnimSite r_radiale";
-HAnimSite1332.children = new MFNode();
+let TouchSensor1332 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1332.description = "HAnimSite r_radiale";
+HAnimSite1331.children = new MFNode();
 
-HAnimSite1332.children[0] = TouchSensor1333;
+HAnimSite1331.children[0] = TouchSensor1332;
 
-let Shape1334 = browser.currentScene.createNode("Shape");
-Shape1334.USE = "HAnimSiteShape";
-HAnimSite1332.children[1] = Shape1334;
+let Shape1333 = browser.currentScene.createNode("Shape");
+Shape1333.USE = "HAnimSiteShape";
+HAnimSite1331.children[1] = Shape1333;
 
-HAnimSegment1299.children[10] = HAnimSite1332;
+HAnimSegment1298.children[10] = HAnimSite1331;
 
-HAnimJoint1298.children = new MFNode();
+HAnimJoint1297.children = new MFNode();
 
-HAnimJoint1298.children[0] = HAnimSegment1299;
+HAnimJoint1297.children[0] = HAnimSegment1298;
 
-let HAnimJoint1335 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1335.name = "r_wrist";
-HAnimJoint1335.DEF = "hanim_r_wrist";
-HAnimJoint1335.center = new SFVec3f(new float[-0.1984,0.8663,-0.0583]);
-HAnimJoint1335.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1336 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1336.name = "r_hand";
-HAnimSegment1336.DEF = "hanim_r_hand";
+let HAnimJoint1334 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1334.name = "r_wrist";
+HAnimJoint1334.DEF = "hanim_r_wrist";
+HAnimJoint1334.center = new SFVec3f(new float[-0.1984,0.8663,-0.0583]);
+HAnimJoint1334.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1335 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1335.name = "r_hand";
+HAnimSegment1335.DEF = "hanim_r_hand";
 //<HAnimJoint name='r_wrist'/> visualization sphere is placed within <HAnimSegment name='r_hand'/>
-let TouchSensor1337 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1337.description = "HAnimJoint r_wrist, HAnimSegment r_hand";
-HAnimSegment1336.children = new MFNode();
+let TouchSensor1336 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1336.description = "HAnimJoint r_wrist, HAnimSegment r_hand";
+HAnimSegment1335.children = new MFNode();
 
-HAnimSegment1336.children[0] = TouchSensor1337;
+HAnimSegment1335.children[0] = TouchSensor1336;
 
-let Transform1338 = browser.currentScene.createNode("Transform");
-Transform1338.translation = new SFVec3f(new float[-0.1984,0.8663,-0.0583]);
-let Shape1339 = browser.currentScene.createNode("Shape");
-Shape1339.USE = "HAnimJointShape";
-Transform1338.children = new MFNode();
+let Transform1337 = browser.currentScene.createNode("Transform");
+Transform1337.translation = new SFVec3f(new float[-0.1984,0.8663,-0.0583]);
+let Shape1338 = browser.currentScene.createNode("Shape");
+Shape1338.USE = "HAnimJointShape";
+Transform1337.children = new MFNode();
 
-Transform1338.children[0] = Shape1339;
+Transform1337.children[0] = Shape1338;
 
-HAnimSegment1336.children[1] = Transform1338;
+HAnimSegment1335.children[1] = Transform1337;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'/> to <HAnimJoint name='r_thumb1'/>
-let Shape1340 = browser.currentScene.createNode("Shape");
-let LineSet1341 = browser.currentScene.createNode("LineSet");
-LineSet1341.vertexCount = new MFInt32(new int[2]);
-let Coordinate1342 = browser.currentScene.createNode("Coordinate");
-Coordinate1342.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1924,0.8472,-0.0534]);
-LineSet1341.coord = Coordinate1342;
+let Shape1339 = browser.currentScene.createNode("Shape");
+let LineSet1340 = browser.currentScene.createNode("LineSet");
+LineSet1340.vertexCount = new MFInt32(new int[2]);
+let Coordinate1341 = browser.currentScene.createNode("Coordinate");
+Coordinate1341.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1924,0.8472,-0.0534]);
+LineSet1340.coord = Coordinate1341;
 
-let ColorRGBA1343 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1343.USE = "HAnimSegmentLineColorRGBA";
-LineSet1341.color = ColorRGBA1343;
+let ColorRGBA1342 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1342.USE = "HAnimSegmentLineColorRGBA";
+LineSet1340.color = ColorRGBA1342;
 
-Shape1340.geometry = LineSet1341;
+Shape1339.geometry = LineSet1340;
 
-HAnimSegment1336.children[2] = Shape1340;
+HAnimSegment1335.children[2] = Shape1339;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'/> to <HAnimJoint name='r_index0'/>
-let Shape1344 = browser.currentScene.createNode("Shape");
-let LineSet1345 = browser.currentScene.createNode("LineSet");
-LineSet1345.vertexCount = new MFInt32(new int[2]);
-let Coordinate1346 = browser.currentScene.createNode("Coordinate");
-Coordinate1346.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1983,0.8024,-0.028]);
-LineSet1345.coord = Coordinate1346;
+let Shape1343 = browser.currentScene.createNode("Shape");
+let LineSet1344 = browser.currentScene.createNode("LineSet");
+LineSet1344.vertexCount = new MFInt32(new int[2]);
+let Coordinate1345 = browser.currentScene.createNode("Coordinate");
+Coordinate1345.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1983,0.8024,-0.028]);
+LineSet1344.coord = Coordinate1345;
 
-let ColorRGBA1347 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1347.USE = "HAnimSegmentLineColorRGBA";
-LineSet1345.color = ColorRGBA1347;
+let ColorRGBA1346 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1346.USE = "HAnimSegmentLineColorRGBA";
+LineSet1344.color = ColorRGBA1346;
 
-Shape1344.geometry = LineSet1345;
+Shape1343.geometry = LineSet1344;
 
-HAnimSegment1336.children[3] = Shape1344;
+HAnimSegment1335.children[3] = Shape1343;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'/> to <HAnimJoint name='r_middle0'/>
-let Shape1348 = browser.currentScene.createNode("Shape");
-let LineSet1349 = browser.currentScene.createNode("LineSet");
-LineSet1349.vertexCount = new MFInt32(new int[2]);
-let Coordinate1350 = browser.currentScene.createNode("Coordinate");
-Coordinate1350.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1987,0.8029,-0.053]);
-LineSet1349.coord = Coordinate1350;
+let Shape1347 = browser.currentScene.createNode("Shape");
+let LineSet1348 = browser.currentScene.createNode("LineSet");
+LineSet1348.vertexCount = new MFInt32(new int[2]);
+let Coordinate1349 = browser.currentScene.createNode("Coordinate");
+Coordinate1349.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1987,0.8029,-0.053]);
+LineSet1348.coord = Coordinate1349;
 
-let ColorRGBA1351 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1351.USE = "HAnimSegmentLineColorRGBA";
-LineSet1349.color = ColorRGBA1351;
+let ColorRGBA1350 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1350.USE = "HAnimSegmentLineColorRGBA";
+LineSet1348.color = ColorRGBA1350;
 
-Shape1348.geometry = LineSet1349;
+Shape1347.geometry = LineSet1348;
 
-HAnimSegment1336.children[4] = Shape1348;
+HAnimSegment1335.children[4] = Shape1347;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'/> to <HAnimJoint name='r_ring0'/>
-let Shape1352 = browser.currentScene.createNode("Shape");
-let LineSet1353 = browser.currentScene.createNode("LineSet");
-LineSet1353.vertexCount = new MFInt32(new int[2]);
-let Coordinate1354 = browser.currentScene.createNode("Coordinate");
-Coordinate1354.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1956,0.8019,-0.0794]);
-LineSet1353.coord = Coordinate1354;
+let Shape1351 = browser.currentScene.createNode("Shape");
+let LineSet1352 = browser.currentScene.createNode("LineSet");
+LineSet1352.vertexCount = new MFInt32(new int[2]);
+let Coordinate1353 = browser.currentScene.createNode("Coordinate");
+Coordinate1353.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1956,0.8019,-0.0794]);
+LineSet1352.coord = Coordinate1353;
 
-let ColorRGBA1355 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1355.USE = "HAnimSegmentLineColorRGBA";
-LineSet1353.color = ColorRGBA1355;
+let ColorRGBA1354 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1354.USE = "HAnimSegmentLineColorRGBA";
+LineSet1352.color = ColorRGBA1354;
 
-Shape1352.geometry = LineSet1353;
+Shape1351.geometry = LineSet1352;
 
-HAnimSegment1336.children[5] = Shape1352;
+HAnimSegment1335.children[5] = Shape1351;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'/> to <HAnimJoint name='r_pinky0'/>
-let Shape1356 = browser.currentScene.createNode("Shape");
-let LineSet1357 = browser.currentScene.createNode("LineSet");
-LineSet1357.vertexCount = new MFInt32(new int[2]);
-let Coordinate1358 = browser.currentScene.createNode("Coordinate");
-Coordinate1358.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1925,0.8066,-0.1036]);
-LineSet1357.coord = Coordinate1358;
+let Shape1355 = browser.currentScene.createNode("Shape");
+let LineSet1356 = browser.currentScene.createNode("LineSet");
+LineSet1356.vertexCount = new MFInt32(new int[2]);
+let Coordinate1357 = browser.currentScene.createNode("Coordinate");
+Coordinate1357.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1925,0.8066,-0.1036]);
+LineSet1356.coord = Coordinate1357;
 
-let ColorRGBA1359 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1359.USE = "HAnimSegmentLineColorRGBA";
-LineSet1357.color = ColorRGBA1359;
+let ColorRGBA1358 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1358.USE = "HAnimSegmentLineColorRGBA";
+LineSet1356.color = ColorRGBA1358;
 
-Shape1356.geometry = LineSet1357;
+Shape1355.geometry = LineSet1356;
 
-HAnimSegment1336.children[6] = Shape1356;
+HAnimSegment1335.children[6] = Shape1355;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_wrist'/> to <HAnimSite name='r_metacarpal_pha2'/>
-let Shape1360 = browser.currentScene.createNode("Shape");
-let LineSet1361 = browser.currentScene.createNode("LineSet");
-LineSet1361.vertexCount = new MFInt32(new int[2]);
-let Coordinate1362 = browser.currentScene.createNode("Coordinate");
-Coordinate1362.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1977,0.8169,-0.0177]);
-LineSet1361.coord = Coordinate1362;
+let Shape1359 = browser.currentScene.createNode("Shape");
+let LineSet1360 = browser.currentScene.createNode("LineSet");
+LineSet1360.vertexCount = new MFInt32(new int[2]);
+let Coordinate1361 = browser.currentScene.createNode("Coordinate");
+Coordinate1361.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1977,0.8169,-0.0177]);
+LineSet1360.coord = Coordinate1361;
 
-let ColorRGBA1363 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1363.USE = "HAnimSiteLineColorRGBA";
-LineSet1361.color = ColorRGBA1363;
+let ColorRGBA1362 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1362.USE = "HAnimSiteLineColorRGBA";
+LineSet1360.color = ColorRGBA1362;
 
-Shape1360.geometry = LineSet1361;
+Shape1359.geometry = LineSet1360;
 
-HAnimSegment1336.children[7] = Shape1360;
+HAnimSegment1335.children[7] = Shape1359;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_wrist'/> to <HAnimSite name='r_ulnar_styloid'/>
-let Shape1364 = browser.currentScene.createNode("Shape");
-let LineSet1365 = browser.currentScene.createNode("LineSet");
-LineSet1365.vertexCount = new MFInt32(new int[2]);
-let Coordinate1366 = browser.currentScene.createNode("Coordinate");
-Coordinate1366.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.2117,0.8562,-0.0584]);
-LineSet1365.coord = Coordinate1366;
+let Shape1363 = browser.currentScene.createNode("Shape");
+let LineSet1364 = browser.currentScene.createNode("LineSet");
+LineSet1364.vertexCount = new MFInt32(new int[2]);
+let Coordinate1365 = browser.currentScene.createNode("Coordinate");
+Coordinate1365.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.2117,0.8562,-0.0584]);
+LineSet1364.coord = Coordinate1365;
 
-let ColorRGBA1367 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1367.USE = "HAnimSiteLineColorRGBA";
-LineSet1365.color = ColorRGBA1367;
+let ColorRGBA1366 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1366.USE = "HAnimSiteLineColorRGBA";
+LineSet1364.color = ColorRGBA1366;
 
-Shape1364.geometry = LineSet1365;
+Shape1363.geometry = LineSet1364;
 
-HAnimSegment1336.children[8] = Shape1364;
+HAnimSegment1335.children[8] = Shape1363;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_wrist'/> to <HAnimSite name='r_metacarpal_pha5'/>
-let Shape1368 = browser.currentScene.createNode("Shape");
-let LineSet1369 = browser.currentScene.createNode("LineSet");
-LineSet1369.vertexCount = new MFInt32(new int[2]);
-let Coordinate1370 = browser.currentScene.createNode("Coordinate");
-Coordinate1370.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1929,0.789,-0.1064]);
-LineSet1369.coord = Coordinate1370;
+let Shape1367 = browser.currentScene.createNode("Shape");
+let LineSet1368 = browser.currentScene.createNode("LineSet");
+LineSet1368.vertexCount = new MFInt32(new int[2]);
+let Coordinate1369 = browser.currentScene.createNode("Coordinate");
+Coordinate1369.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.1929,0.789,-0.1064]);
+LineSet1368.coord = Coordinate1369;
 
-let ColorRGBA1371 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1371.USE = "HAnimSiteLineColorRGBA";
-LineSet1369.color = ColorRGBA1371;
+let ColorRGBA1370 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1370.USE = "HAnimSiteLineColorRGBA";
+LineSet1368.color = ColorRGBA1370;
 
-Shape1368.geometry = LineSet1369;
+Shape1367.geometry = LineSet1368;
 
-HAnimSegment1336.children[9] = Shape1368;
+HAnimSegment1335.children[9] = Shape1367;
 
 //HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_wrist'/> to <HAnimSite name='r_hand_front_view'/>
-let Shape1372 = browser.currentScene.createNode("Shape");
-let LineSet1373 = browser.currentScene.createNode("LineSet");
-LineSet1373.vertexCount = new MFInt32(new int[2]);
-let Coordinate1374 = browser.currentScene.createNode("Coordinate");
-Coordinate1374.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.3,0.75,0.45]);
-LineSet1373.coord = Coordinate1374;
+let Shape1371 = browser.currentScene.createNode("Shape");
+let LineSet1372 = browser.currentScene.createNode("LineSet");
+LineSet1372.vertexCount = new MFInt32(new int[2]);
+let Coordinate1373 = browser.currentScene.createNode("Coordinate");
+Coordinate1373.point = new MFVec3f(new float[-0.1984,0.8663,-0.0583,-0.3,0.75,0.45]);
+LineSet1372.coord = Coordinate1373;
 
-let ColorRGBA1375 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1375.USE = "HAnimSiteViewpointLineColorRGBA";
-LineSet1373.color = ColorRGBA1375;
+let ColorRGBA1374 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1374.USE = "HAnimSiteViewpointLineColorRGBA";
+LineSet1372.color = ColorRGBA1374;
 
-Shape1372.geometry = LineSet1373;
+Shape1371.geometry = LineSet1372;
 
-HAnimSegment1336.children[10] = Shape1372;
+HAnimSegment1335.children[10] = Shape1371;
 
-let HAnimSite1376 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1376.name = "r_metacarpal_pha2_pt";
-HAnimSite1376.DEF = "hanim_r_metacarpal_pha2_pt";
-HAnimSite1376.translation = new SFVec3f(new float[-0.1977,0.8169,-0.0177]);
+let HAnimSite1375 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1375.name = "r_metacarpal_pha2_pt";
+HAnimSite1375.DEF = "hanim_r_metacarpal_pha2_pt";
+HAnimSite1375.translation = new SFVec3f(new float[-0.1977,0.8169,-0.0177]);
 //HAnimSite visualization shape
-let TouchSensor1377 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1377.description = "HAnimSite r_metacarpal_pha2";
-HAnimSite1376.children = new MFNode();
+let TouchSensor1376 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1376.description = "HAnimSite r_metacarpal_pha2";
+HAnimSite1375.children = new MFNode();
 
-HAnimSite1376.children[0] = TouchSensor1377;
+HAnimSite1375.children[0] = TouchSensor1376;
 
-let Shape1378 = browser.currentScene.createNode("Shape");
-Shape1378.USE = "HAnimSiteShape";
-HAnimSite1376.children[1] = Shape1378;
+let Shape1377 = browser.currentScene.createNode("Shape");
+Shape1377.USE = "HAnimSiteShape";
+HAnimSite1375.children[1] = Shape1377;
 
-HAnimSegment1336.children[11] = HAnimSite1376;
+HAnimSegment1335.children[11] = HAnimSite1375;
 
-let HAnimSite1379 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1379.name = "r_ulnar_styloid_pt";
-HAnimSite1379.DEF = "hanim_r_ulnar_styloid_pt";
-HAnimSite1379.translation = new SFVec3f(new float[-0.2117,0.8562,-0.0584]);
+let HAnimSite1378 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1378.name = "r_ulnar_styloid_pt";
+HAnimSite1378.DEF = "hanim_r_ulnar_styloid_pt";
+HAnimSite1378.translation = new SFVec3f(new float[-0.2117,0.8562,-0.0584]);
 //HAnimSite visualization shape
-let TouchSensor1380 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1380.description = "HAnimSite r_ulnar_styloid";
-HAnimSite1379.children = new MFNode();
+let TouchSensor1379 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1379.description = "HAnimSite r_ulnar_styloid";
+HAnimSite1378.children = new MFNode();
 
-HAnimSite1379.children[0] = TouchSensor1380;
+HAnimSite1378.children[0] = TouchSensor1379;
 
-let Shape1381 = browser.currentScene.createNode("Shape");
-Shape1381.USE = "HAnimSiteShape";
-HAnimSite1379.children[1] = Shape1381;
+let Shape1380 = browser.currentScene.createNode("Shape");
+Shape1380.USE = "HAnimSiteShape";
+HAnimSite1378.children[1] = Shape1380;
 
-HAnimSegment1336.children[12] = HAnimSite1379;
+HAnimSegment1335.children[12] = HAnimSite1378;
 
-let HAnimSite1382 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1382.name = "r_metacarpal_pha5_pt";
-HAnimSite1382.DEF = "hanim_r_metacarpal_pha5_pt";
-HAnimSite1382.translation = new SFVec3f(new float[-0.1929,0.789,-0.1064]);
+let HAnimSite1381 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1381.name = "r_metacarpal_pha5_pt";
+HAnimSite1381.DEF = "hanim_r_metacarpal_pha5_pt";
+HAnimSite1381.translation = new SFVec3f(new float[-0.1929,0.789,-0.1064]);
 //HAnimSite visualization shape
-let TouchSensor1383 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1383.description = "HAnimSite r_metacarpal_pha5";
-HAnimSite1382.children = new MFNode();
+let TouchSensor1382 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1382.description = "HAnimSite r_metacarpal_pha5";
+HAnimSite1381.children = new MFNode();
 
-HAnimSite1382.children[0] = TouchSensor1383;
+HAnimSite1381.children[0] = TouchSensor1382;
 
-let Shape1384 = browser.currentScene.createNode("Shape");
-Shape1384.USE = "HAnimSiteShape";
-HAnimSite1382.children[1] = Shape1384;
+let Shape1383 = browser.currentScene.createNode("Shape");
+Shape1383.USE = "HAnimSiteShape";
+HAnimSite1381.children[1] = Shape1383;
 
-HAnimSegment1336.children[13] = HAnimSite1382;
+HAnimSegment1335.children[13] = HAnimSite1381;
 
-let HAnimSite1385 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1385.name = "r_hand_front_view";
-HAnimSite1385.DEF = "hanim_r_hand_front_view";
-HAnimSite1385.translation = new SFVec3f(new float[-0.3,0.75,0.45]);
+let HAnimSite1384 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1384.name = "r_hand_front_view";
+HAnimSite1384.DEF = "hanim_r_hand_front_view";
+HAnimSite1384.translation = new SFVec3f(new float[-0.3,0.75,0.45]);
 //HAnimSite visualization shape
-let TouchSensor1386 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1386.description = "HAnimSite r_hand_front_view";
-HAnimSite1385.children = new MFNode();
+let TouchSensor1385 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1385.description = "HAnimSite r_hand_front_view";
+HAnimSite1384.children = new MFNode();
 
-HAnimSite1385.children[0] = TouchSensor1386;
+HAnimSite1384.children[0] = TouchSensor1385;
 
-let Shape1387 = browser.currentScene.createNode("Shape");
-Shape1387.USE = "HAnimSiteShape";
-HAnimSite1385.children[1] = Shape1387;
+let Shape1386 = browser.currentScene.createNode("Shape");
+Shape1386.USE = "HAnimSiteShape";
+HAnimSite1384.children[1] = Shape1386;
 
-let Viewpoint1388 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1388.DEF = "hanim_r_hand_front_viewpoint";
-Viewpoint1388.centerOfRotation = new SFVec3f(new float[0,0.7,0]);
-Viewpoint1388.description = "right hand front";
-Viewpoint1388.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1385.children[2] = Viewpoint1388;
+let Viewpoint1387 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1387.DEF = "hanim_r_hand_front_viewpoint";
+Viewpoint1387.centerOfRotation = new SFVec3f(new float[0,0.7,0]);
+Viewpoint1387.description = "right hand front";
+Viewpoint1387.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1384.children[2] = Viewpoint1387;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1389 = browser.currentScene.createNode("Anchor");
-Anchor1389.description = "HAnimSite hanim_r_hand_front_view Viewpoint";
-Anchor1389.url = new MFString(new java.lang.String["#hanim_r_hand_front_viewpoint"]);
-let LOD1390 = browser.currentScene.createNode("LOD");
-LOD1390.forceTransitions = True;
-LOD1390.range = new MFFloat(new float[0.04]);
-let WorldInfo1391 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1391.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1390.children = new MFNode();
+let Anchor1388 = browser.currentScene.createNode("Anchor");
+Anchor1388.description = "HAnimSite hanim_r_hand_front_view Viewpoint";
+Anchor1388.url = new MFString(new java.lang.String["#hanim_r_hand_front_viewpoint"]);
+let LOD1389 = browser.currentScene.createNode("LOD");
+LOD1389.forceTransitions = True;
+LOD1389.range = new MFFloat(new float[0.04]);
+let WorldInfo1390 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1390.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1389.children = new MFNode();
 
-LOD1390.children[0] = WorldInfo1391;
+LOD1389.children[0] = WorldInfo1390;
 
-let Shape1392 = browser.currentScene.createNode("Shape");
-Shape1392.USE = "HAnimSiteViewpointShape";
-LOD1390.children[1] = Shape1392;
+let Shape1391 = browser.currentScene.createNode("Shape");
+Shape1391.USE = "HAnimSiteViewpointShape";
+LOD1389.children[1] = Shape1391;
 
-Anchor1389.children = new MFNode();
+Anchor1388.children = new MFNode();
 
-Anchor1389.children[0] = LOD1390;
+Anchor1388.children[0] = LOD1389;
 
-HAnimSite1385.children[3] = Anchor1389;
+HAnimSite1384.children[3] = Anchor1388;
 
-HAnimSegment1336.children[14] = HAnimSite1385;
+HAnimSegment1335.children[14] = HAnimSite1384;
 
-HAnimJoint1335.children = new MFNode();
+HAnimJoint1334.children = new MFNode();
 
-HAnimJoint1335.children[0] = HAnimSegment1336;
+HAnimJoint1334.children[0] = HAnimSegment1335;
 
-let HAnimJoint1393 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1393.name = "r_thumb1";
-HAnimJoint1393.DEF = "hanim_r_thumb1";
-HAnimJoint1393.center = new SFVec3f(new float[-0.1924,0.8472,-0.0534]);
-HAnimJoint1393.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1394 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1394.name = "r_thumb_metacarpal";
-HAnimSegment1394.DEF = "hanim_r_thumb_metacarpal";
+let HAnimJoint1392 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1392.name = "r_thumb1";
+HAnimJoint1392.DEF = "hanim_r_thumb1";
+HAnimJoint1392.center = new SFVec3f(new float[-0.1924,0.8472,-0.0534]);
+HAnimJoint1392.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1393 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1393.name = "r_thumb_metacarpal";
+HAnimSegment1393.DEF = "hanim_r_thumb_metacarpal";
 //<HAnimJoint name='r_thumb1'/> visualization sphere is placed within <HAnimSegment name='r_thumb_metacarpal'/>
-let TouchSensor1395 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1395.description = "HAnimJoint r_thumb1, HAnimSegment r_thumb_metacarpal";
-HAnimSegment1394.children = new MFNode();
+let TouchSensor1394 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1394.description = "HAnimJoint r_thumb1, HAnimSegment r_thumb_metacarpal";
+HAnimSegment1393.children = new MFNode();
 
-HAnimSegment1394.children[0] = TouchSensor1395;
+HAnimSegment1393.children[0] = TouchSensor1394;
 
-let Transform1396 = browser.currentScene.createNode("Transform");
-Transform1396.translation = new SFVec3f(new float[-0.1924,0.8472,-0.0534]);
-let Shape1397 = browser.currentScene.createNode("Shape");
-Shape1397.USE = "HAnimJointShape";
-Transform1396.children = new MFNode();
+let Transform1395 = browser.currentScene.createNode("Transform");
+Transform1395.translation = new SFVec3f(new float[-0.1924,0.8472,-0.0534]);
+let Shape1396 = browser.currentScene.createNode("Shape");
+Shape1396.USE = "HAnimJointShape";
+Transform1395.children = new MFNode();
 
-Transform1396.children[0] = Shape1397;
+Transform1395.children[0] = Shape1396;
 
-HAnimSegment1394.children[1] = Transform1396;
+HAnimSegment1393.children[1] = Transform1395;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_thumb1'/> to <HAnimJoint name='r_thumb2'/>
-let Shape1398 = browser.currentScene.createNode("Shape");
-let LineSet1399 = browser.currentScene.createNode("LineSet");
-LineSet1399.vertexCount = new MFInt32(new int[2]);
-let Coordinate1400 = browser.currentScene.createNode("Coordinate");
-Coordinate1400.point = new MFVec3f(new float[-0.1924,0.8472,-0.0534,-0.1951,0.8226,0.0246]);
-LineSet1399.coord = Coordinate1400;
+let Shape1397 = browser.currentScene.createNode("Shape");
+let LineSet1398 = browser.currentScene.createNode("LineSet");
+LineSet1398.vertexCount = new MFInt32(new int[2]);
+let Coordinate1399 = browser.currentScene.createNode("Coordinate");
+Coordinate1399.point = new MFVec3f(new float[-0.1924,0.8472,-0.0534,-0.1951,0.8226,0.0246]);
+LineSet1398.coord = Coordinate1399;
 
-let ColorRGBA1401 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1401.USE = "HAnimSegmentLineColorRGBA";
-LineSet1399.color = ColorRGBA1401;
+let ColorRGBA1400 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1400.USE = "HAnimSegmentLineColorRGBA";
+LineSet1398.color = ColorRGBA1400;
 
-Shape1398.geometry = LineSet1399;
+Shape1397.geometry = LineSet1398;
 
-HAnimSegment1394.children[2] = Shape1398;
+HAnimSegment1393.children[2] = Shape1397;
 
-HAnimJoint1393.children = new MFNode();
+HAnimJoint1392.children = new MFNode();
 
-HAnimJoint1393.children[0] = HAnimSegment1394;
+HAnimJoint1392.children[0] = HAnimSegment1393;
 
-let HAnimJoint1402 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1402.name = "r_thumb2";
-HAnimJoint1402.DEF = "hanim_r_thumb2";
-HAnimJoint1402.center = new SFVec3f(new float[-0.1951,0.8226,0.0246]);
-HAnimJoint1402.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1403 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1403.name = "r_thumb_proximal";
-HAnimSegment1403.DEF = "hanim_r_thumb_proximal";
+let HAnimJoint1401 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1401.name = "r_thumb2";
+HAnimJoint1401.DEF = "hanim_r_thumb2";
+HAnimJoint1401.center = new SFVec3f(new float[-0.1951,0.8226,0.0246]);
+HAnimJoint1401.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1402 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1402.name = "r_thumb_proximal";
+HAnimSegment1402.DEF = "hanim_r_thumb_proximal";
 //<HAnimJoint name='r_thumb2'/> visualization sphere is placed within <HAnimSegment name='r_thumb_proximal'/>
-let TouchSensor1404 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1404.description = "HAnimJoint r_thumb2, HAnimSegment r_thumb_proximal";
-HAnimSegment1403.children = new MFNode();
+let TouchSensor1403 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1403.description = "HAnimJoint r_thumb2, HAnimSegment r_thumb_proximal";
+HAnimSegment1402.children = new MFNode();
 
-HAnimSegment1403.children[0] = TouchSensor1404;
+HAnimSegment1402.children[0] = TouchSensor1403;
 
-let Transform1405 = browser.currentScene.createNode("Transform");
-Transform1405.translation = new SFVec3f(new float[-0.1951,0.8226,0.0246]);
-let Shape1406 = browser.currentScene.createNode("Shape");
-Shape1406.USE = "HAnimJointShape";
-Transform1405.children = new MFNode();
+let Transform1404 = browser.currentScene.createNode("Transform");
+Transform1404.translation = new SFVec3f(new float[-0.1951,0.8226,0.0246]);
+let Shape1405 = browser.currentScene.createNode("Shape");
+Shape1405.USE = "HAnimJointShape";
+Transform1404.children = new MFNode();
 
-Transform1405.children[0] = Shape1406;
+Transform1404.children[0] = Shape1405;
 
-HAnimSegment1403.children[1] = Transform1405;
+HAnimSegment1402.children[1] = Transform1404;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_thumb2'/> to <HAnimJoint name='r_thumb3'/>
-let Shape1407 = browser.currentScene.createNode("Shape");
-let LineSet1408 = browser.currentScene.createNode("LineSet");
-LineSet1408.vertexCount = new MFInt32(new int[2]);
-let Coordinate1409 = browser.currentScene.createNode("Coordinate");
-Coordinate1409.point = new MFVec3f(new float[-0.1951,0.8226,0.0246,-0.1955,0.8159,0.0464]);
-LineSet1408.coord = Coordinate1409;
+let Shape1406 = browser.currentScene.createNode("Shape");
+let LineSet1407 = browser.currentScene.createNode("LineSet");
+LineSet1407.vertexCount = new MFInt32(new int[2]);
+let Coordinate1408 = browser.currentScene.createNode("Coordinate");
+Coordinate1408.point = new MFVec3f(new float[-0.1951,0.8226,0.0246,-0.1955,0.8159,0.0464]);
+LineSet1407.coord = Coordinate1408;
 
-let ColorRGBA1410 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1410.USE = "HAnimSegmentLineColorRGBA";
-LineSet1408.color = ColorRGBA1410;
+let ColorRGBA1409 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1409.USE = "HAnimSegmentLineColorRGBA";
+LineSet1407.color = ColorRGBA1409;
 
-Shape1407.geometry = LineSet1408;
+Shape1406.geometry = LineSet1407;
 
-HAnimSegment1403.children[2] = Shape1407;
+HAnimSegment1402.children[2] = Shape1406;
 
-HAnimJoint1402.children = new MFNode();
+HAnimJoint1401.children = new MFNode();
 
-HAnimJoint1402.children[0] = HAnimSegment1403;
+HAnimJoint1401.children[0] = HAnimSegment1402;
 
-let HAnimJoint1411 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1411.name = "r_thumb3";
-HAnimJoint1411.DEF = "hanim_r_thumb3";
-HAnimJoint1411.center = new SFVec3f(new float[-0.1955,0.8159,0.0464]);
-HAnimJoint1411.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1412 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1412.name = "r_thumb_distal";
-HAnimSegment1412.DEF = "hanim_r_thumb_distal";
+let HAnimJoint1410 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1410.name = "r_thumb3";
+HAnimJoint1410.DEF = "hanim_r_thumb3";
+HAnimJoint1410.center = new SFVec3f(new float[-0.1955,0.8159,0.0464]);
+HAnimJoint1410.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1411 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1411.name = "r_thumb_distal";
+HAnimSegment1411.DEF = "hanim_r_thumb_distal";
 //<HAnimJoint name='r_thumb3'/> visualization sphere is placed within <HAnimSegment name='r_thumb_distal'/>
-let TouchSensor1413 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1413.description = "HAnimJoint r_thumb3, HAnimSegment r_thumb_distal";
-HAnimSegment1412.children = new MFNode();
+let TouchSensor1412 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1412.description = "HAnimJoint r_thumb3, HAnimSegment r_thumb_distal";
+HAnimSegment1411.children = new MFNode();
 
-HAnimSegment1412.children[0] = TouchSensor1413;
+HAnimSegment1411.children[0] = TouchSensor1412;
 
-let Transform1414 = browser.currentScene.createNode("Transform");
-Transform1414.translation = new SFVec3f(new float[-0.1955,0.8159,0.0464]);
-let Shape1415 = browser.currentScene.createNode("Shape");
-Shape1415.USE = "HAnimJointShape";
-Transform1414.children = new MFNode();
+let Transform1413 = browser.currentScene.createNode("Transform");
+Transform1413.translation = new SFVec3f(new float[-0.1955,0.8159,0.0464]);
+let Shape1414 = browser.currentScene.createNode("Shape");
+Shape1414.USE = "HAnimJointShape";
+Transform1413.children = new MFNode();
 
-Transform1414.children[0] = Shape1415;
+Transform1413.children[0] = Shape1414;
 
-HAnimSegment1412.children[1] = Transform1414;
+HAnimSegment1411.children[1] = Transform1413;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_thumb3'/> to <HAnimSite name='r_thumb_distal_tip'/>
-let Shape1416 = browser.currentScene.createNode("Shape");
-let LineSet1417 = browser.currentScene.createNode("LineSet");
-LineSet1417.vertexCount = new MFInt32(new int[2]);
-let Coordinate1418 = browser.currentScene.createNode("Coordinate");
-Coordinate1418.point = new MFVec3f(new float[-0.1955,0.8159,0.0464,-0.1869,0.809,0.082]);
-LineSet1417.coord = Coordinate1418;
+let Shape1415 = browser.currentScene.createNode("Shape");
+let LineSet1416 = browser.currentScene.createNode("LineSet");
+LineSet1416.vertexCount = new MFInt32(new int[2]);
+let Coordinate1417 = browser.currentScene.createNode("Coordinate");
+Coordinate1417.point = new MFVec3f(new float[-0.1955,0.8159,0.0464,-0.1869,0.809,0.082]);
+LineSet1416.coord = Coordinate1417;
 
-let ColorRGBA1419 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1419.USE = "HAnimSiteLineColorRGBA";
-LineSet1417.color = ColorRGBA1419;
+let ColorRGBA1418 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1418.USE = "HAnimSiteLineColorRGBA";
+LineSet1416.color = ColorRGBA1418;
 
-Shape1416.geometry = LineSet1417;
+Shape1415.geometry = LineSet1416;
 
-HAnimSegment1412.children[2] = Shape1416;
+HAnimSegment1411.children[2] = Shape1415;
 
-let HAnimSite1420 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1420.name = "r_thumb_distal_tip";
-HAnimSite1420.DEF = "hanim_r_thumb_distal_tip";
-HAnimSite1420.translation = new SFVec3f(new float[-0.1869,0.809,0.082]);
+let HAnimSite1419 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1419.name = "r_thumb_distal_tip";
+HAnimSite1419.DEF = "hanim_r_thumb_distal_tip";
+HAnimSite1419.translation = new SFVec3f(new float[-0.1869,0.809,0.082]);
 //HAnimSite visualization shape
-let TouchSensor1421 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1421.description = "HAnimSite r_thumb_distal_tip";
-HAnimSite1420.children = new MFNode();
+let TouchSensor1420 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1420.description = "HAnimSite r_thumb_distal_tip";
+HAnimSite1419.children = new MFNode();
 
-HAnimSite1420.children[0] = TouchSensor1421;
+HAnimSite1419.children[0] = TouchSensor1420;
 
-let Shape1422 = browser.currentScene.createNode("Shape");
-Shape1422.USE = "HAnimSiteShape";
-HAnimSite1420.children[1] = Shape1422;
+let Shape1421 = browser.currentScene.createNode("Shape");
+Shape1421.USE = "HAnimSiteShape";
+HAnimSite1419.children[1] = Shape1421;
 
-HAnimSegment1412.children[3] = HAnimSite1420;
+HAnimSegment1411.children[3] = HAnimSite1419;
 
-HAnimJoint1411.children = new MFNode();
+HAnimJoint1410.children = new MFNode();
 
-HAnimJoint1411.children[0] = HAnimSegment1412;
+HAnimJoint1410.children[0] = HAnimSegment1411;
 
-HAnimJoint1402.children[1] = HAnimJoint1411;
+HAnimJoint1401.children[1] = HAnimJoint1410;
 
-HAnimJoint1393.children[1] = HAnimJoint1402;
+HAnimJoint1392.children[1] = HAnimJoint1401;
 
-HAnimJoint1335.children[1] = HAnimJoint1393;
+HAnimJoint1334.children[1] = HAnimJoint1392;
 
-let HAnimJoint1423 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1423.name = "r_index0";
-HAnimJoint1423.DEF = "hanim_r_index0";
-HAnimJoint1423.center = new SFVec3f(new float[-0.1983,0.8024,-0.028]);
-HAnimJoint1423.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1424 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1424.name = "r_index_metacarpal";
-HAnimSegment1424.DEF = "hanim_r_index_metacarpal";
+let HAnimJoint1422 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1422.name = "r_index0";
+HAnimJoint1422.DEF = "hanim_r_index0";
+HAnimJoint1422.center = new SFVec3f(new float[-0.1983,0.8024,-0.028]);
+HAnimJoint1422.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1423 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1423.name = "r_index_metacarpal";
+HAnimSegment1423.DEF = "hanim_r_index_metacarpal";
 //<HAnimJoint name='r_index0'/> visualization sphere is placed within <HAnimSegment name='r_index_metacarpal'/>
-let TouchSensor1425 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1425.description = "HAnimJoint r_index0, HAnimSegment r_index_metacarpal";
-HAnimSegment1424.children = new MFNode();
+let TouchSensor1424 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1424.description = "HAnimJoint r_index0, HAnimSegment r_index_metacarpal";
+HAnimSegment1423.children = new MFNode();
 
-HAnimSegment1424.children[0] = TouchSensor1425;
+HAnimSegment1423.children[0] = TouchSensor1424;
 
-let Transform1426 = browser.currentScene.createNode("Transform");
-Transform1426.translation = new SFVec3f(new float[-0.1983,0.8024,-0.028]);
-let Shape1427 = browser.currentScene.createNode("Shape");
-Shape1427.USE = "HAnimJointShape";
-Transform1426.children = new MFNode();
+let Transform1425 = browser.currentScene.createNode("Transform");
+Transform1425.translation = new SFVec3f(new float[-0.1983,0.8024,-0.028]);
+let Shape1426 = browser.currentScene.createNode("Shape");
+Shape1426.USE = "HAnimJointShape";
+Transform1425.children = new MFNode();
 
-Transform1426.children[0] = Shape1427;
+Transform1425.children[0] = Shape1426;
 
-HAnimSegment1424.children[1] = Transform1426;
+HAnimSegment1423.children[1] = Transform1425;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_index0'/> to <HAnimJoint name='r_index1'/>
-let Shape1428 = browser.currentScene.createNode("Shape");
-let LineSet1429 = browser.currentScene.createNode("LineSet");
-LineSet1429.vertexCount = new MFInt32(new int[2]);
-let Coordinate1430 = browser.currentScene.createNode("Coordinate");
-Coordinate1430.point = new MFVec3f(new float[-0.1983,0.8024,-0.028,-0.1983,0.7815,-0.028]);
-LineSet1429.coord = Coordinate1430;
+let Shape1427 = browser.currentScene.createNode("Shape");
+let LineSet1428 = browser.currentScene.createNode("LineSet");
+LineSet1428.vertexCount = new MFInt32(new int[2]);
+let Coordinate1429 = browser.currentScene.createNode("Coordinate");
+Coordinate1429.point = new MFVec3f(new float[-0.1983,0.8024,-0.028,-0.1983,0.7815,-0.028]);
+LineSet1428.coord = Coordinate1429;
 
-let ColorRGBA1431 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1431.USE = "HAnimSegmentLineColorRGBA";
-LineSet1429.color = ColorRGBA1431;
+let ColorRGBA1430 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1430.USE = "HAnimSegmentLineColorRGBA";
+LineSet1428.color = ColorRGBA1430;
 
-Shape1428.geometry = LineSet1429;
+Shape1427.geometry = LineSet1428;
 
-HAnimSegment1424.children[2] = Shape1428;
+HAnimSegment1423.children[2] = Shape1427;
 
-HAnimJoint1423.children = new MFNode();
+HAnimJoint1422.children = new MFNode();
 
-HAnimJoint1423.children[0] = HAnimSegment1424;
+HAnimJoint1422.children[0] = HAnimSegment1423;
 
-let HAnimJoint1432 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1432.name = "r_index1";
-HAnimJoint1432.DEF = "hanim_r_index1";
-HAnimJoint1432.center = new SFVec3f(new float[-0.1983,0.7815,-0.028]);
-HAnimJoint1432.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1433 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1433.name = "r_index_proximal";
-HAnimSegment1433.DEF = "hanim_r_index_proximal";
+let HAnimJoint1431 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1431.name = "r_index1";
+HAnimJoint1431.DEF = "hanim_r_index1";
+HAnimJoint1431.center = new SFVec3f(new float[-0.1983,0.7815,-0.028]);
+HAnimJoint1431.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1432 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1432.name = "r_index_proximal";
+HAnimSegment1432.DEF = "hanim_r_index_proximal";
 //<HAnimJoint name='r_index1'/> visualization sphere is placed within <HAnimSegment name='r_index_proximal'/>
-let TouchSensor1434 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1434.description = "HAnimJoint r_index1, HAnimSegment r_index_proximal";
-HAnimSegment1433.children = new MFNode();
+let TouchSensor1433 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1433.description = "HAnimJoint r_index1, HAnimSegment r_index_proximal";
+HAnimSegment1432.children = new MFNode();
 
-HAnimSegment1433.children[0] = TouchSensor1434;
+HAnimSegment1432.children[0] = TouchSensor1433;
 
-let Transform1435 = browser.currentScene.createNode("Transform");
-Transform1435.translation = new SFVec3f(new float[-0.1983,0.7815,-0.028]);
-let Shape1436 = browser.currentScene.createNode("Shape");
-Shape1436.USE = "HAnimJointShape";
-Transform1435.children = new MFNode();
+let Transform1434 = browser.currentScene.createNode("Transform");
+Transform1434.translation = new SFVec3f(new float[-0.1983,0.7815,-0.028]);
+let Shape1435 = browser.currentScene.createNode("Shape");
+Shape1435.USE = "HAnimJointShape";
+Transform1434.children = new MFNode();
 
-Transform1435.children[0] = Shape1436;
+Transform1434.children[0] = Shape1435;
 
-HAnimSegment1433.children[1] = Transform1435;
+HAnimSegment1432.children[1] = Transform1434;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_index1'/> to <HAnimJoint name='r_index2'/>
-let Shape1437 = browser.currentScene.createNode("Shape");
-let LineSet1438 = browser.currentScene.createNode("LineSet");
-LineSet1438.vertexCount = new MFInt32(new int[2]);
-let Coordinate1439 = browser.currentScene.createNode("Coordinate");
-Coordinate1439.point = new MFVec3f(new float[-0.1983,0.7815,-0.028,-0.2017,0.7363,-0.0248]);
-LineSet1438.coord = Coordinate1439;
+let Shape1436 = browser.currentScene.createNode("Shape");
+let LineSet1437 = browser.currentScene.createNode("LineSet");
+LineSet1437.vertexCount = new MFInt32(new int[2]);
+let Coordinate1438 = browser.currentScene.createNode("Coordinate");
+Coordinate1438.point = new MFVec3f(new float[-0.1983,0.7815,-0.028,-0.2017,0.7363,-0.0248]);
+LineSet1437.coord = Coordinate1438;
 
-let ColorRGBA1440 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1440.USE = "HAnimSegmentLineColorRGBA";
-LineSet1438.color = ColorRGBA1440;
+let ColorRGBA1439 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1439.USE = "HAnimSegmentLineColorRGBA";
+LineSet1437.color = ColorRGBA1439;
 
-Shape1437.geometry = LineSet1438;
+Shape1436.geometry = LineSet1437;
 
-HAnimSegment1433.children[2] = Shape1437;
+HAnimSegment1432.children[2] = Shape1436;
 
-HAnimJoint1432.children = new MFNode();
+HAnimJoint1431.children = new MFNode();
 
-HAnimJoint1432.children[0] = HAnimSegment1433;
+HAnimJoint1431.children[0] = HAnimSegment1432;
 
-let HAnimJoint1441 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1441.name = "r_index2";
-HAnimJoint1441.DEF = "hanim_r_index2";
-HAnimJoint1441.center = new SFVec3f(new float[-0.2017,0.7363,-0.0248]);
-HAnimJoint1441.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1442 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1442.name = "r_index_middle";
-HAnimSegment1442.DEF = "hanim_r_index_middle";
+let HAnimJoint1440 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1440.name = "r_index2";
+HAnimJoint1440.DEF = "hanim_r_index2";
+HAnimJoint1440.center = new SFVec3f(new float[-0.2017,0.7363,-0.0248]);
+HAnimJoint1440.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1441 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1441.name = "r_index_middle";
+HAnimSegment1441.DEF = "hanim_r_index_middle";
 //<HAnimJoint name='r_index2'/> visualization sphere is placed within <HAnimSegment name='r_index_middle'/>
-let TouchSensor1443 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1443.description = "HAnimJoint r_index2, HAnimSegment r_index_middle";
-HAnimSegment1442.children = new MFNode();
+let TouchSensor1442 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1442.description = "HAnimJoint r_index2, HAnimSegment r_index_middle";
+HAnimSegment1441.children = new MFNode();
 
-HAnimSegment1442.children[0] = TouchSensor1443;
+HAnimSegment1441.children[0] = TouchSensor1442;
 
-let Transform1444 = browser.currentScene.createNode("Transform");
-Transform1444.translation = new SFVec3f(new float[-0.2017,0.7363,-0.0248]);
-let Shape1445 = browser.currentScene.createNode("Shape");
-Shape1445.USE = "HAnimJointShape";
-Transform1444.children = new MFNode();
+let Transform1443 = browser.currentScene.createNode("Transform");
+Transform1443.translation = new SFVec3f(new float[-0.2017,0.7363,-0.0248]);
+let Shape1444 = browser.currentScene.createNode("Shape");
+Shape1444.USE = "HAnimJointShape";
+Transform1443.children = new MFNode();
 
-Transform1444.children[0] = Shape1445;
+Transform1443.children[0] = Shape1444;
 
-HAnimSegment1442.children[1] = Transform1444;
+HAnimSegment1441.children[1] = Transform1443;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_index2'/> to <HAnimJoint name='r_index3'/>
-let Shape1446 = browser.currentScene.createNode("Shape");
-let LineSet1447 = browser.currentScene.createNode("LineSet");
-LineSet1447.vertexCount = new MFInt32(new int[2]);
-let Coordinate1448 = browser.currentScene.createNode("Coordinate");
-Coordinate1448.point = new MFVec3f(new float[-0.2017,0.7363,-0.0248,-0.2028,0.7139,-0.0236]);
-LineSet1447.coord = Coordinate1448;
+let Shape1445 = browser.currentScene.createNode("Shape");
+let LineSet1446 = browser.currentScene.createNode("LineSet");
+LineSet1446.vertexCount = new MFInt32(new int[2]);
+let Coordinate1447 = browser.currentScene.createNode("Coordinate");
+Coordinate1447.point = new MFVec3f(new float[-0.2017,0.7363,-0.0248,-0.2028,0.7139,-0.0236]);
+LineSet1446.coord = Coordinate1447;
 
-let ColorRGBA1449 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1449.USE = "HAnimSegmentLineColorRGBA";
-LineSet1447.color = ColorRGBA1449;
+let ColorRGBA1448 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1448.USE = "HAnimSegmentLineColorRGBA";
+LineSet1446.color = ColorRGBA1448;
 
-Shape1446.geometry = LineSet1447;
+Shape1445.geometry = LineSet1446;
 
-HAnimSegment1442.children[2] = Shape1446;
+HAnimSegment1441.children[2] = Shape1445;
 
-HAnimJoint1441.children = new MFNode();
+HAnimJoint1440.children = new MFNode();
 
-HAnimJoint1441.children[0] = HAnimSegment1442;
+HAnimJoint1440.children[0] = HAnimSegment1441;
 
-let HAnimJoint1450 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1450.name = "r_index3";
-HAnimJoint1450.DEF = "hanim_r_index3";
-HAnimJoint1450.center = new SFVec3f(new float[-0.2028,0.7139,-0.0236]);
-HAnimJoint1450.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1451 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1451.name = "r_index_distal";
-HAnimSegment1451.DEF = "hanim_r_index_distal";
+let HAnimJoint1449 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1449.name = "r_index3";
+HAnimJoint1449.DEF = "hanim_r_index3";
+HAnimJoint1449.center = new SFVec3f(new float[-0.2028,0.7139,-0.0236]);
+HAnimJoint1449.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1450 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1450.name = "r_index_distal";
+HAnimSegment1450.DEF = "hanim_r_index_distal";
 //<HAnimJoint name='r_index3'/> visualization sphere is placed within <HAnimSegment name='r_index_distal'/>
-let TouchSensor1452 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1452.description = "HAnimJoint r_index3, HAnimSegment r_index_distal";
-HAnimSegment1451.children = new MFNode();
+let TouchSensor1451 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1451.description = "HAnimJoint r_index3, HAnimSegment r_index_distal";
+HAnimSegment1450.children = new MFNode();
 
-HAnimSegment1451.children[0] = TouchSensor1452;
+HAnimSegment1450.children[0] = TouchSensor1451;
 
-let Transform1453 = browser.currentScene.createNode("Transform");
-Transform1453.translation = new SFVec3f(new float[-0.2028,0.7139,-0.0236]);
-let Shape1454 = browser.currentScene.createNode("Shape");
-Shape1454.USE = "HAnimJointShape";
-Transform1453.children = new MFNode();
+let Transform1452 = browser.currentScene.createNode("Transform");
+Transform1452.translation = new SFVec3f(new float[-0.2028,0.7139,-0.0236]);
+let Shape1453 = browser.currentScene.createNode("Shape");
+Shape1453.USE = "HAnimJointShape";
+Transform1452.children = new MFNode();
 
-Transform1453.children[0] = Shape1454;
+Transform1452.children[0] = Shape1453;
 
-HAnimSegment1451.children[1] = Transform1453;
+HAnimSegment1450.children[1] = Transform1452;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_index_distal_tip'/>
-let Shape1455 = browser.currentScene.createNode("Shape");
-let LineSet1456 = browser.currentScene.createNode("LineSet");
-LineSet1456.vertexCount = new MFInt32(new int[2]);
-let Coordinate1457 = browser.currentScene.createNode("Coordinate");
-Coordinate1457.point = new MFVec3f(new float[-0.2028,0.7139,-0.0236,-0.198,0.6883,-0.018]);
-LineSet1456.coord = Coordinate1457;
+let Shape1454 = browser.currentScene.createNode("Shape");
+let LineSet1455 = browser.currentScene.createNode("LineSet");
+LineSet1455.vertexCount = new MFInt32(new int[2]);
+let Coordinate1456 = browser.currentScene.createNode("Coordinate");
+Coordinate1456.point = new MFVec3f(new float[-0.2028,0.7139,-0.0236,-0.198,0.6883,-0.018]);
+LineSet1455.coord = Coordinate1456;
 
-let ColorRGBA1458 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1458.USE = "HAnimSiteLineColorRGBA";
-LineSet1456.color = ColorRGBA1458;
+let ColorRGBA1457 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1457.USE = "HAnimSiteLineColorRGBA";
+LineSet1455.color = ColorRGBA1457;
 
-Shape1455.geometry = LineSet1456;
+Shape1454.geometry = LineSet1455;
 
-HAnimSegment1451.children[2] = Shape1455;
+HAnimSegment1450.children[2] = Shape1454;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_dactylion'/>
-let Shape1459 = browser.currentScene.createNode("Shape");
-let LineSet1460 = browser.currentScene.createNode("LineSet");
-LineSet1460.vertexCount = new MFInt32(new int[2]);
-let Coordinate1461 = browser.currentScene.createNode("Coordinate");
-Coordinate1461.point = new MFVec3f(new float[-0.2028,0.7139,-0.0236,-0.1941,0.6772,-0.0423]);
-LineSet1460.coord = Coordinate1461;
+let Shape1458 = browser.currentScene.createNode("Shape");
+let LineSet1459 = browser.currentScene.createNode("LineSet");
+LineSet1459.vertexCount = new MFInt32(new int[2]);
+let Coordinate1460 = browser.currentScene.createNode("Coordinate");
+Coordinate1460.point = new MFVec3f(new float[-0.2028,0.7139,-0.0236,-0.1941,0.6772,-0.0423]);
+LineSet1459.coord = Coordinate1460;
 
-let ColorRGBA1462 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1462.USE = "HAnimSiteLineColorRGBA";
-LineSet1460.color = ColorRGBA1462;
+let ColorRGBA1461 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1461.USE = "HAnimSiteLineColorRGBA";
+LineSet1459.color = ColorRGBA1461;
 
-Shape1459.geometry = LineSet1460;
+Shape1458.geometry = LineSet1459;
 
-HAnimSegment1451.children[3] = Shape1459;
+HAnimSegment1450.children[3] = Shape1458;
 
-let HAnimSite1463 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1463.name = "r_index_distal_tip";
-HAnimSite1463.DEF = "hanim_r_index_distal_tip";
-HAnimSite1463.translation = new SFVec3f(new float[-0.198,0.6883,-0.018]);
+let HAnimSite1462 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1462.name = "r_index_distal_tip";
+HAnimSite1462.DEF = "hanim_r_index_distal_tip";
+HAnimSite1462.translation = new SFVec3f(new float[-0.198,0.6883,-0.018]);
 //HAnimSite visualization shape
-let TouchSensor1464 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1464.description = "HAnimSite r_index_distal_tip";
-HAnimSite1463.children = new MFNode();
+let TouchSensor1463 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1463.description = "HAnimSite r_index_distal_tip";
+HAnimSite1462.children = new MFNode();
 
-HAnimSite1463.children[0] = TouchSensor1464;
+HAnimSite1462.children[0] = TouchSensor1463;
 
-let Shape1465 = browser.currentScene.createNode("Shape");
-Shape1465.USE = "HAnimSiteShape";
-HAnimSite1463.children[1] = Shape1465;
+let Shape1464 = browser.currentScene.createNode("Shape");
+Shape1464.USE = "HAnimSiteShape";
+HAnimSite1462.children[1] = Shape1464;
 
-HAnimSegment1451.children[4] = HAnimSite1463;
+HAnimSegment1450.children[4] = HAnimSite1462;
 
-let HAnimSite1466 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1466.name = "r_dactylion_pt";
-HAnimSite1466.DEF = "hanim_r_dactylion_pt";
-HAnimSite1466.translation = new SFVec3f(new float[-0.1941,0.6772,-0.0423]);
+let HAnimSite1465 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1465.name = "r_dactylion_pt";
+HAnimSite1465.DEF = "hanim_r_dactylion_pt";
+HAnimSite1465.translation = new SFVec3f(new float[-0.1941,0.6772,-0.0423]);
 //HAnimSite visualization shape
-let TouchSensor1467 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1467.description = "HAnimSite r_dactylion";
-HAnimSite1466.children = new MFNode();
+let TouchSensor1466 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1466.description = "HAnimSite r_dactylion";
+HAnimSite1465.children = new MFNode();
 
-HAnimSite1466.children[0] = TouchSensor1467;
+HAnimSite1465.children[0] = TouchSensor1466;
 
-let Shape1468 = browser.currentScene.createNode("Shape");
-Shape1468.USE = "HAnimSiteShape";
-HAnimSite1466.children[1] = Shape1468;
+let Shape1467 = browser.currentScene.createNode("Shape");
+Shape1467.USE = "HAnimSiteShape";
+HAnimSite1465.children[1] = Shape1467;
 
-HAnimSegment1451.children[5] = HAnimSite1466;
+HAnimSegment1450.children[5] = HAnimSite1465;
 
-HAnimJoint1450.children = new MFNode();
+HAnimJoint1449.children = new MFNode();
 
-HAnimJoint1450.children[0] = HAnimSegment1451;
+HAnimJoint1449.children[0] = HAnimSegment1450;
 
-HAnimJoint1441.children[1] = HAnimJoint1450;
+HAnimJoint1440.children[1] = HAnimJoint1449;
 
-HAnimJoint1432.children[1] = HAnimJoint1441;
+HAnimJoint1431.children[1] = HAnimJoint1440;
 
-HAnimJoint1423.children[1] = HAnimJoint1432;
+HAnimJoint1422.children[1] = HAnimJoint1431;
 
-HAnimJoint1335.children[2] = HAnimJoint1423;
+HAnimJoint1334.children[2] = HAnimJoint1422;
 
-let HAnimJoint1469 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1469.name = "r_middle0";
-HAnimJoint1469.DEF = "hanim_r_middle0";
-HAnimJoint1469.center = new SFVec3f(new float[-0.1987,0.8029,-0.053]);
-HAnimJoint1469.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1470 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1470.name = "r_middle_metacarpal";
-HAnimSegment1470.DEF = "hanim_r_middle_metacarpal";
+let HAnimJoint1468 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1468.name = "r_middle0";
+HAnimJoint1468.DEF = "hanim_r_middle0";
+HAnimJoint1468.center = new SFVec3f(new float[-0.1987,0.8029,-0.053]);
+HAnimJoint1468.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1469 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1469.name = "r_middle_metacarpal";
+HAnimSegment1469.DEF = "hanim_r_middle_metacarpal";
 //<HAnimJoint name='r_middle0'/> visualization sphere is placed within <HAnimSegment name='r_middle_metacarpal'/>
-let TouchSensor1471 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1471.description = "HAnimJoint r_middle0, HAnimSegment r_middle_metacarpal";
-HAnimSegment1470.children = new MFNode();
+let TouchSensor1470 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1470.description = "HAnimJoint r_middle0, HAnimSegment r_middle_metacarpal";
+HAnimSegment1469.children = new MFNode();
 
-HAnimSegment1470.children[0] = TouchSensor1471;
+HAnimSegment1469.children[0] = TouchSensor1470;
 
-let Transform1472 = browser.currentScene.createNode("Transform");
-Transform1472.translation = new SFVec3f(new float[-0.1987,0.8029,-0.053]);
-let Shape1473 = browser.currentScene.createNode("Shape");
-Shape1473.USE = "HAnimJointShape";
-Transform1472.children = new MFNode();
+let Transform1471 = browser.currentScene.createNode("Transform");
+Transform1471.translation = new SFVec3f(new float[-0.1987,0.8029,-0.053]);
+let Shape1472 = browser.currentScene.createNode("Shape");
+Shape1472.USE = "HAnimJointShape";
+Transform1471.children = new MFNode();
 
-Transform1472.children[0] = Shape1473;
+Transform1471.children[0] = Shape1472;
 
-HAnimSegment1470.children[1] = Transform1472;
+HAnimSegment1469.children[1] = Transform1471;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle0'/> to <HAnimJoint name='r_middle1'/>
-let Shape1474 = browser.currentScene.createNode("Shape");
-let LineSet1475 = browser.currentScene.createNode("LineSet");
-LineSet1475.vertexCount = new MFInt32(new int[2]);
-let Coordinate1476 = browser.currentScene.createNode("Coordinate");
-Coordinate1476.point = new MFVec3f(new float[-0.1987,0.8029,-0.053,-0.1987,0.7818,-0.053]);
-LineSet1475.coord = Coordinate1476;
+let Shape1473 = browser.currentScene.createNode("Shape");
+let LineSet1474 = browser.currentScene.createNode("LineSet");
+LineSet1474.vertexCount = new MFInt32(new int[2]);
+let Coordinate1475 = browser.currentScene.createNode("Coordinate");
+Coordinate1475.point = new MFVec3f(new float[-0.1987,0.8029,-0.053,-0.1987,0.7818,-0.053]);
+LineSet1474.coord = Coordinate1475;
 
-let ColorRGBA1477 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1477.USE = "HAnimSegmentLineColorRGBA";
-LineSet1475.color = ColorRGBA1477;
+let ColorRGBA1476 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1476.USE = "HAnimSegmentLineColorRGBA";
+LineSet1474.color = ColorRGBA1476;
 
-Shape1474.geometry = LineSet1475;
+Shape1473.geometry = LineSet1474;
 
-HAnimSegment1470.children[2] = Shape1474;
+HAnimSegment1469.children[2] = Shape1473;
 
-HAnimJoint1469.children = new MFNode();
+HAnimJoint1468.children = new MFNode();
 
-HAnimJoint1469.children[0] = HAnimSegment1470;
+HAnimJoint1468.children[0] = HAnimSegment1469;
 
-let HAnimJoint1478 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1478.name = "r_middle1";
-HAnimJoint1478.DEF = "hanim_r_middle1";
-HAnimJoint1478.center = new SFVec3f(new float[-0.1987,0.7818,-0.053]);
-HAnimJoint1478.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1479 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1479.name = "r_middle_proximal";
-HAnimSegment1479.DEF = "hanim_r_middle_proximal";
+let HAnimJoint1477 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1477.name = "r_middle1";
+HAnimJoint1477.DEF = "hanim_r_middle1";
+HAnimJoint1477.center = new SFVec3f(new float[-0.1987,0.7818,-0.053]);
+HAnimJoint1477.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1478 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1478.name = "r_middle_proximal";
+HAnimSegment1478.DEF = "hanim_r_middle_proximal";
 //<HAnimJoint name='r_middle1'/> visualization sphere is placed within <HAnimSegment name='r_middle_proximal'/>
-let TouchSensor1480 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1480.description = "HAnimJoint r_middle1, HAnimSegment r_middle_proximal";
-HAnimSegment1479.children = new MFNode();
+let TouchSensor1479 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1479.description = "HAnimJoint r_middle1, HAnimSegment r_middle_proximal";
+HAnimSegment1478.children = new MFNode();
 
-HAnimSegment1479.children[0] = TouchSensor1480;
+HAnimSegment1478.children[0] = TouchSensor1479;
 
-let Transform1481 = browser.currentScene.createNode("Transform");
-Transform1481.translation = new SFVec3f(new float[-0.1987,0.7818,-0.053]);
-let Shape1482 = browser.currentScene.createNode("Shape");
-Shape1482.USE = "HAnimJointShape";
-Transform1481.children = new MFNode();
+let Transform1480 = browser.currentScene.createNode("Transform");
+Transform1480.translation = new SFVec3f(new float[-0.1987,0.7818,-0.053]);
+let Shape1481 = browser.currentScene.createNode("Shape");
+Shape1481.USE = "HAnimJointShape";
+Transform1480.children = new MFNode();
 
-Transform1481.children[0] = Shape1482;
+Transform1480.children[0] = Shape1481;
 
-HAnimSegment1479.children[1] = Transform1481;
+HAnimSegment1478.children[1] = Transform1480;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle1'/> to <HAnimJoint name='r_middle2'/>
-let Shape1483 = browser.currentScene.createNode("Shape");
-let LineSet1484 = browser.currentScene.createNode("LineSet");
-LineSet1484.vertexCount = new MFInt32(new int[2]);
-let Coordinate1485 = browser.currentScene.createNode("Coordinate");
-Coordinate1485.point = new MFVec3f(new float[-0.1987,0.7818,-0.053,-0.2013,0.7273,-0.0503]);
-LineSet1484.coord = Coordinate1485;
+let Shape1482 = browser.currentScene.createNode("Shape");
+let LineSet1483 = browser.currentScene.createNode("LineSet");
+LineSet1483.vertexCount = new MFInt32(new int[2]);
+let Coordinate1484 = browser.currentScene.createNode("Coordinate");
+Coordinate1484.point = new MFVec3f(new float[-0.1987,0.7818,-0.053,-0.2013,0.7273,-0.0503]);
+LineSet1483.coord = Coordinate1484;
 
-let ColorRGBA1486 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1486.USE = "HAnimSegmentLineColorRGBA";
-LineSet1484.color = ColorRGBA1486;
+let ColorRGBA1485 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1485.USE = "HAnimSegmentLineColorRGBA";
+LineSet1483.color = ColorRGBA1485;
 
-Shape1483.geometry = LineSet1484;
+Shape1482.geometry = LineSet1483;
 
-HAnimSegment1479.children[2] = Shape1483;
+HAnimSegment1478.children[2] = Shape1482;
 
-HAnimJoint1478.children = new MFNode();
+HAnimJoint1477.children = new MFNode();
 
-HAnimJoint1478.children[0] = HAnimSegment1479;
+HAnimJoint1477.children[0] = HAnimSegment1478;
 
-let HAnimJoint1487 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1487.name = "r_middle2";
-HAnimJoint1487.DEF = "hanim_r_middle2";
-HAnimJoint1487.center = new SFVec3f(new float[-0.2013,0.7273,-0.0503]);
-HAnimJoint1487.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1488 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1488.name = "r_middle_middle";
-HAnimSegment1488.DEF = "hanim_r_middle_middle";
+let HAnimJoint1486 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1486.name = "r_middle2";
+HAnimJoint1486.DEF = "hanim_r_middle2";
+HAnimJoint1486.center = new SFVec3f(new float[-0.2013,0.7273,-0.0503]);
+HAnimJoint1486.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1487 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1487.name = "r_middle_middle";
+HAnimSegment1487.DEF = "hanim_r_middle_middle";
 //<HAnimJoint name='r_middle2'/> visualization sphere is placed within <HAnimSegment name='r_middle_middle'/>
-let TouchSensor1489 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1489.description = "HAnimJoint r_middle2, HAnimSegment r_middle_middle";
-HAnimSegment1488.children = new MFNode();
+let TouchSensor1488 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1488.description = "HAnimJoint r_middle2, HAnimSegment r_middle_middle";
+HAnimSegment1487.children = new MFNode();
 
-HAnimSegment1488.children[0] = TouchSensor1489;
+HAnimSegment1487.children[0] = TouchSensor1488;
 
-let Transform1490 = browser.currentScene.createNode("Transform");
-Transform1490.translation = new SFVec3f(new float[-0.2013,0.7273,-0.0503]);
-let Shape1491 = browser.currentScene.createNode("Shape");
-Shape1491.USE = "HAnimJointShape";
-Transform1490.children = new MFNode();
+let Transform1489 = browser.currentScene.createNode("Transform");
+Transform1489.translation = new SFVec3f(new float[-0.2013,0.7273,-0.0503]);
+let Shape1490 = browser.currentScene.createNode("Shape");
+Shape1490.USE = "HAnimJointShape";
+Transform1489.children = new MFNode();
 
-Transform1490.children[0] = Shape1491;
+Transform1489.children[0] = Shape1490;
 
-HAnimSegment1488.children[1] = Transform1490;
+HAnimSegment1487.children[1] = Transform1489;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle2'/> to <HAnimJoint name='r_middle3'/>
-let Shape1492 = browser.currentScene.createNode("Shape");
-let LineSet1493 = browser.currentScene.createNode("LineSet");
-LineSet1493.vertexCount = new MFInt32(new int[2]);
-let Coordinate1494 = browser.currentScene.createNode("Coordinate");
-Coordinate1494.point = new MFVec3f(new float[-0.2013,0.7273,-0.0503,-0.2026,0.7011,-0.0494]);
-LineSet1493.coord = Coordinate1494;
+let Shape1491 = browser.currentScene.createNode("Shape");
+let LineSet1492 = browser.currentScene.createNode("LineSet");
+LineSet1492.vertexCount = new MFInt32(new int[2]);
+let Coordinate1493 = browser.currentScene.createNode("Coordinate");
+Coordinate1493.point = new MFVec3f(new float[-0.2013,0.7273,-0.0503,-0.2026,0.7011,-0.0494]);
+LineSet1492.coord = Coordinate1493;
 
-let ColorRGBA1495 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1495.USE = "HAnimSegmentLineColorRGBA";
-LineSet1493.color = ColorRGBA1495;
+let ColorRGBA1494 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1494.USE = "HAnimSegmentLineColorRGBA";
+LineSet1492.color = ColorRGBA1494;
 
-Shape1492.geometry = LineSet1493;
+Shape1491.geometry = LineSet1492;
 
-HAnimSegment1488.children[2] = Shape1492;
+HAnimSegment1487.children[2] = Shape1491;
 
-HAnimJoint1487.children = new MFNode();
+HAnimJoint1486.children = new MFNode();
 
-HAnimJoint1487.children[0] = HAnimSegment1488;
+HAnimJoint1486.children[0] = HAnimSegment1487;
 
-let HAnimJoint1496 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1496.name = "r_middle3";
-HAnimJoint1496.DEF = "hanim_r_middle3";
-HAnimJoint1496.center = new SFVec3f(new float[-0.2026,0.7011,-0.0494]);
-HAnimJoint1496.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1497 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1497.name = "r_middle_distal";
-HAnimSegment1497.DEF = "hanim_r_middle_distal";
+let HAnimJoint1495 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1495.name = "r_middle3";
+HAnimJoint1495.DEF = "hanim_r_middle3";
+HAnimJoint1495.center = new SFVec3f(new float[-0.2026,0.7011,-0.0494]);
+HAnimJoint1495.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1496 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1496.name = "r_middle_distal";
+HAnimSegment1496.DEF = "hanim_r_middle_distal";
 //<HAnimJoint name='r_middle3'/> visualization sphere is placed within <HAnimSegment name='r_middle_distal'/>
-let TouchSensor1498 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1498.description = "HAnimJoint r_middle3, HAnimSegment r_middle_distal";
-HAnimSegment1497.children = new MFNode();
+let TouchSensor1497 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1497.description = "HAnimJoint r_middle3, HAnimSegment r_middle_distal";
+HAnimSegment1496.children = new MFNode();
 
-HAnimSegment1497.children[0] = TouchSensor1498;
+HAnimSegment1496.children[0] = TouchSensor1497;
 
-let Transform1499 = browser.currentScene.createNode("Transform");
-Transform1499.translation = new SFVec3f(new float[-0.2026,0.7011,-0.0494]);
-let Shape1500 = browser.currentScene.createNode("Shape");
-Shape1500.USE = "HAnimJointShape";
-Transform1499.children = new MFNode();
+let Transform1498 = browser.currentScene.createNode("Transform");
+Transform1498.translation = new SFVec3f(new float[-0.2026,0.7011,-0.0494]);
+let Shape1499 = browser.currentScene.createNode("Shape");
+Shape1499.USE = "HAnimJointShape";
+Transform1498.children = new MFNode();
 
-Transform1499.children[0] = Shape1500;
+Transform1498.children[0] = Shape1499;
 
-HAnimSegment1497.children[1] = Transform1499;
+HAnimSegment1496.children[1] = Transform1498;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_middle3'/> to <HAnimSite name='r_middle_distal_tip'/>
-let Shape1501 = browser.currentScene.createNode("Shape");
-let LineSet1502 = browser.currentScene.createNode("LineSet");
-LineSet1502.vertexCount = new MFInt32(new int[2]);
-let Coordinate1503 = browser.currentScene.createNode("Coordinate");
-Coordinate1503.point = new MFVec3f(new float[-0.2026,0.7011,-0.0494,-0.1969,0.6758,-0.0427]);
-LineSet1502.coord = Coordinate1503;
+let Shape1500 = browser.currentScene.createNode("Shape");
+let LineSet1501 = browser.currentScene.createNode("LineSet");
+LineSet1501.vertexCount = new MFInt32(new int[2]);
+let Coordinate1502 = browser.currentScene.createNode("Coordinate");
+Coordinate1502.point = new MFVec3f(new float[-0.2026,0.7011,-0.0494,-0.1969,0.6758,-0.0427]);
+LineSet1501.coord = Coordinate1502;
 
-let ColorRGBA1504 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1504.USE = "HAnimSiteLineColorRGBA";
-LineSet1502.color = ColorRGBA1504;
+let ColorRGBA1503 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1503.USE = "HAnimSiteLineColorRGBA";
+LineSet1501.color = ColorRGBA1503;
 
-Shape1501.geometry = LineSet1502;
+Shape1500.geometry = LineSet1501;
 
-HAnimSegment1497.children[2] = Shape1501;
+HAnimSegment1496.children[2] = Shape1500;
 
-let HAnimSite1505 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1505.name = "r_middle_distal_tip";
-HAnimSite1505.DEF = "hanim_r_middle_distal_tip";
-HAnimSite1505.translation = new SFVec3f(new float[-0.1969,0.6758,-0.0427]);
+let HAnimSite1504 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1504.name = "r_middle_distal_tip";
+HAnimSite1504.DEF = "hanim_r_middle_distal_tip";
+HAnimSite1504.translation = new SFVec3f(new float[-0.1969,0.6758,-0.0427]);
 //HAnimSite visualization shape
-let TouchSensor1506 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1506.description = "HAnimSite r_middle_distal_tip";
-HAnimSite1505.children = new MFNode();
+let TouchSensor1505 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1505.description = "HAnimSite r_middle_distal_tip";
+HAnimSite1504.children = new MFNode();
 
-HAnimSite1505.children[0] = TouchSensor1506;
+HAnimSite1504.children[0] = TouchSensor1505;
 
-let Shape1507 = browser.currentScene.createNode("Shape");
-Shape1507.USE = "HAnimSiteShape";
-HAnimSite1505.children[1] = Shape1507;
+let Shape1506 = browser.currentScene.createNode("Shape");
+Shape1506.USE = "HAnimSiteShape";
+HAnimSite1504.children[1] = Shape1506;
 
-HAnimSegment1497.children[3] = HAnimSite1505;
+HAnimSegment1496.children[3] = HAnimSite1504;
 
-HAnimJoint1496.children = new MFNode();
+HAnimJoint1495.children = new MFNode();
 
-HAnimJoint1496.children[0] = HAnimSegment1497;
+HAnimJoint1495.children[0] = HAnimSegment1496;
 
-HAnimJoint1487.children[1] = HAnimJoint1496;
+HAnimJoint1486.children[1] = HAnimJoint1495;
 
-HAnimJoint1478.children[1] = HAnimJoint1487;
+HAnimJoint1477.children[1] = HAnimJoint1486;
 
-HAnimJoint1469.children[1] = HAnimJoint1478;
+HAnimJoint1468.children[1] = HAnimJoint1477;
 
-HAnimJoint1335.children[3] = HAnimJoint1469;
+HAnimJoint1334.children[3] = HAnimJoint1468;
 
-let HAnimJoint1508 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1508.name = "r_ring0";
-HAnimJoint1508.DEF = "hanim_r_ring0";
-HAnimJoint1508.center = new SFVec3f(new float[-0.1956,0.8019,-0.0794]);
-HAnimJoint1508.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1509 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1509.name = "r_ring_metacarpal";
-HAnimSegment1509.DEF = "hanim_r_ring_metacarpal";
+let HAnimJoint1507 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1507.name = "r_ring0";
+HAnimJoint1507.DEF = "hanim_r_ring0";
+HAnimJoint1507.center = new SFVec3f(new float[-0.1956,0.8019,-0.0794]);
+HAnimJoint1507.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1508 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1508.name = "r_ring_metacarpal";
+HAnimSegment1508.DEF = "hanim_r_ring_metacarpal";
 //<HAnimJoint name='r_ring0'/> visualization sphere is placed within <HAnimSegment name='r_ring_metacarpal'/>
-let TouchSensor1510 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1510.description = "HAnimJoint r_ring0, HAnimSegment r_ring_metacarpal";
-HAnimSegment1509.children = new MFNode();
+let TouchSensor1509 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1509.description = "HAnimJoint r_ring0, HAnimSegment r_ring_metacarpal";
+HAnimSegment1508.children = new MFNode();
 
-HAnimSegment1509.children[0] = TouchSensor1510;
+HAnimSegment1508.children[0] = TouchSensor1509;
 
-let Transform1511 = browser.currentScene.createNode("Transform");
-Transform1511.translation = new SFVec3f(new float[-0.1956,0.8019,-0.0794]);
-let Shape1512 = browser.currentScene.createNode("Shape");
-Shape1512.USE = "HAnimJointShape";
-Transform1511.children = new MFNode();
+let Transform1510 = browser.currentScene.createNode("Transform");
+Transform1510.translation = new SFVec3f(new float[-0.1956,0.8019,-0.0794]);
+let Shape1511 = browser.currentScene.createNode("Shape");
+Shape1511.USE = "HAnimJointShape";
+Transform1510.children = new MFNode();
 
-Transform1511.children[0] = Shape1512;
+Transform1510.children[0] = Shape1511;
 
-HAnimSegment1509.children[1] = Transform1511;
+HAnimSegment1508.children[1] = Transform1510;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring0'/> to <HAnimJoint name='r_ring1'/>
-let Shape1513 = browser.currentScene.createNode("Shape");
-let LineSet1514 = browser.currentScene.createNode("LineSet");
-LineSet1514.vertexCount = new MFInt32(new int[2]);
-let Coordinate1515 = browser.currentScene.createNode("Coordinate");
-Coordinate1515.point = new MFVec3f(new float[-0.1956,0.8019,-0.0794,-0.1956,0.7815,-0.0794]);
-LineSet1514.coord = Coordinate1515;
+let Shape1512 = browser.currentScene.createNode("Shape");
+let LineSet1513 = browser.currentScene.createNode("LineSet");
+LineSet1513.vertexCount = new MFInt32(new int[2]);
+let Coordinate1514 = browser.currentScene.createNode("Coordinate");
+Coordinate1514.point = new MFVec3f(new float[-0.1956,0.8019,-0.0794,-0.1956,0.7815,-0.0794]);
+LineSet1513.coord = Coordinate1514;
 
-let ColorRGBA1516 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1516.USE = "HAnimSegmentLineColorRGBA";
-LineSet1514.color = ColorRGBA1516;
+let ColorRGBA1515 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1515.USE = "HAnimSegmentLineColorRGBA";
+LineSet1513.color = ColorRGBA1515;
 
-Shape1513.geometry = LineSet1514;
+Shape1512.geometry = LineSet1513;
 
-HAnimSegment1509.children[2] = Shape1513;
+HAnimSegment1508.children[2] = Shape1512;
 
-HAnimJoint1508.children = new MFNode();
+HAnimJoint1507.children = new MFNode();
 
-HAnimJoint1508.children[0] = HAnimSegment1509;
+HAnimJoint1507.children[0] = HAnimSegment1508;
 
-let HAnimJoint1517 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1517.name = "r_ring1";
-HAnimJoint1517.DEF = "hanim_r_ring1";
-HAnimJoint1517.center = new SFVec3f(new float[-0.1956,0.7815,-0.0794]);
-HAnimJoint1517.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1518 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1518.name = "r_ring_proximal";
-HAnimSegment1518.DEF = "hanim_r_ring_proximal";
+let HAnimJoint1516 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1516.name = "r_ring1";
+HAnimJoint1516.DEF = "hanim_r_ring1";
+HAnimJoint1516.center = new SFVec3f(new float[-0.1956,0.7815,-0.0794]);
+HAnimJoint1516.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1517 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1517.name = "r_ring_proximal";
+HAnimSegment1517.DEF = "hanim_r_ring_proximal";
 //<HAnimJoint name='r_ring1'/> visualization sphere is placed within <HAnimSegment name='r_ring_proximal'/>
-let TouchSensor1519 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1519.description = "HAnimJoint r_ring1, HAnimSegment r_ring_proximal";
-HAnimSegment1518.children = new MFNode();
+let TouchSensor1518 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1518.description = "HAnimJoint r_ring1, HAnimSegment r_ring_proximal";
+HAnimSegment1517.children = new MFNode();
 
-HAnimSegment1518.children[0] = TouchSensor1519;
+HAnimSegment1517.children[0] = TouchSensor1518;
 
-let Transform1520 = browser.currentScene.createNode("Transform");
-Transform1520.translation = new SFVec3f(new float[-0.1956,0.7815,-0.0794]);
-let Shape1521 = browser.currentScene.createNode("Shape");
-Shape1521.USE = "HAnimJointShape";
-Transform1520.children = new MFNode();
+let Transform1519 = browser.currentScene.createNode("Transform");
+Transform1519.translation = new SFVec3f(new float[-0.1956,0.7815,-0.0794]);
+let Shape1520 = browser.currentScene.createNode("Shape");
+Shape1520.USE = "HAnimJointShape";
+Transform1519.children = new MFNode();
 
-Transform1520.children[0] = Shape1521;
+Transform1519.children[0] = Shape1520;
 
-HAnimSegment1518.children[1] = Transform1520;
+HAnimSegment1517.children[1] = Transform1519;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring1'/> to <HAnimJoint name='r_ring2'/>
-let Shape1522 = browser.currentScene.createNode("Shape");
-let LineSet1523 = browser.currentScene.createNode("LineSet");
-LineSet1523.vertexCount = new MFInt32(new int[2]);
-let Coordinate1524 = browser.currentScene.createNode("Coordinate");
-Coordinate1524.point = new MFVec3f(new float[-0.1956,0.7815,-0.0794,-0.1973,0.7287,-0.0777]);
-LineSet1523.coord = Coordinate1524;
+let Shape1521 = browser.currentScene.createNode("Shape");
+let LineSet1522 = browser.currentScene.createNode("LineSet");
+LineSet1522.vertexCount = new MFInt32(new int[2]);
+let Coordinate1523 = browser.currentScene.createNode("Coordinate");
+Coordinate1523.point = new MFVec3f(new float[-0.1956,0.7815,-0.0794,-0.1973,0.7287,-0.0777]);
+LineSet1522.coord = Coordinate1523;
 
-let ColorRGBA1525 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1525.USE = "HAnimSegmentLineColorRGBA";
-LineSet1523.color = ColorRGBA1525;
+let ColorRGBA1524 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1524.USE = "HAnimSegmentLineColorRGBA";
+LineSet1522.color = ColorRGBA1524;
 
-Shape1522.geometry = LineSet1523;
+Shape1521.geometry = LineSet1522;
 
-HAnimSegment1518.children[2] = Shape1522;
+HAnimSegment1517.children[2] = Shape1521;
 
-HAnimJoint1517.children = new MFNode();
+HAnimJoint1516.children = new MFNode();
 
-HAnimJoint1517.children[0] = HAnimSegment1518;
+HAnimJoint1516.children[0] = HAnimSegment1517;
 
-let HAnimJoint1526 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1526.name = "r_ring2";
-HAnimJoint1526.DEF = "hanim_r_ring2";
-HAnimJoint1526.center = new SFVec3f(new float[-0.1973,0.7287,-0.0777]);
-HAnimJoint1526.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1527 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1527.name = "r_ring_middle";
-HAnimSegment1527.DEF = "hanim_r_ring_middle";
+let HAnimJoint1525 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1525.name = "r_ring2";
+HAnimJoint1525.DEF = "hanim_r_ring2";
+HAnimJoint1525.center = new SFVec3f(new float[-0.1973,0.7287,-0.0777]);
+HAnimJoint1525.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1526 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1526.name = "r_ring_middle";
+HAnimSegment1526.DEF = "hanim_r_ring_middle";
 //<HAnimJoint name='r_ring2'/> visualization sphere is placed within <HAnimSegment name='r_ring_middle'/>
-let TouchSensor1528 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1528.description = "HAnimJoint r_ring2, HAnimSegment r_ring_middle";
-HAnimSegment1527.children = new MFNode();
+let TouchSensor1527 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1527.description = "HAnimJoint r_ring2, HAnimSegment r_ring_middle";
+HAnimSegment1526.children = new MFNode();
 
-HAnimSegment1527.children[0] = TouchSensor1528;
+HAnimSegment1526.children[0] = TouchSensor1527;
 
-let Transform1529 = browser.currentScene.createNode("Transform");
-Transform1529.translation = new SFVec3f(new float[-0.1973,0.7287,-0.0777]);
-let Shape1530 = browser.currentScene.createNode("Shape");
-Shape1530.USE = "HAnimJointShape";
-Transform1529.children = new MFNode();
+let Transform1528 = browser.currentScene.createNode("Transform");
+Transform1528.translation = new SFVec3f(new float[-0.1973,0.7287,-0.0777]);
+let Shape1529 = browser.currentScene.createNode("Shape");
+Shape1529.USE = "HAnimJointShape";
+Transform1528.children = new MFNode();
 
-Transform1529.children[0] = Shape1530;
+Transform1528.children[0] = Shape1529;
 
-HAnimSegment1527.children[1] = Transform1529;
+HAnimSegment1526.children[1] = Transform1528;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring2'/> to <HAnimJoint name='r_ring3'/>
-let Shape1531 = browser.currentScene.createNode("Shape");
-let LineSet1532 = browser.currentScene.createNode("LineSet");
-LineSet1532.vertexCount = new MFInt32(new int[2]);
-let Coordinate1533 = browser.currentScene.createNode("Coordinate");
-Coordinate1533.point = new MFVec3f(new float[-0.1973,0.7287,-0.0777,-0.1983,0.7045,-0.0767]);
-LineSet1532.coord = Coordinate1533;
+let Shape1530 = browser.currentScene.createNode("Shape");
+let LineSet1531 = browser.currentScene.createNode("LineSet");
+LineSet1531.vertexCount = new MFInt32(new int[2]);
+let Coordinate1532 = browser.currentScene.createNode("Coordinate");
+Coordinate1532.point = new MFVec3f(new float[-0.1973,0.7287,-0.0777,-0.1983,0.7045,-0.0767]);
+LineSet1531.coord = Coordinate1532;
 
-let ColorRGBA1534 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1534.USE = "HAnimSegmentLineColorRGBA";
-LineSet1532.color = ColorRGBA1534;
+let ColorRGBA1533 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1533.USE = "HAnimSegmentLineColorRGBA";
+LineSet1531.color = ColorRGBA1533;
 
-Shape1531.geometry = LineSet1532;
+Shape1530.geometry = LineSet1531;
 
-HAnimSegment1527.children[2] = Shape1531;
+HAnimSegment1526.children[2] = Shape1530;
 
-HAnimJoint1526.children = new MFNode();
+HAnimJoint1525.children = new MFNode();
 
-HAnimJoint1526.children[0] = HAnimSegment1527;
+HAnimJoint1525.children[0] = HAnimSegment1526;
 
-let HAnimJoint1535 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1535.name = "r_ring3";
-HAnimJoint1535.DEF = "hanim_r_ring3";
-HAnimJoint1535.center = new SFVec3f(new float[-0.1983,0.7045,-0.0767]);
-HAnimJoint1535.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1536 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1536.name = "r_ring_distal";
-HAnimSegment1536.DEF = "hanim_r_ring_distal";
+let HAnimJoint1534 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1534.name = "r_ring3";
+HAnimJoint1534.DEF = "hanim_r_ring3";
+HAnimJoint1534.center = new SFVec3f(new float[-0.1983,0.7045,-0.0767]);
+HAnimJoint1534.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1535 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1535.name = "r_ring_distal";
+HAnimSegment1535.DEF = "hanim_r_ring_distal";
 //<HAnimJoint name='r_ring3'/> visualization sphere is placed within <HAnimSegment name='r_ring_distal'/>
-let TouchSensor1537 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1537.description = "HAnimJoint r_ring3, HAnimSegment r_ring_distal";
-HAnimSegment1536.children = new MFNode();
+let TouchSensor1536 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1536.description = "HAnimJoint r_ring3, HAnimSegment r_ring_distal";
+HAnimSegment1535.children = new MFNode();
 
-HAnimSegment1536.children[0] = TouchSensor1537;
+HAnimSegment1535.children[0] = TouchSensor1536;
 
-let Transform1538 = browser.currentScene.createNode("Transform");
-Transform1538.translation = new SFVec3f(new float[-0.1983,0.7045,-0.0767]);
-let Shape1539 = browser.currentScene.createNode("Shape");
-Shape1539.USE = "HAnimJointShape";
-Transform1538.children = new MFNode();
+let Transform1537 = browser.currentScene.createNode("Transform");
+Transform1537.translation = new SFVec3f(new float[-0.1983,0.7045,-0.0767]);
+let Shape1538 = browser.currentScene.createNode("Shape");
+Shape1538.USE = "HAnimJointShape";
+Transform1537.children = new MFNode();
 
-Transform1538.children[0] = Shape1539;
+Transform1537.children[0] = Shape1538;
 
-HAnimSegment1536.children[1] = Transform1538;
+HAnimSegment1535.children[1] = Transform1537;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ring3'/> to <HAnimSite name='r_ring_distal_tip'/>
-let Shape1540 = browser.currentScene.createNode("Shape");
-let LineSet1541 = browser.currentScene.createNode("LineSet");
-LineSet1541.vertexCount = new MFInt32(new int[2]);
-let Coordinate1542 = browser.currentScene.createNode("Coordinate");
-Coordinate1542.point = new MFVec3f(new float[-0.1983,0.7045,-0.0767,-0.1934,0.6778,-0.0693]);
-LineSet1541.coord = Coordinate1542;
+let Shape1539 = browser.currentScene.createNode("Shape");
+let LineSet1540 = browser.currentScene.createNode("LineSet");
+LineSet1540.vertexCount = new MFInt32(new int[2]);
+let Coordinate1541 = browser.currentScene.createNode("Coordinate");
+Coordinate1541.point = new MFVec3f(new float[-0.1983,0.7045,-0.0767,-0.1934,0.6778,-0.0693]);
+LineSet1540.coord = Coordinate1541;
 
-let ColorRGBA1543 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1543.USE = "HAnimSiteLineColorRGBA";
-LineSet1541.color = ColorRGBA1543;
+let ColorRGBA1542 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1542.USE = "HAnimSiteLineColorRGBA";
+LineSet1540.color = ColorRGBA1542;
 
-Shape1540.geometry = LineSet1541;
+Shape1539.geometry = LineSet1540;
 
-HAnimSegment1536.children[2] = Shape1540;
+HAnimSegment1535.children[2] = Shape1539;
 
-let HAnimSite1544 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1544.name = "r_ring_distal_tip";
-HAnimSite1544.DEF = "hanim_r_ring_distal_tip";
-HAnimSite1544.translation = new SFVec3f(new float[-0.1934,0.6778,-0.0693]);
+let HAnimSite1543 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1543.name = "r_ring_distal_tip";
+HAnimSite1543.DEF = "hanim_r_ring_distal_tip";
+HAnimSite1543.translation = new SFVec3f(new float[-0.1934,0.6778,-0.0693]);
 //HAnimSite visualization shape
-let TouchSensor1545 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1545.description = "HAnimSite r_ring_distal_tip";
-HAnimSite1544.children = new MFNode();
+let TouchSensor1544 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1544.description = "HAnimSite r_ring_distal_tip";
+HAnimSite1543.children = new MFNode();
 
-HAnimSite1544.children[0] = TouchSensor1545;
+HAnimSite1543.children[0] = TouchSensor1544;
 
-let Shape1546 = browser.currentScene.createNode("Shape");
-Shape1546.USE = "HAnimSiteShape";
-HAnimSite1544.children[1] = Shape1546;
+let Shape1545 = browser.currentScene.createNode("Shape");
+Shape1545.USE = "HAnimSiteShape";
+HAnimSite1543.children[1] = Shape1545;
 
-HAnimSegment1536.children[3] = HAnimSite1544;
+HAnimSegment1535.children[3] = HAnimSite1543;
 
-HAnimJoint1535.children = new MFNode();
+HAnimJoint1534.children = new MFNode();
 
-HAnimJoint1535.children[0] = HAnimSegment1536;
+HAnimJoint1534.children[0] = HAnimSegment1535;
 
-HAnimJoint1526.children[1] = HAnimJoint1535;
+HAnimJoint1525.children[1] = HAnimJoint1534;
 
-HAnimJoint1517.children[1] = HAnimJoint1526;
+HAnimJoint1516.children[1] = HAnimJoint1525;
 
-HAnimJoint1508.children[1] = HAnimJoint1517;
+HAnimJoint1507.children[1] = HAnimJoint1516;
 
-HAnimJoint1335.children[4] = HAnimJoint1508;
+HAnimJoint1334.children[4] = HAnimJoint1507;
 
-let HAnimJoint1547 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1547.name = "r_pinky0";
-HAnimJoint1547.DEF = "hanim_r_pinky0";
-HAnimJoint1547.center = new SFVec3f(new float[-0.1925,0.8066,-0.1036]);
-HAnimJoint1547.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1548 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1548.name = "r_pinky_metacarpal";
-HAnimSegment1548.DEF = "hanim_r_pinky_metacarpal";
+let HAnimJoint1546 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1546.name = "r_pinky0";
+HAnimJoint1546.DEF = "hanim_r_pinky0";
+HAnimJoint1546.center = new SFVec3f(new float[-0.1925,0.8066,-0.1036]);
+HAnimJoint1546.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1547 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1547.name = "r_pinky_metacarpal";
+HAnimSegment1547.DEF = "hanim_r_pinky_metacarpal";
 //<HAnimJoint name='r_pinky0'/> visualization sphere is placed within <HAnimSegment name='r_pinky_metacarpal'/>
-let TouchSensor1549 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1549.description = "HAnimJoint r_pinky0, HAnimSegment r_pinky_metacarpal";
-HAnimSegment1548.children = new MFNode();
+let TouchSensor1548 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1548.description = "HAnimJoint r_pinky0, HAnimSegment r_pinky_metacarpal";
+HAnimSegment1547.children = new MFNode();
 
-HAnimSegment1548.children[0] = TouchSensor1549;
+HAnimSegment1547.children[0] = TouchSensor1548;
 
-let Transform1550 = browser.currentScene.createNode("Transform");
-Transform1550.translation = new SFVec3f(new float[-0.1925,0.8066,-0.1036]);
-let Shape1551 = browser.currentScene.createNode("Shape");
-Shape1551.USE = "HAnimJointShape";
-Transform1550.children = new MFNode();
+let Transform1549 = browser.currentScene.createNode("Transform");
+Transform1549.translation = new SFVec3f(new float[-0.1925,0.8066,-0.1036]);
+let Shape1550 = browser.currentScene.createNode("Shape");
+Shape1550.USE = "HAnimJointShape";
+Transform1549.children = new MFNode();
 
-Transform1550.children[0] = Shape1551;
+Transform1549.children[0] = Shape1550;
 
-HAnimSegment1548.children[1] = Transform1550;
+HAnimSegment1547.children[1] = Transform1549;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky0'/> to <HAnimJoint name='r_pinky1'/>
-let Shape1552 = browser.currentScene.createNode("Shape");
-let LineSet1553 = browser.currentScene.createNode("LineSet");
-LineSet1553.vertexCount = new MFInt32(new int[2]);
-let Coordinate1554 = browser.currentScene.createNode("Coordinate");
-Coordinate1554.point = new MFVec3f(new float[-0.1925,0.8066,-0.1036,-0.1925,0.7866,-0.1036]);
-LineSet1553.coord = Coordinate1554;
+let Shape1551 = browser.currentScene.createNode("Shape");
+let LineSet1552 = browser.currentScene.createNode("LineSet");
+LineSet1552.vertexCount = new MFInt32(new int[2]);
+let Coordinate1553 = browser.currentScene.createNode("Coordinate");
+Coordinate1553.point = new MFVec3f(new float[-0.1925,0.8066,-0.1036,-0.1925,0.7866,-0.1036]);
+LineSet1552.coord = Coordinate1553;
 
-let ColorRGBA1555 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1555.USE = "HAnimSegmentLineColorRGBA";
-LineSet1553.color = ColorRGBA1555;
+let ColorRGBA1554 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1554.USE = "HAnimSegmentLineColorRGBA";
+LineSet1552.color = ColorRGBA1554;
 
-Shape1552.geometry = LineSet1553;
+Shape1551.geometry = LineSet1552;
 
-HAnimSegment1548.children[2] = Shape1552;
+HAnimSegment1547.children[2] = Shape1551;
 
-HAnimJoint1547.children = new MFNode();
+HAnimJoint1546.children = new MFNode();
 
-HAnimJoint1547.children[0] = HAnimSegment1548;
+HAnimJoint1546.children[0] = HAnimSegment1547;
 
-let HAnimJoint1556 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1556.name = "r_pinky1";
-HAnimJoint1556.DEF = "hanim_r_pinky1";
-HAnimJoint1556.center = new SFVec3f(new float[-0.1925,0.7866,-0.1036]);
-HAnimJoint1556.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1557 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1557.name = "r_pinky_proximal";
-HAnimSegment1557.DEF = "hanim_r_pinky_proximal";
+let HAnimJoint1555 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1555.name = "r_pinky1";
+HAnimJoint1555.DEF = "hanim_r_pinky1";
+HAnimJoint1555.center = new SFVec3f(new float[-0.1925,0.7866,-0.1036]);
+HAnimJoint1555.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1556 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1556.name = "r_pinky_proximal";
+HAnimSegment1556.DEF = "hanim_r_pinky_proximal";
 //<HAnimJoint name='r_pinky1'/> visualization sphere is placed within <HAnimSegment name='r_pinky_proximal'/>
-let TouchSensor1558 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1558.description = "HAnimJoint r_pinky1, HAnimSegment r_pinky_proximal";
-HAnimSegment1557.children = new MFNode();
+let TouchSensor1557 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1557.description = "HAnimJoint r_pinky1, HAnimSegment r_pinky_proximal";
+HAnimSegment1556.children = new MFNode();
 
-HAnimSegment1557.children[0] = TouchSensor1558;
+HAnimSegment1556.children[0] = TouchSensor1557;
 
-let Transform1559 = browser.currentScene.createNode("Transform");
-Transform1559.translation = new SFVec3f(new float[-0.1925,0.7866,-0.1036]);
-let Shape1560 = browser.currentScene.createNode("Shape");
-Shape1560.USE = "HAnimJointShape";
-Transform1559.children = new MFNode();
+let Transform1558 = browser.currentScene.createNode("Transform");
+Transform1558.translation = new SFVec3f(new float[-0.1925,0.7866,-0.1036]);
+let Shape1559 = browser.currentScene.createNode("Shape");
+Shape1559.USE = "HAnimJointShape";
+Transform1558.children = new MFNode();
 
-Transform1559.children[0] = Shape1560;
+Transform1558.children[0] = Shape1559;
 
-HAnimSegment1557.children[1] = Transform1559;
+HAnimSegment1556.children[1] = Transform1558;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky1'/> to <HAnimJoint name='r_pinky2'/>
-let Shape1561 = browser.currentScene.createNode("Shape");
-let LineSet1562 = browser.currentScene.createNode("LineSet");
-LineSet1562.vertexCount = new MFInt32(new int[2]);
-let Coordinate1563 = browser.currentScene.createNode("Coordinate");
-Coordinate1563.point = new MFVec3f(new float[-0.1925,0.7866,-0.1036,-0.1938,0.7452,-0.1024]);
-LineSet1562.coord = Coordinate1563;
+let Shape1560 = browser.currentScene.createNode("Shape");
+let LineSet1561 = browser.currentScene.createNode("LineSet");
+LineSet1561.vertexCount = new MFInt32(new int[2]);
+let Coordinate1562 = browser.currentScene.createNode("Coordinate");
+Coordinate1562.point = new MFVec3f(new float[-0.1925,0.7866,-0.1036,-0.1938,0.7452,-0.1024]);
+LineSet1561.coord = Coordinate1562;
 
-let ColorRGBA1564 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1564.USE = "HAnimSegmentLineColorRGBA";
-LineSet1562.color = ColorRGBA1564;
+let ColorRGBA1563 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1563.USE = "HAnimSegmentLineColorRGBA";
+LineSet1561.color = ColorRGBA1563;
 
-Shape1561.geometry = LineSet1562;
+Shape1560.geometry = LineSet1561;
 
-HAnimSegment1557.children[2] = Shape1561;
+HAnimSegment1556.children[2] = Shape1560;
 
-HAnimJoint1556.children = new MFNode();
+HAnimJoint1555.children = new MFNode();
 
-HAnimJoint1556.children[0] = HAnimSegment1557;
+HAnimJoint1555.children[0] = HAnimSegment1556;
 
-let HAnimJoint1565 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1565.name = "r_pinky2";
-HAnimJoint1565.DEF = "hanim_r_pinky2";
-HAnimJoint1565.center = new SFVec3f(new float[-0.1938,0.7452,-0.1024]);
-HAnimJoint1565.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1566 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1566.name = "r_pinky_middle";
-HAnimSegment1566.DEF = "hanim_r_pinky_middle";
+let HAnimJoint1564 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1564.name = "r_pinky2";
+HAnimJoint1564.DEF = "hanim_r_pinky2";
+HAnimJoint1564.center = new SFVec3f(new float[-0.1938,0.7452,-0.1024]);
+HAnimJoint1564.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1565 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1565.name = "r_pinky_middle";
+HAnimSegment1565.DEF = "hanim_r_pinky_middle";
 //<HAnimJoint name='r_pinky2'/> visualization sphere is placed within <HAnimSegment name='r_pinky_middle'/>
-let TouchSensor1567 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1567.description = "HAnimJoint r_pinky2, HAnimSegment r_pinky_middle";
-HAnimSegment1566.children = new MFNode();
+let TouchSensor1566 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1566.description = "HAnimJoint r_pinky2, HAnimSegment r_pinky_middle";
+HAnimSegment1565.children = new MFNode();
 
-HAnimSegment1566.children[0] = TouchSensor1567;
+HAnimSegment1565.children[0] = TouchSensor1566;
 
-let Transform1568 = browser.currentScene.createNode("Transform");
-Transform1568.translation = new SFVec3f(new float[-0.1938,0.7452,-0.1024]);
-let Shape1569 = browser.currentScene.createNode("Shape");
-Shape1569.USE = "HAnimJointShape";
-Transform1568.children = new MFNode();
+let Transform1567 = browser.currentScene.createNode("Transform");
+Transform1567.translation = new SFVec3f(new float[-0.1938,0.7452,-0.1024]);
+let Shape1568 = browser.currentScene.createNode("Shape");
+Shape1568.USE = "HAnimJointShape";
+Transform1567.children = new MFNode();
 
-Transform1568.children[0] = Shape1569;
+Transform1567.children[0] = Shape1568;
 
-HAnimSegment1566.children[1] = Transform1568;
+HAnimSegment1565.children[1] = Transform1567;
 
 //HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky2'/> to <HAnimJoint name='r_pinky3'/>
-let Shape1570 = browser.currentScene.createNode("Shape");
-let LineSet1571 = browser.currentScene.createNode("LineSet");
-LineSet1571.vertexCount = new MFInt32(new int[2]);
-let Coordinate1572 = browser.currentScene.createNode("Coordinate");
-Coordinate1572.point = new MFVec3f(new float[-0.1938,0.7452,-0.1024,-0.1948,0.7277,-0.1017]);
-LineSet1571.coord = Coordinate1572;
+let Shape1569 = browser.currentScene.createNode("Shape");
+let LineSet1570 = browser.currentScene.createNode("LineSet");
+LineSet1570.vertexCount = new MFInt32(new int[2]);
+let Coordinate1571 = browser.currentScene.createNode("Coordinate");
+Coordinate1571.point = new MFVec3f(new float[-0.1938,0.7452,-0.1024,-0.1948,0.7277,-0.1017]);
+LineSet1570.coord = Coordinate1571;
 
-let ColorRGBA1573 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1573.USE = "HAnimSegmentLineColorRGBA";
-LineSet1571.color = ColorRGBA1573;
+let ColorRGBA1572 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1572.USE = "HAnimSegmentLineColorRGBA";
+LineSet1570.color = ColorRGBA1572;
 
-Shape1570.geometry = LineSet1571;
+Shape1569.geometry = LineSet1570;
 
-HAnimSegment1566.children[2] = Shape1570;
+HAnimSegment1565.children[2] = Shape1569;
 
-HAnimJoint1565.children = new MFNode();
+HAnimJoint1564.children = new MFNode();
 
-HAnimJoint1565.children[0] = HAnimSegment1566;
+HAnimJoint1564.children[0] = HAnimSegment1565;
 
-let HAnimJoint1574 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1574.name = "r_pinky3";
-HAnimJoint1574.DEF = "hanim_r_pinky3";
-HAnimJoint1574.center = new SFVec3f(new float[-0.1948,0.7277,-0.1017]);
-HAnimJoint1574.stiffness = new SFVec3f(new float[0,0,0]);
-let HAnimSegment1575 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1575.name = "r_pinky_distal";
-HAnimSegment1575.DEF = "hanim_r_pinky_distal";
+let HAnimJoint1573 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1573.name = "r_pinky3";
+HAnimJoint1573.DEF = "hanim_r_pinky3";
+HAnimJoint1573.center = new SFVec3f(new float[-0.1948,0.7277,-0.1017]);
+HAnimJoint1573.stiffness = new SFVec3f(new float[0,0,0]);
+let HAnimSegment1574 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1574.name = "r_pinky_distal";
+HAnimSegment1574.DEF = "hanim_r_pinky_distal";
 //<HAnimJoint name='r_pinky3'/> visualization sphere is placed within <HAnimSegment name='r_pinky_distal'/>
-let TouchSensor1576 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1576.description = "HAnimJoint r_pinky3, HAnimSegment r_pinky_distal";
-HAnimSegment1575.children = new MFNode();
+let TouchSensor1575 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1575.description = "HAnimJoint r_pinky3, HAnimSegment r_pinky_distal";
+HAnimSegment1574.children = new MFNode();
 
-HAnimSegment1575.children[0] = TouchSensor1576;
+HAnimSegment1574.children[0] = TouchSensor1575;
 
-let Transform1577 = browser.currentScene.createNode("Transform");
-Transform1577.translation = new SFVec3f(new float[-0.1948,0.7277,-0.1017]);
-let Shape1578 = browser.currentScene.createNode("Shape");
-Shape1578.USE = "HAnimJointShape";
-Transform1577.children = new MFNode();
+let Transform1576 = browser.currentScene.createNode("Transform");
+Transform1576.translation = new SFVec3f(new float[-0.1948,0.7277,-0.1017]);
+let Shape1577 = browser.currentScene.createNode("Shape");
+Shape1577.USE = "HAnimJointShape";
+Transform1576.children = new MFNode();
 
-Transform1577.children[0] = Shape1578;
+Transform1576.children[0] = Shape1577;
 
-HAnimSegment1575.children[1] = Transform1577;
+HAnimSegment1574.children[1] = Transform1576;
 
 //HAnimSite visualization line segment from ancestor <HAnimJoint name='r_pinky3'/> to <HAnimSite name='r_pinky_distal_tip'/>
-let Shape1579 = browser.currentScene.createNode("Shape");
-let LineSet1580 = browser.currentScene.createNode("LineSet");
-LineSet1580.vertexCount = new MFInt32(new int[2]);
-let Coordinate1581 = browser.currentScene.createNode("Coordinate");
-Coordinate1581.point = new MFVec3f(new float[-0.1948,0.7277,-0.1017,-0.1938,0.7035,-0.0949]);
-LineSet1580.coord = Coordinate1581;
+let Shape1578 = browser.currentScene.createNode("Shape");
+let LineSet1579 = browser.currentScene.createNode("LineSet");
+LineSet1579.vertexCount = new MFInt32(new int[2]);
+let Coordinate1580 = browser.currentScene.createNode("Coordinate");
+Coordinate1580.point = new MFVec3f(new float[-0.1948,0.7277,-0.1017,-0.1938,0.7035,-0.0949]);
+LineSet1579.coord = Coordinate1580;
 
-let ColorRGBA1582 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1582.USE = "HAnimSiteLineColorRGBA";
-LineSet1580.color = ColorRGBA1582;
+let ColorRGBA1581 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1581.USE = "HAnimSiteLineColorRGBA";
+LineSet1579.color = ColorRGBA1581;
 
-Shape1579.geometry = LineSet1580;
+Shape1578.geometry = LineSet1579;
 
-HAnimSegment1575.children[2] = Shape1579;
+HAnimSegment1574.children[2] = Shape1578;
 
-let HAnimSite1583 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1583.name = "r_pinky_distal_tip";
-HAnimSite1583.DEF = "hanim_r_pinky_distal_tip";
-HAnimSite1583.translation = new SFVec3f(new float[-0.1938,0.7035,-0.0949]);
+let HAnimSite1582 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1582.name = "r_pinky_distal_tip";
+HAnimSite1582.DEF = "hanim_r_pinky_distal_tip";
+HAnimSite1582.translation = new SFVec3f(new float[-0.1938,0.7035,-0.0949]);
 //HAnimSite visualization shape
-let TouchSensor1584 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1584.description = "HAnimSite r_pinky_distal_tip";
-HAnimSite1583.children = new MFNode();
+let TouchSensor1583 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1583.description = "HAnimSite r_pinky_distal_tip";
+HAnimSite1582.children = new MFNode();
 
-HAnimSite1583.children[0] = TouchSensor1584;
+HAnimSite1582.children[0] = TouchSensor1583;
 
-let Shape1585 = browser.currentScene.createNode("Shape");
-Shape1585.USE = "HAnimSiteShape";
-HAnimSite1583.children[1] = Shape1585;
+let Shape1584 = browser.currentScene.createNode("Shape");
+Shape1584.USE = "HAnimSiteShape";
+HAnimSite1582.children[1] = Shape1584;
 
-HAnimSegment1575.children[3] = HAnimSite1583;
+HAnimSegment1574.children[3] = HAnimSite1582;
 
-HAnimJoint1574.children = new MFNode();
+HAnimJoint1573.children = new MFNode();
 
-HAnimJoint1574.children[0] = HAnimSegment1575;
+HAnimJoint1573.children[0] = HAnimSegment1574;
 
-HAnimJoint1565.children[1] = HAnimJoint1574;
+HAnimJoint1564.children[1] = HAnimJoint1573;
 
-HAnimJoint1556.children[1] = HAnimJoint1565;
+HAnimJoint1555.children[1] = HAnimJoint1564;
 
-HAnimJoint1547.children[1] = HAnimJoint1556;
+HAnimJoint1546.children[1] = HAnimJoint1555;
 
-HAnimJoint1335.children[5] = HAnimJoint1547;
+HAnimJoint1334.children[5] = HAnimJoint1546;
 
-HAnimJoint1298.children[1] = HAnimJoint1335;
+HAnimJoint1297.children[1] = HAnimJoint1334;
 
-HAnimJoint1282.children[1] = HAnimJoint1298;
+HAnimJoint1281.children[1] = HAnimJoint1297;
 
-HAnimJoint1273.children[1] = HAnimJoint1282;
+HAnimJoint1272.children[1] = HAnimJoint1281;
 
-HAnimJoint1236.children[1] = HAnimJoint1273;
+HAnimJoint1235.children[1] = HAnimJoint1272;
 
-HAnimJoint598.children[3] = HAnimJoint1236;
+HAnimJoint597.children[3] = HAnimJoint1235;
 
-HAnimJoint589.children[1] = HAnimJoint598;
+HAnimJoint588.children[1] = HAnimJoint597;
 
-HAnimJoint580.children[1] = HAnimJoint589;
+HAnimJoint579.children[1] = HAnimJoint588;
 
-HAnimJoint571.children[1] = HAnimJoint580;
+HAnimJoint570.children[1] = HAnimJoint579;
 
-HAnimJoint562.children[1] = HAnimJoint571;
+HAnimJoint561.children[1] = HAnimJoint570;
 
-HAnimJoint553.children[1] = HAnimJoint562;
+HAnimJoint552.children[1] = HAnimJoint561;
 
-HAnimJoint544.children[1] = HAnimJoint553;
+HAnimJoint543.children[1] = HAnimJoint552;
 
-HAnimJoint535.children[1] = HAnimJoint544;
+HAnimJoint534.children[1] = HAnimJoint543;
 
-HAnimJoint512.children[1] = HAnimJoint535;
+HAnimJoint511.children[1] = HAnimJoint534;
 
-HAnimJoint496.children[1] = HAnimJoint512;
+HAnimJoint495.children[1] = HAnimJoint511;
 
-HAnimJoint487.children[1] = HAnimJoint496;
+HAnimJoint486.children[1] = HAnimJoint495;
 
-HAnimJoint478.children[1] = HAnimJoint487;
+HAnimJoint477.children[1] = HAnimJoint486;
 
-HAnimJoint469.children[1] = HAnimJoint478;
+HAnimJoint468.children[1] = HAnimJoint477;
 
-HAnimJoint439.children[1] = HAnimJoint469;
+HAnimJoint438.children[1] = HAnimJoint468;
 
-HAnimJoint430.children[1] = HAnimJoint439;
+HAnimJoint429.children[1] = HAnimJoint438;
 
-HAnimJoint421.children[1] = HAnimJoint430;
+HAnimJoint420.children[1] = HAnimJoint429;
 
-HAnimJoint398.children[1] = HAnimJoint421;
+HAnimJoint397.children[1] = HAnimJoint420;
 
-HAnimJoint48.children[2] = HAnimJoint398;
+HAnimJoint47.children[2] = HAnimJoint397;
 
-HAnimHumanoid47.joints = new MFNode();
+HAnimHumanoid46.joints = new MFNode();
 
-HAnimHumanoid47.joints[0] = HAnimJoint48;
+HAnimHumanoid46.joints[0] = HAnimJoint47;
 
-let HAnimSite1586 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1586.name = "l_inclined_view";
-HAnimSite1586.DEF = "hanim_l_inclined_view";
-HAnimSite1586.rotation = new SFRotation(new float[-0.113,0.993,0.0347,0.671]);
-HAnimSite1586.translation = new SFVec3f(new float[1.62,1.05,2.06]);
+let HAnimSite1585 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1585.name = "l_inclined_view";
+HAnimSite1585.DEF = "hanim_l_inclined_view";
+HAnimSite1585.rotation = new SFRotation(new float[-0.113,0.993,0.0347,0.671]);
+HAnimSite1585.translation = new SFVec3f(new float[1.62,1.05,2.06]);
 //HAnimSite visualization shape
-let TouchSensor1587 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1587.description = "HAnimSite l_inclined_view";
-HAnimSite1586.children = new MFNode();
+let TouchSensor1586 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1586.description = "HAnimSite l_inclined_view";
+HAnimSite1585.children = new MFNode();
 
-HAnimSite1586.children[0] = TouchSensor1587;
+HAnimSite1585.children[0] = TouchSensor1586;
 
-let Shape1588 = browser.currentScene.createNode("Shape");
-Shape1588.USE = "HAnimSiteShape";
-HAnimSite1586.children[1] = Shape1588;
+let Shape1587 = browser.currentScene.createNode("Shape");
+Shape1587.USE = "HAnimSiteShape";
+HAnimSite1585.children[1] = Shape1587;
 
-let Viewpoint1589 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1589.DEF = "hanim_l_inclined_viewpoint";
-Viewpoint1589.description = "left inclined";
-Viewpoint1589.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1586.children[2] = Viewpoint1589;
+let Viewpoint1588 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1588.DEF = "hanim_l_inclined_viewpoint";
+Viewpoint1588.description = "left inclined";
+Viewpoint1588.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1585.children[2] = Viewpoint1588;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1590 = browser.currentScene.createNode("Anchor");
-Anchor1590.description = "HAnimSite hanim_l_inclined_view Viewpoint";
-Anchor1590.url = new MFString(new java.lang.String["#hanim_l_inclined_viewpoint"]);
-let LOD1591 = browser.currentScene.createNode("LOD");
-LOD1591.forceTransitions = True;
-LOD1591.range = new MFFloat(new float[0.04]);
-let WorldInfo1592 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1592.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1591.children = new MFNode();
+let Anchor1589 = browser.currentScene.createNode("Anchor");
+Anchor1589.description = "HAnimSite hanim_l_inclined_view Viewpoint";
+Anchor1589.url = new MFString(new java.lang.String["#hanim_l_inclined_viewpoint"]);
+let LOD1590 = browser.currentScene.createNode("LOD");
+LOD1590.forceTransitions = True;
+LOD1590.range = new MFFloat(new float[0.04]);
+let WorldInfo1591 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1591.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1590.children = new MFNode();
 
-LOD1591.children[0] = WorldInfo1592;
+LOD1590.children[0] = WorldInfo1591;
 
-let Shape1593 = browser.currentScene.createNode("Shape");
-Shape1593.USE = "HAnimSiteViewpointShape";
-LOD1591.children[1] = Shape1593;
+let Shape1592 = browser.currentScene.createNode("Shape");
+Shape1592.USE = "HAnimSiteViewpointShape";
+LOD1590.children[1] = Shape1592;
 
-Anchor1590.children = new MFNode();
+Anchor1589.children = new MFNode();
 
-Anchor1590.children[0] = LOD1591;
+Anchor1589.children[0] = LOD1590;
 
-HAnimSite1586.children[3] = Anchor1590;
+HAnimSite1585.children[3] = Anchor1589;
 
-HAnimHumanoid47.viewpoints[1] = HAnimSite1586;
+HAnimHumanoid46.viewpoints[1] = HAnimSite1585;
 
-let HAnimSite1594 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1594.name = "r_inclined_view";
-HAnimSite1594.DEF = "hanim_r_inclined_view";
-HAnimSite1594.rotation = new SFRotation(new float[-0.113,-0.993,0.0347,0.671]);
-HAnimSite1594.translation = new SFVec3f(new float[-1.62,1.05,2.06]);
+let HAnimSite1593 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1593.name = "r_inclined_view";
+HAnimSite1593.DEF = "hanim_r_inclined_view";
+HAnimSite1593.rotation = new SFRotation(new float[-0.113,-0.993,0.0347,0.671]);
+HAnimSite1593.translation = new SFVec3f(new float[-1.62,1.05,2.06]);
 //HAnimSite visualization shape
-let TouchSensor1595 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1595.description = "HAnimSite r_inclined_view";
-HAnimSite1594.children = new MFNode();
+let TouchSensor1594 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1594.description = "HAnimSite r_inclined_view";
+HAnimSite1593.children = new MFNode();
 
-HAnimSite1594.children[0] = TouchSensor1595;
+HAnimSite1593.children[0] = TouchSensor1594;
 
-let Shape1596 = browser.currentScene.createNode("Shape");
-Shape1596.USE = "HAnimSiteShape";
-HAnimSite1594.children[1] = Shape1596;
+let Shape1595 = browser.currentScene.createNode("Shape");
+Shape1595.USE = "HAnimSiteShape";
+HAnimSite1593.children[1] = Shape1595;
 
-let Viewpoint1597 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1597.DEF = "hanim_r_inclined_viewpoint";
-Viewpoint1597.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
-Viewpoint1597.description = "right inclined";
-Viewpoint1597.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1594.children[2] = Viewpoint1597;
+let Viewpoint1596 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1596.DEF = "hanim_r_inclined_viewpoint";
+Viewpoint1596.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
+Viewpoint1596.description = "right inclined";
+Viewpoint1596.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1593.children[2] = Viewpoint1596;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1598 = browser.currentScene.createNode("Anchor");
-Anchor1598.description = "HAnimSite hanim_r_inclined_view Viewpoint";
-Anchor1598.url = new MFString(new java.lang.String["#hanim_r_inclined_viewpoint"]);
-let LOD1599 = browser.currentScene.createNode("LOD");
-LOD1599.forceTransitions = True;
-LOD1599.range = new MFFloat(new float[0.04]);
-let WorldInfo1600 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1600.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1599.children = new MFNode();
+let Anchor1597 = browser.currentScene.createNode("Anchor");
+Anchor1597.description = "HAnimSite hanim_r_inclined_view Viewpoint";
+Anchor1597.url = new MFString(new java.lang.String["#hanim_r_inclined_viewpoint"]);
+let LOD1598 = browser.currentScene.createNode("LOD");
+LOD1598.forceTransitions = True;
+LOD1598.range = new MFFloat(new float[0.04]);
+let WorldInfo1599 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1599.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1598.children = new MFNode();
 
-LOD1599.children[0] = WorldInfo1600;
+LOD1598.children[0] = WorldInfo1599;
 
-let Shape1601 = browser.currentScene.createNode("Shape");
-Shape1601.USE = "HAnimSiteViewpointShape";
-LOD1599.children[1] = Shape1601;
+let Shape1600 = browser.currentScene.createNode("Shape");
+Shape1600.USE = "HAnimSiteViewpointShape";
+LOD1598.children[1] = Shape1600;
 
-Anchor1598.children = new MFNode();
+Anchor1597.children = new MFNode();
 
-Anchor1598.children[0] = LOD1599;
+Anchor1597.children[0] = LOD1598;
 
-HAnimSite1594.children[3] = Anchor1598;
+HAnimSite1593.children[3] = Anchor1597;
 
-HAnimHumanoid47.viewpoints[2] = HAnimSite1594;
+HAnimHumanoid46.viewpoints[2] = HAnimSite1593;
 
-let HAnimSite1602 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1602.name = "front_view";
-HAnimSite1602.DEF = "hanim_front_view";
-HAnimSite1602.translation = new SFVec3f(new float[0,0.85,2.58]);
+let HAnimSite1601 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1601.name = "front_view";
+HAnimSite1601.DEF = "hanim_front_view";
+HAnimSite1601.translation = new SFVec3f(new float[0,0.85,2.58]);
 //HAnimSite visualization shape
-let TouchSensor1603 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1603.description = "HAnimSite front_view";
-HAnimSite1602.children = new MFNode();
+let TouchSensor1602 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1602.description = "HAnimSite front_view";
+HAnimSite1601.children = new MFNode();
 
-HAnimSite1602.children[0] = TouchSensor1603;
+HAnimSite1601.children[0] = TouchSensor1602;
 
-let Shape1604 = browser.currentScene.createNode("Shape");
-Shape1604.USE = "HAnimSiteShape";
-HAnimSite1602.children[1] = Shape1604;
+let Shape1603 = browser.currentScene.createNode("Shape");
+Shape1603.USE = "HAnimSiteShape";
+HAnimSite1601.children[1] = Shape1603;
 
-let Viewpoint1605 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1605.DEF = "hanim_front_viewpoint";
-Viewpoint1605.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
-Viewpoint1605.description = "front";
-Viewpoint1605.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1602.children[2] = Viewpoint1605;
+let Viewpoint1604 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1604.DEF = "hanim_front_viewpoint";
+Viewpoint1604.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
+Viewpoint1604.description = "front";
+Viewpoint1604.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1601.children[2] = Viewpoint1604;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1606 = browser.currentScene.createNode("Anchor");
-Anchor1606.description = "HAnimSite hanim_front_view Viewpoint";
-Anchor1606.url = new MFString(new java.lang.String["#hanim_front_viewpoint"]);
-let LOD1607 = browser.currentScene.createNode("LOD");
-LOD1607.forceTransitions = True;
-LOD1607.range = new MFFloat(new float[0.04]);
-let WorldInfo1608 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1608.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1607.children = new MFNode();
+let Anchor1605 = browser.currentScene.createNode("Anchor");
+Anchor1605.description = "HAnimSite hanim_front_view Viewpoint";
+Anchor1605.url = new MFString(new java.lang.String["#hanim_front_viewpoint"]);
+let LOD1606 = browser.currentScene.createNode("LOD");
+LOD1606.forceTransitions = True;
+LOD1606.range = new MFFloat(new float[0.04]);
+let WorldInfo1607 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1607.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1606.children = new MFNode();
 
-LOD1607.children[0] = WorldInfo1608;
+LOD1606.children[0] = WorldInfo1607;
 
-let Shape1609 = browser.currentScene.createNode("Shape");
-Shape1609.USE = "HAnimSiteViewpointShape";
-LOD1607.children[1] = Shape1609;
+let Shape1608 = browser.currentScene.createNode("Shape");
+Shape1608.USE = "HAnimSiteViewpointShape";
+LOD1606.children[1] = Shape1608;
 
-Anchor1606.children = new MFNode();
+Anchor1605.children = new MFNode();
 
-Anchor1606.children[0] = LOD1607;
+Anchor1605.children[0] = LOD1606;
 
-HAnimSite1602.children[3] = Anchor1606;
+HAnimSite1601.children[3] = Anchor1605;
 
-HAnimHumanoid47.viewpoints[3] = HAnimSite1602;
+HAnimHumanoid46.viewpoints[3] = HAnimSite1601;
 
-let HAnimSite1610 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1610.name = "back_view";
-HAnimSite1610.DEF = "hanim_back_view";
-HAnimSite1610.rotation = new SFRotation(new float[0,1,0,3.14]);
-HAnimSite1610.translation = new SFVec3f(new float[0,0.85,-2.58]);
+let HAnimSite1609 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1609.name = "back_view";
+HAnimSite1609.DEF = "hanim_back_view";
+HAnimSite1609.rotation = new SFRotation(new float[0,1,0,3.14]);
+HAnimSite1609.translation = new SFVec3f(new float[0,0.85,-2.58]);
 //HAnimSite visualization shape
-let TouchSensor1611 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1611.description = "HAnimSite back_view";
-HAnimSite1610.children = new MFNode();
+let TouchSensor1610 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1610.description = "HAnimSite back_view";
+HAnimSite1609.children = new MFNode();
 
-HAnimSite1610.children[0] = TouchSensor1611;
+HAnimSite1609.children[0] = TouchSensor1610;
 
-let Shape1612 = browser.currentScene.createNode("Shape");
-Shape1612.USE = "HAnimSiteShape";
-HAnimSite1610.children[1] = Shape1612;
+let Shape1611 = browser.currentScene.createNode("Shape");
+Shape1611.USE = "HAnimSiteShape";
+HAnimSite1609.children[1] = Shape1611;
 
-let Viewpoint1613 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1613.DEF = "hanim_back_viewpoint";
-Viewpoint1613.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
-Viewpoint1613.description = "back";
-Viewpoint1613.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1610.children[2] = Viewpoint1613;
+let Viewpoint1612 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1612.DEF = "hanim_back_viewpoint";
+Viewpoint1612.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
+Viewpoint1612.description = "back";
+Viewpoint1612.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1609.children[2] = Viewpoint1612;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1614 = browser.currentScene.createNode("Anchor");
-Anchor1614.description = "HAnimSite hanim_back_view Viewpoint";
-Anchor1614.url = new MFString(new java.lang.String["#hanim_back_viewpoint"]);
-let LOD1615 = browser.currentScene.createNode("LOD");
-LOD1615.forceTransitions = True;
-LOD1615.range = new MFFloat(new float[0.04]);
-let WorldInfo1616 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1616.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1615.children = new MFNode();
+let Anchor1613 = browser.currentScene.createNode("Anchor");
+Anchor1613.description = "HAnimSite hanim_back_view Viewpoint";
+Anchor1613.url = new MFString(new java.lang.String["#hanim_back_viewpoint"]);
+let LOD1614 = browser.currentScene.createNode("LOD");
+LOD1614.forceTransitions = True;
+LOD1614.range = new MFFloat(new float[0.04]);
+let WorldInfo1615 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1615.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1614.children = new MFNode();
 
-LOD1615.children[0] = WorldInfo1616;
+LOD1614.children[0] = WorldInfo1615;
 
-let Shape1617 = browser.currentScene.createNode("Shape");
-Shape1617.USE = "HAnimSiteViewpointShape";
-LOD1615.children[1] = Shape1617;
+let Shape1616 = browser.currentScene.createNode("Shape");
+Shape1616.USE = "HAnimSiteViewpointShape";
+LOD1614.children[1] = Shape1616;
 
-Anchor1614.children = new MFNode();
+Anchor1613.children = new MFNode();
 
-Anchor1614.children[0] = LOD1615;
+Anchor1613.children[0] = LOD1614;
 
-HAnimSite1610.children[3] = Anchor1614;
+HAnimSite1609.children[3] = Anchor1613;
 
-HAnimHumanoid47.viewpoints[4] = HAnimSite1610;
+HAnimHumanoid46.viewpoints[4] = HAnimSite1609;
 
-let HAnimSite1618 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1618.name = "l_side_view";
-HAnimSite1618.DEF = "hanim_l_side_view";
-HAnimSite1618.rotation = new SFRotation(new float[0,1,0,1.5708]);
-HAnimSite1618.translation = new SFVec3f(new float[2.6,0.854,0]);
+let HAnimSite1617 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1617.name = "l_side_view";
+HAnimSite1617.DEF = "hanim_l_side_view";
+HAnimSite1617.rotation = new SFRotation(new float[0,1,0,1.5708]);
+HAnimSite1617.translation = new SFVec3f(new float[2.6,0.854,0]);
 //HAnimSite visualization shape
-let TouchSensor1619 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1619.description = "HAnimSite l_side_view";
-HAnimSite1618.children = new MFNode();
+let TouchSensor1618 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1618.description = "HAnimSite l_side_view";
+HAnimSite1617.children = new MFNode();
 
-HAnimSite1618.children[0] = TouchSensor1619;
+HAnimSite1617.children[0] = TouchSensor1618;
 
-let Shape1620 = browser.currentScene.createNode("Shape");
-Shape1620.USE = "HAnimSiteShape";
-HAnimSite1618.children[1] = Shape1620;
+let Shape1619 = browser.currentScene.createNode("Shape");
+Shape1619.USE = "HAnimSiteShape";
+HAnimSite1617.children[1] = Shape1619;
 
-let Viewpoint1621 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1621.DEF = "hanim_l_side_viewpoint";
-Viewpoint1621.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
-Viewpoint1621.description = "left side";
-Viewpoint1621.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1618.children[2] = Viewpoint1621;
+let Viewpoint1620 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1620.DEF = "hanim_l_side_viewpoint";
+Viewpoint1620.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
+Viewpoint1620.description = "left side";
+Viewpoint1620.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1617.children[2] = Viewpoint1620;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1622 = browser.currentScene.createNode("Anchor");
-Anchor1622.description = "HAnimSite hanim_l_side_view Viewpoint";
-Anchor1622.url = new MFString(new java.lang.String["#hanim_l_side_viewpoint"]);
-let LOD1623 = browser.currentScene.createNode("LOD");
-LOD1623.forceTransitions = True;
-LOD1623.range = new MFFloat(new float[0.04]);
-let WorldInfo1624 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1624.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1623.children = new MFNode();
+let Anchor1621 = browser.currentScene.createNode("Anchor");
+Anchor1621.description = "HAnimSite hanim_l_side_view Viewpoint";
+Anchor1621.url = new MFString(new java.lang.String["#hanim_l_side_viewpoint"]);
+let LOD1622 = browser.currentScene.createNode("LOD");
+LOD1622.forceTransitions = True;
+LOD1622.range = new MFFloat(new float[0.04]);
+let WorldInfo1623 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1623.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1622.children = new MFNode();
 
-LOD1623.children[0] = WorldInfo1624;
+LOD1622.children[0] = WorldInfo1623;
 
-let Shape1625 = browser.currentScene.createNode("Shape");
-Shape1625.USE = "HAnimSiteViewpointShape";
-LOD1623.children[1] = Shape1625;
+let Shape1624 = browser.currentScene.createNode("Shape");
+Shape1624.USE = "HAnimSiteViewpointShape";
+LOD1622.children[1] = Shape1624;
 
-Anchor1622.children = new MFNode();
+Anchor1621.children = new MFNode();
 
-Anchor1622.children[0] = LOD1623;
+Anchor1621.children[0] = LOD1622;
 
-HAnimSite1618.children[3] = Anchor1622;
+HAnimSite1617.children[3] = Anchor1621;
 
-HAnimHumanoid47.viewpoints[5] = HAnimSite1618;
+HAnimHumanoid46.viewpoints[5] = HAnimSite1617;
 
-let HAnimSite1626 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1626.name = "Top_view";
-HAnimSite1626.DEF = "hanim_Top_view";
-HAnimSite1626.rotation = new SFRotation(new float[1,0,0,-1.57]);
-HAnimSite1626.translation = new SFVec3f(new float[0,3.5,0]);
+let HAnimSite1625 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1625.name = "Top_view";
+HAnimSite1625.DEF = "hanim_Top_view";
+HAnimSite1625.rotation = new SFRotation(new float[1,0,0,-1.57]);
+HAnimSite1625.translation = new SFVec3f(new float[0,3.5,0]);
 //HAnimSite visualization shape
-let TouchSensor1627 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1627.description = "HAnimSite Top_view";
-HAnimSite1626.children = new MFNode();
+let TouchSensor1626 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1626.description = "HAnimSite Top_view";
+HAnimSite1625.children = new MFNode();
 
-HAnimSite1626.children[0] = TouchSensor1627;
+HAnimSite1625.children[0] = TouchSensor1626;
 
-let Shape1628 = browser.currentScene.createNode("Shape");
-Shape1628.USE = "HAnimSiteShape";
-HAnimSite1626.children[1] = Shape1628;
+let Shape1627 = browser.currentScene.createNode("Shape");
+Shape1627.USE = "HAnimSiteShape";
+HAnimSite1625.children[1] = Shape1627;
 
-let Viewpoint1629 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1629.DEF = "hanim_Top_viewpoint";
-Viewpoint1629.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
-Viewpoint1629.description = "Top";
-Viewpoint1629.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1626.children[2] = Viewpoint1629;
+let Viewpoint1628 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1628.DEF = "hanim_Top_viewpoint";
+Viewpoint1628.centerOfRotation = new SFVec3f(new float[0,0.9,0]);
+Viewpoint1628.description = "Top";
+Viewpoint1628.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1625.children[2] = Viewpoint1628;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1630 = browser.currentScene.createNode("Anchor");
-Anchor1630.description = "HAnimSite hanim_Top_view Viewpoint";
-Anchor1630.url = new MFString(new java.lang.String["#hanim_Top_viewpoint"]);
-let LOD1631 = browser.currentScene.createNode("LOD");
-LOD1631.forceTransitions = True;
-LOD1631.range = new MFFloat(new float[0.04]);
-let WorldInfo1632 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1632.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1631.children = new MFNode();
+let Anchor1629 = browser.currentScene.createNode("Anchor");
+Anchor1629.description = "HAnimSite hanim_Top_view Viewpoint";
+Anchor1629.url = new MFString(new java.lang.String["#hanim_Top_viewpoint"]);
+let LOD1630 = browser.currentScene.createNode("LOD");
+LOD1630.forceTransitions = True;
+LOD1630.range = new MFFloat(new float[0.04]);
+let WorldInfo1631 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1631.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1630.children = new MFNode();
 
-LOD1631.children[0] = WorldInfo1632;
+LOD1630.children[0] = WorldInfo1631;
 
-let Shape1633 = browser.currentScene.createNode("Shape");
-Shape1633.USE = "HAnimSiteViewpointShape";
-LOD1631.children[1] = Shape1633;
+let Shape1632 = browser.currentScene.createNode("Shape");
+Shape1632.USE = "HAnimSiteViewpointShape";
+LOD1630.children[1] = Shape1632;
 
-Anchor1630.children = new MFNode();
+Anchor1629.children = new MFNode();
 
-Anchor1630.children[0] = LOD1631;
+Anchor1629.children[0] = LOD1630;
 
-HAnimSite1626.children[3] = Anchor1630;
+HAnimSite1625.children[3] = Anchor1629;
 
-HAnimHumanoid47.viewpoints[6] = HAnimSite1626;
+HAnimHumanoid46.viewpoints[6] = HAnimSite1625;
 
-let HAnimSite1634 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1634.name = "front_close_view";
-HAnimSite1634.DEF = "hanim_front_close_view";
-HAnimSite1634.translation = new SFVec3f(new float[0,0.854,1.575]);
+let HAnimSite1633 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1633.name = "front_close_view";
+HAnimSite1633.DEF = "hanim_front_close_view";
+HAnimSite1633.translation = new SFVec3f(new float[0,0.854,1.575]);
 //HAnimSite visualization shape
-let TouchSensor1635 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1635.description = "HAnimSite front_close_view";
-HAnimSite1634.children = new MFNode();
+let TouchSensor1634 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1634.description = "HAnimSite front_close_view";
+HAnimSite1633.children = new MFNode();
 
-HAnimSite1634.children[0] = TouchSensor1635;
+HAnimSite1633.children[0] = TouchSensor1634;
 
-let Shape1636 = browser.currentScene.createNode("Shape");
-Shape1636.USE = "HAnimSiteShape";
-HAnimSite1634.children[1] = Shape1636;
+let Shape1635 = browser.currentScene.createNode("Shape");
+Shape1635.USE = "HAnimSiteShape";
+HAnimSite1633.children[1] = Shape1635;
 
-let Viewpoint1637 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1637.DEF = "hanim_front_close_viewpoint";
-Viewpoint1637.centerOfRotation = new SFVec3f(new float[0,0,1.575]);
-Viewpoint1637.description = "front close";
-Viewpoint1637.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1634.children[2] = Viewpoint1637;
+let Viewpoint1636 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1636.DEF = "hanim_front_close_viewpoint";
+Viewpoint1636.centerOfRotation = new SFVec3f(new float[0,0,1.575]);
+Viewpoint1636.description = "front close";
+Viewpoint1636.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1633.children[2] = Viewpoint1636;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1638 = browser.currentScene.createNode("Anchor");
-Anchor1638.description = "HAnimSite hanim_front_close_view Viewpoint";
-Anchor1638.url = new MFString(new java.lang.String["#hanim_front_close_viewpoint"]);
-let LOD1639 = browser.currentScene.createNode("LOD");
-LOD1639.forceTransitions = True;
-LOD1639.range = new MFFloat(new float[0.04]);
-let WorldInfo1640 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1640.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1639.children = new MFNode();
+let Anchor1637 = browser.currentScene.createNode("Anchor");
+Anchor1637.description = "HAnimSite hanim_front_close_view Viewpoint";
+Anchor1637.url = new MFString(new java.lang.String["#hanim_front_close_viewpoint"]);
+let LOD1638 = browser.currentScene.createNode("LOD");
+LOD1638.forceTransitions = True;
+LOD1638.range = new MFFloat(new float[0.04]);
+let WorldInfo1639 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1639.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1638.children = new MFNode();
 
-LOD1639.children[0] = WorldInfo1640;
+LOD1638.children[0] = WorldInfo1639;
 
-let Shape1641 = browser.currentScene.createNode("Shape");
-Shape1641.USE = "HAnimSiteViewpointShape";
-LOD1639.children[1] = Shape1641;
+let Shape1640 = browser.currentScene.createNode("Shape");
+Shape1640.USE = "HAnimSiteViewpointShape";
+LOD1638.children[1] = Shape1640;
 
-Anchor1638.children = new MFNode();
+Anchor1637.children = new MFNode();
 
-Anchor1638.children[0] = LOD1639;
+Anchor1637.children[0] = LOD1638;
 
-HAnimSite1634.children[3] = Anchor1638;
+HAnimSite1633.children[3] = Anchor1637;
 
-HAnimHumanoid47.viewpoints[7] = HAnimSite1634;
+HAnimHumanoid46.viewpoints[7] = HAnimSite1633;
 
-let HAnimSite1642 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1642.name = "side_close_view";
-HAnimSite1642.DEF = "hanim_side_close_view";
-HAnimSite1642.rotation = new SFRotation(new float[0,1,0,1.5708]);
-HAnimSite1642.translation = new SFVec3f(new float[1.56,0.854,0]);
+let HAnimSite1641 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1641.name = "side_close_view";
+HAnimSite1641.DEF = "hanim_side_close_view";
+HAnimSite1641.rotation = new SFRotation(new float[0,1,0,1.5708]);
+HAnimSite1641.translation = new SFVec3f(new float[1.56,0.854,0]);
 //HAnimSite visualization shape
-let TouchSensor1643 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1643.description = "HAnimSite side_close_view";
-HAnimSite1642.children = new MFNode();
+let TouchSensor1642 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1642.description = "HAnimSite side_close_view";
+HAnimSite1641.children = new MFNode();
 
-HAnimSite1642.children[0] = TouchSensor1643;
+HAnimSite1641.children[0] = TouchSensor1642;
 
-let Shape1644 = browser.currentScene.createNode("Shape");
-Shape1644.USE = "HAnimSiteShape";
-HAnimSite1642.children[1] = Shape1644;
+let Shape1643 = browser.currentScene.createNode("Shape");
+Shape1643.USE = "HAnimSiteShape";
+HAnimSite1641.children[1] = Shape1643;
 
-let Viewpoint1645 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1645.DEF = "hanim_side_close_viewpoint";
-Viewpoint1645.centerOfRotation = new SFVec3f(new float[1.6,0,0]);
-Viewpoint1645.description = "side close";
-Viewpoint1645.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1642.children[2] = Viewpoint1645;
+let Viewpoint1644 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1644.DEF = "hanim_side_close_viewpoint";
+Viewpoint1644.centerOfRotation = new SFVec3f(new float[1.6,0,0]);
+Viewpoint1644.description = "side close";
+Viewpoint1644.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1641.children[2] = Viewpoint1644;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1646 = browser.currentScene.createNode("Anchor");
-Anchor1646.description = "HAnimSite hanim_side_close_view Viewpoint";
-Anchor1646.url = new MFString(new java.lang.String["#hanim_side_close_viewpoint"]);
-let LOD1647 = browser.currentScene.createNode("LOD");
-LOD1647.forceTransitions = True;
-LOD1647.range = new MFFloat(new float[0.04]);
-let WorldInfo1648 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1648.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1647.children = new MFNode();
+let Anchor1645 = browser.currentScene.createNode("Anchor");
+Anchor1645.description = "HAnimSite hanim_side_close_view Viewpoint";
+Anchor1645.url = new MFString(new java.lang.String["#hanim_side_close_viewpoint"]);
+let LOD1646 = browser.currentScene.createNode("LOD");
+LOD1646.forceTransitions = True;
+LOD1646.range = new MFFloat(new float[0.04]);
+let WorldInfo1647 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1647.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1646.children = new MFNode();
 
-LOD1647.children[0] = WorldInfo1648;
+LOD1646.children[0] = WorldInfo1647;
 
-let Shape1649 = browser.currentScene.createNode("Shape");
-Shape1649.USE = "HAnimSiteViewpointShape";
-LOD1647.children[1] = Shape1649;
+let Shape1648 = browser.currentScene.createNode("Shape");
+Shape1648.USE = "HAnimSiteViewpointShape";
+LOD1646.children[1] = Shape1648;
 
-Anchor1646.children = new MFNode();
+Anchor1645.children = new MFNode();
 
-Anchor1646.children[0] = LOD1647;
+Anchor1645.children[0] = LOD1646;
 
-HAnimSite1642.children[3] = Anchor1646;
+HAnimSite1641.children[3] = Anchor1645;
 
-HAnimHumanoid47.viewpoints[8] = HAnimSite1642;
+HAnimHumanoid46.viewpoints[8] = HAnimSite1641;
 
-let HAnimSite1650 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1650.name = "head_front_close_view";
-HAnimSite1650.DEF = "hanim_head_front_close_view";
-HAnimSite1650.translation = new SFVec3f(new float[0,1.5,1]);
+let HAnimSite1649 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1649.name = "head_front_close_view";
+HAnimSite1649.DEF = "hanim_head_front_close_view";
+HAnimSite1649.translation = new SFVec3f(new float[0,1.5,1]);
 //HAnimSite visualization shape
-let TouchSensor1651 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1651.description = "HAnimSite head_front_close_view";
-HAnimSite1650.children = new MFNode();
+let TouchSensor1650 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1650.description = "HAnimSite head_front_close_view";
+HAnimSite1649.children = new MFNode();
 
-HAnimSite1650.children[0] = TouchSensor1651;
+HAnimSite1649.children[0] = TouchSensor1650;
 
-let Shape1652 = browser.currentScene.createNode("Shape");
-Shape1652.USE = "HAnimSiteShape";
-HAnimSite1650.children[1] = Shape1652;
+let Shape1651 = browser.currentScene.createNode("Shape");
+Shape1651.USE = "HAnimSiteShape";
+HAnimSite1649.children[1] = Shape1651;
 
-let Viewpoint1653 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1653.DEF = "hanim_head_front_close_viewpoint";
-Viewpoint1653.centerOfRotation = new SFVec3f(new float[0,0,1]);
-Viewpoint1653.description = "head front close";
-Viewpoint1653.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1650.children[2] = Viewpoint1653;
+let Viewpoint1652 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1652.DEF = "hanim_head_front_close_viewpoint";
+Viewpoint1652.centerOfRotation = new SFVec3f(new float[0,0,1]);
+Viewpoint1652.description = "head front close";
+Viewpoint1652.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1649.children[2] = Viewpoint1652;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1654 = browser.currentScene.createNode("Anchor");
-Anchor1654.description = "HAnimSite hanim_head_front_close_view Viewpoint";
-Anchor1654.url = new MFString(new java.lang.String["#hanim_head_front_close_viewpoint"]);
-let LOD1655 = browser.currentScene.createNode("LOD");
-LOD1655.forceTransitions = True;
-LOD1655.range = new MFFloat(new float[0.04]);
-let WorldInfo1656 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1656.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1655.children = new MFNode();
+let Anchor1653 = browser.currentScene.createNode("Anchor");
+Anchor1653.description = "HAnimSite hanim_head_front_close_view Viewpoint";
+Anchor1653.url = new MFString(new java.lang.String["#hanim_head_front_close_viewpoint"]);
+let LOD1654 = browser.currentScene.createNode("LOD");
+LOD1654.forceTransitions = True;
+LOD1654.range = new MFFloat(new float[0.04]);
+let WorldInfo1655 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1655.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1654.children = new MFNode();
 
-LOD1655.children[0] = WorldInfo1656;
+LOD1654.children[0] = WorldInfo1655;
 
-let Shape1657 = browser.currentScene.createNode("Shape");
-Shape1657.USE = "HAnimSiteViewpointShape";
-LOD1655.children[1] = Shape1657;
+let Shape1656 = browser.currentScene.createNode("Shape");
+Shape1656.USE = "HAnimSiteViewpointShape";
+LOD1654.children[1] = Shape1656;
 
-Anchor1654.children = new MFNode();
+Anchor1653.children = new MFNode();
 
-Anchor1654.children[0] = LOD1655;
+Anchor1653.children[0] = LOD1654;
 
-HAnimSite1650.children[3] = Anchor1654;
+HAnimSite1649.children[3] = Anchor1653;
 
-HAnimHumanoid47.viewpoints[9] = HAnimSite1650;
+HAnimHumanoid46.viewpoints[9] = HAnimSite1649;
 
-let HAnimSite1658 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1658.name = "chest_front_close_view";
-HAnimSite1658.DEF = "hanim_chest_front_close_view";
-HAnimSite1658.translation = new SFVec3f(new float[0,1.2,1]);
+let HAnimSite1657 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1657.name = "chest_front_close_view";
+HAnimSite1657.DEF = "hanim_chest_front_close_view";
+HAnimSite1657.translation = new SFVec3f(new float[0,1.2,1]);
 //HAnimSite visualization shape
-let TouchSensor1659 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1659.description = "HAnimSite chest_front_close_view";
-HAnimSite1658.children = new MFNode();
+let TouchSensor1658 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1658.description = "HAnimSite chest_front_close_view";
+HAnimSite1657.children = new MFNode();
 
-HAnimSite1658.children[0] = TouchSensor1659;
+HAnimSite1657.children[0] = TouchSensor1658;
 
-let Shape1660 = browser.currentScene.createNode("Shape");
-Shape1660.USE = "HAnimSiteShape";
-HAnimSite1658.children[1] = Shape1660;
+let Shape1659 = browser.currentScene.createNode("Shape");
+Shape1659.USE = "HAnimSiteShape";
+HAnimSite1657.children[1] = Shape1659;
 
-let Viewpoint1661 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1661.DEF = "hanim_chest_front_close_viewpoint";
-Viewpoint1661.centerOfRotation = new SFVec3f(new float[0,0,1]);
-Viewpoint1661.description = "chest front close";
-Viewpoint1661.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1658.children[2] = Viewpoint1661;
+let Viewpoint1660 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1660.DEF = "hanim_chest_front_close_viewpoint";
+Viewpoint1660.centerOfRotation = new SFVec3f(new float[0,0,1]);
+Viewpoint1660.description = "chest front close";
+Viewpoint1660.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1657.children[2] = Viewpoint1660;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1662 = browser.currentScene.createNode("Anchor");
-Anchor1662.description = "HAnimSite hanim_chest_front_close_view Viewpoint";
-Anchor1662.url = new MFString(new java.lang.String["#hanim_chest_front_close_viewpoint"]);
-let LOD1663 = browser.currentScene.createNode("LOD");
-LOD1663.forceTransitions = True;
-LOD1663.range = new MFFloat(new float[0.04]);
-let WorldInfo1664 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1664.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1663.children = new MFNode();
+let Anchor1661 = browser.currentScene.createNode("Anchor");
+Anchor1661.description = "HAnimSite hanim_chest_front_close_view Viewpoint";
+Anchor1661.url = new MFString(new java.lang.String["#hanim_chest_front_close_viewpoint"]);
+let LOD1662 = browser.currentScene.createNode("LOD");
+LOD1662.forceTransitions = True;
+LOD1662.range = new MFFloat(new float[0.04]);
+let WorldInfo1663 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1663.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1662.children = new MFNode();
 
-LOD1663.children[0] = WorldInfo1664;
+LOD1662.children[0] = WorldInfo1663;
 
-let Shape1665 = browser.currentScene.createNode("Shape");
-Shape1665.USE = "HAnimSiteViewpointShape";
-LOD1663.children[1] = Shape1665;
+let Shape1664 = browser.currentScene.createNode("Shape");
+Shape1664.USE = "HAnimSiteViewpointShape";
+LOD1662.children[1] = Shape1664;
 
-Anchor1662.children = new MFNode();
+Anchor1661.children = new MFNode();
 
-Anchor1662.children[0] = LOD1663;
+Anchor1661.children[0] = LOD1662;
 
-HAnimSite1658.children[3] = Anchor1662;
+HAnimSite1657.children[3] = Anchor1661;
 
-HAnimHumanoid47.viewpoints[10] = HAnimSite1658;
+HAnimHumanoid46.viewpoints[10] = HAnimSite1657;
 
-let HAnimSite1666 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1666.name = "pelvis_front_close_view";
-HAnimSite1666.DEF = "hanim_pelvis_front_close_view";
-HAnimSite1666.translation = new SFVec3f(new float[0,0.8,1]);
+let HAnimSite1665 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1665.name = "pelvis_front_close_view";
+HAnimSite1665.DEF = "hanim_pelvis_front_close_view";
+HAnimSite1665.translation = new SFVec3f(new float[0,0.8,1]);
 //HAnimSite visualization shape
-let TouchSensor1667 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1667.description = "HAnimSite pelvis_front_close_view";
-HAnimSite1666.children = new MFNode();
+let TouchSensor1666 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1666.description = "HAnimSite pelvis_front_close_view";
+HAnimSite1665.children = new MFNode();
 
-HAnimSite1666.children[0] = TouchSensor1667;
+HAnimSite1665.children[0] = TouchSensor1666;
 
-let Shape1668 = browser.currentScene.createNode("Shape");
-Shape1668.USE = "HAnimSiteShape";
-HAnimSite1666.children[1] = Shape1668;
+let Shape1667 = browser.currentScene.createNode("Shape");
+Shape1667.USE = "HAnimSiteShape";
+HAnimSite1665.children[1] = Shape1667;
 
-let Viewpoint1669 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1669.DEF = "hanim_pelvis_front_close_viewpoint";
-Viewpoint1669.centerOfRotation = new SFVec3f(new float[0,0,1]);
-Viewpoint1669.description = "pelvis front close";
-Viewpoint1669.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1666.children[2] = Viewpoint1669;
+let Viewpoint1668 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1668.DEF = "hanim_pelvis_front_close_viewpoint";
+Viewpoint1668.centerOfRotation = new SFVec3f(new float[0,0,1]);
+Viewpoint1668.description = "pelvis front close";
+Viewpoint1668.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1665.children[2] = Viewpoint1668;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1670 = browser.currentScene.createNode("Anchor");
-Anchor1670.description = "HAnimSite hanim_pelvis_front_close_view Viewpoint";
-Anchor1670.url = new MFString(new java.lang.String["#hanim_pelvis_front_close_viewpoint"]);
-let LOD1671 = browser.currentScene.createNode("LOD");
-LOD1671.forceTransitions = True;
-LOD1671.range = new MFFloat(new float[0.04]);
-let WorldInfo1672 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1672.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1671.children = new MFNode();
+let Anchor1669 = browser.currentScene.createNode("Anchor");
+Anchor1669.description = "HAnimSite hanim_pelvis_front_close_view Viewpoint";
+Anchor1669.url = new MFString(new java.lang.String["#hanim_pelvis_front_close_viewpoint"]);
+let LOD1670 = browser.currentScene.createNode("LOD");
+LOD1670.forceTransitions = True;
+LOD1670.range = new MFFloat(new float[0.04]);
+let WorldInfo1671 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1671.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1670.children = new MFNode();
 
-LOD1671.children[0] = WorldInfo1672;
+LOD1670.children[0] = WorldInfo1671;
 
-let Shape1673 = browser.currentScene.createNode("Shape");
-Shape1673.USE = "HAnimSiteViewpointShape";
-LOD1671.children[1] = Shape1673;
+let Shape1672 = browser.currentScene.createNode("Shape");
+Shape1672.USE = "HAnimSiteViewpointShape";
+LOD1670.children[1] = Shape1672;
 
-Anchor1670.children = new MFNode();
+Anchor1669.children = new MFNode();
 
-Anchor1670.children[0] = LOD1671;
+Anchor1669.children[0] = LOD1670;
 
-HAnimSite1666.children[3] = Anchor1670;
+HAnimSite1665.children[3] = Anchor1669;
 
-HAnimHumanoid47.viewpoints[11] = HAnimSite1666;
+HAnimHumanoid46.viewpoints[11] = HAnimSite1665;
 
-let HAnimSite1674 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1674.name = "knees_front_close_view";
-HAnimSite1674.DEF = "hanim_knees_front_close_view";
-HAnimSite1674.translation = new SFVec3f(new float[0,0.4,1]);
+let HAnimSite1673 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1673.name = "knees_front_close_view";
+HAnimSite1673.DEF = "hanim_knees_front_close_view";
+HAnimSite1673.translation = new SFVec3f(new float[0,0.4,1]);
 //HAnimSite visualization shape
-let TouchSensor1675 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1675.description = "HAnimSite knees_front_close_view";
-HAnimSite1674.children = new MFNode();
+let TouchSensor1674 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1674.description = "HAnimSite knees_front_close_view";
+HAnimSite1673.children = new MFNode();
 
-HAnimSite1674.children[0] = TouchSensor1675;
+HAnimSite1673.children[0] = TouchSensor1674;
 
-let Shape1676 = browser.currentScene.createNode("Shape");
-Shape1676.USE = "HAnimSiteShape";
-HAnimSite1674.children[1] = Shape1676;
+let Shape1675 = browser.currentScene.createNode("Shape");
+Shape1675.USE = "HAnimSiteShape";
+HAnimSite1673.children[1] = Shape1675;
 
-let Viewpoint1677 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1677.DEF = "hanim_knees_front_close_viewpoint";
-Viewpoint1677.centerOfRotation = new SFVec3f(new float[0,0.4,0]);
-Viewpoint1677.description = "knees front close";
-Viewpoint1677.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1674.children[2] = Viewpoint1677;
+let Viewpoint1676 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1676.DEF = "hanim_knees_front_close_viewpoint";
+Viewpoint1676.centerOfRotation = new SFVec3f(new float[0,0.4,0]);
+Viewpoint1676.description = "knees front close";
+Viewpoint1676.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1673.children[2] = Viewpoint1676;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1678 = browser.currentScene.createNode("Anchor");
-Anchor1678.description = "HAnimSite hanim_knees_front_close_view Viewpoint";
-Anchor1678.url = new MFString(new java.lang.String["#hanim_knees_front_close_viewpoint"]);
-let LOD1679 = browser.currentScene.createNode("LOD");
-LOD1679.forceTransitions = True;
-LOD1679.range = new MFFloat(new float[0.04]);
-let WorldInfo1680 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1680.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1679.children = new MFNode();
+let Anchor1677 = browser.currentScene.createNode("Anchor");
+Anchor1677.description = "HAnimSite hanim_knees_front_close_view Viewpoint";
+Anchor1677.url = new MFString(new java.lang.String["#hanim_knees_front_close_viewpoint"]);
+let LOD1678 = browser.currentScene.createNode("LOD");
+LOD1678.forceTransitions = True;
+LOD1678.range = new MFFloat(new float[0.04]);
+let WorldInfo1679 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1679.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1678.children = new MFNode();
 
-LOD1679.children[0] = WorldInfo1680;
+LOD1678.children[0] = WorldInfo1679;
 
-let Shape1681 = browser.currentScene.createNode("Shape");
-Shape1681.USE = "HAnimSiteViewpointShape";
-LOD1679.children[1] = Shape1681;
+let Shape1680 = browser.currentScene.createNode("Shape");
+Shape1680.USE = "HAnimSiteViewpointShape";
+LOD1678.children[1] = Shape1680;
 
-Anchor1678.children = new MFNode();
+Anchor1677.children = new MFNode();
 
-Anchor1678.children[0] = LOD1679;
+Anchor1677.children[0] = LOD1678;
 
-HAnimSite1674.children[3] = Anchor1678;
+HAnimSite1673.children[3] = Anchor1677;
 
-HAnimHumanoid47.viewpoints[12] = HAnimSite1674;
+HAnimHumanoid46.viewpoints[12] = HAnimSite1673;
 
-let HAnimSite1682 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1682.name = "feet_front_close_view";
-HAnimSite1682.DEF = "hanim_feet_front_close_view";
-HAnimSite1682.translation = new SFVec3f(new float[0,0,1]);
+let HAnimSite1681 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1681.name = "feet_front_close_view";
+HAnimSite1681.DEF = "hanim_feet_front_close_view";
+HAnimSite1681.translation = new SFVec3f(new float[0,0,1]);
 //HAnimSite visualization shape
-let TouchSensor1683 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1683.description = "HAnimSite feet_front_close_view";
-HAnimSite1682.children = new MFNode();
+let TouchSensor1682 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1682.description = "HAnimSite feet_front_close_view";
+HAnimSite1681.children = new MFNode();
 
-HAnimSite1682.children[0] = TouchSensor1683;
+HAnimSite1681.children[0] = TouchSensor1682;
 
-let Shape1684 = browser.currentScene.createNode("Shape");
-Shape1684.USE = "HAnimSiteShape";
-HAnimSite1682.children[1] = Shape1684;
+let Shape1683 = browser.currentScene.createNode("Shape");
+Shape1683.USE = "HAnimSiteShape";
+HAnimSite1681.children[1] = Shape1683;
 
-let Viewpoint1685 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1685.DEF = "hanim_feet_front_close_viewpoint";
-Viewpoint1685.description = "feet front close";
-Viewpoint1685.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1682.children[2] = Viewpoint1685;
+let Viewpoint1684 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1684.DEF = "hanim_feet_front_close_viewpoint";
+Viewpoint1684.description = "feet front close";
+Viewpoint1684.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1681.children[2] = Viewpoint1684;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1686 = browser.currentScene.createNode("Anchor");
-Anchor1686.description = "HAnimSite hanim_feet_front_close_view Viewpoint";
-Anchor1686.url = new MFString(new java.lang.String["#hanim_feet_front_close_viewpoint"]);
-let LOD1687 = browser.currentScene.createNode("LOD");
-LOD1687.forceTransitions = True;
-LOD1687.range = new MFFloat(new float[0.04]);
-let WorldInfo1688 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1688.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1687.children = new MFNode();
+let Anchor1685 = browser.currentScene.createNode("Anchor");
+Anchor1685.description = "HAnimSite hanim_feet_front_close_view Viewpoint";
+Anchor1685.url = new MFString(new java.lang.String["#hanim_feet_front_close_viewpoint"]);
+let LOD1686 = browser.currentScene.createNode("LOD");
+LOD1686.forceTransitions = True;
+LOD1686.range = new MFFloat(new float[0.04]);
+let WorldInfo1687 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1687.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1686.children = new MFNode();
 
-LOD1687.children[0] = WorldInfo1688;
+LOD1686.children[0] = WorldInfo1687;
 
-let Shape1689 = browser.currentScene.createNode("Shape");
-Shape1689.USE = "HAnimSiteViewpointShape";
-LOD1687.children[1] = Shape1689;
+let Shape1688 = browser.currentScene.createNode("Shape");
+Shape1688.USE = "HAnimSiteViewpointShape";
+LOD1686.children[1] = Shape1688;
 
-Anchor1686.children = new MFNode();
+Anchor1685.children = new MFNode();
 
-Anchor1686.children[0] = LOD1687;
+Anchor1685.children[0] = LOD1686;
 
-HAnimSite1682.children[3] = Anchor1686;
+HAnimSite1681.children[3] = Anchor1685;
 
-HAnimHumanoid47.viewpoints[13] = HAnimSite1682;
+HAnimHumanoid46.viewpoints[13] = HAnimSite1681;
 
-let HAnimSite1690 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1690.name = "eye_level_view";
-HAnimSite1690.DEF = "hanim_eye_level_view";
-HAnimSite1690.translation = new SFVec3f(new float[0,1.6332,0.0502]);
+let HAnimSite1689 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1689.name = "eye_level_view";
+HAnimSite1689.DEF = "hanim_eye_level_view";
+HAnimSite1689.translation = new SFVec3f(new float[0,1.6332,0.0502]);
 //HAnimSite visualization shape
-let TouchSensor1691 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1691.description = "HAnimSite eye_level_view";
-HAnimSite1690.children = new MFNode();
+let TouchSensor1690 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1690.description = "HAnimSite eye_level_view";
+HAnimSite1689.children = new MFNode();
 
-HAnimSite1690.children[0] = TouchSensor1691;
+HAnimSite1689.children[0] = TouchSensor1690;
 
-let Shape1692 = browser.currentScene.createNode("Shape");
-Shape1692.USE = "HAnimSiteShape";
-HAnimSite1690.children[1] = Shape1692;
+let Shape1691 = browser.currentScene.createNode("Shape");
+Shape1691.USE = "HAnimSiteShape";
+HAnimSite1689.children[1] = Shape1691;
 
-let Viewpoint1693 = browser.currentScene.createNode("Viewpoint");
-Viewpoint1693.DEF = "hanim_eye_level_viewpoint";
-Viewpoint1693.description = "eye level looking forward";
-Viewpoint1693.orientation = new SFRotation(new float[0,1,0,3.141593]);
-Viewpoint1693.position = new SFVec3f(new float[0,0,0]);
-HAnimSite1690.children[2] = Viewpoint1693;
+let Viewpoint1692 = browser.currentScene.createNode("Viewpoint");
+Viewpoint1692.DEF = "hanim_eye_level_viewpoint";
+Viewpoint1692.description = "eye level looking forward";
+Viewpoint1692.orientation = new SFRotation(new float[0,1,0,3.141593]);
+Viewpoint1692.position = new SFVec3f(new float[0,0,0]);
+HAnimSite1689.children[2] = Viewpoint1692;
 
 //HAnimSite/Viewpoint visualization shape
-let Anchor1694 = browser.currentScene.createNode("Anchor");
-Anchor1694.description = "HAnimSite hanim_eye_level_view Viewpoint";
-Anchor1694.url = new MFString(new java.lang.String["#hanim_eye_level_viewpoint"]);
-let LOD1695 = browser.currentScene.createNode("LOD");
-LOD1695.forceTransitions = True;
-LOD1695.range = new MFFloat(new float[0.04]);
-let WorldInfo1696 = browser.currentScene.createNode("WorldInfo");
-WorldInfo1696.info = new MFString(new java.lang.String["hide diamond when close"]);
-LOD1695.children = new MFNode();
+let Anchor1693 = browser.currentScene.createNode("Anchor");
+Anchor1693.description = "HAnimSite hanim_eye_level_view Viewpoint";
+Anchor1693.url = new MFString(new java.lang.String["#hanim_eye_level_viewpoint"]);
+let LOD1694 = browser.currentScene.createNode("LOD");
+LOD1694.forceTransitions = True;
+LOD1694.range = new MFFloat(new float[0.04]);
+let WorldInfo1695 = browser.currentScene.createNode("WorldInfo");
+WorldInfo1695.info = new MFString(new java.lang.String["hide diamond when close"]);
+LOD1694.children = new MFNode();
 
-LOD1695.children[0] = WorldInfo1696;
+LOD1694.children[0] = WorldInfo1695;
 
-let Shape1697 = browser.currentScene.createNode("Shape");
-Shape1697.USE = "HAnimSiteViewpointShape";
-LOD1695.children[1] = Shape1697;
+let Shape1696 = browser.currentScene.createNode("Shape");
+Shape1696.USE = "HAnimSiteViewpointShape";
+LOD1694.children[1] = Shape1696;
 
-Anchor1694.children = new MFNode();
+Anchor1693.children = new MFNode();
 
-Anchor1694.children[0] = LOD1695;
+Anchor1693.children[0] = LOD1694;
 
-HAnimSite1690.children[3] = Anchor1694;
+HAnimSite1689.children[3] = Anchor1693;
 
-HAnimHumanoid47.viewpoints[14] = HAnimSite1690;
+HAnimHumanoid46.viewpoints[14] = HAnimSite1689;
+
+let HAnimSite1697 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1697.USE = "hanim_l_eyeball_site_view";
+HAnimHumanoid46.viewpoints[15] = HAnimSite1697;
 
 let HAnimSite1698 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1698.USE = "hanim_l_eyeball_site_view";
-HAnimHumanoid47.viewpoints[15] = HAnimSite1698;
+HAnimSite1698.USE = "hanim_r_eyeball_site_view";
+HAnimHumanoid46.viewpoints[16] = HAnimSite1698;
 
 let HAnimSite1699 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1699.USE = "hanim_r_eyeball_site_view";
-HAnimHumanoid47.viewpoints[16] = HAnimSite1699;
+HAnimSite1699.USE = "hanim_l_hand_front_view";
+HAnimHumanoid46.viewpoints[17] = HAnimSite1699;
 
 let HAnimSite1700 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1700.USE = "hanim_l_hand_front_view";
-HAnimHumanoid47.viewpoints[17] = HAnimSite1700;
+HAnimSite1700.USE = "hanim_r_hand_front_view";
+HAnimHumanoid46.viewpoints[18] = HAnimSite1700;
 
-let HAnimSite1701 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1701.USE = "hanim_r_hand_front_view";
-HAnimHumanoid47.viewpoints[18] = HAnimSite1701;
+let HAnimJoint1701 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1701.USE = "hanim_humanoid_root";
+HAnimHumanoid46.joints[19] = HAnimJoint1701;
 
 let HAnimJoint1702 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1702.USE = "hanim_humanoid_root";
-HAnimHumanoid47.joints[19] = HAnimJoint1702;
+HAnimJoint1702.USE = "hanim_sacroiliac";
+HAnimHumanoid46.joints[20] = HAnimJoint1702;
 
 let HAnimJoint1703 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1703.USE = "hanim_sacroiliac";
-HAnimHumanoid47.joints[20] = HAnimJoint1703;
+HAnimJoint1703.USE = "hanim_vl5";
+HAnimHumanoid46.joints[21] = HAnimJoint1703;
 
 let HAnimJoint1704 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1704.USE = "hanim_vl5";
-HAnimHumanoid47.joints[21] = HAnimJoint1704;
+HAnimJoint1704.USE = "hanim_vl4";
+HAnimHumanoid46.joints[22] = HAnimJoint1704;
 
 let HAnimJoint1705 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1705.USE = "hanim_vl4";
-HAnimHumanoid47.joints[22] = HAnimJoint1705;
+HAnimJoint1705.USE = "hanim_vl3";
+HAnimHumanoid46.joints[23] = HAnimJoint1705;
 
 let HAnimJoint1706 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1706.USE = "hanim_vl3";
-HAnimHumanoid47.joints[23] = HAnimJoint1706;
+HAnimJoint1706.USE = "hanim_vl2";
+HAnimHumanoid46.joints[24] = HAnimJoint1706;
 
 let HAnimJoint1707 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1707.USE = "hanim_vl2";
-HAnimHumanoid47.joints[24] = HAnimJoint1707;
+HAnimJoint1707.USE = "hanim_vl1";
+HAnimHumanoid46.joints[25] = HAnimJoint1707;
 
 let HAnimJoint1708 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1708.USE = "hanim_vl1";
-HAnimHumanoid47.joints[25] = HAnimJoint1708;
+HAnimJoint1708.USE = "hanim_vt12";
+HAnimHumanoid46.joints[26] = HAnimJoint1708;
 
 let HAnimJoint1709 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1709.USE = "hanim_vt12";
-HAnimHumanoid47.joints[26] = HAnimJoint1709;
+HAnimJoint1709.USE = "hanim_vt11";
+HAnimHumanoid46.joints[27] = HAnimJoint1709;
 
 let HAnimJoint1710 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1710.USE = "hanim_vt11";
-HAnimHumanoid47.joints[27] = HAnimJoint1710;
+HAnimJoint1710.USE = "hanim_vt10";
+HAnimHumanoid46.joints[28] = HAnimJoint1710;
 
 let HAnimJoint1711 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1711.USE = "hanim_vt10";
-HAnimHumanoid47.joints[28] = HAnimJoint1711;
+HAnimJoint1711.USE = "hanim_vt9";
+HAnimHumanoid46.joints[29] = HAnimJoint1711;
 
 let HAnimJoint1712 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1712.USE = "hanim_vt9";
-HAnimHumanoid47.joints[29] = HAnimJoint1712;
+HAnimJoint1712.USE = "hanim_vt8";
+HAnimHumanoid46.joints[30] = HAnimJoint1712;
 
 let HAnimJoint1713 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1713.USE = "hanim_vt8";
-HAnimHumanoid47.joints[30] = HAnimJoint1713;
+HAnimJoint1713.USE = "hanim_vt7";
+HAnimHumanoid46.joints[31] = HAnimJoint1713;
 
 let HAnimJoint1714 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1714.USE = "hanim_vt7";
-HAnimHumanoid47.joints[31] = HAnimJoint1714;
+HAnimJoint1714.USE = "hanim_vt6";
+HAnimHumanoid46.joints[32] = HAnimJoint1714;
 
 let HAnimJoint1715 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1715.USE = "hanim_vt6";
-HAnimHumanoid47.joints[32] = HAnimJoint1715;
+HAnimJoint1715.USE = "hanim_vt5";
+HAnimHumanoid46.joints[33] = HAnimJoint1715;
 
 let HAnimJoint1716 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1716.USE = "hanim_vt5";
-HAnimHumanoid47.joints[33] = HAnimJoint1716;
+HAnimJoint1716.USE = "hanim_vt4";
+HAnimHumanoid46.joints[34] = HAnimJoint1716;
 
 let HAnimJoint1717 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1717.USE = "hanim_vt4";
-HAnimHumanoid47.joints[34] = HAnimJoint1717;
+HAnimJoint1717.USE = "hanim_vt3";
+HAnimHumanoid46.joints[35] = HAnimJoint1717;
 
 let HAnimJoint1718 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1718.USE = "hanim_vt3";
-HAnimHumanoid47.joints[35] = HAnimJoint1718;
+HAnimJoint1718.USE = "hanim_vt2";
+HAnimHumanoid46.joints[36] = HAnimJoint1718;
 
 let HAnimJoint1719 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1719.USE = "hanim_vt2";
-HAnimHumanoid47.joints[36] = HAnimJoint1719;
+HAnimJoint1719.USE = "hanim_vt1";
+HAnimHumanoid46.joints[37] = HAnimJoint1719;
 
 let HAnimJoint1720 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1720.USE = "hanim_vt1";
-HAnimHumanoid47.joints[37] = HAnimJoint1720;
+HAnimJoint1720.USE = "hanim_vc7";
+HAnimHumanoid46.joints[38] = HAnimJoint1720;
 
 let HAnimJoint1721 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1721.USE = "hanim_vc7";
-HAnimHumanoid47.joints[38] = HAnimJoint1721;
+HAnimJoint1721.USE = "hanim_vc6";
+HAnimHumanoid46.joints[39] = HAnimJoint1721;
 
 let HAnimJoint1722 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1722.USE = "hanim_vc6";
-HAnimHumanoid47.joints[39] = HAnimJoint1722;
+HAnimJoint1722.USE = "hanim_vc5";
+HAnimHumanoid46.joints[40] = HAnimJoint1722;
 
 let HAnimJoint1723 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1723.USE = "hanim_vc5";
-HAnimHumanoid47.joints[40] = HAnimJoint1723;
+HAnimJoint1723.USE = "hanim_vc4";
+HAnimHumanoid46.joints[41] = HAnimJoint1723;
 
 let HAnimJoint1724 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1724.USE = "hanim_vc4";
-HAnimHumanoid47.joints[41] = HAnimJoint1724;
+HAnimJoint1724.USE = "hanim_vc3";
+HAnimHumanoid46.joints[42] = HAnimJoint1724;
 
 let HAnimJoint1725 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1725.USE = "hanim_vc3";
-HAnimHumanoid47.joints[42] = HAnimJoint1725;
+HAnimJoint1725.USE = "hanim_vc2";
+HAnimHumanoid46.joints[43] = HAnimJoint1725;
 
 let HAnimJoint1726 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1726.USE = "hanim_vc2";
-HAnimHumanoid47.joints[43] = HAnimJoint1726;
+HAnimJoint1726.USE = "hanim_vc1";
+HAnimHumanoid46.joints[44] = HAnimJoint1726;
 
 let HAnimJoint1727 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1727.USE = "hanim_vc1";
-HAnimHumanoid47.joints[44] = HAnimJoint1727;
+HAnimJoint1727.USE = "hanim_skullbase";
+HAnimHumanoid46.joints[45] = HAnimJoint1727;
 
 let HAnimJoint1728 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1728.USE = "hanim_skullbase";
-HAnimHumanoid47.joints[45] = HAnimJoint1728;
+HAnimJoint1728.USE = "hanim_temporomandibular";
+HAnimHumanoid46.joints[46] = HAnimJoint1728;
 
 let HAnimJoint1729 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1729.USE = "hanim_temporomandibular";
-HAnimHumanoid47.joints[46] = HAnimJoint1729;
+HAnimJoint1729.USE = "hanim_l_acromioclavicular";
+HAnimHumanoid46.joints[47] = HAnimJoint1729;
 
 let HAnimJoint1730 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1730.USE = "hanim_l_acromioclavicular";
-HAnimHumanoid47.joints[47] = HAnimJoint1730;
+HAnimJoint1730.USE = "hanim_r_acromioclavicular";
+HAnimHumanoid46.joints[48] = HAnimJoint1730;
 
 let HAnimJoint1731 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1731.USE = "hanim_r_acromioclavicular";
-HAnimHumanoid47.joints[48] = HAnimJoint1731;
+HAnimJoint1731.USE = "hanim_l_ankle";
+HAnimHumanoid46.joints[49] = HAnimJoint1731;
 
 let HAnimJoint1732 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1732.USE = "hanim_l_ankle";
-HAnimHumanoid47.joints[49] = HAnimJoint1732;
+HAnimJoint1732.USE = "hanim_r_ankle";
+HAnimHumanoid46.joints[50] = HAnimJoint1732;
 
 let HAnimJoint1733 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1733.USE = "hanim_r_ankle";
-HAnimHumanoid47.joints[50] = HAnimJoint1733;
+HAnimJoint1733.USE = "hanim_l_elbow";
+HAnimHumanoid46.joints[51] = HAnimJoint1733;
 
 let HAnimJoint1734 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1734.USE = "hanim_l_elbow";
-HAnimHumanoid47.joints[51] = HAnimJoint1734;
+HAnimJoint1734.USE = "hanim_r_elbow";
+HAnimHumanoid46.joints[52] = HAnimJoint1734;
 
 let HAnimJoint1735 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1735.USE = "hanim_r_elbow";
-HAnimHumanoid47.joints[52] = HAnimJoint1735;
+HAnimJoint1735.USE = "hanim_l_eyeball_joint";
+HAnimHumanoid46.joints[53] = HAnimJoint1735;
 
 let HAnimJoint1736 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1736.USE = "hanim_l_eyeball_joint";
-HAnimHumanoid47.joints[53] = HAnimJoint1736;
+HAnimJoint1736.USE = "hanim_r_eyeball_joint";
+HAnimHumanoid46.joints[54] = HAnimJoint1736;
 
 let HAnimJoint1737 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1737.USE = "hanim_r_eyeball_joint";
-HAnimHumanoid47.joints[54] = HAnimJoint1737;
+HAnimJoint1737.USE = "hanim_l_eyebrow_joint";
+HAnimHumanoid46.joints[55] = HAnimJoint1737;
 
 let HAnimJoint1738 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1738.USE = "hanim_l_eyebrow_joint";
-HAnimHumanoid47.joints[55] = HAnimJoint1738;
+HAnimJoint1738.USE = "hanim_r_eyebrow_joint";
+HAnimHumanoid46.joints[56] = HAnimJoint1738;
 
 let HAnimJoint1739 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1739.USE = "hanim_r_eyebrow_joint";
-HAnimHumanoid47.joints[56] = HAnimJoint1739;
+HAnimJoint1739.USE = "hanim_l_eyelid_joint";
+HAnimHumanoid46.joints[57] = HAnimJoint1739;
 
 let HAnimJoint1740 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1740.USE = "hanim_l_eyelid_joint";
-HAnimHumanoid47.joints[57] = HAnimJoint1740;
+HAnimJoint1740.USE = "hanim_r_eyelid_joint";
+HAnimHumanoid46.joints[58] = HAnimJoint1740;
 
 let HAnimJoint1741 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1741.USE = "hanim_r_eyelid_joint";
-HAnimHumanoid47.joints[58] = HAnimJoint1741;
+HAnimJoint1741.USE = "hanim_l_hip";
+HAnimHumanoid46.joints[59] = HAnimJoint1741;
 
 let HAnimJoint1742 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1742.USE = "hanim_l_hip";
-HAnimHumanoid47.joints[59] = HAnimJoint1742;
+HAnimJoint1742.USE = "hanim_r_hip";
+HAnimHumanoid46.joints[60] = HAnimJoint1742;
 
 let HAnimJoint1743 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1743.USE = "hanim_r_hip";
-HAnimHumanoid47.joints[60] = HAnimJoint1743;
+HAnimJoint1743.USE = "hanim_l_index0";
+HAnimHumanoid46.joints[61] = HAnimJoint1743;
 
 let HAnimJoint1744 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1744.USE = "hanim_l_index0";
-HAnimHumanoid47.joints[61] = HAnimJoint1744;
+HAnimJoint1744.USE = "hanim_r_index0";
+HAnimHumanoid46.joints[62] = HAnimJoint1744;
 
 let HAnimJoint1745 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1745.USE = "hanim_r_index0";
-HAnimHumanoid47.joints[62] = HAnimJoint1745;
+HAnimJoint1745.USE = "hanim_l_index1";
+HAnimHumanoid46.joints[63] = HAnimJoint1745;
 
 let HAnimJoint1746 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1746.USE = "hanim_l_index1";
-HAnimHumanoid47.joints[63] = HAnimJoint1746;
+HAnimJoint1746.USE = "hanim_r_index1";
+HAnimHumanoid46.joints[64] = HAnimJoint1746;
 
 let HAnimJoint1747 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1747.USE = "hanim_r_index1";
-HAnimHumanoid47.joints[64] = HAnimJoint1747;
+HAnimJoint1747.USE = "hanim_l_index2";
+HAnimHumanoid46.joints[65] = HAnimJoint1747;
 
 let HAnimJoint1748 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1748.USE = "hanim_l_index2";
-HAnimHumanoid47.joints[65] = HAnimJoint1748;
+HAnimJoint1748.USE = "hanim_r_index2";
+HAnimHumanoid46.joints[66] = HAnimJoint1748;
 
 let HAnimJoint1749 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1749.USE = "hanim_r_index2";
-HAnimHumanoid47.joints[66] = HAnimJoint1749;
+HAnimJoint1749.USE = "hanim_l_index3";
+HAnimHumanoid46.joints[67] = HAnimJoint1749;
 
 let HAnimJoint1750 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1750.USE = "hanim_l_index3";
-HAnimHumanoid47.joints[67] = HAnimJoint1750;
+HAnimJoint1750.USE = "hanim_r_index3";
+HAnimHumanoid46.joints[68] = HAnimJoint1750;
 
 let HAnimJoint1751 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1751.USE = "hanim_r_index3";
-HAnimHumanoid47.joints[68] = HAnimJoint1751;
+HAnimJoint1751.USE = "hanim_l_knee";
+HAnimHumanoid46.joints[69] = HAnimJoint1751;
 
 let HAnimJoint1752 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1752.USE = "hanim_l_knee";
-HAnimHumanoid47.joints[69] = HAnimJoint1752;
+HAnimJoint1752.USE = "hanim_r_knee";
+HAnimHumanoid46.joints[70] = HAnimJoint1752;
 
 let HAnimJoint1753 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1753.USE = "hanim_r_knee";
-HAnimHumanoid47.joints[70] = HAnimJoint1753;
+HAnimJoint1753.USE = "hanim_l_metatarsal";
+HAnimHumanoid46.joints[71] = HAnimJoint1753;
 
 let HAnimJoint1754 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1754.USE = "hanim_l_metatarsal";
-HAnimHumanoid47.joints[71] = HAnimJoint1754;
+HAnimJoint1754.USE = "hanim_r_metatarsal";
+HAnimHumanoid46.joints[72] = HAnimJoint1754;
 
 let HAnimJoint1755 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1755.USE = "hanim_r_metatarsal";
-HAnimHumanoid47.joints[72] = HAnimJoint1755;
+HAnimJoint1755.USE = "hanim_l_middle0";
+HAnimHumanoid46.joints[73] = HAnimJoint1755;
 
 let HAnimJoint1756 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1756.USE = "hanim_l_middle0";
-HAnimHumanoid47.joints[73] = HAnimJoint1756;
+HAnimJoint1756.USE = "hanim_r_middle0";
+HAnimHumanoid46.joints[74] = HAnimJoint1756;
 
 let HAnimJoint1757 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1757.USE = "hanim_r_middle0";
-HAnimHumanoid47.joints[74] = HAnimJoint1757;
+HAnimJoint1757.USE = "hanim_l_middle1";
+HAnimHumanoid46.joints[75] = HAnimJoint1757;
 
 let HAnimJoint1758 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1758.USE = "hanim_l_middle1";
-HAnimHumanoid47.joints[75] = HAnimJoint1758;
+HAnimJoint1758.USE = "hanim_r_middle1";
+HAnimHumanoid46.joints[76] = HAnimJoint1758;
 
 let HAnimJoint1759 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1759.USE = "hanim_r_middle1";
-HAnimHumanoid47.joints[76] = HAnimJoint1759;
+HAnimJoint1759.USE = "hanim_l_middle2";
+HAnimHumanoid46.joints[77] = HAnimJoint1759;
 
 let HAnimJoint1760 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1760.USE = "hanim_l_middle2";
-HAnimHumanoid47.joints[77] = HAnimJoint1760;
+HAnimJoint1760.USE = "hanim_r_middle2";
+HAnimHumanoid46.joints[78] = HAnimJoint1760;
 
 let HAnimJoint1761 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1761.USE = "hanim_r_middle2";
-HAnimHumanoid47.joints[78] = HAnimJoint1761;
+HAnimJoint1761.USE = "hanim_l_middle3";
+HAnimHumanoid46.joints[79] = HAnimJoint1761;
 
 let HAnimJoint1762 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1762.USE = "hanim_l_middle3";
-HAnimHumanoid47.joints[79] = HAnimJoint1762;
+HAnimJoint1762.USE = "hanim_r_middle3";
+HAnimHumanoid46.joints[80] = HAnimJoint1762;
 
 let HAnimJoint1763 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1763.USE = "hanim_r_middle3";
-HAnimHumanoid47.joints[80] = HAnimJoint1763;
+HAnimJoint1763.USE = "hanim_l_midtarsal";
+HAnimHumanoid46.joints[81] = HAnimJoint1763;
 
 let HAnimJoint1764 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1764.USE = "hanim_l_midtarsal";
-HAnimHumanoid47.joints[81] = HAnimJoint1764;
+HAnimJoint1764.USE = "hanim_r_midtarsal";
+HAnimHumanoid46.joints[82] = HAnimJoint1764;
 
 let HAnimJoint1765 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1765.USE = "hanim_r_midtarsal";
-HAnimHumanoid47.joints[82] = HAnimJoint1765;
+HAnimJoint1765.USE = "hanim_l_pinky0";
+HAnimHumanoid46.joints[83] = HAnimJoint1765;
 
 let HAnimJoint1766 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1766.USE = "hanim_l_pinky0";
-HAnimHumanoid47.joints[83] = HAnimJoint1766;
+HAnimJoint1766.USE = "hanim_r_pinky0";
+HAnimHumanoid46.joints[84] = HAnimJoint1766;
 
 let HAnimJoint1767 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1767.USE = "hanim_r_pinky0";
-HAnimHumanoid47.joints[84] = HAnimJoint1767;
+HAnimJoint1767.USE = "hanim_l_pinky1";
+HAnimHumanoid46.joints[85] = HAnimJoint1767;
 
 let HAnimJoint1768 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1768.USE = "hanim_l_pinky1";
-HAnimHumanoid47.joints[85] = HAnimJoint1768;
+HAnimJoint1768.USE = "hanim_r_pinky1";
+HAnimHumanoid46.joints[86] = HAnimJoint1768;
 
 let HAnimJoint1769 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1769.USE = "hanim_r_pinky1";
-HAnimHumanoid47.joints[86] = HAnimJoint1769;
+HAnimJoint1769.USE = "hanim_l_pinky2";
+HAnimHumanoid46.joints[87] = HAnimJoint1769;
 
 let HAnimJoint1770 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1770.USE = "hanim_l_pinky2";
-HAnimHumanoid47.joints[87] = HAnimJoint1770;
+HAnimJoint1770.USE = "hanim_r_pinky2";
+HAnimHumanoid46.joints[88] = HAnimJoint1770;
 
 let HAnimJoint1771 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1771.USE = "hanim_r_pinky2";
-HAnimHumanoid47.joints[88] = HAnimJoint1771;
+HAnimJoint1771.USE = "hanim_l_pinky3";
+HAnimHumanoid46.joints[89] = HAnimJoint1771;
 
 let HAnimJoint1772 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1772.USE = "hanim_l_pinky3";
-HAnimHumanoid47.joints[89] = HAnimJoint1772;
+HAnimJoint1772.USE = "hanim_r_pinky3";
+HAnimHumanoid46.joints[90] = HAnimJoint1772;
 
 let HAnimJoint1773 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1773.USE = "hanim_r_pinky3";
-HAnimHumanoid47.joints[90] = HAnimJoint1773;
+HAnimJoint1773.USE = "hanim_l_ring0";
+HAnimHumanoid46.joints[91] = HAnimJoint1773;
 
 let HAnimJoint1774 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1774.USE = "hanim_l_ring0";
-HAnimHumanoid47.joints[91] = HAnimJoint1774;
+HAnimJoint1774.USE = "hanim_r_ring0";
+HAnimHumanoid46.joints[92] = HAnimJoint1774;
 
 let HAnimJoint1775 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1775.USE = "hanim_r_ring0";
-HAnimHumanoid47.joints[92] = HAnimJoint1775;
+HAnimJoint1775.USE = "hanim_l_ring1";
+HAnimHumanoid46.joints[93] = HAnimJoint1775;
 
 let HAnimJoint1776 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1776.USE = "hanim_l_ring1";
-HAnimHumanoid47.joints[93] = HAnimJoint1776;
+HAnimJoint1776.USE = "hanim_r_ring1";
+HAnimHumanoid46.joints[94] = HAnimJoint1776;
 
 let HAnimJoint1777 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1777.USE = "hanim_r_ring1";
-HAnimHumanoid47.joints[94] = HAnimJoint1777;
+HAnimJoint1777.USE = "hanim_l_ring2";
+HAnimHumanoid46.joints[95] = HAnimJoint1777;
 
 let HAnimJoint1778 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1778.USE = "hanim_l_ring2";
-HAnimHumanoid47.joints[95] = HAnimJoint1778;
+HAnimJoint1778.USE = "hanim_r_ring2";
+HAnimHumanoid46.joints[96] = HAnimJoint1778;
 
 let HAnimJoint1779 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1779.USE = "hanim_r_ring2";
-HAnimHumanoid47.joints[96] = HAnimJoint1779;
+HAnimJoint1779.USE = "hanim_l_ring3";
+HAnimHumanoid46.joints[97] = HAnimJoint1779;
 
 let HAnimJoint1780 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1780.USE = "hanim_l_ring3";
-HAnimHumanoid47.joints[97] = HAnimJoint1780;
+HAnimJoint1780.USE = "hanim_r_ring3";
+HAnimHumanoid46.joints[98] = HAnimJoint1780;
 
 let HAnimJoint1781 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1781.USE = "hanim_r_ring3";
-HAnimHumanoid47.joints[98] = HAnimJoint1781;
+HAnimJoint1781.USE = "hanim_l_shoulder";
+HAnimHumanoid46.joints[99] = HAnimJoint1781;
 
 let HAnimJoint1782 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1782.USE = "hanim_l_shoulder";
-HAnimHumanoid47.joints[99] = HAnimJoint1782;
+HAnimJoint1782.USE = "hanim_r_shoulder";
+HAnimHumanoid46.joints[100] = HAnimJoint1782;
 
 let HAnimJoint1783 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1783.USE = "hanim_r_shoulder";
-HAnimHumanoid47.joints[100] = HAnimJoint1783;
+HAnimJoint1783.USE = "hanim_l_sternoclavicular";
+HAnimHumanoid46.joints[101] = HAnimJoint1783;
 
 let HAnimJoint1784 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1784.USE = "hanim_l_sternoclavicular";
-HAnimHumanoid47.joints[101] = HAnimJoint1784;
+HAnimJoint1784.USE = "hanim_r_sternoclavicular";
+HAnimHumanoid46.joints[102] = HAnimJoint1784;
 
 let HAnimJoint1785 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1785.USE = "hanim_r_sternoclavicular";
-HAnimHumanoid47.joints[102] = HAnimJoint1785;
+HAnimJoint1785.USE = "hanim_l_subtalar";
+HAnimHumanoid46.joints[103] = HAnimJoint1785;
 
 let HAnimJoint1786 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1786.USE = "hanim_l_subtalar";
-HAnimHumanoid47.joints[103] = HAnimJoint1786;
+HAnimJoint1786.USE = "hanim_r_subtalar";
+HAnimHumanoid46.joints[104] = HAnimJoint1786;
 
 let HAnimJoint1787 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1787.USE = "hanim_r_subtalar";
-HAnimHumanoid47.joints[104] = HAnimJoint1787;
+HAnimJoint1787.USE = "hanim_l_thumb1";
+HAnimHumanoid46.joints[105] = HAnimJoint1787;
 
 let HAnimJoint1788 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1788.USE = "hanim_l_thumb1";
-HAnimHumanoid47.joints[105] = HAnimJoint1788;
+HAnimJoint1788.USE = "hanim_r_thumb1";
+HAnimHumanoid46.joints[106] = HAnimJoint1788;
 
 let HAnimJoint1789 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1789.USE = "hanim_r_thumb1";
-HAnimHumanoid47.joints[106] = HAnimJoint1789;
+HAnimJoint1789.USE = "hanim_l_thumb2";
+HAnimHumanoid46.joints[107] = HAnimJoint1789;
 
 let HAnimJoint1790 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1790.USE = "hanim_l_thumb2";
-HAnimHumanoid47.joints[107] = HAnimJoint1790;
+HAnimJoint1790.USE = "hanim_r_thumb2";
+HAnimHumanoid46.joints[108] = HAnimJoint1790;
 
 let HAnimJoint1791 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1791.USE = "hanim_r_thumb2";
-HAnimHumanoid47.joints[108] = HAnimJoint1791;
+HAnimJoint1791.USE = "hanim_l_thumb3";
+HAnimHumanoid46.joints[109] = HAnimJoint1791;
 
 let HAnimJoint1792 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1792.USE = "hanim_l_thumb3";
-HAnimHumanoid47.joints[109] = HAnimJoint1792;
+HAnimJoint1792.USE = "hanim_r_thumb3";
+HAnimHumanoid46.joints[110] = HAnimJoint1792;
 
 let HAnimJoint1793 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1793.USE = "hanim_r_thumb3";
-HAnimHumanoid47.joints[110] = HAnimJoint1793;
+HAnimJoint1793.USE = "hanim_l_wrist";
+HAnimHumanoid46.joints[111] = HAnimJoint1793;
 
 let HAnimJoint1794 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1794.USE = "hanim_l_wrist";
-HAnimHumanoid47.joints[111] = HAnimJoint1794;
+HAnimJoint1794.USE = "hanim_r_wrist";
+HAnimHumanoid46.joints[112] = HAnimJoint1794;
 
-let HAnimJoint1795 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1795.USE = "hanim_r_wrist";
-HAnimHumanoid47.joints[112] = HAnimJoint1795;
+let HAnimSegment1795 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1795.USE = "hanim_pelvis";
+HAnimHumanoid46.segments[113] = HAnimSegment1795;
 
 let HAnimSegment1796 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1796.USE = "hanim_pelvis";
-HAnimHumanoid47.segments[113] = HAnimSegment1796;
+HAnimSegment1796.USE = "hanim_skull";
+HAnimHumanoid46.segments[114] = HAnimSegment1796;
 
 let HAnimSegment1797 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1797.USE = "hanim_skull";
-HAnimHumanoid47.segments[114] = HAnimSegment1797;
+HAnimSegment1797.USE = "hanim_jaw";
+HAnimHumanoid46.segments[115] = HAnimSegment1797;
 
 let HAnimSegment1798 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1798.USE = "hanim_jaw";
-HAnimHumanoid47.segments[115] = HAnimSegment1798;
+HAnimSegment1798.USE = "hanim_c1";
+HAnimHumanoid46.segments[116] = HAnimSegment1798;
 
 let HAnimSegment1799 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1799.USE = "hanim_c1";
-HAnimHumanoid47.segments[116] = HAnimSegment1799;
+HAnimSegment1799.USE = "hanim_c2";
+HAnimHumanoid46.segments[117] = HAnimSegment1799;
 
 let HAnimSegment1800 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1800.USE = "hanim_c2";
-HAnimHumanoid47.segments[117] = HAnimSegment1800;
+HAnimSegment1800.USE = "hanim_c3";
+HAnimHumanoid46.segments[118] = HAnimSegment1800;
 
 let HAnimSegment1801 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1801.USE = "hanim_c3";
-HAnimHumanoid47.segments[118] = HAnimSegment1801;
+HAnimSegment1801.USE = "hanim_c4";
+HAnimHumanoid46.segments[119] = HAnimSegment1801;
 
 let HAnimSegment1802 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1802.USE = "hanim_c4";
-HAnimHumanoid47.segments[119] = HAnimSegment1802;
+HAnimSegment1802.USE = "hanim_c5";
+HAnimHumanoid46.segments[120] = HAnimSegment1802;
 
 let HAnimSegment1803 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1803.USE = "hanim_c5";
-HAnimHumanoid47.segments[120] = HAnimSegment1803;
+HAnimSegment1803.USE = "hanim_c6";
+HAnimHumanoid46.segments[121] = HAnimSegment1803;
 
 let HAnimSegment1804 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1804.USE = "hanim_c6";
-HAnimHumanoid47.segments[121] = HAnimSegment1804;
+HAnimSegment1804.USE = "hanim_c7";
+HAnimHumanoid46.segments[122] = HAnimSegment1804;
 
 let HAnimSegment1805 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1805.USE = "hanim_c7";
-HAnimHumanoid47.segments[122] = HAnimSegment1805;
+HAnimSegment1805.USE = "hanim_t1";
+HAnimHumanoid46.segments[123] = HAnimSegment1805;
 
 let HAnimSegment1806 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1806.USE = "hanim_t1";
-HAnimHumanoid47.segments[123] = HAnimSegment1806;
+HAnimSegment1806.USE = "hanim_t2";
+HAnimHumanoid46.segments[124] = HAnimSegment1806;
 
 let HAnimSegment1807 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1807.USE = "hanim_t2";
-HAnimHumanoid47.segments[124] = HAnimSegment1807;
+HAnimSegment1807.USE = "hanim_t3";
+HAnimHumanoid46.segments[125] = HAnimSegment1807;
 
 let HAnimSegment1808 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1808.USE = "hanim_t3";
-HAnimHumanoid47.segments[125] = HAnimSegment1808;
+HAnimSegment1808.USE = "hanim_t4";
+HAnimHumanoid46.segments[126] = HAnimSegment1808;
 
 let HAnimSegment1809 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1809.USE = "hanim_t4";
-HAnimHumanoid47.segments[126] = HAnimSegment1809;
+HAnimSegment1809.USE = "hanim_t5";
+HAnimHumanoid46.segments[127] = HAnimSegment1809;
 
 let HAnimSegment1810 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1810.USE = "hanim_t5";
-HAnimHumanoid47.segments[127] = HAnimSegment1810;
+HAnimSegment1810.USE = "hanim_t6";
+HAnimHumanoid46.segments[128] = HAnimSegment1810;
 
 let HAnimSegment1811 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1811.USE = "hanim_t6";
-HAnimHumanoid47.segments[128] = HAnimSegment1811;
+HAnimSegment1811.USE = "hanim_t7";
+HAnimHumanoid46.segments[129] = HAnimSegment1811;
 
 let HAnimSegment1812 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1812.USE = "hanim_t7";
-HAnimHumanoid47.segments[129] = HAnimSegment1812;
+HAnimSegment1812.USE = "hanim_t8";
+HAnimHumanoid46.segments[130] = HAnimSegment1812;
 
 let HAnimSegment1813 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1813.USE = "hanim_t8";
-HAnimHumanoid47.segments[130] = HAnimSegment1813;
+HAnimSegment1813.USE = "hanim_t9";
+HAnimHumanoid46.segments[131] = HAnimSegment1813;
 
 let HAnimSegment1814 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1814.USE = "hanim_t9";
-HAnimHumanoid47.segments[131] = HAnimSegment1814;
+HAnimSegment1814.USE = "hanim_t10";
+HAnimHumanoid46.segments[132] = HAnimSegment1814;
 
 let HAnimSegment1815 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1815.USE = "hanim_t10";
-HAnimHumanoid47.segments[132] = HAnimSegment1815;
+HAnimSegment1815.USE = "hanim_t11";
+HAnimHumanoid46.segments[133] = HAnimSegment1815;
 
 let HAnimSegment1816 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1816.USE = "hanim_t11";
-HAnimHumanoid47.segments[133] = HAnimSegment1816;
+HAnimSegment1816.USE = "hanim_t12";
+HAnimHumanoid46.segments[134] = HAnimSegment1816;
 
 let HAnimSegment1817 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1817.USE = "hanim_t12";
-HAnimHumanoid47.segments[134] = HAnimSegment1817;
+HAnimSegment1817.USE = "hanim_l1";
+HAnimHumanoid46.segments[135] = HAnimSegment1817;
 
 let HAnimSegment1818 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1818.USE = "hanim_l1";
-HAnimHumanoid47.segments[135] = HAnimSegment1818;
+HAnimSegment1818.USE = "hanim_l2";
+HAnimHumanoid46.segments[136] = HAnimSegment1818;
 
 let HAnimSegment1819 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1819.USE = "hanim_l2";
-HAnimHumanoid47.segments[136] = HAnimSegment1819;
+HAnimSegment1819.USE = "hanim_l3";
+HAnimHumanoid46.segments[137] = HAnimSegment1819;
 
 let HAnimSegment1820 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1820.USE = "hanim_l3";
-HAnimHumanoid47.segments[137] = HAnimSegment1820;
+HAnimSegment1820.USE = "hanim_l4";
+HAnimHumanoid46.segments[138] = HAnimSegment1820;
 
 let HAnimSegment1821 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1821.USE = "hanim_l4";
-HAnimHumanoid47.segments[138] = HAnimSegment1821;
+HAnimSegment1821.USE = "hanim_l5";
+HAnimHumanoid46.segments[139] = HAnimSegment1821;
 
 let HAnimSegment1822 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1822.USE = "hanim_l5";
-HAnimHumanoid47.segments[139] = HAnimSegment1822;
+HAnimSegment1822.USE = "hanim_sacrum";
+HAnimHumanoid46.segments[140] = HAnimSegment1822;
 
 let HAnimSegment1823 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1823.USE = "hanim_sacrum";
-HAnimHumanoid47.segments[140] = HAnimSegment1823;
+HAnimSegment1823.USE = "hanim_l_calf";
+HAnimHumanoid46.segments[141] = HAnimSegment1823;
 
 let HAnimSegment1824 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1824.USE = "hanim_l_calf";
-HAnimHumanoid47.segments[141] = HAnimSegment1824;
+HAnimSegment1824.USE = "hanim_r_calf";
+HAnimHumanoid46.segments[142] = HAnimSegment1824;
 
 let HAnimSegment1825 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1825.USE = "hanim_r_calf";
-HAnimHumanoid47.segments[142] = HAnimSegment1825;
+HAnimSegment1825.USE = "hanim_l_clavicle";
+HAnimHumanoid46.segments[143] = HAnimSegment1825;
 
 let HAnimSegment1826 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1826.USE = "hanim_l_clavicle";
-HAnimHumanoid47.segments[143] = HAnimSegment1826;
+HAnimSegment1826.USE = "hanim_r_clavicle";
+HAnimHumanoid46.segments[144] = HAnimSegment1826;
 
 let HAnimSegment1827 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1827.USE = "hanim_r_clavicle";
-HAnimHumanoid47.segments[144] = HAnimSegment1827;
+HAnimSegment1827.USE = "hanim_l_eyeball";
+HAnimHumanoid46.segments[145] = HAnimSegment1827;
 
 let HAnimSegment1828 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1828.USE = "hanim_l_eyeball";
-HAnimHumanoid47.segments[145] = HAnimSegment1828;
+HAnimSegment1828.USE = "hanim_r_eyeball";
+HAnimHumanoid46.segments[146] = HAnimSegment1828;
 
 let HAnimSegment1829 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1829.USE = "hanim_r_eyeball";
-HAnimHumanoid47.segments[146] = HAnimSegment1829;
+HAnimSegment1829.USE = "hanim_l_eyebrow";
+HAnimHumanoid46.segments[147] = HAnimSegment1829;
 
 let HAnimSegment1830 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1830.USE = "hanim_l_eyebrow";
-HAnimHumanoid47.segments[147] = HAnimSegment1830;
+HAnimSegment1830.USE = "hanim_r_eyebrow";
+HAnimHumanoid46.segments[148] = HAnimSegment1830;
 
 let HAnimSegment1831 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1831.USE = "hanim_r_eyebrow";
-HAnimHumanoid47.segments[148] = HAnimSegment1831;
+HAnimSegment1831.USE = "hanim_l_eyelid";
+HAnimHumanoid46.segments[149] = HAnimSegment1831;
 
 let HAnimSegment1832 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1832.USE = "hanim_l_eyelid";
-HAnimHumanoid47.segments[149] = HAnimSegment1832;
+HAnimSegment1832.USE = "hanim_r_eyelid";
+HAnimHumanoid46.segments[150] = HAnimSegment1832;
 
 let HAnimSegment1833 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1833.USE = "hanim_r_eyelid";
-HAnimHumanoid47.segments[150] = HAnimSegment1833;
+HAnimSegment1833.USE = "hanim_l_forearm";
+HAnimHumanoid46.segments[151] = HAnimSegment1833;
 
 let HAnimSegment1834 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1834.USE = "hanim_l_forearm";
-HAnimHumanoid47.segments[151] = HAnimSegment1834;
+HAnimSegment1834.USE = "hanim_r_forearm";
+HAnimHumanoid46.segments[152] = HAnimSegment1834;
 
 let HAnimSegment1835 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1835.USE = "hanim_r_forearm";
-HAnimHumanoid47.segments[152] = HAnimSegment1835;
+HAnimSegment1835.USE = "hanim_l_forefoot";
+HAnimHumanoid46.segments[153] = HAnimSegment1835;
 
 let HAnimSegment1836 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1836.USE = "hanim_l_forefoot";
-HAnimHumanoid47.segments[153] = HAnimSegment1836;
+HAnimSegment1836.USE = "hanim_r_forefoot";
+HAnimHumanoid46.segments[154] = HAnimSegment1836;
 
 let HAnimSegment1837 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1837.USE = "hanim_r_forefoot";
-HAnimHumanoid47.segments[154] = HAnimSegment1837;
+HAnimSegment1837.USE = "hanim_l_hand";
+HAnimHumanoid46.segments[155] = HAnimSegment1837;
 
 let HAnimSegment1838 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1838.USE = "hanim_l_hand";
-HAnimHumanoid47.segments[155] = HAnimSegment1838;
+HAnimSegment1838.USE = "hanim_r_hand";
+HAnimHumanoid46.segments[156] = HAnimSegment1838;
 
 let HAnimSegment1839 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1839.USE = "hanim_r_hand";
-HAnimHumanoid47.segments[156] = HAnimSegment1839;
+HAnimSegment1839.USE = "hanim_l_hindfoot";
+HAnimHumanoid46.segments[157] = HAnimSegment1839;
 
 let HAnimSegment1840 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1840.USE = "hanim_l_hindfoot";
-HAnimHumanoid47.segments[157] = HAnimSegment1840;
+HAnimSegment1840.USE = "hanim_r_hindfoot";
+HAnimHumanoid46.segments[158] = HAnimSegment1840;
 
 let HAnimSegment1841 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1841.USE = "hanim_r_hindfoot";
-HAnimHumanoid47.segments[158] = HAnimSegment1841;
+HAnimSegment1841.USE = "hanim_l_index_distal";
+HAnimHumanoid46.segments[159] = HAnimSegment1841;
 
 let HAnimSegment1842 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1842.USE = "hanim_l_index_distal";
-HAnimHumanoid47.segments[159] = HAnimSegment1842;
+HAnimSegment1842.USE = "hanim_r_index_distal";
+HAnimHumanoid46.segments[160] = HAnimSegment1842;
 
 let HAnimSegment1843 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1843.USE = "hanim_r_index_distal";
-HAnimHumanoid47.segments[160] = HAnimSegment1843;
+HAnimSegment1843.USE = "hanim_l_index_metacarpal";
+HAnimHumanoid46.segments[161] = HAnimSegment1843;
 
 let HAnimSegment1844 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1844.USE = "hanim_l_index_metacarpal";
-HAnimHumanoid47.segments[161] = HAnimSegment1844;
+HAnimSegment1844.USE = "hanim_r_index_metacarpal";
+HAnimHumanoid46.segments[162] = HAnimSegment1844;
 
 let HAnimSegment1845 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1845.USE = "hanim_r_index_metacarpal";
-HAnimHumanoid47.segments[162] = HAnimSegment1845;
+HAnimSegment1845.USE = "hanim_l_index_middle";
+HAnimHumanoid46.segments[163] = HAnimSegment1845;
 
 let HAnimSegment1846 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1846.USE = "hanim_l_index_middle";
-HAnimHumanoid47.segments[163] = HAnimSegment1846;
+HAnimSegment1846.USE = "hanim_r_index_middle";
+HAnimHumanoid46.segments[164] = HAnimSegment1846;
 
 let HAnimSegment1847 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1847.USE = "hanim_r_index_middle";
-HAnimHumanoid47.segments[164] = HAnimSegment1847;
+HAnimSegment1847.USE = "hanim_l_index_proximal";
+HAnimHumanoid46.segments[165] = HAnimSegment1847;
 
 let HAnimSegment1848 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1848.USE = "hanim_l_index_proximal";
-HAnimHumanoid47.segments[165] = HAnimSegment1848;
+HAnimSegment1848.USE = "hanim_r_index_proximal";
+HAnimHumanoid46.segments[166] = HAnimSegment1848;
 
 let HAnimSegment1849 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1849.USE = "hanim_r_index_proximal";
-HAnimHumanoid47.segments[166] = HAnimSegment1849;
+HAnimSegment1849.USE = "hanim_l_middistal";
+HAnimHumanoid46.segments[167] = HAnimSegment1849;
 
 let HAnimSegment1850 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1850.USE = "hanim_l_middistal";
-HAnimHumanoid47.segments[167] = HAnimSegment1850;
+HAnimSegment1850.USE = "hanim_r_middistal";
+HAnimHumanoid46.segments[168] = HAnimSegment1850;
 
 let HAnimSegment1851 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1851.USE = "hanim_r_middistal";
-HAnimHumanoid47.segments[168] = HAnimSegment1851;
+HAnimSegment1851.USE = "hanim_l_middle_distal";
+HAnimHumanoid46.segments[169] = HAnimSegment1851;
 
 let HAnimSegment1852 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1852.USE = "hanim_l_middle_distal";
-HAnimHumanoid47.segments[169] = HAnimSegment1852;
+HAnimSegment1852.USE = "hanim_r_middle_distal";
+HAnimHumanoid46.segments[170] = HAnimSegment1852;
 
 let HAnimSegment1853 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1853.USE = "hanim_r_middle_distal";
-HAnimHumanoid47.segments[170] = HAnimSegment1853;
+HAnimSegment1853.USE = "hanim_l_middle_metacarpal";
+HAnimHumanoid46.segments[171] = HAnimSegment1853;
 
 let HAnimSegment1854 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1854.USE = "hanim_l_middle_metacarpal";
-HAnimHumanoid47.segments[171] = HAnimSegment1854;
+HAnimSegment1854.USE = "hanim_r_middle_metacarpal";
+HAnimHumanoid46.segments[172] = HAnimSegment1854;
 
 let HAnimSegment1855 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1855.USE = "hanim_r_middle_metacarpal";
-HAnimHumanoid47.segments[172] = HAnimSegment1855;
+HAnimSegment1855.USE = "hanim_l_middle_middle";
+HAnimHumanoid46.segments[173] = HAnimSegment1855;
 
 let HAnimSegment1856 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1856.USE = "hanim_l_middle_middle";
-HAnimHumanoid47.segments[173] = HAnimSegment1856;
+HAnimSegment1856.USE = "hanim_r_middle_middle";
+HAnimHumanoid46.segments[174] = HAnimSegment1856;
 
 let HAnimSegment1857 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1857.USE = "hanim_r_middle_middle";
-HAnimHumanoid47.segments[174] = HAnimSegment1857;
+HAnimSegment1857.USE = "hanim_l_middle_proximal";
+HAnimHumanoid46.segments[175] = HAnimSegment1857;
 
 let HAnimSegment1858 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1858.USE = "hanim_l_middle_proximal";
-HAnimHumanoid47.segments[175] = HAnimSegment1858;
+HAnimSegment1858.USE = "hanim_r_middle_proximal";
+HAnimHumanoid46.segments[176] = HAnimSegment1858;
 
 let HAnimSegment1859 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1859.USE = "hanim_r_middle_proximal";
-HAnimHumanoid47.segments[176] = HAnimSegment1859;
+HAnimSegment1859.USE = "hanim_l_midproximal";
+HAnimHumanoid46.segments[177] = HAnimSegment1859;
 
 let HAnimSegment1860 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1860.USE = "hanim_l_midproximal";
-HAnimHumanoid47.segments[177] = HAnimSegment1860;
+HAnimSegment1860.USE = "hanim_r_midproximal";
+HAnimHumanoid46.segments[178] = HAnimSegment1860;
 
 let HAnimSegment1861 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1861.USE = "hanim_r_midproximal";
-HAnimHumanoid47.segments[178] = HAnimSegment1861;
+HAnimSegment1861.USE = "hanim_l_pinky_distal";
+HAnimHumanoid46.segments[179] = HAnimSegment1861;
 
 let HAnimSegment1862 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1862.USE = "hanim_l_pinky_distal";
-HAnimHumanoid47.segments[179] = HAnimSegment1862;
+HAnimSegment1862.USE = "hanim_r_pinky_distal";
+HAnimHumanoid46.segments[180] = HAnimSegment1862;
 
 let HAnimSegment1863 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1863.USE = "hanim_r_pinky_distal";
-HAnimHumanoid47.segments[180] = HAnimSegment1863;
+HAnimSegment1863.USE = "hanim_l_pinky_metacarpal";
+HAnimHumanoid46.segments[181] = HAnimSegment1863;
 
 let HAnimSegment1864 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1864.USE = "hanim_l_pinky_metacarpal";
-HAnimHumanoid47.segments[181] = HAnimSegment1864;
+HAnimSegment1864.USE = "hanim_r_pinky_metacarpal";
+HAnimHumanoid46.segments[182] = HAnimSegment1864;
 
 let HAnimSegment1865 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1865.USE = "hanim_r_pinky_metacarpal";
-HAnimHumanoid47.segments[182] = HAnimSegment1865;
+HAnimSegment1865.USE = "hanim_l_pinky_middle";
+HAnimHumanoid46.segments[183] = HAnimSegment1865;
 
 let HAnimSegment1866 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1866.USE = "hanim_l_pinky_middle";
-HAnimHumanoid47.segments[183] = HAnimSegment1866;
+HAnimSegment1866.USE = "hanim_r_pinky_middle";
+HAnimHumanoid46.segments[184] = HAnimSegment1866;
 
 let HAnimSegment1867 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1867.USE = "hanim_r_pinky_middle";
-HAnimHumanoid47.segments[184] = HAnimSegment1867;
+HAnimSegment1867.USE = "hanim_l_pinky_proximal";
+HAnimHumanoid46.segments[185] = HAnimSegment1867;
 
 let HAnimSegment1868 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1868.USE = "hanim_l_pinky_proximal";
-HAnimHumanoid47.segments[185] = HAnimSegment1868;
+HAnimSegment1868.USE = "hanim_r_pinky_proximal";
+HAnimHumanoid46.segments[186] = HAnimSegment1868;
 
 let HAnimSegment1869 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1869.USE = "hanim_r_pinky_proximal";
-HAnimHumanoid47.segments[186] = HAnimSegment1869;
+HAnimSegment1869.USE = "hanim_l_ring_distal";
+HAnimHumanoid46.segments[187] = HAnimSegment1869;
 
 let HAnimSegment1870 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1870.USE = "hanim_l_ring_distal";
-HAnimHumanoid47.segments[187] = HAnimSegment1870;
+HAnimSegment1870.USE = "hanim_r_ring_distal";
+HAnimHumanoid46.segments[188] = HAnimSegment1870;
 
 let HAnimSegment1871 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1871.USE = "hanim_r_ring_distal";
-HAnimHumanoid47.segments[188] = HAnimSegment1871;
+HAnimSegment1871.USE = "hanim_l_ring_metacarpal";
+HAnimHumanoid46.segments[189] = HAnimSegment1871;
 
 let HAnimSegment1872 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1872.USE = "hanim_l_ring_metacarpal";
-HAnimHumanoid47.segments[189] = HAnimSegment1872;
+HAnimSegment1872.USE = "hanim_r_ring_metacarpal";
+HAnimHumanoid46.segments[190] = HAnimSegment1872;
 
 let HAnimSegment1873 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1873.USE = "hanim_r_ring_metacarpal";
-HAnimHumanoid47.segments[190] = HAnimSegment1873;
+HAnimSegment1873.USE = "hanim_l_ring_middle";
+HAnimHumanoid46.segments[191] = HAnimSegment1873;
 
 let HAnimSegment1874 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1874.USE = "hanim_l_ring_middle";
-HAnimHumanoid47.segments[191] = HAnimSegment1874;
+HAnimSegment1874.USE = "hanim_r_ring_middle";
+HAnimHumanoid46.segments[192] = HAnimSegment1874;
 
 let HAnimSegment1875 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1875.USE = "hanim_r_ring_middle";
-HAnimHumanoid47.segments[192] = HAnimSegment1875;
+HAnimSegment1875.USE = "hanim_l_ring_proximal";
+HAnimHumanoid46.segments[193] = HAnimSegment1875;
 
 let HAnimSegment1876 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1876.USE = "hanim_l_ring_proximal";
-HAnimHumanoid47.segments[193] = HAnimSegment1876;
+HAnimSegment1876.USE = "hanim_r_ring_proximal";
+HAnimHumanoid46.segments[194] = HAnimSegment1876;
 
 let HAnimSegment1877 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1877.USE = "hanim_r_ring_proximal";
-HAnimHumanoid47.segments[194] = HAnimSegment1877;
+HAnimSegment1877.USE = "hanim_l_scapula";
+HAnimHumanoid46.segments[195] = HAnimSegment1877;
 
 let HAnimSegment1878 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1878.USE = "hanim_l_scapula";
-HAnimHumanoid47.segments[195] = HAnimSegment1878;
+HAnimSegment1878.USE = "hanim_r_scapula";
+HAnimHumanoid46.segments[196] = HAnimSegment1878;
 
 let HAnimSegment1879 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1879.USE = "hanim_r_scapula";
-HAnimHumanoid47.segments[196] = HAnimSegment1879;
+HAnimSegment1879.USE = "hanim_l_thigh";
+HAnimHumanoid46.segments[197] = HAnimSegment1879;
 
 let HAnimSegment1880 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1880.USE = "hanim_l_thigh";
-HAnimHumanoid47.segments[197] = HAnimSegment1880;
+HAnimSegment1880.USE = "hanim_r_thigh";
+HAnimHumanoid46.segments[198] = HAnimSegment1880;
 
 let HAnimSegment1881 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1881.USE = "hanim_r_thigh";
-HAnimHumanoid47.segments[198] = HAnimSegment1881;
+HAnimSegment1881.USE = "hanim_l_thumb_distal";
+HAnimHumanoid46.segments[199] = HAnimSegment1881;
 
 let HAnimSegment1882 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1882.USE = "hanim_l_thumb_distal";
-HAnimHumanoid47.segments[199] = HAnimSegment1882;
+HAnimSegment1882.USE = "hanim_r_thumb_distal";
+HAnimHumanoid46.segments[200] = HAnimSegment1882;
 
 let HAnimSegment1883 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1883.USE = "hanim_r_thumb_distal";
-HAnimHumanoid47.segments[200] = HAnimSegment1883;
+HAnimSegment1883.USE = "hanim_l_thumb_metacarpal";
+HAnimHumanoid46.segments[201] = HAnimSegment1883;
 
 let HAnimSegment1884 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1884.USE = "hanim_l_thumb_metacarpal";
-HAnimHumanoid47.segments[201] = HAnimSegment1884;
+HAnimSegment1884.USE = "hanim_r_thumb_metacarpal";
+HAnimHumanoid46.segments[202] = HAnimSegment1884;
 
 let HAnimSegment1885 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1885.USE = "hanim_r_thumb_metacarpal";
-HAnimHumanoid47.segments[202] = HAnimSegment1885;
+HAnimSegment1885.USE = "hanim_l_thumb_proximal";
+HAnimHumanoid46.segments[203] = HAnimSegment1885;
 
 let HAnimSegment1886 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1886.USE = "hanim_l_thumb_proximal";
-HAnimHumanoid47.segments[203] = HAnimSegment1886;
+HAnimSegment1886.USE = "hanim_r_thumb_proximal";
+HAnimHumanoid46.segments[204] = HAnimSegment1886;
 
 let HAnimSegment1887 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1887.USE = "hanim_r_thumb_proximal";
-HAnimHumanoid47.segments[204] = HAnimSegment1887;
+HAnimSegment1887.USE = "hanim_l_upperarm";
+HAnimHumanoid46.segments[205] = HAnimSegment1887;
 
 let HAnimSegment1888 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1888.USE = "hanim_l_upperarm";
-HAnimHumanoid47.segments[205] = HAnimSegment1888;
+HAnimSegment1888.USE = "hanim_r_upperarm";
+HAnimHumanoid46.segments[206] = HAnimSegment1888;
 
-let HAnimSegment1889 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1889.USE = "hanim_r_upperarm";
-HAnimHumanoid47.segments[206] = HAnimSegment1889;
+let HAnimSite1889 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1889.USE = "hanim_crotch_pt";
+HAnimHumanoid46.viewpoints[207] = HAnimSite1889;
 
 let HAnimSite1890 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1890.USE = "hanim_crotch_pt";
-HAnimHumanoid47.viewpoints[207] = HAnimSite1890;
+HAnimSite1890.USE = "hanim_skull_tip";
+HAnimHumanoid46.viewpoints[208] = HAnimSite1890;
 
 let HAnimSite1891 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1891.USE = "hanim_skull_tip";
-HAnimHumanoid47.viewpoints[208] = HAnimSite1891;
+HAnimSite1891.USE = "hanim_sellion_pt";
+HAnimHumanoid46.viewpoints[209] = HAnimSite1891;
 
 let HAnimSite1892 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1892.USE = "hanim_sellion_pt";
-HAnimHumanoid47.viewpoints[209] = HAnimSite1892;
+HAnimSite1892.USE = "hanim_supramenton_pt";
+HAnimHumanoid46.viewpoints[210] = HAnimSite1892;
 
 let HAnimSite1893 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1893.USE = "hanim_supramenton_pt";
-HAnimHumanoid47.viewpoints[210] = HAnimSite1893;
+HAnimSite1893.USE = "hanim_nuchale_pt";
+HAnimHumanoid46.viewpoints[211] = HAnimSite1893;
 
 let HAnimSite1894 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1894.USE = "hanim_nuchale_pt";
-HAnimHumanoid47.viewpoints[211] = HAnimSite1894;
+HAnimSite1894.USE = "hanim_suprasternale_pt";
+HAnimHumanoid46.viewpoints[212] = HAnimSite1894;
 
 let HAnimSite1895 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1895.USE = "hanim_suprasternale_pt";
-HAnimHumanoid47.viewpoints[212] = HAnimSite1895;
+HAnimSite1895.USE = "hanim_cervicale_pt";
+HAnimHumanoid46.viewpoints[213] = HAnimSite1895;
 
 let HAnimSite1896 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1896.USE = "hanim_cervicale_pt";
-HAnimHumanoid47.viewpoints[213] = HAnimSite1896;
+HAnimSite1896.USE = "hanim_substernale_pt";
+HAnimHumanoid46.viewpoints[214] = HAnimSite1896;
 
 let HAnimSite1897 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1897.USE = "hanim_substernale_pt";
-HAnimHumanoid47.viewpoints[214] = HAnimSite1897;
+HAnimSite1897.USE = "hanim_rib10_midspine_pt";
+HAnimHumanoid46.viewpoints[215] = HAnimSite1897;
 
 let HAnimSite1898 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1898.USE = "hanim_rib10_midspine_pt";
-HAnimHumanoid47.viewpoints[215] = HAnimSite1898;
+HAnimSite1898.USE = "hanim_waist_preferred_post_pt";
+HAnimHumanoid46.viewpoints[216] = HAnimSite1898;
 
 let HAnimSite1899 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1899.USE = "hanim_waist_preferred_post_pt";
-HAnimHumanoid47.viewpoints[216] = HAnimSite1899;
+HAnimSite1899.USE = "hanim_navel_pt";
+HAnimHumanoid46.viewpoints[217] = HAnimSite1899;
 
 let HAnimSite1900 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1900.USE = "hanim_navel_pt";
-HAnimHumanoid47.viewpoints[217] = HAnimSite1900;
+HAnimSite1900.USE = "hanim_l_acromion_pt";
+HAnimHumanoid46.viewpoints[218] = HAnimSite1900;
 
 let HAnimSite1901 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1901.USE = "hanim_l_acromion_pt";
-HAnimHumanoid47.viewpoints[218] = HAnimSite1901;
+HAnimSite1901.USE = "hanim_r_acromion_pt";
+HAnimHumanoid46.viewpoints[219] = HAnimSite1901;
 
 let HAnimSite1902 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1902.USE = "hanim_r_acromion_pt";
-HAnimHumanoid47.viewpoints[219] = HAnimSite1902;
+HAnimSite1902.USE = "hanim_r_asis_pt";
+HAnimHumanoid46.viewpoints[220] = HAnimSite1902;
 
 let HAnimSite1903 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1903.USE = "hanim_r_asis_pt";
-HAnimHumanoid47.viewpoints[220] = HAnimSite1903;
+HAnimSite1903.USE = "hanim_l_asis_pt";
+HAnimHumanoid46.viewpoints[221] = HAnimSite1903;
 
 let HAnimSite1904 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1904.USE = "hanim_l_asis_pt";
-HAnimHumanoid47.viewpoints[221] = HAnimSite1904;
+HAnimSite1904.USE = "hanim_l_axilla_ant_pt";
+HAnimHumanoid46.viewpoints[222] = HAnimSite1904;
 
 let HAnimSite1905 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1905.USE = "hanim_l_axilla_ant_pt";
-HAnimHumanoid47.viewpoints[222] = HAnimSite1905;
+HAnimSite1905.USE = "hanim_r_axilla_ant_pt";
+HAnimHumanoid46.viewpoints[223] = HAnimSite1905;
 
 let HAnimSite1906 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1906.USE = "hanim_r_axilla_ant_pt";
-HAnimHumanoid47.viewpoints[223] = HAnimSite1906;
+HAnimSite1906.USE = "hanim_l_axilla_post_pt";
+HAnimHumanoid46.viewpoints[224] = HAnimSite1906;
 
 let HAnimSite1907 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1907.USE = "hanim_l_axilla_post_pt";
-HAnimHumanoid47.viewpoints[224] = HAnimSite1907;
+HAnimSite1907.USE = "hanim_r_axilla_post_pt";
+HAnimHumanoid46.viewpoints[225] = HAnimSite1907;
 
 let HAnimSite1908 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1908.USE = "hanim_r_axilla_post_pt";
-HAnimHumanoid47.viewpoints[225] = HAnimSite1908;
+HAnimSite1908.USE = "hanim_l_calcaneous_post_pt";
+HAnimHumanoid46.viewpoints[226] = HAnimSite1908;
 
 let HAnimSite1909 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1909.USE = "hanim_l_calcaneous_post_pt";
-HAnimHumanoid47.viewpoints[226] = HAnimSite1909;
+HAnimSite1909.USE = "hanim_r_calcaneous_post_pt";
+HAnimHumanoid46.viewpoints[227] = HAnimSite1909;
 
 let HAnimSite1910 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1910.USE = "hanim_r_calcaneous_post_pt";
-HAnimHumanoid47.viewpoints[227] = HAnimSite1910;
+HAnimSite1910.USE = "hanim_l_clavicale_pt";
+HAnimHumanoid46.viewpoints[228] = HAnimSite1910;
 
 let HAnimSite1911 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1911.USE = "hanim_l_clavicale_pt";
-HAnimHumanoid47.viewpoints[228] = HAnimSite1911;
+HAnimSite1911.USE = "hanim_r_clavicale_pt";
+HAnimHumanoid46.viewpoints[229] = HAnimSite1911;
 
 let HAnimSite1912 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1912.USE = "hanim_r_clavicale_pt";
-HAnimHumanoid47.viewpoints[229] = HAnimSite1912;
+HAnimSite1912.USE = "hanim_l_dactylion_pt";
+HAnimHumanoid46.viewpoints[230] = HAnimSite1912;
 
 let HAnimSite1913 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1913.USE = "hanim_l_dactylion_pt";
-HAnimHumanoid47.viewpoints[230] = HAnimSite1913;
+HAnimSite1913.USE = "hanim_r_dactylion_pt";
+HAnimHumanoid46.viewpoints[231] = HAnimSite1913;
 
 let HAnimSite1914 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1914.USE = "hanim_r_dactylion_pt";
-HAnimHumanoid47.viewpoints[231] = HAnimSite1914;
+HAnimSite1914.USE = "hanim_l_digit2_pt";
+HAnimHumanoid46.viewpoints[232] = HAnimSite1914;
 
 let HAnimSite1915 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1915.USE = "hanim_l_digit2_pt";
-HAnimHumanoid47.viewpoints[232] = HAnimSite1915;
+HAnimSite1915.USE = "hanim_r_digit2_pt";
+HAnimHumanoid46.viewpoints[233] = HAnimSite1915;
 
 let HAnimSite1916 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1916.USE = "hanim_r_digit2_pt";
-HAnimHumanoid47.viewpoints[233] = HAnimSite1916;
+HAnimSite1916.USE = "hanim_l_femoral_lateral_epicn_pt";
+HAnimHumanoid46.viewpoints[234] = HAnimSite1916;
 
 let HAnimSite1917 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1917.USE = "hanim_l_femoral_lateral_epicn_pt";
-HAnimHumanoid47.viewpoints[234] = HAnimSite1917;
+HAnimSite1917.USE = "hanim_r_femoral_lateral_epicn_pt";
+HAnimHumanoid46.viewpoints[235] = HAnimSite1917;
 
 let HAnimSite1918 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1918.USE = "hanim_r_femoral_lateral_epicn_pt";
-HAnimHumanoid47.viewpoints[235] = HAnimSite1918;
+HAnimSite1918.USE = "hanim_l_femoral_medial_epicn_pt";
+HAnimHumanoid46.viewpoints[236] = HAnimSite1918;
 
 let HAnimSite1919 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1919.USE = "hanim_l_femoral_medial_epicn_pt";
-HAnimHumanoid47.viewpoints[236] = HAnimSite1919;
+HAnimSite1919.USE = "hanim_r_femoral_medial_epicn_pt";
+HAnimHumanoid46.viewpoints[237] = HAnimSite1919;
 
 let HAnimSite1920 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1920.USE = "hanim_r_femoral_medial_epicn_pt";
-HAnimHumanoid47.viewpoints[237] = HAnimSite1920;
+HAnimSite1920.USE = "hanim_l_forefoot_tip";
+HAnimHumanoid46.viewpoints[238] = HAnimSite1920;
 
 let HAnimSite1921 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1921.USE = "hanim_l_forefoot_tip";
-HAnimHumanoid47.viewpoints[238] = HAnimSite1921;
+HAnimSite1921.USE = "hanim_r_forefoot_tip";
+HAnimHumanoid46.viewpoints[239] = HAnimSite1921;
 
 let HAnimSite1922 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1922.USE = "hanim_r_forefoot_tip";
-HAnimHumanoid47.viewpoints[239] = HAnimSite1922;
+HAnimSite1922.USE = "hanim_r_gonion_pt";
+HAnimHumanoid46.viewpoints[240] = HAnimSite1922;
 
 let HAnimSite1923 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1923.USE = "hanim_r_gonion_pt";
-HAnimHumanoid47.viewpoints[240] = HAnimSite1923;
+HAnimSite1923.USE = "hanim_l_gonion_pt";
+HAnimHumanoid46.viewpoints[241] = HAnimSite1923;
 
 let HAnimSite1924 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1924.USE = "hanim_l_gonion_pt";
-HAnimHumanoid47.viewpoints[241] = HAnimSite1924;
+HAnimSite1924.USE = "hanim_l_humeral_lateral_epicn_pt";
+HAnimHumanoid46.viewpoints[242] = HAnimSite1924;
 
 let HAnimSite1925 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1925.USE = "hanim_l_humeral_lateral_epicn_pt";
-HAnimHumanoid47.viewpoints[242] = HAnimSite1925;
+HAnimSite1925.USE = "hanim_r_humeral_lateral_epicn_pt";
+HAnimHumanoid46.viewpoints[243] = HAnimSite1925;
 
 let HAnimSite1926 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1926.USE = "hanim_r_humeral_lateral_epicn_pt";
-HAnimHumanoid47.viewpoints[243] = HAnimSite1926;
+HAnimSite1926.USE = "hanim_l_humeral_medial_epicn_pt";
+HAnimHumanoid46.viewpoints[244] = HAnimSite1926;
 
 let HAnimSite1927 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1927.USE = "hanim_l_humeral_medial_epicn_pt";
-HAnimHumanoid47.viewpoints[244] = HAnimSite1927;
+HAnimSite1927.USE = "hanim_r_humeral_medial_epicn_pt";
+HAnimHumanoid46.viewpoints[245] = HAnimSite1927;
 
 let HAnimSite1928 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1928.USE = "hanim_r_humeral_medial_epicn_pt";
-HAnimHumanoid47.viewpoints[245] = HAnimSite1928;
+HAnimSite1928.USE = "hanim_r_iliocristale_pt";
+HAnimHumanoid46.viewpoints[246] = HAnimSite1928;
 
 let HAnimSite1929 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1929.USE = "hanim_r_iliocristale_pt";
-HAnimHumanoid47.viewpoints[246] = HAnimSite1929;
+HAnimSite1929.USE = "hanim_l_iliocristale_pt";
+HAnimHumanoid46.viewpoints[247] = HAnimSite1929;
 
 let HAnimSite1930 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1930.USE = "hanim_l_iliocristale_pt";
-HAnimHumanoid47.viewpoints[247] = HAnimSite1930;
+HAnimSite1930.USE = "hanim_l_index_distal_tip";
+HAnimHumanoid46.viewpoints[248] = HAnimSite1930;
 
 let HAnimSite1931 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1931.USE = "hanim_l_index_distal_tip";
-HAnimHumanoid47.viewpoints[248] = HAnimSite1931;
+HAnimSite1931.USE = "hanim_r_index_distal_tip";
+HAnimHumanoid46.viewpoints[249] = HAnimSite1931;
 
 let HAnimSite1932 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1932.USE = "hanim_r_index_distal_tip";
-HAnimHumanoid47.viewpoints[249] = HAnimSite1932;
+HAnimSite1932.USE = "hanim_r_infraorbitale_pt";
+HAnimHumanoid46.viewpoints[250] = HAnimSite1932;
 
 let HAnimSite1933 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1933.USE = "hanim_r_infraorbitale_pt";
-HAnimHumanoid47.viewpoints[250] = HAnimSite1933;
+HAnimSite1933.USE = "hanim_l_infraorbitale_pt";
+HAnimHumanoid46.viewpoints[251] = HAnimSite1933;
 
 let HAnimSite1934 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1934.USE = "hanim_l_infraorbitale_pt";
-HAnimHumanoid47.viewpoints[251] = HAnimSite1934;
+HAnimSite1934.USE = "hanim_l_knee_crease_pt";
+HAnimHumanoid46.viewpoints[252] = HAnimSite1934;
 
 let HAnimSite1935 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1935.USE = "hanim_l_knee_crease_pt";
-HAnimHumanoid47.viewpoints[252] = HAnimSite1935;
+HAnimSite1935.USE = "hanim_r_knee_crease_pt";
+HAnimHumanoid46.viewpoints[253] = HAnimSite1935;
 
 let HAnimSite1936 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1936.USE = "hanim_r_knee_crease_pt";
-HAnimHumanoid47.viewpoints[253] = HAnimSite1936;
+HAnimSite1936.USE = "hanim_l_lateral_malleolus_pt";
+HAnimHumanoid46.viewpoints[254] = HAnimSite1936;
 
 let HAnimSite1937 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1937.USE = "hanim_l_lateral_malleolus_pt";
-HAnimHumanoid47.viewpoints[254] = HAnimSite1937;
+HAnimSite1937.USE = "hanim_r_lateral_malleolus_pt";
+HAnimHumanoid46.viewpoints[255] = HAnimSite1937;
 
 let HAnimSite1938 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1938.USE = "hanim_r_lateral_malleolus_pt";
-HAnimHumanoid47.viewpoints[255] = HAnimSite1938;
+HAnimSite1938.USE = "hanim_l_medial_malleolus_pt";
+HAnimHumanoid46.viewpoints[256] = HAnimSite1938;
 
 let HAnimSite1939 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1939.USE = "hanim_l_medial_malleolus_pt";
-HAnimHumanoid47.viewpoints[256] = HAnimSite1939;
+HAnimSite1939.USE = "hanim_r_medial_malleolus_pt";
+HAnimHumanoid46.viewpoints[257] = HAnimSite1939;
 
 let HAnimSite1940 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1940.USE = "hanim_r_medial_malleolus_pt";
-HAnimHumanoid47.viewpoints[257] = HAnimSite1940;
+HAnimSite1940.USE = "hanim_l_metacarpal_pha2_pt";
+HAnimHumanoid46.viewpoints[258] = HAnimSite1940;
 
 let HAnimSite1941 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1941.USE = "hanim_l_metacarpal_pha2_pt";
-HAnimHumanoid47.viewpoints[258] = HAnimSite1941;
+HAnimSite1941.USE = "hanim_r_metacarpal_pha2_pt";
+HAnimHumanoid46.viewpoints[259] = HAnimSite1941;
 
 let HAnimSite1942 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1942.USE = "hanim_r_metacarpal_pha2_pt";
-HAnimHumanoid47.viewpoints[259] = HAnimSite1942;
+HAnimSite1942.USE = "hanim_l_metacarpal_pha5_pt";
+HAnimHumanoid46.viewpoints[260] = HAnimSite1942;
 
 let HAnimSite1943 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1943.USE = "hanim_l_metacarpal_pha5_pt";
-HAnimHumanoid47.viewpoints[260] = HAnimSite1943;
+HAnimSite1943.USE = "hanim_r_metacarpal_pha5_pt";
+HAnimHumanoid46.viewpoints[261] = HAnimSite1943;
 
 let HAnimSite1944 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1944.USE = "hanim_r_metacarpal_pha5_pt";
-HAnimHumanoid47.viewpoints[261] = HAnimSite1944;
+HAnimSite1944.USE = "hanim_l_metatarsal_pha1_pt";
+HAnimHumanoid46.viewpoints[262] = HAnimSite1944;
 
 let HAnimSite1945 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1945.USE = "hanim_l_metatarsal_pha1_pt";
-HAnimHumanoid47.viewpoints[262] = HAnimSite1945;
+HAnimSite1945.USE = "hanim_r_metatarsal_pha1_pt";
+HAnimHumanoid46.viewpoints[263] = HAnimSite1945;
 
 let HAnimSite1946 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1946.USE = "hanim_r_metatarsal_pha1_pt";
-HAnimHumanoid47.viewpoints[263] = HAnimSite1946;
+HAnimSite1946.USE = "hanim_l_metatarsal_pha5_pt";
+HAnimHumanoid46.viewpoints[264] = HAnimSite1946;
 
 let HAnimSite1947 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1947.USE = "hanim_l_metatarsal_pha5_pt";
-HAnimHumanoid47.viewpoints[264] = HAnimSite1947;
+HAnimSite1947.USE = "hanim_r_metatarsal_pha5_pt";
+HAnimHumanoid46.viewpoints[265] = HAnimSite1947;
 
 let HAnimSite1948 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1948.USE = "hanim_r_metatarsal_pha5_pt";
-HAnimHumanoid47.viewpoints[265] = HAnimSite1948;
+HAnimSite1948.USE = "hanim_l_middle_distal_tip";
+HAnimHumanoid46.viewpoints[266] = HAnimSite1948;
 
 let HAnimSite1949 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1949.USE = "hanim_l_middle_distal_tip";
-HAnimHumanoid47.viewpoints[266] = HAnimSite1949;
+HAnimSite1949.USE = "hanim_r_middle_distal_tip";
+HAnimHumanoid46.viewpoints[267] = HAnimSite1949;
 
 let HAnimSite1950 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1950.USE = "hanim_r_middle_distal_tip";
-HAnimHumanoid47.viewpoints[267] = HAnimSite1950;
+HAnimSite1950.USE = "hanim_r_neck_base_pt";
+HAnimHumanoid46.viewpoints[268] = HAnimSite1950;
 
 let HAnimSite1951 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1951.USE = "hanim_r_neck_base_pt";
-HAnimHumanoid47.viewpoints[268] = HAnimSite1951;
+HAnimSite1951.USE = "hanim_l_neck_base_pt";
+HAnimHumanoid46.viewpoints[269] = HAnimSite1951;
 
 let HAnimSite1952 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1952.USE = "hanim_l_neck_base_pt";
-HAnimHumanoid47.viewpoints[269] = HAnimSite1952;
+HAnimSite1952.USE = "hanim_l_olecranon_pt";
+HAnimHumanoid46.viewpoints[270] = HAnimSite1952;
 
 let HAnimSite1953 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1953.USE = "hanim_l_olecranon_pt";
-HAnimHumanoid47.viewpoints[270] = HAnimSite1953;
+HAnimSite1953.USE = "hanim_r_olecranon_pt";
+HAnimHumanoid46.viewpoints[271] = HAnimSite1953;
 
 let HAnimSite1954 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1954.USE = "hanim_r_olecranon_pt";
-HAnimHumanoid47.viewpoints[271] = HAnimSite1954;
+HAnimSite1954.USE = "hanim_l_pinky_distal_tip";
+HAnimHumanoid46.viewpoints[272] = HAnimSite1954;
 
 let HAnimSite1955 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1955.USE = "hanim_l_pinky_distal_tip";
-HAnimHumanoid47.viewpoints[272] = HAnimSite1955;
+HAnimSite1955.USE = "hanim_r_pinky_distal_tip";
+HAnimHumanoid46.viewpoints[273] = HAnimSite1955;
 
 let HAnimSite1956 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1956.USE = "hanim_r_pinky_distal_tip";
-HAnimHumanoid47.viewpoints[273] = HAnimSite1956;
+HAnimSite1956.USE = "hanim_r_psis_pt";
+HAnimHumanoid46.viewpoints[274] = HAnimSite1956;
 
 let HAnimSite1957 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1957.USE = "hanim_r_psis_pt";
-HAnimHumanoid47.viewpoints[274] = HAnimSite1957;
+HAnimSite1957.USE = "hanim_l_psis_pt";
+HAnimHumanoid46.viewpoints[275] = HAnimSite1957;
 
 let HAnimSite1958 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1958.USE = "hanim_l_psis_pt";
-HAnimHumanoid47.viewpoints[275] = HAnimSite1958;
+HAnimSite1958.USE = "hanim_l_radial_styloid_pt";
+HAnimHumanoid46.viewpoints[276] = HAnimSite1958;
 
 let HAnimSite1959 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1959.USE = "hanim_l_radial_styloid_pt";
-HAnimHumanoid47.viewpoints[276] = HAnimSite1959;
+HAnimSite1959.USE = "hanim_r_radial_styloid_pt";
+HAnimHumanoid46.viewpoints[277] = HAnimSite1959;
 
 let HAnimSite1960 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1960.USE = "hanim_r_radial_styloid_pt";
-HAnimHumanoid47.viewpoints[277] = HAnimSite1960;
+HAnimSite1960.USE = "hanim_l_radiale_pt";
+HAnimHumanoid46.viewpoints[278] = HAnimSite1960;
 
 let HAnimSite1961 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1961.USE = "hanim_l_radiale_pt";
-HAnimHumanoid47.viewpoints[278] = HAnimSite1961;
+HAnimSite1961.USE = "hanim_r_radiale_pt";
+HAnimHumanoid46.viewpoints[279] = HAnimSite1961;
 
 let HAnimSite1962 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1962.USE = "hanim_r_radiale_pt";
-HAnimHumanoid47.viewpoints[279] = HAnimSite1962;
+HAnimSite1962.USE = "hanim_r_rib10_pt";
+HAnimHumanoid46.viewpoints[280] = HAnimSite1962;
 
 let HAnimSite1963 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1963.USE = "hanim_r_rib10_pt";
-HAnimHumanoid47.viewpoints[280] = HAnimSite1963;
+HAnimSite1963.USE = "hanim_l_rib10_pt";
+HAnimHumanoid46.viewpoints[281] = HAnimSite1963;
 
 let HAnimSite1964 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1964.USE = "hanim_l_rib10_pt";
-HAnimHumanoid47.viewpoints[281] = HAnimSite1964;
+HAnimSite1964.USE = "hanim_l_ring_distal_tip";
+HAnimHumanoid46.viewpoints[282] = HAnimSite1964;
 
 let HAnimSite1965 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1965.USE = "hanim_l_ring_distal_tip";
-HAnimHumanoid47.viewpoints[282] = HAnimSite1965;
+HAnimSite1965.USE = "hanim_r_ring_distal_tip";
+HAnimHumanoid46.viewpoints[283] = HAnimSite1965;
 
 let HAnimSite1966 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1966.USE = "hanim_r_ring_distal_tip";
-HAnimHumanoid47.viewpoints[283] = HAnimSite1966;
+HAnimSite1966.USE = "hanim_temporomandibular_l_site_pt";
+HAnimHumanoid46.viewpoints[284] = HAnimSite1966;
 
 let HAnimSite1967 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1967.USE = "hanim_temporomandibular_l_site_pt";
-HAnimHumanoid47.viewpoints[284] = HAnimSite1967;
+HAnimSite1967.USE = "hanim_temporomandibular_r_site_pt";
+HAnimHumanoid46.viewpoints[285] = HAnimSite1967;
 
 let HAnimSite1968 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1968.USE = "hanim_temporomandibular_r_site_pt";
-HAnimHumanoid47.viewpoints[285] = HAnimSite1968;
+HAnimSite1968.USE = "hanim_l_sphyrion_pt";
+HAnimHumanoid46.viewpoints[286] = HAnimSite1968;
 
 let HAnimSite1969 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1969.USE = "hanim_l_sphyrion_pt";
-HAnimHumanoid47.viewpoints[286] = HAnimSite1969;
+HAnimSite1969.USE = "hanim_r_sphyrion_pt";
+HAnimHumanoid46.viewpoints[287] = HAnimSite1969;
 
 let HAnimSite1970 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1970.USE = "hanim_r_sphyrion_pt";
-HAnimHumanoid47.viewpoints[287] = HAnimSite1970;
+HAnimSite1970.USE = "hanim_r_thelion_pt";
+HAnimHumanoid46.viewpoints[288] = HAnimSite1970;
 
 let HAnimSite1971 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1971.USE = "hanim_r_thelion_pt";
-HAnimHumanoid47.viewpoints[288] = HAnimSite1971;
+HAnimSite1971.USE = "hanim_l_thelion_pt";
+HAnimHumanoid46.viewpoints[289] = HAnimSite1971;
 
 let HAnimSite1972 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1972.USE = "hanim_l_thelion_pt";
-HAnimHumanoid47.viewpoints[289] = HAnimSite1972;
+HAnimSite1972.USE = "hanim_l_thumb_distal_tip";
+HAnimHumanoid46.viewpoints[290] = HAnimSite1972;
 
 let HAnimSite1973 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1973.USE = "hanim_l_thumb_distal_tip";
-HAnimHumanoid47.viewpoints[290] = HAnimSite1973;
+HAnimSite1973.USE = "hanim_r_thumb_distal_tip";
+HAnimHumanoid46.viewpoints[291] = HAnimSite1973;
 
 let HAnimSite1974 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1974.USE = "hanim_r_thumb_distal_tip";
-HAnimHumanoid47.viewpoints[291] = HAnimSite1974;
+HAnimSite1974.USE = "hanim_r_tragion_pt";
+HAnimHumanoid46.viewpoints[292] = HAnimSite1974;
 
 let HAnimSite1975 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1975.USE = "hanim_r_tragion_pt";
-HAnimHumanoid47.viewpoints[292] = HAnimSite1975;
+HAnimSite1975.USE = "hanim_l_tragion_pt";
+HAnimHumanoid46.viewpoints[293] = HAnimSite1975;
 
 let HAnimSite1976 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1976.USE = "hanim_l_tragion_pt";
-HAnimHumanoid47.viewpoints[293] = HAnimSite1976;
+HAnimSite1976.USE = "hanim_r_trochanterion_pt";
+HAnimHumanoid46.viewpoints[294] = HAnimSite1976;
 
 let HAnimSite1977 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1977.USE = "hanim_r_trochanterion_pt";
-HAnimHumanoid47.viewpoints[294] = HAnimSite1977;
+HAnimSite1977.USE = "hanim_l_trochanterion_pt";
+HAnimHumanoid46.viewpoints[295] = HAnimSite1977;
 
 let HAnimSite1978 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1978.USE = "hanim_l_trochanterion_pt";
-HAnimHumanoid47.viewpoints[295] = HAnimSite1978;
+HAnimSite1978.USE = "hanim_l_ulnar_styloid_pt";
+HAnimHumanoid46.viewpoints[296] = HAnimSite1978;
 
 let HAnimSite1979 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1979.USE = "hanim_l_ulnar_styloid_pt";
-HAnimHumanoid47.viewpoints[296] = HAnimSite1979;
+HAnimSite1979.USE = "hanim_r_ulnar_styloid_pt";
+HAnimHumanoid46.viewpoints[297] = HAnimSite1979;
 
-let HAnimSite1980 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1980.USE = "hanim_r_ulnar_styloid_pt";
-HAnimHumanoid47.viewpoints[297] = HAnimSite1980;
-
-browser.currentScene.children[12] = HAnimHumanoid47;
+browser.currentScene.children[12] = HAnimHumanoid46;
 

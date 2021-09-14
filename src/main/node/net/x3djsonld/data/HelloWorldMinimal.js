@@ -188,3 +188,4 @@ HelloWorldMinimal.prototype = {
 	}
 }
 new HelloWorldMinimal().main();
+process.exit(0);

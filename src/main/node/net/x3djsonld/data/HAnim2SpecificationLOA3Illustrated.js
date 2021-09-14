@@ -2680,3 +2680,4 @@ HAnim2SpecificationLOA3Illustrated.prototype = {
 	}
 }
 new HAnim2SpecificationLOA3Illustrated().main();
+process.exit(0);

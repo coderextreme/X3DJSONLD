@@ -41,7 +41,7 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("modified");
-meta7->setContent("20 April 2021");
+meta7->setContent("4 August 2021");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
@@ -56,7 +56,7 @@ head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("reference");
-meta10->setContent("http://www.medialab.teicrete.gr/minipages/x3domAudio");
+meta10->setContent("https://www.medialab.hmu.gr/minipages/x3domAudio");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -85,7 +85,6 @@ Background16->setSkyColor(new float[3]{0.2,0.2,0.2});
 group->addChildren(*Background16);
 
 CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setBind("true");
 Viewpoint17->setOrientation(new float[4]{1,0,0,-0.5});
 Viewpoint17->setPosition(new float[3]{0,500,600});
 Viewpoint17->setRetainUserOffsets(True);

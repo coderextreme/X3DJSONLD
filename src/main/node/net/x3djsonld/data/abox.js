@@ -156,3 +156,4 @@ abox.prototype = {
 	}
 }
 new abox().main();
+process.exit(0);

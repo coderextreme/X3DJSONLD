@@ -138,3 +138,4 @@ sphere.prototype = {
 	}
 }
 new sphere().main();
+process.exit(0);
