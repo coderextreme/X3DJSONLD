@@ -168,7 +168,7 @@ Additional references of interest:
 		<!-- note that ROUTE, *Proto*, IMPORT/EXPORT and CommentsBlock are X3D Statements which are also allowed as X3DChildNode -->
 		<xsl:value-of select="
 			($name = 'X3D') or ($name = 'head') or ($name = 'component') or ($name = 'meta') or ($name = 'unit') or ($name = 'Scene') or 
-            ($name = 'IS') or ($name = 'connect') or ($name = 'field') or ($name = 'fieldValue') or ($name = 'ROUTE') or 
+                        ($name = 'IS') or ($name = 'connect') or ($name = 'field') or ($name = 'fieldValue') or ($name = 'ROUTE') or 
 			($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare') or ($name = 'ProtoInstance') or ($name = 'ProtoInterface') or ($name = 'ProtoBody') or 
 			($name = 'IMPORT') or ($name = 'EXPORT') or ($name = 'CommentsBlock')"/>
         <!-- returns boolean or string? results seem inconsistent...  :( -->
@@ -247,15 +247,15 @@ Additional references of interest:
 				<xsl:text>double[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="(@name = 'head') or (@name = 'Scene') or (@name = 'IS') or (@name = 'ProtoInterface') or (@name = 'ProtoBody')">
-                <!-- statement singleton -->
+                                <!-- statement singleton -->
 				<xsl:value-of select="@name"/>
                 <xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 			</xsl:when>
 			<xsl:when test="(@name = 'component') or (@name = 'unit') or (@name = 'meta') or (@name = 'connect') or (@name = 'field') or (@name = 'fieldValue')">
-                <!-- statement list -->
+                                <!-- statement list -->
 				<xsl:text disable-output-escaping="yes">ArrayList&lt;</xsl:text><!-- ArrayList<> -->
 				<xsl:value-of select="@name"/>
-                <xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
+                                <xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 				<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
 			</xsl:when>
 			<!-- X3D Java Specification interface definitions are completely ambiguous, there is no benefit to 
@@ -759,7 +759,6 @@ Additional references of interest:
                     <xsl:text>VolumeRendering</xsl:text>
                 </xsl:when>
                 <xsl:when test="starts-with($nodeTypeBase,'org.web3d') or
-                                
                                 starts-with($nodeTypeBase,'Proto') or
                                 starts-with($nodeTypeBase,'Matrix') or
                                ($nodeTypeBase = 'String') or
@@ -3594,13 +3593,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:when test="starts-with($name,'Metadata')">
 												<xsl:text>, "value"</xsl:text>
 											</xsl:when>
+											<!-- X3D3 synonyms for X3D4 field regularization -->
 											<xsl:when test="($name = 'MovieTexture')">
 												<xsl:text>, "source"</xsl:text>
 												<xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
 												<xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
 											</xsl:when>
-                                            <!-- X3D3 synonyms for X3D4 field regularization -->
-											<xsl:when test="starts-with($name,'DISEntityTypeMapping')">
+                                                                                        <xsl:when test="starts-with($name,'DISEntityTypeMapping')">
 												<xsl:text>, "mapping"</xsl:text>
 											</xsl:when>
 										</xsl:choose>
@@ -12102,7 +12101,8 @@ setAttribute method invocations).
 							</xsl:call-template>
 						</xsl:variable>
 						<xsl:if test="(not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true')) or ($name = 'ProtoInstance')">
-<!-- IS added to X3DUOM
+
+                                                    <!-- IS added to X3DUOM
 	<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal ProtoBody nodes.
@@ -12769,13 +12769,61 @@ setAttribute method invocations).
 	 */
 	public </xsl:text>
 	<xsl:value-of select="$thisClassName"/>
-	<xsl:text> (String fieldValueName, String defaultValue)
+	<xsl:text disable-output-escaping="yes"><![CDATA[ (String fieldValueName, String defaultValue)
 	{
 		initialize();
 		setName (fieldValueName);
 	    setValue(defaultValue);
 	}
-</xsl:text>
+        // special utilities for fieldValue IS
+        
+        private IS IS; // SFNode acceptable node types: IS
+
+	/**
+	 * Provide IS instance (using a properly typed node) from inputOutput SFNode field <i>IS</i>.
+	 * @return value of IS field
+	 */
+	public IS getIS()
+	{
+		return IS;
+	}
+
+	/**
+	 * Accessor method to assign IS instance (using a properly typed node) to inputOutput SFNode field <i>IS</i>.
+	 * @param newValue is new value for the IS field.
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */	public fieldValue setIS(IS newValue)
+	{
+		// set-newValue-validity-checks #0
+		IS = newValue;
+		if (newValue != null)
+		{
+			((X3DConcreteElement) IS).setParent(this); // parentTest15
+		}
+		return this;
+	}
+
+	/**
+	 * Utility method to clear SFNode value of IS field.
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+setAttribute method invocations).	 */
+	public fieldValue clearIS()
+	{
+		((X3DConcreteElement) IS).clearParent(); // remove references to facilitate Java memory management
+		IS = null; // reset SFNode field
+		return this;
+	}
+
+	/**
+	 * Indicate whether an object is available for inputOutput SFNode field <i>IS</i>.
+	 * @return whether an IS statement is available.
+	 * @see #getIS()
+	 */
+	public boolean hasIS()
+	{
+		return (IS != null);
+	}
+]]></xsl:text>
 							</xsl:when>
 
 <!-- error prone, not included:
@@ -37380,6 +37428,13 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see #launchMeshLabWebPage()
      */
     public static final String MESHLAB_URL = "https://www.MeshLab.net";
+                            
+    /** meshlabserver warning
+     * @see #launchMeshLabWebPage()
+     */
+    public static final String MESHLABSERVER_ERROR_NOTICE = 
+            "\nFor MeshLab releases starting in 2021, meshlabserver is discontinued. See https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12"
+          + "\nCapabilities are in PyMeshLab which requires Python language support. See https://github.com/cnr-isti-vclab/PyMeshLab";
 
     /** Default name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
@@ -37489,10 +37544,10 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
             {
                 String errorNotice = "Invalid setMeshLabPath(String newValue) invocation, newValue='" + newValue + 
                                      "', " + getMeshLabServerExecutableName() + " program not found at this location";
-                errorNotice += "\nFor 2021 MeshLab releases, meshlabserver is discontinued.  See https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12";
-//              validationResult.append(errorNotice).append("\n");
-                throw new InvalidFieldValueException(errorNotice);
-            }
+                errorNotice += MESHLABSERVER_ERROR_NOTICE;
+                System.out.println(errorNotice);
+//              throw new InvalidFieldValueException(errorNotice);
+          }
 	}
                 
     /**
@@ -37926,11 +37981,12 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
             args = new String[1];
             args[0] = "-version";
             // test invocation
-            String[] alternate = { "C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.x3d", "-toImage" };
-            args = alternate;
+//          String[] alternate = { "C:/x3d-code/www.web3d.org/x3d/stylesheets/java/examples/CleatClamp.x3d", "-toImage" };
+//          args = alternate;
         }
-		run(args);
-	}
+//      run(args);
+        System.out.println (MESHLABSERVER_ERROR_NOTICE);
+    }
 
     /** Utility run() method provided for test and debugging purposes, allowing invocation with a single String (rather than a String[] array).
 	 * When invoked without parameters then reports results of validate() self-checks to system output.
@@ -39213,7 +39269,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				-->
 			</xsl:choose>
 			<xsl:text>
-		// Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
+	// Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:if test="starts-with($elementName, 'HAnim') and (@name = 'name')">
 				<xsl:text>
@@ -39260,6 +39316,15 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
         for (int i = 0; i < newValue.length; i++)
         {
 ]]></xsl:text>
+                <xsl:if test="(@type='MFString')">
+                        <xsl:text disable-output-escaping="yes"><![CDATA[
+            if (newValue[i].trim().startsWith("\"") && newValue[i].endsWith("\""))
+            {
+                newValue[i] = newValue[i].trim().substring(1, newValue[i].length()-1); // unquote quoted strings before comparison
+                System.out.println ("trimmed MFString newValue[" + i + "]=" + newValue[i]); // debug diagnostic
+            }
+]]></xsl:text>
+                </xsl:if>
             </xsl:if>
 			<xsl:text>		</xsl:text>
 			<xsl:text>if (!(</xsl:text>
@@ -39360,7 +39425,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 			<xsl:value-of select="@name"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="$newValue"/>
-			<xsl:text>=\"" + </xsl:text>
+			<xsl:text>='" + </xsl:text>
 			<xsl:choose>
 				<xsl:when test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
 					<xsl:text>Arrays.toString(</xsl:text>
@@ -39371,7 +39436,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 					<xsl:value-of select="$newValue"/>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:text> + "\"</xsl:text>
+			<xsl:text> + "'</xsl:text>
 			<xsl:text> has an unrecognized value not matching any of the </xsl:text>
             <xsl:choose>
                 <xsl:when test="$isEnumerationTypeRequired">
